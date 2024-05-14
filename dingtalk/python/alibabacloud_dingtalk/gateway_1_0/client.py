@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgateway__1__0_models.OpenConnectionResponse:
+        """
+        @summary 云上网关注册长连接
+        
+        @param request: OpenConnectionRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenConnectionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -75,6 +83,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgateway__1__0_models.OpenConnectionResponse:
+        """
+        @summary 云上网关注册长连接
+        
+        @param request: OpenConnectionRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenConnectionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgateway__1__0_models.OpenConnectionRequest,
     ) -> dingtalkgateway__1__0_models.OpenConnectionResponse:
+        """
+        @summary 云上网关注册长连接
+        
+        @param request: OpenConnectionRequest
+        @return: OpenConnectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.open_connection_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgateway__1__0_models.OpenConnectionRequest,
     ) -> dingtalkgateway__1__0_models.OpenConnectionResponse:
+        """
+        @summary 云上网关注册长连接
+        
+        @param request: OpenConnectionRequest
+        @return: OpenConnectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.open_connection_with_options_async(request, headers, runtime)

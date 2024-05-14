@@ -44,6 +44,7 @@ class GetTravelProcessDetailRequest(TeaModel):
         process_instance_id: str = None,
     ):
         self.process_corp_id = process_corp_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -665,6 +666,7 @@ class PreCheckTemplateRequest(TeaModel):
         self,
         customer_corp_id: str = None,
     ):
+        # This parameter is required.
         self.customer_corp_id = customer_corp_id
 
     def validate(self):
@@ -875,6 +877,7 @@ class QueryTripProcessTemplatesRequest(TeaModel):
         self,
         customer_corp_id: str = None,
     ):
+        # This parameter is required.
         self.customer_corp_id = customer_corp_id
 
     def validate(self):
@@ -1089,6 +1092,7 @@ class SyncBusinessSignInfoRequestTmcProductDetailList(TeaModel):
     ):
         self.gmt_org_pay = gmt_org_pay
         self.pay_type = pay_type
+        # This parameter is required.
         self.product = product
 
     def validate(self):
@@ -1132,6 +1136,7 @@ class SyncBusinessSignInfoRequestTmcProductListProductDetailList(TeaModel):
         self.gmt_org_pay = gmt_org_pay
         self.open_status = open_status
         self.pay_type = pay_type
+        # This parameter is required.
         self.product = product
 
     def validate(self):
@@ -1177,6 +1182,7 @@ class SyncBusinessSignInfoRequestTmcProductList(TeaModel):
         tmc_corp_id: str = None,
     ):
         self.product_detail_list = product_detail_list
+        # This parameter is required.
         self.tmc_corp_id = tmc_corp_id
 
     def validate(self):
@@ -1226,8 +1232,11 @@ class SyncBusinessSignInfoRequest(TeaModel):
         self.biz_type_list = biz_type_list
         self.gmt_org_pay = gmt_org_pay
         self.gmt_sign = gmt_sign
+        # This parameter is required.
         self.org_pay_status = org_pay_status
+        # This parameter is required.
         self.sign_status = sign_status
+        # This parameter is required.
         self.target_corp_id = target_corp_id
         self.tmc_product_detail_list = tmc_product_detail_list
         self.tmc_product_list = tmc_product_list
@@ -1419,16 +1428,21 @@ class SyncCostCenterRequest(TeaModel):
         title: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
+        # This parameter is required.
         self.cost_center_id = cost_center_id
         self.delete_flag = delete_flag
         self.extension = extension
+        # This parameter is required.
         self.gmt_action = gmt_action
         self.number = number
         self.scope = scope
         self.source = source
         self.third_part_id = third_part_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1598,7 +1612,9 @@ class SyncCostCenterEntityRequestEntityList(TeaModel):
         entity_id: str = None,
         entity_type: str = None,
     ):
+        # This parameter is required.
         self.entity_id = entity_id
+        # This parameter is required.
         self.entity_type = entity_type
 
     def validate(self):
@@ -1634,10 +1650,13 @@ class SyncCostCenterEntityRequest(TeaModel):
         entity_list: List[SyncCostCenterEntityRequestEntityList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
+        # This parameter is required.
         self.cost_center_id = cost_center_id
         self.del_all = del_all
         self.entity_list = entity_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1809,9 +1828,12 @@ class SyncInvoiceRequest(TeaModel):
         self.address = address
         self.bank_name = bank_name
         self.bank_no = bank_no
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
         self.delete_flag = delete_flag
+        # This parameter is required.
         self.gmt_action = gmt_action
+        # This parameter is required.
         self.invoice_id = invoice_id
         self.project_ids = project_ids
         self.scope = scope
@@ -1819,9 +1841,11 @@ class SyncInvoiceRequest(TeaModel):
         self.tax_no = tax_no
         self.tel = tel
         self.third_part_id = third_part_id
+        # This parameter is required.
         self.title = title
         self.type = type
         self.unit_type = unit_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2015,7 +2039,9 @@ class SyncInvoiceEntityRequestEntityList(TeaModel):
         entity_id: str = None,
         entity_type: str = None,
     ):
+        # This parameter is required.
         self.entity_id = entity_id
+        # This parameter is required.
         self.entity_type = entity_type
 
     def validate(self):
@@ -2051,10 +2077,13 @@ class SyncInvoiceEntityRequest(TeaModel):
         invoice_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
         self.del_all = del_all
         self.entity_list = entity_list
+        # This parameter is required.
         self.invoice_id = invoice_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2220,19 +2249,24 @@ class SyncProjectRequest(TeaModel):
         third_part_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
         self.code = code
         self.cost_center_id = cost_center_id
         self.delete_flag = delete_flag
         self.extension = extension
+        # This parameter is required.
         self.gmt_action = gmt_action
         self.invoice_id = invoice_id
         self.manager_ids = manager_ids
+        # This parameter is required.
         self.project_id = project_id
+        # This parameter is required.
         self.project_name = project_name
         self.scope = scope
         self.source = source
         self.third_part_id = third_part_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2414,7 +2448,9 @@ class SyncProjectEntityRequestEntityList(TeaModel):
         entity_id: str = None,
         entity_type: str = None,
     ):
+        # This parameter is required.
         self.entity_id = entity_id
+        # This parameter is required.
         self.entity_type = entity_type
 
     def validate(self):
@@ -2450,10 +2486,13 @@ class SyncProjectEntityRequest(TeaModel):
         project_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
         self.del_all = del_all
         self.entity_list = entity_list
+        # This parameter is required.
         self.project_id = project_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2611,8 +2650,10 @@ class SyncSecretKeyRequest(TeaModel):
         trip_app_security: str = None,
         trip_corp_id: str = None,
     ):
+        # This parameter is required.
         self.action_type = action_type
         self.secret_string = secret_string
+        # This parameter is required.
         self.target_corp_id = target_corp_id
         self.trip_app_key = trip_app_key
         self.trip_app_security = trip_app_security
@@ -2824,7 +2865,9 @@ class SyncTripOrderRequestEvent(TeaModel):
         action: str = None,
         gmt_action: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.gmt_action = gmt_action
 
     def validate(self):
@@ -3209,18 +3252,24 @@ class SyncTripOrderRequest(TeaModel):
     ):
         self.biz_extension = biz_extension
         self.channel_type = channel_type
+        # This parameter is required.
         self.currency = currency
+        # This parameter is required.
         self.ding_user_id = ding_user_id
         self.discount_amount = discount_amount
         self.endorse_flag = endorse_flag
+        # This parameter is required.
         self.event = event
+        # This parameter is required.
         self.gmt_order = gmt_order
         self.gmt_pay = gmt_pay
         self.gmt_refund = gmt_refund
         self.invoice_apply_url = invoice_apply_url
         self.journey_biz_no = journey_biz_no
         self.order_details = order_details
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.order_url = order_url
         self.process_id = process_id
         self.real_amount = real_amount
@@ -3232,6 +3281,7 @@ class SyncTripOrderRequest(TeaModel):
         self.target_corp_id = target_corp_id
         self.tmc_corp_id = tmc_corp_id
         self.total_amount = total_amount
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3737,6 +3787,7 @@ class TripPlatformUnifiedEntryRequest(TeaModel):
         method: str = None,
     ):
         self.messages = messages
+        # This parameter is required.
         self.method = method
 
     def validate(self):
@@ -3883,8 +3934,10 @@ class UpgradeTemplateRequest(TeaModel):
         force_upgrade: bool = None,
         tmc_corp_id: str = None,
     ):
+        # This parameter is required.
         self.channel_corp_id = channel_corp_id
         self.force_upgrade = force_upgrade
+        # This parameter is required.
         self.tmc_corp_id = tmc_corp_id
 
     def validate(self):

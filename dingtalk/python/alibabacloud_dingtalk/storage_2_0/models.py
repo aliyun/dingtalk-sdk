@@ -84,7 +84,9 @@ class AddPermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -150,9 +152,12 @@ class AddPermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.option = option
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -306,8 +311,11 @@ class CommitFileRequestOptionAppProperties(TeaModel):
         value: str = None,
         visibility: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.visibility = visibility
 
     def validate(self):
@@ -405,9 +413,12 @@ class CommitFileRequest(TeaModel):
         upload_key: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.option = option
+        # This parameter is required.
         self.upload_key = upload_key
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -789,7 +800,9 @@ class DeletePermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -827,8 +840,11 @@ class DeletePermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1056,7 +1072,9 @@ class GetFileUploadInfoRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.protocol = protocol
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1266,6 +1284,7 @@ class GetPermissionInheritanceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1435,6 +1454,7 @@ class ListPermissionsRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1705,6 +1725,7 @@ class ManagerGetDefaultHandOverUserRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1835,6 +1856,7 @@ class ManagerSetDefaultHandOverUserRequest(TeaModel):
         operator_id: str = None,
     ):
         self.default_handover_user_id = default_handover_user_id
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2103,8 +2125,10 @@ class SearchDentriesRequest(TeaModel):
         option: SearchDentriesRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.keyword = keyword
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2409,9 +2433,12 @@ class SearchPublishDentriesRequest(TeaModel):
         workspace_id: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.keyword = keyword
         self.option = option
+        # This parameter is required.
         self.workspace_id = workspace_id
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2648,8 +2675,10 @@ class SearchWorkspacesRequest(TeaModel):
         option: SearchWorkspacesRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.keyword = keyword
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2842,7 +2871,9 @@ class SetPermissionInheritanceRequest(TeaModel):
         inheritance: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.inheritance = inheritance
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2978,7 +3009,9 @@ class UpdatePermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3044,9 +3077,12 @@ class UpdatePermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.option = option
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

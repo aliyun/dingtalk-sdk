@@ -118,8 +118,10 @@ class AddTeamRequest(TeaModel):
         option: AddTeamRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -411,8 +413,10 @@ class AddWorkspaceRequest(TeaModel):
         option: AddWorkspaceRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -699,6 +703,7 @@ class DeleteTeamRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -827,6 +832,7 @@ class GetDefaultHandOverUserRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -955,6 +961,7 @@ class GetMineWorkspaceRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1233,6 +1240,7 @@ class GetNodeRequest(TeaModel):
         with_permission_role: bool = None,
         with_statistical_info: bool = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
         self.with_permission_role = with_permission_role
         self.with_statistical_info = with_statistical_info
@@ -1549,7 +1557,9 @@ class GetNodeByUrlRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.url = url
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1865,8 +1875,10 @@ class GetNodesRequest(TeaModel):
         option: GetNodesRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.node_ids = node_ids
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2153,6 +2165,7 @@ class GetTeamRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2400,6 +2413,7 @@ class GetWorkspaceRequest(TeaModel):
         operator_id: str = None,
         with_permission_role: bool = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
         self.with_permission_role = with_permission_role
 
@@ -2711,7 +2725,9 @@ class GetWorkspacesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.workspace_ids = workspace_ids
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3007,9 +3023,13 @@ class HandOverWorkspaceRequest(TeaModel):
         workspace_id: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.source_owner_id = source_owner_id
+        # This parameter is required.
         self.target_owner_id = target_owner_id
+        # This parameter is required.
         self.workspace_id = workspace_id
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3156,7 +3176,9 @@ class ListNodesRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.parent_node_id = parent_node_id
         self.with_permission_role = with_permission_role
 
@@ -3460,6 +3482,7 @@ class ListTeamsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3733,6 +3756,7 @@ class ListWorkspacesRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
         self.order_by = order_by
         self.team_id = team_id
@@ -4046,6 +4070,7 @@ class SetDefaultHandOverUserRequest(TeaModel):
         operator_id: str = None,
     ):
         self.default_handover_user_id = default_handover_user_id
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):

@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.CreateFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        """
+        @summary 新增数据表字段
+        
+        @param request: CreateFieldRequest
+        @param headers: CreateFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -82,6 +90,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.CreateFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        """
+        @summary 新增数据表字段
+        
+        @param request: CreateFieldRequest
+        @param headers: CreateFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -125,6 +141,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.CreateFieldRequest,
     ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        """
+        @summary 新增数据表字段
+        
+        @param request: CreateFieldRequest
+        @return: CreateFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateFieldHeaders()
         return self.create_field_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -135,6 +157,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.CreateFieldRequest,
     ) -> dingtalknotable__1__0_models.CreateFieldResponse:
+        """
+        @summary 新增数据表字段
+        
+        @param request: CreateFieldRequest
+        @return: CreateFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateFieldHeaders()
         return await self.create_field_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -146,6 +174,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建数据表
+        
+        @param request: CreateSheetRequest
+        @param headers: CreateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -188,6 +224,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建数据表
+        
+        @param request: CreateSheetRequest
+        @param headers: CreateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -228,6 +272,12 @@ class Client(OpenApiClient):
         base_id: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建数据表
+        
+        @param request: CreateSheetRequest
+        @return: CreateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateSheetHeaders()
         return self.create_sheet_with_options(base_id, request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         base_id: str,
         request: dingtalknotable__1__0_models.CreateSheetRequest,
     ) -> dingtalknotable__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建数据表
+        
+        @param request: CreateSheetRequest
+        @return: CreateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateSheetHeaders()
         return await self.create_sheet_with_options_async(base_id, request, headers, runtime)
@@ -250,6 +306,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        """
+        @summary 删除数据表字段
+        
+        @param request: DeleteFieldRequest
+        @param headers: DeleteFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -288,6 +352,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        """
+        @summary 删除数据表字段
+        
+        @param request: DeleteFieldRequest
+        @param headers: DeleteFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -324,6 +396,12 @@ class Client(OpenApiClient):
         field_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteFieldRequest,
     ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        """
+        @summary 删除数据表字段
+        
+        @param request: DeleteFieldRequest
+        @return: DeleteFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteFieldHeaders()
         return self.delete_field_with_options(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
@@ -335,6 +413,12 @@ class Client(OpenApiClient):
         field_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteFieldRequest,
     ) -> dingtalknotable__1__0_models.DeleteFieldResponse:
+        """
+        @summary 删除数据表字段
+        
+        @param request: DeleteFieldRequest
+        @return: DeleteFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteFieldHeaders()
         return await self.delete_field_with_options_async(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
@@ -347,6 +431,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        """
+        @summary 删除数据表多行记录
+        
+        @param request: DeleteRecordsRequest
+        @param headers: DeleteRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -388,6 +480,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        """
+        @summary 删除数据表多行记录
+        
+        @param request: DeleteRecordsRequest
+        @param headers: DeleteRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -427,6 +527,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteRecordsRequest,
     ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        """
+        @summary 删除数据表多行记录
+        
+        @param request: DeleteRecordsRequest
+        @return: DeleteRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteRecordsHeaders()
         return self.delete_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -437,6 +543,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteRecordsRequest,
     ) -> dingtalknotable__1__0_models.DeleteRecordsResponse:
+        """
+        @summary 删除数据表多行记录
+        
+        @param request: DeleteRecordsRequest
+        @return: DeleteRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteRecordsHeaders()
         return await self.delete_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -449,6 +561,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除数据表
+        
+        @param request: DeleteSheetRequest
+        @param headers: DeleteSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -486,6 +606,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除数据表
+        
+        @param request: DeleteSheetRequest
+        @param headers: DeleteSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -521,6 +649,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteSheetRequest,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除数据表
+        
+        @param request: DeleteSheetRequest
+        @return: DeleteSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
         return self.delete_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -531,6 +665,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.DeleteSheetRequest,
     ) -> dingtalknotable__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除数据表
+        
+        @param request: DeleteSheetRequest
+        @return: DeleteSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
         return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -543,6 +683,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetAllFieldsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        """
+        @summary 获取所有字段
+        
+        @param request: GetAllFieldsRequest
+        @param headers: GetAllFieldsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllFieldsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -580,6 +728,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetAllFieldsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        """
+        @summary 获取所有字段
+        
+        @param request: GetAllFieldsRequest
+        @param headers: GetAllFieldsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllFieldsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -615,6 +771,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetAllFieldsRequest,
     ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        """
+        @summary 获取所有字段
+        
+        @param request: GetAllFieldsRequest
+        @return: GetAllFieldsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllFieldsHeaders()
         return self.get_all_fields_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -625,6 +787,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetAllFieldsRequest,
     ) -> dingtalknotable__1__0_models.GetAllFieldsResponse:
+        """
+        @summary 获取所有字段
+        
+        @param request: GetAllFieldsRequest
+        @return: GetAllFieldsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllFieldsHeaders()
         return await self.get_all_fields_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -636,6 +804,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有数据表
+        
+        @param request: GetAllSheetsRequest
+        @param headers: GetAllSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllSheetsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -672,6 +848,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有数据表
+        
+        @param request: GetAllSheetsRequest
+        @param headers: GetAllSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllSheetsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -706,6 +890,12 @@ class Client(OpenApiClient):
         base_id: str,
         request: dingtalknotable__1__0_models.GetAllSheetsRequest,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有数据表
+        
+        @param request: GetAllSheetsRequest
+        @return: GetAllSheetsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllSheetsHeaders()
         return self.get_all_sheets_with_options(base_id, request, headers, runtime)
@@ -715,6 +905,12 @@ class Client(OpenApiClient):
         base_id: str,
         request: dingtalknotable__1__0_models.GetAllSheetsRequest,
     ) -> dingtalknotable__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有数据表
+        
+        @param request: GetAllSheetsRequest
+        @return: GetAllSheetsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllSheetsHeaders()
         return await self.get_all_sheets_with_options_async(base_id, request, headers, runtime)
@@ -728,6 +924,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        """
+        @summary 获取记录
+        
+        @param request: GetRecordRequest
+        @param headers: GetRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -766,6 +970,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        """
+        @summary 获取记录
+        
+        @param request: GetRecordRequest
+        @param headers: GetRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -802,6 +1014,12 @@ class Client(OpenApiClient):
         record_id: str,
         request: dingtalknotable__1__0_models.GetRecordRequest,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        """
+        @summary 获取记录
+        
+        @param request: GetRecordRequest
+        @return: GetRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordHeaders()
         return self.get_record_with_options(base_id, sheet_id_or_name, record_id, request, headers, runtime)
@@ -813,6 +1031,12 @@ class Client(OpenApiClient):
         record_id: str,
         request: dingtalknotable__1__0_models.GetRecordRequest,
     ) -> dingtalknotable__1__0_models.GetRecordResponse:
+        """
+        @summary 获取记录
+        
+        @param request: GetRecordRequest
+        @return: GetRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordHeaders()
         return await self.get_record_with_options_async(base_id, sheet_id_or_name, record_id, request, headers, runtime)
@@ -825,6 +1049,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordsResponse:
+        """
+        @summary 获取多行记录
+        
+        @param request: GetRecordsRequest
+        @param headers: GetRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -866,6 +1098,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetRecordsResponse:
+        """
+        @summary 获取多行记录
+        
+        @param request: GetRecordsRequest
+        @param headers: GetRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -905,6 +1145,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetRecordsRequest,
     ) -> dingtalknotable__1__0_models.GetRecordsResponse:
+        """
+        @summary 获取多行记录
+        
+        @param request: GetRecordsRequest
+        @return: GetRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordsHeaders()
         return self.get_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -915,6 +1161,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetRecordsRequest,
     ) -> dingtalknotable__1__0_models.GetRecordsResponse:
+        """
+        @summary 获取多行记录
+        
+        @param request: GetRecordsRequest
+        @return: GetRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetRecordsHeaders()
         return await self.get_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -927,6 +1179,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        """
+        @summary 获取数据表
+        
+        @param request: GetSheetRequest
+        @param headers: GetSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -964,6 +1224,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        """
+        @summary 获取数据表
+        
+        @param request: GetSheetRequest
+        @param headers: GetSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -999,6 +1267,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetSheetRequest,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        """
+        @summary 获取数据表
+        
+        @param request: GetSheetRequest
+        @return: GetSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetSheetHeaders()
         return self.get_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1009,6 +1283,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.GetSheetRequest,
     ) -> dingtalknotable__1__0_models.GetSheetResponse:
+        """
+        @summary 获取数据表
+        
+        @param request: GetSheetRequest
+        @return: GetSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetSheetHeaders()
         return await self.get_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1021,6 +1301,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.InsertRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
+        """
+        @summary 新增记录
+        
+        @param request: InsertRecordsRequest
+        @param headers: InsertRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1062,6 +1350,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.InsertRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
+        """
+        @summary 新增记录
+        
+        @param request: InsertRecordsRequest
+        @param headers: InsertRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1101,6 +1397,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.InsertRecordsRequest,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
+        """
+        @summary 新增记录
+        
+        @param request: InsertRecordsRequest
+        @return: InsertRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.InsertRecordsHeaders()
         return self.insert_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1111,6 +1413,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.InsertRecordsRequest,
     ) -> dingtalknotable__1__0_models.InsertRecordsResponse:
+        """
+        @summary 新增记录
+        
+        @param request: InsertRecordsRequest
+        @return: InsertRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.InsertRecordsHeaders()
         return await self.insert_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1124,6 +1432,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        """
+        @summary 更新数据表字段
+        
+        @param request: UpdateFieldRequest
+        @param headers: UpdateFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1168,6 +1484,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        """
+        @summary 更新数据表字段
+        
+        @param request: UpdateFieldRequest
+        @param headers: UpdateFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFieldResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1210,6 +1534,12 @@ class Client(OpenApiClient):
         field_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateFieldRequest,
     ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        """
+        @summary 更新数据表字段
+        
+        @param request: UpdateFieldRequest
+        @return: UpdateFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateFieldHeaders()
         return self.update_field_with_options(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
@@ -1221,6 +1551,12 @@ class Client(OpenApiClient):
         field_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateFieldRequest,
     ) -> dingtalknotable__1__0_models.UpdateFieldResponse:
+        """
+        @summary 更新数据表字段
+        
+        @param request: UpdateFieldRequest
+        @return: UpdateFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateFieldHeaders()
         return await self.update_field_with_options_async(base_id, sheet_id_or_name, field_id_or_name, request, headers, runtime)
@@ -1233,6 +1569,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        """
+        @summary 更新数据表多行记录
+        
+        @param request: UpdateRecordsRequest
+        @param headers: UpdateRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1274,6 +1618,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        """
+        @summary 更新数据表多行记录
+        
+        @param request: UpdateRecordsRequest
+        @param headers: UpdateRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1313,6 +1665,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateRecordsRequest,
     ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        """
+        @summary 更新数据表多行记录
+        
+        @param request: UpdateRecordsRequest
+        @return: UpdateRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateRecordsHeaders()
         return self.update_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1323,6 +1681,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateRecordsRequest,
     ) -> dingtalknotable__1__0_models.UpdateRecordsResponse:
+        """
+        @summary 更新数据表多行记录
+        
+        @param request: UpdateRecordsRequest
+        @return: UpdateRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateRecordsHeaders()
         return await self.update_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1335,6 +1699,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新数据表
+        
+        @param request: UpdateSheetRequest
+        @param headers: UpdateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1376,6 +1748,14 @@ class Client(OpenApiClient):
         headers: dingtalknotable__1__0_models.UpdateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新数据表
+        
+        @param request: UpdateSheetRequest
+        @param headers: UpdateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1415,6 +1795,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateSheetRequest,
     ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新数据表
+        
+        @param request: UpdateSheetRequest
+        @return: UpdateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateSheetHeaders()
         return self.update_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
@@ -1425,6 +1811,12 @@ class Client(OpenApiClient):
         sheet_id_or_name: str,
         request: dingtalknotable__1__0_models.UpdateSheetRequest,
     ) -> dingtalknotable__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新数据表
+        
+        @param request: UpdateSheetRequest
+        @return: UpdateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateSheetHeaders()
         return await self.update_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)

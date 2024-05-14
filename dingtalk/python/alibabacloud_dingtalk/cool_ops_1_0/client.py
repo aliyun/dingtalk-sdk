@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        """
+        @summary ISV批量查询商机标签
+        
+        @param request: BatchQueryOpportunityTagRequest
+        @param headers: BatchQueryOpportunityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryOpportunityTagResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id_list):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        """
+        @summary ISV批量查询商机标签
+        
+        @param request: BatchQueryOpportunityTagRequest
+        @param headers: BatchQueryOpportunityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryOpportunityTagResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id_list):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
     ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        """
+        @summary ISV批量查询商机标签
+        
+        @param request: BatchQueryOpportunityTagRequest
+        @return: BatchQueryOpportunityTagResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders()
         return self.batch_query_opportunity_tag_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagRequest,
     ) -> dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagResponse:
+        """
+        @summary ISV批量查询商机标签
+        
+        @param request: BatchQueryOpportunityTagRequest
+        @return: BatchQueryOpportunityTagResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcool_ops__1__0_models.BatchQueryOpportunityTagHeaders()
         return await self.batch_query_opportunity_tag_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkcool_ops__1__0_models.UpdateIsvOppStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcool_ops__1__0_models.UpdateIsvOppStatusResponse:
+        """
+        @summary ISV商机状态同步
+        
+        @param request: UpdateIsvOppStatusRequest
+        @param headers: UpdateIsvOppStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateIsvOppStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.isv_opportunity_status_list):
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkcool_ops__1__0_models.UpdateIsvOppStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcool_ops__1__0_models.UpdateIsvOppStatusResponse:
+        """
+        @summary ISV商机状态同步
+        
+        @param request: UpdateIsvOppStatusRequest
+        @param headers: UpdateIsvOppStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateIsvOppStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.isv_opportunity_status_list):
@@ -189,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcool_ops__1__0_models.UpdateIsvOppStatusRequest,
     ) -> dingtalkcool_ops__1__0_models.UpdateIsvOppStatusResponse:
+        """
+        @summary ISV商机状态同步
+        
+        @param request: UpdateIsvOppStatusRequest
+        @return: UpdateIsvOppStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcool_ops__1__0_models.UpdateIsvOppStatusHeaders()
         return self.update_isv_opp_status_with_options(request, headers, runtime)
@@ -197,6 +247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcool_ops__1__0_models.UpdateIsvOppStatusRequest,
     ) -> dingtalkcool_ops__1__0_models.UpdateIsvOppStatusResponse:
+        """
+        @summary ISV商机状态同步
+        
+        @param request: UpdateIsvOppStatusRequest
+        @return: UpdateIsvOppStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcool_ops__1__0_models.UpdateIsvOppStatusHeaders()
         return await self.update_isv_opp_status_with_options_async(request, headers, runtime)

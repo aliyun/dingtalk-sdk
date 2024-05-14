@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkmail__1__0_models.CreateUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmail__1__0_models.CreateUserResponse:
+        """
+        @summary 创建企业邮箱用户
+        
+        @param request: CreateUserRequest
+        @param headers: CreateUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.email):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkmail__1__0_models.CreateUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmail__1__0_models.CreateUserResponse:
+        """
+        @summary 创建企业邮箱用户
+        
+        @param request: CreateUserRequest
+        @param headers: CreateUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.email):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkmail__1__0_models.CreateUserRequest,
     ) -> dingtalkmail__1__0_models.CreateUserResponse:
+        """
+        @summary 创建企业邮箱用户
+        
+        @param request: CreateUserRequest
+        @return: CreateUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmail__1__0_models.CreateUserHeaders()
         return self.create_user_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkmail__1__0_models.CreateUserRequest,
     ) -> dingtalkmail__1__0_models.CreateUserResponse:
+        """
+        @summary 创建企业邮箱用户
+        
+        @param request: CreateUserRequest
+        @return: CreateUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmail__1__0_models.CreateUserHeaders()
         return await self.create_user_with_options_async(request, headers, runtime)

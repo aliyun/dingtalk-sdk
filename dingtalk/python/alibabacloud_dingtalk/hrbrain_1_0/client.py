@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailResponse:
+        """
+        @summary 集成奖励记录
+        
+        @param request: HrbrainImportAwardDetailRequest
+        @param headers: HrbrainImportAwardDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportAwardDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -71,6 +79,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailResponse:
+        """
+        @summary 集成奖励记录
+        
+        @param request: HrbrainImportAwardDetailRequest
+        @param headers: HrbrainImportAwardDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportAwardDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -105,6 +121,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailResponse:
+        """
+        @summary 集成奖励记录
+        
+        @param request: HrbrainImportAwardDetailRequest
+        @return: HrbrainImportAwardDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailHeaders()
         return self.hrbrain_import_award_detail_with_options(request, headers, runtime)
@@ -113,6 +135,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailResponse:
+        """
+        @summary 集成奖励记录
+        
+        @param request: HrbrainImportAwardDetailRequest
+        @return: HrbrainImportAwardDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailHeaders()
         return await self.hrbrain_import_award_detail_with_options_async(request, headers, runtime)
@@ -123,6 +151,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoResponse:
+        """
+        @summary 集成组织架构
+        
+        @param request: HrbrainImportDeptInfoRequest
+        @param headers: HrbrainImportDeptInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportDeptInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -159,6 +195,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoResponse:
+        """
+        @summary 集成组织架构
+        
+        @param request: HrbrainImportDeptInfoRequest
+        @param headers: HrbrainImportDeptInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportDeptInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -193,6 +237,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoResponse:
+        """
+        @summary 集成组织架构
+        
+        @param request: HrbrainImportDeptInfoRequest
+        @return: HrbrainImportDeptInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoHeaders()
         return self.hrbrain_import_dept_info_with_options(request, headers, runtime)
@@ -201,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoResponse:
+        """
+        @summary 集成组织架构
+        
+        @param request: HrbrainImportDeptInfoRequest
+        @return: HrbrainImportDeptInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportDeptInfoHeaders()
         return await self.hrbrain_import_dept_info_with_options_async(request, headers, runtime)
@@ -211,6 +267,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportDimissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDimissionResponse:
+        """
+        @summary 集成离职信息
+        
+        @param request: HrbrainImportDimissionRequest
+        @param headers: HrbrainImportDimissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportDimissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -247,6 +311,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportDimissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDimissionResponse:
+        """
+        @summary 集成离职信息
+        
+        @param request: HrbrainImportDimissionRequest
+        @param headers: HrbrainImportDimissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportDimissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -281,6 +353,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportDimissionRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDimissionResponse:
+        """
+        @summary 集成离职信息
+        
+        @param request: HrbrainImportDimissionRequest
+        @return: HrbrainImportDimissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportDimissionHeaders()
         return self.hrbrain_import_dimission_with_options(request, headers, runtime)
@@ -289,6 +367,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportDimissionRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportDimissionResponse:
+        """
+        @summary 集成离职信息
+        
+        @param request: HrbrainImportDimissionRequest
+        @return: HrbrainImportDimissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportDimissionHeaders()
         return await self.hrbrain_import_dimission_with_options_async(request, headers, runtime)
@@ -299,6 +383,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportEduExpHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEduExpResponse:
+        """
+        @summary 集成教育经历
+        
+        @param request: HrbrainImportEduExpRequest
+        @param headers: HrbrainImportEduExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportEduExpResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -335,6 +427,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportEduExpHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEduExpResponse:
+        """
+        @summary 集成教育经历
+        
+        @param request: HrbrainImportEduExpRequest
+        @param headers: HrbrainImportEduExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportEduExpResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -369,6 +469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportEduExpRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEduExpResponse:
+        """
+        @summary 集成教育经历
+        
+        @param request: HrbrainImportEduExpRequest
+        @return: HrbrainImportEduExpResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportEduExpHeaders()
         return self.hrbrain_import_edu_exp_with_options(request, headers, runtime)
@@ -377,6 +483,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportEduExpRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEduExpResponse:
+        """
+        @summary 集成教育经历
+        
+        @param request: HrbrainImportEduExpRequest
+        @return: HrbrainImportEduExpResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportEduExpHeaders()
         return await self.hrbrain_import_edu_exp_with_options_async(request, headers, runtime)
@@ -387,6 +499,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoResponse:
+        """
+        @summary 集成人员信息
+        
+        @param request: HrbrainImportEmpInfoRequest
+        @param headers: HrbrainImportEmpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportEmpInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -423,6 +543,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoResponse:
+        """
+        @summary 集成人员信息
+        
+        @param request: HrbrainImportEmpInfoRequest
+        @param headers: HrbrainImportEmpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportEmpInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -457,6 +585,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoResponse:
+        """
+        @summary 集成人员信息
+        
+        @param request: HrbrainImportEmpInfoRequest
+        @return: HrbrainImportEmpInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoHeaders()
         return self.hrbrain_import_emp_info_with_options(request, headers, runtime)
@@ -465,6 +599,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoResponse:
+        """
+        @summary 集成人员信息
+        
+        @param request: HrbrainImportEmpInfoRequest
+        @return: HrbrainImportEmpInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportEmpInfoHeaders()
         return await self.hrbrain_import_emp_info_with_options_async(request, headers, runtime)
@@ -475,6 +615,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseResponse:
+        """
+        @summary 集成基础标签
+        
+        @param request: HrbrainImportLabelBaseRequest
+        @param headers: HrbrainImportLabelBaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelBaseResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -511,6 +659,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseResponse:
+        """
+        @summary 集成基础标签
+        
+        @param request: HrbrainImportLabelBaseRequest
+        @param headers: HrbrainImportLabelBaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelBaseResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -545,6 +701,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseResponse:
+        """
+        @summary 集成基础标签
+        
+        @param request: HrbrainImportLabelBaseRequest
+        @return: HrbrainImportLabelBaseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseHeaders()
         return self.hrbrain_import_label_base_with_options(request, headers, runtime)
@@ -553,6 +715,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseResponse:
+        """
+        @summary 集成基础标签
+        
+        @param request: HrbrainImportLabelBaseRequest
+        @return: HrbrainImportLabelBaseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelBaseHeaders()
         return await self.hrbrain_import_label_base_with_options_async(request, headers, runtime)
@@ -563,6 +731,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomResponse:
+        """
+        @summary 集成自定义标签
+        
+        @param request: HrbrainImportLabelCustomRequest
+        @param headers: HrbrainImportLabelCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelCustomResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -599,6 +775,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomResponse:
+        """
+        @summary 集成自定义标签
+        
+        @param request: HrbrainImportLabelCustomRequest
+        @param headers: HrbrainImportLabelCustomHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelCustomResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -633,6 +817,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomResponse:
+        """
+        @summary 集成自定义标签
+        
+        @param request: HrbrainImportLabelCustomRequest
+        @return: HrbrainImportLabelCustomResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomHeaders()
         return self.hrbrain_import_label_custom_with_options(request, headers, runtime)
@@ -641,6 +831,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomResponse:
+        """
+        @summary 集成自定义标签
+        
+        @param request: HrbrainImportLabelCustomRequest
+        @return: HrbrainImportLabelCustomResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelCustomHeaders()
         return await self.hrbrain_import_label_custom_with_options_async(request, headers, runtime)
@@ -651,6 +847,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryResponse:
+        """
+        @summary 集成领域经验
+        
+        @param request: HrbrainImportLabelIndustryRequest
+        @param headers: HrbrainImportLabelIndustryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelIndustryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -687,6 +891,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryResponse:
+        """
+        @summary 集成领域经验
+        
+        @param request: HrbrainImportLabelIndustryRequest
+        @param headers: HrbrainImportLabelIndustryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelIndustryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -721,6 +933,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryResponse:
+        """
+        @summary 集成领域经验
+        
+        @param request: HrbrainImportLabelIndustryRequest
+        @return: HrbrainImportLabelIndustryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryHeaders()
         return self.hrbrain_import_label_industry_with_options(request, headers, runtime)
@@ -729,6 +947,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryResponse:
+        """
+        @summary 集成领域经验
+        
+        @param request: HrbrainImportLabelIndustryRequest
+        @return: HrbrainImportLabelIndustryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelIndustryHeaders()
         return await self.hrbrain_import_label_industry_with_options_async(request, headers, runtime)
@@ -739,6 +963,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryResponse:
+        """
+        @summary 集成盘点数据
+        
+        @param request: HrbrainImportLabelInventoryRequest
+        @param headers: HrbrainImportLabelInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelInventoryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -775,6 +1007,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryResponse:
+        """
+        @summary 集成盘点数据
+        
+        @param request: HrbrainImportLabelInventoryRequest
+        @param headers: HrbrainImportLabelInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelInventoryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -809,6 +1049,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryResponse:
+        """
+        @summary 集成盘点数据
+        
+        @param request: HrbrainImportLabelInventoryRequest
+        @return: HrbrainImportLabelInventoryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryHeaders()
         return self.hrbrain_import_label_inventory_with_options(request, headers, runtime)
@@ -817,6 +1063,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryResponse:
+        """
+        @summary 集成盘点数据
+        
+        @param request: HrbrainImportLabelInventoryRequest
+        @return: HrbrainImportLabelInventoryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelInventoryHeaders()
         return await self.hrbrain_import_label_inventory_with_options_async(request, headers, runtime)
@@ -827,6 +1079,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillResponse:
+        """
+        @summary 集成专业技能
+        
+        @param request: HrbrainImportLabelProfSkillRequest
+        @param headers: HrbrainImportLabelProfSkillHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelProfSkillResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -863,6 +1123,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillResponse:
+        """
+        @summary 集成专业技能
+        
+        @param request: HrbrainImportLabelProfSkillRequest
+        @param headers: HrbrainImportLabelProfSkillHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportLabelProfSkillResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -897,6 +1165,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillResponse:
+        """
+        @summary 集成专业技能
+        
+        @param request: HrbrainImportLabelProfSkillRequest
+        @return: HrbrainImportLabelProfSkillResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillHeaders()
         return self.hrbrain_import_label_prof_skill_with_options(request, headers, runtime)
@@ -905,6 +1179,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillResponse:
+        """
+        @summary 集成专业技能
+        
+        @param request: HrbrainImportLabelProfSkillRequest
+        @return: HrbrainImportLabelProfSkillResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportLabelProfSkillHeaders()
         return await self.hrbrain_import_label_prof_skill_with_options_async(request, headers, runtime)
@@ -915,6 +1195,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalResponse:
+        """
+        @summary 集成绩效记录
+        
+        @param request: HrbrainImportPerfEvalRequest
+        @param headers: HrbrainImportPerfEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPerfEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -951,6 +1239,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalResponse:
+        """
+        @summary 集成绩效记录
+        
+        @param request: HrbrainImportPerfEvalRequest
+        @param headers: HrbrainImportPerfEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPerfEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -985,6 +1281,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalResponse:
+        """
+        @summary 集成绩效记录
+        
+        @param request: HrbrainImportPerfEvalRequest
+        @return: HrbrainImportPerfEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalHeaders()
         return self.hrbrain_import_perf_eval_with_options(request, headers, runtime)
@@ -993,6 +1295,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalResponse:
+        """
+        @summary 集成绩效记录
+        
+        @param request: HrbrainImportPerfEvalRequest
+        @return: HrbrainImportPerfEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPerfEvalHeaders()
         return await self.hrbrain_import_perf_eval_with_options_async(request, headers, runtime)
@@ -1003,6 +1311,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPromEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPromEvalResponse:
+        """
+        @summary 集成晋升记录
+        
+        @param request: HrbrainImportPromEvalRequest
+        @param headers: HrbrainImportPromEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPromEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1039,6 +1355,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPromEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPromEvalResponse:
+        """
+        @summary 集成晋升记录
+        
+        @param request: HrbrainImportPromEvalRequest
+        @param headers: HrbrainImportPromEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPromEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1073,6 +1397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPromEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPromEvalResponse:
+        """
+        @summary 集成晋升记录
+        
+        @param request: HrbrainImportPromEvalRequest
+        @return: HrbrainImportPromEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPromEvalHeaders()
         return self.hrbrain_import_prom_eval_with_options(request, headers, runtime)
@@ -1081,6 +1411,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPromEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPromEvalResponse:
+        """
+        @summary 集成晋升记录
+        
+        @param request: HrbrainImportPromEvalRequest
+        @return: HrbrainImportPromEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPromEvalHeaders()
         return await self.hrbrain_import_prom_eval_with_options_async(request, headers, runtime)
@@ -1091,6 +1427,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPunDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPunDetailResponse:
+        """
+        @summary 集成处分记录
+        
+        @param request: HrbrainImportPunDetailRequest
+        @param headers: HrbrainImportPunDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPunDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1127,6 +1471,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportPunDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPunDetailResponse:
+        """
+        @summary 集成处分记录
+        
+        @param request: HrbrainImportPunDetailRequest
+        @param headers: HrbrainImportPunDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportPunDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1161,6 +1513,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPunDetailRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPunDetailResponse:
+        """
+        @summary 集成处分记录
+        
+        @param request: HrbrainImportPunDetailRequest
+        @return: HrbrainImportPunDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPunDetailHeaders()
         return self.hrbrain_import_pun_detail_with_options(request, headers, runtime)
@@ -1169,6 +1527,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportPunDetailRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportPunDetailResponse:
+        """
+        @summary 集成处分记录
+        
+        @param request: HrbrainImportPunDetailRequest
+        @return: HrbrainImportPunDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportPunDetailHeaders()
         return await self.hrbrain_import_pun_detail_with_options_async(request, headers, runtime)
@@ -1179,6 +1543,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportRegistHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportRegistResponse:
+        """
+        @summary 集成入职信息
+        
+        @param request: HrbrainImportRegistRequest
+        @param headers: HrbrainImportRegistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportRegistResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1215,6 +1587,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportRegistHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportRegistResponse:
+        """
+        @summary 集成入职信息
+        
+        @param request: HrbrainImportRegistRequest
+        @param headers: HrbrainImportRegistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportRegistResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1249,6 +1629,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportRegistRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportRegistResponse:
+        """
+        @summary 集成入职信息
+        
+        @param request: HrbrainImportRegistRequest
+        @return: HrbrainImportRegistResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportRegistHeaders()
         return self.hrbrain_import_regist_with_options(request, headers, runtime)
@@ -1257,6 +1643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportRegistRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportRegistResponse:
+        """
+        @summary 集成入职信息
+        
+        @param request: HrbrainImportRegistRequest
+        @return: HrbrainImportRegistResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportRegistHeaders()
         return await self.hrbrain_import_regist_with_options_async(request, headers, runtime)
@@ -1267,6 +1659,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalResponse:
+        """
+        @summary 集成异动记录
+        
+        @param request: HrbrainImportTransferEvalRequest
+        @param headers: HrbrainImportTransferEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportTransferEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1303,6 +1703,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalResponse:
+        """
+        @summary 集成异动记录
+        
+        @param request: HrbrainImportTransferEvalRequest
+        @param headers: HrbrainImportTransferEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportTransferEvalResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1337,6 +1745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalResponse:
+        """
+        @summary 集成异动记录
+        
+        @param request: HrbrainImportTransferEvalRequest
+        @return: HrbrainImportTransferEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalHeaders()
         return self.hrbrain_import_transfer_eval_with_options(request, headers, runtime)
@@ -1345,6 +1759,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalResponse:
+        """
+        @summary 集成异动记录
+        
+        @param request: HrbrainImportTransferEvalRequest
+        @return: HrbrainImportTransferEvalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportTransferEvalHeaders()
         return await self.hrbrain_import_transfer_eval_with_options_async(request, headers, runtime)
@@ -1355,6 +1775,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportWorkExpResponse:
+        """
+        @summary 集成工作经历
+        
+        @param request: HrbrainImportWorkExpRequest
+        @param headers: HrbrainImportWorkExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportWorkExpResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1391,6 +1819,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportWorkExpResponse:
+        """
+        @summary 集成工作经历
+        
+        @param request: HrbrainImportWorkExpRequest
+        @param headers: HrbrainImportWorkExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainImportWorkExpResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1425,6 +1861,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportWorkExpRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportWorkExpResponse:
+        """
+        @summary 集成工作经历
+        
+        @param request: HrbrainImportWorkExpRequest
+        @return: HrbrainImportWorkExpResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders()
         return self.hrbrain_import_work_exp_with_options(request, headers, runtime)
@@ -1433,6 +1875,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportWorkExpRequest,
     ) -> dingtalkhrbrain__1__0_models.HrbrainImportWorkExpResponse:
+        """
+        @summary 集成工作经历
+        
+        @param request: HrbrainImportWorkExpRequest
+        @return: HrbrainImportWorkExpResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders()
         return await self.hrbrain_import_work_exp_with_options_async(request, headers, runtime)
@@ -1443,6 +1891,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.SyncDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.SyncDataResponse:
+        """
+        @summary 同步统计基础数据
+        
+        @param request: SyncDataRequest
+        @param headers: SyncDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -1486,6 +1942,14 @@ class Client(OpenApiClient):
         headers: dingtalkhrbrain__1__0_models.SyncDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrbrain__1__0_models.SyncDataResponse:
+        """
+        @summary 同步统计基础数据
+        
+        @param request: SyncDataRequest
+        @param headers: SyncDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -1527,6 +1991,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.SyncDataRequest,
     ) -> dingtalkhrbrain__1__0_models.SyncDataResponse:
+        """
+        @summary 同步统计基础数据
+        
+        @param request: SyncDataRequest
+        @return: SyncDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.SyncDataHeaders()
         return self.sync_data_with_options(request, headers, runtime)
@@ -1535,6 +2005,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkhrbrain__1__0_models.SyncDataRequest,
     ) -> dingtalkhrbrain__1__0_models.SyncDataResponse:
+        """
+        @summary 同步统计基础数据
+        
+        @param request: SyncDataRequest
+        @return: SyncDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.SyncDataHeaders()
         return await self.sync_data_with_options_async(request, headers, runtime)

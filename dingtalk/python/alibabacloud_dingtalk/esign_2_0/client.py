@@ -35,6 +35,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ApprovalListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ApprovalListResponse:
+        """
+        @summary 获取流程任务用印审批列表
+        
+        @param headers: ApprovalListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApprovalListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -67,6 +74,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ApprovalListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ApprovalListResponse:
+        """
+        @summary 获取流程任务用印审批列表
+        
+        @param headers: ApprovalListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApprovalListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -97,6 +111,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.ApprovalListResponse:
+        """
+        @summary 获取流程任务用印审批列表
+        
+        @return: ApprovalListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ApprovalListHeaders()
         return self.approval_list_with_options(task_id, headers, runtime)
@@ -105,6 +124,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.ApprovalListResponse:
+        """
+        @summary 获取流程任务用印审批列表
+        
+        @return: ApprovalListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ApprovalListHeaders()
         return await self.approval_list_with_options_async(task_id, headers, runtime)
@@ -115,6 +139,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CancelCorpAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CancelCorpAuthResponse:
+        """
+        @summary 取消企业的授权
+        
+        @param request: CancelCorpAuthRequest
+        @param headers: CancelCorpAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelCorpAuthResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -148,6 +180,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CancelCorpAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CancelCorpAuthResponse:
+        """
+        @summary 取消企业的授权
+        
+        @param request: CancelCorpAuthRequest
+        @param headers: CancelCorpAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelCorpAuthResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -179,6 +219,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CancelCorpAuthRequest,
     ) -> dingtalkesign__2__0_models.CancelCorpAuthResponse:
+        """
+        @summary 取消企业的授权
+        
+        @param request: CancelCorpAuthRequest
+        @return: CancelCorpAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CancelCorpAuthHeaders()
         return self.cancel_corp_auth_with_options(request, headers, runtime)
@@ -187,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CancelCorpAuthRequest,
     ) -> dingtalkesign__2__0_models.CancelCorpAuthResponse:
+        """
+        @summary 取消企业的授权
+        
+        @param request: CancelCorpAuthRequest
+        @return: CancelCorpAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CancelCorpAuthHeaders()
         return await self.cancel_corp_auth_with_options_async(request, headers, runtime)
@@ -197,6 +249,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ChannelOrdersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ChannelOrdersResponse:
+        """
+        @summary 套餐转售1（分润模式）
+        
+        @param request: ChannelOrdersRequest
+        @param headers: ChannelOrdersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChannelOrdersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.item_code):
@@ -244,6 +304,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ChannelOrdersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ChannelOrdersResponse:
+        """
+        @summary 套餐转售1（分润模式）
+        
+        @param request: ChannelOrdersRequest
+        @param headers: ChannelOrdersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChannelOrdersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.item_code):
@@ -289,6 +357,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ChannelOrdersRequest,
     ) -> dingtalkesign__2__0_models.ChannelOrdersResponse:
+        """
+        @summary 套餐转售1（分润模式）
+        
+        @param request: ChannelOrdersRequest
+        @return: ChannelOrdersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ChannelOrdersHeaders()
         return self.channel_orders_with_options(request, headers, runtime)
@@ -297,6 +371,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ChannelOrdersRequest,
     ) -> dingtalkesign__2__0_models.ChannelOrdersResponse:
+        """
+        @summary 套餐转售1（分润模式）
+        
+        @param request: ChannelOrdersRequest
+        @return: ChannelOrdersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ChannelOrdersHeaders()
         return await self.channel_orders_with_options_async(request, headers, runtime)
@@ -307,6 +387,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CorpRealnameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CorpRealnameResponse:
+        """
+        @summary 生成企业实名的跳转地址
+        
+        @param request: CorpRealnameRequest
+        @param headers: CorpRealnameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CorpRealnameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -346,6 +434,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CorpRealnameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CorpRealnameResponse:
+        """
+        @summary 生成企业实名的跳转地址
+        
+        @param request: CorpRealnameRequest
+        @param headers: CorpRealnameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CorpRealnameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -383,6 +479,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CorpRealnameRequest,
     ) -> dingtalkesign__2__0_models.CorpRealnameResponse:
+        """
+        @summary 生成企业实名的跳转地址
+        
+        @param request: CorpRealnameRequest
+        @return: CorpRealnameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CorpRealnameHeaders()
         return self.corp_realname_with_options(request, headers, runtime)
@@ -391,6 +493,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CorpRealnameRequest,
     ) -> dingtalkesign__2__0_models.CorpRealnameResponse:
+        """
+        @summary 生成企业实名的跳转地址
+        
+        @param request: CorpRealnameRequest
+        @return: CorpRealnameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CorpRealnameHeaders()
         return await self.corp_realname_with_options_async(request, headers, runtime)
@@ -401,6 +509,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CreateDevelopersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CreateDevelopersResponse:
+        """
+        @summary 钉钉ISV服务商数据初始化
+        
+        @param request: CreateDevelopersRequest
+        @param headers: CreateDevelopersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDevelopersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.notice_url):
@@ -438,6 +554,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CreateDevelopersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CreateDevelopersResponse:
+        """
+        @summary 钉钉ISV服务商数据初始化
+        
+        @param request: CreateDevelopersRequest
+        @param headers: CreateDevelopersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDevelopersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.notice_url):
@@ -473,6 +597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CreateDevelopersRequest,
     ) -> dingtalkesign__2__0_models.CreateDevelopersResponse:
+        """
+        @summary 钉钉ISV服务商数据初始化
+        
+        @param request: CreateDevelopersRequest
+        @return: CreateDevelopersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CreateDevelopersHeaders()
         return self.create_developers_with_options(request, headers, runtime)
@@ -481,6 +611,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CreateDevelopersRequest,
     ) -> dingtalkesign__2__0_models.CreateDevelopersResponse:
+        """
+        @summary 钉钉ISV服务商数据初始化
+        
+        @param request: CreateDevelopersRequest
+        @return: CreateDevelopersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CreateDevelopersHeaders()
         return await self.create_developers_with_options_async(request, headers, runtime)
@@ -491,6 +627,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CreateProcessHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CreateProcessResponse:
+        """
+        @summary 通过API发起签署流程
+        
+        @param request: CreateProcessRequest
+        @param headers: CreateProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateProcessResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ccs):
@@ -540,6 +684,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.CreateProcessHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.CreateProcessResponse:
+        """
+        @summary 通过API发起签署流程
+        
+        @param request: CreateProcessRequest
+        @param headers: CreateProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateProcessResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ccs):
@@ -587,6 +739,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CreateProcessRequest,
     ) -> dingtalkesign__2__0_models.CreateProcessResponse:
+        """
+        @summary 通过API发起签署流程
+        
+        @param request: CreateProcessRequest
+        @return: CreateProcessResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CreateProcessHeaders()
         return self.create_process_with_options(request, headers, runtime)
@@ -595,6 +753,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.CreateProcessRequest,
     ) -> dingtalkesign__2__0_models.CreateProcessResponse:
+        """
+        @summary 通过API发起签署流程
+        
+        @param request: CreateProcessRequest
+        @return: CreateProcessResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.CreateProcessHeaders()
         return await self.create_process_with_options_async(request, headers, runtime)
@@ -605,6 +769,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetAttachsApprovalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        """
+        @summary 获取钉钉审批实例-电子附件信息
+        
+        @param headers: GetAttachsApprovalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAttachsApprovalResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -639,6 +810,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetAttachsApprovalHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        """
+        @summary 获取钉钉审批实例-电子附件信息
+        
+        @param headers: GetAttachsApprovalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAttachsApprovalResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -671,6 +849,11 @@ class Client(OpenApiClient):
         self,
         instance_id: str,
     ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        """
+        @summary 获取钉钉审批实例-电子附件信息
+        
+        @return: GetAttachsApprovalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetAttachsApprovalHeaders()
         return self.get_attachs_approval_with_options(instance_id, headers, runtime)
@@ -679,6 +862,11 @@ class Client(OpenApiClient):
         self,
         instance_id: str,
     ) -> dingtalkesign__2__0_models.GetAttachsApprovalResponse:
+        """
+        @summary 获取钉钉审批实例-电子附件信息
+        
+        @return: GetAttachsApprovalResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetAttachsApprovalHeaders()
         return await self.get_attachs_approval_with_options_async(instance_id, headers, runtime)
@@ -689,6 +877,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetAuthUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetAuthUrlResponse:
+        """
+        @summary 生成授权页面地址
+        
+        @param request: GetAuthUrlRequest
+        @param headers: GetAuthUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAuthUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -726,6 +922,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetAuthUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetAuthUrlResponse:
+        """
+        @summary 生成授权页面地址
+        
+        @param request: GetAuthUrlRequest
+        @param headers: GetAuthUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAuthUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -761,6 +965,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetAuthUrlRequest,
     ) -> dingtalkesign__2__0_models.GetAuthUrlResponse:
+        """
+        @summary 生成授权页面地址
+        
+        @param request: GetAuthUrlRequest
+        @return: GetAuthUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetAuthUrlHeaders()
         return self.get_auth_url_with_options(request, headers, runtime)
@@ -769,6 +979,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetAuthUrlRequest,
     ) -> dingtalkesign__2__0_models.GetAuthUrlResponse:
+        """
+        @summary 生成授权页面地址
+        
+        @param request: GetAuthUrlRequest
+        @return: GetAuthUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetAuthUrlHeaders()
         return await self.get_auth_url_with_options_async(request, headers, runtime)
@@ -778,6 +994,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetContractMarginHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetContractMarginResponse:
+        """
+        @summary 查询套餐余量
+        
+        @param headers: GetContractMarginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContractMarginResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -809,6 +1032,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetContractMarginHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetContractMarginResponse:
+        """
+        @summary 查询套餐余量
+        
+        @param headers: GetContractMarginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContractMarginResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -836,11 +1066,21 @@ class Client(OpenApiClient):
         )
 
     def get_contract_margin(self) -> dingtalkesign__2__0_models.GetContractMarginResponse:
+        """
+        @summary 查询套餐余量
+        
+        @return: GetContractMarginResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetContractMarginHeaders()
         return self.get_contract_margin_with_options(headers, runtime)
 
     async def get_contract_margin_async(self) -> dingtalkesign__2__0_models.GetContractMarginResponse:
+        """
+        @summary 查询套餐余量
+        
+        @return: GetContractMarginResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetContractMarginHeaders()
         return await self.get_contract_margin_with_options_async(headers, runtime)
@@ -850,6 +1090,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetCorpConsoleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetCorpConsoleResponse:
+        """
+        @summary 获取企业控制台地址
+        
+        @param headers: GetCorpConsoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpConsoleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -881,6 +1128,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetCorpConsoleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetCorpConsoleResponse:
+        """
+        @summary 获取企业控制台地址
+        
+        @param headers: GetCorpConsoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpConsoleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -908,11 +1162,21 @@ class Client(OpenApiClient):
         )
 
     def get_corp_console(self) -> dingtalkesign__2__0_models.GetCorpConsoleResponse:
+        """
+        @summary 获取企业控制台地址
+        
+        @return: GetCorpConsoleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetCorpConsoleHeaders()
         return self.get_corp_console_with_options(headers, runtime)
 
     async def get_corp_console_async(self) -> dingtalkesign__2__0_models.GetCorpConsoleResponse:
+        """
+        @summary 获取企业控制台地址
+        
+        @return: GetCorpConsoleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetCorpConsoleHeaders()
         return await self.get_corp_console_with_options_async(headers, runtime)
@@ -922,6 +1186,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetCorpInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetCorpInfoResponse:
+        """
+        @summary 查询企业信息
+        
+        @param headers: GetCorpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -953,6 +1224,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetCorpInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetCorpInfoResponse:
+        """
+        @summary 查询企业信息
+        
+        @param headers: GetCorpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -980,11 +1258,21 @@ class Client(OpenApiClient):
         )
 
     def get_corp_info(self) -> dingtalkesign__2__0_models.GetCorpInfoResponse:
+        """
+        @summary 查询企业信息
+        
+        @return: GetCorpInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetCorpInfoHeaders()
         return self.get_corp_info_with_options(headers, runtime)
 
     async def get_corp_info_async(self) -> dingtalkesign__2__0_models.GetCorpInfoResponse:
+        """
+        @summary 查询企业信息
+        
+        @return: GetCorpInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetCorpInfoHeaders()
         return await self.get_corp_info_with_options_async(headers, runtime)
@@ -995,6 +1283,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetExecuteUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetExecuteUrlResponse:
+        """
+        @summary 获取签署人签署地址
+        
+        @param request: GetExecuteUrlRequest
+        @param headers: GetExecuteUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetExecuteUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account):
@@ -1036,6 +1332,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetExecuteUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetExecuteUrlResponse:
+        """
+        @summary 获取签署人签署地址
+        
+        @param request: GetExecuteUrlRequest
+        @param headers: GetExecuteUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetExecuteUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account):
@@ -1075,6 +1379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetExecuteUrlRequest,
     ) -> dingtalkesign__2__0_models.GetExecuteUrlResponse:
+        """
+        @summary 获取签署人签署地址
+        
+        @param request: GetExecuteUrlRequest
+        @return: GetExecuteUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetExecuteUrlHeaders()
         return self.get_execute_url_with_options(request, headers, runtime)
@@ -1083,6 +1393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetExecuteUrlRequest,
     ) -> dingtalkesign__2__0_models.GetExecuteUrlResponse:
+        """
+        @summary 获取签署人签署地址
+        
+        @param request: GetExecuteUrlRequest
+        @return: GetExecuteUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetExecuteUrlHeaders()
         return await self.get_execute_url_with_options_async(request, headers, runtime)
@@ -1093,6 +1409,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFileInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件详情
+        
+        @param headers: GetFileInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1125,6 +1448,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFileInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件详情
+        
+        @param headers: GetFileInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1155,6 +1485,11 @@ class Client(OpenApiClient):
         self,
         file_id: str,
     ) -> dingtalkesign__2__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件详情
+        
+        @return: GetFileInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFileInfoHeaders()
         return self.get_file_info_with_options(file_id, headers, runtime)
@@ -1163,6 +1498,11 @@ class Client(OpenApiClient):
         self,
         file_id: str,
     ) -> dingtalkesign__2__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件详情
+        
+        @return: GetFileInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFileInfoHeaders()
         return await self.get_file_info_with_options_async(file_id, headers, runtime)
@@ -1173,6 +1513,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFileUploadUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFileUploadUrlResponse:
+        """
+        @summary 获取文件上传地址
+        
+        @param request: GetFileUploadUrlRequest
+        @param headers: GetFileUploadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileUploadUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content_md_5):
@@ -1218,6 +1566,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFileUploadUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFileUploadUrlResponse:
+        """
+        @summary 获取文件上传地址
+        
+        @param request: GetFileUploadUrlRequest
+        @param headers: GetFileUploadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileUploadUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content_md_5):
@@ -1261,6 +1617,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetFileUploadUrlRequest,
     ) -> dingtalkesign__2__0_models.GetFileUploadUrlResponse:
+        """
+        @summary 获取文件上传地址
+        
+        @param request: GetFileUploadUrlRequest
+        @return: GetFileUploadUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFileUploadUrlHeaders()
         return self.get_file_upload_url_with_options(request, headers, runtime)
@@ -1269,6 +1631,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.GetFileUploadUrlRequest,
     ) -> dingtalkesign__2__0_models.GetFileUploadUrlResponse:
+        """
+        @summary 获取文件上传地址
+        
+        @param request: GetFileUploadUrlRequest
+        @return: GetFileUploadUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFileUploadUrlHeaders()
         return await self.get_file_upload_url_with_options_async(request, headers, runtime)
@@ -1279,6 +1647,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFlowDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFlowDetailResponse:
+        """
+        @summary 获取流程详细信息及操作记录
+        
+        @param headers: GetFlowDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1311,6 +1686,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFlowDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFlowDetailResponse:
+        """
+        @summary 获取流程详细信息及操作记录
+        
+        @param headers: GetFlowDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1341,6 +1723,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetFlowDetailResponse:
+        """
+        @summary 获取流程详细信息及操作记录
+        
+        @return: GetFlowDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFlowDetailHeaders()
         return self.get_flow_detail_with_options(task_id, headers, runtime)
@@ -1349,6 +1736,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetFlowDetailResponse:
+        """
+        @summary 获取流程详细信息及操作记录
+        
+        @return: GetFlowDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFlowDetailHeaders()
         return await self.get_flow_detail_with_options_async(task_id, headers, runtime)
@@ -1359,6 +1751,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFlowDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFlowDocsResponse:
+        """
+        @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+        
+        @param headers: GetFlowDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowDocsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1391,6 +1790,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetFlowDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetFlowDocsResponse:
+        """
+        @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+        
+        @param headers: GetFlowDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlowDocsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1421,6 +1827,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetFlowDocsResponse:
+        """
+        @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+        
+        @return: GetFlowDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFlowDocsHeaders()
         return self.get_flow_docs_with_options(task_id, headers, runtime)
@@ -1429,6 +1840,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetFlowDocsResponse:
+        """
+        @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+        
+        @return: GetFlowDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetFlowDocsHeaders()
         return await self.get_flow_docs_with_options_async(task_id, headers, runtime)
@@ -1438,6 +1854,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetIsvStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetIsvStatusResponse:
+        """
+        @summary 获取企业的e签宝微应用当前状态
+        
+        @param headers: GetIsvStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIsvStatusResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1469,6 +1892,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetIsvStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetIsvStatusResponse:
+        """
+        @summary 获取企业的e签宝微应用当前状态
+        
+        @param headers: GetIsvStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIsvStatusResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1496,11 +1926,21 @@ class Client(OpenApiClient):
         )
 
     def get_isv_status(self) -> dingtalkesign__2__0_models.GetIsvStatusResponse:
+        """
+        @summary 获取企业的e签宝微应用当前状态
+        
+        @return: GetIsvStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetIsvStatusHeaders()
         return self.get_isv_status_with_options(headers, runtime)
 
     async def get_isv_status_async(self) -> dingtalkesign__2__0_models.GetIsvStatusResponse:
+        """
+        @summary 获取企业的e签宝微应用当前状态
+        
+        @return: GetIsvStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetIsvStatusHeaders()
         return await self.get_isv_status_with_options_async(headers, runtime)
@@ -1511,6 +1951,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetSignDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetSignDetailResponse:
+        """
+        @summary 获取流程签署的详细信息
+        
+        @param headers: GetSignDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1543,6 +1990,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetSignDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetSignDetailResponse:
+        """
+        @summary 获取流程签署的详细信息
+        
+        @param headers: GetSignDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1573,6 +2027,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetSignDetailResponse:
+        """
+        @summary 获取流程签署的详细信息
+        
+        @return: GetSignDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetSignDetailHeaders()
         return self.get_sign_detail_with_options(task_id, headers, runtime)
@@ -1581,6 +2040,11 @@ class Client(OpenApiClient):
         self,
         task_id: str,
     ) -> dingtalkesign__2__0_models.GetSignDetailResponse:
+        """
+        @summary 获取流程签署的详细信息
+        
+        @return: GetSignDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetSignDetailHeaders()
         return await self.get_sign_detail_with_options_async(task_id, headers, runtime)
@@ -1591,6 +2055,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetUserInfoResponse:
+        """
+        @summary 查询个人信息
+        
+        @param headers: GetUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1623,6 +2094,13 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.GetUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.GetUserInfoResponse:
+        """
+        @summary 查询个人信息
+        
+        @param headers: GetUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1653,6 +2131,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkesign__2__0_models.GetUserInfoResponse:
+        """
+        @summary 查询个人信息
+        
+        @return: GetUserInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetUserInfoHeaders()
         return self.get_user_info_with_options(user_id, headers, runtime)
@@ -1661,6 +2144,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkesign__2__0_models.GetUserInfoResponse:
+        """
+        @summary 查询个人信息
+        
+        @return: GetUserInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.GetUserInfoHeaders()
         return await self.get_user_info_with_options_async(user_id, headers, runtime)
@@ -1671,6 +2159,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ProcessStartHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
+        """
+        @summary 获取发起签署任务的地址
+        
+        @param request: ProcessStartRequest
+        @param headers: ProcessStartHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ProcessStartResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auto_start):
@@ -1722,6 +2218,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ProcessStartHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
+        """
+        @summary 获取发起签署任务的地址
+        
+        @param request: ProcessStartRequest
+        @param headers: ProcessStartHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ProcessStartResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auto_start):
@@ -1771,6 +2275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ProcessStartRequest,
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
+        """
+        @summary 获取发起签署任务的地址
+        
+        @param request: ProcessStartRequest
+        @return: ProcessStartResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ProcessStartHeaders()
         return self.process_start_with_options(request, headers, runtime)
@@ -1779,6 +2289,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ProcessStartRequest,
     ) -> dingtalkesign__2__0_models.ProcessStartResponse:
+        """
+        @summary 获取发起签署任务的地址
+        
+        @param request: ProcessStartRequest
+        @return: ProcessStartResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ProcessStartHeaders()
         return await self.process_start_with_options_async(request, headers, runtime)
@@ -1789,6 +2305,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ResaleOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ResaleOrderResponse:
+        """
+        @summary 套餐转售2（底价结算模式）
+        
+        @param request: ResaleOrderRequest
+        @param headers: ResaleOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ResaleOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order_create_time):
@@ -1834,6 +2358,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.ResaleOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.ResaleOrderResponse:
+        """
+        @summary 套餐转售2（底价结算模式）
+        
+        @param request: ResaleOrderRequest
+        @param headers: ResaleOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ResaleOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order_create_time):
@@ -1877,6 +2409,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ResaleOrderRequest,
     ) -> dingtalkesign__2__0_models.ResaleOrderResponse:
+        """
+        @summary 套餐转售2（底价结算模式）
+        
+        @param request: ResaleOrderRequest
+        @return: ResaleOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ResaleOrderHeaders()
         return self.resale_order_with_options(request, headers, runtime)
@@ -1885,6 +2423,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.ResaleOrderRequest,
     ) -> dingtalkesign__2__0_models.ResaleOrderResponse:
+        """
+        @summary 套餐转售2（底价结算模式）
+        
+        @param request: ResaleOrderRequest
+        @return: ResaleOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.ResaleOrderHeaders()
         return await self.resale_order_with_options_async(request, headers, runtime)
@@ -1895,6 +2439,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.UsersRealnameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.UsersRealnameResponse:
+        """
+        @summary 获取跳转到个人实名的地址
+        
+        @param request: UsersRealnameRequest
+        @param headers: UsersRealnameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UsersRealnameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -1934,6 +2486,14 @@ class Client(OpenApiClient):
         headers: dingtalkesign__2__0_models.UsersRealnameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkesign__2__0_models.UsersRealnameResponse:
+        """
+        @summary 获取跳转到个人实名的地址
+        
+        @param request: UsersRealnameRequest
+        @param headers: UsersRealnameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UsersRealnameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.redirect_url):
@@ -1971,6 +2531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.UsersRealnameRequest,
     ) -> dingtalkesign__2__0_models.UsersRealnameResponse:
+        """
+        @summary 获取跳转到个人实名的地址
+        
+        @param request: UsersRealnameRequest
+        @return: UsersRealnameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.UsersRealnameHeaders()
         return self.users_realname_with_options(request, headers, runtime)
@@ -1979,6 +2545,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkesign__2__0_models.UsersRealnameRequest,
     ) -> dingtalkesign__2__0_models.UsersRealnameResponse:
+        """
+        @summary 获取跳转到个人实名的地址
+        
+        @param request: UsersRealnameRequest
+        @return: UsersRealnameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkesign__2__0_models.UsersRealnameHeaders()
         return await self.users_realname_with_options_async(request, headers, runtime)

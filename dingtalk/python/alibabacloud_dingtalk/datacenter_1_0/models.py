@@ -46,6 +46,7 @@ class GetAbnormalOperationRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -192,6 +193,7 @@ class GetAdministrativeLicensingRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -338,6 +340,7 @@ class GetAdministrativePenaltiesRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -484,6 +487,7 @@ class GetBasicInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -630,6 +634,7 @@ class GetBiddingInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -776,6 +781,7 @@ class GetBranchInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -922,6 +928,7 @@ class GetChangeRecordRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1068,6 +1075,7 @@ class GetDomainInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1214,6 +1222,7 @@ class GetDoubleRandomRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1360,6 +1369,7 @@ class GetEnvironmentalPenaltiesRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1506,6 +1516,7 @@ class GetHolderInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1652,6 +1663,7 @@ class GetIntellectualPropertyRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1798,6 +1810,7 @@ class GetInvestmentAbroadRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -1944,6 +1957,7 @@ class GetJobInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2090,6 +2104,7 @@ class GetPatentInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2236,6 +2251,7 @@ class GetPrincipalEmployeeRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2382,6 +2398,7 @@ class GetQeneralTaxpayerInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2528,6 +2545,7 @@ class GetQualificationCertRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2674,6 +2692,7 @@ class GetSeriousViolationRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2820,6 +2839,7 @@ class GetSoftwareCopyrightRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -2966,6 +2986,7 @@ class GetTrademarkInfoRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -3112,6 +3133,7 @@ class GetWorkCopyrightRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):
@@ -3355,6 +3377,7 @@ class QueryActiveUserStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -3386,10 +3409,15 @@ class QueryActiveUserStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -3552,6 +3580,7 @@ class QueryAnhmdStatisticalDataRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -3591,10 +3620,15 @@ class QueryAnhmdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -3753,6 +3787,7 @@ class QueryApprovalStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -3784,10 +3819,15 @@ class QueryApprovalStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -3946,6 +3986,7 @@ class QueryAttendanceStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -3977,10 +4018,15 @@ class QueryAttendanceStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -4139,6 +4185,7 @@ class QueryBlackboardStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -4170,10 +4217,15 @@ class QueryBlackboardStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -4332,6 +4384,7 @@ class QueryCalendarStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -4363,10 +4416,15 @@ class QueryCalendarStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -4525,6 +4583,7 @@ class QueryCheckinStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -4556,10 +4615,15 @@ class QueryCheckinStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -4718,6 +4782,7 @@ class QueryCircleStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -4749,10 +4814,15 @@ class QueryCircleStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -4913,8 +4983,11 @@ class QueryCompanyBasicInfoRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.keyword = keyword
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -5076,7 +5149,9 @@ class QueryDigitalDistrictOrgInfoRequest(TeaModel):
         corp_ids: List[str] = None,
         stat_dates: List[str] = None,
     ):
+        # This parameter is required.
         self.corp_ids = corp_ids
+        # This parameter is required.
         self.stat_dates = stat_dates
 
     def validate(self):
@@ -5215,6 +5290,7 @@ class QueryDingReciveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -5246,10 +5322,15 @@ class QueryDingReciveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -5408,6 +5489,7 @@ class QueryDingSendStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -5439,10 +5521,15 @@ class QueryDingSendStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -5601,6 +5688,7 @@ class QueryDocumentStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -5632,10 +5720,15 @@ class QueryDocumentStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -5794,6 +5887,7 @@ class QueryDriveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -5825,10 +5919,15 @@ class QueryDriveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -5987,6 +6086,7 @@ class QueryEmployeeTypeStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -6018,10 +6118,15 @@ class QueryEmployeeTypeStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -6187,11 +6292,15 @@ class QueryGeneralDataServiceRequest(TeaModel):
         user_id: str = None,
     ):
         self.dept_id = dept_id
+        # This parameter is required.
         self.end_date = end_date
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.service_id = service_id
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -6246,9 +6355,13 @@ class QueryGeneralDataServiceResponseBodyMetaList(TeaModel):
         field_name: str = None,
         field_type: str = None,
     ):
+        # This parameter is required.
         self.field_desc = field_desc
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.field_name = field_name
+        # This parameter is required.
         self.field_type = field_type
 
     def validate(self):
@@ -6403,6 +6516,7 @@ class QueryGroupLiveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -6434,10 +6548,15 @@ class QueryGroupLiveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -6596,6 +6715,7 @@ class QueryGroupMessageStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -6627,10 +6747,15 @@ class QueryGroupMessageStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -6789,6 +6914,7 @@ class QueryHealthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -6820,10 +6946,15 @@ class QueryHealthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -6982,6 +7113,7 @@ class QueryMailStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -7013,10 +7145,15 @@ class QueryMailStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -7905,6 +8042,7 @@ class QueryOnlineUserStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -7936,10 +8074,15 @@ class QueryOnlineUserStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -8098,6 +8241,7 @@ class QueryRedEnvelopeReciveStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -8129,10 +8273,15 @@ class QueryRedEnvelopeReciveStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -8291,6 +8440,7 @@ class QueryRedEnvelopeSendStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -8322,10 +8472,15 @@ class QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -8484,6 +8639,7 @@ class QueryReportStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -8515,10 +8671,15 @@ class QueryReportStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -8677,6 +8838,7 @@ class QuerySingleMessageStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -8708,10 +8870,15 @@ class QuerySingleMessageStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -8870,6 +9037,7 @@ class QueryTelMeetingStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -8901,10 +9069,15 @@ class QueryTelMeetingStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -9063,6 +9236,7 @@ class QueryTodoStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -9094,10 +9268,15 @@ class QueryTodoStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -9256,6 +9435,7 @@ class QueryVedioMeetingStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -9287,10 +9467,15 @@ class QueryVedioMeetingStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -9449,6 +9634,7 @@ class QueryYydActiveDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -9480,10 +9666,15 @@ class QueryYydActiveDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -9642,6 +9833,7 @@ class QueryYydActiveMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -9673,10 +9865,15 @@ class QueryYydActiveMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -9835,6 +10032,7 @@ class QueryYydActiveWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -9866,10 +10064,15 @@ class QueryYydActiveWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10028,6 +10231,7 @@ class QueryYydAppDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -10059,10 +10263,15 @@ class QueryYydAppDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10221,6 +10430,7 @@ class QueryYydAppMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -10252,10 +10462,15 @@ class QueryYydAppMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10414,6 +10629,7 @@ class QueryYydAppStdStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -10445,10 +10661,15 @@ class QueryYydAppStdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10607,6 +10828,7 @@ class QueryYydAppWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -10638,10 +10860,15 @@ class QueryYydAppWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10800,6 +11027,7 @@ class QueryYydCalendarDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -10831,10 +11059,15 @@ class QueryYydCalendarDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -10993,6 +11226,7 @@ class QueryYydCalendarMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11024,10 +11258,15 @@ class QueryYydCalendarMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -11186,6 +11425,7 @@ class QueryYydCalendarWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11217,10 +11457,15 @@ class QueryYydCalendarWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -11379,6 +11624,7 @@ class QueryYydDingMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11410,10 +11656,15 @@ class QueryYydDingMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -11572,6 +11823,7 @@ class QueryYydDingMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11603,10 +11855,15 @@ class QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -11765,6 +12022,7 @@ class QueryYydDingMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11796,10 +12054,15 @@ class QueryYydDingMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -11958,6 +12221,7 @@ class QueryYydGroupMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -11989,10 +12253,15 @@ class QueryYydGroupMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -12151,6 +12420,7 @@ class QueryYydGroupMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -12182,10 +12452,15 @@ class QueryYydGroupMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -12344,6 +12619,7 @@ class QueryYydGroupMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -12375,10 +12651,15 @@ class QueryYydGroupMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -12537,6 +12818,7 @@ class QueryYydLogDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -12568,10 +12850,15 @@ class QueryYydLogDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -12730,6 +13017,7 @@ class QueryYydLogMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -12761,10 +13049,15 @@ class QueryYydLogMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -12923,6 +13216,7 @@ class QueryYydLogWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -12954,10 +13248,15 @@ class QueryYydLogWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -13116,6 +13415,7 @@ class QueryYydMeetingDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -13147,10 +13447,15 @@ class QueryYydMeetingDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -13309,6 +13614,7 @@ class QueryYydMeetingMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -13340,10 +13646,15 @@ class QueryYydMeetingMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -13502,6 +13813,7 @@ class QueryYydMeetingWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -13533,10 +13845,15 @@ class QueryYydMeetingWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -13695,6 +14012,7 @@ class QueryYydNoticeDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -13726,10 +14044,15 @@ class QueryYydNoticeDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -13888,6 +14211,7 @@ class QueryYydNoticeMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -13919,10 +14243,15 @@ class QueryYydNoticeMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14081,6 +14410,7 @@ class QueryYydNoticeWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -14112,10 +14442,15 @@ class QueryYydNoticeWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14274,6 +14609,7 @@ class QueryYydSingleMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -14305,10 +14641,15 @@ class QueryYydSingleMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14467,6 +14808,7 @@ class QueryYydSingleMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -14498,10 +14840,15 @@ class QueryYydSingleMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14660,6 +15007,7 @@ class QueryYydSingleMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -14691,10 +15039,15 @@ class QueryYydSingleMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14853,6 +15206,7 @@ class QueryYydToatlMsgDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -14884,10 +15238,15 @@ class QueryYydToatlMsgDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15046,6 +15405,7 @@ class QueryYydToatlMsgMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -15077,10 +15437,15 @@ class QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15239,6 +15604,7 @@ class QueryYydToatlMsgWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -15270,10 +15636,15 @@ class QueryYydToatlMsgWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15432,6 +15803,7 @@ class QueryYydTodoDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -15463,10 +15835,15 @@ class QueryYydTodoDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15625,6 +16002,7 @@ class QueryYydTodoMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -15656,10 +16034,15 @@ class QueryYydTodoMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15818,6 +16201,7 @@ class QueryYydTodoWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -15849,10 +16233,15 @@ class QueryYydTodoWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -16011,6 +16400,7 @@ class QueryYydTotalDayStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -16042,10 +16432,15 @@ class QueryYydTotalDayStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -16204,6 +16599,7 @@ class QueryYydTotalMonthStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -16235,10 +16631,15 @@ class QueryYydTotalMonthStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -16397,6 +16798,7 @@ class QueryYydTotalStdStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -16428,10 +16830,15 @@ class QueryYydTotalStdStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -16590,6 +16997,7 @@ class QueryYydTotalWeekStatisticalDataRequest(TeaModel):
         self,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -16621,10 +17029,15 @@ class QueryYydTotalWeekStatisticalDataResponseBodyMetaList(TeaModel):
         period: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.kpi_caliber = kpi_caliber
+        # This parameter is required.
         self.kpi_id = kpi_id
+        # This parameter is required.
         self.kpi_name = kpi_name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -16787,6 +17200,7 @@ class SearchCompanyRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.search_key = search_key
 
     def validate(self):

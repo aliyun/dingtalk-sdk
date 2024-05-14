@@ -44,8 +44,11 @@ class BusinessMatchRequest(TeaModel):
         corp_name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.business_info = business_info
+        # This parameter is required.
         self.corp_name = corp_name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -183,7 +186,9 @@ class BusinessMatchResultRequest(TeaModel):
         task_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -333,8 +338,11 @@ class CampusAddRenterMemberRequest(TeaModel):
         type: str = None,
     ):
         self.extend = extend
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.renter_id = renter_id
         self.type = type
 
@@ -511,11 +519,13 @@ class CampusCreateCampusRequest(TeaModel):
         self.address = address
         self.area = area
         self.belong_project_group_id = belong_project_group_id
+        # This parameter is required.
         self.campus_name = campus_name
         self.capacity = capacity
         self.city_id = city_id
         self.country = country
         self.county_id = county_id
+        # This parameter is required.
         self.creator_union_id = creator_union_id
         self.description = description
         self.extend = extend
@@ -724,6 +734,7 @@ class CampusCreateCampusGroupRequest(TeaModel):
         name: str = None,
     ):
         self.extend = extend
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -864,6 +875,7 @@ class CampusCreateRenterRequest(TeaModel):
         self.credit_code = credit_code
         self.end_time = end_time
         self.extend = extend
+        # This parameter is required.
         self.name = name
         self.start_time = start_time
         self.state = state
@@ -1148,6 +1160,7 @@ class CampusDeleteCampusGroupRequest(TeaModel):
         self,
         campus_project_group_id: int = None,
     ):
+        # This parameter is required.
         self.campus_project_group_id = campus_project_group_id
 
     def validate(self):
@@ -1276,6 +1289,7 @@ class CampusDeleteRenterRequest(TeaModel):
         self,
         renter_id: int = None,
     ):
+        # This parameter is required.
         self.renter_id = renter_id
 
     def validate(self):
@@ -1369,6 +1383,7 @@ class CampusGetCampusRequest(TeaModel):
         self,
         campus_dept_id: int = None,
     ):
+        # This parameter is required.
         self.campus_dept_id = campus_dept_id
 
     def validate(self):
@@ -1599,6 +1614,7 @@ class CampusGetCampusGroupRequest(TeaModel):
         self,
         group_id: int = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
 
     def validate(self):
@@ -1733,6 +1749,7 @@ class CampusGetRenterRequest(TeaModel):
         self,
         renter_id: int = None,
     ):
+        # This parameter is required.
         self.renter_id = renter_id
 
     def validate(self):
@@ -1911,6 +1928,7 @@ class CampusGetRenterMemberRequest(TeaModel):
         union_id: str = None,
     ):
         self.renter_id = renter_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2881,6 +2899,7 @@ class CampusUpdateCampusRequest(TeaModel):
         self.address = address
         self.area = area
         self.belong_project_group_id = belong_project_group_id
+        # This parameter is required.
         self.campus_dept_id = campus_dept_id
         self.campus_name = campus_name
         self.capacity = capacity
@@ -3083,6 +3102,7 @@ class CampusUpdateCampusGroupRequest(TeaModel):
         extend: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.campus_project_group_id = campus_project_group_id
         self.extend = extend
         self.name = name
@@ -3230,7 +3250,9 @@ class CampusUpdateRenterRequest(TeaModel):
         self.credit_code = credit_code
         self.end_time = end_time
         self.extend = extend
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.renter_id = renter_id
         self.start_time = start_time
         self.state = state
@@ -3391,8 +3413,10 @@ class CampusUpdateRenterMemberRequest(TeaModel):
     ):
         self.extend = extend
         self.name = name
+        # This parameter is required.
         self.renter_id = renter_id
         self.type = type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3537,6 +3561,7 @@ class ChatFormGetDataForApiAccessRequest(TeaModel):
         self,
         ding_talk_trace_id: str = None,
     ):
+        # This parameter is required.
         self.ding_talk_trace_id = ding_talk_trace_id
 
     def validate(self):
@@ -3564,6 +3589,7 @@ class ChatFormGetDataForApiAccessResponseBody(TeaModel):
         self,
         data: str = None,
     ):
+        # This parameter is required.
         self.data = data
 
     def validate(self):
@@ -3704,9 +3730,12 @@ class ChatMemoAddGeneralFileRequest(TeaModel):
         tag_list: List[ChatMemoAddGeneralFileRequestTagList] = None,
     ):
         self.biz_id = biz_id
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.download_url = download_url
         self.file_desc = file_desc
+        # This parameter is required.
         self.file_name = file_name
         self.tag_list = tag_list
 
@@ -3871,7 +3900,9 @@ class ChatMemoDeleteGeneralFileRequest(TeaModel):
         dataset_id: int = None,
         media_id: str = None,
     ):
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.media_id = media_id
 
     def validate(self):
@@ -4008,9 +4039,12 @@ class ChatMemoFaqAddRequest(TeaModel):
         question: str = None,
         redirection: str = None,
     ):
+        # This parameter is required.
         self.answer = answer
         self.biz_id = biz_id
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.question = question
         self.redirection = redirection
 
@@ -4163,7 +4197,9 @@ class ChatMemoFaqDeleteRequest(TeaModel):
         dataset_id: int = None,
         media_id: str = None,
     ):
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.media_id = media_id
 
     def validate(self):
@@ -4298,8 +4334,11 @@ class ChatMemoFaqListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -4521,8 +4560,11 @@ class ChatMemoGetFileListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -4743,7 +4785,9 @@ class ChatMemoGetFileStatusRequest(TeaModel):
         dataset_id: int = None,
         media_id: str = None,
     ):
+        # This parameter is required.
         self.dataset_id = dataset_id
+        # This parameter is required.
         self.media_id = media_id
 
     def validate(self):
@@ -4882,6 +4926,7 @@ class CollegeActiveCollegeDeptGroupRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -5013,9 +5058,13 @@ class CollegeAddCollegeDeptRequest(TeaModel):
         sort_factor: int = None,
         super_id: int = None,
     ):
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_type = dept_type
+        # This parameter is required.
         self.sort_factor = sort_factor
+        # This parameter is required.
         self.super_id = super_id
 
     def validate(self):
@@ -5157,7 +5206,9 @@ class CollegeAddManagerRequest(TeaModel):
         dept_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5298,13 +5349,17 @@ class CollegeAddStudentRequest(TeaModel):
         student_number: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
         self.emp_extension = emp_extension
         self.gender = gender
         self.identify_id = identify_id
+        # This parameter is required.
         self.mobile = mobile
         self.start_year = start_year
+        # This parameter is required.
         self.student_name = student_name
+        # This parameter is required.
         self.student_number = student_number
         self.user_id = user_id
 
@@ -5492,8 +5547,11 @@ class CollegeChangeStudentDeptRequest(TeaModel):
         new_dept_id: int = None,
         student_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.new_dept_id = new_dept_id
+        # This parameter is required.
         self.student_id = student_id
 
     def validate(self):
@@ -5630,6 +5688,7 @@ class CollegeDeleteCollegeDeptRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -5758,6 +5817,7 @@ class CollegeListCollegeSubDeptRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -5935,8 +5995,11 @@ class CollegeListDeptManagerRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -6129,9 +6192,13 @@ class CollegeListStudentInfoRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.ding_student_status = ding_student_status
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -6346,7 +6413,9 @@ class CollegeListUncheckedStudentRequest(TeaModel):
         page_size: int = None,
     ):
         self.dept_id = dept_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -6554,6 +6623,7 @@ class CollegeQueryCollegeDeptGroupInfoRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -6688,6 +6758,7 @@ class CollegeQueryCollegeDeptInfoRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -6841,7 +6912,9 @@ class CollegeQueryStudentInfoByDeptRequest(TeaModel):
         dept_id: int = None,
         student_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.student_id = student_id
 
     def validate(self):
@@ -7040,6 +7113,7 @@ class CollegeQueryStudentInfoByMobileRequest(TeaModel):
         self,
         mobile: str = None,
     ):
+        # This parameter is required.
         self.mobile = mobile
 
     def validate(self):
@@ -7275,6 +7349,7 @@ class CollegeQueryStudentInfoByStudentIdRequest(TeaModel):
         self,
         student_id: int = None,
     ):
+        # This parameter is required.
         self.student_id = student_id
 
     def validate(self):
@@ -7512,8 +7587,11 @@ class CollegeRemoveManagerRequest(TeaModel):
         is_force: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.is_force = is_force
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7651,7 +7729,9 @@ class CollegeRemoveStudentRequest(TeaModel):
         dept_id: int = None,
         student_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.student_id = student_id
 
     def validate(self):
@@ -7787,6 +7867,7 @@ class CollegeUpdateCollegeDeptRequest(TeaModel):
         sort_factor: int = None,
         super_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
         self.dept_name = dept_name
         self.sort_factor = sort_factor
@@ -7932,7 +8013,9 @@ class CollegeUpdateStudentDeptInfoRequest(TeaModel):
         student_id: int = None,
         student_number: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.student_id = student_id
         self.student_number = student_number
 
@@ -8079,6 +8162,7 @@ class CollegeUpdateStudentInfoRequest(TeaModel):
         self.gender = gender
         self.identify_id = identify_id
         self.start_year = start_year
+        # This parameter is required.
         self.student_id = student_id
         self.student_name = student_name
 
@@ -8231,7 +8315,9 @@ class CollegeUpdateStudentMoblieRequest(TeaModel):
         student_id: int = None,
     ):
         self.is_force = is_force
+        # This parameter is required.
         self.new_mobile = new_mobile
+        # This parameter is required.
         self.student_id = student_id
 
     def validate(self):
@@ -8371,6 +8457,7 @@ class CustomizeContactCreateRequest(TeaModel):
         order: int = None,
     ):
         self.manager_id_list = manager_id_list
+        # This parameter is required.
         self.name = name
         self.order = order
 
@@ -8410,9 +8497,13 @@ class CustomizeContactCreateResponseBodyContent(TeaModel):
         order: int = None,
         root_dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.root_dept_id = root_dept_id
 
     def validate(self):
@@ -8452,6 +8543,7 @@ class CustomizeContactCreateResponseBody(TeaModel):
         self,
         content: CustomizeContactCreateResponseBodyContent = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -8555,6 +8647,7 @@ class CustomizeContactDeleteRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -8689,12 +8782,16 @@ class CustomizeContactDeptCreateRequest(TeaModel):
         ref_id: int = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.code = code
         self.manager_id_list = manager_id_list
+        # This parameter is required.
         self.name = name
         self.order = order
+        # This parameter is required.
         self.parent_dept_id = parent_dept_id
         self.ref_id = ref_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -8746,6 +8843,7 @@ class CustomizeContactDeptCreateResponseBody(TeaModel):
         self,
         content: int = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -8848,7 +8946,9 @@ class CustomizeContactDeptDeleteRequest(TeaModel):
         code: str = None,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -8880,6 +8980,7 @@ class CustomizeContactDeptDeleteResponseBody(TeaModel):
         self,
         content: bool = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -8982,7 +9083,9 @@ class CustomizeContactDeptGroupCreateRequest(TeaModel):
         code: str = None,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -9116,7 +9219,9 @@ class CustomizeContactDeptInfoRequest(TeaModel):
         code: str = None,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -9155,13 +9260,21 @@ class CustomizeContactDeptInfoResponseBodyContent(TeaModel):
         ref_id: int = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.manager_id_list = manager_id_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.parent_dept_id = parent_dept_id
+        # This parameter is required.
         self.ref_id = ref_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -9217,6 +9330,7 @@ class CustomizeContactDeptInfoResponseBody(TeaModel):
         self,
         content: CustomizeContactDeptInfoResponseBodyContent = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -9321,7 +9435,9 @@ class CustomizeContactDeptListRequest(TeaModel):
         code: str = None,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -9360,13 +9476,21 @@ class CustomizeContactDeptListResponseBodyContent(TeaModel):
         ref_id: int = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.manager_id_list = manager_id_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.parent_dept_id = parent_dept_id
+        # This parameter is required.
         self.ref_id = ref_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -9422,6 +9546,7 @@ class CustomizeContactDeptListResponseBody(TeaModel):
         self,
         content: List[CustomizeContactDeptListResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -9536,11 +9661,14 @@ class CustomizeContactDeptUpdateRequest(TeaModel):
         order: int = None,
         parent_dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
         self.manager_id_list = manager_id_list
         self.name = name
         self.order = order
+        # This parameter is required.
         self.parent_dept_id = parent_dept_id
 
     def validate(self):
@@ -9588,6 +9716,7 @@ class CustomizeContactDeptUpdateResponseBody(TeaModel):
         self,
         content: int = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -9691,8 +9820,11 @@ class CustomizeContactEmpAddRequest(TeaModel):
         dept_id: int = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -9728,6 +9860,7 @@ class CustomizeContactEmpAddResponseBody(TeaModel):
         self,
         content: bool = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -9831,8 +9964,11 @@ class CustomizeContactEmpDeleteRequest(TeaModel):
         dept_id: int = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -9868,6 +10004,7 @@ class CustomizeContactEmpDeleteResponseBody(TeaModel):
         self,
         content: bool = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -9969,6 +10106,7 @@ class CustomizeContactEmpListRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -9997,7 +10135,9 @@ class CustomizeContactEmpListResponseBodyContent(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10029,6 +10169,7 @@ class CustomizeContactEmpListResponseBody(TeaModel):
         self,
         content: List[CustomizeContactEmpListResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -10141,9 +10282,13 @@ class CustomizeContactListResponseBodyContent(TeaModel):
         order: int = None,
         root_dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.root_dept_id = root_dept_id
 
     def validate(self):
@@ -10295,9 +10440,12 @@ class CustomizeContactUpdateRequest(TeaModel):
         name: str = None,
         order: int = None,
     ):
+        # This parameter is required.
         self.code = code
         self.manager_id_list = manager_id_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.order = order
 
     def validate(self):
@@ -10973,9 +11121,11 @@ class DigitalStoreContactInfoResponseBody(TeaModel):
         name: str = None,
         root_dept_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
         self.ding_dept_id = ding_dept_id
         self.name = name
+        # This parameter is required.
         self.root_dept_id = root_dept_id
 
     def validate(self):
@@ -11664,6 +11814,7 @@ class DigitalStoreGroupInfoRequest(TeaModel):
         self,
         group_id: int = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
 
     def validate(self):
@@ -11693,8 +11844,11 @@ class DigitalStoreGroupInfoResponseBody(TeaModel):
         group_name: str = None,
         store_id_list: List[int] = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.store_id_list = store_id_list
 
     def validate(self):
@@ -11805,7 +11959,9 @@ class DigitalStoreGroupsResponseBodyContent(TeaModel):
         group_id: int = None,
         group_name: str = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
+        # This parameter is required.
         self.group_name = group_name
 
     def validate(self):
@@ -11837,6 +11993,7 @@ class DigitalStoreGroupsResponseBody(TeaModel):
         self,
         content: List[DigitalStoreGroupsResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -11947,7 +12104,9 @@ class DigitalStoreNodeInfoRequest(TeaModel):
         code: str = None,
         node_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.node_id = node_id
 
     def validate(self):
@@ -11984,9 +12143,13 @@ class DigitalStoreNodeInfoResponseBody(TeaModel):
         type: int = None,
     ):
         self.ding_dept_id = ding_dept_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -12109,8 +12272,10 @@ class DigitalStoreRightsInfoResponseBody(TeaModel):
         start_time: int = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.quantity = quantity
         self.rights_code = rights_code
+        # This parameter is required.
         self.rights_name = rights_name
         self.start_time = start_time
 
@@ -12233,9 +12398,13 @@ class DigitalStoreRolesResponseBodyContent(TeaModel):
         role_name: str = None,
         source: str = None,
     ):
+        # This parameter is required.
         self.level = level
+        # This parameter is required.
         self.role_code = role_code
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.role_name = role_name
         self.source = source
 
@@ -12280,6 +12449,7 @@ class DigitalStoreRolesResponseBody(TeaModel):
         self,
         content: List[DigitalStoreRolesResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -12530,7 +12700,9 @@ class DigitalStoreStoreInfoRequest(TeaModel):
         code: str = None,
         store_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.store_id = store_id
 
     def validate(self):
@@ -12575,19 +12747,32 @@ class DigitalStoreStoreInfoResponseBody(TeaModel):
         store_id: int = None,
         telephone: str = None,
     ):
+        # This parameter is required.
         self.address = address
+        # This parameter is required.
         self.business_hours = business_hours
         self.ding_dept_id = ding_dept_id
+        # This parameter is required.
         self.latitude = latitude
+        # This parameter is required.
         self.location_address = location_address
+        # This parameter is required.
         self.longitude = longitude
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.store_acreage = store_acreage
+        # This parameter is required.
         self.store_bandwidth = store_bandwidth
+        # This parameter is required.
         self.store_code = store_code
+        # This parameter is required.
         self.store_id = store_id
+        # This parameter is required.
         self.telephone = telephone
 
     def validate(self):
@@ -12742,7 +12927,9 @@ class DigitalStoreSubNodesRequest(TeaModel):
         code: str = None,
         node_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.node_id = node_id
 
     def validate(self):
@@ -12779,9 +12966,13 @@ class DigitalStoreSubNodesResponseBodyContent(TeaModel):
         type: int = None,
     ):
         self.ding_dept_id = ding_dept_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -12825,6 +13016,7 @@ class DigitalStoreSubNodesResponseBody(TeaModel):
         self,
         content: List[DigitalStoreSubNodesResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -13193,7 +13385,9 @@ class DigitalStoreUserInfoRequest(TeaModel):
         code: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -13231,8 +13425,11 @@ class DigitalStoreUserInfoResponseBody(TeaModel):
     ):
         self.name = name
         self.role_id_list = role_id_list
+        # This parameter is required.
         self.scope_list = scope_list
+        # This parameter is required.
         self.store_list = store_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -13351,7 +13548,9 @@ class DigitalStoreUsersRequest(TeaModel):
         code: str = None,
         node_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.node_id = node_id
 
     def validate(self):
@@ -13384,7 +13583,9 @@ class DigitalStoreUsersResponseBodyContent(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -13416,6 +13617,7 @@ class DigitalStoreUsersResponseBody(TeaModel):
         self,
         content: List[DigitalStoreUsersResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -13742,6 +13944,7 @@ class ExternalQueryExternalAppOrgsRequest(TeaModel):
         self,
         external_type: str = None,
     ):
+        # This parameter is required.
         self.external_type = external_type
 
     def validate(self):
@@ -13911,6 +14114,7 @@ class ExternalQueryExternalBelongMainOrgRequest(TeaModel):
         self,
         external_type: str = None,
     ):
+        # This parameter is required.
         self.external_type = external_type
 
     def validate(self):
@@ -14045,6 +14249,7 @@ class ExternalQueryExternalOrgsRequest(TeaModel):
         self,
         external_type: str = None,
     ):
+        # This parameter is required.
         self.external_type = external_type
 
     def validate(self):
@@ -14435,9 +14640,12 @@ class IndustryManufactureCommonEventRequest(TeaModel):
         biz_data: Dict[str, Any] = None,
         event_type: List[str] = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
         self.biz_data = biz_data
+        # This parameter is required.
         self.event_type = event_type
 
     def validate(self):
@@ -14772,24 +14980,43 @@ class IndustryManufactureCostRecordListGetResponseBodyList(TeaModel):
         type: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.material_cost_record_no = material_cost_record_no
+        # This parameter is required.
         self.material_name = material_name
+        # This parameter is required.
         self.material_no = material_no
+        # This parameter is required.
         self.memo = memo
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.production_task_no = production_task_no
+        # This parameter is required.
         self.real_count = real_count
+        # This parameter is required.
         self.real_price = real_price
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -14892,9 +15119,12 @@ class IndustryManufactureCostRecordListGetResponseBody(TeaModel):
         next_cursor: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -15155,22 +15385,39 @@ class IndustryManufactureFeeListGetResponseBodyList(TeaModel):
         type: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.material_name = material_name
+        # This parameter is required.
         self.material_no = material_no
+        # This parameter is required.
         self.per_amount = per_amount
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.production_task_no = production_task_no
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15265,9 +15512,13 @@ class IndustryManufactureFeeListGetResponseBody(TeaModel):
         next_cursor: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -15414,7 +15665,9 @@ class IndustryManufactureLabourCostRequest(TeaModel):
         self.material_no = material_no
         self.microapp_agent_id = microapp_agent_id
         self.org_id = org_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.process_no = process_no
         self.start_time = start_time
@@ -15523,23 +15776,41 @@ class IndustryManufactureLabourCostResponseBodyList(TeaModel):
         un_qualified_reason_1: str = None,
         un_qualified_reason_2: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.labour_cost_name = labour_cost_name
+        # This parameter is required.
         self.labour_cost_no = labour_cost_no
+        # This parameter is required.
         self.material_name = material_name
+        # This parameter is required.
         self.material_no = material_no
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.process_name = process_name
+        # This parameter is required.
         self.process_no = process_no
+        # This parameter is required.
         self.qualified_price = qualified_price
+        # This parameter is required.
         self.un_qualified_info = un_qualified_info
+        # This parameter is required.
         self.un_qualified_price_1 = un_qualified_price_1
+        # This parameter is required.
         self.un_qualified_price_2 = un_qualified_price_2
+        # This parameter is required.
         self.un_qualified_reason_1 = un_qualified_reason_1
+        # This parameter is required.
         self.un_qualified_reason_2 = un_qualified_reason_2
 
     def validate(self):
@@ -15638,9 +15909,12 @@ class IndustryManufactureLabourCostResponseBody(TeaModel):
         next_cursor: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -15780,6 +16054,7 @@ class IndustryManufactureMaterialListRequest(TeaModel):
         self.app_id = app_id
         self.app_ids = app_ids
         self.app_name = app_name
+        # This parameter is required.
         self.corp_id = corp_id
         self.current_page = current_page
         self.cursor = cursor
@@ -15890,17 +16165,29 @@ class IndustryManufactureMaterialListResponseBodyList(TeaModel):
         type: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.material_name = material_name
+        # This parameter is required.
         self.material_no = material_no
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.specification = specification
+        # This parameter is required.
         self.stock_max_warn = stock_max_warn
+        # This parameter is required.
         self.stock_min_warn = stock_min_warn
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -15975,9 +16262,12 @@ class IndustryManufactureMaterialListResponseBody(TeaModel):
         next_cursor: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -16123,7 +16413,9 @@ class IndustryManufactureMesDispatchTaskRequest(TeaModel):
         team_id: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
         self.base_data_name = base_data_name
         self.defects_amount = defects_amount
@@ -16147,6 +16439,7 @@ class IndustryManufactureMesDispatchTaskRequest(TeaModel):
         self.task_status = task_status
         self.task_type = task_type
         self.team_id = team_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -16455,7 +16748,9 @@ class IndustryManufactureMesMaterialRequest(TeaModel):
         unit: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
         self.base_data_name = base_data_name
         self.category = category
@@ -16465,6 +16760,7 @@ class IndustryManufactureMesMaterialRequest(TeaModel):
         self.product_specification = product_specification
         self.prop = prop
         self.unit = unit
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -16689,7 +16985,9 @@ class IndustryManufactureMesOutPlanRequest(TeaModel):
     ):
         self.approval_status = approval_status
         self.approver = approver
+        # This parameter is required.
         self.base_data_name = base_data_name
+        # This parameter is required.
         self.out_source_project_code = out_source_project_code
         self.out_source_team_id = out_source_team_id
         self.price = price
@@ -16704,6 +17002,7 @@ class IndustryManufactureMesOutPlanRequest(TeaModel):
         self.supplier_code = supplier_code
         self.supplier_name = supplier_name
         self.total_wage = total_wage
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -16957,7 +17256,9 @@ class IndustryManufactureMesOutputRequest(TeaModel):
         user_name: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
         self.approve_status = approve_status
         self.base_data_name = base_data_name
@@ -16985,6 +17286,7 @@ class IndustryManufactureMesOutputRequest(TeaModel):
         self.team_id = team_id
         self.user_id = user_id
         self.user_name = user_name
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -17311,7 +17613,9 @@ class IndustryManufactureMesProcessRequest(TeaModel):
         sop: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
         self.base_data_name = base_data_name
         self.extend_data = extend_data
@@ -17323,6 +17627,7 @@ class IndustryManufactureMesProcessRequest(TeaModel):
         self.prop = prop
         self.remark = remark
         self.sop = sop
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -17605,10 +17910,13 @@ class IndustryManufactureMesProductionPlanRequest(TeaModel):
         unit: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
         self.actual_end_time = actual_end_time
         self.actual_start_time = actual_start_time
+        # This parameter is required.
         self.app_key = app_key
+        # This parameter is required.
         self.base_data_name = base_data_name
         self.bom_uuid = bom_uuid
         self.events = events
@@ -17629,6 +17937,7 @@ class IndustryManufactureMesProductionPlanRequest(TeaModel):
         self.title = title
         self.type = type
         self.unit = unit
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -17893,9 +18202,12 @@ class IndustryManufactureMesSubCooperationTeamRequestExtendData(TeaModel):
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -17936,7 +18248,9 @@ class IndustryManufactureMesSubCooperationTeamRequestGroupPlugins(TeaModel):
         label: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -17969,7 +18283,9 @@ class IndustryManufactureMesSubCooperationTeamRequestLeaders(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -18002,7 +18318,9 @@ class IndustryManufactureMesSubCooperationTeamRequestMembers(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -18046,8 +18364,11 @@ class IndustryManufactureMesSubCooperationTeamRequest(TeaModel):
         process_ids: List[str] = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
+        # This parameter is required.
         self.base_data_name = base_data_name
         self.events = events
         self.extend_data = extend_data
@@ -18056,8 +18377,10 @@ class IndustryManufactureMesSubCooperationTeamRequest(TeaModel):
         self.leaders = leaders
         self.members = members
         self.name = name
+        # This parameter is required.
         self.out_corp_id = out_corp_id
         self.process_ids = process_ids
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -18301,9 +18624,12 @@ class IndustryManufactureMesTeamMgmtRequestExtendData(TeaModel):
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -18344,7 +18670,9 @@ class IndustryManufactureMesTeamMgmtRequestGroupPlugins(TeaModel):
         label: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -18377,7 +18705,9 @@ class IndustryManufactureMesTeamMgmtRequestLeaders(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -18410,7 +18740,9 @@ class IndustryManufactureMesTeamMgmtRequestMembers(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -18456,14 +18788,18 @@ class IndustryManufactureMesTeamMgmtRequest(TeaModel):
         tag_key: str = None,
         tag_values: List[str] = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.app_key = app_key
+        # This parameter is required.
         self.base_data_name = base_data_name
         self.events = events
         self.extend_data = extend_data
         self.group_config = group_config
         self.group_plugins = group_plugins
         self.group_type = group_type
+        # This parameter is required.
         self.id = id
         self.leaders = leaders
         self.members = members
@@ -18588,6 +18924,7 @@ class IndustryManufactureMesTeamMgmtResponseBodyResult(TeaModel):
         self,
         content: str = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -18618,7 +18955,9 @@ class IndustryManufactureMesTeamMgmtResponseBody(TeaModel):
         result: IndustryManufactureMesTeamMgmtResponseBodyResult = None,
     ):
         self.ding_open_errcode = ding_open_errcode
+        # This parameter is required.
         self.error_msg = error_msg
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -18748,6 +19087,7 @@ class IndustryMmanufactureMaterialCostGetRequest(TeaModel):
         self.app_id = app_id
         self.app_ids = app_ids
         self.app_name = app_name
+        # This parameter is required.
         self.corp_id = corp_id
         self.cursor = cursor
         self.end_time = end_time
@@ -18756,7 +19096,9 @@ class IndustryMmanufactureMaterialCostGetRequest(TeaModel):
         self.material_no = material_no
         self.microapp_agent_id = microapp_agent_id
         self.org_id = org_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.start_time = start_time
         self.suite_key = suite_key
@@ -18860,19 +19202,33 @@ class IndustryMmanufactureMaterialCostGetResponseBodyList(TeaModel):
         process_code: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.act_price = act_price
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.material_cost_no = material_cost_no
+        # This parameter is required.
         self.material_name = material_name
+        # This parameter is required.
         self.material_no = material_no
+        # This parameter is required.
         self.memo = memo
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -18955,9 +19311,12 @@ class IndustryMmanufactureMaterialCostGetResponseBody(TeaModel):
         next_cursor: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -19088,13 +19447,16 @@ class PushDingMessageRequest(TeaModel):
         user_id_list: List[str] = None,
     ):
         self.app_id = app_id
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.message_type = message_type
         self.message_url = message_url
         self.picture_url = picture_url
         self.single_title = single_title
         self.single_url = single_url
         self.title = title
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -19305,17 +19667,29 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment(TeaModel):
         remark: str = None,
         ward_id_list: List[int] = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_order = dept_order
+        # This parameter is required.
         self.dept_status = dept_status
+        # This parameter is required.
         self.dept_type = dept_type
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_dept_code = parent_dept_code
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.ward_id_list = ward_id_list
 
     def validate(self):
@@ -19394,13 +19768,21 @@ class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_extend_display_name = dept_extend_display_name
+        # This parameter is required.
         self.dept_extend_key = dept_extend_key
+        # This parameter is required.
         self.dept_extend_value = dept_extend_value
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -19457,7 +19839,9 @@ class QueryAllDepartmentResponseBodyContentDeptAndExt(TeaModel):
         department: QueryAllDepartmentResponseBodyContentDeptAndExtDepartment = None,
         extend_infos: List[QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos] = None,
     ):
+        # This parameter is required.
         self.department = department
+        # This parameter is required.
         self.extend_infos = extend_infos
 
     def validate(self):
@@ -19507,13 +19891,21 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_extend_display_name = dept_extend_display_name
+        # This parameter is required.
         self.dept_extend_key = dept_extend_key
+        # This parameter is required.
         self.dept_extend_value = dept_extend_value
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -19571,8 +19963,11 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.job_number = job_number
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -19616,14 +20011,23 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup(TeaModel):
         parent_dept_code: str = None,
         remark: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.dept_status = dept_status
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.leader = leader
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_dept_code = parent_dept_code
+        # This parameter is required.
         self.remark = remark
 
     def validate(self):
@@ -19686,7 +20090,9 @@ class QueryAllDepartmentResponseBodyContentGroupAndExtList(TeaModel):
         extend_infos: List[QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos] = None,
         group: QueryAllDepartmentResponseBodyContentGroupAndExtListGroup = None,
     ):
+        # This parameter is required.
         self.extend_infos = extend_infos
+        # This parameter is required.
         self.group = group
 
     def validate(self):
@@ -19732,9 +20138,13 @@ class QueryAllDepartmentResponseBodyContent(TeaModel):
         id: int = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.dept_and_ext = dept_and_ext
+        # This parameter is required.
         self.group_and_ext_list = group_and_ext_list
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -19962,17 +20372,29 @@ class QueryAllDoctorsResponseBodyContent(TeaModel):
         user_code: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.assess_group_id = assess_group_id
+        # This parameter is required.
         self.assess_group_name = assess_group_name
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_type = dept_type
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.job_num = job_num
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.uid = uid
+        # This parameter is required.
         self.user_code = user_code
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -20048,8 +20470,11 @@ class QueryAllDoctorsResponseBody(TeaModel):
         total_pages: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.total_pages = total_pages
 
     def validate(self):
@@ -20610,8 +21035,11 @@ class QueryAllMemberByDeptResponseBodyContent(TeaModel):
         uid: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.job_num = job_num
+        # This parameter is required.
         self.uid = uid
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -20651,8 +21079,11 @@ class QueryAllMemberByDeptResponseBody(TeaModel):
         total_pages: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.total_pages = total_pages
 
     def validate(self):
@@ -20815,8 +21246,11 @@ class QueryAllMemberByGroupResponseBodyContent(TeaModel):
         uid: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.job_num = job_num
+        # This parameter is required.
         self.uid = uid
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -20856,8 +21290,11 @@ class QueryAllMemberByGroupResponseBody(TeaModel):
         total_pages: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.total_pages = total_pages
 
     def validate(self):
@@ -21137,6 +21574,7 @@ class QueryBizOptLogResponseBody(TeaModel):
         next_token: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -21251,7 +21689,9 @@ class QueryDepartmentExtendInfoRequest(TeaModel):
         dept_code: int = None,
         prop_code: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.prop_code = prop_code
 
     def validate(self):
@@ -21290,13 +21730,21 @@ class QueryDepartmentExtendInfoResponseBodyContent(TeaModel):
         id: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_extend_display_name = dept_extend_display_name
+        # This parameter is required.
         self.dept_extend_key = dept_extend_key
+        # This parameter is required.
         self.dept_extend_value = dept_extend_value
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -21477,7 +21925,9 @@ class QueryDepartmentInfoResponseBodyContentDepartment(TeaModel):
         self.dept_order = dept_order
         self.dept_status = dept_status
         self.dept_type = dept_type
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
         self.id = id
         self.name = name
@@ -21561,11 +22011,14 @@ class QueryDepartmentInfoResponseBodyContentExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
         self.dept_extend_display_name = dept_extend_display_name
         self.dept_extend_key = dept_extend_key
         self.dept_extend_value = dept_extend_value
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
         self.id = id
         self.status = status
@@ -21624,6 +22077,7 @@ class QueryDepartmentInfoResponseBodyContent(TeaModel):
         department: QueryDepartmentInfoResponseBodyContentDepartment = None,
         extend_infos: List[QueryDepartmentInfoResponseBodyContentExtendInfos] = None,
     ):
+        # This parameter is required.
         self.department = department
         self.extend_infos = extend_infos
 
@@ -22239,13 +22693,20 @@ class QueryGroupInfoResponseBodyContentExtendInfos(TeaModel):
         id: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
         self.dept_extend_display_name = dept_extend_display_name
+        # This parameter is required.
         self.dept_extend_key = dept_extend_key
+        # This parameter is required.
         self.dept_extend_value = dept_extend_value
+        # This parameter is required.
         self.gmt_create_str = gmt_create_str
+        # This parameter is required.
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -22604,13 +23065,21 @@ class QueryHospitalDistrictInfoResponseBodyContent(TeaModel):
         id: int = None,
         parent_district_id: int = None,
     ):
+        # This parameter is required.
         self.address = address
+        # This parameter is required.
         self.deleted = deleted
+        # This parameter is required.
         self.district_name = district_name
+        # This parameter is required.
         self.district_type = district_type
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.parent_district_id = parent_district_id
 
     def validate(self):
@@ -22670,8 +23139,11 @@ class QueryHospitalDistrictInfoResponseBody(TeaModel):
         total_pages: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.total_pages = total_pages
 
     def validate(self):
@@ -22794,7 +23266,9 @@ class QueryHospitalRoleUserInfoRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -22833,13 +23307,20 @@ class QueryHospitalRoleUserInfoResponseBodyContent(TeaModel):
         user_code: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.job_number = job_number
+        # This parameter is required.
         self.role_code = role_code
+        # This parameter is required.
         self.role_name = role_name
         self.status = status
+        # This parameter is required.
         self.user_code = user_code
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -22899,8 +23380,11 @@ class QueryHospitalRoleUserInfoResponseBody(TeaModel):
         total_pages: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.total_pages = total_pages
 
     def validate(self):
@@ -23029,13 +23513,21 @@ class QueryHospitalRolesResponseBodyContent(TeaModel):
         role_name: str = None,
         sort: int = None,
     ):
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.read_only = read_only
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.role_code = role_code
+        # This parameter is required.
         self.role_name = role_name
+        # This parameter is required.
         self.sort = sort
 
     def validate(self):
@@ -23203,9 +23695,13 @@ class QueryJobCodeDictionaryResponseBodyContent(TeaModel):
         display_name: str = None,
         doctor_type: str = None,
     ):
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
+        # This parameter is required.
         self.doctor_type = doctor_type
 
     def validate(self):
@@ -23245,6 +23741,7 @@ class QueryJobCodeDictionaryResponseBody(TeaModel):
         self,
         content: List[QueryJobCodeDictionaryResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -23356,8 +23853,11 @@ class QueryJobStatusCodeDictionaryResponseBodyContent(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -23393,6 +23893,7 @@ class QueryJobStatusCodeDictionaryResponseBody(TeaModel):
         self,
         content: List[QueryJobStatusCodeDictionaryResponseBodyContent] = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -23504,8 +24005,10 @@ class QueryMedicalEventsResponseBodyContent(TeaModel):
         content: str = None,
         event_id: int = None,
     ):
+        # This parameter is required.
         self.code = code
         self.content = content
+        # This parameter is required.
         self.event_id = event_id
 
     def validate(self):
@@ -23544,7 +24047,9 @@ class QueryMedicalEventsResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.success = success
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -23662,6 +24167,7 @@ class QueryUserCredentialsRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -23691,8 +24197,11 @@ class QueryUserCredentialsResponseBodyContentCredentialList(TeaModel):
         credential_type: int = None,
         term_of_validity: str = None,
     ):
+        # This parameter is required.
         self.credential_name = credential_name
+        # This parameter is required.
         self.credential_type = credential_type
+        # This parameter is required.
         self.term_of_validity = term_of_validity
 
     def validate(self):
@@ -23729,7 +24238,9 @@ class QueryUserCredentialsResponseBodyContent(TeaModel):
         credential_list: List[QueryUserCredentialsResponseBodyContentCredentialList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.credential_list = credential_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -23884,12 +24395,19 @@ class QueryUserExtInfoResponseBodyContent(TeaModel):
         user_extend_key: str = None,
         user_extend_value: str = None,
     ):
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.user_code = user_code
+        # This parameter is required.
         self.user_extend_display_name = user_extend_display_name
+        # This parameter is required.
         self.user_extend_key = user_extend_key
+        # This parameter is required.
         self.user_extend_value = user_extend_value
 
     def validate(self):
@@ -24052,6 +24570,7 @@ class QueryUserExtendValuesRequest(TeaModel):
         user_ids: List[str] = None,
     ):
         self.user_extend_key = user_extend_key
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -24086,9 +24605,12 @@ class QueryUserExtendValuesResponseBodyContent(TeaModel):
         user_extend_key: str = None,
         user_extend_value: str = None,
     ):
+        # This parameter is required.
         self.user_code = user_code
         self.user_extend_display_name = user_extend_display_name
+        # This parameter is required.
         self.user_extend_key = user_extend_key
+        # This parameter is required.
         self.user_extend_value = user_extend_value
 
     def validate(self):
@@ -24131,7 +24653,9 @@ class QueryUserExtendValuesResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.content = content
+        # This parameter is required.
         self.success = success
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -24282,7 +24806,9 @@ class QueryUserInfoResponseBodyContentDept(TeaModel):
     ):
         self.gmt_create_str = gmt_create_str
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.rel_id = rel_id
 
@@ -24333,11 +24859,15 @@ class QueryUserInfoResponseBodyContentGroup(TeaModel):
         name: str = None,
         rel_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.dept_name = dept_name
         self.gmt_create_str = gmt_create_str
         self.gmt_modified_str = gmt_modified_str
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.rel_id = rel_id
 
@@ -24393,9 +24923,13 @@ class QueryUserInfoResponseBodyContentJob(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -24438,9 +24972,13 @@ class QueryUserInfoResponseBodyContentJobStatus(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -24483,9 +25021,13 @@ class QueryUserInfoResponseBodyContentJobStatusList(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -24528,9 +25070,13 @@ class QueryUserInfoResponseBodyContentUserProb(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -24579,15 +25125,25 @@ class QueryUserInfoResponseBodyContent(TeaModel):
         user_name: str = None,
         user_prob: QueryUserInfoResponseBodyContentUserProb = None,
     ):
+        # This parameter is required.
         self.comments = comments
+        # This parameter is required.
         self.dept = dept
+        # This parameter is required.
         self.group = group
+        # This parameter is required.
         self.job = job
+        # This parameter is required.
         self.job_num = job_num
+        # This parameter is required.
         self.job_status = job_status
+        # This parameter is required.
         self.job_status_list = job_status_list
+        # This parameter is required.
         self.uid = uid
+        # This parameter is required.
         self.user_name = user_name
+        # This parameter is required.
         self.user_prob = user_prob
 
     def validate(self):
@@ -24791,8 +25347,11 @@ class QueryUserProbCodeDictionaryResponseBodyContent(TeaModel):
         code: str = None,
         display_name: str = None,
     ):
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.display_name = display_name
 
     def validate(self):
@@ -24938,7 +25497,9 @@ class QueryUserRolesResponseBodyContent(TeaModel):
         role_code: str = None,
         role_name: str = None,
     ):
+        # This parameter is required.
         self.role_code = role_code
+        # This parameter is required.
         self.role_name = role_name
 
     def validate(self):
@@ -25082,7 +25643,9 @@ class SaveUserExtendValuesRequest(TeaModel):
         user_extend_value: str = None,
     ):
         self.user_display_name = user_display_name
+        # This parameter is required.
         self.user_extend_key = user_extend_key
+        # This parameter is required.
         self.user_extend_value = user_extend_value
 
     def validate(self):
@@ -25118,6 +25681,7 @@ class SaveUserExtendValuesResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -25220,7 +25784,9 @@ class SupplAddRoleRequest(TeaModel):
         parent_role_group_id: str = None,
         role_name: str = None,
     ):
+        # This parameter is required.
         self.parent_role_group_id = parent_role_group_id
+        # This parameter is required.
         self.role_name = role_name
 
     def validate(self):
@@ -25356,9 +25922,12 @@ class SupplyAddDeptRequest(TeaModel):
         super_dept_id: int = None,
         supply_dept_type: str = None,
     ):
+        # This parameter is required.
         self.dept_name = dept_name
         self.partner_number = partner_number
+        # This parameter is required.
         self.super_dept_id = super_dept_id
+        # This parameter is required.
         self.supply_dept_type = supply_dept_type
 
     def validate(self):
@@ -25398,6 +25967,7 @@ class SupplyAddDeptResponseBodyResult(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -25533,11 +26103,15 @@ class SupplyAddMemberRequest(TeaModel):
         member_work_number: str = None,
         supply_dept_id: int = None,
     ):
+        # This parameter is required.
         self.is_partner_manager = is_partner_manager
+        # This parameter is required.
         self.member_mobile = member_mobile
+        # This parameter is required.
         self.member_name = member_name
         self.member_title = member_title
         self.member_work_number = member_work_number
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -25587,7 +26161,9 @@ class SupplyAddMemberResponseBodyResult(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.ding_member_status = ding_member_status
+        # This parameter is required.
         self.union_id = union_id
         self.user_id = user_id
 
@@ -25728,7 +26304,9 @@ class SupplyAddPartnerAdminsRequest(TeaModel):
         dept_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -25863,8 +26441,11 @@ class SupplyAddPartnerManagersRequest(TeaModel):
         interface_id: str = None,
         interface_type: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.interface_id = interface_id
+        # This parameter is required.
         self.interface_type = interface_type
 
     def validate(self):
@@ -26002,7 +26583,9 @@ class SupplyAddPartnerTypeRequest(TeaModel):
         name: str = None,
         super_id: int = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.super_id = super_id
 
     def validate(self):
@@ -26135,6 +26718,7 @@ class SupplyChainDeleteDeptRequest(TeaModel):
         self,
         supply_dept_id: int = None,
     ):
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -26263,6 +26847,7 @@ class SupplyChainQueryDeptInfoRequest(TeaModel):
         self,
         supply_dept_id: int = None,
     ):
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -26517,6 +27102,7 @@ class SupplyChainUpdateDeptInfoRequest(TeaModel):
         self.partner_number = partner_number
         self.partner_type_list = partner_type_list
         self.super_id = super_id
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -26664,6 +27250,7 @@ class SupplyDeleteMemberRequest(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
         self.mobile = mobile
         self.union_id = union_id
@@ -26808,7 +27395,9 @@ class SupplyDeletePartnerAdminsRequest(TeaModel):
         dept_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -26943,8 +27532,11 @@ class SupplyDeletePartnerManagersRequest(TeaModel):
         interface_id: str = None,
         interface_type: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.interface_id = interface_id
+        # This parameter is required.
         self.interface_type = interface_type
 
     def validate(self):
@@ -27081,6 +27673,7 @@ class SupplyDeletePartnerTypeRequest(TeaModel):
         self,
         label_id: int = None,
     ):
+        # This parameter is required.
         self.label_id = label_id
 
     def validate(self):
@@ -27210,7 +27803,9 @@ class SupplyDeleteRoleRequest(TeaModel):
         is_role_group: bool = None,
         role_id: str = None,
     ):
+        # This parameter is required.
         self.is_role_group = is_role_group
+        # This parameter is required.
         self.role_id = role_id
 
     def validate(self):
@@ -27597,8 +28192,11 @@ class SupplyListDeptMembersRequest(TeaModel):
         page_size: int = None,
         supply_dept_id: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -27812,6 +28410,7 @@ class SupplyListPartnerAdminsRequest(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -28174,6 +28773,7 @@ class SupplyListPartnerTypeRequest(TeaModel):
         self,
         label_id: int = None,
     ):
+        # This parameter is required.
         self.label_id = label_id
 
     def validate(self):
@@ -28349,6 +28949,7 @@ class SupplyListRoleRequest(TeaModel):
         self,
         parent_role_id: str = None,
     ):
+        # This parameter is required.
         self.parent_role_id = parent_role_id
 
     def validate(self):
@@ -28524,6 +29125,7 @@ class SupplyListSubDeptRequest(TeaModel):
         self,
         supply_dept_id: int = None,
     ):
+        # This parameter is required.
         self.supply_dept_id = supply_dept_id
 
     def validate(self):
@@ -28776,6 +29378,7 @@ class SupplyQueryPartnerTypeRequest(TeaModel):
         self,
         label_id: int = None,
     ):
+        # This parameter is required.
         self.label_id = label_id
 
     def validate(self):
@@ -28953,11 +29556,14 @@ class SupplyUpdateMemberRequest(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.is_copy_dept = is_copy_dept
         self.member_title = member_title
         self.member_work_number = member_work_number
         self.mobile = mobile
+        # This parameter is required.
         self.new_dept_id = new_dept_id
+        # This parameter is required.
         self.old_dept_id = old_dept_id
         self.role_id_list = role_id_list
         self.union_id = union_id
@@ -29123,6 +29729,7 @@ class SupplyUpdatePartnerTypeRequest(TeaModel):
         name: str = None,
         super_id: int = None,
     ):
+        # This parameter is required.
         self.label_id = label_id
         self.name = name
         self.super_id = super_id
@@ -29263,8 +29870,11 @@ class SupplyUpdateRoleRequest(TeaModel):
         role_id: str = None,
         role_name: str = None,
     ):
+        # This parameter is required.
         self.is_role_group = is_role_group
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.role_name = role_name
 
     def validate(self):
@@ -29404,9 +30014,12 @@ class UpdateUserExtendInfoRequest(TeaModel):
         job_status_code: List[str] = None,
         user_prob_code: str = None,
     ):
+        # This parameter is required.
         self.comments = comments
+        # This parameter is required.
         self.job_code = job_code
         self.job_status_code = job_status_code
+        # This parameter is required.
         self.user_prob_code = user_prob_code
 
     def validate(self):

@@ -38,6 +38,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.AddAttendeeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
+        """
+        @summary 新增日程参与人
+        
+        @param request: AddAttendeeRequest
+        @param headers: AddAttendeeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddAttendeeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
@@ -82,6 +90,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.AddAttendeeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
+        """
+        @summary 新增日程参与人
+        
+        @param request: AddAttendeeRequest
+        @param headers: AddAttendeeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddAttendeeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_add):
@@ -124,6 +140,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.AddAttendeeRequest,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
+        """
+        @summary 新增日程参与人
+        
+        @param request: AddAttendeeRequest
+        @return: AddAttendeeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.AddAttendeeHeaders()
         return self.add_attendee_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -135,6 +157,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.AddAttendeeRequest,
     ) -> dingtalkcalendar__1__0_models.AddAttendeeResponse:
+        """
+        @summary 新增日程参与人
+        
+        @param request: AddAttendeeRequest
+        @return: AddAttendeeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.AddAttendeeHeaders()
         return await self.add_attendee_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -148,6 +176,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        """
+        @summary 添加会议室
+        
+        @param request: AddMeetingRoomsRequest
+        @param headers: AddMeetingRoomsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddMeetingRoomsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.meeting_rooms_to_add):
@@ -188,6 +224,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        """
+        @summary 添加会议室
+        
+        @param request: AddMeetingRoomsRequest
+        @param headers: AddMeetingRoomsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddMeetingRoomsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.meeting_rooms_to_add):
@@ -226,6 +270,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
     ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        """
+        @summary 添加会议室
+        
+        @param request: AddMeetingRoomsRequest
+        @return: AddMeetingRoomsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders()
         return self.add_meeting_rooms_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.AddMeetingRoomsRequest,
     ) -> dingtalkcalendar__1__0_models.AddMeetingRoomsResponse:
+        """
+        @summary 添加会议室
+        
+        @param request: AddMeetingRoomsRequest
+        @return: AddMeetingRoomsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.AddMeetingRoomsHeaders()
         return await self.add_meeting_rooms_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -249,6 +305,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CheckInHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        """
+        @summary 签到
+        
+        @param headers: CheckInHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckInResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -281,6 +344,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CheckInHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        """
+        @summary 签到
+        
+        @param headers: CheckInHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckInResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -311,6 +381,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        """
+        @summary 签到
+        
+        @return: CheckInResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CheckInHeaders()
         return self.check_in_with_options(user_id, calendar_id, event_id, headers, runtime)
@@ -321,6 +396,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.CheckInResponse:
+        """
+        @summary 签到
+        
+        @return: CheckInResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CheckInHeaders()
         return await self.check_in_with_options_async(user_id, calendar_id, event_id, headers, runtime)
@@ -332,6 +412,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        """
+        @summary 转换老版本的eventId
+        
+        @param request: ConvertLegacyEventIdRequest
+        @param headers: ConvertLegacyEventIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConvertLegacyEventIdResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.legacy_event_ids):
@@ -368,6 +456,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        """
+        @summary 转换老版本的eventId
+        
+        @param request: ConvertLegacyEventIdRequest
+        @param headers: ConvertLegacyEventIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConvertLegacyEventIdResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.legacy_event_ids):
@@ -402,6 +498,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        """
+        @summary 转换老版本的eventId
+        
+        @param request: ConvertLegacyEventIdRequest
+        @return: ConvertLegacyEventIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders()
         return self.convert_legacy_event_id_with_options(user_id, request, headers, runtime)
@@ -411,6 +513,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.ConvertLegacyEventIdRequest,
     ) -> dingtalkcalendar__1__0_models.ConvertLegacyEventIdResponse:
+        """
+        @summary 转换老版本的eventId
+        
+        @param request: ConvertLegacyEventIdRequest
+        @return: ConvertLegacyEventIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ConvertLegacyEventIdHeaders()
         return await self.convert_legacy_event_id_with_options_async(user_id, request, headers, runtime)
@@ -423,6 +531,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateAclsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateAclsResponse:
+        """
+        @summary 创建访问控制
+        
+        @param request: CreateAclsRequest
+        @param headers: CreateAclsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAclsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.privilege):
@@ -464,6 +580,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateAclsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateAclsResponse:
+        """
+        @summary 创建访问控制
+        
+        @param request: CreateAclsRequest
+        @param headers: CreateAclsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAclsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.privilege):
@@ -503,6 +627,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateAclsRequest,
     ) -> dingtalkcalendar__1__0_models.CreateAclsResponse:
+        """
+        @summary 创建访问控制
+        
+        @param request: CreateAclsRequest
+        @return: CreateAclsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateAclsHeaders()
         return self.create_acls_with_options(user_id, calendar_id, request, headers, runtime)
@@ -513,6 +643,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateAclsRequest,
     ) -> dingtalkcalendar__1__0_models.CreateAclsResponse:
+        """
+        @summary 创建访问控制
+        
+        @param request: CreateAclsRequest
+        @return: CreateAclsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateAclsHeaders()
         return await self.create_acls_with_options_async(user_id, calendar_id, request, headers, runtime)
@@ -525,6 +661,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
+        """
+        @summary 创建日程
+        
+        @param request: CreateEventRequest
+        @param headers: CreateEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -588,6 +732,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
+        """
+        @summary 创建日程
+        
+        @param request: CreateEventRequest
+        @param headers: CreateEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -649,6 +801,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateEventRequest,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
+        """
+        @summary 创建日程
+        
+        @param request: CreateEventRequest
+        @return: CreateEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateEventHeaders()
         return self.create_event_with_options(user_id, calendar_id, request, headers, runtime)
@@ -659,6 +817,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateEventRequest,
     ) -> dingtalkcalendar__1__0_models.CreateEventResponse:
+        """
+        @summary 创建日程
+        
+        @param request: CreateEventRequest
+        @return: CreateEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateEventHeaders()
         return await self.create_event_with_options_async(user_id, calendar_id, request, headers, runtime)
@@ -670,6 +834,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateEventByMeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        """
+        @summary 创建日程(me接口)
+        
+        @param request: CreateEventByMeRequest
+        @param headers: CreateEventByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventByMeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -732,6 +904,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateEventByMeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        """
+        @summary 创建日程(me接口)
+        
+        @param request: CreateEventByMeRequest
+        @param headers: CreateEventByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventByMeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -792,6 +972,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
     ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        """
+        @summary 创建日程(me接口)
+        
+        @param request: CreateEventByMeRequest
+        @return: CreateEventByMeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateEventByMeHeaders()
         return self.create_event_by_me_with_options(calendar_id, request, headers, runtime)
@@ -801,6 +987,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.CreateEventByMeRequest,
     ) -> dingtalkcalendar__1__0_models.CreateEventByMeResponse:
+        """
+        @summary 创建日程(me接口)
+        
+        @param request: CreateEventByMeRequest
+        @return: CreateEventByMeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateEventByMeHeaders()
         return await self.create_event_by_me_with_options_async(calendar_id, request, headers, runtime)
@@ -812,6 +1004,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateSubscribedCalendarResponse:
+        """
+        @summary 快速创建订阅日历
+        
+        @param request: CreateSubscribedCalendarRequest
+        @param headers: CreateSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSubscribedCalendarResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -854,6 +1054,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.CreateSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.CreateSubscribedCalendarResponse:
+        """
+        @summary 快速创建订阅日历
+        
+        @param request: CreateSubscribedCalendarRequest
+        @param headers: CreateSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSubscribedCalendarResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -894,6 +1102,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.CreateSubscribedCalendarRequest,
     ) -> dingtalkcalendar__1__0_models.CreateSubscribedCalendarResponse:
+        """
+        @summary 快速创建订阅日历
+        
+        @param request: CreateSubscribedCalendarRequest
+        @return: CreateSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateSubscribedCalendarHeaders()
         return self.create_subscribed_calendar_with_options(user_id, request, headers, runtime)
@@ -903,6 +1117,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.CreateSubscribedCalendarRequest,
     ) -> dingtalkcalendar__1__0_models.CreateSubscribedCalendarResponse:
+        """
+        @summary 快速创建订阅日历
+        
+        @param request: CreateSubscribedCalendarRequest
+        @return: CreateSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.CreateSubscribedCalendarHeaders()
         return await self.create_subscribed_calendar_with_options_async(user_id, request, headers, runtime)
@@ -915,6 +1135,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteAclHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteAclResponse:
+        """
+        @summary 删除访问控制
+        
+        @param headers: DeleteAclHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteAclResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -947,6 +1174,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteAclHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteAclResponse:
+        """
+        @summary 删除访问控制
+        
+        @param headers: DeleteAclHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteAclResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -977,6 +1211,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         acl_id: str,
     ) -> dingtalkcalendar__1__0_models.DeleteAclResponse:
+        """
+        @summary 删除访问控制
+        
+        @return: DeleteAclResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteAclHeaders()
         return self.delete_acl_with_options(user_id, calendar_id, acl_id, headers, runtime)
@@ -987,6 +1226,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         acl_id: str,
     ) -> dingtalkcalendar__1__0_models.DeleteAclResponse:
+        """
+        @summary 删除访问控制
+        
+        @return: DeleteAclResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteAclHeaders()
         return await self.delete_acl_with_options_async(user_id, calendar_id, acl_id, headers, runtime)
@@ -1000,6 +1244,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        """
+        @summary 删除指定日程
+        
+        @param request: DeleteEventRequest
+        @param headers: DeleteEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteEventResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.push_notification):
@@ -1040,6 +1292,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        """
+        @summary 删除指定日程
+        
+        @param request: DeleteEventRequest
+        @param headers: DeleteEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteEventResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.push_notification):
@@ -1078,6 +1338,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.DeleteEventRequest,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        """
+        @summary 删除指定日程
+        
+        @param request: DeleteEventRequest
+        @return: DeleteEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteEventHeaders()
         return self.delete_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1089,6 +1355,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.DeleteEventRequest,
     ) -> dingtalkcalendar__1__0_models.DeleteEventResponse:
+        """
+        @summary 删除指定日程
+        
+        @param request: DeleteEventRequest
+        @return: DeleteEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteEventHeaders()
         return await self.delete_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1100,6 +1372,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteSubscribedCalendarResponse:
+        """
+        @summary 删除指定订阅日历
+        
+        @param headers: DeleteSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSubscribedCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1131,6 +1410,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.DeleteSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.DeleteSubscribedCalendarResponse:
+        """
+        @summary 删除指定订阅日历
+        
+        @param headers: DeleteSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSubscribedCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1160,6 +1446,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.DeleteSubscribedCalendarResponse:
+        """
+        @summary 删除指定订阅日历
+        
+        @return: DeleteSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteSubscribedCalendarHeaders()
         return self.delete_subscribed_calendar_with_options(user_id, calendar_id, headers, runtime)
@@ -1169,6 +1460,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.DeleteSubscribedCalendarResponse:
+        """
+        @summary 删除指定订阅日历
+        
+        @return: DeleteSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.DeleteSubscribedCalendarHeaders()
         return await self.delete_subscribed_calendar_with_options_async(user_id, calendar_id, headers, runtime)
@@ -1180,6 +1476,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GenerateCaldavAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
+        """
+        @summary 生成caldav账户
+        
+        @param request: GenerateCaldavAccountRequest
+        @param headers: GenerateCaldavAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateCaldavAccountResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.device):
@@ -1218,6 +1522,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GenerateCaldavAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
+        """
+        @summary 生成caldav账户
+        
+        @param request: GenerateCaldavAccountRequest
+        @param headers: GenerateCaldavAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateCaldavAccountResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.device):
@@ -1254,6 +1566,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GenerateCaldavAccountRequest,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
+        """
+        @summary 生成caldav账户
+        
+        @param request: GenerateCaldavAccountRequest
+        @return: GenerateCaldavAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GenerateCaldavAccountHeaders()
         return self.generate_caldav_account_with_options(user_id, request, headers, runtime)
@@ -1263,6 +1581,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GenerateCaldavAccountRequest,
     ) -> dingtalkcalendar__1__0_models.GenerateCaldavAccountResponse:
+        """
+        @summary 生成caldav账户
+        
+        @param request: GenerateCaldavAccountRequest
+        @return: GenerateCaldavAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GenerateCaldavAccountHeaders()
         return await self.generate_caldav_account_with_options_async(user_id, request, headers, runtime)
@@ -1276,6 +1600,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: GetEventRequest
+        @param headers: GetEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetEventResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -1314,6 +1646,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: GetEventRequest
+        @param headers: GetEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetEventResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -1350,6 +1690,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetEventRequest,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: GetEventRequest
+        @return: GetEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
         return self.get_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1361,6 +1707,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetEventRequest,
     ) -> dingtalkcalendar__1__0_models.GetEventResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: GetEventRequest
+        @return: GetEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetEventHeaders()
         return await self.get_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1372,6 +1724,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        """
+        @summary 查询会议室忙闲
+        
+        @param request: GetMeetingRoomsScheduleRequest
+        @param headers: GetMeetingRoomsScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMeetingRoomsScheduleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -1412,6 +1772,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        """
+        @summary 查询会议室忙闲
+        
+        @param request: GetMeetingRoomsScheduleRequest
+        @param headers: GetMeetingRoomsScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMeetingRoomsScheduleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -1450,6 +1818,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
     ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        """
+        @summary 查询会议室忙闲
+        
+        @param request: GetMeetingRoomsScheduleRequest
+        @return: GetMeetingRoomsScheduleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders()
         return self.get_meeting_rooms_schedule_with_options(user_id, request, headers, runtime)
@@ -1459,6 +1833,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleRequest,
     ) -> dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleResponse:
+        """
+        @summary 查询会议室忙闲
+        
+        @param request: GetMeetingRoomsScheduleRequest
+        @return: GetMeetingRoomsScheduleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetMeetingRoomsScheduleHeaders()
         return await self.get_meeting_rooms_schedule_with_options_async(user_id, request, headers, runtime)
@@ -1470,6 +1850,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetScheduleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        """
+        @summary 查询闲忙
+        
+        @param request: GetScheduleRequest
+        @param headers: GetScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetScheduleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -1510,6 +1898,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetScheduleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        """
+        @summary 查询闲忙
+        
+        @param request: GetScheduleRequest
+        @param headers: GetScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetScheduleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -1548,6 +1944,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GetScheduleRequest,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        """
+        @summary 查询闲忙
+        
+        @param request: GetScheduleRequest
+        @return: GetScheduleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
         return self.get_schedule_with_options(user_id, request, headers, runtime)
@@ -1557,6 +1959,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.GetScheduleRequest,
     ) -> dingtalkcalendar__1__0_models.GetScheduleResponse:
+        """
+        @summary 查询闲忙
+        
+        @param request: GetScheduleRequest
+        @return: GetScheduleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
         return await self.get_schedule_with_options_async(user_id, request, headers, runtime)
@@ -1569,6 +1977,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignInLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        """
+        @summary 获取签到链接
+        
+        @param headers: GetSignInLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignInLinkResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1601,6 +2016,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignInLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        """
+        @summary 获取签到链接
+        
+        @param headers: GetSignInLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignInLinkResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1631,6 +2053,11 @@ class Client(OpenApiClient):
         user_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        """
+        @summary 获取签到链接
+        
+        @return: GetSignInLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignInLinkHeaders()
         return self.get_sign_in_link_with_options(calendar_id, user_id, event_id, headers, runtime)
@@ -1641,6 +2068,11 @@ class Client(OpenApiClient):
         user_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSignInLinkResponse:
+        """
+        @summary 获取签到链接
+        
+        @return: GetSignInLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignInLinkHeaders()
         return await self.get_sign_in_link_with_options_async(calendar_id, user_id, event_id, headers, runtime)
@@ -1654,6 +2086,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignInListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
+        """
+        @summary 获取签到信息详情
+        
+        @param request: GetSignInListRequest
+        @param headers: GetSignInListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignInListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1696,6 +2136,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignInListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
+        """
+        @summary 获取签到信息详情
+        
+        @param request: GetSignInListRequest
+        @param headers: GetSignInListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignInListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1736,6 +2184,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetSignInListRequest,
     ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
+        """
+        @summary 获取签到信息详情
+        
+        @param request: GetSignInListRequest
+        @return: GetSignInListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignInListHeaders()
         return self.get_sign_in_list_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1747,6 +2201,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetSignInListRequest,
     ) -> dingtalkcalendar__1__0_models.GetSignInListResponse:
+        """
+        @summary 获取签到信息详情
+        
+        @param request: GetSignInListRequest
+        @return: GetSignInListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignInListHeaders()
         return await self.get_sign_in_list_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1759,6 +2219,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignOutLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        """
+        @summary 获取签退链接
+        
+        @param headers: GetSignOutLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignOutLinkResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1791,6 +2258,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignOutLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        """
+        @summary 获取签退链接
+        
+        @param headers: GetSignOutLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignOutLinkResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1821,6 +2295,11 @@ class Client(OpenApiClient):
         user_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        """
+        @summary 获取签退链接
+        
+        @return: GetSignOutLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignOutLinkHeaders()
         return self.get_sign_out_link_with_options(calendar_id, user_id, event_id, headers, runtime)
@@ -1831,6 +2310,11 @@ class Client(OpenApiClient):
         user_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSignOutLinkResponse:
+        """
+        @summary 获取签退链接
+        
+        @return: GetSignOutLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignOutLinkHeaders()
         return await self.get_sign_out_link_with_options_async(calendar_id, user_id, event_id, headers, runtime)
@@ -1844,6 +2328,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignOutListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        """
+        @summary 获取签退信息详情
+        
+        @param request: GetSignOutListRequest
+        @param headers: GetSignOutListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignOutListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1886,6 +2378,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSignOutListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        """
+        @summary 获取签退信息详情
+        
+        @param request: GetSignOutListRequest
+        @param headers: GetSignOutListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignOutListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1926,6 +2426,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
     ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        """
+        @summary 获取签退信息详情
+        
+        @param request: GetSignOutListRequest
+        @return: GetSignOutListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignOutListHeaders()
         return self.get_sign_out_list_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1937,6 +2443,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.GetSignOutListRequest,
     ) -> dingtalkcalendar__1__0_models.GetSignOutListResponse:
+        """
+        @summary 获取签退信息详情
+        
+        @param request: GetSignOutListRequest
+        @return: GetSignOutListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSignOutListHeaders()
         return await self.get_sign_out_list_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -1948,6 +2460,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSubscribedCalendarResponse:
+        """
+        @summary 获取指定订阅日历详情
+        
+        @param headers: GetSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSubscribedCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1979,6 +2498,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.GetSubscribedCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.GetSubscribedCalendarResponse:
+        """
+        @summary 获取指定订阅日历详情
+        
+        @param headers: GetSubscribedCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSubscribedCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2008,6 +2534,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSubscribedCalendarResponse:
+        """
+        @summary 获取指定订阅日历详情
+        
+        @return: GetSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSubscribedCalendarHeaders()
         return self.get_subscribed_calendar_with_options(user_id, calendar_id, headers, runtime)
@@ -2017,6 +2548,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.GetSubscribedCalendarResponse:
+        """
+        @summary 获取指定订阅日历详情
+        
+        @return: GetSubscribedCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.GetSubscribedCalendarHeaders()
         return await self.get_subscribed_calendar_with_options_async(user_id, calendar_id, headers, runtime)
@@ -2028,6 +2564,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListAclsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListAclsResponse:
+        """
+        @summary 获取访问控制列表
+        
+        @param headers: ListAclsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAclsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2059,6 +2602,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListAclsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListAclsResponse:
+        """
+        @summary 获取访问控制列表
+        
+        @param headers: ListAclsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAclsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2088,6 +2638,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.ListAclsResponse:
+        """
+        @summary 获取访问控制列表
+        
+        @return: ListAclsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListAclsHeaders()
         return self.list_acls_with_options(user_id, calendar_id, headers, runtime)
@@ -2097,6 +2652,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.ListAclsResponse:
+        """
+        @summary 获取访问控制列表
+        
+        @return: ListAclsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListAclsHeaders()
         return await self.list_acls_with_options_async(user_id, calendar_id, headers, runtime)
@@ -2110,6 +2670,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListAttendeesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListAttendeesResponse:
+        """
+        @summary 分页获取参与人列表
+        
+        @param request: ListAttendeesRequest
+        @param headers: ListAttendeesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAttendeesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2150,6 +2718,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListAttendeesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListAttendeesResponse:
+        """
+        @summary 分页获取参与人列表
+        
+        @param request: ListAttendeesRequest
+        @param headers: ListAttendeesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAttendeesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2188,6 +2764,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.ListAttendeesRequest,
     ) -> dingtalkcalendar__1__0_models.ListAttendeesResponse:
+        """
+        @summary 分页获取参与人列表
+        
+        @param request: ListAttendeesRequest
+        @return: ListAttendeesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListAttendeesHeaders()
         return self.list_attendees_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2199,6 +2781,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.ListAttendeesRequest,
     ) -> dingtalkcalendar__1__0_models.ListAttendeesResponse:
+        """
+        @summary 分页获取参与人列表
+        
+        @param request: ListAttendeesRequest
+        @return: ListAttendeesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListAttendeesHeaders()
         return await self.list_attendees_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2209,6 +2797,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        """
+        @summary 日历本查询
+        
+        @param headers: ListCalendarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCalendarsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2239,6 +2834,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        """
+        @summary 日历本查询
+        
+        @param headers: ListCalendarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCalendarsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2267,6 +2869,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        """
+        @summary 日历本查询
+        
+        @return: ListCalendarsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListCalendarsHeaders()
         return self.list_calendars_with_options(user_id, headers, runtime)
@@ -2275,6 +2882,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkcalendar__1__0_models.ListCalendarsResponse:
+        """
+        @summary 日历本查询
+        
+        @return: ListCalendarsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListCalendarsHeaders()
         return await self.list_calendars_with_options_async(user_id, headers, runtime)
@@ -2287,6 +2899,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: ListEventsRequest
+        @param headers: ListEventsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2338,6 +2958,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: ListEventsRequest
+        @param headers: ListEventsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2387,6 +3015,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: ListEventsRequest
+        @return: ListEventsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsHeaders()
         return self.list_events_with_options(user_id, calendar_id, request, headers, runtime)
@@ -2397,6 +3031,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsResponse:
+        """
+        @summary 查询日程列表
+        
+        @param request: ListEventsRequest
+        @return: ListEventsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsHeaders()
         return await self.list_events_with_options_async(user_id, calendar_id, request, headers, runtime)
@@ -2409,6 +3049,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsInstancesResponse:
+        """
+        @summary 查询同一个循环日程序列下已生成的实例
+        
+        @param request: ListEventsInstancesRequest
+        @param headers: ListEventsInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2452,6 +3100,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsInstancesResponse:
+        """
+        @summary 查询同一个循环日程序列下已生成的实例
+        
+        @param request: ListEventsInstancesRequest
+        @param headers: ListEventsInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2493,6 +3149,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsInstancesRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsInstancesResponse:
+        """
+        @summary 查询同一个循环日程序列下已生成的实例
+        
+        @param request: ListEventsInstancesRequest
+        @return: ListEventsInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsInstancesHeaders()
         return self.list_events_instances_with_options(user_id, calendar_id, request, headers, runtime)
@@ -2503,6 +3165,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsInstancesRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsInstancesResponse:
+        """
+        @summary 查询同一个循环日程序列下已生成的实例
+        
+        @param request: ListEventsInstancesRequest
+        @return: ListEventsInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsInstancesHeaders()
         return await self.list_events_instances_with_options_async(user_id, calendar_id, request, headers, runtime)
@@ -2515,6 +3183,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程
+        
+        @param request: ListEventsViewRequest
+        @param headers: ListEventsViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsViewResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2560,6 +3236,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListEventsViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程
+        
+        @param request: ListEventsViewRequest
+        @param headers: ListEventsViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsViewResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2603,6 +3287,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsViewRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程
+        
+        @param request: ListEventsViewRequest
+        @return: ListEventsViewResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsViewHeaders()
         return self.list_events_view_with_options(user_id, calendar_id, request, headers, runtime)
@@ -2613,6 +3303,12 @@ class Client(OpenApiClient):
         calendar_id: str,
         request: dingtalkcalendar__1__0_models.ListEventsViewRequest,
     ) -> dingtalkcalendar__1__0_models.ListEventsViewResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程
+        
+        @param request: ListEventsViewRequest
+        @return: ListEventsViewResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsViewHeaders()
         return await self.list_events_view_with_options_async(user_id, calendar_id, request, headers, runtime)
@@ -2626,6 +3322,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        """
+        @summary 查询循环日程实例列表
+        
+        @param request: ListInstancesRequest
+        @param headers: ListInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2672,6 +3376,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.ListInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        """
+        @summary 查询循环日程实例列表
+        
+        @param request: ListInstancesRequest
+        @param headers: ListInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_attendees):
@@ -2716,6 +3428,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.ListInstancesRequest,
     ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        """
+        @summary 查询循环日程实例列表
+        
+        @param request: ListInstancesRequest
+        @return: ListInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
         return self.list_instances_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2727,6 +3445,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.ListInstancesRequest,
     ) -> dingtalkcalendar__1__0_models.ListInstancesResponse:
+        """
+        @summary 查询循环日程实例列表
+        
+        @param request: ListInstancesRequest
+        @return: ListInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
         return await self.list_instances_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2740,6 +3464,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.PatchEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
+        """
+        @summary 修改日程
+        
+        @param request: PatchEventRequest
+        @param headers: PatchEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PatchEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -2806,6 +3538,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.PatchEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
+        """
+        @summary 修改日程
+        
+        @param request: PatchEventRequest
+        @param headers: PatchEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PatchEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees):
@@ -2870,6 +3610,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.PatchEventRequest,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
+        """
+        @summary 修改日程
+        
+        @param request: PatchEventRequest
+        @return: PatchEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.PatchEventHeaders()
         return self.patch_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2881,6 +3627,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.PatchEventRequest,
     ) -> dingtalkcalendar__1__0_models.PatchEventResponse:
+        """
+        @summary 修改日程
+        
+        @param request: PatchEventRequest
+        @return: PatchEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.PatchEventHeaders()
         return await self.patch_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2894,6 +3646,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RemoveAttendeeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
+        """
+        @summary 删除日程参与人
+        
+        @param request: RemoveAttendeeRequest
+        @param headers: RemoveAttendeeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveAttendeeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_remove):
@@ -2934,6 +3694,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RemoveAttendeeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
+        """
+        @summary 删除日程参与人
+        
+        @param request: RemoveAttendeeRequest
+        @param headers: RemoveAttendeeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveAttendeeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attendees_to_remove):
@@ -2972,6 +3740,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RemoveAttendeeRequest,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
+        """
+        @summary 删除日程参与人
+        
+        @param request: RemoveAttendeeRequest
+        @return: RemoveAttendeeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RemoveAttendeeHeaders()
         return self.remove_attendee_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2983,6 +3757,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RemoveAttendeeRequest,
     ) -> dingtalkcalendar__1__0_models.RemoveAttendeeResponse:
+        """
+        @summary 删除日程参与人
+        
+        @param request: RemoveAttendeeRequest
+        @return: RemoveAttendeeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RemoveAttendeeHeaders()
         return await self.remove_attendee_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -2996,6 +3776,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        """
+        @summary 删除会议室
+        
+        @param request: RemoveMeetingRoomsRequest
+        @param headers: RemoveMeetingRoomsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveMeetingRoomsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.meeting_rooms_to_remove):
@@ -3036,6 +3824,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        """
+        @summary 删除会议室
+        
+        @param request: RemoveMeetingRoomsRequest
+        @param headers: RemoveMeetingRoomsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveMeetingRoomsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.meeting_rooms_to_remove):
@@ -3074,6 +3870,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
     ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        """
+        @summary 删除会议室
+        
+        @param request: RemoveMeetingRoomsRequest
+        @return: RemoveMeetingRoomsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders()
         return self.remove_meeting_rooms_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -3085,6 +3887,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RemoveMeetingRoomsRequest,
     ) -> dingtalkcalendar__1__0_models.RemoveMeetingRoomsResponse:
+        """
+        @summary 删除会议室
+        
+        @param request: RemoveMeetingRoomsRequest
+        @return: RemoveMeetingRoomsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RemoveMeetingRoomsHeaders()
         return await self.remove_meeting_rooms_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -3098,6 +3906,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RespondEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
+        """
+        @summary 回复日程邀请
+        
+        @param request: RespondEventRequest
+        @param headers: RespondEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RespondEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.response_status):
@@ -3138,6 +3954,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.RespondEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
+        """
+        @summary 回复日程邀请
+        
+        @param request: RespondEventRequest
+        @param headers: RespondEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RespondEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.response_status):
@@ -3176,6 +4000,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RespondEventRequest,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
+        """
+        @summary 回复日程邀请
+        
+        @param request: RespondEventRequest
+        @return: RespondEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RespondEventHeaders()
         return self.respond_event_with_options(user_id, calendar_id, event_id, request, headers, runtime)
@@ -3187,6 +4017,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.RespondEventRequest,
     ) -> dingtalkcalendar__1__0_models.RespondEventResponse:
+        """
+        @summary 回复日程邀请
+        
+        @param request: RespondEventRequest
+        @return: RespondEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.RespondEventHeaders()
         return await self.respond_event_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
@@ -3199,6 +4035,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SignInHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        """
+        @summary 签到
+        
+        @param headers: SignInHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SignInResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3231,6 +4074,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SignInHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        """
+        @summary 签到
+        
+        @param headers: SignInHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SignInResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3261,6 +4111,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        """
+        @summary 签到
+        
+        @return: SignInResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SignInHeaders()
         return self.sign_in_with_options(user_id, calendar_id, event_id, headers, runtime)
@@ -3271,6 +4126,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.SignInResponse:
+        """
+        @summary 签到
+        
+        @return: SignInResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SignInHeaders()
         return await self.sign_in_with_options_async(user_id, calendar_id, event_id, headers, runtime)
@@ -3283,6 +4143,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SignOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        """
+        @summary 签退
+        
+        @param headers: SignOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SignOutResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3315,6 +4182,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SignOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        """
+        @summary 签退
+        
+        @param headers: SignOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SignOutResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3345,6 +4219,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        """
+        @summary 签退
+        
+        @return: SignOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SignOutHeaders()
         return self.sign_out_with_options(user_id, calendar_id, event_id, headers, runtime)
@@ -3355,6 +4234,11 @@ class Client(OpenApiClient):
         calendar_id: str,
         event_id: str,
     ) -> dingtalkcalendar__1__0_models.SignOutResponse:
+        """
+        @summary 签退
+        
+        @return: SignOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SignOutHeaders()
         return await self.sign_out_with_options_async(user_id, calendar_id, event_id, headers, runtime)
@@ -3366,6 +4250,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SubscribeCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        """
+        @summary 订阅公共日历
+        
+        @param headers: SubscribeCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubscribeCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3397,6 +4288,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.SubscribeCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        """
+        @summary 订阅公共日历
+        
+        @param headers: SubscribeCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubscribeCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3426,6 +4324,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        """
+        @summary 订阅公共日历
+        
+        @return: SubscribeCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SubscribeCalendarHeaders()
         return self.subscribe_calendar_with_options(user_id, calendar_id, headers, runtime)
@@ -3435,6 +4338,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.SubscribeCalendarResponse:
+        """
+        @summary 订阅公共日历
+        
+        @return: SubscribeCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.SubscribeCalendarHeaders()
         return await self.subscribe_calendar_with_options_async(user_id, calendar_id, headers, runtime)
@@ -3448,6 +4356,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.TransferEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        """
+        @summary 日程转让
+        
+        @param request: TransferEventRequest
+        @param headers: TransferEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TransferEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.is_exit_calendar):
@@ -3492,6 +4408,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.TransferEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        """
+        @summary 日程转让
+        
+        @param request: TransferEventRequest
+        @param headers: TransferEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TransferEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.is_exit_calendar):
@@ -3534,6 +4458,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.TransferEventRequest,
     ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        """
+        @summary 日程转让
+        
+        @param request: TransferEventRequest
+        @return: TransferEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.TransferEventHeaders()
         return self.transfer_event_with_options(calendar_id, user_id, event_id, request, headers, runtime)
@@ -3545,6 +4475,12 @@ class Client(OpenApiClient):
         event_id: str,
         request: dingtalkcalendar__1__0_models.TransferEventRequest,
     ) -> dingtalkcalendar__1__0_models.TransferEventResponse:
+        """
+        @summary 日程转让
+        
+        @param request: TransferEventRequest
+        @return: TransferEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.TransferEventHeaders()
         return await self.transfer_event_with_options_async(calendar_id, user_id, event_id, request, headers, runtime)
@@ -3556,6 +4492,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.UnsubscribeCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.UnsubscribeCalendarResponse:
+        """
+        @summary 取消订阅公共日历
+        
+        @param headers: UnsubscribeCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnsubscribeCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3587,6 +4530,13 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.UnsubscribeCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.UnsubscribeCalendarResponse:
+        """
+        @summary 取消订阅公共日历
+        
+        @param headers: UnsubscribeCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnsubscribeCalendarResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3616,6 +4566,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.UnsubscribeCalendarResponse:
+        """
+        @summary 取消订阅公共日历
+        
+        @return: UnsubscribeCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.UnsubscribeCalendarHeaders()
         return self.unsubscribe_calendar_with_options(user_id, calendar_id, headers, runtime)
@@ -3625,6 +4580,11 @@ class Client(OpenApiClient):
         user_id: str,
         calendar_id: str,
     ) -> dingtalkcalendar__1__0_models.UnsubscribeCalendarResponse:
+        """
+        @summary 取消订阅公共日历
+        
+        @return: UnsubscribeCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.UnsubscribeCalendarHeaders()
         return await self.unsubscribe_calendar_with_options_async(user_id, calendar_id, headers, runtime)
@@ -3637,6 +4597,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsResponse:
+        """
+        @summary 更新指定订阅日历
+        
+        @param request: UpdateSubscribedCalendarsRequest
+        @param headers: UpdateSubscribedCalendarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSubscribedCalendarsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -3680,6 +4648,14 @@ class Client(OpenApiClient):
         headers: dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsResponse:
+        """
+        @summary 更新指定订阅日历
+        
+        @param request: UpdateSubscribedCalendarsRequest
+        @param headers: UpdateSubscribedCalendarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSubscribedCalendarsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -3721,6 +4697,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsRequest,
     ) -> dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsResponse:
+        """
+        @summary 更新指定订阅日历
+        
+        @param request: UpdateSubscribedCalendarsRequest
+        @return: UpdateSubscribedCalendarsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsHeaders()
         return self.update_subscribed_calendars_with_options(calendar_id, user_id, request, headers, runtime)
@@ -3731,6 +4713,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsRequest,
     ) -> dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsResponse:
+        """
+        @summary 更新指定订阅日历
+        
+        @param request: UpdateSubscribedCalendarsRequest
+        @return: UpdateSubscribedCalendarsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.UpdateSubscribedCalendarsHeaders()
         return await self.update_subscribed_calendars_with_options_async(calendar_id, user_id, request, headers, runtime)

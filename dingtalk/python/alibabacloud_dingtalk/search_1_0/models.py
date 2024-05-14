@@ -51,10 +51,12 @@ class BatchInsertSearchItemRequestSearchItemModels(TeaModel):
     ):
         self.footer = footer
         self.icon = icon
+        # This parameter is required.
         self.item_id = item_id
         self.mobile_url = mobile_url
         self.pc_url = pc_url
         self.summary = summary
+        # This parameter is required.
         self.title = title
         self.url = url
 
@@ -111,6 +113,7 @@ class BatchInsertSearchItemRequest(TeaModel):
         self,
         search_item_models: List[BatchInsertSearchItemRequestSearchItemModels] = None,
     ):
+        # This parameter is required.
         self.search_item_models = search_item_models
 
     def validate(self):
@@ -219,9 +222,12 @@ class CreateSearchTabRequest(TeaModel):
     ):
         self.dark_icon = dark_icon
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.priority = priority
         self.source = source
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -269,6 +275,7 @@ class CreateSearchTabResponseBody(TeaModel):
         self,
         tab_id: int = None,
     ):
+        # This parameter is required.
         self.tab_id = tab_id
 
     def validate(self):
@@ -512,16 +519,27 @@ class GetSearchItemResponseBody(TeaModel):
         title: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.footer = footer
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.item_id = item_id
+        # This parameter is required.
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.pc_url = pc_url
+        # This parameter is required.
         self.summary = summary
+        # This parameter is required.
         self.tab_id = tab_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -665,8 +683,11 @@ class GetSearchItemsByKeyWordRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.key_word = key_word
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -712,16 +733,27 @@ class GetSearchItemsByKeyWordResponseBodyValue(TeaModel):
         title: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.footer = footer
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.item_id = item_id
+        # This parameter is required.
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.pc_url = pc_url
+        # This parameter is required.
         self.summary = summary
+        # This parameter is required.
         self.tab_id = tab_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -791,8 +823,11 @@ class GetSearchItemsByKeyWordResponseBody(TeaModel):
         total_count: int = None,
         value: List[GetSearchItemsByKeyWordResponseBodyValue] = None,
     ):
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -919,13 +954,19 @@ class GetSearchTabResponseBody(TeaModel):
         tab_id: int = None,
     ):
         self.dark_icon = dark_icon
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.priority = priority
         self.source = source
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.tab_id = tab_id
 
     def validate(self):
@@ -1068,10 +1109,12 @@ class InsertSearchItemRequest(TeaModel):
     ):
         self.footer = footer
         self.icon = icon
+        # This parameter is required.
         self.item_id = item_id
         self.mobile_url = mobile_url
         self.pc_url = pc_url
         self.summary = summary
+        # This parameter is required.
         self.title = title
         self.url = url
 
@@ -1203,13 +1246,19 @@ class ListSearchTabsByOrgIdResponseBodySearchTabResult(TeaModel):
         tab_id: int = None,
     ):
         self.dark_icon = dark_icon
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.priority = priority
         self.source = source
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.tab_id = tab_id
 
     def validate(self):
@@ -1269,6 +1318,7 @@ class ListSearchTabsByOrgIdResponseBody(TeaModel):
         self,
         search_tab_result: List[ListSearchTabsByOrgIdResponseBodySearchTabResult] = None,
     ):
+        # This parameter is required.
         self.search_tab_result = search_tab_result
 
     def validate(self):
@@ -1385,9 +1435,12 @@ class UpdateSearchTabRequest(TeaModel):
     ):
         self.dark_icon = dark_icon
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.priority = priority
         self.source = source
+        # This parameter is required.
         self.status = status
 
     def validate(self):

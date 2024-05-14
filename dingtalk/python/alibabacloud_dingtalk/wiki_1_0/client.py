@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkwiki__1__0_models.WikiWordsDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwiki__1__0_models.WikiWordsDetailResponse:
+        """
+        @summary 根据词条名称获取该词条释义
+        
+        @param request: WikiWordsDetailRequest
+        @param headers: WikiWordsDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WikiWordsDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.word_name):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkwiki__1__0_models.WikiWordsDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwiki__1__0_models.WikiWordsDetailResponse:
+        """
+        @summary 根据词条名称获取该词条释义
+        
+        @param request: WikiWordsDetailRequest
+        @param headers: WikiWordsDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WikiWordsDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.word_name):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwiki__1__0_models.WikiWordsDetailRequest,
     ) -> dingtalkwiki__1__0_models.WikiWordsDetailResponse:
+        """
+        @summary 根据词条名称获取该词条释义
+        
+        @param request: WikiWordsDetailRequest
+        @return: WikiWordsDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__1__0_models.WikiWordsDetailHeaders()
         return self.wiki_words_detail_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwiki__1__0_models.WikiWordsDetailRequest,
     ) -> dingtalkwiki__1__0_models.WikiWordsDetailResponse:
+        """
+        @summary 根据词条名称获取该词条释义
+        
+        @param request: WikiWordsDetailRequest
+        @return: WikiWordsDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__1__0_models.WikiWordsDetailHeaders()
         return await self.wiki_words_detail_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkwiki__1__0_models.WikiWordsParseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwiki__1__0_models.WikiWordsParseResponse:
+        """
+        @summary 外部传递过来的消息根据百科词库分词
+        
+        @param request: WikiWordsParseRequest
+        @param headers: WikiWordsParseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WikiWordsParseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkwiki__1__0_models.WikiWordsParseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwiki__1__0_models.WikiWordsParseResponse:
+        """
+        @summary 外部传递过来的消息根据百科词库分词
+        
+        @param request: WikiWordsParseRequest
+        @param headers: WikiWordsParseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WikiWordsParseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -189,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwiki__1__0_models.WikiWordsParseRequest,
     ) -> dingtalkwiki__1__0_models.WikiWordsParseResponse:
+        """
+        @summary 外部传递过来的消息根据百科词库分词
+        
+        @param request: WikiWordsParseRequest
+        @return: WikiWordsParseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__1__0_models.WikiWordsParseHeaders()
         return self.wiki_words_parse_with_options(request, headers, runtime)
@@ -197,6 +247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwiki__1__0_models.WikiWordsParseRequest,
     ) -> dingtalkwiki__1__0_models.WikiWordsParseResponse:
+        """
+        @summary 外部传递过来的消息根据百科词库分词
+        
+        @param request: WikiWordsParseRequest
+        @return: WikiWordsParseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwiki__1__0_models.WikiWordsParseHeaders()
         return await self.wiki_words_parse_with_options_async(request, headers, runtime)

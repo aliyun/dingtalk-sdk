@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        """
+        @summary 合同权益核销
+        
+        @param request: ContractBenefitConsumeRequest
+        @param headers: ContractBenefitConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ContractBenefitConsumeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.benefit_point):
@@ -82,6 +90,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        """
+        @summary 合同权益核销
+        
+        @param request: ContractBenefitConsumeRequest
+        @param headers: ContractBenefitConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ContractBenefitConsumeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.benefit_point):
@@ -127,6 +143,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
     ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        """
+        @summary 合同权益核销
+        
+        @param request: ContractBenefitConsumeRequest
+        @return: ContractBenefitConsumeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
         return self.contract_benefit_consume_with_options(request, headers, runtime)
@@ -135,6 +157,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.ContractBenefitConsumeRequest,
     ) -> dingtalkcontract__1__0_models.ContractBenefitConsumeResponse:
+        """
+        @summary 合同权益核销
+        
+        @param request: ContractBenefitConsumeRequest
+        @return: ContractBenefitConsumeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
         return await self.contract_benefit_consume_with_options_async(request, headers, runtime)
@@ -145,6 +173,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        """
+        @summary 天谷侧查询审批单
+        
+        @param request: EsignQueryApprovalInfoRequest
+        @param headers: EsignQueryApprovalInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryApprovalInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -184,6 +220,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        """
+        @summary 天谷侧查询审批单
+        
+        @param request: EsignQueryApprovalInfoRequest
+        @param headers: EsignQueryApprovalInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryApprovalInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -221,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        """
+        @summary 天谷侧查询审批单
+        
+        @param request: EsignQueryApprovalInfoRequest
+        @return: EsignQueryApprovalInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders()
         return self.esign_query_approval_info_with_options(request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryApprovalInfoResponse:
+        """
+        @summary 天谷侧查询审批单
+        
+        @param request: EsignQueryApprovalInfoRequest
+        @return: EsignQueryApprovalInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryApprovalInfoHeaders()
         return await self.esign_query_approval_info_with_options_async(request, headers, runtime)
@@ -239,6 +295,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        """
+        @summary 天谷侧查询授权信息接口
+        
+        @param request: EsignQueryGrantInfoRequest
+        @param headers: EsignQueryGrantInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryGrantInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -278,6 +342,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        """
+        @summary 天谷侧查询授权信息接口
+        
+        @param request: EsignQueryGrantInfoRequest
+        @param headers: EsignQueryGrantInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryGrantInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -315,6 +387,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        """
+        @summary 天谷侧查询授权信息接口
+        
+        @param request: EsignQueryGrantInfoRequest
+        @return: EsignQueryGrantInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders()
         return self.esign_query_grant_info_with_options(request, headers, runtime)
@@ -323,6 +401,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryGrantInfoRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryGrantInfoResponse:
+        """
+        @summary 天谷侧查询授权信息接口
+        
+        @param request: EsignQueryGrantInfoRequest
+        @return: EsignQueryGrantInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryGrantInfoHeaders()
         return await self.esign_query_grant_info_with_options_async(request, headers, runtime)
@@ -333,6 +417,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        """
+        @summary 天谷侧查询获取免登信息
+        
+        @param request: EsignQueryIdentityByTicketRequest
+        @param headers: EsignQueryIdentityByTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryIdentityByTicketResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -372,6 +464,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        """
+        @summary 天谷侧查询获取免登信息
+        
+        @param request: EsignQueryIdentityByTicketRequest
+        @param headers: EsignQueryIdentityByTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignQueryIdentityByTicketResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -409,6 +509,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        """
+        @summary 天谷侧查询获取免登信息
+        
+        @param request: EsignQueryIdentityByTicketRequest
+        @return: EsignQueryIdentityByTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders()
         return self.esign_query_identity_by_ticket_with_options(request, headers, runtime)
@@ -417,6 +523,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignQueryIdentityByTicketRequest,
     ) -> dingtalkcontract__1__0_models.EsignQueryIdentityByTicketResponse:
+        """
+        @summary 天谷侧查询获取免登信息
+        
+        @param request: EsignQueryIdentityByTicketRequest
+        @return: EsignQueryIdentityByTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignQueryIdentityByTicketHeaders()
         return await self.esign_query_identity_by_ticket_with_options_async(request, headers, runtime)
@@ -427,6 +539,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignSyncEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        """
+        @summary e签宝电子签事件同步回传接口
+        
+        @param request: EsignSyncEventRequest
+        @param headers: EsignSyncEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignSyncEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -470,6 +590,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.EsignSyncEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        """
+        @summary e签宝电子签事件同步回传接口
+        
+        @param request: EsignSyncEventRequest
+        @param headers: EsignSyncEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignSyncEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -511,6 +639,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
     ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        """
+        @summary e签宝电子签事件同步回传接口
+        
+        @param request: EsignSyncEventRequest
+        @return: EsignSyncEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
         return self.esign_sync_event_with_options(request, headers, runtime)
@@ -519,6 +653,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.EsignSyncEventRequest,
     ) -> dingtalkcontract__1__0_models.EsignSyncEventResponse:
+        """
+        @summary e签宝电子签事件同步回传接口
+        
+        @param request: EsignSyncEventRequest
+        @return: EsignSyncEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
         return await self.esign_sync_event_with_options_async(request, headers, runtime)
@@ -529,6 +669,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.QueryAdvancedContractVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.QueryAdvancedContractVersionResponse:
+        """
+        @summary e签宝查询智能合同版本接口
+        
+        @param request: QueryAdvancedContractVersionRequest
+        @param headers: QueryAdvancedContractVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAdvancedContractVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -566,6 +714,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.QueryAdvancedContractVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.QueryAdvancedContractVersionResponse:
+        """
+        @summary e签宝查询智能合同版本接口
+        
+        @param request: QueryAdvancedContractVersionRequest
+        @param headers: QueryAdvancedContractVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAdvancedContractVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -601,6 +757,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.QueryAdvancedContractVersionRequest,
     ) -> dingtalkcontract__1__0_models.QueryAdvancedContractVersionResponse:
+        """
+        @summary e签宝查询智能合同版本接口
+        
+        @param request: QueryAdvancedContractVersionRequest
+        @return: QueryAdvancedContractVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.QueryAdvancedContractVersionHeaders()
         return self.query_advanced_contract_version_with_options(request, headers, runtime)
@@ -609,6 +771,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.QueryAdvancedContractVersionRequest,
     ) -> dingtalkcontract__1__0_models.QueryAdvancedContractVersionResponse:
+        """
+        @summary e签宝查询智能合同版本接口
+        
+        @param request: QueryAdvancedContractVersionRequest
+        @return: QueryAdvancedContractVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.QueryAdvancedContractVersionHeaders()
         return await self.query_advanced_contract_version_with_options_async(request, headers, runtime)
@@ -619,6 +787,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.SendContractCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.SendContractCardResponse:
+        """
+        @summary 发送合同相关卡片
+        
+        @param request: SendContractCardRequest
+        @param headers: SendContractCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendContractCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_type):
@@ -670,6 +846,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontract__1__0_models.SendContractCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontract__1__0_models.SendContractCardResponse:
+        """
+        @summary 发送合同相关卡片
+        
+        @param request: SendContractCardRequest
+        @param headers: SendContractCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendContractCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_type):
@@ -719,6 +903,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.SendContractCardRequest,
     ) -> dingtalkcontract__1__0_models.SendContractCardResponse:
+        """
+        @summary 发送合同相关卡片
+        
+        @param request: SendContractCardRequest
+        @return: SendContractCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.SendContractCardHeaders()
         return self.send_contract_card_with_options(request, headers, runtime)
@@ -727,6 +917,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontract__1__0_models.SendContractCardRequest,
     ) -> dingtalkcontract__1__0_models.SendContractCardResponse:
+        """
+        @summary 发送合同相关卡片
+        
+        @param request: SendContractCardRequest
+        @return: SendContractCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.SendContractCardHeaders()
         return await self.send_contract_card_with_options_async(request, headers, runtime)

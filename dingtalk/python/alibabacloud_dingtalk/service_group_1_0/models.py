@@ -49,7 +49,9 @@ class AddContactMemberToGroupRequest(TeaModel):
         self.fission_type = fission_type
         self.member_union_id = member_union_id
         self.member_user_id = member_user_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -631,8 +633,11 @@ class AddMemberToServiceGroupRequest(TeaModel):
         open_team_id: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -774,11 +779,16 @@ class AddOpenCategoryRequest(TeaModel):
         user_id: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.library_id = library_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.parent_id = parent_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -1040,19 +1050,29 @@ class AddOpenKnowledgeRequest(TeaModel):
         user_name: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.category_id = category_id
+        # This parameter is required.
         self.content = content
         self.effect_timeend = effect_timeend
         self.effect_timestart = effect_timestart
+        # This parameter is required.
         self.ext_title = ext_title
         self.keyword = keyword
+        # This parameter is required.
         self.library_id = library_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.source = source
         self.tags = tags
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -1148,6 +1168,7 @@ class AddOpenKnowledgeResponseBodyResult(TeaModel):
     ):
         self.id = id
         self.message = message
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1184,7 +1205,9 @@ class AddOpenKnowledgeResponseBody(TeaModel):
         result: AddOpenKnowledgeResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1299,11 +1322,17 @@ class AddOpenLibraryRequest(TeaModel):
         user_name: str = None,
     ):
         self.description = description
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.source = source
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -1357,8 +1386,10 @@ class AddOpenLibraryResponseBodyResult(TeaModel):
         message: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.id = id
         self.message = message
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1395,7 +1426,9 @@ class AddOpenLibraryResponseBody(TeaModel):
         result: AddOpenLibraryResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1538,6 +1571,7 @@ class AddTicketMemoRequestTicketMemo(TeaModel):
         memo: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.memo = memo
 
     def validate(self):
@@ -1580,8 +1614,11 @@ class AddTicketMemoRequest(TeaModel):
         processor_union_id: str = None,
         ticket_memo: AddTicketMemoRequestTicketMemo = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.processor_union_id = processor_union_id
         self.ticket_memo = ticket_memo
 
@@ -1764,6 +1801,7 @@ class AssignTicketRequestTicketMemo(TeaModel):
         memo: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.memo = memo
 
     def validate(self):
@@ -1809,9 +1847,13 @@ class AssignTicketRequest(TeaModel):
         ticket_memo: AssignTicketRequestTicketMemo = None,
     ):
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.operator_union_id = operator_union_id
+        # This parameter is required.
         self.processor_union_ids = processor_union_ids
         self.ticket_memo = ticket_memo
 
@@ -1932,7 +1974,9 @@ class BatchBindingGroupBizIdsRequestBindingGroupBizIds(TeaModel):
         biz_id: str = None,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1965,7 +2009,9 @@ class BatchBindingGroupBizIdsRequest(TeaModel):
         binding_group_biz_ids: List[BatchBindingGroupBizIdsRequestBindingGroupBizIds] = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.binding_group_biz_ids = binding_group_biz_ids
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -2108,8 +2154,11 @@ class BatchGetGroupSetConfigRequest(TeaModel):
         open_group_set_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.config_keys = config_keys
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -2146,7 +2195,9 @@ class BatchGetGroupSetConfigResponseBodyGroupSetConfigs(TeaModel):
         config_key: str = None,
         config_value: str = None,
     ):
+        # This parameter is required.
         self.config_key = config_key
+        # This parameter is required.
         self.config_value = config_value
 
     def validate(self):
@@ -2297,9 +2348,11 @@ class BatchQueryCustomerSendTaskRequest(TeaModel):
         self.gmt_create_end = gmt_create_end
         self.gmt_create_start = gmt_create_start
         self.max_results = max_results
+        # This parameter is required.
         self.need_rich_statistics = need_rich_statistics
         self.next_token = next_token
         self.open_batch_task_ids = open_batch_task_ids
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.task_name = task_name
 
@@ -2446,9 +2499,12 @@ class BatchQueryCustomerSendTaskResponseBody(TeaModel):
         records: List[BatchQueryCustomerSendTaskResponseBodyRecords] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.records = records
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -2573,9 +2629,11 @@ class BatchQueryGroupMemberRequest(TeaModel):
         open_conversation_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -2806,6 +2864,7 @@ class BatchQuerySendMessageTaskRequest(TeaModel):
         self.max_results = max_results
         self.next_token = next_token
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.task_name = task_name
 
@@ -2877,6 +2936,7 @@ class BatchQuerySendMessageTaskResponseBodyRecords(TeaModel):
         self.read_group_inc = read_group_inc
         self.send_group_inc = send_group_inc
         self.send_message_status = send_message_status
+        # This parameter is required.
         self.send_task_time_str = send_task_time_str
         self.task_name = task_name
 
@@ -3069,11 +3129,16 @@ class BoundTemplateToTeamRequest(TeaModel):
         template_name: str = None,
         template_type: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.robot_config = robot_config
         self.template_desc = template_desc
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.template_name = template_name
+        # This parameter is required.
         self.template_type = template_type
 
     def validate(self):
@@ -3340,7 +3405,9 @@ class CancelTicketRequest(TeaModel):
         ticket_memo: CancelTicketRequestTicketMemo = None,
     ):
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
         self.operator_union_id = operator_union_id
         self.ticket_memo = ticket_memo
@@ -3459,8 +3526,11 @@ class CategoryStatisticsRequest(TeaModel):
         min_dt: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -3498,8 +3568,11 @@ class CategoryStatisticsResponseBodyCategoryStatisticsRecords(TeaModel):
         last_count: int = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.last_count = last_count
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -3537,8 +3610,11 @@ class CategoryStatisticsResponseBodyCategoryTrend(TeaModel):
         dt: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.dt = dt
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -3575,7 +3651,9 @@ class CategoryStatisticsResponseBody(TeaModel):
         category_statistics_records: List[CategoryStatisticsResponseBodyCategoryStatisticsRecords] = None,
         category_trend: List[CategoryStatisticsResponseBodyCategoryTrend] = None,
     ):
+        # This parameter is required.
         self.category_statistics_records = category_statistics_records
+        # This parameter is required.
         self.category_trend = category_trend
 
     def validate(self):
@@ -3875,7 +3953,9 @@ class CloseHumanSessionRequest(TeaModel):
         open_conversation_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -3907,6 +3987,7 @@ class CloseHumanSessionResponseBody(TeaModel):
         self,
         session_id: int = None,
     ):
+        # This parameter is required.
         self.session_id = session_id
 
     def validate(self):
@@ -4573,11 +4654,15 @@ class CreateGroupRequest(TeaModel):
         owner_staff_id: str = None,
     ):
         self.group_biz_id = group_biz_id
+        # This parameter is required.
         self.group_name = group_name
         self.group_tag_names = group_tag_names
         self.member_staff_ids = member_staff_ids
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.owner_staff_id = owner_staff_id
 
     def validate(self):
@@ -4630,7 +4715,9 @@ class CreateGroupResponseBody(TeaModel):
         group_url: str = None,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.group_url = group_url
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -4932,8 +5019,11 @@ class CreateGroupSetRequest(TeaModel):
         group_template_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.group_set_name = group_set_name
+        # This parameter is required.
         self.group_template_id = group_template_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -5078,8 +5168,11 @@ class CreateInstanceRequest(TeaModel):
     ):
         self.channel = channel
         self.external_biz_id = external_biz_id
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_data_list = form_data_list
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.operator_union_id = operator_union_id
         self.owner_union_id = owner_union_id
@@ -5235,7 +5328,9 @@ class CreateTeamRequest(TeaModel):
         creator_ding_union_id: str = None,
         team_name: str = None,
     ):
+        # This parameter is required.
         self.creator_ding_union_id = creator_ding_union_id
+        # This parameter is required.
         self.team_name = team_name
 
     def validate(self):
@@ -5501,14 +5596,20 @@ class CreateTicketRequest(TeaModel):
         scene_context: CreateTicketRequestSceneContext = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
         self.custom_fields = custom_fields
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_template_biz_id = open_template_biz_id
+        # This parameter is required.
         self.processor_union_ids = processor_union_ids
+        # This parameter is required.
         self.scene = scene
         self.scene_context = scene_context
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -5711,8 +5812,11 @@ class CustomerSendMsgTaskRequestMessageContent(TeaModel):
         title: str = None,
     ):
         self.btns = btns
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.message_type = message_type
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -5847,8 +5951,10 @@ class CustomerSendMsgTaskRequestSendConfig(TeaModel):
         send_type: str = None,
         url_track_config: List[CustomerSendMsgTaskRequestSendConfigUrlTrackConfig] = None,
     ):
+        # This parameter is required.
         self.need_url_track = need_url_track
         self.send_time = send_time
+        # This parameter is required.
         self.send_type = send_type
         self.url_track_config = url_track_config
 
@@ -5901,10 +6007,13 @@ class CustomerSendMsgTaskRequest(TeaModel):
         send_config: CustomerSendMsgTaskRequestSendConfig = None,
         task_name: str = None,
     ):
+        # This parameter is required.
         self.message_content = message_content
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.query_customer = query_customer
         self.send_config = send_config
+        # This parameter is required.
         self.task_name = task_name
 
     def validate(self):
@@ -6061,10 +6170,13 @@ class DeleteGroupMembersFromGroupRequest(TeaModel):
         open_group_set_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.delete_group_type = delete_group_type
+        # This parameter is required.
         self.member_union_id = member_union_id
         self.open_conversation_id = open_conversation_id
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -6212,8 +6324,11 @@ class DeleteInstanceRequest(TeaModel):
         open_team_id: str = None,
         operator_union_id: str = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.open_data_instance_id = open_data_instance_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.operator_union_id = operator_union_id
 
@@ -6507,12 +6622,15 @@ class EmotionStatisticsRequest(TeaModel):
         open_group_set_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
         self.max_emotion = max_emotion
+        # This parameter is required.
         self.min_dt = min_dt
         self.min_emotion = min_emotion
         self.open_conversation_ids = open_conversation_ids
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -6566,8 +6684,11 @@ class EmotionStatisticsResponseBodyEmotionStatisticsRecords(TeaModel):
         dt: str = None,
         emotion_score: float = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.dt = dt
+        # This parameter is required.
         self.emotion_score = emotion_score
 
     def validate(self):
@@ -6603,6 +6724,7 @@ class EmotionStatisticsResponseBody(TeaModel):
         self,
         emotion_statistics_records: List[EmotionStatisticsResponseBodyEmotionStatisticsRecords] = None,
     ):
+        # This parameter is required.
         self.emotion_statistics_records = emotion_statistics_records
 
     def validate(self):
@@ -6786,6 +6908,7 @@ class FinishTicketRequestTicketMemo(TeaModel):
         memo: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.memo = memo
 
     def validate(self):
@@ -6830,9 +6953,13 @@ class FinishTicketRequest(TeaModel):
         ticket_memo: FinishTicketRequestTicketMemo = None,
     ):
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.processor_union_id = processor_union_id
+        # This parameter is required.
         self.ticket_memo = ticket_memo
 
     def validate(self):
@@ -7172,8 +7299,11 @@ class GetInstancesByIdsRequest(TeaModel):
         open_data_instance_id_list: List[str] = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.open_data_instance_id_list = open_data_instance_id_list
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -7219,11 +7349,15 @@ class GetInstancesByIdsResponseBodyCustomFormInstanceResponseList(TeaModel):
     ):
         self.creator_union_id = creator_union_id
         self.fields = fields
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
         self.modified_union_id = modified_union_id
         self.open_data_instance_id = open_data_instance_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.owner_union_id = owner_union_id
 
@@ -7393,6 +7527,7 @@ class GetNegativeWordCloudRequest(TeaModel):
         self,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -7421,7 +7556,9 @@ class GetNegativeWordCloudResponseBodyWords(TeaModel):
         count: int = None,
         word: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.word = word
 
     def validate(self):
@@ -7453,6 +7590,7 @@ class GetNegativeWordCloudResponseBody(TeaModel):
         self,
         words: List[GetNegativeWordCloudResponseBodyWords] = None,
     ):
+        # This parameter is required.
         self.words = words
 
     def validate(self):
@@ -7565,9 +7703,13 @@ class GetOssTempUrlRequest(TeaModel):
         key: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.fetch_mode = fetch_mode
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -7711,9 +7853,13 @@ class GetStoragePolicyRequest(TeaModel):
         file_size: int = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_size = file_size
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -7879,7 +8025,9 @@ class GetTicketRequest(TeaModel):
         open_team_id: str = None,
         open_ticket_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
 
     def validate(self):
@@ -8239,6 +8387,7 @@ class GetWordCloudRequest(TeaModel):
         self,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -8267,7 +8416,9 @@ class GetWordCloudResponseBodyWords(TeaModel):
         count: int = None,
         word: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.word = word
 
     def validate(self):
@@ -8299,6 +8450,7 @@ class GetWordCloudResponseBody(TeaModel):
         self,
         words: List[GetWordCloudResponseBodyWords] = None,
     ):
+        # This parameter is required.
         self.words = words
 
     def validate(self):
@@ -8410,8 +8562,11 @@ class GroupStatisticsRequest(TeaModel):
         min_dt: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -8448,7 +8603,9 @@ class GroupStatisticsResponseBodyGroupTrend(TeaModel):
         count: int = None,
         dt: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.dt = dt
 
     def validate(self):
@@ -8483,9 +8640,13 @@ class GroupStatisticsResponseBody(TeaModel):
         increase_group_count: int = None,
         increase_rate: str = None,
     ):
+        # This parameter is required.
         self.group_count = group_count
+        # This parameter is required.
         self.group_trend = group_trend
+        # This parameter is required.
         self.increase_group_count = increase_group_count
+        # This parameter is required.
         self.increase_rate = increase_rate
 
     def validate(self):
@@ -8609,8 +8770,11 @@ class IntentionCategoryStatisticsRequest(TeaModel):
         min_dt: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -8651,11 +8815,17 @@ class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords(TeaModel):
         praise_count: int = None,
         suggest_count: int = None,
     ):
+        # This parameter is required.
         self.ask_count = ask_count
+        # This parameter is required.
         self.category_name = category_name
+        # This parameter is required.
         self.dissatisfied_count = dissatisfied_count
+        # This parameter is required.
         self.error_count = error_count
+        # This parameter is required.
         self.praise_count = praise_count
+        # This parameter is required.
         self.suggest_count = suggest_count
 
     def validate(self):
@@ -8703,6 +8873,7 @@ class IntentionCategoryStatisticsResponseBody(TeaModel):
         self,
         intention_category_records: List[IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords] = None,
     ):
+        # This parameter is required.
         self.intention_category_records = intention_category_records
 
     def validate(self):
@@ -8814,8 +8985,11 @@ class IntentionStatisticsRequest(TeaModel):
         min_dt: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -8853,8 +9027,11 @@ class IntentionStatisticsResponseBodyIntentionStatisticsRecords(TeaModel):
         intention: str = None,
         last_count: int = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.intention = intention
+        # This parameter is required.
         self.last_count = last_count
 
     def validate(self):
@@ -8892,8 +9069,11 @@ class IntentionStatisticsResponseBodyIntentionTrend(TeaModel):
         dt: str = None,
         intention: str = None,
     ):
+        # This parameter is required.
         self.count = count
+        # This parameter is required.
         self.dt = dt
+        # This parameter is required.
         self.intention = intention
 
     def validate(self):
@@ -8930,7 +9110,9 @@ class IntentionStatisticsResponseBody(TeaModel):
         intention_statistics_records: List[IntentionStatisticsResponseBodyIntentionStatisticsRecords] = None,
         intention_trend: List[IntentionStatisticsResponseBodyIntentionTrend] = None,
     ):
+        # This parameter is required.
         self.intention_statistics_records = intention_statistics_records
+        # This parameter is required.
         self.intention_trend = intention_trend
 
     def validate(self):
@@ -9054,7 +9236,9 @@ class ListTicketOperateRecordRequest(TeaModel):
         open_team_id: str = None,
         open_ticket_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
 
     def validate(self):
@@ -9514,6 +9698,7 @@ class QueryActiveUsersRequest(TeaModel):
         open_team_id: str = None,
         top_n: int = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.open_team_id = open_team_id
         self.top_n = top_n
@@ -9557,12 +9742,19 @@ class QueryActiveUsersResponseBodyActiveUserInfos(TeaModel):
         ranking: int = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.action_index_l14d = action_index_l14d
+        # This parameter is required.
         self.action_index_l30d = action_index_l30d
+        # This parameter is required.
         self.action_index_l7d = action_index_l7d
+        # This parameter is required.
         self.active_score = active_score
+        # This parameter is required.
         self.nick_name = nick_name
+        # This parameter is required.
         self.ranking = ranking
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9614,6 +9806,7 @@ class QueryActiveUsersResponseBody(TeaModel):
         self,
         active_user_infos: List[QueryActiveUsersResponseBodyActiveUserInfos] = None,
     ):
+        # This parameter is required.
         self.active_user_infos = active_user_infos
 
     def validate(self):
@@ -9727,10 +9920,14 @@ class QueryCrmGroupContactRequest(TeaModel):
         open_team_id: str = None,
         search_fields: str = None,
     ):
+        # This parameter is required.
         self.min_result = min_result
         self.next_token = next_token
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.search_fields = search_fields
 
     def validate(self):
@@ -10098,7 +10295,9 @@ class QueryCustomerTaskUserDetailRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.open_batch_task_id = open_batch_task_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.receiver_union_ids = receiver_union_ids
 
@@ -10286,7 +10485,9 @@ class QueryCustomerTaskUserDetailResponseBody(TeaModel):
         records: List[QueryCustomerTaskUserDetailResponseBodyRecords] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.records = records
         self.total_count = total_count
@@ -10456,13 +10657,21 @@ class QueryGroupResponseBody(TeaModel):
         robot_code: str = None,
         robot_name: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.group_url = group_url
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.robot_code = robot_code
+        # This parameter is required.
         self.robot_name = robot_name
 
     def validate(self):
@@ -10596,6 +10805,7 @@ class QueryGroupMemberRequest(TeaModel):
     ):
         self.open_conversation_id = open_conversation_id
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.target_corp_id = target_corp_id
 
     def validate(self):
@@ -10838,6 +11048,7 @@ class QueryGroupSetRequest(TeaModel):
         self,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -10869,10 +11080,15 @@ class QueryGroupSetResponseBodyRecords(TeaModel):
         open_group_set_id: str = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.group_set_name = group_set_name
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -10916,6 +11132,7 @@ class QueryGroupSetResponseBody(TeaModel):
         self,
         records: List[QueryGroupSetResponseBodyRecords] = None,
     ):
+        # This parameter is required.
         self.records = records
 
     def validate(self):
@@ -11063,9 +11280,11 @@ class QueryInstancesByMultiConditionsRequest(TeaModel):
         search_fields: str = None,
         sort_fields: List[QueryInstancesByMultiConditionsRequestSortFields] = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.search_fields = search_fields
         self.sort_fields = sort_fields
@@ -11133,11 +11352,16 @@ class QueryInstancesByMultiConditionsResponseBodyRecords(TeaModel):
     ):
         self.creator_union_id = creator_union_id
         self.fields = fields
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
         self.modified_union_id = modified_union_id
+        # This parameter is required.
         self.open_data_instance_id = open_data_instance_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.owner_union_id = owner_union_id
 
@@ -11201,9 +11425,11 @@ class QueryInstancesByMultiConditionsResponseBody(TeaModel):
         records: List[QueryInstancesByMultiConditionsResponseBodyRecords] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.records = records
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -11330,7 +11556,9 @@ class QuerySendMsgTaskStatisticsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.open_batch_task_id = open_batch_task_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -11667,8 +11895,11 @@ class QuerySendMsgTaskStatisticsDetailRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.open_batch_task_id = open_batch_task_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -11902,8 +12133,11 @@ class QueryServiceGroupMessageReadStatusRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_msg_task_id = open_msg_task_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -12014,6 +12248,7 @@ class QueryServiceGroupMessageReadStatusResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.records = records
         self.total_count = total_count
@@ -12320,7 +12555,9 @@ class RemoveContactFromOrgRequest(TeaModel):
         contact_union_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.contact_union_id = contact_union_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -12462,11 +12699,17 @@ class ReportCustomerDetailRequest(TeaModel):
     ):
         self.has_login = has_login
         self.has_open_conv = has_open_conv
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -12529,13 +12772,21 @@ class ReportCustomerDetailResponseBodyRecords(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.at_robot_cnt = at_robot_cnt
+        # This parameter is required.
         self.customer_name = customer_name
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.has_login = has_login
+        # This parameter is required.
         self.has_open_conv = has_open_conv
+        # This parameter is required.
         self.send_msg_cnt = send_msg_cnt
+        # This parameter is required.
         self.union_id = union_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -12594,9 +12845,13 @@ class ReportCustomerDetailResponseBody(TeaModel):
         records: List[ReportCustomerDetailResponseBodyRecords] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.records = records
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -12728,12 +12983,17 @@ class ReportCustomerStatisticsRequest(TeaModel):
     ):
         self.group_owner_user_ids = group_owner_user_ids
         self.group_tags = group_tags
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
         self.open_conversation_ids = open_conversation_ids
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -12803,16 +13063,26 @@ class ReportCustomerStatisticsResponseBodyRecords(TeaModel):
         send_msg_cnt: int = None,
         sender_cnt: int = None,
     ):
+        # This parameter is required.
         self.at_robot_cnt = at_robot_cnt
         self.biz_id = biz_id
+        # This parameter is required.
         self.customer_cnt = customer_cnt
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.group_set_name = group_set_name
+        # This parameter is required.
         self.login_cnt = login_cnt
+        # This parameter is required.
         self.open_conv_cnt = open_conv_cnt
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.send_msg_cnt = send_msg_cnt
+        # This parameter is required.
         self.sender_cnt = sender_cnt
 
     def validate(self):
@@ -12883,9 +13153,13 @@ class ReportCustomerStatisticsResponseBody(TeaModel):
         records: List[ReportCustomerStatisticsResponseBodyRecords] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.current_page = current_page
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.records = records
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -13216,16 +13490,23 @@ class ResubmitTicketRequest(TeaModel):
         ticket_memo: ResubmitTicketRequestTicketMemo = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
         self.custom_fields = custom_fields
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_template_biz_id = open_template_biz_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.processor_union_ids = processor_union_ids
+        # This parameter is required.
         self.scene = scene
         self.scene_context = scene_context
         self.ticket_memo = ticket_memo
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -13485,7 +13766,9 @@ class RetractTicketRequest(TeaModel):
         ticket_memo: RetractTicketRequestTicketMemo = None,
     ):
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
         self.operator_union_id = operator_union_id
         self.ticket_memo = ticket_memo
@@ -13604,8 +13887,11 @@ class RobotMessageRecallRequest(TeaModel):
         open_msg_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_msg_id = open_msg_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -13745,7 +14031,9 @@ class SaveFormInstanceRequest(TeaModel):
         operator_union_id: str = None,
         owner_union_id: str = None,
     ):
+        # This parameter is required.
         self.form_data_list = form_data_list
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.operator_union_id = operator_union_id
         self.owner_union_id = owner_union_id
@@ -13961,10 +14249,15 @@ class SearchGroupResponseBodyRecords(TeaModel):
         open_group_set_id: str = None,
         open_team_id: str = None,
     ):
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.group_url = group_url
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.open_team_id = open_team_id
 
     def validate(self):
@@ -14012,6 +14305,7 @@ class SearchGroupResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.records = records
         self.total_count = total_count
@@ -14183,6 +14477,7 @@ class SendMsgByTaskRequestMessageContent(TeaModel):
         self.btns = btns
         self.content = content
         self.images = images
+        # This parameter is required.
         self.message_type = message_type
         self.remind = remind
         self.title = title
@@ -14269,6 +14564,7 @@ class SendMsgByTaskRequestQueryGroup(TeaModel):
         self.last_active_time_start = last_active_time_start
         self.open_conversation_ids = open_conversation_ids
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.query_type = query_type
 
     def validate(self):
@@ -14364,6 +14660,7 @@ class SendMsgByTaskRequestSendConfig(TeaModel):
     ):
         self.need_url_track = need_url_track
         self.send_time = send_time
+        # This parameter is required.
         self.send_type = send_type
         self.url_track_config = url_track_config
 
@@ -14416,10 +14713,15 @@ class SendMsgByTaskRequest(TeaModel):
         send_config: SendMsgByTaskRequestSendConfig = None,
         task_name: str = None,
     ):
+        # This parameter is required.
         self.message_content = message_content
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.query_group = query_group
+        # This parameter is required.
         self.send_config = send_config
+        # This parameter is required.
         self.task_name = task_name
 
     def validate(self):
@@ -14609,8 +14911,11 @@ class SendMsgByTaskSupportInviteJoinOrgRequestMessageContent(TeaModel):
         title: str = None,
     ):
         self.btns = btns
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.message_type = message_type
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -14663,11 +14968,17 @@ class SendMsgByTaskSupportInviteJoinOrgRequest(TeaModel):
         send_channel: str = None,
         task_name: str = None,
     ):
+        # This parameter is required.
         self.message_content = message_content
+        # This parameter is required.
         self.mobile_phones = mobile_phones
+        # This parameter is required.
         self.need_url_track = need_url_track
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.send_channel = send_channel
+        # This parameter is required.
         self.task_name = task_name
 
     def validate(self):
@@ -14869,14 +15180,18 @@ class SendServiceGroupMessageRequest(TeaModel):
         self.at_union_ids = at_union_ids
         self.btn_orientation = btn_orientation
         self.btns = btns
+        # This parameter is required.
         self.content = content
         self.has_content_links = has_content_links
         self.is_at_all = is_at_all
+        # This parameter is required.
         self.message_type = message_type
         self.receiver_dingtalk_ids = receiver_dingtalk_ids
         self.receiver_mobiles = receiver_mobiles
         self.receiver_union_ids = receiver_union_ids
+        # This parameter is required.
         self.target_open_conversation_id = target_open_conversation_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -14964,6 +15279,7 @@ class SendServiceGroupMessageResponseBody(TeaModel):
         self,
         open_msg_task_id: str = None,
     ):
+        # This parameter is required.
         self.open_msg_task_id = open_msg_task_id
 
     def validate(self):
@@ -15266,8 +15582,11 @@ class TakeTicketRequest(TeaModel):
         open_ticket_id: str = None,
         taker_union_id: str = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.taker_union_id = taker_union_id
 
     def validate(self):
@@ -15373,9 +15692,12 @@ class TopicStatisticsRequest(TeaModel):
         open_team_id: str = None,
         search_content: str = None,
     ):
+        # This parameter is required.
         self.max_dt = max_dt
+        # This parameter is required.
         self.min_dt = min_dt
         self.open_conversation_ids = open_conversation_ids
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.search_content = search_content
 
@@ -15423,9 +15745,13 @@ class TopicStatisticsResponseBodyTopicStatisticsRecords(TeaModel):
         participants_num: int = None,
         topic_num: int = None,
     ):
+        # This parameter is required.
         self.dt = dt
+        # This parameter is required.
         self.msg_count = msg_count
+        # This parameter is required.
         self.participants_num = participants_num
+        # This parameter is required.
         self.topic_num = topic_num
 
     def validate(self):
@@ -15465,6 +15791,7 @@ class TopicStatisticsResponseBody(TeaModel):
         self,
         topic_statistics_records: List[TopicStatisticsResponseBodyTopicStatisticsRecords] = None,
     ):
+        # This parameter is required.
         self.topic_statistics_records = topic_statistics_records
 
     def validate(self):
@@ -15693,9 +16020,13 @@ class TransferTicketRequest(TeaModel):
         ticket_memo: TransferTicketRequestTicketMemo = None,
     ):
         self.notify = notify
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.processor_union_id = processor_union_id
+        # This parameter is required.
         self.processor_union_ids = processor_union_ids
         self.ticket_memo = ticket_memo
 
@@ -15957,8 +16288,10 @@ class UpdateGroupTagRequest(TeaModel):
         tag_names: List[str] = None,
         update_type: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_ids = open_conversation_ids
         self.tag_names = tag_names
+        # This parameter is required.
         self.update_type = update_type
 
     def validate(self):
@@ -16067,9 +16400,13 @@ class UpdateInstanceRequest(TeaModel):
         owner_union_id: str = None,
     ):
         self.external_biz_id = external_biz_id
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_data_list = form_data_list
+        # This parameter is required.
         self.open_data_instance_id = open_data_instance_id
+        # This parameter is required.
         self.open_team_id = open_team_id
         self.operator_union_id = operator_union_id
         self.owner_union_id = owner_union_id
@@ -16259,6 +16596,7 @@ class UpdateTicketRequestTicketMemo(TeaModel):
         memo: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.memo = memo
 
     def validate(self):
@@ -16303,9 +16641,13 @@ class UpdateTicketRequest(TeaModel):
         ticket_memo: UpdateTicketRequestTicketMemo = None,
     ):
         self.custom_fields = custom_fields
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.processor_union_id = processor_union_id
+        # This parameter is required.
         self.ticket_memo = ticket_memo
 
     def validate(self):
@@ -16421,7 +16763,9 @@ class UpgradeCloudGroupRequest(TeaModel):
         open_team_id: str = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.ccs_instance_id = ccs_instance_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.open_group_set_id = open_group_set_id
         self.open_team_id = open_team_id
@@ -16537,6 +16881,7 @@ class UpgradeNormalGroupRequest(TeaModel):
         open_team_id: str = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.open_group_set_id = open_group_set_id
         self.open_team_id = open_team_id
@@ -16680,6 +17025,7 @@ class UrgeTicketRequestTicketMemo(TeaModel):
         memo: str = None,
     ):
         self.attachments = attachments
+        # This parameter is required.
         self.memo = memo
 
     def validate(self):
@@ -16722,9 +17068,13 @@ class UrgeTicketRequest(TeaModel):
         operator_union_id: str = None,
         ticket_memo: UrgeTicketRequestTicketMemo = None,
     ):
+        # This parameter is required.
         self.open_team_id = open_team_id
+        # This parameter is required.
         self.open_ticket_id = open_ticket_id
+        # This parameter is required.
         self.operator_union_id = operator_union_id
+        # This parameter is required.
         self.ticket_memo = ticket_memo
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
+        """
+        @summary 添加智能客服机器人到钉钉群
+        
+        @param request: AddRobotInstanceToGroupRequest
+        @param headers: AddRobotInstanceToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRobotInstanceToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
+        """
+        @summary 添加智能客服机器人到钉钉群
+        
+        @param request: AddRobotInstanceToGroupRequest
+        @param headers: AddRobotInstanceToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRobotInstanceToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
+        """
+        @summary 添加智能客服机器人到钉钉群
+        
+        @param request: AddRobotInstanceToGroupRequest
+        @return: AddRobotInstanceToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
         return self.add_robot_instance_to_group_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.AddRobotInstanceToGroupRequest,
     ) -> dingtalkdingmi__1__0_models.AddRobotInstanceToGroupResponse:
+        """
+        @summary 添加智能客服机器人到钉钉群
+        
+        @param request: AddRobotInstanceToGroupRequest
+        @return: AddRobotInstanceToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.AddRobotInstanceToGroupHeaders()
         return await self.add_robot_instance_to_group_with_options_async(request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.AskRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        """
+        @summary 调用小蜜机器人的问答能力
+        
+        @param request: AskRobotRequest
+        @param headers: AskRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AskRobotResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ding_user_id):
@@ -166,6 +202,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.AskRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        """
+        @summary 调用小蜜机器人的问答能力
+        
+        @param request: AskRobotRequest
+        @param headers: AskRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AskRobotResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ding_user_id):
@@ -205,6 +249,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.AskRobotRequest,
     ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        """
+        @summary 调用小蜜机器人的问答能力
+        
+        @param request: AskRobotRequest
+        @return: AskRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
         return self.ask_robot_with_options(request, headers, runtime)
@@ -213,6 +263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.AskRobotRequest,
     ) -> dingtalkdingmi__1__0_models.AskRobotResponse:
+        """
+        @summary 调用小蜜机器人的问答能力
+        
+        @param request: AskRobotRequest
+        @return: AskRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.AskRobotHeaders()
         return await self.ask_robot_with_options_async(request, headers, runtime)
@@ -223,6 +279,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        """
+        @summary 小蜜机器人数据统计指标
+        
+        @param request: GetDingMeBaseDataRequest
+        @param headers: GetDingMeBaseDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDingMeBaseDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_key):
@@ -264,6 +328,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        """
+        @summary 小蜜机器人数据统计指标
+        
+        @param request: GetDingMeBaseDataRequest
+        @param headers: GetDingMeBaseDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDingMeBaseDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_key):
@@ -303,6 +375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
     ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        """
+        @summary 小蜜机器人数据统计指标
+        
+        @param request: GetDingMeBaseDataRequest
+        @return: GetDingMeBaseDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
         return self.get_ding_me_base_data_with_options(request, headers, runtime)
@@ -311,6 +389,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetDingMeBaseDataRequest,
     ) -> dingtalkdingmi__1__0_models.GetDingMeBaseDataResponse:
+        """
+        @summary 小蜜机器人数据统计指标
+        
+        @param request: GetDingMeBaseDataRequest
+        @return: GetDingMeBaseDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetDingMeBaseDataHeaders()
         return await self.get_ding_me_base_data_with_options_async(request, headers, runtime)
@@ -321,6 +405,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        """
+        @summary 获取智能客服机器人信息
+        
+        @param request: GetIntelligentRobotInfoRequest
+        @param headers: GetIntelligentRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIntelligentRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.robot_app_key):
@@ -356,6 +448,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        """
+        @summary 获取智能客服机器人信息
+        
+        @param request: GetIntelligentRobotInfoRequest
+        @param headers: GetIntelligentRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIntelligentRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.robot_app_key):
@@ -389,6 +489,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        """
+        @summary 获取智能客服机器人信息
+        
+        @param request: GetIntelligentRobotInfoRequest
+        @return: GetIntelligentRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
         return self.get_intelligent_robot_info_with_options(request, headers, runtime)
@@ -397,6 +503,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetIntelligentRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.GetIntelligentRobotInfoResponse:
+        """
+        @summary 获取智能客服机器人信息
+        
+        @param request: GetIntelligentRobotInfoRequest
+        @return: GetIntelligentRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetIntelligentRobotInfoHeaders()
         return await self.get_intelligent_robot_info_with_options_async(request, headers, runtime)
@@ -407,6 +519,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        """
+        @summary 获取服务窗机器人信息
+        
+        @param request: GetOfficialAccountRobotInfoRequest
+        @param headers: GetOfficialAccountRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.type):
@@ -442,6 +562,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        """
+        @summary 获取服务窗机器人信息
+        
+        @param request: GetOfficialAccountRobotInfoRequest
+        @param headers: GetOfficialAccountRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.type):
@@ -475,6 +603,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        """
+        @summary 获取服务窗机器人信息
+        
+        @param request: GetOfficialAccountRobotInfoRequest
+        @return: GetOfficialAccountRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
         return self.get_official_account_robot_info_with_options(request, headers, runtime)
@@ -483,6 +617,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoResponse:
+        """
+        @summary 获取服务窗机器人信息
+        
+        @param request: GetOfficialAccountRobotInfoRequest
+        @return: GetOfficialAccountRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetOfficialAccountRobotInfoHeaders()
         return await self.get_official_account_robot_info_with_options_async(request, headers, runtime)
@@ -493,6 +633,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        """
+        @summary 小蜜客服网页渠道获取三方用户token
+        
+        @param request: GetWebChannelUserTokenRequest
+        @param headers: GetWebChannelUserTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWebChannelUserTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.foreign_id):
@@ -532,6 +680,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        """
+        @summary 小蜜客服网页渠道获取三方用户token
+        
+        @param request: GetWebChannelUserTokenRequest
+        @param headers: GetWebChannelUserTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWebChannelUserTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.foreign_id):
@@ -569,6 +725,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
     ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        """
+        @summary 小蜜客服网页渠道获取三方用户token
+        
+        @param request: GetWebChannelUserTokenRequest
+        @return: GetWebChannelUserTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
         return self.get_web_channel_user_token_with_options(request, headers, runtime)
@@ -577,6 +739,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.GetWebChannelUserTokenRequest,
     ) -> dingtalkdingmi__1__0_models.GetWebChannelUserTokenResponse:
+        """
+        @summary 小蜜客服网页渠道获取三方用户token
+        
+        @param request: GetWebChannelUserTokenRequest
+        @return: GetWebChannelUserTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.GetWebChannelUserTokenHeaders()
         return await self.get_web_channel_user_token_with_options_async(request, headers, runtime)
@@ -587,6 +755,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        """
+        @summary 通过小蜜机器人在客户群内推送消息
+        
+        @param request: PushCustomerGroupMessageRequest
+        @param headers: PushCustomerGroupMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushCustomerGroupMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -626,6 +802,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        """
+        @summary 通过小蜜机器人在客户群内推送消息
+        
+        @param request: PushCustomerGroupMessageRequest
+        @param headers: PushCustomerGroupMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushCustomerGroupMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -663,6 +847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        """
+        @summary 通过小蜜机器人在客户群内推送消息
+        
+        @param request: PushCustomerGroupMessageRequest
+        @return: PushCustomerGroupMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
         return self.push_customer_group_message_with_options(request, headers, runtime)
@@ -671,6 +861,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushCustomerGroupMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushCustomerGroupMessageResponse:
+        """
+        @summary 通过小蜜机器人在客户群内推送消息
+        
+        @param request: PushCustomerGroupMessageRequest
+        @return: PushCustomerGroupMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushCustomerGroupMessageHeaders()
         return await self.push_customer_group_message_with_options_async(request, headers, runtime)
@@ -681,6 +877,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        """
+        @summary 推送智能客服机器人钉钉群聊消息
+        
+        @param request: PushIntelligentRobotGroupMessageRequest
+        @param headers: PushIntelligentRobotGroupMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushIntelligentRobotGroupMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -722,6 +926,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        """
+        @summary 推送智能客服机器人钉钉群聊消息
+        
+        @param request: PushIntelligentRobotGroupMessageRequest
+        @param headers: PushIntelligentRobotGroupMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushIntelligentRobotGroupMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -761,6 +973,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        """
+        @summary 推送智能客服机器人钉钉群聊消息
+        
+        @param request: PushIntelligentRobotGroupMessageRequest
+        @return: PushIntelligentRobotGroupMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
         return self.push_intelligent_robot_group_message_with_options(request, headers, runtime)
@@ -769,6 +987,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageResponse:
+        """
+        @summary 推送智能客服机器人钉钉群聊消息
+        
+        @param request: PushIntelligentRobotGroupMessageRequest
+        @return: PushIntelligentRobotGroupMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushIntelligentRobotGroupMessageHeaders()
         return await self.push_intelligent_robot_group_message_with_options_async(request, headers, runtime)
@@ -779,6 +1003,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        """
+        @summary 智能客服机器人推送消息
+        
+        @param request: PushIntelligentRobotMessageRequest
+        @param headers: PushIntelligentRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushIntelligentRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -820,6 +1052,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        """
+        @summary 智能客服机器人推送消息
+        
+        @param request: PushIntelligentRobotMessageRequest
+        @param headers: PushIntelligentRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushIntelligentRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -859,6 +1099,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        """
+        @summary 智能客服机器人推送消息
+        
+        @param request: PushIntelligentRobotMessageRequest
+        @return: PushIntelligentRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
         return self.push_intelligent_robot_message_with_options(request, headers, runtime)
@@ -867,6 +1113,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushIntelligentRobotMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushIntelligentRobotMessageResponse:
+        """
+        @summary 智能客服机器人推送消息
+        
+        @param request: PushIntelligentRobotMessageRequest
+        @return: PushIntelligentRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushIntelligentRobotMessageHeaders()
         return await self.push_intelligent_robot_message_with_options_async(request, headers, runtime)
@@ -877,6 +1129,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        """
+        @summary 通过服务窗机器人推送单聊消息
+        
+        @param request: PushOfficialAccountMessageRequest
+        @param headers: PushOfficialAccountMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushOfficialAccountMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.msg_key):
@@ -916,6 +1176,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        """
+        @summary 通过服务窗机器人推送单聊消息
+        
+        @param request: PushOfficialAccountMessageRequest
+        @param headers: PushOfficialAccountMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushOfficialAccountMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.msg_key):
@@ -953,6 +1221,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        """
+        @summary 通过服务窗机器人推送单聊消息
+        
+        @param request: PushOfficialAccountMessageRequest
+        @return: PushOfficialAccountMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
         return self.push_official_account_message_with_options(request, headers, runtime)
@@ -961,6 +1235,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushOfficialAccountMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushOfficialAccountMessageResponse:
+        """
+        @summary 通过服务窗机器人推送单聊消息
+        
+        @param request: PushOfficialAccountMessageRequest
+        @return: PushOfficialAccountMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushOfficialAccountMessageHeaders()
         return await self.push_official_account_message_with_options_async(request, headers, runtime)
@@ -971,6 +1251,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        """
+        @summary 通过小蜜客服机器人推送单聊消息
+        
+        @param request: PushRobotMessageRequest
+        @param headers: PushRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -1012,6 +1300,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.PushRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        """
+        @summary 通过小蜜客服机器人推送单聊消息
+        
+        @param request: PushRobotMessageRequest
+        @param headers: PushRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chatbot_id):
@@ -1051,6 +1347,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        """
+        @summary 通过小蜜客服机器人推送单聊消息
+        
+        @param request: PushRobotMessageRequest
+        @return: PushRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
         return self.push_robot_message_with_options(request, headers, runtime)
@@ -1059,6 +1361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.PushRobotMessageRequest,
     ) -> dingtalkdingmi__1__0_models.PushRobotMessageResponse:
+        """
+        @summary 通过小蜜客服机器人推送单聊消息
+        
+        @param request: PushRobotMessageRequest
+        @return: PushRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.PushRobotMessageHeaders()
         return await self.push_robot_message_with_options_async(request, headers, runtime)
@@ -1069,6 +1377,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.ReplyRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        """
+        @summary 异步回复机器人消息
+        
+        @param request: ReplyRobotRequest
+        @param headers: ReplyRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReplyRobotResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.proxy_message_str):
@@ -1104,6 +1420,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.ReplyRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        """
+        @summary 异步回复机器人消息
+        
+        @param request: ReplyRobotRequest
+        @param headers: ReplyRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReplyRobotResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.proxy_message_str):
@@ -1137,6 +1461,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
     ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        """
+        @summary 异步回复机器人消息
+        
+        @param request: ReplyRobotRequest
+        @return: ReplyRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
         return self.reply_robot_with_options(request, headers, runtime)
@@ -1145,6 +1475,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.ReplyRobotRequest,
     ) -> dingtalkdingmi__1__0_models.ReplyRobotResponse:
+        """
+        @summary 异步回复机器人消息
+        
+        @param request: ReplyRobotRequest
+        @return: ReplyRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.ReplyRobotHeaders()
         return await self.reply_robot_with_options_async(request, headers, runtime)
@@ -1155,6 +1491,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        """
+        @summary 更新服务窗机器人信息
+        
+        @param request: UpdateOfficialAccountRobotInfoRequest
+        @param headers: UpdateOfficialAccountRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateOfficialAccountRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.type):
@@ -1202,6 +1546,14 @@ class Client(OpenApiClient):
         headers: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        """
+        @summary 更新服务窗机器人信息
+        
+        @param request: UpdateOfficialAccountRobotInfoRequest
+        @param headers: UpdateOfficialAccountRobotInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateOfficialAccountRobotInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.type):
@@ -1247,6 +1599,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        """
+        @summary 更新服务窗机器人信息
+        
+        @param request: UpdateOfficialAccountRobotInfoRequest
+        @return: UpdateOfficialAccountRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
         return self.update_official_account_robot_info_with_options(request, headers, runtime)
@@ -1255,6 +1613,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoRequest,
     ) -> dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoResponse:
+        """
+        @summary 更新服务窗机器人信息
+        
+        @param request: UpdateOfficialAccountRobotInfoRequest
+        @return: UpdateOfficialAccountRobotInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdingmi__1__0_models.UpdateOfficialAccountRobotInfoHeaders()
         return await self.update_official_account_robot_info_with_options_async(request, headers, runtime)

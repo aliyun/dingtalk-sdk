@@ -103,10 +103,12 @@ class CloseTopboxRequest(TeaModel):
         unoin_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.conversation_type = conversation_type
         self.cool_app_code = cool_app_code
         self.group_template_id = group_template_id
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.robot_code = robot_code
         self.unoin_id = unoin_id
@@ -269,6 +271,7 @@ class CreateCoupleGroupRequestUsers(TeaModel):
         user_id: str = None,
     ):
         self.app_user_id = app_user_id
+        # This parameter is required.
         self.group_owner = group_owner
         self.user_id = user_id
 
@@ -307,6 +310,7 @@ class CreateCoupleGroupRequest(TeaModel):
         operator_id: str = None,
         users: List[CreateCoupleGroupRequestUsers] = None,
     ):
+        # This parameter is required.
         self.group_template_id = group_template_id
         self.operator_id = operator_id
         self.users = users
@@ -474,6 +478,7 @@ class CreateGroupRequestUsers(TeaModel):
         user_id: str = None,
     ):
         self.app_user_id = app_user_id
+        # This parameter is required.
         self.group_owner = group_owner
         self.user_id = user_id
 
@@ -515,9 +520,12 @@ class CreateGroupRequest(TeaModel):
         users: List[CreateGroupRequestUsers] = None,
     ):
         self.group_avatar = group_avatar
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.group_template_id = group_template_id
         self.operator_id = operator_id
+        # This parameter is required.
         self.users = users
 
     def validate(self):
@@ -760,14 +768,18 @@ class CreateTopboxRequest(TeaModel):
         user_id_private_data_map: Dict[str, UserIdPrivateDataMapValue] = None,
     ):
         self.callback_route_key = callback_route_key
+        # This parameter is required.
         self.card_data = card_data
         self.card_settings = card_settings
+        # This parameter is required.
         self.card_template_id = card_template_id
+        # This parameter is required.
         self.conversation_type = conversation_type
         self.cool_app_code = cool_app_code
         self.expired_time = expired_time
         self.group_template_id = group_template_id
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.platforms = platforms
         self.receiver_union_id_list = receiver_union_id_list

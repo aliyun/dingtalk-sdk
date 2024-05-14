@@ -43,7 +43,9 @@ class AddRobotInstanceToGroupRequest(TeaModel):
         chatbot_id: str = None,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.chatbot_id = chatbot_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -180,7 +182,9 @@ class AskRobotRequest(TeaModel):
         session_uuid: str = None,
     ):
         self.ding_user_id = ding_user_id
+        # This parameter is required.
         self.question = question
+        # This parameter is required.
         self.robot_app_key = robot_app_key
         self.session_uuid = session_uuid
 
@@ -325,9 +329,13 @@ class GetDingMeBaseDataRequest(TeaModel):
         end_day: str = None,
         start_day: str = None,
     ):
+        # This parameter is required.
         self.app_key = app_key
+        # This parameter is required.
         self.by_day = by_day
+        # This parameter is required.
         self.end_day = end_day
+        # This parameter is required.
         self.start_day = start_day
 
     def validate(self):
@@ -370,9 +378,13 @@ class GetDingMeBaseDataResponseBody(TeaModel):
         runtime: int = None,
         tips: Dict[str, Any] = None,
     ):
+        # This parameter is required.
         self.from_cache = from_cache
+        # This parameter is required.
         self.rawset = rawset
+        # This parameter is required.
         self.runtime = runtime
+        # This parameter is required.
         self.tips = tips
 
     def validate(self):
@@ -486,6 +498,7 @@ class GetIntelligentRobotInfoRequest(TeaModel):
         self,
         robot_app_key: str = None,
     ):
+        # This parameter is required.
         self.robot_app_key = robot_app_key
 
     def validate(self):
@@ -614,6 +627,7 @@ class GetOfficialAccountRobotInfoRequest(TeaModel):
         self,
         type: str = None,
     ):
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -646,11 +660,17 @@ class GetOfficialAccountRobotInfoResponseBody(TeaModel):
         name: str = None,
         preview_media_url: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.brief = brief
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.preview_media_url = preview_media_url
 
     def validate(self):
@@ -774,8 +794,11 @@ class GetWebChannelUserTokenRequest(TeaModel):
         nick: str = None,
         source: int = None,
     ):
+        # This parameter is required.
         self.foreign_id = foreign_id
+        # This parameter is required.
         self.nick = nick
+        # This parameter is required.
         self.source = source
 
     def validate(self):
@@ -914,8 +937,11 @@ class PushCustomerGroupMessageRequest(TeaModel):
         msg_key: str = None,
         msg_param: str = None,
     ):
+        # This parameter is required.
         self.conversation_id = conversation_id
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
 
     def validate(self):
@@ -951,6 +977,7 @@ class PushCustomerGroupMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1055,9 +1082,13 @@ class PushIntelligentRobotGroupMessageRequest(TeaModel):
         msg_param: str = None,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.chatbot_id = chatbot_id
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1201,9 +1232,13 @@ class PushIntelligentRobotMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.chatbot_id = chatbot_id
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1346,8 +1381,11 @@ class PushOfficialAccountMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1383,6 +1421,7 @@ class PushOfficialAccountMessageResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1487,9 +1526,13 @@ class PushRobotMessageRequest(TeaModel):
         msg_param: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.chatbot_id = chatbot_id
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1630,6 +1673,7 @@ class ReplyRobotRequest(TeaModel):
         self,
         proxy_message_str: str = None,
     ):
+        # This parameter is required.
         self.proxy_message_str = proxy_message_str
 
     def validate(self):
@@ -1763,11 +1807,17 @@ class UpdateOfficialAccountRobotInfoRequest(TeaModel):
         preview_media_url: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.avatar = avatar
+        # This parameter is required.
         self.brief = brief
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.preview_media_url = preview_media_url
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -1815,6 +1865,7 @@ class UpdateOfficialAccountRobotInfoResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):

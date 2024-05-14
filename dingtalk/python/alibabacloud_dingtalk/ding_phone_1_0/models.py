@@ -45,6 +45,7 @@ class AddCallConfigRequest(TeaModel):
         phone_number: str = None,
         scope_type: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
         self.isv_token = isv_token
         self.phone_number = phone_number

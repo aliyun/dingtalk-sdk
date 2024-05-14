@@ -69,12 +69,14 @@ class EditContactRequestData(TeaModel):
         lxr_weixin: str = None,
         lxr_worktel: str = None,
     ):
+        # This parameter is required.
         self.data_userid = data_userid
         self.lxr_address = lxr_address
         self.lxr_birthday = lxr_birthday
         self.lxr_chengwei = lxr_chengwei
         self.lxr_ctnumber = lxr_ctnumber
         self.lxr_cttype = lxr_cttype
+        # This parameter is required.
         self.lxr_customerid = lxr_customerid
         self.lxr_department = lxr_department
         self.lxr_dingtalk = lxr_dingtalk
@@ -84,6 +86,7 @@ class EditContactRequestData(TeaModel):
         self.lxr_handset = lxr_handset
         self.lxr_headship = lxr_headship
         self.lxr_like = lxr_like
+        # This parameter is required.
         self.lxr_name = lxr_name
         self.lxr_photo = lxr_photo
         self.lxr_preside = lxr_preside
@@ -235,8 +238,10 @@ class EditContactRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -279,7 +284,9 @@ class EditContactResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -432,12 +439,14 @@ class EditCustomerRequestData(TeaModel):
         kh_weixin: str = None,
         kh_worktel: str = None,
     ):
+        # This parameter is required.
         self.data_userid = data_userid
         self.kh_address = kh_address
         self.kh_appellation = kh_appellation
         self.kh_befontof = kh_befontof
         self.kh_billinfo = kh_billinfo
         self.kh_city = kh_city
+        # This parameter is required.
         self.kh_class = kh_class
         self.kh_coaddress = kh_coaddress
         self.kh_contype = kh_contype
@@ -460,6 +469,7 @@ class EditCustomerRequestData(TeaModel):
         self.kh_industry = kh_industry
         self.kh_info = kh_info
         self.kh_jibie = kh_jibie
+        # This parameter is required.
         self.kh_name = kh_name
         self.kh_pkhid = kh_pkhid
         self.kh_preside = kh_preside
@@ -698,8 +708,10 @@ class EditCustomerRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -742,7 +754,9 @@ class EditCustomerResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -896,12 +910,14 @@ class EditCustomerPoolRequestData(TeaModel):
         kh_weixin: str = None,
         kh_worktel: str = None,
     ):
+        # This parameter is required.
         self.data_userid = data_userid
         self.kh_address = kh_address
         self.kh_appellation = kh_appellation
         self.kh_befontof = kh_befontof
         self.kh_billinfo = kh_billinfo
         self.kh_city = kh_city
+        # This parameter is required.
         self.kh_class = kh_class
         self.kh_coaddress = kh_coaddress
         self.kh_contype = kh_contype
@@ -925,6 +941,7 @@ class EditCustomerPoolRequestData(TeaModel):
         self.kh_industry = kh_industry
         self.kh_info = kh_info
         self.kh_jibie = kh_jibie
+        # This parameter is required.
         self.kh_name = kh_name
         self.kh_pkhid = kh_pkhid
         self.kh_preside = kh_preside
@@ -1167,8 +1184,10 @@ class EditCustomerPoolRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -1211,7 +1230,9 @@ class EditCustomerPoolResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -1333,19 +1354,24 @@ class EditExchangeRequestData(TeaModel):
         hh_type: str = None,
     ):
         self.child_mx = child_mx
+        # This parameter is required.
         self.data_userid = data_userid
         self.hh_customerid = hh_customerid
         self.hh_date = hh_date
         self.hh_inempid = hh_inempid
+        # This parameter is required.
         self.hh_inlibid = hh_inlibid
         self.hh_intime = hh_intime
+        # This parameter is required.
         self.hh_number = hh_number
         self.hh_orderid = hh_orderid
         self.hh_outempid = hh_outempid
+        # This parameter is required.
         self.hh_outlibid = hh_outlibid
         self.hh_outtime = hh_outtime
         self.hh_remark = hh_remark
         self.hh_state = hh_state
+        # This parameter is required.
         self.hh_title = hh_title
         self.hh_type = hh_type
 
@@ -1438,8 +1464,10 @@ class EditExchangeRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -1482,7 +1510,9 @@ class EditExchangeResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -1625,12 +1655,15 @@ class EditGoodsRequestData(TeaModel):
         self.cpcontent = cpcontent
         self.cpguige = cpguige
         self.cpimg = cpimg
+        # This parameter is required.
         self.cpname = cpname
         self.cpno = cpno
         self.cpremark = cpremark
         self.cptype = cptype
+        # This parameter is required.
         self.cpunit = cpunit
         self.cpweight = cpweight
+        # This parameter is required.
         self.data_userid = data_userid
         self.gysid = gysid
         self.ispicimanage = ispicimanage
@@ -1644,6 +1677,7 @@ class EditGoodsRequestData(TeaModel):
         self.stockdown = stockdown
         self.stockup = stockup
         self.typeid = typeid
+        # This parameter is required.
         self.unitrate = unitrate
 
     def validate(self):
@@ -1787,8 +1821,10 @@ class EditGoodsRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -1831,7 +1867,9 @@ class EditGoodsResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -1952,17 +1990,24 @@ class EditIntostockRequestData(TeaModel):
     ):
         self.askempid = askempid
         self.auditreson = auditreson
+        # This parameter is required.
         self.billno = billno
+        # This parameter is required.
         self.child_mx = child_mx
         self.customerid = customerid
+        # This parameter is required.
         self.data_userid = data_userid
+        # This parameter is required.
         self.empid = empid
         self.inorout = inorout
+        # This parameter is required.
         self.libiodate = libiodate
         self.libioname = libioname
+        # This parameter is required.
         self.libiostate = libiostate
         self.orderid = orderid
         self.remark = remark
+        # This parameter is required.
         self.stocklibid = stocklibid
 
     def validate(self):
@@ -2046,8 +2091,10 @@ class EditIntostockRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -2090,7 +2137,9 @@ class EditIntostockResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -2219,9 +2268,12 @@ class EditInvoiceRequestData(TeaModel):
         fh_yunfei: str = None,
     ):
         self.child_mx = child_mx
+        # This parameter is required.
         self.data_userid = data_userid
         self.fh_address = fh_address
+        # This parameter is required.
         self.fh_customerid = fh_customerid
+        # This parameter is required.
         self.fh_date = fh_date
         self.fh_email = fh_email
         self.fh_handset = fh_handset
@@ -2230,8 +2282,10 @@ class EditInvoiceRequestData(TeaModel):
         self.fh_kg = fh_kg
         self.fh_linkman = fh_linkman
         self.fh_lxrid = fh_lxrid
+        # This parameter is required.
         self.fh_mode = fh_mode
         self.fh_msn = fh_msn
+        # This parameter is required.
         self.fh_number = fh_number
         self.fh_post = fh_post
         self.fh_preside = fh_preside
@@ -2359,8 +2413,10 @@ class EditInvoiceRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -2403,7 +2459,9 @@ class EditInvoiceResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -2539,12 +2597,15 @@ class EditOrderRequestData(TeaModel):
         ht_yunfeimoney: str = None,
     ):
         self.child_mx = child_mx
+        # This parameter is required.
         self.data_userid = data_userid
         self.fahuoaddressid = fahuoaddressid
         self.ht_begindate = ht_begindate
         self.ht_contract = ht_contract
+        # This parameter is required.
         self.ht_customerid = ht_customerid
         self.ht_cusub = ht_cusub
+        # This parameter is required.
         self.ht_date = ht_date
         self.ht_deliplace = ht_deliplace
         self.ht_enddate = ht_enddate
@@ -2555,12 +2616,16 @@ class EditOrderRequestData(TeaModel):
         self.ht_lxrinfo = ht_lxrinfo
         self.ht_moneyzhekou = ht_moneyzhekou
         self.ht_number = ht_number
+        # This parameter is required.
         self.ht_order = ht_order
         self.ht_paymode = ht_paymode
+        # This parameter is required.
         self.ht_preside = ht_preside
         self.ht_remark = ht_remark
+        # This parameter is required.
         self.ht_state = ht_state
         self.ht_summemo = ht_summemo
+        # This parameter is required.
         self.ht_summoney = ht_summoney
         self.ht_title = ht_title
         self.ht_type = ht_type
@@ -2714,8 +2779,10 @@ class EditOrderRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -2758,7 +2825,9 @@ class EditOrderResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -2879,17 +2948,24 @@ class EditOutstockRequestData(TeaModel):
     ):
         self.askempid = askempid
         self.auditreson = auditreson
+        # This parameter is required.
         self.billno = billno
+        # This parameter is required.
         self.child_mx = child_mx
         self.customerid = customerid
+        # This parameter is required.
         self.data_userid = data_userid
+        # This parameter is required.
         self.empid = empid
         self.inorout = inorout
+        # This parameter is required.
         self.libiodate = libiodate
         self.libioname = libioname
+        # This parameter is required.
         self.libiostate = libiostate
         self.orderid = orderid
         self.remark = remark
+        # This parameter is required.
         self.stocklibid = stocklibid
 
     def validate(self):
@@ -2973,8 +3049,10 @@ class EditOutstockRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -3017,7 +3095,9 @@ class EditOutstockResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -3135,18 +3215,23 @@ class EditProductionRequestData(TeaModel):
         sch_statesstr: str = None,
         sch_title: str = None,
     ):
+        # This parameter is required.
         self.data_userid = data_userid
         self.sch_customerid = sch_customerid
         self.sch_endtime = sch_endtime
         self.sch_finished = sch_finished
         self.sch_htid = sch_htid
         self.sch_makeemp = sch_makeemp
+        # This parameter is required.
         self.sch_number = sch_number
+        # This parameter is required.
         self.sch_planendtime = sch_planendtime
         self.sch_principal = sch_principal
         self.sch_remark = sch_remark
+        # This parameter is required.
         self.sch_starttime = sch_starttime
         self.sch_statesstr = sch_statesstr
+        # This parameter is required.
         self.sch_title = sch_title
 
     def validate(self):
@@ -3226,8 +3311,10 @@ class EditProductionRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -3270,7 +3357,9 @@ class EditProductionResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -3399,21 +3488,27 @@ class EditPurchaseRequestData(TeaModel):
         self.cg_fjmoneylx = cg_fjmoneylx
         self.cg_kjmoney = cg_kjmoney
         self.cg_moneyzhekou = cg_moneyzhekou
+        # This parameter is required.
         self.cg_zxstate = cg_zxstate
+        # This parameter is required.
         self.cgdate = cgdate
         self.cgname = cgname
+        # This parameter is required.
         self.cgno = cgno
         self.cgremark = cgremark
         self.cgtype = cgtype
         self.child_mx = child_mx
+        # This parameter is required.
         self.data_userid = data_userid
         self.empid = empid
         self.gys_lxrid = gys_lxrid
         self.gys_lxrinfo = gys_lxrinfo
+        # This parameter is required.
         self.gysid = gysid
         self.gysjingban = gysjingban
         self.order_htid = order_htid
         self.order_khid = order_khid
+        # This parameter is required.
         self.summoney = summoney
 
     def validate(self):
@@ -3521,8 +3616,10 @@ class EditPurchaseRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -3565,7 +3662,9 @@ class EditPurchaseResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -3690,9 +3789,12 @@ class EditQuotationRecordRequestData(TeaModel):
         child_mx: str = None,
         data_userid: str = None,
     ):
+        # This parameter is required.
         self.bj_bjren = bj_bjren
         self.bj_bzremark = bj_bzremark
+        # This parameter is required.
         self.bj_customerid = bj_customerid
+        # This parameter is required.
         self.bj_date = bj_date
         self.bj_fjmoney = bj_fjmoney
         self.bj_fjmoneylx = bj_fjmoneylx
@@ -3703,12 +3805,14 @@ class EditQuotationRecordRequestData(TeaModel):
         self.bj_lianxi = bj_lianxi
         self.bj_moneyzhekou = bj_moneyzhekou
         self.bj_number = bj_number
+        # This parameter is required.
         self.bj_price = bj_price
         self.bj_remark = bj_remark
         self.bj_state = bj_state
         self.bj_title = bj_title
         self.bj_xshid = bj_xshid
         self.child_mx = child_mx
+        # This parameter is required.
         self.data_userid = data_userid
 
     def validate(self):
@@ -3816,8 +3920,10 @@ class EditQuotationRecordRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -3860,7 +3966,9 @@ class EditQuotationRecordResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -3984,8 +4092,11 @@ class EditSalesRequestData(TeaModel):
         xsh_title: str = None,
         xsh_type: str = None,
     ):
+        # This parameter is required.
         self.data_userid = data_userid
+        # This parameter is required.
         self.xsh_customerid = xsh_customerid
+        # This parameter is required.
         self.xsh_date = xsh_date
         self.xsh_expdate = xsh_expdate
         self.xsh_expmoney = xsh_expmoney
@@ -4001,6 +4112,7 @@ class EditSalesRequestData(TeaModel):
         self.xsh_provider = xsh_provider
         self.xsh_require = xsh_require
         self.xsh_state = xsh_state
+        # This parameter is required.
         self.xsh_title = xsh_title
         self.xsh_type = xsh_type
 
@@ -4105,8 +4217,10 @@ class EditSalesRequest(TeaModel):
         stamp: int = None,
     ):
         self.data = data
+        # This parameter is required.
         self.datatype = datatype
         self.msgid = msgid
+        # This parameter is required.
         self.stamp = stamp
 
     def validate(self):
@@ -4149,7 +4263,9 @@ class EditSalesResponseBody(TeaModel):
         msgid: int = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.msgid = msgid
+        # This parameter is required.
         self.time = time
 
     def validate(self):
@@ -4257,8 +4373,11 @@ class GetDataListRequest(TeaModel):
         page: int = None,
         pagesize: int = None,
     ):
+        # This parameter is required.
         self.datatype = datatype
+        # This parameter is required.
         self.page = page
+        # This parameter is required.
         self.pagesize = pagesize
 
     def validate(self):
@@ -4294,6 +4413,7 @@ class GetDataListResponseBodyData(TeaModel):
         self,
         detail: Dict[str, str] = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -4326,11 +4446,17 @@ class GetDataListResponseBody(TeaModel):
         time: str = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.dataname = dataname
+        # This parameter is required.
         self.page = page
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.time = time
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -4461,7 +4587,9 @@ class GetDataViewRequest(TeaModel):
         datatype: str = None,
         msgid: int = None,
     ):
+        # This parameter is required.
         self.datatype = datatype
+        # This parameter is required.
         self.msgid = msgid
 
     def validate(self):
@@ -4493,6 +4621,7 @@ class GetDataViewResponseBodyData(TeaModel):
         self,
         detail: Dict[str, str] = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -4522,8 +4651,11 @@ class GetDataViewResponseBody(TeaModel):
         dataname: Dict[str, dict] = None,
         time: str = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.dataname = dataname
+        # This parameter is required.
         self.time = time
 
     def validate(self):

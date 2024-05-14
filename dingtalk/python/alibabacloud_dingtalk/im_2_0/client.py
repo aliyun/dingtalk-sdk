@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CloseTopboxHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CloseTopboxResponse:
+        """
+        @summary 关闭互动卡片吊顶
+        
+        @param request: CloseTopboxRequest
+        @param headers: CloseTopboxHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopboxResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -86,6 +94,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CloseTopboxHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CloseTopboxResponse:
+        """
+        @summary 关闭互动卡片吊顶
+        
+        @param request: CloseTopboxRequest
+        @param headers: CloseTopboxHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopboxResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -133,6 +149,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CloseTopboxRequest,
     ) -> dingtalkim__2__0_models.CloseTopboxResponse:
+        """
+        @summary 关闭互动卡片吊顶
+        
+        @param request: CloseTopboxRequest
+        @return: CloseTopboxResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CloseTopboxHeaders()
         return self.close_topbox_with_options(request, headers, runtime)
@@ -141,6 +163,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CloseTopboxRequest,
     ) -> dingtalkim__2__0_models.CloseTopboxResponse:
+        """
+        @summary 关闭互动卡片吊顶
+        
+        @param request: CloseTopboxRequest
+        @return: CloseTopboxResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CloseTopboxHeaders()
         return await self.close_topbox_with_options_async(request, headers, runtime)
@@ -151,6 +179,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateCoupleGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        """
+        @summary 创建两人群
+        
+        @param request: CreateCoupleGroupRequest
+        @param headers: CreateCoupleGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCoupleGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_template_id):
@@ -190,6 +226,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateCoupleGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        """
+        @summary 创建两人群
+        
+        @param request: CreateCoupleGroupRequest
+        @param headers: CreateCoupleGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCoupleGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_template_id):
@@ -227,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
     ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        """
+        @summary 创建两人群
+        
+        @param request: CreateCoupleGroupRequest
+        @return: CreateCoupleGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateCoupleGroupHeaders()
         return self.create_couple_group_with_options(request, headers, runtime)
@@ -235,6 +285,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateCoupleGroupRequest,
     ) -> dingtalkim__2__0_models.CreateCoupleGroupResponse:
+        """
+        @summary 创建两人群
+        
+        @param request: CreateCoupleGroupRequest
+        @return: CreateCoupleGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateCoupleGroupHeaders()
         return await self.create_couple_group_with_options_async(request, headers, runtime)
@@ -245,6 +301,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        """
+        @summary 创建普通群
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_avatar):
@@ -288,6 +352,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        """
+        @summary 创建普通群
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_avatar):
@@ -329,6 +401,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateGroupRequest,
     ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        """
+        @summary 创建普通群
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateGroupHeaders()
         return self.create_group_with_options(request, headers, runtime)
@@ -337,6 +415,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateGroupRequest,
     ) -> dingtalkim__2__0_models.CreateGroupResponse:
+        """
+        @summary 创建普通群
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateGroupHeaders()
         return await self.create_group_with_options_async(request, headers, runtime)
@@ -347,6 +431,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateTopboxHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        """
+        @summary 创建并开启互动卡片吊顶
+        
+        @param request: CreateTopboxRequest
+        @param headers: CreateTopboxHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTopboxResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -416,6 +508,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__2__0_models.CreateTopboxHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        """
+        @summary 创建并开启互动卡片吊顶
+        
+        @param request: CreateTopboxRequest
+        @param headers: CreateTopboxHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTopboxResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -483,6 +583,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateTopboxRequest,
     ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        """
+        @summary 创建并开启互动卡片吊顶
+        
+        @param request: CreateTopboxRequest
+        @return: CreateTopboxResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateTopboxHeaders()
         return self.create_topbox_with_options(request, headers, runtime)
@@ -491,6 +597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__2__0_models.CreateTopboxRequest,
     ) -> dingtalkim__2__0_models.CreateTopboxResponse:
+        """
+        @summary 创建并开启互动卡片吊顶
+        
+        @param request: CreateTopboxRequest
+        @return: CreateTopboxResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__2__0_models.CreateTopboxHeaders()
         return await self.create_topbox_with_options_async(request, headers, runtime)
@@ -500,6 +612,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        """
+        @summary 群设备市场管理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManagerDeviceMarketResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -524,6 +643,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        """
+        @summary 群设备市场管理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManagerDeviceMarketResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -544,11 +670,21 @@ class Client(OpenApiClient):
         )
 
     def group_manager_device_market(self) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        """
+        @summary 群设备市场管理
+        
+        @return: GroupManagerDeviceMarketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.group_manager_device_market_with_options(headers, runtime)
 
     async def group_manager_device_market_async(self) -> dingtalkim__2__0_models.GroupManagerDeviceMarketResponse:
+        """
+        @summary 群设备市场管理
+        
+        @return: GroupManagerDeviceMarketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.group_manager_device_market_with_options_async(headers, runtime)

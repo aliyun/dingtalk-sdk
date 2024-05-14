@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpEmployeeDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpEmployeeDataPushResponse:
+        """
+        @summary 人员数据推送
+        
+        @param request: AmdpEmployeeDataPushRequest
+        @param headers: AmdpEmployeeDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpEmployeeDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpEmployeeDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpEmployeeDataPushResponse:
+        """
+        @summary 人员数据推送
+        
+        @param request: AmdpEmployeeDataPushRequest
+        @param headers: AmdpEmployeeDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpEmployeeDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpEmployeeDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpEmployeeDataPushResponse:
+        """
+        @summary 人员数据推送
+        
+        @param request: AmdpEmployeeDataPushRequest
+        @return: AmdpEmployeeDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpEmployeeDataPushHeaders()
         return self.amdp_employee_data_push_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpEmployeeDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpEmployeeDataPushResponse:
+        """
+        @summary 人员数据推送
+        
+        @param request: AmdpEmployeeDataPushRequest
+        @return: AmdpEmployeeDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpEmployeeDataPushHeaders()
         return await self.amdp_employee_data_push_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpJobPositionDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpJobPositionDataPushResponse:
+        """
+        @summary 任职数据推送
+        
+        @param request: AmdpJobPositionDataPushRequest
+        @param headers: AmdpJobPositionDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpJobPositionDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpJobPositionDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpJobPositionDataPushResponse:
+        """
+        @summary 任职数据推送
+        
+        @param request: AmdpJobPositionDataPushRequest
+        @param headers: AmdpJobPositionDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpJobPositionDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -189,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpJobPositionDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpJobPositionDataPushResponse:
+        """
+        @summary 任职数据推送
+        
+        @param request: AmdpJobPositionDataPushRequest
+        @return: AmdpJobPositionDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpJobPositionDataPushHeaders()
         return self.amdp_job_position_data_push_with_options(request, headers, runtime)
@@ -197,6 +247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpJobPositionDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpJobPositionDataPushResponse:
+        """
+        @summary 任职数据推送
+        
+        @param request: AmdpJobPositionDataPushRequest
+        @return: AmdpJobPositionDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpJobPositionDataPushHeaders()
         return await self.amdp_job_position_data_push_with_options_async(request, headers, runtime)
@@ -207,6 +263,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpOrganizationDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpOrganizationDataPushResponse:
+        """
+        @summary 组织部门数据推送
+        
+        @param request: AmdpOrganizationDataPushRequest
+        @param headers: AmdpOrganizationDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpOrganizationDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -242,6 +306,14 @@ class Client(OpenApiClient):
         headers: dingtalkamdp__1__0_models.AmdpOrganizationDataPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkamdp__1__0_models.AmdpOrganizationDataPushResponse:
+        """
+        @summary 组织部门数据推送
+        
+        @param request: AmdpOrganizationDataPushRequest
+        @param headers: AmdpOrganizationDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpOrganizationDataPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.param):
@@ -275,6 +347,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpOrganizationDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpOrganizationDataPushResponse:
+        """
+        @summary 组织部门数据推送
+        
+        @param request: AmdpOrganizationDataPushRequest
+        @return: AmdpOrganizationDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpOrganizationDataPushHeaders()
         return self.amdp_organization_data_push_with_options(request, headers, runtime)
@@ -283,6 +361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkamdp__1__0_models.AmdpOrganizationDataPushRequest,
     ) -> dingtalkamdp__1__0_models.AmdpOrganizationDataPushResponse:
+        """
+        @summary 组织部门数据推送
+        
+        @param request: AmdpOrganizationDataPushRequest
+        @return: AmdpOrganizationDataPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkamdp__1__0_models.AmdpOrganizationDataPushHeaders()
         return await self.amdp_organization_data_push_with_options_async(request, headers, runtime)

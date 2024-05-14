@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditContactHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
+        """
+        @summary 编辑联系人数据
+        
+        @param request: EditContactRequest
+        @param headers: EditContactHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditContactResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditContactHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
+        """
+        @summary 编辑联系人数据
+        
+        @param request: EditContactRequest
+        @param headers: EditContactHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditContactResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditContactRequest,
     ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
+        """
+        @summary 编辑联系人数据
+        
+        @param request: EditContactRequest
+        @return: EditContactResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
         return self.edit_contact_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditContactRequest,
     ) -> dingtalkjzcrm__1__0_models.EditContactResponse:
+        """
+        @summary 编辑联系人数据
+        
+        @param request: EditContactRequest
+        @return: EditContactResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditContactHeaders()
         return await self.edit_contact_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        """
+        @summary 编辑客户数据
+        
+        @param request: EditCustomerRequest
+        @param headers: EditCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        """
+        @summary 编辑客户数据
+        
+        @param request: EditCustomerRequest
+        @param headers: EditCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        """
+        @summary 编辑客户数据
+        
+        @param request: EditCustomerRequest
+        @return: EditCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
         return self.edit_customer_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditCustomerRequest,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerResponse:
+        """
+        @summary 编辑客户数据
+        
+        @param request: EditCustomerRequest
+        @return: EditCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditCustomerHeaders()
         return await self.edit_customer_with_options_async(request, headers, runtime)
@@ -231,6 +287,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        """
+        @summary 编辑客户公共池数据
+        
+        @param request: EditCustomerPoolRequest
+        @param headers: EditCustomerPoolHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditCustomerPoolResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -272,6 +336,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        """
+        @summary 编辑客户公共池数据
+        
+        @param request: EditCustomerPoolRequest
+        @param headers: EditCustomerPoolHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditCustomerPoolResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -311,6 +383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        """
+        @summary 编辑客户公共池数据
+        
+        @param request: EditCustomerPoolRequest
+        @return: EditCustomerPoolResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
         return self.edit_customer_pool_with_options(request, headers, runtime)
@@ -319,6 +397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditCustomerPoolRequest,
     ) -> dingtalkjzcrm__1__0_models.EditCustomerPoolResponse:
+        """
+        @summary 编辑客户公共池数据
+        
+        @param request: EditCustomerPoolRequest
+        @return: EditCustomerPoolResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditCustomerPoolHeaders()
         return await self.edit_customer_pool_with_options_async(request, headers, runtime)
@@ -329,6 +413,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditExchangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        """
+        @summary 编辑销售换货单数据
+        
+        @param request: EditExchangeRequest
+        @param headers: EditExchangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditExchangeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -370,6 +462,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditExchangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        """
+        @summary 编辑销售换货单数据
+        
+        @param request: EditExchangeRequest
+        @param headers: EditExchangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditExchangeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -409,6 +509,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
     ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        """
+        @summary 编辑销售换货单数据
+        
+        @param request: EditExchangeRequest
+        @return: EditExchangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
         return self.edit_exchange_with_options(request, headers, runtime)
@@ -417,6 +523,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditExchangeRequest,
     ) -> dingtalkjzcrm__1__0_models.EditExchangeResponse:
+        """
+        @summary 编辑销售换货单数据
+        
+        @param request: EditExchangeRequest
+        @return: EditExchangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditExchangeHeaders()
         return await self.edit_exchange_with_options_async(request, headers, runtime)
@@ -427,6 +539,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditGoodsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        """
+        @summary 编辑产品数据
+        
+        @param request: EditGoodsRequest
+        @param headers: EditGoodsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditGoodsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -468,6 +588,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditGoodsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        """
+        @summary 编辑产品数据
+        
+        @param request: EditGoodsRequest
+        @param headers: EditGoodsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditGoodsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -507,6 +635,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
     ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        """
+        @summary 编辑产品数据
+        
+        @param request: EditGoodsRequest
+        @return: EditGoodsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
         return self.edit_goods_with_options(request, headers, runtime)
@@ -515,6 +649,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditGoodsRequest,
     ) -> dingtalkjzcrm__1__0_models.EditGoodsResponse:
+        """
+        @summary 编辑产品数据
+        
+        @param request: EditGoodsRequest
+        @return: EditGoodsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditGoodsHeaders()
         return await self.edit_goods_with_options_async(request, headers, runtime)
@@ -525,6 +665,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditIntostockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        """
+        @summary 编辑入库单数据
+        
+        @param request: EditIntostockRequest
+        @param headers: EditIntostockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditIntostockResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -566,6 +714,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditIntostockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        """
+        @summary 编辑入库单数据
+        
+        @param request: EditIntostockRequest
+        @param headers: EditIntostockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditIntostockResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -605,6 +761,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
     ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        """
+        @summary 编辑入库单数据
+        
+        @param request: EditIntostockRequest
+        @return: EditIntostockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
         return self.edit_intostock_with_options(request, headers, runtime)
@@ -613,6 +775,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditIntostockRequest,
     ) -> dingtalkjzcrm__1__0_models.EditIntostockResponse:
+        """
+        @summary 编辑入库单数据
+        
+        @param request: EditIntostockRequest
+        @return: EditIntostockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditIntostockHeaders()
         return await self.edit_intostock_with_options_async(request, headers, runtime)
@@ -623,6 +791,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        """
+        @summary 编辑发货单数据
+        
+        @param request: EditInvoiceRequest
+        @param headers: EditInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -664,6 +840,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        """
+        @summary 编辑发货单数据
+        
+        @param request: EditInvoiceRequest
+        @param headers: EditInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -703,6 +887,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
     ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        """
+        @summary 编辑发货单数据
+        
+        @param request: EditInvoiceRequest
+        @return: EditInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
         return self.edit_invoice_with_options(request, headers, runtime)
@@ -711,6 +901,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditInvoiceRequest,
     ) -> dingtalkjzcrm__1__0_models.EditInvoiceResponse:
+        """
+        @summary 编辑发货单数据
+        
+        @param request: EditInvoiceRequest
+        @return: EditInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditInvoiceHeaders()
         return await self.edit_invoice_with_options_async(request, headers, runtime)
@@ -721,6 +917,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        """
+        @summary 编辑合同订单数据
+        
+        @param request: EditOrderRequest
+        @param headers: EditOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -762,6 +966,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        """
+        @summary 编辑合同订单数据
+        
+        @param request: EditOrderRequest
+        @param headers: EditOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -801,6 +1013,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditOrderRequest,
     ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        """
+        @summary 编辑合同订单数据
+        
+        @param request: EditOrderRequest
+        @return: EditOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
         return self.edit_order_with_options(request, headers, runtime)
@@ -809,6 +1027,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditOrderRequest,
     ) -> dingtalkjzcrm__1__0_models.EditOrderResponse:
+        """
+        @summary 编辑合同订单数据
+        
+        @param request: EditOrderRequest
+        @return: EditOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditOrderHeaders()
         return await self.edit_order_with_options_async(request, headers, runtime)
@@ -819,6 +1043,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditOutstockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        """
+        @summary 编辑出库单信息
+        
+        @param request: EditOutstockRequest
+        @param headers: EditOutstockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditOutstockResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -860,6 +1092,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditOutstockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        """
+        @summary 编辑出库单信息
+        
+        @param request: EditOutstockRequest
+        @param headers: EditOutstockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditOutstockResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -899,6 +1139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
     ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        """
+        @summary 编辑出库单信息
+        
+        @param request: EditOutstockRequest
+        @return: EditOutstockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
         return self.edit_outstock_with_options(request, headers, runtime)
@@ -907,6 +1153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditOutstockRequest,
     ) -> dingtalkjzcrm__1__0_models.EditOutstockResponse:
+        """
+        @summary 编辑出库单信息
+        
+        @param request: EditOutstockRequest
+        @return: EditOutstockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditOutstockHeaders()
         return await self.edit_outstock_with_options_async(request, headers, runtime)
@@ -917,6 +1169,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditProductionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        """
+        @summary 编辑生产单数据
+        
+        @param request: EditProductionRequest
+        @param headers: EditProductionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditProductionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -958,6 +1218,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditProductionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        """
+        @summary 编辑生产单数据
+        
+        @param request: EditProductionRequest
+        @param headers: EditProductionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditProductionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -997,6 +1265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditProductionRequest,
     ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        """
+        @summary 编辑生产单数据
+        
+        @param request: EditProductionRequest
+        @return: EditProductionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
         return self.edit_production_with_options(request, headers, runtime)
@@ -1005,6 +1279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditProductionRequest,
     ) -> dingtalkjzcrm__1__0_models.EditProductionResponse:
+        """
+        @summary 编辑生产单数据
+        
+        @param request: EditProductionRequest
+        @return: EditProductionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditProductionHeaders()
         return await self.edit_production_with_options_async(request, headers, runtime)
@@ -1015,6 +1295,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditPurchaseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        """
+        @summary 编辑采购单数据
+        
+        @param request: EditPurchaseRequest
+        @param headers: EditPurchaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditPurchaseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1056,6 +1344,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditPurchaseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        """
+        @summary 编辑采购单数据
+        
+        @param request: EditPurchaseRequest
+        @param headers: EditPurchaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditPurchaseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1095,6 +1391,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
     ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        """
+        @summary 编辑采购单数据
+        
+        @param request: EditPurchaseRequest
+        @return: EditPurchaseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
         return self.edit_purchase_with_options(request, headers, runtime)
@@ -1103,6 +1405,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditPurchaseRequest,
     ) -> dingtalkjzcrm__1__0_models.EditPurchaseResponse:
+        """
+        @summary 编辑采购单数据
+        
+        @param request: EditPurchaseRequest
+        @return: EditPurchaseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditPurchaseHeaders()
         return await self.edit_purchase_with_options_async(request, headers, runtime)
@@ -1113,6 +1421,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        """
+        @summary 编辑报价记录数据
+        
+        @param request: EditQuotationRecordRequest
+        @param headers: EditQuotationRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditQuotationRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1154,6 +1470,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        """
+        @summary 编辑报价记录数据
+        
+        @param request: EditQuotationRecordRequest
+        @param headers: EditQuotationRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditQuotationRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1193,6 +1517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
     ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        """
+        @summary 编辑报价记录数据
+        
+        @param request: EditQuotationRecordRequest
+        @return: EditQuotationRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
         return self.edit_quotation_record_with_options(request, headers, runtime)
@@ -1201,6 +1531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditQuotationRecordRequest,
     ) -> dingtalkjzcrm__1__0_models.EditQuotationRecordResponse:
+        """
+        @summary 编辑报价记录数据
+        
+        @param request: EditQuotationRecordRequest
+        @return: EditQuotationRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditQuotationRecordHeaders()
         return await self.edit_quotation_record_with_options_async(request, headers, runtime)
@@ -1211,6 +1547,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditSalesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        """
+        @summary 编辑销售机会数据
+        
+        @param request: EditSalesRequest
+        @param headers: EditSalesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditSalesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1252,6 +1596,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.EditSalesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        """
+        @summary 编辑销售机会数据
+        
+        @param request: EditSalesRequest
+        @param headers: EditSalesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditSalesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data):
@@ -1291,6 +1643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditSalesRequest,
     ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        """
+        @summary 编辑销售机会数据
+        
+        @param request: EditSalesRequest
+        @return: EditSalesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
         return self.edit_sales_with_options(request, headers, runtime)
@@ -1299,6 +1657,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.EditSalesRequest,
     ) -> dingtalkjzcrm__1__0_models.EditSalesResponse:
+        """
+        @summary 编辑销售机会数据
+        
+        @param request: EditSalesRequest
+        @return: EditSalesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.EditSalesHeaders()
         return await self.edit_sales_with_options_async(request, headers, runtime)
@@ -1309,6 +1673,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.GetDataListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        """
+        @summary 获取数据列表
+        
+        @param request: GetDataListRequest
+        @param headers: GetDataListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.datatype):
@@ -1348,6 +1720,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.GetDataListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        """
+        @summary 获取数据列表
+        
+        @param request: GetDataListRequest
+        @param headers: GetDataListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.datatype):
@@ -1385,6 +1765,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.GetDataListRequest,
     ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        """
+        @summary 获取数据列表
+        
+        @param request: GetDataListRequest
+        @return: GetDataListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
         return self.get_data_list_with_options(request, headers, runtime)
@@ -1393,6 +1779,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.GetDataListRequest,
     ) -> dingtalkjzcrm__1__0_models.GetDataListResponse:
+        """
+        @summary 获取数据列表
+        
+        @param request: GetDataListRequest
+        @return: GetDataListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.GetDataListHeaders()
         return await self.get_data_list_with_options_async(request, headers, runtime)
@@ -1403,6 +1795,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.GetDataViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        """
+        @summary 获取数据详情
+        
+        @param request: GetDataViewRequest
+        @param headers: GetDataViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataViewResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.datatype):
@@ -1440,6 +1840,14 @@ class Client(OpenApiClient):
         headers: dingtalkjzcrm__1__0_models.GetDataViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        """
+        @summary 获取数据详情
+        
+        @param request: GetDataViewRequest
+        @param headers: GetDataViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataViewResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.datatype):
@@ -1475,6 +1883,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
     ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        """
+        @summary 获取数据详情
+        
+        @param request: GetDataViewRequest
+        @return: GetDataViewResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
         return self.get_data_view_with_options(request, headers, runtime)
@@ -1483,6 +1897,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkjzcrm__1__0_models.GetDataViewRequest,
     ) -> dingtalkjzcrm__1__0_models.GetDataViewResponse:
+        """
+        @summary 获取数据详情
+        
+        @param request: GetDataViewRequest
+        @return: GetDataViewResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkjzcrm__1__0_models.GetDataViewHeaders()
         return await self.get_data_view_with_options_async(request, headers, runtime)

@@ -161,8 +161,11 @@ class AddFolderRequestOptionAppProperties(TeaModel):
         value: str = None,
         visibility: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.visibility = visibility
 
     def validate(self):
@@ -241,8 +244,10 @@ class AddFolderRequest(TeaModel):
         option: AddFolderRequestOption = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -566,7 +571,9 @@ class AddPermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -632,9 +639,12 @@ class AddPermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.option = option
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -886,6 +896,7 @@ class AddSpaceRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1275,6 +1286,7 @@ class ClearRecycleBinRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1405,8 +1417,11 @@ class CommitFileRequestOptionAppProperties(TeaModel):
         value: str = None,
         visibility: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.visibility = visibility
 
     def validate(self):
@@ -1493,10 +1508,14 @@ class CommitFileRequest(TeaModel):
         upload_key: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.option = option
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.upload_key = upload_key
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1856,10 +1875,14 @@ class CopyDentriesRequest(TeaModel):
         target_space_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
         self.option = option
+        # This parameter is required.
         self.target_folder_id = target_folder_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2114,8 +2137,11 @@ class CopyDentryRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.target_folder_id = target_folder_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2481,8 +2507,10 @@ class DeleteDentriesRequest(TeaModel):
         option: DeleteDentriesRequestOption = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2688,6 +2716,7 @@ class DeleteDentryRequest(TeaModel):
         union_id: str = None,
     ):
         self.to_recycle_bin = to_recycle_bin
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2827,7 +2856,9 @@ class DeleteDentryAppPropertiesRequest(TeaModel):
         property_names: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.property_names = property_names
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2963,7 +2994,9 @@ class DeletePermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3001,8 +3034,11 @@ class DeletePermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3147,6 +3183,7 @@ class DeleteRecycleItemRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3276,7 +3313,9 @@ class DeleteRecycleItemsRequest(TeaModel):
         recycle_item_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.recycle_item_ids = recycle_item_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3409,6 +3448,7 @@ class GetCurrentAppRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3719,8 +3759,10 @@ class GetDentriesRequest(TeaModel):
         option: GetDentriesRequestOption = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4183,6 +4225,7 @@ class GetDentryRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4594,6 +4637,7 @@ class GetDentryOpenInfoRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4735,7 +4779,9 @@ class GetDentryThumbnailsRequest(TeaModel):
         dentry_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5003,6 +5049,7 @@ class GetFileDownloadInfoRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5291,9 +5338,12 @@ class GetFileUploadInfoRequest(TeaModel):
         protocol: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.multipart = multipart
         self.option = option
+        # This parameter is required.
         self.protocol = protocol
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5538,8 +5588,11 @@ class GetMultipartFileUploadInfosRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.part_numbers = part_numbers
+        # This parameter is required.
         self.upload_key = upload_key
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5776,6 +5829,7 @@ class GetOrgRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6029,8 +6083,11 @@ class GetRecycleBinRequest(TeaModel):
         scope_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.recycle_bin_scope = recycle_bin_scope
+        # This parameter is required.
         self.scope_id = scope_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6208,6 +6265,7 @@ class GetRecycleItemRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6413,6 +6471,7 @@ class GetSpaceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6796,6 +6855,7 @@ class GetTaskRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -7083,6 +7143,7 @@ class InitMultipartFileUploadRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -7270,6 +7331,7 @@ class ListAllDentriesRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -7656,7 +7718,9 @@ class ListDentriesRequest(TeaModel):
         self.next_token = next_token
         self.order = order
         self.order_by = order_by
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.union_id = union_id
         self.with_thumbnail = with_thumbnail
 
@@ -8056,6 +8120,7 @@ class ListDentryVersionsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -8427,6 +8492,7 @@ class ListPermissionsRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -8725,6 +8791,7 @@ class ListRecycleItemsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -8987,10 +9054,14 @@ class MoveDentriesRequest(TeaModel):
         target_space_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
         self.option = option
+        # This parameter is required.
         self.target_folder_id = target_folder_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9251,8 +9322,11 @@ class MoveDentryRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.target_folder_id = target_folder_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9590,7 +9664,9 @@ class RegisterOpenInfoRequestOpenInfos(TeaModel):
         open_type: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.open_type = open_type
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -9624,8 +9700,11 @@ class RegisterOpenInfoRequest(TeaModel):
         provider: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.open_infos = open_infos
+        # This parameter is required.
         self.provider = provider
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9771,7 +9850,9 @@ class RenameDentryRequest(TeaModel):
         new_name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.new_name = new_name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10115,6 +10196,7 @@ class RestoreRecycleItemRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10297,7 +10379,9 @@ class RestoreRecycleItemsRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.recycle_item_ids = recycle_item_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10513,6 +10597,7 @@ class RevertDentryVersionRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10643,8 +10728,11 @@ class SubscribeEventRequest(TeaModel):
         scope_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.scope_id = scope_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10783,8 +10871,11 @@ class UnsubscribeEventRequest(TeaModel):
         scope_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.scope_id = scope_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -10923,8 +11014,11 @@ class UpdateDentryAppPropertiesRequestAppProperties(TeaModel):
         value: str = None,
         visibility: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.visibility = visibility
 
     def validate(self):
@@ -10961,7 +11055,9 @@ class UpdateDentryAppPropertiesRequest(TeaModel):
         app_properties: List[UpdateDentryAppPropertiesRequestAppProperties] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.app_properties = app_properties
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -11105,7 +11201,9 @@ class UpdatePermissionRequestMembers(TeaModel):
         type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -11171,9 +11269,12 @@ class UpdatePermissionRequest(TeaModel):
         role_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.option = option
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

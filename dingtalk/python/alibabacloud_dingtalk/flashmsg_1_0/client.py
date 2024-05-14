@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.AddPluginRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        """
+        @summary 添加插件规则
+        
+        @param request: AddPluginRuleRequest
+        @param headers: AddPluginRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPluginRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chat_type):
@@ -78,6 +86,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.AddPluginRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        """
+        @summary 添加插件规则
+        
+        @param request: AddPluginRuleRequest
+        @param headers: AddPluginRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPluginRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chat_type):
@@ -119,6 +135,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        """
+        @summary 添加插件规则
+        
+        @param request: AddPluginRuleRequest
+        @return: AddPluginRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.AddPluginRuleHeaders()
         return self.add_plugin_rule_with_options(request, headers, runtime)
@@ -127,6 +149,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.AddPluginRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.AddPluginRuleResponse:
+        """
+        @summary 添加插件规则
+        
+        @param request: AddPluginRuleRequest
+        @return: AddPluginRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.AddPluginRuleHeaders()
         return await self.add_plugin_rule_with_options_async(request, headers, runtime)
@@ -137,6 +165,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        """
+        @summary 删除插件规则
+        
+        @param request: DeletePlguinRuleRequest
+        @param headers: DeletePlguinRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePlguinRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        """
+        @summary 删除插件规则
+        
+        @param request: DeletePlguinRuleRequest
+        @param headers: DeletePlguinRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePlguinRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -209,6 +253,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        """
+        @summary 删除插件规则
+        
+        @param request: DeletePlguinRuleRequest
+        @return: DeletePlguinRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders()
         return self.delete_plguin_rule_with_options(request, headers, runtime)
@@ -217,6 +267,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.DeletePlguinRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.DeletePlguinRuleResponse:
+        """
+        @summary 删除插件规则
+        
+        @param request: DeletePlguinRuleRequest
+        @return: DeletePlguinRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.DeletePlguinRuleHeaders()
         return await self.delete_plguin_rule_with_options_async(request, headers, runtime)
@@ -227,6 +283,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetBaseProfileListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetBaseProfileListResponse:
+        """
+        @summary 闪读用户基础信息查询
+        
+        @param request: GetBaseProfileListRequest
+        @param headers: GetBaseProfileListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetBaseProfileListResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -259,6 +323,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetBaseProfileListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetBaseProfileListResponse:
+        """
+        @summary 闪读用户基础信息查询
+        
+        @param request: GetBaseProfileListRequest
+        @param headers: GetBaseProfileListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetBaseProfileListResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -289,6 +361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetBaseProfileListRequest,
     ) -> dingtalkflashmsg__1__0_models.GetBaseProfileListResponse:
+        """
+        @summary 闪读用户基础信息查询
+        
+        @param request: GetBaseProfileListRequest
+        @return: GetBaseProfileListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetBaseProfileListHeaders()
         return self.get_base_profile_list_with_options(request, headers, runtime)
@@ -297,6 +375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetBaseProfileListRequest,
     ) -> dingtalkflashmsg__1__0_models.GetBaseProfileListResponse:
+        """
+        @summary 闪读用户基础信息查询
+        
+        @param request: GetBaseProfileListRequest
+        @return: GetBaseProfileListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetBaseProfileListHeaders()
         return await self.get_base_profile_list_with_options_async(request, headers, runtime)
@@ -307,6 +391,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetConversationResponse:
+        """
+        @summary 获得闪读会话信息
+        
+        @param request: GetConversationRequest
+        @param headers: GetConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -344,6 +436,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetConversationResponse:
+        """
+        @summary 获得闪读会话信息
+        
+        @param request: GetConversationRequest
+        @param headers: GetConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -379,6 +479,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetConversationRequest,
     ) -> dingtalkflashmsg__1__0_models.GetConversationResponse:
+        """
+        @summary 获得闪读会话信息
+        
+        @param request: GetConversationRequest
+        @return: GetConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetConversationHeaders()
         return self.get_conversation_with_options(request, headers, runtime)
@@ -387,6 +493,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetConversationRequest,
     ) -> dingtalkflashmsg__1__0_models.GetConversationResponse:
+        """
+        @summary 获得闪读会话信息
+        
+        @param request: GetConversationRequest
+        @return: GetConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetConversationHeaders()
         return await self.get_conversation_with_options_async(request, headers, runtime)
@@ -397,6 +509,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetMemberListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetMemberListResponse:
+        """
+        @summary 获得成员ID列表
+        
+        @param request: GetMemberListRequest
+        @param headers: GetMemberListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMemberListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -438,6 +558,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.GetMemberListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.GetMemberListResponse:
+        """
+        @summary 获得成员ID列表
+        
+        @param request: GetMemberListRequest
+        @param headers: GetMemberListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMemberListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -477,6 +605,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetMemberListRequest,
     ) -> dingtalkflashmsg__1__0_models.GetMemberListResponse:
+        """
+        @summary 获得成员ID列表
+        
+        @param request: GetMemberListRequest
+        @return: GetMemberListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetMemberListHeaders()
         return self.get_member_list_with_options(request, headers, runtime)
@@ -485,6 +619,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.GetMemberListRequest,
     ) -> dingtalkflashmsg__1__0_models.GetMemberListResponse:
+        """
+        @summary 获得成员ID列表
+        
+        @param request: GetMemberListRequest
+        @return: GetMemberListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.GetMemberListHeaders()
         return await self.get_member_list_with_options_async(request, headers, runtime)
@@ -495,6 +635,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        """
+        @summary 查询插件规则
+        
+        @param request: QueryPluginRuleRequest
+        @param headers: QueryPluginRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPluginRuleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.chat_type):
@@ -540,6 +688,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        """
+        @summary 查询插件规则
+        
+        @param request: QueryPluginRuleRequest
+        @param headers: QueryPluginRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPluginRuleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.chat_type):
@@ -583,6 +739,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        """
+        @summary 查询插件规则
+        
+        @param request: QueryPluginRuleRequest
+        @return: QueryPluginRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders()
         return self.query_plugin_rule_with_options(request, headers, runtime)
@@ -591,6 +753,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.QueryPluginRuleRequest,
     ) -> dingtalkflashmsg__1__0_models.QueryPluginRuleResponse:
+        """
+        @summary 查询插件规则
+        
+        @param request: QueryPluginRuleRequest
+        @return: QueryPluginRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.QueryPluginRuleHeaders()
         return await self.query_plugin_rule_with_options_async(request, headers, runtime)
@@ -601,6 +769,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.SendDingTipHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.SendDingTipResponse:
+        """
+        @summary 发送Ding提示消息
+        
+        @param request: SendDingTipRequest
+        @param headers: SendDingTipHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendDingTipResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -646,6 +822,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.SendDingTipHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.SendDingTipResponse:
+        """
+        @summary 发送Ding提示消息
+        
+        @param request: SendDingTipRequest
+        @param headers: SendDingTipHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendDingTipResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -689,6 +873,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.SendDingTipRequest,
     ) -> dingtalkflashmsg__1__0_models.SendDingTipResponse:
+        """
+        @summary 发送Ding提示消息
+        
+        @param request: SendDingTipRequest
+        @return: SendDingTipResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.SendDingTipHeaders()
         return self.send_ding_tip_with_options(request, headers, runtime)
@@ -697,6 +887,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.SendDingTipRequest,
     ) -> dingtalkflashmsg__1__0_models.SendDingTipResponse:
+        """
+        @summary 发送Ding提示消息
+        
+        @param request: SendDingTipRequest
+        @return: SendDingTipResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.SendDingTipHeaders()
         return await self.send_ding_tip_with_options_async(request, headers, runtime)
@@ -707,6 +903,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.SendMessageTipHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.SendMessageTipResponse:
+        """
+        @summary 发送闪读消息提示
+        
+        @param request: SendMessageTipRequest
+        @param headers: SendMessageTipHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageTipResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.default_view):
@@ -754,6 +958,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmsg__1__0_models.SendMessageTipHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmsg__1__0_models.SendMessageTipResponse:
+        """
+        @summary 发送闪读消息提示
+        
+        @param request: SendMessageTipRequest
+        @param headers: SendMessageTipHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageTipResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.default_view):
@@ -799,6 +1011,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.SendMessageTipRequest,
     ) -> dingtalkflashmsg__1__0_models.SendMessageTipResponse:
+        """
+        @summary 发送闪读消息提示
+        
+        @param request: SendMessageTipRequest
+        @return: SendMessageTipResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.SendMessageTipHeaders()
         return self.send_message_tip_with_options(request, headers, runtime)
@@ -807,6 +1025,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmsg__1__0_models.SendMessageTipRequest,
     ) -> dingtalkflashmsg__1__0_models.SendMessageTipResponse:
+        """
+        @summary 发送闪读消息提示
+        
+        @param request: SendMessageTipRequest
+        @return: SendMessageTipResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmsg__1__0_models.SendMessageTipHeaders()
         return await self.send_message_tip_with_options_async(request, headers, runtime)

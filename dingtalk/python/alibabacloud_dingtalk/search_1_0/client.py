@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.BatchInsertSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        """
+        @summary 为指定的数据源批量添加数据项
+        
+        @param request: BatchInsertSearchItemRequest
+        @param headers: BatchInsertSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchInsertSearchItemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.search_item_models):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.BatchInsertSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        """
+        @summary 为指定的数据源批量添加数据项
+        
+        @param request: BatchInsertSearchItemRequest
+        @param headers: BatchInsertSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchInsertSearchItemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.search_item_models):
@@ -106,6 +122,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
     ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        """
+        @summary 为指定的数据源批量添加数据项
+        
+        @param request: BatchInsertSearchItemRequest
+        @return: BatchInsertSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.BatchInsertSearchItemHeaders()
         return self.batch_insert_search_item_with_options(tab_id, request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.BatchInsertSearchItemRequest,
     ) -> dingtalksearch__1__0_models.BatchInsertSearchItemResponse:
+        """
+        @summary 为指定的数据源批量添加数据项
+        
+        @param request: BatchInsertSearchItemRequest
+        @return: BatchInsertSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.BatchInsertSearchItemHeaders()
         return await self.batch_insert_search_item_with_options_async(tab_id, request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.CreateSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
+        """
+        @summary 创建搜索数据源
+        
+        @param request: CreateSearchTabRequest
+        @param headers: CreateSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSearchTabResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dark_icon):
@@ -170,6 +206,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.CreateSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
+        """
+        @summary 创建搜索数据源
+        
+        @param request: CreateSearchTabRequest
+        @param headers: CreateSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSearchTabResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dark_icon):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksearch__1__0_models.CreateSearchTabRequest,
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
+        """
+        @summary 创建搜索数据源
+        
+        @param request: CreateSearchTabRequest
+        @return: CreateSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.CreateSearchTabHeaders()
         return self.create_search_tab_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksearch__1__0_models.CreateSearchTabRequest,
     ) -> dingtalksearch__1__0_models.CreateSearchTabResponse:
+        """
+        @summary 创建搜索数据源
+        
+        @param request: CreateSearchTabRequest
+        @return: CreateSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.CreateSearchTabHeaders()
         return await self.create_search_tab_with_options_async(request, headers, runtime)
@@ -232,6 +288,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
+        """
+        @summary 从指定的数据源中删除一条数据项
+        
+        @param headers: DeleteSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSearchItemResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -263,6 +326,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
+        """
+        @summary 从指定的数据源中删除一条数据项
+        
+        @param headers: DeleteSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSearchItemResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -292,6 +362,11 @@ class Client(OpenApiClient):
         tab_id: str,
         item_id: str,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
+        """
+        @summary 从指定的数据源中删除一条数据项
+        
+        @return: DeleteSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.DeleteSearchItemHeaders()
         return self.delete_search_item_with_options(tab_id, item_id, headers, runtime)
@@ -301,6 +376,11 @@ class Client(OpenApiClient):
         tab_id: str,
         item_id: str,
     ) -> dingtalksearch__1__0_models.DeleteSearchItemResponse:
+        """
+        @summary 从指定的数据源中删除一条数据项
+        
+        @return: DeleteSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.DeleteSearchItemHeaders()
         return await self.delete_search_item_with_options_async(tab_id, item_id, headers, runtime)
@@ -311,6 +391,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
+        """
+        @summary 删除搜索数据源
+        
+        @param headers: DeleteSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSearchTabResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -341,6 +428,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.DeleteSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
+        """
+        @summary 删除搜索数据源
+        
+        @param headers: DeleteSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSearchTabResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -369,6 +463,11 @@ class Client(OpenApiClient):
         self,
         tab_id: str,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
+        """
+        @summary 删除搜索数据源
+        
+        @return: DeleteSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.DeleteSearchTabHeaders()
         return self.delete_search_tab_with_options(tab_id, headers, runtime)
@@ -377,6 +476,11 @@ class Client(OpenApiClient):
         self,
         tab_id: str,
     ) -> dingtalksearch__1__0_models.DeleteSearchTabResponse:
+        """
+        @summary 删除搜索数据源
+        
+        @return: DeleteSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.DeleteSearchTabHeaders()
         return await self.delete_search_tab_with_options_async(tab_id, headers, runtime)
@@ -388,6 +492,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
+        """
+        @summary 获取指定数据源中的一条数据项
+        
+        @param headers: GetSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchItemResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -419,6 +530,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
+        """
+        @summary 获取指定数据源中的一条数据项
+        
+        @param headers: GetSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchItemResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -448,6 +566,11 @@ class Client(OpenApiClient):
         tab_id: str,
         item_id: str,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
+        """
+        @summary 获取指定数据源中的一条数据项
+        
+        @return: GetSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchItemHeaders()
         return self.get_search_item_with_options(tab_id, item_id, headers, runtime)
@@ -457,6 +580,11 @@ class Client(OpenApiClient):
         tab_id: str,
         item_id: str,
     ) -> dingtalksearch__1__0_models.GetSearchItemResponse:
+        """
+        @summary 获取指定数据源中的一条数据项
+        
+        @return: GetSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchItemHeaders()
         return await self.get_search_item_with_options_async(tab_id, item_id, headers, runtime)
@@ -468,6 +596,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        """
+        @summary 根据搜索关键词获取相关数据项
+        
+        @param request: GetSearchItemsByKeyWordRequest
+        @param headers: GetSearchItemsByKeyWordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchItemsByKeyWordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.key_word):
@@ -508,6 +644,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        """
+        @summary 根据搜索关键词获取相关数据项
+        
+        @param request: GetSearchItemsByKeyWordRequest
+        @param headers: GetSearchItemsByKeyWordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchItemsByKeyWordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.key_word):
@@ -546,6 +690,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
     ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        """
+        @summary 根据搜索关键词获取相关数据项
+        
+        @param request: GetSearchItemsByKeyWordRequest
+        @return: GetSearchItemsByKeyWordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders()
         return self.get_search_items_by_key_word_with_options(tab_id, request, headers, runtime)
@@ -555,6 +705,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.GetSearchItemsByKeyWordRequest,
     ) -> dingtalksearch__1__0_models.GetSearchItemsByKeyWordResponse:
+        """
+        @summary 根据搜索关键词获取相关数据项
+        
+        @param request: GetSearchItemsByKeyWordRequest
+        @return: GetSearchItemsByKeyWordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchItemsByKeyWordHeaders()
         return await self.get_search_items_by_key_word_with_options_async(tab_id, request, headers, runtime)
@@ -565,6 +721,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
+        """
+        @summary 获取搜索数据源
+        
+        @param headers: GetSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchTabResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -595,6 +758,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.GetSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
+        """
+        @summary 获取搜索数据源
+        
+        @param headers: GetSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSearchTabResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -623,6 +793,11 @@ class Client(OpenApiClient):
         self,
         tab_id: str,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
+        """
+        @summary 获取搜索数据源
+        
+        @return: GetSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchTabHeaders()
         return self.get_search_tab_with_options(tab_id, headers, runtime)
@@ -631,6 +806,11 @@ class Client(OpenApiClient):
         self,
         tab_id: str,
     ) -> dingtalksearch__1__0_models.GetSearchTabResponse:
+        """
+        @summary 获取搜索数据源
+        
+        @return: GetSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.GetSearchTabHeaders()
         return await self.get_search_tab_with_options_async(tab_id, headers, runtime)
@@ -642,6 +822,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.InsertSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
+        """
+        @summary 为指定的数据源添加一条数据项
+        
+        @param request: InsertSearchItemRequest
+        @param headers: InsertSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertSearchItemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.footer):
@@ -692,6 +880,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.InsertSearchItemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
+        """
+        @summary 为指定的数据源添加一条数据项
+        
+        @param request: InsertSearchItemRequest
+        @param headers: InsertSearchItemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertSearchItemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.footer):
@@ -740,6 +936,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.InsertSearchItemRequest,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
+        """
+        @summary 为指定的数据源添加一条数据项
+        
+        @param request: InsertSearchItemRequest
+        @return: InsertSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.InsertSearchItemHeaders()
         return self.insert_search_item_with_options(tab_id, request, headers, runtime)
@@ -749,6 +951,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.InsertSearchItemRequest,
     ) -> dingtalksearch__1__0_models.InsertSearchItemResponse:
+        """
+        @summary 为指定的数据源添加一条数据项
+        
+        @param request: InsertSearchItemRequest
+        @return: InsertSearchItemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.InsertSearchItemHeaders()
         return await self.insert_search_item_with_options_async(tab_id, request, headers, runtime)
@@ -758,6 +966,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        """
+        @summary 列出企业所有的搜索数据源
+        
+        @param headers: ListSearchTabsByOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSearchTabsByOrgIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -787,6 +1002,13 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        """
+        @summary 列出企业所有的搜索数据源
+        
+        @param headers: ListSearchTabsByOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSearchTabsByOrgIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -812,11 +1034,21 @@ class Client(OpenApiClient):
         )
 
     def list_search_tabs_by_org_id(self) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        """
+        @summary 列出企业所有的搜索数据源
+        
+        @return: ListSearchTabsByOrgIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders()
         return self.list_search_tabs_by_org_id_with_options(headers, runtime)
 
     async def list_search_tabs_by_org_id_async(self) -> dingtalksearch__1__0_models.ListSearchTabsByOrgIdResponse:
+        """
+        @summary 列出企业所有的搜索数据源
+        
+        @return: ListSearchTabsByOrgIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.ListSearchTabsByOrgIdHeaders()
         return await self.list_search_tabs_by_org_id_with_options_async(headers, runtime)
@@ -828,6 +1060,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.UpdateSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
+        """
+        @summary 更新搜索数据源
+        
+        @param request: UpdateSearchTabRequest
+        @param headers: UpdateSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSearchTabResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dark_icon):
@@ -874,6 +1114,14 @@ class Client(OpenApiClient):
         headers: dingtalksearch__1__0_models.UpdateSearchTabHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
+        """
+        @summary 更新搜索数据源
+        
+        @param request: UpdateSearchTabRequest
+        @param headers: UpdateSearchTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSearchTabResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dark_icon):
@@ -918,6 +1166,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.UpdateSearchTabRequest,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
+        """
+        @summary 更新搜索数据源
+        
+        @param request: UpdateSearchTabRequest
+        @return: UpdateSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.UpdateSearchTabHeaders()
         return self.update_search_tab_with_options(tab_id, request, headers, runtime)
@@ -927,6 +1181,12 @@ class Client(OpenApiClient):
         tab_id: str,
         request: dingtalksearch__1__0_models.UpdateSearchTabRequest,
     ) -> dingtalksearch__1__0_models.UpdateSearchTabResponse:
+        """
+        @summary 更新搜索数据源
+        
+        @param request: UpdateSearchTabRequest
+        @return: UpdateSearchTabResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksearch__1__0_models.UpdateSearchTabHeaders()
         return await self.update_search_tab_with_options_async(tab_id, request, headers, runtime)

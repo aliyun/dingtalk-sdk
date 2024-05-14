@@ -45,9 +45,12 @@ class CreateFieldRequest(TeaModel):
         type: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.property = property
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -208,8 +211,10 @@ class CreateSheetRequestFields(TeaModel):
         property: Dict[str, Any] = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.property = property
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -249,6 +254,7 @@ class CreateSheetRequest(TeaModel):
     ):
         self.fields = fields
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -399,6 +405,7 @@ class DeleteFieldRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -528,7 +535,9 @@ class DeleteRecordsRequest(TeaModel):
         record_ids: List[str] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.record_ids = record_ids
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -661,6 +670,7 @@ class DeleteSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -789,6 +799,7 @@ class GetAllFieldsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -970,6 +981,7 @@ class GetAllSheetsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1139,6 +1151,7 @@ class GetRecordRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1277,6 +1290,7 @@ class GetRecordsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1466,6 +1480,7 @@ class GetSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1600,6 +1615,7 @@ class InsertRecordsRequestRecords(TeaModel):
         self,
         fields: Dict[str, Any] = None,
     ):
+        # This parameter is required.
         self.fields = fields
 
     def validate(self):
@@ -1628,7 +1644,9 @@ class InsertRecordsRequest(TeaModel):
         records: List[InsertRecordsRequestRecords] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.records = records
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1806,8 +1824,10 @@ class UpdateFieldRequest(TeaModel):
         property: Dict[str, Any] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.property = property
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1945,7 +1965,9 @@ class UpdateRecordsRequestRecords(TeaModel):
         fields: Dict[str, Any] = None,
         id: str = None,
     ):
+        # This parameter is required.
         self.fields = fields
+        # This parameter is required.
         self.id = id
 
     def validate(self):
@@ -1978,7 +2000,9 @@ class UpdateRecordsRequest(TeaModel):
         records: List[UpdateRecordsRequestRecords] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.records = records
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2155,7 +2179,9 @@ class UpdateSheetRequest(TeaModel):
         name: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):

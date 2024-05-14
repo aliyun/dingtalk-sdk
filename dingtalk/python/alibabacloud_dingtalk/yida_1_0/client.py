@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.AppLoginCodeGenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        """
+        @summary 生成登录态传递用的code
+        
+        @param request: AppLoginCodeGenRequest
+        @param headers: AppLoginCodeGenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppLoginCodeGenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.full_url):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.AppLoginCodeGenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        """
+        @summary 生成登录态传递用的code
+        
+        @param request: AppLoginCodeGenRequest
+        @param headers: AppLoginCodeGenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppLoginCodeGenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.full_url):
@@ -123,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
     ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        """
+        @summary 生成登录态传递用的code
+        
+        @param request: AppLoginCodeGenRequest
+        @return: AppLoginCodeGenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.AppLoginCodeGenHeaders()
         return self.app_login_code_gen_with_options(request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.AppLoginCodeGenRequest,
     ) -> dingtalkyida__1__0_models.AppLoginCodeGenResponse:
+        """
+        @summary 生成登录态传递用的code
+        
+        @param request: AppLoginCodeGenRequest
+        @return: AppLoginCodeGenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.AppLoginCodeGenHeaders()
         return await self.app_login_code_gen_with_options_async(request, headers, runtime)
@@ -141,6 +169,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        """
+        @summary 批量获取指定表单实例ID列表对应的表单实例数据
+        
+        @param request: BatchGetFormDataByIdListRequest
+        @param headers: BatchGetFormDataByIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetFormDataByIdListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -186,6 +222,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        """
+        @summary 批量获取指定表单实例ID列表对应的表单实例数据
+        
+        @param request: BatchGetFormDataByIdListRequest
+        @param headers: BatchGetFormDataByIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetFormDataByIdListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -229,6 +273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
     ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        """
+        @summary 批量获取指定表单实例ID列表对应的表单实例数据
+        
+        @param request: BatchGetFormDataByIdListRequest
+        @return: BatchGetFormDataByIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders()
         return self.batch_get_form_data_by_id_list_with_options(request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchGetFormDataByIdListRequest,
     ) -> dingtalkyida__1__0_models.BatchGetFormDataByIdListResponse:
+        """
+        @summary 批量获取指定表单实例ID列表对应的表单实例数据
+        
+        @param request: BatchGetFormDataByIdListRequest
+        @return: BatchGetFormDataByIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchGetFormDataByIdListHeaders()
         return await self.batch_get_form_data_by_id_list_with_options_async(request, headers, runtime)
@@ -247,6 +303,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        """
+        @summary 批量删除指定的表单实例
+        
+        @param request: BatchRemovalByFormInstanceIdListRequest
+        @param headers: BatchRemovalByFormInstanceIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRemovalByFormInstanceIdListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -294,6 +358,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        """
+        @summary 批量删除指定的表单实例
+        
+        @param request: BatchRemovalByFormInstanceIdListRequest
+        @param headers: BatchRemovalByFormInstanceIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRemovalByFormInstanceIdListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -339,6 +411,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
     ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        """
+        @summary 批量删除指定的表单实例
+        
+        @param request: BatchRemovalByFormInstanceIdListRequest
+        @return: BatchRemovalByFormInstanceIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders()
         return self.batch_removal_by_form_instance_id_list_with_options(request, headers, runtime)
@@ -347,6 +425,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListRequest,
     ) -> dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListResponse:
+        """
+        @summary 批量删除指定的表单实例
+        
+        @param request: BatchRemovalByFormInstanceIdListRequest
+        @return: BatchRemovalByFormInstanceIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchRemovalByFormInstanceIdListHeaders()
         return await self.batch_removal_by_form_instance_id_list_with_options_async(request, headers, runtime)
@@ -357,6 +441,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchSaveFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        """
+        @summary 批量保存表单实例数据
+        
+        @param request: BatchSaveFormDataRequest
+        @param headers: BatchSaveFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchSaveFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -406,6 +498,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchSaveFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        """
+        @summary 批量保存表单实例数据
+        
+        @param request: BatchSaveFormDataRequest
+        @param headers: BatchSaveFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchSaveFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -453,6 +553,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
     ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        """
+        @summary 批量保存表单实例数据
+        
+        @param request: BatchSaveFormDataRequest
+        @return: BatchSaveFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchSaveFormDataHeaders()
         return self.batch_save_form_data_with_options(request, headers, runtime)
@@ -461,6 +567,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchSaveFormDataRequest,
     ) -> dingtalkyida__1__0_models.BatchSaveFormDataResponse:
+        """
+        @summary 批量保存表单实例数据
+        
+        @param request: BatchSaveFormDataRequest
+        @return: BatchSaveFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchSaveFormDataHeaders()
         return await self.batch_save_form_data_with_options_async(request, headers, runtime)
@@ -471,6 +583,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        """
+        @summary 将多条表单实例的指定表单组件更新成指定值
+        
+        @param request: BatchUpdateFormDataByInstanceIdRequest
+        @param headers: BatchUpdateFormDataByInstanceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFormDataByInstanceIdResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -524,6 +644,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        """
+        @summary 将多条表单实例的指定表单组件更新成指定值
+        
+        @param request: BatchUpdateFormDataByInstanceIdRequest
+        @param headers: BatchUpdateFormDataByInstanceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFormDataByInstanceIdResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -575,6 +703,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        """
+        @summary 将多条表单实例的指定表单组件更新成指定值
+        
+        @param request: BatchUpdateFormDataByInstanceIdRequest
+        @return: BatchUpdateFormDataByInstanceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders()
         return self.batch_update_form_data_by_instance_id_with_options(request, headers, runtime)
@@ -583,6 +717,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdRequest,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdResponse:
+        """
+        @summary 将多条表单实例的指定表单组件更新成指定值
+        
+        @param request: BatchUpdateFormDataByInstanceIdRequest
+        @return: BatchUpdateFormDataByInstanceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceIdHeaders()
         return await self.batch_update_form_data_by_instance_id_with_options_async(request, headers, runtime)
@@ -593,6 +733,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        """
+        @summary 通过表单实例数据批量更新表单实例
+        
+        @param request: BatchUpdateFormDataByInstanceMapRequest
+        @param headers: BatchUpdateFormDataByInstanceMapHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFormDataByInstanceMapResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -644,6 +792,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        """
+        @summary 通过表单实例数据批量更新表单实例
+        
+        @param request: BatchUpdateFormDataByInstanceMapRequest
+        @param headers: BatchUpdateFormDataByInstanceMapHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFormDataByInstanceMapResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -693,6 +849,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        """
+        @summary 通过表单实例数据批量更新表单实例
+        
+        @param request: BatchUpdateFormDataByInstanceMapRequest
+        @return: BatchUpdateFormDataByInstanceMapResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders()
         return self.batch_update_form_data_by_instance_map_with_options(request, headers, runtime)
@@ -701,6 +863,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapRequest,
     ) -> dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapResponse:
+        """
+        @summary 通过表单实例数据批量更新表单实例
+        
+        @param request: BatchUpdateFormDataByInstanceMapRequest
+        @return: BatchUpdateFormDataByInstanceMapResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BatchUpdateFormDataByInstanceMapHeaders()
         return await self.batch_update_form_data_by_instance_map_with_options_async(request, headers, runtime)
@@ -711,6 +879,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BuyAuthorizationOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BuyAuthorizationOrderResponse:
+        """
+        @summary 多渠道新购(通过应用授权服务)
+        
+        @param request: BuyAuthorizationOrderRequest
+        @param headers: BuyAuthorizationOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BuyAuthorizationOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -766,6 +942,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BuyAuthorizationOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BuyAuthorizationOrderResponse:
+        """
+        @summary 多渠道新购(通过应用授权服务)
+        
+        @param request: BuyAuthorizationOrderRequest
+        @param headers: BuyAuthorizationOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BuyAuthorizationOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -819,6 +1003,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BuyAuthorizationOrderRequest,
     ) -> dingtalkyida__1__0_models.BuyAuthorizationOrderResponse:
+        """
+        @summary 多渠道新购(通过应用授权服务)
+        
+        @param request: BuyAuthorizationOrderRequest
+        @return: BuyAuthorizationOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BuyAuthorizationOrderHeaders()
         return self.buy_authorization_order_with_options(request, headers, runtime)
@@ -827,6 +1017,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BuyAuthorizationOrderRequest,
     ) -> dingtalkyida__1__0_models.BuyAuthorizationOrderResponse:
+        """
+        @summary 多渠道新购(通过应用授权服务)
+        
+        @param request: BuyAuthorizationOrderRequest
+        @return: BuyAuthorizationOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BuyAuthorizationOrderHeaders()
         return await self.buy_authorization_order_with_options_async(request, headers, runtime)
@@ -837,6 +1033,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BuyFreshOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BuyFreshOrderResponse:
+        """
+        @summary 新购宜搭产品
+        
+        @param request: BuyFreshOrderRequest
+        @param headers: BuyFreshOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BuyFreshOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -892,6 +1096,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.BuyFreshOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.BuyFreshOrderResponse:
+        """
+        @summary 新购宜搭产品
+        
+        @param request: BuyFreshOrderRequest
+        @param headers: BuyFreshOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BuyFreshOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -945,6 +1157,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BuyFreshOrderRequest,
     ) -> dingtalkyida__1__0_models.BuyFreshOrderResponse:
+        """
+        @summary 新购宜搭产品
+        
+        @param request: BuyFreshOrderRequest
+        @return: BuyFreshOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BuyFreshOrderHeaders()
         return self.buy_fresh_order_with_options(request, headers, runtime)
@@ -953,6 +1171,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.BuyFreshOrderRequest,
     ) -> dingtalkyida__1__0_models.BuyFreshOrderResponse:
+        """
+        @summary 新购宜搭产品
+        
+        @param request: BuyFreshOrderRequest
+        @return: BuyFreshOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.BuyFreshOrderHeaders()
         return await self.buy_fresh_order_with_options_async(request, headers, runtime)
@@ -964,6 +1188,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.CheckCloudAccountStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
+        """
+        @summary 根据阿里云账号验证激活结果
+        
+        @param request: CheckCloudAccountStatusRequest
+        @param headers: CheckCloudAccountStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckCloudAccountStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -1000,6 +1232,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.CheckCloudAccountStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
+        """
+        @summary 根据阿里云账号验证激活结果
+        
+        @param request: CheckCloudAccountStatusRequest
+        @param headers: CheckCloudAccountStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckCloudAccountStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -1034,6 +1274,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.CheckCloudAccountStatusRequest,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
+        """
+        @summary 根据阿里云账号验证激活结果
+        
+        @param request: CheckCloudAccountStatusRequest
+        @return: CheckCloudAccountStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.CheckCloudAccountStatusHeaders()
         return self.check_cloud_account_status_with_options(caller_uid, request, headers, runtime)
@@ -1043,6 +1289,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.CheckCloudAccountStatusRequest,
     ) -> dingtalkyida__1__0_models.CheckCloudAccountStatusResponse:
+        """
+        @summary 根据阿里云账号验证激活结果
+        
+        @param request: CheckCloudAccountStatusRequest
+        @return: CheckCloudAccountStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.CheckCloudAccountStatusHeaders()
         return await self.check_cloud_account_status_with_options_async(caller_uid, request, headers, runtime)
@@ -1053,6 +1305,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        """
+        @summary 新增或更新表单实例
+        
+        @param request: CreateOrUpdateFormDataRequest
+        @param headers: CreateOrUpdateFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOrUpdateFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1100,6 +1360,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        """
+        @summary 新增或更新表单实例
+        
+        @param request: CreateOrUpdateFormDataRequest
+        @param headers: CreateOrUpdateFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOrUpdateFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1145,6 +1413,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
     ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        """
+        @summary 新增或更新表单实例
+        
+        @param request: CreateOrUpdateFormDataRequest
+        @return: CreateOrUpdateFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders()
         return self.create_or_update_form_data_with_options(request, headers, runtime)
@@ -1153,6 +1427,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.CreateOrUpdateFormDataRequest,
     ) -> dingtalkyida__1__0_models.CreateOrUpdateFormDataResponse:
+        """
+        @summary 新增或更新表单实例
+        
+        @param request: CreateOrUpdateFormDataRequest
+        @return: CreateOrUpdateFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.CreateOrUpdateFormDataHeaders()
         return await self.create_or_update_form_data_with_options_async(request, headers, runtime)
@@ -1163,6 +1443,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteFormDataResponse:
+        """
+        @summary 删除表单实例
+        
+        @param request: DeleteFormDataRequest
+        @param headers: DeleteFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFormDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1206,6 +1494,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteFormDataResponse:
+        """
+        @summary 删除表单实例
+        
+        @param request: DeleteFormDataRequest
+        @param headers: DeleteFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFormDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1247,6 +1543,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteFormDataRequest,
     ) -> dingtalkyida__1__0_models.DeleteFormDataResponse:
+        """
+        @summary 删除表单实例
+        
+        @param request: DeleteFormDataRequest
+        @return: DeleteFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteFormDataHeaders()
         return self.delete_form_data_with_options(request, headers, runtime)
@@ -1255,6 +1557,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteFormDataRequest,
     ) -> dingtalkyida__1__0_models.DeleteFormDataResponse:
+        """
+        @summary 删除表单实例
+        
+        @param request: DeleteFormDataRequest
+        @return: DeleteFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteFormDataHeaders()
         return await self.delete_form_data_with_options_async(request, headers, runtime)
@@ -1265,6 +1573,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteInstanceResponse:
+        """
+        @summary 删除流程实例
+        
+        @param request: DeleteInstanceRequest
+        @param headers: DeleteInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1308,6 +1624,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteInstanceResponse:
+        """
+        @summary 删除流程实例
+        
+        @param request: DeleteInstanceRequest
+        @param headers: DeleteInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1349,6 +1673,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteInstanceRequest,
     ) -> dingtalkyida__1__0_models.DeleteInstanceResponse:
+        """
+        @summary 删除流程实例
+        
+        @param request: DeleteInstanceRequest
+        @return: DeleteInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteInstanceHeaders()
         return self.delete_instance_with_options(request, headers, runtime)
@@ -1357,6 +1687,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteInstanceRequest,
     ) -> dingtalkyida__1__0_models.DeleteInstanceResponse:
+        """
+        @summary 删除流程实例
+        
+        @param request: DeleteInstanceRequest
+        @return: DeleteInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteInstanceHeaders()
         return await self.delete_instance_with_options_async(request, headers, runtime)
@@ -1367,6 +1703,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteSequenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteSequenceResponse:
+        """
+        @summary deleteSequence
+        
+        @param request: DeleteSequenceRequest
+        @param headers: DeleteSequenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSequenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1410,6 +1754,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeleteSequenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeleteSequenceResponse:
+        """
+        @summary deleteSequence
+        
+        @param request: DeleteSequenceRequest
+        @param headers: DeleteSequenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSequenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1451,6 +1803,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteSequenceRequest,
     ) -> dingtalkyida__1__0_models.DeleteSequenceResponse:
+        """
+        @summary deleteSequence
+        
+        @param request: DeleteSequenceRequest
+        @return: DeleteSequenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteSequenceHeaders()
         return self.delete_sequence_with_options(request, headers, runtime)
@@ -1459,6 +1817,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeleteSequenceRequest,
     ) -> dingtalkyida__1__0_models.DeleteSequenceResponse:
+        """
+        @summary deleteSequence
+        
+        @param request: DeleteSequenceRequest
+        @return: DeleteSequenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeleteSequenceHeaders()
         return await self.delete_sequence_with_options_async(request, headers, runtime)
@@ -1469,6 +1833,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeployFunctionCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        """
+        @summary 云开发平台函数计算部署完成回调宜搭
+        
+        @param request: DeployFunctionCallbackRequest
+        @param headers: DeployFunctionCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeployFunctionCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_id):
@@ -1514,6 +1886,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.DeployFunctionCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        """
+        @summary 云开发平台函数计算部署完成回调宜搭
+        
+        @param request: DeployFunctionCallbackRequest
+        @param headers: DeployFunctionCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeployFunctionCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_id):
@@ -1557,6 +1937,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
     ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        """
+        @summary 云开发平台函数计算部署完成回调宜搭
+        
+        @param request: DeployFunctionCallbackRequest
+        @return: DeployFunctionCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeployFunctionCallbackHeaders()
         return self.deploy_function_callback_with_options(request, headers, runtime)
@@ -1565,6 +1951,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.DeployFunctionCallbackRequest,
     ) -> dingtalkyida__1__0_models.DeployFunctionCallbackResponse:
+        """
+        @summary 云开发平台函数计算部署完成回调宜搭
+        
+        @param request: DeployFunctionCallbackRequest
+        @return: DeployFunctionCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.DeployFunctionCallbackHeaders()
         return await self.deploy_function_callback_with_options_async(request, headers, runtime)
@@ -1575,6 +1967,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteBatchTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        """
+        @summary 批量审批
+        
+        @param request: ExecuteBatchTaskRequest
+        @param headers: ExecuteBatchTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteBatchTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1620,6 +2020,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteBatchTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        """
+        @summary 批量审批
+        
+        @param request: ExecuteBatchTaskRequest
+        @param headers: ExecuteBatchTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteBatchTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1663,6 +2071,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        """
+        @summary 批量审批
+        
+        @param request: ExecuteBatchTaskRequest
+        @return: ExecuteBatchTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteBatchTaskHeaders()
         return self.execute_batch_task_with_options(request, headers, runtime)
@@ -1671,6 +2085,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteBatchTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecuteBatchTaskResponse:
+        """
+        @summary 批量审批
+        
+        @param request: ExecuteBatchTaskRequest
+        @return: ExecuteBatchTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteBatchTaskHeaders()
         return await self.execute_batch_task_with_options_async(request, headers, runtime)
@@ -1681,6 +2101,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteCustomApiHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteCustomApiResponse:
+        """
+        @summary 执行用户自定义的API接口
+        
+        @param request: ExecuteCustomApiRequest
+        @param headers: ExecuteCustomApiHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteCustomApiResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1726,6 +2154,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteCustomApiHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteCustomApiResponse:
+        """
+        @summary 执行用户自定义的API接口
+        
+        @param request: ExecuteCustomApiRequest
+        @param headers: ExecuteCustomApiHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteCustomApiResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1769,6 +2205,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteCustomApiRequest,
     ) -> dingtalkyida__1__0_models.ExecuteCustomApiResponse:
+        """
+        @summary 执行用户自定义的API接口
+        
+        @param request: ExecuteCustomApiRequest
+        @return: ExecuteCustomApiResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteCustomApiHeaders()
         return self.execute_custom_api_with_options(request, headers, runtime)
@@ -1777,6 +2219,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteCustomApiRequest,
     ) -> dingtalkyida__1__0_models.ExecuteCustomApiResponse:
+        """
+        @summary 执行用户自定义的API接口
+        
+        @param request: ExecuteCustomApiRequest
+        @return: ExecuteCustomApiResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteCustomApiHeaders()
         return await self.execute_custom_api_with_options_async(request, headers, runtime)
@@ -1787,6 +2235,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecutePlatformTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecutePlatformTaskResponse:
+        """
+        @summary 执行宜搭平台的审批任务
+        
+        @param request: ExecutePlatformTaskRequest
+        @param headers: ExecutePlatformTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecutePlatformTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1838,6 +2294,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecutePlatformTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecutePlatformTaskResponse:
+        """
+        @summary 执行宜搭平台的审批任务
+        
+        @param request: ExecutePlatformTaskRequest
+        @param headers: ExecutePlatformTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecutePlatformTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1887,6 +2351,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecutePlatformTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecutePlatformTaskResponse:
+        """
+        @summary 执行宜搭平台的审批任务
+        
+        @param request: ExecutePlatformTaskRequest
+        @return: ExecutePlatformTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecutePlatformTaskHeaders()
         return self.execute_platform_task_with_options(request, headers, runtime)
@@ -1895,6 +2365,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecutePlatformTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecutePlatformTaskResponse:
+        """
+        @summary 执行宜搭平台的审批任务
+        
+        @param request: ExecutePlatformTaskRequest
+        @return: ExecutePlatformTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecutePlatformTaskHeaders()
         return await self.execute_platform_task_with_options_async(request, headers, runtime)
@@ -1905,6 +2381,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteTaskResponse:
+        """
+        @summary 执行审批任务
+        
+        @param request: ExecuteTaskRequest
+        @param headers: ExecuteTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -1960,6 +2444,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExecuteTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExecuteTaskResponse:
+        """
+        @summary 执行审批任务
+        
+        @param request: ExecuteTaskRequest
+        @param headers: ExecuteTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -2013,6 +2505,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecuteTaskResponse:
+        """
+        @summary 执行审批任务
+        
+        @param request: ExecuteTaskRequest
+        @return: ExecuteTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteTaskHeaders()
         return self.execute_task_with_options(request, headers, runtime)
@@ -2021,6 +2519,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExecuteTaskRequest,
     ) -> dingtalkyida__1__0_models.ExecuteTaskResponse:
+        """
+        @summary 执行审批任务
+        
+        @param request: ExecuteTaskRequest
+        @return: ExecuteTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExecuteTaskHeaders()
         return await self.execute_task_with_options_async(request, headers, runtime)
@@ -2031,6 +2535,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExpireCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExpireCommodityResponse:
+        """
+        @summary 多渠道到期
+        
+        @param request: ExpireCommodityRequest
+        @param headers: ExpireCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExpireCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2070,6 +2582,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ExpireCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ExpireCommodityResponse:
+        """
+        @summary 多渠道到期
+        
+        @param request: ExpireCommodityRequest
+        @param headers: ExpireCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExpireCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2107,6 +2627,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExpireCommodityRequest,
     ) -> dingtalkyida__1__0_models.ExpireCommodityResponse:
+        """
+        @summary 多渠道到期
+        
+        @param request: ExpireCommodityRequest
+        @return: ExpireCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExpireCommodityHeaders()
         return self.expire_commodity_with_options(request, headers, runtime)
@@ -2115,6 +2641,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ExpireCommodityRequest,
     ) -> dingtalkyida__1__0_models.ExpireCommodityResponse:
+        """
+        @summary 多渠道到期
+        
+        @param request: ExpireCommodityRequest
+        @return: ExpireCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ExpireCommodityHeaders()
         return await self.expire_commodity_with_options_async(request, headers, runtime)
@@ -2126,6 +2658,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
+        """
+        @summary 根据阿里云账号获取激活码
+        
+        @param request: GetActivationCodeByCallerUnionIdRequest
+        @param headers: GetActivationCodeByCallerUnionIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivationCodeByCallerUnionIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2162,6 +2702,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
+        """
+        @summary 根据阿里云账号获取激活码
+        
+        @param request: GetActivationCodeByCallerUnionIdRequest
+        @param headers: GetActivationCodeByCallerUnionIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivationCodeByCallerUnionIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2196,6 +2744,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdRequest,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
+        """
+        @summary 根据阿里云账号获取激活码
+        
+        @param request: GetActivationCodeByCallerUnionIdRequest
+        @return: GetActivationCodeByCallerUnionIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdHeaders()
         return self.get_activation_code_by_caller_union_id_with_options(caller_uid, request, headers, runtime)
@@ -2205,6 +2759,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdRequest,
     ) -> dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdResponse:
+        """
+        @summary 根据阿里云账号获取激活码
+        
+        @param request: GetActivationCodeByCallerUnionIdRequest
+        @return: GetActivationCodeByCallerUnionIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivationCodeByCallerUnionIdHeaders()
         return await self.get_activation_code_by_caller_union_id_with_options_async(caller_uid, request, headers, runtime)
@@ -2218,6 +2778,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivityButtonListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
+        """
+        @summary 获取流程实例可操作功能列表
+        
+        @param request: GetActivityButtonListRequest
+        @param headers: GetActivityButtonListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivityButtonListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.language):
@@ -2260,6 +2828,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivityButtonListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
+        """
+        @summary 获取流程实例可操作功能列表
+        
+        @param request: GetActivityButtonListRequest
+        @param headers: GetActivityButtonListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivityButtonListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.language):
@@ -2300,6 +2876,12 @@ class Client(OpenApiClient):
         activity_id: str,
         request: dingtalkyida__1__0_models.GetActivityButtonListRequest,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
+        """
+        @summary 获取流程实例可操作功能列表
+        
+        @param request: GetActivityButtonListRequest
+        @return: GetActivityButtonListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivityButtonListHeaders()
         return self.get_activity_button_list_with_options(app_type, process_code, activity_id, request, headers, runtime)
@@ -2311,6 +2893,12 @@ class Client(OpenApiClient):
         activity_id: str,
         request: dingtalkyida__1__0_models.GetActivityButtonListRequest,
     ) -> dingtalkyida__1__0_models.GetActivityButtonListResponse:
+        """
+        @summary 获取流程实例可操作功能列表
+        
+        @param request: GetActivityButtonListRequest
+        @return: GetActivityButtonListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivityButtonListHeaders()
         return await self.get_activity_button_list_with_options_async(app_type, process_code, activity_id, request, headers, runtime)
@@ -2321,6 +2909,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivityListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityListResponse:
+        """
+        @summary 获取流程设计的节点信息
+        
+        @param request: GetActivityListRequest
+        @param headers: GetActivityListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivityListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -2364,6 +2960,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetActivityListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetActivityListResponse:
+        """
+        @summary 获取流程设计的节点信息
+        
+        @param request: GetActivityListRequest
+        @param headers: GetActivityListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActivityListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -2405,6 +3009,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetActivityListRequest,
     ) -> dingtalkyida__1__0_models.GetActivityListResponse:
+        """
+        @summary 获取流程设计的节点信息
+        
+        @param request: GetActivityListRequest
+        @return: GetActivityListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivityListHeaders()
         return self.get_activity_list_with_options(request, headers, runtime)
@@ -2413,6 +3023,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetActivityListRequest,
     ) -> dingtalkyida__1__0_models.GetActivityListResponse:
+        """
+        @summary 获取流程设计的节点信息
+        
+        @param request: GetActivityListRequest
+        @return: GetActivityListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetActivityListHeaders()
         return await self.get_activity_list_with_options_async(request, headers, runtime)
@@ -2423,6 +3039,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetAllAuthCubesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        """
+        @summary 查询表单的接口，支持分页、表单名称模糊查询
+        
+        @param request: GetAllAuthCubesRequest
+        @param headers: GetAllAuthCubesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllAuthCubesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -2470,6 +3094,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetAllAuthCubesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        """
+        @summary 查询表单的接口，支持分页、表单名称模糊查询
+        
+        @param request: GetAllAuthCubesRequest
+        @param headers: GetAllAuthCubesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllAuthCubesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -2515,6 +3147,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
     ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        """
+        @summary 查询表单的接口，支持分页、表单名称模糊查询
+        
+        @param request: GetAllAuthCubesRequest
+        @return: GetAllAuthCubesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetAllAuthCubesHeaders()
         return self.get_all_auth_cubes_with_options(request, headers, runtime)
@@ -2523,6 +3161,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetAllAuthCubesRequest,
     ) -> dingtalkyida__1__0_models.GetAllAuthCubesResponse:
+        """
+        @summary 查询表单的接口，支持分页、表单名称模糊查询
+        
+        @param request: GetAllAuthCubesRequest
+        @return: GetAllAuthCubesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetAllAuthCubesHeaders()
         return await self.get_all_auth_cubes_with_options_async(request, headers, runtime)
@@ -2533,6 +3177,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetApplicationAuthorizationServicePlatformResourceRequest
+        @param headers: GetApplicationAuthorizationServicePlatformResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetApplicationAuthorizationServicePlatformResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2572,6 +3224,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetApplicationAuthorizationServicePlatformResourceRequest
+        @param headers: GetApplicationAuthorizationServicePlatformResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetApplicationAuthorizationServicePlatformResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -2609,6 +3269,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceRequest,
     ) -> dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetApplicationAuthorizationServicePlatformResourceRequest
+        @return: GetApplicationAuthorizationServicePlatformResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceHeaders()
         return self.get_application_authorization_service_platform_resource_with_options(request, headers, runtime)
@@ -2617,6 +3283,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceRequest,
     ) -> dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetApplicationAuthorizationServicePlatformResourceRequest
+        @return: GetApplicationAuthorizationServicePlatformResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetApplicationAuthorizationServicePlatformResourceHeaders()
         return await self.get_application_authorization_service_platform_resource_with_options_async(request, headers, runtime)
@@ -2627,6 +3299,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        """
+        @summary 获取自动化流日志详情
+        
+        @param request: GetAutoFlowLogDetailRequest
+        @param headers: GetAutoFlowLogDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAutoFlowLogDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -2672,6 +3352,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        """
+        @summary 获取自动化流日志详情
+        
+        @param request: GetAutoFlowLogDetailRequest
+        @param headers: GetAutoFlowLogDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAutoFlowLogDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -2715,6 +3403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
     ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        """
+        @summary 获取自动化流日志详情
+        
+        @param request: GetAutoFlowLogDetailRequest
+        @return: GetAutoFlowLogDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders()
         return self.get_auto_flow_log_detail_with_options(request, headers, runtime)
@@ -2723,6 +3417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetAutoFlowLogDetailRequest,
     ) -> dingtalkyida__1__0_models.GetAutoFlowLogDetailResponse:
+        """
+        @summary 获取自动化流日志详情
+        
+        @param request: GetAutoFlowLogDetailRequest
+        @return: GetAutoFlowLogDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetAutoFlowLogDetailHeaders()
         return await self.get_auto_flow_log_detail_with_options_async(request, headers, runtime)
@@ -2735,6 +3435,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpAccomplishmentTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
+        """
+        @summary 查询已完成任务列表
+        
+        @param request: GetCorpAccomplishmentTasksRequest
+        @param headers: GetCorpAccomplishmentTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpAccomplishmentTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -2788,6 +3496,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpAccomplishmentTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
+        """
+        @summary 查询已完成任务列表
+        
+        @param request: GetCorpAccomplishmentTasksRequest
+        @param headers: GetCorpAccomplishmentTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpAccomplishmentTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -2839,6 +3555,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetCorpAccomplishmentTasksRequest,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
+        """
+        @summary 查询已完成任务列表
+        
+        @param request: GetCorpAccomplishmentTasksRequest
+        @return: GetCorpAccomplishmentTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpAccomplishmentTasksHeaders()
         return self.get_corp_accomplishment_tasks_with_options(corp_id, user_id, request, headers, runtime)
@@ -2849,6 +3571,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetCorpAccomplishmentTasksRequest,
     ) -> dingtalkyida__1__0_models.GetCorpAccomplishmentTasksResponse:
+        """
+        @summary 查询已完成任务列表
+        
+        @param request: GetCorpAccomplishmentTasksRequest
+        @return: GetCorpAccomplishmentTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpAccomplishmentTasksHeaders()
         return await self.get_corp_accomplishment_tasks_with_options_async(corp_id, user_id, request, headers, runtime)
@@ -2859,6 +3587,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpLevelByAccountIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpLevelByAccountIdResponse:
+        """
+        @summary 根据accountId获取企业等级
+        
+        @param request: GetCorpLevelByAccountIdRequest
+        @param headers: GetCorpLevelByAccountIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpLevelByAccountIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -2894,6 +3630,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpLevelByAccountIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpLevelByAccountIdResponse:
+        """
+        @summary 根据accountId获取企业等级
+        
+        @param request: GetCorpLevelByAccountIdRequest
+        @param headers: GetCorpLevelByAccountIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpLevelByAccountIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -2927,6 +3671,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetCorpLevelByAccountIdRequest,
     ) -> dingtalkyida__1__0_models.GetCorpLevelByAccountIdResponse:
+        """
+        @summary 根据accountId获取企业等级
+        
+        @param request: GetCorpLevelByAccountIdRequest
+        @return: GetCorpLevelByAccountIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpLevelByAccountIdHeaders()
         return self.get_corp_level_by_account_id_with_options(request, headers, runtime)
@@ -2935,6 +3685,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetCorpLevelByAccountIdRequest,
     ) -> dingtalkyida__1__0_models.GetCorpLevelByAccountIdResponse:
+        """
+        @summary 根据accountId获取企业等级
+        
+        @param request: GetCorpLevelByAccountIdRequest
+        @return: GetCorpLevelByAccountIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpLevelByAccountIdHeaders()
         return await self.get_corp_level_by_account_id_with_options_async(request, headers, runtime)
@@ -2945,6 +3701,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpTasksResponse:
+        """
+        @summary 查询待办任务列表
+        
+        @param request: GetCorpTasksRequest
+        @param headers: GetCorpTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -3000,6 +3764,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetCorpTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetCorpTasksResponse:
+        """
+        @summary 查询待办任务列表
+        
+        @param request: GetCorpTasksRequest
+        @param headers: GetCorpTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -3053,6 +3825,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetCorpTasksRequest,
     ) -> dingtalkyida__1__0_models.GetCorpTasksResponse:
+        """
+        @summary 查询待办任务列表
+        
+        @param request: GetCorpTasksRequest
+        @return: GetCorpTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpTasksHeaders()
         return self.get_corp_tasks_with_options(request, headers, runtime)
@@ -3061,6 +3839,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetCorpTasksRequest,
     ) -> dingtalkyida__1__0_models.GetCorpTasksResponse:
+        """
+        @summary 查询待办任务列表
+        
+        @param request: GetCorpTasksRequest
+        @return: GetCorpTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetCorpTasksHeaders()
         return await self.get_corp_tasks_with_options_async(request, headers, runtime)
@@ -3071,6 +3855,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetDbConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        """
+        @summary 获取数据库连接串信息
+        
+        @param request: GetDbConfigRequest
+        @param headers: GetDbConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDbConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3112,6 +3904,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetDbConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        """
+        @summary 获取数据库连接串信息
+        
+        @param request: GetDbConfigRequest
+        @param headers: GetDbConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDbConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3151,6 +3951,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetDbConfigRequest,
     ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        """
+        @summary 获取数据库连接串信息
+        
+        @param request: GetDbConfigRequest
+        @return: GetDbConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetDbConfigHeaders()
         return self.get_db_config_with_options(request, headers, runtime)
@@ -3159,6 +3965,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetDbConfigRequest,
     ) -> dingtalkyida__1__0_models.GetDbConfigResponse:
+        """
+        @summary 获取数据库连接串信息
+        
+        @param request: GetDbConfigRequest
+        @return: GetDbConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetDbConfigHeaders()
         return await self.get_db_config_with_options_async(request, headers, runtime)
@@ -3169,6 +3981,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFieldDefByUuidHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        """
+        @summary 根据表单ID获取字段信息
+        
+        @param request: GetFieldDefByUuidRequest
+        @param headers: GetFieldDefByUuidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFieldDefByUuidResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3210,6 +4030,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFieldDefByUuidHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        """
+        @summary 根据表单ID获取字段信息
+        
+        @param request: GetFieldDefByUuidRequest
+        @param headers: GetFieldDefByUuidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFieldDefByUuidResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3249,6 +4077,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
     ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        """
+        @summary 根据表单ID获取字段信息
+        
+        @param request: GetFieldDefByUuidRequest
+        @return: GetFieldDefByUuidResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFieldDefByUuidHeaders()
         return self.get_field_def_by_uuid_with_options(request, headers, runtime)
@@ -3257,6 +4091,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetFieldDefByUuidRequest,
     ) -> dingtalkyida__1__0_models.GetFieldDefByUuidResponse:
+        """
+        @summary 根据表单ID获取字段信息
+        
+        @param request: GetFieldDefByUuidRequest
+        @return: GetFieldDefByUuidResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFieldDefByUuidHeaders()
         return await self.get_field_def_by_uuid_with_options_async(request, headers, runtime)
@@ -3269,6 +4109,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormComponentDefinitionListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
+        """
+        @summary 获取表单定义
+        
+        @param request: GetFormComponentDefinitionListRequest
+        @param headers: GetFormComponentDefinitionListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormComponentDefinitionListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.language):
@@ -3312,6 +4160,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormComponentDefinitionListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
+        """
+        @summary 获取表单定义
+        
+        @param request: GetFormComponentDefinitionListRequest
+        @param headers: GetFormComponentDefinitionListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormComponentDefinitionListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.language):
@@ -3353,6 +4209,12 @@ class Client(OpenApiClient):
         form_uuid: str,
         request: dingtalkyida__1__0_models.GetFormComponentDefinitionListRequest,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
+        """
+        @summary 获取表单定义
+        
+        @param request: GetFormComponentDefinitionListRequest
+        @return: GetFormComponentDefinitionListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormComponentDefinitionListHeaders()
         return self.get_form_component_definition_list_with_options(app_type, form_uuid, request, headers, runtime)
@@ -3363,6 +4225,12 @@ class Client(OpenApiClient):
         form_uuid: str,
         request: dingtalkyida__1__0_models.GetFormComponentDefinitionListRequest,
     ) -> dingtalkyida__1__0_models.GetFormComponentDefinitionListResponse:
+        """
+        @summary 获取表单定义
+        
+        @param request: GetFormComponentDefinitionListRequest
+        @return: GetFormComponentDefinitionListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormComponentDefinitionListHeaders()
         return await self.get_form_component_definition_list_with_options_async(app_type, form_uuid, request, headers, runtime)
@@ -3374,6 +4242,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormDataByIDHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
+        """
+        @summary 根据表单 ID 查询实例详情
+        
+        @param request: GetFormDataByIDRequest
+        @param headers: GetFormDataByIDHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormDataByIDResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3416,6 +4292,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormDataByIDHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
+        """
+        @summary 根据表单 ID 查询实例详情
+        
+        @param request: GetFormDataByIDRequest
+        @param headers: GetFormDataByIDHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormDataByIDResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3456,6 +4340,12 @@ class Client(OpenApiClient):
         id: str,
         request: dingtalkyida__1__0_models.GetFormDataByIDRequest,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
+        """
+        @summary 根据表单 ID 查询实例详情
+        
+        @param request: GetFormDataByIDRequest
+        @return: GetFormDataByIDResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormDataByIDHeaders()
         return self.get_form_data_by_idwith_options(id, request, headers, runtime)
@@ -3465,6 +4355,12 @@ class Client(OpenApiClient):
         id: str,
         request: dingtalkyida__1__0_models.GetFormDataByIDRequest,
     ) -> dingtalkyida__1__0_models.GetFormDataByIDResponse:
+        """
+        @summary 根据表单 ID 查询实例详情
+        
+        @param request: GetFormDataByIDRequest
+        @return: GetFormDataByIDResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormDataByIDHeaders()
         return await self.get_form_data_by_idwith_options_async(id, request, headers, runtime)
@@ -3475,6 +4371,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormListInAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        """
+        @summary 获取应用内表单列表信息
+        
+        @param request: GetFormListInAppRequest
+        @param headers: GetFormListInAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormListInAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3520,6 +4424,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetFormListInAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        """
+        @summary 获取应用内表单列表信息
+        
+        @param request: GetFormListInAppRequest
+        @param headers: GetFormListInAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormListInAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3563,6 +4475,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetFormListInAppRequest,
     ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        """
+        @summary 获取应用内表单列表信息
+        
+        @param request: GetFormListInAppRequest
+        @return: GetFormListInAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormListInAppHeaders()
         return self.get_form_list_in_app_with_options(request, headers, runtime)
@@ -3571,6 +4489,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetFormListInAppRequest,
     ) -> dingtalkyida__1__0_models.GetFormListInAppResponse:
+        """
+        @summary 获取应用内表单列表信息
+        
+        @param request: GetFormListInAppRequest
+        @return: GetFormListInAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetFormListInAppHeaders()
         return await self.get_form_list_in_app_with_options_async(request, headers, runtime)
@@ -3582,6 +4506,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstanceByIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
+        """
+        @summary 根据实例 ID 获取流程实例详情
+        
+        @param request: GetInstanceByIdRequest
+        @param headers: GetInstanceByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstanceByIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3624,6 +4556,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstanceByIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
+        """
+        @summary 根据实例 ID 获取流程实例详情
+        
+        @param request: GetInstanceByIdRequest
+        @param headers: GetInstanceByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstanceByIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -3664,6 +4604,12 @@ class Client(OpenApiClient):
         id: str,
         request: dingtalkyida__1__0_models.GetInstanceByIdRequest,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
+        """
+        @summary 根据实例 ID 获取流程实例详情
+        
+        @param request: GetInstanceByIdRequest
+        @return: GetInstanceByIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstanceByIdHeaders()
         return self.get_instance_by_id_with_options(id, request, headers, runtime)
@@ -3673,6 +4619,12 @@ class Client(OpenApiClient):
         id: str,
         request: dingtalkyida__1__0_models.GetInstanceByIdRequest,
     ) -> dingtalkyida__1__0_models.GetInstanceByIdResponse:
+        """
+        @summary 根据实例 ID 获取流程实例详情
+        
+        @param request: GetInstanceByIdRequest
+        @return: GetInstanceByIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstanceByIdHeaders()
         return await self.get_instance_by_id_with_options_async(id, request, headers, runtime)
@@ -3683,6 +4635,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstanceIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceIdListResponse:
+        """
+        @summary 根据条件搜索流程实例 ID
+        
+        @param request: GetInstanceIdListRequest
+        @param headers: GetInstanceIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstanceIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -3750,6 +4710,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstanceIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstanceIdListResponse:
+        """
+        @summary 根据条件搜索流程实例 ID
+        
+        @param request: GetInstanceIdListRequest
+        @param headers: GetInstanceIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstanceIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -3815,6 +4783,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstanceIdListRequest,
     ) -> dingtalkyida__1__0_models.GetInstanceIdListResponse:
+        """
+        @summary 根据条件搜索流程实例 ID
+        
+        @param request: GetInstanceIdListRequest
+        @return: GetInstanceIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstanceIdListHeaders()
         return self.get_instance_id_list_with_options(request, headers, runtime)
@@ -3823,6 +4797,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstanceIdListRequest,
     ) -> dingtalkyida__1__0_models.GetInstanceIdListResponse:
+        """
+        @summary 根据条件搜索流程实例 ID
+        
+        @param request: GetInstanceIdListRequest
+        @return: GetInstanceIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstanceIdListHeaders()
         return await self.get_instance_id_list_with_options_async(request, headers, runtime)
@@ -3833,6 +4813,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstancesResponse:
+        """
+        @summary 根据搜索条件获取流程表单实例详情
+        
+        @param request: GetInstancesRequest
+        @param headers: GetInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -3902,6 +4890,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstancesResponse:
+        """
+        @summary 根据搜索条件获取流程表单实例详情
+        
+        @param request: GetInstancesRequest
+        @param headers: GetInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -3969,6 +4965,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstancesRequest,
     ) -> dingtalkyida__1__0_models.GetInstancesResponse:
+        """
+        @summary 根据搜索条件获取流程表单实例详情
+        
+        @param request: GetInstancesRequest
+        @return: GetInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstancesHeaders()
         return self.get_instances_with_options(request, headers, runtime)
@@ -3977,6 +4979,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstancesRequest,
     ) -> dingtalkyida__1__0_models.GetInstancesResponse:
+        """
+        @summary 根据搜索条件获取流程表单实例详情
+        
+        @param request: GetInstancesRequest
+        @return: GetInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstancesHeaders()
         return await self.get_instances_with_options_async(request, headers, runtime)
@@ -3987,6 +4995,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstancesByIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstancesByIdListResponse:
+        """
+        @summary 根据实例 ID 列表批量获取流程实例详情
+        
+        @param request: GetInstancesByIdListRequest
+        @param headers: GetInstancesByIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstancesByIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4030,6 +5046,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetInstancesByIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetInstancesByIdListResponse:
+        """
+        @summary 根据实例 ID 列表批量获取流程实例详情
+        
+        @param request: GetInstancesByIdListRequest
+        @param headers: GetInstancesByIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInstancesByIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4071,6 +5095,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstancesByIdListRequest,
     ) -> dingtalkyida__1__0_models.GetInstancesByIdListResponse:
+        """
+        @summary 根据实例 ID 列表批量获取流程实例详情
+        
+        @param request: GetInstancesByIdListRequest
+        @return: GetInstancesByIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstancesByIdListHeaders()
         return self.get_instances_by_id_list_with_options(request, headers, runtime)
@@ -4079,6 +5109,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetInstancesByIdListRequest,
     ) -> dingtalkyida__1__0_models.GetInstancesByIdListResponse:
+        """
+        @summary 根据实例 ID 列表批量获取流程实例详情
+        
+        @param request: GetInstancesByIdListRequest
+        @return: GetInstancesByIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetInstancesByIdListHeaders()
         return await self.get_instances_by_id_list_with_options_async(request, headers, runtime)
@@ -4090,6 +5126,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetMeCorpSubmissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
+        """
+        @summary 查询已提交任务列表
+        
+        @param request: GetMeCorpSubmissionRequest
+        @param headers: GetMeCorpSubmissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMeCorpSubmissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -4144,6 +5188,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetMeCorpSubmissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
+        """
+        @summary 查询已提交任务列表
+        
+        @param request: GetMeCorpSubmissionRequest
+        @param headers: GetMeCorpSubmissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMeCorpSubmissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -4196,6 +5248,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetMeCorpSubmissionRequest,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
+        """
+        @summary 查询已提交任务列表
+        
+        @param request: GetMeCorpSubmissionRequest
+        @return: GetMeCorpSubmissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetMeCorpSubmissionHeaders()
         return self.get_me_corp_submission_with_options(user_id, request, headers, runtime)
@@ -4205,6 +5263,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetMeCorpSubmissionRequest,
     ) -> dingtalkyida__1__0_models.GetMeCorpSubmissionResponse:
+        """
+        @summary 查询已提交任务列表
+        
+        @param request: GetMeCorpSubmissionRequest
+        @return: GetMeCorpSubmissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetMeCorpSubmissionHeaders()
         return await self.get_me_corp_submission_with_options_async(user_id, request, headers, runtime)
@@ -4216,6 +5280,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetNotifyMeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
+        """
+        @summary 查询抄送我的任务列表（企业维度）
+        
+        @param request: GetNotifyMeRequest
+        @param headers: GetNotifyMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNotifyMeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -4274,6 +5346,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetNotifyMeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
+        """
+        @summary 查询抄送我的任务列表（企业维度）
+        
+        @param request: GetNotifyMeRequest
+        @param headers: GetNotifyMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNotifyMeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_types):
@@ -4330,6 +5410,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetNotifyMeRequest,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
+        """
+        @summary 查询抄送我的任务列表（企业维度）
+        
+        @param request: GetNotifyMeRequest
+        @return: GetNotifyMeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetNotifyMeHeaders()
         return self.get_notify_me_with_options(user_id, request, headers, runtime)
@@ -4339,6 +5425,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkyida__1__0_models.GetNotifyMeRequest,
     ) -> dingtalkyida__1__0_models.GetNotifyMeResponse:
+        """
+        @summary 查询抄送我的任务列表（企业维度）
+        
+        @param request: GetNotifyMeRequest
+        @return: GetNotifyMeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetNotifyMeHeaders()
         return await self.get_notify_me_with_options_async(user_id, request, headers, runtime)
@@ -4350,6 +5442,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetOpenUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
+        """
+        @summary 附件地址转临时免登地址
+        
+        @param request: GetOpenUrlRequest
+        @param headers: GetOpenUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOpenUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.file_url):
@@ -4394,6 +5494,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetOpenUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
+        """
+        @summary 附件地址转临时免登地址
+        
+        @param request: GetOpenUrlRequest
+        @param headers: GetOpenUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOpenUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.file_url):
@@ -4436,6 +5544,12 @@ class Client(OpenApiClient):
         app_type: str,
         request: dingtalkyida__1__0_models.GetOpenUrlRequest,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
+        """
+        @summary 附件地址转临时免登地址
+        
+        @param request: GetOpenUrlRequest
+        @return: GetOpenUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetOpenUrlHeaders()
         return self.get_open_url_with_options(app_type, request, headers, runtime)
@@ -4445,6 +5559,12 @@ class Client(OpenApiClient):
         app_type: str,
         request: dingtalkyida__1__0_models.GetOpenUrlRequest,
     ) -> dingtalkyida__1__0_models.GetOpenUrlResponse:
+        """
+        @summary 附件地址转临时免登地址
+        
+        @param request: GetOpenUrlRequest
+        @return: GetOpenUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetOpenUrlHeaders()
         return await self.get_open_url_with_options_async(app_type, request, headers, runtime)
@@ -4455,6 +5575,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetOperationRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOperationRecordsResponse:
+        """
+        @summary 获取审批记录
+        
+        @param request: GetOperationRecordsRequest
+        @param headers: GetOperationRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOperationRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4498,6 +5626,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetOperationRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetOperationRecordsResponse:
+        """
+        @summary 获取审批记录
+        
+        @param request: GetOperationRecordsRequest
+        @param headers: GetOperationRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOperationRecordsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4539,6 +5675,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetOperationRecordsRequest,
     ) -> dingtalkyida__1__0_models.GetOperationRecordsResponse:
+        """
+        @summary 获取审批记录
+        
+        @param request: GetOperationRecordsRequest
+        @return: GetOperationRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetOperationRecordsHeaders()
         return self.get_operation_records_with_options(request, headers, runtime)
@@ -4547,6 +5689,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetOperationRecordsRequest,
     ) -> dingtalkyida__1__0_models.GetOperationRecordsResponse:
+        """
+        @summary 获取审批记录
+        
+        @param request: GetOperationRecordsRequest
+        @return: GetOperationRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetOperationRecordsHeaders()
         return await self.get_operation_records_with_options_async(request, headers, runtime)
@@ -4557,6 +5705,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPlatformResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetPlatformResourceRequest
+        @param headers: GetPlatformResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPlatformResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -4596,6 +5752,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPlatformResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetPlatformResourceRequest
+        @param headers: GetPlatformResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPlatformResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -4633,6 +5797,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPlatformResourceRequest,
     ) -> dingtalkyida__1__0_models.GetPlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetPlatformResourceRequest
+        @return: GetPlatformResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPlatformResourceHeaders()
         return self.get_platform_resource_with_options(request, headers, runtime)
@@ -4641,6 +5811,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPlatformResourceRequest,
     ) -> dingtalkyida__1__0_models.GetPlatformResourceResponse:
+        """
+        @summary 多渠道平台概览接口
+        
+        @param request: GetPlatformResourceRequest
+        @return: GetPlatformResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPlatformResourceHeaders()
         return await self.get_platform_resource_with_options_async(request, headers, runtime)
@@ -4651,6 +5827,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPrintAppInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        """
+        @summary 查询用户开通打印模板的应用信息
+        
+        @param request: GetPrintAppInfoRequest
+        @param headers: GetPrintAppInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrintAppInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.name_like):
@@ -4688,6 +5872,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPrintAppInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        """
+        @summary 查询用户开通打印模板的应用信息
+        
+        @param request: GetPrintAppInfoRequest
+        @param headers: GetPrintAppInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrintAppInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.name_like):
@@ -4723,6 +5915,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
     ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        """
+        @summary 查询用户开通打印模板的应用信息
+        
+        @param request: GetPrintAppInfoRequest
+        @return: GetPrintAppInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPrintAppInfoHeaders()
         return self.get_print_app_info_with_options(request, headers, runtime)
@@ -4731,6 +5929,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPrintAppInfoRequest,
     ) -> dingtalkyida__1__0_models.GetPrintAppInfoResponse:
+        """
+        @summary 查询用户开通打印模板的应用信息
+        
+        @param request: GetPrintAppInfoRequest
+        @return: GetPrintAppInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPrintAppInfoHeaders()
         return await self.get_print_app_info_with_options_async(request, headers, runtime)
@@ -4741,6 +5945,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPrintDictionaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        """
+        @summary 获取打印所需的表单与流程节点
+        
+        @param request: GetPrintDictionaryRequest
+        @param headers: GetPrintDictionaryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrintDictionaryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4782,6 +5994,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetPrintDictionaryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        """
+        @summary 获取打印所需的表单与流程节点
+        
+        @param request: GetPrintDictionaryRequest
+        @param headers: GetPrintDictionaryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrintDictionaryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4821,6 +6041,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
     ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        """
+        @summary 获取打印所需的表单与流程节点
+        
+        @param request: GetPrintDictionaryRequest
+        @return: GetPrintDictionaryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPrintDictionaryHeaders()
         return self.get_print_dictionary_with_options(request, headers, runtime)
@@ -4829,6 +6055,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetPrintDictionaryRequest,
     ) -> dingtalkyida__1__0_models.GetPrintDictionaryResponse:
+        """
+        @summary 获取打印所需的表单与流程节点
+        
+        @param request: GetPrintDictionaryRequest
+        @return: GetPrintDictionaryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetPrintDictionaryHeaders()
         return await self.get_print_dictionary_with_options_async(request, headers, runtime)
@@ -4840,6 +6072,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetProcessDefinitionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
+        """
+        @summary 获取流程定义
+        
+        @param request: GetProcessDefinitionRequest
+        @param headers: GetProcessDefinitionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessDefinitionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4892,6 +6132,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetProcessDefinitionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
+        """
+        @summary 获取流程定义
+        
+        @param request: GetProcessDefinitionRequest
+        @param headers: GetProcessDefinitionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessDefinitionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -4942,6 +6190,12 @@ class Client(OpenApiClient):
         process_instance_id: str,
         request: dingtalkyida__1__0_models.GetProcessDefinitionRequest,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
+        """
+        @summary 获取流程定义
+        
+        @param request: GetProcessDefinitionRequest
+        @return: GetProcessDefinitionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetProcessDefinitionHeaders()
         return self.get_process_definition_with_options(process_instance_id, request, headers, runtime)
@@ -4951,6 +6205,12 @@ class Client(OpenApiClient):
         process_instance_id: str,
         request: dingtalkyida__1__0_models.GetProcessDefinitionRequest,
     ) -> dingtalkyida__1__0_models.GetProcessDefinitionResponse:
+        """
+        @summary 获取流程定义
+        
+        @param request: GetProcessDefinitionRequest
+        @return: GetProcessDefinitionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetProcessDefinitionHeaders()
         return await self.get_process_definition_with_options_async(process_instance_id, request, headers, runtime)
@@ -4961,6 +6221,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetRunningTaskListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        """
+        @summary 通过实例id批量获取待办任务
+        
+        @param request: GetRunningTaskListRequest
+        @param headers: GetRunningTaskListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRunningTaskListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5004,6 +6272,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetRunningTaskListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        """
+        @summary 通过实例id批量获取待办任务
+        
+        @param request: GetRunningTaskListRequest
+        @param headers: GetRunningTaskListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRunningTaskListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5045,6 +6321,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
     ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        """
+        @summary 通过实例id批量获取待办任务
+        
+        @param request: GetRunningTaskListRequest
+        @return: GetRunningTaskListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetRunningTaskListHeaders()
         return self.get_running_task_list_with_options(request, headers, runtime)
@@ -5053,6 +6335,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
     ) -> dingtalkyida__1__0_models.GetRunningTaskListResponse:
+        """
+        @summary 通过实例id批量获取待办任务
+        
+        @param request: GetRunningTaskListRequest
+        @return: GetRunningTaskListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetRunningTaskListHeaders()
         return await self.get_running_task_list_with_options_async(request, headers, runtime)
@@ -5063,6 +6351,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetRunningTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetRunningTasksResponse:
+        """
+        @summary 查询流程运行任务（vpc）
+        
+        @param request: GetRunningTasksRequest
+        @param headers: GetRunningTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRunningTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5106,6 +6402,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetRunningTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetRunningTasksResponse:
+        """
+        @summary 查询流程运行任务（vpc）
+        
+        @param request: GetRunningTasksRequest
+        @param headers: GetRunningTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRunningTasksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5147,6 +6451,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetRunningTasksRequest,
     ) -> dingtalkyida__1__0_models.GetRunningTasksResponse:
+        """
+        @summary 查询流程运行任务（vpc）
+        
+        @param request: GetRunningTasksRequest
+        @return: GetRunningTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetRunningTasksHeaders()
         return self.get_running_tasks_with_options(request, headers, runtime)
@@ -5155,6 +6465,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetRunningTasksRequest,
     ) -> dingtalkyida__1__0_models.GetRunningTasksResponse:
+        """
+        @summary 查询流程运行任务（vpc）
+        
+        @param request: GetRunningTasksRequest
+        @return: GetRunningTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetRunningTasksHeaders()
         return await self.get_running_tasks_with_options_async(request, headers, runtime)
@@ -5165,6 +6481,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetSaleUserInfoByUserIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetSaleUserInfoByUserIdResponse:
+        """
+        @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
+        
+        @param request: GetSaleUserInfoByUserIdRequest
+        @param headers: GetSaleUserInfoByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSaleUserInfoByUserIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -5204,6 +6528,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetSaleUserInfoByUserIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetSaleUserInfoByUserIdResponse:
+        """
+        @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
+        
+        @param request: GetSaleUserInfoByUserIdRequest
+        @param headers: GetSaleUserInfoByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSaleUserInfoByUserIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -5241,6 +6573,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetSaleUserInfoByUserIdRequest,
     ) -> dingtalkyida__1__0_models.GetSaleUserInfoByUserIdResponse:
+        """
+        @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
+        
+        @param request: GetSaleUserInfoByUserIdRequest
+        @return: GetSaleUserInfoByUserIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetSaleUserInfoByUserIdHeaders()
         return self.get_sale_user_info_by_user_id_with_options(request, headers, runtime)
@@ -5249,6 +6587,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetSaleUserInfoByUserIdRequest,
     ) -> dingtalkyida__1__0_models.GetSaleUserInfoByUserIdResponse:
+        """
+        @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
+        
+        @param request: GetSaleUserInfoByUserIdRequest
+        @return: GetSaleUserInfoByUserIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetSaleUserInfoByUserIdHeaders()
         return await self.get_sale_user_info_by_user_id_with_options_async(request, headers, runtime)
@@ -5259,6 +6603,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        """
+        @summary 表单的元数据(字段)查询接口
+        
+        @param request: GetSimpleCubeModelListRequest
+        @param headers: GetSimpleCubeModelListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSimpleCubeModelListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5304,6 +6656,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        """
+        @summary 表单的元数据(字段)查询接口
+        
+        @param request: GetSimpleCubeModelListRequest
+        @param headers: GetSimpleCubeModelListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSimpleCubeModelListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5347,6 +6707,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
     ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        """
+        @summary 表单的元数据(字段)查询接口
+        
+        @param request: GetSimpleCubeModelListRequest
+        @return: GetSimpleCubeModelListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders()
         return self.get_simple_cube_model_list_with_options(request, headers, runtime)
@@ -5355,6 +6721,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetSimpleCubeModelListRequest,
     ) -> dingtalkyida__1__0_models.GetSimpleCubeModelListResponse:
+        """
+        @summary 表单的元数据(字段)查询接口
+        
+        @param request: GetSimpleCubeModelListRequest
+        @return: GetSimpleCubeModelListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetSimpleCubeModelListHeaders()
         return await self.get_simple_cube_model_list_with_options_async(request, headers, runtime)
@@ -5365,6 +6737,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetTaskCopiesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetTaskCopiesResponse:
+        """
+        @summary 查询抄送我的任务列表（应用维度）
+        
+        @param request: GetTaskCopiesRequest
+        @param headers: GetTaskCopiesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskCopiesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5418,6 +6798,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.GetTaskCopiesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.GetTaskCopiesResponse:
+        """
+        @summary 查询抄送我的任务列表（应用维度）
+        
+        @param request: GetTaskCopiesRequest
+        @param headers: GetTaskCopiesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskCopiesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -5469,6 +6857,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetTaskCopiesRequest,
     ) -> dingtalkyida__1__0_models.GetTaskCopiesResponse:
+        """
+        @summary 查询抄送我的任务列表（应用维度）
+        
+        @param request: GetTaskCopiesRequest
+        @return: GetTaskCopiesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetTaskCopiesHeaders()
         return self.get_task_copies_with_options(request, headers, runtime)
@@ -5477,6 +6871,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.GetTaskCopiesRequest,
     ) -> dingtalkyida__1__0_models.GetTaskCopiesResponse:
+        """
+        @summary 查询抄送我的任务列表（应用维度）
+        
+        @param request: GetTaskCopiesRequest
+        @return: GetTaskCopiesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.GetTaskCopiesHeaders()
         return await self.get_task_copies_with_options_async(request, headers, runtime)
@@ -5487,6 +6887,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        """
+        @summary 获取组织下的宜搭应用列表
+        
+        @param request: ListApplicationRequest
+        @param headers: ListApplicationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_filter):
@@ -5534,6 +6942,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        """
+        @summary 获取组织下的宜搭应用列表
+        
+        @param request: ListApplicationRequest
+        @param headers: ListApplicationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_filter):
@@ -5579,6 +6995,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListApplicationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        """
+        @summary 获取组织下的宜搭应用列表
+        
+        @param request: ListApplicationRequest
+        @return: ListApplicationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationHeaders()
         return self.list_application_with_options(request, headers, runtime)
@@ -5587,6 +7009,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListApplicationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationResponse:
+        """
+        @summary 获取组织下的宜搭应用列表
+        
+        @param request: ListApplicationRequest
+        @return: ListApplicationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationHeaders()
         return await self.list_application_with_options_async(request, headers, runtime)
@@ -5598,6 +7026,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationAuthorizationServiceApplicationInformationRequest
+        @param headers: ListApplicationAuthorizationServiceApplicationInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationAuthorizationServiceApplicationInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5640,6 +7076,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationAuthorizationServiceApplicationInformationRequest
+        @param headers: ListApplicationAuthorizationServiceApplicationInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationAuthorizationServiceApplicationInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5680,6 +7124,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationAuthorizationServiceApplicationInformationRequest
+        @return: ListApplicationAuthorizationServiceApplicationInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationHeaders()
         return self.list_application_authorization_service_application_information_with_options(instance_id, request, headers, runtime)
@@ -5689,6 +7139,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationAuthorizationServiceApplicationInformationRequest
+        @return: ListApplicationAuthorizationServiceApplicationInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationAuthorizationServiceApplicationInformationHeaders()
         return await self.list_application_authorization_service_application_information_with_options_async(instance_id, request, headers, runtime)
@@ -5700,6 +7156,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListApplicationAuthorizationServiceConnectorInformationRequest
+        @param headers: ListApplicationAuthorizationServiceConnectorInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationAuthorizationServiceConnectorInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5742,6 +7206,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListApplicationAuthorizationServiceConnectorInformationRequest
+        @param headers: ListApplicationAuthorizationServiceConnectorInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationAuthorizationServiceConnectorInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5782,6 +7254,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListApplicationAuthorizationServiceConnectorInformationRequest
+        @return: ListApplicationAuthorizationServiceConnectorInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationHeaders()
         return self.list_application_authorization_service_connector_information_with_options(instance_id, request, headers, runtime)
@@ -5791,6 +7269,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListApplicationAuthorizationServiceConnectorInformationRequest
+        @return: ListApplicationAuthorizationServiceConnectorInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationAuthorizationServiceConnectorInformationHeaders()
         return await self.list_application_authorization_service_connector_information_with_options_async(instance_id, request, headers, runtime)
@@ -5802,6 +7286,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationInformationRequest
+        @param headers: ListApplicationInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5844,6 +7336,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListApplicationInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationInformationRequest
+        @param headers: ListApplicationInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListApplicationInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5884,6 +7384,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationInformationRequest
+        @return: ListApplicationInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationInformationHeaders()
         return self.list_application_information_with_options(instance_id, request, headers, runtime)
@@ -5893,6 +7399,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListApplicationInformationRequest,
     ) -> dingtalkyida__1__0_models.ListApplicationInformationResponse:
+        """
+        @summary 多渠道应用概览
+        
+        @param request: ListApplicationInformationRequest
+        @return: ListApplicationInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListApplicationInformationHeaders()
         return await self.list_application_information_with_options_async(instance_id, request, headers, runtime)
@@ -5903,6 +7415,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListCommodityResponse:
+        """
+        @summary 多渠道列出商品列表
+        
+        @param request: ListCommodityRequest
+        @param headers: ListCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5944,6 +7464,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListCommodityResponse:
+        """
+        @summary 多渠道列出商品列表
+        
+        @param request: ListCommodityRequest
+        @param headers: ListCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -5983,6 +7511,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListCommodityRequest,
     ) -> dingtalkyida__1__0_models.ListCommodityResponse:
+        """
+        @summary 多渠道列出商品列表
+        
+        @param request: ListCommodityRequest
+        @return: ListCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListCommodityHeaders()
         return self.list_commodity_with_options(request, headers, runtime)
@@ -5991,6 +7525,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListCommodityRequest,
     ) -> dingtalkyida__1__0_models.ListCommodityResponse:
+        """
+        @summary 多渠道列出商品列表
+        
+        @param request: ListCommodityRequest
+        @return: ListCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListCommodityHeaders()
         return await self.list_commodity_with_options_async(request, headers, runtime)
@@ -6002,6 +7542,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListConnectorInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListConnectorInformationRequest
+        @param headers: ListConnectorInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListConnectorInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -6044,6 +7592,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListConnectorInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListConnectorInformationRequest
+        @param headers: ListConnectorInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListConnectorInformationResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -6084,6 +7640,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListConnectorInformationRequest,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListConnectorInformationRequest
+        @return: ListConnectorInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListConnectorInformationHeaders()
         return self.list_connector_information_with_options(instance_id, request, headers, runtime)
@@ -6093,6 +7655,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ListConnectorInformationRequest,
     ) -> dingtalkyida__1__0_models.ListConnectorInformationResponse:
+        """
+        @summary 多渠道插件概览
+        
+        @param request: ListConnectorInformationRequest
+        @return: ListConnectorInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListConnectorInformationHeaders()
         return await self.list_connector_information_with_options_async(instance_id, request, headers, runtime)
@@ -6103,6 +7671,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListFormRemarksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        """
+        @summary 查询表单实例评论列表
+        
+        @param request: ListFormRemarksRequest
+        @param headers: ListFormRemarksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormRemarksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6146,6 +7722,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListFormRemarksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        """
+        @summary 查询表单实例评论列表
+        
+        @param request: ListFormRemarksRequest
+        @param headers: ListFormRemarksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormRemarksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6187,6 +7771,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListFormRemarksRequest,
     ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        """
+        @summary 查询表单实例评论列表
+        
+        @param request: ListFormRemarksRequest
+        @return: ListFormRemarksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListFormRemarksHeaders()
         return self.list_form_remarks_with_options(request, headers, runtime)
@@ -6195,6 +7785,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListFormRemarksRequest,
     ) -> dingtalkyida__1__0_models.ListFormRemarksResponse:
+        """
+        @summary 查询表单实例评论列表
+        
+        @param request: ListFormRemarksRequest
+        @return: ListFormRemarksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListFormRemarksHeaders()
         return await self.list_form_remarks_with_options_async(request, headers, runtime)
@@ -6205,6 +7801,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListNavigationByFormTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListNavigationByFormTypeResponse:
+        """
+        @summary 获取应用下的页面列表
+        
+        @param request: ListNavigationByFormTypeRequest
+        @param headers: ListNavigationByFormTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListNavigationByFormTypeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6248,6 +7852,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListNavigationByFormTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListNavigationByFormTypeResponse:
+        """
+        @summary 获取应用下的页面列表
+        
+        @param request: ListNavigationByFormTypeRequest
+        @param headers: ListNavigationByFormTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListNavigationByFormTypeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6289,6 +7901,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListNavigationByFormTypeRequest,
     ) -> dingtalkyida__1__0_models.ListNavigationByFormTypeResponse:
+        """
+        @summary 获取应用下的页面列表
+        
+        @param request: ListNavigationByFormTypeRequest
+        @return: ListNavigationByFormTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListNavigationByFormTypeHeaders()
         return self.list_navigation_by_form_type_with_options(request, headers, runtime)
@@ -6297,6 +7915,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListNavigationByFormTypeRequest,
     ) -> dingtalkyida__1__0_models.ListNavigationByFormTypeResponse:
+        """
+        @summary 获取应用下的页面列表
+        
+        @param request: ListNavigationByFormTypeRequest
+        @return: ListNavigationByFormTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListNavigationByFormTypeHeaders()
         return await self.list_navigation_by_form_type_with_options_async(request, headers, runtime)
@@ -6307,6 +7931,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListOperationLogsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询表单的变更记录
+        
+        @param request: ListOperationLogsRequest
+        @param headers: ListOperationLogsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOperationLogsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6350,6 +7982,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListOperationLogsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询表单的变更记录
+        
+        @param request: ListOperationLogsRequest
+        @param headers: ListOperationLogsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOperationLogsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6391,6 +8031,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListOperationLogsRequest,
     ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询表单的变更记录
+        
+        @param request: ListOperationLogsRequest
+        @return: ListOperationLogsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListOperationLogsHeaders()
         return self.list_operation_logs_with_options(request, headers, runtime)
@@ -6399,6 +8045,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ListOperationLogsRequest,
     ) -> dingtalkyida__1__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询表单的变更记录
+        
+        @param request: ListOperationLogsRequest
+        @return: ListOperationLogsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListOperationLogsHeaders()
         return await self.list_operation_logs_with_options_async(request, headers, runtime)
@@ -6410,6 +8062,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
+        """
+        @summary 获取子表单数据
+        
+        @param request: ListTableDataByFormInstanceIdTableIdRequest
+        @param headers: ListTableDataByFormInstanceIdTableIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTableDataByFormInstanceIdTableIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6458,6 +8118,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
+        """
+        @summary 获取子表单数据
+        
+        @param request: ListTableDataByFormInstanceIdTableIdRequest
+        @param headers: ListTableDataByFormInstanceIdTableIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTableDataByFormInstanceIdTableIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6504,6 +8172,12 @@ class Client(OpenApiClient):
         form_instance_id: str,
         request: dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdRequest,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
+        """
+        @summary 获取子表单数据
+        
+        @param request: ListTableDataByFormInstanceIdTableIdRequest
+        @return: ListTableDataByFormInstanceIdTableIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdHeaders()
         return self.list_table_data_by_form_instance_id_table_id_with_options(form_instance_id, request, headers, runtime)
@@ -6513,6 +8187,12 @@ class Client(OpenApiClient):
         form_instance_id: str,
         request: dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdRequest,
     ) -> dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdResponse:
+        """
+        @summary 获取子表单数据
+        
+        @param request: ListTableDataByFormInstanceIdTableIdRequest
+        @return: ListTableDataByFormInstanceIdTableIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ListTableDataByFormInstanceIdTableIdHeaders()
         return await self.list_table_data_by_form_instance_id_table_id_with_options_async(form_instance_id, request, headers, runtime)
@@ -6523,6 +8203,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.LoginCodeGenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.LoginCodeGenResponse:
+        """
+        @summary 生成宜搭登录态穿透用的code
+        
+        @param request: LoginCodeGenRequest
+        @param headers: LoginCodeGenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LoginCodeGenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -6558,6 +8246,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.LoginCodeGenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.LoginCodeGenResponse:
+        """
+        @summary 生成宜搭登录态穿透用的code
+        
+        @param request: LoginCodeGenRequest
+        @param headers: LoginCodeGenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LoginCodeGenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -6591,6 +8287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.LoginCodeGenRequest,
     ) -> dingtalkyida__1__0_models.LoginCodeGenResponse:
+        """
+        @summary 生成宜搭登录态穿透用的code
+        
+        @param request: LoginCodeGenRequest
+        @return: LoginCodeGenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.LoginCodeGenHeaders()
         return self.login_code_gen_with_options(request, headers, runtime)
@@ -6599,6 +8301,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.LoginCodeGenRequest,
     ) -> dingtalkyida__1__0_models.LoginCodeGenResponse:
+        """
+        @summary 生成宜搭登录态穿透用的code
+        
+        @param request: LoginCodeGenRequest
+        @return: LoginCodeGenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.LoginCodeGenHeaders()
         return await self.login_code_gen_with_options_async(request, headers, runtime)
@@ -6609,6 +8317,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.NotifyAuthorizationResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.NotifyAuthorizationResultResponse:
+        """
+        @summary 通知宜搭授权(购买)结果
+        
+        @param request: NotifyAuthorizationResultRequest
+        @param headers: NotifyAuthorizationResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyAuthorizationResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -6664,6 +8380,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.NotifyAuthorizationResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.NotifyAuthorizationResultResponse:
+        """
+        @summary 通知宜搭授权(购买)结果
+        
+        @param request: NotifyAuthorizationResultRequest
+        @param headers: NotifyAuthorizationResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyAuthorizationResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -6717,6 +8441,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.NotifyAuthorizationResultRequest,
     ) -> dingtalkyida__1__0_models.NotifyAuthorizationResultResponse:
+        """
+        @summary 通知宜搭授权(购买)结果
+        
+        @param request: NotifyAuthorizationResultRequest
+        @return: NotifyAuthorizationResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.NotifyAuthorizationResultHeaders()
         return self.notify_authorization_result_with_options(request, headers, runtime)
@@ -6725,6 +8455,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.NotifyAuthorizationResultRequest,
     ) -> dingtalkyida__1__0_models.NotifyAuthorizationResultResponse:
+        """
+        @summary 通知宜搭授权(购买)结果
+        
+        @param request: NotifyAuthorizationResultRequest
+        @return: NotifyAuthorizationResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.NotifyAuthorizationResultHeaders()
         return await self.notify_authorization_result_with_options_async(request, headers, runtime)
@@ -6735,6 +8471,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PageAutoFlowLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        """
+        @summary 分页查询宜搭流程自动化运行记录
+        
+        @param request: PageAutoFlowLogRequest
+        @param headers: PageAutoFlowLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageAutoFlowLogResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6790,6 +8534,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PageAutoFlowLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        """
+        @summary 分页查询宜搭流程自动化运行记录
+        
+        @param request: PageAutoFlowLogRequest
+        @param headers: PageAutoFlowLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageAutoFlowLogResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -6843,6 +8595,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
     ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        """
+        @summary 分页查询宜搭流程自动化运行记录
+        
+        @param request: PageAutoFlowLogRequest
+        @return: PageAutoFlowLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PageAutoFlowLogHeaders()
         return self.page_auto_flow_log_with_options(request, headers, runtime)
@@ -6851,6 +8609,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PageAutoFlowLogRequest,
     ) -> dingtalkyida__1__0_models.PageAutoFlowLogResponse:
+        """
+        @summary 分页查询宜搭流程自动化运行记录
+        
+        @param request: PageAutoFlowLogRequest
+        @return: PageAutoFlowLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PageAutoFlowLogHeaders()
         return await self.page_auto_flow_log_with_options_async(request, headers, runtime)
@@ -6861,6 +8625,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PageFormBaseInfosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        """
+        @summary 分页获取应用下表单列表
+        
+        @param request: PageFormBaseInfosRequest
+        @param headers: PageFormBaseInfosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageFormBaseInfosResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_key):
@@ -6908,6 +8680,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PageFormBaseInfosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        """
+        @summary 分页获取应用下表单列表
+        
+        @param request: PageFormBaseInfosRequest
+        @param headers: PageFormBaseInfosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageFormBaseInfosResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_key):
@@ -6953,6 +8733,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
     ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        """
+        @summary 分页获取应用下表单列表
+        
+        @param request: PageFormBaseInfosRequest
+        @return: PageFormBaseInfosResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PageFormBaseInfosHeaders()
         return self.page_form_base_infos_with_options(request, headers, runtime)
@@ -6961,6 +8747,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PageFormBaseInfosRequest,
     ) -> dingtalkyida__1__0_models.PageFormBaseInfosResponse:
+        """
+        @summary 分页获取应用下表单列表
+        
+        @param request: PageFormBaseInfosRequest
+        @return: PageFormBaseInfosResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PageFormBaseInfosHeaders()
         return await self.page_form_base_infos_with_options_async(request, headers, runtime)
@@ -6971,6 +8763,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PreviewPublishedProcessHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        """
+        @summary 预览审批流程
+        
+        @param request: PreviewPublishedProcessRequest
+        @param headers: PreviewPublishedProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreviewPublishedProcessResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7020,6 +8820,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.PreviewPublishedProcessHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        """
+        @summary 预览审批流程
+        
+        @param request: PreviewPublishedProcessRequest
+        @param headers: PreviewPublishedProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreviewPublishedProcessResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7067,6 +8875,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
     ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        """
+        @summary 预览审批流程
+        
+        @param request: PreviewPublishedProcessRequest
+        @return: PreviewPublishedProcessResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PreviewPublishedProcessHeaders()
         return self.preview_published_process_with_options(request, headers, runtime)
@@ -7075,6 +8889,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.PreviewPublishedProcessRequest,
     ) -> dingtalkyida__1__0_models.PreviewPublishedProcessResponse:
+        """
+        @summary 预览审批流程
+        
+        @param request: PreviewPublishedProcessRequest
+        @return: PreviewPublishedProcessResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.PreviewPublishedProcessHeaders()
         return await self.preview_published_process_with_options_async(request, headers, runtime)
@@ -7085,6 +8905,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.QueryServiceRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        """
+        @summary 查询服务调用记录
+        
+        @param request: QueryServiceRecordRequest
+        @param headers: QueryServiceRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryServiceRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7148,6 +8976,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.QueryServiceRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        """
+        @summary 查询服务调用记录
+        
+        @param request: QueryServiceRecordRequest
+        @param headers: QueryServiceRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryServiceRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7209,6 +9045,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
     ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        """
+        @summary 查询服务调用记录
+        
+        @param request: QueryServiceRecordRequest
+        @return: QueryServiceRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.QueryServiceRecordHeaders()
         return self.query_service_record_with_options(request, headers, runtime)
@@ -7217,6 +9059,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.QueryServiceRecordRequest,
     ) -> dingtalkyida__1__0_models.QueryServiceRecordResponse:
+        """
+        @summary 查询服务调用记录
+        
+        @param request: QueryServiceRecordRequest
+        @return: QueryServiceRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.QueryServiceRecordHeaders()
         return await self.query_service_record_with_options_async(request, headers, runtime)
@@ -7227,6 +9075,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RedirectTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RedirectTaskResponse:
+        """
+        @summary 执行转交任务
+        
+        @param request: RedirectTaskRequest
+        @param headers: RedirectTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RedirectTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7278,6 +9134,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RedirectTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RedirectTaskResponse:
+        """
+        @summary 执行转交任务
+        
+        @param request: RedirectTaskRequest
+        @param headers: RedirectTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RedirectTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7327,6 +9191,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RedirectTaskRequest,
     ) -> dingtalkyida__1__0_models.RedirectTaskResponse:
+        """
+        @summary 执行转交任务
+        
+        @param request: RedirectTaskRequest
+        @return: RedirectTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RedirectTaskHeaders()
         return self.redirect_task_with_options(request, headers, runtime)
@@ -7335,6 +9205,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RedirectTaskRequest,
     ) -> dingtalkyida__1__0_models.RedirectTaskResponse:
+        """
+        @summary 执行转交任务
+        
+        @param request: RedirectTaskRequest
+        @return: RedirectTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RedirectTaskHeaders()
         return await self.redirect_task_with_options_async(request, headers, runtime)
@@ -7345,6 +9221,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RefundCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RefundCommodityResponse:
+        """
+        @summary 多渠道退款
+        
+        @param request: RefundCommodityRequest
+        @param headers: RefundCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RefundCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7384,6 +9268,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RefundCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RefundCommodityResponse:
+        """
+        @summary 多渠道退款
+        
+        @param request: RefundCommodityRequest
+        @param headers: RefundCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RefundCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7421,6 +9313,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RefundCommodityRequest,
     ) -> dingtalkyida__1__0_models.RefundCommodityResponse:
+        """
+        @summary 多渠道退款
+        
+        @param request: RefundCommodityRequest
+        @return: RefundCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RefundCommodityHeaders()
         return self.refund_commodity_with_options(request, headers, runtime)
@@ -7429,6 +9327,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RefundCommodityRequest,
     ) -> dingtalkyida__1__0_models.RefundCommodityResponse:
+        """
+        @summary 多渠道退款
+        
+        @param request: RefundCommodityRequest
+        @return: RefundCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RefundCommodityHeaders()
         return await self.refund_commodity_with_options_async(request, headers, runtime)
@@ -7439,6 +9343,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RegisterAccountsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RegisterAccountsResponse:
+        """
+        @summary 多渠道注册
+        
+        @param request: RegisterAccountsRequest
+        @param headers: RegisterAccountsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterAccountsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7478,6 +9390,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RegisterAccountsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RegisterAccountsResponse:
+        """
+        @summary 多渠道注册
+        
+        @param request: RegisterAccountsRequest
+        @param headers: RegisterAccountsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterAccountsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7515,6 +9435,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RegisterAccountsRequest,
     ) -> dingtalkyida__1__0_models.RegisterAccountsResponse:
+        """
+        @summary 多渠道注册
+        
+        @param request: RegisterAccountsRequest
+        @return: RegisterAccountsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RegisterAccountsHeaders()
         return self.register_accounts_with_options(request, headers, runtime)
@@ -7523,6 +9449,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RegisterAccountsRequest,
     ) -> dingtalkyida__1__0_models.RegisterAccountsResponse:
+        """
+        @summary 多渠道注册
+        
+        @param request: RegisterAccountsRequest
+        @return: RegisterAccountsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RegisterAccountsHeaders()
         return await self.register_accounts_with_options_async(request, headers, runtime)
@@ -7533,6 +9465,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ReleaseCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ReleaseCommodityResponse:
+        """
+        @summary 多渠道释放
+        
+        @param request: ReleaseCommodityRequest
+        @param headers: ReleaseCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReleaseCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7572,6 +9512,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ReleaseCommodityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ReleaseCommodityResponse:
+        """
+        @summary 多渠道释放
+        
+        @param request: ReleaseCommodityRequest
+        @param headers: ReleaseCommodityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReleaseCommodityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7609,6 +9557,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ReleaseCommodityRequest,
     ) -> dingtalkyida__1__0_models.ReleaseCommodityResponse:
+        """
+        @summary 多渠道释放
+        
+        @param request: ReleaseCommodityRequest
+        @return: ReleaseCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ReleaseCommodityHeaders()
         return self.release_commodity_with_options(request, headers, runtime)
@@ -7617,6 +9571,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ReleaseCommodityRequest,
     ) -> dingtalkyida__1__0_models.ReleaseCommodityResponse:
+        """
+        @summary 多渠道释放
+        
+        @param request: ReleaseCommodityRequest
+        @return: ReleaseCommodityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ReleaseCommodityHeaders()
         return await self.release_commodity_with_options_async(request, headers, runtime)
@@ -7628,6 +9588,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RemoveTenantResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
+        """
+        @summary 租户到期30天后, 删除租户关联的资源
+        
+        @param request: RemoveTenantResourceRequest
+        @param headers: RemoveTenantResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveTenantResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7664,6 +9632,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RemoveTenantResourceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
+        """
+        @summary 租户到期30天后, 删除租户关联的资源
+        
+        @param request: RemoveTenantResourceRequest
+        @param headers: RemoveTenantResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveTenantResourceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7698,6 +9674,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.RemoveTenantResourceRequest,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
+        """
+        @summary 租户到期30天后, 删除租户关联的资源
+        
+        @param request: RemoveTenantResourceRequest
+        @return: RemoveTenantResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RemoveTenantResourceHeaders()
         return self.remove_tenant_resource_with_options(caller_uid, request, headers, runtime)
@@ -7707,6 +9689,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.RemoveTenantResourceRequest,
     ) -> dingtalkyida__1__0_models.RemoveTenantResourceResponse:
+        """
+        @summary 租户到期30天后, 删除租户关联的资源
+        
+        @param request: RemoveTenantResourceRequest
+        @return: RemoveTenantResourceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RemoveTenantResourceHeaders()
         return await self.remove_tenant_resource_with_options_async(caller_uid, request, headers, runtime)
@@ -7717,6 +9705,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenderBatchCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenderBatchCallbackResponse:
+        """
+        @summary 宜搭vpc批量打印回调
+        
+        @param request: RenderBatchCallbackRequest
+        @param headers: RenderBatchCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenderBatchCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7774,6 +9770,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenderBatchCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenderBatchCallbackResponse:
+        """
+        @summary 宜搭vpc批量打印回调
+        
+        @param request: RenderBatchCallbackRequest
+        @param headers: RenderBatchCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenderBatchCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -7829,6 +9833,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenderBatchCallbackRequest,
     ) -> dingtalkyida__1__0_models.RenderBatchCallbackResponse:
+        """
+        @summary 宜搭vpc批量打印回调
+        
+        @param request: RenderBatchCallbackRequest
+        @return: RenderBatchCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenderBatchCallbackHeaders()
         return self.render_batch_callback_with_options(request, headers, runtime)
@@ -7837,6 +9847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenderBatchCallbackRequest,
     ) -> dingtalkyida__1__0_models.RenderBatchCallbackResponse:
+        """
+        @summary 宜搭vpc批量打印回调
+        
+        @param request: RenderBatchCallbackRequest
+        @return: RenderBatchCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenderBatchCallbackHeaders()
         return await self.render_batch_callback_with_options_async(request, headers, runtime)
@@ -7847,6 +9863,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道续费
+        
+        @param request: RenewApplicationAuthorizationServiceOrderRequest
+        @param headers: RenewApplicationAuthorizationServiceOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenewApplicationAuthorizationServiceOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7888,6 +9912,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道续费
+        
+        @param request: RenewApplicationAuthorizationServiceOrderRequest
+        @param headers: RenewApplicationAuthorizationServiceOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenewApplicationAuthorizationServiceOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7927,6 +9959,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderRequest,
     ) -> dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道续费
+        
+        @param request: RenewApplicationAuthorizationServiceOrderRequest
+        @return: RenewApplicationAuthorizationServiceOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderHeaders()
         return self.renew_application_authorization_service_order_with_options(request, headers, runtime)
@@ -7935,6 +9973,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderRequest,
     ) -> dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道续费
+        
+        @param request: RenewApplicationAuthorizationServiceOrderRequest
+        @return: RenewApplicationAuthorizationServiceOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenewApplicationAuthorizationServiceOrderHeaders()
         return await self.renew_application_authorization_service_order_with_options_async(request, headers, runtime)
@@ -7945,6 +9989,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenewTenantOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenewTenantOrderResponse:
+        """
+        @summary 续费租户
+        
+        @param request: RenewTenantOrderRequest
+        @param headers: RenewTenantOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenewTenantOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -7984,6 +10036,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.RenewTenantOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.RenewTenantOrderResponse:
+        """
+        @summary 续费租户
+        
+        @param request: RenewTenantOrderRequest
+        @param headers: RenewTenantOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenewTenantOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -8021,6 +10081,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenewTenantOrderRequest,
     ) -> dingtalkyida__1__0_models.RenewTenantOrderResponse:
+        """
+        @summary 续费租户
+        
+        @param request: RenewTenantOrderRequest
+        @return: RenewTenantOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenewTenantOrderHeaders()
         return self.renew_tenant_order_with_options(request, headers, runtime)
@@ -8029,6 +10095,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.RenewTenantOrderRequest,
     ) -> dingtalkyida__1__0_models.RenewTenantOrderResponse:
+        """
+        @summary 续费租户
+        
+        @param request: RenewTenantOrderRequest
+        @return: RenewTenantOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.RenewTenantOrderHeaders()
         return await self.renew_tenant_order_with_options_async(request, headers, runtime)
@@ -8039,6 +10111,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SaveFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SaveFormDataResponse:
+        """
+        @summary 新增表单实例
+        
+        @param request: SaveFormDataRequest
+        @param headers: SaveFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8084,6 +10164,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SaveFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SaveFormDataResponse:
+        """
+        @summary 新增表单实例
+        
+        @param request: SaveFormDataRequest
+        @param headers: SaveFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8127,6 +10215,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SaveFormDataRequest,
     ) -> dingtalkyida__1__0_models.SaveFormDataResponse:
+        """
+        @summary 新增表单实例
+        
+        @param request: SaveFormDataRequest
+        @return: SaveFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SaveFormDataHeaders()
         return self.save_form_data_with_options(request, headers, runtime)
@@ -8135,6 +10229,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SaveFormDataRequest,
     ) -> dingtalkyida__1__0_models.SaveFormDataResponse:
+        """
+        @summary 新增表单实例
+        
+        @param request: SaveFormDataRequest
+        @return: SaveFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SaveFormDataHeaders()
         return await self.save_form_data_with_options_async(request, headers, runtime)
@@ -8145,6 +10245,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SaveFormRemarkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SaveFormRemarkResponse:
+        """
+        @summary 提交表单/流程实例下的评论
+        
+        @param request: SaveFormRemarkRequest
+        @param headers: SaveFormRemarkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveFormRemarkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8194,6 +10302,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SaveFormRemarkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SaveFormRemarkResponse:
+        """
+        @summary 提交表单/流程实例下的评论
+        
+        @param request: SaveFormRemarkRequest
+        @param headers: SaveFormRemarkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveFormRemarkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8241,6 +10357,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SaveFormRemarkRequest,
     ) -> dingtalkyida__1__0_models.SaveFormRemarkResponse:
+        """
+        @summary 提交表单/流程实例下的评论
+        
+        @param request: SaveFormRemarkRequest
+        @return: SaveFormRemarkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SaveFormRemarkHeaders()
         return self.save_form_remark_with_options(request, headers, runtime)
@@ -8249,6 +10371,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SaveFormRemarkRequest,
     ) -> dingtalkyida__1__0_models.SaveFormRemarkResponse:
+        """
+        @summary 提交表单/流程实例下的评论
+        
+        @param request: SaveFormRemarkRequest
+        @return: SaveFormRemarkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SaveFormRemarkHeaders()
         return await self.save_form_remark_with_options_async(request, headers, runtime)
@@ -8259,6 +10387,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        """
+        @summary 保存用户设计的模板结构
+        
+        @param request: SavePrintTplDetailInfoRequest
+        @param headers: SavePrintTplDetailInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SavePrintTplDetailInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8312,6 +10448,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        """
+        @summary 保存用户设计的模板结构
+        
+        @param request: SavePrintTplDetailInfoRequest
+        @param headers: SavePrintTplDetailInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SavePrintTplDetailInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8363,6 +10507,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
     ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        """
+        @summary 保存用户设计的模板结构
+        
+        @param request: SavePrintTplDetailInfoRequest
+        @return: SavePrintTplDetailInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders()
         return self.save_print_tpl_detail_info_with_options(request, headers, runtime)
@@ -8371,6 +10521,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SavePrintTplDetailInfoRequest,
     ) -> dingtalkyida__1__0_models.SavePrintTplDetailInfoResponse:
+        """
+        @summary 保存用户设计的模板结构
+        
+        @param request: SavePrintTplDetailInfoRequest
+        @return: SavePrintTplDetailInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SavePrintTplDetailInfoHeaders()
         return await self.save_print_tpl_detail_info_with_options_async(request, headers, runtime)
@@ -8381,6 +10537,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchActivationCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchActivationCodeResponse:
+        """
+        @summary 获取阿里云账号购买宜搭的账号信息
+        
+        @param request: SearchActivationCodeRequest
+        @param headers: SearchActivationCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchActivationCodeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -8418,6 +10582,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchActivationCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchActivationCodeResponse:
+        """
+        @summary 获取阿里云账号购买宜搭的账号信息
+        
+        @param request: SearchActivationCodeRequest
+        @param headers: SearchActivationCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchActivationCodeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -8453,6 +10625,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchActivationCodeRequest,
     ) -> dingtalkyida__1__0_models.SearchActivationCodeResponse:
+        """
+        @summary 获取阿里云账号购买宜搭的账号信息
+        
+        @param request: SearchActivationCodeRequest
+        @return: SearchActivationCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchActivationCodeHeaders()
         return self.search_activation_code_with_options(request, headers, runtime)
@@ -8461,6 +10639,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchActivationCodeRequest,
     ) -> dingtalkyida__1__0_models.SearchActivationCodeResponse:
+        """
+        @summary 获取阿里云账号购买宜搭的账号信息
+        
+        @param request: SearchActivationCodeRequest
+        @return: SearchActivationCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchActivationCodeHeaders()
         return await self.search_activation_code_with_options_async(request, headers, runtime)
@@ -8471,6 +10655,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchEmployeeFieldValuesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchEmployeeFieldValuesResponse:
+        """
+        @summary 搜索表单中指定人员组件的值
+        
+        @param request: SearchEmployeeFieldValuesRequest
+        @param headers: SearchEmployeeFieldValuesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchEmployeeFieldValuesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8528,6 +10720,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchEmployeeFieldValuesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchEmployeeFieldValuesResponse:
+        """
+        @summary 搜索表单中指定人员组件的值
+        
+        @param request: SearchEmployeeFieldValuesRequest
+        @param headers: SearchEmployeeFieldValuesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchEmployeeFieldValuesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8583,6 +10783,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchEmployeeFieldValuesRequest,
     ) -> dingtalkyida__1__0_models.SearchEmployeeFieldValuesResponse:
+        """
+        @summary 搜索表单中指定人员组件的值
+        
+        @param request: SearchEmployeeFieldValuesRequest
+        @return: SearchEmployeeFieldValuesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchEmployeeFieldValuesHeaders()
         return self.search_employee_field_values_with_options(request, headers, runtime)
@@ -8591,6 +10797,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchEmployeeFieldValuesRequest,
     ) -> dingtalkyida__1__0_models.SearchEmployeeFieldValuesResponse:
+        """
+        @summary 搜索表单中指定人员组件的值
+        
+        @param request: SearchEmployeeFieldValuesRequest
+        @return: SearchEmployeeFieldValuesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchEmployeeFieldValuesHeaders()
         return await self.search_employee_field_values_with_options_async(request, headers, runtime)
@@ -8603,6 +10815,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
+        """
+        @summary 根据条件搜索表单实例 ID 列表
+        
+        @param request: SearchFormDataIdListRequest
+        @param headers: SearchFormDataIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -8662,6 +10882,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataIdListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
+        """
+        @summary 根据条件搜索表单实例 ID 列表
+        
+        @param request: SearchFormDataIdListRequest
+        @param headers: SearchFormDataIdListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataIdListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -8719,6 +10947,12 @@ class Client(OpenApiClient):
         form_uuid: str,
         request: dingtalkyida__1__0_models.SearchFormDataIdListRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
+        """
+        @summary 根据条件搜索表单实例 ID 列表
+        
+        @param request: SearchFormDataIdListRequest
+        @return: SearchFormDataIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataIdListHeaders()
         return self.search_form_data_id_list_with_options(app_type, form_uuid, request, headers, runtime)
@@ -8729,6 +10963,12 @@ class Client(OpenApiClient):
         form_uuid: str,
         request: dingtalkyida__1__0_models.SearchFormDataIdListRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataIdListResponse:
+        """
+        @summary 根据条件搜索表单实例 ID 列表
+        
+        @param request: SearchFormDataIdListRequest
+        @return: SearchFormDataIdListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataIdListHeaders()
         return await self.search_form_data_id_list_with_options_async(app_type, form_uuid, request, headers, runtime)
@@ -8739,6 +10979,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        """
+        @summary 查询表单实例数据(不返回表单的子表单组件数据)
+        
+        @param request: SearchFormDataRemovalTableDataRequest
+        @param headers: SearchFormDataRemovalTableDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataRemovalTableDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8798,6 +11046,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        """
+        @summary 查询表单实例数据(不返回表单的子表单组件数据)
+        
+        @param request: SearchFormDataRemovalTableDataRequest
+        @param headers: SearchFormDataRemovalTableDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataRemovalTableDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8855,6 +11111,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        """
+        @summary 查询表单实例数据(不返回表单的子表单组件数据)
+        
+        @param request: SearchFormDataRemovalTableDataRequest
+        @return: SearchFormDataRemovalTableDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders()
         return self.search_form_data_removal_table_data_with_options(request, headers, runtime)
@@ -8863,6 +11125,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataRemovalTableDataRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataRemovalTableDataResponse:
+        """
+        @summary 查询表单实例数据(不返回表单的子表单组件数据)
+        
+        @param request: SearchFormDataRemovalTableDataRequest
+        @return: SearchFormDataRemovalTableDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataRemovalTableDataHeaders()
         return await self.search_form_data_removal_table_data_with_options_async(request, headers, runtime)
@@ -8873,6 +11141,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        """
+        @summary 通过高级检索条件查询表单实例
+        
+        @param request: SearchFormDataSecondGenerationRequest
+        @param headers: SearchFormDataSecondGenerationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataSecondGenerationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8932,6 +11208,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        """
+        @summary 通过高级检索条件查询表单实例
+        
+        @param request: SearchFormDataSecondGenerationRequest
+        @param headers: SearchFormDataSecondGenerationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataSecondGenerationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -8989,6 +11273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        """
+        @summary 通过高级检索条件查询表单实例
+        
+        @param request: SearchFormDataSecondGenerationRequest
+        @return: SearchFormDataSecondGenerationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders()
         return self.search_form_data_second_generation_with_options(request, headers, runtime)
@@ -8997,6 +11287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationResponse:
+        """
+        @summary 通过高级检索条件查询表单实例
+        
+        @param request: SearchFormDataSecondGenerationRequest
+        @return: SearchFormDataSecondGenerationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationHeaders()
         return await self.search_form_data_second_generation_with_options_async(request, headers, runtime)
@@ -9007,6 +11303,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        """
+        @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+        
+        @param request: SearchFormDataSecondGenerationNoTableFieldRequest
+        @param headers: SearchFormDataSecondGenerationNoTableFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataSecondGenerationNoTableFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9066,6 +11370,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        """
+        @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+        
+        @param request: SearchFormDataSecondGenerationNoTableFieldRequest
+        @param headers: SearchFormDataSecondGenerationNoTableFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDataSecondGenerationNoTableFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9123,6 +11435,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        """
+        @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+        
+        @param request: SearchFormDataSecondGenerationNoTableFieldRequest
+        @return: SearchFormDataSecondGenerationNoTableFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders()
         return self.search_form_data_second_generation_no_table_field_with_options(request, headers, runtime)
@@ -9131,6 +11449,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldResponse:
+        """
+        @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+        
+        @param request: SearchFormDataSecondGenerationNoTableFieldRequest
+        @return: SearchFormDataSecondGenerationNoTableFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDataSecondGenerationNoTableFieldHeaders()
         return await self.search_form_data_second_generation_no_table_field_with_options_async(request, headers, runtime)
@@ -9141,6 +11465,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDatasResponse:
+        """
+        @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
+        
+        @param request: SearchFormDatasRequest
+        @param headers: SearchFormDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9202,6 +11534,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.SearchFormDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.SearchFormDatasResponse:
+        """
+        @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
+        
+        @param request: SearchFormDatasRequest
+        @param headers: SearchFormDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFormDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9261,6 +11601,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDatasRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDatasResponse:
+        """
+        @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
+        
+        @param request: SearchFormDatasRequest
+        @return: SearchFormDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDatasHeaders()
         return self.search_form_datas_with_options(request, headers, runtime)
@@ -9269,6 +11615,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.SearchFormDatasRequest,
     ) -> dingtalkyida__1__0_models.SearchFormDatasResponse:
+        """
+        @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
+        
+        @param request: SearchFormDatasRequest
+        @return: SearchFormDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.SearchFormDatasHeaders()
         return await self.search_form_datas_with_options_async(request, headers, runtime)
@@ -9279,6 +11631,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.StartInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        """
+        @summary 发起新的流程实例
+        
+        @param request: StartInstanceRequest
+        @param headers: StartInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9330,6 +11690,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.StartInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        """
+        @summary 发起新的流程实例
+        
+        @param request: StartInstanceRequest
+        @param headers: StartInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9379,6 +11747,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.StartInstanceRequest,
     ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        """
+        @summary 发起新的流程实例
+        
+        @param request: StartInstanceRequest
+        @return: StartInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.StartInstanceHeaders()
         return self.start_instance_with_options(request, headers, runtime)
@@ -9387,6 +11761,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.StartInstanceRequest,
     ) -> dingtalkyida__1__0_models.StartInstanceResponse:
+        """
+        @summary 发起新的流程实例
+        
+        @param request: StartInstanceRequest
+        @return: StartInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.StartInstanceHeaders()
         return await self.start_instance_with_options_async(request, headers, runtime)
@@ -9397,6 +11777,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.TerminateCloudAuthorizationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.TerminateCloudAuthorizationResponse:
+        """
+        @summary 阿里云合同到期终止
+        
+        @param request: TerminateCloudAuthorizationRequest
+        @param headers: TerminateCloudAuthorizationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TerminateCloudAuthorizationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -9436,6 +11824,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.TerminateCloudAuthorizationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.TerminateCloudAuthorizationResponse:
+        """
+        @summary 阿里云合同到期终止
+        
+        @param request: TerminateCloudAuthorizationRequest
+        @param headers: TerminateCloudAuthorizationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TerminateCloudAuthorizationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -9473,6 +11869,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.TerminateCloudAuthorizationRequest,
     ) -> dingtalkyida__1__0_models.TerminateCloudAuthorizationResponse:
+        """
+        @summary 阿里云合同到期终止
+        
+        @param request: TerminateCloudAuthorizationRequest
+        @return: TerminateCloudAuthorizationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.TerminateCloudAuthorizationHeaders()
         return self.terminate_cloud_authorization_with_options(request, headers, runtime)
@@ -9481,6 +11883,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.TerminateCloudAuthorizationRequest,
     ) -> dingtalkyida__1__0_models.TerminateCloudAuthorizationResponse:
+        """
+        @summary 阿里云合同到期终止
+        
+        @param request: TerminateCloudAuthorizationRequest
+        @return: TerminateCloudAuthorizationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.TerminateCloudAuthorizationHeaders()
         return await self.terminate_cloud_authorization_with_options_async(request, headers, runtime)
@@ -9491,6 +11899,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.TerminateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.TerminateInstanceResponse:
+        """
+        @summary 终止流程实例
+        
+        @param request: TerminateInstanceRequest
+        @param headers: TerminateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TerminateInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9534,6 +11950,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.TerminateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.TerminateInstanceResponse:
+        """
+        @summary 终止流程实例
+        
+        @param request: TerminateInstanceRequest
+        @param headers: TerminateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TerminateInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9575,6 +11999,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.TerminateInstanceRequest,
     ) -> dingtalkyida__1__0_models.TerminateInstanceResponse:
+        """
+        @summary 终止流程实例
+        
+        @param request: TerminateInstanceRequest
+        @return: TerminateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.TerminateInstanceHeaders()
         return self.terminate_instance_with_options(request, headers, runtime)
@@ -9583,6 +12013,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.TerminateInstanceRequest,
     ) -> dingtalkyida__1__0_models.TerminateInstanceResponse:
+        """
+        @summary 终止流程实例
+        
+        @param request: TerminateInstanceRequest
+        @return: TerminateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.TerminateInstanceHeaders()
         return await self.terminate_instance_with_options_async(request, headers, runtime)
@@ -9593,6 +12029,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateCloudAccountInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateCloudAccountInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpdateCloudAccountInformationRequest
+        @param headers: UpdateCloudAccountInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCloudAccountInformationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -9634,6 +12078,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateCloudAccountInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateCloudAccountInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpdateCloudAccountInformationRequest
+        @param headers: UpdateCloudAccountInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCloudAccountInformationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -9673,6 +12125,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateCloudAccountInformationRequest,
     ) -> dingtalkyida__1__0_models.UpdateCloudAccountInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpdateCloudAccountInformationRequest
+        @return: UpdateCloudAccountInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateCloudAccountInformationHeaders()
         return self.update_cloud_account_information_with_options(request, headers, runtime)
@@ -9681,6 +12139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateCloudAccountInformationRequest,
     ) -> dingtalkyida__1__0_models.UpdateCloudAccountInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpdateCloudAccountInformationRequest
+        @return: UpdateCloudAccountInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateCloudAccountInformationHeaders()
         return await self.update_cloud_account_information_with_options_async(request, headers, runtime)
@@ -9691,6 +12155,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateFormDataResponse:
+        """
+        @summary 更新表单实例
+        
+        @param request: UpdateFormDataRequest
+        @param headers: UpdateFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9738,6 +12210,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateFormDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateFormDataResponse:
+        """
+        @summary 更新表单实例
+        
+        @param request: UpdateFormDataRequest
+        @param headers: UpdateFormDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFormDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9783,6 +12263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateFormDataRequest,
     ) -> dingtalkyida__1__0_models.UpdateFormDataResponse:
+        """
+        @summary 更新表单实例
+        
+        @param request: UpdateFormDataRequest
+        @return: UpdateFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateFormDataHeaders()
         return self.update_form_data_with_options(request, headers, runtime)
@@ -9791,6 +12277,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateFormDataRequest,
     ) -> dingtalkyida__1__0_models.UpdateFormDataResponse:
+        """
+        @summary 更新表单实例
+        
+        @param request: UpdateFormDataRequest
+        @return: UpdateFormDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateFormDataHeaders()
         return await self.update_form_data_with_options_async(request, headers, runtime)
@@ -9801,6 +12293,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateInstanceResponse:
+        """
+        @summary 更新流程实例
+        
+        @param request: UpdateInstanceRequest
+        @param headers: UpdateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9846,6 +12346,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateInstanceResponse:
+        """
+        @summary 更新流程实例
+        
+        @param request: UpdateInstanceRequest
+        @param headers: UpdateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9889,6 +12397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateInstanceRequest,
     ) -> dingtalkyida__1__0_models.UpdateInstanceResponse:
+        """
+        @summary 更新流程实例
+        
+        @param request: UpdateInstanceRequest
+        @return: UpdateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateInstanceHeaders()
         return self.update_instance_with_options(request, headers, runtime)
@@ -9897,6 +12411,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateInstanceRequest,
     ) -> dingtalkyida__1__0_models.UpdateInstanceResponse:
+        """
+        @summary 更新流程实例
+        
+        @param request: UpdateInstanceRequest
+        @return: UpdateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateInstanceHeaders()
         return await self.update_instance_with_options_async(request, headers, runtime)
@@ -9907,6 +12427,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateStatusResponse:
+        """
+        @summary 未知
+        
+        @param request: UpdateStatusRequest
+        @param headers: UpdateStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9954,6 +12482,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpdateStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpdateStatusResponse:
+        """
+        @summary 未知
+        
+        @param request: UpdateStatusRequest
+        @param headers: UpdateStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_type):
@@ -9999,6 +12535,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateStatusRequest,
     ) -> dingtalkyida__1__0_models.UpdateStatusResponse:
+        """
+        @summary 未知
+        
+        @param request: UpdateStatusRequest
+        @return: UpdateStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateStatusHeaders()
         return self.update_status_with_options(request, headers, runtime)
@@ -10007,6 +12549,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpdateStatusRequest,
     ) -> dingtalkyida__1__0_models.UpdateStatusResponse:
+        """
+        @summary 未知
+        
+        @param request: UpdateStatusRequest
+        @return: UpdateStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpdateStatusHeaders()
         return await self.update_status_with_options_async(request, headers, runtime)
@@ -10017,6 +12565,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpgradeTenantInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpgradeTenantInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpgradeTenantInformationRequest
+        @param headers: UpgradeTenantInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeTenantInformationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10058,6 +12614,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.UpgradeTenantInformationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.UpgradeTenantInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpgradeTenantInformationRequest
+        @param headers: UpgradeTenantInformationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeTenantInformationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10097,6 +12661,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpgradeTenantInformationRequest,
     ) -> dingtalkyida__1__0_models.UpgradeTenantInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpgradeTenantInformationRequest
+        @return: UpgradeTenantInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpgradeTenantInformationHeaders()
         return self.upgrade_tenant_information_with_options(request, headers, runtime)
@@ -10105,6 +12675,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.UpgradeTenantInformationRequest,
     ) -> dingtalkyida__1__0_models.UpgradeTenantInformationResponse:
+        """
+        @summary 变配阿里云账号对应的租户信息
+        
+        @param request: UpgradeTenantInformationRequest
+        @return: UpgradeTenantInformationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.UpgradeTenantInformationHeaders()
         return await self.upgrade_tenant_information_with_options_async(request, headers, runtime)
@@ -10116,6 +12692,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateApplicationAuthorizationOrderRequest
+        @param headers: ValidateApplicationAuthorizationOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationAuthorizationOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10154,6 +12738,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateApplicationAuthorizationOrderRequest
+        @param headers: ValidateApplicationAuthorizationOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationAuthorizationOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10190,6 +12782,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateApplicationAuthorizationOrderRequest
+        @return: ValidateApplicationAuthorizationOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderHeaders()
         return self.validate_application_authorization_order_with_options(instance_id, request, headers, runtime)
@@ -10199,6 +12797,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateApplicationAuthorizationOrderRequest
+        @return: ValidateApplicationAuthorizationOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationAuthorizationOrderHeaders()
         return await self.validate_application_authorization_order_with_options_async(instance_id, request, headers, runtime)
@@ -10210,6 +12814,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateApplicationAuthorizationServiceOrderRequest
+        @param headers: ValidateApplicationAuthorizationServiceOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationAuthorizationServiceOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10246,6 +12858,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateApplicationAuthorizationServiceOrderRequest
+        @param headers: ValidateApplicationAuthorizationServiceOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationAuthorizationServiceOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10280,6 +12900,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateApplicationAuthorizationServiceOrderRequest
+        @return: ValidateApplicationAuthorizationServiceOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderHeaders()
         return self.validate_application_authorization_service_order_with_options(caller_uid, request, headers, runtime)
@@ -10289,6 +12915,12 @@ class Client(OpenApiClient):
         caller_uid: str,
         request: dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateApplicationAuthorizationServiceOrderRequest
+        @return: ValidateApplicationAuthorizationServiceOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationAuthorizationServiceOrderHeaders()
         return await self.validate_application_authorization_service_order_with_options_async(caller_uid, request, headers, runtime)
@@ -10300,6 +12932,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
+        """
+        @summary 校验变配
+        
+        @param request: ValidateApplicationServiceOrderUpgradeRequest
+        @param headers: ValidateApplicationServiceOrderUpgradeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationServiceOrderUpgradeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10336,6 +12976,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
+        """
+        @summary 校验变配
+        
+        @param request: ValidateApplicationServiceOrderUpgradeRequest
+        @param headers: ValidateApplicationServiceOrderUpgradeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateApplicationServiceOrderUpgradeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10370,6 +13018,12 @@ class Client(OpenApiClient):
         caller_unionid: str,
         request: dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
+        """
+        @summary 校验变配
+        
+        @param request: ValidateApplicationServiceOrderUpgradeRequest
+        @return: ValidateApplicationServiceOrderUpgradeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeHeaders()
         return self.validate_application_service_order_upgrade_with_options(caller_unionid, request, headers, runtime)
@@ -10379,6 +13033,12 @@ class Client(OpenApiClient):
         caller_unionid: str,
         request: dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeRequest,
     ) -> dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeResponse:
+        """
+        @summary 校验变配
+        
+        @param request: ValidateApplicationServiceOrderUpgradeRequest
+        @return: ValidateApplicationServiceOrderUpgradeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateApplicationServiceOrderUpgradeHeaders()
         return await self.validate_application_service_order_upgrade_with_options_async(caller_unionid, request, headers, runtime)
@@ -10389,6 +13049,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderBuyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderBuyResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateOrderBuyRequest
+        @param headers: ValidateOrderBuyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderBuyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10426,6 +13094,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderBuyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderBuyResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateOrderBuyRequest
+        @param headers: ValidateOrderBuyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderBuyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10461,6 +13137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ValidateOrderBuyRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderBuyResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateOrderBuyRequest
+        @return: ValidateOrderBuyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderBuyHeaders()
         return self.validate_order_buy_with_options(request, headers, runtime)
@@ -10469,6 +13151,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ValidateOrderBuyRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderBuyResponse:
+        """
+        @summary 多渠道新购校验
+        
+        @param request: ValidateOrderBuyRequest
+        @return: ValidateOrderBuyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderBuyHeaders()
         return await self.validate_order_buy_with_options_async(request, headers, runtime)
@@ -10480,6 +13168,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateOrderUpdateRequest
+        @param headers: ValidateOrderUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderUpdateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10518,6 +13214,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateOrderUpdateRequest
+        @param headers: ValidateOrderUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderUpdateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10554,6 +13258,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ValidateOrderUpdateRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateOrderUpdateRequest
+        @return: ValidateOrderUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderUpdateHeaders()
         return self.validate_order_update_with_options(instance_id, request, headers, runtime)
@@ -10563,6 +13273,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkyida__1__0_models.ValidateOrderUpdateRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpdateResponse:
+        """
+        @summary 多渠道续费前校验
+        
+        @param request: ValidateOrderUpdateRequest
+        @return: ValidateOrderUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderUpdateHeaders()
         return await self.validate_order_update_with_options_async(instance_id, request, headers, runtime)
@@ -10573,6 +13289,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderUpgradeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpgradeResponse:
+        """
+        @summary 多渠道升配前校验
+        
+        @param request: ValidateOrderUpgradeRequest
+        @param headers: ValidateOrderUpgradeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderUpgradeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10612,6 +13336,14 @@ class Client(OpenApiClient):
         headers: dingtalkyida__1__0_models.ValidateOrderUpgradeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpgradeResponse:
+        """
+        @summary 多渠道升配前校验
+        
+        @param request: ValidateOrderUpgradeRequest
+        @param headers: ValidateOrderUpgradeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ValidateOrderUpgradeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.access_key):
@@ -10649,6 +13381,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ValidateOrderUpgradeRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpgradeResponse:
+        """
+        @summary 多渠道升配前校验
+        
+        @param request: ValidateOrderUpgradeRequest
+        @return: ValidateOrderUpgradeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderUpgradeHeaders()
         return self.validate_order_upgrade_with_options(request, headers, runtime)
@@ -10657,6 +13395,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyida__1__0_models.ValidateOrderUpgradeRequest,
     ) -> dingtalkyida__1__0_models.ValidateOrderUpgradeResponse:
+        """
+        @summary 多渠道升配前校验
+        
+        @param request: ValidateOrderUpgradeRequest
+        @return: ValidateOrderUpgradeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyida__1__0_models.ValidateOrderUpgradeHeaders()
         return await self.validate_order_upgrade_with_options_async(request, headers, runtime)

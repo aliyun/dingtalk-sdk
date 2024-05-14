@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsAddHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
+        """
+        @summary 企业百科增加当前企业词条信息
+        
+        @param request: PediaWordsAddRequest
+        @param headers: PediaWordsAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsAddResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.contact_list):
@@ -86,6 +94,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsAddHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
+        """
+        @summary 企业百科增加当前企业词条信息
+        
+        @param request: PediaWordsAddRequest
+        @param headers: PediaWordsAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsAddResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.contact_list):
@@ -135,6 +151,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
+        """
+        @summary 企业百科增加当前企业词条信息
+        
+        @param request: PediaWordsAddRequest
+        @return: PediaWordsAddResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
         return self.pedia_words_add_with_options(request, headers, runtime)
@@ -143,6 +165,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsAddRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsAddResponse:
+        """
+        @summary 企业百科增加当前企业词条信息
+        
+        @param request: PediaWordsAddRequest
+        @return: PediaWordsAddResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsAddHeaders()
         return await self.pedia_words_add_with_options_async(request, headers, runtime)
@@ -153,6 +181,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsApproveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        """
+        @summary 企业百科针对待审核词条进行审核
+        
+        @param request: PediaWordsApproveRequest
+        @param headers: PediaWordsApproveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsApproveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.approve_reason):
@@ -198,6 +234,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsApproveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        """
+        @summary 企业百科针对待审核词条进行审核
+        
+        @param request: PediaWordsApproveRequest
+        @param headers: PediaWordsApproveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsApproveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.approve_reason):
@@ -241,6 +285,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        """
+        @summary 企业百科针对待审核词条进行审核
+        
+        @param request: PediaWordsApproveRequest
+        @return: PediaWordsApproveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
         return self.pedia_words_approve_with_options(request, headers, runtime)
@@ -249,6 +299,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsApproveRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsApproveResponse:
+        """
+        @summary 企业百科针对待审核词条进行审核
+        
+        @param request: PediaWordsApproveRequest
+        @return: PediaWordsApproveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsApproveHeaders()
         return await self.pedia_words_approve_with_options_async(request, headers, runtime)
@@ -259,6 +315,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsDeleteHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        """
+        @summary 企业百科针对uuid删除当前词条
+        
+        @param request: PediaWordsDeleteRequest
+        @param headers: PediaWordsDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsDeleteResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -296,6 +360,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsDeleteHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        """
+        @summary 企业百科针对uuid删除当前词条
+        
+        @param request: PediaWordsDeleteRequest
+        @param headers: PediaWordsDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsDeleteResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -331,6 +403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        """
+        @summary 企业百科针对uuid删除当前词条
+        
+        @param request: PediaWordsDeleteRequest
+        @return: PediaWordsDeleteResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
         return self.pedia_words_delete_with_options(request, headers, runtime)
@@ -339,6 +417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsDeleteRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsDeleteResponse:
+        """
+        @summary 企业百科针对uuid删除当前词条
+        
+        @param request: PediaWordsDeleteRequest
+        @return: PediaWordsDeleteResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsDeleteHeaders()
         return await self.pedia_words_delete_with_options_async(request, headers, runtime)
@@ -349,6 +433,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        """
+        @summary 根据词条主键ID查询当前词条详情
+        
+        @param request: PediaWordsQueryRequest
+        @param headers: PediaWordsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsQueryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -386,6 +478,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        """
+        @summary 根据词条主键ID查询当前词条详情
+        
+        @param request: PediaWordsQueryRequest
+        @param headers: PediaWordsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsQueryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -421,6 +521,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        """
+        @summary 根据词条主键ID查询当前词条详情
+        
+        @param request: PediaWordsQueryRequest
+        @return: PediaWordsQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
         return self.pedia_words_query_with_options(request, headers, runtime)
@@ -429,6 +535,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsQueryRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsQueryResponse:
+        """
+        @summary 根据词条主键ID查询当前词条详情
+        
+        @param request: PediaWordsQueryRequest
+        @return: PediaWordsQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsQueryHeaders()
         return await self.pedia_words_query_with_options_async(request, headers, runtime)
@@ -439,6 +551,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsSearchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        """
+        @summary 分页获取企业词条信息
+        
+        @param request: PediaWordsSearchRequest
+        @param headers: PediaWordsSearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsSearchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.page_number):
@@ -482,6 +602,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsSearchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        """
+        @summary 分页获取企业词条信息
+        
+        @param request: PediaWordsSearchRequest
+        @param headers: PediaWordsSearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsSearchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.page_number):
@@ -523,6 +651,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        """
+        @summary 分页获取企业词条信息
+        
+        @param request: PediaWordsSearchRequest
+        @return: PediaWordsSearchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
         return self.pedia_words_search_with_options(request, headers, runtime)
@@ -531,6 +665,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsSearchRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsSearchResponse:
+        """
+        @summary 分页获取企业词条信息
+        
+        @param request: PediaWordsSearchRequest
+        @return: PediaWordsSearchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsSearchHeaders()
         return await self.pedia_words_search_with_options_async(request, headers, runtime)
@@ -541,6 +681,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        """
+        @summary 企业百科对当前已经生效词条进行编辑
+        
+        @param request: PediaWordsUpdateRequest
+        @param headers: PediaWordsUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_link):
@@ -596,6 +744,14 @@ class Client(OpenApiClient):
         headers: dingtalkpedia__1__0_models.PediaWordsUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        """
+        @summary 企业百科对当前已经生效词条进行编辑
+        
+        @param request: PediaWordsUpdateRequest
+        @param headers: PediaWordsUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PediaWordsUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_link):
@@ -649,6 +805,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        """
+        @summary 企业百科对当前已经生效词条进行编辑
+        
+        @param request: PediaWordsUpdateRequest
+        @return: PediaWordsUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
         return self.pedia_words_update_with_options(request, headers, runtime)
@@ -657,6 +819,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkpedia__1__0_models.PediaWordsUpdateRequest,
     ) -> dingtalkpedia__1__0_models.PediaWordsUpdateResponse:
+        """
+        @summary 企业百科对当前已经生效词条进行编辑
+        
+        @param request: PediaWordsUpdateRequest
+        @return: PediaWordsUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkpedia__1__0_models.PediaWordsUpdateHeaders()
         return await self.pedia_words_update_with_options_async(request, headers, runtime)

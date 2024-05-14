@@ -45,9 +45,13 @@ class BatchInsertBizObjectRequest(TeaModel):
         op_user_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_json_array = biz_object_json_array
+        # This parameter is required.
         self.is_draft = is_draft
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -134,8 +138,10 @@ class BatchInsertBizObjectResponseBody(TeaModel):
         data: BatchInsertBizObjectResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -247,6 +253,7 @@ class CancelProcessInstanceRequest(TeaModel):
         self,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -275,7 +282,9 @@ class CancelProcessInstanceResponseBody(TeaModel):
         code: str = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -384,9 +393,13 @@ class CreateBizObjectRequest(TeaModel):
         op_user_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_json = biz_object_json
+        # This parameter is required.
         self.is_draft = is_draft
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -473,8 +486,10 @@ class CreateBizObjectResponseBody(TeaModel):
         data: CreateBizObjectResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -588,8 +603,11 @@ class CreateProcessesInstanceRequest(TeaModel):
         op_user_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -654,8 +672,10 @@ class CreateProcessesInstanceResponseBody(TeaModel):
         data: CreateProcessesInstanceResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -768,7 +788,9 @@ class DeleteBizObjectRequest(TeaModel):
         biz_object_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -801,7 +823,9 @@ class DeleteBizObjectResponseBody(TeaModel):
         code: str = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -908,7 +932,9 @@ class DeleteProcessesInstanceRequest(TeaModel):
         is_auto_update_biz_object: bool = None,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.is_auto_update_biz_object = is_auto_update_biz_object
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -941,7 +967,9 @@ class DeleteProcessesInstanceResponseBody(TeaModel):
         code: str = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -1048,6 +1076,7 @@ class GetAppsRequest(TeaModel):
         query_type: str = None,
         values: List[str] = None,
     ):
+        # This parameter is required.
         self.query_type = query_type
         self.values = values
 
@@ -1133,8 +1162,10 @@ class GetAppsResponseBody(TeaModel):
         data: List[GetAppsResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -1252,6 +1283,7 @@ class GetAttachmentTemporaryUrlRequest(TeaModel):
         self,
         attachment_id: str = None,
     ):
+        # This parameter is required.
         self.attachment_id = attachment_id
 
     def validate(self):
@@ -1308,8 +1340,10 @@ class GetAttachmentTemporaryUrlResponseBody(TeaModel):
         data: GetAttachmentTemporaryUrlResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -1513,8 +1547,10 @@ class GetOrganizationsResponseBody(TeaModel):
         data: List[GetOrganizationsResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -1632,6 +1668,7 @@ class GetRoleUsersRequest(TeaModel):
         self,
         role_id: str = None,
     ):
+        # This parameter is required.
         self.role_id = role_id
 
     def validate(self):
@@ -1754,8 +1791,10 @@ class GetRoleUsersResponseBody(TeaModel):
         data: List[GetRoleUsersResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -2057,8 +2096,10 @@ class GetRolesResponseBody(TeaModel):
         data: GetRolesResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -2173,9 +2214,13 @@ class GetUploadUrlRequest(TeaModel):
         is_overwrite: bool = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.field_name = field_name
+        # This parameter is required.
         self.is_overwrite = is_overwrite
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -2244,8 +2289,10 @@ class GetUploadUrlResponseBody(TeaModel):
         data: GetUploadUrlResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -2358,6 +2405,7 @@ class GetUsersRequest(TeaModel):
         department_id: str = None,
         is_recursive: bool = None,
     ):
+        # This parameter is required.
         self.department_id = department_id
         self.is_recursive = is_recursive
 
@@ -2485,8 +2533,10 @@ class GetUsersResponseBody(TeaModel):
         data: List[GetUsersResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -2604,6 +2654,7 @@ class LoadBizFieldsRequest(TeaModel):
         self,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -2820,8 +2871,10 @@ class LoadBizFieldsResponseBody(TeaModel):
         data: LoadBizFieldsResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -2934,7 +2987,9 @@ class LoadBizObjectRequest(TeaModel):
         biz_object_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -2968,8 +3023,10 @@ class LoadBizObjectResponseBody(TeaModel):
         data: Dict[str, Any] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -3118,9 +3175,12 @@ class LoadBizObjectsRequest(TeaModel):
         sort_by_fields: List[LoadBizObjectsRequestSortByFields] = None,
     ):
         self.matcher_json = matcher_json
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.return_fields = return_fields
+        # This parameter is required.
         self.schema_code = schema_code
         self.sort_by_fields = sort_by_fields
 
@@ -3224,8 +3284,10 @@ class LoadBizObjectsResponseBody(TeaModel):
         data: LoadBizObjectsResponseBodyData = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -3337,6 +3399,7 @@ class QueryAppFunctionNodesRequest(TeaModel):
         self,
         app_code: str = None,
     ):
+        # This parameter is required.
         self.app_code = app_code
 
     def validate(self):
@@ -3441,8 +3504,10 @@ class QueryAppFunctionNodesResponseBody(TeaModel):
         data: List[QueryAppFunctionNodesResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -3561,7 +3626,9 @@ class QueryProcessesInstanceRequest(TeaModel):
         biz_object_id: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -3735,8 +3802,10 @@ class QueryProcessesInstanceResponseBody(TeaModel):
         data: List[QueryProcessesInstanceResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -3854,6 +3923,7 @@ class QueryProcessesWorkItemsRequest(TeaModel):
         self,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -4167,8 +4237,10 @@ class QueryProcessesWorkItemsResponseBody(TeaModel):
         data: List[QueryProcessesWorkItemsResponseBodyData] = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
         self.data = data
+        # This parameter is required.
         self.message = message
 
     def validate(self):
@@ -4288,8 +4360,11 @@ class UpdateBizObjectRequest(TeaModel):
         biz_object_json: str = None,
         schema_code: str = None,
     ):
+        # This parameter is required.
         self.biz_object_id = biz_object_id
+        # This parameter is required.
         self.biz_object_json = biz_object_json
+        # This parameter is required.
         self.schema_code = schema_code
 
     def validate(self):
@@ -4326,7 +4401,9 @@ class UpdateBizObjectResponseBody(TeaModel):
         code: str = None,
         message: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.message = message
 
     def validate(self):

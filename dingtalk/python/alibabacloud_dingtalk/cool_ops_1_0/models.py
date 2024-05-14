@@ -269,15 +269,23 @@ class UpdateIsvOppStatusRequestIsvOpportunityStatusList(TeaModel):
         user_id: str = None,
     ):
         self.isv_corp_id = isv_corp_id
+        # This parameter is required.
         self.micro_app_id = micro_app_id
+        # This parameter is required.
         self.name = name
         self.note = note
         self.oper_corp_id = oper_corp_id
+        # This parameter is required.
         self.oper_name = oper_name
+        # This parameter is required.
         self.oper_time = oper_time
+        # This parameter is required.
         self.oper_user_id = oper_user_id
+        # This parameter is required.
         self.opp_source_corp_id = opp_source_corp_id
+        # This parameter is required.
         self.opportunity_status = opportunity_status
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkactivity__1__0_models.CreateActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkactivity__1__0_models.CreateActivityResponse:
+        """
+        @summary 创建活动
+        
+        @param request: CreateActivityRequest
+        @param headers: CreateActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkactivity__1__0_models.CreateActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkactivity__1__0_models.CreateActivityResponse:
+        """
+        @summary 创建活动
+        
+        @param request: CreateActivityRequest
+        @param headers: CreateActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkactivity__1__0_models.CreateActivityRequest,
     ) -> dingtalkactivity__1__0_models.CreateActivityResponse:
+        """
+        @summary 创建活动
+        
+        @param request: CreateActivityRequest
+        @return: CreateActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkactivity__1__0_models.CreateActivityHeaders()
         return self.create_activity_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkactivity__1__0_models.CreateActivityRequest,
     ) -> dingtalkactivity__1__0_models.CreateActivityResponse:
+        """
+        @summary 创建活动
+        
+        @param request: CreateActivityRequest
+        @return: CreateActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkactivity__1__0_models.CreateActivityHeaders()
         return await self.create_activity_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkactivity__1__0_models.ListActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkactivity__1__0_models.ListActivityResponse:
+        """
+        @summary 查询活动列表
+        
+        @param request: ListActivityRequest
+        @param headers: ListActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListActivityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -158,6 +194,14 @@ class Client(OpenApiClient):
         headers: dingtalkactivity__1__0_models.ListActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkactivity__1__0_models.ListActivityResponse:
+        """
+        @summary 查询活动列表
+        
+        @param request: ListActivityRequest
+        @param headers: ListActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListActivityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -193,6 +237,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkactivity__1__0_models.ListActivityRequest,
     ) -> dingtalkactivity__1__0_models.ListActivityResponse:
+        """
+        @summary 查询活动列表
+        
+        @param request: ListActivityRequest
+        @return: ListActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkactivity__1__0_models.ListActivityHeaders()
         return self.list_activity_with_options(request, headers, runtime)
@@ -201,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkactivity__1__0_models.ListActivityRequest,
     ) -> dingtalkactivity__1__0_models.ListActivityResponse:
+        """
+        @summary 查询活动列表
+        
+        @param request: ListActivityRequest
+        @return: ListActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkactivity__1__0_models.ListActivityHeaders()
         return await self.list_activity_with_options_async(request, headers, runtime)

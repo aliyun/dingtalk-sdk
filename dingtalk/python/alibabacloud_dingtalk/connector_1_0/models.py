@@ -158,12 +158,15 @@ class CreateActionRequestActionInfo(TeaModel):
         output_schema: str = None,
     ):
         self.api_path = api_path
+        # This parameter is required.
         self.description = description
         self.ding_connector_id = ding_connector_id
         self.input_mapping_config = input_mapping_config
         self.input_schema = input_schema
+        # This parameter is required.
         self.integrator_action_id = integrator_action_id
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.name = name
         self.output_data_rules = output_data_rules
         self.output_mapping_config = output_mapping_config
@@ -249,6 +252,7 @@ class CreateActionRequest(TeaModel):
         action_info: List[CreateActionRequestActionInfo] = None,
         integrator_flag: str = None,
     ):
+        # This parameter is required.
         self.action_info = action_info
         self.integrator_flag = integrator_flag
 
@@ -295,12 +299,19 @@ class CreateActionResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: str = None,
     ):
+        # This parameter is required.
         self.ding_action_id = ding_action_id
+        # This parameter is required.
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.integrator_action_id = integrator_action_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.sub_err_code = sub_err_code
+        # This parameter is required.
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -352,6 +363,7 @@ class CreateActionResponseBody(TeaModel):
         self,
         item: List[CreateActionResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):
@@ -473,10 +485,13 @@ class CreateConnectorRequestConnectorInfo(TeaModel):
         self.api_secret = api_secret
         self.app_id = app_id
         self.auth_value_env = auth_value_env
+        # This parameter is required.
         self.description = description
         self.domain_env = domain_env
         self.icon_media_id = icon_media_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -537,6 +552,7 @@ class CreateConnectorRequest(TeaModel):
         connector_info: List[CreateConnectorRequestConnectorInfo] = None,
         integrator_flag: str = None,
     ):
+        # This parameter is required.
         self.connector_info = connector_info
         self.integrator_flag = integrator_flag
 
@@ -582,9 +598,11 @@ class CreateConnectorResponseBodyItem(TeaModel):
         success: bool = None,
     ):
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
         self.sub_err_code = sub_err_code
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -628,6 +646,7 @@ class CreateConnectorResponseBody(TeaModel):
         self,
         item: List[CreateConnectorResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):
@@ -738,7 +757,9 @@ class CreateInvocableInstanceRequest(TeaModel):
         connect_asset_uri: str = None,
         instance_key: str = None,
     ):
+        # This parameter is required.
         self.connect_asset_uri = connect_asset_uri
+        # This parameter is required.
         self.instance_key = instance_key
 
     def validate(self):
@@ -882,11 +903,15 @@ class CreateTriggerRequestTriggerInfo(TeaModel):
         integrator_trigger_id: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.description = description
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.input_schema = input_schema
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.integrator_trigger_id = integrator_trigger_id
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -936,6 +961,7 @@ class CreateTriggerRequest(TeaModel):
         trigger_info: List[CreateTriggerRequestTriggerInfo] = None,
     ):
         self.integrator_flag = integrator_flag
+        # This parameter is required.
         self.trigger_info = trigger_info
 
     def validate(self):
@@ -981,12 +1007,19 @@ class CreateTriggerResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.ding_trigger_id = ding_trigger_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.integrator_trigger_id = integrator_trigger_id
+        # This parameter is required.
         self.sub_err_code = sub_err_code
+        # This parameter is required.
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1038,6 +1071,7 @@ class CreateTriggerResponseBody(TeaModel):
         self,
         item: List[CreateTriggerResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):
@@ -1147,6 +1181,7 @@ class GetActionDetailRequest(TeaModel):
         self,
         connect_asset_uri: str = None,
     ):
+        # This parameter is required.
         self.connect_asset_uri = connect_asset_uri
 
     def validate(self):
@@ -1606,6 +1641,7 @@ class PullDataByPageRequest(TeaModel):
         next_token: str = None,
     ):
         self.app_id = app_id
+        # This parameter is required.
         self.data_model_id = data_model_id
         self.datetime_filter_field = datetime_filter_field
         self.max_datetime = max_datetime
@@ -1668,12 +1704,19 @@ class PullDataByPageResponseBodyList(TeaModel):
         data_modified_app_type: str = None,
         json_data: str = None,
     ):
+        # This parameter is required.
         self.data_create_app_id = data_create_app_id
+        # This parameter is required.
         self.data_create_app_type = data_create_app_type
+        # This parameter is required.
         self.data_gmt_create = data_gmt_create
+        # This parameter is required.
         self.data_gmt_modified = data_gmt_modified
+        # This parameter is required.
         self.data_modified_app_id = data_modified_app_id
+        # This parameter is required.
         self.data_modified_app_type = data_modified_app_type
+        # This parameter is required.
         self.json_data = json_data
 
     def validate(self):
@@ -1727,6 +1770,7 @@ class PullDataByPageResponseBody(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.list = list
         self.max_results = max_results
         self.next_token = next_token
@@ -1848,6 +1892,7 @@ class PullDataByPkRequest(TeaModel):
         primary_key: str = None,
     ):
         self.app_id = app_id
+        # This parameter is required.
         self.primary_key = primary_key
 
     def validate(self):
@@ -1885,12 +1930,19 @@ class PullDataByPkResponseBody(TeaModel):
         data_modified_app_type: str = None,
         json_data: str = None,
     ):
+        # This parameter is required.
         self.data_create_app_id = data_create_app_id
+        # This parameter is required.
         self.data_create_app_type = data_create_app_type
+        # This parameter is required.
         self.data_gmt_create = data_gmt_create
+        # This parameter is required.
         self.data_gmt_modified = data_gmt_modified
+        # This parameter is required.
         self.data_modified_app_id = data_modified_app_id
+        # This parameter is required.
         self.data_modified_app_type = data_modified_app_type
+        # This parameter is required.
         self.json_data = json_data
 
     def validate(self):
@@ -2020,7 +2072,9 @@ class SearchActionsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.connector_id = connector_id
+        # This parameter is required.
         self.connector_provider_corp_id = connector_provider_corp_id
         self.integration_types = integration_types
         self.max_results = max_results
@@ -2077,6 +2131,7 @@ class SearchActionsResponseBodyList(TeaModel):
         provider_corp_id: str = None,
     ):
         self.authority_url = authority_url
+        # This parameter is required.
         self.authorized = authorized
         self.connect_asset_uri = connect_asset_uri
         self.connector_id = connector_id
@@ -2279,6 +2334,7 @@ class SearchConnectorsRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2499,13 +2555,18 @@ class SyncDataRequestTriggerDataList(TeaModel):
         trigger_condition: str = None,
         trigger_id: str = None,
     ):
+        # This parameter is required.
         self.action = action
         self.custom_trigger_id = custom_trigger_id
+        # This parameter is required.
         self.data_gmt_create = data_gmt_create
+        # This parameter is required.
         self.data_gmt_modified = data_gmt_modified
         self.integration_object = integration_object
+        # This parameter is required.
         self.json_data = json_data
         self.trigger_condition = trigger_condition
+        # This parameter is required.
         self.trigger_id = trigger_id
 
     def validate(self):
@@ -2563,6 +2624,7 @@ class SyncDataRequest(TeaModel):
         trigger_data_list: List[SyncDataRequestTriggerDataList] = None,
     ):
         self.app_id = app_id
+        # This parameter is required.
         self.trigger_data_list = trigger_data_list
 
     def validate(self):
@@ -2606,10 +2668,15 @@ class SyncDataResponseBodyList(TeaModel):
         success: bool = None,
         trigger_id: str = None,
     ):
+        # This parameter is required.
         self.biz_primary_key = biz_primary_key
+        # This parameter is required.
         self.sub_err_code = sub_err_code
+        # This parameter is required.
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
+        # This parameter is required.
         self.trigger_id = trigger_id
 
     def validate(self):
@@ -2653,6 +2720,7 @@ class SyncDataResponseBody(TeaModel):
         self,
         list: List[SyncDataResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -2884,7 +2952,9 @@ class UpdateActionRequestActionInfo(TeaModel):
         self.ding_connector_id = ding_connector_id
         self.input_mapping_config = input_mapping_config
         self.input_schema = input_schema
+        # This parameter is required.
         self.integrator_action_id = integrator_action_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
         self.name = name
         self.output_data_rules = output_data_rules
@@ -2975,7 +3045,9 @@ class UpdateActionRequest(TeaModel):
         action_info: List[UpdateActionRequestActionInfo] = None,
         integrator_flag: str = None,
     ):
+        # This parameter is required.
         self.action_info = action_info
+        # This parameter is required.
         self.integrator_flag = integrator_flag
 
     def validate(self):
@@ -3021,12 +3093,19 @@ class UpdateActionResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: str = None,
     ):
+        # This parameter is required.
         self.ding_action_id = ding_action_id
+        # This parameter is required.
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.integrator_action_id = integrator_action_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.sub_err_code = sub_err_code
+        # This parameter is required.
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -3078,6 +3157,7 @@ class UpdateActionResponseBody(TeaModel):
         self,
         item: List[UpdateActionResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):
@@ -3204,6 +3284,7 @@ class UpdateConnectorRequestConnectorInfo(TeaModel):
         self.ding_connector_id = ding_connector_id
         self.domain_env = domain_env
         self.icon_media_id = icon_media_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
         self.name = name
 
@@ -3269,7 +3350,9 @@ class UpdateConnectorRequest(TeaModel):
         connector_info: List[UpdateConnectorRequestConnectorInfo] = None,
         integrator_flag: str = None,
     ):
+        # This parameter is required.
         self.connector_info = connector_info
+        # This parameter is required.
         self.integrator_flag = integrator_flag
 
     def validate(self):
@@ -3314,9 +3397,11 @@ class UpdateConnectorResponseBodyItem(TeaModel):
         success: bool = None,
     ):
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
         self.sub_err_code = sub_err_code
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -3360,6 +3445,7 @@ class UpdateConnectorResponseBody(TeaModel):
         self,
         item: List[UpdateConnectorResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):
@@ -3479,7 +3565,9 @@ class UpdateTriggerRequestTriggerInfo(TeaModel):
         self.ding_connector_id = ding_connector_id
         self.ding_trigger_id = ding_trigger_id
         self.input_schema = input_schema
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.integrator_trigger_id = integrator_trigger_id
         self.name = name
 
@@ -3533,7 +3621,9 @@ class UpdateTriggerRequest(TeaModel):
         integrator_flag: str = None,
         trigger_info: List[UpdateTriggerRequestTriggerInfo] = None,
     ):
+        # This parameter is required.
         self.integrator_flag = integrator_flag
+        # This parameter is required.
         self.trigger_info = trigger_info
 
     def validate(self):
@@ -3579,12 +3669,19 @@ class UpdateTriggerResponseBodyItem(TeaModel):
         sub_err_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.ding_connector_id = ding_connector_id
+        # This parameter is required.
         self.ding_trigger_id = ding_trigger_id
+        # This parameter is required.
         self.integrator_connector_id = integrator_connector_id
+        # This parameter is required.
         self.integrator_trigger_id = integrator_trigger_id
+        # This parameter is required.
         self.sub_err_code = sub_err_code
+        # This parameter is required.
         self.sub_err_msg = sub_err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -3636,6 +3733,7 @@ class UpdateTriggerResponseBody(TeaModel):
         self,
         item: List[UpdateTriggerResponseBodyItem] = None,
     ):
+        # This parameter is required.
         self.item = item
 
     def validate(self):

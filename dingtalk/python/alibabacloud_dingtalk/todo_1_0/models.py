@@ -228,9 +228,11 @@ class CreatePersonalTodoTaskRequest(TeaModel):
     ):
         self.description = description
         self.due_time = due_time
+        # This parameter is required.
         self.executor_ids = executor_ids
         self.notify_configs = notify_configs
         self.participant_ids = participant_ids
+        # This parameter is required.
         self.subject = subject
 
     def validate(self):
@@ -605,6 +607,7 @@ class CreateTodoTaskRequest(TeaModel):
         self.participant_ids = participant_ids
         self.priority = priority
         self.source_id = source_id
+        # This parameter is required.
         self.subject = subject
         self.operator_id = operator_id
 
@@ -828,7 +831,9 @@ class CreateTodoTaskResponseBody(TeaModel):
     ):
         self.biz_tag = biz_tag
         self.content_field_list = content_field_list
+        # This parameter is required.
         self.created_time = created_time
+        # This parameter is required.
         self.creator_id = creator_id
         self.description = description
         self.detail_url = detail_url
@@ -836,6 +841,7 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.due_time = due_time
         self.executor_ids = executor_ids
         self.finish_time = finish_time
+        # This parameter is required.
         self.id = id
         self.is_only_show_executor = is_only_show_executor
         self.modified_time = modified_time
@@ -847,6 +853,7 @@ class CreateTodoTaskResponseBody(TeaModel):
         self.source = source
         self.source_id = source_id
         self.start_time = start_time
+        # This parameter is required.
         self.subject = subject
 
     def validate(self):
@@ -1143,10 +1150,13 @@ class CreateTodoTypeConfigRequest(TeaModel):
         operator_id: str = None,
     ):
         self.action_list = action_list
+        # This parameter is required.
         self.card_type = card_type
         self.content_field_list = content_field_list
         self.description = description
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
         self.operator_id = operator_id
 
@@ -1223,6 +1233,7 @@ class CreateTodoTypeConfigResponseBodyActionList(TeaModel):
         self.action_key = action_key
         self.action_type = action_type
         self.button_style_type = button_style_type
+        # This parameter is required.
         self.name_i18n = name_i18n
         self.url = url
 
@@ -1322,12 +1333,17 @@ class CreateTodoTypeConfigResponseBody(TeaModel):
         self.biz_tag = biz_tag
         self.card_type = card_type
         self.content_field_list = content_field_list
+        # This parameter is required.
         self.created_time = created_time
+        # This parameter is required.
         self.creator_id = creator_id
         self.description = description
         self.icon = icon
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.modified_time = modified_time
+        # This parameter is required.
         self.modifier_id = modifier_id
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
         self.request_id = request_id
@@ -2638,6 +2654,7 @@ class GetTodoTypeConfigResponseBodyActionList(TeaModel):
         self.action_key = action_key
         self.action_type = action_type
         self.button_style_type = button_style_type
+        # This parameter is required.
         self.name_i18n = name_i18n
         self.url = url
 
@@ -2737,12 +2754,17 @@ class GetTodoTypeConfigResponseBody(TeaModel):
         self.biz_tag = biz_tag
         self.card_type = card_type
         self.content_field_list = content_field_list
+        # This parameter is required.
         self.created_time = created_time
+        # This parameter is required.
         self.creator_id = creator_id
         self.description = description
         self.icon = icon
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.modified_time = modified_time
+        # This parameter is required.
         self.modifier_id = modifier_id
         self.pc_detail_url_open_mode = pc_detail_url_open_mode
         self.request_id = request_id
@@ -3116,6 +3138,7 @@ class QueryOrgTodoByUserResponseBody(TeaModel):
         next_token: str = None,
         todo_cards: List[QueryOrgTodoByUserResponseBodyTodoCards] = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.todo_cards = todo_cards

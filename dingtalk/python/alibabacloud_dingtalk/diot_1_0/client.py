@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        """
+        @summary openAPI录入上线前的测试2
+        
+        @param request: AyunOnlienTestRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AyunOnlienTestResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.req_id):
@@ -67,6 +75,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        """
+        @summary openAPI录入上线前的测试2
+        
+        @param request: AyunOnlienTestRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AyunOnlienTestResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.req_id):
@@ -95,6 +111,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
     ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        """
+        @summary openAPI录入上线前的测试2
+        
+        @param request: AyunOnlienTestRequest
+        @return: AyunOnlienTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.ayun_onlien_test_with_options(request, headers, runtime)
@@ -103,6 +125,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.AyunOnlienTestRequest,
     ) -> dingtalkdiot__1__0_models.AyunOnlienTestResponse:
+        """
+        @summary openAPI录入上线前的测试2
+        
+        @param request: AyunOnlienTestRequest
+        @return: AyunOnlienTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.ayun_onlien_test_with_options_async(request, headers, runtime)
@@ -113,6 +141,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
+        """
+        @summary 删除设备
+        
+        @param request: BatchDeleteDeviceRequest
+        @param headers: BatchDeleteDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchDeleteDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -150,6 +186,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
+        """
+        @summary 删除设备
+        
+        @param request: BatchDeleteDeviceRequest
+        @param headers: BatchDeleteDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchDeleteDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -185,6 +229,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
+        """
+        @summary 删除设备
+        
+        @param request: BatchDeleteDeviceRequest
+        @return: BatchDeleteDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
         return self.batch_delete_device_with_options(request, headers, runtime)
@@ -193,6 +243,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchDeleteDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchDeleteDeviceResponse:
+        """
+        @summary 删除设备
+        
+        @param request: BatchDeleteDeviceRequest
+        @return: BatchDeleteDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchDeleteDeviceHeaders()
         return await self.batch_delete_device_with_options_async(request, headers, runtime)
@@ -203,6 +259,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        """
+        @summary 批量注册设备
+        
+        @param request: BatchRegisterDeviceRequest
+        @param headers: BatchRegisterDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRegisterDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -240,6 +304,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        """
+        @summary 批量注册设备
+        
+        @param request: BatchRegisterDeviceRequest
+        @param headers: BatchRegisterDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRegisterDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -275,6 +347,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        """
+        @summary 批量注册设备
+        
+        @param request: BatchRegisterDeviceRequest
+        @return: BatchRegisterDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
         return self.batch_register_device_with_options(request, headers, runtime)
@@ -283,6 +361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchRegisterDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchRegisterDeviceResponse:
+        """
+        @summary 批量注册设备
+        
+        @param request: BatchRegisterDeviceRequest
+        @return: BatchRegisterDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchRegisterDeviceHeaders()
         return await self.batch_register_device_with_options_async(request, headers, runtime)
@@ -293,6 +377,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        """
+        @summary 批量注册事件类型
+        
+        @param request: BatchRegisterEventTypeRequest
+        @param headers: BatchRegisterEventTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRegisterEventTypeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -330,6 +422,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        """
+        @summary 批量注册事件类型
+        
+        @param request: BatchRegisterEventTypeRequest
+        @param headers: BatchRegisterEventTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRegisterEventTypeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -365,6 +465,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
     ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        """
+        @summary 批量注册事件类型
+        
+        @param request: BatchRegisterEventTypeRequest
+        @return: BatchRegisterEventTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
         return self.batch_register_event_type_with_options(request, headers, runtime)
@@ -373,6 +479,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchRegisterEventTypeRequest,
     ) -> dingtalkdiot__1__0_models.BatchRegisterEventTypeResponse:
+        """
+        @summary 批量注册事件类型
+        
+        @param request: BatchRegisterEventTypeRequest
+        @return: BatchRegisterEventTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchRegisterEventTypeHeaders()
         return await self.batch_register_event_type_with_options_async(request, headers, runtime)
@@ -383,6 +495,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        """
+        @summary 批量修改设备
+        
+        @param request: BatchUpdateDeviceRequest
+        @param headers: BatchUpdateDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -420,6 +540,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        """
+        @summary 批量修改设备
+        
+        @param request: BatchUpdateDeviceRequest
+        @param headers: BatchUpdateDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -455,6 +583,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        """
+        @summary 批量修改设备
+        
+        @param request: BatchUpdateDeviceRequest
+        @return: BatchUpdateDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
         return self.batch_update_device_with_options(request, headers, runtime)
@@ -463,6 +597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BatchUpdateDeviceRequest,
     ) -> dingtalkdiot__1__0_models.BatchUpdateDeviceResponse:
+        """
+        @summary 批量修改设备
+        
+        @param request: BatchUpdateDeviceRequest
+        @return: BatchUpdateDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BatchUpdateDeviceHeaders()
         return await self.batch_update_device_with_options_async(request, headers, runtime)
@@ -473,6 +613,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BindSystemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        """
+        @summary 系统绑定
+        
+        @param request: BindSystemRequest
+        @param headers: BindSystemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BindSystemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_code):
@@ -516,6 +664,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.BindSystemHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        """
+        @summary 系统绑定
+        
+        @param request: BindSystemRequest
+        @param headers: BindSystemHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BindSystemResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_code):
@@ -557,6 +713,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BindSystemRequest,
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        """
+        @summary 系统绑定
+        
+        @param request: BindSystemRequest
+        @return: BindSystemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BindSystemHeaders()
         return self.bind_system_with_options(request, headers, runtime)
@@ -565,6 +727,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.BindSystemRequest,
     ) -> dingtalkdiot__1__0_models.BindSystemResponse:
+        """
+        @summary 系统绑定
+        
+        @param request: BindSystemRequest
+        @return: BindSystemResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.BindSystemHeaders()
         return await self.bind_system_with_options_async(request, headers, runtime)
@@ -575,6 +743,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        """
+        @summary 发起设备会议
+        
+        @param request: DeviceConferenceRequest
+        @param headers: DeviceConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeviceConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conf_title):
@@ -616,6 +792,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.DeviceConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        """
+        @summary 发起设备会议
+        
+        @param request: DeviceConferenceRequest
+        @param headers: DeviceConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeviceConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conf_title):
@@ -655,6 +839,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
     ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        """
+        @summary 发起设备会议
+        
+        @param request: DeviceConferenceRequest
+        @return: DeviceConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
         return self.device_conference_with_options(request, headers, runtime)
@@ -663,6 +853,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.DeviceConferenceRequest,
     ) -> dingtalkdiot__1__0_models.DeviceConferenceResponse:
+        """
+        @summary 发起设备会议
+        
+        @param request: DeviceConferenceRequest
+        @return: DeviceConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.DeviceConferenceHeaders()
         return await self.device_conference_with_options_async(request, headers, runtime)
@@ -672,6 +868,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMamaResponse:
+        """
+        @summary 钉钉物联Mama接口
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMamaResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -696,6 +899,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMamaResponse:
+        """
+        @summary 钉钉物联Mama接口
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMamaResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -716,11 +926,21 @@ class Client(OpenApiClient):
         )
 
     def diot_mama(self) -> dingtalkdiot__1__0_models.DiotMamaResponse:
+        """
+        @summary 钉钉物联Mama接口
+        
+        @return: DiotMamaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.diot_mama_with_options(headers, runtime)
 
     async def diot_mama_async(self) -> dingtalkdiot__1__0_models.DiotMamaResponse:
+        """
+        @summary 钉钉物联Mama接口
+        
+        @return: DiotMamaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.diot_mama_with_options_async(headers, runtime)
@@ -730,6 +950,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        """
+        @summary diot官方市场处理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMarketManagerTestResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -754,6 +981,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        """
+        @summary diot官方市场处理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMarketManagerTestResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -774,11 +1008,21 @@ class Client(OpenApiClient):
         )
 
     def diot_market_manager_test(self) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        """
+        @summary diot官方市场处理
+        
+        @return: DiotMarketManagerTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.diot_market_manager_test_with_options(headers, runtime)
 
     async def diot_market_manager_test_async(self) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
+        """
+        @summary diot官方市场处理
+        
+        @return: DiotMarketManagerTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.diot_market_manager_test_with_options_async(headers, runtime)
@@ -788,6 +1032,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotSystemMarkTestResponse:
+        """
+        @summary 钉钉物联系统测试
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotSystemMarkTestResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -812,6 +1063,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotSystemMarkTestResponse:
+        """
+        @summary 钉钉物联系统测试
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotSystemMarkTestResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -832,11 +1090,21 @@ class Client(OpenApiClient):
         )
 
     def diot_system_mark_test(self) -> dingtalkdiot__1__0_models.DiotSystemMarkTestResponse:
+        """
+        @summary 钉钉物联系统测试
+        
+        @return: DiotSystemMarkTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.diot_system_mark_test_with_options(headers, runtime)
 
     async def diot_system_mark_test_async(self) -> dingtalkdiot__1__0_models.DiotSystemMarkTestResponse:
+        """
+        @summary 钉钉物联系统测试
+        
+        @return: DiotSystemMarkTestResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.diot_system_mark_test_with_options_async(headers, runtime)
@@ -846,6 +1114,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        """
+        @summary 钉钉物联市场管理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMarketManagerResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -870,6 +1145,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        """
+        @summary 钉钉物联市场管理
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DiotMarketManagerResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -890,11 +1172,21 @@ class Client(OpenApiClient):
         )
 
     def diot__market__manager(self) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        """
+        @summary 钉钉物联市场管理
+        
+        @return: DiotMarketManagerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.diot__market__manager_with_options(headers, runtime)
 
     async def diot__market__manager_async(self) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
+        """
+        @summary 钉钉物联市场管理
+        
+        @return: DiotMarketManagerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.diot__market__manager_with_options_async(headers, runtime)
@@ -905,6 +1197,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.PushEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        """
+        @summary 推送事件
+        
+        @param request: PushEventRequest
+        @param headers: PushEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -958,6 +1258,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.PushEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        """
+        @summary 推送事件
+        
+        @param request: PushEventRequest
+        @param headers: PushEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1009,6 +1317,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.PushEventRequest,
     ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        """
+        @summary 推送事件
+        
+        @param request: PushEventRequest
+        @return: PushEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.PushEventHeaders()
         return self.push_event_with_options(request, headers, runtime)
@@ -1017,6 +1331,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.PushEventRequest,
     ) -> dingtalkdiot__1__0_models.PushEventResponse:
+        """
+        @summary 推送事件
+        
+        @param request: PushEventRequest
+        @return: PushEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.PushEventHeaders()
         return await self.push_event_with_options_async(request, headers, runtime)
@@ -1027,6 +1347,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        """
+        @summary 查询设备
+        
+        @param request: QueryDeviceRequest
+        @param headers: QueryDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDeviceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1066,6 +1394,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        """
+        @summary 查询设备
+        
+        @param request: QueryDeviceRequest
+        @param headers: QueryDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDeviceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1103,6 +1439,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryDeviceRequest,
     ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        """
+        @summary 查询设备
+        
+        @param request: QueryDeviceRequest
+        @return: QueryDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
         return self.query_device_with_options(request, headers, runtime)
@@ -1111,6 +1453,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryDeviceRequest,
     ) -> dingtalkdiot__1__0_models.QueryDeviceResponse:
+        """
+        @summary 查询设备
+        
+        @param request: QueryDeviceRequest
+        @return: QueryDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryDeviceHeaders()
         return await self.query_device_with_options_async(request, headers, runtime)
@@ -1121,6 +1469,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryDevicePkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryDevicePkResponse:
+        """
+        @summary 查询硬件设备的PK值信息
+        
+        @param request: QueryDevicePkRequest
+        @param headers: QueryDevicePkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDevicePkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.device_id):
@@ -1156,6 +1512,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryDevicePkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryDevicePkResponse:
+        """
+        @summary 查询硬件设备的PK值信息
+        
+        @param request: QueryDevicePkRequest
+        @param headers: QueryDevicePkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDevicePkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.device_id):
@@ -1189,6 +1553,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryDevicePkRequest,
     ) -> dingtalkdiot__1__0_models.QueryDevicePkResponse:
+        """
+        @summary 查询硬件设备的PK值信息
+        
+        @param request: QueryDevicePkRequest
+        @return: QueryDevicePkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryDevicePkHeaders()
         return self.query_device_pk_with_options(request, headers, runtime)
@@ -1197,6 +1567,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryDevicePkRequest,
     ) -> dingtalkdiot__1__0_models.QueryDevicePkResponse:
+        """
+        @summary 查询硬件设备的PK值信息
+        
+        @param request: QueryDevicePkRequest
+        @return: QueryDevicePkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryDevicePkHeaders()
         return await self.query_device_pk_with_options_async(request, headers, runtime)
@@ -1207,6 +1583,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        """
+        @summary 查询事件
+        
+        @param request: QueryEventRequest
+        @param headers: QueryEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1258,6 +1642,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.QueryEventHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        """
+        @summary 查询事件
+        
+        @param request: QueryEventRequest
+        @param headers: QueryEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEventResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1307,6 +1699,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryEventRequest,
     ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        """
+        @summary 查询事件
+        
+        @param request: QueryEventRequest
+        @return: QueryEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryEventHeaders()
         return self.query_event_with_options(request, headers, runtime)
@@ -1315,6 +1713,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.QueryEventRequest,
     ) -> dingtalkdiot__1__0_models.QueryEventResponse:
+        """
+        @summary 查询事件
+        
+        @param request: QueryEventRequest
+        @return: QueryEventResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.QueryEventHeaders()
         return await self.query_event_with_options_async(request, headers, runtime)
@@ -1325,6 +1729,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        """
+        @summary 注册设备
+        
+        @param request: RegisterDeviceRequest
+        @param headers: RegisterDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1380,6 +1792,14 @@ class Client(OpenApiClient):
         headers: dingtalkdiot__1__0_models.RegisterDeviceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        """
+        @summary 注册设备
+        
+        @param request: RegisterDeviceRequest
+        @param headers: RegisterDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterDeviceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1433,6 +1853,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
     ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        """
+        @summary 注册设备
+        
+        @param request: RegisterDeviceRequest
+        @return: RegisterDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
         return self.register_device_with_options(request, headers, runtime)
@@ -1441,6 +1867,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdiot__1__0_models.RegisterDeviceRequest,
     ) -> dingtalkdiot__1__0_models.RegisterDeviceResponse:
+        """
+        @summary 注册设备
+        
+        @param request: RegisterDeviceRequest
+        @return: RegisterDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdiot__1__0_models.RegisterDeviceHeaders()
         return await self.register_device_with_options_async(request, headers, runtime)
@@ -1450,6 +1882,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        """
+        @summary 升级设备
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeDeviceResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -1474,6 +1913,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        """
+        @summary 升级设备
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeDeviceResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -1494,11 +1940,21 @@ class Client(OpenApiClient):
         )
 
     def upgrade_device(self) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        """
+        @summary 升级设备
+        
+        @return: UpgradeDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.upgrade_device_with_options(headers, runtime)
 
     async def upgrade_device_async(self) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
+        """
+        @summary 升级设备
+        
+        @return: UpgradeDeviceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.upgrade_device_with_options_async(headers, runtime)
@@ -1508,6 +1964,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse:
+        """
+        @summary 获取工作台流转物联信息
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WorkbenchTransformInfoResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -1532,6 +1995,13 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse:
+        """
+        @summary 获取工作台流转物联信息
+        
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WorkbenchTransformInfoResponse
+        """
         req = open_api_models.OpenApiRequest(
             headers=headers
         )
@@ -1552,11 +2022,21 @@ class Client(OpenApiClient):
         )
 
     def workbench_transform_info(self) -> dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse:
+        """
+        @summary 获取工作台流转物联信息
+        
+        @return: WorkbenchTransformInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.workbench_transform_info_with_options(headers, runtime)
 
     async def workbench_transform_info_async(self) -> dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse:
+        """
+        @summary 获取工作台流转物联信息
+        
+        @return: WorkbenchTransformInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.workbench_transform_info_with_options_async(headers, runtime)

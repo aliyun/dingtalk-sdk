@@ -45,9 +45,13 @@ class AddCustomSpaceRequest(TeaModel):
         permission_mode: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.identifier = identifier
+        # This parameter is required.
         self.permission_mode = permission_mode
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -94,13 +98,18 @@ class AddCustomSpaceResponseBody(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -236,10 +245,13 @@ class AddFileRequest(TeaModel):
         union_id: str = None,
     ):
         self.add_conflict_policy = add_conflict_policy
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_type = file_type
         self.media_id = media_id
         self.parent_id = parent_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -300,17 +312,28 @@ class AddFileResponseBody(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -462,8 +485,11 @@ class AddPermissionRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -501,8 +527,11 @@ class AddPermissionRequest(TeaModel):
         role: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.role = role
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -613,7 +642,9 @@ class AddSpaceRequest(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -652,13 +683,18 @@ class AddSpaceResponseBody(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -789,7 +825,9 @@ class ClearRecycleFilesRequest(TeaModel):
         recycle_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.recycle_type = recycle_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -892,7 +930,9 @@ class CopyFileRequest(TeaModel):
     ):
         self.add_conflict_policy = add_conflict_policy
         self.target_parent_id = target_parent_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -945,6 +985,7 @@ class CopyFileResponseBodyFile(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
@@ -954,6 +995,7 @@ class CopyFileResponseBodyFile(TeaModel):
         self.file_size = file_size
         self.file_type = file_type
         self.modifier = modifier
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
         self.space_id = space_id
@@ -1141,7 +1183,9 @@ class DeleteFileRequest(TeaModel):
         delete_policy: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.delete_policy = delete_policy
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1173,6 +1217,7 @@ class DeleteFileResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1276,8 +1321,11 @@ class DeleteFilesRequest(TeaModel):
         file_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.delete_policy = delete_policy
+        # This parameter is required.
         self.file_ids = file_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1314,6 +1362,7 @@ class DeleteFilesResponseBody(TeaModel):
         success: bool = None,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.success = success
         self.task_id = task_id
 
@@ -1422,8 +1471,11 @@ class DeletePermissionRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -1461,8 +1513,11 @@ class DeletePermissionRequest(TeaModel):
         role: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.role = role
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1574,8 +1629,11 @@ class DeleteRecycleFilesRequest(TeaModel):
         recycle_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.recycle_item_id_list = recycle_item_id_list
+        # This parameter is required.
         self.recycle_type = recycle_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1677,6 +1735,7 @@ class DeleteSpaceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1770,6 +1829,7 @@ class GetAsyncTaskInfoRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1803,11 +1863,21 @@ class GetAsyncTaskInfoResponseBody(TeaModel):
         task_id: str = None,
         total: int = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.begin_time = begin_time
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_time = end_time
+        # This parameter is required.
         self.failed = failed
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.success = success
+        # This parameter is required.
         self.task_id = task_id
         self.total = total
 
@@ -1936,6 +2006,7 @@ class GetDownloadInfoRequest(TeaModel):
         with_internal_resource_url: bool = None,
         with_region: bool = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
         self.with_internal_resource_url = with_internal_resource_url
         self.with_region = with_region
@@ -1976,9 +2047,12 @@ class GetDownloadInfoResponseBodyDownloadInfo(TeaModel):
         internal_resource_url: str = None,
         resource_url: str = None,
     ):
+        # This parameter is required.
         self.expiration_seconds = expiration_seconds
+        # This parameter is required.
         self.headers = headers
         self.internal_resource_url = internal_resource_url
+        # This parameter is required.
         self.resource_url = resource_url
 
     def validate(self):
@@ -2127,6 +2201,7 @@ class GetFileInfoRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2167,17 +2242,28 @@ class GetFileInfoResponseBody(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -2327,6 +2413,7 @@ class GetMySpaceInfoRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2361,13 +2448,24 @@ class GetMySpaceInfoResponseBody(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
+        # This parameter is required.
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -2499,6 +2597,7 @@ class GetPreviewInfoRequest(TeaModel):
         version: int = None,
         watermark: bool = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
         self.version = version
         self.watermark = watermark
@@ -2536,6 +2635,7 @@ class GetPreviewInfoResponseBodyInfo(TeaModel):
         self,
         url: str = None,
     ):
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -2563,6 +2663,7 @@ class GetPreviewInfoResponseBody(TeaModel):
         self,
         info: GetPreviewInfoResponseBodyInfo = None,
     ):
+        # This parameter is required.
         self.info = info
 
     def validate(self):
@@ -2666,6 +2767,7 @@ class GetPrivilegeInfoRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2693,6 +2795,7 @@ class GetPrivilegeInfoResponseBody(TeaModel):
         self,
         types: List[str] = None,
     ):
+        # This parameter is required.
         self.types = types
 
     def validate(self):
@@ -2796,8 +2899,11 @@ class GetQuotaInfosRequest(TeaModel):
         type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.identifiers = identifiers
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2878,6 +2984,7 @@ class GetQuotaInfosResponseBody(TeaModel):
         self,
         quotas: List[GetQuotaInfosResponseBodyQuotas] = None,
     ):
+        # This parameter is required.
         self.quotas = quotas
 
     def validate(self):
@@ -2997,10 +3104,14 @@ class GetUploadInfoRequest(TeaModel):
     ):
         self.add_conflict_policy = add_conflict_policy
         self.caller_region = caller_region
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_size = file_size
+        # This parameter is required.
         self.md_5 = md_5
         self.media_id = media_id
+        # This parameter is required.
         self.union_id = union_id
         self.with_internal_end_point = with_internal_end_point
         self.with_region = with_region
@@ -3066,10 +3177,14 @@ class GetUploadInfoResponseBodyHeaderSignatureUploadInfo(TeaModel):
         media_id: str = None,
         resource_url: str = None,
     ):
+        # This parameter is required.
         self.expiration_seconds = expiration_seconds
+        # This parameter is required.
         self.headers = headers
         self.internal_resource_url = internal_resource_url
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.resource_url = resource_url
 
     def validate(self):
@@ -3120,13 +3235,20 @@ class GetUploadInfoResponseBodyStsUploadInfo(TeaModel):
         internal_end_point: str = None,
         media_id: str = None,
     ):
+        # This parameter is required.
         self.access_key_id = access_key_id
+        # This parameter is required.
         self.access_key_secret = access_key_secret
+        # This parameter is required.
         self.access_token = access_token
+        # This parameter is required.
         self.access_token_expiration_millis = access_token_expiration_millis
+        # This parameter is required.
         self.bucket = bucket
+        # This parameter is required.
         self.end_point = end_point
         self.internal_end_point = internal_end_point
+        # This parameter is required.
         self.media_id = media_id
 
     def validate(self):
@@ -3304,10 +3426,15 @@ class GrantPrivilegeOfCustomSpaceRequest(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.file_ids = file_ids
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.union_id = union_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3417,6 +3544,7 @@ class InfoSpaceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3451,13 +3579,24 @@ class InfoSpaceResponseBody(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
+        # This parameter is required.
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -3592,10 +3731,12 @@ class ListFilesRequest(TeaModel):
         union_id: str = None,
         with_icon: bool = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.order_type = order_type
         self.parent_id = parent_id
+        # This parameter is required.
         self.union_id = union_id
         self.with_icon = with_icon
 
@@ -3659,18 +3800,29 @@ class ListFilesResponseBodyFiles(TeaModel):
         thumbnail: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.icon = icon
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
         self.thumbnail = thumbnail
 
@@ -3756,7 +3908,9 @@ class ListFilesResponseBody(TeaModel):
         files: List[ListFilesResponseBodyFiles] = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.files = files
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -3870,6 +4024,7 @@ class ListPermissionsRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3903,6 +4058,7 @@ class ListPermissionsResponseBodyMembersMember(TeaModel):
         self.corp_id = corp_id
         self.member_id = member_id
         self.member_name = member_name
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -3944,8 +4100,11 @@ class ListPermissionsResponseBodyMembers(TeaModel):
         member: ListPermissionsResponseBodyMembersMember = None,
         role: str = None,
     ):
+        # This parameter is required.
         self.extend = extend
+        # This parameter is required.
         self.member = member
+        # This parameter is required.
         self.role = role
 
     def validate(self):
@@ -3989,6 +4148,7 @@ class ListPermissionsResponseBodyOutMembersMember(TeaModel):
         self.corp_id = corp_id
         self.member_id = member_id
         self.member_name = member_name
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -4030,8 +4190,11 @@ class ListPermissionsResponseBodyOutMembers(TeaModel):
         member: ListPermissionsResponseBodyOutMembersMember = None,
         role: str = None,
     ):
+        # This parameter is required.
         self.extend = extend
+        # This parameter is required.
         self.member = member
+        # This parameter is required.
         self.role = role
 
     def validate(self):
@@ -4070,7 +4233,9 @@ class ListPermissionsResponseBody(TeaModel):
         members: List[ListPermissionsResponseBodyMembers] = None,
         out_members: List[ListPermissionsResponseBodyOutMembers] = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.out_members = out_members
 
     def validate(self):
@@ -4197,10 +4362,13 @@ class ListRecycleFilesRequest(TeaModel):
         recycle_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.order_type = order_type
+        # This parameter is required.
         self.recycle_type = recycle_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4252,12 +4420,21 @@ class ListRecycleFilesResponseBodyRecycleItems(TeaModel):
         recycle_item_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
         self.delete_staff_id = delete_staff_id
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.delete_time = delete_time
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
+        # This parameter is required.
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
+        # This parameter is required.
         self.recycle_item_id = recycle_item_id
 
     def validate(self):
@@ -4314,7 +4491,9 @@ class ListRecycleFilesResponseBody(TeaModel):
         next_token: str = None,
         recycle_items: List[ListRecycleFilesResponseBodyRecycleItems] = None,
     ):
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.recycle_items = recycle_items
 
     def validate(self):
@@ -4431,9 +4610,12 @@ class ListSpacesRequest(TeaModel):
         space_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4480,13 +4662,18 @@ class ListSpacesResponseBodySpaces(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -4544,6 +4731,7 @@ class ListSpacesResponseBody(TeaModel):
         spaces: List[ListSpacesResponseBodySpaces] = None,
     ):
         self.next_token = next_token
+        # This parameter is required.
         self.spaces = spaces
 
     def validate(self):
@@ -4662,11 +4850,17 @@ class ManagementBuyQuotaRequestOrder(TeaModel):
         money: int = None,
         order_id: int = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.capacity = capacity
+        # This parameter is required.
         self.capacity_type = capacity_type
+        # This parameter is required.
         self.day = day
+        # This parameter is required.
         self.money = money
+        # This parameter is required.
         self.order_id = order_id
 
     def validate(self):
@@ -4716,8 +4910,11 @@ class ManagementBuyQuotaRequest(TeaModel):
         token: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.token = token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4822,7 +5019,9 @@ class ManagementListSpacesRequest(TeaModel):
         space_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.space_ids = space_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4861,13 +5060,18 @@ class ManagementListSpacesResponseBodySpaces(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -4923,6 +5127,7 @@ class ManagementListSpacesResponseBody(TeaModel):
         self,
         spaces: List[ManagementListSpacesResponseBodySpaces] = None,
     ):
+        # This parameter is required.
         self.spaces = spaces
 
     def validate(self):
@@ -5034,8 +5239,11 @@ class ManagementModifySpaceRequest(TeaModel):
         space_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.quota = quota
+        # This parameter is required.
         self.space_ids = space_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5078,13 +5286,18 @@ class ManagementModifySpaceResponseBodySpaces(TeaModel):
         space_type: str = None,
         used_quota: int = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.permission_mode = permission_mode
         self.quota = quota
+        # This parameter is required.
         self.space_id = space_id
         self.space_name = space_name
+        # This parameter is required.
         self.space_type = space_type
+        # This parameter is required.
         self.used_quota = used_quota
 
     def validate(self):
@@ -5140,6 +5353,7 @@ class ManagementModifySpaceResponseBody(TeaModel):
         self,
         spaces: List[ManagementModifySpaceResponseBodySpaces] = None,
     ):
+        # This parameter is required.
         self.spaces = spaces
 
     def validate(self):
@@ -5251,8 +5465,11 @@ class ModifyPermissionRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -5290,8 +5507,11 @@ class ModifyPermissionRequest(TeaModel):
         role: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.role = role
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5406,7 +5626,9 @@ class MoveFileRequest(TeaModel):
     ):
         self.add_conflict_policy = add_conflict_policy
         self.target_parent_id = target_parent_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5459,17 +5681,28 @@ class MoveFileResponseBody(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -5624,9 +5857,12 @@ class MoveFilesRequest(TeaModel):
         union_id: str = None,
     ):
         self.add_conflict_policy = add_conflict_policy
+        # This parameter is required.
         self.file_ids = file_ids
         self.target_parent_id = target_parent_id
+        # This parameter is required.
         self.target_space_id = target_space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5683,17 +5919,28 @@ class MoveFilesResponseBodyFiles(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -5770,6 +6017,7 @@ class MoveFilesResponseBody(TeaModel):
         files: List[MoveFilesResponseBodyFiles] = None,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.files = files
         self.task_id = task_id
 
@@ -5886,8 +6134,11 @@ class RecoverRecycleFilesRequest(TeaModel):
         recycle_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.recycle_item_id_list = recycle_item_id_list
+        # This parameter is required.
         self.recycle_type = recycle_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5990,7 +6241,9 @@ class RenameFileRequest(TeaModel):
         new_file_name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.new_file_name = new_file_name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6035,17 +6288,28 @@ class RenameFileResponseBody(TeaModel):
         space_id: str = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.file_extension = file_extension
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_path = file_path
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
         self.modifier = modifier
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.parent_id = parent_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):

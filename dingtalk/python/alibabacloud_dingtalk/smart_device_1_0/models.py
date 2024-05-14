@@ -42,6 +42,7 @@ class AddDeviceVideoConferenceMembersRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -135,6 +136,7 @@ class CreateDeviceVideoConferenceRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -163,7 +165,9 @@ class CreateDeviceVideoConferenceResponseBody(TeaModel):
         code: str = None,
         conference_id: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.conference_id = conference_id
 
     def validate(self):
@@ -270,7 +274,9 @@ class ExtractFacialFeatureRequest(TeaModel):
         media_id: str = None,
         userid: str = None,
     ):
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.userid = userid
 
     def validate(self):
@@ -302,6 +308,7 @@ class ExtractFacialFeatureResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -403,6 +410,7 @@ class KickDeviceVideoConferenceMembersRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -790,7 +798,9 @@ class QueryDeviceVideoConferenceBookResponseBody(TeaModel):
         code: str = None,
         conference_id: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.conference_id = conference_id
 
     def validate(self):

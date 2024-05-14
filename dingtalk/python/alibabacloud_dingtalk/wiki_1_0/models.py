@@ -42,6 +42,7 @@ class WikiWordsDetailRequest(TeaModel):
         self,
         word_name: str = None,
     ):
+        # This parameter is required.
         self.word_name = word_name
 
     def validate(self):
@@ -73,10 +74,15 @@ class WikiWordsDetailResponseBodyDataAppLink(TeaModel):
         pc_link: str = None,
         phone_link: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.app_name = app_name
+        # This parameter is required.
         self.icon_link = icon_link
+        # This parameter is required.
         self.pc_link = pc_link
+        # This parameter is required.
         self.phone_link = phone_link
 
     def validate(self):
@@ -122,8 +128,11 @@ class WikiWordsDetailResponseBodyDataRelatedDoc(TeaModel):
         name: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -161,8 +170,11 @@ class WikiWordsDetailResponseBodyDataRelatedLink(TeaModel):
         name: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -217,25 +229,45 @@ class WikiWordsDetailResponseBodyData(TeaModel):
         word_name: str = None,
         word_paraphrase: str = None,
     ):
+        # This parameter is required.
         self.app_link = app_link
+        # This parameter is required.
         self.approve_name = approve_name
+        # This parameter is required.
         self.contacts = contacts
+        # This parameter is required.
         self.creator_name = creator_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modify = gmt_modify
+        # This parameter is required.
         self.high_light_word_alias = high_light_word_alias
+        # This parameter is required.
         self.im_high_light = im_high_light
+        # This parameter is required.
         self.org_name = org_name
+        # This parameter is required.
         self.related_doc = related_doc
+        # This parameter is required.
         self.related_link = related_link
+        # This parameter is required.
         self.sim_high_light = sim_high_light
+        # This parameter is required.
         self.simple_word_paraphrase = simple_word_paraphrase
+        # This parameter is required.
         self.tags_list = tags_list
+        # This parameter is required.
         self.updater_name = updater_name
+        # This parameter is required.
         self.uuid = uuid
+        # This parameter is required.
         self.word_alias = word_alias
+        # This parameter is required.
         self.word_full_name = word_full_name
+        # This parameter is required.
         self.word_name = word_name
+        # This parameter is required.
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -367,8 +399,11 @@ class WikiWordsDetailResponseBody(TeaModel):
         err_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.err_msg = err_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -486,6 +521,7 @@ class WikiWordsParseRequest(TeaModel):
         self,
         content: str = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -515,8 +551,11 @@ class WikiWordsParseResponseBodyData(TeaModel):
         start_index: int = None,
         word_name: str = None,
     ):
+        # This parameter is required.
         self.end_index = end_index
+        # This parameter is required.
         self.start_index = start_index
+        # This parameter is required.
         self.word_name = word_name
 
     def validate(self):
@@ -554,7 +593,9 @@ class WikiWordsParseResponseBody(TeaModel):
         err_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.err_msg = err_msg
         self.success = success
 

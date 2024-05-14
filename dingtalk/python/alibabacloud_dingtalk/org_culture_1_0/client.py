@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchResponse:
+        """
+        @summary 批量发放积分或额度
+        
+        @param request: AssignOrgHoldingToEmpHoldingBatchRequest
+        @param headers: AssignOrgHoldingToEmpHoldingBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssignOrgHoldingToEmpHoldingBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.remark):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchResponse:
+        """
+        @summary 批量发放积分或额度
+        
+        @param request: AssignOrgHoldingToEmpHoldingBatchRequest
+        @param headers: AssignOrgHoldingToEmpHoldingBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AssignOrgHoldingToEmpHoldingBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.remark):
@@ -123,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchRequest,
     ) -> dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchResponse:
+        """
+        @summary 批量发放积分或额度
+        
+        @param request: AssignOrgHoldingToEmpHoldingBatchRequest
+        @return: AssignOrgHoldingToEmpHoldingBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchHeaders()
         return self.assign_org_holding_to_emp_holding_batch_with_options(request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchRequest,
     ) -> dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchResponse:
+        """
+        @summary 批量发放积分或额度
+        
+        @param request: AssignOrgHoldingToEmpHoldingBatchRequest
+        @return: AssignOrgHoldingToEmpHoldingBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.AssignOrgHoldingToEmpHoldingBatchHeaders()
         return await self.assign_org_holding_to_emp_holding_batch_with_options_async(request, headers, runtime)
@@ -142,6 +170,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        """
+        @summary 扣减员工积分
+        
+        @param request: ConsumeUserPointsRequest
+        @param headers: ConsumeUserPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumeUserPointsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -184,6 +220,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        """
+        @summary 扣减员工积分
+        
+        @param request: ConsumeUserPointsRequest
+        @param headers: ConsumeUserPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumeUserPointsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -224,6 +268,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
     ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        """
+        @summary 扣减员工积分
+        
+        @param request: ConsumeUserPointsRequest
+        @return: ConsumeUserPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders()
         return self.consume_user_points_with_options(user_id, request, headers, runtime)
@@ -233,6 +283,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkorg_culture__1__0_models.ConsumeUserPointsRequest,
     ) -> dingtalkorg_culture__1__0_models.ConsumeUserPointsResponse:
+        """
+        @summary 扣减员工积分
+        
+        @param request: ConsumeUserPointsRequest
+        @return: ConsumeUserPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.ConsumeUserPointsHeaders()
         return await self.consume_user_points_with_options_async(user_id, request, headers, runtime)
@@ -243,6 +299,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        """
+        @summary 创建荣誉勋章模板
+        
+        @param request: CreateOrgHonorRequest
+        @param headers: CreateOrgHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOrgHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.avatar_frame_media_id):
@@ -288,6 +352,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        """
+        @summary 创建荣誉勋章模板
+        
+        @param request: CreateOrgHonorRequest
+        @param headers: CreateOrgHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOrgHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.avatar_frame_media_id):
@@ -331,6 +403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        """
+        @summary 创建荣誉勋章模板
+        
+        @param request: CreateOrgHonorRequest
+        @return: CreateOrgHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders()
         return self.create_org_honor_with_options(request, headers, runtime)
@@ -339,6 +417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.CreateOrgHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.CreateOrgHonorResponse:
+        """
+        @summary 创建荣誉勋章模板
+        
+        @param request: CreateOrgHonorRequest
+        @return: CreateOrgHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.CreateOrgHonorHeaders()
         return await self.create_org_honor_with_options_async(request, headers, runtime)
@@ -349,6 +433,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.DeductionPointBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.DeductionPointBatchResponse:
+        """
+        @summary 批量扣减积分
+        
+        @param request: DeductionPointBatchRequest
+        @param headers: DeductionPointBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeductionPointBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.deduction_amount):
@@ -392,6 +484,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.DeductionPointBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.DeductionPointBatchResponse:
+        """
+        @summary 批量扣减积分
+        
+        @param request: DeductionPointBatchRequest
+        @param headers: DeductionPointBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeductionPointBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.deduction_amount):
@@ -433,6 +533,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.DeductionPointBatchRequest,
     ) -> dingtalkorg_culture__1__0_models.DeductionPointBatchResponse:
+        """
+        @summary 批量扣减积分
+        
+        @param request: DeductionPointBatchRequest
+        @return: DeductionPointBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.DeductionPointBatchHeaders()
         return self.deduction_point_batch_with_options(request, headers, runtime)
@@ -441,6 +547,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.DeductionPointBatchRequest,
     ) -> dingtalkorg_culture__1__0_models.DeductionPointBatchResponse:
+        """
+        @summary 批量扣减积分
+        
+        @param request: DeductionPointBatchRequest
+        @return: DeductionPointBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.DeductionPointBatchHeaders()
         return await self.deduction_point_batch_with_options_async(request, headers, runtime)
@@ -451,6 +563,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.ExportPointOpenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.ExportPointOpenResponse:
+        """
+        @summary 积分榜单导出
+        
+        @param request: ExportPointOpenRequest
+        @param headers: ExportPointOpenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExportPointOpenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.export_date):
@@ -490,6 +610,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.ExportPointOpenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.ExportPointOpenResponse:
+        """
+        @summary 积分榜单导出
+        
+        @param request: ExportPointOpenRequest
+        @param headers: ExportPointOpenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExportPointOpenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.export_date):
@@ -527,6 +655,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.ExportPointOpenRequest,
     ) -> dingtalkorg_culture__1__0_models.ExportPointOpenResponse:
+        """
+        @summary 积分榜单导出
+        
+        @param request: ExportPointOpenRequest
+        @return: ExportPointOpenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.ExportPointOpenHeaders()
         return self.export_point_open_with_options(request, headers, runtime)
@@ -535,6 +669,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.ExportPointOpenRequest,
     ) -> dingtalkorg_culture__1__0_models.ExportPointOpenResponse:
+        """
+        @summary 积分榜单导出
+        
+        @param request: ExportPointOpenRequest
+        @return: ExportPointOpenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.ExportPointOpenHeaders()
         return await self.export_point_open_with_options_async(request, headers, runtime)
@@ -546,6 +686,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.GrantHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.GrantHonorResponse:
+        """
+        @summary 授予荣誉 异步执行
+        
+        @param request: GrantHonorRequest
+        @param headers: GrantHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GrantHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.expiration_time):
@@ -596,6 +744,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.GrantHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.GrantHonorResponse:
+        """
+        @summary 授予荣誉 异步执行
+        
+        @param request: GrantHonorRequest
+        @param headers: GrantHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GrantHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.expiration_time):
@@ -644,6 +800,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.GrantHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.GrantHonorResponse:
+        """
+        @summary 授予荣誉 异步执行
+        
+        @param request: GrantHonorRequest
+        @return: GrantHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.GrantHonorHeaders()
         return self.grant_honor_with_options(honor_id, request, headers, runtime)
@@ -653,6 +815,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.GrantHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.GrantHonorResponse:
+        """
+        @summary 授予荣誉 异步执行
+        
+        @param request: GrantHonorRequest
+        @return: GrantHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.GrantHonorHeaders()
         return await self.grant_honor_with_options_async(honor_id, request, headers, runtime)
@@ -663,6 +831,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        """
+        @summary 查询当前企业下可兑换的积分
+        
+        @param request: QueryCorpPointsRequest
+        @param headers: QueryCorpPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCorpPointsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.opt_user_id):
@@ -698,6 +874,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        """
+        @summary 查询当前企业下可兑换的积分
+        
+        @param request: QueryCorpPointsRequest
+        @param headers: QueryCorpPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCorpPointsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.opt_user_id):
@@ -731,6 +915,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        """
+        @summary 查询当前企业下可兑换的积分
+        
+        @param request: QueryCorpPointsRequest
+        @return: QueryCorpPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders()
         return self.query_corp_points_with_options(request, headers, runtime)
@@ -739,6 +929,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryCorpPointsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryCorpPointsResponse:
+        """
+        @summary 查询当前企业下可兑换的积分
+        
+        @param request: QueryCorpPointsRequest
+        @return: QueryCorpPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryCorpPointsHeaders()
         return await self.query_corp_points_with_options_async(request, headers, runtime)
@@ -749,6 +945,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryEmpPointDetailsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryEmpPointDetailsResponse:
+        """
+        @summary 查询个人积分使用明细
+        
+        @param request: QueryEmpPointDetailsRequest
+        @param headers: QueryEmpPointDetailsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEmpPointDetailsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -788,6 +992,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryEmpPointDetailsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryEmpPointDetailsResponse:
+        """
+        @summary 查询个人积分使用明细
+        
+        @param request: QueryEmpPointDetailsRequest
+        @param headers: QueryEmpPointDetailsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEmpPointDetailsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -825,6 +1037,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryEmpPointDetailsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryEmpPointDetailsResponse:
+        """
+        @summary 查询个人积分使用明细
+        
+        @param request: QueryEmpPointDetailsRequest
+        @return: QueryEmpPointDetailsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryEmpPointDetailsHeaders()
         return self.query_emp_point_details_with_options(request, headers, runtime)
@@ -833,6 +1051,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryEmpPointDetailsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryEmpPointDetailsResponse:
+        """
+        @summary 查询个人积分使用明细
+        
+        @param request: QueryEmpPointDetailsRequest
+        @return: QueryEmpPointDetailsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryEmpPointDetailsHeaders()
         return await self.query_emp_point_details_with_options_async(request, headers, runtime)
@@ -843,6 +1067,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryOrgHonorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgHonorsResponse:
+        """
+        @summary 获取组织荣誉
+        
+        @param request: QueryOrgHonorsRequest
+        @param headers: QueryOrgHonorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgHonorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -880,6 +1112,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryOrgHonorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgHonorsResponse:
+        """
+        @summary 获取组织荣誉
+        
+        @param request: QueryOrgHonorsRequest
+        @param headers: QueryOrgHonorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgHonorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -915,6 +1155,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryOrgHonorsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgHonorsResponse:
+        """
+        @summary 获取组织荣誉
+        
+        @param request: QueryOrgHonorsRequest
+        @return: QueryOrgHonorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryOrgHonorsHeaders()
         return self.query_org_honors_with_options(request, headers, runtime)
@@ -923,6 +1169,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryOrgHonorsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgHonorsResponse:
+        """
+        @summary 获取组织荣誉
+        
+        @param request: QueryOrgHonorsRequest
+        @return: QueryOrgHonorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryOrgHonorsHeaders()
         return await self.query_org_honors_with_options_async(request, headers, runtime)
@@ -933,6 +1185,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryOrgPointDetailsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgPointDetailsResponse:
+        """
+        @summary 查询组织发放扣除积分明细
+        
+        @param request: QueryOrgPointDetailsRequest
+        @param headers: QueryOrgPointDetailsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgPointDetailsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_type):
@@ -974,6 +1234,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryOrgPointDetailsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgPointDetailsResponse:
+        """
+        @summary 查询组织发放扣除积分明细
+        
+        @param request: QueryOrgPointDetailsRequest
+        @param headers: QueryOrgPointDetailsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgPointDetailsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_type):
@@ -1013,6 +1281,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryOrgPointDetailsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgPointDetailsResponse:
+        """
+        @summary 查询组织发放扣除积分明细
+        
+        @param request: QueryOrgPointDetailsRequest
+        @return: QueryOrgPointDetailsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryOrgPointDetailsHeaders()
         return self.query_org_point_details_with_options(request, headers, runtime)
@@ -1021,6 +1295,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.QueryOrgPointDetailsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryOrgPointDetailsResponse:
+        """
+        @summary 查询组织发放扣除积分明细
+        
+        @param request: QueryOrgPointDetailsRequest
+        @return: QueryOrgPointDetailsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryOrgPointDetailsHeaders()
         return await self.query_org_point_details_with_options_async(request, headers, runtime)
@@ -1030,6 +1310,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleResponse:
+        """
+        @summary 查询积分自动发放行为规则
+        
+        @param headers: QueryPointActionAutoAssignRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPointActionAutoAssignRuleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1059,6 +1346,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleResponse:
+        """
+        @summary 查询积分自动发放行为规则
+        
+        @param headers: QueryPointActionAutoAssignRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPointActionAutoAssignRuleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1084,11 +1378,21 @@ class Client(OpenApiClient):
         )
 
     def query_point_action_auto_assign_rule(self) -> dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleResponse:
+        """
+        @summary 查询积分自动发放行为规则
+        
+        @return: QueryPointActionAutoAssignRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleHeaders()
         return self.query_point_action_auto_assign_rule_with_options(headers, runtime)
 
     async def query_point_action_auto_assign_rule_async(self) -> dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleResponse:
+        """
+        @summary 查询积分自动发放行为规则
+        
+        @return: QueryPointActionAutoAssignRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryPointActionAutoAssignRuleHeaders()
         return await self.query_point_action_auto_assign_rule_with_options_async(headers, runtime)
@@ -1098,6 +1402,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingResponse:
+        """
+        @summary 每月自动发放额度查询
+        
+        @param headers: QueryPointAutoIssueSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPointAutoIssueSettingResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1127,6 +1438,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingResponse:
+        """
+        @summary 每月自动发放额度查询
+        
+        @param headers: QueryPointAutoIssueSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPointAutoIssueSettingResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1152,11 +1470,21 @@ class Client(OpenApiClient):
         )
 
     def query_point_auto_issue_setting(self) -> dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingResponse:
+        """
+        @summary 每月自动发放额度查询
+        
+        @return: QueryPointAutoIssueSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingHeaders()
         return self.query_point_auto_issue_setting_with_options(headers, runtime)
 
     async def query_point_auto_issue_setting_async(self) -> dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingResponse:
+        """
+        @summary 每月自动发放额度查询
+        
+        @return: QueryPointAutoIssueSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryPointAutoIssueSettingHeaders()
         return await self.query_point_auto_issue_setting_with_options_async(headers, runtime)
@@ -1168,6 +1496,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryUserHonorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryUserHonorsResponse:
+        """
+        @summary 查询员工已获得的组织荣誉列表
+        
+        @param request: QueryUserHonorsRequest
+        @param headers: QueryUserHonorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserHonorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1206,6 +1542,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryUserHonorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryUserHonorsResponse:
+        """
+        @summary 查询员工已获得的组织荣誉列表
+        
+        @param request: QueryUserHonorsRequest
+        @param headers: QueryUserHonorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserHonorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1242,6 +1586,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkorg_culture__1__0_models.QueryUserHonorsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryUserHonorsResponse:
+        """
+        @summary 查询员工已获得的组织荣誉列表
+        
+        @param request: QueryUserHonorsRequest
+        @return: QueryUserHonorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryUserHonorsHeaders()
         return self.query_user_honors_with_options(user_id, request, headers, runtime)
@@ -1251,6 +1601,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkorg_culture__1__0_models.QueryUserHonorsRequest,
     ) -> dingtalkorg_culture__1__0_models.QueryUserHonorsResponse:
+        """
+        @summary 查询员工已获得的组织荣誉列表
+        
+        @param request: QueryUserHonorsRequest
+        @return: QueryUserHonorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryUserHonorsHeaders()
         return await self.query_user_honors_with_options_async(user_id, request, headers, runtime)
@@ -1261,6 +1617,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryUserPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        """
+        @summary 查询员工已获得的积分
+        
+        @param headers: QueryUserPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserPointsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1291,6 +1654,13 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.QueryUserPointsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        """
+        @summary 查询员工已获得的积分
+        
+        @param headers: QueryUserPointsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserPointsResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1319,6 +1689,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        """
+        @summary 查询员工已获得的积分
+        
+        @return: QueryUserPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryUserPointsHeaders()
         return self.query_user_points_with_options(user_id, headers, runtime)
@@ -1327,6 +1702,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkorg_culture__1__0_models.QueryUserPointsResponse:
+        """
+        @summary 查询员工已获得的积分
+        
+        @return: QueryUserPointsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.QueryUserPointsHeaders()
         return await self.query_user_points_with_options_async(user_id, headers, runtime)
@@ -1338,6 +1718,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.RecallHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        """
+        @summary 撤销员工获得的荣誉勋章
+        
+        @param request: RecallHonorRequest
+        @param headers: RecallHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1374,6 +1762,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.RecallHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        """
+        @summary 撤销员工获得的荣誉勋章
+        
+        @param request: RecallHonorRequest
+        @param headers: RecallHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1408,6 +1804,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        """
+        @summary 撤销员工获得的荣誉勋章
+        
+        @param request: RecallHonorRequest
+        @return: RecallHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.RecallHonorHeaders()
         return self.recall_honor_with_options(honor_id, request, headers, runtime)
@@ -1417,6 +1819,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.RecallHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.RecallHonorResponse:
+        """
+        @summary 撤销员工获得的荣誉勋章
+        
+        @param request: RecallHonorRequest
+        @return: RecallHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.RecallHonorHeaders()
         return await self.recall_honor_with_options_async(honor_id, request, headers, runtime)
@@ -1427,6 +1835,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.UpdateAutoIssuePointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.UpdateAutoIssuePointResponse:
+        """
+        @summary 每月自动发放额度修改
+        
+        @param request: UpdateAutoIssuePointRequest
+        @param headers: UpdateAutoIssuePointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAutoIssuePointResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.point_auto_num):
@@ -1468,6 +1884,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.UpdateAutoIssuePointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.UpdateAutoIssuePointResponse:
+        """
+        @summary 每月自动发放额度修改
+        
+        @param request: UpdateAutoIssuePointRequest
+        @param headers: UpdateAutoIssuePointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAutoIssuePointResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.point_auto_num):
@@ -1507,6 +1931,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.UpdateAutoIssuePointRequest,
     ) -> dingtalkorg_culture__1__0_models.UpdateAutoIssuePointResponse:
+        """
+        @summary 每月自动发放额度修改
+        
+        @param request: UpdateAutoIssuePointRequest
+        @return: UpdateAutoIssuePointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.UpdateAutoIssuePointHeaders()
         return self.update_auto_issue_point_with_options(request, headers, runtime)
@@ -1515,6 +1945,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.UpdateAutoIssuePointRequest,
     ) -> dingtalkorg_culture__1__0_models.UpdateAutoIssuePointResponse:
+        """
+        @summary 每月自动发放额度修改
+        
+        @param request: UpdateAutoIssuePointRequest
+        @return: UpdateAutoIssuePointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.UpdateAutoIssuePointHeaders()
         return await self.update_auto_issue_point_with_options_async(request, headers, runtime)
@@ -1525,6 +1961,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleResponse:
+        """
+        @summary 修改积分系统行为规则
+        
+        @param request: UpdatePointActionAutoAssignRuleRequest
+        @param headers: UpdatePointActionAutoAssignRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePointActionAutoAssignRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.update_point_rule_request_dtolist):
@@ -1562,6 +2006,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleResponse:
+        """
+        @summary 修改积分系统行为规则
+        
+        @param request: UpdatePointActionAutoAssignRuleRequest
+        @param headers: UpdatePointActionAutoAssignRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePointActionAutoAssignRuleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.update_point_rule_request_dtolist):
@@ -1597,6 +2049,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleRequest,
     ) -> dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleResponse:
+        """
+        @summary 修改积分系统行为规则
+        
+        @param request: UpdatePointActionAutoAssignRuleRequest
+        @return: UpdatePointActionAutoAssignRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleHeaders()
         return self.update_point_action_auto_assign_rule_with_options(request, headers, runtime)
@@ -1605,6 +2063,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleRequest,
     ) -> dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleResponse:
+        """
+        @summary 修改积分系统行为规则
+        
+        @param request: UpdatePointActionAutoAssignRuleRequest
+        @return: UpdatePointActionAutoAssignRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.UpdatePointActionAutoAssignRuleHeaders()
         return await self.update_point_action_auto_assign_rule_with_options_async(request, headers, runtime)
@@ -1616,6 +2080,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.WearOrgHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        """
+        @summary 佩戴/卸下荣誉勋章
+        
+        @param request: WearOrgHonorRequest
+        @param headers: WearOrgHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WearOrgHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1654,6 +2126,14 @@ class Client(OpenApiClient):
         headers: dingtalkorg_culture__1__0_models.WearOrgHonorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        """
+        @summary 佩戴/卸下荣誉勋章
+        
+        @param request: WearOrgHonorRequest
+        @param headers: WearOrgHonorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WearOrgHonorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1690,6 +2170,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        """
+        @summary 佩戴/卸下荣誉勋章
+        
+        @param request: WearOrgHonorRequest
+        @return: WearOrgHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.WearOrgHonorHeaders()
         return self.wear_org_honor_with_options(honor_id, request, headers, runtime)
@@ -1699,6 +2185,12 @@ class Client(OpenApiClient):
         honor_id: str,
         request: dingtalkorg_culture__1__0_models.WearOrgHonorRequest,
     ) -> dingtalkorg_culture__1__0_models.WearOrgHonorResponse:
+        """
+        @summary 佩戴/卸下荣誉勋章
+        
+        @param request: WearOrgHonorRequest
+        @return: WearOrgHonorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkorg_culture__1__0_models.WearOrgHonorHeaders()
         return await self.wear_org_honor_with_options_async(honor_id, request, headers, runtime)

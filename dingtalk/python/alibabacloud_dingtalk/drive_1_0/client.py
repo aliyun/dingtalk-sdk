@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddCustomSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddCustomSpaceResponse:
+        """
+        @summary 新建自定义空间
+        
+        @param request: AddCustomSpaceRequest
+        @param headers: AddCustomSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddCustomSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddCustomSpaceResponse:
+        """
+        @summary 新建自定义空间
+        
+        @param request: AddCustomSpaceRequest
+        @param headers: AddCustomSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.AddCustomSpaceRequest,
     ) -> dingtalkdrive__1__0_models.AddCustomSpaceResponse:
+        """
+        @summary 新建自定义空间
+        
+        @param request: AddCustomSpaceRequest
+        @return: AddCustomSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddCustomSpaceHeaders()
         return self.add_custom_space_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.AddCustomSpaceRequest,
     ) -> dingtalkdrive__1__0_models.AddCustomSpaceResponse:
+        """
+        @summary 新建自定义空间
+        
+        @param request: AddCustomSpaceRequest
+        @return: AddCustomSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddCustomSpaceHeaders()
         return await self.add_custom_space_with_options_async(request, headers, runtime)
@@ -134,6 +162,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
+        """
+        @summary 添加文件
+        
+        @param request: AddFileRequest
+        @param headers: AddFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -180,6 +216,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
+        """
+        @summary 添加文件
+        
+        @param request: AddFileRequest
+        @param headers: AddFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -224,6 +268,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.AddFileRequest,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
+        """
+        @summary 添加文件
+        
+        @param request: AddFileRequest
+        @return: AddFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddFileHeaders()
         return self.add_file_with_options(space_id, request, headers, runtime)
@@ -233,6 +283,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.AddFileRequest,
     ) -> dingtalkdrive__1__0_models.AddFileResponse:
+        """
+        @summary 添加文件
+        
+        @param request: AddFileRequest
+        @return: AddFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddFileHeaders()
         return await self.add_file_with_options_async(space_id, request, headers, runtime)
@@ -245,6 +301,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @param headers: AddPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -286,6 +350,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @param headers: AddPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -325,6 +397,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.AddPermissionRequest,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @return: AddPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddPermissionHeaders()
         return self.add_permission_with_options(space_id, file_id, request, headers, runtime)
@@ -335,6 +413,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.AddPermissionRequest,
     ) -> dingtalkdrive__1__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @return: AddPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddPermissionHeaders()
         return await self.add_permission_with_options_async(space_id, file_id, request, headers, runtime)
@@ -345,6 +429,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddSpaceResponse:
+        """
+        @summary 新建空间
+        
+        @param request: AddSpaceRequest
+        @param headers: AddSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.name):
@@ -382,6 +474,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.AddSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.AddSpaceResponse:
+        """
+        @summary 新建空间
+        
+        @param request: AddSpaceRequest
+        @param headers: AddSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.name):
@@ -417,6 +517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.AddSpaceRequest,
     ) -> dingtalkdrive__1__0_models.AddSpaceResponse:
+        """
+        @summary 新建空间
+        
+        @param request: AddSpaceRequest
+        @return: AddSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddSpaceHeaders()
         return self.add_space_with_options(request, headers, runtime)
@@ -425,6 +531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.AddSpaceRequest,
     ) -> dingtalkdrive__1__0_models.AddSpaceResponse:
+        """
+        @summary 新建空间
+        
+        @param request: AddSpaceRequest
+        @return: AddSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.AddSpaceHeaders()
         return await self.add_space_with_options_async(request, headers, runtime)
@@ -435,6 +547,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ClearRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ClearRecycleFilesResponse:
+        """
+        @summary 清空回收站文件
+        
+        @param request: ClearRecycleFilesRequest
+        @param headers: ClearRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_type):
@@ -472,6 +592,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ClearRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ClearRecycleFilesResponse:
+        """
+        @summary 清空回收站文件
+        
+        @param request: ClearRecycleFilesRequest
+        @param headers: ClearRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_type):
@@ -507,6 +635,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ClearRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.ClearRecycleFilesResponse:
+        """
+        @summary 清空回收站文件
+        
+        @param request: ClearRecycleFilesRequest
+        @return: ClearRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ClearRecycleFilesHeaders()
         return self.clear_recycle_files_with_options(request, headers, runtime)
@@ -515,6 +649,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ClearRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.ClearRecycleFilesResponse:
+        """
+        @summary 清空回收站文件
+        
+        @param request: ClearRecycleFilesRequest
+        @return: ClearRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ClearRecycleFilesHeaders()
         return await self.clear_recycle_files_with_options_async(request, headers, runtime)
@@ -527,6 +667,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.CopyFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
+        """
+        @summary 拷贝文件
+        
+        @param request: CopyFileRequest
+        @param headers: CopyFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -570,6 +718,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.CopyFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
+        """
+        @summary 拷贝文件
+        
+        @param request: CopyFileRequest
+        @param headers: CopyFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -611,6 +767,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.CopyFileRequest,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
+        """
+        @summary 拷贝文件
+        
+        @param request: CopyFileRequest
+        @return: CopyFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.CopyFileHeaders()
         return self.copy_file_with_options(space_id, file_id, request, headers, runtime)
@@ -621,6 +783,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.CopyFileRequest,
     ) -> dingtalkdrive__1__0_models.CopyFileResponse:
+        """
+        @summary 拷贝文件
+        
+        @param request: CopyFileRequest
+        @return: CopyFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.CopyFileHeaders()
         return await self.copy_file_with_options_async(space_id, file_id, request, headers, runtime)
@@ -633,6 +801,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
+        """
+        @summary 删除文件
+        
+        @param request: DeleteFileRequest
+        @param headers: DeleteFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.delete_policy):
@@ -672,6 +848,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
+        """
+        @summary 删除文件
+        
+        @param request: DeleteFileRequest
+        @param headers: DeleteFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.delete_policy):
@@ -709,6 +893,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.DeleteFileRequest,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
+        """
+        @summary 删除文件
+        
+        @param request: DeleteFileRequest
+        @return: DeleteFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteFileHeaders()
         return self.delete_file_with_options(space_id, file_id, request, headers, runtime)
@@ -719,6 +909,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.DeleteFileRequest,
     ) -> dingtalkdrive__1__0_models.DeleteFileResponse:
+        """
+        @summary 删除文件
+        
+        @param request: DeleteFileRequest
+        @return: DeleteFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteFileHeaders()
         return await self.delete_file_with_options_async(space_id, file_id, request, headers, runtime)
@@ -730,6 +926,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFilesResponse:
+        """
+        @summary 批量删除文件（夹）
+        
+        @param request: DeleteFilesRequest
+        @param headers: DeleteFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.delete_policy):
@@ -770,6 +974,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteFilesResponse:
+        """
+        @summary 批量删除文件（夹）
+        
+        @param request: DeleteFilesRequest
+        @param headers: DeleteFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.delete_policy):
@@ -808,6 +1020,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.DeleteFilesRequest,
     ) -> dingtalkdrive__1__0_models.DeleteFilesResponse:
+        """
+        @summary 批量删除文件（夹）
+        
+        @param request: DeleteFilesRequest
+        @return: DeleteFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteFilesHeaders()
         return self.delete_files_with_options(space_id, request, headers, runtime)
@@ -817,6 +1035,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.DeleteFilesRequest,
     ) -> dingtalkdrive__1__0_models.DeleteFilesResponse:
+        """
+        @summary 批量删除文件（夹）
+        
+        @param request: DeleteFilesRequest
+        @return: DeleteFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteFilesHeaders()
         return await self.delete_files_with_options_async(space_id, request, headers, runtime)
@@ -829,6 +1053,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeletePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @param headers: DeletePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -870,6 +1102,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeletePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @param headers: DeletePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -909,6 +1149,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.DeletePermissionRequest,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @return: DeletePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeletePermissionHeaders()
         return self.delete_permission_with_options(space_id, file_id, request, headers, runtime)
@@ -919,6 +1165,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.DeletePermissionRequest,
     ) -> dingtalkdrive__1__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @return: DeletePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeletePermissionHeaders()
         return await self.delete_permission_with_options_async(space_id, file_id, request, headers, runtime)
@@ -929,6 +1181,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteRecycleFilesResponse:
+        """
+        @summary 彻底删除回收站文件
+        
+        @param request: DeleteRecycleFilesRequest
+        @param headers: DeleteRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_item_id_list):
@@ -968,6 +1228,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteRecycleFilesResponse:
+        """
+        @summary 彻底删除回收站文件
+        
+        @param request: DeleteRecycleFilesRequest
+        @param headers: DeleteRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_item_id_list):
@@ -1005,6 +1273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.DeleteRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.DeleteRecycleFilesResponse:
+        """
+        @summary 彻底删除回收站文件
+        
+        @param request: DeleteRecycleFilesRequest
+        @return: DeleteRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteRecycleFilesHeaders()
         return self.delete_recycle_files_with_options(request, headers, runtime)
@@ -1013,6 +1287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.DeleteRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.DeleteRecycleFilesResponse:
+        """
+        @summary 彻底删除回收站文件
+        
+        @param request: DeleteRecycleFilesRequest
+        @return: DeleteRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteRecycleFilesHeaders()
         return await self.delete_recycle_files_with_options_async(request, headers, runtime)
@@ -1024,6 +1304,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除空间
+        
+        @param request: DeleteSpaceRequest
+        @param headers: DeleteSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1060,6 +1348,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.DeleteSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除空间
+        
+        @param request: DeleteSpaceRequest
+        @param headers: DeleteSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1094,6 +1390,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.DeleteSpaceRequest,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除空间
+        
+        @param request: DeleteSpaceRequest
+        @return: DeleteSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteSpaceHeaders()
         return self.delete_space_with_options(space_id, request, headers, runtime)
@@ -1103,6 +1405,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.DeleteSpaceRequest,
     ) -> dingtalkdrive__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除空间
+        
+        @param request: DeleteSpaceRequest
+        @return: DeleteSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.DeleteSpaceHeaders()
         return await self.delete_space_with_options_async(space_id, request, headers, runtime)
@@ -1114,6 +1422,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetAsyncTaskInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
+        """
+        @summary 获取异步任务信息
+        
+        @param request: GetAsyncTaskInfoRequest
+        @param headers: GetAsyncTaskInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAsyncTaskInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1150,6 +1466,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetAsyncTaskInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
+        """
+        @summary 获取异步任务信息
+        
+        @param request: GetAsyncTaskInfoRequest
+        @param headers: GetAsyncTaskInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAsyncTaskInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1184,6 +1508,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalkdrive__1__0_models.GetAsyncTaskInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
+        """
+        @summary 获取异步任务信息
+        
+        @param request: GetAsyncTaskInfoRequest
+        @return: GetAsyncTaskInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetAsyncTaskInfoHeaders()
         return self.get_async_task_info_with_options(task_id, request, headers, runtime)
@@ -1193,6 +1523,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalkdrive__1__0_models.GetAsyncTaskInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetAsyncTaskInfoResponse:
+        """
+        @summary 获取异步任务信息
+        
+        @param request: GetAsyncTaskInfoRequest
+        @return: GetAsyncTaskInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetAsyncTaskInfoHeaders()
         return await self.get_async_task_info_with_options_async(task_id, request, headers, runtime)
@@ -1205,6 +1541,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetDownloadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
+        """
+        @summary 获取下载信息
+        
+        @param request: GetDownloadInfoRequest
+        @param headers: GetDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDownloadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1246,6 +1590,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetDownloadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
+        """
+        @summary 获取下载信息
+        
+        @param request: GetDownloadInfoRequest
+        @param headers: GetDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDownloadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1285,6 +1637,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetDownloadInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
+        """
+        @summary 获取下载信息
+        
+        @param request: GetDownloadInfoRequest
+        @return: GetDownloadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetDownloadInfoHeaders()
         return self.get_download_info_with_options(space_id, file_id, request, headers, runtime)
@@ -1295,6 +1653,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetDownloadInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetDownloadInfoResponse:
+        """
+        @summary 获取下载信息
+        
+        @param request: GetDownloadInfoRequest
+        @return: GetDownloadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetDownloadInfoHeaders()
         return await self.get_download_info_with_options_async(space_id, file_id, request, headers, runtime)
@@ -1307,6 +1671,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetFileInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件信息
+        
+        @param request: GetFileInfoRequest
+        @param headers: GetFileInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1344,6 +1716,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetFileInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件信息
+        
+        @param request: GetFileInfoRequest
+        @param headers: GetFileInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1379,6 +1759,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetFileInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件信息
+        
+        @param request: GetFileInfoRequest
+        @return: GetFileInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetFileInfoHeaders()
         return self.get_file_info_with_options(space_id, file_id, request, headers, runtime)
@@ -1389,6 +1775,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetFileInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetFileInfoResponse:
+        """
+        @summary 获取文件信息
+        
+        @param request: GetFileInfoRequest
+        @return: GetFileInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetFileInfoHeaders()
         return await self.get_file_info_with_options_async(space_id, file_id, request, headers, runtime)
@@ -1399,6 +1791,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetMySpaceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetMySpaceInfoResponse:
+        """
+        @summary 获取我的工作空间信息
+        
+        @param request: GetMySpaceInfoRequest
+        @param headers: GetMySpaceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMySpaceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1434,6 +1834,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetMySpaceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetMySpaceInfoResponse:
+        """
+        @summary 获取我的工作空间信息
+        
+        @param request: GetMySpaceInfoRequest
+        @param headers: GetMySpaceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMySpaceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1467,6 +1875,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.GetMySpaceInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetMySpaceInfoResponse:
+        """
+        @summary 获取我的工作空间信息
+        
+        @param request: GetMySpaceInfoRequest
+        @return: GetMySpaceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetMySpaceInfoHeaders()
         return self.get_my_space_info_with_options(request, headers, runtime)
@@ -1475,6 +1889,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.GetMySpaceInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetMySpaceInfoResponse:
+        """
+        @summary 获取我的工作空间信息
+        
+        @param request: GetMySpaceInfoRequest
+        @return: GetMySpaceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetMySpaceInfoHeaders()
         return await self.get_my_space_info_with_options_async(request, headers, runtime)
@@ -1487,6 +1907,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetPreviewInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        """
+        @summary 获取预览信息
+        
+        @param request: GetPreviewInfoRequest
+        @param headers: GetPreviewInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPreviewInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1528,6 +1956,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetPreviewInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        """
+        @summary 获取预览信息
+        
+        @param request: GetPreviewInfoRequest
+        @param headers: GetPreviewInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPreviewInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1567,6 +2003,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        """
+        @summary 获取预览信息
+        
+        @param request: GetPreviewInfoRequest
+        @return: GetPreviewInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetPreviewInfoHeaders()
         return self.get_preview_info_with_options(space_id, file_id, request, headers, runtime)
@@ -1577,6 +2019,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetPreviewInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetPreviewInfoResponse:
+        """
+        @summary 获取预览信息
+        
+        @param request: GetPreviewInfoRequest
+        @return: GetPreviewInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetPreviewInfoHeaders()
         return await self.get_preview_info_with_options_async(space_id, file_id, request, headers, runtime)
@@ -1589,6 +2037,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetPrivilegeInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetPrivilegeInfoResponse:
+        """
+        @summary 获取权限点信息
+        
+        @param request: GetPrivilegeInfoRequest
+        @param headers: GetPrivilegeInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivilegeInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1626,6 +2082,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetPrivilegeInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetPrivilegeInfoResponse:
+        """
+        @summary 获取权限点信息
+        
+        @param request: GetPrivilegeInfoRequest
+        @param headers: GetPrivilegeInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivilegeInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1661,6 +2125,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetPrivilegeInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetPrivilegeInfoResponse:
+        """
+        @summary 获取权限点信息
+        
+        @param request: GetPrivilegeInfoRequest
+        @return: GetPrivilegeInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetPrivilegeInfoHeaders()
         return self.get_privilege_info_with_options(space_id, file_id, request, headers, runtime)
@@ -1671,6 +2141,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.GetPrivilegeInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetPrivilegeInfoResponse:
+        """
+        @summary 获取权限点信息
+        
+        @param request: GetPrivilegeInfoRequest
+        @return: GetPrivilegeInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetPrivilegeInfoHeaders()
         return await self.get_privilege_info_with_options_async(space_id, file_id, request, headers, runtime)
@@ -1681,6 +2157,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetQuotaInfosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetQuotaInfosResponse:
+        """
+        @summary 获取容量信息列表
+        
+        @param request: GetQuotaInfosRequest
+        @param headers: GetQuotaInfosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetQuotaInfosResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.identifiers):
@@ -1720,6 +2204,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetQuotaInfosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetQuotaInfosResponse:
+        """
+        @summary 获取容量信息列表
+        
+        @param request: GetQuotaInfosRequest
+        @param headers: GetQuotaInfosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetQuotaInfosResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.identifiers):
@@ -1757,6 +2249,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.GetQuotaInfosRequest,
     ) -> dingtalkdrive__1__0_models.GetQuotaInfosResponse:
+        """
+        @summary 获取容量信息列表
+        
+        @param request: GetQuotaInfosRequest
+        @return: GetQuotaInfosResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetQuotaInfosHeaders()
         return self.get_quota_infos_with_options(request, headers, runtime)
@@ -1765,6 +2263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.GetQuotaInfosRequest,
     ) -> dingtalkdrive__1__0_models.GetQuotaInfosResponse:
+        """
+        @summary 获取容量信息列表
+        
+        @param request: GetQuotaInfosRequest
+        @return: GetQuotaInfosResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetQuotaInfosHeaders()
         return await self.get_quota_infos_with_options_async(request, headers, runtime)
@@ -1777,6 +2281,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetUploadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetUploadInfoRequest
+        @param headers: GetUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUploadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -1830,6 +2342,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GetUploadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetUploadInfoRequest
+        @param headers: GetUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUploadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -1881,6 +2401,12 @@ class Client(OpenApiClient):
         parent_id: str,
         request: dingtalkdrive__1__0_models.GetUploadInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetUploadInfoRequest
+        @return: GetUploadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetUploadInfoHeaders()
         return self.get_upload_info_with_options(space_id, parent_id, request, headers, runtime)
@@ -1891,6 +2417,12 @@ class Client(OpenApiClient):
         parent_id: str,
         request: dingtalkdrive__1__0_models.GetUploadInfoRequest,
     ) -> dingtalkdrive__1__0_models.GetUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetUploadInfoRequest
+        @return: GetUploadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GetUploadInfoHeaders()
         return await self.get_upload_info_with_options_async(space_id, parent_id, request, headers, runtime)
@@ -1902,6 +2434,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
+        """
+        @summary 添加自定义空间权限
+        
+        @param request: GrantPrivilegeOfCustomSpaceRequest
+        @param headers: GrantPrivilegeOfCustomSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GrantPrivilegeOfCustomSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.duration):
@@ -1946,6 +2486,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
+        """
+        @summary 添加自定义空间权限
+        
+        @param request: GrantPrivilegeOfCustomSpaceRequest
+        @param headers: GrantPrivilegeOfCustomSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GrantPrivilegeOfCustomSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.duration):
@@ -1988,6 +2536,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceRequest,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
+        """
+        @summary 添加自定义空间权限
+        
+        @param request: GrantPrivilegeOfCustomSpaceRequest
+        @return: GrantPrivilegeOfCustomSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceHeaders()
         return self.grant_privilege_of_custom_space_with_options(space_id, request, headers, runtime)
@@ -1997,6 +2551,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceRequest,
     ) -> dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceResponse:
+        """
+        @summary 添加自定义空间权限
+        
+        @param request: GrantPrivilegeOfCustomSpaceRequest
+        @return: GrantPrivilegeOfCustomSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.GrantPrivilegeOfCustomSpaceHeaders()
         return await self.grant_privilege_of_custom_space_with_options_async(space_id, request, headers, runtime)
@@ -2008,6 +2568,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.InfoSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: InfoSpaceRequest
+        @param headers: InfoSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InfoSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2044,6 +2612,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.InfoSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: InfoSpaceRequest
+        @param headers: InfoSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InfoSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2078,6 +2654,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.InfoSpaceRequest,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: InfoSpaceRequest
+        @return: InfoSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.InfoSpaceHeaders()
         return self.info_space_with_options(space_id, request, headers, runtime)
@@ -2087,6 +2669,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.InfoSpaceRequest,
     ) -> dingtalkdrive__1__0_models.InfoSpaceResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: InfoSpaceRequest
+        @return: InfoSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.InfoSpaceHeaders()
         return await self.info_space_with_options_async(space_id, request, headers, runtime)
@@ -2098,6 +2686,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
+        """
+        @summary 获取文件列表
+        
+        @param request: ListFilesRequest
+        @param headers: ListFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFilesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2144,6 +2740,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
+        """
+        @summary 获取文件列表
+        
+        @param request: ListFilesRequest
+        @param headers: ListFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFilesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2188,6 +2792,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.ListFilesRequest,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
+        """
+        @summary 获取文件列表
+        
+        @param request: ListFilesRequest
+        @return: ListFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListFilesHeaders()
         return self.list_files_with_options(space_id, request, headers, runtime)
@@ -2197,6 +2807,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.ListFilesRequest,
     ) -> dingtalkdrive__1__0_models.ListFilesResponse:
+        """
+        @summary 获取文件列表
+        
+        @param request: ListFilesRequest
+        @return: ListFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListFilesHeaders()
         return await self.list_files_with_options_async(space_id, request, headers, runtime)
@@ -2209,6 +2825,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListPermissionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @param headers: ListPermissionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPermissionsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2246,6 +2870,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListPermissionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @param headers: ListPermissionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPermissionsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2281,6 +2913,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.ListPermissionsRequest,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @return: ListPermissionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListPermissionsHeaders()
         return self.list_permissions_with_options(space_id, file_id, request, headers, runtime)
@@ -2291,6 +2929,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.ListPermissionsRequest,
     ) -> dingtalkdrive__1__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @return: ListPermissionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListPermissionsHeaders()
         return await self.list_permissions_with_options_async(space_id, file_id, request, headers, runtime)
@@ -2301,6 +2945,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListRecycleFilesResponse:
+        """
+        @summary 获取回收站文件列表
+        
+        @param request: ListRecycleFilesRequest
+        @param headers: ListRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2344,6 +2996,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListRecycleFilesResponse:
+        """
+        @summary 获取回收站文件列表
+        
+        @param request: ListRecycleFilesRequest
+        @param headers: ListRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2385,6 +3045,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ListRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.ListRecycleFilesResponse:
+        """
+        @summary 获取回收站文件列表
+        
+        @param request: ListRecycleFilesRequest
+        @return: ListRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListRecycleFilesHeaders()
         return self.list_recycle_files_with_options(request, headers, runtime)
@@ -2393,6 +3059,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ListRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.ListRecycleFilesResponse:
+        """
+        @summary 获取回收站文件列表
+        
+        @param request: ListRecycleFilesRequest
+        @return: ListRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListRecycleFilesHeaders()
         return await self.list_recycle_files_with_options_async(request, headers, runtime)
@@ -2403,6 +3075,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListSpacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListSpacesResponse:
+        """
+        @summary 获取空间列表
+        
+        @param request: ListSpacesRequest
+        @param headers: ListSpacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSpacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2444,6 +3124,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ListSpacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ListSpacesResponse:
+        """
+        @summary 获取空间列表
+        
+        @param request: ListSpacesRequest
+        @param headers: ListSpacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSpacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2483,6 +3171,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ListSpacesRequest,
     ) -> dingtalkdrive__1__0_models.ListSpacesResponse:
+        """
+        @summary 获取空间列表
+        
+        @param request: ListSpacesRequest
+        @return: ListSpacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListSpacesHeaders()
         return self.list_spaces_with_options(request, headers, runtime)
@@ -2491,6 +3185,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ListSpacesRequest,
     ) -> dingtalkdrive__1__0_models.ListSpacesResponse:
+        """
+        @summary 获取空间列表
+        
+        @param request: ListSpacesRequest
+        @return: ListSpacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ListSpacesHeaders()
         return await self.list_spaces_with_options_async(request, headers, runtime)
@@ -2501,6 +3201,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementBuyQuotaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementBuyQuotaResponse:
+        """
+        @summary 管理侧购买容量
+        
+        @param request: ManagementBuyQuotaRequest
+        @param headers: ManagementBuyQuotaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementBuyQuotaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order):
@@ -2540,6 +3248,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementBuyQuotaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementBuyQuotaResponse:
+        """
+        @summary 管理侧购买容量
+        
+        @param request: ManagementBuyQuotaRequest
+        @param headers: ManagementBuyQuotaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementBuyQuotaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order):
@@ -2577,6 +3293,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementBuyQuotaRequest,
     ) -> dingtalkdrive__1__0_models.ManagementBuyQuotaResponse:
+        """
+        @summary 管理侧购买容量
+        
+        @param request: ManagementBuyQuotaRequest
+        @return: ManagementBuyQuotaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementBuyQuotaHeaders()
         return self.management_buy_quota_with_options(request, headers, runtime)
@@ -2585,6 +3307,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementBuyQuotaRequest,
     ) -> dingtalkdrive__1__0_models.ManagementBuyQuotaResponse:
+        """
+        @summary 管理侧购买容量
+        
+        @param request: ManagementBuyQuotaRequest
+        @return: ManagementBuyQuotaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementBuyQuotaHeaders()
         return await self.management_buy_quota_with_options_async(request, headers, runtime)
@@ -2595,6 +3323,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementListSpacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementListSpacesResponse:
+        """
+        @summary 管理侧获取空间列表
+        
+        @param request: ManagementListSpacesRequest
+        @param headers: ManagementListSpacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementListSpacesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.space_ids):
@@ -2632,6 +3368,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementListSpacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementListSpacesResponse:
+        """
+        @summary 管理侧获取空间列表
+        
+        @param request: ManagementListSpacesRequest
+        @param headers: ManagementListSpacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementListSpacesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.space_ids):
@@ -2667,6 +3411,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementListSpacesRequest,
     ) -> dingtalkdrive__1__0_models.ManagementListSpacesResponse:
+        """
+        @summary 管理侧获取空间列表
+        
+        @param request: ManagementListSpacesRequest
+        @return: ManagementListSpacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementListSpacesHeaders()
         return self.management_list_spaces_with_options(request, headers, runtime)
@@ -2675,6 +3425,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementListSpacesRequest,
     ) -> dingtalkdrive__1__0_models.ManagementListSpacesResponse:
+        """
+        @summary 管理侧获取空间列表
+        
+        @param request: ManagementListSpacesRequest
+        @return: ManagementListSpacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementListSpacesHeaders()
         return await self.management_list_spaces_with_options_async(request, headers, runtime)
@@ -2685,6 +3441,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementModifySpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementModifySpaceResponse:
+        """
+        @summary 管理侧修改空间信息
+        
+        @param request: ManagementModifySpaceRequest
+        @param headers: ManagementModifySpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementModifySpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.quota):
@@ -2724,6 +3488,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ManagementModifySpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ManagementModifySpaceResponse:
+        """
+        @summary 管理侧修改空间信息
+        
+        @param request: ManagementModifySpaceRequest
+        @param headers: ManagementModifySpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagementModifySpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.quota):
@@ -2761,6 +3533,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementModifySpaceRequest,
     ) -> dingtalkdrive__1__0_models.ManagementModifySpaceResponse:
+        """
+        @summary 管理侧修改空间信息
+        
+        @param request: ManagementModifySpaceRequest
+        @return: ManagementModifySpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementModifySpaceHeaders()
         return self.management_modify_space_with_options(request, headers, runtime)
@@ -2769,6 +3547,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.ManagementModifySpaceRequest,
     ) -> dingtalkdrive__1__0_models.ManagementModifySpaceResponse:
+        """
+        @summary 管理侧修改空间信息
+        
+        @param request: ManagementModifySpaceRequest
+        @return: ManagementModifySpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ManagementModifySpaceHeaders()
         return await self.management_modify_space_with_options_async(request, headers, runtime)
@@ -2781,6 +3565,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ModifyPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: ModifyPermissionRequest
+        @param headers: ModifyPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2822,6 +3614,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.ModifyPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: ModifyPermissionRequest
+        @param headers: ModifyPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2861,6 +3661,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.ModifyPermissionRequest,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: ModifyPermissionRequest
+        @return: ModifyPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ModifyPermissionHeaders()
         return self.modify_permission_with_options(space_id, file_id, request, headers, runtime)
@@ -2871,6 +3677,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.ModifyPermissionRequest,
     ) -> dingtalkdrive__1__0_models.ModifyPermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: ModifyPermissionRequest
+        @return: ModifyPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.ModifyPermissionHeaders()
         return await self.modify_permission_with_options_async(space_id, file_id, request, headers, runtime)
@@ -2883,6 +3695,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.MoveFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
+        """
+        @summary 移动文件
+        
+        @param request: MoveFileRequest
+        @param headers: MoveFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -2926,6 +3746,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.MoveFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
+        """
+        @summary 移动文件
+        
+        @param request: MoveFileRequest
+        @param headers: MoveFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -2967,6 +3795,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.MoveFileRequest,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
+        """
+        @summary 移动文件
+        
+        @param request: MoveFileRequest
+        @return: MoveFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.MoveFileHeaders()
         return self.move_file_with_options(space_id, file_id, request, headers, runtime)
@@ -2977,6 +3811,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.MoveFileRequest,
     ) -> dingtalkdrive__1__0_models.MoveFileResponse:
+        """
+        @summary 移动文件
+        
+        @param request: MoveFileRequest
+        @return: MoveFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.MoveFileHeaders()
         return await self.move_file_with_options_async(space_id, file_id, request, headers, runtime)
@@ -2988,6 +3828,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.MoveFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFilesResponse:
+        """
+        @summary 批量移动文件（夹）
+        
+        @param request: MoveFilesRequest
+        @param headers: MoveFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -3032,6 +3880,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.MoveFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.MoveFilesResponse:
+        """
+        @summary 批量移动文件（夹）
+        
+        @param request: MoveFilesRequest
+        @param headers: MoveFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_conflict_policy):
@@ -3074,6 +3930,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.MoveFilesRequest,
     ) -> dingtalkdrive__1__0_models.MoveFilesResponse:
+        """
+        @summary 批量移动文件（夹）
+        
+        @param request: MoveFilesRequest
+        @return: MoveFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.MoveFilesHeaders()
         return self.move_files_with_options(space_id, request, headers, runtime)
@@ -3083,6 +3945,12 @@ class Client(OpenApiClient):
         space_id: str,
         request: dingtalkdrive__1__0_models.MoveFilesRequest,
     ) -> dingtalkdrive__1__0_models.MoveFilesResponse:
+        """
+        @summary 批量移动文件（夹）
+        
+        @param request: MoveFilesRequest
+        @return: MoveFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.MoveFilesHeaders()
         return await self.move_files_with_options_async(space_id, request, headers, runtime)
@@ -3093,6 +3961,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.RecoverRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RecoverRecycleFilesResponse:
+        """
+        @summary 还原回收站文件
+        
+        @param request: RecoverRecycleFilesRequest
+        @param headers: RecoverRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecoverRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_item_id_list):
@@ -3132,6 +4008,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.RecoverRecycleFilesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RecoverRecycleFilesResponse:
+        """
+        @summary 还原回收站文件
+        
+        @param request: RecoverRecycleFilesRequest
+        @param headers: RecoverRecycleFilesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecoverRecycleFilesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.recycle_item_id_list):
@@ -3169,6 +4053,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.RecoverRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.RecoverRecycleFilesResponse:
+        """
+        @summary 还原回收站文件
+        
+        @param request: RecoverRecycleFilesRequest
+        @return: RecoverRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.RecoverRecycleFilesHeaders()
         return self.recover_recycle_files_with_options(request, headers, runtime)
@@ -3177,6 +4067,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdrive__1__0_models.RecoverRecycleFilesRequest,
     ) -> dingtalkdrive__1__0_models.RecoverRecycleFilesResponse:
+        """
+        @summary 还原回收站文件
+        
+        @param request: RecoverRecycleFilesRequest
+        @return: RecoverRecycleFilesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.RecoverRecycleFilesHeaders()
         return await self.recover_recycle_files_with_options_async(request, headers, runtime)
@@ -3189,6 +4085,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.RenameFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
+        """
+        @summary 重命名文件
+        
+        @param request: RenameFileRequest
+        @param headers: RenameFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenameFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.new_file_name):
@@ -3228,6 +4132,14 @@ class Client(OpenApiClient):
         headers: dingtalkdrive__1__0_models.RenameFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
+        """
+        @summary 重命名文件
+        
+        @param request: RenameFileRequest
+        @param headers: RenameFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RenameFileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.new_file_name):
@@ -3265,6 +4177,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.RenameFileRequest,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
+        """
+        @summary 重命名文件
+        
+        @param request: RenameFileRequest
+        @return: RenameFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.RenameFileHeaders()
         return self.rename_file_with_options(space_id, file_id, request, headers, runtime)
@@ -3275,6 +4193,12 @@ class Client(OpenApiClient):
         file_id: str,
         request: dingtalkdrive__1__0_models.RenameFileRequest,
     ) -> dingtalkdrive__1__0_models.RenameFileResponse:
+        """
+        @summary 重命名文件
+        
+        @param request: RenameFileRequest
+        @return: RenameFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdrive__1__0_models.RenameFileHeaders()
         return await self.rename_file_with_options_async(space_id, file_id, request, headers, runtime)

@@ -42,6 +42,7 @@ class GetRelationUkSettingRequest(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):

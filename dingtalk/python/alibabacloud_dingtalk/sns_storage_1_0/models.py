@@ -188,8 +188,10 @@ class GetDentriesRequest(TeaModel):
         option: GetDentriesRequestOption = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -652,6 +654,7 @@ class GetDentryRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1017,7 +1020,9 @@ class GetDentryThumbnailsRequest(TeaModel):
         dentry_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_ids = dentry_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1285,6 +1290,7 @@ class GetFileDownloadInfoRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1479,7 +1485,9 @@ class GetSpaceRequest(TeaModel):
         open_conversation_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1706,6 +1714,7 @@ class ListAllDentriesRequest(TeaModel):
         union_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2092,7 +2101,9 @@ class ListDentriesRequest(TeaModel):
         self.next_token = next_token
         self.order = order
         self.order_by = order_by
+        # This parameter is required.
         self.parent_id = parent_id
+        # This parameter is required.
         self.union_id = union_id
         self.with_thumbnail = with_thumbnail
 
@@ -2523,8 +2534,10 @@ class ListExpiredRequest(TeaModel):
         option: ListExpiredRequestOption = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.option = option
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2796,8 +2809,11 @@ class SubscribeEventRequest(TeaModel):
         scope_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.scope_id = scope_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2936,8 +2952,11 @@ class UnsubscribeEventRequest(TeaModel):
         scope_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.scope_id = scope_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

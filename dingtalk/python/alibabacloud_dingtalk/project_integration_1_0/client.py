@@ -35,6 +35,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        """
+        @summary 在项目事件会话中加人
+        
+        @param headers: AddAttendeeToEventGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddAttendeeToEventGroupResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -66,6 +73,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        """
+        @summary 在项目事件会话中加人
+        
+        @param headers: AddAttendeeToEventGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddAttendeeToEventGroupResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -95,6 +109,11 @@ class Client(OpenApiClient):
         user_id: str,
         group_id: str,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        """
+        @summary 在项目事件会话中加人
+        
+        @return: AddAttendeeToEventGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
         return self.add_attendee_to_event_group_with_options(user_id, group_id, headers, runtime)
@@ -104,6 +123,11 @@ class Client(OpenApiClient):
         user_id: str,
         group_id: str,
     ) -> dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupResponse:
+        """
+        @summary 在项目事件会话中加人
+        
+        @return: AddAttendeeToEventGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.AddAttendeeToEventGroupHeaders()
         return await self.add_attendee_to_event_group_with_options_async(user_id, group_id, headers, runtime)
@@ -114,6 +138,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.CreateEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        """
+        @summary 创建项目事件会话
+        
+        @param headers: CreateEventGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventGroupResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -144,6 +175,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.CreateEventGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        """
+        @summary 创建项目事件会话
+        
+        @param headers: CreateEventGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEventGroupResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -172,6 +210,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        """
+        @summary 创建项目事件会话
+        
+        @return: CreateEventGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.CreateEventGroupHeaders()
         return self.create_event_group_with_options(user_id, headers, runtime)
@@ -180,6 +223,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.CreateEventGroupResponse:
+        """
+        @summary 创建项目事件会话
+        
+        @return: CreateEventGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.CreateEventGroupHeaders()
         return await self.create_event_group_with_options_async(user_id, headers, runtime)
@@ -190,6 +238,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 在群会话发送项目卡片消息
+        
+        @param headers: SendInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -220,6 +275,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 在群会话发送项目卡片消息
+        
+        @param headers: SendInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -248,6 +310,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 在群会话发送项目卡片消息
+        
+        @return: SendInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders()
         return self.send_interactive_card_with_options(user_id, headers, runtime)
@@ -256,6 +323,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 在群会话发送项目卡片消息
+        
+        @return: SendInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.SendInteractiveCardHeaders()
         return await self.send_interactive_card_with_options_async(user_id, headers, runtime)
@@ -266,6 +338,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        """
+        @summary 单聊会话发送项目卡片消息
+        
+        @param headers: SendSingleInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendSingleInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -296,6 +375,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        """
+        @summary 单聊会话发送项目卡片消息
+        
+        @param headers: SendSingleInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendSingleInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -324,6 +410,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        """
+        @summary 单聊会话发送项目卡片消息
+        
+        @return: SendSingleInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders()
         return self.send_single_interactive_card_with_options(user_id, headers, runtime)
@@ -332,6 +423,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.SendSingleInteractiveCardResponse:
+        """
+        @summary 单聊会话发送项目卡片消息
+        
+        @return: SendSingleInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.SendSingleInteractiveCardHeaders()
         return await self.send_single_interactive_card_with_options_async(user_id, headers, runtime)
@@ -342,6 +438,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新项目卡片消息
+        
+        @param headers: UpdateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -372,6 +475,13 @@ class Client(OpenApiClient):
         headers: dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新项目卡片消息
+        
+        @param headers: UpdateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveCardResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -400,6 +510,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新项目卡片消息
+        
+        @return: UpdateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders()
         return self.update_interactive_card_with_options(user_id, headers, runtime)
@@ -408,6 +523,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkproject_integration__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新项目卡片消息
+        
+        @return: UpdateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkproject_integration__1__0_models.UpdateInteractiveCardHeaders()
         return await self.update_interactive_card_with_options_async(user_id, headers, runtime)

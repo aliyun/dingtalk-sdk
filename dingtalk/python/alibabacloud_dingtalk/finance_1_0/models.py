@@ -49,12 +49,17 @@ class ApplyBatchPayRequest(TeaModel):
         trans_amount: str = None,
         trans_expire_time: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
+        # This parameter is required.
         self.order_no = order_no
         self.pass_back_params = pass_back_params
+        # This parameter is required.
         self.pay_terminal = pay_terminal
         self.return_url = return_url
+        # This parameter is required.
         self.staff_id = staff_id
+        # This parameter is required.
         self.trans_amount = trans_amount
         self.trans_expire_time = trans_expire_time
 
@@ -112,7 +117,9 @@ class ApplyBatchPayResponseBody(TeaModel):
         order_no: str = None,
         pay_data: str = None,
     ):
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.pay_data = pay_data
 
     def validate(self):
@@ -218,6 +225,7 @@ class CloseLoanEntranceRequest(TeaModel):
         self,
         request_id: str = None,
     ):
+        # This parameter is required.
         self.request_id = request_id
 
     def validate(self):
@@ -246,6 +254,7 @@ class CloseLoanEntranceResponseBody(TeaModel):
         request_id: str = None,
         result: str = None,
     ):
+        # This parameter is required.
         self.request_id = request_id
         self.result = result
 
@@ -353,7 +362,9 @@ class ConsultCreateSubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
+        # This parameter is required.
         self.contact_name = contact_name
+        # This parameter is required.
         self.mobile = mobile
 
     def validate(self):
@@ -391,8 +402,10 @@ class ConsultCreateSubInstitutionRequestLegalPersonCertInfo(TeaModel):
     ):
         self.cert_back_image = cert_back_image
         self.cert_front_image = cert_front_image
+        # This parameter is required.
         self.cert_name = cert_name
         self.cert_type = cert_type
+        # This parameter is required.
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -437,7 +450,9 @@ class ConsultCreateSubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
+        # This parameter is required.
         self.qualification_image = qualification_image
+        # This parameter is required.
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -479,6 +494,7 @@ class ConsultCreateSubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
         self.account_name = account_name
         self.account_type = account_type
@@ -488,6 +504,7 @@ class ConsultCreateSubInstitutionRequestSettleInfo(TeaModel):
         self.bank_name = bank_name
         self.bank_province = bank_province
         self.bank_short_name_code = bank_short_name_code
+        # This parameter is required.
         self.type = type
         self.usage_type = usage_type
 
@@ -632,8 +649,11 @@ class ConsultCreateSubInstitutionRequestSubInstBasicInfo(TeaModel):
         type: str = None,
     ):
         self.alias_name = alias_name
+        # This parameter is required.
         self.mcc = mcc
+        # This parameter is required.
         self.sub_inst_name = sub_inst_name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -676,7 +696,9 @@ class ConsultCreateSubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_type: str = None,
     ):
         self.cert_image = cert_image
+        # This parameter is required.
         self.cert_no = cert_no
+        # This parameter is required.
         self.cert_type = cert_type
 
     def validate(self):
@@ -908,19 +930,30 @@ class ConsultCreateSubInstitutionRequest(TeaModel):
         sub_inst_shop_info: ConsultCreateSubInstitutionRequestSubInstShopInfo = None,
     ):
         self.binding_alipay_logon_id = binding_alipay_logon_id
+        # This parameter is required.
         self.contact_info = contact_info
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.legal_person_cert_info = legal_person_cert_info
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
         self.qualification_infos = qualification_infos
+        # This parameter is required.
         self.services = services
+        # This parameter is required.
         self.settle_info = settle_info
+        # This parameter is required.
         self.solution = solution
         self.sub_inst_address_info = sub_inst_address_info
         self.sub_inst_auth_info = sub_inst_auth_info
+        # This parameter is required.
         self.sub_inst_basic_info = sub_inst_basic_info
+        # This parameter is required.
         self.sub_inst_certify_info = sub_inst_certify_info
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
         self.sub_inst_invoice_info = sub_inst_invoice_info
         self.sub_inst_shop_info = sub_inst_shop_info
@@ -1049,6 +1082,7 @@ class ConsultCreateSubInstitutionResponseBody(TeaModel):
         self,
         order_id: str = None,
     ):
+        # This parameter is required.
         self.order_id = order_id
 
     def validate(self):
@@ -1155,11 +1189,16 @@ class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDet
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1212,11 +1251,17 @@ class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_info_list = fund_tool_detail_info_list
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1281,15 +1326,22 @@ class CreatWithholdingOrderAndPayRequest(TeaModel):
         time_out_express: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.inst_id = inst_id
         self.other_pay_channel_detail_info_list = other_pay_channel_detail_info_list
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
+        # This parameter is required.
         self.payer_user_id = payer_user_id
         self.remark = remark
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
         self.time_out_express = time_out_express
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -1372,17 +1424,27 @@ class CreatWithholdingOrderAndPayResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.gmt_pay = gmt_pay
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
+        # This parameter is required.
         self.pay_channel_account_no = pay_channel_account_no
+        # This parameter is required.
         self.payer_staff_id = payer_staff_id
         self.remark = remark
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -1533,11 +1595,16 @@ class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoListFundToolDetail
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1590,11 +1657,17 @@ class CreateAcquireRefundOrderRequestOtherPayChannelDetailInfoList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_info_list = fund_tool_detail_info_list
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1658,14 +1731,20 @@ class CreateAcquireRefundOrderRequest(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.inst_id = inst_id
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.origin_out_trade_no = origin_out_trade_no
         self.other_pay_channel_detail_info_list = other_pay_channel_detail_info_list
+        # This parameter is required.
         self.out_refund_no = out_refund_no
+        # This parameter is required.
         self.refund_amount = refund_amount
         self.remark = remark
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -1735,8 +1814,11 @@ class CreateAcquireRefundOrderResponseBody(TeaModel):
         refund_order_no: str = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.out_refund_no = out_refund_no
+        # This parameter is required.
         self.refund_order_no = refund_order_no
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -1851,11 +1933,16 @@ class CreateBatchTradeOrderRequestBatchTradeDetails(TeaModel):
         payee_account_type: str = None,
         serial_no: int = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.memo = memo
+        # This parameter is required.
         self.payee_account_name = payee_account_name
+        # This parameter is required.
         self.payee_account_no = payee_account_no
+        # This parameter is required.
         self.payee_account_type = payee_account_type
+        # This parameter is required.
         self.serial_no = serial_no
 
     def validate(self):
@@ -1911,14 +1998,22 @@ class CreateBatchTradeOrderRequest(TeaModel):
         total_count: int = None,
         trade_title: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
+        # This parameter is required.
         self.account_no = account_no
         self.batch_remark = batch_remark
+        # This parameter is required.
         self.batch_trade_details = batch_trade_details
+        # This parameter is required.
         self.out_batch_no = out_batch_no
+        # This parameter is required.
         self.staff_id = staff_id
+        # This parameter is required.
         self.total_amount = total_amount
+        # This parameter is required.
         self.total_count = total_count
+        # This parameter is required.
         self.trade_title = trade_title
 
     def validate(self):
@@ -1989,7 +2084,9 @@ class CreateBatchTradeOrderResponseBody(TeaModel):
         out_batch_no: str = None,
     ):
         self.order_no = order_no
+        # This parameter is required.
         self.order_status = order_status
+        # This parameter is required.
         self.out_batch_no = out_batch_no
 
     def validate(self):
@@ -2100,7 +2197,9 @@ class CreateSubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
+        # This parameter is required.
         self.contact_name = contact_name
+        # This parameter is required.
         self.mobile = mobile
 
     def validate(self):
@@ -2138,8 +2237,10 @@ class CreateSubInstitutionRequestLegalPersonCertInfo(TeaModel):
     ):
         self.cert_back_image = cert_back_image
         self.cert_front_image = cert_front_image
+        # This parameter is required.
         self.cert_name = cert_name
         self.cert_type = cert_type
+        # This parameter is required.
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -2184,7 +2285,9 @@ class CreateSubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
+        # This parameter is required.
         self.qualification_image = qualification_image
+        # This parameter is required.
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -2226,6 +2329,7 @@ class CreateSubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
         self.account_name = account_name
         self.account_type = account_type
@@ -2235,6 +2339,7 @@ class CreateSubInstitutionRequestSettleInfo(TeaModel):
         self.bank_name = bank_name
         self.bank_province = bank_province
         self.bank_short_name_code = bank_short_name_code
+        # This parameter is required.
         self.type = type
         self.usage_type = usage_type
 
@@ -2379,8 +2484,11 @@ class CreateSubInstitutionRequestSubInstBasicInfo(TeaModel):
         type: str = None,
     ):
         self.alias_name = alias_name
+        # This parameter is required.
         self.mcc = mcc
+        # This parameter is required.
         self.sub_inst_name = sub_inst_name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2423,7 +2531,9 @@ class CreateSubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_type: str = None,
     ):
         self.cert_image = cert_image
+        # This parameter is required.
         self.cert_no = cert_no
+        # This parameter is required.
         self.cert_type = cert_type
 
     def validate(self):
@@ -2655,19 +2765,30 @@ class CreateSubInstitutionRequest(TeaModel):
         sub_inst_shop_info: CreateSubInstitutionRequestSubInstShopInfo = None,
     ):
         self.binding_alipay_logon_id = binding_alipay_logon_id
+        # This parameter is required.
         self.contact_info = contact_info
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.legal_person_cert_info = legal_person_cert_info
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
         self.qualification_infos = qualification_infos
+        # This parameter is required.
         self.services = services
+        # This parameter is required.
         self.settle_info = settle_info
+        # This parameter is required.
         self.solution = solution
         self.sub_inst_address_info = sub_inst_address_info
         self.sub_inst_auth_info = sub_inst_auth_info
+        # This parameter is required.
         self.sub_inst_basic_info = sub_inst_basic_info
+        # This parameter is required.
         self.sub_inst_certify_info = sub_inst_certify_info
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
         self.sub_inst_invoice_info = sub_inst_invoice_info
         self.sub_inst_shop_info = sub_inst_shop_info
@@ -2796,6 +2917,7 @@ class CreateSubInstitutionResponseBody(TeaModel):
         self,
         order_id: str = None,
     ):
+        # This parameter is required.
         self.order_id = order_id
 
     def validate(self):
@@ -2898,7 +3020,9 @@ class CreateUserCodeInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
+        # This parameter is required.
         self.gmt_end = gmt_end
+        # This parameter is required.
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -2940,16 +3064,25 @@ class CreateUserCodeInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
+        # This parameter is required.
         self.available_times = available_times
+        # This parameter is required.
         self.code_identity = code_identity
         self.code_value = code_value
         self.code_value_type = code_value_type
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_expired = gmt_expired
+        # This parameter is required.
         self.request_id = request_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
 
     def validate(self):
@@ -3027,6 +3160,7 @@ class CreateUserCodeInstanceResponseBody(TeaModel):
         code_id: str = None,
     ):
         self.code_detail_url = code_detail_url
+        # This parameter is required.
         self.code_id = code_id
 
     def validate(self):
@@ -3321,7 +3455,9 @@ class ModifySubInstitutionRequestContactInfo(TeaModel):
         contact_name: str = None,
         mobile: str = None,
     ):
+        # This parameter is required.
         self.contact_name = contact_name
+        # This parameter is required.
         self.mobile = mobile
 
     def validate(self):
@@ -3359,8 +3495,10 @@ class ModifySubInstitutionRequestLegalPersonCertInfo(TeaModel):
     ):
         self.cert_back_image = cert_back_image
         self.cert_front_image = cert_front_image
+        # This parameter is required.
         self.cert_name = cert_name
         self.cert_type = cert_type
+        # This parameter is required.
         self.id_card_no = id_card_no
 
     def validate(self):
@@ -3405,7 +3543,9 @@ class ModifySubInstitutionRequestQualificationInfos(TeaModel):
         qualification_image: str = None,
         qualification_type: str = None,
     ):
+        # This parameter is required.
         self.qualification_image = qualification_image
+        # This parameter is required.
         self.qualification_type = qualification_type
 
     def validate(self):
@@ -3447,6 +3587,7 @@ class ModifySubInstitutionRequestSettleInfo(TeaModel):
         type: str = None,
         usage_type: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
         self.account_name = account_name
         self.account_type = account_type
@@ -3456,6 +3597,7 @@ class ModifySubInstitutionRequestSettleInfo(TeaModel):
         self.bank_name = bank_name
         self.bank_province = bank_province
         self.bank_short_name_code = bank_short_name_code
+        # This parameter is required.
         self.type = type
         self.usage_type = usage_type
 
@@ -3600,8 +3742,11 @@ class ModifySubInstitutionRequestSubInstBasicInfo(TeaModel):
         type: str = None,
     ):
         self.alias_name = alias_name
+        # This parameter is required.
         self.mcc = mcc
+        # This parameter is required.
         self.sub_inst_name = sub_inst_name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3644,7 +3789,9 @@ class ModifySubInstitutionRequestSubInstCertifyInfo(TeaModel):
         cert_type: str = None,
     ):
         self.cert_image = cert_image
+        # This parameter is required.
         self.cert_no = cert_no
+        # This parameter is required.
         self.cert_type = cert_type
 
     def validate(self):
@@ -3875,18 +4022,28 @@ class ModifySubInstitutionRequest(TeaModel):
         sub_inst_shop_info: ModifySubInstitutionRequestSubInstShopInfo = None,
     ):
         self.binding_alipay_logon_id = binding_alipay_logon_id
+        # This parameter is required.
         self.contact_info = contact_info
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.legal_person_cert_info = legal_person_cert_info
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
         self.qualification_infos = qualification_infos
+        # This parameter is required.
         self.services = services
+        # This parameter is required.
         self.settle_info = settle_info
         self.sub_inst_address_info = sub_inst_address_info
         self.sub_inst_auth_info = sub_inst_auth_info
+        # This parameter is required.
         self.sub_inst_basic_info = sub_inst_basic_info
+        # This parameter is required.
         self.sub_inst_certify_info = sub_inst_certify_info
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
         self.sub_inst_invoice_info = sub_inst_invoice_info
         self.sub_inst_shop_info = sub_inst_shop_info
@@ -4117,11 +4274,16 @@ class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList(TeaMod
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -4176,13 +4338,19 @@ class NotifyPayCodePayResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_list = fund_tool_detail_list
         self.gmt_create = gmt_create
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -4262,22 +4430,36 @@ class NotifyPayCodePayResultRequest(TeaModel):
         trade_status: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.charge_amount = charge_amount
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_trade_create = gmt_trade_create
+        # This parameter is required.
         self.gmt_trade_finish = gmt_trade_finish
+        # This parameter is required.
         self.merchant_name = merchant_name
+        # This parameter is required.
         self.pay_channel_detail_list = pay_channel_detail_list
+        # This parameter is required.
         self.pay_code = pay_code
+        # This parameter is required.
         self.promotion_amount = promotion_amount
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.title = title
         self.trade_error_code = trade_error_code
         self.trade_error_msg = trade_error_msg
+        # This parameter is required.
         self.trade_no = trade_no
+        # This parameter is required.
         self.trade_status = trade_status
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4377,6 +4559,7 @@ class NotifyPayCodePayResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4483,11 +4666,16 @@ class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList(Tea
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -4541,12 +4729,19 @@ class NotifyPayCodeRefundResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_list = fund_tool_detail_list
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_refund_order_no = pay_channel_refund_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -4615,15 +4810,25 @@ class NotifyPayCodeRefundResultRequest(TeaModel):
         trade_no: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.gmt_refund = gmt_refund
+        # This parameter is required.
         self.pay_channel_detail_list = pay_channel_detail_list
+        # This parameter is required.
         self.pay_code = pay_code
+        # This parameter is required.
         self.refund_amount = refund_amount
+        # This parameter is required.
         self.refund_order_no = refund_order_no
+        # This parameter is required.
         self.refund_promotion_amount = refund_promotion_amount
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.trade_no = trade_no
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4695,6 +4900,7 @@ class NotifyPayCodeRefundResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4805,15 +5011,21 @@ class NotifyVerifyResultRequest(TeaModel):
         verify_result: bool = None,
         verify_time: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.pay_code = pay_code
         self.remark = remark
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
         self.verify_event = verify_event
         self.verify_location = verify_location
         self.verify_no = verify_no
+        # This parameter is required.
         self.verify_result = verify_result
+        # This parameter is required.
         self.verify_time = verify_time
 
     def validate(self):
@@ -4877,6 +5089,7 @@ class NotifyVerifyResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4979,7 +5192,9 @@ class PreCreateGroupBillOrderRequestBillItemList(TeaModel):
         amount: str = None,
         payer_union_id: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.payer_union_id = payer_union_id
 
     def validate(self):
@@ -5021,16 +5236,23 @@ class PreCreateGroupBillOrderRequest(TeaModel):
         remark: str = None,
         total_amount: str = None,
     ):
+        # This parameter is required.
         self.bill_item_list = bill_item_list
         self.ext_params = ext_params
+        # This parameter is required.
         self.head_count = head_count
+        # This parameter is required.
         self.is_average_amount = is_average_amount
+        # This parameter is required.
         self.merchant_id = merchant_id
         self.open_cid = open_cid
+        # This parameter is required.
         self.out_biz_no = out_biz_no
         self.payee_corp_id = payee_corp_id
+        # This parameter is required.
         self.payee_union_id = payee_union_id
         self.remark = remark
+        # This parameter is required.
         self.total_amount = total_amount
 
     def validate(self):
@@ -5242,6 +5464,7 @@ class QueryAcquireRefundOrderRequest(TeaModel):
         self,
         out_refund_no: str = None,
     ):
+        # This parameter is required.
         self.out_refund_no = out_refund_no
 
     def validate(self):
@@ -5282,19 +5505,31 @@ class QueryAcquireRefundOrderResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.gmt_create = gmt_create
         self.gmt_refund = gmt_refund
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.origin_out_trade_no = origin_out_trade_no
+        # This parameter is required.
         self.out_refund_no = out_refund_no
+        # This parameter is required.
         self.pay_channel = pay_channel
+        # This parameter is required.
         self.pay_channel_account_no = pay_channel_account_no
+        # This parameter is required.
         self.payer_user_id = payer_user_id
         self.remark = remark
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -5450,8 +5685,11 @@ class QueryBatchTradeDetailListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.out_batch_no = out_batch_no
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -5496,15 +5734,25 @@ class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList(TeaModel):
         serial_no: int = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.detail_no = detail_no
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.memo = memo
+        # This parameter is required.
         self.payee_account_name = payee_account_name
+        # This parameter is required.
         self.payee_account_no = payee_account_no
+        # This parameter is required.
         self.payee_account_type = payee_account_type
+        # This parameter is required.
         self.serial_no = serial_no
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -5572,10 +5820,14 @@ class QueryBatchTradeDetailListResponseBody(TeaModel):
         total: int = None,
         total_page_number: int = None,
     ):
+        # This parameter is required.
         self.batch_trade_detail_list = batch_trade_detail_list
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.total = total
+        # This parameter is required.
         self.total_page_number = total_page_number
 
     def validate(self):
@@ -5701,6 +5953,7 @@ class QueryBatchTradeOrderRequest(TeaModel):
         self,
         out_batch_nos: List[str] = None,
     ):
+        # This parameter is required.
         self.out_batch_nos = out_batch_nos
 
     def validate(self):
@@ -5741,19 +5994,33 @@ class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs(TeaModel):
         success_count: int = None,
         total_amount: str = None,
     ):
+        # This parameter is required.
         self.alipay_trans_id = alipay_trans_id
+        # This parameter is required.
         self.fail_amount = fail_amount
+        # This parameter is required.
         self.fail_count = fail_count
+        # This parameter is required.
         self.fail_reason = fail_reason
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.gmt_submit = gmt_submit
+        # This parameter is required.
         self.out_batch_no = out_batch_no
+        # This parameter is required.
         self.payer_staff_id = payer_staff_id
+        # This parameter is required.
         self.payment_amount = payment_amount
+        # This parameter is required.
         self.payment_currency = payment_currency
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.success_amount = success_amount
+        # This parameter is required.
         self.success_count = success_count
+        # This parameter is required.
         self.total_amount = total_amount
 
     def validate(self):
@@ -5833,6 +6100,7 @@ class QueryBatchTradeOrderResponseBody(TeaModel):
         self,
         batch_trade_order_vos: List[QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs] = None,
     ):
+        # This parameter is required.
         self.batch_trade_order_vos = batch_trade_order_vos
 
     def validate(self):
@@ -5947,11 +6215,17 @@ class QueryPayAccountListResponseBodyPayAccountVOList(TeaModel):
         account_remark: str = None,
         account_type: str = None,
     ):
+        # This parameter is required.
         self.account_class = account_class
+        # This parameter is required.
         self.account_id = account_id
+        # This parameter is required.
         self.account_name = account_name
+        # This parameter is required.
         self.account_no = account_no
+        # This parameter is required.
         self.account_remark = account_remark
+        # This parameter is required.
         self.account_type = account_type
 
     def validate(self):
@@ -5999,6 +6273,7 @@ class QueryPayAccountListResponseBody(TeaModel):
         self,
         pay_account_volist: List[QueryPayAccountListResponseBodyPayAccountVOList] = None,
     ):
+        # This parameter is required.
         self.pay_account_volist = pay_account_volist
 
     def validate(self):
@@ -6111,9 +6386,11 @@ class QueryRegisterOrderRequest(TeaModel):
         out_trade_no: str = None,
         sub_inst_id: str = None,
     ):
+        # This parameter is required.
         self.inst_id = inst_id
         self.order_id = order_id
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
 
     def validate(self):
@@ -6300,10 +6577,15 @@ class QueryUserAgreementRequest(TeaModel):
         sub_inst_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.biz_scene = biz_scene
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -6358,17 +6640,29 @@ class QueryUserAgreementResponseBody(TeaModel):
         sub_inst_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.agreement_no = agreement_no
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.gmt_expire = gmt_expire
+        # This parameter is required.
         self.gmt_sign = gmt_sign
+        # This parameter is required.
         self.gmt_valid = gmt_valid
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.pay_channel = pay_channel
+        # This parameter is required.
         self.pay_channel_account_name = pay_channel_account_name
+        # This parameter is required.
         self.pay_channel_account_no = pay_channel_account_no
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -6514,6 +6808,7 @@ class QueryUserAlipayAccountResponseBody(TeaModel):
         self,
         alipay_uid: str = None,
     ):
+        # This parameter is required.
         self.alipay_uid = alipay_uid
 
     def validate(self):
@@ -6615,6 +6910,7 @@ class QueryWithholdingOrderRequest(TeaModel):
         self,
         out_trade_no: str = None,
     ):
+        # This parameter is required.
         self.out_trade_no = out_trade_no
 
     def validate(self):
@@ -6654,18 +6950,29 @@ class QueryWithholdingOrderResponseBody(TeaModel):
         sub_inst_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.gmt_create = gmt_create
         self.gmt_pay = gmt_pay
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.order_no = order_no
+        # This parameter is required.
         self.out_trade_no = out_trade_no
+        # This parameter is required.
         self.pay_channel = pay_channel
+        # This parameter is required.
         self.pay_channel_account_no = pay_channel_account_no
+        # This parameter is required.
         self.payer_user_id = payer_user_id
         self.remark = remark
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -6818,9 +7125,12 @@ class SaveCorpPayCodeRequest(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.code_identity = code_identity
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_info = ext_info
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -6987,8 +7297,11 @@ class UnsignUserAgreementRequest(TeaModel):
         self.agreement_no = agreement_no
         self.biz_code = biz_code
         self.biz_scene = biz_scene
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7103,7 +7416,9 @@ class UpateUserCodeInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
+        # This parameter is required.
         self.gmt_end = gmt_end
+        # This parameter is required.
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -7144,15 +7459,23 @@ class UpateUserCodeInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
+        # This parameter is required.
         self.available_times = available_times
+        # This parameter is required.
         self.code_id = code_id
+        # This parameter is required.
         self.code_identity = code_identity
         self.code_value = code_value
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_expired = gmt_expired
         self.status = status
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
 
     def validate(self):
@@ -7336,17 +7659,25 @@ class UpdateInvoiceVerifyStatusRequest(TeaModel):
         msg: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
         self.checking_result = checking_result
+        # This parameter is required.
         self.checking_status = checking_status
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.corp_id = corp_id
         self.extension = extension
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_no = invoice_no
         self.invoice_status = invoice_status
+        # This parameter is required.
         self.invoice_verify_id = invoice_verify_id
+        # This parameter is required.
         self.msg = msg
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -7522,6 +7853,7 @@ class UploadInvoiceRequestExtension(TeaModel):
         order_no_list: List[str] = None,
         order_type: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
         self.order_no = order_no
         self.order_no_list = order_no_list
@@ -7577,16 +7909,25 @@ class UploadInvoiceRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
+        # This parameter is required.
         self.invoice_amount = invoice_amount
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_date = invoice_date
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.invoice_type = invoice_type
         self.logo_url = logo_url
+        # This parameter is required.
         self.payee_name = payee_name
+        # This parameter is required.
         self.payee_tax_no = payee_tax_no
+        # This parameter is required.
         self.payer_name = payer_name
         self.payer_tax_no = payer_tax_no
+        # This parameter is required.
         self.pdf_url = pdf_url
         self.tax_amount = tax_amount
         self.verify_code = verify_code
@@ -7677,6 +8018,7 @@ class UploadInvoiceRequestUserIdentity(TeaModel):
         self.mobile = mobile
         self.mobile_state_code = mobile_state_code
         self.target_corp_id = target_corp_id
+        # This parameter is required.
         self.type = type
         self.union_id = union_id
         self.user_id = user_id
@@ -7729,6 +8071,7 @@ class UploadInvoiceRequest(TeaModel):
         user_identity: UploadInvoiceRequestUserIdentity = None,
     ):
         self.extension = extension
+        # This parameter is required.
         self.invoices = invoices
         self.user_identity = user_identity
 
@@ -7783,10 +8126,15 @@ class UploadInvoiceResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.err_code = err_code
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.reason = reason
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -7830,6 +8178,7 @@ class UploadInvoiceResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceResponseBodyResultResults] = None,
     ):
+        # This parameter is required.
         self.results = results
 
     def validate(self):
@@ -7970,6 +8319,7 @@ class UploadInvoiceByAuthRequestExtension(TeaModel):
         order_no: str = None,
         order_type: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
         self.order_no = order_no
         self.order_type = order_type
@@ -8020,19 +8370,30 @@ class UploadInvoiceByAuthRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
+        # This parameter is required.
         self.invoice_amount = invoice_amount
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_date = invoice_date
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.invoice_type = invoice_type
         self.logo_url = logo_url
+        # This parameter is required.
         self.payee_name = payee_name
+        # This parameter is required.
         self.payee_tax_no = payee_tax_no
+        # This parameter is required.
         self.payer_name = payer_name
         self.payer_tax_no = payer_tax_no
+        # This parameter is required.
         self.pdf_url = pdf_url
+        # This parameter is required.
         self.tax_amount = tax_amount
         self.verify_code = verify_code
+        # This parameter is required.
         self.without_tax_amount = without_tax_amount
 
     def validate(self):
@@ -8114,6 +8475,7 @@ class UploadInvoiceByAuthRequest(TeaModel):
         invoices: List[UploadInvoiceByAuthRequestInvoices] = None,
     ):
         self.extension = extension
+        # This parameter is required.
         self.invoices = invoices
 
     def validate(self):
@@ -8160,10 +8522,15 @@ class UploadInvoiceByAuthResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.err_code = err_code
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.reason = reason
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -8207,6 +8574,7 @@ class UploadInvoiceByAuthResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceByAuthResponseBodyResultResults] = None,
     ):
+        # This parameter is required.
         self.results = results
 
     def validate(self):
@@ -8358,19 +8726,30 @@ class UploadInvoiceByMobileRequestInvoices(TeaModel):
         verify_code: str = None,
         without_tax_amount: str = None,
     ):
+        # This parameter is required.
         self.invoice_amount = invoice_amount
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_date = invoice_date
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.invoice_type = invoice_type
         self.logo_url = logo_url
+        # This parameter is required.
         self.payee_name = payee_name
+        # This parameter is required.
         self.payee_tax_no = payee_tax_no
+        # This parameter is required.
         self.payer_name = payer_name
         self.payer_tax_no = payer_tax_no
+        # This parameter is required.
         self.pdf_url = pdf_url
+        # This parameter is required.
         self.tax_amount = tax_amount
         self.verify_code = verify_code
+        # This parameter is required.
         self.without_tax_amount = without_tax_amount
 
     def validate(self):
@@ -8452,8 +8831,11 @@ class UploadInvoiceByMobileRequest(TeaModel):
         mobile: str = None,
         mobile_state_code: str = None,
     ):
+        # This parameter is required.
         self.invoices = invoices
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.mobile_state_code = mobile_state_code
 
     def validate(self):
@@ -8501,10 +8883,15 @@ class UploadInvoiceByMobileResponseBodyResultResults(TeaModel):
         reason: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.err_code = err_code
+        # This parameter is required.
         self.invoice_code = invoice_code
+        # This parameter is required.
         self.invoice_no = invoice_no
+        # This parameter is required.
         self.reason = reason
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -8548,6 +8935,7 @@ class UploadInvoiceByMobileResponseBodyResult(TeaModel):
         self,
         results: List[UploadInvoiceByMobileResponseBodyResultResults] = None,
     ):
+        # This parameter is required.
         self.results = results
 
     def validate(self):
@@ -8690,10 +9078,15 @@ class UploadRegisterImageRequest(TeaModel):
         inst_id: str = None,
         pay_channel: str = None,
     ):
+        # This parameter is required.
         self.image_content = image_content
+        # This parameter is required.
         self.image_name = image_name
+        # This parameter is required.
         self.image_type = image_type
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.pay_channel = pay_channel
 
     def validate(self):
@@ -8737,6 +9130,7 @@ class UploadRegisterImageResponseBody(TeaModel):
         self,
         oss_url: str = None,
     ):
+        # This parameter is required.
         self.oss_url = oss_url
 
     def validate(self):
@@ -8849,17 +9243,27 @@ class UserAgreementPageSignRequest(TeaModel):
         sub_merchant_service_name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.biz_scene = biz_scene
+        # This parameter is required.
         self.inst_id = inst_id
+        # This parameter is required.
         self.pay_channel = pay_channel
         self.remark = remark
         self.return_url = return_url
+        # This parameter is required.
         self.sign_scene = sign_scene
+        # This parameter is required.
         self.sub_inst_id = sub_inst_id
+        # This parameter is required.
         self.sub_merchant_name = sub_merchant_name
+        # This parameter is required.
         self.sub_merchant_service_desc = sub_merchant_service_desc
+        # This parameter is required.
         self.sub_merchant_service_name = sub_merchant_service_name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8931,6 +9335,7 @@ class UserAgreementPageSignResponseBody(TeaModel):
         self,
         page_data: str = None,
     ):
+        # This parameter is required.
         self.page_data = page_data
 
     def validate(self):

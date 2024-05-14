@@ -91,10 +91,15 @@ class QueryGoodsListResponseBodyResultList(TeaModel):
         product_specs: str = None,
         unit: str = None,
     ):
+        # This parameter is required.
         self.goods_name = goods_name
+        # This parameter is required.
         self.goods_no = goods_no
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.product_specs = product_specs
+        # This parameter is required.
         self.unit = unit
 
     def validate(self):
@@ -141,9 +146,12 @@ class QueryGoodsListResponseBodyResult(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):

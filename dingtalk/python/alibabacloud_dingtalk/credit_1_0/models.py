@@ -47,9 +47,11 @@ class QueryScoreRequest(TeaModel):
         org_name: str = None,
         uni_sc_code: str = None,
     ):
+        # This parameter is required.
         self.encryption = encryption
         self.full_name = full_name
         self.id_card_code = id_card_code
+        # This parameter is required.
         self.mobile = mobile
         self.org_name = org_name
         self.uni_sc_code = uni_sc_code

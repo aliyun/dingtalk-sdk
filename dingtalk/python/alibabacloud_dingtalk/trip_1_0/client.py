@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.GetTravelProcessDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        """
+        @summary 获取差旅审批实例详情
+        
+        @param request: GetTravelProcessDetailRequest
+        @param headers: GetTravelProcessDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTravelProcessDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.process_corp_id):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.GetTravelProcessDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        """
+        @summary 获取差旅审批实例详情
+        
+        @param request: GetTravelProcessDetailRequest
+        @param headers: GetTravelProcessDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTravelProcessDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.process_corp_id):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        """
+        @summary 获取差旅审批实例详情
+        
+        @param request: GetTravelProcessDetailRequest
+        @return: GetTravelProcessDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.GetTravelProcessDetailHeaders()
         return self.get_travel_process_detail_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,
     ) -> dingtalktrip__1__0_models.GetTravelProcessDetailResponse:
+        """
+        @summary 获取差旅审批实例详情
+        
+        @param request: GetTravelProcessDetailRequest
+        @return: GetTravelProcessDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.GetTravelProcessDetailHeaders()
         return await self.get_travel_process_detail_with_options_async(request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.PreCheckTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        """
+        @summary 表单升级预校验
+        
+        @param request: PreCheckTemplateRequest
+        @param headers: PreCheckTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCheckTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.customer_corp_id):
@@ -160,6 +196,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.PreCheckTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        """
+        @summary 表单升级预校验
+        
+        @param request: PreCheckTemplateRequest
+        @param headers: PreCheckTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCheckTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.customer_corp_id):
@@ -193,6 +237,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
     ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        """
+        @summary 表单升级预校验
+        
+        @param request: PreCheckTemplateRequest
+        @return: PreCheckTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.PreCheckTemplateHeaders()
         return self.pre_check_template_with_options(request, headers, runtime)
@@ -201,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.PreCheckTemplateRequest,
     ) -> dingtalktrip__1__0_models.PreCheckTemplateResponse:
+        """
+        @summary 表单升级预校验
+        
+        @param request: PreCheckTemplateRequest
+        @return: PreCheckTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.PreCheckTemplateHeaders()
         return await self.pre_check_template_with_options_async(request, headers, runtime)
@@ -211,6 +267,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        """
+        @summary 查询审批套件详情
+        
+        @param request: QueryTripProcessTemplatesRequest
+        @param headers: QueryTripProcessTemplatesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripProcessTemplatesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.customer_corp_id):
@@ -246,6 +310,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        """
+        @summary 查询审批套件详情
+        
+        @param request: QueryTripProcessTemplatesRequest
+        @param headers: QueryTripProcessTemplatesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTripProcessTemplatesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.customer_corp_id):
@@ -279,6 +351,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
     ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        """
+        @summary 查询审批套件详情
+        
+        @param request: QueryTripProcessTemplatesRequest
+        @return: QueryTripProcessTemplatesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders()
         return self.query_trip_process_templates_with_options(request, headers, runtime)
@@ -287,6 +365,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.QueryTripProcessTemplatesRequest,
     ) -> dingtalktrip__1__0_models.QueryTripProcessTemplatesResponse:
+        """
+        @summary 查询审批套件详情
+        
+        @param request: QueryTripProcessTemplatesRequest
+        @return: QueryTripProcessTemplatesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.QueryTripProcessTemplatesHeaders()
         return await self.query_trip_process_templates_with_options_async(request, headers, runtime)
@@ -297,6 +381,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        """
+        @summary 同步服务商企业签约变更事件
+        
+        @param request: SyncBusinessSignInfoRequest
+        @param headers: SyncBusinessSignInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncBusinessSignInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type_list):
@@ -346,6 +438,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        """
+        @summary 同步服务商企业签约变更事件
+        
+        @param request: SyncBusinessSignInfoRequest
+        @param headers: SyncBusinessSignInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncBusinessSignInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type_list):
@@ -393,6 +493,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
     ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        """
+        @summary 同步服务商企业签约变更事件
+        
+        @param request: SyncBusinessSignInfoRequest
+        @return: SyncBusinessSignInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders()
         return self.sync_business_sign_info_with_options(request, headers, runtime)
@@ -401,6 +507,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,
     ) -> dingtalktrip__1__0_models.SyncBusinessSignInfoResponse:
+        """
+        @summary 同步服务商企业签约变更事件
+        
+        @param request: SyncBusinessSignInfoRequest
+        @return: SyncBusinessSignInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncBusinessSignInfoHeaders()
         return await self.sync_business_sign_info_with_options_async(request, headers, runtime)
@@ -411,6 +523,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncCostCenterHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        """
+        @summary 出差表单成本中心同步
+        
+        @param request: SyncCostCenterRequest
+        @param headers: SyncCostCenterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCostCenterResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -466,6 +586,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncCostCenterHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        """
+        @summary 出差表单成本中心同步
+        
+        @param request: SyncCostCenterRequest
+        @param headers: SyncCostCenterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCostCenterResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -519,6 +647,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncCostCenterRequest,
     ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        """
+        @summary 出差表单成本中心同步
+        
+        @param request: SyncCostCenterRequest
+        @return: SyncCostCenterResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncCostCenterHeaders()
         return self.sync_cost_center_with_options(request, headers, runtime)
@@ -527,6 +661,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncCostCenterRequest,
     ) -> dingtalktrip__1__0_models.SyncCostCenterResponse:
+        """
+        @summary 出差表单成本中心同步
+        
+        @param request: SyncCostCenterRequest
+        @return: SyncCostCenterResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncCostCenterHeaders()
         return await self.sync_cost_center_with_options_async(request, headers, runtime)
@@ -537,6 +677,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncCostCenterEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        """
+        @summary 出差表单成本中心可用范围
+        
+        @param request: SyncCostCenterEntityRequest
+        @param headers: SyncCostCenterEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCostCenterEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -580,6 +728,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncCostCenterEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        """
+        @summary 出差表单成本中心可用范围
+        
+        @param request: SyncCostCenterEntityRequest
+        @param headers: SyncCostCenterEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCostCenterEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -621,6 +777,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        """
+        @summary 出差表单成本中心可用范围
+        
+        @param request: SyncCostCenterEntityRequest
+        @return: SyncCostCenterEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncCostCenterEntityHeaders()
         return self.sync_cost_center_entity_with_options(request, headers, runtime)
@@ -629,6 +791,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncCostCenterEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncCostCenterEntityResponse:
+        """
+        @summary 出差表单成本中心可用范围
+        
+        @param request: SyncCostCenterEntityRequest
+        @return: SyncCostCenterEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncCostCenterEntityHeaders()
         return await self.sync_cost_center_entity_with_options_async(request, headers, runtime)
@@ -639,6 +807,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        """
+        @summary 出差表单发票抬头
+        
+        @param request: SyncInvoiceRequest
+        @param headers: SyncInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.address):
@@ -706,6 +882,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        """
+        @summary 出差表单发票抬头
+        
+        @param request: SyncInvoiceRequest
+        @param headers: SyncInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.address):
@@ -771,6 +955,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncInvoiceRequest,
     ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        """
+        @summary 出差表单发票抬头
+        
+        @param request: SyncInvoiceRequest
+        @return: SyncInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncInvoiceHeaders()
         return self.sync_invoice_with_options(request, headers, runtime)
@@ -779,6 +969,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncInvoiceRequest,
     ) -> dingtalktrip__1__0_models.SyncInvoiceResponse:
+        """
+        @summary 出差表单发票抬头
+        
+        @param request: SyncInvoiceRequest
+        @return: SyncInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncInvoiceHeaders()
         return await self.sync_invoice_with_options_async(request, headers, runtime)
@@ -789,6 +985,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncInvoiceEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        """
+        @summary 出差表单发票抬头可用范围
+        
+        @param request: SyncInvoiceEntityRequest
+        @param headers: SyncInvoiceEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInvoiceEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -832,6 +1036,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncInvoiceEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        """
+        @summary 出差表单发票抬头可用范围
+        
+        @param request: SyncInvoiceEntityRequest
+        @param headers: SyncInvoiceEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncInvoiceEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -873,6 +1085,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        """
+        @summary 出差表单发票抬头可用范围
+        
+        @param request: SyncInvoiceEntityRequest
+        @return: SyncInvoiceEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncInvoiceEntityHeaders()
         return self.sync_invoice_entity_with_options(request, headers, runtime)
@@ -881,6 +1099,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncInvoiceEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncInvoiceEntityResponse:
+        """
+        @summary 出差表单发票抬头可用范围
+        
+        @param request: SyncInvoiceEntityRequest
+        @return: SyncInvoiceEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncInvoiceEntityHeaders()
         return await self.sync_invoice_entity_with_options_async(request, headers, runtime)
@@ -891,6 +1115,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncProjectHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        """
+        @summary 出差表单项目
+        
+        @param request: SyncProjectRequest
+        @param headers: SyncProjectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncProjectResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -952,6 +1184,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncProjectHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        """
+        @summary 出差表单项目
+        
+        @param request: SyncProjectRequest
+        @param headers: SyncProjectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncProjectResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -1011,6 +1251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncProjectRequest,
     ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        """
+        @summary 出差表单项目
+        
+        @param request: SyncProjectRequest
+        @return: SyncProjectResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncProjectHeaders()
         return self.sync_project_with_options(request, headers, runtime)
@@ -1019,6 +1265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncProjectRequest,
     ) -> dingtalktrip__1__0_models.SyncProjectResponse:
+        """
+        @summary 出差表单项目
+        
+        @param request: SyncProjectRequest
+        @return: SyncProjectResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncProjectHeaders()
         return await self.sync_project_with_options_async(request, headers, runtime)
@@ -1029,6 +1281,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncProjectEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        """
+        @summary 出差表单项目可用范围
+        
+        @param request: SyncProjectEntityRequest
+        @param headers: SyncProjectEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncProjectEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -1072,6 +1332,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncProjectEntityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        """
+        @summary 出差表单项目可用范围
+        
+        @param request: SyncProjectEntityRequest
+        @param headers: SyncProjectEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncProjectEntityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -1113,6 +1381,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        """
+        @summary 出差表单项目可用范围
+        
+        @param request: SyncProjectEntityRequest
+        @return: SyncProjectEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncProjectEntityHeaders()
         return self.sync_project_entity_with_options(request, headers, runtime)
@@ -1121,6 +1395,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncProjectEntityRequest,
     ) -> dingtalktrip__1__0_models.SyncProjectEntityResponse:
+        """
+        @summary 出差表单项目可用范围
+        
+        @param request: SyncProjectEntityRequest
+        @return: SyncProjectEntityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncProjectEntityHeaders()
         return await self.sync_project_entity_with_options_async(request, headers, runtime)
@@ -1131,6 +1411,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncSecretKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        """
+        @summary 调用本接口同步公司密钥信息。
+        
+        @param request: SyncSecretKeyRequest
+        @param headers: SyncSecretKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSecretKeyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_type):
@@ -1176,6 +1464,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncSecretKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        """
+        @summary 调用本接口同步公司密钥信息。
+        
+        @param request: SyncSecretKeyRequest
+        @param headers: SyncSecretKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSecretKeyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_type):
@@ -1219,6 +1515,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
     ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        """
+        @summary 调用本接口同步公司密钥信息。
+        
+        @param request: SyncSecretKeyRequest
+        @return: SyncSecretKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncSecretKeyHeaders()
         return self.sync_secret_key_with_options(request, headers, runtime)
@@ -1227,6 +1529,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncSecretKeyRequest,
     ) -> dingtalktrip__1__0_models.SyncSecretKeyResponse:
+        """
+        @summary 调用本接口同步公司密钥信息。
+        
+        @param request: SyncSecretKeyRequest
+        @return: SyncSecretKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncSecretKeyHeaders()
         return await self.sync_secret_key_with_options_async(request, headers, runtime)
@@ -1237,6 +1545,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncTripOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
+        """
+        @summary 同步出行订单变更事件
+        
+        @param request: SyncTripOrderRequest
+        @param headers: SyncTripOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_extension):
@@ -1322,6 +1638,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncTripOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
+        """
+        @summary 同步出行订单变更事件
+        
+        @param request: SyncTripOrderRequest
+        @param headers: SyncTripOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_extension):
@@ -1405,6 +1729,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncTripOrderRequest,
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
+        """
+        @summary 同步出行订单变更事件
+        
+        @param request: SyncTripOrderRequest
+        @return: SyncTripOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncTripOrderHeaders()
         return self.sync_trip_order_with_options(request, headers, runtime)
@@ -1413,6 +1743,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncTripOrderRequest,
     ) -> dingtalktrip__1__0_models.SyncTripOrderResponse:
+        """
+        @summary 同步出行订单变更事件
+        
+        @param request: SyncTripOrderRequest
+        @return: SyncTripOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncTripOrderHeaders()
         return await self.sync_trip_order_with_options_async(request, headers, runtime)
@@ -1423,6 +1759,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncTripProductConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        """
+        @summary 预订管理产品线配置同步
+        
+        @param request: SyncTripProductConfigRequest
+        @param headers: SyncTripProductConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripProductConfigResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.target_corp_id):
@@ -1460,6 +1804,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.SyncTripProductConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        """
+        @summary 预订管理产品线配置同步
+        
+        @param request: SyncTripProductConfigRequest
+        @param headers: SyncTripProductConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncTripProductConfigResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.target_corp_id):
@@ -1495,6 +1847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
     ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        """
+        @summary 预订管理产品线配置同步
+        
+        @param request: SyncTripProductConfigRequest
+        @return: SyncTripProductConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncTripProductConfigHeaders()
         return self.sync_trip_product_config_with_options(request, headers, runtime)
@@ -1503,6 +1861,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.SyncTripProductConfigRequest,
     ) -> dingtalktrip__1__0_models.SyncTripProductConfigResponse:
+        """
+        @summary 预订管理产品线配置同步
+        
+        @param request: SyncTripProductConfigRequest
+        @return: SyncTripProductConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.SyncTripProductConfigHeaders()
         return await self.sync_trip_product_config_with_options_async(request, headers, runtime)
@@ -1513,6 +1877,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        """
+        @summary 智能差旅平台数据互通统一入口
+        
+        @param request: TripPlatformUnifiedEntryRequest
+        @param headers: TripPlatformUnifiedEntryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TripPlatformUnifiedEntryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.messages):
@@ -1550,6 +1922,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        """
+        @summary 智能差旅平台数据互通统一入口
+        
+        @param request: TripPlatformUnifiedEntryRequest
+        @param headers: TripPlatformUnifiedEntryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TripPlatformUnifiedEntryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.messages):
@@ -1585,6 +1965,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
     ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        """
+        @summary 智能差旅平台数据互通统一入口
+        
+        @param request: TripPlatformUnifiedEntryRequest
+        @return: TripPlatformUnifiedEntryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders()
         return self.trip_platform_unified_entry_with_options(request, headers, runtime)
@@ -1593,6 +1979,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.TripPlatformUnifiedEntryRequest,
     ) -> dingtalktrip__1__0_models.TripPlatformUnifiedEntryResponse:
+        """
+        @summary 智能差旅平台数据互通统一入口
+        
+        @param request: TripPlatformUnifiedEntryRequest
+        @return: TripPlatformUnifiedEntryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.TripPlatformUnifiedEntryHeaders()
         return await self.trip_platform_unified_entry_with_options_async(request, headers, runtime)
@@ -1603,6 +1995,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.UpgradeTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        """
+        @summary 升级套件
+        
+        @param request: UpgradeTemplateRequest
+        @param headers: UpgradeTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -1642,6 +2042,14 @@ class Client(OpenApiClient):
         headers: dingtalktrip__1__0_models.UpgradeTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        """
+        @summary 升级套件
+        
+        @param request: UpgradeTemplateRequest
+        @param headers: UpgradeTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpgradeTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.channel_corp_id):
@@ -1679,6 +2087,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
     ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        """
+        @summary 升级套件
+        
+        @param request: UpgradeTemplateRequest
+        @return: UpgradeTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.UpgradeTemplateHeaders()
         return self.upgrade_template_with_options(request, headers, runtime)
@@ -1687,6 +2101,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrip__1__0_models.UpgradeTemplateRequest,
     ) -> dingtalktrip__1__0_models.UpgradeTemplateResponse:
+        """
+        @summary 升级套件
+        
+        @param request: UpgradeTemplateRequest
+        @return: UpgradeTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrip__1__0_models.UpgradeTemplateHeaders()
         return await self.upgrade_template_with_options_async(request, headers, runtime)

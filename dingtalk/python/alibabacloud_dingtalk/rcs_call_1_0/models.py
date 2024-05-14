@@ -45,9 +45,13 @@ class RunCallUserRequest(TeaModel):
         order_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.authorize_corp_id = authorize_corp_id
+        # This parameter is required.
         self.authorize_user_id = authorize_user_id
+        # This parameter is required.
         self.order_id = order_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.CreatePackageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.CreatePackageResponse:
+        """
+        @summary 上传H5离线包
+        
+        @param request: CreatePackageRequest
+        @param headers: CreatePackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePackageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.CreatePackageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.CreatePackageResponse:
+        """
+        @summary 上传H5离线包
+        
+        @param request: CreatePackageRequest
+        @param headers: CreatePackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePackageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.CreatePackageRequest,
     ) -> dingtalkh_5package__1__0_models.CreatePackageResponse:
+        """
+        @summary 上传H5离线包
+        
+        @param request: CreatePackageRequest
+        @return: CreatePackageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.CreatePackageHeaders()
         return self.create_package_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.CreatePackageRequest,
     ) -> dingtalkh_5package__1__0_models.CreatePackageResponse:
+        """
+        @summary 上传H5离线包
+        
+        @param request: CreatePackageRequest
+        @return: CreatePackageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.CreatePackageHeaders()
         return await self.create_package_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.GetAccessTokenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取包上传一次性AccessToken
+        
+        @param request: GetAccessTokenRequest
+        @param headers: GetAccessTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -170,6 +206,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.GetAccessTokenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取包上传一次性AccessToken
+        
+        @param request: GetAccessTokenRequest
+        @param headers: GetAccessTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -205,6 +249,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.GetAccessTokenRequest,
     ) -> dingtalkh_5package__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取包上传一次性AccessToken
+        
+        @param request: GetAccessTokenRequest
+        @return: GetAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.GetAccessTokenHeaders()
         return self.get_access_token_with_options(request, headers, runtime)
@@ -213,6 +263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.GetAccessTokenRequest,
     ) -> dingtalkh_5package__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取包上传一次性AccessToken
+        
+        @param request: GetAccessTokenRequest
+        @return: GetAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.GetAccessTokenHeaders()
         return await self.get_access_token_with_options_async(request, headers, runtime)
@@ -223,6 +279,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.GetCreateStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.GetCreateStatusResponse:
+        """
+        @summary 获取H5离线包版本创建状态
+        
+        @param request: GetCreateStatusRequest
+        @param headers: GetCreateStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCreateStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.task_id):
@@ -258,6 +322,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.GetCreateStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.GetCreateStatusResponse:
+        """
+        @summary 获取H5离线包版本创建状态
+        
+        @param request: GetCreateStatusRequest
+        @param headers: GetCreateStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCreateStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.task_id):
@@ -291,6 +363,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.GetCreateStatusRequest,
     ) -> dingtalkh_5package__1__0_models.GetCreateStatusResponse:
+        """
+        @summary 获取H5离线包版本创建状态
+        
+        @param request: GetCreateStatusRequest
+        @return: GetCreateStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.GetCreateStatusHeaders()
         return self.get_create_status_with_options(request, headers, runtime)
@@ -299,6 +377,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.GetCreateStatusRequest,
     ) -> dingtalkh_5package__1__0_models.GetCreateStatusResponse:
+        """
+        @summary 获取H5离线包版本创建状态
+        
+        @param request: GetCreateStatusRequest
+        @return: GetCreateStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.GetCreateStatusHeaders()
         return await self.get_create_status_with_options_async(request, headers, runtime)
@@ -309,6 +393,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.PublishPackageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.PublishPackageResponse:
+        """
+        @summary 发布离线包
+        
+        @param request: PublishPackageRequest
+        @param headers: PublishPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishPackageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -348,6 +440,14 @@ class Client(OpenApiClient):
         headers: dingtalkh_5package__1__0_models.PublishPackageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkh_5package__1__0_models.PublishPackageResponse:
+        """
+        @summary 发布离线包
+        
+        @param request: PublishPackageRequest
+        @param headers: PublishPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishPackageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_id):
@@ -385,6 +485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.PublishPackageRequest,
     ) -> dingtalkh_5package__1__0_models.PublishPackageResponse:
+        """
+        @summary 发布离线包
+        
+        @param request: PublishPackageRequest
+        @return: PublishPackageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.PublishPackageHeaders()
         return self.publish_package_with_options(request, headers, runtime)
@@ -393,6 +499,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkh_5package__1__0_models.PublishPackageRequest,
     ) -> dingtalkh_5package__1__0_models.PublishPackageResponse:
+        """
+        @summary 发布离线包
+        
+        @param request: PublishPackageRequest
+        @return: PublishPackageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkh_5package__1__0_models.PublishPackageHeaders()
         return await self.publish_package_with_options_async(request, headers, runtime)

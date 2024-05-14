@@ -42,6 +42,7 @@ class CloseHPackageRequest(TeaModel):
         self,
         mini_app_id: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -342,6 +343,7 @@ class HPackageListGetRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
         self.page_number = page_number
         self.page_size = page_size
@@ -564,7 +566,9 @@ class HPublishPackageRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -698,7 +702,9 @@ class HUploadPackageRequest(TeaModel):
         mini_app_id: str = None,
         oss_object_key: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.oss_object_key = oss_object_key
 
     def validate(self):
@@ -832,7 +838,9 @@ class HUploadPackageStatusRequest(TeaModel):
         mini_app_id: str = None,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -870,10 +878,14 @@ class HUploadPackageStatusResponseBody(TeaModel):
         version: str = None,
     ):
         self.build_time = build_time
+        # This parameter is required.
         self.finished = finished
         self.package_size = package_size
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -995,6 +1007,7 @@ class OpenMicroAppPackageRequest(TeaModel):
         self,
         agent_id: int = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
 
     def validate(self):
@@ -1124,7 +1137,9 @@ class ReleaseGrayDeployRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1258,7 +1273,9 @@ class ReleaseGrayExitRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1392,7 +1409,9 @@ class ReleaseGrayOrgGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1527,8 +1546,11 @@ class ReleaseGrayOrgSetRequest(TeaModel):
         value: List[str] = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1666,7 +1688,9 @@ class ReleaseGrayPercentGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1801,8 +1825,11 @@ class ReleaseGrayPercentSetRequest(TeaModel):
         value: float = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1940,7 +1967,9 @@ class ReleaseGrayUserIdGetRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):

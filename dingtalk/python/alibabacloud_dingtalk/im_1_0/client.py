@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        """
+        @summary 添加企业文字表情
+        
+        @param request: AddOrgTextEmotionRequest
+        @param headers: AddOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddOrgTextEmotionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.background_media_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        """
+        @summary 添加企业文字表情
+        
+        @param request: AddOrgTextEmotionRequest
+        @param headers: AddOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddOrgTextEmotionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.background_media_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
     ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        """
+        @summary 添加企业文字表情
+        
+        @param request: AddOrgTextEmotionRequest
+        @return: AddOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
         return self.add_org_text_emotion_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
     ) -> dingtalkim__1__0_models.AddOrgTextEmotionResponse:
+        """
+        @summary 添加企业文字表情
+        
+        @param request: AddOrgTextEmotionRequest
+        @return: AddOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddOrgTextEmotionHeaders()
         return await self.add_org_text_emotion_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddRobotToConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        """
+        @summary 添加机器人到会话
+        
+        @param request: AddRobotToConversationRequest
+        @param headers: AddRobotToConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRobotToConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.icon):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddRobotToConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        """
+        @summary 添加机器人到会话
+        
+        @param request: AddRobotToConversationRequest
+        @param headers: AddRobotToConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRobotToConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.icon):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddRobotToConversationRequest,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        """
+        @summary 添加机器人到会话
+        
+        @param request: AddRobotToConversationRequest
+        @return: AddRobotToConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
         return self.add_robot_to_conversation_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddRobotToConversationRequest,
     ) -> dingtalkim__1__0_models.AddRobotToConversationResponse:
+        """
+        @summary 添加机器人到会话
+        
+        @param request: AddRobotToConversationRequest
+        @return: AddRobotToConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
         return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
@@ -230,6 +286,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        """
+        @summary 自动开通钉钉客联微应用
+        
+        @param headers: AutoOpenDingTalkConnectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AutoOpenDingTalkConnectResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -259,6 +322,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        """
+        @summary 自动开通钉钉客联微应用
+        
+        @param headers: AutoOpenDingTalkConnectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AutoOpenDingTalkConnectResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -284,11 +354,21 @@ class Client(OpenApiClient):
         )
 
     def auto_open_ding_talk_connect(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        """
+        @summary 自动开通钉钉客联微应用
+        
+        @return: AutoOpenDingTalkConnectResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
         return self.auto_open_ding_talk_connect_with_options(headers, runtime)
 
     async def auto_open_ding_talk_connect_async(self) -> dingtalkim__1__0_models.AutoOpenDingTalkConnectResponse:
+        """
+        @summary 自动开通钉钉客联微应用
+        
+        @return: AutoOpenDingTalkConnectResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AutoOpenDingTalkConnectHeaders()
         return await self.auto_open_ding_talk_connect_with_options_async(headers, runtime)
@@ -299,6 +379,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        """
+        @summary 批量查询家校群消息详情
+        
+        @param request: BatchQueryFamilySchoolMessageRequest
+        @param headers: BatchQueryFamilySchoolMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryFamilySchoolMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -338,6 +426,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        """
+        @summary 批量查询家校群消息详情
+        
+        @param request: BatchQueryFamilySchoolMessageRequest
+        @param headers: BatchQueryFamilySchoolMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryFamilySchoolMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -375,6 +471,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
     ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        """
+        @summary 批量查询家校群消息详情
+        
+        @param request: BatchQueryFamilySchoolMessageRequest
+        @return: BatchQueryFamilySchoolMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
         return self.batch_query_family_school_message_with_options(request, headers, runtime)
@@ -383,6 +485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.BatchQueryFamilySchoolMessageRequest,
     ) -> dingtalkim__1__0_models.BatchQueryFamilySchoolMessageResponse:
+        """
+        @summary 批量查询家校群消息详情
+        
+        @param request: BatchQueryFamilySchoolMessageRequest
+        @return: BatchQueryFamilySchoolMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.BatchQueryFamilySchoolMessageHeaders()
         return await self.batch_query_family_school_message_with_options_async(request, headers, runtime)
@@ -393,6 +501,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.BatchQueryGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: BatchQueryGroupMemberRequest
+        @param headers: BatchQueryGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -434,6 +550,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.BatchQueryGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: BatchQueryGroupMemberRequest
+        @param headers: BatchQueryGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -473,6 +597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: BatchQueryGroupMemberRequest
+        @return: BatchQueryGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
         return self.batch_query_group_member_with_options(request, headers, runtime)
@@ -481,6 +611,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: BatchQueryGroupMemberRequest
+        @return: BatchQueryGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.BatchQueryGroupMemberHeaders()
         return await self.batch_query_group_member_with_options_async(request, headers, runtime)
@@ -491,6 +627,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CardTemplateBuildActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        """
+        @summary 钉钉互动卡片模板构建动作
+        
+        @param request: CardTemplateBuildActionRequest
+        @param headers: CardTemplateBuildActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardTemplateBuildActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -528,6 +672,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CardTemplateBuildActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        """
+        @summary 钉钉互动卡片模板构建动作
+        
+        @param request: CardTemplateBuildActionRequest
+        @param headers: CardTemplateBuildActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardTemplateBuildActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -563,6 +715,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
     ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        """
+        @summary 钉钉互动卡片模板构建动作
+        
+        @param request: CardTemplateBuildActionRequest
+        @return: CardTemplateBuildActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
         return self.card_template_build_action_with_options(request, headers, runtime)
@@ -571,6 +729,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CardTemplateBuildActionRequest,
     ) -> dingtalkim__1__0_models.CardTemplateBuildActionResponse:
+        """
+        @summary 钉钉互动卡片模板构建动作
+        
+        @param request: CardTemplateBuildActionRequest
+        @return: CardTemplateBuildActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CardTemplateBuildActionHeaders()
         return await self.card_template_build_action_with_options_async(request, headers, runtime)
@@ -581,6 +745,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChangeGroupOwnerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        """
+        @summary 更换群主
+        
+        @param request: ChangeGroupOwnerRequest
+        @param headers: ChangeGroupOwnerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeGroupOwnerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_owner_id):
@@ -620,6 +792,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChangeGroupOwnerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        """
+        @summary 更换群主
+        
+        @param request: ChangeGroupOwnerRequest
+        @param headers: ChangeGroupOwnerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeGroupOwnerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_owner_id):
@@ -657,6 +837,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
     ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        """
+        @summary 更换群主
+        
+        @param request: ChangeGroupOwnerRequest
+        @return: ChangeGroupOwnerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
         return self.change_group_owner_with_options(request, headers, runtime)
@@ -665,6 +851,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.ChangeGroupOwnerRequest,
     ) -> dingtalkim__1__0_models.ChangeGroupOwnerResponse:
+        """
+        @summary 更换群主
+        
+        @param request: ChangeGroupOwnerRequest
+        @return: ChangeGroupOwnerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChangeGroupOwnerHeaders()
         return await self.change_group_owner_with_options_async(request, headers, runtime)
@@ -675,6 +867,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        """
+        @summary 会话开放的ChatId转OpenConversationId
+        
+        @param headers: ChatIdToOpenConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatIdToOpenConversationIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -705,6 +904,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        """
+        @summary 会话开放的ChatId转OpenConversationId
+        
+        @param headers: ChatIdToOpenConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatIdToOpenConversationIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -733,6 +939,11 @@ class Client(OpenApiClient):
         self,
         chat_id: str,
     ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        """
+        @summary 会话开放的ChatId转OpenConversationId
+        
+        @return: ChatIdToOpenConversationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders()
         return self.chat_id_to_open_conversation_id_with_options(chat_id, headers, runtime)
@@ -741,6 +952,11 @@ class Client(OpenApiClient):
         self,
         chat_id: str,
     ) -> dingtalkim__1__0_models.ChatIdToOpenConversationIdResponse:
+        """
+        @summary 会话开放的ChatId转OpenConversationId
+        
+        @return: ChatIdToOpenConversationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChatIdToOpenConversationIdHeaders()
         return await self.chat_id_to_open_conversation_id_with_options_async(chat_id, headers, runtime)
@@ -751,6 +967,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChatSubAdminUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
+        """
+        @summary 设置群管理员
+        
+        @param request: ChatSubAdminUpdateRequest
+        @param headers: ChatSubAdminUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatSubAdminUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -790,6 +1014,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ChatSubAdminUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
+        """
+        @summary 设置群管理员
+        
+        @param request: ChatSubAdminUpdateRequest
+        @param headers: ChatSubAdminUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatSubAdminUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -827,6 +1059,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
     ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
+        """
+        @summary 设置群管理员
+        
+        @param request: ChatSubAdminUpdateRequest
+        @return: ChatSubAdminUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
         return self.chat_sub_admin_update_with_options(request, headers, runtime)
@@ -835,6 +1073,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.ChatSubAdminUpdateRequest,
     ) -> dingtalkim__1__0_models.ChatSubAdminUpdateResponse:
+        """
+        @summary 设置群管理员
+        
+        @param request: ChatSubAdminUpdateRequest
+        @return: ChatSubAdminUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ChatSubAdminUpdateHeaders()
         return await self.chat_sub_admin_update_with_options_async(request, headers, runtime)
@@ -845,6 +1089,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        """
+        @summary 查询用户是否为企业内部群成员
+        
+        @param request: CheckUserIsGroupMemberRequest
+        @param headers: CheckUserIsGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserIsGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -882,6 +1134,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        """
+        @summary 查询用户是否为企业内部群成员
+        
+        @param request: CheckUserIsGroupMemberRequest
+        @param headers: CheckUserIsGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserIsGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -917,6 +1177,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
     ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        """
+        @summary 查询用户是否为企业内部群成员
+        
+        @param request: CheckUserIsGroupMemberRequest
+        @return: CheckUserIsGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
         return self.check_user_is_group_member_with_options(request, headers, runtime)
@@ -925,6 +1191,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CheckUserIsGroupMemberRequest,
     ) -> dingtalkim__1__0_models.CheckUserIsGroupMemberResponse:
+        """
+        @summary 查询用户是否为企业内部群成员
+        
+        @param request: CheckUserIsGroupMemberRequest
+        @return: CheckUserIsGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
         return await self.check_user_is_group_member_with_options_async(request, headers, runtime)
@@ -935,6 +1207,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        """
+        @summary 创建钉外两人群
+        
+        @param request: CreateCoupleGroupConversationRequest
+        @param headers: CreateCoupleGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCoupleGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -980,6 +1260,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        """
+        @summary 创建钉外两人群
+        
+        @param request: CreateCoupleGroupConversationRequest
+        @param headers: CreateCoupleGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCoupleGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -1023,6 +1311,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        """
+        @summary 创建钉外两人群
+        
+        @param request: CreateCoupleGroupConversationRequest
+        @return: CreateCoupleGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
         return self.create_couple_group_conversation_with_options(request, headers, runtime)
@@ -1031,6 +1325,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateCoupleGroupConversationResponse:
+        """
+        @summary 创建钉外两人群
+        
+        @param request: CreateCoupleGroupConversationRequest
+        @return: CreateCoupleGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
         return await self.create_couple_group_conversation_with_options_async(request, headers, runtime)
@@ -1041,6 +1341,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        """
+        @summary 创建互通群（支持普通互通群、跨钉两人群）
+        
+        @param request: CreateGroupConversationRequest
+        @param headers: CreateGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -1090,6 +1398,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        """
+        @summary 创建互通群（支持普通互通群、跨钉两人群）
+        
+        @param request: CreateGroupConversationRequest
+        @param headers: CreateGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -1137,6 +1453,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        """
+        @summary 创建互通群（支持普通互通群、跨钉两人群）
+        
+        @param request: CreateGroupConversationRequest
+        @return: CreateGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
         return self.create_group_conversation_with_options(request, headers, runtime)
@@ -1145,6 +1467,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateGroupConversationResponse:
+        """
+        @summary 创建互通群（支持普通互通群、跨钉两人群）
+        
+        @param request: CreateGroupConversationRequest
+        @return: CreateGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
         return await self.create_group_conversation_with_options_async(request, headers, runtime)
@@ -1155,6 +1483,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateInterconnectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        """
+        @summary 创建钉外账号
+        
+        @param request: CreateInterconnectionRequest
+        @param headers: CreateInterconnectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateInterconnectionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.interconnections):
@@ -1190,6 +1526,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateInterconnectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        """
+        @summary 创建钉外账号
+        
+        @param request: CreateInterconnectionRequest
+        @param headers: CreateInterconnectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateInterconnectionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.interconnections):
@@ -1223,6 +1567,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateInterconnectionRequest,
     ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        """
+        @summary 创建钉外账号
+        
+        @param request: CreateInterconnectionRequest
+        @return: CreateInterconnectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
         return self.create_interconnection_with_options(request, headers, runtime)
@@ -1231,6 +1581,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateInterconnectionRequest,
     ) -> dingtalkim__1__0_models.CreateInterconnectionResponse:
+        """
+        @summary 创建钉外账号
+        
+        @param request: CreateInterconnectionRequest
+        @return: CreateInterconnectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
         return await self.create_interconnection_with_options_async(request, headers, runtime)
@@ -1241,6 +1597,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateSceneGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupConversationRequest
+        @param headers: CreateSceneGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSceneGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.features):
@@ -1290,6 +1654,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateSceneGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupConversationRequest
+        @param headers: CreateSceneGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSceneGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.features):
@@ -1337,6 +1709,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupConversationRequest
+        @return: CreateSceneGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
         return self.create_scene_group_conversation_with_options(request, headers, runtime)
@@ -1345,6 +1723,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateSceneGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateSceneGroupConversationResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupConversationRequest
+        @return: CreateSceneGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateSceneGroupConversationHeaders()
         return await self.create_scene_group_conversation_with_options_async(request, headers, runtime)
@@ -1355,6 +1739,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateStoreGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        """
+        @summary 创建店铺群
+        
+        @param request: CreateStoreGroupConversationRequest
+        @param headers: CreateStoreGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStoreGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -1402,6 +1794,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.CreateStoreGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        """
+        @summary 创建店铺群
+        
+        @param request: CreateStoreGroupConversationRequest
+        @param headers: CreateStoreGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStoreGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -1447,6 +1847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        """
+        @summary 创建店铺群
+        
+        @param request: CreateStoreGroupConversationRequest
+        @return: CreateStoreGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
         return self.create_store_group_conversation_with_options(request, headers, runtime)
@@ -1455,6 +1861,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.CreateStoreGroupConversationRequest,
     ) -> dingtalkim__1__0_models.CreateStoreGroupConversationResponse:
+        """
+        @summary 创建店铺群
+        
+        @param request: CreateStoreGroupConversationRequest
+        @return: CreateStoreGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
         return await self.create_store_group_conversation_with_options_async(request, headers, runtime)
@@ -1465,6 +1877,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        """
+        @summary 删除企业文字表情
+        
+        @param request: DeleteOrgTextEmotionRequest
+        @param headers: DeleteOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteOrgTextEmotionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_id):
@@ -1502,6 +1922,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        """
+        @summary 删除企业文字表情
+        
+        @param request: DeleteOrgTextEmotionRequest
+        @param headers: DeleteOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteOrgTextEmotionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_id):
@@ -1537,6 +1965,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
     ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        """
+        @summary 删除企业文字表情
+        
+        @param request: DeleteOrgTextEmotionRequest
+        @return: DeleteOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
         return self.delete_org_text_emotion_with_options(request, headers, runtime)
@@ -1545,6 +1979,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.DeleteOrgTextEmotionRequest,
     ) -> dingtalkim__1__0_models.DeleteOrgTextEmotionResponse:
+        """
+        @summary 删除企业文字表情
+        
+        @param request: DeleteOrgTextEmotionRequest
+        @return: DeleteOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DeleteOrgTextEmotionHeaders()
         return await self.delete_org_text_emotion_with_options_async(request, headers, runtime)
@@ -1555,6 +1995,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.DismissGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        """
+        @summary 解散互通群
+        
+        @param request: DismissGroupConversationRequest
+        @param headers: DismissGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DismissGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -1590,6 +2038,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.DismissGroupConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        """
+        @summary 解散互通群
+        
+        @param request: DismissGroupConversationRequest
+        @param headers: DismissGroupConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DismissGroupConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -1623,6 +2079,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.DismissGroupConversationRequest,
     ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        """
+        @summary 解散互通群
+        
+        @param request: DismissGroupConversationRequest
+        @return: DismissGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
         return self.dismiss_group_conversation_with_options(request, headers, runtime)
@@ -1631,6 +2093,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.DismissGroupConversationRequest,
     ) -> dingtalkim__1__0_models.DismissGroupConversationResponse:
+        """
+        @summary 解散互通群
+        
+        @param request: DismissGroupConversationRequest
+        @return: DismissGroupConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
         return await self.dismiss_group_conversation_with_options_async(request, headers, runtime)
@@ -1641,6 +2109,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetConversationUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        """
+        @summary 创建ToB会话地址
+        
+        @param request: GetConversationUrlRequest
+        @param headers: GetConversationUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -1684,6 +2160,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetConversationUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        """
+        @summary 创建ToB会话地址
+        
+        @param request: GetConversationUrlRequest
+        @param headers: GetConversationUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -1725,6 +2209,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetConversationUrlRequest,
     ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        """
+        @summary 创建ToB会话地址
+        
+        @param request: GetConversationUrlRequest
+        @return: GetConversationUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
         return self.get_conversation_url_with_options(request, headers, runtime)
@@ -1733,6 +2223,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetConversationUrlRequest,
     ) -> dingtalkim__1__0_models.GetConversationUrlResponse:
+        """
+        @summary 创建ToB会话地址
+        
+        @param request: GetConversationUrlRequest
+        @return: GetConversationUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetConversationUrlHeaders()
         return await self.get_conversation_url_with_options_async(request, headers, runtime)
@@ -1743,6 +2239,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        """
+        @summary 查询用户家校群消息(图片&视频Z&富文本)
+        
+        @param request: GetFamilySchoolConversationMsgRequest
+        @param headers: GetFamilySchoolConversationMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFamilySchoolConversationMsgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1786,6 +2290,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        """
+        @summary 查询用户家校群消息(图片&视频Z&富文本)
+        
+        @param request: GetFamilySchoolConversationMsgRequest
+        @param headers: GetFamilySchoolConversationMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFamilySchoolConversationMsgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1827,6 +2339,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        """
+        @summary 查询用户家校群消息(图片&视频Z&富文本)
+        
+        @param request: GetFamilySchoolConversationMsgRequest
+        @return: GetFamilySchoolConversationMsgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
         return self.get_family_school_conversation_msg_with_options(request, headers, runtime)
@@ -1835,6 +2353,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetFamilySchoolConversationMsgRequest,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationMsgResponse:
+        """
+        @summary 查询用户家校群消息(图片&视频Z&富文本)
+        
+        @param request: GetFamilySchoolConversationMsgRequest
+        @return: GetFamilySchoolConversationMsgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetFamilySchoolConversationMsgHeaders()
         return await self.get_family_school_conversation_msg_with_options_async(request, headers, runtime)
@@ -1845,6 +2369,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        """
+        @summary 查询用户家校群
+        
+        @param request: GetFamilySchoolConversationsRequest
+        @param headers: GetFamilySchoolConversationsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFamilySchoolConversationsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1884,6 +2416,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        """
+        @summary 查询用户家校群
+        
+        @param request: GetFamilySchoolConversationsRequest
+        @param headers: GetFamilySchoolConversationsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFamilySchoolConversationsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1921,6 +2461,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        """
+        @summary 查询用户家校群
+        
+        @param request: GetFamilySchoolConversationsRequest
+        @return: GetFamilySchoolConversationsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
         return self.get_family_school_conversations_with_options(request, headers, runtime)
@@ -1929,6 +2475,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetFamilySchoolConversationsRequest,
     ) -> dingtalkim__1__0_models.GetFamilySchoolConversationsResponse:
+        """
+        @summary 查询用户家校群
+        
+        @param request: GetFamilySchoolConversationsRequest
+        @return: GetFamilySchoolConversationsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
         return await self.get_family_school_conversations_with_options_async(request, headers, runtime)
@@ -1939,6 +2491,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetInnerGroupMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        """
+        @summary 查询企业内部群成员
+        
+        @param request: GetInnerGroupMembersRequest
+        @param headers: GetInnerGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInnerGroupMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1980,6 +2540,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetInnerGroupMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        """
+        @summary 查询企业内部群成员
+        
+        @param request: GetInnerGroupMembersRequest
+        @param headers: GetInnerGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInnerGroupMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2019,6 +2587,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
     ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        """
+        @summary 查询企业内部群成员
+        
+        @param request: GetInnerGroupMembersRequest
+        @return: GetInnerGroupMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
         return self.get_inner_group_members_with_options(request, headers, runtime)
@@ -2027,6 +2601,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,
     ) -> dingtalkim__1__0_models.GetInnerGroupMembersResponse:
+        """
+        @summary 查询企业内部群成员
+        
+        @param request: GetInnerGroupMembersRequest
+        @return: GetInnerGroupMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetInnerGroupMembersHeaders()
         return await self.get_inner_group_members_with_options_async(request, headers, runtime)
@@ -2037,6 +2617,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetInterconnectionUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        """
+        @summary 创建客联互通会话地址
+        
+        @param request: GetInterconnectionUrlRequest
+        @param headers: GetInterconnectionUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInterconnectionUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_avatar):
@@ -2092,6 +2680,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetInterconnectionUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        """
+        @summary 创建客联互通会话地址
+        
+        @param request: GetInterconnectionUrlRequest
+        @param headers: GetInterconnectionUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInterconnectionUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_avatar):
@@ -2145,6 +2741,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
     ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        """
+        @summary 创建客联互通会话地址
+        
+        @param request: GetInterconnectionUrlRequest
+        @return: GetInterconnectionUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
         return self.get_interconnection_url_with_options(request, headers, runtime)
@@ -2153,6 +2755,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetInterconnectionUrlRequest,
     ) -> dingtalkim__1__0_models.GetInterconnectionUrlResponse:
+        """
+        @summary 创建客联互通会话地址
+        
+        @param request: GetInterconnectionUrlRequest
+        @return: GetInterconnectionUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetInterconnectionUrlHeaders()
         return await self.get_interconnection_url_with_options_async(request, headers, runtime)
@@ -2163,6 +2771,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetNewestInnerGroupsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        """
+        @summary 查询最近活跃的企业内部群列表
+        
+        @param request: GetNewestInnerGroupsRequest
+        @param headers: GetNewestInnerGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNewestInnerGroupsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -2198,6 +2814,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetNewestInnerGroupsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        """
+        @summary 查询最近活跃的企业内部群列表
+        
+        @param request: GetNewestInnerGroupsRequest
+        @param headers: GetNewestInnerGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNewestInnerGroupsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -2231,6 +2855,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
     ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        """
+        @summary 查询最近活跃的企业内部群列表
+        
+        @param request: GetNewestInnerGroupsRequest
+        @return: GetNewestInnerGroupsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
         return self.get_newest_inner_groups_with_options(request, headers, runtime)
@@ -2239,6 +2869,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetNewestInnerGroupsRequest,
     ) -> dingtalkim__1__0_models.GetNewestInnerGroupsResponse:
+        """
+        @summary 查询最近活跃的企业内部群列表
+        
+        @param request: GetNewestInnerGroupsRequest
+        @return: GetNewestInnerGroupsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
         return await self.get_newest_inner_groups_with_options_async(request, headers, runtime)
@@ -2249,6 +2885,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetSceneGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        """
+        @summary 查询群简要信息
+        
+        @param request: GetSceneGroupInfoRequest
+        @param headers: GetSceneGroupInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -2286,6 +2930,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetSceneGroupInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        """
+        @summary 查询群简要信息
+        
+        @param request: GetSceneGroupInfoRequest
+        @param headers: GetSceneGroupInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -2321,6 +2973,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        """
+        @summary 查询群简要信息
+        
+        @param request: GetSceneGroupInfoRequest
+        @return: GetSceneGroupInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
         return self.get_scene_group_info_with_options(request, headers, runtime)
@@ -2329,6 +2987,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
+        """
+        @summary 查询群简要信息
+        
+        @param request: GetSceneGroupInfoRequest
+        @return: GetSceneGroupInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetSceneGroupInfoHeaders()
         return await self.get_scene_group_info_with_options_async(request, headers, runtime)
@@ -2339,6 +3003,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetSceneGroupMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: GetSceneGroupMembersRequest
+        @param headers: GetSceneGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -2380,6 +3052,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GetSceneGroupMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: GetSceneGroupMembersRequest
+        @param headers: GetSceneGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -2419,6 +3099,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: GetSceneGroupMembersRequest
+        @return: GetSceneGroupMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
         return self.get_scene_group_members_with_options(request, headers, runtime)
@@ -2427,6 +3113,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GetSceneGroupMembersRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupMembersResponse:
+        """
+        @summary 查询群成员
+        
+        @param request: GetSceneGroupMembersRequest
+        @return: GetSceneGroupMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
         return await self.get_scene_group_members_with_options_async(request, headers, runtime)
@@ -2437,6 +3129,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupBanWordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        """
+        @summary 群禁言
+        
+        @param request: GroupBanWordsRequest
+        @param headers: GroupBanWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupBanWordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ban_words_mode):
@@ -2476,6 +3176,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupBanWordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        """
+        @summary 群禁言
+        
+        @param request: GroupBanWordsRequest
+        @param headers: GroupBanWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupBanWordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.ban_words_mode):
@@ -2513,6 +3221,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupBanWordsRequest,
     ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        """
+        @summary 群禁言
+        
+        @param request: GroupBanWordsRequest
+        @return: GroupBanWordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
         return self.group_ban_words_with_options(request, headers, runtime)
@@ -2521,6 +3235,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupBanWordsRequest,
     ) -> dingtalkim__1__0_models.GroupBanWordsResponse:
+        """
+        @summary 群禁言
+        
+        @param request: GroupBanWordsRequest
+        @return: GroupBanWordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupBanWordsHeaders()
         return await self.group_ban_words_with_options_async(request, headers, runtime)
@@ -2531,6 +3251,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityInquiryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        """
+        @summary 群容量扩容询价
+        
+        @param request: GroupCapacityInquiryRequest
+        @param headers: GroupCapacityInquiryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityInquiryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.effective_duration):
@@ -2574,6 +3302,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityInquiryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        """
+        @summary 群容量扩容询价
+        
+        @param request: GroupCapacityInquiryRequest
+        @param headers: GroupCapacityInquiryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityInquiryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.effective_duration):
@@ -2615,6 +3351,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        """
+        @summary 群容量扩容询价
+        
+        @param request: GroupCapacityInquiryRequest
+        @return: GroupCapacityInquiryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
         return self.group_capacity_inquiry_with_options(request, headers, runtime)
@@ -2623,6 +3365,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityInquiryRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityInquiryResponse:
+        """
+        @summary 群容量扩容询价
+        
+        @param request: GroupCapacityInquiryRequest
+        @return: GroupCapacityInquiryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityInquiryHeaders()
         return await self.group_capacity_inquiry_with_options_async(request, headers, runtime)
@@ -2633,6 +3381,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        """
+        @summary 群容量扩容确认下单
+        
+        @param request: GroupCapacityOrderConfirmRequest
+        @param headers: GroupCapacityOrderConfirmHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityOrderConfirmResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator):
@@ -2670,6 +3426,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        """
+        @summary 群容量扩容确认下单
+        
+        @param request: GroupCapacityOrderConfirmRequest
+        @param headers: GroupCapacityOrderConfirmHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityOrderConfirmResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator):
@@ -2705,6 +3469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        """
+        @summary 群容量扩容确认下单
+        
+        @param request: GroupCapacityOrderConfirmRequest
+        @return: GroupCapacityOrderConfirmResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
         return self.group_capacity_order_confirm_with_options(request, headers, runtime)
@@ -2713,6 +3483,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityOrderConfirmRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderConfirmResponse:
+        """
+        @summary 群容量扩容确认下单
+        
+        @param request: GroupCapacityOrderConfirmRequest
+        @return: GroupCapacityOrderConfirmResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityOrderConfirmHeaders()
         return await self.group_capacity_order_confirm_with_options_async(request, headers, runtime)
@@ -2723,6 +3499,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        """
+        @summary 群容量请求扩容下单
+        
+        @param request: GroupCapacityOrderPlaceRequest
+        @param headers: GroupCapacityOrderPlaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityOrderPlaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.actual_price):
@@ -2778,6 +3562,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        """
+        @summary 群容量请求扩容下单
+        
+        @param request: GroupCapacityOrderPlaceRequest
+        @param headers: GroupCapacityOrderPlaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupCapacityOrderPlaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.actual_price):
@@ -2831,6 +3623,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        """
+        @summary 群容量请求扩容下单
+        
+        @param request: GroupCapacityOrderPlaceRequest
+        @return: GroupCapacityOrderPlaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
         return self.group_capacity_order_place_with_options(request, headers, runtime)
@@ -2839,6 +3637,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupCapacityOrderPlaceRequest,
     ) -> dingtalkim__1__0_models.GroupCapacityOrderPlaceResponse:
+        """
+        @summary 群容量请求扩容下单
+        
+        @param request: GroupCapacityOrderPlaceRequest
+        @return: GroupCapacityOrderPlaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupCapacityOrderPlaceHeaders()
         return await self.group_capacity_order_place_with_options_async(request, headers, runtime)
@@ -2849,6 +3653,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupManageQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        """
+        @summary 根据群链接、群号等检索条件，查询群信息
+        
+        @param request: GroupManageQueryRequest
+        @param headers: GroupManageQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManageQueryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.created_after):
@@ -2902,6 +3714,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupManageQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        """
+        @summary 根据群链接、群号等检索条件，查询群信息
+        
+        @param request: GroupManageQueryRequest
+        @param headers: GroupManageQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManageQueryResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.created_after):
@@ -2953,6 +3773,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupManageQueryRequest,
     ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        """
+        @summary 根据群链接、群号等检索条件，查询群信息
+        
+        @param request: GroupManageQueryRequest
+        @return: GroupManageQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
         return self.group_manage_query_with_options(request, headers, runtime)
@@ -2961,6 +3787,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupManageQueryRequest,
     ) -> dingtalkim__1__0_models.GroupManageQueryResponse:
+        """
+        @summary 根据群链接、群号等检索条件，查询群信息
+        
+        @param request: GroupManageQueryRequest
+        @return: GroupManageQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupManageQueryHeaders()
         return await self.group_manage_query_with_options_async(request, headers, runtime)
@@ -2971,6 +3803,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupManageReduceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        """
+        @summary 群管理缩容
+        
+        @param request: GroupManageReduceRequest
+        @param headers: GroupManageReduceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManageReduceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.capacity_limit):
@@ -3010,6 +3850,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.GroupManageReduceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        """
+        @summary 群管理缩容
+        
+        @param request: GroupManageReduceRequest
+        @param headers: GroupManageReduceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupManageReduceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.capacity_limit):
@@ -3047,6 +3895,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupManageReduceRequest,
     ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        """
+        @summary 群管理缩容
+        
+        @param request: GroupManageReduceRequest
+        @return: GroupManageReduceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
         return self.group_manage_reduce_with_options(request, headers, runtime)
@@ -3055,6 +3909,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.GroupManageReduceRequest,
     ) -> dingtalkim__1__0_models.GroupManageReduceResponse:
+        """
+        @summary 群管理缩容
+        
+        @param request: GroupManageReduceRequest
+        @return: GroupManageReduceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.GroupManageReduceHeaders()
         return await self.group_manage_reduce_with_options_async(request, headers, runtime)
@@ -3065,6 +3925,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.InstallRobotToOrgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        """
+        @summary 安装机器人到组织
+        
+        @param request: InstallRobotToOrgRequest
+        @param headers: InstallRobotToOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallRobotToOrgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.brief):
@@ -3114,6 +3982,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.InstallRobotToOrgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        """
+        @summary 安装机器人到组织
+        
+        @param request: InstallRobotToOrgRequest
+        @param headers: InstallRobotToOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallRobotToOrgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.brief):
@@ -3161,6 +4037,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        """
+        @summary 安装机器人到组织
+        
+        @param request: InstallRobotToOrgRequest
+        @return: InstallRobotToOrgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
         return self.install_robot_to_org_with_options(request, headers, runtime)
@@ -3169,6 +4051,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.InstallRobotToOrgRequest,
     ) -> dingtalkim__1__0_models.InstallRobotToOrgResponse:
+        """
+        @summary 安装机器人到组织
+        
+        @param request: InstallRobotToOrgRequest
+        @return: InstallRobotToOrgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
         return await self.install_robot_to_org_with_options_async(request, headers, runtime)
@@ -3179,6 +4067,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        """
+        @summary 创建可交互式实例
+        
+        @param request: InteractiveCardCreateInstanceRequest
+        @param headers: InteractiveCardCreateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InteractiveCardCreateInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -3236,6 +4132,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        """
+        @summary 创建可交互式实例
+        
+        @param request: InteractiveCardCreateInstanceRequest
+        @param headers: InteractiveCardCreateInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InteractiveCardCreateInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -3291,6 +4195,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
     ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        """
+        @summary 创建可交互式实例
+        
+        @param request: InteractiveCardCreateInstanceRequest
+        @return: InteractiveCardCreateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
         return self.interactive_card_create_instance_with_options(request, headers, runtime)
@@ -3299,6 +4209,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
     ) -> dingtalkim__1__0_models.InteractiveCardCreateInstanceResponse:
+        """
+        @summary 创建可交互式实例
+        
+        @param request: InteractiveCardCreateInstanceRequest
+        @return: InteractiveCardCreateInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
         return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
@@ -3308,6 +4224,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ListOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        """
+        @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+        
+        @param headers: ListOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgTextEmotionResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3337,6 +4260,13 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.ListOrgTextEmotionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        """
+        @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+        
+        @param headers: ListOrgTextEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgTextEmotionResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3362,11 +4292,21 @@ class Client(OpenApiClient):
         )
 
     def list_org_text_emotion(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        """
+        @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+        
+        @return: ListOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
         return self.list_org_text_emotion_with_options(headers, runtime)
 
     async def list_org_text_emotion_async(self) -> dingtalkim__1__0_models.ListOrgTextEmotionResponse:
+        """
+        @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+        
+        @return: ListOrgTextEmotionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
         return await self.list_org_text_emotion_with_options_async(headers, runtime)
@@ -3377,6 +4317,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群信息
+        
+        @param request: QueryGroupInfoByMemberAuthRequest
+        @param headers: QueryGroupInfoByMemberAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupInfoByMemberAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -3414,6 +4362,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群信息
+        
+        @param request: QueryGroupInfoByMemberAuthRequest
+        @param headers: QueryGroupInfoByMemberAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupInfoByMemberAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -3449,6 +4405,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
     ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群信息
+        
+        @param request: QueryGroupInfoByMemberAuthRequest
+        @return: QueryGroupInfoByMemberAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
         return self.query_group_info_by_member_auth_with_options(request, headers, runtime)
@@ -3457,6 +4419,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,
     ) -> dingtalkim__1__0_models.QueryGroupInfoByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群信息
+        
+        @param request: QueryGroupInfoByMemberAuthRequest
+        @return: QueryGroupInfoByMemberAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupInfoByMemberAuthHeaders()
         return await self.query_group_info_by_member_auth_with_options_async(request, headers, runtime)
@@ -3467,6 +4435,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        """
+        @summary 查询群成员列表
+        
+        @param request: QueryGroupMemberRequest
+        @param headers: QueryGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3502,6 +4478,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        """
+        @summary 查询群成员列表
+        
+        @param request: QueryGroupMemberRequest
+        @param headers: QueryGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3535,6 +4519,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        """
+        @summary 查询群成员列表
+        
+        @param request: QueryGroupMemberRequest
+        @return: QueryGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
         return self.query_group_member_with_options(request, headers, runtime)
@@ -3543,6 +4533,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMemberResponse:
+        """
+        @summary 查询群成员列表
+        
+        @param request: QueryGroupMemberRequest
+        @return: QueryGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMemberHeaders()
         return await self.query_group_member_with_options_async(request, headers, runtime)
@@ -3553,6 +4549,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群成员
+        
+        @param request: QueryGroupMemberByMemberAuthRequest
+        @param headers: QueryGroupMemberByMemberAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMemberByMemberAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -3590,6 +4594,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群成员
+        
+        @param request: QueryGroupMemberByMemberAuthRequest
+        @param headers: QueryGroupMemberByMemberAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMemberByMemberAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -3625,6 +4637,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群成员
+        
+        @param request: QueryGroupMemberByMemberAuthRequest
+        @return: QueryGroupMemberByMemberAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
         return self.query_group_member_by_member_auth_with_options(request, headers, runtime)
@@ -3633,6 +4651,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMemberByMemberAuthRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMemberByMemberAuthResponse:
+        """
+        @summary 成员授权场景下查询群成员
+        
+        @param request: QueryGroupMemberByMemberAuthRequest
+        @return: QueryGroupMemberByMemberAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMemberByMemberAuthHeaders()
         return await self.query_group_member_by_member_auth_with_options_async(request, headers, runtime)
@@ -3643,6 +4667,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMuteStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        """
+        @summary 查询群禁言状态
+        
+        @param request: QueryGroupMuteStatusRequest
+        @param headers: QueryGroupMuteStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMuteStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3680,6 +4712,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryGroupMuteStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        """
+        @summary 查询群禁言状态
+        
+        @param request: QueryGroupMuteStatusRequest
+        @param headers: QueryGroupMuteStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGroupMuteStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3715,6 +4755,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        """
+        @summary 查询群禁言状态
+        
+        @param request: QueryGroupMuteStatusRequest
+        @return: QueryGroupMuteStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
         return self.query_group_mute_status_with_options(request, headers, runtime)
@@ -3723,6 +4769,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
+        """
+        @summary 查询群禁言状态
+        
+        @param request: QueryGroupMuteStatusRequest
+        @return: QueryGroupMuteStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryGroupMuteStatusHeaders()
         return await self.query_group_mute_status_with_options_async(request, headers, runtime)
@@ -3733,6 +4785,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        """
+        @summary 查询群内具有指定群角色的所有群成员
+        
+        @param request: QueryMembersOfGroupRoleRequest
+        @param headers: QueryMembersOfGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMembersOfGroupRoleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3772,6 +4832,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        """
+        @summary 查询群内具有指定群角色的所有群成员
+        
+        @param request: QueryMembersOfGroupRoleRequest
+        @param headers: QueryMembersOfGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMembersOfGroupRoleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3809,6 +4877,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
     ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        """
+        @summary 查询群内具有指定群角色的所有群成员
+        
+        @param request: QueryMembersOfGroupRoleRequest
+        @return: QueryMembersOfGroupRoleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
         return self.query_members_of_group_role_with_options(request, headers, runtime)
@@ -3817,6 +4891,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryMembersOfGroupRoleRequest,
     ) -> dingtalkim__1__0_models.QueryMembersOfGroupRoleResponse:
+        """
+        @summary 查询群内具有指定群角色的所有群成员
+        
+        @param request: QueryMembersOfGroupRoleRequest
+        @return: QueryMembersOfGroupRoleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
         return await self.query_members_of_group_role_with_options_async(request, headers, runtime)
@@ -3827,6 +4907,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        """
+        @summary 查询群内群模板机器人
+        
+        @param request: QuerySceneGroupTemplateRobotRequest
+        @param headers: QuerySceneGroupTemplateRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySceneGroupTemplateRobotResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3864,6 +4952,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        """
+        @summary 查询群内群模板机器人
+        
+        @param request: QuerySceneGroupTemplateRobotRequest
+        @param headers: QuerySceneGroupTemplateRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySceneGroupTemplateRobotResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -3899,6 +4995,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        """
+        @summary 查询群内群模板机器人
+        
+        @param request: QuerySceneGroupTemplateRobotRequest
+        @return: QuerySceneGroupTemplateRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
         return self.query_scene_group_template_robot_with_options(request, headers, runtime)
@@ -3907,6 +5009,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
+        """
+        @summary 查询群内群模板机器人
+        
+        @param request: QuerySceneGroupTemplateRobotRequest
+        @return: QuerySceneGroupTemplateRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QuerySceneGroupTemplateRobotHeaders()
         return await self.query_scene_group_template_robot_with_options_async(request, headers, runtime)
@@ -3917,6 +5025,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QuerySingleGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        """
+        @summary 批量查询群信息
+        
+        @param request: QuerySingleGroupRequest
+        @param headers: QuerySingleGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySingleGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_members):
@@ -3954,6 +5070,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QuerySingleGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        """
+        @summary 批量查询群信息
+        
+        @param request: QuerySingleGroupRequest
+        @param headers: QuerySingleGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySingleGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_members):
@@ -3989,6 +5113,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QuerySingleGroupRequest,
     ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        """
+        @summary 批量查询群信息
+        
+        @param request: QuerySingleGroupRequest
+        @return: QuerySingleGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
         return self.query_single_group_with_options(request, headers, runtime)
@@ -3997,6 +5127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QuerySingleGroupRequest,
     ) -> dingtalkim__1__0_models.QuerySingleGroupResponse:
+        """
+        @summary 批量查询群信息
+        
+        @param request: QuerySingleGroupRequest
+        @return: QuerySingleGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QuerySingleGroupHeaders()
         return await self.query_single_group_with_options_async(request, headers, runtime)
@@ -4007,6 +5143,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryUnReadMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        """
+        @summary 批量查询未读消息数
+        
+        @param request: QueryUnReadMessageRequest
+        @param headers: QueryUnReadMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnReadMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -4044,6 +5188,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.QueryUnReadMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        """
+        @summary 批量查询未读消息数
+        
+        @param request: QueryUnReadMessageRequest
+        @param headers: QueryUnReadMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnReadMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_id):
@@ -4079,6 +5231,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
     ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        """
+        @summary 批量查询未读消息数
+        
+        @param request: QueryUnReadMessageRequest
+        @return: QueryUnReadMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
         return self.query_un_read_message_with_options(request, headers, runtime)
@@ -4087,6 +5245,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.QueryUnReadMessageRequest,
     ) -> dingtalkim__1__0_models.QueryUnReadMessageResponse:
+        """
+        @summary 批量查询未读消息数
+        
+        @param request: QueryUnReadMessageRequest
+        @return: QueryUnReadMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
         return await self.query_un_read_message_with_options_async(request, headers, runtime)
@@ -4097,6 +5261,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.RemoveRobotFromConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        """
+        @summary 移除会话机器人
+        
+        @param request: RemoveRobotFromConversationRequest
+        @param headers: RemoveRobotFromConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveRobotFromConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chat_bot_user_id):
@@ -4134,6 +5306,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.RemoveRobotFromConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        """
+        @summary 移除会话机器人
+        
+        @param request: RemoveRobotFromConversationRequest
+        @param headers: RemoveRobotFromConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveRobotFromConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.chat_bot_user_id):
@@ -4169,6 +5349,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        """
+        @summary 移除会话机器人
+        
+        @param request: RemoveRobotFromConversationRequest
+        @return: RemoveRobotFromConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
         return self.remove_robot_from_conversation_with_options(request, headers, runtime)
@@ -4177,6 +5363,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
     ) -> dingtalkim__1__0_models.RemoveRobotFromConversationResponse:
+        """
+        @summary 移除会话机器人
+        
+        @param request: RemoveRobotFromConversationRequest
+        @return: RemoveRobotFromConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
         return await self.remove_robot_from_conversation_with_options_async(request, headers, runtime)
@@ -4187,6 +5379,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SearchInnerGroupsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        """
+        @summary 根据关键词搜索企业内部群
+        
+        @param request: SearchInnerGroupsRequest
+        @param headers: SearchInnerGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchInnerGroupsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4226,6 +5426,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SearchInnerGroupsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        """
+        @summary 根据关键词搜索企业内部群
+        
+        @param request: SearchInnerGroupsRequest
+        @param headers: SearchInnerGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchInnerGroupsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4263,6 +5471,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
     ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        """
+        @summary 根据关键词搜索企业内部群
+        
+        @param request: SearchInnerGroupsRequest
+        @return: SearchInnerGroupsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
         return self.search_inner_groups_with_options(request, headers, runtime)
@@ -4271,6 +5485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
     ) -> dingtalkim__1__0_models.SearchInnerGroupsResponse:
+        """
+        @summary 根据关键词搜索企业内部群
+        
+        @param request: SearchInnerGroupsRequest
+        @return: SearchInnerGroupsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SearchInnerGroupsHeaders()
         return await self.search_inner_groups_with_options_async(request, headers, runtime)
@@ -4281,6 +5501,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 发送可交互式动态卡片
+        
+        @param request: SendInteractiveCardRequest
+        @param headers: SendInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_open_ids):
@@ -4344,6 +5572,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 发送可交互式动态卡片
+        
+        @param request: SendInteractiveCardRequest
+        @param headers: SendInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_open_ids):
@@ -4405,6 +5641,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 发送可交互式动态卡片
+        
+        @param request: SendInteractiveCardRequest
+        @return: SendInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
         return self.send_interactive_card_with_options(request, headers, runtime)
@@ -4413,6 +5655,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendInteractiveCardResponse:
+        """
+        @summary 发送可交互式动态卡片
+        
+        @param request: SendInteractiveCardRequest
+        @return: SendInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendInteractiveCardHeaders()
         return await self.send_interactive_card_with_options_async(request, headers, runtime)
@@ -4423,6 +5671,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendOTOInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        """
+        @summary 人与人单聊发送可交互式动态卡片
+        
+        @param request: SendOTOInteractiveCardRequest
+        @param headers: SendOTOInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOTOInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_open_ids):
@@ -4480,6 +5736,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendOTOInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        """
+        @summary 人与人单聊发送可交互式动态卡片
+        
+        @param request: SendOTOInteractiveCardRequest
+        @param headers: SendOTOInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOTOInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_open_ids):
@@ -4535,6 +5799,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        """
+        @summary 人与人单聊发送可交互式动态卡片
+        
+        @param request: SendOTOInteractiveCardRequest
+        @return: SendOTOInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
         return self.send_otointeractive_card_with_options(request, headers, runtime)
@@ -4543,6 +5813,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendOTOInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendOTOInteractiveCardResponse:
+        """
+        @summary 人与人单聊发送可交互式动态卡片
+        
+        @param request: SendOTOInteractiveCardRequest
+        @return: SendOTOInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
         return await self.send_otointeractive_card_with_options_async(request, headers, runtime)
@@ -4553,6 +5829,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendRobotInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        """
+        @summary 机器人发送互动卡片（普通版）
+        
+        @param request: SendRobotInteractiveCardRequest
+        @param headers: SendRobotInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRobotInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_url):
@@ -4608,6 +5892,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendRobotInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        """
+        @summary 机器人发送互动卡片（普通版）
+        
+        @param request: SendRobotInteractiveCardRequest
+        @param headers: SendRobotInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRobotInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_url):
@@ -4661,6 +5953,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        """
+        @summary 机器人发送互动卡片（普通版）
+        
+        @param request: SendRobotInteractiveCardRequest
+        @return: SendRobotInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
         return self.send_robot_interactive_card_with_options(request, headers, runtime)
@@ -4669,6 +5967,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendRobotInteractiveCardResponse:
+        """
+        @summary 机器人发送互动卡片（普通版）
+        
+        @param request: SendRobotInteractiveCardRequest
+        @return: SendRobotInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendRobotInteractiveCardHeaders()
         return await self.send_robot_interactive_card_with_options_async(request, headers, runtime)
@@ -4679,6 +5983,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        """
+        @summary 机器人发送消息
+        
+        @param request: SendRobotMessageRequest
+        @param headers: SendRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_all):
@@ -4726,6 +6038,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendRobotMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        """
+        @summary 机器人发送消息
+        
+        @param request: SendRobotMessageRequest
+        @param headers: SendRobotMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendRobotMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.at_all):
@@ -4771,6 +6091,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendRobotMessageRequest,
     ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        """
+        @summary 机器人发送消息
+        
+        @param request: SendRobotMessageRequest
+        @return: SendRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
         return self.send_robot_message_with_options(request, headers, runtime)
@@ -4779,6 +6105,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendRobotMessageRequest,
     ) -> dingtalkim__1__0_models.SendRobotMessageResponse:
+        """
+        @summary 机器人发送消息
+        
+        @param request: SendRobotMessageRequest
+        @return: SendRobotMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendRobotMessageHeaders()
         return await self.send_robot_message_with_options_async(request, headers, runtime)
@@ -4789,6 +6121,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        """
+        @summary 发送模板响应式可交互式卡片
+        
+        @param request: SendTemplateInteractiveCardRequest
+        @param headers: SendTemplateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendTemplateInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_url):
@@ -4838,6 +6178,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        """
+        @summary 发送模板响应式可交互式卡片
+        
+        @param request: SendTemplateInteractiveCardRequest
+        @param headers: SendTemplateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendTemplateInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_url):
@@ -4885,6 +6233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        """
+        @summary 发送模板响应式可交互式卡片
+        
+        @param request: SendTemplateInteractiveCardRequest
+        @return: SendTemplateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
         return self.send_template_interactive_card_with_options(request, headers, runtime)
@@ -4893,6 +6247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendTemplateInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.SendTemplateInteractiveCardResponse:
+        """
+        @summary 发送模板响应式可交互式卡片
+        
+        @param request: SendTemplateInteractiveCardRequest
+        @return: SendTemplateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendTemplateInteractiveCardHeaders()
         return await self.send_template_interactive_card_with_options_async(request, headers, runtime)
@@ -4903,6 +6263,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SetRightPanelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        """
+        @summary 设置侧边栏
+        
+        @param request: SetRightPanelRequest
+        @param headers: SetRightPanelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRightPanelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -4948,6 +6316,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SetRightPanelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        """
+        @summary 设置侧边栏
+        
+        @param request: SetRightPanelRequest
+        @param headers: SetRightPanelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRightPanelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -4991,6 +6367,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SetRightPanelRequest,
     ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        """
+        @summary 设置侧边栏
+        
+        @param request: SetRightPanelRequest
+        @return: SetRightPanelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SetRightPanelHeaders()
         return self.set_right_panel_with_options(request, headers, runtime)
@@ -4999,6 +6381,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SetRightPanelRequest,
     ) -> dingtalkim__1__0_models.SetRightPanelResponse:
+        """
+        @summary 设置侧边栏
+        
+        @param request: SetRightPanelRequest
+        @return: SetRightPanelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SetRightPanelHeaders()
         return await self.set_right_panel_with_options_async(request, headers, runtime)
@@ -5009,6 +6397,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.TopboxCloseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        """
+        @summary 钉钉吊顶卡片关闭
+        
+        @param request: TopboxCloseRequest
+        @param headers: TopboxCloseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TopboxCloseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -5054,6 +6450,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.TopboxCloseHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        """
+        @summary 钉钉吊顶卡片关闭
+        
+        @param request: TopboxCloseRequest
+        @param headers: TopboxCloseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TopboxCloseResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -5097,6 +6501,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.TopboxCloseRequest,
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        """
+        @summary 钉钉吊顶卡片关闭
+        
+        @param request: TopboxCloseRequest
+        @return: TopboxCloseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.TopboxCloseHeaders()
         return self.topbox_close_with_options(request, headers, runtime)
@@ -5105,6 +6515,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.TopboxCloseRequest,
     ) -> dingtalkim__1__0_models.TopboxCloseResponse:
+        """
+        @summary 钉钉吊顶卡片关闭
+        
+        @param request: TopboxCloseRequest
+        @return: TopboxCloseResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.TopboxCloseHeaders()
         return await self.topbox_close_with_options_async(request, headers, runtime)
@@ -5115,6 +6531,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.TopboxOpenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        """
+        @summary 钉钉吊顶卡片开启
+        
+        @param request: TopboxOpenRequest
+        @param headers: TopboxOpenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TopboxOpenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -5164,6 +6588,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.TopboxOpenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        """
+        @summary 钉钉吊顶卡片开启
+        
+        @param request: TopboxOpenRequest
+        @param headers: TopboxOpenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TopboxOpenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_type):
@@ -5211,6 +6643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.TopboxOpenRequest,
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        """
+        @summary 钉钉吊顶卡片开启
+        
+        @param request: TopboxOpenRequest
+        @return: TopboxOpenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.TopboxOpenHeaders()
         return self.topbox_open_with_options(request, headers, runtime)
@@ -5219,6 +6657,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.TopboxOpenRequest,
     ) -> dingtalkim__1__0_models.TopboxOpenResponse:
+        """
+        @summary 钉钉吊顶卡片开启
+        
+        @param request: TopboxOpenRequest
+        @return: TopboxOpenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.TopboxOpenHeaders()
         return await self.topbox_open_with_options_async(request, headers, runtime)
@@ -5229,6 +6673,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupAvatarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        """
+        @summary 修改群头像
+        
+        @param request: UpdateGroupAvatarRequest
+        @param headers: UpdateGroupAvatarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupAvatarResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_avatar):
@@ -5266,6 +6718,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupAvatarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        """
+        @summary 修改群头像
+        
+        @param request: UpdateGroupAvatarRequest
+        @param headers: UpdateGroupAvatarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupAvatarResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_avatar):
@@ -5301,6 +6761,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        """
+        @summary 修改群头像
+        
+        @param request: UpdateGroupAvatarRequest
+        @return: UpdateGroupAvatarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
         return self.update_group_avatar_with_options(request, headers, runtime)
@@ -5309,6 +6775,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupAvatarResponse:
+        """
+        @summary 修改群头像
+        
+        @param request: UpdateGroupAvatarRequest
+        @return: UpdateGroupAvatarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupAvatarHeaders()
         return await self.update_group_avatar_with_options_async(request, headers, runtime)
@@ -5319,6 +6791,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupNameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        """
+        @summary 修改群名称
+        
+        @param request: UpdateGroupNameRequest
+        @param headers: UpdateGroupNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupNameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_name):
@@ -5356,6 +6836,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupNameHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        """
+        @summary 修改群名称
+        
+        @param request: UpdateGroupNameRequest
+        @param headers: UpdateGroupNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupNameResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_name):
@@ -5391,6 +6879,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupNameRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        """
+        @summary 修改群名称
+        
+        @param request: UpdateGroupNameRequest
+        @return: UpdateGroupNameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
         return self.update_group_name_with_options(request, headers, runtime)
@@ -5399,6 +6893,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupNameRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupNameResponse:
+        """
+        @summary 修改群名称
+        
+        @param request: UpdateGroupNameRequest
+        @return: UpdateGroupNameResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupNameHeaders()
         return await self.update_group_name_with_options_async(request, headers, runtime)
@@ -5409,6 +6909,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        """
+        @summary 设置场景群权限项
+        
+        @param request: UpdateGroupPermissionRequest
+        @param headers: UpdateGroupPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -5448,6 +6956,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        """
+        @summary 设置场景群权限项
+        
+        @param request: UpdateGroupPermissionRequest
+        @param headers: UpdateGroupPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupPermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -5485,6 +7001,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        """
+        @summary 设置场景群权限项
+        
+        @param request: UpdateGroupPermissionRequest
+        @return: UpdateGroupPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
         return self.update_group_permission_with_options(request, headers, runtime)
@@ -5493,6 +7015,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupPermissionRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupPermissionResponse:
+        """
+        @summary 设置场景群权限项
+        
+        @param request: UpdateGroupPermissionRequest
+        @return: UpdateGroupPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupPermissionHeaders()
         return await self.update_group_permission_with_options_async(request, headers, runtime)
@@ -5503,6 +7031,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupSubAdminHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        """
+        @summary 更新群管理员
+        
+        @param request: UpdateGroupSubAdminRequest
+        @param headers: UpdateGroupSubAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupSubAdminResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -5542,6 +7078,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateGroupSubAdminHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        """
+        @summary 更新群管理员
+        
+        @param request: UpdateGroupSubAdminRequest
+        @param headers: UpdateGroupSubAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupSubAdminResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -5579,6 +7123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        """
+        @summary 更新群管理员
+        
+        @param request: UpdateGroupSubAdminRequest
+        @return: UpdateGroupSubAdminResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
         return self.update_group_sub_admin_with_options(request, headers, runtime)
@@ -5587,6 +7137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
+        """
+        @summary 更新群管理员
+        
+        @param request: UpdateGroupSubAdminRequest
+        @return: UpdateGroupSubAdminResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateGroupSubAdminHeaders()
         return await self.update_group_sub_admin_with_options_async(request, headers, runtime)
@@ -5597,6 +7153,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新可交互式动态卡片
+        
+        @param request: UpdateInteractiveCardRequest
+        @param headers: UpdateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -5640,6 +7204,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新可交互式动态卡片
+        
+        @param request: UpdateInteractiveCardRequest
+        @param headers: UpdateInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -5681,6 +7253,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新可交互式动态卡片
+        
+        @param request: UpdateInteractiveCardRequest
+        @return: UpdateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
         return self.update_interactive_card_with_options(request, headers, runtime)
@@ -5689,6 +7267,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.UpdateInteractiveCardResponse:
+        """
+        @summary 更新可交互式动态卡片
+        
+        @param request: UpdateInteractiveCardRequest
+        @return: UpdateInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateInteractiveCardHeaders()
         return await self.update_interactive_card_with_options_async(request, headers, runtime)
@@ -5699,6 +7283,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateMemberBanWordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        """
+        @summary 设置群成员禁言状态
+        
+        @param request: UpdateMemberBanWordsRequest
+        @param headers: UpdateMemberBanWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberBanWordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mute_duration):
@@ -5740,6 +7332,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateMemberBanWordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        """
+        @summary 设置群成员禁言状态
+        
+        @param request: UpdateMemberBanWordsRequest
+        @param headers: UpdateMemberBanWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberBanWordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mute_duration):
@@ -5779,6 +7379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        """
+        @summary 设置群成员禁言状态
+        
+        @param request: UpdateMemberBanWordsRequest
+        @return: UpdateMemberBanWordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
         return self.update_member_ban_words_with_options(request, headers, runtime)
@@ -5787,6 +7393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
+        """
+        @summary 设置群成员禁言状态
+        
+        @param request: UpdateMemberBanWordsRequest
+        @return: UpdateMemberBanWordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateMemberBanWordsHeaders()
         return await self.update_member_ban_words_with_options_async(request, headers, runtime)
@@ -5797,6 +7409,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateMemberGroupNickHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        """
+        @summary 更新群成员的群昵称
+        
+        @param request: UpdateMemberGroupNickRequest
+        @param headers: UpdateMemberGroupNickHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberGroupNickResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_nick):
@@ -5836,6 +7456,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateMemberGroupNickHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        """
+        @summary 更新群成员的群昵称
+        
+        @param request: UpdateMemberGroupNickRequest
+        @param headers: UpdateMemberGroupNickHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberGroupNickResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_nick):
@@ -5873,6 +7501,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        """
+        @summary 更新群成员的群昵称
+        
+        @param request: UpdateMemberGroupNickRequest
+        @return: UpdateMemberGroupNickResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
         return self.update_member_group_nick_with_options(request, headers, runtime)
@@ -5881,6 +7515,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
+        """
+        @summary 更新群成员的群昵称
+        
+        @param request: UpdateMemberGroupNickRequest
+        @return: UpdateMemberGroupNickResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateMemberGroupNickHeaders()
         return await self.update_member_group_nick_with_options_async(request, headers, runtime)
@@ -5891,6 +7531,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateRobotInOrgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        """
+        @summary 修改组织里的机器人
+        
+        @param request: UpdateRobotInOrgRequest
+        @param headers: UpdateRobotInOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotInOrgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.brief):
@@ -5940,6 +7588,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateRobotInOrgHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        """
+        @summary 修改组织里的机器人
+        
+        @param request: UpdateRobotInOrgRequest
+        @param headers: UpdateRobotInOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotInOrgResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.brief):
@@ -5987,6 +7643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        """
+        @summary 修改组织里的机器人
+        
+        @param request: UpdateRobotInOrgRequest
+        @return: UpdateRobotInOrgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
         return self.update_robot_in_org_with_options(request, headers, runtime)
@@ -5995,6 +7657,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateRobotInOrgRequest,
     ) -> dingtalkim__1__0_models.UpdateRobotInOrgResponse:
+        """
+        @summary 修改组织里的机器人
+        
+        @param request: UpdateRobotInOrgRequest
+        @return: UpdateRobotInOrgResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInOrgHeaders()
         return await self.update_robot_in_org_with_options_async(request, headers, runtime)
@@ -6005,6 +7673,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        """
+        @summary 机器人更新可交互式卡片(个人、企业)
+        
+        @param request: UpdateRobotInteractiveCardRequest
+        @param headers: UpdateRobotInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_biz_id):
@@ -6048,6 +7724,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        """
+        @summary 机器人更新可交互式卡片(个人、企业)
+        
+        @param request: UpdateRobotInteractiveCardRequest
+        @param headers: UpdateRobotInteractiveCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotInteractiveCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_biz_id):
@@ -6089,6 +7773,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        """
+        @summary 机器人更新可交互式卡片(个人、企业)
+        
+        @param request: UpdateRobotInteractiveCardRequest
+        @return: UpdateRobotInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
         return self.update_robot_interactive_card_with_options(request, headers, runtime)
@@ -6097,6 +7787,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateRobotInteractiveCardRequest,
     ) -> dingtalkim__1__0_models.UpdateRobotInteractiveCardResponse:
+        """
+        @summary 机器人更新可交互式卡片(个人、企业)
+        
+        @param request: UpdateRobotInteractiveCardRequest
+        @return: UpdateRobotInteractiveCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
         return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
@@ -6107,6 +7803,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        """
+        @summary 设置群成员的群角色
+        
+        @param request: UpdateTheGroupRolesOfGroupMemberRequest
+        @param headers: UpdateTheGroupRolesOfGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTheGroupRolesOfGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -6146,6 +7850,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        """
+        @summary 设置群成员的群角色
+        
+        @param request: UpdateTheGroupRolesOfGroupMemberRequest
+        @param headers: UpdateTheGroupRolesOfGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTheGroupRolesOfGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -6183,6 +7895,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
     ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        """
+        @summary 设置群成员的群角色
+        
+        @param request: UpdateTheGroupRolesOfGroupMemberRequest
+        @return: UpdateTheGroupRolesOfGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
         return self.update_the_group_roles_of_group_member_with_options(request, headers, runtime)
@@ -6191,6 +7909,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberRequest,
     ) -> dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberResponse:
+        """
+        @summary 设置群成员的群角色
+        
+        @param request: UpdateTheGroupRolesOfGroupMemberRequest
+        @return: UpdateTheGroupRolesOfGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
         return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
@@ -6201,6 +7925,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        """
+        @summary 添加群成员
+        
+        @param request: AddGroupMemberRequest
+        @param headers: AddGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -6242,6 +7974,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.AddGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        """
+        @summary 添加群成员
+        
+        @param request: AddGroupMemberRequest
+        @param headers: AddGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -6281,6 +8021,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddGroupMemberRequest,
     ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        """
+        @summary 添加群成员
+        
+        @param request: AddGroupMemberRequest
+        @return: AddGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
         return self.add_group_member_with_options(request, headers, runtime)
@@ -6289,6 +8035,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.AddGroupMemberRequest,
     ) -> dingtalkim__1__0_models.AddGroupMemberResponse:
+        """
+        @summary 添加群成员
+        
+        @param request: AddGroupMemberRequest
+        @return: AddGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddGroupMemberHeaders()
         return await self.add_group_member_with_options_async(request, headers, runtime)
@@ -6299,6 +8051,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.RemoveGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        """
+        @summary 移除群成员
+        
+        @param request: RemoveGroupMemberRequest
+        @param headers: RemoveGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -6340,6 +8100,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.RemoveGroupMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        """
+        @summary 移除群成员
+        
+        @param request: RemoveGroupMemberRequest
+        @param headers: RemoveGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveGroupMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_user_ids):
@@ -6379,6 +8147,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
     ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        """
+        @summary 移除群成员
+        
+        @param request: RemoveGroupMemberRequest
+        @return: RemoveGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
         return self.remove_group_member_with_options(request, headers, runtime)
@@ -6387,6 +8161,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.RemoveGroupMemberRequest,
     ) -> dingtalkim__1__0_models.RemoveGroupMemberResponse:
+        """
+        @summary 移除群成员
+        
+        @param request: RemoveGroupMemberRequest
+        @return: RemoveGroupMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.RemoveGroupMemberHeaders()
         return await self.remove_group_member_with_options_async(request, headers, runtime)
@@ -6397,6 +8177,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendDingMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        """
+        @summary 发送ToC消息
+        
+        @param request: SendDingMessageRequest
+        @param headers: SendDingMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendDingMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code):
@@ -6442,6 +8230,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendDingMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        """
+        @summary 发送ToC消息
+        
+        @param request: SendDingMessageRequest
+        @param headers: SendDingMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendDingMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code):
@@ -6485,6 +8281,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendDingMessageRequest,
     ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        """
+        @summary 发送ToC消息
+        
+        @param request: SendDingMessageRequest
+        @return: SendDingMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendDingMessageHeaders()
         return self.send_ding_message_with_options(request, headers, runtime)
@@ -6493,6 +8295,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendDingMessageRequest,
     ) -> dingtalkim__1__0_models.SendDingMessageResponse:
+        """
+        @summary 发送ToC消息
+        
+        @param request: SendDingMessageRequest
+        @return: SendDingMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendDingMessageHeaders()
         return await self.send_ding_message_with_options_async(request, headers, runtime)
@@ -6503,6 +8311,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendMessageResponse:
+        """
+        @summary 发送ToB消息
+        
+        @param request: SendMessageRequest
+        @param headers: SendMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.message):
@@ -6548,6 +8364,14 @@ class Client(OpenApiClient):
         headers: dingtalkim__1__0_models.SendMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.SendMessageResponse:
+        """
+        @summary 发送ToB消息
+        
+        @param request: SendMessageRequest
+        @param headers: SendMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.message):
@@ -6591,6 +8415,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendMessageRequest,
     ) -> dingtalkim__1__0_models.SendMessageResponse:
+        """
+        @summary 发送ToB消息
+        
+        @param request: SendMessageRequest
+        @return: SendMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendMessageHeaders()
         return self.send_message_with_options(request, headers, runtime)
@@ -6599,6 +8429,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkim__1__0_models.SendMessageRequest,
     ) -> dingtalkim__1__0_models.SendMessageResponse:
+        """
+        @summary 发送ToB消息
+        
+        @param request: SendMessageRequest
+        @return: SendMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.SendMessageHeaders()
         return await self.send_message_with_options_async(request, headers, runtime)

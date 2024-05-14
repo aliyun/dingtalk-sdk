@@ -47,11 +47,16 @@ class CreateMiniAppRequest(TeaModel):
         icon: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.biz_type = biz_type
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.desc = desc
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -205,11 +210,16 @@ class CreateMiniAppPluginRequest(TeaModel):
         icon: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.biz_type = biz_type
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.desc = desc
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -843,6 +853,7 @@ class GetSettingByMiniAppIdResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -946,8 +957,11 @@ class InvokeHtmlBundleBuildRequest(TeaModel):
         mini_app_id: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -983,6 +997,7 @@ class InvokeHtmlBundleBuildResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1088,10 +1103,15 @@ class ListAvaiableVersionRequest(TeaModel):
         page_size: int = None,
         version_type_set: List[int] = None,
     ):
+        # This parameter is required.
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.page_num = page_num
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.version_type_set = version_type_set
 
     def validate(self):
@@ -1139,10 +1159,15 @@ class ListAvaiableVersionResponseBodyVersions(TeaModel):
         package_url: str = None,
         version: str = None,
     ):
+        # This parameter is required.
         self.build_status = build_status
+        # This parameter is required.
         self.h_5bundle = h_5bundle
+        # This parameter is required.
         self.package_size = package_size
+        # This parameter is required.
         self.package_url = package_url
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1334,6 +1359,7 @@ class QueryHtmlBundleBuildResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1405,9 +1431,13 @@ class RollBackVersionRequest(TeaModel):
         rollback_version: str = None,
         target_version: str = None,
     ):
+        # This parameter is required.
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.rollback_version = rollback_version
+        # This parameter is required.
         self.target_version = target_version
 
     def validate(self):
@@ -1549,7 +1579,9 @@ class SetExtendSettingRequest(TeaModel):
         build_h5bundle: bool = None,
         mini_app_id: str = None,
     ):
+        # This parameter is required.
         self.build_h5bundle = build_h5bundle
+        # This parameter is required.
         self.mini_app_id = mini_app_id
 
     def validate(self):
@@ -1581,6 +1613,7 @@ class SetExtendSettingResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1685,9 +1718,12 @@ class UpdateVersionStatusRequest(TeaModel):
         version: str = None,
         version_type: int = None,
     ):
+        # This parameter is required.
         self.bundle_id = bundle_id
+        # This parameter is required.
         self.mini_app_id = mini_app_id
         self.version = version
+        # This parameter is required.
         self.version_type = version_type
 
     def validate(self):
@@ -1727,6 +1763,7 @@ class UpdateVersionStatusResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):

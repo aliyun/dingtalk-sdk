@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.AddCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.AddCallConfigResponse:
+        """
+        @summary 添加外呼码号配置
+        
+        @param request: AddCallConfigRequest
+        @param headers: AddCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.AddCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.AddCallConfigResponse:
+        """
+        @summary 添加外呼码号配置
+        
+        @param request: AddCallConfigRequest
+        @param headers: AddCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.AddCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.AddCallConfigResponse:
+        """
+        @summary 添加外呼码号配置
+        
+        @param request: AddCallConfigRequest
+        @return: AddCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.AddCallConfigHeaders()
         return self.add_call_config_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.AddCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.AddCallConfigResponse:
+        """
+        @summary 添加外呼码号配置
+        
+        @param request: AddCallConfigRequest
+        @return: AddCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.AddCallConfigHeaders()
         return await self.add_call_config_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.DelCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.DelCallConfigResponse:
+        """
+        @summary 删除码号配置
+        
+        @param request: DelCallConfigRequest
+        @param headers: DelCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -172,6 +208,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.DelCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.DelCallConfigResponse:
+        """
+        @summary 删除码号配置
+        
+        @param request: DelCallConfigRequest
+        @param headers: DelCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -209,6 +253,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.DelCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.DelCallConfigResponse:
+        """
+        @summary 删除码号配置
+        
+        @param request: DelCallConfigRequest
+        @return: DelCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.DelCallConfigHeaders()
         return self.del_call_config_with_options(request, headers, runtime)
@@ -217,6 +267,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.DelCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.DelCallConfigResponse:
+        """
+        @summary 删除码号配置
+        
+        @param request: DelCallConfigRequest
+        @return: DelCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.DelCallConfigHeaders()
         return await self.del_call_config_with_options_async(request, headers, runtime)
@@ -227,6 +283,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.QueryCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.QueryCallConfigResponse:
+        """
+        @summary 查询外呼码号配置
+        
+        @param request: QueryCallConfigRequest
+        @param headers: QueryCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -268,6 +332,14 @@ class Client(OpenApiClient):
         headers: dingtalkding_phone__1__0_models.QueryCallConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkding_phone__1__0_models.QueryCallConfigResponse:
+        """
+        @summary 查询外呼码号配置
+        
+        @param request: QueryCallConfigRequest
+        @param headers: QueryCallConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCallConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -307,6 +379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.QueryCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.QueryCallConfigResponse:
+        """
+        @summary 查询外呼码号配置
+        
+        @param request: QueryCallConfigRequest
+        @return: QueryCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.QueryCallConfigHeaders()
         return self.query_call_config_with_options(request, headers, runtime)
@@ -315,6 +393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkding_phone__1__0_models.QueryCallConfigRequest,
     ) -> dingtalkding_phone__1__0_models.QueryCallConfigResponse:
+        """
+        @summary 查询外呼码号配置
+        
+        @param request: QueryCallConfigRequest
+        @return: QueryCallConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkding_phone__1__0_models.QueryCallConfigHeaders()
         return await self.query_call_config_with_options_async(request, headers, runtime)

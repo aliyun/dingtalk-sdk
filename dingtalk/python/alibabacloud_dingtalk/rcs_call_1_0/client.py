@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkrcs_call__1__0_models.RunCallUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        """
+        @summary 主叫方发起免费电话给授权企业人员，关联订单id
+        
+        @param request: RunCallUserRequest
+        @param headers: RunCallUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RunCallUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.authorize_corp_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkrcs_call__1__0_models.RunCallUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        """
+        @summary 主叫方发起免费电话给授权企业人员，关联订单id
+        
+        @param request: RunCallUserRequest
+        @param headers: RunCallUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RunCallUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.authorize_corp_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
     ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        """
+        @summary 主叫方发起免费电话给授权企业人员，关联订单id
+        
+        @param request: RunCallUserRequest
+        @return: RunCallUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
         return self.run_call_user_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkrcs_call__1__0_models.RunCallUserRequest,
     ) -> dingtalkrcs_call__1__0_models.RunCallUserResponse:
+        """
+        @summary 主叫方发起免费电话给授权企业人员，关联订单id
+        
+        @param request: RunCallUserRequest
+        @return: RunCallUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrcs_call__1__0_models.RunCallUserHeaders()
         return await self.run_call_user_with_options_async(request, headers, runtime)

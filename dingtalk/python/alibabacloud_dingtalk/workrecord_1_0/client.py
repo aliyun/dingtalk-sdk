@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkrecord__1__0_models.CountWorkRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkrecord__1__0_models.CountWorkRecordResponse:
+        """
+        @summary 查询个人单企业待办数
+        
+        @param request: CountWorkRecordRequest
+        @param headers: CountWorkRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountWorkRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkrecord__1__0_models.CountWorkRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkrecord__1__0_models.CountWorkRecordResponse:
+        """
+        @summary 查询个人单企业待办数
+        
+        @param request: CountWorkRecordRequest
+        @param headers: CountWorkRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountWorkRecordResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkrecord__1__0_models.CountWorkRecordRequest,
     ) -> dingtalkworkrecord__1__0_models.CountWorkRecordResponse:
+        """
+        @summary 查询个人单企业待办数
+        
+        @param request: CountWorkRecordRequest
+        @return: CountWorkRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkrecord__1__0_models.CountWorkRecordHeaders()
         return self.count_work_record_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkrecord__1__0_models.CountWorkRecordRequest,
     ) -> dingtalkworkrecord__1__0_models.CountWorkRecordResponse:
+        """
+        @summary 查询个人单企业待办数
+        
+        @param request: CountWorkRecordRequest
+        @return: CountWorkRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkrecord__1__0_models.CountWorkRecordHeaders()
         return await self.count_work_record_with_options_async(request, headers, runtime)

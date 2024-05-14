@@ -117,6 +117,7 @@ class GetAccessTokenRequest(TeaModel):
         app_key: str = None,
         app_secret: str = None,
     ):
+        # This parameter is required.
         self.app_key = app_key
         self.app_secret = app_secret
 
@@ -256,6 +257,7 @@ class GetAuthInfoRequest(TeaModel):
         self,
         auth_corp_id: str = None,
     ):
+        # This parameter is required.
         self.auth_corp_id = auth_corp_id
 
     def validate(self):
@@ -286,9 +288,13 @@ class GetAuthInfoResponseBodyAuthAppInfoAgentList(TeaModel):
         agent_name: str = None,
         app_id: int = None,
     ):
+        # This parameter is required.
         self.admin_list = admin_list
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.agent_name = agent_name
+        # This parameter is required.
         self.app_id = app_id
 
     def validate(self):
@@ -328,6 +334,7 @@ class GetAuthInfoResponseBodyAuthAppInfo(TeaModel):
         self,
         agent_list: List[GetAuthInfoResponseBodyAuthAppInfoAgentList] = None,
     ):
+        # This parameter is required.
         self.agent_list = agent_list
 
     def validate(self):
@@ -371,14 +378,23 @@ class GetAuthInfoResponseBodyAuthCorpInfo(TeaModel):
         invite_url: str = None,
         license_code: str = None,
     ):
+        # This parameter is required.
         self.auth_channel = auth_channel
+        # This parameter is required.
         self.auth_channel_type = auth_channel_type
+        # This parameter is required.
         self.auth_level = auth_level
+        # This parameter is required.
         self.corp_logo_url = corp_logo_url
+        # This parameter is required.
         self.corp_name = corp_name
+        # This parameter is required.
         self.industry = industry
+        # This parameter is required.
         self.invite_code = invite_code
+        # This parameter is required.
         self.invite_url = invite_url
+        # This parameter is required.
         self.license_code = license_code
 
     def validate(self):
@@ -438,6 +454,7 @@ class GetAuthInfoResponseBodyAuthUserInfo(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -467,8 +484,11 @@ class GetAuthInfoResponseBody(TeaModel):
         auth_corp_info: GetAuthInfoResponseBodyAuthCorpInfo = None,
         auth_user_info: GetAuthInfoResponseBodyAuthUserInfo = None,
     ):
+        # This parameter is required.
         self.auth_app_info = auth_app_info
+        # This parameter is required.
         self.auth_corp_info = auth_corp_info
+        # This parameter is required.
         self.auth_user_info = auth_user_info
 
     def validate(self):
@@ -556,9 +576,13 @@ class GetCorpAccessTokenRequest(TeaModel):
         suite_secret: str = None,
         suite_ticket: str = None,
     ):
+        # This parameter is required.
         self.auth_corp_id = auth_corp_id
+        # This parameter is required.
         self.suite_key = suite_key
+        # This parameter is required.
         self.suite_secret = suite_secret
+        # This parameter is required.
         self.suite_ticket = suite_ticket
 
     def validate(self):
@@ -706,7 +730,9 @@ class GetPersonalAuthRuleResponseBodyResult(TeaModel):
         auth_items: List[str] = None,
         resource: str = None,
     ):
+        # This parameter is required.
         self.auth_items = auth_items
+        # This parameter is required.
         self.resource = resource
 
     def validate(self):
@@ -815,7 +841,9 @@ class GetSsoAccessTokenRequest(TeaModel):
         corpid: str = None,
         sso_secret: str = None,
     ):
+        # This parameter is required.
         self.corpid = corpid
+        # This parameter is required.
         self.sso_secret = sso_secret
 
     def validate(self):
@@ -954,6 +982,7 @@ class GetSsoUserInfoRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -987,12 +1016,19 @@ class GetSsoUserInfoResponseBody(TeaModel):
         user_id: str = None,
         user_name: str = None,
     ):
+        # This parameter is required.
         self.avatar = avatar
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.corp_name = corp_name
+        # This parameter is required.
         self.email = email
+        # This parameter is required.
         self.is_admin = is_admin
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -1087,8 +1123,11 @@ class GetSuiteAccessTokenRequest(TeaModel):
         suite_secret: str = None,
         suite_ticket: str = None,
     ):
+        # This parameter is required.
         self.suite_key = suite_key
+        # This parameter is required.
         self.suite_secret = suite_secret
+        # This parameter is required.
         self.suite_ticket = suite_ticket
 
     def validate(self):
@@ -1200,8 +1239,11 @@ class GetTokenRequest(TeaModel):
         client_secret: str = None,
         grant_type: str = None,
     ):
+        # This parameter is required.
         self.client_id = client_id
+        # This parameter is required.
         self.client_secret = client_secret
+        # This parameter is required.
         self.grant_type = grant_type
 
     def validate(self):
@@ -1315,6 +1357,7 @@ class GetUserTokenRequest(TeaModel):
         grant_type: str = None,
         refresh_token: str = None,
     ):
+        # This parameter is required.
         self.client_id = client_id
         self.client_secret = client_secret
         self.code = code

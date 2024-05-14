@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateMiniAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppResponse:
+        """
+        @summary 创建小程序
+        
+        @param request: CreateMiniAppRequest
+        @param headers: CreateMiniAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMiniAppResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -82,6 +90,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateMiniAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppResponse:
+        """
+        @summary 创建小程序
+        
+        @param request: CreateMiniAppRequest
+        @param headers: CreateMiniAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMiniAppResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -125,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateMiniAppRequest,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppResponse:
+        """
+        @summary 创建小程序
+        
+        @param request: CreateMiniAppRequest
+        @return: CreateMiniAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateMiniAppHeaders()
         return self.create_mini_app_with_options(request, headers, runtime)
@@ -133,6 +155,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateMiniAppRequest,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppResponse:
+        """
+        @summary 创建小程序
+        
+        @param request: CreateMiniAppRequest
+        @return: CreateMiniAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateMiniAppHeaders()
         return await self.create_mini_app_with_options_async(request, headers, runtime)
@@ -143,6 +171,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateMiniAppPluginHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppPluginResponse:
+        """
+        @summary 创建小程序组件
+        
+        @param request: CreateMiniAppPluginRequest
+        @param headers: CreateMiniAppPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMiniAppPluginResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -188,6 +224,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateMiniAppPluginHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppPluginResponse:
+        """
+        @summary 创建小程序组件
+        
+        @param request: CreateMiniAppPluginRequest
+        @param headers: CreateMiniAppPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMiniAppPluginResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -231,6 +275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateMiniAppPluginRequest,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppPluginResponse:
+        """
+        @summary 创建小程序组件
+        
+        @param request: CreateMiniAppPluginRequest
+        @return: CreateMiniAppPluginResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateMiniAppPluginHeaders()
         return self.create_mini_app_plugin_with_options(request, headers, runtime)
@@ -239,6 +289,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateMiniAppPluginRequest,
     ) -> dingtalkminiapp__1__0_models.CreateMiniAppPluginResponse:
+        """
+        @summary 创建小程序组件
+        
+        @param request: CreateMiniAppPluginRequest
+        @return: CreateMiniAppPluginResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateMiniAppPluginHeaders()
         return await self.create_mini_app_plugin_with_options_async(request, headers, runtime)
@@ -249,6 +305,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateVersionAcrossBundleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateVersionAcrossBundleResponse:
+        """
+        @summary 小程序多端发布版本
+        
+        @param request: CreateVersionAcrossBundleRequest
+        @param headers: CreateVersionAcrossBundleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVersionAcrossBundleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -292,6 +356,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.CreateVersionAcrossBundleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.CreateVersionAcrossBundleResponse:
+        """
+        @summary 小程序多端发布版本
+        
+        @param request: CreateVersionAcrossBundleRequest
+        @param headers: CreateVersionAcrossBundleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVersionAcrossBundleResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -333,6 +405,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateVersionAcrossBundleRequest,
     ) -> dingtalkminiapp__1__0_models.CreateVersionAcrossBundleResponse:
+        """
+        @summary 小程序多端发布版本
+        
+        @param request: CreateVersionAcrossBundleRequest
+        @return: CreateVersionAcrossBundleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateVersionAcrossBundleHeaders()
         return self.create_version_across_bundle_with_options(request, headers, runtime)
@@ -341,6 +419,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.CreateVersionAcrossBundleRequest,
     ) -> dingtalkminiapp__1__0_models.CreateVersionAcrossBundleResponse:
+        """
+        @summary 小程序多端发布版本
+        
+        @param request: CreateVersionAcrossBundleRequest
+        @return: CreateVersionAcrossBundleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.CreateVersionAcrossBundleHeaders()
         return await self.create_version_across_bundle_with_options_async(request, headers, runtime)
@@ -351,6 +435,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetMaxVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetMaxVersionResponse:
+        """
+        @summary 获取小程序最大的构建版本
+        
+        @param request: GetMaxVersionRequest
+        @param headers: GetMaxVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMaxVersionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -390,6 +482,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetMaxVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetMaxVersionResponse:
+        """
+        @summary 获取小程序最大的构建版本
+        
+        @param request: GetMaxVersionRequest
+        @param headers: GetMaxVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMaxVersionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -427,6 +527,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.GetMaxVersionRequest,
     ) -> dingtalkminiapp__1__0_models.GetMaxVersionResponse:
+        """
+        @summary 获取小程序最大的构建版本
+        
+        @param request: GetMaxVersionRequest
+        @return: GetMaxVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetMaxVersionHeaders()
         return self.get_max_version_with_options(request, headers, runtime)
@@ -435,6 +541,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.GetMaxVersionRequest,
     ) -> dingtalkminiapp__1__0_models.GetMaxVersionResponse:
+        """
+        @summary 获取小程序最大的构建版本
+        
+        @param request: GetMaxVersionRequest
+        @return: GetMaxVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetMaxVersionHeaders()
         return await self.get_max_version_with_options_async(request, headers, runtime)
@@ -445,6 +557,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        """
+        @summary 同步小程序元数据
+        
+        @param request: GetMiniAppMetaDataRequest
+        @param headers: GetMiniAppMetaDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMiniAppMetaDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -486,6 +606,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        """
+        @summary 同步小程序元数据
+        
+        @param request: GetMiniAppMetaDataRequest
+        @param headers: GetMiniAppMetaDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMiniAppMetaDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -525,6 +653,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
     ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        """
+        @summary 同步小程序元数据
+        
+        @param request: GetMiniAppMetaDataRequest
+        @return: GetMiniAppMetaDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders()
         return self.get_mini_app_meta_data_with_options(request, headers, runtime)
@@ -533,6 +667,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.GetMiniAppMetaDataRequest,
     ) -> dingtalkminiapp__1__0_models.GetMiniAppMetaDataResponse:
+        """
+        @summary 同步小程序元数据
+        
+        @param request: GetMiniAppMetaDataRequest
+        @return: GetMiniAppMetaDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetMiniAppMetaDataHeaders()
         return await self.get_mini_app_meta_data_with_options_async(request, headers, runtime)
@@ -543,6 +683,13 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
+        """
+        @summary 查询小程序配置
+        
+        @param headers: GetSettingByMiniAppIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSettingByMiniAppIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -573,6 +720,13 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
+        """
+        @summary 查询小程序配置
+        
+        @param headers: GetSettingByMiniAppIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSettingByMiniAppIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -601,6 +755,11 @@ class Client(OpenApiClient):
         self,
         mini_app_id: str,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
+        """
+        @summary 查询小程序配置
+        
+        @return: GetSettingByMiniAppIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders()
         return self.get_setting_by_mini_app_id_with_options(mini_app_id, headers, runtime)
@@ -609,6 +768,11 @@ class Client(OpenApiClient):
         self,
         mini_app_id: str,
     ) -> dingtalkminiapp__1__0_models.GetSettingByMiniAppIdResponse:
+        """
+        @summary 查询小程序配置
+        
+        @return: GetSettingByMiniAppIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.GetSettingByMiniAppIdHeaders()
         return await self.get_setting_by_mini_app_id_with_options_async(mini_app_id, headers, runtime)
@@ -619,6 +783,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildResponse:
+        """
+        @summary 构建H5Bundle
+        
+        @param request: InvokeHtmlBundleBuildRequest
+        @param headers: InvokeHtmlBundleBuildHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvokeHtmlBundleBuildResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -658,6 +830,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildResponse:
+        """
+        @summary 构建H5Bundle
+        
+        @param request: InvokeHtmlBundleBuildRequest
+        @param headers: InvokeHtmlBundleBuildHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvokeHtmlBundleBuildResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -695,6 +875,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildRequest,
     ) -> dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildResponse:
+        """
+        @summary 构建H5Bundle
+        
+        @param request: InvokeHtmlBundleBuildRequest
+        @return: InvokeHtmlBundleBuildResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildHeaders()
         return self.invoke_html_bundle_build_with_options(request, headers, runtime)
@@ -703,6 +889,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildRequest,
     ) -> dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildResponse:
+        """
+        @summary 构建H5Bundle
+        
+        @param request: InvokeHtmlBundleBuildRequest
+        @return: InvokeHtmlBundleBuildResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.InvokeHtmlBundleBuildHeaders()
         return await self.invoke_html_bundle_build_with_options_async(request, headers, runtime)
@@ -713,6 +905,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.ListAvaiableVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.ListAvaiableVersionResponse:
+        """
+        @summary 获取小程序版本列表
+        
+        @param request: ListAvaiableVersionRequest
+        @param headers: ListAvaiableVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAvaiableVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -756,6 +956,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.ListAvaiableVersionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.ListAvaiableVersionResponse:
+        """
+        @summary 获取小程序版本列表
+        
+        @param request: ListAvaiableVersionRequest
+        @param headers: ListAvaiableVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAvaiableVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -797,6 +1005,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.ListAvaiableVersionRequest,
     ) -> dingtalkminiapp__1__0_models.ListAvaiableVersionResponse:
+        """
+        @summary 获取小程序版本列表
+        
+        @param request: ListAvaiableVersionRequest
+        @return: ListAvaiableVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.ListAvaiableVersionHeaders()
         return self.list_avaiable_version_with_options(request, headers, runtime)
@@ -805,6 +1019,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.ListAvaiableVersionRequest,
     ) -> dingtalkminiapp__1__0_models.ListAvaiableVersionResponse:
+        """
+        @summary 获取小程序版本列表
+        
+        @param request: ListAvaiableVersionRequest
+        @return: ListAvaiableVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.ListAvaiableVersionHeaders()
         return await self.list_avaiable_version_with_options_async(request, headers, runtime)
@@ -815,6 +1035,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.QueryHtmlBundleBuildHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.QueryHtmlBundleBuildResponse:
+        """
+        @summary 查询H5构建结果
+        
+        @param request: QueryHtmlBundleBuildRequest
+        @param headers: QueryHtmlBundleBuildHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryHtmlBundleBuildResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -854,6 +1082,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.QueryHtmlBundleBuildHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.QueryHtmlBundleBuildResponse:
+        """
+        @summary 查询H5构建结果
+        
+        @param request: QueryHtmlBundleBuildRequest
+        @param headers: QueryHtmlBundleBuildHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryHtmlBundleBuildResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -891,6 +1127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.QueryHtmlBundleBuildRequest,
     ) -> dingtalkminiapp__1__0_models.QueryHtmlBundleBuildResponse:
+        """
+        @summary 查询H5构建结果
+        
+        @param request: QueryHtmlBundleBuildRequest
+        @return: QueryHtmlBundleBuildResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.QueryHtmlBundleBuildHeaders()
         return self.query_html_bundle_build_with_options(request, headers, runtime)
@@ -899,6 +1141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.QueryHtmlBundleBuildRequest,
     ) -> dingtalkminiapp__1__0_models.QueryHtmlBundleBuildResponse:
+        """
+        @summary 查询H5构建结果
+        
+        @param request: QueryHtmlBundleBuildRequest
+        @return: QueryHtmlBundleBuildResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.QueryHtmlBundleBuildHeaders()
         return await self.query_html_bundle_build_with_options_async(request, headers, runtime)
@@ -909,6 +1157,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        """
+        @summary 回滚版本
+        
+        @param request: RollBackVersionRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RollBackVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -945,6 +1201,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        """
+        @summary 回滚版本
+        
+        @param request: RollBackVersionRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RollBackVersionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -979,6 +1243,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
     ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        """
+        @summary 回滚版本
+        
+        @param request: RollBackVersionRequest
+        @return: RollBackVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.roll_back_version_with_options(request, headers, runtime)
@@ -987,6 +1257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.RollBackVersionRequest,
     ) -> dingtalkminiapp__1__0_models.RollBackVersionResponse:
+        """
+        @summary 回滚版本
+        
+        @param request: RollBackVersionRequest
+        @return: RollBackVersionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.roll_back_version_with_options_async(request, headers, runtime)
@@ -997,6 +1273,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.SetExtendSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.SetExtendSettingResponse:
+        """
+        @summary 修改小程序配置
+        
+        @param request: SetExtendSettingRequest
+        @param headers: SetExtendSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetExtendSettingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.build_h5bundle):
@@ -1034,6 +1318,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.SetExtendSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.SetExtendSettingResponse:
+        """
+        @summary 修改小程序配置
+        
+        @param request: SetExtendSettingRequest
+        @param headers: SetExtendSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetExtendSettingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.build_h5bundle):
@@ -1069,6 +1361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.SetExtendSettingRequest,
     ) -> dingtalkminiapp__1__0_models.SetExtendSettingResponse:
+        """
+        @summary 修改小程序配置
+        
+        @param request: SetExtendSettingRequest
+        @return: SetExtendSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.SetExtendSettingHeaders()
         return self.set_extend_setting_with_options(request, headers, runtime)
@@ -1077,6 +1375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.SetExtendSettingRequest,
     ) -> dingtalkminiapp__1__0_models.SetExtendSettingResponse:
+        """
+        @summary 修改小程序配置
+        
+        @param request: SetExtendSettingRequest
+        @return: SetExtendSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.SetExtendSettingHeaders()
         return await self.set_extend_setting_with_options_async(request, headers, runtime)
@@ -1087,6 +1391,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.UpdateVersionStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.UpdateVersionStatusResponse:
+        """
+        @summary 发布版本
+        
+        @param request: UpdateVersionStatusRequest
+        @param headers: UpdateVersionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVersionStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -1128,6 +1440,14 @@ class Client(OpenApiClient):
         headers: dingtalkminiapp__1__0_models.UpdateVersionStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminiapp__1__0_models.UpdateVersionStatusResponse:
+        """
+        @summary 发布版本
+        
+        @param request: UpdateVersionStatusRequest
+        @param headers: UpdateVersionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVersionStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bundle_id):
@@ -1167,6 +1487,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.UpdateVersionStatusRequest,
     ) -> dingtalkminiapp__1__0_models.UpdateVersionStatusResponse:
+        """
+        @summary 发布版本
+        
+        @param request: UpdateVersionStatusRequest
+        @return: UpdateVersionStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.UpdateVersionStatusHeaders()
         return self.update_version_status_with_options(request, headers, runtime)
@@ -1175,6 +1501,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkminiapp__1__0_models.UpdateVersionStatusRequest,
     ) -> dingtalkminiapp__1__0_models.UpdateVersionStatusResponse:
+        """
+        @summary 发布版本
+        
+        @param request: UpdateVersionStatusRequest
+        @return: UpdateVersionStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminiapp__1__0_models.UpdateVersionStatusHeaders()
         return await self.update_version_status_with_options_async(request, headers, runtime)

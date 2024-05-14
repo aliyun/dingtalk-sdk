@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__2__0_models.GetRelationUkSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__2__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @param headers: GetRelationUkSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelationUkSettingResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__2__0_models.GetRelationUkSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__2__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @param headers: GetRelationUkSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelationUkSettingResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__2__0_models.GetRelationUkSettingRequest,
     ) -> dingtalkcrm__2__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @return: GetRelationUkSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__2__0_models.GetRelationUkSettingHeaders()
         return self.get_relation_uk_setting_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__2__0_models.GetRelationUkSettingRequest,
     ) -> dingtalkcrm__2__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @return: GetRelationUkSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__2__0_models.GetRelationUkSettingHeaders()
         return await self.get_relation_uk_setting_with_options_async(request, headers, runtime)

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AbandonCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        """
+        @summary 从私海放弃客户（退回公海）
+        
+        @param request: AbandonCustomerRequest
+        @param headers: AbandonCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AbandonCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.custom_track_desc):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AbandonCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        """
+        @summary 从私海放弃客户（退回公海）
+        
+        @param request: AbandonCustomerRequest
+        @param headers: AbandonCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AbandonCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.custom_track_desc):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
     ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        """
+        @summary 从私海放弃客户（退回公海）
+        
+        @param request: AbandonCustomerRequest
+        @return: AbandonCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
         return self.abandon_customer_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AbandonCustomerRequest,
     ) -> dingtalkcrm__1__0_models.AbandonCustomerResponse:
+        """
+        @summary 从私海放弃客户（退回公海）
+        
+        @param request: AbandonCustomerRequest
+        @return: AbandonCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AbandonCustomerHeaders()
         return await self.abandon_customer_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        """
+        @summary 添加crm个人客户（或企业客户）
+        
+        @param request: AddCrmPersonalCustomerRequest
+        @param headers: AddCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -182,6 +218,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        """
+        @summary 添加crm个人客户（或企业客户）
+        
+        @param request: AddCrmPersonalCustomerRequest
+        @param headers: AddCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -229,6 +273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        """
+        @summary 添加crm个人客户（或企业客户）
+        
+        @param request: AddCrmPersonalCustomerRequest
+        @return: AddCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
         return self.add_crm_personal_customer_with_options(request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.AddCrmPersonalCustomerResponse:
+        """
+        @summary 添加crm个人客户（或企业客户）
+        
+        @param request: AddCrmPersonalCustomerRequest
+        @return: AddCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddCrmPersonalCustomerHeaders()
         return await self.add_crm_personal_customer_with_options_async(request, headers, runtime)
@@ -247,6 +303,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddCustomerTrackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        """
+        @summary 新增动态
+        
+        @param request: AddCustomerTrackRequest
+        @param headers: AddCustomerTrackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomerTrackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -298,6 +362,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddCustomerTrackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        """
+        @summary 新增动态
+        
+        @param request: AddCustomerTrackRequest
+        @param headers: AddCustomerTrackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomerTrackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -347,6 +419,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
     ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        """
+        @summary 新增动态
+        
+        @param request: AddCustomerTrackRequest
+        @return: AddCustomerTrackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
         return self.add_customer_track_with_options(request, headers, runtime)
@@ -355,6 +433,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddCustomerTrackRequest,
     ) -> dingtalkcrm__1__0_models.AddCustomerTrackResponse:
+        """
+        @summary 新增动态
+        
+        @param request: AddCustomerTrackRequest
+        @return: AddCustomerTrackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddCustomerTrackHeaders()
         return await self.add_customer_track_with_options_async(request, headers, runtime)
@@ -365,6 +449,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddLeadsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        """
+        @summary 添加线索
+        
+        @param request: AddLeadsRequest
+        @param headers: AddLeadsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLeadsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.assign_timestamp):
@@ -408,6 +500,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddLeadsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        """
+        @summary 添加线索
+        
+        @param request: AddLeadsRequest
+        @param headers: AddLeadsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLeadsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.assign_timestamp):
@@ -449,6 +549,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddLeadsRequest,
     ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        """
+        @summary 添加线索
+        
+        @param request: AddLeadsRequest
+        @return: AddLeadsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
         return self.add_leads_with_options(request, headers, runtime)
@@ -457,6 +563,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddLeadsRequest,
     ) -> dingtalkcrm__1__0_models.AddLeadsResponse:
+        """
+        @summary 添加线索
+        
+        @param request: AddLeadsRequest
+        @return: AddLeadsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
         return await self.add_leads_with_options_async(request, headers, runtime)
@@ -467,6 +579,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构增加字段
+        
+        @param request: AddRelationMetaFieldRequest
+        @param headers: AddRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_dtolist):
@@ -508,6 +628,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构增加字段
+        
+        @param request: AddRelationMetaFieldRequest
+        @param headers: AddRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_dtolist):
@@ -547,6 +675,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构增加字段
+        
+        @param request: AddRelationMetaFieldRequest
+        @return: AddRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
         return self.add_relation_meta_field_with_options(request, headers, runtime)
@@ -555,6 +689,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.AddRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构增加字段
+        
+        @param request: AddRelationMetaFieldRequest
+        @return: AddRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
         return await self.add_relation_meta_field_with_options_async(request, headers, runtime)
@@ -565,6 +705,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        """
+        @summary 批量新增联系人
+        
+        @param request: BatchAddContactsRequest
+        @param headers: BatchAddContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -602,6 +750,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        """
+        @summary 批量新增联系人
+        
+        @param request: BatchAddContactsRequest
+        @param headers: BatchAddContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -637,6 +793,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        """
+        @summary 批量新增联系人
+        
+        @param request: BatchAddContactsRequest
+        @return: BatchAddContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
         return self.batch_add_contacts_with_options(request, headers, runtime)
@@ -645,6 +807,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddContactsResponse:
+        """
+        @summary 批量新增联系人
+        
+        @param request: BatchAddContactsRequest
+        @return: BatchAddContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddContactsHeaders()
         return await self.batch_add_contacts_with_options_async(request, headers, runtime)
@@ -655,6 +823,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        """
+        @summary 批量新增跟进记录
+        
+        @param request: BatchAddFollowRecordsRequest
+        @param headers: BatchAddFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_list):
@@ -692,6 +868,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        """
+        @summary 批量新增跟进记录
+        
+        @param request: BatchAddFollowRecordsRequest
+        @param headers: BatchAddFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_list):
@@ -727,6 +911,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        """
+        @summary 批量新增跟进记录
+        
+        @param request: BatchAddFollowRecordsRequest
+        @return: BatchAddFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
         return self.batch_add_follow_records_with_options(request, headers, runtime)
@@ -735,6 +925,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddFollowRecordsResponse:
+        """
+        @summary 批量新增跟进记录
+        
+        @param request: BatchAddFollowRecordsRequest
+        @return: BatchAddFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddFollowRecordsHeaders()
         return await self.batch_add_follow_records_with_options_async(request, headers, runtime)
@@ -745,6 +941,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        """
+        @summary 批量新增关系数据
+        
+        @param request: BatchAddRelationDatasRequest
+        @param headers: BatchAddRelationDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddRelationDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -786,6 +990,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        """
+        @summary 批量新增关系数据
+        
+        @param request: BatchAddRelationDatasRequest
+        @param headers: BatchAddRelationDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchAddRelationDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -825,6 +1037,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        """
+        @summary 批量新增关系数据
+        
+        @param request: BatchAddRelationDatasRequest
+        @return: BatchAddRelationDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
         return self.batch_add_relation_datas_with_options(request, headers, runtime)
@@ -833,6 +1051,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchAddRelationDatasRequest,
     ) -> dingtalkcrm__1__0_models.BatchAddRelationDatasResponse:
+        """
+        @summary 批量新增关系数据
+        
+        @param request: BatchAddRelationDatasRequest
+        @return: BatchAddRelationDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchAddRelationDatasHeaders()
         return await self.batch_add_relation_datas_with_options_async(request, headers, runtime)
@@ -843,6 +1067,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchCreateClueDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        """
+        @summary 批量创建线索数据
+        
+        @param request: BatchCreateClueDataRequest
+        @param headers: BatchCreateClueDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateClueDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data_list):
@@ -882,6 +1114,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchCreateClueDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        """
+        @summary 批量创建线索数据
+        
+        @param request: BatchCreateClueDataRequest
+        @param headers: BatchCreateClueDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateClueDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data_list):
@@ -919,6 +1159,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
     ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        """
+        @summary 批量创建线索数据
+        
+        @param request: BatchCreateClueDataRequest
+        @return: BatchCreateClueDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchCreateClueDataHeaders()
         return self.batch_create_clue_data_with_options(request, headers, runtime)
@@ -927,6 +1173,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchCreateClueDataRequest,
     ) -> dingtalkcrm__1__0_models.BatchCreateClueDataResponse:
+        """
+        @summary 批量创建线索数据
+        
+        @param request: BatchCreateClueDataRequest
+        @return: BatchCreateClueDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchCreateClueDataHeaders()
         return await self.batch_create_clue_data_with_options_async(request, headers, runtime)
@@ -937,6 +1189,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        """
+        @summary 批量删除跟进记录
+        
+        @param request: BatchRemoveFollowRecordsRequest
+        @param headers: BatchRemoveFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRemoveFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_ids):
@@ -974,6 +1234,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        """
+        @summary 批量删除跟进记录
+        
+        @param request: BatchRemoveFollowRecordsRequest
+        @param headers: BatchRemoveFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchRemoveFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_ids):
@@ -1009,6 +1277,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        """
+        @summary 批量删除跟进记录
+        
+        @param request: BatchRemoveFollowRecordsRequest
+        @return: BatchRemoveFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
         return self.batch_remove_follow_records_with_options(request, headers, runtime)
@@ -1017,6 +1291,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchRemoveFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchRemoveFollowRecordsResponse:
+        """
+        @summary 批量删除跟进记录
+        
+        @param request: BatchRemoveFollowRecordsRequest
+        @return: BatchRemoveFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchRemoveFollowRecordsHeaders()
         return await self.batch_remove_follow_records_with_options_async(request, headers, runtime)
@@ -1027,6 +1307,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: BatchSendOfficialAccountOTOMessageRequest
+        @param headers: BatchSendOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchSendOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -1066,6 +1354,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: BatchSendOfficialAccountOTOMessageRequest
+        @param headers: BatchSendOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchSendOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -1103,6 +1399,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: BatchSendOfficialAccountOTOMessageRequest
+        @return: BatchSendOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
         return self.batch_send_official_account_otomessage_with_options(request, headers, runtime)
@@ -1111,6 +1413,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: BatchSendOfficialAccountOTOMessageRequest
+        @return: BatchSendOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchSendOfficialAccountOTOMessageHeaders()
         return await self.batch_send_official_account_otomessage_with_options_async(request, headers, runtime)
@@ -1121,6 +1429,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        """
+        @summary 批量修改联系人
+        
+        @param request: BatchUpdateContactsRequest
+        @param headers: BatchUpdateContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1158,6 +1474,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        """
+        @summary 批量修改联系人
+        
+        @param request: BatchUpdateContactsRequest
+        @param headers: BatchUpdateContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1193,6 +1517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        """
+        @summary 批量修改联系人
+        
+        @param request: BatchUpdateContactsRequest
+        @return: BatchUpdateContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
         return self.batch_update_contacts_with_options(request, headers, runtime)
@@ -1201,6 +1531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateContactsRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateContactsResponse:
+        """
+        @summary 批量修改联系人
+        
+        @param request: BatchUpdateContactsRequest
+        @return: BatchUpdateContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateContactsHeaders()
         return await self.batch_update_contacts_with_options_async(request, headers, runtime)
@@ -1211,6 +1547,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        """
+        @summary 批量修改跟进记录
+        
+        @param request: BatchUpdateFollowRecordsRequest
+        @param headers: BatchUpdateFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_list):
@@ -1248,6 +1592,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        """
+        @summary 批量修改跟进记录
+        
+        @param request: BatchUpdateFollowRecordsRequest
+        @param headers: BatchUpdateFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.instance_list):
@@ -1283,6 +1635,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        """
+        @summary 批量修改跟进记录
+        
+        @param request: BatchUpdateFollowRecordsRequest
+        @return: BatchUpdateFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
         return self.batch_update_follow_records_with_options(request, headers, runtime)
@@ -1291,6 +1649,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateFollowRecordsResponse:
+        """
+        @summary 批量修改跟进记录
+        
+        @param request: BatchUpdateFollowRecordsRequest
+        @return: BatchUpdateFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateFollowRecordsHeaders()
         return await self.batch_update_follow_records_with_options_async(request, headers, runtime)
@@ -1301,6 +1665,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        """
+        @summary 批量修改关系数据
+        
+        @param request: BatchUpdateRelationDatasRequest
+        @param headers: BatchUpdateRelationDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateRelationDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1342,6 +1714,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        """
+        @summary 批量修改关系数据
+        
+        @param request: BatchUpdateRelationDatasRequest
+        @param headers: BatchUpdateRelationDatasHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateRelationDatasResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1381,6 +1761,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        """
+        @summary 批量修改关系数据
+        
+        @param request: BatchUpdateRelationDatasRequest
+        @return: BatchUpdateRelationDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
         return self.batch_update_relation_datas_with_options(request, headers, runtime)
@@ -1389,6 +1775,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.BatchUpdateRelationDatasRequest,
     ) -> dingtalkcrm__1__0_models.BatchUpdateRelationDatasResponse:
+        """
+        @summary 批量修改关系数据
+        
+        @param request: BatchUpdateRelationDatasRequest
+        @return: BatchUpdateRelationDatasResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
         return await self.batch_update_relation_datas_with_options_async(request, headers, runtime)
@@ -1399,6 +1791,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        """
+        @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
+        
+        @param request: CreateCustomerRequest
+        @param headers: CreateCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.contacts):
@@ -1448,6 +1848,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        """
+        @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
+        
+        @param request: CreateCustomerRequest
+        @param headers: CreateCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.contacts):
@@ -1495,6 +1903,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateCustomerRequest,
     ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        """
+        @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
+        
+        @param request: CreateCustomerRequest
+        @return: CreateCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
         return self.create_customer_with_options(request, headers, runtime)
@@ -1503,6 +1917,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateCustomerRequest,
     ) -> dingtalkcrm__1__0_models.CreateCustomerResponse:
+        """
+        @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
+        
+        @param request: CreateCustomerRequest
+        @return: CreateCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateCustomerHeaders()
         return await self.create_customer_with_options_async(request, headers, runtime)
@@ -1513,6 +1933,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建客户群
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_name):
@@ -1554,6 +1982,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建客户群
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_name):
@@ -1593,6 +2029,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateGroupRequest,
     ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建客户群
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
         return self.create_group_with_options(request, headers, runtime)
@@ -1601,6 +2043,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateGroupRequest,
     ) -> dingtalkcrm__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建客户群
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateGroupHeaders()
         return await self.create_group_with_options_async(request, headers, runtime)
@@ -1611,6 +2059,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        """
+        @summary 创建群组
+        
+        @param request: CreateGroupSetRequest
+        @param headers: CreateGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_user_id):
@@ -1664,6 +2120,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        """
+        @summary 创建群组
+        
+        @param request: CreateGroupSetRequest
+        @param headers: CreateGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_user_id):
@@ -1715,6 +2179,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        """
+        @summary 创建群组
+        
+        @param request: CreateGroupSetRequest
+        @return: CreateGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
         return self.create_group_set_with_options(request, headers, runtime)
@@ -1723,6 +2193,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.CreateGroupSetResponse:
+        """
+        @summary 创建群组
+        
+        @param request: CreateGroupSetRequest
+        @return: CreateGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateGroupSetHeaders()
         return await self.create_group_set_with_options_async(request, headers, runtime)
@@ -1733,6 +2209,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateRelationMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        """
+        @summary 创建关系模型表结构
+        
+        @param request: CreateRelationMetaRequest
+        @param headers: CreateRelationMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRelationMetaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1772,6 +2256,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.CreateRelationMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        """
+        @summary 创建关系模型表结构
+        
+        @param request: CreateRelationMetaRequest
+        @param headers: CreateRelationMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRelationMetaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -1809,6 +2301,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
     ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        """
+        @summary 创建关系模型表结构
+        
+        @param request: CreateRelationMetaRequest
+        @return: CreateRelationMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
         return self.create_relation_meta_with_options(request, headers, runtime)
@@ -1817,6 +2315,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.CreateRelationMetaRequest,
     ) -> dingtalkcrm__1__0_models.CreateRelationMetaResponse:
+        """
+        @summary 创建关系模型表结构
+        
+        @param request: CreateRelationMetaRequest
+        @return: CreateRelationMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.CreateRelationMetaHeaders()
         return await self.create_relation_meta_with_options_async(request, headers, runtime)
@@ -1828,6 +2332,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        """
+        @summary 删除CRM自定义对象数据
+        
+        @param request: DeleteCrmCustomObjectDataRequest
+        @param headers: DeleteCrmCustomObjectDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmCustomObjectDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.form_code):
@@ -1864,6 +2376,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        """
+        @summary 删除CRM自定义对象数据
+        
+        @param request: DeleteCrmCustomObjectDataRequest
+        @param headers: DeleteCrmCustomObjectDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmCustomObjectDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.form_code):
@@ -1898,6 +2418,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        """
+        @summary 删除CRM自定义对象数据
+        
+        @param request: DeleteCrmCustomObjectDataRequest
+        @return: DeleteCrmCustomObjectDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders()
         return self.delete_crm_custom_object_data_with_options(instance_id, request, headers, runtime)
@@ -1907,6 +2433,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataResponse:
+        """
+        @summary 删除CRM自定义对象数据
+        
+        @param request: DeleteCrmCustomObjectDataRequest
+        @return: DeleteCrmCustomObjectDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmCustomObjectDataHeaders()
         return await self.delete_crm_custom_object_data_with_options_async(instance_id, request, headers, runtime)
@@ -1918,6 +2450,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        """
+        @summary crm自定义表单数据删除接口
+        
+        @param request: DeleteCrmFormInstanceRequest
+        @param headers: DeleteCrmFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmFormInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -1956,6 +2496,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        """
+        @summary crm自定义表单数据删除接口
+        
+        @param request: DeleteCrmFormInstanceRequest
+        @param headers: DeleteCrmFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmFormInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -1992,6 +2540,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        """
+        @summary crm自定义表单数据删除接口
+        
+        @param request: DeleteCrmFormInstanceRequest
+        @return: DeleteCrmFormInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders()
         return self.delete_crm_form_instance_with_options(instance_id, request, headers, runtime)
@@ -2001,6 +2555,12 @@ class Client(OpenApiClient):
         instance_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmFormInstanceRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmFormInstanceResponse:
+        """
+        @summary crm自定义表单数据删除接口
+        
+        @param request: DeleteCrmFormInstanceRequest
+        @return: DeleteCrmFormInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmFormInstanceHeaders()
         return await self.delete_crm_form_instance_with_options_async(instance_id, request, headers, runtime)
@@ -2012,6 +2572,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
+        """
+        @summary 删除crm个人客户（或企业客户）
+        
+        @param request: DeleteCrmPersonalCustomerRequest
+        @param headers: DeleteCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -2050,6 +2618,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
+        """
+        @summary 删除crm个人客户（或企业客户）
+        
+        @param request: DeleteCrmPersonalCustomerRequest
+        @param headers: DeleteCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -2086,6 +2662,12 @@ class Client(OpenApiClient):
         data_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
+        """
+        @summary 删除crm个人客户（或企业客户）
+        
+        @param request: DeleteCrmPersonalCustomerRequest
+        @return: DeleteCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders()
         return self.delete_crm_personal_customer_with_options(data_id, request, headers, runtime)
@@ -2095,6 +2677,12 @@ class Client(OpenApiClient):
         data_id: str,
         request: dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerResponse:
+        """
+        @summary 删除crm个人客户（或企业客户）
+        
+        @param request: DeleteCrmPersonalCustomerRequest
+        @return: DeleteCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteCrmPersonalCustomerHeaders()
         return await self.delete_crm_personal_customer_with_options_async(data_id, request, headers, runtime)
@@ -2105,6 +2693,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteLeadsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        """
+        @summary 删除线索
+        
+        @param request: DeleteLeadsRequest
+        @param headers: DeleteLeadsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLeadsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.out_leads_ids):
@@ -2140,6 +2736,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteLeadsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        """
+        @summary 删除线索
+        
+        @param request: DeleteLeadsRequest
+        @param headers: DeleteLeadsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLeadsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.out_leads_ids):
@@ -2173,6 +2777,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
     ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        """
+        @summary 删除线索
+        
+        @param request: DeleteLeadsRequest
+        @return: DeleteLeadsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
         return self.delete_leads_with_options(request, headers, runtime)
@@ -2181,6 +2791,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DeleteLeadsRequest,
     ) -> dingtalkcrm__1__0_models.DeleteLeadsResponse:
+        """
+        @summary 删除线索
+        
+        @param request: DeleteLeadsRequest
+        @return: DeleteLeadsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteLeadsHeaders()
         return await self.delete_leads_with_options_async(request, headers, runtime)
@@ -2191,6 +2807,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构删除字段
+        
+        @param request: DeleteRelationMetaFieldRequest
+        @param headers: DeleteRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_id_list):
@@ -2232,6 +2856,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构删除字段
+        
+        @param request: DeleteRelationMetaFieldRequest
+        @param headers: DeleteRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_id_list):
@@ -2271,6 +2903,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构删除字段
+        
+        @param request: DeleteRelationMetaFieldRequest
+        @return: DeleteRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
         return self.delete_relation_meta_field_with_options(request, headers, runtime)
@@ -2279,6 +2917,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DeleteRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.DeleteRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构删除字段
+        
+        @param request: DeleteRelationMetaFieldRequest
+        @return: DeleteRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DeleteRelationMetaFieldHeaders()
         return await self.delete_relation_meta_field_with_options_async(request, headers, runtime)
@@ -2289,6 +2933,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        """
+        @summary 获取CRM客户对象的元数据描述
+        
+        @param request: DescribeCrmPersonalCustomerObjectMetaRequest
+        @param headers: DescribeCrmPersonalCustomerObjectMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeCrmPersonalCustomerObjectMetaResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -2324,6 +2976,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        """
+        @summary 获取CRM客户对象的元数据描述
+        
+        @param request: DescribeCrmPersonalCustomerObjectMetaRequest
+        @param headers: DescribeCrmPersonalCustomerObjectMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeCrmPersonalCustomerObjectMetaResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -2357,6 +3017,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        """
+        @summary 获取CRM客户对象的元数据描述
+        
+        @param request: DescribeCrmPersonalCustomerObjectMetaRequest
+        @return: DescribeCrmPersonalCustomerObjectMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
         return self.describe_crm_personal_customer_object_meta_with_options(request, headers, runtime)
@@ -2365,6 +3031,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaRequest,
     ) -> dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaResponse:
+        """
+        @summary 获取CRM客户对象的元数据描述
+        
+        @param request: DescribeCrmPersonalCustomerObjectMetaRequest
+        @return: DescribeCrmPersonalCustomerObjectMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
         return await self.describe_crm_personal_customer_object_meta_with_options_async(request, headers, runtime)
@@ -2375,6 +3047,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DescribeRelationMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        """
+        @summary 查询关系模型表结构
+        
+        @param request: DescribeRelationMetaRequest
+        @param headers: DescribeRelationMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeRelationMetaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -2414,6 +3094,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.DescribeRelationMetaHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        """
+        @summary 查询关系模型表结构
+        
+        @param request: DescribeRelationMetaRequest
+        @param headers: DescribeRelationMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeRelationMetaResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.operator_user_id):
@@ -2451,6 +3139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
     ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        """
+        @summary 查询关系模型表结构
+        
+        @param request: DescribeRelationMetaRequest
+        @return: DescribeRelationMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
         return self.describe_relation_meta_with_options(request, headers, runtime)
@@ -2459,6 +3153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.DescribeRelationMetaRequest,
     ) -> dingtalkcrm__1__0_models.DescribeRelationMetaResponse:
+        """
+        @summary 查询关系模型表结构
+        
+        @param request: DescribeRelationMetaRequest
+        @return: DescribeRelationMetaResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeRelationMetaHeaders()
         return await self.describe_relation_meta_with_options_async(request, headers, runtime)
@@ -2469,6 +3169,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        """
+        @summary 分页获取关联对象的跟进记录列表
+        
+        @param request: FindTargetRelatedFollowRecordsRequest
+        @param headers: FindTargetRelatedFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FindTargetRelatedFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.follow_target_data_id):
@@ -2510,6 +3218,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        """
+        @summary 分页获取关联对象的跟进记录列表
+        
+        @param request: FindTargetRelatedFollowRecordsRequest
+        @param headers: FindTargetRelatedFollowRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FindTargetRelatedFollowRecordsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.follow_target_data_id):
@@ -2549,6 +3265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        """
+        @summary 分页获取关联对象的跟进记录列表
+        
+        @param request: FindTargetRelatedFollowRecordsRequest
+        @return: FindTargetRelatedFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders()
         return self.find_target_related_follow_records_with_options(request, headers, runtime)
@@ -2557,6 +3279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsRequest,
     ) -> dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsResponse:
+        """
+        @summary 分页获取关联对象的跟进记录列表
+        
+        @param request: FindTargetRelatedFollowRecordsRequest
+        @return: FindTargetRelatedFollowRecordsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.FindTargetRelatedFollowRecordsHeaders()
         return await self.find_target_related_follow_records_with_options_async(request, headers, runtime)
@@ -2567,6 +3295,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        """
+        @summary 分页获取所有客户的掉保时间数据
+        
+        @param request: GetAllCustomerRecyclesRequest
+        @param headers: GetAllCustomerRecyclesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllCustomerRecyclesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2604,6 +3340,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        """
+        @summary 分页获取所有客户的掉保时间数据
+        
+        @param request: GetAllCustomerRecyclesRequest
+        @param headers: GetAllCustomerRecyclesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllCustomerRecyclesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2639,6 +3383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
     ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        """
+        @summary 分页获取所有客户的掉保时间数据
+        
+        @param request: GetAllCustomerRecyclesRequest
+        @return: GetAllCustomerRecyclesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
         return self.get_all_customer_recycles_with_options(request, headers, runtime)
@@ -2647,6 +3397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetAllCustomerRecyclesRequest,
     ) -> dingtalkcrm__1__0_models.GetAllCustomerRecyclesResponse:
+        """
+        @summary 分页获取所有客户的掉保时间数据
+        
+        @param request: GetAllCustomerRecyclesRequest
+        @return: GetAllCustomerRecyclesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetAllCustomerRecyclesHeaders()
         return await self.get_all_customer_recycles_with_options_async(request, headers, runtime)
@@ -2657,6 +3413,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        """
+        @summary 根据指定条件查询联系人数据
+        
+        @param request: GetContactsRequest
+        @param headers: GetContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -2702,6 +3466,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        """
+        @summary 根据指定条件查询联系人数据
+        
+        @param request: GetContactsRequest
+        @param headers: GetContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContactsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -2745,6 +3517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetContactsRequest,
     ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        """
+        @summary 根据指定条件查询联系人数据
+        
+        @param request: GetContactsRequest
+        @return: GetContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetContactsHeaders()
         return self.get_contacts_with_options(request, headers, runtime)
@@ -2753,6 +3531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetContactsRequest,
     ) -> dingtalkcrm__1__0_models.GetContactsResponse:
+        """
+        @summary 根据指定条件查询联系人数据
+        
+        @param request: GetContactsRequest
+        @return: GetContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetContactsHeaders()
         return await self.get_contacts_with_options_async(request, headers, runtime)
@@ -2763,6 +3547,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param headers: GetCrmGroupChatHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2793,6 +3584,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param headers: GetCrmGroupChatHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2821,6 +3619,11 @@ class Client(OpenApiClient):
         self,
         open_conversation_id: str,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        """
+        @summary 获取单个客户群
+        
+        @return: GetCrmGroupChatResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatHeaders()
         return self.get_crm_group_chat_with_options(open_conversation_id, headers, runtime)
@@ -2829,6 +3632,11 @@ class Client(OpenApiClient):
         self,
         open_conversation_id: str,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatResponse:
+        """
+        @summary 获取单个客户群
+        
+        @return: GetCrmGroupChatResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatHeaders()
         return await self.get_crm_group_chat_with_options_async(open_conversation_id, headers, runtime)
@@ -2839,6 +3647,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        """
+        @summary 批量获取多个客户群
+        
+        @param request: GetCrmGroupChatMultiRequest
+        @param headers: GetCrmGroupChatMultiHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatMultiResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_ids):
@@ -2874,6 +3690,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        """
+        @summary 批量获取多个客户群
+        
+        @param request: GetCrmGroupChatMultiRequest
+        @param headers: GetCrmGroupChatMultiHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatMultiResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.open_conversation_ids):
@@ -2907,6 +3731,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        """
+        @summary 批量获取多个客户群
+        
+        @param request: GetCrmGroupChatMultiRequest
+        @return: GetCrmGroupChatMultiResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
         return self.get_crm_group_chat_multi_with_options(request, headers, runtime)
@@ -2915,6 +3745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmGroupChatMultiRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatMultiResponse:
+        """
+        @summary 批量获取多个客户群
+        
+        @param request: GetCrmGroupChatMultiRequest
+        @return: GetCrmGroupChatMultiResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatMultiHeaders()
         return await self.get_crm_group_chat_multi_with_options_async(request, headers, runtime)
@@ -2925,6 +3761,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param request: GetCrmGroupChatSingleRequest
+        @param headers: GetCrmGroupChatSingleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatSingleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -2960,6 +3804,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param request: GetCrmGroupChatSingleRequest
+        @param headers: GetCrmGroupChatSingleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmGroupChatSingleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
@@ -2993,6 +3845,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param request: GetCrmGroupChatSingleRequest
+        @return: GetCrmGroupChatSingleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
         return self.get_crm_group_chat_single_with_options(request, headers, runtime)
@@ -3001,6 +3859,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmGroupChatSingleRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmGroupChatSingleResponse:
+        """
+        @summary 获取单个客户群
+        
+        @param request: GetCrmGroupChatSingleRequest
+        @return: GetCrmGroupChatSingleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmGroupChatSingleHeaders()
         return await self.get_crm_group_chat_single_with_options_async(request, headers, runtime)
@@ -3011,6 +3875,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        """
+        @summary 获取CRM表单权限配置
+        
+        @param request: GetCrmRolePermissionRequest
+        @param headers: GetCrmRolePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmRolePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -3048,6 +3920,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        """
+        @summary 获取CRM表单权限配置
+        
+        @param request: GetCrmRolePermissionRequest
+        @param headers: GetCrmRolePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCrmRolePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -3083,6 +3963,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        """
+        @summary 获取CRM表单权限配置
+        
+        @param request: GetCrmRolePermissionRequest
+        @return: GetCrmRolePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
         return self.get_crm_role_permission_with_options(request, headers, runtime)
@@ -3091,6 +3977,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCrmRolePermissionRequest,
     ) -> dingtalkcrm__1__0_models.GetCrmRolePermissionResponse:
+        """
+        @summary 获取CRM表单权限配置
+        
+        @param request: GetCrmRolePermissionRequest
+        @return: GetCrmRolePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCrmRolePermissionHeaders()
         return await self.get_crm_role_permission_with_options_async(request, headers, runtime)
@@ -3101,6 +3993,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        """
+        @summary 分页获取某个客户的客户动态
+        
+        @param request: GetCustomerTracksByRelationIdRequest
+        @param headers: GetCustomerTracksByRelationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCustomerTracksByRelationIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3142,6 +4042,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        """
+        @summary 分页获取某个客户的客户动态
+        
+        @param request: GetCustomerTracksByRelationIdRequest
+        @param headers: GetCustomerTracksByRelationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCustomerTracksByRelationIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3181,6 +4089,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
     ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        """
+        @summary 分页获取某个客户的客户动态
+        
+        @param request: GetCustomerTracksByRelationIdRequest
+        @return: GetCustomerTracksByRelationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
         return self.get_customer_tracks_by_relation_id_with_options(request, headers, runtime)
@@ -3189,6 +4103,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdRequest,
     ) -> dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdResponse:
+        """
+        @summary 分页获取某个客户的客户动态
+        
+        @param request: GetCustomerTracksByRelationIdRequest
+        @return: GetCustomerTracksByRelationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetCustomerTracksByRelationIdHeaders()
         return await self.get_customer_tracks_by_relation_id_with_options_async(request, headers, runtime)
@@ -3199,6 +4119,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        """
+        @summary 查询群组
+        
+        @param request: GetGroupSetRequest
+        @param headers: GetGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupSetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_group_set_id):
@@ -3234,6 +4162,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        """
+        @summary 查询群组
+        
+        @param request: GetGroupSetRequest
+        @param headers: GetGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupSetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.open_group_set_id):
@@ -3267,6 +4203,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        """
+        @summary 查询群组
+        
+        @param request: GetGroupSetRequest
+        @return: GetGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
         return self.get_group_set_with_options(request, headers, runtime)
@@ -3275,6 +4217,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.GetGroupSetResponse:
+        """
+        @summary 查询群组
+        
+        @param request: GetGroupSetRequest
+        @return: GetGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
         return await self.get_group_set_with_options_async(request, headers, runtime)
@@ -3285,6 +4233,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetNavigationCatalogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        """
+        @summary 获取自定义导航挂靠节点结构
+        
+        @param request: GetNavigationCatalogRequest
+        @param headers: GetNavigationCatalogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNavigationCatalogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_trace_id):
@@ -3324,6 +4280,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetNavigationCatalogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        """
+        @summary 获取自定义导航挂靠节点结构
+        
+        @param request: GetNavigationCatalogRequest
+        @param headers: GetNavigationCatalogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetNavigationCatalogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_trace_id):
@@ -3361,6 +4325,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
     ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        """
+        @summary 获取自定义导航挂靠节点结构
+        
+        @param request: GetNavigationCatalogRequest
+        @return: GetNavigationCatalogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetNavigationCatalogHeaders()
         return self.get_navigation_catalog_with_options(request, headers, runtime)
@@ -3369,6 +4339,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
     ) -> dingtalkcrm__1__0_models.GetNavigationCatalogResponse:
+        """
+        @summary 获取自定义导航挂靠节点结构
+        
+        @param request: GetNavigationCatalogRequest
+        @return: GetNavigationCatalogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetNavigationCatalogHeaders()
         return await self.get_navigation_catalog_with_options_async(request, headers, runtime)
@@ -3379,6 +4355,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetObjectDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        """
+        @summary 根据指定条件查询自定义对象数据
+        
+        @param request: GetObjectDataRequest
+        @param headers: GetObjectDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -3422,6 +4406,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetObjectDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        """
+        @summary 根据指定条件查询自定义对象数据
+        
+        @param request: GetObjectDataRequest
+        @param headers: GetObjectDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetObjectDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -3463,6 +4455,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetObjectDataRequest,
     ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        """
+        @summary 根据指定条件查询自定义对象数据
+        
+        @param request: GetObjectDataRequest
+        @return: GetObjectDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetObjectDataHeaders()
         return self.get_object_data_with_options(request, headers, runtime)
@@ -3471,6 +4469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetObjectDataRequest,
     ) -> dingtalkcrm__1__0_models.GetObjectDataResponse:
+        """
+        @summary 根据指定条件查询自定义对象数据
+        
+        @param request: GetObjectDataRequest
+        @return: GetObjectDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetObjectDataHeaders()
         return await self.get_object_data_with_options_async(request, headers, runtime)
@@ -3481,6 +4485,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        """
+        @summary 获取关注服务窗的联系人信息，包括手机号、主企业等字段，调用前先进行用户授权
+        
+        @param headers: GetOfficialAccountContactInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountContactInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3511,6 +4522,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        """
+        @summary 获取关注服务窗的联系人信息，包括手机号、主企业等字段，调用前先进行用户授权
+        
+        @param headers: GetOfficialAccountContactInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountContactInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3539,6 +4557,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        """
+        @summary 获取关注服务窗的联系人信息，包括手机号、主企业等字段，调用前先进行用户授权
+        
+        @return: GetOfficialAccountContactInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
         return self.get_official_account_contact_info_with_options(user_id, headers, runtime)
@@ -3547,6 +4570,11 @@ class Client(OpenApiClient):
         self,
         user_id: str,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactInfoResponse:
+        """
+        @summary 获取关注服务窗的联系人信息，包括手机号、主企业等字段，调用前先进行用户授权
+        
+        @return: GetOfficialAccountContactInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountContactInfoHeaders()
         return await self.get_official_account_contact_info_with_options_async(user_id, headers, runtime)
@@ -3557,6 +4585,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
+        """
+        @summary 分页获取服务窗联系人信息
+        
+        @param request: GetOfficialAccountContactsRequest
+        @param headers: GetOfficialAccountContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountContactsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3594,6 +4630,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
+        """
+        @summary 分页获取服务窗联系人信息
+        
+        @param request: GetOfficialAccountContactsRequest
+        @param headers: GetOfficialAccountContactsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountContactsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3629,6 +4673,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
+        """
+        @summary 分页获取服务窗联系人信息
+        
+        @param request: GetOfficialAccountContactsRequest
+        @return: GetOfficialAccountContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
         return self.get_official_account_contacts_with_options(request, headers, runtime)
@@ -3637,6 +4687,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetOfficialAccountContactsRequest,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountContactsResponse:
+        """
+        @summary 分页获取服务窗联系人信息
+        
+        @param request: GetOfficialAccountContactsRequest
+        @return: GetOfficialAccountContactsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountContactsHeaders()
         return await self.get_official_account_contacts_with_options_async(request, headers, runtime)
@@ -3647,6 +4703,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        """
+        @summary 获取服务窗消息发送的结果
+        
+        @param request: GetOfficialAccountOTOMessageResultRequest
+        @param headers: GetOfficialAccountOTOMessageResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountOTOMessageResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -3684,6 +4748,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        """
+        @summary 获取服务窗消息发送的结果
+        
+        @param request: GetOfficialAccountOTOMessageResultRequest
+        @param headers: GetOfficialAccountOTOMessageResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOfficialAccountOTOMessageResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -3719,6 +4791,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        """
+        @summary 获取服务窗消息发送的结果
+        
+        @param request: GetOfficialAccountOTOMessageResultRequest
+        @return: GetOfficialAccountOTOMessageResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
         return self.get_official_account_otomessage_result_with_options(request, headers, runtime)
@@ -3727,6 +4805,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultRequest,
     ) -> dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultResponse:
+        """
+        @summary 获取服务窗消息发送的结果
+        
+        @param request: GetOfficialAccountOTOMessageResultRequest
+        @return: GetOfficialAccountOTOMessageResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
         return await self.get_official_account_otomessage_result_with_options_async(request, headers, runtime)
@@ -3737,6 +4821,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetRelationUkSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @param headers: GetRelationUkSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelationUkSettingResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -3772,6 +4864,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.GetRelationUkSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @param headers: GetRelationUkSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelationUkSettingResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -3805,6 +4905,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
     ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @return: GetRelationUkSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
         return self.get_relation_uk_setting_with_options(request, headers, runtime)
@@ -3813,6 +4919,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
     ) -> dingtalkcrm__1__0_models.GetRelationUkSettingResponse:
+        """
+        @summary 获取关系数据查重规则
+        
+        @param request: GetRelationUkSettingRequest
+        @return: GetRelationUkSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.GetRelationUkSettingHeaders()
         return await self.get_relation_uk_setting_with_options_async(request, headers, runtime)
@@ -3823,6 +4935,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.JoinGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        """
+        @summary 加入群组
+        
+        @param request: JoinGroupSetRequest
+        @param headers: JoinGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: JoinGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_data_list):
@@ -3864,6 +4984,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.JoinGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        """
+        @summary 加入群组
+        
+        @param request: JoinGroupSetRequest
+        @param headers: JoinGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: JoinGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_data_list):
@@ -3903,6 +5031,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        """
+        @summary 加入群组
+        
+        @param request: JoinGroupSetRequest
+        @return: JoinGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
         return self.join_group_set_with_options(request, headers, runtime)
@@ -3911,6 +5045,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.JoinGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.JoinGroupSetResponse:
+        """
+        @summary 加入群组
+        
+        @param request: JoinGroupSetRequest
+        @return: JoinGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
         return await self.join_group_set_with_options_async(request, headers, runtime)
@@ -3920,6 +5060,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListClueTagHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        """
+        @summary 获取线索标签列表
+        
+        @param headers: ListClueTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListClueTagResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3949,6 +5096,13 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListClueTagHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        """
+        @summary 获取线索标签列表
+        
+        @param headers: ListClueTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListClueTagResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3974,11 +5128,21 @@ class Client(OpenApiClient):
         )
 
     def list_clue_tag(self) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        """
+        @summary 获取线索标签列表
+        
+        @return: ListClueTagResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListClueTagHeaders()
         return self.list_clue_tag_with_options(headers, runtime)
 
     async def list_clue_tag_async(self) -> dingtalkcrm__1__0_models.ListClueTagResponse:
+        """
+        @summary 获取线索标签列表
+        
+        @return: ListClueTagResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListClueTagHeaders()
         return await self.list_clue_tag_with_options_async(headers, runtime)
@@ -3989,6 +5153,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        """
+        @summary 批量获取crm个人客户
+        
+        @param request: ListCrmPersonalCustomersRequest
+        @param headers: ListCrmPersonalCustomersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCrmPersonalCustomersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -4027,6 +5199,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        """
+        @summary 批量获取crm个人客户
+        
+        @param request: ListCrmPersonalCustomersRequest
+        @param headers: ListCrmPersonalCustomersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCrmPersonalCustomersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -4063,6 +5243,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
     ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        """
+        @summary 批量获取crm个人客户
+        
+        @param request: ListCrmPersonalCustomersRequest
+        @return: ListCrmPersonalCustomersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
         return self.list_crm_personal_customers_with_options(request, headers, runtime)
@@ -4071,6 +5257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ListCrmPersonalCustomersRequest,
     ) -> dingtalkcrm__1__0_models.ListCrmPersonalCustomersResponse:
+        """
+        @summary 批量获取crm个人客户
+        
+        @param request: ListCrmPersonalCustomersRequest
+        @return: ListCrmPersonalCustomersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListCrmPersonalCustomersHeaders()
         return await self.list_crm_personal_customers_with_options_async(request, headers, runtime)
@@ -4081,6 +5273,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        """
+        @summary 查询群组列表
+        
+        @param request: ListGroupSetRequest
+        @param headers: ListGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListGroupSetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4122,6 +5322,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ListGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        """
+        @summary 查询群组列表
+        
+        @param request: ListGroupSetRequest
+        @param headers: ListGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListGroupSetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4161,6 +5369,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ListGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        """
+        @summary 查询群组列表
+        
+        @param request: ListGroupSetRequest
+        @return: ListGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
         return self.list_group_set_with_options(request, headers, runtime)
@@ -4169,6 +5383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ListGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.ListGroupSetResponse:
+        """
+        @summary 查询群组列表
+        
+        @param request: ListGroupSetRequest
+        @return: ListGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
         return await self.list_group_set_with_options_async(request, headers, runtime)
@@ -4179,6 +5399,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryAllCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        """
+        @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
+        
+        @param request: QueryAllCustomerRequest
+        @param headers: QueryAllCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4220,6 +5448,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryAllCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        """
+        @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
+        
+        @param request: QueryAllCustomerRequest
+        @param headers: QueryAllCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4259,6 +5495,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
     ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        """
+        @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
+        
+        @param request: QueryAllCustomerRequest
+        @return: QueryAllCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
         return self.query_all_customer_with_options(request, headers, runtime)
@@ -4267,6 +5509,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
     ) -> dingtalkcrm__1__0_models.QueryAllCustomerResponse:
+        """
+        @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
+        
+        @param request: QueryAllCustomerRequest
+        @return: QueryAllCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryAllCustomerHeaders()
         return await self.query_all_customer_with_options_async(request, headers, runtime)
@@ -4277,6 +5525,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryAllTracksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        """
+        @summary 批量查询企业客户动态
+        
+        @param request: QueryAllTracksRequest
+        @param headers: QueryAllTracksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllTracksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4316,6 +5572,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryAllTracksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        """
+        @summary 批量查询企业客户动态
+        
+        @param request: QueryAllTracksRequest
+        @param headers: QueryAllTracksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllTracksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4353,6 +5617,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
     ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        """
+        @summary 批量查询企业客户动态
+        
+        @param request: QueryAllTracksRequest
+        @return: QueryAllTracksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
         return self.query_all_tracks_with_options(request, headers, runtime)
@@ -4361,6 +5631,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryAllTracksRequest,
     ) -> dingtalkcrm__1__0_models.QueryAllTracksResponse:
+        """
+        @summary 批量查询企业客户动态
+        
+        @param request: QueryAllTracksRequest
+        @return: QueryAllTracksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
         return await self.query_all_tracks_with_options_async(request, headers, runtime)
@@ -4371,6 +5647,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        """
+        @summary 查询线索跟进状态
+        
+        @param request: QueryClueFollowStatusRequest
+        @param headers: QueryClueFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryClueFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.clue_id):
@@ -4406,6 +5690,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        """
+        @summary 查询线索跟进状态
+        
+        @param request: QueryClueFollowStatusRequest
+        @param headers: QueryClueFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryClueFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.clue_id):
@@ -4439,6 +5731,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
     ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        """
+        @summary 查询线索跟进状态
+        
+        @param request: QueryClueFollowStatusRequest
+        @return: QueryClueFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders()
         return self.query_clue_follow_status_with_options(request, headers, runtime)
@@ -4447,6 +5745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
     ) -> dingtalkcrm__1__0_models.QueryClueFollowStatusResponse:
+        """
+        @summary 查询线索跟进状态
+        
+        @param request: QueryClueFollowStatusRequest
+        @return: QueryClueFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryClueFollowStatusHeaders()
         return await self.query_clue_follow_status_with_options_async(request, headers, runtime)
@@ -4457,6 +5761,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        """
+        @summary 查询客户群
+        
+        @param request: QueryCrmGroupChatsRequest
+        @param headers: QueryCrmGroupChatsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCrmGroupChatsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4498,6 +5810,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        """
+        @summary 查询客户群
+        
+        @param request: QueryCrmGroupChatsRequest
+        @param headers: QueryCrmGroupChatsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCrmGroupChatsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4537,6 +5857,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
     ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        """
+        @summary 查询客户群
+        
+        @param request: QueryCrmGroupChatsRequest
+        @return: QueryCrmGroupChatsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
         return self.query_crm_group_chats_with_options(request, headers, runtime)
@@ -4545,6 +5871,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryCrmGroupChatsRequest,
     ) -> dingtalkcrm__1__0_models.QueryCrmGroupChatsResponse:
+        """
+        @summary 查询客户群
+        
+        @param request: QueryCrmGroupChatsRequest
+        @return: QueryCrmGroupChatsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCrmGroupChatsHeaders()
         return await self.query_crm_group_chats_with_options_async(request, headers, runtime)
@@ -4555,6 +5887,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        """
+        @summary 根据指定查询条件批量获取客户数据
+        
+        @param request: QueryCrmPersonalCustomerRequest
+        @param headers: QueryCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -4598,6 +5938,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        """
+        @summary 根据指定查询条件批量获取客户数据
+        
+        @param request: QueryCrmPersonalCustomerRequest
+        @param headers: QueryCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.current_operator_user_id):
@@ -4639,6 +5987,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        """
+        @summary 根据指定查询条件批量获取客户数据
+        
+        @param request: QueryCrmPersonalCustomerRequest
+        @return: QueryCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
         return self.query_crm_personal_customer_with_options(request, headers, runtime)
@@ -4647,6 +6001,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.QueryCrmPersonalCustomerResponse:
+        """
+        @summary 根据指定查询条件批量获取客户数据
+        
+        @param request: QueryCrmPersonalCustomerRequest
+        @return: QueryCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
         return await self.query_crm_personal_customer_with_options_async(request, headers, runtime)
@@ -4657,6 +6017,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryGlobalInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        """
+        @summary 营销服融合三方全局信息
+        
+        @param request: QueryGlobalInfoRequest
+        @param headers: QueryGlobalInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGlobalInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -4692,6 +6060,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryGlobalInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        """
+        @summary 营销服融合三方全局信息
+        
+        @param request: QueryGlobalInfoRequest
+        @param headers: QueryGlobalInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGlobalInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -4725,6 +6101,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
     ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        """
+        @summary 营销服融合三方全局信息
+        
+        @param request: QueryGlobalInfoRequest
+        @return: QueryGlobalInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryGlobalInfoHeaders()
         return self.query_global_info_with_options(request, headers, runtime)
@@ -4733,6 +6115,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
     ) -> dingtalkcrm__1__0_models.QueryGlobalInfoResponse:
+        """
+        @summary 营销服融合三方全局信息
+        
+        @param request: QueryGlobalInfoRequest
+        @return: QueryGlobalInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryGlobalInfoHeaders()
         return await self.query_global_info_with_options_async(request, headers, runtime)
@@ -4743,6 +6131,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        """
+        @summary 查询服务窗用户基础信息
+        
+        @param request: QueryOfficialAccountUserBasicInfoRequest
+        @param headers: QueryOfficialAccountUserBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOfficialAccountUserBasicInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.binding_token):
@@ -4780,6 +6176,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        """
+        @summary 查询服务窗用户基础信息
+        
+        @param request: QueryOfficialAccountUserBasicInfoRequest
+        @param headers: QueryOfficialAccountUserBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOfficialAccountUserBasicInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.binding_token):
@@ -4815,6 +6219,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
     ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        """
+        @summary 查询服务窗用户基础信息
+        
+        @param request: QueryOfficialAccountUserBasicInfoRequest
+        @return: QueryOfficialAccountUserBasicInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
         return self.query_official_account_user_basic_info_with_options(request, headers, runtime)
@@ -4823,6 +6233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoRequest,
     ) -> dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoResponse:
+        """
+        @summary 查询服务窗用户基础信息
+        
+        @param request: QueryOfficialAccountUserBasicInfoRequest
+        @return: QueryOfficialAccountUserBasicInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryOfficialAccountUserBasicInfoHeaders()
         return await self.query_official_account_user_basic_info_with_options_async(request, headers, runtime)
@@ -4834,6 +6250,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        """
+        @summary 根据targetId查询关系数据
+        
+        @param request: QueryRelationDatasByTargetIdRequest
+        @param headers: QueryRelationDatasByTargetIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRelationDatasByTargetIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -4870,6 +6294,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        """
+        @summary 根据targetId查询关系数据
+        
+        @param request: QueryRelationDatasByTargetIdRequest
+        @param headers: QueryRelationDatasByTargetIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRelationDatasByTargetIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.relation_type):
@@ -4904,6 +6336,12 @@ class Client(OpenApiClient):
         target_id: str,
         request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
     ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        """
+        @summary 根据targetId查询关系数据
+        
+        @param request: QueryRelationDatasByTargetIdRequest
+        @return: QueryRelationDatasByTargetIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders()
         return self.query_relation_datas_by_target_id_with_options(target_id, request, headers, runtime)
@@ -4913,6 +6351,12 @@ class Client(OpenApiClient):
         target_id: str,
         request: dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdRequest,
     ) -> dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdResponse:
+        """
+        @summary 根据targetId查询关系数据
+        
+        @param request: QueryRelationDatasByTargetIdRequest
+        @return: QueryRelationDatasByTargetIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryRelationDatasByTargetIdHeaders()
         return await self.query_relation_datas_by_target_id_with_options_async(target_id, request, headers, runtime)
@@ -4923,6 +6367,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息撤回
+        
+        @param request: RecallOfficialAccountOTOMessageRequest
+        @param headers: RecallOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -4960,6 +6412,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息撤回
+        
+        @param request: RecallOfficialAccountOTOMessageRequest
+        @param headers: RecallOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -4995,6 +6455,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息撤回
+        
+        @param request: RecallOfficialAccountOTOMessageRequest
+        @return: RecallOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
         return self.recall_official_account_otomessage_with_options(request, headers, runtime)
@@ -5003,6 +6469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗消息撤回
+        
+        @param request: RecallOfficialAccountOTOMessageRequest
+        @return: RecallOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
         return await self.recall_official_account_otomessage_with_options_async(request, headers, runtime)
@@ -5013,6 +6485,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗单发接口，指定消息接收人发送
+        
+        @param request: SendOfficialAccountOTOMessageRequest
+        @param headers: SendOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -5052,6 +6532,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗单发接口，指定消息接收人发送
+        
+        @param request: SendOfficialAccountOTOMessageRequest
+        @param headers: SendOfficialAccountOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOfficialAccountOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -5089,6 +6577,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗单发接口，指定消息接收人发送
+        
+        @param request: SendOfficialAccountOTOMessageRequest
+        @return: SendOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
         return self.send_official_account_otomessage_with_options(request, headers, runtime)
@@ -5097,6 +6591,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageRequest,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageResponse:
+        """
+        @summary 服务窗单发接口，指定消息接收人发送
+        
+        @param request: SendOfficialAccountOTOMessageRequest
+        @return: SendOfficialAccountOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.SendOfficialAccountOTOMessageHeaders()
         return await self.send_official_account_otomessage_with_options_async(request, headers, runtime)
@@ -5107,6 +6607,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        """
+        @summary 个人应用发送服务窗消息
+        
+        @param request: SendOfficialAccountSNSMessageRequest
+        @param headers: SendOfficialAccountSNSMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOfficialAccountSNSMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_token):
@@ -5146,6 +6654,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        """
+        @summary 个人应用发送服务窗消息
+        
+        @param request: SendOfficialAccountSNSMessageRequest
+        @param headers: SendOfficialAccountSNSMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendOfficialAccountSNSMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_token):
@@ -5183,6 +6699,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        """
+        @summary 个人应用发送服务窗消息
+        
+        @param request: SendOfficialAccountSNSMessageRequest
+        @return: SendOfficialAccountSNSMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
         return self.send_official_account_snsmessage_with_options(request, headers, runtime)
@@ -5191,6 +6713,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageRequest,
     ) -> dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageResponse:
+        """
+        @summary 个人应用发送服务窗消息
+        
+        @param request: SendOfficialAccountSNSMessageRequest
+        @return: SendOfficialAccountSNSMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.SendOfficialAccountSNSMessageHeaders()
         return await self.send_official_account_snsmessage_with_options_async(request, headers, runtime)
@@ -5201,6 +6729,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: ServiceWindowMessageBatchPushRequest
+        @param headers: ServiceWindowMessageBatchPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ServiceWindowMessageBatchPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -5238,6 +6774,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: ServiceWindowMessageBatchPushRequest
+        @param headers: ServiceWindowMessageBatchPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ServiceWindowMessageBatchPushResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -5273,6 +6817,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
     ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: ServiceWindowMessageBatchPushRequest
+        @return: ServiceWindowMessageBatchPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
         return self.service_window_message_batch_push_with_options(request, headers, runtime)
@@ -5281,6 +6831,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushRequest,
     ) -> dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushResponse:
+        """
+        @summary 服务窗消息群发
+        
+        @param request: ServiceWindowMessageBatchPushRequest
+        @return: ServiceWindowMessageBatchPushResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
         return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
@@ -5291,6 +6847,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        """
+        @summary 更新crm个人客户（或企业客户）
+        
+        @param request: UpdateCrmPersonalCustomerRequest
+        @param headers: UpdateCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -5342,6 +6906,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        """
+        @summary 更新crm个人客户（或企业客户）
+        
+        @param request: UpdateCrmPersonalCustomerRequest
+        @param headers: UpdateCrmPersonalCustomerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCrmPersonalCustomerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -5391,6 +6963,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        """
+        @summary 更新crm个人客户（或企业客户）
+        
+        @param request: UpdateCrmPersonalCustomerRequest
+        @return: UpdateCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
         return self.update_crm_personal_customer_with_options(request, headers, runtime)
@@ -5399,6 +6977,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerRequest,
     ) -> dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerResponse:
+        """
+        @summary 更新crm个人客户（或企业客户）
+        
+        @param request: UpdateCrmPersonalCustomerRequest
+        @return: UpdateCrmPersonalCustomerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
         return await self.update_crm_personal_customer_with_options_async(request, headers, runtime)
@@ -5409,6 +6993,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        """
+        @summary 更新群组
+        
+        @param request: UpdateGroupSetRequest
+        @param headers: UpdateGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.manager_user_ids):
@@ -5460,6 +7052,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateGroupSetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        """
+        @summary 更新群组
+        
+        @param request: UpdateGroupSetRequest
+        @param headers: UpdateGroupSetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupSetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.manager_user_ids):
@@ -5509,6 +7109,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        """
+        @summary 更新群组
+        
+        @param request: UpdateGroupSetRequest
+        @return: UpdateGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
         return self.update_group_set_with_options(request, headers, runtime)
@@ -5517,6 +7123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateGroupSetRequest,
     ) -> dingtalkcrm__1__0_models.UpdateGroupSetResponse:
+        """
+        @summary 更新群组
+        
+        @param request: UpdateGroupSetRequest
+        @return: UpdateGroupSetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateGroupSetHeaders()
         return await self.update_group_set_with_options_async(request, headers, runtime)
@@ -5527,6 +7139,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateMenuDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        """
+        @summary 增量同步导航数据
+        
+        @param request: UpdateMenuDataRequest
+        @param headers: UpdateMenuDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMenuDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attr):
@@ -5572,6 +7192,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateMenuDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        """
+        @summary 增量同步导航数据
+        
+        @param request: UpdateMenuDataRequest
+        @param headers: UpdateMenuDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMenuDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attr):
@@ -5615,6 +7243,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
     ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        """
+        @summary 增量同步导航数据
+        
+        @param request: UpdateMenuDataRequest
+        @return: UpdateMenuDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateMenuDataHeaders()
         return self.update_menu_data_with_options(request, headers, runtime)
@@ -5623,6 +7257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateMenuDataRequest,
     ) -> dingtalkcrm__1__0_models.UpdateMenuDataResponse:
+        """
+        @summary 增量同步导航数据
+        
+        @param request: UpdateMenuDataRequest
+        @return: UpdateMenuDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateMenuDataHeaders()
         return await self.update_menu_data_with_options_async(request, headers, runtime)
@@ -5633,6 +7273,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构更新字段
+        
+        @param request: UpdateRelationMetaFieldRequest
+        @param headers: UpdateRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_dtolist):
@@ -5674,6 +7322,14 @@ class Client(OpenApiClient):
         headers: dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构更新字段
+        
+        @param request: UpdateRelationMetaFieldRequest
+        @param headers: UpdateRelationMetaFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRelationMetaFieldResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.field_dtolist):
@@ -5713,6 +7369,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构更新字段
+        
+        @param request: UpdateRelationMetaFieldRequest
+        @return: UpdateRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
         return self.update_relation_meta_field_with_options(request, headers, runtime)
@@ -5721,6 +7383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcrm__1__0_models.UpdateRelationMetaFieldRequest,
     ) -> dingtalkcrm__1__0_models.UpdateRelationMetaFieldResponse:
+        """
+        @summary 关系模型表结构更新字段
+        
+        @param request: UpdateRelationMetaFieldRequest
+        @return: UpdateRelationMetaFieldResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateRelationMetaFieldHeaders()
         return await self.update_relation_meta_field_with_options_async(request, headers, runtime)

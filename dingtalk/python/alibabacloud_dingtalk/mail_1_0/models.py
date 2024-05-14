@@ -45,9 +45,13 @@ class CreateUserRequest(TeaModel):
         name: str = None,
         password: str = None,
     ):
+        # This parameter is required.
         self.email = email
+        # This parameter is required.
         self.employee_type = employee_type
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.password = password
 
     def validate(self):

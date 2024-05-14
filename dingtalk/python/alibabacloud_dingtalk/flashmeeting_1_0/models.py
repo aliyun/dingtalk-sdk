@@ -44,7 +44,9 @@ class CreateFlashMeetingRequest(TeaModel):
         event_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.event_id = event_id
         self.title = title
 
@@ -85,10 +87,15 @@ class CreateFlashMeetingResponseBody(TeaModel):
         title: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.flash_meeting_key = flash_meeting_key
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -207,7 +214,9 @@ class GetShanhuiByCalendarRequest(TeaModel):
         event_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.event_id = event_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -279,6 +288,7 @@ class GetShanhuiByCalendarResponseBodyResult(TeaModel):
         topics: List[GetShanhuiByCalendarResponseBodyResultTopics] = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.flashmeeting_key = flashmeeting_key
         self.has_summary = has_summary
         self.start_time = start_time
@@ -453,7 +463,9 @@ class GetShanhuiByShanhuiKeyResponseBodyResultTopics(TeaModel):
         doc_key: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.doc_key = doc_key
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -674,9 +686,11 @@ class GetTaskFromShanhuiDocRequest(TeaModel):
         next_token: int = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.doc_key = doc_key
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

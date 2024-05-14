@@ -43,7 +43,9 @@ class GetPersonalCarbonInfoRequest(TeaModel):
         action_type: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -77,6 +79,7 @@ class GetPersonalCarbonInfoResponseBody(TeaModel):
         personal_carbon_amount: float = None,
     ):
         self.content = content
+        # This parameter is required.
         self.personal_carbon_amount = personal_carbon_amount
 
     def validate(self):
@@ -188,12 +191,19 @@ class WriteAlibabaOrgCarbonRequestOrgDetailsList(TeaModel):
         dept_id: int = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.action_id = action_id
+        # This parameter is required.
         self.action_time = action_time
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.carbon_amount = carbon_amount
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -245,6 +255,7 @@ class WriteAlibabaOrgCarbonRequest(TeaModel):
         self,
         org_details_list: List[WriteAlibabaOrgCarbonRequestOrgDetailsList] = None,
     ):
+        # This parameter is required.
         self.org_details_list = org_details_list
 
     def validate(self):
@@ -281,7 +292,9 @@ class WriteAlibabaOrgCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -395,14 +408,23 @@ class WriteAlibabaUserCarbonRequestUserDetailsList(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.action_end_time = action_end_time
+        # This parameter is required.
         self.action_id = action_id
+        # This parameter is required.
         self.action_start_time = action_start_time
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.carbon_amount = carbon_amount
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -462,6 +484,7 @@ class WriteAlibabaUserCarbonRequest(TeaModel):
         self,
         user_details_list: List[WriteAlibabaUserCarbonRequestUserDetailsList] = None,
     ):
+        # This parameter is required.
         self.user_details_list = user_details_list
 
     def validate(self):
@@ -498,7 +521,9 @@ class WriteAlibabaUserCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -605,7 +630,9 @@ class WriteIsvStateRequest(TeaModel):
         isv_name: str = None,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.isv_name = isv_name
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -744,12 +771,19 @@ class WriteOrgCarbonRequestOrgDetailsList(TeaModel):
         dept_id: int = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.action_id = action_id
+        # This parameter is required.
         self.action_time = action_time
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.carbon_amount = carbon_amount
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -801,6 +835,7 @@ class WriteOrgCarbonRequest(TeaModel):
         self,
         org_details_list: List[WriteOrgCarbonRequestOrgDetailsList] = None,
     ):
+        # This parameter is required.
         self.org_details_list = org_details_list
 
     def validate(self):
@@ -837,7 +872,9 @@ class WriteOrgCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -951,14 +988,23 @@ class WriteUserCarbonRequestUserDetailsList(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.action_end_time = action_end_time
+        # This parameter is required.
         self.action_id = action_id
+        # This parameter is required.
         self.action_start_time = action_start_time
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.carbon_amount = carbon_amount
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -1018,6 +1064,7 @@ class WriteUserCarbonRequest(TeaModel):
         self,
         user_details_list: List[WriteUserCarbonRequestUserDetailsList] = None,
     ):
+        # This parameter is required.
         self.user_details_list = user_details_list
 
     def validate(self):
@@ -1054,7 +1101,9 @@ class WriteUserCarbonResponseBody(TeaModel):
         result: int = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):

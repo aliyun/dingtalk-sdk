@@ -186,8 +186,11 @@ class RemovePermissionRequestMembers(TeaModel):
         member_type: str = None,
         policy_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.policy_type = policy_type
 
     def validate(self):
@@ -226,7 +229,9 @@ class RemovePermissionRequest(TeaModel):
         task_creator: int = None,
         task_id: int = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.members = members
         self.task_creator = task_creator
         self.task_id = task_id
@@ -420,8 +425,11 @@ class UpdatePermissionForUsersRequestMembers(TeaModel):
         member_type: str = None,
         policy_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.policy_type = policy_type
 
     def validate(self):
@@ -460,8 +468,11 @@ class UpdatePermissionForUsersRequest(TeaModel):
         task_creator: int = None,
         operator_uid: int = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.task_creator = task_creator
         self.operator_uid = operator_uid
 

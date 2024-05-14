@@ -10,7 +10,9 @@ class AvaliableTemplate(TeaModel):
         name: str = None,
         process_code: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -45,9 +47,11 @@ class FormDataSourceTarget(TeaModel):
         biz_type: str = None,
         form_code: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.app_uuid = app_uuid
         self.biz_type = biz_type
+        # This parameter is required.
         self.form_code = form_code
 
     def validate(self):
@@ -88,6 +92,7 @@ class FormDataSource(TeaModel):
         target: FormDataSourceTarget = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.target = target
         self.type = type
 
@@ -157,7 +162,9 @@ class FormComponentPropsStatField(TeaModel):
         label: str = None,
         upper: str = None,
     ):
+        # This parameter is required.
         self.component_id = component_id
+        # This parameter is required.
         self.label = label
         self.upper = upper
 
@@ -451,7 +458,9 @@ class FormComponent(TeaModel):
         props: FormComponentProps = None,
     ):
         self.children = children
+        # This parameter is required.
         self.component_type = component_type
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -565,7 +574,9 @@ class AddApproveDentryAuthRequestFileInfos(TeaModel):
         file_id: str = None,
         space_id: int = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -598,7 +609,9 @@ class AddApproveDentryAuthRequest(TeaModel):
         file_infos: List[AddApproveDentryAuthRequestFileInfos] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.file_infos = file_infos
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -840,9 +853,12 @@ class AddProcessInstanceCommentRequest(TeaModel):
         process_instance_id: str = None,
         text: str = None,
     ):
+        # This parameter is required.
         self.comment_user_id = comment_user_id
         self.file = file
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.text = text
 
     def validate(self):
@@ -992,7 +1008,9 @@ class BatchExecuteProcessInstancesRequestTaskInfoList(TeaModel):
         process_instance_id: str = None,
         task_id: int = None,
     ):
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -1027,9 +1045,12 @@ class BatchExecuteProcessInstancesRequest(TeaModel):
         result: str = None,
         task_info_list: List[BatchExecuteProcessInstancesRequestTaskInfoList] = None,
     ):
+        # This parameter is required.
         self.actioner_user_id = actioner_user_id
         self.remark = remark
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.task_info_list = task_info_list
 
     def validate(self):
@@ -1192,6 +1213,7 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers(Te
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1223,8 +1245,10 @@ class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests(TeaModel):
         status: str = None,
     ):
         self.notifiers = notifiers
+        # This parameter is required.
         self.process_instance_id = process_instance_id
         self.result = result
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -1410,8 +1434,10 @@ class CancelIntegratedTaskRequest(TeaModel):
         activity_ids: List[str] = None,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.activity_id = activity_id
         self.activity_ids = activity_ids
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -1549,7 +1575,9 @@ class CleanProcessDataRequest(TeaModel):
         corp_id: str = None,
         process_code: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -1713,6 +1741,7 @@ class CopyProcessRequestSourceProcessVOList(TeaModel):
     ):
         self.biz_type = biz_type
         self.name = name
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -1751,7 +1780,9 @@ class CopyProcessRequest(TeaModel):
         source_process_volist: List[CopyProcessRequestSourceProcessVOList] = None,
     ):
         self.copy_options = copy_options
+        # This parameter is required.
         self.source_corp_id = source_corp_id
+        # This parameter is required.
         self.source_process_volist = source_process_volist
 
     def validate(self):
@@ -1988,7 +2019,9 @@ class CreateIntegratedTaskRequest(TeaModel):
         tasks: List[CreateIntegratedTaskRequestTasks] = None,
     ):
         self.activity_id = activity_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.tasks = tasks
 
     def validate(self):
@@ -2182,6 +2215,7 @@ class DeleteProcessRequest(TeaModel):
         process_code: str = None,
     ):
         self.clean_running_task = clean_running_task
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -2440,11 +2474,15 @@ class ExecuteProcessInstanceRequest(TeaModel):
         result: str = None,
         task_id: int = None,
     ):
+        # This parameter is required.
         self.actioner_user_id = actioner_user_id
         self.file = file
+        # This parameter is required.
         self.process_instance_id = process_instance_id
         self.remark = remark
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -2675,7 +2713,9 @@ class FormCreateRequest(TeaModel):
         template_config: FormCreateRequestTemplateConfig = None,
     ):
         self.description = description
+        # This parameter is required.
         self.form_components = form_components
+        # This parameter is required.
         self.name = name
         self.process_code = process_code
         self.template_config = template_config
@@ -2732,6 +2772,7 @@ class FormCreateResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -2864,6 +2905,7 @@ class GetAttachmentSpaceRequest(TeaModel):
         user_id: str = None,
     ):
         self.agent_id = agent_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3033,6 +3075,7 @@ class GetConditionFormComponentRequest(TeaModel):
         process_code: str = None,
     ):
         self.agent_id = agent_id
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -3065,7 +3108,9 @@ class GetConditionFormComponentResponseBodyResult(TeaModel):
         id: str = None,
         label: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.label = label
 
     def validate(self):
@@ -3308,7 +3353,9 @@ class GetFieldModifiedHistoryRequest(TeaModel):
         field_id: str = None,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -3344,6 +3391,7 @@ class GetFieldModifiedHistoryResponseBodyResult(TeaModel):
         user_id: str = None,
         value: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.field_id = field_id
         self.name = name
@@ -3506,6 +3554,7 @@ class GetManageProcessByStaffIdRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3541,6 +3590,7 @@ class GetManageProcessByStaffIdResponseBodyResult(TeaModel):
     ):
         self.attendance_type = attendance_type
         self.flow_title = flow_title
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.gmt_modified = gmt_modified
         self.icon_name = icon_name
         self.icon_url = icon_url
@@ -3711,6 +3761,7 @@ class GetProcessCodeByNameRequest(TeaModel):
         self,
         name: str = None,
     ):
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -3739,7 +3790,11 @@ class GetProcessCodeByNameResponseBodyResult(TeaModel):
         gmt_modified: str = None,
         process_code: str = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -3874,6 +3929,7 @@ class GetProcessConfigRequest(TeaModel):
         self,
         proc_code: str = None,
     ):
+        # This parameter is required.
         self.proc_code = proc_code
 
     def validate(self):
@@ -4377,6 +4433,7 @@ class GetProcessInstanceRequest(TeaModel):
         self,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -4514,6 +4571,7 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
     ):
         self.attachments = attachments
         self.cc_user_ids = cc_user_ids
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.date = date
         self.remark = remark
         self.result = result
@@ -4587,7 +4645,9 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
         user_id: str = None,
     ):
         self.activity_id = activity_id
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.finish_time = finish_time
         self.mobile_url = mobile_url
         self.pc_url = pc_url
@@ -4681,6 +4741,7 @@ class GetProcessInstanceResponseBodyResult(TeaModel):
         self.biz_data = biz_data
         self.business_id = business_id
         self.cc_user_ids = cc_user_ids
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.finish_time = finish_time
         self.form_component_values = form_component_values
@@ -5195,9 +5256,12 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
         user_id: str = None,
     ):
         self.agent_id = agent_id
+        # This parameter is required.
         self.file_id = file_id
         self.file_id_list = file_id_list
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5377,6 +5441,7 @@ class GetUserTodoTaskSumRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5509,8 +5574,11 @@ class GrantCspaceAuthorizationRequest(TeaModel):
         user_id: str = None,
     ):
         self.duration_seconds = duration_seconds
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5617,7 +5685,9 @@ class GrantProcessInstanceForDownloadFileRequest(TeaModel):
         file_id: str = None,
         process_instance_id: str = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
 
     def validate(self):
@@ -5827,7 +5897,9 @@ class InstallAppRequest(TeaModel):
         source_dir_name: str = None,
     ):
         self.biz_group = biz_group
+        # This parameter is required.
         self.install_option = install_option
+        # This parameter is required.
         self.source_dir_name = source_dir_name
 
     def validate(self):
@@ -6020,9 +6092,13 @@ class ListProcessInstanceIdsRequest(TeaModel):
         user_ids: List[str] = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.start_time = start_time
         self.statuses = statuses
         self.user_ids = user_ids
@@ -6221,9 +6297,13 @@ class ListTodoWorkRecordsRequest(TeaModel):
         status: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -6501,7 +6581,9 @@ class ListUserVisibleBpmsProcessesRequest(TeaModel):
         next_token: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.user_id = user_id
 
@@ -6746,10 +6828,14 @@ class PagesExportInstancesRequest(TeaModel):
         status: str = None,
     ):
         self.end_time_in_mills = end_time_in_mills
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.order_by = order_by
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.start_time_in_mills = start_time_in_mills
         self.status = status
 
@@ -6808,8 +6894,11 @@ class PagesExportInstancesResponseBodyResultListFormComponentValues(TeaModel):
     ):
         self.component_name = component_name
         self.ext_value = ext_value
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -6991,7 +7080,9 @@ class PagesExportInstancesResponseBodyResultListTasks(TeaModel):
         self.create_timestamp = create_timestamp
         self.finish_timestamp = finish_timestamp
         self.result = result
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.task_id = task_id
         self.user_id = user_id
 
@@ -7057,19 +7148,31 @@ class PagesExportInstancesResponseBodyResultList(TeaModel):
         tasks: List[PagesExportInstancesResponseBodyResultListTasks] = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.attached_process_instance_ids = attached_process_instance_ids
+        # This parameter is required.
         self.business_id = business_id
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.finish_time = finish_time
+        # This parameter is required.
         self.form_component_values = form_component_values
+        # This parameter is required.
         self.main_process_instance_id = main_process_instance_id
         self.operation_records = operation_records
+        # This parameter is required.
         self.originator_dept_id = originator_dept_id
+        # This parameter is required.
         self.originator_userid = originator_userid
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.status = status
         self.tasks = tasks
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -7177,8 +7280,10 @@ class PagesExportInstancesResponseBodyResult(TeaModel):
         list: List[PagesExportInstancesResponseBodyResultList] = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -7458,7 +7563,9 @@ class ProcessForecastRequestFormComponentValues(TeaModel):
         self.details = details
         self.ext_value = ext_value
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -7521,9 +7628,13 @@ class ProcessForecastRequest(TeaModel):
         process_code: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.form_component_values = form_component_values
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7824,7 +7935,9 @@ class ProcessForecastResponseBodyResultWorkflowForecastNodes(TeaModel):
         activity_id: str = None,
         out_id: str = None,
     ):
+        # This parameter is required.
         self.activity_id = activity_id
+        # This parameter is required.
         self.out_id = out_id
 
     def validate(self):
@@ -7862,12 +7975,18 @@ class ProcessForecastResponseBodyResult(TeaModel):
         workflow_activity_rules: List[ProcessForecastResponseBodyResultWorkflowActivityRules] = None,
         workflow_forecast_nodes: List[ProcessForecastResponseBodyResultWorkflowForecastNodes] = None,
     ):
+        # This parameter is required.
         self.is_forecast_success = is_forecast_success
+        # This parameter is required.
         self.is_static_workflow = is_static_workflow
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.process_id = process_id
+        # This parameter is required.
         self.user_id = user_id
         self.workflow_activity_rules = workflow_activity_rules
+        # This parameter is required.
         self.workflow_forecast_nodes = workflow_forecast_nodes
 
     def validate(self):
@@ -8043,7 +8162,9 @@ class QueryAllFormInstancesRequest(TeaModel):
         next_token: str = None,
     ):
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
 
@@ -8090,10 +8211,14 @@ class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList(TeaModel):
         value: str = None,
     ):
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.component_type = component_type
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -8154,15 +8279,22 @@ class QueryAllFormInstancesResponseBodyResultValues(TeaModel):
     ):
         self.app_uuid = app_uuid
         self.attributes = attributes
+        # This parameter is required.
         self.create_timestamp = create_timestamp
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_inst_data_list = form_inst_data_list
+        # This parameter is required.
         self.form_instance_id = form_instance_id
+        # This parameter is required.
         self.modifier = modifier
         self.modify_timestamp = modify_timestamp
         self.out_biz_code = out_biz_code
         self.out_instance_id = out_instance_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -8245,9 +8377,13 @@ class QueryAllFormInstancesResponseBodyResult(TeaModel):
         next_token: str = None,
         values: List[QueryAllFormInstancesResponseBodyResultValues] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.values = values
 
     def validate(self):
@@ -8295,6 +8431,7 @@ class QueryAllFormInstancesResponseBody(TeaModel):
         self,
         result: QueryAllFormInstancesResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -8405,9 +8542,12 @@ class QueryAllProcessInstancesRequest(TeaModel):
     ):
         self.app_uuid = app_uuid
         self.end_time_in_mills = end_time_in_mills
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.process_code = process_code
+        # This parameter is required.
         self.start_time_in_mills = start_time_in_mills
 
     def validate(self):
@@ -8459,8 +8599,11 @@ class QueryAllProcessInstancesResponseBodyResultListFormComponentValues(TeaModel
         value: str = None,
     ):
         self.ext_value = ext_value
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -8620,7 +8763,9 @@ class QueryAllProcessInstancesResponseBodyResultListTasks(TeaModel):
         self.create_timestamp = create_timestamp
         self.finish_timestamp = finish_timestamp
         self.result = result
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.task_id = task_id
         self.user_id = user_id
 
@@ -8686,19 +8831,31 @@ class QueryAllProcessInstancesResponseBodyResultList(TeaModel):
         tasks: List[QueryAllProcessInstancesResponseBodyResultListTasks] = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.attached_process_instance_ids = attached_process_instance_ids
+        # This parameter is required.
         self.business_id = business_id
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.finish_time = finish_time
+        # This parameter is required.
         self.form_component_values = form_component_values
+        # This parameter is required.
         self.main_process_instance_id = main_process_instance_id
         self.operation_records = operation_records
+        # This parameter is required.
         self.originator_dept_id = originator_dept_id
+        # This parameter is required.
         self.originator_userid = originator_userid
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.status = status
         self.tasks = tasks
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -8807,9 +8964,12 @@ class QueryAllProcessInstancesResponseBodyResult(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -8961,7 +9121,9 @@ class QueryFormByBizTypeRequest(TeaModel):
         app_uuid: str = None,
         biz_types: List[str] = None,
     ):
+        # This parameter is required.
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.biz_types = biz_types
 
     def validate(self):
@@ -9005,18 +9167,24 @@ class QueryFormByBizTypeResponseBodyResult(TeaModel):
         owner_id: str = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.app_uuid = app_uuid
         self.biz_type = biz_type
+        # This parameter is required.
         self.content = content
         self.create_time = create_time
         self.creator = creator
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.memo = memo
         self.modifed_time = modifed_time
+        # This parameter is required.
         self.name = name
         self.owner_id = owner_id
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -9204,7 +9372,9 @@ class QueryFormInstanceRequest(TeaModel):
         form_instance_id: str = None,
     ):
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_instance_id = form_instance_id
 
     def validate(self):
@@ -9245,11 +9415,17 @@ class QueryFormInstanceResponseBodyFormInstDataList(TeaModel):
         label: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.component_type = component_type
+        # This parameter is required.
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -9311,9 +9487,13 @@ class QueryFormInstanceResponseBody(TeaModel):
         self.app_uuid = app_uuid
         self.attributes = attributes
         self.create_timestamp = create_timestamp
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_inst_data_list = form_inst_data_list
+        # This parameter is required.
         self.form_instance_id = form_instance_id
         self.modifier = modifier
         self.modify_timestamp = modify_timestamp
@@ -9476,8 +9656,11 @@ class QueryIntegratedTodoTaskRequest(TeaModel):
         user_id: str = None,
     ):
         self.create_before = create_before
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -9731,6 +9914,7 @@ class QueryProcessByBizCategoryIdRequest(TeaModel):
         biz_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
         self.user_id = user_id
 
@@ -9919,6 +10103,7 @@ class QuerySchemaAndProcessRequest(TeaModel):
         process_code: str = None,
     ):
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -10112,6 +10297,7 @@ class QuerySchemaByProcessCodeRequest(TeaModel):
         process_code: str = None,
     ):
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -10148,6 +10334,7 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps(
         required: bool = None,
     ):
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.id = id
         self.label = label
         self.options = options
@@ -10195,7 +10382,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren(TeaMo
         component_name: str = None,
         props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -10482,7 +10671,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps(TeaModel
         self.hidden_in_approval_detail = hidden_in_approval_detail
         self.hide_label = hide_label
         self.holiday_options = holiday_options
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.label = label
         self.label_editable_freeze = label_editable_freeze
         self.link = link
@@ -10743,7 +10934,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems(TeaModel):
         props: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps = None,
     ):
         self.children = children
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -10793,7 +10986,9 @@ class QuerySchemaByProcessCodeResponseBodyResultSchemaContent(TeaModel):
         title: str = None,
     ):
         self.icon = icon
+        # This parameter is required.
         self.items = items
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -10855,22 +11050,31 @@ class QuerySchemaByProcessCodeResponseBodyResult(TeaModel):
         status: str = None,
         visible_range: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.app_uuid = app_uuid
         self.biz_type = biz_type
+        # This parameter is required.
         self.creator_user_id = creator_user_id
         self.custom_setting = custom_setting
         self.engine_type = engine_type
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
         self.icon = icon
         self.list_order = list_order
         self.memo = memo
         self.name = name
+        # This parameter is required.
         self.owner_id_type = owner_id_type
         self.proc_type = proc_type
+        # This parameter is required.
         self.schema_content = schema_content
         self.status = status
         self.visible_range = visible_range
@@ -10974,6 +11178,7 @@ class QuerySchemaByProcessCodeResponseBody(TeaModel):
         self,
         result: QuerySchemaByProcessCodeResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -11176,9 +11381,12 @@ class RedirectWorkflowTaskRequest(TeaModel):
     ):
         self.action_name = action_name
         self.file = file
+        # This parameter is required.
         self.operate_user_id = operate_user_id
         self.remark = remark
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.to_user_id = to_user_id
 
     def validate(self):
@@ -11428,9 +11636,12 @@ class SaveIntegratedInstanceRequest(TeaModel):
         self.biz_data = biz_data
         self.form_component_value_list = form_component_value_list
         self.notifiers = notifiers
+        # This parameter is required.
         self.originator_user_id = originator_user_id
+        # This parameter is required.
         self.process_code = process_code
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -11813,7 +12024,9 @@ class SaveProcessRequest(TeaModel):
         template_config: SaveProcessRequestTemplateConfig = None,
     ):
         self.description = description
+        # This parameter is required.
         self.form_components = form_components
+        # This parameter is required.
         self.name = name
         self.process_code = process_code
         self.process_feature_config = process_feature_config
@@ -11878,6 +12091,7 @@ class SaveProcessResponseBodyResult(TeaModel):
         self,
         process_code: str = None,
     ):
+        # This parameter is required.
         self.process_code = process_code
 
     def validate(self):
@@ -12174,7 +12388,9 @@ class StartProcessInstanceRequestFormComponentValues(TeaModel):
         self.details = details
         self.ext_value = ext_value
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -12279,9 +12495,12 @@ class StartProcessInstanceRequest(TeaModel):
         self.cc_list = cc_list
         self.cc_position = cc_position
         self.dept_id = dept_id
+        # This parameter is required.
         self.form_component_values = form_component_values
         self.microapp_agent_id = microapp_agent_id
+        # This parameter is required.
         self.originator_user_id = originator_user_id
+        # This parameter is required.
         self.process_code = process_code
         self.target_select_actioners = target_select_actioners
 
@@ -12368,6 +12587,7 @@ class StartProcessInstanceResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -12474,6 +12694,7 @@ class TerminateProcessInstanceRequest(TeaModel):
     ):
         self.is_system = is_system
         self.operating_user_id = operating_user_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
         self.remark = remark
 
@@ -12624,7 +12845,9 @@ class UpdateIntegratedTaskRequestTasks(TeaModel):
         task_id: int = None,
     ):
         self.result = result
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -12662,6 +12885,7 @@ class UpdateIntegratedTaskRequest(TeaModel):
         tasks: List[UpdateIntegratedTaskRequestTasks] = None,
     ):
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.tasks = tasks
 
     def validate(self):
@@ -12802,6 +13026,7 @@ class UpdateProcessInstanceRequestNotifiers(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -12833,8 +13058,10 @@ class UpdateProcessInstanceRequest(TeaModel):
         status: str = None,
     ):
         self.notifiers = notifiers
+        # This parameter is required.
         self.process_instance_id = process_instance_id
         self.result = result
+        # This parameter is required.
         self.status = status
 
     def validate(self):

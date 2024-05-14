@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        """
+        @summary 添加评论
+        
+        @param request: AddCommentRequest
+        @param headers: AddCommentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCommentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddCommentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        """
+        @summary 添加评论
+        
+        @param request: AddCommentRequest
+        @param headers: AddCommentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCommentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -122,6 +138,12 @@ class Client(OpenApiClient):
         doc_id: str,
         request: dingtalkdoc__1__0_models.AddCommentRequest,
     ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        """
+        @summary 添加评论
+        
+        @param request: AddCommentRequest
+        @return: AddCommentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddCommentHeaders()
         return self.add_comment_with_options(doc_id, request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         doc_id: str,
         request: dingtalkdoc__1__0_models.AddCommentRequest,
     ) -> dingtalkdoc__1__0_models.AddCommentResponse:
+        """
+        @summary 添加评论
+        
+        @param request: AddCommentRequest
+        @return: AddCommentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddCommentHeaders()
         return await self.add_comment_with_options_async(doc_id, request, headers, runtime)
@@ -143,6 +171,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
+        """
+        @summary 添加知识库文档成员
+        
+        @param request: AddWorkspaceDocMembersRequest
+        @param headers: AddWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -182,6 +218,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
+        """
+        @summary 添加知识库文档成员
+        
+        @param request: AddWorkspaceDocMembersRequest
+        @param headers: AddWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -219,6 +263,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.AddWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
+        """
+        @summary 添加知识库文档成员
+        
+        @param request: AddWorkspaceDocMembersRequest
+        @return: AddWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddWorkspaceDocMembersHeaders()
         return self.add_workspace_doc_members_with_options(workspace_id, node_id, request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.AddWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceDocMembersResponse:
+        """
+        @summary 添加知识库文档成员
+        
+        @param request: AddWorkspaceDocMembersRequest
+        @return: AddWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddWorkspaceDocMembersHeaders()
         return await self.add_workspace_doc_members_with_options_async(workspace_id, node_id, request, headers, runtime)
@@ -240,6 +296,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
+        """
+        @summary 添加知识库成员
+        
+        @param request: AddWorkspaceMembersRequest
+        @param headers: AddWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -278,6 +342,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AddWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
+        """
+        @summary 添加知识库成员
+        
+        @param request: AddWorkspaceMembersRequest
+        @param headers: AddWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -314,6 +386,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.AddWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
+        """
+        @summary 添加知识库成员
+        
+        @param request: AddWorkspaceMembersRequest
+        @return: AddWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddWorkspaceMembersHeaders()
         return self.add_workspace_members_with_options(workspace_id, request, headers, runtime)
@@ -323,6 +401,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.AddWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.AddWorkspaceMembersResponse:
+        """
+        @summary 添加知识库成员
+        
+        @param request: AddWorkspaceMembersRequest
+        @return: AddWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AddWorkspaceMembersHeaders()
         return await self.add_workspace_members_with_options_async(workspace_id, request, headers, runtime)
@@ -335,6 +419,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AppendRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        """
+        @summary 追加行
+        
+        @param request: AppendRowsRequest
+        @param headers: AppendRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -376,6 +468,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.AppendRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        """
+        @summary 追加行
+        
+        @param request: AppendRowsRequest
+        @param headers: AppendRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -415,6 +515,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.AppendRowsRequest,
     ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        """
+        @summary 追加行
+        
+        @param request: AppendRowsRequest
+        @return: AppendRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AppendRowsHeaders()
         return self.append_rows_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -425,6 +531,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.AppendRowsRequest,
     ) -> dingtalkdoc__1__0_models.AppendRowsResponse:
+        """
+        @summary 追加行
+        
+        @param request: AppendRowsRequest
+        @return: AppendRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.AppendRowsHeaders()
         return await self.append_rows_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -436,6 +548,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchResponse:
+        """
+        @summary 批量执行表格操作
+        
+        @param request: BatchRequest
+        @param headers: BatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -476,6 +596,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchResponse:
+        """
+        @summary 批量执行表格操作
+        
+        @param request: BatchRequest
+        @param headers: BatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -514,6 +642,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.BatchRequest,
     ) -> dingtalkdoc__1__0_models.BatchResponse:
+        """
+        @summary 批量执行表格操作
+        
+        @param request: BatchRequest
+        @return: BatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchHeaders()
         return self.batch_with_options(workbook_id, request, headers, runtime)
@@ -523,6 +657,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.BatchRequest,
     ) -> dingtalkdoc__1__0_models.BatchResponse:
+        """
+        @summary 批量执行表格操作
+        
+        @param request: BatchRequest
+        @return: BatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchHeaders()
         return await self.batch_with_options_async(workbook_id, request, headers, runtime)
@@ -533,6 +673,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchGetWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspaceDocsResponse:
+        """
+        @summary 批量查询知识库文档
+        
+        @param request: BatchGetWorkspaceDocsRequest
+        @param headers: BatchGetWorkspaceDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetWorkspaceDocsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.node_ids):
@@ -570,6 +718,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchGetWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspaceDocsResponse:
+        """
+        @summary 批量查询知识库文档
+        
+        @param request: BatchGetWorkspaceDocsRequest
+        @param headers: BatchGetWorkspaceDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetWorkspaceDocsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.node_ids):
@@ -605,6 +761,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.BatchGetWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspaceDocsResponse:
+        """
+        @summary 批量查询知识库文档
+        
+        @param request: BatchGetWorkspaceDocsRequest
+        @return: BatchGetWorkspaceDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchGetWorkspaceDocsHeaders()
         return self.batch_get_workspace_docs_with_options(request, headers, runtime)
@@ -613,6 +775,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.BatchGetWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspaceDocsResponse:
+        """
+        @summary 批量查询知识库文档
+        
+        @param request: BatchGetWorkspaceDocsRequest
+        @return: BatchGetWorkspaceDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchGetWorkspaceDocsHeaders()
         return await self.batch_get_workspace_docs_with_options_async(request, headers, runtime)
@@ -623,6 +791,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchGetWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspacesResponse:
+        """
+        @summary 知识库批量查询
+        
+        @param request: BatchGetWorkspacesRequest
+        @param headers: BatchGetWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.include_recent):
@@ -662,6 +838,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BatchGetWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspacesResponse:
+        """
+        @summary 知识库批量查询
+        
+        @param request: BatchGetWorkspacesRequest
+        @param headers: BatchGetWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.include_recent):
@@ -699,6 +883,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.BatchGetWorkspacesRequest,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspacesResponse:
+        """
+        @summary 知识库批量查询
+        
+        @param request: BatchGetWorkspacesRequest
+        @return: BatchGetWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchGetWorkspacesHeaders()
         return self.batch_get_workspaces_with_options(request, headers, runtime)
@@ -707,6 +897,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.BatchGetWorkspacesRequest,
     ) -> dingtalkdoc__1__0_models.BatchGetWorkspacesResponse:
+        """
+        @summary 知识库批量查询
+        
+        @param request: BatchGetWorkspacesRequest
+        @return: BatchGetWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BatchGetWorkspacesHeaders()
         return await self.batch_get_workspaces_with_options_async(request, headers, runtime)
@@ -718,6 +914,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        """
+        @summary 关联文档酷应用到表格
+        
+        @param request: BindCoolAppToSheetRequest
+        @param headers: BindCoolAppToSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BindCoolAppToSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -758,6 +962,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        """
+        @summary 关联文档酷应用到表格
+        
+        @param request: BindCoolAppToSheetRequest
+        @param headers: BindCoolAppToSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BindCoolAppToSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -796,6 +1008,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
     ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        """
+        @summary 关联文档酷应用到表格
+        
+        @param request: BindCoolAppToSheetRequest
+        @return: BindCoolAppToSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders()
         return self.bind_cool_app_to_sheet_with_options(workbook_id, request, headers, runtime)
@@ -805,6 +1023,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.BindCoolAppToSheetRequest,
     ) -> dingtalkdoc__1__0_models.BindCoolAppToSheetResponse:
+        """
+        @summary 关联文档酷应用到表格
+        
+        @param request: BindCoolAppToSheetRequest
+        @return: BindCoolAppToSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.BindCoolAppToSheetHeaders()
         return await self.bind_cool_app_to_sheet_with_options_async(workbook_id, request, headers, runtime)
@@ -818,6 +1042,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ClearHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ClearResponse:
+        """
+        @summary 清除单元格区域内所有内容
+        
+        @param request: ClearRequest
+        @param headers: ClearHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -856,6 +1088,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ClearHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ClearResponse:
+        """
+        @summary 清除单元格区域内所有内容
+        
+        @param request: ClearRequest
+        @param headers: ClearHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -892,6 +1132,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.ClearRequest,
     ) -> dingtalkdoc__1__0_models.ClearResponse:
+        """
+        @summary 清除单元格区域内所有内容
+        
+        @param request: ClearRequest
+        @return: ClearResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ClearHeaders()
         return self.clear_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -903,6 +1149,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.ClearRequest,
     ) -> dingtalkdoc__1__0_models.ClearResponse:
+        """
+        @summary 清除单元格区域内所有内容
+        
+        @param request: ClearRequest
+        @return: ClearResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ClearHeaders()
         return await self.clear_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -916,6 +1168,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ClearDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ClearDataResponse:
+        """
+        @summary 清除单元格区域内数据
+        
+        @param request: ClearDataRequest
+        @param headers: ClearDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -954,6 +1214,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ClearDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ClearDataResponse:
+        """
+        @summary 清除单元格区域内数据
+        
+        @param request: ClearDataRequest
+        @param headers: ClearDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -990,6 +1258,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.ClearDataRequest,
     ) -> dingtalkdoc__1__0_models.ClearDataResponse:
+        """
+        @summary 清除单元格区域内数据
+        
+        @param request: ClearDataRequest
+        @return: ClearDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ClearDataHeaders()
         return self.clear_data_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1001,6 +1275,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.ClearDataRequest,
     ) -> dingtalkdoc__1__0_models.ClearDataResponse:
+        """
+        @summary 清除单元格区域内数据
+        
+        @param request: ClearDataRequest
+        @return: ClearDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ClearDataHeaders()
         return await self.clear_data_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1013,6 +1293,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        """
+        @summary 创建条件格式
+        
+        @param request: CreateConditionalFormattingRuleRequest
+        @param headers: CreateConditionalFormattingRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateConditionalFormattingRuleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1058,6 +1346,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        """
+        @summary 创建条件格式
+        
+        @param request: CreateConditionalFormattingRuleRequest
+        @param headers: CreateConditionalFormattingRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateConditionalFormattingRuleResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1101,6 +1397,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
     ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        """
+        @summary 创建条件格式
+        
+        @param request: CreateConditionalFormattingRuleRequest
+        @return: CreateConditionalFormattingRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders()
         return self.create_conditional_formatting_rule_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -1111,6 +1413,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.CreateConditionalFormattingRuleRequest,
     ) -> dingtalkdoc__1__0_models.CreateConditionalFormattingRuleResponse:
+        """
+        @summary 创建条件格式
+        
+        @param request: CreateConditionalFormattingRuleRequest
+        @return: CreateConditionalFormattingRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateConditionalFormattingRuleHeaders()
         return await self.create_conditional_formatting_rule_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -1122,6 +1430,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        """
+        @summary 创建开发者元数据
+        
+        @param request: CreateDeveloperMetadataRequest
+        @param headers: CreateDeveloperMetadataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeveloperMetadataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1166,6 +1482,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        """
+        @summary 创建开发者元数据
+        
+        @param request: CreateDeveloperMetadataRequest
+        @param headers: CreateDeveloperMetadataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeveloperMetadataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1208,6 +1532,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
     ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        """
+        @summary 创建开发者元数据
+        
+        @param request: CreateDeveloperMetadataRequest
+        @return: CreateDeveloperMetadataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders()
         return self.create_developer_metadata_with_options(workbook_id, request, headers, runtime)
@@ -1217,6 +1547,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.CreateDeveloperMetadataRequest,
     ) -> dingtalkdoc__1__0_models.CreateDeveloperMetadataResponse:
+        """
+        @summary 创建开发者元数据
+        
+        @param request: CreateDeveloperMetadataRequest
+        @return: CreateDeveloperMetadataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders()
         return await self.create_developer_metadata_with_options_async(workbook_id, request, headers, runtime)
@@ -1230,6 +1566,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateRangeProtectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateRangeProtectionResponse:
+        """
+        @summary 创建单元格锁定
+        
+        @param request: CreateRangeProtectionRequest
+        @param headers: CreateRangeProtectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRangeProtectionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1274,6 +1618,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateRangeProtectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateRangeProtectionResponse:
+        """
+        @summary 创建单元格锁定
+        
+        @param request: CreateRangeProtectionRequest
+        @param headers: CreateRangeProtectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRangeProtectionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1316,6 +1668,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.CreateRangeProtectionRequest,
     ) -> dingtalkdoc__1__0_models.CreateRangeProtectionResponse:
+        """
+        @summary 创建单元格锁定
+        
+        @param request: CreateRangeProtectionRequest
+        @return: CreateRangeProtectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateRangeProtectionHeaders()
         return self.create_range_protection_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1327,6 +1685,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.CreateRangeProtectionRequest,
     ) -> dingtalkdoc__1__0_models.CreateRangeProtectionResponse:
+        """
+        @summary 创建单元格锁定
+        
+        @param request: CreateRangeProtectionRequest
+        @return: CreateRangeProtectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateRangeProtectionHeaders()
         return await self.create_range_protection_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1338,6 +1702,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建工作表
+        
+        @param request: CreateSheetRequest
+        @param headers: CreateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1378,6 +1750,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建工作表
+        
+        @param request: CreateSheetRequest
+        @param headers: CreateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1416,6 +1796,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.CreateSheetRequest,
     ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建工作表
+        
+        @param request: CreateSheetRequest
+        @return: CreateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateSheetHeaders()
         return self.create_sheet_with_options(workbook_id, request, headers, runtime)
@@ -1425,6 +1811,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.CreateSheetRequest,
     ) -> dingtalkdoc__1__0_models.CreateSheetResponse:
+        """
+        @summary 创建工作表
+        
+        @param request: CreateSheetRequest
+        @return: CreateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateSheetHeaders()
         return await self.create_sheet_with_options_async(workbook_id, request, headers, runtime)
@@ -1435,6 +1827,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateWorkspaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceResponse:
+        """
+        @summary 新建知识库
+        
+        @param request: CreateWorkspaceRequest
+        @param headers: CreateWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWorkspaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -1474,6 +1874,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateWorkspaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceResponse:
+        """
+        @summary 新建知识库
+        
+        @param request: CreateWorkspaceRequest
+        @param headers: CreateWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWorkspaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -1511,6 +1919,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.CreateWorkspaceRequest,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceResponse:
+        """
+        @summary 新建知识库
+        
+        @param request: CreateWorkspaceRequest
+        @return: CreateWorkspaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateWorkspaceHeaders()
         return self.create_workspace_with_options(request, headers, runtime)
@@ -1519,6 +1933,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.CreateWorkspaceRequest,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceResponse:
+        """
+        @summary 新建知识库
+        
+        @param request: CreateWorkspaceRequest
+        @return: CreateWorkspaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateWorkspaceHeaders()
         return await self.create_workspace_with_options_async(request, headers, runtime)
@@ -1530,6 +1950,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateWorkspaceDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
+        """
+        @summary 创建知识库文档
+        
+        @param request: CreateWorkspaceDocRequest
+        @param headers: CreateWorkspaceDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWorkspaceDocResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.doc_type):
@@ -1576,6 +2004,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.CreateWorkspaceDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
+        """
+        @summary 创建知识库文档
+        
+        @param request: CreateWorkspaceDocRequest
+        @param headers: CreateWorkspaceDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateWorkspaceDocResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.doc_type):
@@ -1620,6 +2056,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.CreateWorkspaceDocRequest,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
+        """
+        @summary 创建知识库文档
+        
+        @param request: CreateWorkspaceDocRequest
+        @return: CreateWorkspaceDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateWorkspaceDocHeaders()
         return self.create_workspace_doc_with_options(workspace_id, request, headers, runtime)
@@ -1629,6 +2071,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.CreateWorkspaceDocRequest,
     ) -> dingtalkdoc__1__0_models.CreateWorkspaceDocResponse:
+        """
+        @summary 创建知识库文档
+        
+        @param request: CreateWorkspaceDocRequest
+        @return: CreateWorkspaceDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateWorkspaceDocHeaders()
         return await self.create_workspace_doc_with_options_async(workspace_id, request, headers, runtime)
@@ -1641,6 +2089,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteColumnsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteColumnsResponse:
+        """
+        @summary 删除列
+        
+        @param request: DeleteColumnsRequest
+        @param headers: DeleteColumnsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteColumnsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1684,6 +2140,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteColumnsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteColumnsResponse:
+        """
+        @summary 删除列
+        
+        @param request: DeleteColumnsRequest
+        @param headers: DeleteColumnsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteColumnsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1725,6 +2189,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteColumnsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteColumnsResponse:
+        """
+        @summary 删除列
+        
+        @param request: DeleteColumnsRequest
+        @return: DeleteColumnsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteColumnsHeaders()
         return self.delete_columns_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -1735,6 +2205,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteColumnsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteColumnsResponse:
+        """
+        @summary 删除列
+        
+        @param request: DeleteColumnsRequest
+        @return: DeleteColumnsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteColumnsHeaders()
         return await self.delete_columns_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -1748,6 +2224,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteDropdownListsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        """
+        @summary 删除下拉列表
+        
+        @param request: DeleteDropdownListsRequest
+        @param headers: DeleteDropdownListsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDropdownListsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1786,6 +2270,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteDropdownListsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        """
+        @summary 删除下拉列表
+        
+        @param request: DeleteDropdownListsRequest
+        @param headers: DeleteDropdownListsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDropdownListsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1822,6 +2314,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        """
+        @summary 删除下拉列表
+        
+        @param request: DeleteDropdownListsRequest
+        @return: DeleteDropdownListsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteDropdownListsHeaders()
         return self.delete_dropdown_lists_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1833,6 +2331,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.DeleteDropdownListsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteDropdownListsResponse:
+        """
+        @summary 删除下拉列表
+        
+        @param request: DeleteDropdownListsRequest
+        @return: DeleteDropdownListsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteDropdownListsHeaders()
         return await self.delete_dropdown_lists_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -1847,6 +2351,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteRangeProtectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteRangeProtectionResponse:
+        """
+        @summary 删除单元格锁定
+        
+        @param request: DeleteRangeProtectionRequest
+        @param headers: DeleteRangeProtectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRangeProtectionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1886,6 +2398,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteRangeProtectionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteRangeProtectionResponse:
+        """
+        @summary 删除单元格锁定
+        
+        @param request: DeleteRangeProtectionRequest
+        @param headers: DeleteRangeProtectionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRangeProtectionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1923,6 +2443,12 @@ class Client(OpenApiClient):
         protection_id: str,
         request: dingtalkdoc__1__0_models.DeleteRangeProtectionRequest,
     ) -> dingtalkdoc__1__0_models.DeleteRangeProtectionResponse:
+        """
+        @summary 删除单元格锁定
+        
+        @param request: DeleteRangeProtectionRequest
+        @return: DeleteRangeProtectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteRangeProtectionHeaders()
         return self.delete_range_protection_with_options(workbook_id, sheet_id, range_address, protection_id, request, headers, runtime)
@@ -1935,6 +2461,12 @@ class Client(OpenApiClient):
         protection_id: str,
         request: dingtalkdoc__1__0_models.DeleteRangeProtectionRequest,
     ) -> dingtalkdoc__1__0_models.DeleteRangeProtectionResponse:
+        """
+        @summary 删除单元格锁定
+        
+        @param request: DeleteRangeProtectionRequest
+        @return: DeleteRangeProtectionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteRangeProtectionHeaders()
         return await self.delete_range_protection_with_options_async(workbook_id, sheet_id, range_address, protection_id, request, headers, runtime)
@@ -1947,6 +2479,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteRowsResponse:
+        """
+        @summary 删除行
+        
+        @param request: DeleteRowsRequest
+        @param headers: DeleteRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1990,6 +2530,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteRowsResponse:
+        """
+        @summary 删除行
+        
+        @param request: DeleteRowsRequest
+        @param headers: DeleteRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2031,6 +2579,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteRowsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteRowsResponse:
+        """
+        @summary 删除行
+        
+        @param request: DeleteRowsRequest
+        @return: DeleteRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteRowsHeaders()
         return self.delete_rows_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -2041,6 +2595,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteRowsRequest,
     ) -> dingtalkdoc__1__0_models.DeleteRowsResponse:
+        """
+        @summary 删除行
+        
+        @param request: DeleteRowsRequest
+        @return: DeleteRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteRowsHeaders()
         return await self.delete_rows_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -2053,6 +2613,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除工作表
+        
+        @param request: DeleteSheetRequest
+        @param headers: DeleteSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2090,6 +2658,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除工作表
+        
+        @param request: DeleteSheetRequest
+        @param headers: DeleteSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2125,6 +2701,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteSheetRequest,
     ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除工作表
+        
+        @param request: DeleteSheetRequest
+        @return: DeleteSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteSheetHeaders()
         return self.delete_sheet_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -2135,6 +2717,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.DeleteSheetRequest,
     ) -> dingtalkdoc__1__0_models.DeleteSheetResponse:
+        """
+        @summary 删除工作表
+        
+        @param request: DeleteSheetRequest
+        @return: DeleteSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteSheetHeaders()
         return await self.delete_sheet_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -2147,6 +2735,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        """
+        @summary 删除知识库文档
+        
+        @param request: DeleteWorkspaceDocRequest
+        @param headers: DeleteWorkspaceDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceDocResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2184,6 +2780,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        """
+        @summary 删除知识库文档
+        
+        @param request: DeleteWorkspaceDocRequest
+        @param headers: DeleteWorkspaceDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceDocResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2219,6 +2823,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        """
+        @summary 删除知识库文档
+        
+        @param request: DeleteWorkspaceDocRequest
+        @return: DeleteWorkspaceDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders()
         return self.delete_workspace_doc_with_options(workspace_id, node_id, request, headers, runtime)
@@ -2229,6 +2839,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceDocRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocResponse:
+        """
+        @summary 删除知识库文档
+        
+        @param request: DeleteWorkspaceDocRequest
+        @return: DeleteWorkspaceDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocHeaders()
         return await self.delete_workspace_doc_with_options_async(workspace_id, node_id, request, headers, runtime)
@@ -2241,6 +2857,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
+        """
+        @summary 删除知识库文档成员
+        
+        @param request: DeleteWorkspaceDocMembersRequest
+        @param headers: DeleteWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2280,6 +2904,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
+        """
+        @summary 删除知识库文档成员
+        
+        @param request: DeleteWorkspaceDocMembersRequest
+        @param headers: DeleteWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2317,6 +2949,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
+        """
+        @summary 删除知识库文档成员
+        
+        @param request: DeleteWorkspaceDocMembersRequest
+        @return: DeleteWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersHeaders()
         return self.delete_workspace_doc_members_with_options(workspace_id, node_id, request, headers, runtime)
@@ -2327,6 +2965,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersResponse:
+        """
+        @summary 删除知识库文档成员
+        
+        @param request: DeleteWorkspaceDocMembersRequest
+        @return: DeleteWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceDocMembersHeaders()
         return await self.delete_workspace_doc_members_with_options_async(workspace_id, node_id, request, headers, runtime)
@@ -2338,6 +2982,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
+        """
+        @summary 删除知识库成员
+        
+        @param request: DeleteWorkspaceMembersRequest
+        @param headers: DeleteWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2376,6 +3028,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
+        """
+        @summary 删除知识库成员
+        
+        @param request: DeleteWorkspaceMembersRequest
+        @param headers: DeleteWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -2412,6 +3072,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
+        """
+        @summary 删除知识库成员
+        
+        @param request: DeleteWorkspaceMembersRequest
+        @return: DeleteWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders()
         return self.delete_workspace_members_with_options(workspace_id, request, headers, runtime)
@@ -2421,6 +3087,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.DeleteWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.DeleteWorkspaceMembersResponse:
+        """
+        @summary 删除知识库成员
+        
+        @param request: DeleteWorkspaceMembersRequest
+        @return: DeleteWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteWorkspaceMembersHeaders()
         return await self.delete_workspace_members_with_options_async(workspace_id, request, headers, runtime)
@@ -2433,6 +3105,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocAppendParagraphHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        """
+        @summary 追加指定段落元素
+        
+        @param request: DocAppendParagraphRequest
+        @param headers: DocAppendParagraphHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocAppendParagraphResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2476,6 +3156,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocAppendParagraphHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        """
+        @summary 追加指定段落元素
+        
+        @param request: DocAppendParagraphRequest
+        @param headers: DocAppendParagraphHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocAppendParagraphResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2517,6 +3205,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
     ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        """
+        @summary 追加指定段落元素
+        
+        @param request: DocAppendParagraphRequest
+        @return: DocAppendParagraphResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocAppendParagraphHeaders()
         return self.doc_append_paragraph_with_options(doc_key, block_id, request, headers, runtime)
@@ -2527,6 +3221,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocAppendParagraphRequest,
     ) -> dingtalkdoc__1__0_models.DocAppendParagraphResponse:
+        """
+        @summary 追加指定段落元素
+        
+        @param request: DocAppendParagraphRequest
+        @return: DocAppendParagraphResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocAppendParagraphHeaders()
         return await self.doc_append_paragraph_with_options_async(doc_key, block_id, request, headers, runtime)
@@ -2539,6 +3239,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocAppendTextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        """
+        @summary 在段落后追加文本
+        
+        @param request: DocAppendTextRequest
+        @param headers: DocAppendTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocAppendTextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2580,6 +3288,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocAppendTextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        """
+        @summary 在段落后追加文本
+        
+        @param request: DocAppendTextRequest
+        @param headers: DocAppendTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocAppendTextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2619,6 +3335,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocAppendTextRequest,
     ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        """
+        @summary 在段落后追加文本
+        
+        @param request: DocAppendTextRequest
+        @return: DocAppendTextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocAppendTextHeaders()
         return self.doc_append_text_with_options(doc_key, block_id, request, headers, runtime)
@@ -2629,6 +3351,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocAppendTextRequest,
     ) -> dingtalkdoc__1__0_models.DocAppendTextResponse:
+        """
+        @summary 在段落后追加文本
+        
+        @param request: DocAppendTextRequest
+        @return: DocAppendTextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocAppendTextHeaders()
         return await self.doc_append_text_with_options_async(doc_key, block_id, request, headers, runtime)
@@ -2640,6 +3368,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocBlocksQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        """
+        @summary 查询指定Block元素
+        
+        @param request: DocBlocksQueryRequest
+        @param headers: DocBlocksQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocBlocksQueryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.block_type):
@@ -2682,6 +3418,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocBlocksQueryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        """
+        @summary 查询指定Block元素
+        
+        @param request: DocBlocksQueryRequest
+        @param headers: DocBlocksQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocBlocksQueryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.block_type):
@@ -2722,6 +3466,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
     ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        """
+        @summary 查询指定Block元素
+        
+        @param request: DocBlocksQueryRequest
+        @return: DocBlocksQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocBlocksQueryHeaders()
         return self.doc_blocks_query_with_options(doc_key, request, headers, runtime)
@@ -2731,6 +3481,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocBlocksQueryRequest,
     ) -> dingtalkdoc__1__0_models.DocBlocksQueryResponse:
+        """
+        @summary 查询指定Block元素
+        
+        @param request: DocBlocksQueryRequest
+        @return: DocBlocksQueryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocBlocksQueryHeaders()
         return await self.doc_blocks_query_with_options_async(doc_key, request, headers, runtime)
@@ -2743,6 +3499,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocDeleteBlockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        """
+        @summary 删除指定位置的 Block
+        
+        @param request: DocDeleteBlockRequest
+        @param headers: DocDeleteBlockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocDeleteBlockResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2780,6 +3544,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocDeleteBlockHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        """
+        @summary 删除指定位置的 Block
+        
+        @param request: DocDeleteBlockRequest
+        @param headers: DocDeleteBlockHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocDeleteBlockResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2815,6 +3587,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
     ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        """
+        @summary 删除指定位置的 Block
+        
+        @param request: DocDeleteBlockRequest
+        @return: DocDeleteBlockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
         return self.doc_delete_block_with_options(doc_key, block_id, request, headers, runtime)
@@ -2825,6 +3603,12 @@ class Client(OpenApiClient):
         block_id: str,
         request: dingtalkdoc__1__0_models.DocDeleteBlockRequest,
     ) -> dingtalkdoc__1__0_models.DocDeleteBlockResponse:
+        """
+        @summary 删除指定位置的 Block
+        
+        @param request: DocDeleteBlockRequest
+        @return: DocDeleteBlockResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
         return await self.doc_delete_block_with_options_async(doc_key, block_id, request, headers, runtime)
@@ -2836,6 +3620,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocInsertBlocksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        """
+        @summary 插入指定Block元素
+        
+        @param request: DocInsertBlocksRequest
+        @param headers: DocInsertBlocksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocInsertBlocksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2882,6 +3674,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocInsertBlocksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        """
+        @summary 插入指定Block元素
+        
+        @param request: DocInsertBlocksRequest
+        @param headers: DocInsertBlocksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocInsertBlocksResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2926,6 +3726,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
     ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        """
+        @summary 插入指定Block元素
+        
+        @param request: DocInsertBlocksRequest
+        @return: DocInsertBlocksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocInsertBlocksHeaders()
         return self.doc_insert_blocks_with_options(doc_key, request, headers, runtime)
@@ -2935,6 +3741,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocInsertBlocksRequest,
     ) -> dingtalkdoc__1__0_models.DocInsertBlocksResponse:
+        """
+        @summary 插入指定Block元素
+        
+        @param request: DocInsertBlocksRequest
+        @return: DocInsertBlocksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocInsertBlocksHeaders()
         return await self.doc_insert_blocks_with_options_async(doc_key, request, headers, runtime)
@@ -2946,6 +3758,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocUpdateContentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        """
+        @summary 覆写全文
+        
+        @param request: DocUpdateContentRequest
+        @param headers: DocUpdateContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocUpdateContentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -2988,6 +3808,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.DocUpdateContentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        """
+        @summary 覆写全文
+        
+        @param request: DocUpdateContentRequest
+        @param headers: DocUpdateContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocUpdateContentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3028,6 +3856,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
     ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        """
+        @summary 覆写全文
+        
+        @param request: DocUpdateContentRequest
+        @return: DocUpdateContentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocUpdateContentHeaders()
         return self.doc_update_content_with_options(doc_key, request, headers, runtime)
@@ -3037,6 +3871,12 @@ class Client(OpenApiClient):
         doc_key: str,
         request: dingtalkdoc__1__0_models.DocUpdateContentRequest,
     ) -> dingtalkdoc__1__0_models.DocUpdateContentResponse:
+        """
+        @summary 覆写全文
+        
+        @param request: DocUpdateContentRequest
+        @return: DocUpdateContentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocUpdateContentHeaders()
         return await self.doc_update_content_with_options_async(doc_key, request, headers, runtime)
@@ -3048,6 +3888,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有工作表
+        
+        @param request: GetAllSheetsRequest
+        @param headers: GetAllSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllSheetsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3084,6 +3932,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetAllSheetsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有工作表
+        
+        @param request: GetAllSheetsRequest
+        @param headers: GetAllSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllSheetsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3118,6 +3974,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
     ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有工作表
+        
+        @param request: GetAllSheetsRequest
+        @return: GetAllSheetsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetAllSheetsHeaders()
         return self.get_all_sheets_with_options(workbook_id, request, headers, runtime)
@@ -3127,6 +3989,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.GetAllSheetsRequest,
     ) -> dingtalkdoc__1__0_models.GetAllSheetsResponse:
+        """
+        @summary 获取所有工作表
+        
+        @param request: GetAllSheetsRequest
+        @return: GetAllSheetsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetAllSheetsHeaders()
         return await self.get_all_sheets_with_options_async(workbook_id, request, headers, runtime)
@@ -3139,6 +4007,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        """
+        @summary 获取开发者元数据
+        
+        @param request: GetDeveloperMetadataRequest
+        @param headers: GetDeveloperMetadataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDeveloperMetadataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3176,6 +4052,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        """
+        @summary 获取开发者元数据
+        
+        @param request: GetDeveloperMetadataRequest
+        @param headers: GetDeveloperMetadataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDeveloperMetadataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3211,6 +4095,12 @@ class Client(OpenApiClient):
         developer_metadata_id: str,
         request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
     ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        """
+        @summary 获取开发者元数据
+        
+        @param request: GetDeveloperMetadataRequest
+        @return: GetDeveloperMetadataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
         return self.get_developer_metadata_with_options(workbook_id, developer_metadata_id, request, headers, runtime)
@@ -3221,6 +4111,12 @@ class Client(OpenApiClient):
         developer_metadata_id: str,
         request: dingtalkdoc__1__0_models.GetDeveloperMetadataRequest,
     ) -> dingtalkdoc__1__0_models.GetDeveloperMetadataResponse:
+        """
+        @summary 获取开发者元数据
+        
+        @param request: GetDeveloperMetadataRequest
+        @return: GetDeveloperMetadataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
         return await self.get_developer_metadata_with_options_async(workbook_id, developer_metadata_id, request, headers, runtime)
@@ -3234,6 +4130,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRangeResponse:
+        """
+        @summary 获取单元格区域
+        
+        @param request: GetRangeRequest
+        @param headers: GetRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3274,6 +4178,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRangeResponse:
+        """
+        @summary 获取单元格区域
+        
+        @param request: GetRangeRequest
+        @param headers: GetRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3312,6 +4224,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.GetRangeRequest,
     ) -> dingtalkdoc__1__0_models.GetRangeResponse:
+        """
+        @summary 获取单元格区域
+        
+        @param request: GetRangeRequest
+        @return: GetRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRangeHeaders()
         return self.get_range_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -3323,6 +4241,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.GetRangeRequest,
     ) -> dingtalkdoc__1__0_models.GetRangeResponse:
+        """
+        @summary 获取单元格区域
+        
+        @param request: GetRangeRequest
+        @return: GetRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRangeHeaders()
         return await self.get_range_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -3333,6 +4257,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRecentEditDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRecentEditDocsResponse:
+        """
+        @summary 获取最近编辑文档
+        
+        @param request: GetRecentEditDocsRequest
+        @param headers: GetRecentEditDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecentEditDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3372,6 +4304,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRecentEditDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRecentEditDocsResponse:
+        """
+        @summary 获取最近编辑文档
+        
+        @param request: GetRecentEditDocsRequest
+        @param headers: GetRecentEditDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecentEditDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3409,6 +4349,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRecentEditDocsRequest,
     ) -> dingtalkdoc__1__0_models.GetRecentEditDocsResponse:
+        """
+        @summary 获取最近编辑文档
+        
+        @param request: GetRecentEditDocsRequest
+        @return: GetRecentEditDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRecentEditDocsHeaders()
         return self.get_recent_edit_docs_with_options(request, headers, runtime)
@@ -3417,6 +4363,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRecentEditDocsRequest,
     ) -> dingtalkdoc__1__0_models.GetRecentEditDocsResponse:
+        """
+        @summary 获取最近编辑文档
+        
+        @param request: GetRecentEditDocsRequest
+        @return: GetRecentEditDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRecentEditDocsHeaders()
         return await self.get_recent_edit_docs_with_options_async(request, headers, runtime)
@@ -3427,6 +4379,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        """
+        @summary 获取最近打开文档
+        
+        @param request: GetRecentOpenDocsRequest
+        @param headers: GetRecentOpenDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecentOpenDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3466,6 +4426,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        """
+        @summary 获取最近打开文档
+        
+        @param request: GetRecentOpenDocsRequest
+        @param headers: GetRecentOpenDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecentOpenDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -3503,6 +4471,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
     ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        """
+        @summary 获取最近打开文档
+        
+        @param request: GetRecentOpenDocsRequest
+        @return: GetRecentOpenDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders()
         return self.get_recent_open_docs_with_options(request, headers, runtime)
@@ -3511,6 +4485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRecentOpenDocsRequest,
     ) -> dingtalkdoc__1__0_models.GetRecentOpenDocsResponse:
+        """
+        @summary 获取最近打开文档
+        
+        @param request: GetRecentOpenDocsRequest
+        @return: GetRecentOpenDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRecentOpenDocsHeaders()
         return await self.get_recent_open_docs_with_options_async(request, headers, runtime)
@@ -3521,6 +4501,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRelatedWorkspacesResponse:
+        """
+        @summary 查询用户有权限的知识库
+        
+        @param request: GetRelatedWorkspacesRequest
+        @param headers: GetRelatedWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.include_recent):
@@ -3558,6 +4546,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetRelatedWorkspacesResponse:
+        """
+        @summary 查询用户有权限的知识库
+        
+        @param request: GetRelatedWorkspacesRequest
+        @param headers: GetRelatedWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.include_recent):
@@ -3593,6 +4589,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRelatedWorkspacesRequest,
     ) -> dingtalkdoc__1__0_models.GetRelatedWorkspacesResponse:
+        """
+        @summary 查询用户有权限的知识库
+        
+        @param request: GetRelatedWorkspacesRequest
+        @return: GetRelatedWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders()
         return self.get_related_workspaces_with_options(request, headers, runtime)
@@ -3601,6 +4603,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.GetRelatedWorkspacesRequest,
     ) -> dingtalkdoc__1__0_models.GetRelatedWorkspacesResponse:
+        """
+        @summary 查询用户有权限的知识库
+        
+        @param request: GetRelatedWorkspacesRequest
+        @return: GetRelatedWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders()
         return await self.get_related_workspaces_with_options_async(request, headers, runtime)
@@ -3613,6 +4621,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        """
+        @summary 获取工作表
+        
+        @param request: GetSheetRequest
+        @param headers: GetSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3650,6 +4666,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        """
+        @summary 获取工作表
+        
+        @param request: GetSheetRequest
+        @param headers: GetSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3685,6 +4709,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.GetSheetRequest,
     ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        """
+        @summary 获取工作表
+        
+        @param request: GetSheetRequest
+        @return: GetSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetSheetHeaders()
         return self.get_sheet_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -3695,6 +4725,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.GetSheetRequest,
     ) -> dingtalkdoc__1__0_models.GetSheetResponse:
+        """
+        @summary 获取工作表
+        
+        @param request: GetSheetRequest
+        @return: GetSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetSheetHeaders()
         return await self.get_sheet_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -3706,6 +4742,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetTemplateByIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: GetTemplateByIdRequest
+        @param headers: GetTemplateByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateByIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.belong):
@@ -3744,6 +4788,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetTemplateByIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: GetTemplateByIdRequest
+        @param headers: GetTemplateByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateByIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.belong):
@@ -3780,6 +4832,12 @@ class Client(OpenApiClient):
         template_id: str,
         request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
     ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: GetTemplateByIdRequest
+        @return: GetTemplateByIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetTemplateByIdHeaders()
         return self.get_template_by_id_with_options(template_id, request, headers, runtime)
@@ -3789,6 +4847,12 @@ class Client(OpenApiClient):
         template_id: str,
         request: dingtalkdoc__1__0_models.GetTemplateByIdRequest,
     ) -> dingtalkdoc__1__0_models.GetTemplateByIdResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: GetTemplateByIdRequest
+        @return: GetTemplateByIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetTemplateByIdHeaders()
         return await self.get_template_by_id_with_options_async(template_id, request, headers, runtime)
@@ -3799,6 +4863,13 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetWorkspaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        """
+        @summary 查询知识库信息
+        
+        @param headers: GetWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspaceResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3829,6 +4900,13 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetWorkspaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        """
+        @summary 查询知识库信息
+        
+        @param headers: GetWorkspaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspaceResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3857,6 +4935,11 @@ class Client(OpenApiClient):
         self,
         workspace_id: str,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        """
+        @summary 查询知识库信息
+        
+        @return: GetWorkspaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetWorkspaceHeaders()
         return self.get_workspace_with_options(workspace_id, headers, runtime)
@@ -3865,6 +4948,11 @@ class Client(OpenApiClient):
         self,
         workspace_id: str,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceResponse:
+        """
+        @summary 查询知识库信息
+        
+        @return: GetWorkspaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetWorkspaceHeaders()
         return await self.get_workspace_with_options_async(workspace_id, headers, runtime)
@@ -3877,6 +4965,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetWorkspaceNodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceNodeResponse:
+        """
+        @summary 查询知识库文档
+        
+        @param request: GetWorkspaceNodeRequest
+        @param headers: GetWorkspaceNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspaceNodeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3914,6 +5010,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.GetWorkspaceNodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceNodeResponse:
+        """
+        @summary 查询知识库文档
+        
+        @param request: GetWorkspaceNodeRequest
+        @param headers: GetWorkspaceNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWorkspaceNodeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -3949,6 +5053,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.GetWorkspaceNodeRequest,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceNodeResponse:
+        """
+        @summary 查询知识库文档
+        
+        @param request: GetWorkspaceNodeRequest
+        @return: GetWorkspaceNodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetWorkspaceNodeHeaders()
         return self.get_workspace_node_with_options(workspace_id, node_id, request, headers, runtime)
@@ -3959,6 +5069,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.GetWorkspaceNodeRequest,
     ) -> dingtalkdoc__1__0_models.GetWorkspaceNodeResponse:
+        """
+        @summary 查询知识库文档
+        
+        @param request: GetWorkspaceNodeRequest
+        @return: GetWorkspaceNodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetWorkspaceNodeHeaders()
         return await self.get_workspace_node_with_options_async(workspace_id, node_id, request, headers, runtime)
@@ -3970,6 +5086,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InitDocumentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        """
+        @summary 文档初始化
+        
+        @param request: InitDocumentRequest
+        @param headers: InitDocumentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InitDocumentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4014,6 +5138,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InitDocumentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        """
+        @summary 文档初始化
+        
+        @param request: InitDocumentRequest
+        @param headers: InitDocumentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InitDocumentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4056,6 +5188,12 @@ class Client(OpenApiClient):
         doc_id: str,
         request: dingtalkdoc__1__0_models.InitDocumentRequest,
     ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        """
+        @summary 文档初始化
+        
+        @param request: InitDocumentRequest
+        @return: InitDocumentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InitDocumentHeaders()
         return self.init_document_with_options(doc_id, request, headers, runtime)
@@ -4065,6 +5203,12 @@ class Client(OpenApiClient):
         doc_id: str,
         request: dingtalkdoc__1__0_models.InitDocumentRequest,
     ) -> dingtalkdoc__1__0_models.InitDocumentResponse:
+        """
+        @summary 文档初始化
+        
+        @param request: InitDocumentRequest
+        @return: InitDocumentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InitDocumentHeaders()
         return await self.init_document_with_options_async(doc_id, request, headers, runtime)
@@ -4076,6 +5220,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertBlocksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        """
+        @summary 向文档内插入块级元素
+        
+        @param request: InsertBlocksRequest
+        @param headers: InsertBlocksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertBlocksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.blocks):
@@ -4116,6 +5268,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertBlocksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        """
+        @summary 向文档内插入块级元素
+        
+        @param request: InsertBlocksRequest
+        @param headers: InsertBlocksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertBlocksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.blocks):
@@ -4154,6 +5314,12 @@ class Client(OpenApiClient):
         document_id: str,
         request: dingtalkdoc__1__0_models.InsertBlocksRequest,
     ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        """
+        @summary 向文档内插入块级元素
+        
+        @param request: InsertBlocksRequest
+        @return: InsertBlocksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertBlocksHeaders()
         return self.insert_blocks_with_options(document_id, request, headers, runtime)
@@ -4163,6 +5329,12 @@ class Client(OpenApiClient):
         document_id: str,
         request: dingtalkdoc__1__0_models.InsertBlocksRequest,
     ) -> dingtalkdoc__1__0_models.InsertBlocksResponse:
+        """
+        @summary 向文档内插入块级元素
+        
+        @param request: InsertBlocksRequest
+        @return: InsertBlocksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertBlocksHeaders()
         return await self.insert_blocks_with_options_async(document_id, request, headers, runtime)
@@ -4175,6 +5347,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertColumnsBeforeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertColumnsBeforeResponse:
+        """
+        @summary 指定列左侧插入若干列
+        
+        @param request: InsertColumnsBeforeRequest
+        @param headers: InsertColumnsBeforeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertColumnsBeforeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4218,6 +5398,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertColumnsBeforeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertColumnsBeforeResponse:
+        """
+        @summary 指定列左侧插入若干列
+        
+        @param request: InsertColumnsBeforeRequest
+        @param headers: InsertColumnsBeforeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertColumnsBeforeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4259,6 +5447,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.InsertColumnsBeforeRequest,
     ) -> dingtalkdoc__1__0_models.InsertColumnsBeforeResponse:
+        """
+        @summary 指定列左侧插入若干列
+        
+        @param request: InsertColumnsBeforeRequest
+        @return: InsertColumnsBeforeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertColumnsBeforeHeaders()
         return self.insert_columns_before_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -4269,6 +5463,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.InsertColumnsBeforeRequest,
     ) -> dingtalkdoc__1__0_models.InsertColumnsBeforeResponse:
+        """
+        @summary 指定列左侧插入若干列
+        
+        @param request: InsertColumnsBeforeRequest
+        @return: InsertColumnsBeforeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertColumnsBeforeHeaders()
         return await self.insert_columns_before_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -4282,6 +5482,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertDropdownListsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        """
+        @summary 插入下拉列表
+        
+        @param request: InsertDropdownListsRequest
+        @param headers: InsertDropdownListsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertDropdownListsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4324,6 +5532,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertDropdownListsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        """
+        @summary 插入下拉列表
+        
+        @param request: InsertDropdownListsRequest
+        @param headers: InsertDropdownListsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertDropdownListsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4364,6 +5580,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
     ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        """
+        @summary 插入下拉列表
+        
+        @param request: InsertDropdownListsRequest
+        @return: InsertDropdownListsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertDropdownListsHeaders()
         return self.insert_dropdown_lists_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4375,6 +5597,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.InsertDropdownListsRequest,
     ) -> dingtalkdoc__1__0_models.InsertDropdownListsResponse:
+        """
+        @summary 插入下拉列表
+        
+        @param request: InsertDropdownListsRequest
+        @return: InsertDropdownListsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertDropdownListsHeaders()
         return await self.insert_dropdown_lists_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4387,6 +5615,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertRowsBeforeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertRowsBeforeResponse:
+        """
+        @summary 指定行上方插入若干行
+        
+        @param request: InsertRowsBeforeRequest
+        @param headers: InsertRowsBeforeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertRowsBeforeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4430,6 +5666,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.InsertRowsBeforeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.InsertRowsBeforeResponse:
+        """
+        @summary 指定行上方插入若干行
+        
+        @param request: InsertRowsBeforeRequest
+        @param headers: InsertRowsBeforeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertRowsBeforeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4471,6 +5715,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.InsertRowsBeforeRequest,
     ) -> dingtalkdoc__1__0_models.InsertRowsBeforeResponse:
+        """
+        @summary 指定行上方插入若干行
+        
+        @param request: InsertRowsBeforeRequest
+        @return: InsertRowsBeforeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertRowsBeforeHeaders()
         return self.insert_rows_before_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -4481,6 +5731,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.InsertRowsBeforeRequest,
     ) -> dingtalkdoc__1__0_models.InsertRowsBeforeResponse:
+        """
+        @summary 指定行上方插入若干行
+        
+        @param request: InsertRowsBeforeRequest
+        @return: InsertRowsBeforeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.InsertRowsBeforeHeaders()
         return await self.insert_rows_before_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -4491,6 +5747,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ListTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: ListTemplateRequest
+        @param headers: ListTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTemplateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4534,6 +5798,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.ListTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: ListTemplateRequest
+        @param headers: ListTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTemplateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -4575,6 +5847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.ListTemplateRequest,
     ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: ListTemplateRequest
+        @return: ListTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ListTemplateHeaders()
         return self.list_template_with_options(request, headers, runtime)
@@ -4583,6 +5861,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.ListTemplateRequest,
     ) -> dingtalkdoc__1__0_models.ListTemplateResponse:
+        """
+        @summary 查询文档模版
+        
+        @param request: ListTemplateRequest
+        @return: ListTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.ListTemplateHeaders()
         return await self.list_template_with_options_async(request, headers, runtime)
@@ -4596,6 +5880,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.MergeRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        """
+        @summary 合并单元格
+        
+        @param request: MergeRangeRequest
+        @param headers: MergeRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MergeRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4634,6 +5926,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.MergeRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        """
+        @summary 合并单元格
+        
+        @param request: MergeRangeRequest
+        @param headers: MergeRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MergeRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4670,6 +5970,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.MergeRangeRequest,
     ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        """
+        @summary 合并单元格
+        
+        @param request: MergeRangeRequest
+        @return: MergeRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.MergeRangeHeaders()
         return self.merge_range_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4681,6 +5987,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.MergeRangeRequest,
     ) -> dingtalkdoc__1__0_models.MergeRangeResponse:
+        """
+        @summary 合并单元格
+        
+        @param request: MergeRangeRequest
+        @return: MergeRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.MergeRangeHeaders()
         return await self.merge_range_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4694,6 +6006,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.RangeFindNextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        """
+        @summary 查找下一个符合条件的单元格
+        
+        @param request: RangeFindNextRequest
+        @param headers: RangeFindNextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RangeFindNextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4738,6 +6058,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.RangeFindNextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        """
+        @summary 查找下一个符合条件的单元格
+        
+        @param request: RangeFindNextRequest
+        @param headers: RangeFindNextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RangeFindNextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4780,6 +6108,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.RangeFindNextRequest,
     ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        """
+        @summary 查找下一个符合条件的单元格
+        
+        @param request: RangeFindNextRequest
+        @return: RangeFindNextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.RangeFindNextHeaders()
         return self.range_find_next_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4791,6 +6125,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.RangeFindNextRequest,
     ) -> dingtalkdoc__1__0_models.RangeFindNextResponse:
+        """
+        @summary 查找下一个符合条件的单元格
+        
+        @param request: RangeFindNextRequest
+        @return: RangeFindNextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.RangeFindNextHeaders()
         return await self.range_find_next_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -4801,6 +6141,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
+        """
+        @summary 搜索用户有权限的知识库文档
+        
+        @param request: SearchWorkspaceDocsRequest
+        @param headers: SearchWorkspaceDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchWorkspaceDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.keyword):
@@ -4844,6 +6192,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
+        """
+        @summary 搜索用户有权限的知识库文档
+        
+        @param request: SearchWorkspaceDocsRequest
+        @param headers: SearchWorkspaceDocsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchWorkspaceDocsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.keyword):
@@ -4885,6 +6241,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
+        """
+        @summary 搜索用户有权限的知识库文档
+        
+        @param request: SearchWorkspaceDocsRequest
+        @return: SearchWorkspaceDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
         return self.search_workspace_docs_with_options(request, headers, runtime)
@@ -4893,6 +6255,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdoc__1__0_models.SearchWorkspaceDocsRequest,
     ) -> dingtalkdoc__1__0_models.SearchWorkspaceDocsResponse:
+        """
+        @summary 搜索用户有权限的知识库文档
+        
+        @param request: SearchWorkspaceDocsRequest
+        @return: SearchWorkspaceDocsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
         return await self.search_workspace_docs_with_options_async(request, headers, runtime)
@@ -4905,6 +6273,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetColumnWidthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        """
+        @summary 设置列宽
+        
+        @param request: SetColumnWidthRequest
+        @param headers: SetColumnWidthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetColumnWidthResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4948,6 +6324,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetColumnWidthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        """
+        @summary 设置列宽
+        
+        @param request: SetColumnWidthRequest
+        @param headers: SetColumnWidthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetColumnWidthResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -4989,6 +6373,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
     ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        """
+        @summary 设置列宽
+        
+        @param request: SetColumnWidthRequest
+        @return: SetColumnWidthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetColumnWidthHeaders()
         return self.set_column_width_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -4999,6 +6389,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetColumnWidthRequest,
     ) -> dingtalkdoc__1__0_models.SetColumnWidthResponse:
+        """
+        @summary 设置列宽
+        
+        @param request: SetColumnWidthRequest
+        @return: SetColumnWidthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetColumnWidthHeaders()
         return await self.set_column_width_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5011,6 +6407,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetColumnsVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetColumnsVisibilityResponse:
+        """
+        @summary 设置列隐藏或显示
+        
+        @param request: SetColumnsVisibilityRequest
+        @param headers: SetColumnsVisibilityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetColumnsVisibilityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5056,6 +6460,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetColumnsVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetColumnsVisibilityResponse:
+        """
+        @summary 设置列隐藏或显示
+        
+        @param request: SetColumnsVisibilityRequest
+        @param headers: SetColumnsVisibilityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetColumnsVisibilityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5099,6 +6511,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetColumnsVisibilityRequest,
     ) -> dingtalkdoc__1__0_models.SetColumnsVisibilityResponse:
+        """
+        @summary 设置列隐藏或显示
+        
+        @param request: SetColumnsVisibilityRequest
+        @return: SetColumnsVisibilityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetColumnsVisibilityHeaders()
         return self.set_columns_visibility_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5109,6 +6527,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetColumnsVisibilityRequest,
     ) -> dingtalkdoc__1__0_models.SetColumnsVisibilityResponse:
+        """
+        @summary 设置列隐藏或显示
+        
+        @param request: SetColumnsVisibilityRequest
+        @return: SetColumnsVisibilityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetColumnsVisibilityHeaders()
         return await self.set_columns_visibility_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5121,6 +6545,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetRowHeightHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        """
+        @summary 设置行高
+        
+        @param request: SetRowHeightRequest
+        @param headers: SetRowHeightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRowHeightResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5164,6 +6596,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetRowHeightHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        """
+        @summary 设置行高
+        
+        @param request: SetRowHeightRequest
+        @param headers: SetRowHeightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRowHeightResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5205,6 +6645,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetRowHeightRequest,
     ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        """
+        @summary 设置行高
+        
+        @param request: SetRowHeightRequest
+        @return: SetRowHeightResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetRowHeightHeaders()
         return self.set_row_height_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5215,6 +6661,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetRowHeightRequest,
     ) -> dingtalkdoc__1__0_models.SetRowHeightResponse:
+        """
+        @summary 设置行高
+        
+        @param request: SetRowHeightRequest
+        @return: SetRowHeightResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetRowHeightHeaders()
         return await self.set_row_height_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5227,6 +6679,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetRowsVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetRowsVisibilityResponse:
+        """
+        @summary 设置行隐藏或显示
+        
+        @param request: SetRowsVisibilityRequest
+        @param headers: SetRowsVisibilityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRowsVisibilityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5272,6 +6732,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SetRowsVisibilityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SetRowsVisibilityResponse:
+        """
+        @summary 设置行隐藏或显示
+        
+        @param request: SetRowsVisibilityRequest
+        @param headers: SetRowsVisibilityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetRowsVisibilityResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5315,6 +6783,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetRowsVisibilityRequest,
     ) -> dingtalkdoc__1__0_models.SetRowsVisibilityResponse:
+        """
+        @summary 设置行隐藏或显示
+        
+        @param request: SetRowsVisibilityRequest
+        @return: SetRowsVisibilityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetRowsVisibilityHeaders()
         return self.set_rows_visibility_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5325,6 +6799,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SetRowsVisibilityRequest,
     ) -> dingtalkdoc__1__0_models.SetRowsVisibilityResponse:
+        """
+        @summary 设置行隐藏或显示
+        
+        @param request: SetRowsVisibilityRequest
+        @return: SetRowsVisibilityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SetRowsVisibilityHeaders()
         return await self.set_rows_visibility_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5337,6 +6817,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SheetAutofitRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SheetAutofitRowsResponse:
+        """
+        @summary SheetAutofitRows
+        
+        @param request: SheetAutofitRowsRequest
+        @param headers: SheetAutofitRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SheetAutofitRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5382,6 +6870,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SheetAutofitRowsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SheetAutofitRowsResponse:
+        """
+        @summary SheetAutofitRows
+        
+        @param request: SheetAutofitRowsRequest
+        @param headers: SheetAutofitRowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SheetAutofitRowsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5425,6 +6921,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SheetAutofitRowsRequest,
     ) -> dingtalkdoc__1__0_models.SheetAutofitRowsResponse:
+        """
+        @summary SheetAutofitRows
+        
+        @param request: SheetAutofitRowsRequest
+        @return: SheetAutofitRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SheetAutofitRowsHeaders()
         return self.sheet_autofit_rows_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5435,6 +6937,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SheetAutofitRowsRequest,
     ) -> dingtalkdoc__1__0_models.SheetAutofitRowsResponse:
+        """
+        @summary SheetAutofitRows
+        
+        @param request: SheetAutofitRowsRequest
+        @return: SheetAutofitRowsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SheetAutofitRowsHeaders()
         return await self.sheet_autofit_rows_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5447,6 +6955,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SheetFindAllHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        """
+        @summary 工作表上查找所有符合条件的单元格
+        
+        @param request: SheetFindAllRequest
+        @param headers: SheetFindAllHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SheetFindAllResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5492,6 +7008,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.SheetFindAllHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        """
+        @summary 工作表上查找所有符合条件的单元格
+        
+        @param request: SheetFindAllRequest
+        @param headers: SheetFindAllHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SheetFindAllResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5535,6 +7059,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SheetFindAllRequest,
     ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        """
+        @summary 工作表上查找所有符合条件的单元格
+        
+        @param request: SheetFindAllRequest
+        @return: SheetFindAllResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SheetFindAllHeaders()
         return self.sheet_find_all_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5545,6 +7075,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.SheetFindAllRequest,
     ) -> dingtalkdoc__1__0_models.SheetFindAllResponse:
+        """
+        @summary 工作表上查找所有符合条件的单元格
+        
+        @param request: SheetFindAllRequest
+        @return: SheetFindAllResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SheetFindAllHeaders()
         return await self.sheet_find_all_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5556,6 +7092,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        """
+        @summary 取消文档酷应用和表格的关联
+        
+        @param request: UnbindCoolAppToSheetRequest
+        @param headers: UnbindCoolAppToSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnbindCoolAppToSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -5594,6 +7138,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        """
+        @summary 取消文档酷应用和表格的关联
+        
+        @param request: UnbindCoolAppToSheetRequest
+        @param headers: UnbindCoolAppToSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnbindCoolAppToSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -5630,6 +7182,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
     ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        """
+        @summary 取消文档酷应用和表格的关联
+        
+        @param request: UnbindCoolAppToSheetRequest
+        @return: UnbindCoolAppToSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders()
         return self.unbind_cool_app_to_sheet_with_options(workbook_id, request, headers, runtime)
@@ -5639,6 +7197,12 @@ class Client(OpenApiClient):
         workbook_id: str,
         request: dingtalkdoc__1__0_models.UnbindCoolAppToSheetRequest,
     ) -> dingtalkdoc__1__0_models.UnbindCoolAppToSheetResponse:
+        """
+        @summary 取消文档酷应用和表格的关联
+        
+        @param request: UnbindCoolAppToSheetRequest
+        @return: UnbindCoolAppToSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders()
         return await self.unbind_cool_app_to_sheet_with_options_async(workbook_id, request, headers, runtime)
@@ -5652,6 +7216,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        """
+        @summary 更新单元格区域
+        
+        @param request: UpdateRangeRequest
+        @param headers: UpdateRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5708,6 +7280,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateRangeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        """
+        @summary 更新单元格区域
+        
+        @param request: UpdateRangeRequest
+        @param headers: UpdateRangeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRangeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5762,6 +7342,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.UpdateRangeRequest,
     ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        """
+        @summary 更新单元格区域
+        
+        @param request: UpdateRangeRequest
+        @return: UpdateRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateRangeHeaders()
         return self.update_range_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -5773,6 +7359,12 @@ class Client(OpenApiClient):
         range_address: str,
         request: dingtalkdoc__1__0_models.UpdateRangeRequest,
     ) -> dingtalkdoc__1__0_models.UpdateRangeResponse:
+        """
+        @summary 更新单元格区域
+        
+        @param request: UpdateRangeRequest
+        @return: UpdateRangeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateRangeHeaders()
         return await self.update_range_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
@@ -5785,6 +7377,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新工作表
+        
+        @param request: UpdateSheetRequest
+        @param headers: UpdateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5828,6 +7428,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateSheetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新工作表
+        
+        @param request: UpdateSheetRequest
+        @param headers: UpdateSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSheetResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -5869,6 +7477,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.UpdateSheetRequest,
     ) -> dingtalkdoc__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新工作表
+        
+        @param request: UpdateSheetRequest
+        @return: UpdateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateSheetHeaders()
         return self.update_sheet_with_options(workbook_id, sheet_id, request, headers, runtime)
@@ -5879,6 +7493,12 @@ class Client(OpenApiClient):
         sheet_id: str,
         request: dingtalkdoc__1__0_models.UpdateSheetRequest,
     ) -> dingtalkdoc__1__0_models.UpdateSheetResponse:
+        """
+        @summary 更新工作表
+        
+        @param request: UpdateSheetRequest
+        @return: UpdateSheetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateSheetHeaders()
         return await self.update_sheet_with_options_async(workbook_id, sheet_id, request, headers, runtime)
@@ -5891,6 +7511,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
+        """
+        @summary 修改知识库文档成员
+        
+        @param request: UpdateWorkspaceDocMembersRequest
+        @param headers: UpdateWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -5930,6 +7558,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
+        """
+        @summary 修改知识库文档成员
+        
+        @param request: UpdateWorkspaceDocMembersRequest
+        @param headers: UpdateWorkspaceDocMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateWorkspaceDocMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -5967,6 +7603,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
+        """
+        @summary 修改知识库文档成员
+        
+        @param request: UpdateWorkspaceDocMembersRequest
+        @return: UpdateWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersHeaders()
         return self.update_workspace_doc_members_with_options(workspace_id, node_id, request, headers, runtime)
@@ -5977,6 +7619,12 @@ class Client(OpenApiClient):
         node_id: str,
         request: dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersRequest,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersResponse:
+        """
+        @summary 修改知识库文档成员
+        
+        @param request: UpdateWorkspaceDocMembersRequest
+        @return: UpdateWorkspaceDocMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateWorkspaceDocMembersHeaders()
         return await self.update_workspace_doc_members_with_options_async(workspace_id, node_id, request, headers, runtime)
@@ -5988,6 +7636,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
+        """
+        @summary 更新知识库成员
+        
+        @param request: UpdateWorkspaceMembersRequest
+        @param headers: UpdateWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -6026,6 +7682,14 @@ class Client(OpenApiClient):
         headers: dingtalkdoc__1__0_models.UpdateWorkspaceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
+        """
+        @summary 更新知识库成员
+        
+        @param request: UpdateWorkspaceMembersRequest
+        @param headers: UpdateWorkspaceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateWorkspaceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.members):
@@ -6062,6 +7726,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.UpdateWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
+        """
+        @summary 更新知识库成员
+        
+        @param request: UpdateWorkspaceMembersRequest
+        @return: UpdateWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateWorkspaceMembersHeaders()
         return self.update_workspace_members_with_options(workspace_id, request, headers, runtime)
@@ -6071,6 +7741,12 @@ class Client(OpenApiClient):
         workspace_id: str,
         request: dingtalkdoc__1__0_models.UpdateWorkspaceMembersRequest,
     ) -> dingtalkdoc__1__0_models.UpdateWorkspaceMembersResponse:
+        """
+        @summary 更新知识库成员
+        
+        @param request: UpdateWorkspaceMembersRequest
+        @return: UpdateWorkspaceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UpdateWorkspaceMembersHeaders()
         return await self.update_workspace_members_with_options_async(workspace_id, request, headers, runtime)

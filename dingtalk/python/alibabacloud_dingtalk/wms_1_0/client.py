@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkwms__1__0_models.QueryGoodsListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        """
+        @summary 获取物料列表
+        
+        @param request: QueryGoodsListRequest
+        @param headers: QueryGoodsListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGoodsListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time_in_mills):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkwms__1__0_models.QueryGoodsListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        """
+        @summary 获取物料列表
+        
+        @param request: QueryGoodsListRequest
+        @param headers: QueryGoodsListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGoodsListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time_in_mills):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwms__1__0_models.QueryGoodsListRequest,
     ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        """
+        @summary 获取物料列表
+        
+        @param request: QueryGoodsListRequest
+        @return: QueryGoodsListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
         return self.query_goods_list_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwms__1__0_models.QueryGoodsListRequest,
     ) -> dingtalkwms__1__0_models.QueryGoodsListResponse:
+        """
+        @summary 获取物料列表
+        
+        @param request: QueryGoodsListRequest
+        @return: QueryGoodsListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwms__1__0_models.QueryGoodsListHeaders()
         return await self.query_goods_list_with_options_async(request, headers, runtime)

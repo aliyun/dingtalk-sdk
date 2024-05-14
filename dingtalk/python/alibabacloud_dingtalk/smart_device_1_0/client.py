@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
+        """
+        @summary 添加硬件视频会议参会人
+        
+        @param request: AddDeviceVideoConferenceMembersRequest
+        @param headers: AddDeviceVideoConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddDeviceVideoConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
+        """
+        @summary 添加硬件视频会议参会人
+        
+        @param request: AddDeviceVideoConferenceMembersRequest
+        @param headers: AddDeviceVideoConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddDeviceVideoConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -109,6 +125,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersRequest,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
+        """
+        @summary 添加硬件视频会议参会人
+        
+        @param request: AddDeviceVideoConferenceMembersRequest
+        @return: AddDeviceVideoConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersHeaders()
         return self.add_device_video_conference_members_with_options(device_id, conference_id, request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersRequest,
     ) -> dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersResponse:
+        """
+        @summary 添加硬件视频会议参会人
+        
+        @param request: AddDeviceVideoConferenceMembersRequest
+        @return: AddDeviceVideoConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.AddDeviceVideoConferenceMembersHeaders()
         return await self.add_device_video_conference_members_with_options_async(device_id, conference_id, request, headers, runtime)
@@ -130,6 +158,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
+        """
+        @summary 创建硬件视频会议
+        
+        @param request: CreateDeviceVideoConferenceRequest
+        @param headers: CreateDeviceVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeviceVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -166,6 +202,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
+        """
+        @summary 创建硬件视频会议
+        
+        @param request: CreateDeviceVideoConferenceRequest
+        @param headers: CreateDeviceVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeviceVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -200,6 +244,12 @@ class Client(OpenApiClient):
         device_id: str,
         request: dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceRequest,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
+        """
+        @summary 创建硬件视频会议
+        
+        @param request: CreateDeviceVideoConferenceRequest
+        @return: CreateDeviceVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceHeaders()
         return self.create_device_video_conference_with_options(device_id, request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         device_id: str,
         request: dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceRequest,
     ) -> dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceResponse:
+        """
+        @summary 创建硬件视频会议
+        
+        @param request: CreateDeviceVideoConferenceRequest
+        @return: CreateDeviceVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.CreateDeviceVideoConferenceHeaders()
         return await self.create_device_video_conference_with_options_async(device_id, request, headers, runtime)
@@ -219,6 +275,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        """
+        @summary 基于企业员工照片为终端提取人脸识别特征
+        
+        @param request: ExtractFacialFeatureRequest
+        @param headers: ExtractFacialFeatureHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExtractFacialFeatureResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.media_id):
@@ -256,6 +320,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        """
+        @summary 基于企业员工照片为终端提取人脸识别特征
+        
+        @param request: ExtractFacialFeatureRequest
+        @param headers: ExtractFacialFeatureHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExtractFacialFeatureResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.media_id):
@@ -291,6 +363,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
     ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        """
+        @summary 基于企业员工照片为终端提取人脸识别特征
+        
+        @param request: ExtractFacialFeatureRequest
+        @return: ExtractFacialFeatureResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders()
         return self.extract_facial_feature_with_options(request, headers, runtime)
@@ -299,6 +377,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.ExtractFacialFeatureRequest,
     ) -> dingtalksmart_device__1__0_models.ExtractFacialFeatureResponse:
+        """
+        @summary 基于企业员工照片为终端提取人脸识别特征
+        
+        @param request: ExtractFacialFeatureRequest
+        @return: ExtractFacialFeatureResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.ExtractFacialFeatureHeaders()
         return await self.extract_facial_feature_with_options_async(request, headers, runtime)
@@ -311,6 +395,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
+        """
+        @summary 踢出硬件视频会议参会人
+        
+        @param request: KickDeviceVideoConferenceMembersRequest
+        @param headers: KickDeviceVideoConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickDeviceVideoConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -348,6 +440,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
+        """
+        @summary 踢出硬件视频会议参会人
+        
+        @param request: KickDeviceVideoConferenceMembersRequest
+        @param headers: KickDeviceVideoConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickDeviceVideoConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -383,6 +483,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersRequest,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
+        """
+        @summary 踢出硬件视频会议参会人
+        
+        @param request: KickDeviceVideoConferenceMembersRequest
+        @return: KickDeviceVideoConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersHeaders()
         return self.kick_device_video_conference_members_with_options(device_id, conference_id, request, headers, runtime)
@@ -393,6 +499,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersRequest,
     ) -> dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersResponse:
+        """
+        @summary 踢出硬件视频会议参会人
+        
+        @param request: KickDeviceVideoConferenceMembersRequest
+        @return: KickDeviceVideoConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.KickDeviceVideoConferenceMembersHeaders()
         return await self.kick_device_video_conference_members_with_options_async(device_id, conference_id, request, headers, runtime)
@@ -403,6 +515,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.MachineManagerUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.MachineManagerUpdateResponse:
+        """
+        @summary 变更智能考勤机设备管理员
+        
+        @param request: MachineManagerUpdateRequest
+        @param headers: MachineManagerUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MachineManagerUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.atm_manager_right_map):
@@ -444,6 +564,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.MachineManagerUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.MachineManagerUpdateResponse:
+        """
+        @summary 变更智能考勤机设备管理员
+        
+        @param request: MachineManagerUpdateRequest
+        @param headers: MachineManagerUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MachineManagerUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.atm_manager_right_map):
@@ -483,6 +611,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.MachineManagerUpdateRequest,
     ) -> dingtalksmart_device__1__0_models.MachineManagerUpdateResponse:
+        """
+        @summary 变更智能考勤机设备管理员
+        
+        @param request: MachineManagerUpdateRequest
+        @return: MachineManagerUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.MachineManagerUpdateHeaders()
         return self.machine_manager_update_with_options(request, headers, runtime)
@@ -491,6 +625,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.MachineManagerUpdateRequest,
     ) -> dingtalksmart_device__1__0_models.MachineManagerUpdateResponse:
+        """
+        @summary 变更智能考勤机设备管理员
+        
+        @param request: MachineManagerUpdateRequest
+        @return: MachineManagerUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.MachineManagerUpdateHeaders()
         return await self.machine_manager_update_with_options_async(request, headers, runtime)
@@ -501,6 +641,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        """
+        @summary 变更智能考勤机员工
+        
+        @param request: MachineUsersUpdateRequest
+        @param headers: MachineUsersUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MachineUsersUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_dept_ids):
@@ -546,6 +694,14 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        """
+        @summary 变更智能考勤机员工
+        
+        @param request: MachineUsersUpdateRequest
+        @param headers: MachineUsersUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MachineUsersUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.add_dept_ids):
@@ -589,6 +745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
     ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        """
+        @summary 变更智能考勤机员工
+        
+        @param request: MachineUsersUpdateRequest
+        @return: MachineUsersUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders()
         return self.machine_users_update_with_options(request, headers, runtime)
@@ -597,6 +759,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalksmart_device__1__0_models.MachineUsersUpdateRequest,
     ) -> dingtalksmart_device__1__0_models.MachineUsersUpdateResponse:
+        """
+        @summary 变更智能考勤机员工
+        
+        @param request: MachineUsersUpdateRequest
+        @return: MachineUsersUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.MachineUsersUpdateHeaders()
         return await self.machine_users_update_with_options_async(request, headers, runtime)
@@ -608,6 +776,13 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        """
+        @summary 查询硬件视频会议预约信息
+        
+        @param headers: QueryDeviceVideoConferenceBookHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDeviceVideoConferenceBookResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -639,6 +814,13 @@ class Client(OpenApiClient):
         headers: dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        """
+        @summary 查询硬件视频会议预约信息
+        
+        @param headers: QueryDeviceVideoConferenceBookHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDeviceVideoConferenceBookResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -668,6 +850,11 @@ class Client(OpenApiClient):
         device_id: str,
         book_id: str,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        """
+        @summary 查询硬件视频会议预约信息
+        
+        @return: QueryDeviceVideoConferenceBookResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders()
         return self.query_device_video_conference_book_with_options(device_id, book_id, headers, runtime)
@@ -677,6 +864,11 @@ class Client(OpenApiClient):
         device_id: str,
         book_id: str,
     ) -> dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookResponse:
+        """
+        @summary 查询硬件视频会议预约信息
+        
+        @return: QueryDeviceVideoConferenceBookResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders()
         return await self.query_device_video_conference_book_with_options_async(device_id, book_id, headers, runtime)

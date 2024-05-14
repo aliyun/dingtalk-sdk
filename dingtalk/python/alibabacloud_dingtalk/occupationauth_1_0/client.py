@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkoccupationauth__1__0_models.CheckUserTaskStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTaskStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTaskStatusRequest
+        @param headers: CheckUserTaskStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserTaskStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.province_code):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkoccupationauth__1__0_models.CheckUserTaskStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTaskStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTaskStatusRequest
+        @param headers: CheckUserTaskStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserTaskStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.province_code):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoccupationauth__1__0_models.CheckUserTaskStatusRequest,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTaskStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTaskStatusRequest
+        @return: CheckUserTaskStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoccupationauth__1__0_models.CheckUserTaskStatusHeaders()
         return self.check_user_task_status_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoccupationauth__1__0_models.CheckUserTaskStatusRequest,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTaskStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTaskStatusRequest
+        @return: CheckUserTaskStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoccupationauth__1__0_models.CheckUserTaskStatusHeaders()
         return await self.check_user_task_status_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkoccupationauth__1__0_models.CheckUserTasksStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTasksStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTasksStatusRequest
+        @param headers: CheckUserTasksStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserTasksStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.province_code):
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkoccupationauth__1__0_models.CheckUserTasksStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTasksStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTasksStatusRequest
+        @param headers: CheckUserTasksStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckUserTasksStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.province_code):
@@ -189,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoccupationauth__1__0_models.CheckUserTasksStatusRequest,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTasksStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTasksStatusRequest
+        @return: CheckUserTasksStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoccupationauth__1__0_models.CheckUserTasksStatusHeaders()
         return self.check_user_tasks_status_with_options(request, headers, runtime)
@@ -197,6 +247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoccupationauth__1__0_models.CheckUserTasksStatusRequest,
     ) -> dingtalkoccupationauth__1__0_models.CheckUserTasksStatusResponse:
+        """
+        @summary 检查用户任务状态
+        
+        @param request: CheckUserTasksStatusRequest
+        @return: CheckUserTasksStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoccupationauth__1__0_models.CheckUserTasksStatusHeaders()
         return await self.check_user_tasks_status_with_options_async(request, headers, runtime)

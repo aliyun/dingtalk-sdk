@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ApplyBatchPayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        """
+        @summary 批量付款
+        
+        @param request: ApplyBatchPayRequest
+        @param headers: ApplyBatchPayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApplyBatchPayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -84,6 +92,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ApplyBatchPayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        """
+        @summary 批量付款
+        
+        @param request: ApplyBatchPayRequest
+        @param headers: ApplyBatchPayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApplyBatchPayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -131,6 +147,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        """
+        @summary 批量付款
+        
+        @param request: ApplyBatchPayRequest
+        @return: ApplyBatchPayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
         return self.apply_batch_pay_with_options(request, headers, runtime)
@@ -139,6 +161,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ApplyBatchPayRequest,
     ) -> dingtalkfinance__1__0_models.ApplyBatchPayResponse:
+        """
+        @summary 批量付款
+        
+        @param request: ApplyBatchPayRequest
+        @return: ApplyBatchPayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ApplyBatchPayHeaders()
         return await self.apply_batch_pay_with_options_async(request, headers, runtime)
@@ -149,6 +177,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CloseLoanEntranceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        """
+        @summary 助贷业务关闭借款入口
+        
+        @param request: CloseLoanEntranceRequest
+        @param headers: CloseLoanEntranceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseLoanEntranceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.request_id):
@@ -184,6 +220,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CloseLoanEntranceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        """
+        @summary 助贷业务关闭借款入口
+        
+        @param request: CloseLoanEntranceRequest
+        @param headers: CloseLoanEntranceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseLoanEntranceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.request_id):
@@ -217,6 +261,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
     ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        """
+        @summary 助贷业务关闭借款入口
+        
+        @param request: CloseLoanEntranceRequest
+        @return: CloseLoanEntranceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
         return self.close_loan_entrance_with_options(request, headers, runtime)
@@ -225,6 +275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CloseLoanEntranceRequest,
     ) -> dingtalkfinance__1__0_models.CloseLoanEntranceResponse:
+        """
+        @summary 助贷业务关闭借款入口
+        
+        @param request: CloseLoanEntranceRequest
+        @return: CloseLoanEntranceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CloseLoanEntranceHeaders()
         return await self.close_loan_entrance_with_options_async(request, headers, runtime)
@@ -235,6 +291,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        """
+        @summary 子机构创建进件预校验
+        
+        @param request: ConsultCreateSubInstitutionRequest
+        @param headers: ConsultCreateSubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsultCreateSubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -302,6 +366,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        """
+        @summary 子机构创建进件预校验
+        
+        @param request: ConsultCreateSubInstitutionRequest
+        @param headers: ConsultCreateSubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsultCreateSubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -367,6 +439,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        """
+        @summary 子机构创建进件预校验
+        
+        @param request: ConsultCreateSubInstitutionRequest
+        @return: ConsultCreateSubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
         return self.consult_create_sub_institution_with_options(request, headers, runtime)
@@ -375,6 +453,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ConsultCreateSubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.ConsultCreateSubInstitutionResponse:
+        """
+        @summary 子机构创建进件预校验
+        
+        @param request: ConsultCreateSubInstitutionRequest
+        @return: ConsultCreateSubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ConsultCreateSubInstitutionHeaders()
         return await self.consult_create_sub_institution_with_options_async(request, headers, runtime)
@@ -385,6 +469,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        """
+        @summary 发起代扣交易
+        
+        @param request: CreatWithholdingOrderAndPayRequest
+        @param headers: CreatWithholdingOrderAndPayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatWithholdingOrderAndPayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -438,6 +530,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        """
+        @summary 发起代扣交易
+        
+        @param request: CreatWithholdingOrderAndPayRequest
+        @param headers: CreatWithholdingOrderAndPayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatWithholdingOrderAndPayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -489,6 +589,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
     ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        """
+        @summary 发起代扣交易
+        
+        @param request: CreatWithholdingOrderAndPayRequest
+        @return: CreatWithholdingOrderAndPayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
         return self.creat_withholding_order_and_pay_with_options(request, headers, runtime)
@@ -497,6 +603,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayRequest,
     ) -> dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayResponse:
+        """
+        @summary 发起代扣交易
+        
+        @param request: CreatWithholdingOrderAndPayRequest
+        @return: CreatWithholdingOrderAndPayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreatWithholdingOrderAndPayHeaders()
         return await self.creat_withholding_order_and_pay_with_options_async(request, headers, runtime)
@@ -507,6 +619,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        """
+        @summary 收单退款交易
+        
+        @param request: CreateAcquireRefundOrderRequest
+        @param headers: CreateAcquireRefundOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAcquireRefundOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.inst_id):
@@ -558,6 +678,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        """
+        @summary 收单退款交易
+        
+        @param request: CreateAcquireRefundOrderRequest
+        @param headers: CreateAcquireRefundOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAcquireRefundOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.inst_id):
@@ -607,6 +735,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
     ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        """
+        @summary 收单退款交易
+        
+        @param request: CreateAcquireRefundOrderRequest
+        @return: CreateAcquireRefundOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
         return self.create_acquire_refund_order_with_options(request, headers, runtime)
@@ -615,6 +749,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateAcquireRefundOrderRequest,
     ) -> dingtalkfinance__1__0_models.CreateAcquireRefundOrderResponse:
+        """
+        @summary 收单退款交易
+        
+        @param request: CreateAcquireRefundOrderRequest
+        @return: CreateAcquireRefundOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateAcquireRefundOrderHeaders()
         return await self.create_acquire_refund_order_with_options_async(request, headers, runtime)
@@ -625,6 +765,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        """
+        @summary 创建批量支付单
+        
+        @param request: CreateBatchTradeOrderRequest
+        @param headers: CreateBatchTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBatchTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -676,6 +824,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        """
+        @summary 创建批量支付单
+        
+        @param request: CreateBatchTradeOrderRequest
+        @param headers: CreateBatchTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBatchTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.account_id):
@@ -725,6 +881,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        """
+        @summary 创建批量支付单
+        
+        @param request: CreateBatchTradeOrderRequest
+        @return: CreateBatchTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
         return self.create_batch_trade_order_with_options(request, headers, runtime)
@@ -733,6 +895,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateBatchTradeOrderRequest,
     ) -> dingtalkfinance__1__0_models.CreateBatchTradeOrderResponse:
+        """
+        @summary 创建批量支付单
+        
+        @param request: CreateBatchTradeOrderRequest
+        @return: CreateBatchTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateBatchTradeOrderHeaders()
         return await self.create_batch_trade_order_with_options_async(request, headers, runtime)
@@ -743,6 +911,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateSubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        """
+        @summary 创建子机构
+        
+        @param request: CreateSubInstitutionRequest
+        @param headers: CreateSubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -810,6 +986,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateSubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        """
+        @summary 创建子机构
+        
+        @param request: CreateSubInstitutionRequest
+        @param headers: CreateSubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -875,6 +1059,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        """
+        @summary 创建子机构
+        
+        @param request: CreateSubInstitutionRequest
+        @return: CreateSubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
         return self.create_sub_institution_with_options(request, headers, runtime)
@@ -883,6 +1073,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateSubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.CreateSubInstitutionResponse:
+        """
+        @summary 创建子机构
+        
+        @param request: CreateSubInstitutionRequest
+        @return: CreateSubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateSubInstitutionHeaders()
         return await self.create_sub_institution_with_options_async(request, headers, runtime)
@@ -893,6 +1089,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        """
+        @summary 创建用户码实例
+        
+        @param request: CreateUserCodeInstanceRequest
+        @param headers: CreateUserCodeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserCodeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -948,6 +1152,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        """
+        @summary 创建用户码实例
+        
+        @param request: CreateUserCodeInstanceRequest
+        @param headers: CreateUserCodeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserCodeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -1001,6 +1213,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
     ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        """
+        @summary 创建用户码实例
+        
+        @param request: CreateUserCodeInstanceRequest
+        @return: CreateUserCodeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
         return self.create_user_code_instance_with_options(request, headers, runtime)
@@ -1009,6 +1227,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.CreateUserCodeInstanceRequest,
     ) -> dingtalkfinance__1__0_models.CreateUserCodeInstanceResponse:
+        """
+        @summary 创建用户码实例
+        
+        @param request: CreateUserCodeInstanceRequest
+        @return: CreateUserCodeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.CreateUserCodeInstanceHeaders()
         return await self.create_user_code_instance_with_options_async(request, headers, runtime)
@@ -1019,6 +1243,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.DecodePayCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        """
+        @summary 解码付款码
+        
+        @param request: DecodePayCodeRequest
+        @param headers: DecodePayCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DecodePayCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.pay_code):
@@ -1056,6 +1288,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.DecodePayCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        """
+        @summary 解码付款码
+        
+        @param request: DecodePayCodeRequest
+        @param headers: DecodePayCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DecodePayCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.pay_code):
@@ -1091,6 +1331,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
     ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        """
+        @summary 解码付款码
+        
+        @param request: DecodePayCodeRequest
+        @return: DecodePayCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
         return self.decode_pay_code_with_options(request, headers, runtime)
@@ -1099,6 +1345,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.DecodePayCodeRequest,
     ) -> dingtalkfinance__1__0_models.DecodePayCodeResponse:
+        """
+        @summary 解码付款码
+        
+        @param request: DecodePayCodeRequest
+        @return: DecodePayCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
         return await self.decode_pay_code_with_options_async(request, headers, runtime)
@@ -1109,6 +1361,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ModifySubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        """
+        @summary 修改子机构信息
+        
+        @param request: ModifySubInstitutionRequest
+        @param headers: ModifySubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifySubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -1174,6 +1434,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.ModifySubInstitutionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        """
+        @summary 修改子机构信息
+        
+        @param request: ModifySubInstitutionRequest
+        @param headers: ModifySubInstitutionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifySubInstitutionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.binding_alipay_logon_id):
@@ -1237,6 +1505,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        """
+        @summary 修改子机构信息
+        
+        @param request: ModifySubInstitutionRequest
+        @return: ModifySubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
         return self.modify_sub_institution_with_options(request, headers, runtime)
@@ -1245,6 +1519,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,
     ) -> dingtalkfinance__1__0_models.ModifySubInstitutionResponse:
+        """
+        @summary 修改子机构信息
+        
+        @param request: ModifySubInstitutionRequest
+        @return: ModifySubInstitutionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.ModifySubInstitutionHeaders()
         return await self.modify_sub_institution_with_options_async(request, headers, runtime)
@@ -1255,6 +1535,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        """
+        @summary 通知付款码支付结果
+        
+        @param request: NotifyPayCodePayResultRequest
+        @param headers: NotifyPayCodePayResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyPayCodePayResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -1322,6 +1610,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        """
+        @summary 通知付款码支付结果
+        
+        @param request: NotifyPayCodePayResultRequest
+        @param headers: NotifyPayCodePayResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyPayCodePayResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -1387,6 +1683,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        """
+        @summary 通知付款码支付结果
+        
+        @param request: NotifyPayCodePayResultRequest
+        @return: NotifyPayCodePayResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
         return self.notify_pay_code_pay_result_with_options(request, headers, runtime)
@@ -1395,6 +1697,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyPayCodePayResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodePayResultResponse:
+        """
+        @summary 通知付款码支付结果
+        
+        @param request: NotifyPayCodePayResultRequest
+        @return: NotifyPayCodePayResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyPayCodePayResultHeaders()
         return await self.notify_pay_code_pay_result_with_options_async(request, headers, runtime)
@@ -1405,6 +1713,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        """
+        @summary 通知付款码退款结果
+        
+        @param request: NotifyPayCodeRefundResultRequest
+        @param headers: NotifyPayCodeRefundResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyPayCodeRefundResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1458,6 +1774,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        """
+        @summary 通知付款码退款结果
+        
+        @param request: NotifyPayCodeRefundResultRequest
+        @param headers: NotifyPayCodeRefundResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyPayCodeRefundResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1509,6 +1833,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        """
+        @summary 通知付款码退款结果
+        
+        @param request: NotifyPayCodeRefundResultRequest
+        @return: NotifyPayCodeRefundResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
         return self.notify_pay_code_refund_result_with_options(request, headers, runtime)
@@ -1517,6 +1847,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyPayCodeRefundResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyPayCodeRefundResultResponse:
+        """
+        @summary 通知付款码退款结果
+        
+        @param request: NotifyPayCodeRefundResultRequest
+        @return: NotifyPayCodeRefundResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyPayCodeRefundResultHeaders()
         return await self.notify_pay_code_refund_result_with_options_async(request, headers, runtime)
@@ -1527,6 +1863,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        """
+        @summary 上报码验证结果
+        
+        @param request: NotifyVerifyResultRequest
+        @param headers: NotifyVerifyResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyVerifyResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1580,6 +1924,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.NotifyVerifyResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        """
+        @summary 上报码验证结果
+        
+        @param request: NotifyVerifyResultRequest
+        @param headers: NotifyVerifyResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyVerifyResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1631,6 +1983,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        """
+        @summary 上报码验证结果
+        
+        @param request: NotifyVerifyResultRequest
+        @return: NotifyVerifyResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
         return self.notify_verify_result_with_options(request, headers, runtime)
@@ -1639,6 +1997,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.NotifyVerifyResultRequest,
     ) -> dingtalkfinance__1__0_models.NotifyVerifyResultResponse:
+        """
+        @summary 上报码验证结果
+        
+        @param request: NotifyVerifyResultRequest
+        @return: NotifyVerifyResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.NotifyVerifyResultHeaders()
         return await self.notify_verify_result_with_options_async(request, headers, runtime)
@@ -1649,6 +2013,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        """
+        @summary 预创建群收款订单返回订单号
+        
+        @param request: PreCreateGroupBillOrderRequest
+        @param headers: PreCreateGroupBillOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCreateGroupBillOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bill_item_list):
@@ -1704,6 +2076,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        """
+        @summary 预创建群收款订单返回订单号
+        
+        @param request: PreCreateGroupBillOrderRequest
+        @param headers: PreCreateGroupBillOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PreCreateGroupBillOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.bill_item_list):
@@ -1757,6 +2137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
     ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        """
+        @summary 预创建群收款订单返回订单号
+        
+        @param request: PreCreateGroupBillOrderRequest
+        @return: PreCreateGroupBillOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders()
         return self.pre_create_group_bill_order_with_options(request, headers, runtime)
@@ -1765,6 +2151,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.PreCreateGroupBillOrderRequest,
     ) -> dingtalkfinance__1__0_models.PreCreateGroupBillOrderResponse:
+        """
+        @summary 预创建群收款订单返回订单号
+        
+        @param request: PreCreateGroupBillOrderRequest
+        @return: PreCreateGroupBillOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.PreCreateGroupBillOrderHeaders()
         return await self.pre_create_group_bill_order_with_options_async(request, headers, runtime)
@@ -1775,6 +2167,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        """
+        @summary 查询收单退款交易
+        
+        @param request: QueryAcquireRefundOrderRequest
+        @param headers: QueryAcquireRefundOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAcquireRefundOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_refund_no):
@@ -1810,6 +2210,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        """
+        @summary 查询收单退款交易
+        
+        @param request: QueryAcquireRefundOrderRequest
+        @param headers: QueryAcquireRefundOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAcquireRefundOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_refund_no):
@@ -1843,6 +2251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        """
+        @summary 查询收单退款交易
+        
+        @param request: QueryAcquireRefundOrderRequest
+        @return: QueryAcquireRefundOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
         return self.query_acquire_refund_order_with_options(request, headers, runtime)
@@ -1851,6 +2265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryAcquireRefundOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryAcquireRefundOrderResponse:
+        """
+        @summary 查询收单退款交易
+        
+        @param request: QueryAcquireRefundOrderRequest
+        @return: QueryAcquireRefundOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryAcquireRefundOrderHeaders()
         return await self.query_acquire_refund_order_with_options_async(request, headers, runtime)
@@ -1861,6 +2281,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        """
+        @summary 查询批量付款明细列表
+        
+        @param request: QueryBatchTradeDetailListRequest
+        @param headers: QueryBatchTradeDetailListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBatchTradeDetailListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_batch_no):
@@ -1900,6 +2328,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        """
+        @summary 查询批量付款明细列表
+        
+        @param request: QueryBatchTradeDetailListRequest
+        @param headers: QueryBatchTradeDetailListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBatchTradeDetailListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_batch_no):
@@ -1937,6 +2373,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        """
+        @summary 查询批量付款明细列表
+        
+        @param request: QueryBatchTradeDetailListRequest
+        @return: QueryBatchTradeDetailListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
         return self.query_batch_trade_detail_list_with_options(request, headers, runtime)
@@ -1945,6 +2387,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryBatchTradeDetailListRequest,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeDetailListResponse:
+        """
+        @summary 查询批量付款明细列表
+        
+        @param request: QueryBatchTradeDetailListRequest
+        @return: QueryBatchTradeDetailListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryBatchTradeDetailListHeaders()
         return await self.query_batch_trade_detail_list_with_options_async(request, headers, runtime)
@@ -1955,6 +2403,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        """
+        @summary 根据请求对象查询批量交易订单信息
+        
+        @param request: QueryBatchTradeOrderRequest
+        @param headers: QueryBatchTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBatchTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.out_batch_nos):
@@ -1990,6 +2446,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        """
+        @summary 根据请求对象查询批量交易订单信息
+        
+        @param request: QueryBatchTradeOrderRequest
+        @param headers: QueryBatchTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBatchTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.out_batch_nos):
@@ -2023,6 +2487,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        """
+        @summary 根据请求对象查询批量交易订单信息
+        
+        @param request: QueryBatchTradeOrderRequest
+        @return: QueryBatchTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
         return self.query_batch_trade_order_with_options(request, headers, runtime)
@@ -2031,6 +2501,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryBatchTradeOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryBatchTradeOrderResponse:
+        """
+        @summary 根据请求对象查询批量交易订单信息
+        
+        @param request: QueryBatchTradeOrderRequest
+        @return: QueryBatchTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryBatchTradeOrderHeaders()
         return await self.query_batch_trade_order_with_options_async(request, headers, runtime)
@@ -2040,6 +2516,13 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        """
+        @summary 查询付款账号列表
+        
+        @param headers: QueryPayAccountListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPayAccountListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2069,6 +2552,13 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryPayAccountListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        """
+        @summary 查询付款账号列表
+        
+        @param headers: QueryPayAccountListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPayAccountListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2094,11 +2584,21 @@ class Client(OpenApiClient):
         )
 
     def query_pay_account_list(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        """
+        @summary 查询付款账号列表
+        
+        @return: QueryPayAccountListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
         return self.query_pay_account_list_with_options(headers, runtime)
 
     async def query_pay_account_list_async(self) -> dingtalkfinance__1__0_models.QueryPayAccountListResponse:
+        """
+        @summary 查询付款账号列表
+        
+        @return: QueryPayAccountListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryPayAccountListHeaders()
         return await self.query_pay_account_list_with_options_async(headers, runtime)
@@ -2109,6 +2609,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        """
+        @summary 查询子机构申请单状态
+        
+        @param request: QueryRegisterOrderRequest
+        @param headers: QueryRegisterOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRegisterOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.inst_id):
@@ -2150,6 +2658,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryRegisterOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        """
+        @summary 查询子机构申请单状态
+        
+        @param request: QueryRegisterOrderRequest
+        @param headers: QueryRegisterOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRegisterOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.inst_id):
@@ -2189,6 +2705,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        """
+        @summary 查询子机构申请单状态
+        
+        @param request: QueryRegisterOrderRequest
+        @return: QueryRegisterOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
         return self.query_register_order_with_options(request, headers, runtime)
@@ -2197,6 +2719,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryRegisterOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryRegisterOrderResponse:
+        """
+        @summary 查询子机构申请单状态
+        
+        @param request: QueryRegisterOrderRequest
+        @return: QueryRegisterOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryRegisterOrderHeaders()
         return await self.query_register_order_with_options_async(request, headers, runtime)
@@ -2207,6 +2735,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryUserAgreementHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        """
+        @summary 查询用户协议
+        
+        @param request: QueryUserAgreementRequest
+        @param headers: QueryUserAgreementHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserAgreementResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
@@ -2250,6 +2786,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryUserAgreementHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        """
+        @summary 查询用户协议
+        
+        @param request: QueryUserAgreementRequest
+        @param headers: QueryUserAgreementHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserAgreementResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_code):
@@ -2291,6 +2835,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
     ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        """
+        @summary 查询用户协议
+        
+        @param request: QueryUserAgreementRequest
+        @return: QueryUserAgreementResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
         return self.query_user_agreement_with_options(request, headers, runtime)
@@ -2299,6 +2849,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryUserAgreementRequest,
     ) -> dingtalkfinance__1__0_models.QueryUserAgreementResponse:
+        """
+        @summary 查询用户协议
+        
+        @param request: QueryUserAgreementRequest
+        @return: QueryUserAgreementResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryUserAgreementHeaders()
         return await self.query_user_agreement_with_options_async(request, headers, runtime)
@@ -2308,6 +2864,13 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+        """
+        @summary 获取用户绑定支付宝信息
+        
+        @param headers: QueryUserAlipayAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserAlipayAccountResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2337,6 +2900,13 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+        """
+        @summary 获取用户绑定支付宝信息
+        
+        @param headers: QueryUserAlipayAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserAlipayAccountResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2362,11 +2932,21 @@ class Client(OpenApiClient):
         )
 
     def query_user_alipay_account(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+        """
+        @summary 获取用户绑定支付宝信息
+        
+        @return: QueryUserAlipayAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
         return self.query_user_alipay_account_with_options(headers, runtime)
 
     async def query_user_alipay_account_async(self) -> dingtalkfinance__1__0_models.QueryUserAlipayAccountResponse:
+        """
+        @summary 获取用户绑定支付宝信息
+        
+        @return: QueryUserAlipayAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryUserAlipayAccountHeaders()
         return await self.query_user_alipay_account_with_options_async(headers, runtime)
@@ -2377,6 +2957,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        """
+        @summary 查询代扣交易订单信息
+        
+        @param request: QueryWithholdingOrderRequest
+        @param headers: QueryWithholdingOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryWithholdingOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_trade_no):
@@ -2412,6 +3000,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        """
+        @summary 查询代扣交易订单信息
+        
+        @param request: QueryWithholdingOrderRequest
+        @param headers: QueryWithholdingOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryWithholdingOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.out_trade_no):
@@ -2445,6 +3041,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        """
+        @summary 查询代扣交易订单信息
+        
+        @param request: QueryWithholdingOrderRequest
+        @return: QueryWithholdingOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
         return self.query_withholding_order_with_options(request, headers, runtime)
@@ -2453,6 +3055,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.QueryWithholdingOrderRequest,
     ) -> dingtalkfinance__1__0_models.QueryWithholdingOrderResponse:
+        """
+        @summary 查询代扣交易订单信息
+        
+        @param request: QueryWithholdingOrderRequest
+        @return: QueryWithholdingOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.QueryWithholdingOrderHeaders()
         return await self.query_withholding_order_with_options_async(request, headers, runtime)
@@ -2463,6 +3071,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        """
+        @summary 保存付款码企业配置信息
+        
+        @param request: SaveCorpPayCodeRequest
+        @param headers: SaveCorpPayCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveCorpPayCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code_identity):
@@ -2504,6 +3120,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        """
+        @summary 保存付款码企业配置信息
+        
+        @param request: SaveCorpPayCodeRequest
+        @param headers: SaveCorpPayCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveCorpPayCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code_identity):
@@ -2543,6 +3167,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
     ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        """
+        @summary 保存付款码企业配置信息
+        
+        @param request: SaveCorpPayCodeRequest
+        @return: SaveCorpPayCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
         return self.save_corp_pay_code_with_options(request, headers, runtime)
@@ -2551,6 +3181,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.SaveCorpPayCodeRequest,
     ) -> dingtalkfinance__1__0_models.SaveCorpPayCodeResponse:
+        """
+        @summary 保存付款码企业配置信息
+        
+        @param request: SaveCorpPayCodeRequest
+        @return: SaveCorpPayCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.SaveCorpPayCodeHeaders()
         return await self.save_corp_pay_code_with_options_async(request, headers, runtime)
@@ -2561,6 +3197,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        """
+        @summary 解约用户协议
+        
+        @param request: UnsignUserAgreementRequest
+        @param headers: UnsignUserAgreementHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnsignUserAgreementResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agreement_no):
@@ -2606,6 +3250,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UnsignUserAgreementHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        """
+        @summary 解约用户协议
+        
+        @param request: UnsignUserAgreementRequest
+        @param headers: UnsignUserAgreementHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnsignUserAgreementResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agreement_no):
@@ -2649,6 +3301,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
     ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        """
+        @summary 解约用户协议
+        
+        @param request: UnsignUserAgreementRequest
+        @return: UnsignUserAgreementResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
         return self.unsign_user_agreement_with_options(request, headers, runtime)
@@ -2657,6 +3315,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UnsignUserAgreementRequest,
     ) -> dingtalkfinance__1__0_models.UnsignUserAgreementResponse:
+        """
+        @summary 解约用户协议
+        
+        @param request: UnsignUserAgreementRequest
+        @return: UnsignUserAgreementResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UnsignUserAgreementHeaders()
         return await self.unsign_user_agreement_with_options_async(request, headers, runtime)
@@ -2667,6 +3331,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        """
+        @summary 更新用户码实例
+        
+        @param request: UpateUserCodeInstanceRequest
+        @param headers: UpateUserCodeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpateUserCodeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -2720,6 +3392,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        """
+        @summary 更新用户码实例
+        
+        @param request: UpateUserCodeInstanceRequest
+        @param headers: UpateUserCodeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpateUserCodeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -2771,6 +3451,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
     ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        """
+        @summary 更新用户码实例
+        
+        @param request: UpateUserCodeInstanceRequest
+        @return: UpateUserCodeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
         return self.upate_user_code_instance_with_options(request, headers, runtime)
@@ -2779,6 +3465,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UpateUserCodeInstanceRequest,
     ) -> dingtalkfinance__1__0_models.UpateUserCodeInstanceResponse:
+        """
+        @summary 更新用户码实例
+        
+        @param request: UpateUserCodeInstanceRequest
+        @return: UpateUserCodeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UpateUserCodeInstanceHeaders()
         return await self.upate_user_code_instance_with_options_async(request, headers, runtime)
@@ -2789,6 +3481,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        """
+        @summary 用来给第三方企业提供发票验真结果更新的oapi
+        
+        @param request: UpdateInvoiceVerifyStatusRequest
+        @param headers: UpdateInvoiceVerifyStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceVerifyStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -2846,6 +3546,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        """
+        @summary 用来给第三方企业提供发票验真结果更新的oapi
+        
+        @param request: UpdateInvoiceVerifyStatusRequest
+        @param headers: UpdateInvoiceVerifyStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceVerifyStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id):
@@ -2901,6 +3609,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
     ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        """
+        @summary 用来给第三方企业提供发票验真结果更新的oapi
+        
+        @param request: UpdateInvoiceVerifyStatusRequest
+        @return: UpdateInvoiceVerifyStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
         return self.update_invoice_verify_status_with_options(request, headers, runtime)
@@ -2909,6 +3623,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusRequest,
     ) -> dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusResponse:
+        """
+        @summary 用来给第三方企业提供发票验真结果更新的oapi
+        
+        @param request: UpdateInvoiceVerifyStatusRequest
+        @return: UpdateInvoiceVerifyStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UpdateInvoiceVerifyStatusHeaders()
         return await self.update_invoice_verify_status_with_options_async(request, headers, runtime)
@@ -2919,6 +3639,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        """
+        @summary 上传发票
+        
+        @param request: UploadInvoiceRequest
+        @param headers: UploadInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -2958,6 +3686,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        """
+        @summary 上传发票
+        
+        @param request: UploadInvoiceRequest
+        @param headers: UploadInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -2995,6 +3731,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        """
+        @summary 上传发票
+        
+        @param request: UploadInvoiceRequest
+        @return: UploadInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
         return self.upload_invoice_with_options(request, headers, runtime)
@@ -3003,6 +3745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceResponse:
+        """
+        @summary 上传发票
+        
+        @param request: UploadInvoiceRequest
+        @return: UploadInvoiceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceHeaders()
         return await self.upload_invoice_with_options_async(request, headers, runtime)
@@ -3013,6 +3761,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        """
+        @summary 用户授权上传发票oapi
+        
+        @param request: UploadInvoiceByAuthRequest
+        @param headers: UploadInvoiceByAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceByAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -3050,6 +3806,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        """
+        @summary 用户授权上传发票oapi
+        
+        @param request: UploadInvoiceByAuthRequest
+        @param headers: UploadInvoiceByAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceByAuthResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.extension):
@@ -3085,6 +3849,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        """
+        @summary 用户授权上传发票oapi
+        
+        @param request: UploadInvoiceByAuthRequest
+        @return: UploadInvoiceByAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
         return self.upload_invoice_by_auth_with_options(request, headers, runtime)
@@ -3093,6 +3863,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceByAuthRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByAuthResponse:
+        """
+        @summary 用户授权上传发票oapi
+        
+        @param request: UploadInvoiceByAuthRequest
+        @return: UploadInvoiceByAuthResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceByAuthHeaders()
         return await self.upload_invoice_by_auth_with_options_async(request, headers, runtime)
@@ -3103,6 +3879,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        """
+        @summary 通过手机号上传发票
+        
+        @param request: UploadInvoiceByMobileRequest
+        @param headers: UploadInvoiceByMobileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceByMobileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.invoices):
@@ -3142,6 +3926,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        """
+        @summary 通过手机号上传发票
+        
+        @param request: UploadInvoiceByMobileRequest
+        @param headers: UploadInvoiceByMobileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadInvoiceByMobileResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.invoices):
@@ -3179,6 +3971,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        """
+        @summary 通过手机号上传发票
+        
+        @param request: UploadInvoiceByMobileRequest
+        @return: UploadInvoiceByMobileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
         return self.upload_invoice_by_mobile_with_options(request, headers, runtime)
@@ -3187,6 +3985,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadInvoiceByMobileRequest,
     ) -> dingtalkfinance__1__0_models.UploadInvoiceByMobileResponse:
+        """
+        @summary 通过手机号上传发票
+        
+        @param request: UploadInvoiceByMobileRequest
+        @return: UploadInvoiceByMobileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadInvoiceByMobileHeaders()
         return await self.upload_invoice_by_mobile_with_options_async(request, headers, runtime)
@@ -3197,6 +4001,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        """
+        @summary 上传进件中的图片获得图片链接
+        
+        @param request: UploadRegisterImageRequest
+        @param headers: UploadRegisterImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadRegisterImageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.image_content):
@@ -3240,6 +4052,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UploadRegisterImageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        """
+        @summary 上传进件中的图片获得图片链接
+        
+        @param request: UploadRegisterImageRequest
+        @param headers: UploadRegisterImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadRegisterImageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.image_content):
@@ -3281,6 +4101,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
     ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        """
+        @summary 上传进件中的图片获得图片链接
+        
+        @param request: UploadRegisterImageRequest
+        @return: UploadRegisterImageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
         return self.upload_register_image_with_options(request, headers, runtime)
@@ -3289,6 +4115,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UploadRegisterImageRequest,
     ) -> dingtalkfinance__1__0_models.UploadRegisterImageResponse:
+        """
+        @summary 上传进件中的图片获得图片链接
+        
+        @param request: UploadRegisterImageRequest
+        @return: UploadRegisterImageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UploadRegisterImageHeaders()
         return await self.upload_register_image_with_options_async(request, headers, runtime)
@@ -3299,6 +4131,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UserAgreementPageSignHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        """
+        @summary 用户协议签约
+        
+        @param request: UserAgreementPageSignRequest
+        @param headers: UserAgreementPageSignHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserAgreementPageSignResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_code):
@@ -3356,6 +4196,14 @@ class Client(OpenApiClient):
         headers: dingtalkfinance__1__0_models.UserAgreementPageSignHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        """
+        @summary 用户协议签约
+        
+        @param request: UserAgreementPageSignRequest
+        @param headers: UserAgreementPageSignHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserAgreementPageSignResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_code):
@@ -3411,6 +4259,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
     ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        """
+        @summary 用户协议签约
+        
+        @param request: UserAgreementPageSignRequest
+        @return: UserAgreementPageSignResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
         return self.user_agreement_page_sign_with_options(request, headers, runtime)
@@ -3419,6 +4273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkfinance__1__0_models.UserAgreementPageSignRequest,
     ) -> dingtalkfinance__1__0_models.UserAgreementPageSignResponse:
+        """
+        @summary 用户协议签约
+        
+        @param request: UserAgreementPageSignRequest
+        @return: UserAgreementPageSignResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkfinance__1__0_models.UserAgreementPageSignHeaders()
         return await self.user_agreement_page_sign_with_options_async(request, headers, runtime)

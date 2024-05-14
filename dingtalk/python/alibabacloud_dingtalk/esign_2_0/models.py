@@ -305,6 +305,7 @@ class CancelCorpAuthResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -417,11 +418,16 @@ class ChannelOrdersRequest(TeaModel):
         pay_fee: float = None,
         quantity: float = None,
     ):
+        # This parameter is required.
         self.item_code = item_code
+        # This parameter is required.
         self.item_name = item_name
+        # This parameter is required.
         self.order_create_time = order_create_time
+        # This parameter is required.
         self.order_id = order_id
         self.pay_fee = pay_fee
+        # This parameter is required.
         self.quantity = quantity
 
     def validate(self):
@@ -578,6 +584,7 @@ class CorpRealnameRequest(TeaModel):
         user_id: str = None,
     ):
         self.redirect_url = redirect_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -862,6 +869,7 @@ class CreateProcessRequestCcs(TeaModel):
     ):
         self.account = account
         self.account_name = account_name
+        # This parameter is required.
         self.account_type = account_type
         self.org_name = org_name
         self.user_id = user_id
@@ -909,8 +917,11 @@ class CreateProcessRequestFiles(TeaModel):
         file_name: str = None,
         file_type: int = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_type = file_type
 
     def validate(self):
@@ -1053,10 +1064,12 @@ class CreateProcessRequestParticipants(TeaModel):
     ):
         self.account = account
         self.account_name = account_name
+        # This parameter is required.
         self.account_type = account_type
         self.org_name = org_name
         self.sign_order = sign_order
         self.sign_pos_list = sign_pos_list
+        # This parameter is required.
         self.sign_requirements = sign_requirements
         self.user_id = user_id
 
@@ -1169,11 +1182,13 @@ class CreateProcessRequest(TeaModel):
     ):
         self.ccs = ccs
         self.files = files
+        # This parameter is required.
         self.initiator_user_id = initiator_user_id
         self.participants = participants
         self.redirect_url = redirect_url
         self.sign_end_time = sign_end_time
         self.source_info = source_info
+        # This parameter is required.
         self.task_name = task_name
 
     def validate(self):
@@ -1258,6 +1273,7 @@ class CreateProcessResponseBody(TeaModel):
         self,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -1601,8 +1617,11 @@ class GetAuthUrlResponseBody(TeaModel):
         pc_url: str = None,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.pc_url = pc_url
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -2049,6 +2068,7 @@ class GetExecuteUrlRequest(TeaModel):
     ):
         self.account = account
         self.sign_container = sign_container
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -2215,6 +2235,7 @@ class GetFileInfoResponseBody(TeaModel):
         status: int = None,
     ):
         self.download_url = download_url
+        # This parameter is required.
         self.file_id = file_id
         self.name = name
         self.pdf_total_pages = pdf_total_pages
@@ -2398,7 +2419,9 @@ class GetFileUploadUrlResponseBody(TeaModel):
         file_id: str = None,
         upload_url: str = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.upload_url = upload_url
 
     def validate(self):
@@ -2962,7 +2985,9 @@ class GetSignDetailResponseBodySigners(TeaModel):
         sign_status: float = None,
         signer_name: str = None,
     ):
+        # This parameter is required.
         self.sign_status = sign_status
+        # This parameter is required.
         self.signer_name = signer_name
 
     def validate(self):
@@ -2996,8 +3021,11 @@ class GetSignDetailResponseBody(TeaModel):
         flow_status: float = None,
         signers: List[GetSignDetailResponseBodySigners] = None,
     ):
+        # This parameter is required.
         self.business_scene = business_scene
+        # This parameter is required.
         self.flow_status = flow_status
+        # This parameter is required.
         self.signers = signers
 
     def validate(self):
@@ -3240,6 +3268,7 @@ class ProcessStartRequestCcs(TeaModel):
     ):
         self.account = account
         self.account_name = account_name
+        # This parameter is required.
         self.account_type = account_type
         self.org_name = org_name
         self.user_id = user_id
@@ -3286,7 +3315,9 @@ class ProcessStartRequestFiles(TeaModel):
         file_id: str = None,
         file_name: str = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
 
     def validate(self):
@@ -3325,6 +3356,7 @@ class ProcessStartRequestParticipants(TeaModel):
     ):
         self.account = account
         self.account_name = account_name
+        # This parameter is required.
         self.account_type = account_type
         self.org_name = org_name
         self.sign_requirements = sign_requirements
@@ -3423,7 +3455,9 @@ class ProcessStartRequest(TeaModel):
     ):
         self.auto_start = auto_start
         self.ccs = ccs
+        # This parameter is required.
         self.files = files
+        # This parameter is required.
         self.initiator_user_id = initiator_user_id
         self.participants = participants
         self.redirect_url = redirect_url
@@ -3635,10 +3669,14 @@ class ResaleOrderRequest(TeaModel):
         service_start_time: float = None,
         service_stop_time: float = None,
     ):
+        # This parameter is required.
         self.order_create_time = order_create_time
+        # This parameter is required.
         self.order_id = order_id
+        # This parameter is required.
         self.quantity = quantity
         self.service_start_time = service_start_time
+        # This parameter is required.
         self.service_stop_time = service_stop_time
 
     def validate(self):
@@ -3791,6 +3829,7 @@ class UsersRealnameRequest(TeaModel):
         user_id: str = None,
     ):
         self.redirect_url = redirect_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

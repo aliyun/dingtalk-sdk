@@ -45,6 +45,7 @@ class QueryBaymaxSkillLogRequest(TeaModel):
         to: int = None,
     ):
         self.from_ = from_
+        # This parameter is required.
         self.skill_execute_id = skill_execute_id
         self.to = to
 
@@ -81,6 +82,7 @@ class QueryBaymaxSkillLogResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):

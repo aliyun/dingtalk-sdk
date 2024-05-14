@@ -42,6 +42,7 @@ class CountWorkRecordRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -69,6 +70,7 @@ class CountWorkRecordResponseBody(TeaModel):
         self,
         undo_count: int = None,
     ):
+        # This parameter is required.
         self.undo_count = undo_count
 
     def validate(self):

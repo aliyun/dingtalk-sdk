@@ -370,11 +370,16 @@ class ChannelOrderRequest(TeaModel):
         pay_fee: int = None,
         quantity: int = None,
     ):
+        # This parameter is required.
         self.item_code = item_code
+        # This parameter is required.
         self.item_name = item_name
         self.order_create_time = order_create_time
+        # This parameter is required.
         self.order_id = order_id
+        # This parameter is required.
         self.pay_fee = pay_fee
+        # This parameter is required.
         self.quantity = quantity
 
     def validate(self):
@@ -1136,6 +1141,7 @@ class GetCorpRealnameUrlRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2710,10 +2716,15 @@ class GetUploadUrlRequest(TeaModel):
         file_name: str = None,
         file_size: int = None,
     ):
+        # This parameter is required.
         self.content_md_5 = content_md_5
+        # This parameter is required.
         self.content_type = content_type
+        # This parameter is required.
         self.convert_2pdf = convert_2pdf
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_size = file_size
 
     def validate(self):
@@ -3055,6 +3066,7 @@ class GetUserRealnameUrlRequest(TeaModel):
         user_id: str = None,
     ):
         self.redirect_url = redirect_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3701,10 +3713,15 @@ class OrderResaleRequest(TeaModel):
         service_start_time: int = None,
         service_stop_time: int = None,
     ):
+        # This parameter is required.
         self.order_create_time = order_create_time
+        # This parameter is required.
         self.order_id = order_id
+        # This parameter is required.
         self.quantity = quantity
+        # This parameter is required.
         self.service_start_time = service_start_time
+        # This parameter is required.
         self.service_stop_time = service_stop_time
 
     def validate(self):

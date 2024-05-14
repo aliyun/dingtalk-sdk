@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardResponse:
+        """
+        @summary 创建群公告
+        
+        @param request: CreateGroupBlackboardRequest
+        @param headers: CreateGroupBlackboardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupBlackboardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardResponse:
+        """
+        @summary 创建群公告
+        
+        @param request: CreateGroupBlackboardRequest
+        @param headers: CreateGroupBlackboardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupBlackboardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -123,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardRequest,
     ) -> dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardResponse:
+        """
+        @summary 创建群公告
+        
+        @param request: CreateGroupBlackboardRequest
+        @return: CreateGroupBlackboardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardHeaders()
         return self.create_group_blackboard_with_options(request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardRequest,
     ) -> dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardResponse:
+        """
+        @summary 创建群公告
+        
+        @param request: CreateGroupBlackboardRequest
+        @return: CreateGroupBlackboardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkgroup_blackboard__1__0_models.CreateGroupBlackboardHeaders()
         return await self.create_group_blackboard_with_options_async(request, headers, runtime)
@@ -141,6 +169,14 @@ class Client(OpenApiClient):
         headers: dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardResponse:
+        """
+        @summary 删除群公告
+        
+        @param request: DeleteGroupBlackboardRequest
+        @param headers: DeleteGroupBlackboardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteGroupBlackboardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data_id):
@@ -180,6 +216,14 @@ class Client(OpenApiClient):
         headers: dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardResponse:
+        """
+        @summary 删除群公告
+        
+        @param request: DeleteGroupBlackboardRequest
+        @param headers: DeleteGroupBlackboardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteGroupBlackboardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.data_id):
@@ -217,6 +261,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardRequest,
     ) -> dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardResponse:
+        """
+        @summary 删除群公告
+        
+        @param request: DeleteGroupBlackboardRequest
+        @return: DeleteGroupBlackboardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardHeaders()
         return self.delete_group_blackboard_with_options(request, headers, runtime)
@@ -225,6 +275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardRequest,
     ) -> dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardResponse:
+        """
+        @summary 删除群公告
+        
+        @param request: DeleteGroupBlackboardRequest
+        @return: DeleteGroupBlackboardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkgroup_blackboard__1__0_models.DeleteGroupBlackboardHeaders()
         return await self.delete_group_blackboard_with_options_async(request, headers, runtime)

@@ -45,7 +45,9 @@ class CreateFeedRequestCourseInfoLectorUserInfo(TeaModel):
         user_id: str = None,
     ):
         self.avatar = avatar
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -84,7 +86,9 @@ class CreateFeedRequestCourseInfoPayInfoCsUserInfo(TeaModel):
         user_id: str = None,
     ):
         self.avatar = avatar
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -122,8 +126,11 @@ class CreateFeedRequestCourseInfoPayInfoDiscountInfo(TeaModel):
         price: int = None,
         start_time_millis: int = None,
     ):
+        # This parameter is required.
         self.end_time_millis = end_time_millis
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.start_time_millis = start_time_millis
 
     def validate(self):
@@ -161,8 +168,10 @@ class CreateFeedRequestCourseInfoPayInfo(TeaModel):
         discount_info: CreateFeedRequestCourseInfoPayInfoDiscountInfo = None,
         price: int = None,
     ):
+        # This parameter is required.
         self.cs_user_info = cs_user_info
         self.discount_info = discount_info
+        # This parameter is required.
         self.price = price
 
     def validate(self):
@@ -205,6 +214,7 @@ class CreateFeedRequestCourseInfo(TeaModel):
         pay_info: CreateFeedRequestCourseInfoPayInfo = None,
         study_group_name: str = None,
     ):
+        # This parameter is required.
         self.lector_user_info = lector_user_info
         self.pay_info = pay_info
         self.study_group_name = study_group_name
@@ -249,8 +259,11 @@ class CreateFeedRequestFeedInfoMediaContents(TeaModel):
         title: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -287,7 +300,9 @@ class CreateFeedRequestFeedInfoRecommends(TeaModel):
         object_id: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.object_id = object_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -332,19 +347,28 @@ class CreateFeedRequestFeedInfo(TeaModel):
         thumb_url: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.action_type = action_type
+        # This parameter is required.
         self.belongs_to = belongs_to
+        # This parameter is required.
         self.feed_category = feed_category
         self.feed_id = feed_id
         self.feed_tag = feed_tag
+        # This parameter is required.
         self.feed_type = feed_type
         self.industry_id = industry_id
+        # This parameter is required.
         self.introduction = introduction
         self.introduction_pic_url = introduction_pic_url
+        # This parameter is required.
         self.mcn_id = mcn_id
+        # This parameter is required.
         self.media_contents = media_contents
         self.recommends = recommends
+        # This parameter is required.
         self.thumb_url = thumb_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -444,7 +468,9 @@ class CreateFeedRequest(TeaModel):
         feed_info: CreateFeedRequestFeedInfo = None,
     ):
         self.course_info = course_info
+        # This parameter is required.
         self.create_user_id = create_user_id
+        # This parameter is required.
         self.feed_info = feed_info
 
     def validate(self):
@@ -485,6 +511,7 @@ class CreateFeedResponseBody(TeaModel):
         self,
         feed_id: str = None,
     ):
+        # This parameter is required.
         self.feed_id = feed_id
 
     def validate(self):
@@ -586,6 +613,7 @@ class GetFeedRequest(TeaModel):
         self,
         mcn_id: str = None,
     ):
+        # This parameter is required.
         self.mcn_id = mcn_id
 
     def validate(self):
@@ -617,10 +645,15 @@ class GetFeedResponseBodyFeedItem(TeaModel):
         title: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.duration_millis = duration_millis
+        # This parameter is required.
         self.feed_content_type = feed_content_type
+        # This parameter is required.
         self.item_id = item_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -665,7 +698,9 @@ class GetFeedResponseBody(TeaModel):
         feed_id: str = None,
         feed_item: List[GetFeedResponseBodyFeedItem] = None,
     ):
+        # This parameter is required.
         self.feed_id = feed_id
+        # This parameter is required.
         self.feed_item = feed_item
 
     def validate(self):
@@ -785,12 +820,16 @@ class GetMediaCerficateRequest(TeaModel):
         thumb_url: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.mcn_id = mcn_id
         self.media_id = media_id
         self.media_introduction = media_introduction
+        # This parameter is required.
         self.media_title = media_title
         self.thumb_url = thumb_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -849,13 +888,21 @@ class GetMediaCerficateResponseBody(TeaModel):
         oss_file_name: str = None,
         oss_security_token: str = None,
     ):
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.oss_access_key_id = oss_access_key_id
+        # This parameter is required.
         self.oss_access_key_secret = oss_access_key_secret
+        # This parameter is required.
         self.oss_bucket_name = oss_bucket_name
+        # This parameter is required.
         self.oss_endpoint = oss_endpoint
+        # This parameter is required.
         self.oss_expiration = oss_expiration
+        # This parameter is required.
         self.oss_file_name = oss_file_name
+        # This parameter is required.
         self.oss_security_token = oss_security_token
 
     def validate(self):
@@ -985,6 +1032,7 @@ class ListItemUserDataRequest(TeaModel):
         self,
         body: List[str] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -1013,7 +1061,9 @@ class ListItemUserDataResponseBodyStudyInfos(TeaModel):
         duration_millis: int = None,
         uid: str = None,
     ):
+        # This parameter is required.
         self.duration_millis = duration_millis
+        # This parameter is required.
         self.uid = uid
 
     def validate(self):
@@ -1045,6 +1095,7 @@ class ListItemUserDataResponseBody(TeaModel):
         self,
         study_infos: List[ListItemUserDataResponseBodyStudyInfos] = None,
     ):
+        # This parameter is required.
         self.study_infos = study_infos
 
     def validate(self):
@@ -1158,8 +1209,11 @@ class PageFeedRequest(TeaModel):
         next_token: int = None,
     ):
         self.body = body
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.mcn_id = mcn_id
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -1204,11 +1258,17 @@ class PageFeedResponseBodyFeedList(TeaModel):
         thumb_url: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.feed_category = feed_category
+        # This parameter is required.
         self.feed_id = feed_id
+        # This parameter is required.
         self.feed_type = feed_type
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.thumb_url = thumb_url
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -1258,8 +1318,11 @@ class PageFeedResponseBody(TeaModel):
         has_next: bool = None,
         next_cursor: int = None,
     ):
+        # This parameter is required.
         self.feed_list = feed_list
+        # This parameter is required.
         self.has_next = has_next
+        # This parameter is required.
         self.next_cursor = next_cursor
 
     def validate(self):

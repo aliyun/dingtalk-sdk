@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.CreateFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.CreateFeedResponse:
+        """
+        @summary 创建内容
+        
+        @param request: CreateFeedRequest
+        @param headers: CreateFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.course_info):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.CreateFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.CreateFeedResponse:
+        """
+        @summary 创建内容
+        
+        @param request: CreateFeedRequest
+        @param headers: CreateFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.course_info):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.CreateFeedRequest,
     ) -> dingtalkcontent__1__0_models.CreateFeedResponse:
+        """
+        @summary 创建内容
+        
+        @param request: CreateFeedRequest
+        @return: CreateFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.CreateFeedHeaders()
         return self.create_feed_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.CreateFeedRequest,
     ) -> dingtalkcontent__1__0_models.CreateFeedResponse:
+        """
+        @summary 创建内容
+        
+        @param request: CreateFeedRequest
+        @return: CreateFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.CreateFeedHeaders()
         return await self.create_feed_with_options_async(request, headers, runtime)
@@ -130,6 +158,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.GetFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
+        """
+        @summary 获取feed的详细信息，包括子课程的信息
+        
+        @param request: GetFeedRequest
+        @param headers: GetFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mcn_id):
@@ -166,6 +202,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.GetFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
+        """
+        @summary 获取feed的详细信息，包括子课程的信息
+        
+        @param request: GetFeedRequest
+        @param headers: GetFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mcn_id):
@@ -200,6 +244,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalkcontent__1__0_models.GetFeedRequest,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
+        """
+        @summary 获取feed的详细信息，包括子课程的信息
+        
+        @param request: GetFeedRequest
+        @return: GetFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.GetFeedHeaders()
         return self.get_feed_with_options(feed_id, request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalkcontent__1__0_models.GetFeedRequest,
     ) -> dingtalkcontent__1__0_models.GetFeedResponse:
+        """
+        @summary 获取feed的详细信息，包括子课程的信息
+        
+        @param request: GetFeedRequest
+        @return: GetFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.GetFeedHeaders()
         return await self.get_feed_with_options_async(feed_id, request, headers, runtime)
@@ -219,6 +275,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.GetMediaCerficateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetMediaCerficateResponse:
+        """
+        @summary 获取oss上传凭证
+        
+        @param request: GetMediaCerficateRequest
+        @param headers: GetMediaCerficateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMediaCerficateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.file_name):
@@ -266,6 +330,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.GetMediaCerficateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.GetMediaCerficateResponse:
+        """
+        @summary 获取oss上传凭证
+        
+        @param request: GetMediaCerficateRequest
+        @param headers: GetMediaCerficateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMediaCerficateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.file_name):
@@ -311,6 +383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.GetMediaCerficateRequest,
     ) -> dingtalkcontent__1__0_models.GetMediaCerficateResponse:
+        """
+        @summary 获取oss上传凭证
+        
+        @param request: GetMediaCerficateRequest
+        @return: GetMediaCerficateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.GetMediaCerficateHeaders()
         return self.get_media_cerficate_with_options(request, headers, runtime)
@@ -319,6 +397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.GetMediaCerficateRequest,
     ) -> dingtalkcontent__1__0_models.GetMediaCerficateResponse:
+        """
+        @summary 获取oss上传凭证
+        
+        @param request: GetMediaCerficateRequest
+        @return: GetMediaCerficateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.GetMediaCerficateHeaders()
         return await self.get_media_cerficate_with_options_async(request, headers, runtime)
@@ -330,6 +414,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.ListItemUserDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
+        """
+        @summary 展示机构内观看内容的统计信息
+        
+        @param request: ListItemUserDataRequest
+        @param headers: ListItemUserDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListItemUserDataResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -363,6 +455,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.ListItemUserDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
+        """
+        @summary 展示机构内观看内容的统计信息
+        
+        @param request: ListItemUserDataRequest
+        @param headers: ListItemUserDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListItemUserDataResponse
+        """
         UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
@@ -394,6 +494,12 @@ class Client(OpenApiClient):
         item_id: str,
         request: dingtalkcontent__1__0_models.ListItemUserDataRequest,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
+        """
+        @summary 展示机构内观看内容的统计信息
+        
+        @param request: ListItemUserDataRequest
+        @return: ListItemUserDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.ListItemUserDataHeaders()
         return self.list_item_user_data_with_options(item_id, request, headers, runtime)
@@ -403,6 +509,12 @@ class Client(OpenApiClient):
         item_id: str,
         request: dingtalkcontent__1__0_models.ListItemUserDataRequest,
     ) -> dingtalkcontent__1__0_models.ListItemUserDataResponse:
+        """
+        @summary 展示机构内观看内容的统计信息
+        
+        @param request: ListItemUserDataRequest
+        @return: ListItemUserDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.ListItemUserDataHeaders()
         return await self.list_item_user_data_with_options_async(item_id, request, headers, runtime)
@@ -413,6 +525,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.PageFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.PageFeedResponse:
+        """
+        @summary 获取机构下课程列表
+        
+        @param request: PageFeedRequest
+        @param headers: PageFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -453,6 +573,14 @@ class Client(OpenApiClient):
         headers: dingtalkcontent__1__0_models.PageFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.PageFeedResponse:
+        """
+        @summary 获取机构下课程列表
+        
+        @param request: PageFeedRequest
+        @param headers: PageFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -491,6 +619,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.PageFeedRequest,
     ) -> dingtalkcontent__1__0_models.PageFeedResponse:
+        """
+        @summary 获取机构下课程列表
+        
+        @param request: PageFeedRequest
+        @return: PageFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.PageFeedHeaders()
         return self.page_feed_with_options(request, headers, runtime)
@@ -499,6 +633,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcontent__1__0_models.PageFeedRequest,
     ) -> dingtalkcontent__1__0_models.PageFeedResponse:
+        """
+        @summary 获取机构下课程列表
+        
+        @param request: PageFeedRequest
+        @return: PageFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.PageFeedHeaders()
         return await self.page_feed_with_options_async(request, headers, runtime)

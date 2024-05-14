@@ -160,11 +160,16 @@ class CreateTemplatesRequestFields(TeaModel):
         order: int = None,
         sort: int = None,
     ):
+        # This parameter is required.
         self.data_type = data_type
         self.data_value = data_value
+        # This parameter is required.
         self.field_name = field_name
+        # This parameter is required.
         self.need = need
+        # This parameter is required.
         self.order = order
+        # This parameter is required.
         self.sort = sort
 
     def validate(self):
@@ -233,14 +238,17 @@ class CreateTemplatesRequest(TeaModel):
         self.allow_get_location = allow_get_location
         self.auth_dept_ids = auth_dept_ids
         self.auth_user_ids = auth_user_ids
+        # This parameter is required.
         self.creator = creator
         self.default_received_cids = default_received_cids
         self.default_received_master_levels = default_received_master_levels
         self.default_receivers = default_receivers
+        # This parameter is required.
         self.fields = fields
         self.logo = logo
         self.max_word_count = max_word_count
         self.min_word_count = min_word_count
+        # This parameter is required.
         self.name = name
         self.template_managers = template_managers
 
@@ -333,6 +341,7 @@ class CreateTemplatesResponseBody(TeaModel):
         self,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -438,10 +447,15 @@ class GetSendAndReceiveReportListRequest(TeaModel):
         operation_user_id: str = None,
         start_time: int = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.operation_user_id = operation_user_id
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -673,10 +687,15 @@ class GetSubmitStatisticsRequest(TeaModel):
         start_time: int = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.operation_user_id = operation_user_id
+        # This parameter is required.
         self.remind_id = remind_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -868,9 +887,13 @@ class QueryRemindResultsRequest(TeaModel):
         operation_user_id: str = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.operation_user_id = operation_user_id
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -1135,6 +1158,7 @@ class QueryReportDetailRequest(TeaModel):
         self,
         report_id: str = None,
     ):
+        # This parameter is required.
         self.report_id = report_id
 
     def validate(self):

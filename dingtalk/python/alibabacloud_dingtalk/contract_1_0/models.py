@@ -48,11 +48,16 @@ class ContractBenefitConsumeRequest(TeaModel):
         isv_corp_id: str = None,
         opt_union_id: str = None,
     ):
+        # This parameter is required.
         self.benefit_point = benefit_point
+        # This parameter is required.
         self.biz_request_id = biz_request_id
+        # This parameter is required.
         self.consume_quota = consume_quota
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_params = ext_params
+        # This parameter is required.
         self.isv_corp_id = isv_corp_id
         self.opt_union_id = opt_union_id
 
@@ -635,8 +640,10 @@ class EsignQueryIdentityByTicketRequest(TeaModel):
         extension: Dict[str, str] = None,
         ticket: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
         self.extension = extension
+        # This parameter is required.
         self.ticket = ticket
 
     def validate(self):
@@ -812,6 +819,7 @@ class EsignSyncEventRequest(TeaModel):
         extension: Dict[str, str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.action = action
         self.corp_id = corp_id
         self.esign_data = esign_data
@@ -1307,14 +1315,19 @@ class SendContractCardRequest(TeaModel):
         sender: SendContractCardRequestSender = None,
         sync_single_chat: bool = None,
     ):
+        # This parameter is required.
         self.card_type = card_type
         self.contract_info = contract_info
+        # This parameter is required.
         self.corp_id = corp_id
         self.extension = extension
         self.process_instance_id = process_instance_id
         self.receive_groups = receive_groups
+        # This parameter is required.
         self.receivers = receivers
+        # This parameter is required.
         self.sender = sender
+        # This parameter is required.
         self.sync_single_chat = sync_single_chat
 
     def validate(self):

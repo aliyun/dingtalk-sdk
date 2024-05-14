@@ -364,23 +364,29 @@ class AddLeaveTypeRequest(TeaModel):
         when_can_leave: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
         self.extras = extras
         self.freedom_leave = freedom_leave
+        # This parameter is required.
         self.hours_in_per_day = hours_in_per_day
         self.leave_certificate = leave_certificate
         self.leave_hour_ceil = leave_hour_ceil
+        # This parameter is required.
         self.leave_name = leave_name
         self.leave_time_ceil = leave_time_ceil
         self.leave_time_ceil_min_unit = leave_time_ceil_min_unit
+        # This parameter is required.
         self.leave_view_unit = leave_view_unit
         self.max_leave_time = max_leave_time
         self.min_leave_hour = min_leave_hour
+        # This parameter is required.
         self.natural_day_leave = natural_day_leave
         self.paid_leave = paid_leave
         self.submit_time_rule = submit_time_rule
         self.visibility_rules = visibility_rules
         self.when_can_leave = when_can_leave
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -702,6 +708,7 @@ class AddLeaveTypeResponseBody(TeaModel):
         self,
         result: AddLeaveTypeResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -807,7 +814,9 @@ class AttendanceBleDevicesAddRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.device_id_list = device_id_list
+        # This parameter is required.
         self.group_key = group_key
         self.op_user_id = op_user_id
 
@@ -1094,6 +1103,7 @@ class AttendanceBleDevicesQueryRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.group_key = group_key
         self.op_user_id = op_user_id
 
@@ -1276,7 +1286,9 @@ class AttendanceBleDevicesRemoveRequest(TeaModel):
         group_key: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.device_id_list = device_id_list
+        # This parameter is required.
         self.group_key = group_key
         self.op_user_id = op_user_id
 
@@ -1471,8 +1483,10 @@ class BatchBossCheckRequestModels(TeaModel):
         time_result: str = None,
     ):
         self.absent_min = absent_min
+        # This parameter is required.
         self.plan_id = plan_id
         self.remark = remark
+        # This parameter is required.
         self.time_result = time_result
 
     def validate(self):
@@ -1514,6 +1528,7 @@ class BatchBossCheckRequest(TeaModel):
         op_user_id: str = None,
     ):
         self.models = models
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -1553,6 +1568,7 @@ class BatchBossCheckResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1901,7 +1917,9 @@ class CheckClosingAccountRequestUserTimeRange(TeaModel):
         end_time: int = None,
         start_time: int = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -1935,8 +1953,11 @@ class CheckClosingAccountRequest(TeaModel):
         user_ids: List[str] = None,
         user_time_range: List[CheckClosingAccountRequestUserTimeRange] = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.user_ids = user_ids
+        # This parameter is required.
         self.user_time_range = user_time_range
 
     def validate(self):
@@ -1982,8 +2003,11 @@ class CheckClosingAccountResponseBody(TeaModel):
         mesage: str = None,
         pass_: bool = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.mesage = mesage
+        # This parameter is required.
         self.pass_ = pass_
 
     def validate(self):
@@ -2096,9 +2120,13 @@ class CheckWritePermissionRequest(TeaModel):
         op_user_id: str = None,
         resource_key: str = None,
     ):
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.entity_ids = entity_ids
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.resource_key = resource_key
 
     def validate(self):
@@ -2138,6 +2166,7 @@ class CheckWritePermissionResponseBody(TeaModel):
         self,
         entity_permission_map: Dict[str, bool] = None,
     ):
+        # This parameter is required.
         self.entity_permission_map = entity_permission_map
 
     def validate(self):
@@ -2294,6 +2323,7 @@ class CreateApproveRequest(TeaModel):
         self.punch_param = punch_param
         self.sub_type = sub_type
         self.tag_name = tag_name
+        # This parameter is required.
         self.userid = userid
 
     def validate(self):
@@ -2444,6 +2474,7 @@ class DeleteLeaveRequestRequest(TeaModel):
         self,
         outer_id: str = None,
     ):
+        # This parameter is required.
         self.outer_id = outer_id
 
     def validate(self):
@@ -2582,10 +2613,14 @@ class DeleteWaterMarkTemplateRequest(TeaModel):
         system_template: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
         self.form_content = form_content
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.system_template = system_template
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2734,10 +2769,15 @@ class DingTalkSecurityCheckRequest(TeaModel):
         sec: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.client_ver = client_ver
+        # This parameter is required.
         self.platform = platform
+        # This parameter is required.
         self.platform_ver = platform_ver
+        # This parameter is required.
         self.sec = sec
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2814,6 +2854,7 @@ class DingTalkSecurityCheckResponseBody(TeaModel):
         self,
         result: DingTalkSecurityCheckResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2919,8 +2960,11 @@ class GetATManageScopeRequest(TeaModel):
         next_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2958,7 +3002,9 @@ class GetATManageScopeResponseBodyResult(TeaModel):
         manage_scope: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.manage_scope = manage_scope
         self.user_ids = user_ids
 
@@ -3105,7 +3151,9 @@ class GetAdjustmentsRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -3329,9 +3377,12 @@ class GetCheckInSchemaTemplateRequest(TeaModel):
         scene_code: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.scene_code = scene_code
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3637,11 +3688,17 @@ class GetCheckinRecordByUserRequest(TeaModel):
         start_time: int = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -4363,6 +4420,7 @@ class GetClosingAccountsRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -4395,11 +4453,17 @@ class GetClosingAccountsResponseBodyResultClosingAccountModel(TeaModel):
         start_day: int = None,
         start_month: int = None,
     ):
+        # This parameter is required.
         self.closing_day = closing_day
+        # This parameter is required.
         self.closing_hour_minutes = closing_hour_minutes
+        # This parameter is required.
         self.end_day = end_day
+        # This parameter is required.
         self.end_month = end_month
+        # This parameter is required.
         self.start_day = start_day
+        # This parameter is required.
         self.start_month = start_month
 
     def validate(self):
@@ -4447,6 +4511,7 @@ class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel(TeaModel):
         self,
         invalid_time_stamp: int = None,
     ):
+        # This parameter is required.
         self.invalid_time_stamp = invalid_time_stamp
 
     def validate(self):
@@ -4477,9 +4542,13 @@ class GetClosingAccountsResponseBodyResult(TeaModel):
         unseal_closing_account_model: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.closing_account_model = closing_account_model
+        # This parameter is required.
         self.switch_on = switch_on
+        # This parameter is required.
         self.unseal_closing_account_model = unseal_closing_account_model
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4524,6 +4593,7 @@ class GetClosingAccountsResponseBody(TeaModel):
         self,
         result: List[GetClosingAccountsResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4636,9 +4706,13 @@ class GetColumnvalsRequest(TeaModel):
         to_date: int = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.column_id_list = column_id_list
+        # This parameter is required.
         self.from_date = from_date
+        # This parameter is required.
         self.to_date = to_date
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -4912,10 +4986,15 @@ class GetLeaveRecordsRequest(TeaModel):
         page_size: int = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.leave_code = leave_code
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -5227,6 +5306,7 @@ class GetLeaveTypeRequest(TeaModel):
         op_user_id: str = None,
         vacation_source: str = None,
     ):
+        # This parameter is required.
         self.op_user_id = op_user_id
         self.vacation_source = vacation_source
 
@@ -5489,6 +5569,7 @@ class GetLeaveTypeResponseBody(TeaModel):
         self,
         result: List[GetLeaveTypeResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -5607,15 +5688,25 @@ class GetMachineResponseBodyResultMachineBluetoothVO(TeaModel):
         monitor_location_abnormal: bool = None,
         user_device_count: int = None,
     ):
+        # This parameter is required.
         self.address = address
+        # This parameter is required.
         self.bluetooth_check_with_face = bluetooth_check_with_face
+        # This parameter is required.
         self.bluetooth_distance_mode = bluetooth_distance_mode
+        # This parameter is required.
         self.bluetooth_distance_mode_desc = bluetooth_distance_mode_desc
+        # This parameter is required.
         self.bluetooth_value = bluetooth_value
+        # This parameter is required.
         self.latitude = latitude
+        # This parameter is required.
         self.limit_user_device_count = limit_user_device_count
+        # This parameter is required.
         self.longitude = longitude
+        # This parameter is required.
         self.monitor_location_abnormal = monitor_location_abnormal
+        # This parameter is required.
         self.user_device_count = user_device_count
 
     def validate(self):
@@ -5689,16 +5780,27 @@ class GetMachineResponseBodyResult(TeaModel):
         product_version: str = None,
         voice_mode: int = None,
     ):
+        # This parameter is required.
         self.atm_manager_list = atm_manager_list
+        # This parameter is required.
         self.dev_id = dev_id
+        # This parameter is required.
         self.device_id = device_id
+        # This parameter is required.
         self.device_name = device_name
+        # This parameter is required.
         self.device_sn = device_sn
+        # This parameter is required.
         self.machine_bluetooth_vo = machine_bluetooth_vo
+        # This parameter is required.
         self.max_face = max_face
+        # This parameter is required.
         self.net_status = net_status
+        # This parameter is required.
         self.product_name = product_name
+        # This parameter is required.
         self.product_version = product_version
+        # This parameter is required.
         self.voice_mode = voice_mode
 
     def validate(self):
@@ -5768,6 +5870,7 @@ class GetMachineResponseBody(TeaModel):
         self,
         result: GetMachineResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -5872,7 +5975,9 @@ class GetMachineUserRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -5906,8 +6011,11 @@ class GetMachineUserResponseBodyResultUserList(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.has_face = has_face
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5945,8 +6053,11 @@ class GetMachineUserResponseBodyResult(TeaModel):
         next_token: str = None,
         user_list: List[GetMachineUserResponseBodyResultUserList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.user_list = user_list
 
     def validate(self):
@@ -5990,6 +6101,7 @@ class GetMachineUserResponseBody(TeaModel):
         self,
         result: GetMachineUserResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -6209,6 +6321,7 @@ class GetOvertimeSettingResponseBodyResult(TeaModel):
     ):
         self.default = default
         self.duration_settings = duration_settings
+        # This parameter is required.
         self.id = id
         self.name = name
         self.overtime_divisions = overtime_divisions
@@ -6305,6 +6418,7 @@ class GetOvertimeSettingResponseBody(TeaModel):
         self,
         result: List[GetOvertimeSettingResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -6416,6 +6530,7 @@ class GetShiftRequest(TeaModel):
         shift_id: int = None,
     ):
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.shift_id = shift_id
 
     def validate(self):
@@ -6529,6 +6644,7 @@ class GetShiftResponseBodyResultSectionsPunches(TeaModel):
         self.absenteeism_late_minutes = absenteeism_late_minutes
         self.across = across
         self.begin_min = begin_min
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.check_time = check_time
         self.check_type = check_type
         self.end_min = end_min
@@ -6614,6 +6730,7 @@ class GetShiftResponseBodyResultSectionsRests(TeaModel):
         rest_id: int = None,
     ):
         self.across = across
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.check_time = check_time
         self.check_type = check_type
         self.rest_id = rest_id
@@ -6719,7 +6836,9 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
     ):
         self.attend_days = attend_days
         self.corp_id = corp_id
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.gmt_create = gmt_create
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.gmt_modified = gmt_modified
         self.shift_id = shift_id
         self.shift_setting_id = shift_setting_id
@@ -6958,7 +7077,9 @@ class GetSimpleGroupsRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -7583,7 +7704,9 @@ class GetSimpleOvertimeSettingRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -7806,8 +7929,11 @@ class GetUserHolidaysRequest(TeaModel):
         work_date_from: int = None,
         work_date_to: int = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
+        # This parameter is required.
         self.work_date_from = work_date_from
+        # This parameter is required.
         self.work_date_to = work_date_to
 
     def validate(self):
@@ -8135,8 +8261,11 @@ class GroupAddRequestMembers(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.role = role
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8350,8 +8479,10 @@ class GroupAddRequest(TeaModel):
         self.freecheck_day_start_min_offset = freecheck_day_start_min_offset
         self.freecheck_work_days = freecheck_work_days
         self.group_id = group_id
+        # This parameter is required.
         self.group_name = group_name
         self.manager_list = manager_list
+        # This parameter is required.
         self.members = members
         self.modify_member = modify_member
         self.offset = offset
@@ -8366,9 +8497,11 @@ class GroupAddRequest(TeaModel):
         self.skip_holidays = skip_holidays
         self.special_days = special_days
         self.trim_distance = trim_distance
+        # This parameter is required.
         self.type = type
         self.wifis = wifis
         self.workday_class_list = workday_class_list
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -8963,6 +9096,7 @@ class GroupUpdateRequest(TeaModel):
         self.skip_holidays = skip_holidays
         self.trim_distance = trim_distance
         self.workday_class_list = workday_class_list
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -9275,7 +9409,9 @@ class InitAndGetLeaveALlocationQuotasRequest(TeaModel):
         user_id: str = None,
     ):
         self.leave_code = leave_code
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -9737,13 +9873,17 @@ class ModifyWaterMarkTemplateRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
         self.icon = icon
         self.layout_design_id = layout_design_id
+        # This parameter is required.
         self.schema_content = schema_content
         self.title = title
         self.water_mark_id = water_mark_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -9906,6 +10046,7 @@ class ProcessApproveCreateRequestPunchParam(TeaModel):
         self.position_id = position_id
         self.position_name = position_name
         self.position_type = position_type
+        # This parameter is required.
         self.punch_time = punch_time
 
     def validate(self):
@@ -9950,11 +10091,17 @@ class ProcessApproveCreateRequest(TeaModel):
         tag_name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.approve_id = approve_id
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.punch_param = punch_param
+        # This parameter is required.
         self.sub_type = sub_type
+        # This parameter is required.
         self.tag_name = tag_name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10004,6 +10151,7 @@ class ProcessApproveCreateResponseBodyResult(TeaModel):
         self,
         dingtalk_approve_id: str = None,
     ):
+        # This parameter is required.
         self.dingtalk_approve_id = dingtalk_approve_id
 
     def validate(self):
@@ -10450,11 +10598,16 @@ class ReduceQuotaWithLeaveRecordRequest(TeaModel):
         reason: str = None,
         start_time: int = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.leave_code = leave_code
+        # This parameter is required.
         self.outer_id = outer_id
+        # This parameter is required.
         self.quota_num = quota_num
         self.reason = reason
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -10613,6 +10766,7 @@ class RetainLeaveTypesRequest(TeaModel):
     ):
         self.leave_codes = leave_codes
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.source = source
 
     def validate(self):
@@ -11170,13 +11324,21 @@ class SaveCustomWaterMarkTemplateRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.layout_design_id = layout_design_id
+        # This parameter is required.
         self.scene_code = scene_code
+        # This parameter is required.
         self.schema_content = schema_content
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -11374,9 +11536,12 @@ class ShiftAddRequestSectionsTimes(TeaModel):
         flex_minutes: List[int] = None,
         free_check: bool = None,
     ):
+        # This parameter is required.
         self.across = across
         self.begin_min = begin_min
+        # This parameter is required.
         self.check_time = check_time
+        # This parameter is required.
         self.check_type = check_type
         self.end_min = end_min
         self.flex_minutes = flex_minutes
@@ -11431,6 +11596,7 @@ class ShiftAddRequestSections(TeaModel):
         self,
         times: List[ShiftAddRequestSectionsTimes] = None,
     ):
+        # This parameter is required.
         self.times = times
 
     def validate(self):
@@ -11576,12 +11742,15 @@ class ShiftAddRequest(TeaModel):
         shift_id: int = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
         self.owner = owner
+        # This parameter is required.
         self.sections = sections
         self.service_id = service_id
         self.setting = setting
         self.shift_id = shift_id
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -11789,6 +11958,7 @@ class SyncScheduleInfoRequestScheduleInfos(TeaModel):
         retain_attendance_check: bool = None,
         wifi_keys: List[str] = None,
     ):
+        # This parameter is required.
         self.plan_id = plan_id
         self.position_keys = position_keys
         self.retain_attendance_check = retain_attendance_check
@@ -11832,7 +12002,9 @@ class SyncScheduleInfoRequest(TeaModel):
         op_user_id: str = None,
         schedule_infos: List[SyncScheduleInfoRequestScheduleInfos] = None,
     ):
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.schedule_infos = schedule_infos
 
     def validate(self):
@@ -12071,16 +12243,20 @@ class UpdateLeaveTypeRequest(TeaModel):
         visibility_rules: List[UpdateLeaveTypeRequestVisibilityRules] = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
         self.extras = extras
         self.hours_in_per_day = hours_in_per_day
         self.leave_certificate = leave_certificate
+        # This parameter is required.
         self.leave_code = leave_code
         self.leave_name = leave_name
+        # This parameter is required.
         self.leave_view_unit = leave_view_unit
         self.natural_day_leave = natural_day_leave
         self.submit_time_rule = submit_time_rule
         self.visibility_rules = visibility_rules
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -12374,6 +12550,7 @@ class UpdateLeaveTypeResponseBody(TeaModel):
         self,
         result: UpdateLeaveTypeResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):

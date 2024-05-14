@@ -85,7 +85,9 @@ class ExecuteAgentRequest(TeaModel):
         scenario_instance_id: str = None,
         skill_id: str = None,
     ):
+        # This parameter is required.
         self.agent_code = agent_code
+        # This parameter is required.
         self.inputs = inputs
         self.scenario_code = scenario_code
         self.scenario_instance_id = scenario_instance_id
@@ -272,8 +274,11 @@ class LiandanTextImageGetRequest(TeaModel):
         task_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.module = module
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -419,9 +424,13 @@ class LiandanluExclusiveModelRequest(TeaModel):
         prompt: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.model_id = model_id
+        # This parameter is required.
         self.module = module
+        # This parameter is required.
         self.prompt = prompt
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -572,10 +581,13 @@ class LiandanluTextToImageModelRequest(TeaModel):
         prompt: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.module = module
         self.number = number
         self.parameters = parameters
+        # This parameter is required.
         self.prompt = prompt
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -659,7 +671,9 @@ class LiandanluTextToImageModelResponseBody(TeaModel):
         result: LiandanluTextToImageModelResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -771,7 +785,9 @@ class QueryBaymaxSkillLogRequest(TeaModel):
         to: int = None,
     ):
         self.from_ = from_
+        # This parameter is required.
         self.log_level = log_level
+        # This parameter is required.
         self.skill_execute_id = skill_execute_id
         self.to = to
 
@@ -812,6 +828,7 @@ class QueryBaymaxSkillLogResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1289,7 +1306,9 @@ class QueryMemoryLearningTaskRequest(TeaModel):
         agent_code: str = None,
         learning_code: str = None,
     ):
+        # This parameter is required.
         self.agent_code = agent_code
+        # This parameter is required.
         self.learning_code = learning_code
 
     def validate(self):
@@ -1493,9 +1512,13 @@ class SubmitMemoryLearningTaskRequest(TeaModel):
         learning_mode: str = None,
         memory_key: str = None,
     ):
+        # This parameter is required.
         self.agent_code = agent_code
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.learning_mode = learning_mode
+        # This parameter is required.
         self.memory_key = memory_key
 
     def validate(self):
@@ -1540,9 +1563,13 @@ class SubmitMemoryLearningTaskShrinkRequest(TeaModel):
         learning_mode: str = None,
         memory_key: str = None,
     ):
+        # This parameter is required.
         self.agent_code = agent_code
+        # This parameter is required.
         self.content_shrink = content_shrink
+        # This parameter is required.
         self.learning_mode = learning_mode
+        # This parameter is required.
         self.memory_key = memory_key
 
     def validate(self):

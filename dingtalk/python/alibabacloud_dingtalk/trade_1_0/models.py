@@ -46,10 +46,14 @@ class CheckOpportunityResultRequest(TeaModel):
         dept_id: int = None,
         market_code: str = None,
     ):
+        # This parameter is required.
         self.belong_to_phone_num = belong_to_phone_num
+        # This parameter is required.
         self.contact_phone_num = contact_phone_num
+        # This parameter is required.
         self.corp_id = corp_id
         self.dept_id = dept_id
+        # This parameter is required.
         self.market_code = market_code
 
     def validate(self):
@@ -198,10 +202,14 @@ class CreateOpportunityRequest(TeaModel):
         dept_id: int = None,
         market_code: str = None,
     ):
+        # This parameter is required.
         self.belong_to_phone_num = belong_to_phone_num
+        # This parameter is required.
         self.contact_phone_num = contact_phone_num
+        # This parameter is required.
         self.corp_id = corp_id
         self.dept_id = dept_id
+        # This parameter is required.
         self.market_code = market_code
 
     def validate(self):
@@ -358,20 +366,31 @@ class QueryTradeOrderResponseBody(TeaModel):
         refund_time: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.article_code = article_code
+        # This parameter is required.
         self.article_item_code = article_item_code
+        # This parameter is required.
         self.article_item_name = article_item_name
+        # This parameter is required.
         self.article_name = article_name
         self.close_time = close_time
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.fee = fee
+        # This parameter is required.
         self.isv_crop_id = isv_crop_id
+        # This parameter is required.
         self.order_id = order_id
         self.outer_order_id = outer_order_id
+        # This parameter is required.
         self.pay_fee = pay_fee
         self.pay_time = pay_time
+        # This parameter is required.
         self.quantity = quantity
         self.refund_time = refund_time
+        # This parameter is required.
         self.status = status
 
     def validate(self):

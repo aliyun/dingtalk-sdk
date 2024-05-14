@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        """
+        @summary 创建应用商品服务群
+        
+        @param request: CreateAppGoodsServiceConversationRequest
+        @param headers: CreateAppGoodsServiceConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAppGoodsServiceConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.isv_user_id):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        """
+        @summary 创建应用商品服务群
+        
+        @param request: CreateAppGoodsServiceConversationRequest
+        @param headers: CreateAppGoodsServiceConversationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAppGoodsServiceConversationResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.isv_user_id):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
     ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        """
+        @summary 创建应用商品服务群
+        
+        @param request: CreateAppGoodsServiceConversationRequest
+        @return: CreateAppGoodsServiceConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders()
         return self.create_app_goods_service_conversation_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationRequest,
     ) -> dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationResponse:
+        """
+        @summary 创建应用商品服务群
+        
+        @param request: CreateAppGoodsServiceConversationRequest
+        @return: CreateAppGoodsServiceConversationResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders()
         return await self.create_app_goods_service_conversation_with_options_async(request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        """
+        @summary 获取酷应用访问状态
+        
+        @param request: GetCoolAppAccessStatusRequest
+        @param headers: GetCoolAppAccessStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCoolAppAccessStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_code):
@@ -164,6 +200,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        """
+        @summary 获取酷应用访问状态
+        
+        @param request: GetCoolAppAccessStatusRequest
+        @param headers: GetCoolAppAccessStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCoolAppAccessStatusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_code):
@@ -201,6 +245,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
     ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        """
+        @summary 获取酷应用访问状态
+        
+        @param request: GetCoolAppAccessStatusRequest
+        @return: GetCoolAppAccessStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders()
         return self.get_cool_app_access_status_with_options(request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
     ) -> dingtalkapp_market__1__0_models.GetCoolAppAccessStatusResponse:
+        """
+        @summary 获取酷应用访问状态
+        
+        @param request: GetCoolAppAccessStatusRequest
+        @return: GetCoolAppAccessStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetCoolAppAccessStatusHeaders()
         return await self.get_cool_app_access_status_with_options_async(request, headers, runtime)
@@ -219,6 +275,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        """
+        @summary 获取内购商品SKU页面地址
+        
+        @param request: GetInAppSkuUrlRequest
+        @param headers: GetInAppSkuUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInAppSkuUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_page):
@@ -260,6 +324,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        """
+        @summary 获取内购商品SKU页面地址
+        
+        @param request: GetInAppSkuUrlRequest
+        @param headers: GetInAppSkuUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInAppSkuUrlResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_page):
@@ -299,6 +371,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
     ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        """
+        @summary 获取内购商品SKU页面地址
+        
+        @param request: GetInAppSkuUrlRequest
+        @return: GetInAppSkuUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders()
         return self.get_in_app_sku_url_with_options(request, headers, runtime)
@@ -307,6 +385,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetInAppSkuUrlRequest,
     ) -> dingtalkapp_market__1__0_models.GetInAppSkuUrlResponse:
+        """
+        @summary 获取内购商品SKU页面地址
+        
+        @param request: GetInAppSkuUrlRequest
+        @return: GetInAppSkuUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetInAppSkuUrlHeaders()
         return await self.get_in_app_sku_url_with_options_async(request, headers, runtime)
@@ -317,6 +401,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetPersonalExperienceInfoResponse:
+        """
+        @summary 获取个人体验相关信息
+        
+        @param request: GetPersonalExperienceInfoRequest
+        @param headers: GetPersonalExperienceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalExperienceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -352,6 +444,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.GetPersonalExperienceInfoResponse:
+        """
+        @summary 获取个人体验相关信息
+        
+        @param request: GetPersonalExperienceInfoRequest
+        @param headers: GetPersonalExperienceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalExperienceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -385,6 +485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoRequest,
     ) -> dingtalkapp_market__1__0_models.GetPersonalExperienceInfoResponse:
+        """
+        @summary 获取个人体验相关信息
+        
+        @param request: GetPersonalExperienceInfoRequest
+        @return: GetPersonalExperienceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetPersonalExperienceInfoHeaders()
         return self.get_personal_experience_info_with_options(request, headers, runtime)
@@ -393,6 +499,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.GetPersonalExperienceInfoRequest,
     ) -> dingtalkapp_market__1__0_models.GetPersonalExperienceInfoResponse:
+        """
+        @summary 获取个人体验相关信息
+        
+        @param request: GetPersonalExperienceInfoRequest
+        @return: GetPersonalExperienceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.GetPersonalExperienceInfoHeaders()
         return await self.get_personal_experience_info_with_options_async(request, headers, runtime)
@@ -403,6 +515,13 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.QueryMarketOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
+        """
+        @summary 应用市场订单查询
+        
+        @param headers: QueryMarketOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMarketOrderResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -433,6 +552,13 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.QueryMarketOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
+        """
+        @summary 应用市场订单查询
+        
+        @param headers: QueryMarketOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMarketOrderResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -461,6 +587,11 @@ class Client(OpenApiClient):
         self,
         order_id: str,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
+        """
+        @summary 应用市场订单查询
+        
+        @return: QueryMarketOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.QueryMarketOrderHeaders()
         return self.query_market_order_with_options(order_id, headers, runtime)
@@ -469,6 +600,11 @@ class Client(OpenApiClient):
         self,
         order_id: str,
     ) -> dingtalkapp_market__1__0_models.QueryMarketOrderResponse:
+        """
+        @summary 应用市场订单查询
+        
+        @return: QueryMarketOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.QueryMarketOrderHeaders()
         return await self.query_market_order_with_options_async(order_id, headers, runtime)
@@ -479,6 +615,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.UserTaskReportHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.UserTaskReportResponse:
+        """
+        @summary app内用户操作任务同步
+        
+        @param request: UserTaskReportRequest
+        @param headers: UserTaskReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserTaskReportResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_no):
@@ -520,6 +664,14 @@ class Client(OpenApiClient):
         headers: dingtalkapp_market__1__0_models.UserTaskReportHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapp_market__1__0_models.UserTaskReportResponse:
+        """
+        @summary app内用户操作任务同步
+        
+        @param request: UserTaskReportRequest
+        @param headers: UserTaskReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserTaskReportResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_no):
@@ -559,6 +711,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.UserTaskReportRequest,
     ) -> dingtalkapp_market__1__0_models.UserTaskReportResponse:
+        """
+        @summary app内用户操作任务同步
+        
+        @param request: UserTaskReportRequest
+        @return: UserTaskReportResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.UserTaskReportHeaders()
         return self.user_task_report_with_options(request, headers, runtime)
@@ -567,6 +725,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapp_market__1__0_models.UserTaskReportRequest,
     ) -> dingtalkapp_market__1__0_models.UserTaskReportResponse:
+        """
+        @summary app内用户操作任务同步
+        
+        @param request: UserTaskReportRequest
+        @return: UserTaskReportResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.UserTaskReportHeaders()
         return await self.user_task_report_with_options_async(request, headers, runtime)

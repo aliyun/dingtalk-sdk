@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        """
+        @summary 执行AI技能
+        
+        @param request: ExecuteAgentRequest
+        @param headers: ExecuteAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteAgentResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_code):
@@ -78,6 +86,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        """
+        @summary 执行AI技能
+        
+        @param request: ExecuteAgentRequest
+        @param headers: ExecuteAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteAgentResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.agent_code):
@@ -119,6 +135,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
     ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        """
+        @summary 执行AI技能
+        
+        @param request: ExecuteAgentRequest
+        @return: ExecuteAgentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
         return self.execute_agent_with_options(request, headers, runtime)
@@ -127,6 +149,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
     ) -> dingtalkai_paa_s__1__0_models.ExecuteAgentResponse:
+        """
+        @summary 执行AI技能
+        
+        @param request: ExecuteAgentRequest
+        @return: ExecuteAgentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.ExecuteAgentHeaders()
         return await self.execute_agent_with_options_async(request, headers, runtime)
@@ -137,6 +165,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        """
+        @summary 炼丹炉文生图任务结果获取
+        
+        @param request: LiandanTextImageGetRequest
+        @param headers: LiandanTextImageGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanTextImageGetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.module):
@@ -176,6 +212,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        """
+        @summary 炼丹炉文生图任务结果获取
+        
+        @param request: LiandanTextImageGetRequest
+        @param headers: LiandanTextImageGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanTextImageGetResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.module):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        """
+        @summary 炼丹炉文生图任务结果获取
+        
+        @param request: LiandanTextImageGetRequest
+        @return: LiandanTextImageGetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders()
         return self.liandan_text_image_get_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanTextImageGetRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanTextImageGetResponse:
+        """
+        @summary 炼丹炉文生图任务结果获取
+        
+        @param request: LiandanTextImageGetRequest
+        @return: LiandanTextImageGetResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanTextImageGetHeaders()
         return await self.liandan_text_image_get_with_options_async(request, headers, runtime)
@@ -231,6 +287,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        """
+        @summary 炼丹炉专属模型接口
+        
+        @param request: LiandanluExclusiveModelRequest
+        @param headers: LiandanluExclusiveModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanluExclusiveModelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.model_id):
@@ -272,6 +336,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        """
+        @summary 炼丹炉专属模型接口
+        
+        @param request: LiandanluExclusiveModelRequest
+        @param headers: LiandanluExclusiveModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanluExclusiveModelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.model_id):
@@ -311,6 +383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        """
+        @summary 炼丹炉专属模型接口
+        
+        @param request: LiandanluExclusiveModelRequest
+        @return: LiandanluExclusiveModelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders()
         return self.liandanlu_exclusive_model_with_options(request, headers, runtime)
@@ -319,6 +397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelResponse:
+        """
+        @summary 炼丹炉专属模型接口
+        
+        @param request: LiandanluExclusiveModelRequest
+        @return: LiandanluExclusiveModelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanluExclusiveModelHeaders()
         return await self.liandanlu_exclusive_model_with_options_async(request, headers, runtime)
@@ -329,6 +413,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        """
+        @summary 炼丹炉通过提示词生成图片
+        
+        @param request: LiandanluTextToImageModelRequest
+        @param headers: LiandanluTextToImageModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanluTextToImageModelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.module):
@@ -372,6 +464,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        """
+        @summary 炼丹炉通过提示词生成图片
+        
+        @param request: LiandanluTextToImageModelRequest
+        @param headers: LiandanluTextToImageModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LiandanluTextToImageModelResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.module):
@@ -413,6 +513,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        """
+        @summary 炼丹炉通过提示词生成图片
+        
+        @param request: LiandanluTextToImageModelRequest
+        @return: LiandanluTextToImageModelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders()
         return self.liandanlu_text_to_image_model_with_options(request, headers, runtime)
@@ -421,6 +527,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelRequest,
     ) -> dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelResponse:
+        """
+        @summary 炼丹炉通过提示词生成图片
+        
+        @param request: LiandanluTextToImageModelRequest
+        @return: LiandanluTextToImageModelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders()
         return await self.liandanlu_text_to_image_model_with_options_async(request, headers, runtime)
@@ -431,6 +543,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @param headers: QueryBaymaxSkillLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBaymaxSkillLogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.from_):
@@ -472,6 +592,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @param headers: QueryBaymaxSkillLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBaymaxSkillLogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.from_):
@@ -511,6 +639,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @return: QueryBaymaxSkillLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogHeaders()
         return self.query_baymax_skill_log_with_options(request, headers, runtime)
@@ -519,6 +653,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @return: QueryBaymaxSkillLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogHeaders()
         return await self.query_baymax_skill_log_with_options_async(request, headers, runtime)
@@ -530,6 +670,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIResponse:
+        """
+        @summary 查询会话消息并以大模型友好的协议返回
+        
+        @param tmp_req: QueryConversationMessageForAIRequest
+        @param headers: QueryConversationMessageForAIHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConversationMessageForAIResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -576,6 +724,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIResponse:
+        """
+        @summary 查询会话消息并以大模型友好的协议返回
+        
+        @param tmp_req: QueryConversationMessageForAIRequest
+        @param headers: QueryConversationMessageForAIHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConversationMessageForAIResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -620,6 +776,12 @@ class Client(OpenApiClient):
         cid: str,
         request: dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIResponse:
+        """
+        @summary 查询会话消息并以大模型友好的协议返回
+        
+        @param request: QueryConversationMessageForAIRequest
+        @return: QueryConversationMessageForAIResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIHeaders()
         return self.query_conversation_message_for_aiwith_options(cid, request, headers, runtime)
@@ -629,6 +791,12 @@ class Client(OpenApiClient):
         cid: str,
         request: dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIResponse:
+        """
+        @summary 查询会话消息并以大模型友好的协议返回
+        
+        @param request: QueryConversationMessageForAIRequest
+        @return: QueryConversationMessageForAIResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryConversationMessageForAIHeaders()
         return await self.query_conversation_message_for_aiwith_options_async(cid, request, headers, runtime)
@@ -639,6 +807,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskResponse:
+        """
+        @summary 查询记忆学习进度
+        
+        @param request: QueryMemoryLearningTaskRequest
+        @param headers: QueryMemoryLearningTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMemoryLearningTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.agent_code):
@@ -676,6 +852,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskResponse:
+        """
+        @summary 查询记忆学习进度
+        
+        @param request: QueryMemoryLearningTaskRequest
+        @param headers: QueryMemoryLearningTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMemoryLearningTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.agent_code):
@@ -711,6 +895,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskResponse:
+        """
+        @summary 查询记忆学习进度
+        
+        @param request: QueryMemoryLearningTaskRequest
+        @return: QueryMemoryLearningTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders()
         return self.query_memory_learning_task_with_options(request, headers, runtime)
@@ -719,6 +909,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskRequest,
     ) -> dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskResponse:
+        """
+        @summary 查询记忆学习进度
+        
+        @param request: QueryMemoryLearningTaskRequest
+        @return: QueryMemoryLearningTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders()
         return await self.query_memory_learning_task_with_options_async(request, headers, runtime)
@@ -729,6 +925,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskResponse:
+        """
+        @summary 提交记忆学习任务
+        
+        @param tmp_req: SubmitMemoryLearningTaskRequest
+        @param headers: SubmitMemoryLearningTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitMemoryLearningTaskResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -774,6 +978,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskResponse:
+        """
+        @summary 提交记忆学习任务
+        
+        @param tmp_req: SubmitMemoryLearningTaskRequest
+        @param headers: SubmitMemoryLearningTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitMemoryLearningTaskResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -817,6 +1029,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskRequest,
     ) -> dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskResponse:
+        """
+        @summary 提交记忆学习任务
+        
+        @param request: SubmitMemoryLearningTaskRequest
+        @return: SubmitMemoryLearningTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskHeaders()
         return self.submit_memory_learning_task_with_options(request, headers, runtime)
@@ -825,6 +1043,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskRequest,
     ) -> dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskResponse:
+        """
+        @summary 提交记忆学习任务
+        
+        @param request: SubmitMemoryLearningTaskRequest
+        @return: SubmitMemoryLearningTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskHeaders()
         return await self.submit_memory_learning_task_with_options_async(request, headers, runtime)

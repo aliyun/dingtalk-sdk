@@ -47,11 +47,17 @@ class BatchRegisterDeviceRequestDeviceList(TeaModel):
         device_name: str = None,
         managers: str = None,
     ):
+        # This parameter is required.
         self.collaborators = collaborators
+        # This parameter is required.
         self.department_id = department_id
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.device_key = device_key
+        # This parameter is required.
         self.device_name = device_name
+        # This parameter is required.
         self.managers = managers
 
     def validate(self):
@@ -100,7 +106,9 @@ class BatchRegisterDeviceRequest(TeaModel):
         device_list: List[BatchRegisterDeviceRequestDeviceList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.device_list = device_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -385,7 +393,9 @@ class CreateChatRoomRequest(TeaModel):
         owner_user_id: str = None,
         role_list: List[str] = None,
     ):
+        # This parameter is required.
         self.chat_group_name = chat_group_name
+        # This parameter is required.
         self.device_codes = device_codes
         self.device_type_id = device_type_id
         self.owner_user_id = owner_user_id
@@ -546,13 +556,21 @@ class CreateDepartmentRequest(TeaModel):
         system_url: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.auth_info = auth_info
+        # This parameter is required.
         self.auth_type = auth_type
+        # This parameter is required.
         self.biz_ext = biz_ext
+        # This parameter is required.
         self.department_name = department_name
+        # This parameter is required.
         self.department_type = department_type
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.system_url = system_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -717,8 +735,10 @@ class CreateDeviceChatRoomRequest(TeaModel):
         self.chat_type = chat_type
         self.device_codes = device_codes
         self.device_uuids = device_uuids
+        # This parameter is required.
         self.owner_user_id = owner_user_id
         self.title = title
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -916,8 +936,10 @@ class DeviceDingRequest(TeaModel):
         params_json: str = None,
         receiver_user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.device_key = device_key
         self.params_json = params_json
+        # This parameter is required.
         self.receiver_user_id_list = receiver_user_id_list
 
     def validate(self):
@@ -953,6 +975,7 @@ class DeviceDingResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1054,6 +1077,7 @@ class DissolveGroupRequest(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1193,6 +1217,7 @@ class EditDeviceAdminRequest(TeaModel):
     ):
         self.device_code = device_code
         self.role_uuid = role_uuid
+        # This parameter is required.
         self.user_ids = user_ids
         self.uuid = uuid
 
@@ -1340,6 +1365,7 @@ class GetDeviceGroupInfoRequest(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -2427,6 +2453,7 @@ class PullDeviceToGroupRequest(TeaModel):
     ):
         self.device_codes = device_codes
         self.device_uuids = device_uuids
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.operator = operator
 
@@ -2575,6 +2602,7 @@ class PullUserToGroupRequest(TeaModel):
         open_conversation_id: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.user_ids = user_ids
 
@@ -2724,8 +2752,10 @@ class RegisterAndActivateDeviceRequest(TeaModel):
     ):
         self.device_callback_url = device_callback_url
         self.device_category = device_category
+        # This parameter is required.
         self.device_code = device_code
         self.device_detail_url = device_detail_url
+        # This parameter is required.
         self.device_name = device_name
         self.introduction = introduction
         self.role_uuid = role_uuid
@@ -2798,13 +2828,21 @@ class RegisterAndActivateDeviceResponseBodyResult(TeaModel):
         user_ids: List[str] = None,
     ):
         self.device_category = device_category
+        # This parameter is required.
         self.device_code = device_code
+        # This parameter is required.
         self.device_detail_url = device_detail_url
+        # This parameter is required.
         self.device_name = device_name
+        # This parameter is required.
         self.device_uuid = device_uuid
+        # This parameter is required.
         self.introduction = introduction
+        # This parameter is required.
         self.role_uuid = role_uuid
+        # This parameter is required.
         self.type_uuid = type_uuid
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -2865,6 +2903,7 @@ class RegisterAndActivateDeviceResponseBody(TeaModel):
         result: RegisterAndActivateDeviceResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
         self.success = success
 
@@ -2984,8 +3023,10 @@ class RegisterAndActivateDeviceBatchRequestRegisterAndActivateVOS(TeaModel):
     ):
         self.device_callback_url = device_callback_url
         self.device_category = device_category
+        # This parameter is required.
         self.device_code = device_code
         self.device_detail_url = device_detail_url
+        # This parameter is required.
         self.device_name = device_name
         self.group_uuid = group_uuid
         self.introduction = introduction
@@ -3518,11 +3559,15 @@ class RegisterDeviceRequest(TeaModel):
         user_id: str = None,
     ):
         self.collaborators = collaborators
+        # This parameter is required.
         self.department_id = department_id
         self.description = description
+        # This parameter is required.
         self.device_key = device_key
+        # This parameter is required.
         self.device_name = device_name
         self.managers = managers
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3574,6 +3619,7 @@ class RegisterDeviceResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -3680,7 +3726,9 @@ class RemoveDeviceFromGroupRequest(TeaModel):
     ):
         self.device_codes = device_codes
         self.device_uuids = device_uuids
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.operator = operator
 
     def validate(self):
@@ -3828,6 +3876,7 @@ class RemoveUserFromGroupRequest(TeaModel):
         open_conversation_id: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.user_ids = user_ids
 
@@ -3977,12 +4026,14 @@ class SendCardRequest(TeaModel):
         user_id: str = None,
     ):
         self.biz_id = biz_id
+        # This parameter is required.
         self.card_data = card_data
         self.device_code = device_code
         self.device_uuid = device_uuid
         self.open_conversation_id = open_conversation_id
         self.part_visible = part_visible
         self.receivers = receivers
+        # This parameter is required.
         self.template_id = template_id
         self.topbox = topbox
         self.user_id = user_id
@@ -4494,7 +4545,9 @@ class UpdateCardRequest(TeaModel):
         card_data: str = None,
         tips: UpdateCardRequestTips = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.card_data = card_data
         self.tips = tips
 
@@ -4535,6 +4588,7 @@ class UpdateCardResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):

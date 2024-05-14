@@ -10,7 +10,9 @@ class OpenConnectionRequestSubscriptions(TeaModel):
         topic: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.topic = topic
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -46,10 +48,13 @@ class OpenConnectionRequest(TeaModel):
         local_ip: str = None,
         subscriptions: List[OpenConnectionRequestSubscriptions] = None,
     ):
+        # This parameter is required.
         self.client_id = client_id
+        # This parameter is required.
         self.client_secret = client_secret
         self.extras = extras
         self.local_ip = local_ip
+        # This parameter is required.
         self.subscriptions = subscriptions
 
     def validate(self):

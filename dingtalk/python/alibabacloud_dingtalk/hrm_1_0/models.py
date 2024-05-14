@@ -164,7 +164,9 @@ class AddHrmPreentryRequest(TeaModel):
     ):
         self.agent_id = agent_id
         self.groups = groups
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
         self.need_send_pre_entry_msg = need_send_pre_entry_msg
         self.pre_entry_time = pre_entry_time
@@ -511,6 +513,7 @@ class ECertQueryResponseBody(TeaModel):
         self.last_work_day = last_work_day
         self.main_dept_id = main_dept_id
         self.main_dept_name = main_dept_name
+        # This parameter is required.
         self.name = name
         self.real_name = real_name
         self.termination_reason_passive = termination_reason_passive
@@ -675,10 +678,14 @@ class EmployeeAttachmentUpdateRequest(TeaModel):
         media_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_agent_id = app_agent_id
+        # This parameter is required.
         self.field_code = field_code
         self.file_suffix = file_suffix
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -829,6 +836,7 @@ class EsignRollbackRequest(TeaModel):
         self,
         opt_user_id: str = None,
     ):
+        # This parameter is required.
         self.opt_user_id = opt_user_id
 
     def validate(self):
@@ -856,6 +864,7 @@ class EsignRollbackResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -919,6 +928,434 @@ class EsignRollbackResponse(TeaModel):
         return self
 
 
+class GetEmployeeRosterByFieldHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetEmployeeRosterByFieldRequest(TeaModel):
+    def __init__(
+        self,
+        app_agent_id: int = None,
+        field_filter_list: List[str] = None,
+        text_2select_convert: bool = None,
+        user_id_list: List[str] = None,
+    ):
+        self.app_agent_id = app_agent_id
+        self.field_filter_list = field_filter_list
+        self.text_2select_convert = text_2select_convert
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_agent_id is not None:
+            result['appAgentId'] = self.app_agent_id
+        if self.field_filter_list is not None:
+            result['fieldFilterList'] = self.field_filter_list
+        if self.text_2select_convert is not None:
+            result['text2SelectConvert'] = self.text_2select_convert
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appAgentId') is not None:
+            self.app_agent_id = m.get('appAgentId')
+        if m.get('fieldFilterList') is not None:
+            self.field_filter_list = m.get('fieldFilterList')
+        if m.get('text2SelectConvert') is not None:
+            self.text_2select_convert = m.get('text2SelectConvert')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList(TeaModel):
+    def __init__(
+        self,
+        item_index: int = None,
+        label: str = None,
+        value: str = None,
+    ):
+        self.item_index = item_index
+        self.label = label
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_index is not None:
+            result['itemIndex'] = self.item_index
+        if self.label is not None:
+            result['label'] = self.label
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemIndex') is not None:
+            self.item_index = m.get('itemIndex')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetEmployeeRosterByFieldResponseBodyResultFieldDataList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_value_list: List[GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList] = None,
+        group_id: str = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_value_list = field_value_list
+        self.group_id = group_id
+
+    def validate(self):
+        if self.field_value_list:
+            for k in self.field_value_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        result['fieldValueList'] = []
+        if self.field_value_list is not None:
+            for k in self.field_value_list:
+                result['fieldValueList'].append(k.to_map() if k else None)
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        self.field_value_list = []
+        if m.get('fieldValueList') is not None:
+            for k in m.get('fieldValueList'):
+                temp_model = GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList()
+                self.field_value_list.append(temp_model.from_map(k))
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class GetEmployeeRosterByFieldResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        field_data_list: List[GetEmployeeRosterByFieldResponseBodyResultFieldDataList] = None,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        self.corp_id = corp_id
+        self.field_data_list = field_data_list
+        self.union_id = union_id
+        self.user_id = user_id
+
+    def validate(self):
+        if self.field_data_list:
+            for k in self.field_data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['fieldDataList'] = []
+        if self.field_data_list is not None:
+            for k in self.field_data_list:
+                result['fieldDataList'].append(k.to_map() if k else None)
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.field_data_list = []
+        if m.get('fieldDataList') is not None:
+            for k in m.get('fieldDataList'):
+                temp_model = GetEmployeeRosterByFieldResponseBodyResultFieldDataList()
+                self.field_data_list.append(temp_model.from_map(k))
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetEmployeeRosterByFieldResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetEmployeeRosterByFieldResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetEmployeeRosterByFieldResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetEmployeeRosterByFieldResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetEmployeeRosterByFieldResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetEmployeeRosterByFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrmBenefitQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrmBenefitQueryRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_codes: List[str] = None,
+    ):
+        # This parameter is required.
+        self.benefit_codes = benefit_codes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_codes is not None:
+            result['benefitCodes'] = self.benefit_codes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCodes') is not None:
+            self.benefit_codes = m.get('benefitCodes')
+        return self
+
+
+class HrmBenefitQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Any = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class HrmBenefitQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrmBenefitQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrmBenefitQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HrmMailSendHeaders(TeaModel):
     def __init__(
         self,
@@ -959,8 +1396,11 @@ class HrmMailSendRequestMailAttachments(TeaModel):
         path: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.path = path
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -998,8 +1438,11 @@ class HrmMailSendRequestMailMeetingAlarm(TeaModel):
         alarm_minutes: int = None,
         alarm_summary: str = None,
     ):
+        # This parameter is required.
         self.alarm_desc = alarm_desc
+        # This parameter is required.
         self.alarm_minutes = alarm_minutes
+        # This parameter is required.
         self.alarm_summary = alarm_summary
 
     def validate(self):
@@ -1036,7 +1479,9 @@ class HrmMailSendRequestMailMeetingAttendees(TeaModel):
         address: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.address = address
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -1069,7 +1514,9 @@ class HrmMailSendRequestMailMeetingOrganizer(TeaModel):
         address: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.address = address
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -1114,13 +1561,18 @@ class HrmMailSendRequestMailMeeting(TeaModel):
         self.alarm = alarm
         self.attendees = attendees
         self.description = description
+        # This parameter is required.
         self.end_time = end_time
         self.location = location
+        # This parameter is required.
         self.method = method
         self.organizer = organizer
         self.sequence = sequence
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.summary = summary
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -1212,10 +1664,14 @@ class HrmMailSendRequestMail(TeaModel):
         self.attachments = attachments
         self.bcc_address = bcc_address
         self.cc_address = cc_address
+        # This parameter is required.
         self.content = content
         self.meeting = meeting
+        # This parameter is required.
         self.receiver_address = receiver_address
+        # This parameter is required.
         self.sender_alias = sender_alias
+        # This parameter is required.
         self.subject = subject
 
     def validate(self):
@@ -1284,8 +1740,11 @@ class HrmMailSendRequestOperator(TeaModel):
         mail_account_type: str = None,
         token: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.mail_account_type = mail_account_type
+        # This parameter is required.
         self.token = token
 
     def validate(self):
@@ -1322,7 +1781,9 @@ class HrmMailSendRequest(TeaModel):
         mail: HrmMailSendRequestMail = None,
         operator: HrmMailSendRequestOperator = None,
     ):
+        # This parameter is required.
         self.mail = mail
+        # This parameter is required.
         self.operator = operator
 
     def validate(self):
@@ -1461,7 +1922,9 @@ class HrmMokaEventRequest(TeaModel):
         biz_id: str = None,
         content: str = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -1595,6 +2058,7 @@ class HrmMokaOapiRequest(TeaModel):
         api_code: str = None,
         params: Any = None,
     ):
+        # This parameter is required.
         self.api_code = api_code
         self.params = params
 
@@ -1749,9 +2213,12 @@ class HrmProcessRegularRequest(TeaModel):
         remark: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.operation_id = operation_id
+        # This parameter is required.
         self.regular_date = regular_date
         self.remark = remark
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1791,6 +2258,7 @@ class HrmProcessRegularResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1908,6 +2376,7 @@ class HrmProcessTransferRequest(TeaModel):
         self.position_level_after_transfer = position_level_after_transfer
         self.position_name_after_transfer = position_name_after_transfer
         self.rank_id_after_transfer = rank_id_after_transfer
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2070,8 +2539,11 @@ class HrmProcessUpdateTerminationInfoRequest(TeaModel):
         last_work_date: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dismission_memo = dismission_memo
+        # This parameter is required.
         self.last_work_date = last_work_date
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2107,6 +2579,7 @@ class HrmProcessUpdateTerminationInfoResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2212,10 +2685,13 @@ class HrmPtsServiceRequest(TeaModel):
         params: Any = None,
         path: str = None,
     ):
+        # This parameter is required.
         self.env = env
         self.method = method
+        # This parameter is required.
         self.outer_id = outer_id
         self.params = params
+        # This parameter is required.
         self.path = path
 
     def validate(self):
@@ -2412,6 +2888,7 @@ class MasterDataDeleteRequestBodyScope(TeaModel):
         scope_code: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.scope_code = scope_code
         self.version = version
 
@@ -2448,10 +2925,13 @@ class MasterDataDeleteRequestBody(TeaModel):
         field_list: List[MasterDataDeleteRequestBodyFieldList] = None,
         scope: MasterDataDeleteRequestBodyScope = None,
     ):
+        # This parameter is required.
         self.biz_time = biz_time
+        # This parameter is required.
         self.biz_uk = biz_uk
         self.entity_code = entity_code
         self.field_list = field_list
+        # This parameter is required.
         self.scope = scope
 
     def validate(self):
@@ -2507,7 +2987,9 @@ class MasterDataDeleteRequest(TeaModel):
         body: List[MasterDataDeleteRequestBody] = None,
         tenant_id: int = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.tenant_id = tenant_id
 
     def validate(self):
@@ -2593,6 +3075,7 @@ class MasterDataDeleteResponseBody(TeaModel):
         all_success: bool = None,
         fail_result: List[MasterDataDeleteResponseBodyFailResult] = None,
     ):
+        # This parameter is required.
         self.all_success = all_success
         self.fail_result = fail_result
 
@@ -2796,13 +3279,19 @@ class MasterDataQueryRequest(TeaModel):
         view_entity_code: str = None,
     ):
         self.biz_uk = biz_uk
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.opt_user_id = opt_user_id
         self.query_params = query_params
+        # This parameter is required.
         self.relation_ids = relation_ids
+        # This parameter is required.
         self.scope_code = scope_code
+        # This parameter is required.
         self.tenant_id = tenant_id
+        # This parameter is required.
         self.view_entity_code = view_entity_code
 
     def validate(self):
@@ -2955,8 +3444,11 @@ class MasterDataQueryResponseBodyResult(TeaModel):
         view_entity_field_volist: List[MasterDataQueryResponseBodyResultViewEntityFieldVOList] = None,
     ):
         self.outer_id = outer_id
+        # This parameter is required.
         self.relation_id = relation_id
+        # This parameter is required.
         self.scope_code = scope_code
+        # This parameter is required.
         self.view_entity_code = view_entity_code
         self.view_entity_field_volist = view_entity_field_volist
 
@@ -3015,7 +3507,9 @@ class MasterDataQueryResponseBody(TeaModel):
     ):
         self.has_more = has_more
         self.next_token = next_token
+        # This parameter is required.
         self.result = result
+        # This parameter is required.
         self.success = success
         self.total = total
 
@@ -3143,7 +3637,9 @@ class MasterDataSaveRequestBodyFieldList(TeaModel):
         name: str = None,
         value_str: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.value_str = value_str
 
     def validate(self):
@@ -3176,6 +3672,7 @@ class MasterDataSaveRequestBodyScope(TeaModel):
         scope_code: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.scope_code = scope_code
         self.version = version
 
@@ -3213,11 +3710,16 @@ class MasterDataSaveRequestBody(TeaModel):
         scope: MasterDataSaveRequestBodyScope = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_time = biz_time
+        # This parameter is required.
         self.biz_uk = biz_uk
         self.entity_code = entity_code
+        # This parameter is required.
         self.field_list = field_list
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3277,7 +3779,9 @@ class MasterDataSaveRequest(TeaModel):
         body: List[MasterDataSaveRequestBody] = None,
         tenant_id: int = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.tenant_id = tenant_id
 
     def validate(self):
@@ -3363,6 +3867,7 @@ class MasterDataSaveResponseBody(TeaModel):
         all_success: bool = None,
         fail_result: List[MasterDataSaveResponseBodyFailResult] = None,
     ):
+        # This parameter is required.
         self.all_success = all_success
         self.fail_result = fail_result
 
@@ -3478,7 +3983,9 @@ class MasterDataTenantQueyRequest(TeaModel):
         entity_code: str = None,
         scope_code: str = None,
     ):
+        # This parameter is required.
         self.entity_code = entity_code
+        # This parameter is required.
         self.scope_code = scope_code
 
     def validate(self):
@@ -3517,9 +4024,12 @@ class MasterDataTenantQueyResponseBodyResult(TeaModel):
     ):
         self.has_data = has_data
         self.integrate_data_auth = integrate_data_auth
+        # This parameter is required.
         self.name = name
         self.read_auth = read_auth
+        # This parameter is required.
         self.tenant_id = tenant_id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3567,6 +4077,7 @@ class MasterDataTenantQueyResponseBody(TeaModel):
         self,
         result: List[MasterDataTenantQueyResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -3764,12 +4275,18 @@ class MasterDatasQueryRequest(TeaModel):
         view_entity_code: str = None,
     ):
         self.biz_uk = biz_uk
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.query_params = query_params
+        # This parameter is required.
         self.relation_ids = relation_ids
+        # This parameter is required.
         self.scope_code = scope_code
+        # This parameter is required.
         self.tenant_id = tenant_id
+        # This parameter is required.
         self.view_entity_code = view_entity_code
 
     def validate(self):
@@ -3918,6 +4435,7 @@ class MasterDatasQueryResponseBodyResult(TeaModel):
         view_entity_field_volist: List[MasterDatasQueryResponseBodyResultViewEntityFieldVOList] = None,
     ):
         self.obj_id = obj_id
+        # This parameter is required.
         self.relation_id = relation_id
         self.scope_code = scope_code
         self.view_entity_code = view_entity_code
@@ -3979,6 +4497,7 @@ class MasterDatasQueryResponseBody(TeaModel):
         self.has_more = has_more
         self.next_token = next_token
         self.result = result
+        # This parameter is required.
         self.success = success
         self.total = total
 
@@ -4456,6 +4975,7 @@ class QueryHrmEmployeeDismissionInfoRequest(TeaModel):
         self,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -4483,6 +5003,7 @@ class QueryHrmEmployeeDismissionInfoShrinkRequest(TeaModel):
         self,
         user_id_list_shrink: str = None,
     ):
+        # This parameter is required.
         self.user_id_list_shrink = user_id_list_shrink
 
     def validate(self):
@@ -4757,7 +5278,9 @@ class QueryJobRanksRequest(TeaModel):
         rank_code: str = None,
         rank_name: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.rank_category_id = rank_category_id
         self.rank_code = rank_code
@@ -4991,7 +5514,9 @@ class QueryJobsRequest(TeaModel):
         next_token: int = None,
     ):
         self.job_name = job_name
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -5196,7 +5721,9 @@ class QueryPositionsRequest(TeaModel):
         self.in_category_ids = in_category_ids
         self.in_position_ids = in_position_ids
         self.position_name = position_name
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -5428,6 +5955,7 @@ class RosterMetaAvailableFieldListRequest(TeaModel):
         self,
         app_agent_id: int = None,
     ):
+        # This parameter is required.
         self.app_agent_id = app_agent_id
 
     def validate(self):
@@ -5614,9 +6142,13 @@ class RosterMetaFieldOptionsUpdateRequest(TeaModel):
         modify_type: str = None,
     ):
         self.app_agent_id = app_agent_id
+        # This parameter is required.
         self.field_code = field_code
+        # This parameter is required.
         self.group_id = group_id
+        # This parameter is required.
         self.labels = labels
+        # This parameter is required.
         self.modify_type = modify_type
 
     def validate(self):
@@ -5768,12 +6300,19 @@ class SendIsvCardMessageRequest(TeaModel):
         sender_user_id: str = None,
         value_map: Dict[str, str] = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.message_type = message_type
+        # This parameter is required.
         self.receiver_user_ids = receiver_user_ids
+        # This parameter is required.
         self.scene_type = scene_type
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.sender_user_id = sender_user_id
         self.value_map = value_map
 
@@ -6004,14 +6543,20 @@ class SolutionTaskInitRequest(TeaModel):
         user_id: str = None,
         solution_type: str = None,
     ):
+        # This parameter is required.
         self.category = category
         self.claim_time = claim_time
         self.description = description
         self.finish_time = finish_time
+        # This parameter is required.
         self.outer_id = outer_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.solution_type = solution_type
 
     def validate(self):
@@ -6186,14 +6731,21 @@ class SolutionTaskSaveRequest(TeaModel):
         self.claim_time = claim_time
         self.description = description
         self.finish_time = finish_time
+        # This parameter is required.
         self.outer_id = outer_id
+        # This parameter is required.
         self.solution_instance_id = solution_instance_id
         self.start_time = start_time
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.task_type = task_type
         self.template_outer_id = template_outer_id
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.solution_type = solution_type
 
     def validate(self):
@@ -6422,11 +6974,16 @@ class SyncTaskTemplateRequest(TeaModel):
         self.delete = delete
         self.des = des
         self.ext = ext
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.opt_user_id = opt_user_id
+        # This parameter is required.
         self.outer_id = outer_id
         self.task_scope_vo = task_scope_vo
+        # This parameter is required.
         self.task_type = task_type
+        # This parameter is required.
         self.solution_type = solution_type
 
     def validate(self):
@@ -6595,10 +7152,15 @@ class UpdateIsvCardMessageRequest(TeaModel):
         value_map: Dict[str, str] = None,
     ):
         self.agent_id = agent_id
+        # This parameter is required.
         self.biz_id = biz_id
+        # This parameter is required.
         self.message_type = message_type
+        # This parameter is required.
         self.scene_type = scene_type
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.value_map = value_map
 
     def validate(self):

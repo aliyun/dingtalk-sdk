@@ -47,11 +47,15 @@ class CreateGroupBlackboardRequest(TeaModel):
         unique_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.send_ding = send_ding
         self.sticky = sticky
+        # This parameter is required.
         self.unique_id = unique_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -101,6 +105,7 @@ class CreateGroupBlackboardResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data_id = data_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -208,8 +213,11 @@ class DeleteGroupBlackboardRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.data_id = data_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -247,6 +255,7 @@ class DeleteGroupBlackboardResponseBody(TeaModel):
         success: bool = None,
     ):
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.success = success
 
     def validate(self):

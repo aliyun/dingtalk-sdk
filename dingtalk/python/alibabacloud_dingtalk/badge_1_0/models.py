@@ -43,7 +43,9 @@ class CreateBadgeCodeUserInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
+        # This parameter is required.
         self.gmt_end = gmt_end
+        # This parameter is required.
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -85,16 +87,25 @@ class CreateBadgeCodeUserInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
+        # This parameter is required.
         self.available_times = available_times
+        # This parameter is required.
         self.code_identity = code_identity
         self.code_value = code_value
         self.code_value_type = code_value_type
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_expired = gmt_expired
+        # This parameter is required.
         self.request_id = request_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
 
     def validate(self):
@@ -172,6 +183,7 @@ class CreateBadgeCodeUserInstanceResponseBody(TeaModel):
         code_id: str = None,
     ):
         self.code_detail_url = code_detail_url
+        # This parameter is required.
         self.code_id = code_id
 
     def validate(self):
@@ -280,9 +292,13 @@ class CreateBadgeNotifyRequest(TeaModel):
         msg_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.msg_id = msg_id
+        # This parameter is required.
         self.msg_type = msg_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -322,6 +338,7 @@ class CreateBadgeNotifyResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -424,7 +441,9 @@ class DecodeBadgeCodeRequest(TeaModel):
         pay_code: str = None,
         request_id: str = None,
     ):
+        # This parameter is required.
         self.pay_code = pay_code
+        # This parameter is required.
         self.request_id = request_id
 
     def validate(self):
@@ -464,13 +483,17 @@ class DecodeBadgeCodeResponseBody(TeaModel):
         user_corp_relation_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.alipay_code = alipay_code
         self.code_id = code_id
         self.code_identity = code_identity
+        # This parameter is required.
         self.code_type = code_type
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_info = ext_info
         self.out_biz_id = out_biz_id
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
         self.user_id = user_id
 
@@ -610,11 +633,16 @@ class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList(TeaM
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -669,13 +697,19 @@ class NotifyBadgeCodePayResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_list = fund_tool_detail_list
         self.gmt_create = gmt_create
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -755,22 +789,36 @@ class NotifyBadgeCodePayResultRequest(TeaModel):
         trade_status: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.charge_amount = charge_amount
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_trade_create = gmt_trade_create
+        # This parameter is required.
         self.gmt_trade_finish = gmt_trade_finish
+        # This parameter is required.
         self.merchant_name = merchant_name
+        # This parameter is required.
         self.pay_channel_detail_list = pay_channel_detail_list
+        # This parameter is required.
         self.pay_code = pay_code
+        # This parameter is required.
         self.promotion_amount = promotion_amount
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.title = title
         self.trade_error_code = trade_error_code
         self.trade_error_msg = trade_error_msg
+        # This parameter is required.
         self.trade_no = trade_no
+        # This parameter is required.
         self.trade_status = trade_status
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -870,6 +918,7 @@ class NotifyBadgeCodePayResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -976,11 +1025,16 @@ class NotifyBadgeCodeRefundResultRequestPayChannelDetailListFundToolDetailList(T
         gmt_finish: str = None,
         promotion_fund_tool: bool = None,
     ):
+        # This parameter is required.
         self.amount = amount
         self.ext_info = ext_info
+        # This parameter is required.
         self.fund_tool_name = fund_tool_name
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_finish = gmt_finish
+        # This parameter is required.
         self.promotion_fund_tool = promotion_fund_tool
 
     def validate(self):
@@ -1034,12 +1088,19 @@ class NotifyBadgeCodeRefundResultRequestPayChannelDetailList(TeaModel):
         pay_channel_type: str = None,
         promotion_amount: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.fund_tool_detail_list = fund_tool_detail_list
+        # This parameter is required.
         self.pay_channel_name = pay_channel_name
+        # This parameter is required.
         self.pay_channel_order_no = pay_channel_order_no
+        # This parameter is required.
         self.pay_channel_refund_order_no = pay_channel_refund_order_no
+        # This parameter is required.
         self.pay_channel_type = pay_channel_type
+        # This parameter is required.
         self.promotion_amount = promotion_amount
 
     def validate(self):
@@ -1108,15 +1169,25 @@ class NotifyBadgeCodeRefundResultRequest(TeaModel):
         trade_no: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.gmt_refund = gmt_refund
+        # This parameter is required.
         self.pay_channel_detail_list = pay_channel_detail_list
+        # This parameter is required.
         self.pay_code = pay_code
+        # This parameter is required.
         self.refund_amount = refund_amount
+        # This parameter is required.
         self.refund_order_no = refund_order_no
+        # This parameter is required.
         self.refund_promotion_amount = refund_promotion_amount
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.trade_no = trade_no
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1188,6 +1259,7 @@ class NotifyBadgeCodeRefundResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1298,15 +1370,21 @@ class NotifyBadgeCodeVerifyResultRequest(TeaModel):
         verify_result: bool = None,
         verify_time: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.pay_code = pay_code
         self.remark = remark
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
         self.verify_event = verify_event
         self.verify_location = verify_location
         self.verify_no = verify_no
+        # This parameter is required.
         self.verify_result = verify_result
+        # This parameter is required.
         self.verify_time = verify_time
 
     def validate(self):
@@ -1370,6 +1448,7 @@ class NotifyBadgeCodeVerifyResultResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1474,9 +1553,12 @@ class SaveBadgeCodeCorpInstanceRequest(TeaModel):
         ext_info: Dict[str, str] = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.code_identity = code_identity
+        # This parameter is required.
         self.corp_id = corp_id
         self.ext_info = ext_info
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -1636,7 +1718,9 @@ class UpdateBadgeCodeUserInstanceRequestAvailableTimes(TeaModel):
         gmt_end: str = None,
         gmt_start: str = None,
     ):
+        # This parameter is required.
         self.gmt_end = gmt_end
+        # This parameter is required.
         self.gmt_start = gmt_start
 
     def validate(self):
@@ -1677,15 +1761,23 @@ class UpdateBadgeCodeUserInstanceRequest(TeaModel):
         user_corp_relation_type: str = None,
         user_identity: str = None,
     ):
+        # This parameter is required.
         self.available_times = available_times
+        # This parameter is required.
         self.code_id = code_id
+        # This parameter is required.
         self.code_identity = code_identity
         self.code_value = code_value
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.ext_info = ext_info
+        # This parameter is required.
         self.gmt_expired = gmt_expired
         self.status = status
+        # This parameter is required.
         self.user_corp_relation_type = user_corp_relation_type
+        # This parameter is required.
         self.user_identity = user_identity
 
     def validate(self):

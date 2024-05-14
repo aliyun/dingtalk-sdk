@@ -43,7 +43,9 @@ class CreateAppGoodsServiceConversationRequest(TeaModel):
         isv_user_id: str = None,
         order_id: int = None,
     ):
+        # This parameter is required.
         self.isv_user_id = isv_user_id
+        # This parameter is required.
         self.order_id = order_id
 
     def validate(self):
@@ -184,8 +186,11 @@ class GetCoolAppAccessStatusRequest(TeaModel):
         cool_app_code: str = None,
         enc_field_biz_code: str = None,
     ):
+        # This parameter is required.
         self.auth_code = auth_code
+        # This parameter is required.
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.enc_field_biz_code = enc_field_biz_code
 
     def validate(self):
@@ -327,6 +332,7 @@ class GetInAppSkuUrlRequest(TeaModel):
     ):
         self.callback_page = callback_page
         self.extend_param = extend_param
+        # This parameter is required.
         self.goods_code = goods_code
         self.item_code = item_code
 
@@ -638,19 +644,29 @@ class QueryMarketOrderResponseBody(TeaModel):
         status: int = None,
         total_actual_pay_fee: int = None,
     ):
+        # This parameter is required.
         self.biz_order_id = biz_order_id
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.create_timestamp = create_timestamp
         self.end_timestamp = end_timestamp
+        # This parameter is required.
         self.goods_code = goods_code
+        # This parameter is required.
         self.goods_name = goods_name
+        # This parameter is required.
         self.in_app_order = in_app_order
+        # This parameter is required.
         self.item_code = item_code
+        # This parameter is required.
         self.item_name = item_name
         self.paid_timestamp = paid_timestamp
         self.quantity = quantity
         self.start_timestamp = start_timestamp
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.total_actual_pay_fee = total_actual_pay_fee
 
     def validate(self):
@@ -807,9 +823,13 @@ class UserTaskReportRequest(TeaModel):
         task_tag: str = None,
         userid: str = None,
     ):
+        # This parameter is required.
         self.biz_no = biz_no
+        # This parameter is required.
         self.operate_date = operate_date
+        # This parameter is required.
         self.task_tag = task_tag
+        # This parameter is required.
         self.userid = userid
 
     def validate(self):

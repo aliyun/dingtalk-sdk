@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        """
+        @summary 批量创建模板
+        
+        @param request: BatchCreateTemplateRequest
+        @param headers: BatchCreateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_list):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchCreateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        """
+        @summary 批量创建模板
+        
+        @param request: BatchCreateTemplateRequest
+        @param headers: BatchCreateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_list):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
     ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        """
+        @summary 批量创建模板
+        
+        @param request: BatchCreateTemplateRequest
+        @return: BatchCreateTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
         return self.batch_create_template_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchCreateTemplateRequest,
     ) -> dingtalkapaas__1__0_models.BatchCreateTemplateResponse:
+        """
+        @summary 批量创建模板
+        
+        @param request: BatchCreateTemplateRequest
+        @return: BatchCreateTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchCreateTemplateHeaders()
         return await self.batch_create_template_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchQueryByTemplateKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchQueryByTemplateKeyResponse:
+        """
+        @summary 批量查询模板
+        
+        @param request: BatchQueryByTemplateKeyRequest
+        @param headers: BatchQueryByTemplateKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryByTemplateKeyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_keys):
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchQueryByTemplateKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchQueryByTemplateKeyResponse:
+        """
+        @summary 批量查询模板
+        
+        @param request: BatchQueryByTemplateKeyRequest
+        @param headers: BatchQueryByTemplateKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryByTemplateKeyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_keys):
@@ -189,6 +233,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchQueryByTemplateKeyRequest,
     ) -> dingtalkapaas__1__0_models.BatchQueryByTemplateKeyResponse:
+        """
+        @summary 批量查询模板
+        
+        @param request: BatchQueryByTemplateKeyRequest
+        @return: BatchQueryByTemplateKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchQueryByTemplateKeyHeaders()
         return self.batch_query_by_template_key_with_options(request, headers, runtime)
@@ -197,6 +247,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchQueryByTemplateKeyRequest,
     ) -> dingtalkapaas__1__0_models.BatchQueryByTemplateKeyResponse:
+        """
+        @summary 批量查询模板
+        
+        @param request: BatchQueryByTemplateKeyRequest
+        @return: BatchQueryByTemplateKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchQueryByTemplateKeyHeaders()
         return await self.batch_query_by_template_key_with_options_async(request, headers, runtime)
@@ -207,6 +263,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchUpdateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchUpdateTemplateResponse:
+        """
+        @summary 批量修改模板
+        
+        @param request: BatchUpdateTemplateRequest
+        @param headers: BatchUpdateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_list):
@@ -242,6 +306,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.BatchUpdateTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.BatchUpdateTemplateResponse:
+        """
+        @summary 批量修改模板
+        
+        @param request: BatchUpdateTemplateRequest
+        @param headers: BatchUpdateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_list):
@@ -275,6 +347,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchUpdateTemplateRequest,
     ) -> dingtalkapaas__1__0_models.BatchUpdateTemplateResponse:
+        """
+        @summary 批量修改模板
+        
+        @param request: BatchUpdateTemplateRequest
+        @return: BatchUpdateTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchUpdateTemplateHeaders()
         return self.batch_update_template_with_options(request, headers, runtime)
@@ -283,6 +361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.BatchUpdateTemplateRequest,
     ) -> dingtalkapaas__1__0_models.BatchUpdateTemplateResponse:
+        """
+        @summary 批量修改模板
+        
+        @param request: BatchUpdateTemplateRequest
+        @return: BatchUpdateTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.BatchUpdateTemplateHeaders()
         return await self.batch_update_template_with_options_async(request, headers, runtime)
@@ -292,6 +376,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        """
+        @summary 查询行业标签
+        
+        @param headers: QueryIndustryTagListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryIndustryTagListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -321,6 +412,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryIndustryTagListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        """
+        @summary 查询行业标签
+        
+        @param headers: QueryIndustryTagListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryIndustryTagListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -346,11 +444,21 @@ class Client(OpenApiClient):
         )
 
     def query_industry_tag_list(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        """
+        @summary 查询行业标签
+        
+        @return: QueryIndustryTagListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
         return self.query_industry_tag_list_with_options(headers, runtime)
 
     async def query_industry_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryIndustryTagListResponse:
+        """
+        @summary 查询行业标签
+        
+        @return: QueryIndustryTagListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryIndustryTagListHeaders()
         return await self.query_industry_tag_list_with_options_async(headers, runtime)
@@ -360,6 +468,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        """
+        @summary 查询角色
+        
+        @param headers: QueryRoleTagListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRoleTagListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -389,6 +504,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryRoleTagListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        """
+        @summary 查询角色
+        
+        @param headers: QueryRoleTagListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRoleTagListResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -414,11 +536,21 @@ class Client(OpenApiClient):
         )
 
     def query_role_tag_list(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        """
+        @summary 查询角色
+        
+        @return: QueryRoleTagListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
         return self.query_role_tag_list_with_options(headers, runtime)
 
     async def query_role_tag_list_async(self) -> dingtalkapaas__1__0_models.QueryRoleTagListResponse:
+        """
+        @summary 查询角色
+        
+        @return: QueryRoleTagListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryRoleTagListHeaders()
         return await self.query_role_tag_list_with_options_async(headers, runtime)
@@ -428,6 +560,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        """
+        @summary 查询模板分类
+        
+        @param headers: QueryTemplateCategorysHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTemplateCategorysResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -457,6 +596,13 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        """
+        @summary 查询模板分类
+        
+        @param headers: QueryTemplateCategorysHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTemplateCategorysResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -482,11 +628,21 @@ class Client(OpenApiClient):
         )
 
     def query_template_categorys(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        """
+        @summary 查询模板分类
+        
+        @return: QueryTemplateCategorysResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
         return self.query_template_categorys_with_options(headers, runtime)
 
     async def query_template_categorys_async(self) -> dingtalkapaas__1__0_models.QueryTemplateCategorysResponse:
+        """
+        @summary 查询模板分类
+        
+        @return: QueryTemplateCategorysResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.QueryTemplateCategorysHeaders()
         return await self.query_template_categorys_with_options_async(headers, runtime)
@@ -497,6 +653,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.RecallAuditTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.RecallAuditTemplateResponse:
+        """
+        @summary 撤回模板审核
+        
+        @param request: RecallAuditTemplateRequest
+        @param headers: RecallAuditTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallAuditTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_keys):
@@ -532,6 +696,14 @@ class Client(OpenApiClient):
         headers: dingtalkapaas__1__0_models.RecallAuditTemplateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkapaas__1__0_models.RecallAuditTemplateResponse:
+        """
+        @summary 撤回模板审核
+        
+        @param request: RecallAuditTemplateRequest
+        @param headers: RecallAuditTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallAuditTemplateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.template_keys):
@@ -565,6 +737,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.RecallAuditTemplateRequest,
     ) -> dingtalkapaas__1__0_models.RecallAuditTemplateResponse:
+        """
+        @summary 撤回模板审核
+        
+        @param request: RecallAuditTemplateRequest
+        @return: RecallAuditTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.RecallAuditTemplateHeaders()
         return self.recall_audit_template_with_options(request, headers, runtime)
@@ -573,6 +751,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkapaas__1__0_models.RecallAuditTemplateRequest,
     ) -> dingtalkapaas__1__0_models.RecallAuditTemplateResponse:
+        """
+        @summary 撤回模板审核
+        
+        @param request: RecallAuditTemplateRequest
+        @return: RecallAuditTemplateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapaas__1__0_models.RecallAuditTemplateHeaders()
         return await self.recall_audit_template_with_options_async(request, headers, runtime)

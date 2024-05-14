@@ -47,9 +47,12 @@ class AddApplicationRegFormTemplateRequest(TeaModel):
         op_user_id: str = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.name = name
         self.outer_id = outer_id
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -94,7 +97,9 @@ class AddApplicationRegFormTemplateResponseBody(TeaModel):
         template_id: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):
@@ -204,7 +209,9 @@ class AddFileRequest(TeaModel):
         op_user_id: str = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.media_id = media_id
         self.op_user_id = op_user_id
 
@@ -247,8 +254,11 @@ class AddFileResponseBody(TeaModel):
         file_name: str = None,
         space_id: int = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -1063,6 +1073,7 @@ class CollectResumeDetailRequestResumeDataBaseInfo(TeaModel):
         self.job_title = job_title
         self.last_school_name = last_school_name
         self.married = married
+        # This parameter is required.
         self.name = name
         self.native_place = native_place
         self.now_location = now_location
@@ -1491,6 +1502,7 @@ class CollectResumeDetailRequestResumeData(TeaModel):
         training_experiences: List[CollectResumeDetailRequestResumeDataTrainingExperiences] = None,
         work_experiences: List[CollectResumeDetailRequestResumeDataWorkExperiences] = None,
     ):
+        # This parameter is required.
         self.base_info = base_info
         self.certificates = certificates
         self.education_experiences = education_experiences
@@ -1649,9 +1661,12 @@ class CollectResumeDetailRequest(TeaModel):
         self.channel_code = channel_code
         self.channel_outer_id = channel_outer_id
         self.channel_talent_id = channel_talent_id
+        # This parameter is required.
         self.deliver_job_id = deliver_job_id
+        # This parameter is required.
         self.opt_user_id = opt_user_id
         self.resume_channel_url = resume_channel_url
+        # This parameter is required.
         self.resume_data = resume_data
         self.resume_file = resume_file
 
@@ -1820,8 +1835,11 @@ class CollectResumeMailRequestResumeFile(TeaModel):
         file_name: str = None,
         file_type: str = None,
     ):
+        # This parameter is required.
         self.download_url = download_url
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_type = file_type
 
     def validate(self):
@@ -1869,18 +1887,27 @@ class CollectResumeMailRequest(TeaModel):
         resume_channel_url: str = None,
         resume_file: CollectResumeMailRequestResumeFile = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.channel_code = channel_code
         self.deliver_job_id = deliver_job_id
+        # This parameter is required.
         self.from_mail_address = from_mail_address
         self.history_mail_import = history_mail_import
+        # This parameter is required.
         self.mail_id = mail_id
+        # This parameter is required.
         self.mail_title = mail_title
         self.opt_user_id = opt_user_id
+        # This parameter is required.
         self.receive_mail_address = receive_mail_address
+        # This parameter is required.
         self.receive_mail_type = receive_mail_type
+        # This parameter is required.
         self.received_time = received_time
         self.resume_channel_url = resume_channel_url
+        # This parameter is required.
         self.resume_file = resume_file
 
     def validate(self):
@@ -2086,6 +2113,7 @@ class ConfirmRightsResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2189,6 +2217,7 @@ class FinishBeginnerTaskRequest(TeaModel):
         user_id: str = None,
     ):
         self.scope = scope
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2220,6 +2249,7 @@ class FinishBeginnerTaskResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2357,15 +2387,25 @@ class GetApplicationRegFormByFlowIdResponseBody(TeaModel):
         template_id: str = None,
         template_version: int = None,
     ):
+        # This parameter is required.
         self.candidate_id = candidate_id
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.flow_id = flow_id
+        # This parameter is required.
         self.form_id = form_id
+        # This parameter is required.
         self.gmt_create_millis = gmt_create_millis
+        # This parameter is required.
         self.gmt_modified_millis = gmt_modified_millis
+        # This parameter is required.
         self.job_id = job_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.template_version = template_version
 
     def validate(self):
@@ -2505,6 +2545,7 @@ class GetCandidateByPhoneNumberRequest(TeaModel):
         phone_number: str = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.phone_number = phone_number
 
     def validate(self):
@@ -2537,6 +2578,7 @@ class GetCandidateByPhoneNumberResponseBody(TeaModel):
         candidate_id: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.candidate_id = candidate_id
         self.name = name
 
@@ -2648,8 +2690,11 @@ class GetFileUploadInfoRequest(TeaModel):
         op_user_id: str = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.file_name = file_name
+        # This parameter is required.
         self.file_size = file_size
+        # This parameter is required.
         self.md_5 = md_5
         self.op_user_id = op_user_id
 
@@ -2700,12 +2745,19 @@ class GetFileUploadInfoResponseBody(TeaModel):
         end_point: str = None,
         media_id: str = None,
     ):
+        # This parameter is required.
         self.access_key_id = access_key_id
+        # This parameter is required.
         self.access_key_secret = access_key_secret
+        # This parameter is required.
         self.access_token = access_token
+        # This parameter is required.
         self.access_token_expiration_millis = access_token_expiration_millis
+        # This parameter is required.
         self.bucket = bucket
+        # This parameter is required.
         self.end_point = end_point
+        # This parameter is required.
         self.media_id = media_id
 
     def validate(self):
@@ -2834,7 +2886,9 @@ class GetFlowIdByRelationEntityIdRequest(TeaModel):
         relation_entity_id: str = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.relation_entity = relation_entity
+        # This parameter is required.
         self.relation_entity_id = relation_entity_id
 
     def validate(self):
@@ -2870,6 +2924,7 @@ class GetFlowIdByRelationEntityIdResponseBody(TeaModel):
         self,
         flow_id: str = None,
     ):
+        # This parameter is required.
         self.flow_id = flow_id
 
     def validate(self):
@@ -3151,7 +3206,9 @@ class QueryCandidatesRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.stat_id = stat_id
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -3369,8 +3426,11 @@ class QueryInterviewsRequest(TeaModel):
         size: int = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.candidate_id = candidate_id
+        # This parameter is required.
         self.start_time_begin_millis = start_time_begin_millis
+        # This parameter is required.
         self.start_time_end_millis = start_time_end_millis
         self.next_token = next_token
         self.size = size
@@ -3977,10 +4037,14 @@ class UpdateApplicationRegFormRequestDingPanFile(TeaModel):
         file_type: str = None,
         space_id: int = None,
     ):
+        # This parameter is required.
         self.file_id = file_id
+        # This parameter is required.
         self.file_name = file_name
         self.file_size = file_size
+        # This parameter is required.
         self.file_type = file_type
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -4027,7 +4091,9 @@ class UpdateApplicationRegFormRequest(TeaModel):
         ding_pan_file: UpdateApplicationRegFormRequestDingPanFile = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.ding_pan_file = ding_pan_file
 
     def validate(self):
@@ -4071,12 +4137,19 @@ class UpdateApplicationRegFormResponseBody(TeaModel):
         template_id: str = None,
         template_version: int = None,
     ):
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.form_id = form_id
+        # This parameter is required.
         self.gmt_create_millis = gmt_create_millis
+        # This parameter is required.
         self.gmt_modified_millis = gmt_modified_millis
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.template_version = template_version
 
     def validate(self):
@@ -4204,6 +4277,7 @@ class UpdateInterviewSignInInfoRequest(TeaModel):
         sign_in_time_millis: int = None,
     ):
         self.biz_code = biz_code
+        # This parameter is required.
         self.sign_in_time_millis = sign_in_time_millis
 
     def validate(self):
@@ -4309,14 +4383,20 @@ class UpdateJobDeliverRequest(TeaModel):
         status: int = None,
         job_id: str = None,
     ):
+        # This parameter is required.
         self.biz_code = biz_code
+        # This parameter is required.
         self.channel_outer_id = channel_outer_id
+        # This parameter is required.
         self.deliver_user_id = deliver_user_id
         self.error_code = error_code
         self.error_msg = error_msg
+        # This parameter is required.
         self.op_time = op_time
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.job_id = job_id
 
     def validate(self):

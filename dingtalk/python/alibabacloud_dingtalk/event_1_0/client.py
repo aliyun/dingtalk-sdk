@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.GetCallBackFaileResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.GetCallBackFaileResultResponse:
+        """
+        @summary 调用本获取推送失败的变更事件。
+        
+        @param request: GetCallBackFaileResultRequest
+        @param headers: GetCallBackFaileResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCallBackFaileResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.begin_time):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.GetCallBackFaileResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.GetCallBackFaileResultResponse:
+        """
+        @summary 调用本获取推送失败的变更事件。
+        
+        @param request: GetCallBackFaileResultRequest
+        @param headers: GetCallBackFaileResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCallBackFaileResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.begin_time):
@@ -109,6 +125,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.GetCallBackFaileResultRequest,
     ) -> dingtalkevent__1__0_models.GetCallBackFaileResultResponse:
+        """
+        @summary 调用本获取推送失败的变更事件。
+        
+        @param request: GetCallBackFaileResultRequest
+        @return: GetCallBackFaileResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.GetCallBackFaileResultHeaders()
         return self.get_call_back_faile_result_with_options(request, headers, runtime)
@@ -117,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.GetCallBackFaileResultRequest,
     ) -> dingtalkevent__1__0_models.GetCallBackFaileResultResponse:
+        """
+        @summary 调用本获取推送失败的变更事件。
+        
+        @param request: GetCallBackFaileResultRequest
+        @return: GetCallBackFaileResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.GetCallBackFaileResultHeaders()
         return await self.get_call_back_faile_result_with_options_async(request, headers, runtime)
@@ -127,6 +155,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.InstallAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        """
+        @summary 安装一方应用
+        
+        @param request: InstallAppRequest
+        @param headers: InstallAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -168,6 +204,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.InstallAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        """
+        @summary 安装一方应用
+        
+        @param request: InstallAppRequest
+        @param headers: InstallAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -207,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.InstallAppRequest,
     ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        """
+        @summary 安装一方应用
+        
+        @param request: InstallAppRequest
+        @return: InstallAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.InstallAppHeaders()
         return self.install_app_with_options(request, headers, runtime)
@@ -215,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.InstallAppRequest,
     ) -> dingtalkevent__1__0_models.InstallAppResponse:
+        """
+        @summary 安装一方应用
+        
+        @param request: InstallAppRequest
+        @return: InstallAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.InstallAppHeaders()
         return await self.install_app_with_options_async(request, headers, runtime)
@@ -225,6 +281,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.InstallCoolAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        """
+        @summary 安装酷应用
+        
+        @param tmp_req: InstallCoolAppRequest
+        @param headers: InstallCoolAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkevent__1__0_models.InstallCoolAppShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -280,6 +344,14 @@ class Client(OpenApiClient):
         headers: dingtalkevent__1__0_models.InstallCoolAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        """
+        @summary 安装酷应用
+        
+        @param tmp_req: InstallCoolAppRequest
+        @param headers: InstallCoolAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkevent__1__0_models.InstallCoolAppShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -333,6 +405,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.InstallCoolAppRequest,
     ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        """
+        @summary 安装酷应用
+        
+        @param request: InstallCoolAppRequest
+        @return: InstallCoolAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.InstallCoolAppHeaders()
         return self.install_cool_app_with_options(request, headers, runtime)
@@ -341,6 +419,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.InstallCoolAppRequest,
     ) -> dingtalkevent__1__0_models.InstallCoolAppResponse:
+        """
+        @summary 安装酷应用
+        
+        @param request: InstallCoolAppRequest
+        @return: InstallCoolAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkevent__1__0_models.InstallCoolAppHeaders()
         return await self.install_cool_app_with_options_async(request, headers, runtime)
@@ -351,6 +435,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.RePushSuiteTicketResponse:
+        """
+        @summary 重新获取suiteTicket
+        
+        @param request: RePushSuiteTicketRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RePushSuiteTicketResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.suite_id):
@@ -383,6 +475,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkevent__1__0_models.RePushSuiteTicketResponse:
+        """
+        @summary 重新获取suiteTicket
+        
+        @param request: RePushSuiteTicketRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RePushSuiteTicketResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.suite_id):
@@ -413,6 +513,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.RePushSuiteTicketRequest,
     ) -> dingtalkevent__1__0_models.RePushSuiteTicketResponse:
+        """
+        @summary 重新获取suiteTicket
+        
+        @param request: RePushSuiteTicketRequest
+        @return: RePushSuiteTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.re_push_suite_ticket_with_options(request, headers, runtime)
@@ -421,6 +527,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkevent__1__0_models.RePushSuiteTicketRequest,
     ) -> dingtalkevent__1__0_models.RePushSuiteTicketResponse:
+        """
+        @summary 重新获取suiteTicket
+        
+        @param request: RePushSuiteTicketRequest
+        @return: RePushSuiteTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.re_push_suite_ticket_with_options_async(request, headers, runtime)

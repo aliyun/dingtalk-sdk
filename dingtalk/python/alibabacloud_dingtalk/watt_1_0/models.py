@@ -11,6 +11,7 @@ class CheckInCrowdsByMobileRequest(TeaModel):
         mobile: str = None,
     ):
         self.crowd_ids = crowd_ids
+        # This parameter is required.
         self.mobile = mobile
 
     def validate(self):

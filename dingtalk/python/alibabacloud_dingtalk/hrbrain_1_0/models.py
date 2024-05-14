@@ -49,13 +49,17 @@ class HrbrainImportAwardDetailRequestBody(TeaModel):
         name: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.award_date = award_date
+        # This parameter is required.
         self.award_name = award_name
         self.award_org = award_org
         self.award_type = award_type
         self.comment = comment
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -112,7 +116,9 @@ class HrbrainImportAwardDetailRequest(TeaModel):
         body: List[HrbrainImportAwardDetailRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -275,12 +281,15 @@ class HrbrainImportDeptInfoRequestBody(TeaModel):
         super_name: str = None,
     ):
         self.create_date = create_date
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_no = dept_no
         self.effective_date = effective_date
         self.extend_info = extend_info
         self.is_effective = is_effective
         self.super_dept_name = super_dept_name
+        # This parameter is required.
         self.super_dept_no = super_dept_no
         self.super_emp_id = super_emp_id
         self.super_name = super_name
@@ -347,7 +356,9 @@ class HrbrainImportDeptInfoRequest(TeaModel):
         body: List[HrbrainImportDeptInfoRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -513,19 +524,28 @@ class HrbrainImportDimissionRequestBody(TeaModel):
         work_loc_addr: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_no = dept_no
+        # This parameter is required.
         self.dimission_date = dimission_date
+        # This parameter is required.
         self.dimission_reaason_desc = dimission_reaason_desc
+        # This parameter is required.
         self.dimission_reason = dimission_reason
+        # This parameter is required.
         self.emp_type = emp_type
         self.extend_info = extend_info
         self.job_code_name = job_code_name
         self.job_level = job_level
+        # This parameter is required.
         self.name = name
         self.post_name = post_name
+        # This parameter is required.
         self.super_name = super_name
         self.work_loc_addr = work_loc_addr
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -606,7 +626,9 @@ class HrbrainImportDimissionRequest(TeaModel):
         body: List[HrbrainImportDimissionRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -766,13 +788,19 @@ class HrbrainImportEduExpRequestBody(TeaModel):
         start_date: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.edu_name = edu_name
+        # This parameter is required.
         self.end_date = end_date
         self.extend_info = extend_info
         self.major = major
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.school_name = school_name
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -829,7 +857,9 @@ class HrbrainImportEduExpRequest(TeaModel):
         body: List[HrbrainImportEduExpRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1010,26 +1040,39 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
         work_loc_city: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.birthday = birthday
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_no = dept_no
         self.dimission_date = dimission_date
+        # This parameter is required.
         self.emp_source = emp_source
+        # This parameter is required.
         self.emp_status = emp_status
+        # This parameter is required.
         self.emp_type = emp_type
         self.extend_info = extend_info
+        # This parameter is required.
         self.gender = gender
         self.highest_degree = highest_degree
         self.highest_edu_name = highest_edu_name
         self.is_dimission = is_dimission
+        # This parameter is required.
         self.job_code_name = job_code_name
         self.job_level = job_level
         self.last_school_name = last_school_name
         self.marriage = marriage
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.nation = nation
+        # This parameter is required.
         self.nation_ctry = nation_ctry
+        # This parameter is required.
         self.political_status = political_status
+        # This parameter is required.
         self.post_name = post_name
         self.regist_date = regist_date
         self.regular_date = regular_date
@@ -1038,6 +1081,7 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
         self.work_email = work_email
         self.work_loc_addr = work_loc_addr
         self.work_loc_city = work_loc_city
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -1178,7 +1222,9 @@ class HrbrainImportEmpInfoRequest(TeaModel):
         body: List[HrbrainImportEmpInfoRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1333,8 +1379,11 @@ class HrbrainImportLabelBaseRequestBody(TeaModel):
         name: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -1371,7 +1420,9 @@ class HrbrainImportLabelBaseRequest(TeaModel):
         body: List[HrbrainImportLabelBaseRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1528,8 +1579,11 @@ class HrbrainImportLabelCustomRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.tag = tag
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -1570,7 +1624,9 @@ class HrbrainImportLabelCustomRequest(TeaModel):
         body: List[HrbrainImportLabelCustomRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1729,10 +1785,15 @@ class HrbrainImportLabelIndustryRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.extend_info = extend_info
+        # This parameter is required.
         self.level_1 = level_1
+        # This parameter is required.
         self.level_2 = level_2
+        # This parameter is required.
         self.level_3 = level_3
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -1781,7 +1842,9 @@ class HrbrainImportLabelIndustryRequest(TeaModel):
         body: List[HrbrainImportLabelIndustryRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1938,8 +2001,11 @@ class HrbrainImportLabelInventoryRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -1980,7 +2046,9 @@ class HrbrainImportLabelInventoryRequest(TeaModel):
         body: List[HrbrainImportLabelInventoryRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -2139,10 +2207,15 @@ class HrbrainImportLabelProfSkillRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.extend_info = extend_info
+        # This parameter is required.
         self.level_1 = level_1
+        # This parameter is required.
         self.level_2 = level_2
+        # This parameter is required.
         self.level_3 = level_3
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -2191,7 +2264,9 @@ class HrbrainImportLabelProfSkillRequest(TeaModel):
         body: List[HrbrainImportLabelProfSkillRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -2356,14 +2431,21 @@ class HrbrainImportPerfEvalRequestBody(TeaModel):
     ):
         self.comment = comment
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
         self.perf_cate = perf_cate
+        # This parameter is required.
         self.perf_plan_name = perf_plan_name
         self.perf_score = perf_score
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.period_end_date = period_end_date
+        # This parameter is required.
         self.period_start_date = period_start_date
+        # This parameter is required.
         self.score = score
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -2432,7 +2514,9 @@ class HrbrainImportPerfEvalRequest(TeaModel):
         body: List[HrbrainImportPerfEvalRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -2595,14 +2679,20 @@ class HrbrainImportPromEvalRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.comment = comment
+        # This parameter is required.
         self.effective_date = effective_date
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.new_job_level = new_job_level
+        # This parameter is required.
         self.period = period
         self.period_end_date = period_end_date
         self.period_start_date = period_start_date
+        # This parameter is required.
         self.pre_job_level = pre_job_level
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -2667,7 +2757,9 @@ class HrbrainImportPromEvalRequest(TeaModel):
         body: List[HrbrainImportPromEvalRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -2827,11 +2919,15 @@ class HrbrainImportPunDetailRequestBody(TeaModel):
         work_no: str = None,
     ):
         self.comment = comment
+        # This parameter is required.
         self.effective_date = effective_date
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.pun_name = pun_name
         self.pun_org = pun_org
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -2884,7 +2980,9 @@ class HrbrainImportPunDetailRequest(TeaModel):
         body: List[HrbrainImportPunDetailRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3049,18 +3147,25 @@ class HrbrainImportRegistRequestBody(TeaModel):
         work_loc_addr: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.dept_no = dept_no
+        # This parameter is required.
         self.emp_source = emp_source
+        # This parameter is required.
         self.emp_type = emp_type
         self.extend_info = extend_info
         self.job_code_name = job_code_name
         self.job_level = job_level
+        # This parameter is required.
         self.name = name
         self.post_name = post_name
+        # This parameter is required.
         self.regist_date = regist_date
         self.super_name = super_name
         self.work_loc_addr = work_loc_addr
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -3137,7 +3242,9 @@ class HrbrainImportRegistRequest(TeaModel):
         body: List[HrbrainImportRegistRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3297,13 +3404,20 @@ class HrbrainImportTransferEvalRequestBody(TeaModel):
         transfer_type: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.curr_info = curr_info
         self.extend_info = extend_info
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.pre_info = pre_info
+        # This parameter is required.
         self.transfer_date = transfer_date
+        # This parameter is required.
         self.transfer_reason = transfer_reason
+        # This parameter is required.
         self.transfer_type = transfer_type
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -3360,7 +3474,9 @@ class HrbrainImportTransferEvalRequest(TeaModel):
         body: List[HrbrainImportTransferEvalRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3520,13 +3636,18 @@ class HrbrainImportWorkExpRequestBody(TeaModel):
         start_date: str = None,
         work_no: str = None,
     ):
+        # This parameter is required.
         self.company_name = company_name
+        # This parameter is required.
         self.end_date = end_date
         self.extend_info = extend_info
         self.job_desc = job_desc
+        # This parameter is required.
         self.name = name
         self.post_name = post_name
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.work_no = work_no
 
     def validate(self):
@@ -3583,7 +3704,9 @@ class HrbrainImportWorkExpRequest(TeaModel):
         body: List[HrbrainImportWorkExpRequestBody] = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.body = body
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3740,10 +3863,15 @@ class SyncDataRequest(TeaModel):
         project_id: str = None,
         schema_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.data_id = data_id
+        # This parameter is required.
         self.etl_time = etl_time
+        # This parameter is required.
         self.project_id = project_id
+        # This parameter is required.
         self.schema_id = schema_id
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.CreateTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.CreateTicketResponse:
+        """
+        @summary 创建工单
+        
+        @param request: CreateTicketRequest
+        @param headers: CreateTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTicketResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.foreign_id):
@@ -84,6 +92,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.CreateTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.CreateTicketResponse:
+        """
+        @summary 创建工单
+        
+        @param request: CreateTicketRequest
+        @param headers: CreateTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTicketResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.foreign_id):
@@ -131,6 +147,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.CreateTicketRequest,
     ) -> dingtalkcustomer_service__1__0_models.CreateTicketResponse:
+        """
+        @summary 创建工单
+        
+        @param request: CreateTicketRequest
+        @return: CreateTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.CreateTicketHeaders()
         return self.create_ticket_with_options(request, headers, runtime)
@@ -139,6 +161,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.CreateTicketRequest,
     ) -> dingtalkcustomer_service__1__0_models.CreateTicketResponse:
+        """
+        @summary 创建工单
+        
+        @param request: CreateTicketRequest
+        @return: CreateTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.CreateTicketHeaders()
         return await self.create_ticket_with_options_async(request, headers, runtime)
@@ -150,6 +178,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        """
+        @summary 执行工单活动
+        
+        @param request: ExecuteActivityRequest
+        @param headers: ExecuteActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_code):
@@ -198,6 +234,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        """
+        @summary 执行工单活动
+        
+        @param request: ExecuteActivityRequest
+        @param headers: ExecuteActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_code):
@@ -244,6 +288,12 @@ class Client(OpenApiClient):
         ticket_id: str,
         request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        """
+        @summary 执行工单活动
+        
+        @param request: ExecuteActivityRequest
+        @return: ExecuteActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders()
         return self.execute_activity_with_options(ticket_id, request, headers, runtime)
@@ -253,6 +303,12 @@ class Client(OpenApiClient):
         ticket_id: str,
         request: dingtalkcustomer_service__1__0_models.ExecuteActivityRequest,
     ) -> dingtalkcustomer_service__1__0_models.ExecuteActivityResponse:
+        """
+        @summary 执行工单活动
+        
+        @param request: ExecuteActivityRequest
+        @return: ExecuteActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.ExecuteActivityHeaders()
         return await self.execute_activity_with_options_async(ticket_id, request, headers, runtime)
@@ -263,6 +319,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.GetUserSourceListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.GetUserSourceListResponse:
+        """
+        @summary 获取source列表
+        
+        @param request: GetUserSourceListRequest
+        @param headers: GetUserSourceListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserSourceListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -308,6 +372,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.GetUserSourceListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.GetUserSourceListResponse:
+        """
+        @summary 获取source列表
+        
+        @param request: GetUserSourceListRequest
+        @param headers: GetUserSourceListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserSourceListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -351,6 +423,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.GetUserSourceListRequest,
     ) -> dingtalkcustomer_service__1__0_models.GetUserSourceListResponse:
+        """
+        @summary 获取source列表
+        
+        @param request: GetUserSourceListRequest
+        @return: GetUserSourceListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.GetUserSourceListHeaders()
         return self.get_user_source_list_with_options(request, headers, runtime)
@@ -359,6 +437,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.GetUserSourceListRequest,
     ) -> dingtalkcustomer_service__1__0_models.GetUserSourceListResponse:
+        """
+        @summary 获取source列表
+        
+        @param request: GetUserSourceListRequest
+        @return: GetUserSourceListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.GetUserSourceListHeaders()
         return await self.get_user_source_list_with_options_async(request, headers, runtime)
@@ -370,6 +454,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        """
+        @summary 查询动作记录
+        
+        @param request: PageListActionRequest
+        @param headers: PageListActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListActionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -412,6 +504,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        """
+        @summary 查询动作记录
+        
+        @param request: PageListActionRequest
+        @param headers: PageListActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListActionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -452,6 +552,12 @@ class Client(OpenApiClient):
         ticket_id: str,
         request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        """
+        @summary 查询动作记录
+        
+        @param request: PageListActionRequest
+        @return: PageListActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListActionHeaders()
         return self.page_list_action_with_options(ticket_id, request, headers, runtime)
@@ -461,6 +567,12 @@ class Client(OpenApiClient):
         ticket_id: str,
         request: dingtalkcustomer_service__1__0_models.PageListActionRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListActionResponse:
+        """
+        @summary 查询动作记录
+        
+        @param request: PageListActionRequest
+        @return: PageListActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListActionHeaders()
         return await self.page_list_action_with_options_async(ticket_id, request, headers, runtime)
@@ -471,6 +583,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        """
+        @summary 分页查询机器人信息
+        
+        @param request: PageListRobotRequest
+        @param headers: PageListRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListRobotResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -514,6 +634,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListRobotHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        """
+        @summary 分页查询机器人信息
+        
+        @param request: PageListRobotRequest
+        @param headers: PageListRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListRobotResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -555,6 +683,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        """
+        @summary 分页查询机器人信息
+        
+        @param request: PageListRobotRequest
+        @return: PageListRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListRobotHeaders()
         return self.page_list_robot_with_options(request, headers, runtime)
@@ -563,6 +697,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.PageListRobotRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListRobotResponse:
+        """
+        @summary 分页查询机器人信息
+        
+        @param request: PageListRobotRequest
+        @return: PageListRobotResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListRobotHeaders()
         return await self.page_list_robot_with_options_async(request, headers, runtime)
@@ -573,6 +713,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        """
+        @summary 分页查询工单
+        
+        @param request: PageListTicketRequest
+        @param headers: PageListTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListTicketResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -628,6 +776,14 @@ class Client(OpenApiClient):
         headers: dingtalkcustomer_service__1__0_models.PageListTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        """
+        @summary 分页查询工单
+        
+        @param request: PageListTicketRequest
+        @param headers: PageListTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListTicketResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -681,6 +837,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        """
+        @summary 分页查询工单
+        
+        @param request: PageListTicketRequest
+        @return: PageListTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListTicketHeaders()
         return self.page_list_ticket_with_options(request, headers, runtime)
@@ -689,6 +851,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcustomer_service__1__0_models.PageListTicketRequest,
     ) -> dingtalkcustomer_service__1__0_models.PageListTicketResponse:
+        """
+        @summary 分页查询工单
+        
+        @param request: PageListTicketRequest
+        @return: PageListTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcustomer_service__1__0_models.PageListTicketHeaders()
         return await self.page_list_ticket_with_options_async(request, headers, runtime)

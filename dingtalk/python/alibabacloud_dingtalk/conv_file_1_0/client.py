@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.GetSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        """
+        @summary 获取IM会话存储空间信息
+        
+        @param request: GetSpaceRequest
+        @param headers: GetSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.GetSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        """
+        @summary 获取IM会话存储空间信息
+        
+        @param request: GetSpaceRequest
+        @param headers: GetSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.GetSpaceRequest,
     ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        """
+        @summary 获取IM会话存储空间信息
+        
+        @param request: GetSpaceRequest
+        @return: GetSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
         return self.get_space_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.GetSpaceRequest,
     ) -> dingtalkconv_file__1__0_models.GetSpaceResponse:
+        """
+        @summary 获取IM会话存储空间信息
+        
+        @param request: GetSpaceRequest
+        @return: GetSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.GetSpaceHeaders()
         return await self.get_space_with_options_async(request, headers, runtime)
@@ -129,6 +157,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendResponse:
+        """
+        @summary 发送文件到指定会话
+        
+        @param request: SendRequest
+        @param headers: SendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -172,6 +208,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendResponse:
+        """
+        @summary 发送文件到指定会话
+        
+        @param request: SendRequest
+        @param headers: SendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendRequest,
     ) -> dingtalkconv_file__1__0_models.SendResponse:
+        """
+        @summary 发送文件到指定会话
+        
+        @param request: SendRequest
+        @return: SendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendHeaders()
         return self.send_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendRequest,
     ) -> dingtalkconv_file__1__0_models.SendResponse:
+        """
+        @summary 发送文件到指定会话
+        
+        @param request: SendRequest
+        @return: SendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendHeaders()
         return await self.send_with_options_async(request, headers, runtime)
@@ -231,6 +287,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendByAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        """
+        @summary 以应用身份发送文件给自己
+        
+        @param request: SendByAppRequest
+        @param headers: SendByAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendByAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -272,6 +336,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendByAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        """
+        @summary 以应用身份发送文件给自己
+        
+        @param request: SendByAppRequest
+        @param headers: SendByAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendByAppResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -311,6 +383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendByAppRequest,
     ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        """
+        @summary 以应用身份发送文件给自己
+        
+        @param request: SendByAppRequest
+        @return: SendByAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
         return self.send_by_app_with_options(request, headers, runtime)
@@ -319,6 +397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendByAppRequest,
     ) -> dingtalkconv_file__1__0_models.SendByAppResponse:
+        """
+        @summary 以应用身份发送文件给自己
+        
+        @param request: SendByAppRequest
+        @return: SendByAppResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendByAppHeaders()
         return await self.send_by_app_with_options_async(request, headers, runtime)
@@ -329,6 +413,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        """
+        @summary 发送文件链接到指定会话
+        
+        @param request: SendLinkRequest
+        @param headers: SendLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLinkResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -372,6 +464,14 @@ class Client(OpenApiClient):
         headers: dingtalkconv_file__1__0_models.SendLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        """
+        @summary 发送文件链接到指定会话
+        
+        @param request: SendLinkRequest
+        @param headers: SendLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLinkResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -413,6 +513,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendLinkRequest,
     ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        """
+        @summary 发送文件链接到指定会话
+        
+        @param request: SendLinkRequest
+        @return: SendLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
         return self.send_link_with_options(request, headers, runtime)
@@ -421,6 +527,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconv_file__1__0_models.SendLinkRequest,
     ) -> dingtalkconv_file__1__0_models.SendLinkResponse:
+        """
+        @summary 发送文件链接到指定会话
+        
+        @param request: SendLinkRequest
+        @return: SendLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconv_file__1__0_models.SendLinkHeaders()
         return await self.send_link_with_options_async(request, headers, runtime)

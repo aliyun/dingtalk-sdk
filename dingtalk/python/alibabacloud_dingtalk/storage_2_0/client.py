@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.AddPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @param headers: AddPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.AddPermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @param headers: AddPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -122,6 +138,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.AddPermissionRequest,
     ) -> dingtalkstorage__2__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @return: AddPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.AddPermissionHeaders()
         return self.add_permission_with_options(dentry_uuid, request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.AddPermissionRequest,
     ) -> dingtalkstorage__2__0_models.AddPermissionResponse:
+        """
+        @summary 添加权限
+        
+        @param request: AddPermissionRequest
+        @return: AddPermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.AddPermissionHeaders()
         return await self.add_permission_with_options_async(dentry_uuid, request, headers, runtime)
@@ -142,6 +170,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.CommitFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.CommitFileResponse:
+        """
+        @summary 提交文件
+        
+        @param request: CommitFileRequest
+        @param headers: CommitFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CommitFileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -186,6 +222,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.CommitFileHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.CommitFileResponse:
+        """
+        @summary 提交文件
+        
+        @param request: CommitFileRequest
+        @param headers: CommitFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CommitFileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -228,6 +272,12 @@ class Client(OpenApiClient):
         parent_dentry_uuid: str,
         request: dingtalkstorage__2__0_models.CommitFileRequest,
     ) -> dingtalkstorage__2__0_models.CommitFileResponse:
+        """
+        @summary 提交文件
+        
+        @param request: CommitFileRequest
+        @return: CommitFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.CommitFileHeaders()
         return self.commit_file_with_options(parent_dentry_uuid, request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         parent_dentry_uuid: str,
         request: dingtalkstorage__2__0_models.CommitFileRequest,
     ) -> dingtalkstorage__2__0_models.CommitFileResponse:
+        """
+        @summary 提交文件
+        
+        @param request: CommitFileRequest
+        @return: CommitFileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.CommitFileHeaders()
         return await self.commit_file_with_options_async(parent_dentry_uuid, request, headers, runtime)
@@ -248,6 +304,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.DeletePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @param headers: DeletePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -290,6 +354,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.DeletePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @param headers: DeletePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -330,6 +402,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.DeletePermissionRequest,
     ) -> dingtalkstorage__2__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @return: DeletePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.DeletePermissionHeaders()
         return self.delete_permission_with_options(dentry_uuid, request, headers, runtime)
@@ -339,6 +417,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.DeletePermissionRequest,
     ) -> dingtalkstorage__2__0_models.DeletePermissionResponse:
+        """
+        @summary 删除权限
+        
+        @param request: DeletePermissionRequest
+        @return: DeletePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.DeletePermissionHeaders()
         return await self.delete_permission_with_options_async(dentry_uuid, request, headers, runtime)
@@ -350,6 +434,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.GetFileUploadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.GetFileUploadInfoResponse:
+        """
+        @summary 获取文件上传信息
+        
+        @param request: GetFileUploadInfoRequest
+        @param headers: GetFileUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileUploadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -392,6 +484,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.GetFileUploadInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.GetFileUploadInfoResponse:
+        """
+        @summary 获取文件上传信息
+        
+        @param request: GetFileUploadInfoRequest
+        @param headers: GetFileUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileUploadInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -432,6 +532,12 @@ class Client(OpenApiClient):
         parent_dentry_uuid: str,
         request: dingtalkstorage__2__0_models.GetFileUploadInfoRequest,
     ) -> dingtalkstorage__2__0_models.GetFileUploadInfoResponse:
+        """
+        @summary 获取文件上传信息
+        
+        @param request: GetFileUploadInfoRequest
+        @return: GetFileUploadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.GetFileUploadInfoHeaders()
         return self.get_file_upload_info_with_options(parent_dentry_uuid, request, headers, runtime)
@@ -441,6 +547,12 @@ class Client(OpenApiClient):
         parent_dentry_uuid: str,
         request: dingtalkstorage__2__0_models.GetFileUploadInfoRequest,
     ) -> dingtalkstorage__2__0_models.GetFileUploadInfoResponse:
+        """
+        @summary 获取文件上传信息
+        
+        @param request: GetFileUploadInfoRequest
+        @return: GetFileUploadInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.GetFileUploadInfoHeaders()
         return await self.get_file_upload_info_with_options_async(parent_dentry_uuid, request, headers, runtime)
@@ -452,6 +564,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.GetPermissionInheritanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.GetPermissionInheritanceResponse:
+        """
+        @summary 获取权限继承模式
+        
+        @param request: GetPermissionInheritanceRequest
+        @param headers: GetPermissionInheritanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPermissionInheritanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -488,6 +608,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.GetPermissionInheritanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.GetPermissionInheritanceResponse:
+        """
+        @summary 获取权限继承模式
+        
+        @param request: GetPermissionInheritanceRequest
+        @param headers: GetPermissionInheritanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPermissionInheritanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -522,6 +650,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.GetPermissionInheritanceRequest,
     ) -> dingtalkstorage__2__0_models.GetPermissionInheritanceResponse:
+        """
+        @summary 获取权限继承模式
+        
+        @param request: GetPermissionInheritanceRequest
+        @return: GetPermissionInheritanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.GetPermissionInheritanceHeaders()
         return self.get_permission_inheritance_with_options(dentry_uuid, request, headers, runtime)
@@ -531,6 +665,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.GetPermissionInheritanceRequest,
     ) -> dingtalkstorage__2__0_models.GetPermissionInheritanceResponse:
+        """
+        @summary 获取权限继承模式
+        
+        @param request: GetPermissionInheritanceRequest
+        @return: GetPermissionInheritanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.GetPermissionInheritanceHeaders()
         return await self.get_permission_inheritance_with_options_async(dentry_uuid, request, headers, runtime)
@@ -542,6 +682,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ListPermissionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @param headers: ListPermissionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPermissionsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -582,6 +730,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ListPermissionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @param headers: ListPermissionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPermissionsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -620,6 +776,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.ListPermissionsRequest,
     ) -> dingtalkstorage__2__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @return: ListPermissionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ListPermissionsHeaders()
         return self.list_permissions_with_options(dentry_uuid, request, headers, runtime)
@@ -629,6 +791,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.ListPermissionsRequest,
     ) -> dingtalkstorage__2__0_models.ListPermissionsResponse:
+        """
+        @summary 获取权限列表
+        
+        @param request: ListPermissionsRequest
+        @return: ListPermissionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ListPermissionsHeaders()
         return await self.list_permissions_with_options_async(dentry_uuid, request, headers, runtime)
@@ -639,6 +807,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        """
+        @summary 查询员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerGetDefaultHandOverUserRequest
+        @param headers: ManagerGetDefaultHandOverUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagerGetDefaultHandOverUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -674,6 +850,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        """
+        @summary 查询员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerGetDefaultHandOverUserRequest
+        @param headers: ManagerGetDefaultHandOverUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagerGetDefaultHandOverUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -707,6 +891,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
     ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        """
+        @summary 查询员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerGetDefaultHandOverUserRequest
+        @return: ManagerGetDefaultHandOverUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders()
         return self.manager_get_default_hand_over_user_with_options(request, headers, runtime)
@@ -715,6 +905,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,
     ) -> dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserResponse:
+        """
+        @summary 查询员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerGetDefaultHandOverUserRequest
+        @return: ManagerGetDefaultHandOverUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserHeaders()
         return await self.manager_get_default_hand_over_user_with_options_async(request, headers, runtime)
@@ -725,6 +921,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        """
+        @summary 设置员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerSetDefaultHandOverUserRequest
+        @param headers: ManagerSetDefaultHandOverUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagerSetDefaultHandOverUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -764,6 +968,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        """
+        @summary 设置员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerSetDefaultHandOverUserRequest
+        @param headers: ManagerSetDefaultHandOverUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManagerSetDefaultHandOverUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -801,6 +1013,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
     ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        """
+        @summary 设置员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerSetDefaultHandOverUserRequest
+        @return: ManagerSetDefaultHandOverUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders()
         return self.manager_set_default_hand_over_user_with_options(request, headers, runtime)
@@ -809,6 +1027,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserRequest,
     ) -> dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserResponse:
+        """
+        @summary 设置员工离职时空间默认转交人(管理员)
+        
+        @param request: ManagerSetDefaultHandOverUserRequest
+        @return: ManagerSetDefaultHandOverUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.ManagerSetDefaultHandOverUserHeaders()
         return await self.manager_set_default_hand_over_user_with_options_async(request, headers, runtime)
@@ -819,6 +1043,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchDentriesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchDentriesResponse:
+        """
+        @summary 搜索文件
+        
+        @param request: SearchDentriesRequest
+        @param headers: SearchDentriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchDentriesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -860,6 +1092,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchDentriesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchDentriesResponse:
+        """
+        @summary 搜索文件
+        
+        @param request: SearchDentriesRequest
+        @param headers: SearchDentriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchDentriesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -899,6 +1139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchDentriesRequest,
     ) -> dingtalkstorage__2__0_models.SearchDentriesResponse:
+        """
+        @summary 搜索文件
+        
+        @param request: SearchDentriesRequest
+        @return: SearchDentriesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchDentriesHeaders()
         return self.search_dentries_with_options(request, headers, runtime)
@@ -907,6 +1153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchDentriesRequest,
     ) -> dingtalkstorage__2__0_models.SearchDentriesResponse:
+        """
+        @summary 搜索文件
+        
+        @param request: SearchDentriesRequest
+        @return: SearchDentriesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchDentriesHeaders()
         return await self.search_dentries_with_options_async(request, headers, runtime)
@@ -917,6 +1169,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchPublishDentriesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        """
+        @summary 搜索公开发布文件
+        
+        @param request: SearchPublishDentriesRequest
+        @param headers: SearchPublishDentriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchPublishDentriesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -960,6 +1220,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchPublishDentriesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        """
+        @summary 搜索公开发布文件
+        
+        @param request: SearchPublishDentriesRequest
+        @param headers: SearchPublishDentriesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchPublishDentriesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1001,6 +1269,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
     ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        """
+        @summary 搜索公开发布文件
+        
+        @param request: SearchPublishDentriesRequest
+        @return: SearchPublishDentriesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchPublishDentriesHeaders()
         return self.search_publish_dentries_with_options(request, headers, runtime)
@@ -1009,6 +1283,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchPublishDentriesRequest,
     ) -> dingtalkstorage__2__0_models.SearchPublishDentriesResponse:
+        """
+        @summary 搜索公开发布文件
+        
+        @param request: SearchPublishDentriesRequest
+        @return: SearchPublishDentriesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchPublishDentriesHeaders()
         return await self.search_publish_dentries_with_options_async(request, headers, runtime)
@@ -1019,6 +1299,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchWorkspacesResponse:
+        """
+        @summary 搜索知识库
+        
+        @param request: SearchWorkspacesRequest
+        @param headers: SearchWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1060,6 +1348,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SearchWorkspacesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SearchWorkspacesResponse:
+        """
+        @summary 搜索知识库
+        
+        @param request: SearchWorkspacesRequest
+        @param headers: SearchWorkspacesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchWorkspacesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1099,6 +1395,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchWorkspacesRequest,
     ) -> dingtalkstorage__2__0_models.SearchWorkspacesResponse:
+        """
+        @summary 搜索知识库
+        
+        @param request: SearchWorkspacesRequest
+        @return: SearchWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchWorkspacesHeaders()
         return self.search_workspaces_with_options(request, headers, runtime)
@@ -1107,6 +1409,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkstorage__2__0_models.SearchWorkspacesRequest,
     ) -> dingtalkstorage__2__0_models.SearchWorkspacesResponse:
+        """
+        @summary 搜索知识库
+        
+        @param request: SearchWorkspacesRequest
+        @return: SearchWorkspacesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SearchWorkspacesHeaders()
         return await self.search_workspaces_with_options_async(request, headers, runtime)
@@ -1118,6 +1426,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SetPermissionInheritanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SetPermissionInheritanceResponse:
+        """
+        @summary 设置权限继承模式
+        
+        @param request: SetPermissionInheritanceRequest
+        @param headers: SetPermissionInheritanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetPermissionInheritanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1158,6 +1474,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.SetPermissionInheritanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.SetPermissionInheritanceResponse:
+        """
+        @summary 设置权限继承模式
+        
+        @param request: SetPermissionInheritanceRequest
+        @param headers: SetPermissionInheritanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetPermissionInheritanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1196,6 +1520,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.SetPermissionInheritanceRequest,
     ) -> dingtalkstorage__2__0_models.SetPermissionInheritanceResponse:
+        """
+        @summary 设置权限继承模式
+        
+        @param request: SetPermissionInheritanceRequest
+        @return: SetPermissionInheritanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SetPermissionInheritanceHeaders()
         return self.set_permission_inheritance_with_options(dentry_uuid, request, headers, runtime)
@@ -1205,6 +1535,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.SetPermissionInheritanceRequest,
     ) -> dingtalkstorage__2__0_models.SetPermissionInheritanceResponse:
+        """
+        @summary 设置权限继承模式
+        
+        @param request: SetPermissionInheritanceRequest
+        @return: SetPermissionInheritanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SetPermissionInheritanceHeaders()
         return await self.set_permission_inheritance_with_options_async(dentry_uuid, request, headers, runtime)
@@ -1216,6 +1552,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.UpdatePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.UpdatePermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: UpdatePermissionRequest
+        @param headers: UpdatePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1260,6 +1604,14 @@ class Client(OpenApiClient):
         headers: dingtalkstorage__2__0_models.UpdatePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkstorage__2__0_models.UpdatePermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: UpdatePermissionRequest
+        @param headers: UpdatePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePermissionResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1302,6 +1654,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.UpdatePermissionRequest,
     ) -> dingtalkstorage__2__0_models.UpdatePermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: UpdatePermissionRequest
+        @return: UpdatePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.UpdatePermissionHeaders()
         return self.update_permission_with_options(dentry_uuid, request, headers, runtime)
@@ -1311,6 +1669,12 @@ class Client(OpenApiClient):
         dentry_uuid: str,
         request: dingtalkstorage__2__0_models.UpdatePermissionRequest,
     ) -> dingtalkstorage__2__0_models.UpdatePermissionResponse:
+        """
+        @summary 修改权限
+        
+        @param request: UpdatePermissionRequest
+        @return: UpdatePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.UpdatePermissionHeaders()
         return await self.update_permission_with_options_async(dentry_uuid, request, headers, runtime)

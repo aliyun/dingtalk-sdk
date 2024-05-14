@@ -45,9 +45,12 @@ class QueryBlackboardReadUnReadRequest(TeaModel):
         next_token: str = None,
         operation_user_id: str = None,
     ):
+        # This parameter is required.
         self.blackboard_id = blackboard_id
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operation_user_id = operation_user_id
 
     def validate(self):
@@ -241,6 +244,7 @@ class QueryBlackboardSpaceRequest(TeaModel):
         self,
         operation_user_id: str = None,
     ):
+        # This parameter is required.
         self.operation_user_id = operation_user_id
 
     def validate(self):

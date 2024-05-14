@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CountTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        """
+        @summary 查询用户待办计数
+        
+        @param request: CountTodoTasksRequest
+        @param headers: CountTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.from_due_time):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CountTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        """
+        @summary 查询用户待办计数
+        
+        @param request: CountTodoTasksRequest
+        @param headers: CountTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.from_due_time):
@@ -122,6 +138,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CountTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        """
+        @summary 查询用户待办计数
+        
+        @param request: CountTodoTasksRequest
+        @return: CountTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CountTodoTasksHeaders()
         return self.count_todo_tasks_with_options(union_id, request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CountTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.CountTodoTasksResponse:
+        """
+        @summary 查询用户待办计数
+        
+        @param request: CountTodoTasksRequest
+        @return: CountTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CountTodoTasksHeaders()
         return await self.count_todo_tasks_with_options_async(union_id, request, headers, runtime)
@@ -141,6 +169,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份创建个人待办
+        
+        @param request: CreatePersonalTodoTaskRequest
+        @param headers: CreatePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePersonalTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -186,6 +222,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份创建个人待办
+        
+        @param request: CreatePersonalTodoTaskRequest
+        @param headers: CreatePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePersonalTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.description):
@@ -229,6 +273,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份创建个人待办
+        
+        @param request: CreatePersonalTodoTaskRequest
+        @return: CreatePersonalTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders()
         return self.create_personal_todo_task_with_options(request, headers, runtime)
@@ -237,6 +287,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktodo__1__0_models.CreatePersonalTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.CreatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份创建个人待办
+        
+        @param request: CreatePersonalTodoTaskRequest
+        @return: CreatePersonalTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreatePersonalTodoTaskHeaders()
         return await self.create_personal_todo_task_with_options_async(request, headers, runtime)
@@ -248,6 +304,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreateTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
+        """
+        @summary 创建待办
+        
+        @param request: CreateTodoTaskRequest
+        @param headers: CreateTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -314,6 +378,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreateTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
+        """
+        @summary 创建待办
+        
+        @param request: CreateTodoTaskRequest
+        @param headers: CreateTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -378,6 +450,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CreateTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
+        """
+        @summary 创建待办
+        
+        @param request: CreateTodoTaskRequest
+        @return: CreateTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreateTodoTaskHeaders()
         return self.create_todo_task_with_options(union_id, request, headers, runtime)
@@ -387,6 +465,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CreateTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.CreateTodoTaskResponse:
+        """
+        @summary 创建待办
+        
+        @param request: CreateTodoTaskRequest
+        @return: CreateTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreateTodoTaskHeaders()
         return await self.create_todo_task_with_options_async(union_id, request, headers, runtime)
@@ -398,6 +482,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
+        """
+        @summary 创建待办卡片类型配置
+        
+        @param request: CreateTodoTypeConfigRequest
+        @param headers: CreateTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTodoTypeConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -448,6 +540,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.CreateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
+        """
+        @summary 创建待办卡片类型配置
+        
+        @param request: CreateTodoTypeConfigRequest
+        @param headers: CreateTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTodoTypeConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -496,6 +596,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CreateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
+        """
+        @summary 创建待办卡片类型配置
+        
+        @param request: CreateTodoTypeConfigRequest
+        @return: CreateTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreateTodoTypeConfigHeaders()
         return self.create_todo_type_config_with_options(union_id, request, headers, runtime)
@@ -505,6 +611,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.CreateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.CreateTodoTypeConfigResponse:
+        """
+        @summary 创建待办卡片类型配置
+        
+        @param request: CreateTodoTypeConfigRequest
+        @return: CreateTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.CreateTodoTypeConfigHeaders()
         return await self.create_todo_type_config_with_options_async(union_id, request, headers, runtime)
@@ -517,6 +629,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.DeleteTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
+        """
+        @summary 删除待办
+        
+        @param request: DeleteTodoTaskRequest
+        @param headers: DeleteTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -554,6 +674,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.DeleteTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
+        """
+        @summary 删除待办
+        
+        @param request: DeleteTodoTaskRequest
+        @param headers: DeleteTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -589,6 +717,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.DeleteTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
+        """
+        @summary 删除待办
+        
+        @param request: DeleteTodoTaskRequest
+        @return: DeleteTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.DeleteTodoTaskHeaders()
         return self.delete_todo_task_with_options(union_id, task_id, request, headers, runtime)
@@ -599,6 +733,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.DeleteTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.DeleteTodoTaskResponse:
+        """
+        @summary 删除待办
+        
+        @param request: DeleteTodoTaskRequest
+        @return: DeleteTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.DeleteTodoTaskHeaders()
         return await self.delete_todo_task_with_options_async(union_id, task_id, request, headers, runtime)
@@ -610,6 +750,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        """
+        @summary 查询待办
+        
+        @param headers: GetTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -641,6 +788,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        """
+        @summary 查询待办
+        
+        @param headers: GetTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -670,6 +824,11 @@ class Client(OpenApiClient):
         union_id: str,
         task_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        """
+        @summary 查询待办
+        
+        @return: GetTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskHeaders()
         return self.get_todo_task_with_options(union_id, task_id, headers, runtime)
@@ -679,6 +838,11 @@ class Client(OpenApiClient):
         union_id: str,
         task_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskResponse:
+        """
+        @summary 查询待办
+        
+        @return: GetTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskHeaders()
         return await self.get_todo_task_with_options_async(union_id, task_id, headers, runtime)
@@ -690,6 +854,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        """
+        @summary 根据sourceId查询待办详情
+        
+        @param headers: GetTodoTaskBySourceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskBySourceIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -721,6 +892,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        """
+        @summary 根据sourceId查询待办详情
+        
+        @param headers: GetTodoTaskBySourceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskBySourceIdResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -750,6 +928,11 @@ class Client(OpenApiClient):
         union_id: str,
         source_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        """
+        @summary 根据sourceId查询待办详情
+        
+        @return: GetTodoTaskBySourceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders()
         return self.get_todo_task_by_source_id_with_options(union_id, source_id, headers, runtime)
@@ -759,6 +942,11 @@ class Client(OpenApiClient):
         union_id: str,
         source_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskBySourceIdResponse:
+        """
+        @summary 根据sourceId查询待办详情
+        
+        @return: GetTodoTaskBySourceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskBySourceIdHeaders()
         return await self.get_todo_task_by_source_id_with_options_async(union_id, source_id, headers, runtime)
@@ -770,6 +958,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        """
+        @summary 专属钉根据待办ID查询待办详情
+        
+        @param headers: GetTodoTaskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -801,6 +996,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTaskDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        """
+        @summary 专属钉根据待办ID查询待办详情
+        
+        @param headers: GetTodoTaskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTaskDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -830,6 +1032,11 @@ class Client(OpenApiClient):
         task_id: str,
         union_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        """
+        @summary 专属钉根据待办ID查询待办详情
+        
+        @return: GetTodoTaskDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskDetailHeaders()
         return self.get_todo_task_detail_with_options(task_id, union_id, headers, runtime)
@@ -839,6 +1046,11 @@ class Client(OpenApiClient):
         task_id: str,
         union_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTaskDetailResponse:
+        """
+        @summary 专属钉根据待办ID查询待办详情
+        
+        @return: GetTodoTaskDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTaskDetailHeaders()
         return await self.get_todo_task_detail_with_options_async(task_id, union_id, headers, runtime)
@@ -850,6 +1062,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        """
+        @summary 根据id获取待办卡片类型配置
+        
+        @param headers: GetTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTypeConfigResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -881,6 +1100,13 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.GetTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        """
+        @summary 根据id获取待办卡片类型配置
+        
+        @param headers: GetTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTodoTypeConfigResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -910,6 +1136,11 @@ class Client(OpenApiClient):
         union_id: str,
         card_type_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        """
+        @summary 根据id获取待办卡片类型配置
+        
+        @return: GetTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
         return self.get_todo_type_config_with_options(union_id, card_type_id, headers, runtime)
@@ -919,6 +1150,11 @@ class Client(OpenApiClient):
         union_id: str,
         card_type_id: str,
     ) -> dingtalktodo__1__0_models.GetTodoTypeConfigResponse:
+        """
+        @summary 根据id获取待办卡片类型配置
+        
+        @return: GetTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
         return await self.get_todo_type_config_with_options_async(union_id, card_type_id, headers, runtime)
@@ -930,6 +1166,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        """
+        @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+        
+        @param request: QueryOrgTodoByUserRequest
+        @param headers: QueryOrgTodoByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgTodoByUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.from_due_time):
@@ -982,6 +1226,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        """
+        @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+        
+        @param request: QueryOrgTodoByUserRequest
+        @param headers: QueryOrgTodoByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgTodoByUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.from_due_time):
@@ -1032,6 +1284,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        """
+        @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+        
+        @param request: QueryOrgTodoByUserRequest
+        @return: QueryOrgTodoByUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders()
         return self.query_org_todo_by_user_with_options(union_id, request, headers, runtime)
@@ -1041,6 +1299,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryOrgTodoByUserRequest,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoByUserResponse:
+        """
+        @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+        
+        @param request: QueryOrgTodoByUserRequest
+        @return: QueryOrgTodoByUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryOrgTodoByUserHeaders()
         return await self.query_org_todo_by_user_with_options_async(union_id, request, headers, runtime)
@@ -1052,6 +1316,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryOrgTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
+        """
+        @summary 查询企业下用户待办列表
+        
+        @param request: QueryOrgTodoTasksRequest
+        @param headers: QueryOrgTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.is_done):
@@ -1090,6 +1362,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryOrgTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
+        """
+        @summary 查询企业下用户待办列表
+        
+        @param request: QueryOrgTodoTasksRequest
+        @param headers: QueryOrgTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.is_done):
@@ -1126,6 +1406,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryOrgTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
+        """
+        @summary 查询企业下用户待办列表
+        
+        @param request: QueryOrgTodoTasksRequest
+        @return: QueryOrgTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryOrgTodoTasksHeaders()
         return self.query_org_todo_tasks_with_options(union_id, request, headers, runtime)
@@ -1135,6 +1421,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryOrgTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.QueryOrgTodoTasksResponse:
+        """
+        @summary 查询企业下用户待办列表
+        
+        @param request: QueryOrgTodoTasksRequest
+        @return: QueryOrgTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryOrgTodoTasksHeaders()
         return await self.query_org_todo_tasks_with_options_async(union_id, request, headers, runtime)
@@ -1146,6 +1438,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        """
+        @summary 查询用户待办列表
+        
+        @param request: QueryTodoTasksRequest
+        @param headers: QueryTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.category):
@@ -1198,6 +1498,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.QueryTodoTasksHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        """
+        @summary 查询用户待办列表
+        
+        @param request: QueryTodoTasksRequest
+        @param headers: QueryTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTodoTasksResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.category):
@@ -1248,6 +1556,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        """
+        @summary 查询用户待办列表
+        
+        @param request: QueryTodoTasksRequest
+        @return: QueryTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryTodoTasksHeaders()
         return self.query_todo_tasks_with_options(union_id, request, headers, runtime)
@@ -1257,6 +1571,12 @@ class Client(OpenApiClient):
         union_id: str,
         request: dingtalktodo__1__0_models.QueryTodoTasksRequest,
     ) -> dingtalktodo__1__0_models.QueryTodoTasksResponse:
+        """
+        @summary 查询用户待办列表
+        
+        @param request: QueryTodoTasksRequest
+        @return: QueryTodoTasksResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryTodoTasksHeaders()
         return await self.query_todo_tasks_with_options_async(union_id, request, headers, runtime)
@@ -1269,6 +1589,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
+        """
+        @summary 更新待办
+        
+        @param request: UpdateTodoTaskRequest
+        @param headers: UpdateTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1320,6 +1648,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
+        """
+        @summary 更新待办
+        
+        @param request: UpdateTodoTaskRequest
+        @param headers: UpdateTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTaskResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1369,6 +1705,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
+        """
+        @summary 更新待办
+        
+        @param request: UpdateTodoTaskRequest
+        @return: UpdateTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTaskHeaders()
         return self.update_todo_task_with_options(union_id, task_id, request, headers, runtime)
@@ -1379,6 +1721,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTaskRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskResponse:
+        """
+        @summary 更新待办
+        
+        @param request: UpdateTodoTaskRequest
+        @return: UpdateTodoTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTaskHeaders()
         return await self.update_todo_task_with_options_async(union_id, task_id, request, headers, runtime)
@@ -1391,6 +1739,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        """
+        @summary 更新待办执行者状态
+        
+        @param request: UpdateTodoTaskExecutorStatusRequest
+        @param headers: UpdateTodoTaskExecutorStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTaskExecutorStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1432,6 +1788,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        """
+        @summary 更新待办执行者状态
+        
+        @param request: UpdateTodoTaskExecutorStatusRequest
+        @param headers: UpdateTodoTaskExecutorStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTaskExecutorStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1471,6 +1835,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        """
+        @summary 更新待办执行者状态
+        
+        @param request: UpdateTodoTaskExecutorStatusRequest
+        @return: UpdateTodoTaskExecutorStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders()
         return self.update_todo_task_executor_status_with_options(union_id, task_id, request, headers, runtime)
@@ -1481,6 +1851,12 @@ class Client(OpenApiClient):
         task_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusResponse:
+        """
+        @summary 更新待办执行者状态
+        
+        @param request: UpdateTodoTaskExecutorStatusRequest
+        @return: UpdateTodoTaskExecutorStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTaskExecutorStatusHeaders()
         return await self.update_todo_task_executor_status_with_options_async(union_id, task_id, request, headers, runtime)
@@ -1493,6 +1869,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
+        """
+        @summary 更新待办卡片类型配置
+        
+        @param request: UpdateTodoTypeConfigRequest
+        @param headers: UpdateTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTypeConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1544,6 +1928,14 @@ class Client(OpenApiClient):
         headers: dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
+        """
+        @summary 更新待办卡片类型配置
+        
+        @param request: UpdateTodoTypeConfigRequest
+        @param headers: UpdateTodoTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTodoTypeConfigResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_id):
@@ -1593,6 +1985,12 @@ class Client(OpenApiClient):
         card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
+        """
+        @summary 更新待办卡片类型配置
+        
+        @param request: UpdateTodoTypeConfigRequest
+        @return: UpdateTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders()
         return self.update_todo_type_config_with_options(union_id, card_type_id, request, headers, runtime)
@@ -1603,6 +2001,12 @@ class Client(OpenApiClient):
         card_type_id: str,
         request: dingtalktodo__1__0_models.UpdateTodoTypeConfigRequest,
     ) -> dingtalktodo__1__0_models.UpdateTodoTypeConfigResponse:
+        """
+        @summary 更新待办卡片类型配置
+        
+        @param request: UpdateTodoTypeConfigRequest
+        @return: UpdateTodoTypeConfigResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.UpdateTodoTypeConfigHeaders()
         return await self.update_todo_type_config_with_options_async(union_id, card_type_id, request, headers, runtime)

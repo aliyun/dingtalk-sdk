@@ -43,7 +43,9 @@ class GetSpaceRequest(TeaModel):
         open_conversation_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -226,9 +228,13 @@ class SendRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -490,8 +496,11 @@ class SendByAppRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -750,9 +759,13 @@ class SendLinkRequest(TeaModel):
         space_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

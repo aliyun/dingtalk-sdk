@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.GetFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.GetFormInstanceResponse:
+        """
+        @summary 获取单个填表实例详情接口
+        
+        @param request: GetFormInstanceRequest
+        @param headers: GetFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.GetFormInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.GetFormInstanceResponse:
+        """
+        @summary 获取单个填表实例详情接口
+        
+        @param request: GetFormInstanceRequest
+        @param headers: GetFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFormInstanceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -106,6 +122,12 @@ class Client(OpenApiClient):
         form_instance_id: str,
         request: dingtalkswform__1__0_models.GetFormInstanceRequest,
     ) -> dingtalkswform__1__0_models.GetFormInstanceResponse:
+        """
+        @summary 获取单个填表实例详情接口
+        
+        @param request: GetFormInstanceRequest
+        @return: GetFormInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.GetFormInstanceHeaders()
         return self.get_form_instance_with_options(form_instance_id, request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         form_instance_id: str,
         request: dingtalkswform__1__0_models.GetFormInstanceRequest,
     ) -> dingtalkswform__1__0_models.GetFormInstanceResponse:
+        """
+        @summary 获取单个填表实例详情接口
+        
+        @param request: GetFormInstanceRequest
+        @return: GetFormInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.GetFormInstanceHeaders()
         return await self.get_form_instance_with_options_async(form_instance_id, request, headers, runtime)
@@ -126,6 +154,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.ListFormInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.ListFormInstancesResponse:
+        """
+        @summary 获取填表模版下的填表实例列表接口
+        
+        @param request: ListFormInstancesRequest
+        @param headers: ListFormInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_date):
@@ -168,6 +204,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.ListFormInstancesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.ListFormInstancesResponse:
+        """
+        @summary 获取填表模版下的填表实例列表接口
+        
+        @param request: ListFormInstancesRequest
+        @param headers: ListFormInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormInstancesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_date):
@@ -208,6 +252,12 @@ class Client(OpenApiClient):
         form_code: str,
         request: dingtalkswform__1__0_models.ListFormInstancesRequest,
     ) -> dingtalkswform__1__0_models.ListFormInstancesResponse:
+        """
+        @summary 获取填表模版下的填表实例列表接口
+        
+        @param request: ListFormInstancesRequest
+        @return: ListFormInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.ListFormInstancesHeaders()
         return self.list_form_instances_with_options(form_code, request, headers, runtime)
@@ -217,6 +267,12 @@ class Client(OpenApiClient):
         form_code: str,
         request: dingtalkswform__1__0_models.ListFormInstancesRequest,
     ) -> dingtalkswform__1__0_models.ListFormInstancesResponse:
+        """
+        @summary 获取填表模版下的填表实例列表接口
+        
+        @param request: ListFormInstancesRequest
+        @return: ListFormInstancesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.ListFormInstancesHeaders()
         return await self.list_form_instances_with_options_async(form_code, request, headers, runtime)
@@ -227,6 +283,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.ListFormSchemasByCreatorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.ListFormSchemasByCreatorResponse:
+        """
+        @summary 获取用户创建的填表模板列表接口
+        
+        @param request: ListFormSchemasByCreatorRequest
+        @param headers: ListFormSchemasByCreatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormSchemasByCreatorResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -268,6 +332,14 @@ class Client(OpenApiClient):
         headers: dingtalkswform__1__0_models.ListFormSchemasByCreatorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkswform__1__0_models.ListFormSchemasByCreatorResponse:
+        """
+        @summary 获取用户创建的填表模板列表接口
+        
+        @param request: ListFormSchemasByCreatorRequest
+        @param headers: ListFormSchemasByCreatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFormSchemasByCreatorResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -307,6 +379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkswform__1__0_models.ListFormSchemasByCreatorRequest,
     ) -> dingtalkswform__1__0_models.ListFormSchemasByCreatorResponse:
+        """
+        @summary 获取用户创建的填表模板列表接口
+        
+        @param request: ListFormSchemasByCreatorRequest
+        @return: ListFormSchemasByCreatorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.ListFormSchemasByCreatorHeaders()
         return self.list_form_schemas_by_creator_with_options(request, headers, runtime)
@@ -315,6 +393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkswform__1__0_models.ListFormSchemasByCreatorRequest,
     ) -> dingtalkswform__1__0_models.ListFormSchemasByCreatorResponse:
+        """
+        @summary 获取用户创建的填表模板列表接口
+        
+        @param request: ListFormSchemasByCreatorRequest
+        @return: ListFormSchemasByCreatorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkswform__1__0_models.ListFormSchemasByCreatorHeaders()
         return await self.list_form_schemas_by_creator_with_options_async(request, headers, runtime)

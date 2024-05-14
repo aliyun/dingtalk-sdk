@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CancelScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CancelScheduleConferenceResponse:
+        """
+        @summary 取消预约会议
+        
+        @param request: CancelScheduleConferenceRequest
+        @param headers: CancelScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CancelScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CancelScheduleConferenceResponse:
+        """
+        @summary 取消预约会议
+        
+        @param request: CancelScheduleConferenceRequest
+        @param headers: CancelScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CancelScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.CancelScheduleConferenceResponse:
+        """
+        @summary 取消预约会议
+        
+        @param request: CancelScheduleConferenceRequest
+        @return: CancelScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CancelScheduleConferenceHeaders()
         return self.cancel_schedule_conference_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CancelScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.CancelScheduleConferenceResponse:
+        """
+        @summary 取消预约会议
+        
+        @param request: CancelScheduleConferenceRequest
+        @return: CancelScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CancelScheduleConferenceHeaders()
         return await self.cancel_schedule_conference_with_options_async(request, headers, runtime)
@@ -126,6 +154,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CloseVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
+        """
+        @summary 关闭视频会议
+        
+        @param request: CloseVideoConferenceRequest
+        @param headers: CloseVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -162,6 +198,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CloseVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
+        """
+        @summary 关闭视频会议
+        
+        @param request: CloseVideoConferenceRequest
+        @param headers: CloseVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -196,6 +240,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.CloseVideoConferenceRequest,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
+        """
+        @summary 关闭视频会议
+        
+        @param request: CloseVideoConferenceRequest
+        @return: CloseVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CloseVideoConferenceHeaders()
         return self.close_video_conference_with_options(conference_id, request, headers, runtime)
@@ -205,6 +255,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.CloseVideoConferenceRequest,
     ) -> dingtalkconference__1__0_models.CloseVideoConferenceResponse:
+        """
+        @summary 关闭视频会议
+        
+        @param request: CloseVideoConferenceRequest
+        @return: CloseVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CloseVideoConferenceHeaders()
         return await self.close_video_conference_with_options_async(conference_id, request, headers, runtime)
@@ -216,6 +272,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CohostsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CohostsResponse:
+        """
+        @summary 设置联席主持人
+        
+        @param request: CohostsRequest
+        @param headers: CohostsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CohostsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -254,6 +318,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CohostsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CohostsResponse:
+        """
+        @summary 设置联席主持人
+        
+        @param request: CohostsRequest
+        @param headers: CohostsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CohostsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -290,6 +362,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.CohostsRequest,
     ) -> dingtalkconference__1__0_models.CohostsResponse:
+        """
+        @summary 设置联席主持人
+        
+        @param request: CohostsRequest
+        @return: CohostsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CohostsHeaders()
         return self.cohosts_with_options(conference_id, request, headers, runtime)
@@ -299,6 +377,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.CohostsRequest,
     ) -> dingtalkconference__1__0_models.CohostsResponse:
+        """
+        @summary 设置联席主持人
+        
+        @param request: CohostsRequest
+        @return: CohostsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CohostsHeaders()
         return await self.cohosts_with_options_async(conference_id, request, headers, runtime)
@@ -309,6 +393,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateCustomShortLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateCustomShortLinkResponse:
+        """
+        @summary 创建专属短链
+        
+        @param request: CreateCustomShortLinkRequest
+        @param headers: CreateCustomShortLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomShortLinkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -352,6 +444,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateCustomShortLinkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateCustomShortLinkResponse:
+        """
+        @summary 创建专属短链
+        
+        @param request: CreateCustomShortLinkRequest
+        @param headers: CreateCustomShortLinkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomShortLinkResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cool_app_code):
@@ -393,6 +493,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateCustomShortLinkRequest,
     ) -> dingtalkconference__1__0_models.CreateCustomShortLinkResponse:
+        """
+        @summary 创建专属短链
+        
+        @param request: CreateCustomShortLinkRequest
+        @return: CreateCustomShortLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateCustomShortLinkHeaders()
         return self.create_custom_short_link_with_options(request, headers, runtime)
@@ -401,6 +507,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateCustomShortLinkRequest,
     ) -> dingtalkconference__1__0_models.CreateCustomShortLinkResponse:
+        """
+        @summary 创建专属短链
+        
+        @param request: CreateCustomShortLinkRequest
+        @return: CreateCustomShortLinkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateCustomShortLinkHeaders()
         return await self.create_custom_short_link_with_options_async(request, headers, runtime)
@@ -411,6 +523,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateScheduleConferenceResponse:
+        """
+        @summary 创建预约会议
+        
+        @param request: CreateScheduleConferenceRequest
+        @param headers: CreateScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -452,6 +572,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateScheduleConferenceResponse:
+        """
+        @summary 创建预约会议
+        
+        @param request: CreateScheduleConferenceRequest
+        @param headers: CreateScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -491,6 +619,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.CreateScheduleConferenceResponse:
+        """
+        @summary 创建预约会议
+        
+        @param request: CreateScheduleConferenceRequest
+        @return: CreateScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateScheduleConferenceHeaders()
         return self.create_schedule_conference_with_options(request, headers, runtime)
@@ -499,6 +633,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.CreateScheduleConferenceResponse:
+        """
+        @summary 创建预约会议
+        
+        @param request: CreateScheduleConferenceRequest
+        @return: CreateScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateScheduleConferenceHeaders()
         return await self.create_schedule_conference_with_options_async(request, headers, runtime)
@@ -509,6 +649,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateVideoConferenceResponse:
+        """
+        @summary 创建视频会议
+        
+        @param request: CreateVideoConferenceRequest
+        @param headers: CreateVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conf_title):
@@ -550,6 +698,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.CreateVideoConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.CreateVideoConferenceResponse:
+        """
+        @summary 创建视频会议
+        
+        @param request: CreateVideoConferenceRequest
+        @param headers: CreateVideoConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVideoConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conf_title):
@@ -589,6 +745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateVideoConferenceRequest,
     ) -> dingtalkconference__1__0_models.CreateVideoConferenceResponse:
+        """
+        @summary 创建视频会议
+        
+        @param request: CreateVideoConferenceRequest
+        @return: CreateVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateVideoConferenceHeaders()
         return self.create_video_conference_with_options(request, headers, runtime)
@@ -597,6 +759,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.CreateVideoConferenceRequest,
     ) -> dingtalkconference__1__0_models.CreateVideoConferenceResponse:
+        """
+        @summary 创建视频会议
+        
+        @param request: CreateVideoConferenceRequest
+        @return: CreateVideoConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CreateVideoConferenceHeaders()
         return await self.create_video_conference_with_options_async(request, headers, runtime)
@@ -608,6 +776,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.FocusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.FocusResponse:
+        """
+        @summary 设置全员看他
+        
+        @param request: FocusRequest
+        @param headers: FocusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FocusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -646,6 +822,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.FocusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.FocusResponse:
+        """
+        @summary 设置全员看他
+        
+        @param request: FocusRequest
+        @param headers: FocusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FocusResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -682,6 +866,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.FocusRequest,
     ) -> dingtalkconference__1__0_models.FocusResponse:
+        """
+        @summary 设置全员看他
+        
+        @param request: FocusRequest
+        @return: FocusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.FocusHeaders()
         return self.focus_with_options(conference_id, request, headers, runtime)
@@ -691,6 +881,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.FocusRequest,
     ) -> dingtalkconference__1__0_models.FocusResponse:
+        """
+        @summary 设置全员看他
+        
+        @param request: FocusRequest
+        @return: FocusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.FocusHeaders()
         return await self.focus_with_options_async(conference_id, request, headers, runtime)
@@ -702,6 +898,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议信息
+        
+        @param request: GetConfDataByConferenceIdRequest
+        @param headers: GetConfDataByConferenceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConfDataByConferenceIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.real_data):
@@ -738,6 +942,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议信息
+        
+        @param request: GetConfDataByConferenceIdRequest
+        @param headers: GetConfDataByConferenceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConfDataByConferenceIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.real_data):
@@ -772,6 +984,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
     ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议信息
+        
+        @param request: GetConfDataByConferenceIdRequest
+        @return: GetConfDataByConferenceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders()
         return self.get_conf_data_by_conference_id_with_options(conference_id, request, headers, runtime)
@@ -781,6 +999,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetConfDataByConferenceIdRequest,
     ) -> dingtalkconference__1__0_models.GetConfDataByConferenceIdResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议信息
+        
+        @param request: GetConfDataByConferenceIdRequest
+        @return: GetConfDataByConferenceIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetConfDataByConferenceIdHeaders()
         return await self.get_conf_data_by_conference_id_with_options_async(conference_id, request, headers, runtime)
@@ -792,6 +1016,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetConfDetailDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议成员信息
+        
+        @param request: GetConfDetailDataRequest
+        @param headers: GetConfDetailDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConfDetailDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -832,6 +1064,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetConfDetailDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议成员信息
+        
+        @param request: GetConfDetailDataRequest
+        @param headers: GetConfDetailDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConfDetailDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -870,6 +1110,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
     ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议成员信息
+        
+        @param request: GetConfDetailDataRequest
+        @return: GetConfDetailDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetConfDetailDataHeaders()
         return self.get_conf_detail_data_with_options(conference_id, request, headers, runtime)
@@ -879,6 +1125,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetConfDetailDataRequest,
     ) -> dingtalkconference__1__0_models.GetConfDetailDataResponse:
+        """
+        @summary 通过conferenceId获取指定音视频会议成员信息
+        
+        @param request: GetConfDetailDataRequest
+        @return: GetConfDetailDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetConfDetailDataHeaders()
         return await self.get_conf_detail_data_with_options_async(conference_id, request, headers, runtime)
@@ -889,6 +1141,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetHistoryConfDataListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        """
+        @summary 获取音视频会议列表数据
+        
+        @param request: GetHistoryConfDataListRequest
+        @param headers: GetHistoryConfDataListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHistoryConfDataListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.creator_nike):
@@ -940,6 +1200,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetHistoryConfDataListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        """
+        @summary 获取音视频会议列表数据
+        
+        @param request: GetHistoryConfDataListRequest
+        @param headers: GetHistoryConfDataListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHistoryConfDataListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.creator_nike):
@@ -989,6 +1257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
     ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        """
+        @summary 获取音视频会议列表数据
+        
+        @param request: GetHistoryConfDataListRequest
+        @return: GetHistoryConfDataListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetHistoryConfDataListHeaders()
         return self.get_history_conf_data_list_with_options(request, headers, runtime)
@@ -997,6 +1271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.GetHistoryConfDataListRequest,
     ) -> dingtalkconference__1__0_models.GetHistoryConfDataListResponse:
+        """
+        @summary 获取音视频会议列表数据
+        
+        @param request: GetHistoryConfDataListRequest
+        @return: GetHistoryConfDataListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetHistoryConfDataListHeaders()
         return await self.get_history_conf_data_list_with_options_async(request, headers, runtime)
@@ -1008,6 +1288,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetUserLastMetricHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        """
+        @summary 通过conferenceId和unionId获取最新会议质量数据
+        
+        @param request: GetUserLastMetricRequest
+        @param headers: GetUserLastMetricHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserLastMetricResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.union_id_list):
@@ -1044,6 +1332,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetUserLastMetricHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        """
+        @summary 通过conferenceId和unionId获取最新会议质量数据
+        
+        @param request: GetUserLastMetricRequest
+        @param headers: GetUserLastMetricHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserLastMetricResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.union_id_list):
@@ -1078,6 +1374,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
     ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        """
+        @summary 通过conferenceId和unionId获取最新会议质量数据
+        
+        @param request: GetUserLastMetricRequest
+        @return: GetUserLastMetricResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetUserLastMetricHeaders()
         return self.get_user_last_metric_with_options(conference_id, request, headers, runtime)
@@ -1087,6 +1389,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetUserLastMetricRequest,
     ) -> dingtalkconference__1__0_models.GetUserLastMetricResponse:
+        """
+        @summary 通过conferenceId和unionId获取最新会议质量数据
+        
+        @param request: GetUserLastMetricRequest
+        @return: GetUserLastMetricResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetUserLastMetricHeaders()
         return await self.get_user_last_metric_with_options_async(conference_id, request, headers, runtime)
@@ -1098,6 +1406,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetUserMetricDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        """
+        @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+        
+        @param request: GetUserMetricDataRequest
+        @param headers: GetUserMetricDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserMetricDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.begin_time):
@@ -1138,6 +1454,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.GetUserMetricDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        """
+        @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+        
+        @param request: GetUserMetricDataRequest
+        @param headers: GetUserMetricDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserMetricDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.begin_time):
@@ -1176,6 +1500,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
     ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        """
+        @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+        
+        @param request: GetUserMetricDataRequest
+        @return: GetUserMetricDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetUserMetricDataHeaders()
         return self.get_user_metric_data_with_options(conference_id, request, headers, runtime)
@@ -1185,6 +1515,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.GetUserMetricDataRequest,
     ) -> dingtalkconference__1__0_models.GetUserMetricDataResponse:
+        """
+        @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+        
+        @param request: GetUserMetricDataRequest
+        @return: GetUserMetricDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.GetUserMetricDataHeaders()
         return await self.get_user_metric_data_with_options_async(conference_id, request, headers, runtime)
@@ -1196,6 +1532,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.InviteUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.InviteUsersResponse:
+        """
+        @summary 邀请其他人员
+        
+        @param request: InviteUsersRequest
+        @param headers: InviteUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InviteUsersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.invitee_list):
@@ -1236,6 +1580,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.InviteUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.InviteUsersResponse:
+        """
+        @summary 邀请其他人员
+        
+        @param request: InviteUsersRequest
+        @param headers: InviteUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InviteUsersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.invitee_list):
@@ -1274,6 +1626,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.InviteUsersRequest,
     ) -> dingtalkconference__1__0_models.InviteUsersResponse:
+        """
+        @summary 邀请其他人员
+        
+        @param request: InviteUsersRequest
+        @return: InviteUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.InviteUsersHeaders()
         return self.invite_users_with_options(conference_id, request, headers, runtime)
@@ -1283,6 +1641,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.InviteUsersRequest,
     ) -> dingtalkconference__1__0_models.InviteUsersResponse:
+        """
+        @summary 邀请其他人员
+        
+        @param request: InviteUsersRequest
+        @return: InviteUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.InviteUsersHeaders()
         return await self.invite_users_with_options_async(conference_id, request, headers, runtime)
@@ -1294,6 +1658,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.KickMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.KickMembersResponse:
+        """
+        @summary 会议踢出成员
+        
+        @param request: KickMembersRequest
+        @param headers: KickMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.forbidden_rejoin):
@@ -1332,6 +1704,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.KickMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.KickMembersResponse:
+        """
+        @summary 会议踢出成员
+        
+        @param request: KickMembersRequest
+        @param headers: KickMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.forbidden_rejoin):
@@ -1368,6 +1748,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.KickMembersRequest,
     ) -> dingtalkconference__1__0_models.KickMembersResponse:
+        """
+        @summary 会议踢出成员
+        
+        @param request: KickMembersRequest
+        @return: KickMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.KickMembersHeaders()
         return self.kick_members_with_options(conference_id, request, headers, runtime)
@@ -1377,6 +1763,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.KickMembersRequest,
     ) -> dingtalkconference__1__0_models.KickMembersResponse:
+        """
+        @summary 会议踢出成员
+        
+        @param request: KickMembersRequest
+        @return: KickMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.KickMembersHeaders()
         return await self.kick_members_with_options_async(conference_id, request, headers, runtime)
@@ -1388,6 +1780,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.LockConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        """
+        @summary 锁定会议
+        
+        @param request: LockConferenceRequest
+        @param headers: LockConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1424,6 +1824,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.LockConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        """
+        @summary 锁定会议
+        
+        @param request: LockConferenceRequest
+        @param headers: LockConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LockConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1458,6 +1866,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.LockConferenceRequest,
     ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        """
+        @summary 锁定会议
+        
+        @param request: LockConferenceRequest
+        @return: LockConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.LockConferenceHeaders()
         return self.lock_conference_with_options(conference_id, request, headers, runtime)
@@ -1467,6 +1881,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.LockConferenceRequest,
     ) -> dingtalkconference__1__0_models.LockConferenceResponse:
+        """
+        @summary 锁定会议
+        
+        @param request: LockConferenceRequest
+        @return: LockConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.LockConferenceHeaders()
         return await self.lock_conference_with_options_async(conference_id, request, headers, runtime)
@@ -1478,6 +1898,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.MuteAllHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.MuteAllResponse:
+        """
+        @summary 会议全员静音或解除静音
+        
+        @param request: MuteAllRequest
+        @param headers: MuteAllHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MuteAllResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1516,6 +1944,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.MuteAllHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.MuteAllResponse:
+        """
+        @summary 会议全员静音或解除静音
+        
+        @param request: MuteAllRequest
+        @param headers: MuteAllHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MuteAllResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1552,6 +1988,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.MuteAllRequest,
     ) -> dingtalkconference__1__0_models.MuteAllResponse:
+        """
+        @summary 会议全员静音或解除静音
+        
+        @param request: MuteAllRequest
+        @return: MuteAllResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.MuteAllHeaders()
         return self.mute_all_with_options(conference_id, request, headers, runtime)
@@ -1561,6 +2003,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.MuteAllRequest,
     ) -> dingtalkconference__1__0_models.MuteAllResponse:
+        """
+        @summary 会议全员静音或解除静音
+        
+        @param request: MuteAllRequest
+        @return: MuteAllResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.MuteAllHeaders()
         return await self.mute_all_with_options_async(conference_id, request, headers, runtime)
@@ -1572,6 +2020,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.MuteMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.MuteMembersResponse:
+        """
+        @summary 指定人员静音或取消静音
+        
+        @param request: MuteMembersRequest
+        @param headers: MuteMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MuteMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1610,6 +2066,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.MuteMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.MuteMembersResponse:
+        """
+        @summary 指定人员静音或取消静音
+        
+        @param request: MuteMembersRequest
+        @param headers: MuteMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MuteMembersResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action):
@@ -1646,6 +2110,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.MuteMembersRequest,
     ) -> dingtalkconference__1__0_models.MuteMembersResponse:
+        """
+        @summary 指定人员静音或取消静音
+        
+        @param request: MuteMembersRequest
+        @return: MuteMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.MuteMembersHeaders()
         return self.mute_members_with_options(conference_id, request, headers, runtime)
@@ -1655,6 +2125,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.MuteMembersRequest,
     ) -> dingtalkconference__1__0_models.MuteMembersResponse:
+        """
+        @summary 指定人员静音或取消静音
+        
+        @param request: MuteMembersRequest
+        @return: MuteMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.MuteMembersHeaders()
         return await self.mute_members_with_options_async(conference_id, request, headers, runtime)
@@ -1666,6 +2142,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordTextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        """
+        @summary 查询云录制文本信息
+        
+        @param request: QueryCloudRecordTextRequest
+        @param headers: QueryCloudRecordTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordTextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.direction):
@@ -1710,6 +2194,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordTextHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        """
+        @summary 查询云录制文本信息
+        
+        @param request: QueryCloudRecordTextRequest
+        @param headers: QueryCloudRecordTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordTextResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.direction):
@@ -1752,6 +2244,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        """
+        @summary 查询云录制文本信息
+        
+        @param request: QueryCloudRecordTextRequest
+        @return: QueryCloudRecordTextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordTextHeaders()
         return self.query_cloud_record_text_with_options(conference_id, request, headers, runtime)
@@ -1761,6 +2259,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordTextRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordTextResponse:
+        """
+        @summary 查询云录制文本信息
+        
+        @param request: QueryCloudRecordTextRequest
+        @return: QueryCloudRecordTextResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordTextHeaders()
         return await self.query_cloud_record_text_with_options_async(conference_id, request, headers, runtime)
@@ -1772,6 +2276,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        """
+        @summary 查询云录制视频
+        
+        @param request: QueryCloudRecordVideoRequest
+        @param headers: QueryCloudRecordVideoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordVideoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1808,6 +2320,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        """
+        @summary 查询云录制视频
+        
+        @param request: QueryCloudRecordVideoRequest
+        @param headers: QueryCloudRecordVideoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordVideoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -1842,6 +2362,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        """
+        @summary 查询云录制视频
+        
+        @param request: QueryCloudRecordVideoRequest
+        @return: QueryCloudRecordVideoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders()
         return self.query_cloud_record_video_with_options(conference_id, request, headers, runtime)
@@ -1851,6 +2377,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordVideoRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoResponse:
+        """
+        @summary 查询云录制视频
+        
+        @param request: QueryCloudRecordVideoRequest
+        @return: QueryCloudRecordVideoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordVideoHeaders()
         return await self.query_cloud_record_video_with_options_async(conference_id, request, headers, runtime)
@@ -1862,6 +2394,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        """
+        @summary 查询云录制视频播放信息
+        
+        @param request: QueryCloudRecordVideoPlayInfoRequest
+        @param headers: QueryCloudRecordVideoPlayInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordVideoPlayInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.media_id):
@@ -1902,6 +2442,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        """
+        @summary 查询云录制视频播放信息
+        
+        @param request: QueryCloudRecordVideoPlayInfoRequest
+        @param headers: QueryCloudRecordVideoPlayInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCloudRecordVideoPlayInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.media_id):
@@ -1940,6 +2488,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        """
+        @summary 查询云录制视频播放信息
+        
+        @param request: QueryCloudRecordVideoPlayInfoRequest
+        @return: QueryCloudRecordVideoPlayInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders()
         return self.query_cloud_record_video_play_info_with_options(conference_id, request, headers, runtime)
@@ -1949,6 +2503,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoRequest,
     ) -> dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoResponse:
+        """
+        @summary 查询云录制视频播放信息
+        
+        @param request: QueryCloudRecordVideoPlayInfoRequest
+        @return: QueryCloudRecordVideoPlayInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryCloudRecordVideoPlayInfoHeaders()
         return await self.query_cloud_record_video_play_info_with_options_async(conference_id, request, headers, runtime)
@@ -1959,6 +2519,13 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoResponse:
+        """
+        @summary 查询视频会议信息
+        
+        @param headers: QueryConferenceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1989,6 +2556,13 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoResponse:
+        """
+        @summary 查询视频会议信息
+        
+        @param headers: QueryConferenceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2017,6 +2591,11 @@ class Client(OpenApiClient):
         self,
         conference_id: str,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoResponse:
+        """
+        @summary 查询视频会议信息
+        
+        @return: QueryConferenceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceInfoHeaders()
         return self.query_conference_info_with_options(conference_id, headers, runtime)
@@ -2025,6 +2604,11 @@ class Client(OpenApiClient):
         self,
         conference_id: str,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoResponse:
+        """
+        @summary 查询视频会议信息
+        
+        @return: QueryConferenceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceInfoHeaders()
         return await self.query_conference_info_with_options_async(conference_id, headers, runtime)
@@ -2035,6 +2619,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceInfoBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoBatchResponse:
+        """
+        @summary 批量查询视频会议信息
+        
+        @param request: QueryConferenceInfoBatchRequest
+        @param headers: QueryConferenceInfoBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conference_id_list):
@@ -2070,6 +2662,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceInfoBatchHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoBatchResponse:
+        """
+        @summary 批量查询视频会议信息
+        
+        @param request: QueryConferenceInfoBatchRequest
+        @param headers: QueryConferenceInfoBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoBatchResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conference_id_list):
@@ -2103,6 +2703,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryConferenceInfoBatchRequest,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoBatchResponse:
+        """
+        @summary 批量查询视频会议信息
+        
+        @param request: QueryConferenceInfoBatchRequest
+        @return: QueryConferenceInfoBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceInfoBatchHeaders()
         return self.query_conference_info_batch_with_options(request, headers, runtime)
@@ -2111,6 +2717,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryConferenceInfoBatchRequest,
     ) -> dingtalkconference__1__0_models.QueryConferenceInfoBatchResponse:
+        """
+        @summary 批量查询视频会议信息
+        
+        @param request: QueryConferenceInfoBatchRequest
+        @return: QueryConferenceInfoBatchResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceInfoBatchHeaders()
         return await self.query_conference_info_batch_with_options_async(request, headers, runtime)
@@ -2122,6 +2734,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceMembersResponse:
+        """
+        @summary 查询视频会议成员
+        
+        @param request: QueryConferenceMembersRequest
+        @param headers: QueryConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2160,6 +2780,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryConferenceMembersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryConferenceMembersResponse:
+        """
+        @summary 查询视频会议成员
+        
+        @param request: QueryConferenceMembersRequest
+        @param headers: QueryConferenceMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceMembersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2196,6 +2824,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryConferenceMembersRequest,
     ) -> dingtalkconference__1__0_models.QueryConferenceMembersResponse:
+        """
+        @summary 查询视频会议成员
+        
+        @param request: QueryConferenceMembersRequest
+        @return: QueryConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceMembersHeaders()
         return self.query_conference_members_with_options(conference_id, request, headers, runtime)
@@ -2205,6 +2839,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.QueryConferenceMembersRequest,
     ) -> dingtalkconference__1__0_models.QueryConferenceMembersResponse:
+        """
+        @summary 查询视频会议成员
+        
+        @param request: QueryConferenceMembersRequest
+        @return: QueryConferenceMembersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryConferenceMembersHeaders()
         return await self.query_conference_members_with_options_async(conference_id, request, headers, runtime)
@@ -2215,6 +2855,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConfSettingsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConfSettingsResponse:
+        """
+        @summary 查询预约会议设置
+        
+        @param request: QueryScheduleConfSettingsRequest
+        @param headers: QueryScheduleConfSettingsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConfSettingsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.schedule_conference_id):
@@ -2250,6 +2898,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConfSettingsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConfSettingsResponse:
+        """
+        @summary 查询预约会议设置
+        
+        @param request: QueryScheduleConfSettingsRequest
+        @param headers: QueryScheduleConfSettingsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConfSettingsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.schedule_conference_id):
@@ -2283,6 +2939,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryScheduleConfSettingsRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConfSettingsResponse:
+        """
+        @summary 查询预约会议设置
+        
+        @param request: QueryScheduleConfSettingsRequest
+        @return: QueryScheduleConfSettingsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConfSettingsHeaders()
         return self.query_schedule_conf_settings_with_options(request, headers, runtime)
@@ -2291,6 +2953,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryScheduleConfSettingsRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConfSettingsResponse:
+        """
+        @summary 查询预约会议设置
+        
+        @param request: QueryScheduleConfSettingsRequest
+        @return: QueryScheduleConfSettingsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConfSettingsHeaders()
         return await self.query_schedule_conf_settings_with_options_async(request, headers, runtime)
@@ -2302,6 +2970,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceResponse:
+        """
+        @summary 查询预约会议信息
+        
+        @param request: QueryScheduleConferenceRequest
+        @param headers: QueryScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.request_union_id):
@@ -2338,6 +3014,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceResponse:
+        """
+        @summary 查询预约会议信息
+        
+        @param request: QueryScheduleConferenceRequest
+        @param headers: QueryScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.request_union_id):
@@ -2372,6 +3056,12 @@ class Client(OpenApiClient):
         schedule_conference_id: str,
         request: dingtalkconference__1__0_models.QueryScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceResponse:
+        """
+        @summary 查询预约会议信息
+        
+        @param request: QueryScheduleConferenceRequest
+        @return: QueryScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConferenceHeaders()
         return self.query_schedule_conference_with_options(schedule_conference_id, request, headers, runtime)
@@ -2381,6 +3071,12 @@ class Client(OpenApiClient):
         schedule_conference_id: str,
         request: dingtalkconference__1__0_models.QueryScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceResponse:
+        """
+        @summary 查询预约会议信息
+        
+        @param request: QueryScheduleConferenceRequest
+        @return: QueryScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConferenceHeaders()
         return await self.query_schedule_conference_with_options_async(schedule_conference_id, request, headers, runtime)
@@ -2392,6 +3088,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        """
+        @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+        
+        @param request: QueryScheduleConferenceInfoRequest
+        @param headers: QueryScheduleConferenceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConferenceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2430,6 +3134,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        """
+        @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+        
+        @param request: QueryScheduleConferenceInfoRequest
+        @param headers: QueryScheduleConferenceInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScheduleConferenceInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -2466,6 +3178,12 @@ class Client(OpenApiClient):
         schedule_conference_id: str,
         request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        """
+        @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+        
+        @param request: QueryScheduleConferenceInfoRequest
+        @return: QueryScheduleConferenceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders()
         return self.query_schedule_conference_info_with_options(schedule_conference_id, request, headers, runtime)
@@ -2475,6 +3193,12 @@ class Client(OpenApiClient):
         schedule_conference_id: str,
         request: dingtalkconference__1__0_models.QueryScheduleConferenceInfoRequest,
     ) -> dingtalkconference__1__0_models.QueryScheduleConferenceInfoResponse:
+        """
+        @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+        
+        @param request: QueryScheduleConferenceInfoRequest
+        @return: QueryScheduleConferenceInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryScheduleConferenceInfoHeaders()
         return await self.query_schedule_conference_info_with_options_async(schedule_conference_id, request, headers, runtime)
@@ -2485,6 +3209,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        """
+        @summary 查询用户进行中会议
+        
+        @param request: QueryUserOnGoingConferenceRequest
+        @param headers: QueryUserOnGoingConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserOnGoingConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2520,6 +3252,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        """
+        @summary 查询用户进行中会议
+        
+        @param request: QueryUserOnGoingConferenceRequest
+        @param headers: QueryUserOnGoingConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserOnGoingConferenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2553,6 +3293,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        """
+        @summary 查询用户进行中会议
+        
+        @param request: QueryUserOnGoingConferenceRequest
+        @return: QueryUserOnGoingConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders()
         return self.query_user_on_going_conference_with_options(request, headers, runtime)
@@ -2561,6 +3307,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.QueryUserOnGoingConferenceRequest,
     ) -> dingtalkconference__1__0_models.QueryUserOnGoingConferenceResponse:
+        """
+        @summary 查询用户进行中会议
+        
+        @param request: QueryUserOnGoingConferenceRequest
+        @return: QueryUserOnGoingConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryUserOnGoingConferenceHeaders()
         return await self.query_user_on_going_conference_with_options_async(request, headers, runtime)
@@ -2572,6 +3324,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StartCloudRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
+        """
+        @summary 开启云录制
+        
+        @param request: StartCloudRecordRequest
+        @param headers: StartCloudRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartCloudRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mode):
@@ -2612,6 +3372,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StartCloudRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
+        """
+        @summary 开启云录制
+        
+        @param request: StartCloudRecordRequest
+        @param headers: StartCloudRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartCloudRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mode):
@@ -2650,6 +3418,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StartCloudRecordRequest,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
+        """
+        @summary 开启云录制
+        
+        @param request: StartCloudRecordRequest
+        @return: StartCloudRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StartCloudRecordHeaders()
         return self.start_cloud_record_with_options(conference_id, request, headers, runtime)
@@ -2659,6 +3433,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StartCloudRecordRequest,
     ) -> dingtalkconference__1__0_models.StartCloudRecordResponse:
+        """
+        @summary 开启云录制
+        
+        @param request: StartCloudRecordRequest
+        @return: StartCloudRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StartCloudRecordHeaders()
         return await self.start_cloud_record_with_options_async(conference_id, request, headers, runtime)
@@ -2670,6 +3450,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StartStreamOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
+        """
+        @summary 会议开始直播推流
+        
+        @param request: StartStreamOutRequest
+        @param headers: StartStreamOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartStreamOutResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mode):
@@ -2716,6 +3504,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StartStreamOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
+        """
+        @summary 会议开始直播推流
+        
+        @param request: StartStreamOutRequest
+        @param headers: StartStreamOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartStreamOutResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.mode):
@@ -2760,6 +3556,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StartStreamOutRequest,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
+        """
+        @summary 会议开始直播推流
+        
+        @param request: StartStreamOutRequest
+        @return: StartStreamOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StartStreamOutHeaders()
         return self.start_stream_out_with_options(conference_id, request, headers, runtime)
@@ -2769,6 +3571,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StartStreamOutRequest,
     ) -> dingtalkconference__1__0_models.StartStreamOutResponse:
+        """
+        @summary 会议开始直播推流
+        
+        @param request: StartStreamOutRequest
+        @return: StartStreamOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StartStreamOutHeaders()
         return await self.start_stream_out_with_options_async(conference_id, request, headers, runtime)
@@ -2780,6 +3588,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StopCloudRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
+        """
+        @summary 关闭云录制
+        
+        @param request: StopCloudRecordRequest
+        @param headers: StopCloudRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopCloudRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2816,6 +3632,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StopCloudRecordHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
+        """
+        @summary 关闭云录制
+        
+        @param request: StopCloudRecordRequest
+        @param headers: StopCloudRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopCloudRecordResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.union_id):
@@ -2850,6 +3674,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StopCloudRecordRequest,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
+        """
+        @summary 关闭云录制
+        
+        @param request: StopCloudRecordRequest
+        @return: StopCloudRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StopCloudRecordHeaders()
         return self.stop_cloud_record_with_options(conference_id, request, headers, runtime)
@@ -2859,6 +3689,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StopCloudRecordRequest,
     ) -> dingtalkconference__1__0_models.StopCloudRecordResponse:
+        """
+        @summary 关闭云录制
+        
+        @param request: StopCloudRecordRequest
+        @return: StopCloudRecordResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StopCloudRecordHeaders()
         return await self.stop_cloud_record_with_options_async(conference_id, request, headers, runtime)
@@ -2870,6 +3706,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StopStreamOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
+        """
+        @summary 会议停止直播推流
+        
+        @param request: StopStreamOutRequest
+        @param headers: StopStreamOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopStreamOutResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.stop_all_stream):
@@ -2910,6 +3754,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.StopStreamOutHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
+        """
+        @summary 会议停止直播推流
+        
+        @param request: StopStreamOutRequest
+        @param headers: StopStreamOutHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopStreamOutResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.stop_all_stream):
@@ -2948,6 +3800,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StopStreamOutRequest,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
+        """
+        @summary 会议停止直播推流
+        
+        @param request: StopStreamOutRequest
+        @return: StopStreamOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StopStreamOutHeaders()
         return self.stop_stream_out_with_options(conference_id, request, headers, runtime)
@@ -2957,6 +3815,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.StopStreamOutRequest,
     ) -> dingtalkconference__1__0_models.StopStreamOutResponse:
+        """
+        @summary 会议停止直播推流
+        
+        @param request: StopStreamOutRequest
+        @return: StopStreamOutResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.StopStreamOutHeaders()
         return await self.stop_stream_out_with_options_async(conference_id, request, headers, runtime)
@@ -2967,6 +3831,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        """
+        @summary 更新预约会议设置
+        
+        @param request: UpdateScheduleConfSettingsRequest
+        @param headers: UpdateScheduleConfSettingsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateScheduleConfSettingsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -3006,6 +3878,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        """
+        @summary 更新预约会议设置
+        
+        @param request: UpdateScheduleConfSettingsRequest
+        @param headers: UpdateScheduleConfSettingsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateScheduleConfSettingsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -3043,6 +3923,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        """
+        @summary 更新预约会议设置
+        
+        @param request: UpdateScheduleConfSettingsRequest
+        @return: UpdateScheduleConfSettingsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders()
         return self.update_schedule_conf_settings_with_options(request, headers, runtime)
@@ -3051,6 +3937,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConfSettingsResponse:
+        """
+        @summary 更新预约会议设置
+        
+        @param request: UpdateScheduleConfSettingsRequest
+        @return: UpdateScheduleConfSettingsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateScheduleConfSettingsHeaders()
         return await self.update_schedule_conf_settings_with_options_async(request, headers, runtime)
@@ -3061,6 +3953,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConferenceResponse:
+        """
+        @summary 更新预约会议
+        
+        @param request: UpdateScheduleConferenceRequest
+        @param headers: UpdateScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -3104,6 +4004,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateScheduleConferenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConferenceResponse:
+        """
+        @summary 更新预约会议
+        
+        @param request: UpdateScheduleConferenceRequest
+        @param headers: UpdateScheduleConferenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateScheduleConferenceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator_union_id):
@@ -3145,6 +4053,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.UpdateScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConferenceResponse:
+        """
+        @summary 更新预约会议
+        
+        @param request: UpdateScheduleConferenceRequest
+        @return: UpdateScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateScheduleConferenceHeaders()
         return self.update_schedule_conference_with_options(request, headers, runtime)
@@ -3153,6 +4067,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconference__1__0_models.UpdateScheduleConferenceRequest,
     ) -> dingtalkconference__1__0_models.UpdateScheduleConferenceResponse:
+        """
+        @summary 更新预约会议
+        
+        @param request: UpdateScheduleConferenceRequest
+        @return: UpdateScheduleConferenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateScheduleConferenceHeaders()
         return await self.update_schedule_conference_with_options_async(request, headers, runtime)
@@ -3163,6 +4083,13 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        """
+        @summary 更新会议额外信息
+        
+        @param headers: UpdateVideoConferenceExtInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVideoConferenceExtInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3193,6 +4120,13 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        """
+        @summary 更新会议额外信息
+        
+        @param headers: UpdateVideoConferenceExtInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVideoConferenceExtInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3221,6 +4155,11 @@ class Client(OpenApiClient):
         self,
         conference_id: str,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        """
+        @summary 更新会议额外信息
+        
+        @return: UpdateVideoConferenceExtInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders()
         return self.update_video_conference_ext_info_with_options(conference_id, headers, runtime)
@@ -3229,6 +4168,11 @@ class Client(OpenApiClient):
         self,
         conference_id: str,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoResponse:
+        """
+        @summary 更新会议额外信息
+        
+        @return: UpdateVideoConferenceExtInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateVideoConferenceExtInfoHeaders()
         return await self.update_video_conference_ext_info_with_options_async(conference_id, headers, runtime)
@@ -3240,6 +4184,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        """
+        @summary 设置会议中的会议属性
+        
+        @param request: UpdateVideoConferenceSettingRequest
+        @param headers: UpdateVideoConferenceSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVideoConferenceSettingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.allow_unmute_self):
@@ -3286,6 +4238,14 @@ class Client(OpenApiClient):
         headers: dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        """
+        @summary 设置会议中的会议属性
+        
+        @param request: UpdateVideoConferenceSettingRequest
+        @param headers: UpdateVideoConferenceSettingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVideoConferenceSettingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.allow_unmute_self):
@@ -3330,6 +4290,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        """
+        @summary 设置会议中的会议属性
+        
+        @param request: UpdateVideoConferenceSettingRequest
+        @return: UpdateVideoConferenceSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders()
         return self.update_video_conference_setting_with_options(conference_id, request, headers, runtime)
@@ -3339,6 +4305,12 @@ class Client(OpenApiClient):
         conference_id: str,
         request: dingtalkconference__1__0_models.UpdateVideoConferenceSettingRequest,
     ) -> dingtalkconference__1__0_models.UpdateVideoConferenceSettingResponse:
+        """
+        @summary 设置会议中的会议属性
+        
+        @param request: UpdateVideoConferenceSettingRequest
+        @return: UpdateVideoConferenceSettingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.UpdateVideoConferenceSettingHeaders()
         return await self.update_video_conference_setting_with_options_async(conference_id, request, headers, runtime)

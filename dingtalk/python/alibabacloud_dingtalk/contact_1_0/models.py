@@ -46,10 +46,14 @@ class AddAccountMappingRequest(TeaModel):
         out_tenant_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.domain = domain
         self.extension = extension
+        # This parameter is required.
         self.out_id = out_id
+        # This parameter is required.
         self.out_tenant_id = out_tenant_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -93,6 +97,7 @@ class AddAccountMappingResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -771,11 +776,17 @@ class AddOrgAccountOwnnessRequest(TeaModel):
         text: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.ownenss_type = ownenss_type
+        # This parameter is required.
         self.ownness_id = ownness_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -942,6 +953,7 @@ class AnnualCertificationAuditRequest(TeaModel):
         self.applicant_mobile = applicant_mobile
         self.applicant_name = applicant_name
         self.application_letter = application_letter
+        # This parameter is required.
         self.auth_status = auth_status
         self.certificate_type = certificate_type
         self.corp_name = corp_name
@@ -950,6 +962,7 @@ class AnnualCertificationAuditRequest(TeaModel):
         self.legal_person = legal_person
         self.license_number = license_number
         self.license_url = license_url
+        # This parameter is required.
         self.order_id = order_id
         self.public_account = public_account
         self.reason_code = reason_code
@@ -1319,8 +1332,11 @@ class ChangeMainAdminRequest(TeaModel):
         source_user_id: str = None,
         target_user_id: str = None,
     ):
+        # This parameter is required.
         self.effect_corp_id = effect_corp_id
+        # This parameter is required.
         self.source_user_id = source_user_id
+        # This parameter is required.
         self.target_user_id = target_user_id
 
     def validate(self):
@@ -1426,6 +1442,7 @@ class CreateCooperateOrgRequest(TeaModel):
     ):
         self.industry_code = industry_code
         self.logo_media_id = logo_media_id
+        # This parameter is required.
         self.org_name = org_name
 
     def validate(self):
@@ -1563,7 +1580,9 @@ class CreateManagementGroupRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -1597,6 +1616,7 @@ class CreateManagementGroupRequestScope(TeaModel):
         scope_type: int = None,
     ):
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.scope_type = scope_type
 
     def validate(self):
@@ -1631,9 +1651,13 @@ class CreateManagementGroupRequest(TeaModel):
         resource_ids: List[str] = None,
         scope: CreateManagementGroupRequestScope = None,
     ):
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.resource_ids = resource_ids
+        # This parameter is required.
         self.scope = scope
 
     def validate(self):
@@ -1684,6 +1708,7 @@ class CreateManagementGroupResponseBody(TeaModel):
         self,
         group_id: str = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
 
     def validate(self):
@@ -1786,7 +1811,9 @@ class CreateSecondaryManagementGroupRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -1820,6 +1847,7 @@ class CreateSecondaryManagementGroupRequestScope(TeaModel):
         scope_type: int = None,
     ):
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.scope_type = scope_type
 
     def validate(self):
@@ -1855,10 +1883,15 @@ class CreateSecondaryManagementGroupRequest(TeaModel):
         scope: CreateSecondaryManagementGroupRequestScope = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.resource_ids = resource_ids
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1913,6 +1946,7 @@ class CreateSecondaryManagementGroupResponseBody(TeaModel):
         self,
         group_id: str = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
 
     def validate(self):
@@ -2015,7 +2049,9 @@ class DelAccountMappingRequest(TeaModel):
         domain: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.domain = domain
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2150,8 +2186,11 @@ class DelOrgAccUserOwnnessRequest(TeaModel):
         ownness_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.ownenss_type = ownenss_type
+        # This parameter is required.
         self.ownness_id = ownness_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2187,6 +2226,7 @@ class DelOrgAccUserOwnnessResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2790,7 +2830,9 @@ class GetAccountMappingRequest(TeaModel):
         domain: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.domain = domain
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2826,10 +2868,12 @@ class GetAccountMappingResponseBodyResult(TeaModel):
         out_tenant_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.domain = domain
         self.extension = extension
         self.out_id = out_id
         self.out_tenant_id = out_tenant_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3015,12 +3059,18 @@ class GetApplyInviteInfoResponseBody(TeaModel):
         org_apply_code_invite: bool = None,
         search_name_invite: bool = None,
     ):
+        # This parameter is required.
         self.audit_type = audit_type
+        # This parameter is required.
         self.emp_apply_join_dept = emp_apply_join_dept
+        # This parameter is required.
         self.invite_switch = invite_switch
         self.invite_url = invite_url
+        # This parameter is required.
         self.link_invite = link_invite
+        # This parameter is required.
         self.org_apply_code_invite = org_apply_code_invite
+        # This parameter is required.
         self.search_name_invite = search_name_invite
 
     def validate(self):
@@ -3149,7 +3199,9 @@ class GetBranchAuthDataRequest(TeaModel):
         code: str = None,
     ):
         self.body = body
+        # This parameter is required.
         self.branch_corp_id = branch_corp_id
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -3344,15 +3396,19 @@ class GetCardInUserHolderResponseBody(TeaModel):
         template_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.avatar_url = avatar_url
         self.card_accept_status = card_accept_status
         self.card_accept_time_long = card_accept_time_long
+        # This parameter is required.
         self.card_id = card_id
         self.card_source = card_source
         self.extension = extension
         self.industry_name = industry_name
         self.introduce = introduce
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.org_name = org_name
         self.template_id = template_id
         self.title = title
@@ -3895,12 +3951,16 @@ class GetCardInfoResponseBody(TeaModel):
         title: str = None,
     ):
         self.admin_role = admin_role
+        # This parameter is required.
         self.avatar_url = avatar_url
+        # This parameter is required.
         self.card_id = card_id
         self.extension = extension
         self.industry_name = industry_name
         self.introduce = introduce
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.org_name = org_name
         self.settings = settings
         self.template_id = template_id
@@ -4315,6 +4375,7 @@ class GetCooperateOrgInviteInfoResponseBody(TeaModel):
         self,
         invite_url: str = None,
     ):
+        # This parameter is required.
         self.invite_url = invite_url
 
     def validate(self):
@@ -4416,6 +4477,7 @@ class GetCorpCardStyleListResponseBody(TeaModel):
         self,
         result: List[Dict[str, Any]] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4517,6 +4579,7 @@ class GetDingIdByMigrationDingIdRequest(TeaModel):
         self,
         migration_ding_id: str = None,
     ):
+        # This parameter is required.
         self.migration_ding_id = migration_ding_id
 
     def validate(self):
@@ -4911,10 +4974,15 @@ class GetLatestDingIndexResponseBody(TeaModel):
         idx_total: float = None,
         stat_date: str = None,
     ):
+        # This parameter is required.
         self.idx_carbon = idx_carbon
+        # This parameter is required.
         self.idx_efficiency = idx_efficiency
+        # This parameter is required.
         self.idx_monthly_avg = idx_monthly_avg
+        # This parameter is required.
         self.idx_total = idx_total
+        # This parameter is required.
         self.stat_date = stat_date
 
     def validate(self):
@@ -5032,6 +5100,7 @@ class GetMigrationDingIdByDingIdRequest(TeaModel):
         self,
         ding_id: str = None,
     ):
+        # This parameter is required.
         self.ding_id = ding_id
 
     def validate(self):
@@ -5160,6 +5229,7 @@ class GetMigrationUnionIdByUnionIdRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5322,10 +5392,13 @@ class GetOrgAuthInfoResponseBody(TeaModel):
         registration_num: str = None,
         unified_social_credit: str = None,
     ):
+        # This parameter is required.
         self.auth_level = auth_level
         self.legal_person = legal_person
+        # This parameter is required.
         self.license_org_name = license_org_name
         self.license_url = license_url
+        # This parameter is required.
         self.org_name = org_name
         self.organization_code = organization_code
         self.registration_num = registration_num
@@ -5458,6 +5531,7 @@ class GetTranslateFileJobResultRequest(TeaModel):
         self,
         job_id: str = None,
     ):
+        # This parameter is required.
         self.job_id = job_id
 
     def validate(self):
@@ -5486,6 +5560,7 @@ class GetTranslateFileJobResultResponseBody(TeaModel):
         status: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.status = status
         self.url = url
 
@@ -5592,6 +5667,7 @@ class GetUnionIdByMigrationUnionIdRequest(TeaModel):
         self,
         migration_union_id: str = None,
     ):
+        # This parameter is required.
         self.migration_union_id = migration_union_id
 
     def validate(self):
@@ -5858,6 +5934,7 @@ class GetUserCardHolderListRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
 
@@ -5901,17 +5978,26 @@ class GetUserCardHolderListResponseBodyList(TeaModel):
         template_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.avatar_url = avatar_url
         self.card_accept_status = card_accept_status
         self.card_accept_time_long = card_accept_time_long
+        # This parameter is required.
         self.card_id = card_id
         self.card_source = card_source
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.industry_name = industry_name
+        # This parameter is required.
         self.introduce = introduce
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.org_name = org_name
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -5987,7 +6073,9 @@ class GetUserCardHolderListResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
+        # This parameter is required.
         self.next_token = next_token
         self.total_count = total_count
 
@@ -6248,10 +6336,15 @@ class IsvCardEventPushRequest(TeaModel):
         isv_token: str = None,
         isv_uid: str = None,
     ):
+        # This parameter is required.
         self.event_params = event_params
+        # This parameter is required.
         self.event_type = event_type
+        # This parameter is required.
         self.isv_card_id = isv_card_id
+        # This parameter is required.
         self.isv_token = isv_token
+        # This parameter is required.
         self.isv_uid = isv_uid
 
     def validate(self):
@@ -6295,6 +6388,7 @@ class IsvCardEventPushResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -7394,8 +7488,10 @@ class ListEmpAttributeVisibilityResponseBody(TeaModel):
         list: List[ListEmpAttributeVisibilityResponseBodyList] = None,
         next_cursor: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.next_cursor = next_cursor
 
     def validate(self):
@@ -7517,8 +7613,10 @@ class ListEmpLeaveRecordsRequest(TeaModel):
         start_time: str = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -7563,11 +7661,17 @@ class ListEmpLeaveRecordsResponseBodyRecords(TeaModel):
         state_code: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.leave_reason = leave_reason
+        # This parameter is required.
         self.leave_time = leave_time
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.state_code = state_code
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7617,6 +7721,7 @@ class ListEmpLeaveRecordsResponseBody(TeaModel):
         records: List[ListEmpLeaveRecordsResponseBodyRecords] = None,
     ):
         self.next_token = next_token
+        # This parameter is required.
         self.records = records
 
     def validate(self):
@@ -7731,7 +7836,9 @@ class ListManagementGroupsRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -7764,7 +7871,9 @@ class ListManagementGroupsResponseBodyGroupsMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -7798,6 +7907,7 @@ class ListManagementGroupsResponseBodyGroupsScope(TeaModel):
         scope_type: int = None,
     ):
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.scope_type = scope_type
 
     def validate(self):
@@ -7833,10 +7943,12 @@ class ListManagementGroupsResponseBodyGroups(TeaModel):
         resource_ids: List[str] = None,
         scope: ListManagementGroupsResponseBodyGroupsScope = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
         self.group_name = group_name
         self.members = members
         self.resource_ids = resource_ids
+        # This parameter is required.
         self.scope = scope
 
     def validate(self):
@@ -7893,7 +8005,9 @@ class ListManagementGroupsResponseBody(TeaModel):
         has_more: bool = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.groups = groups
+        # This parameter is required.
         self.has_more = has_more
         self.next_token = next_token
 
@@ -8012,6 +8126,7 @@ class ListOwnedOrgByStaffIdRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8040,7 +8155,9 @@ class ListOwnedOrgByStaffIdResponseBodyOrgList(TeaModel):
         corp_id: str = None,
         corp_name: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.corp_name = corp_name
 
     def validate(self):
@@ -8181,6 +8298,7 @@ class ListSeniorSettingsRequest(TeaModel):
         self,
         senior_staff_id: str = None,
     ):
+        # This parameter is required.
         self.senior_staff_id = senior_staff_id
 
     def validate(self):
@@ -8373,11 +8491,17 @@ class ModifyOrgAccUserOwnnessRequest(TeaModel):
         text: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.ownenss_type = ownenss_type
+        # This parameter is required.
         self.ownness_id = ownness_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8528,6 +8652,7 @@ class MultiOrgPermissionGrantRequest(TeaModel):
         join_corp_id: str = None,
     ):
         self.grant_dept_id_list = grant_dept_id_list
+        # This parameter is required.
         self.join_corp_id = join_corp_id
 
     def validate(self):
@@ -8629,8 +8754,10 @@ class PushVerifyEventRequest(TeaModel):
         user_id: str = None,
     ):
         self.caller_device_id = caller_device_id
+        # This parameter is required.
         self.factor_code_list = factor_code_list
         self.state = state
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8771,6 +8898,7 @@ class QueryCardVisitorStatisticDataRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -8950,9 +9078,12 @@ class QueryCorpStatisticDataRequest(TeaModel):
         template_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.start_time = start_time
         self.template_ids = template_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9169,11 +9300,16 @@ class QueryCorpUserStatisticRequest(TeaModel):
         template_ids: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.start_time = start_time
         self.template_ids = template_ids
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9541,6 +9677,7 @@ class QueryStatusRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -9568,6 +9705,7 @@ class QueryStatusResponseBody(TeaModel):
         self,
         disable: bool = None,
     ):
+        # This parameter is required.
         self.disable = disable
 
     def validate(self):
@@ -9770,6 +9908,7 @@ class QueryVerifyResultRequest(TeaModel):
         self,
         verify_id: str = None,
     ):
+        # This parameter is required.
         self.verify_id = verify_id
 
     def validate(self):
@@ -9942,8 +10081,11 @@ class SearchDepartmentRequest(TeaModel):
         query_word: str = None,
         size: int = None,
     ):
+        # This parameter is required.
         self.offset = offset
+        # This parameter is required.
         self.query_word = query_word
+        # This parameter is required.
         self.size = size
 
     def validate(self):
@@ -9981,8 +10123,10 @@ class SearchDepartmentResponseBody(TeaModel):
         list: List[int] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.list = list
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -10096,8 +10240,11 @@ class SearchUserRequest(TeaModel):
         size: int = None,
     ):
         self.full_match_field = full_match_field
+        # This parameter is required.
         self.offset = offset
+        # This parameter is required.
         self.query_word = query_word
+        # This parameter is required.
         self.size = size
 
     def validate(self):
@@ -10250,6 +10397,7 @@ class SeparateBranchOrgRequest(TeaModel):
         self,
         attach_dept_id: int = None,
     ):
+        # This parameter is required.
         self.attach_dept_id = attach_dept_id
 
     def validate(self):
@@ -10277,6 +10425,7 @@ class SeparateBranchOrgResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -10380,6 +10529,7 @@ class SetDisableRequest(TeaModel):
         user_id: str = None,
     ):
         self.reason = reason
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10512,6 +10662,7 @@ class SetEnableRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10642,6 +10793,7 @@ class SignOutRequest(TeaModel):
         user_id: str = None,
     ):
         self.reason = reason
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10776,6 +10928,7 @@ class SortUserRequest(TeaModel):
         user_id_list: List[str] = None,
     ):
         self.sort_type = sort_type
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -10807,6 +10960,7 @@ class SortUserResponseBody(TeaModel):
         self,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -10915,7 +11069,9 @@ class TransformToExclusiveAccountRequest(TeaModel):
         self.idp_ding_talk = idp_ding_talk
         self.init_password = init_password
         self.login_id = login_id
+        # This parameter is required.
         self.transform_type = transform_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -11027,8 +11183,10 @@ class TranslateFileRequest(TeaModel):
         output_file_name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.medias = medias
         self.output_file_name = output_file_name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -11167,6 +11325,7 @@ class UniqueQueryUserCardRequest(TeaModel):
         union_id: str = None,
     ):
         self.template_id = template_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -11355,8 +11514,11 @@ class UpdateBranchAttributesInCooperateRequestBody(TeaModel):
         link_dept_id: int = None,
         union_root_name: str = None,
     ):
+        # This parameter is required.
         self.branch_corp_id = branch_corp_id
+        # This parameter is required.
         self.link_dept_id = link_dept_id
+        # This parameter is required.
         self.union_root_name = union_root_name
 
     def validate(self):
@@ -11392,6 +11554,7 @@ class UpdateBranchAttributesInCooperateRequest(TeaModel):
         self,
         body: List[UpdateBranchAttributesInCooperateRequestBody] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -11497,8 +11660,11 @@ class UpdateBranchVisibleSettingInCooperateRequestBody(TeaModel):
         visible_branch_corp_ids: List[str] = None,
         visible_dept_ids: List[int] = None,
     ):
+        # This parameter is required.
         self.branch_corp_id = branch_corp_id
+        # This parameter is required.
         self.open = open
+        # This parameter is required.
         self.type = type
         self.visible_branch_corp_ids = visible_branch_corp_ids
         self.visible_dept_ids = visible_dept_ids
@@ -11544,6 +11710,7 @@ class UpdateBranchVisibleSettingInCooperateRequest(TeaModel):
         self,
         body: List[UpdateBranchVisibleSettingInCooperateRequestBody] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -12152,6 +12319,7 @@ class UpdateContactRestrictSettingRequest(TeaModel):
         self.subject_dept_ids = subject_dept_ids
         self.subject_tag_ids = subject_tag_ids
         self.subject_user_ids = subject_user_ids
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -12328,6 +12496,7 @@ class UpdateDeptSettngTailFirstRequest(TeaModel):
         self,
         enable: bool = None,
     ):
+        # This parameter is required.
         self.enable = enable
 
     def validate(self):
@@ -12893,7 +13062,9 @@ class UpdateManagementGroupRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -12927,6 +13098,7 @@ class UpdateManagementGroupRequestScope(TeaModel):
         scope_type: int = None,
     ):
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.scope_type = scope_type
 
     def validate(self):
@@ -12961,9 +13133,13 @@ class UpdateManagementGroupRequest(TeaModel):
         resource_ids: List[str] = None,
         scope: UpdateManagementGroupRequestScope = None,
     ):
+        # This parameter is required.
         self.group_name = group_name
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.resource_ids = resource_ids
+        # This parameter is required.
         self.scope = scope
 
     def validate(self):
@@ -13085,11 +13261,13 @@ class UpdateSeniorSettingRequest(TeaModel):
         protect_scenes: List[str] = None,
         senior_staff_id: str = None,
     ):
+        # This parameter is required.
         self.open = open
         self.permit_dept_ids = permit_dept_ids
         self.permit_staff_ids = permit_staff_ids
         self.permit_tag_ids = permit_tag_ids
         self.protect_scenes = protect_scenes
+        # This parameter is required.
         self.senior_staff_id = senior_staff_id
 
     def validate(self):
@@ -13395,10 +13573,15 @@ class UpdateUserOwnnessRequest(TeaModel):
         ownenss_type: int = None,
         start_time: int = None,
     ):
+        # This parameter is required.
         self.deleted_flag = deleted_flag
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.ownenss_type = ownenss_type
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -13442,6 +13625,7 @@ class UpdateUserOwnnessResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):

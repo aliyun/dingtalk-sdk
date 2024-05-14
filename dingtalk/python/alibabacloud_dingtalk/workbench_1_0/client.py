@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        """
+        @summary 批量添加最近使用记录
+        
+        @param request: AddRecentUserAppListRequest
+        @param headers: AddRecentUserAppListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRecentUserAppListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        """
+        @summary 批量添加最近使用记录
+        
+        @param request: AddRecentUserAppListRequest
+        @param headers: AddRecentUserAppListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRecentUserAppListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
     ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        """
+        @summary 批量添加最近使用记录
+        
+        @param request: AddRecentUserAppListRequest
+        @return: AddRecentUserAppListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders()
         return self.add_recent_user_app_list_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.AddRecentUserAppListRequest,
     ) -> dingtalkworkbench__1__0_models.AddRecentUserAppListResponse:
+        """
+        @summary 批量添加最近使用记录
+        
+        @param request: AddRecentUserAppListRequest
+        @return: AddRecentUserAppListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.AddRecentUserAppListHeaders()
         return await self.add_recent_user_app_list_with_options_async(request, headers, runtime)
@@ -129,6 +157,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
+        """
+        @summary 查询自定义工作台
+        
+        @param headers: GetDingPortalDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDingPortalDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -159,6 +194,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
+        """
+        @summary 查询自定义工作台
+        
+        @param headers: GetDingPortalDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDingPortalDetailResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -187,6 +229,11 @@ class Client(OpenApiClient):
         self,
         app_uuid: str,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
+        """
+        @summary 查询自定义工作台
+        
+        @return: GetDingPortalDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders()
         return self.get_ding_portal_detail_with_options(app_uuid, headers, runtime)
@@ -195,6 +242,11 @@ class Client(OpenApiClient):
         self,
         app_uuid: str,
     ) -> dingtalkworkbench__1__0_models.GetDingPortalDetailResponse:
+        """
+        @summary 查询自定义工作台
+        
+        @return: GetDingPortalDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetDingPortalDetailHeaders()
         return await self.get_ding_portal_detail_with_options_async(app_uuid, headers, runtime)
@@ -205,6 +257,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        """
+        @summary 获取工作台插件的权限点
+        
+        @param request: GetPluginPermissionPointRequest
+        @param headers: GetPluginPermissionPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPluginPermissionPointResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mini_app_id):
@@ -240,6 +300,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        """
+        @summary 获取工作台插件的权限点
+        
+        @param request: GetPluginPermissionPointRequest
+        @param headers: GetPluginPermissionPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPluginPermissionPointResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mini_app_id):
@@ -273,6 +341,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
     ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        """
+        @summary 获取工作台插件的权限点
+        
+        @param request: GetPluginPermissionPointRequest
+        @return: GetPluginPermissionPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders()
         return self.get_plugin_permission_point_with_options(request, headers, runtime)
@@ -281,6 +355,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.GetPluginPermissionPointRequest,
     ) -> dingtalkworkbench__1__0_models.GetPluginPermissionPointResponse:
+        """
+        @summary 获取工作台插件的权限点
+        
+        @param request: GetPluginPermissionPointRequest
+        @return: GetPluginPermissionPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetPluginPermissionPointHeaders()
         return await self.get_plugin_permission_point_with_options_async(request, headers, runtime)
@@ -291,6 +371,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        """
+        @summary 获取插件的校验规则
+        
+        @param request: GetPluginRuleCheckInfoRequest
+        @param headers: GetPluginRuleCheckInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPluginRuleCheckInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mini_app_id):
@@ -326,6 +414,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        """
+        @summary 获取插件的校验规则
+        
+        @param request: GetPluginRuleCheckInfoRequest
+        @param headers: GetPluginRuleCheckInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPluginRuleCheckInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.mini_app_id):
@@ -359,6 +455,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
     ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        """
+        @summary 获取插件的校验规则
+        
+        @param request: GetPluginRuleCheckInfoRequest
+        @return: GetPluginRuleCheckInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders()
         return self.get_plugin_rule_check_info_with_options(request, headers, runtime)
@@ -367,6 +469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoRequest,
     ) -> dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoResponse:
+        """
+        @summary 获取插件的校验规则
+        
+        @param request: GetPluginRuleCheckInfoRequest
+        @return: GetPluginRuleCheckInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.GetPluginRuleCheckInfoHeaders()
         return await self.get_plugin_rule_check_info_with_options_async(request, headers, runtime)
@@ -377,6 +485,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        """
+        @summary 获取工作台分组列表
+        
+        @param request: ListWorkBenchGroupRequest
+        @param headers: ListWorkBenchGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListWorkBenchGroupResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.ecological_corp_id):
@@ -416,6 +532,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        """
+        @summary 获取工作台分组列表
+        
+        @param request: ListWorkBenchGroupRequest
+        @param headers: ListWorkBenchGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListWorkBenchGroupResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.ecological_corp_id):
@@ -453,6 +577,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
     ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        """
+        @summary 获取工作台分组列表
+        
+        @param request: ListWorkBenchGroupRequest
+        @return: ListWorkBenchGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders()
         return self.list_work_bench_group_with_options(request, headers, runtime)
@@ -461,6 +591,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.ListWorkBenchGroupRequest,
     ) -> dingtalkworkbench__1__0_models.ListWorkBenchGroupResponse:
+        """
+        @summary 获取工作台分组列表
+        
+        @param request: ListWorkBenchGroupRequest
+        @return: ListWorkBenchGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.ListWorkBenchGroupHeaders()
         return await self.list_work_bench_group_with_options_async(request, headers, runtime)
@@ -471,6 +607,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        """
+        @summary 工作台支持数字红点
+        
+        @param request: ModifyWorkbenchBadgeRequest
+        @param headers: ModifyWorkbenchBadgeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyWorkbenchBadgeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -516,6 +660,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        """
+        @summary 工作台支持数字红点
+        
+        @param request: ModifyWorkbenchBadgeRequest
+        @param headers: ModifyWorkbenchBadgeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyWorkbenchBadgeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -559,6 +711,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
     ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        """
+        @summary 工作台支持数字红点
+        
+        @param request: ModifyWorkbenchBadgeRequest
+        @return: ModifyWorkbenchBadgeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders()
         return self.modify_workbench_badge_with_options(request, headers, runtime)
@@ -567,6 +725,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeRequest,
     ) -> dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeResponse:
+        """
+        @summary 工作台支持数字红点
+        
+        @param request: ModifyWorkbenchBadgeRequest
+        @return: ModifyWorkbenchBadgeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.ModifyWorkbenchBadgeHeaders()
         return await self.modify_workbench_badge_with_options_async(request, headers, runtime)
@@ -577,6 +741,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryComponentScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
+        """
+        @summary 工作台组件授权范围查询
+        
+        @param headers: QueryComponentScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryComponentScopesResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -607,6 +778,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryComponentScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
+        """
+        @summary 工作台组件授权范围查询
+        
+        @param headers: QueryComponentScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryComponentScopesResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -635,6 +813,11 @@ class Client(OpenApiClient):
         self,
         component_id: str,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
+        """
+        @summary 工作台组件授权范围查询
+        
+        @return: QueryComponentScopesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.QueryComponentScopesHeaders()
         return self.query_component_scopes_with_options(component_id, headers, runtime)
@@ -643,6 +826,11 @@ class Client(OpenApiClient):
         self,
         component_id: str,
     ) -> dingtalkworkbench__1__0_models.QueryComponentScopesResponse:
+        """
+        @summary 工作台组件授权范围查询
+        
+        @return: QueryComponentScopesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.QueryComponentScopesHeaders()
         return await self.query_component_scopes_with_options_async(component_id, headers, runtime)
@@ -653,6 +841,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        """
+        @summary 查询快捷方式可见范围
+        
+        @param headers: QueryShortcutScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryShortcutScopesResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -683,6 +878,13 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        """
+        @summary 查询快捷方式可见范围
+        
+        @param headers: QueryShortcutScopesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryShortcutScopesResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -711,6 +913,11 @@ class Client(OpenApiClient):
         self,
         shortcut_key: str,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        """
+        @summary 查询快捷方式可见范围
+        
+        @return: QueryShortcutScopesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
         return self.query_shortcut_scopes_with_options(shortcut_key, headers, runtime)
@@ -719,6 +926,11 @@ class Client(OpenApiClient):
         self,
         shortcut_key: str,
     ) -> dingtalkworkbench__1__0_models.QueryShortcutScopesResponse:
+        """
+        @summary 查询快捷方式可见范围
+        
+        @return: QueryShortcutScopesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.QueryShortcutScopesHeaders()
         return await self.query_shortcut_scopes_with_options_async(shortcut_key, headers, runtime)
@@ -729,6 +941,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.UndoDeletionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        """
+        @summary 工作台数字红点支持撤销已被删除的资源
+        
+        @param request: UndoDeletionRequest
+        @param headers: UndoDeletionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UndoDeletionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -770,6 +990,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.UndoDeletionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        """
+        @summary 工作台数字红点支持撤销已被删除的资源
+        
+        @param request: UndoDeletionRequest
+        @param headers: UndoDeletionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UndoDeletionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_id_list):
@@ -809,6 +1037,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
     ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        """
+        @summary 工作台数字红点支持撤销已被删除的资源
+        
+        @param request: UndoDeletionRequest
+        @return: UndoDeletionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.UndoDeletionHeaders()
         return self.undo_deletion_with_options(request, headers, runtime)
@@ -817,6 +1051,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkworkbench__1__0_models.UndoDeletionRequest,
     ) -> dingtalkworkbench__1__0_models.UndoDeletionResponse:
+        """
+        @summary 工作台数字红点支持撤销已被删除的资源
+        
+        @param request: UndoDeletionRequest
+        @return: UndoDeletionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.UndoDeletionHeaders()
         return await self.undo_deletion_with_options_async(request, headers, runtime)
@@ -829,6 +1069,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
+        """
+        @summary 更新自定义工作台页面可见性
+        
+        @param request: UpdateDingPortalPageScopeRequest
+        @param headers: UpdateDingPortalPageScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateDingPortalPageScopeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.all_visible):
@@ -872,6 +1120,14 @@ class Client(OpenApiClient):
         headers: dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
+        """
+        @summary 更新自定义工作台页面可见性
+        
+        @param request: UpdateDingPortalPageScopeRequest
+        @param headers: UpdateDingPortalPageScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateDingPortalPageScopeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.all_visible):
@@ -913,6 +1169,12 @@ class Client(OpenApiClient):
         app_uuid: str,
         request: dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeRequest,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
+        """
+        @summary 更新自定义工作台页面可见性
+        
+        @param request: UpdateDingPortalPageScopeRequest
+        @return: UpdateDingPortalPageScopeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeHeaders()
         return self.update_ding_portal_page_scope_with_options(page_uuid, app_uuid, request, headers, runtime)
@@ -923,6 +1185,12 @@ class Client(OpenApiClient):
         app_uuid: str,
         request: dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeRequest,
     ) -> dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeResponse:
+        """
+        @summary 更新自定义工作台页面可见性
+        
+        @param request: UpdateDingPortalPageScopeRequest
+        @return: UpdateDingPortalPageScopeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkbench__1__0_models.UpdateDingPortalPageScopeHeaders()
         return await self.update_ding_portal_page_scope_with_options_async(page_uuid, app_uuid, request, headers, runtime)

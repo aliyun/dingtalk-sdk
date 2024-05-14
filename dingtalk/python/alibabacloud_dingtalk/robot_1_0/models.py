@@ -43,7 +43,9 @@ class BatchOTOQueryRequest(TeaModel):
         process_query_key: str = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.process_query_key = process_query_key
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -78,9 +80,13 @@ class BatchOTOQueryResponseBodyMessageReadInfoList(TeaModel):
         read_timestamp: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.read_status = read_status
+        # This parameter is required.
         self.read_timestamp = read_timestamp
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -237,8 +243,11 @@ class BatchRecallGroupRequest(TeaModel):
         open_conversation_id: str = None,
         process_query_keys: List[str] = None,
     ):
+        # This parameter is required.
         self.chatbot_id = chatbot_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.process_query_keys = process_query_keys
 
     def validate(self):
@@ -275,7 +284,9 @@ class BatchRecallGroupResponseBody(TeaModel):
         failed_result: Dict[str, str] = None,
         success_result: List[str] = None,
     ):
+        # This parameter is required.
         self.failed_result = failed_result
+        # This parameter is required.
         self.success_result = success_result
 
     def validate(self):
@@ -382,7 +393,9 @@ class BatchRecallOTORequest(TeaModel):
         process_query_keys: List[str] = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.process_query_keys = process_query_keys
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -523,8 +536,11 @@ class BatchRecallPrivateChatRequest(TeaModel):
         process_query_keys: List[str] = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.process_query_keys = process_query_keys
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -561,7 +577,9 @@ class BatchRecallPrivateChatResponseBody(TeaModel):
         failed_result: Dict[str, str] = None,
         success_result: List[str] = None,
     ):
+        # This parameter is required.
         self.failed_result = failed_result
+        # This parameter is required.
         self.success_result = success_result
 
     def validate(self):
@@ -670,9 +688,13 @@ class BatchSendOTORequest(TeaModel):
         robot_code: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
+        # This parameter is required.
         self.robot_code = robot_code
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -825,6 +847,7 @@ class ClearRobotPluginRequest(TeaModel):
         self,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -957,7 +980,9 @@ class ExecuteRobotAiSkillRequest(TeaModel):
         skill_id: str = None,
     ):
         self.context = context
+        # This parameter is required.
         self.input = input
+        # This parameter is required.
         self.robot_code = robot_code
         self.skill_id = skill_id
 
@@ -1105,6 +1130,7 @@ class GetBotListInGroupRequest(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -1287,7 +1313,9 @@ class ManageSingleChatRobotStatusRequest(TeaModel):
         robot_code: str = None,
         status: str = None,
     ):
+        # This parameter is required.
         self.robot_code = robot_code
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -1428,6 +1456,7 @@ class OrgGroupQueryRequest(TeaModel):
         self.max_results = max_results
         self.next_token = next_token
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.process_query_key = process_query_key
         self.robot_code = robot_code
         self.token = token
@@ -1598,8 +1627,11 @@ class OrgGroupRecallRequest(TeaModel):
         process_query_keys: List[str] = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.process_query_keys = process_query_keys
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -1636,7 +1668,9 @@ class OrgGroupRecallResponseBody(TeaModel):
         failed_result: Dict[str, str] = None,
         success_result: List[str] = None,
     ):
+        # This parameter is required.
         self.failed_result = failed_result
+        # This parameter is required.
         self.success_result = success_result
 
     def validate(self):
@@ -1748,7 +1782,9 @@ class OrgGroupSendRequest(TeaModel):
         token: str = None,
     ):
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
         self.open_conversation_id = open_conversation_id
         self.robot_code = robot_code
@@ -1799,6 +1835,7 @@ class OrgGroupSendResponseBody(TeaModel):
         self,
         process_query_key: str = None,
     ):
+        # This parameter is required.
         self.process_query_key = process_query_key
 
     def validate(self):
@@ -1907,6 +1944,7 @@ class PrivateChatQueryRequest(TeaModel):
         self.max_results = max_results
         self.next_token = next_token
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.process_query_key = process_query_key
         self.robot_code = robot_code
 
@@ -2075,7 +2113,9 @@ class PrivateChatSendRequest(TeaModel):
         robot_code: str = None,
     ):
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.msg_key = msg_key
+        # This parameter is required.
         self.msg_param = msg_param
         self.open_conversation_id = open_conversation_id
         self.robot_code = robot_code
@@ -2121,6 +2161,7 @@ class PrivateChatSendResponseBody(TeaModel):
         self,
         process_query_key: str = None,
     ):
+        # This parameter is required.
         self.process_query_key = process_query_key
 
     def validate(self):
@@ -2224,8 +2265,11 @@ class QueryBotInstanceInGroupInfoRequest(TeaModel):
         page_size: int = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -2368,6 +2412,7 @@ class QueryRobotPluginRequest(TeaModel):
         self,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -2550,7 +2595,9 @@ class RobotMessageFileDownloadRequest(TeaModel):
         download_code: str = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.download_code = download_code
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -2582,6 +2629,7 @@ class RobotMessageFileDownloadResponseBody(TeaModel):
         self,
         download_url: str = None,
     ):
+        # This parameter is required.
         self.download_url = download_url
 
     def validate(self):
@@ -2684,7 +2732,9 @@ class RobotRecallDingRequest(TeaModel):
         open_ding_id: str = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.open_ding_id = open_ding_id
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -2820,9 +2870,13 @@ class RobotSendDingRequest(TeaModel):
         remind_type: int = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.receiver_user_id_list = receiver_user_id_list
+        # This parameter is required.
         self.remind_type = remind_type
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -2863,7 +2917,9 @@ class RobotSendDingResponseBody(TeaModel):
         failed_list: Dict[str, Any] = None,
         open_ding_id: str = None,
     ):
+        # This parameter is required.
         self.failed_list = failed_list
+        # This parameter is required.
         self.open_ding_id = open_ding_id
 
     def validate(self):
@@ -2973,10 +3029,15 @@ class SendRobotDingMessageRequest(TeaModel):
         receiver_user_id_list: List[str] = None,
         robot_code: str = None,
     ):
+        # This parameter is required.
         self.content_params = content_params
+        # This parameter is required.
         self.ding_template_id = ding_template_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.receiver_user_id_list = receiver_user_id_list
+        # This parameter is required.
         self.robot_code = robot_code
 
     def validate(self):
@@ -3020,6 +3081,7 @@ class SendRobotDingMessageResponseBody(TeaModel):
         self,
         ding_send_result_id: str = None,
     ):
+        # This parameter is required.
         self.ding_send_result_id = ding_send_result_id
 
     def validate(self):
@@ -3124,8 +3186,10 @@ class SetRobotPluginRequestPluginInfoList(TeaModel):
         name: str = None,
         pc_url: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.name = name
         self.pc_url = pc_url
 
@@ -3317,7 +3381,9 @@ class UpdateInstalledRobotRequest(TeaModel):
         self.description = description
         self.icon = icon
         self.name = name
+        # This parameter is required.
         self.robot_code = robot_code
+        # This parameter is required.
         self.update_type = update_type
 
     def validate(self):

@@ -36,6 +36,13 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        """
+        @summary 生成jsapi ticket
+        
+        @param headers: CreateJsapiTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateJsapiTicketResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -65,6 +72,13 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        """
+        @summary 生成jsapi ticket
+        
+        @param headers: CreateJsapiTicketHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateJsapiTicketResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -90,11 +104,21 @@ class Client(OpenApiClient):
         )
 
     def create_jsapi_ticket(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        """
+        @summary 生成jsapi ticket
+        
+        @return: CreateJsapiTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
         return self.create_jsapi_ticket_with_options(headers, runtime)
 
     async def create_jsapi_ticket_async(self) -> dingtalkoauth_2__1__0_models.CreateJsapiTicketResponse:
+        """
+        @summary 生成jsapi ticket
+        
+        @return: CreateJsapiTicketResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.CreateJsapiTicketHeaders()
         return await self.create_jsapi_ticket_with_options_async(headers, runtime)
@@ -105,6 +129,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(企业内部应用)
+        
+        @param request: GetAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_key):
@@ -137,6 +169,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(企业内部应用)
+        
+        @param request: GetAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_key):
@@ -167,6 +207,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(企业内部应用)
+        
+        @param request: GetAccessTokenRequest
+        @return: GetAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_access_token_with_options(request, headers, runtime)
@@ -175,6 +221,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(企业内部应用)
+        
+        @param request: GetAccessTokenRequest
+        @return: GetAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_access_token_with_options_async(request, headers, runtime)
@@ -185,6 +237,14 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        """
+        @summary 获取企业开通应用后的授权信息
+        
+        @param request: GetAuthInfoRequest
+        @param headers: GetAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.auth_corp_id):
@@ -220,6 +280,14 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        """
+        @summary 获取企业开通应用后的授权信息
+        
+        @param request: GetAuthInfoRequest
+        @param headers: GetAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.auth_corp_id):
@@ -253,6 +321,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
     ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        """
+        @summary 获取企业开通应用后的授权信息
+        
+        @param request: GetAuthInfoRequest
+        @return: GetAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
         return self.get_auth_info_with_options(request, headers, runtime)
@@ -261,6 +335,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetAuthInfoRequest,
     ) -> dingtalkoauth_2__1__0_models.GetAuthInfoResponse:
+        """
+        @summary 获取企业开通应用后的授权信息
+        
+        @param request: GetAuthInfoRequest
+        @return: GetAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetAuthInfoHeaders()
         return await self.get_auth_info_with_options_async(request, headers, runtime)
@@ -271,6 +351,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(应用商店应用)
+        
+        @param request: GetCorpAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_corp_id):
@@ -307,6 +395,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(应用商店应用)
+        
+        @param request: GetCorpAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorpAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.auth_corp_id):
@@ -341,6 +437,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(应用商店应用)
+        
+        @param request: GetCorpAccessTokenRequest
+        @return: GetCorpAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_corp_access_token_with_options(request, headers, runtime)
@@ -349,6 +451,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetCorpAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse:
+        """
+        @summary 获取企业accessToken(应用商店应用)
+        
+        @param request: GetCorpAccessTokenRequest
+        @return: GetCorpAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_corp_access_token_with_options_async(request, headers, runtime)
@@ -358,6 +466,13 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        """
+        @summary 查询个人授权记录
+        
+        @param headers: GetPersonalAuthRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalAuthRuleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -387,6 +502,13 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        """
+        @summary 查询个人授权记录
+        
+        @param headers: GetPersonalAuthRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalAuthRuleResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -412,11 +534,21 @@ class Client(OpenApiClient):
         )
 
     def get_personal_auth_rule(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        """
+        @summary 查询个人授权记录
+        
+        @return: GetPersonalAuthRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
         return self.get_personal_auth_rule_with_options(headers, runtime)
 
     async def get_personal_auth_rule_async(self) -> dingtalkoauth_2__1__0_models.GetPersonalAuthRuleResponse:
+        """
+        @summary 查询个人授权记录
+        
+        @return: GetPersonalAuthRuleResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetPersonalAuthRuleHeaders()
         return await self.get_personal_auth_rule_with_options_async(headers, runtime)
@@ -427,6 +559,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        """
+        @summary 生成微应用管理后台accessToken
+        
+        @param request: GetSsoAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSsoAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corpid):
@@ -459,6 +599,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        """
+        @summary 生成微应用管理后台accessToken
+        
+        @param request: GetSsoAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSsoAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corpid):
@@ -489,6 +637,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        """
+        @summary 生成微应用管理后台accessToken
+        
+        @param request: GetSsoAccessTokenRequest
+        @return: GetSsoAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_sso_access_token_with_options(request, headers, runtime)
@@ -497,6 +651,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSsoAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse:
+        """
+        @summary 生成微应用管理后台accessToken
+        
+        @param request: GetSsoAccessTokenRequest
+        @return: GetSsoAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_sso_access_token_with_options_async(request, headers, runtime)
@@ -507,6 +667,14 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        """
+        @summary 查询微应用后台免登的用户信息
+        
+        @param request: GetSsoUserInfoRequest
+        @param headers: GetSsoUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSsoUserInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.code):
@@ -542,6 +710,14 @@ class Client(OpenApiClient):
         headers: dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        """
+        @summary 查询微应用后台免登的用户信息
+        
+        @param request: GetSsoUserInfoRequest
+        @param headers: GetSsoUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSsoUserInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.code):
@@ -575,6 +751,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        """
+        @summary 查询微应用后台免登的用户信息
+        
+        @param request: GetSsoUserInfoRequest
+        @return: GetSsoUserInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
         return self.get_sso_user_info_with_options(request, headers, runtime)
@@ -583,6 +765,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSsoUserInfoRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSsoUserInfoResponse:
+        """
+        @summary 查询微应用后台免登的用户信息
+        
+        @param request: GetSsoUserInfoRequest
+        @return: GetSsoUserInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkoauth_2__1__0_models.GetSsoUserInfoHeaders()
         return await self.get_sso_user_info_with_options_async(request, headers, runtime)
@@ -593,6 +781,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        """
+        @summary 获取isvAccessToken（三方企业应用）
+        
+        @param request: GetSuiteAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSuiteAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.suite_key):
@@ -627,6 +823,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        """
+        @summary 获取isvAccessToken（三方企业应用）
+        
+        @param request: GetSuiteAccessTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSuiteAccessTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.suite_key):
@@ -659,6 +863,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        """
+        @summary 获取isvAccessToken（三方企业应用）
+        
+        @param request: GetSuiteAccessTokenRequest
+        @return: GetSuiteAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_suite_access_token_with_options(request, headers, runtime)
@@ -667,6 +877,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetSuiteAccessTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse:
+        """
+        @summary 获取isvAccessToken（三方企业应用）
+        
+        @param request: GetSuiteAccessTokenRequest
+        @return: GetSuiteAccessTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_suite_access_token_with_options_async(request, headers, runtime)
@@ -678,6 +894,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        """
+        @summary 获取Access Token
+        
+        @param request: GetTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -713,6 +937,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        """
+        @summary 获取Access Token
+        
+        @param request: GetTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -746,6 +978,12 @@ class Client(OpenApiClient):
         corp_id: str,
         request: dingtalkoauth_2__1__0_models.GetTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        """
+        @summary 获取Access Token
+        
+        @param request: GetTokenRequest
+        @return: GetTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_token_with_options(corp_id, request, headers, runtime)
@@ -755,6 +993,12 @@ class Client(OpenApiClient):
         corp_id: str,
         request: dingtalkoauth_2__1__0_models.GetTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetTokenResponse:
+        """
+        @summary 获取Access Token
+        
+        @param request: GetTokenRequest
+        @return: GetTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_token_with_options_async(corp_id, request, headers, runtime)
@@ -765,6 +1009,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        """
+        @summary 获取用户token
+        
+        @param request: GetUserTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -803,6 +1055,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        """
+        @summary 获取用户token
+        
+        @param request: GetUserTokenRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserTokenResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.client_id):
@@ -839,6 +1099,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        """
+        @summary 获取用户token
+        
+        @param request: GetUserTokenRequest
+        @return: GetUserTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.get_user_token_with_options(request, headers, runtime)
@@ -847,6 +1113,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkoauth_2__1__0_models.GetUserTokenRequest,
     ) -> dingtalkoauth_2__1__0_models.GetUserTokenResponse:
+        """
+        @summary 获取用户token
+        
+        @param request: GetUserTokenRequest
+        @return: GetUserTokenResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_user_token_with_options_async(request, headers, runtime)

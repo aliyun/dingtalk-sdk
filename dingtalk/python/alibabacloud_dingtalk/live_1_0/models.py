@@ -44,8 +44,11 @@ class AddShareCidListRequest(TeaModel):
         group_ids: List[str] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.group_id_type = group_id_type
+        # This parameter is required.
         self.group_ids = group_ids
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -195,9 +198,13 @@ class CreateCloudFeedRequest(TeaModel):
     ):
         self.cover_url = cover_url
         self.intro = intro
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.video_url = video_url
 
     def validate(self):
@@ -354,10 +361,14 @@ class CreateLiveRequest(TeaModel):
     ):
         self.cover_url = cover_url
         self.introduction = introduction
+        # This parameter is required.
         self.pre_end_time = pre_end_time
+        # This parameter is required.
         self.pre_start_time = pre_start_time
         self.public_type = public_type
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -540,7 +551,9 @@ class DeleteLiveRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -702,6 +715,7 @@ class DeleteLiveFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -832,8 +846,11 @@ class EditFeedReplayRequest(TeaModel):
         edit_start_time: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.edit_end_time = edit_end_time
+        # This parameter is required.
         self.edit_start_time = edit_start_time
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -971,7 +988,9 @@ class GetLiveReplayUrlRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1143,8 +1162,11 @@ class GetUserAllLiveListRequest(TeaModel):
         self.start_time = start_time
         self.statuses = statuses
         self.title = title
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1520,8 +1542,10 @@ class GetUserCreateLiveListRequest(TeaModel):
         self.start_time = start_time
         self.statuses = statuses
         self.title = title
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1902,9 +1926,12 @@ class GetUserWatchLiveListRequest(TeaModel):
         next_token: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.filter_type = filter_type
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2272,8 +2299,10 @@ class ModifyFeedWhiteListRequest(TeaModel):
         modify_user_list: List[str] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.action = action
         self.modify_user_list = modify_user_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2311,8 +2340,10 @@ class ModifyFeedWhiteListShrinkRequest(TeaModel):
         modify_user_list_shrink: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.action = action
         self.modify_user_list_shrink = modify_user_list_shrink
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2449,6 +2480,7 @@ class QueryFeedWhiteListRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2578,7 +2610,9 @@ class QueryLiveInfoRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2842,7 +2876,9 @@ class QueryLiveWatchDetailRequest(TeaModel):
         live_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3049,9 +3085,12 @@ class QueryLiveWatchUserListRequest(TeaModel):
         page_size: int = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3618,6 +3657,7 @@ class StartCloudFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3746,6 +3786,7 @@ class StopCloudFeedRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3876,8 +3917,11 @@ class SubscribeLiveRequest(TeaModel):
         subscribe: bool = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.live_id = live_id
+        # This parameter is required.
         self.subscribe = subscribe
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4051,10 +4095,12 @@ class UpdateLiveRequest(TeaModel):
     ):
         self.cover_url = cover_url
         self.introduction = introduction
+        # This parameter is required.
         self.live_id = live_id
         self.pre_end_time = pre_end_time
         self.pre_start_time = pre_start_time
         self.title = title
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4244,6 +4290,7 @@ class UpdateLiveFeedRequest(TeaModel):
         self.introduction = introduction
         self.start_time = start_time
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

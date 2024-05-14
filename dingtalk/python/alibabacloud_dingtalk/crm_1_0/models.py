@@ -46,7 +46,9 @@ class AbandonCustomerRequest(TeaModel):
         opt_type: str = None,
     ):
         self.custom_track_desc = custom_track_desc
+        # This parameter is required.
         self.instance_id_list = instance_id_list
+        # This parameter is required.
         self.operator_user_id = operator_user_id
         self.opt_type = opt_type
 
@@ -230,7 +232,9 @@ class AddCrmPersonalCustomerRequest(TeaModel):
     ):
         self.action = action
         self.creator_nick = creator_nick
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.data = data
         self.extend_data = extend_data
         self.permission = permission
@@ -292,6 +296,7 @@ class AddCrmPersonalCustomerResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -401,14 +406,20 @@ class AddCustomerTrackRequest(TeaModel):
         title: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.customer_id = customer_id
         self.extra_biz_info = extra_biz_info
         self.idempotent_key = idempotent_key
         self.masked_content = masked_content
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_type = relation_type
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -468,6 +479,7 @@ class AddCustomerTrackResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -570,7 +582,9 @@ class AddLeadsRequestLeads(TeaModel):
         leads_name: str = None,
         out_leads_id: str = None,
     ):
+        # This parameter is required.
         self.leads_name = leads_name
+        # This parameter is required.
         self.out_leads_id = out_leads_id
 
     def validate(self):
@@ -607,9 +621,13 @@ class AddLeadsRequest(TeaModel):
         out_task_id: str = None,
     ):
         self.assign_timestamp = assign_timestamp
+        # This parameter is required.
         self.assign_user_id = assign_user_id
+        # This parameter is required.
         self.assigned_user_id = assigned_user_id
+        # This parameter is required.
         self.leads = leads
+        # This parameter is required.
         self.out_task_id = out_task_id
 
     def validate(self):
@@ -817,6 +835,7 @@ class AddRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         unit: str = None,
     ):
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
         self.choice = choice
         self.content = content
@@ -825,6 +844,7 @@ class AddRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         self.field_id = field_id
         self.format = format
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
         self.label_editable_freeze = label_editable_freeze
         self.link = link
@@ -834,6 +854,7 @@ class AddRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         self.options = options
         self.pay_enable = pay_enable
         self.placeholder = placeholder
+        # This parameter is required.
         self.required = required
         self.required_editable_freeze = required_editable_freeze
         self.sortable = sortable
@@ -957,7 +978,9 @@ class AddRelationMetaFieldRequestFieldDTOList(TeaModel):
         component_name: str = None,
         props: AddRelationMetaFieldRequestFieldDTOListProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -994,9 +1017,13 @@ class AddRelationMetaFieldRequest(TeaModel):
         relation_type: str = None,
         tenant: str = None,
     ):
+        # This parameter is required.
         self.field_dtolist = field_dtolist
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_type = relation_type
+        # This parameter is required.
         self.tenant = tenant
 
     def validate(self):
@@ -1044,6 +1071,7 @@ class AddRelationMetaFieldResponseBody(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -1148,7 +1176,9 @@ class BatchAddContactsRequestRelationListBizDataList(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -1185,6 +1215,7 @@ class BatchAddContactsRequestRelationList(TeaModel):
         biz_data_list: List[BatchAddContactsRequestRelationListBizDataList] = None,
         biz_ext_map: Dict[str, str] = None,
     ):
+        # This parameter is required.
         self.biz_data_list = biz_data_list
         self.biz_ext_map = biz_ext_map
 
@@ -1226,7 +1257,9 @@ class BatchAddContactsRequest(TeaModel):
         operator_user_id: str = None,
         relation_list: List[BatchAddContactsRequestRelationList] = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_list = relation_list
 
     def validate(self):
@@ -1423,7 +1456,9 @@ class BatchAddFollowRecordsRequestInstanceListDataArray(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -1459,6 +1494,7 @@ class BatchAddFollowRecordsRequestInstanceList(TeaModel):
         self,
         data_array: List[BatchAddFollowRecordsRequestInstanceListDataArray] = None,
     ):
+        # This parameter is required.
         self.data_array = data_array
 
     def validate(self):
@@ -1495,7 +1531,9 @@ class BatchAddFollowRecordsRequest(TeaModel):
         instance_list: List[BatchAddFollowRecordsRequestInstanceList] = None,
         operator_user_id: str = None,
     ):
+        # This parameter is required.
         self.instance_list = instance_list
+        # This parameter is required.
         self.operator_user_id = operator_user_id
 
     def validate(self):
@@ -1692,7 +1730,9 @@ class BatchAddRelationDatasRequestRelationListBizDataList(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -1763,6 +1803,7 @@ class BatchAddRelationDatasRequestRelationList(TeaModel):
         biz_ext_map: Dict[str, str] = None,
         relation_permission_dto: BatchAddRelationDatasRequestRelationListRelationPermissionDTO = None,
     ):
+        # This parameter is required.
         self.biz_data_list = biz_data_list
         self.biz_ext_map = biz_ext_map
         self.relation_permission_dto = relation_permission_dto
@@ -1814,8 +1855,11 @@ class BatchAddRelationDatasRequest(TeaModel):
         relation_type: str = None,
         skip_duplicate_check: bool = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_list = relation_list
+        # This parameter is required.
         self.relation_type = relation_type
         self.skip_duplicate_check = skip_duplicate_check
 
@@ -2029,7 +2073,9 @@ class BatchCreateClueDataRequestDataListContactList(TeaModel):
         wang_wang: str = None,
         we_chat: str = None,
     ):
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
         self.phone = phone
         self.qq = qq
@@ -2087,6 +2133,7 @@ class BatchCreateClueDataRequestDataListEnterprise(TeaModel):
     ):
         self.address = address
         self.industry_code = industry_code
+        # This parameter is required.
         self.name = name
         self.region = region
         self.unified_social_credit_code = unified_social_credit_code
@@ -2133,6 +2180,7 @@ class BatchCreateClueDataRequestDataListTagIdList(TeaModel):
         tag_id: str = None,
         tag_name: str = None,
     ):
+        # This parameter is required.
         self.tag_id = tag_id
         self.tag_name = tag_name
 
@@ -2170,10 +2218,14 @@ class BatchCreateClueDataRequestDataList(TeaModel):
         source_type: str = None,
         tag_id_list: List[BatchCreateClueDataRequestDataListTagIdList] = None,
     ):
+        # This parameter is required.
         self.contact_list = contact_list
         self.enterprise = enterprise
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.source_id = source_id
+        # This parameter is required.
         self.source_type = source_type
         self.tag_id_list = tag_id_list
 
@@ -2246,6 +2298,7 @@ class BatchCreateClueDataRequest(TeaModel):
     ):
         self.data_list = data_list
         self.private_seas = private_seas
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2444,7 +2497,9 @@ class BatchRemoveFollowRecordsRequest(TeaModel):
         instance_ids: List[str] = None,
         operator_user_id: str = None,
     ):
+        # This parameter is required.
         self.instance_ids = instance_ids
+        # This parameter is required.
         self.operator_user_id = operator_user_id
 
     def validate(self):
@@ -2631,7 +2686,9 @@ class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButton
         action_url: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.action_url = action_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -2673,6 +2730,7 @@ class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard(TeaMo
         self.markdown = markdown
         self.single_title = single_title
         self.single_url = single_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -2731,9 +2789,13 @@ class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink(TeaModel):
         text: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.message_url = message_url
+        # This parameter is required.
         self.pic_url = pic_url
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -2774,7 +2836,9 @@ class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown(TeaMode
         text: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -2806,6 +2870,7 @@ class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText(TeaModel):
         self,
         content: str = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -2895,10 +2960,13 @@ class BatchSendOfficialAccountOTOMessageRequestDetail(TeaModel):
         uuid: str = None,
     ):
         self.biz_request_id = biz_request_id
+        # This parameter is required.
         self.message_body = message_body
+        # This parameter is required.
         self.msg_type = msg_type
         self.send_to_all = send_to_all
         self.user_id_list = user_id_list
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -2952,6 +3020,7 @@ class BatchSendOfficialAccountOTOMessageRequest(TeaModel):
     ):
         self.account_id = account_id
         self.biz_id = biz_id
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -2989,6 +3058,7 @@ class BatchSendOfficialAccountOTOMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -3128,7 +3198,9 @@ class BatchUpdateContactsRequestRelationListBizDataList(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -3168,6 +3240,7 @@ class BatchUpdateContactsRequestRelationList(TeaModel):
     ):
         self.biz_data_list = biz_data_list
         self.biz_ext_map = biz_ext_map
+        # This parameter is required.
         self.relation_id = relation_id
 
     def validate(self):
@@ -3212,7 +3285,9 @@ class BatchUpdateContactsRequest(TeaModel):
         operator_user_id: str = None,
         relation_list: List[BatchUpdateContactsRequestRelationList] = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_list = relation_list
 
     def validate(self):
@@ -3409,7 +3484,9 @@ class BatchUpdateFollowRecordsRequestInstanceListDataArray(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -3446,7 +3523,9 @@ class BatchUpdateFollowRecordsRequestInstanceList(TeaModel):
         data_array: List[BatchUpdateFollowRecordsRequestInstanceListDataArray] = None,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.data_array = data_array
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -3487,7 +3566,9 @@ class BatchUpdateFollowRecordsRequest(TeaModel):
         instance_list: List[BatchUpdateFollowRecordsRequestInstanceList] = None,
         operator_user_id: str = None,
     ):
+        # This parameter is required.
         self.instance_list = instance_list
+        # This parameter is required.
         self.operator_user_id = operator_user_id
 
     def validate(self):
@@ -3684,7 +3765,9 @@ class BatchUpdateRelationDatasRequestRelationListBizDataList(TeaModel):
         value: str = None,
     ):
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -3724,6 +3807,7 @@ class BatchUpdateRelationDatasRequestRelationList(TeaModel):
     ):
         self.biz_data_list = biz_data_list
         self.biz_ext_map = biz_ext_map
+        # This parameter is required.
         self.relation_id = relation_id
 
     def validate(self):
@@ -3770,8 +3854,11 @@ class BatchUpdateRelationDatasRequest(TeaModel):
         relation_type: str = None,
         skip_duplicate_check: bool = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_list = relation_list
+        # This parameter is required.
         self.relation_type = relation_type
         self.skip_duplicate_check = skip_duplicate_check
 
@@ -3981,6 +4068,7 @@ class CreateCustomerRequestContacts(TeaModel):
         data: Dict[str, Any] = None,
         extend_data: Dict[str, Any] = None,
     ):
+        # This parameter is required.
         self.data = data
         self.extend_data = extend_data
 
@@ -4099,12 +4187,15 @@ class CreateCustomerRequest(TeaModel):
         save_option: CreateCustomerRequestSaveOption = None,
     ):
         self.contacts = contacts
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.data = data
         self.extend_data = extend_data
         self.instance_id = instance_id
         self.object_type = object_type
         self.permission = permission
+        # This parameter is required.
         self.save_option = save_option
 
     def validate(self):
@@ -4204,6 +4295,7 @@ class CreateCustomerResponseBody(TeaModel):
         object_type: str = None,
     ):
         self.contacts = contacts
+        # This parameter is required.
         self.customer_instance_id = customer_instance_id
         self.object_type = object_type
 
@@ -4325,9 +4417,12 @@ class CreateGroupRequest(TeaModel):
         owner_user_id: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.group_name = group_name
         self.member_user_ids = member_user_ids
+        # This parameter is required.
         self.owner_user_id = owner_user_id
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -4367,6 +4462,7 @@ class CreateGroupResponseBody(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -4477,13 +4573,17 @@ class CreateGroupSetRequest(TeaModel):
         template_id: str = None,
         welcome: str = None,
     ):
+        # This parameter is required.
         self.creator_user_id = creator_user_id
         self.manager_user_ids = manager_user_ids
         self.member_quota = member_quota
+        # This parameter is required.
         self.name = name
         self.notice = notice
         self.notice_toped = notice_toped
+        # This parameter is required.
         self.owner_user_id = owner_user_id
+        # This parameter is required.
         self.relation_type = relation_type
         self.template_id = template_id
         self.welcome = welcome
@@ -4633,7 +4733,9 @@ class CreateGroupSetResponseBody(TeaModel):
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.invite_link = invite_link
+        # This parameter is required.
         self.last_open_conversation_id = last_open_conversation_id
+        # This parameter is required.
         self.manager = manager
         self.manager_user_ids = manager_user_ids
         self.member_count = member_count
@@ -4642,6 +4744,7 @@ class CreateGroupSetResponseBody(TeaModel):
         self.notice = notice
         self.notice_toped = notice_toped
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.owner = owner
         self.owner_user_id = owner_user_id
         self.relation_type = relation_type
@@ -4872,6 +4975,7 @@ class CreateRelationMetaRequestRelationMetaDTOItemsProps(TeaModel):
         unit: str = None,
     ):
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
         self.choice = choice
         self.content = content
@@ -4880,6 +4984,7 @@ class CreateRelationMetaRequestRelationMetaDTOItemsProps(TeaModel):
         self.field_id = field_id
         self.format = format
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
         self.label_editable_freeze = label_editable_freeze
         self.link = link
@@ -4889,6 +4994,7 @@ class CreateRelationMetaRequestRelationMetaDTOItemsProps(TeaModel):
         self.options = options
         self.pay_enable = pay_enable
         self.placeholder = placeholder
+        # This parameter is required.
         self.required = required
         self.required_editable_freeze = required_editable_freeze
         self.sortable = sortable
@@ -5012,7 +5118,9 @@ class CreateRelationMetaRequestRelationMetaDTOItems(TeaModel):
         component_name: str = None,
         props: CreateRelationMetaRequestRelationMetaDTOItemsProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -5049,9 +5157,13 @@ class CreateRelationMetaRequestRelationMetaDTO(TeaModel):
         name: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.desc = desc
+        # This parameter is required.
         self.items = items
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -5101,8 +5213,11 @@ class CreateRelationMetaRequest(TeaModel):
         relation_meta_dto: CreateRelationMetaRequestRelationMetaDTO = None,
         tenant: str = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_meta_dto = relation_meta_dto
+        # This parameter is required.
         self.tenant = tenant
 
     def validate(self):
@@ -5140,6 +5255,7 @@ class CreateRelationMetaResponseBody(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -5241,6 +5357,7 @@ class DeleteCrmCustomObjectDataRequest(TeaModel):
         self,
         form_code: str = None,
     ):
+        # This parameter is required.
         self.form_code = form_code
 
     def validate(self):
@@ -5268,6 +5385,7 @@ class DeleteCrmCustomObjectDataResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -5370,7 +5488,9 @@ class DeleteCrmFormInstanceRequest(TeaModel):
         current_operator_user_id: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.current_operator_user_id = current_operator_user_id
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -5504,6 +5624,7 @@ class DeleteCrmPersonalCustomerRequest(TeaModel):
         current_operator_user_id: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.current_operator_user_id = current_operator_user_id
         self.relation_type = relation_type
 
@@ -5536,6 +5657,7 @@ class DeleteCrmPersonalCustomerResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -5637,6 +5759,7 @@ class DeleteLeadsRequest(TeaModel):
         self,
         out_leads_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.out_leads_ids = out_leads_ids
 
     def validate(self):
@@ -5768,9 +5891,13 @@ class DeleteRelationMetaFieldRequest(TeaModel):
         relation_type: str = None,
         tenant: str = None,
     ):
+        # This parameter is required.
         self.field_id_list = field_id_list
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_type = relation_type
+        # This parameter is required.
         self.tenant = tenant
 
     def validate(self):
@@ -5810,6 +5937,7 @@ class DeleteRelationMetaFieldResponseBody(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -6043,7 +6171,9 @@ class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields
         aggregator: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.aggregator = aggregator
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -6362,8 +6492,11 @@ class DescribeRelationMetaRequest(TeaModel):
         relation_types: List[str] = None,
         tenant: str = None,
     ):
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_types = relation_types
+        # This parameter is required.
         self.tenant = tenant
 
     def validate(self):
@@ -6435,9 +6568,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataS
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.filter_type = filter_type
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -6477,6 +6614,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataS
         self,
         filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters] = None,
     ):
+        # This parameter is required.
         self.filters = filters
 
     def validate(self):
@@ -6515,9 +6653,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataS
         biz_type: str = None,
         form_code: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.form_code = form_code
 
     def validate(self):
@@ -6559,8 +6701,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataS
         target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.params = params
+        # This parameter is required.
         self.target = target
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -6601,6 +6746,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsField
         self,
         edit_freeze: bool = None,
     ):
+        # This parameter is required.
         self.edit_freeze = edit_freeze
 
     def validate(self):
@@ -6630,8 +6776,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsField
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -6672,9 +6821,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsField
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -6741,33 +6894,61 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsField
         vertical_print: bool = None,
         watermark: bool = None,
     ):
+        # This parameter is required.
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.duration_label = duration_label
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.limit = limit
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.mode = mode
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.ratio = ratio
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.spread = spread
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
+        # This parameter is required.
         self.watermark = watermark
 
     def validate(self):
@@ -6921,7 +7102,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsField
         component_name: str = None,
         relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.relate_props = relate_props
 
     def validate(self):
@@ -6955,6 +7138,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptio
         self,
         edit_freeze: bool = None,
     ):
+        # This parameter is required.
         self.edit_freeze = edit_freeze
 
     def validate(self):
@@ -6984,8 +7168,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptio
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -7026,9 +7213,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.filter_type = filter_type
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -7068,6 +7259,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         self,
         filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters] = None,
     ):
+        # This parameter is required.
         self.filters = filters
 
     def validate(self):
@@ -7106,9 +7298,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         biz_type: str = None,
         form_code: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.form_code = form_code
 
     def validate(self):
@@ -7150,8 +7346,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.params = params
+        # This parameter is required.
         self.target = target
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -7193,7 +7392,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -7228,9 +7429,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -7293,29 +7498,53 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         unit: str = None,
         vertical_print: bool = None,
     ):
+        # This parameter is required.
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.multi = multi
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.quote = quote
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
 
     def validate(self):
@@ -7453,7 +7682,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         component_name: str = None,
         relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.relate_props = relate_props
 
     def validate(self):
@@ -7489,8 +7720,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelat
         data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource = None,
         fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields] = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
         self.data_source = data_source
+        # This parameter is required.
         self.fields = fields
 
     def validate(self):
@@ -7538,7 +7771,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule(
         type: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -7573,9 +7808,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatF
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -7654,45 +7893,82 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps(TeaM
         vertical_print: bool = None,
         watermark: bool = None,
     ):
+        # This parameter is required.
         self.action_name = action_name
+        # This parameter is required.
         self.align = align
         self.available_templates = available_templates
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
         self.data_source = data_source
         self.default_color = default_color
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.duration_label = duration_label
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.fields = fields
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.limit = limit
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.mode = mode
+        # This parameter is required.
         self.multiple = multiple
+        # This parameter is required.
         self.not_print = not_print
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.quote = quote
+        # This parameter is required.
         self.ratio = ratio
+        # This parameter is required.
         self.relate_source = relate_source
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.rule = rule
+        # This parameter is required.
         self.sortable = sortable
+        # This parameter is required.
         self.spread = spread
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.table_view_mode = table_view_mode
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
+        # This parameter is required.
         self.watermark = watermark
 
     def validate(self):
@@ -7933,7 +8209,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren(TeaModel)
         component_name: str = None,
         props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -8003,9 +8281,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourcePar
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.filter_type = filter_type
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -8045,6 +8327,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourcePar
         self,
         filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters] = None,
     ):
+        # This parameter is required.
         self.filters = filters
 
     def validate(self):
@@ -8127,6 +8410,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource(Te
         target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.params = params
         self.target = target
         self.type = type
@@ -8169,6 +8453,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateP
         self,
         edit_freeze: bool = None,
     ):
+        # This parameter is required.
         self.edit_freeze = edit_freeze
 
     def validate(self):
@@ -8198,8 +8483,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateP
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -8240,9 +8528,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateP
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -8309,33 +8601,61 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateP
         vertical_print: bool = None,
         watermark: bool = None,
     ):
+        # This parameter is required.
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.duration_label = duration_label
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.limit = limit
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.mode = mode
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.ratio = ratio
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.spread = spread
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
+        # This parameter is required.
         self.watermark = watermark
 
     def validate(self):
@@ -8489,7 +8809,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields(TeaMod
         component_name: str = None,
         relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.relate_props = relate_props
 
     def validate(self):
@@ -8523,6 +8845,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtens
         self,
         edit_freeze: bool = None,
     ):
+        # This parameter is required.
         self.edit_freeze = edit_freeze
 
     def validate(self):
@@ -8553,9 +8876,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions(TeaMo
         value: str = None,
         warn: bool = None,
     ):
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.warn = warn
 
     def validate(self):
@@ -8600,9 +8927,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceD
         value: str = None,
         value_type: str = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.filter_type = filter_type
+        # This parameter is required.
         self.value = value
+        # This parameter is required.
         self.value_type = value_type
 
     def validate(self):
@@ -8642,6 +8973,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceD
         self,
         filters: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters] = None,
     ):
+        # This parameter is required.
         self.filters = filters
 
     def validate(self):
@@ -8680,9 +9012,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceD
         biz_type: str = None,
         form_code: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.biz_type = biz_type
+        # This parameter is required.
         self.form_code = form_code
 
     def validate(self):
@@ -8724,8 +9060,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceD
         target: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.params = params
+        # This parameter is required.
         self.target = target
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -8766,6 +9105,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceF
         self,
         edit_freeze: bool = None,
     ):
+        # This parameter is required.
         self.edit_freeze = edit_freeze
 
     def validate(self):
@@ -8795,8 +9135,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceF
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -8837,9 +9180,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceF
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -8902,29 +9249,53 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceF
         unit: str = None,
         vertical_print: bool = None,
     ):
+        # This parameter is required.
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.multi = multi
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.quote = quote
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
 
     def validate(self):
@@ -9062,7 +9433,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceF
         component_name: str = None,
         relate_props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.relate_props = relate_props
 
     def validate(self):
@@ -9098,8 +9471,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource(
         data_source: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource = None,
         fields: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields] = None,
     ):
+        # This parameter is required.
         self.biz_type = biz_type
         self.data_source = data_source
+        # This parameter is required.
         self.fields = fields
 
     def validate(self):
@@ -9147,7 +9522,9 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule(TeaModel
         type: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -9182,9 +9559,13 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField(Tea
         unit: str = None,
         upper: bool = None,
     ):
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.upper = upper
 
     def validate(self):
@@ -9265,47 +9646,86 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         vertical_print: bool = None,
         watermark: bool = None,
     ):
+        # This parameter is required.
         self.action_name = action_name
+        # This parameter is required.
         self.align = align
         self.available_templates = available_templates
+        # This parameter is required.
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.choice = choice
+        # This parameter is required.
         self.content = content
         self.data_source = data_source
         self.default_color = default_color
+        # This parameter is required.
         self.disabled = disabled
+        # This parameter is required.
         self.duration = duration
+        # This parameter is required.
         self.duration_label = duration_label
+        # This parameter is required.
         self.field_id = field_id
+        # This parameter is required.
         self.fields = fields
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.formula = formula
+        # This parameter is required.
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
+        # This parameter is required.
         self.label_editable_freeze = label_editable_freeze
+        # This parameter is required.
         self.limit = limit
+        # This parameter is required.
         self.link = link
+        # This parameter is required.
         self.mode = mode
+        # This parameter is required.
         self.multi = multi
+        # This parameter is required.
         self.multiple = multiple
+        # This parameter is required.
         self.need_detail = need_detail
+        # This parameter is required.
         self.not_print = not_print
+        # This parameter is required.
         self.not_upper = not_upper
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.pay_enable = pay_enable
+        # This parameter is required.
         self.placeholder = placeholder
+        # This parameter is required.
         self.quote = quote
+        # This parameter is required.
         self.ratio = ratio
+        # This parameter is required.
         self.relate_source = relate_source
+        # This parameter is required.
         self.required = required
+        # This parameter is required.
         self.required_editable_freeze = required_editable_freeze
+        # This parameter is required.
         self.rule = rule
+        # This parameter is required.
         self.sortable = sortable
+        # This parameter is required.
         self.spread = spread
+        # This parameter is required.
         self.stat_field = stat_field
+        # This parameter is required.
         self.table_view_mode = table_view_mode
+        # This parameter is required.
         self.unit = unit
+        # This parameter is required.
         self.vertical_print = vertical_print
+        # This parameter is required.
         self.watermark = watermark
 
     def validate(self):
@@ -9555,8 +9975,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItems(TeaModel):
         component_name: str = None,
         props: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps = None,
     ):
+        # This parameter is required.
         self.children = children
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -9611,14 +10034,23 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOList(TeaModel):
         relation_meta_status: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.desc = desc
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.items = items
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.relation_meta_code = relation_meta_code
+        # This parameter is required.
         self.relation_meta_status = relation_meta_status
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -9686,6 +10118,7 @@ class DescribeRelationMetaResponseBody(TeaModel):
         self,
         relation_meta_dtolist: List[DescribeRelationMetaResponseBodyRelationMetaDTOList] = None,
     ):
+        # This parameter is required.
         self.relation_meta_dtolist = relation_meta_dtolist
 
     def validate(self):
@@ -9798,8 +10231,11 @@ class FindTargetRelatedFollowRecordsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.follow_target_data_id = follow_target_data_id
+        # This parameter is required.
         self.follow_target_type = follow_target_type
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
 
@@ -9899,6 +10335,7 @@ class FindTargetRelatedFollowRecordsResponseBodyResultResultList(TeaModel):
         self.gmt_create_milliseconds = gmt_create_milliseconds
         self.gmt_modified_milliseconds = gmt_modified_milliseconds
         self.modifier_user_id = modifier_user_id
+        # This parameter is required.
         self.record_inst_id = record_inst_id
 
     def validate(self):
@@ -10150,7 +10587,9 @@ class GetAllCustomerRecyclesResponseBodyResultList(TeaModel):
         recycle_rule_id: int = None,
         recycle_time: str = None,
     ):
+        # This parameter is required.
         self.customer_id = customer_id
+        # This parameter is required.
         self.follow_up_action_time = follow_up_action_time
         self.is_deleted = is_deleted
         self.notify_time = notify_time
@@ -10204,7 +10643,9 @@ class GetAllCustomerRecyclesResponseBody(TeaModel):
         next_token: str = None,
         result_list: List[GetAllCustomerRecyclesResponseBodyResultList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.next_token = next_token
         self.result_list = result_list
 
@@ -10329,6 +10770,7 @@ class GetContactsRequest(TeaModel):
         query_dsl: str = None,
     ):
         self.current_operator_user_id = current_operator_user_id
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.object_type = object_type
@@ -10994,6 +11436,7 @@ class GetCrmGroupChatSingleRequest(TeaModel):
         self,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -11198,7 +11641,9 @@ class GetCrmRolePermissionResponseBodyPermissionsFieldScopes(TeaModel):
         field_actions: List[str] = None,
         field_id: str = None,
     ):
+        # This parameter is required.
         self.field_actions = field_actions
+        # This parameter is required.
         self.field_id = field_id
 
     def validate(self):
@@ -11231,7 +11676,9 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt(TeaModel):
         dept_id_list: List[float] = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.dept_id_list = dept_id_list
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -11265,8 +11712,11 @@ class GetCrmRolePermissionResponseBodyPermissionsManagingScopeList(TeaModel):
         manager: bool = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.ext = ext
+        # This parameter is required.
         self.manager = manager
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -11305,7 +11755,9 @@ class GetCrmRolePermissionResponseBodyPermissionsOperateScopes(TeaModel):
         has_auth: bool = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.has_auth = has_auth
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -11340,8 +11792,11 @@ class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
         self.user_id = user_id
 
@@ -11389,13 +11844,21 @@ class GetCrmRolePermissionResponseBodyPermissions(TeaModel):
         role_member_list: List[GetCrmRolePermissionResponseBodyPermissionsRoleMemberList] = None,
         role_name: str = None,
     ):
+        # This parameter is required.
         self.default_role = default_role
+        # This parameter is required.
         self.field_scopes = field_scopes
+        # This parameter is required.
         self.managing_scope_list = managing_scope_list
+        # This parameter is required.
         self.operate_scopes = operate_scopes
+        # This parameter is required.
         self.resource_id = resource_id
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.role_member_list = role_member_list
+        # This parameter is required.
         self.role_name = role_name
 
     def validate(self):
@@ -11486,6 +11949,7 @@ class GetCrmRolePermissionResponseBody(TeaModel):
         self,
         permissions: List[GetCrmRolePermissionResponseBodyPermissions] = None,
     ):
+        # This parameter is required.
         self.permissions = permissions
 
     def validate(self):
@@ -11600,6 +12064,7 @@ class GetCustomerTracksByRelationIdRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.relation_id = relation_id
         self.type_group = type_group
 
@@ -11681,14 +12146,20 @@ class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
         type: int = None,
         type_group: int = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.creator_name = creator_name
         self.detail = detail
+        # This parameter is required.
         self.format = format
+        # This parameter is required.
         self.gmt_create = gmt_create
         self.isv_info = isv_info
         self.title = title
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.type_group = type_group
 
     def validate(self):
@@ -11752,7 +12223,9 @@ class GetCustomerTracksByRelationIdResponseBody(TeaModel):
         next_token: str = None,
         result_list: List[GetCustomerTracksByRelationIdResponseBodyResultList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.next_token = next_token
         self.result_list = result_list
 
@@ -11871,6 +12344,7 @@ class GetGroupSetRequest(TeaModel):
         self,
         open_group_set_id: str = None,
     ):
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
 
     def validate(self):
@@ -11985,6 +12459,7 @@ class GetGroupSetResponseBody(TeaModel):
         self.group_chat_count = group_chat_count
         self.invite_link = invite_link
         self.last_open_conversation_id = last_open_conversation_id
+        # This parameter is required.
         self.manager = manager
         self.manager_user_ids = manager_user_ids
         self.member_count = member_count
@@ -11993,6 +12468,7 @@ class GetGroupSetResponseBody(TeaModel):
         self.notice = notice
         self.notice_toped = notice_toped
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.owner = owner
         self.owner_user_id = owner_user_id
         self.relation_type = relation_type
@@ -12174,8 +12650,11 @@ class GetNavigationCatalogRequest(TeaModel):
         module: str = None,
         operator_user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_trace_id = biz_trace_id
+        # This parameter is required.
         self.module = module
+        # This parameter is required.
         self.operator_user_id = operator_user_id
 
     def validate(self):
@@ -12417,7 +12896,9 @@ class GetObjectDataRequest(TeaModel):
         query_dsl: str = None,
     ):
         self.current_operator_user_id = current_operator_user_id
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.name = name
         self.next_token = next_token
         self.query_dsl = query_dsl
@@ -12873,7 +13354,9 @@ class GetOfficialAccountContactsRequest(TeaModel):
         max_results: int = None,
         next_token: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -13173,6 +13656,7 @@ class GetOfficialAccountOTOMessageResultRequest(TeaModel):
         open_push_id: str = None,
     ):
         self.account_id = account_id
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -13205,7 +13689,9 @@ class GetOfficialAccountOTOMessageResultResponseBodyResult(TeaModel):
         read_user_id_list: List[str] = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.read_user_id_list = read_user_id_list
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -13239,6 +13725,7 @@ class GetOfficialAccountOTOMessageResultResponseBody(TeaModel):
         result: GetOfficialAccountOTOMessageResultResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -13346,6 +13833,7 @@ class GetRelationUkSettingRequest(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -13375,6 +13863,7 @@ class GetRelationUkSettingResponseBodyResult(TeaModel):
         field_id: str = None,
     ):
         self.biz_alias = biz_alias
+        # This parameter is required.
         self.field_id = field_id
 
     def validate(self):
@@ -13558,8 +14047,11 @@ class JoinGroupSetRequest(TeaModel):
         union_id: str = None,
     ):
         self.biz_data_list = biz_data_list
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -13608,7 +14100,9 @@ class JoinGroupSetResponseBody(TeaModel):
         chat_id: str = None,
         open_conversation_id: str = None,
     ):
+        # This parameter is required.
         self.chat_id = chat_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
 
     def validate(self):
@@ -13858,6 +14352,7 @@ class ListCrmPersonalCustomersRequest(TeaModel):
         current_operator_user_id: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.body = body
         self.current_operator_user_id = current_operator_user_id
         self.relation_type = relation_type
@@ -13896,7 +14391,9 @@ class ListCrmPersonalCustomersResponseBodyResultPermission(TeaModel):
         owner_staff_ids: List[str] = None,
         participant_staff_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.owner_staff_ids = owner_staff_ids
+        # This parameter is required.
         self.participant_staff_ids = participant_staff_ids
 
     def validate(self):
@@ -13940,18 +14437,31 @@ class ListCrmPersonalCustomersResponseBodyResult(TeaModel):
         proc_inst_status: str = None,
         proc_out_result: str = None,
     ):
+        # This parameter is required.
         self.app_uuid = app_uuid
+        # This parameter is required.
         self.creator_nick = creator_nick
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.extend_data = extend_data
+        # This parameter is required.
         self.form_code = form_code
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.object_type = object_type
+        # This parameter is required.
         self.permission = permission
+        # This parameter is required.
         self.proc_inst_status = proc_inst_status
+        # This parameter is required.
         self.proc_out_result = proc_out_result
 
     def validate(self):
@@ -14029,6 +14539,7 @@ class ListCrmPersonalCustomersResponseBody(TeaModel):
         self,
         result: List[ListCrmPersonalCustomersResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -14144,6 +14655,7 @@ class ListGroupSetRequest(TeaModel):
         self.max_results = max_results
         self.next_token = next_token
         self.query_dsl = query_dsl
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -14267,7 +14779,9 @@ class ListGroupSetResponseBodyResultList(TeaModel):
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.group_chat_count = group_chat_count
+        # This parameter is required.
         self.last_open_conversation_id = last_open_conversation_id
+        # This parameter is required.
         self.manager = manager
         self.manager_user_ids = manager_user_ids
         self.member_count = member_count
@@ -14276,6 +14790,7 @@ class ListGroupSetResponseBodyResultList(TeaModel):
         self.notice = notice
         self.notice_toped = notice_toped
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.owner = owner
         self.owner_user_id = owner_user_id
         self.relation_type = relation_type
@@ -14382,6 +14897,7 @@ class ListGroupSetResponseBody(TeaModel):
     ):
         self.has_more = has_more
         self.next_token = next_token
+        # This parameter is required.
         self.result_list = result_list
         self.total_count = total_count
 
@@ -14823,6 +15339,7 @@ class QueryAllTracksRequest(TeaModel):
         next_token: str = None,
         order: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.order = order
@@ -14870,6 +15387,7 @@ class QueryAllTracksResponseBodyValues(TeaModel):
         self.creator = creator
         self.customer_id = customer_id
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.id = id
         self.sub_type = sub_type
         self.type = type
@@ -15228,9 +15746,11 @@ class QueryCrmGroupChatsRequest(TeaModel):
         query_dsl: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.query_dsl = query_dsl
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -15276,12 +15796,18 @@ class QueryCrmGroupChatsResponseBodyResultList(TeaModel):
         owner_user_id: str = None,
         owner_user_name: str = None,
     ):
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.member_count = member_count
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.open_group_set_id = open_group_set_id
+        # This parameter is required.
         self.owner_user_id = owner_user_id
+        # This parameter is required.
         self.owner_user_name = owner_user_name
 
     def validate(self):
@@ -15336,6 +15862,7 @@ class QueryCrmGroupChatsResponseBody(TeaModel):
         result_list: List[QueryCrmGroupChatsResponseBodyResultList] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.next_token = next_token
         self.result_list = result_list
@@ -15465,6 +15992,7 @@ class QueryCrmPersonalCustomerRequest(TeaModel):
         relation_type: str = None,
     ):
         self.current_operator_user_id = current_operator_user_id
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.query_dsl = query_dsl
@@ -15512,7 +16040,9 @@ class QueryCrmPersonalCustomerResponseBodyValuesPermission(TeaModel):
         owner_staff_ids: List[str] = None,
         participant_staff_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.owner_staff_ids = owner_staff_ids
+        # This parameter is required.
         self.participant_staff_ids = participant_staff_ids
 
     def validate(self):
@@ -15554,16 +16084,27 @@ class QueryCrmPersonalCustomerResponseBodyValues(TeaModel):
         proc_inst_status: str = None,
         proc_out_result: str = None,
     ):
+        # This parameter is required.
         self.creator_nick = creator_nick
+        # This parameter is required.
         self.creator_user_id = creator_user_id
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.extend_data = extend_data
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.instance_id = instance_id
+        # This parameter is required.
         self.object_type = object_type
+        # This parameter is required.
         self.permission = permission
+        # This parameter is required.
         self.proc_inst_status = proc_inst_status
+        # This parameter is required.
         self.proc_out_result = proc_out_result
 
     def validate(self):
@@ -15766,6 +16307,7 @@ class QueryGlobalInfoRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -15924,7 +16466,9 @@ class QueryOfficialAccountUserBasicInfoRequest(TeaModel):
         binding_token: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.binding_token = binding_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -15956,6 +16500,7 @@ class QueryOfficialAccountUserBasicInfoResponseBodyResult(TeaModel):
         self,
         status: str = None,
     ):
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -15985,6 +16530,7 @@ class QueryOfficialAccountUserBasicInfoResponseBody(TeaModel):
         result: QueryOfficialAccountUserBasicInfoResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -16092,6 +16638,7 @@ class QueryRelationDatasByTargetIdRequest(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -16121,8 +16668,11 @@ class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList(TeaModel):
         key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.extend_value = extend_value
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -16161,9 +16711,13 @@ class QueryRelationDatasByTargetIdResponseBodyRelations(TeaModel):
         relation_id: str = None,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.biz_data_list = biz_data_list
+        # This parameter is required.
         self.open_conversation_ids = open_conversation_ids
+        # This parameter is required.
         self.relation_id = relation_id
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):
@@ -16211,6 +16765,7 @@ class QueryRelationDatasByTargetIdResponseBody(TeaModel):
         self,
         relations: List[QueryRelationDatasByTargetIdResponseBodyRelations] = None,
     ):
+        # This parameter is required.
         self.relations = relations
 
     def validate(self):
@@ -16322,6 +16877,7 @@ class RecallOfficialAccountOTOMessageRequest(TeaModel):
         open_push_id: str = None,
     ):
         self.account_id = account_id
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -16455,7 +17011,9 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList(
         action_url: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.action_url = action_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -16497,6 +17055,7 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCard(TeaModel):
         self.markdown = markdown
         self.single_title = single_title
         self.single_url = single_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -16582,9 +17141,13 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink(TeaModel):
         text: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.message_url = message_url
+        # This parameter is required.
         self.pic_url = pic_url
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -16625,7 +17188,9 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown(TeaModel):
         text: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -16657,6 +17222,7 @@ class SendOfficialAccountOTOMessageRequestDetailMessageBodyText(TeaModel):
         self,
         content: str = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -16753,10 +17319,13 @@ class SendOfficialAccountOTOMessageRequestDetail(TeaModel):
         user_id: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.message_body = message_body
+        # This parameter is required.
         self.msg_type = msg_type
         self.union_id = union_id
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -16806,6 +17375,7 @@ class SendOfficialAccountOTOMessageRequest(TeaModel):
     ):
         self.account_id = account_id
         self.biz_id = biz_id
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -16843,6 +17413,7 @@ class SendOfficialAccountOTOMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -16872,6 +17443,7 @@ class SendOfficialAccountOTOMessageResponseBody(TeaModel):
         result: SendOfficialAccountOTOMessageResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -17240,8 +17812,11 @@ class SendOfficialAccountSNSMessageRequestDetail(TeaModel):
         msg_type: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.message_body = message_body
+        # This parameter is required.
         self.msg_type = msg_type
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -17281,8 +17856,10 @@ class SendOfficialAccountSNSMessageRequest(TeaModel):
         biz_id: str = None,
         detail: SendOfficialAccountSNSMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.binding_token = binding_token
         self.biz_id = biz_id
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -17320,6 +17897,7 @@ class SendOfficialAccountSNSMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -17349,6 +17927,7 @@ class SendOfficialAccountSNSMessageResponseBody(TeaModel):
         result: SendOfficialAccountSNSMessageResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -17457,7 +18036,9 @@ class ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList(
         action_url: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.action_url = action_url
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -17600,7 +18181,9 @@ class ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown(TeaModel):
         text: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -17632,6 +18215,7 @@ class ServiceWindowMessageBatchPushRequestDetailMessageBodyText(TeaModel):
         self,
         content: str = None,
     ):
+        # This parameter is required.
         self.content = content
 
     def validate(self):
@@ -17721,10 +18305,14 @@ class ServiceWindowMessageBatchPushRequestDetail(TeaModel):
         uuid: str = None,
     ):
         self.biz_request_id = biz_request_id
+        # This parameter is required.
         self.message_body = message_body
+        # This parameter is required.
         self.msg_type = msg_type
         self.send_to_all = send_to_all
+        # This parameter is required.
         self.user_id_list = user_id_list
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -17776,6 +18364,7 @@ class ServiceWindowMessageBatchPushRequest(TeaModel):
         detail: ServiceWindowMessageBatchPushRequestDetail = None,
     ):
         self.biz_id = biz_id
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -17809,6 +18398,7 @@ class ServiceWindowMessageBatchPushResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -17987,10 +18577,13 @@ class UpdateCrmPersonalCustomerRequest(TeaModel):
         skip_duplicate_check: bool = None,
     ):
         self.action = action
+        # This parameter is required.
         self.data = data
         self.extend_data = extend_data
+        # This parameter is required.
         self.instance_id = instance_id
         self.modifier_nick = modifier_nick
+        # This parameter is required.
         self.modifier_user_id = modifier_user_id
         self.permission = permission
         self.relation_type = relation_type
@@ -18055,6 +18648,7 @@ class UpdateCrmPersonalCustomerResponseBody(TeaModel):
         self,
         instance_id: str = None,
     ):
+        # This parameter is required.
         self.instance_id = instance_id
 
     def validate(self):
@@ -18169,6 +18763,7 @@ class UpdateGroupSetRequest(TeaModel):
         self.name = name
         self.notice = notice
         self.notice_toped = notice_toped
+        # This parameter is required.
         self.open_group_set_id = open_group_set_id
         self.owner_user_id = owner_user_id
         self.template_id = template_id
@@ -18352,17 +18947,23 @@ class UpdateMenuDataRequestNavData(TeaModel):
         sort_num: int = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.display_status = display_status
         self.icon = icon
         self.icon_bg_color = icon_bg_color
         self.icon_color = icon_color
         self.integration_protocol = integration_protocol
+        # This parameter is required.
         self.mobile_nav_name = mobile_nav_name
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.nav_code = nav_code
         self.nav_ext_info = nav_ext_info
+        # This parameter is required.
         self.nav_id = nav_id
+        # This parameter is required.
         self.nav_name = nav_name
+        # This parameter is required.
         self.nav_status = nav_status
         self.nav_type = nav_type
         self.parent_nav_id = parent_nav_id
@@ -18467,10 +19068,15 @@ class UpdateMenuDataRequest(TeaModel):
         operator_user_id: str = None,
     ):
         self.attr = attr
+        # This parameter is required.
         self.biz_trace_id = biz_trace_id
+        # This parameter is required.
         self.module = module
+        # This parameter is required.
         self.nav_data = nav_data
+        # This parameter is required.
         self.operate_type = operate_type
+        # This parameter is required.
         self.operator_user_id = operator_user_id
 
     def validate(self):
@@ -18676,14 +19282,17 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         unit: str = None,
     ):
         self.align = align
+        # This parameter is required.
         self.biz_alias = biz_alias
         self.choice = choice
         self.content = content
         self.disabled = disabled
         self.duration = duration
+        # This parameter is required.
         self.field_id = field_id
         self.format = format
         self.invisible = invisible
+        # This parameter is required.
         self.label = label
         self.label_editable_freeze = label_editable_freeze
         self.link = link
@@ -18693,6 +19302,7 @@ class UpdateRelationMetaFieldRequestFieldDTOListProps(TeaModel):
         self.options = options
         self.pay_enable = pay_enable
         self.placeholder = placeholder
+        # This parameter is required.
         self.required = required
         self.required_editable_freeze = required_editable_freeze
         self.sortable = sortable
@@ -18816,7 +19426,9 @@ class UpdateRelationMetaFieldRequestFieldDTOList(TeaModel):
         component_name: str = None,
         props: UpdateRelationMetaFieldRequestFieldDTOListProps = None,
     ):
+        # This parameter is required.
         self.component_name = component_name
+        # This parameter is required.
         self.props = props
 
     def validate(self):
@@ -18853,9 +19465,13 @@ class UpdateRelationMetaFieldRequest(TeaModel):
         relation_type: str = None,
         tenant: str = None,
     ):
+        # This parameter is required.
         self.field_dtolist = field_dtolist
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.relation_type = relation_type
+        # This parameter is required.
         self.tenant = tenant
 
     def validate(self):
@@ -18903,6 +19519,7 @@ class UpdateRelationMetaFieldResponseBody(TeaModel):
         self,
         relation_type: str = None,
     ):
+        # This parameter is required.
         self.relation_type = relation_type
 
     def validate(self):

@@ -44,8 +44,11 @@ class QueryAppActiveUsersRequest(TeaModel):
         need_position_info: bool = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.need_position_info = need_position_info
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -86,11 +89,17 @@ class QueryAppActiveUsersResponseBodyList(TeaModel):
         start_time: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_trace_id = app_trace_id
+        # This parameter is required.
         self.latitude = latitude
+        # This parameter is required.
         self.longitude = longitude
+        # This parameter is required.
         self.report_time = report_time
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -141,9 +150,13 @@ class QueryAppActiveUsersResponseBody(TeaModel):
         next_token: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -265,6 +278,7 @@ class QueryCollectingTraceTaskRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -298,12 +312,19 @@ class QueryCollectingTraceTaskResponseBodyList(TeaModel):
         report_start_time: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_trace_id = app_trace_id
+        # This parameter is required.
         self.geo_collect_period = geo_collect_period
+        # This parameter is required.
         self.geo_report_period = geo_report_period
+        # This parameter is required.
         self.geo_report_status = geo_report_status
+        # This parameter is required.
         self.report_end_time = report_end_time
+        # This parameter is required.
         self.report_start_time = report_start_time
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -355,6 +376,7 @@ class QueryCollectingTraceTaskResponseBody(TeaModel):
         self,
         list: List[QueryCollectingTraceTaskResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -470,8 +492,10 @@ class QueryPageTraceDataRequest(TeaModel):
         trace_id: str = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.staff_id = staff_id
         self.start_time = start_time
         self.trace_id = trace_id
@@ -522,7 +546,9 @@ class QueryPageTraceDataResponseBodyListCoordinates(TeaModel):
         latitude: float = None,
         longitude: float = None,
     ):
+        # This parameter is required.
         self.latitude = latitude
+        # This parameter is required.
         self.longitude = longitude
 
     def validate(self):
@@ -556,8 +582,11 @@ class QueryPageTraceDataResponseBodyList(TeaModel):
         gmt_location: int = None,
         gmt_upload: int = None,
     ):
+        # This parameter is required.
         self.coordinates = coordinates
+        # This parameter is required.
         self.gmt_location = gmt_location
+        # This parameter is required.
         self.gmt_upload = gmt_upload
 
     def validate(self):
@@ -597,8 +626,11 @@ class QueryPageTraceDataResponseBody(TeaModel):
         list: List[QueryPageTraceDataResponseBodyList] = None,
         next_token: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkalgo__1__0_models.NlpWordDistinguishHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalgo__1__0_models.NlpWordDistinguishResponse:
+        """
+        @summary 自然语言处理之关键词识别
+        
+        @param request: NlpWordDistinguishRequest
+        @param headers: NlpWordDistinguishHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NlpWordDistinguishResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attach_extract_decision_info):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkalgo__1__0_models.NlpWordDistinguishHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalgo__1__0_models.NlpWordDistinguishResponse:
+        """
+        @summary 自然语言处理之关键词识别
+        
+        @param request: NlpWordDistinguishRequest
+        @param headers: NlpWordDistinguishHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NlpWordDistinguishResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.attach_extract_decision_info):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalgo__1__0_models.NlpWordDistinguishRequest,
     ) -> dingtalkalgo__1__0_models.NlpWordDistinguishResponse:
+        """
+        @summary 自然语言处理之关键词识别
+        
+        @param request: NlpWordDistinguishRequest
+        @return: NlpWordDistinguishResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalgo__1__0_models.NlpWordDistinguishHeaders()
         return self.nlp_word_distinguish_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalgo__1__0_models.NlpWordDistinguishRequest,
     ) -> dingtalkalgo__1__0_models.NlpWordDistinguishResponse:
+        """
+        @summary 自然语言处理之关键词识别
+        
+        @param request: NlpWordDistinguishRequest
+        @return: NlpWordDistinguishResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalgo__1__0_models.NlpWordDistinguishHeaders()
         return await self.nlp_word_distinguish_with_options_async(request, headers, runtime)
@@ -129,6 +157,14 @@ class Client(OpenApiClient):
         headers: dingtalkalgo__1__0_models.OkrOpenRecommendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalgo__1__0_models.OkrOpenRecommendResponse:
+        """
+        @summary Okr内容推荐
+        
+        @param request: OkrOpenRecommendRequest
+        @param headers: OkrOpenRecommendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OkrOpenRecommendResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.candidate_okr_items):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalkalgo__1__0_models.OkrOpenRecommendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalgo__1__0_models.OkrOpenRecommendResponse:
+        """
+        @summary Okr内容推荐
+        
+        @param request: OkrOpenRecommendRequest
+        @param headers: OkrOpenRecommendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OkrOpenRecommendResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.candidate_okr_items):
@@ -217,6 +261,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalgo__1__0_models.OkrOpenRecommendRequest,
     ) -> dingtalkalgo__1__0_models.OkrOpenRecommendResponse:
+        """
+        @summary Okr内容推荐
+        
+        @param request: OkrOpenRecommendRequest
+        @return: OkrOpenRecommendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalgo__1__0_models.OkrOpenRecommendHeaders()
         return self.okr_open_recommend_with_options(request, headers, runtime)
@@ -225,6 +275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalgo__1__0_models.OkrOpenRecommendRequest,
     ) -> dingtalkalgo__1__0_models.OkrOpenRecommendResponse:
+        """
+        @summary Okr内容推荐
+        
+        @param request: OkrOpenRecommendRequest
+        @return: OkrOpenRecommendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalgo__1__0_models.OkrOpenRecommendHeaders()
         return await self.okr_open_recommend_with_options_async(request, headers, runtime)

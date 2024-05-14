@@ -46,10 +46,15 @@ class AppLoginCodeGenRequest(TeaModel):
         full_url: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_key = app_key
+        # This parameter is required.
         self.sign_timestamp_str = sign_timestamp_str
+        # This parameter is required.
         self.signature = signature
+        # This parameter is required.
         self.full_url = full_url
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -199,11 +204,16 @@ class BatchGetFormDataByIdListRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_instance_id_list = form_instance_id_list
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.need_form_instance_value = need_form_instance_value
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -618,12 +628,17 @@ class BatchRemovalByFormInstanceIdListRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
         self.execute_expression = execute_expression
+        # This parameter is required.
         self.form_instance_id_list = form_instance_id_list
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -748,13 +763,18 @@ class BatchSaveFormDataRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        # This parameter is required.
         self.form_data_json_list = form_data_json_list
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.keep_running_after_exception = keep_running_after_exception
         self.no_execute_expression = no_execute_expression
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -920,15 +940,21 @@ class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
         use_latest_form_schema_version: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        # This parameter is required.
         self.form_instance_id_list = form_instance_id_list
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.ignore_empty = ignore_empty
         self.no_execute_expression = no_execute_expression
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.update_form_data_json = update_form_data_json
         self.use_latest_form_schema_version = use_latest_form_schema_version
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1101,14 +1127,19 @@ class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
         use_latest_form_schema_version: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.ignore_empty = ignore_empty
         self.no_execute_expression = no_execute_expression
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.update_form_data_json_map = update_form_data_json_map
         self.use_latest_form_schema_version = use_latest_form_schema_version
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1779,12 +1810,18 @@ class CreateOrUpdateFormDataRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_data_json = form_data_json
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.no_execute_expression = no_execute_expression
+        # This parameter is required.
         self.search_condition = search_condition
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1941,10 +1978,14 @@ class DeleteFormDataRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_instance_id = form_instance_id
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2058,10 +2099,14 @@ class DeleteInstanceRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2451,11 +2496,16 @@ class ExecuteBatchTaskRequest(TeaModel):
         task_information_list: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.out_result = out_result
         self.remark = remark
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.task_information_list = task_information_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2505,8 +2555,11 @@ class ExecuteBatchTaskResponseBody(TeaModel):
         success_number: int = None,
         total: int = None,
     ):
+        # This parameter is required.
         self.fail_number = fail_number
+        # This parameter is required.
         self.success_number = success_number
+        # This parameter is required.
         self.total = total
 
     def validate(self):
@@ -2621,11 +2674,16 @@ class ExecuteCustomApiRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.data = data
         self.language = language
+        # This parameter is required.
         self.service_id = service_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2782,14 +2840,20 @@ class ExecutePlatformTaskRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.form_data_json = form_data_json
         self.language = language
         self.no_execute_expressions = no_execute_expressions
+        # This parameter is required.
         self.out_result = out_result
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2925,16 +2989,23 @@ class ExecuteTaskRequest(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.digital_sign_url = digital_sign_url
         self.form_data_json = form_data_json
         self.language = language
         self.no_execute_expressions = no_execute_expressions
+        # This parameter is required.
         self.out_result = out_result
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3345,7 +3416,9 @@ class GetActivityButtonListRequest(TeaModel):
         user_id: str = None,
     ):
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3728,12 +3801,18 @@ class GetAllAuthCubesRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.corp_id = corp_id
         self.keywords = keywords
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4148,6 +4227,7 @@ class GetAllAuthCubesResponseBody(TeaModel):
         count: int = None,
         result: List[GetAllAuthCubesResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.count = count
         self.result = result
 
@@ -4455,11 +4535,17 @@ class GetAutoFlowLogDetailRequest(TeaModel):
         token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.proc_instance_id = proc_instance_id
+        # This parameter is required.
         self.token = token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4731,6 +4817,7 @@ class GetCorpAccomplishmentTasksRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.process_codes = process_codes
+        # This parameter is required.
         self.token = token
 
     def validate(self):
@@ -5191,6 +5278,7 @@ class GetCorpTasksRequest(TeaModel):
         user_id: str = None,
     ):
         self.app_types = app_types
+        # This parameter is required.
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
@@ -5199,7 +5287,9 @@ class GetCorpTasksRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.process_codes = process_codes
+        # This parameter is required.
         self.token = token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5532,9 +5622,13 @@ class GetDbConfigRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5726,9 +5820,13 @@ class GetFieldDefByUuidRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5944,7 +6042,9 @@ class GetFormComponentDefinitionListRequest(TeaModel):
         version: int = None,
     ):
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
         self.version = version
 
@@ -6396,11 +6496,14 @@ class GetFormListInAppRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.form_types = form_types
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -6693,9 +6796,12 @@ class GetInstanceByIdRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7100,10 +7206,12 @@ class GetInstanceIdListRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.approved_result = approved_result
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.instance_status = instance_status
         self.language = language
@@ -7111,8 +7219,10 @@ class GetInstanceIdListRequest(TeaModel):
         self.modified_to_time_gmt = modified_to_time_gmt
         self.originator_id = originator_id
         self.search_field_json = search_field_json
+        # This parameter is required.
         self.system_token = system_token
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
         self.page_number = page_number
         self.page_size = page_size
@@ -7331,10 +7441,12 @@ class GetInstancesRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.approved_result = approved_result
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.instance_status = instance_status
         self.language = language
@@ -7343,8 +7455,10 @@ class GetInstancesRequest(TeaModel):
         self.order_config_json = order_config_json
         self.originator_id = originator_id
         self.search_field_json = search_field_json
+        # This parameter is required.
         self.system_token = system_token
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
         self.page_number = page_number
         self.page_size = page_size
@@ -7839,10 +7953,14 @@ class GetInstancesByIdListRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.process_instance_ids = process_instance_ids
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -8263,6 +8381,7 @@ class GetMeCorpSubmissionRequest(TeaModel):
         token: str = None,
     ):
         self.app_types = app_types
+        # This parameter is required.
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
@@ -8271,6 +8390,7 @@ class GetMeCorpSubmissionRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.process_codes = process_codes
+        # This parameter is required.
         self.token = token
 
     def validate(self):
@@ -8841,6 +8961,7 @@ class GetNotifyMeRequest(TeaModel):
         token: str = None,
     ):
         self.app_types = app_types
+        # This parameter is required.
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
@@ -8851,6 +8972,7 @@ class GetNotifyMeRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.process_codes = process_codes
+        # This parameter is required.
         self.token = token
 
     def validate(self):
@@ -9146,10 +9268,13 @@ class GetOpenUrlRequest(TeaModel):
         timeout: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.file_url = file_url
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
         self.timeout = timeout
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -9298,10 +9423,14 @@ class GetOperationRecordsRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10059,6 +10188,7 @@ class GetPrintAppInfoRequest(TeaModel):
         user_id: str = None,
     ):
         self.name_like = name_like
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -10288,8 +10418,11 @@ class GetPrintDictionaryRequest(TeaModel):
         user_id: str = None,
         version: int = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.user_id = user_id
         self.version = version
 
@@ -11099,10 +11232,15 @@ class GetRunningTaskListRequest(TeaModel):
         user_corp_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.process_instance_id_list = process_instance_id_list
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_corp_id = user_corp_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -11651,8 +11789,11 @@ class GetSaleUserInfoByUserIdRequest(TeaModel):
         namespace: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.namespace = namespace
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -11859,11 +12000,17 @@ class GetSimpleCubeModelListRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.cube_code = cube_code
+        # This parameter is required.
         self.cube_tenant_id = cube_tenant_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -12175,6 +12322,7 @@ class GetTaskCopiesRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
@@ -12183,7 +12331,9 @@ class GetTaskCopiesRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.process_codes = process_codes
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -12618,10 +12768,13 @@ class ListApplicationRequest(TeaModel):
     ):
         self.app_filter = app_filter
         self.app_name_search_keyword = app_name_search_keyword
+        # This parameter is required.
         self.corp_id = corp_id
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.token = token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -14206,10 +14359,14 @@ class ListFormRemarksRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.form_instance_id_list = form_instance_id_list
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -14358,10 +14515,14 @@ class ListNavigationByFormTypeRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_type = form_type
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -14598,10 +14759,14 @@ class ListOperationLogsRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.form_instance_id_list = form_instance_id_list
+        # This parameter is required.
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -14645,6 +14810,7 @@ class ListOperationLogsResponseBody(TeaModel):
         self,
         operation_log_map: Dict[str, Any] = None,
     ):
+        # This parameter is required.
         self.operation_log_map = operation_log_map
 
     def validate(self):
@@ -14752,12 +14918,17 @@ class ListTableDataByFormInstanceIdTableIdRequest(TeaModel):
         table_field_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.table_field_id = table_field_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -14922,6 +15093,7 @@ class LoginCodeGenRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -15249,15 +15421,20 @@ class PageAutoFlowLogRequest(TeaModel):
         user_id: str = None,
     ):
         self.app_type = app_type
+        # This parameter is required.
         self.corp_id = corp_id
         self.end_time_gmt = end_time_gmt
         self.form_uuid = form_uuid
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.process_code = process_code
         self.start_time_gmt = start_time_gmt
         self.status = status
+        # This parameter is required.
         self.token = token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -15533,12 +15710,17 @@ class PageFormBaseInfosRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_key = app_key
         self.form_type_list = form_type_list
         self.language = language
+        # This parameter is required.
         self.page_index = page_index
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -15839,13 +16021,18 @@ class PreviewPublishedProcessRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.department_id = department_id
+        # This parameter is required.
         self.form_data_json = form_data_json
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
         self.process_code = process_code
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -16195,10 +16382,13 @@ class QueryServiceRecordRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.hook_type = hook_type
         self.hook_uuid = hook_uuid
+        # This parameter is required.
         self.instance_id = instance_id
         self.invoke_after_date_gmt = invoke_after_date_gmt
         self.invoke_before_date_gmt = invoke_before_date_gmt
@@ -16208,7 +16398,9 @@ class QueryServiceRecordRequest(TeaModel):
         self.request_url = request_url
         self.source_uuid = source_uuid
         self.success = success
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -16514,14 +16706,21 @@ class RedirectTaskRequest(TeaModel):
         task_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.by_manager = by_manager
         self.language = language
+        # This parameter is required.
         self.now_action_executor_id = now_action_executor_id
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.task_id = task_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -17657,11 +17856,16 @@ class SaveFormDataRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        # This parameter is required.
         self.form_data_json = form_data_json
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -17817,13 +18021,18 @@ class SaveFormRemarkRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.at_user_id = at_user_id
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.form_instance_id = form_instance_id
         self.language = language
         self.reply_id = reply_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -17989,14 +18198,17 @@ class SavePrintTplDetailInfoRequest(TeaModel):
         user_id: str = None,
         vm: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.description = description
         self.file_name_config = file_name_config
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.form_version = form_version
         self.setting = setting
         self.template_id = template_id
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
         self.vm = vm
 
@@ -18164,6 +18376,7 @@ class SearchActivationCodeRequest(TeaModel):
         caller_uid: str = None,
     ):
         self.access_key = access_key
+        # This parameter is required.
         self.caller_uid = caller_uid
 
     def validate(self):
@@ -18531,7 +18744,9 @@ class SearchFormDataIdListRequest(TeaModel):
         self.modified_to_time_gmt = modified_to_time_gmt
         self.originator_id = originator_id
         self.search_field_json = search_field_json
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
         self.page_number = page_number
         self.page_size = page_size
@@ -18726,9 +18941,11 @@ class SearchFormDataRemovalTableDataRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.modified_from_time_gmt = modified_from_time_gmt
         self.modified_to_time_gmt = modified_to_time_gmt
@@ -18737,7 +18954,9 @@ class SearchFormDataRemovalTableDataRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.search_field_json = search_field_json
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -19228,9 +19447,11 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.modified_from_time_gmt = modified_from_time_gmt
         self.modified_to_time_gmt = modified_to_time_gmt
@@ -19239,7 +19460,9 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.search_condition = search_condition
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -19700,9 +19923,11 @@ class SearchFormDataSecondGenerationNoTableFieldRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.modified_from_time_gmt = modified_from_time_gmt
         self.modified_to_time_gmt = modified_to_time_gmt
@@ -19711,7 +19936,9 @@ class SearchFormDataSecondGenerationNoTableFieldRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.search_condition = search_condition
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -20173,11 +20400,13 @@ class SearchFormDatasRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
         self.current_page = current_page
         self.dynamic_order = dynamic_order
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
         self.modified_from_time_gmt = modified_from_time_gmt
@@ -20185,7 +20414,9 @@ class SearchFormDatasRequest(TeaModel):
         self.originator_id = originator_id
         self.page_size = page_size
         self.search_field_json = search_field_json
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -20664,14 +20895,19 @@ class StartInstanceRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.department_id = department_id
+        # This parameter is required.
         self.form_data_json = form_data_json
+        # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
         self.process_code = process_code
         self.process_data = process_data
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -20976,10 +21212,14 @@ class TerminateInstanceRequest(TeaModel):
         system_token: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -21242,11 +21482,15 @@ class UpdateFormDataRequest(TeaModel):
         user_id: str = None,
     ):
         self.app_type = app_type
+        # This parameter is required.
         self.form_instance_id = form_instance_id
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.update_form_data_json = update_form_data_json
         self.use_latest_version = use_latest_version
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -21369,11 +21613,16 @@ class UpdateInstanceRequest(TeaModel):
         update_form_data_json: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
         self.language = language
+        # This parameter is required.
         self.process_instance_id = process_instance_id
+        # This parameter is required.
         self.system_token = system_token
+        # This parameter is required.
         self.update_form_data_json = update_form_data_json
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

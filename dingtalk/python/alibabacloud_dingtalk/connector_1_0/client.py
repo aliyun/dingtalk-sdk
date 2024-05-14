@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateActionResponse:
+        """
+        @summary 创建执行动作
+        
+        @param request: CreateActionRequest
+        @param headers: CreateActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_info):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateActionResponse:
+        """
+        @summary 创建执行动作
+        
+        @param request: CreateActionRequest
+        @param headers: CreateActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_info):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateActionRequest,
     ) -> dingtalkconnector__1__0_models.CreateActionResponse:
+        """
+        @summary 创建执行动作
+        
+        @param request: CreateActionRequest
+        @return: CreateActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateActionHeaders()
         return self.create_action_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateActionRequest,
     ) -> dingtalkconnector__1__0_models.CreateActionResponse:
+        """
+        @summary 创建执行动作
+        
+        @param request: CreateActionRequest
+        @return: CreateActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateActionHeaders()
         return await self.create_action_with_options_async(request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateConnectorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateConnectorResponse:
+        """
+        @summary 创建连接器
+        
+        @param request: CreateConnectorRequest
+        @param headers: CreateConnectorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateConnectorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_info):
@@ -162,6 +198,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateConnectorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateConnectorResponse:
+        """
+        @summary 创建连接器
+        
+        @param request: CreateConnectorRequest
+        @param headers: CreateConnectorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateConnectorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_info):
@@ -197,6 +241,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateConnectorRequest,
     ) -> dingtalkconnector__1__0_models.CreateConnectorResponse:
+        """
+        @summary 创建连接器
+        
+        @param request: CreateConnectorRequest
+        @return: CreateConnectorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateConnectorHeaders()
         return self.create_connector_with_options(request, headers, runtime)
@@ -205,6 +255,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateConnectorRequest,
     ) -> dingtalkconnector__1__0_models.CreateConnectorResponse:
+        """
+        @summary 创建连接器
+        
+        @param request: CreateConnectorRequest
+        @return: CreateConnectorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateConnectorHeaders()
         return await self.create_connector_with_options_async(request, headers, runtime)
@@ -215,6 +271,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        """
+        @summary 创建一个用于运行执行动作/集成流的可调用实例
+        
+        @param request: CreateInvocableInstanceRequest
+        @param headers: CreateInvocableInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateInvocableInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -252,6 +316,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        """
+        @summary 创建一个用于运行执行动作/集成流的可调用实例
+        
+        @param request: CreateInvocableInstanceRequest
+        @param headers: CreateInvocableInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateInvocableInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -287,6 +359,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
     ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        """
+        @summary 创建一个用于运行执行动作/集成流的可调用实例
+        
+        @param request: CreateInvocableInstanceRequest
+        @return: CreateInvocableInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders()
         return self.create_invocable_instance_with_options(request, headers, runtime)
@@ -295,6 +373,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateInvocableInstanceRequest,
     ) -> dingtalkconnector__1__0_models.CreateInvocableInstanceResponse:
+        """
+        @summary 创建一个用于运行执行动作/集成流的可调用实例
+        
+        @param request: CreateInvocableInstanceRequest
+        @return: CreateInvocableInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateInvocableInstanceHeaders()
         return await self.create_invocable_instance_with_options_async(request, headers, runtime)
@@ -305,6 +389,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateTriggerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
+        """
+        @summary 创建触发器
+        
+        @param request: CreateTriggerRequest
+        @param headers: CreateTriggerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTriggerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.integrator_flag):
@@ -342,6 +434,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.CreateTriggerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
+        """
+        @summary 创建触发器
+        
+        @param request: CreateTriggerRequest
+        @param headers: CreateTriggerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTriggerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.integrator_flag):
@@ -377,6 +477,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateTriggerRequest,
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
+        """
+        @summary 创建触发器
+        
+        @param request: CreateTriggerRequest
+        @return: CreateTriggerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateTriggerHeaders()
         return self.create_trigger_with_options(request, headers, runtime)
@@ -385,6 +491,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.CreateTriggerRequest,
     ) -> dingtalkconnector__1__0_models.CreateTriggerResponse:
+        """
+        @summary 创建触发器
+        
+        @param request: CreateTriggerRequest
+        @return: CreateTriggerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.CreateTriggerHeaders()
         return await self.create_trigger_with_options_async(request, headers, runtime)
@@ -395,6 +507,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.GetActionDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        """
+        @summary 获取执行动作详情
+        
+        @param request: GetActionDetailRequest
+        @param headers: GetActionDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActionDetailResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -430,6 +550,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.GetActionDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        """
+        @summary 获取执行动作详情
+        
+        @param request: GetActionDetailRequest
+        @param headers: GetActionDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetActionDetailResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -463,6 +591,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.GetActionDetailRequest,
     ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        """
+        @summary 获取执行动作详情
+        
+        @param request: GetActionDetailRequest
+        @return: GetActionDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.GetActionDetailHeaders()
         return self.get_action_detail_with_options(request, headers, runtime)
@@ -471,6 +605,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.GetActionDetailRequest,
     ) -> dingtalkconnector__1__0_models.GetActionDetailResponse:
+        """
+        @summary 获取执行动作详情
+        
+        @param request: GetActionDetailRequest
+        @return: GetActionDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.GetActionDetailHeaders()
         return await self.get_action_detail_with_options_async(request, headers, runtime)
@@ -481,6 +621,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.InvokeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        """
+        @summary 调用执行实例
+        
+        @param request: InvokeInstanceRequest
+        @param headers: InvokeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvokeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -520,6 +668,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.InvokeInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        """
+        @summary 调用执行实例
+        
+        @param request: InvokeInstanceRequest
+        @param headers: InvokeInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvokeInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connect_asset_uri):
@@ -557,6 +713,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
     ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        """
+        @summary 调用执行实例
+        
+        @param request: InvokeInstanceRequest
+        @return: InvokeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.InvokeInstanceHeaders()
         return self.invoke_instance_with_options(request, headers, runtime)
@@ -565,6 +727,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.InvokeInstanceRequest,
     ) -> dingtalkconnector__1__0_models.InvokeInstanceResponse:
+        """
+        @summary 调用执行实例
+        
+        @param request: InvokeInstanceRequest
+        @return: InvokeInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.InvokeInstanceHeaders()
         return await self.invoke_instance_with_options_async(request, headers, runtime)
@@ -575,6 +743,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.PullDataByPageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        """
+        @summary 分页拉取连接器主数据
+        
+        @param request: PullDataByPageRequest
+        @param headers: PullDataByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PullDataByPageResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -622,6 +798,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.PullDataByPageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        """
+        @summary 分页拉取连接器主数据
+        
+        @param request: PullDataByPageRequest
+        @param headers: PullDataByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PullDataByPageResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -667,6 +851,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.PullDataByPageRequest,
     ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        """
+        @summary 分页拉取连接器主数据
+        
+        @param request: PullDataByPageRequest
+        @return: PullDataByPageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.PullDataByPageHeaders()
         return self.pull_data_by_page_with_options(request, headers, runtime)
@@ -675,6 +865,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.PullDataByPageRequest,
     ) -> dingtalkconnector__1__0_models.PullDataByPageResponse:
+        """
+        @summary 分页拉取连接器主数据
+        
+        @param request: PullDataByPageRequest
+        @return: PullDataByPageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.PullDataByPageHeaders()
         return await self.pull_data_by_page_with_options_async(request, headers, runtime)
@@ -686,6 +882,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.PullDataByPkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        """
+        @summary 通过业务主键拉取单条连接器主数据
+        
+        @param request: PullDataByPkRequest
+        @param headers: PullDataByPkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PullDataByPkResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -724,6 +928,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.PullDataByPkHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        """
+        @summary 通过业务主键拉取单条连接器主数据
+        
+        @param request: PullDataByPkRequest
+        @param headers: PullDataByPkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PullDataByPkResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.app_id):
@@ -760,6 +972,12 @@ class Client(OpenApiClient):
         data_model_id: str,
         request: dingtalkconnector__1__0_models.PullDataByPkRequest,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        """
+        @summary 通过业务主键拉取单条连接器主数据
+        
+        @param request: PullDataByPkRequest
+        @return: PullDataByPkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.PullDataByPkHeaders()
         return self.pull_data_by_pk_with_options(data_model_id, request, headers, runtime)
@@ -769,6 +987,12 @@ class Client(OpenApiClient):
         data_model_id: str,
         request: dingtalkconnector__1__0_models.PullDataByPkRequest,
     ) -> dingtalkconnector__1__0_models.PullDataByPkResponse:
+        """
+        @summary 通过业务主键拉取单条连接器主数据
+        
+        @param request: PullDataByPkRequest
+        @return: PullDataByPkResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.PullDataByPkHeaders()
         return await self.pull_data_by_pk_with_options_async(data_model_id, request, headers, runtime)
@@ -779,6 +1003,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SearchActionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        """
+        @summary 搜索执行动作
+        
+        @param request: SearchActionsRequest
+        @param headers: SearchActionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchActionsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_id):
@@ -822,6 +1054,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SearchActionsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        """
+        @summary 搜索执行动作
+        
+        @param request: SearchActionsRequest
+        @param headers: SearchActionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchActionsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_id):
@@ -863,6 +1103,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SearchActionsRequest,
     ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        """
+        @summary 搜索执行动作
+        
+        @param request: SearchActionsRequest
+        @return: SearchActionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SearchActionsHeaders()
         return self.search_actions_with_options(request, headers, runtime)
@@ -871,6 +1117,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SearchActionsRequest,
     ) -> dingtalkconnector__1__0_models.SearchActionsResponse:
+        """
+        @summary 搜索执行动作
+        
+        @param request: SearchActionsRequest
+        @return: SearchActionsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SearchActionsHeaders()
         return await self.search_actions_with_options_async(request, headers, runtime)
@@ -881,6 +1133,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SearchConnectorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        """
+        @summary 搜索连接器
+        
+        @param request: SearchConnectorsRequest
+        @param headers: SearchConnectorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchConnectorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -920,6 +1180,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SearchConnectorsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        """
+        @summary 搜索连接器
+        
+        @param request: SearchConnectorsRequest
+        @param headers: SearchConnectorsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchConnectorsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -957,6 +1225,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
     ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        """
+        @summary 搜索连接器
+        
+        @param request: SearchConnectorsRequest
+        @return: SearchConnectorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SearchConnectorsHeaders()
         return self.search_connectors_with_options(request, headers, runtime)
@@ -965,6 +1239,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SearchConnectorsRequest,
     ) -> dingtalkconnector__1__0_models.SearchConnectorsResponse:
+        """
+        @summary 搜索连接器
+        
+        @param request: SearchConnectorsRequest
+        @return: SearchConnectorsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SearchConnectorsHeaders()
         return await self.search_connectors_with_options_async(request, headers, runtime)
@@ -975,6 +1255,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SyncDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SyncDataResponse:
+        """
+        @summary 同步连接器数据
+        
+        @param request: SyncDataRequest
+        @param headers: SyncDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_id):
@@ -1012,6 +1300,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.SyncDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.SyncDataResponse:
+        """
+        @summary 同步连接器数据
+        
+        @param request: SyncDataRequest
+        @param headers: SyncDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_id):
@@ -1047,6 +1343,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SyncDataRequest,
     ) -> dingtalkconnector__1__0_models.SyncDataResponse:
+        """
+        @summary 同步连接器数据
+        
+        @param request: SyncDataRequest
+        @return: SyncDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SyncDataHeaders()
         return self.sync_data_with_options(request, headers, runtime)
@@ -1055,6 +1357,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.SyncDataRequest,
     ) -> dingtalkconnector__1__0_models.SyncDataResponse:
+        """
+        @summary 同步连接器数据
+        
+        @param request: SyncDataRequest
+        @return: SyncDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.SyncDataHeaders()
         return await self.sync_data_with_options_async(request, headers, runtime)
@@ -1065,6 +1373,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateActionResponse:
+        """
+        @summary 更新执行动作信息
+        
+        @param request: UpdateActionRequest
+        @param headers: UpdateActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_info):
@@ -1102,6 +1418,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateActionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateActionResponse:
+        """
+        @summary 更新执行动作信息
+        
+        @param request: UpdateActionRequest
+        @param headers: UpdateActionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateActionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.action_info):
@@ -1137,6 +1461,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateActionRequest,
     ) -> dingtalkconnector__1__0_models.UpdateActionResponse:
+        """
+        @summary 更新执行动作信息
+        
+        @param request: UpdateActionRequest
+        @return: UpdateActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateActionHeaders()
         return self.update_action_with_options(request, headers, runtime)
@@ -1145,6 +1475,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateActionRequest,
     ) -> dingtalkconnector__1__0_models.UpdateActionResponse:
+        """
+        @summary 更新执行动作信息
+        
+        @param request: UpdateActionRequest
+        @return: UpdateActionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateActionHeaders()
         return await self.update_action_with_options_async(request, headers, runtime)
@@ -1155,6 +1491,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateConnectorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateConnectorResponse:
+        """
+        @summary 更新连接器信息
+        
+        @param request: UpdateConnectorRequest
+        @param headers: UpdateConnectorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConnectorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_info):
@@ -1192,6 +1536,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateConnectorHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateConnectorResponse:
+        """
+        @summary 更新连接器信息
+        
+        @param request: UpdateConnectorRequest
+        @param headers: UpdateConnectorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConnectorResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.connector_info):
@@ -1227,6 +1579,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateConnectorRequest,
     ) -> dingtalkconnector__1__0_models.UpdateConnectorResponse:
+        """
+        @summary 更新连接器信息
+        
+        @param request: UpdateConnectorRequest
+        @return: UpdateConnectorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateConnectorHeaders()
         return self.update_connector_with_options(request, headers, runtime)
@@ -1235,6 +1593,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateConnectorRequest,
     ) -> dingtalkconnector__1__0_models.UpdateConnectorResponse:
+        """
+        @summary 更新连接器信息
+        
+        @param request: UpdateConnectorRequest
+        @return: UpdateConnectorResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateConnectorHeaders()
         return await self.update_connector_with_options_async(request, headers, runtime)
@@ -1245,6 +1609,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateTriggerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
+        """
+        @summary 更新触发事件信息
+        
+        @param request: UpdateTriggerRequest
+        @param headers: UpdateTriggerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTriggerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.integrator_flag):
@@ -1282,6 +1654,14 @@ class Client(OpenApiClient):
         headers: dingtalkconnector__1__0_models.UpdateTriggerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
+        """
+        @summary 更新触发事件信息
+        
+        @param request: UpdateTriggerRequest
+        @param headers: UpdateTriggerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTriggerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.integrator_flag):
@@ -1317,6 +1697,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateTriggerRequest,
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
+        """
+        @summary 更新触发事件信息
+        
+        @param request: UpdateTriggerRequest
+        @return: UpdateTriggerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateTriggerHeaders()
         return self.update_trigger_with_options(request, headers, runtime)
@@ -1325,6 +1711,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkconnector__1__0_models.UpdateTriggerRequest,
     ) -> dingtalkconnector__1__0_models.UpdateTriggerResponse:
+        """
+        @summary 更新触发事件信息
+        
+        @param request: UpdateTriggerRequest
+        @return: UpdateTriggerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconnector__1__0_models.UpdateTriggerHeaders()
         return await self.update_trigger_with_options_async(request, headers, runtime)

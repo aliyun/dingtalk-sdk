@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.CreateTemplatesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.CreateTemplatesResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplatesRequest
+        @param headers: CreateTemplatesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplatesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.allow_add_receivers):
@@ -98,6 +106,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.CreateTemplatesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.CreateTemplatesResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplatesRequest
+        @param headers: CreateTemplatesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplatesResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.allow_add_receivers):
@@ -159,6 +175,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.CreateTemplatesRequest,
     ) -> dingtalkreport__1__0_models.CreateTemplatesResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplatesRequest
+        @return: CreateTemplatesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.CreateTemplatesHeaders()
         return self.create_templates_with_options(request, headers, runtime)
@@ -167,6 +189,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.CreateTemplatesRequest,
     ) -> dingtalkreport__1__0_models.CreateTemplatesResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplatesRequest
+        @return: CreateTemplatesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.CreateTemplatesHeaders()
         return await self.create_templates_with_options_async(request, headers, runtime)
@@ -177,6 +205,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        """
+        @summary 查询员工提交和收到的日志列表
+        
+        @param request: GetSendAndReceiveReportListRequest
+        @param headers: GetSendAndReceiveReportListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSendAndReceiveReportListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -220,6 +256,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        """
+        @summary 查询员工提交和收到的日志列表
+        
+        @param request: GetSendAndReceiveReportListRequest
+        @param headers: GetSendAndReceiveReportListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSendAndReceiveReportListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -261,6 +305,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
     ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        """
+        @summary 查询员工提交和收到的日志列表
+        
+        @param request: GetSendAndReceiveReportListRequest
+        @return: GetSendAndReceiveReportListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders()
         return self.get_send_and_receive_report_list_with_options(request, headers, runtime)
@@ -269,6 +319,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.GetSendAndReceiveReportListRequest,
     ) -> dingtalkreport__1__0_models.GetSendAndReceiveReportListResponse:
+        """
+        @summary 查询员工提交和收到的日志列表
+        
+        @param request: GetSendAndReceiveReportListRequest
+        @return: GetSendAndReceiveReportListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.GetSendAndReceiveReportListHeaders()
         return await self.get_send_and_receive_report_list_with_options_async(request, headers, runtime)
@@ -279,6 +335,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.GetSubmitStatisticsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        """
+        @summary 获取指定周期的提交统计结果
+        
+        @param request: GetSubmitStatisticsRequest
+        @param headers: GetSubmitStatisticsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSubmitStatisticsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -322,6 +386,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.GetSubmitStatisticsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        """
+        @summary 获取指定周期的提交统计结果
+        
+        @param request: GetSubmitStatisticsRequest
+        @param headers: GetSubmitStatisticsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSubmitStatisticsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -363,6 +435,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
     ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        """
+        @summary 获取指定周期的提交统计结果
+        
+        @param request: GetSubmitStatisticsRequest
+        @return: GetSubmitStatisticsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.GetSubmitStatisticsHeaders()
         return self.get_submit_statistics_with_options(request, headers, runtime)
@@ -371,6 +449,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.GetSubmitStatisticsRequest,
     ) -> dingtalkreport__1__0_models.GetSubmitStatisticsResponse:
+        """
+        @summary 获取指定周期的提交统计结果
+        
+        @param request: GetSubmitStatisticsRequest
+        @return: GetSubmitStatisticsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.GetSubmitStatisticsHeaders()
         return await self.get_submit_statistics_with_options_async(request, headers, runtime)
@@ -381,6 +465,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.QueryRemindResultsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.QueryRemindResultsResponse:
+        """
+        @summary 获取创建的统计规则信息
+        
+        @param request: QueryRemindResultsRequest
+        @param headers: QueryRemindResultsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRemindResultsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -422,6 +514,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.QueryRemindResultsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.QueryRemindResultsResponse:
+        """
+        @summary 获取创建的统计规则信息
+        
+        @param request: QueryRemindResultsRequest
+        @param headers: QueryRemindResultsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRemindResultsResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -461,6 +561,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.QueryRemindResultsRequest,
     ) -> dingtalkreport__1__0_models.QueryRemindResultsResponse:
+        """
+        @summary 获取创建的统计规则信息
+        
+        @param request: QueryRemindResultsRequest
+        @return: QueryRemindResultsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.QueryRemindResultsHeaders()
         return self.query_remind_results_with_options(request, headers, runtime)
@@ -469,6 +575,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.QueryRemindResultsRequest,
     ) -> dingtalkreport__1__0_models.QueryRemindResultsResponse:
+        """
+        @summary 获取创建的统计规则信息
+        
+        @param request: QueryRemindResultsRequest
+        @return: QueryRemindResultsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.QueryRemindResultsHeaders()
         return await self.query_remind_results_with_options_async(request, headers, runtime)
@@ -479,6 +591,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.QueryReportDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.QueryReportDetailResponse:
+        """
+        @summary 获取日志详情
+        
+        @param request: QueryReportDetailRequest
+        @param headers: QueryReportDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReportDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.report_id):
@@ -514,6 +634,14 @@ class Client(OpenApiClient):
         headers: dingtalkreport__1__0_models.QueryReportDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkreport__1__0_models.QueryReportDetailResponse:
+        """
+        @summary 获取日志详情
+        
+        @param request: QueryReportDetailRequest
+        @param headers: QueryReportDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReportDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.report_id):
@@ -547,6 +675,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.QueryReportDetailRequest,
     ) -> dingtalkreport__1__0_models.QueryReportDetailResponse:
+        """
+        @summary 获取日志详情
+        
+        @param request: QueryReportDetailRequest
+        @return: QueryReportDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.QueryReportDetailHeaders()
         return self.query_report_detail_with_options(request, headers, runtime)
@@ -555,6 +689,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkreport__1__0_models.QueryReportDetailRequest,
     ) -> dingtalkreport__1__0_models.QueryReportDetailResponse:
+        """
+        @summary 获取日志详情
+        
+        @param request: QueryReportDetailRequest
+        @return: QueryReportDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkreport__1__0_models.QueryReportDetailHeaders()
         return await self.query_report_detail_with_options_async(request, headers, runtime)

@@ -98,15 +98,25 @@ class CreateActivityRequestDetail(TeaModel):
         url: str = None,
     ):
         self.address = address
+        # This parameter is required.
         self.banner_media_id = banner_media_id
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.foreign_id = foreign_id
+        # This parameter is required.
         self.industry = industry
+        # This parameter is required.
         self.role_name = role_name
+        # This parameter is required.
         self.source = source
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -176,6 +186,7 @@ class CreateActivityRequest(TeaModel):
         self,
         detail: CreateActivityRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):

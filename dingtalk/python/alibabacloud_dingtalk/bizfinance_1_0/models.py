@@ -1366,6 +1366,7 @@ class BatchCreateCustomerRequestCreateCustomerRequestList(TeaModel):
         self.description = description
         self.drawer_email = drawer_email
         self.drawer_telephone = drawer_telephone
+        # This parameter is required.
         self.name = name
         self.purchaser_account = purchaser_account
         self.purchaser_address = purchaser_address
@@ -1437,6 +1438,7 @@ class BatchCreateCustomerRequest(TeaModel):
         operator: str = None,
     ):
         self.create_customer_request_list = create_customer_request_list
+        # This parameter is required.
         self.operator = operator
 
     def validate(self):
@@ -1625,6 +1627,7 @@ class BindCompanyAccountantBookRequest(TeaModel):
         accountant_book_id: str = None,
         company_code: str = None,
     ):
+        # This parameter is required.
         self.accountant_book_id = accountant_book_id
         self.company_code = company_code
 
@@ -1956,10 +1959,12 @@ class CreateCustomerRequest(TeaModel):
         purchaser_tax_no: str = None,
         purchaser_tel: str = None,
     ):
+        # This parameter is required.
         self.creator = creator
         self.description = description
         self.drawer_email = drawer_email
         self.drawer_telephone = drawer_telephone
+        # This parameter is required.
         self.name = name
         self.purchaser_account = purchaser_account
         self.purchaser_address = purchaser_address
@@ -2147,16 +2152,21 @@ class CreateReceiptRequestReceipts(TeaModel):
         supplier_code: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.category_code = category_code
+        # This parameter is required.
         self.code = code
         self.create_time = create_time
+        # This parameter is required.
         self.create_user_id = create_user_id
         self.customer_code = customer_code
         self.enterprise_acount_code = enterprise_acount_code
         self.occur_date = occur_date
         self.principal_id = principal_id
         self.project_code = project_code
+        # This parameter is required.
         self.receipt_type = receipt_type
         self.remark = remark
         self.supplier_code = supplier_code
@@ -2239,6 +2249,7 @@ class CreateReceiptRequest(TeaModel):
         self,
         receipts: List[CreateReceiptRequestReceipts] = None,
     ):
+        # This parameter is required.
         self.receipts = receipts
 
     def validate(self):
@@ -2277,9 +2288,11 @@ class CreateReceiptResponseBodyResults(TeaModel):
         error_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.code = code
         self.error_code = error_code
         self.error_msg = error_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2319,6 +2332,7 @@ class CreateReceiptResponseBody(TeaModel):
         self,
         results: List[CreateReceiptResponseBodyResults] = None,
     ):
+        # This parameter is required.
         self.results = results
 
     def validate(self):
@@ -2430,8 +2444,11 @@ class DeleteReceiptRequestReceipts(TeaModel):
         delete_user_id: str = None,
         receipt_type: int = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.delete_user_id = delete_user_id
+        # This parameter is required.
         self.receipt_type = receipt_type
 
     def validate(self):
@@ -2467,6 +2484,7 @@ class DeleteReceiptRequest(TeaModel):
         self,
         receipts: List[DeleteReceiptRequestReceipts] = None,
     ):
+        # This parameter is required.
         self.receipts = receipts
 
     def validate(self):
@@ -2505,9 +2523,11 @@ class DeleteReceiptResponseBodyResults(TeaModel):
         error_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.code = code
         self.error_code = error_code
         self.error_msg = error_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2547,6 +2567,7 @@ class DeleteReceiptResponseBody(TeaModel):
         self,
         results: List[DeleteReceiptResponseBodyResults] = None,
     ):
+        # This parameter is required.
         self.results = results
 
     def validate(self):
@@ -2656,6 +2677,7 @@ class GetBookkeepingUserListResponseBody(TeaModel):
         self,
         result: List[str] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2757,6 +2779,7 @@ class GetCategoryRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -2791,11 +2814,16 @@ class GetCategoryResponseBody(TeaModel):
         type: str = None,
     ):
         self.accountant_book_id_list = accountant_book_id_list
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.is_dir = is_dir
+        # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2921,6 +2949,7 @@ class GetCustomerRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -2955,10 +2984,15 @@ class GetCustomerResponseBody(TeaModel):
         user_define_code: str = None,
     ):
         self.accountant_book_id_list = accountant_book_id_list
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -3085,6 +3119,7 @@ class GetFinanceAccountRequest(TeaModel):
         self,
         account_code: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
 
     def validate(self):
@@ -3122,16 +3157,21 @@ class GetFinanceAccountResponseBody(TeaModel):
         create_time: int = None,
         creator: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
         self.account_id = account_id
+        # This parameter is required.
         self.account_name = account_name
         self.account_remark = account_remark
+        # This parameter is required.
         self.account_type = account_type
         self.accountant_book_id_list = accountant_book_id_list
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
 
     def validate(self):
@@ -3318,6 +3358,7 @@ class GetFormTemplateInfoResponseBody(TeaModel):
         self,
         receipt_form_template_info_list: List[GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList] = None,
     ):
+        # This parameter is required.
         self.receipt_form_template_info_list = receipt_form_template_info_list
 
     def validate(self):
@@ -4715,6 +4756,7 @@ class GetProductRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -4891,6 +4933,7 @@ class GetProjectRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -4929,12 +4972,18 @@ class GetProjectResponseBody(TeaModel):
     ):
         self.accountant_book_id_list = accountant_book_id_list
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.description = description
         self.name = name
+        # This parameter is required.
         self.project_code = project_code
+        # This parameter is required.
         self.project_name = project_name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -5074,7 +5123,9 @@ class GetReceiptRequest(TeaModel):
         code: str = None,
         model_id: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.model_id = model_id
 
     def validate(self):
@@ -5109,9 +5160,13 @@ class GetReceiptResponseBody(TeaModel):
         model_id: str = None,
         source: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.model_id = model_id
+        # This parameter is required.
         self.source = source
 
     def validate(self):
@@ -5225,6 +5280,7 @@ class GetSupplierRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -5259,10 +5315,15 @@ class GetSupplierResponseBody(TeaModel):
         user_define_code: str = None,
     ):
         self.accountant_book_id_list = accountant_book_id_list
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -5389,6 +5450,7 @@ class GetYongYouOpenApiTokenRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5828,10 +5890,13 @@ class PushHistoricalReceiptsRequest(TeaModel):
         form_code_list: List[str] = None,
         start_time: int = None,
     ):
+        # This parameter is required.
         self.biz_id = biz_id
         self.end_time = end_time
         self.forced_ignore_dup = forced_ignore_dup
+        # This parameter is required.
         self.form_code_list = form_code_list
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -5978,8 +6043,11 @@ class QueryCategoryByPageRequest(TeaModel):
         page_size: int = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -6020,11 +6088,16 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         status: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.is_dir = is_dir
+        # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -6073,7 +6146,9 @@ class QueryCategoryByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryCategoryByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -6316,7 +6391,9 @@ class QueryCustomerByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -6353,10 +6430,15 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -6406,7 +6488,9 @@ class QueryCustomerByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryCustomerByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -6810,7 +6894,9 @@ class QueryEnterpriseAccountByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -6851,15 +6937,20 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         create_time: int = None,
         creator: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
         self.account_id = account_id
+        # This parameter is required.
         self.account_name = account_name
         self.account_remark = account_remark
+        # This parameter is required.
         self.account_type = account_type
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
 
     def validate(self):
@@ -6924,7 +7015,9 @@ class QueryEnterpriseAccountByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryEnterpriseAccountByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -7485,6 +7578,7 @@ class QueryPermissionByUserIdRequest(TeaModel):
         user_id: str = None,
     ):
         self.company_code = company_code
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -7672,6 +7766,7 @@ class QueryPermissionRoleMemberRequest(TeaModel):
         role_code_list: List[str] = None,
     ):
         self.company_code = company_code
+        # This parameter is required.
         self.role_code_list = role_code_list
 
     def validate(self):
@@ -7813,7 +7908,9 @@ class QueryProductByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -8030,7 +8127,9 @@ class QueryProjectByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -8073,12 +8172,17 @@ class QueryProjectByPageResponseBodyList(TeaModel):
     ):
         self.caode = caode
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
         self.description = description
         self.name = name
+        # This parameter is required.
         self.project_code = project_code
+        # This parameter is required.
         self.project_name = project_name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -8144,7 +8248,9 @@ class QueryProjectByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryProjectByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -9830,10 +9936,15 @@ class QueryReceiptsByPageRequest(TeaModel):
         time_filter_field: str = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.model_id = model_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.time_filter_field = time_filter_field
 
     def validate(self):
@@ -9884,9 +9995,13 @@ class QueryReceiptsByPageResponseBodyList(TeaModel):
         model_id: str = None,
         source: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.model_id = model_id
+        # This parameter is required.
         self.source = source
 
     def validate(self):
@@ -9927,7 +10042,9 @@ class QueryReceiptsByPageResponseBody(TeaModel):
         has_more: str = None,
         list: List[QueryReceiptsByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -10253,7 +10370,9 @@ class QuerySupplierByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -10290,10 +10409,15 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -10343,7 +10467,9 @@ class QuerySupplierByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QuerySupplierByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -12294,7 +12420,9 @@ class UpdateFinanceMultiCompanyInfoRequest(TeaModel):
         tax_or_invoice_has_init: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.company_code = company_code
+        # This parameter is required.
         self.company_name = company_name
         self.tax_nature = tax_nature
         self.tax_no = tax_no
@@ -17958,17 +18086,21 @@ class UpdateReceiptRequestReceipts(TeaModel):
     ):
         self.amount = amount
         self.category_code = category_code
+        # This parameter is required.
         self.code = code
         self.customer_code = customer_code
         self.enterprise_acount_code = enterprise_acount_code
         self.occur_date = occur_date
         self.principal_id = principal_id
         self.project_code = project_code
+        # This parameter is required.
         self.receipt_type = receipt_type
         self.remark = remark
         self.supplier_code = supplier_code
         self.title = title
+        # This parameter is required.
         self.update_time = update_time
+        # This parameter is required.
         self.update_user_id = update_user_id
 
     def validate(self):
@@ -18048,6 +18180,7 @@ class UpdateReceiptRequest(TeaModel):
         self,
         receipts: List[UpdateReceiptRequestReceipts] = None,
     ):
+        # This parameter is required.
         self.receipts = receipts
 
     def validate(self):
@@ -18086,9 +18219,11 @@ class UpdateReceiptResponseBodyResults(TeaModel):
         error_msg: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.code = code
         self.error_code = error_code
         self.error_msg = error_msg
+        # This parameter is required.
         self.success = success
 
     def validate(self):

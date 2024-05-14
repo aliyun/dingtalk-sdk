@@ -48,8 +48,11 @@ class NlpWordDistinguishRequestAttachExtractDecisionInfo(TeaModel):
     ):
         self.black_words = black_words
         self.candidate_words = candidate_words
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -95,8 +98,11 @@ class NlpWordDistinguishRequest(TeaModel):
         isv_app_id: str = None,
         text: str = None,
     ):
+        # This parameter is required.
         self.attach_extract_decision_info = attach_extract_decision_info
+        # This parameter is required.
         self.isv_app_id = isv_app_id
+        # This parameter is required.
         self.text = text
 
     def validate(self):
@@ -162,6 +168,7 @@ class NlpWordDistinguishResponseBody(TeaModel):
         request_id: str = None,
         word_entities: List[NlpWordDistinguishResponseBodyWordEntities] = None,
     ):
+        # This parameter is required.
         self.request_id = request_id
         self.word_entities = word_entities
 
@@ -371,7 +378,9 @@ class OkrOpenRecommendRequestCandidateOkrItems(TeaModel):
         user_id: str = None,
     ):
         self.okr_infos = okr_infos
+        # This parameter is required.
         self.relation = relation
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -420,10 +429,15 @@ class OkrOpenRecommendRequest(TeaModel):
         user_id: str = None,
         words: List[str] = None,
     ):
+        # This parameter is required.
         self.candidate_okr_items = candidate_okr_items
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.isv_app_id = isv_app_id
+        # This parameter is required.
         self.user_id = user_id
         self.words = words
 
@@ -482,8 +496,11 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults(TeaMod
         semantic_level: int = None,
         words: List[str] = None,
     ):
+        # This parameter is required.
         self.kr_id = kr_id
+        # This parameter is required.
         self.semantic_level = semantic_level
+        # This parameter is required.
         self.words = words
 
     def validate(self):
@@ -521,8 +538,11 @@ class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults(TeaMo
         semantic_level: int = None,
         words: List[str] = None,
     ):
+        # This parameter is required.
         self.objective_id = objective_id
+        # This parameter is required.
         self.semantic_level = semantic_level
+        # This parameter is required.
         self.words = words
 
     def validate(self):
@@ -564,8 +584,11 @@ class OkrOpenRecommendResponseBodyOkrRecommendItems(TeaModel):
     ):
         self.kr_result_related_results = kr_result_related_results
         self.objective_related_results = objective_related_results
+        # This parameter is required.
         self.related_level = related_level
+        # This parameter is required.
         self.semantic_level = semantic_level
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -628,6 +651,7 @@ class OkrOpenRecommendResponseBody(TeaModel):
         request_id: str = None,
     ):
         self.okr_recommend_items = okr_recommend_items
+        # This parameter is required.
         self.request_id = request_id
 
     def validate(self):

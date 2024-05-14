@@ -80,7 +80,9 @@ class ApplyFollowerAuthInfoRequest(TeaModel):
     ):
         self.app_auth_key = app_auth_key
         self.field_scope = field_scope
+        # This parameter is required.
         self.session_id = session_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -120,6 +122,7 @@ class ApplyFollowerAuthInfoResponseBodyResult(TeaModel):
         self,
         open_apply_id: str = None,
     ):
+        # This parameter is required.
         self.open_apply_id = open_apply_id
 
     def validate(self):
@@ -147,6 +150,7 @@ class ApplyFollowerAuthInfoResponseBody(TeaModel):
         self,
         result: ApplyFollowerAuthInfoResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -253,9 +257,13 @@ class CallbackRegiesterRequest(TeaModel):
         callback_url: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.api_secret = api_secret
+        # This parameter is required.
         self.callback_key = callback_key
+        # This parameter is required.
         self.callback_url = callback_url
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -297,6 +305,7 @@ class CallbackRegiesterResponseBodyResult(TeaModel):
         callback_url: str = None,
     ):
         self.api_secret = api_secret
+        # This parameter is required.
         self.callback_url = callback_url
 
     def validate(self):
@@ -328,6 +337,7 @@ class CallbackRegiesterResponseBody(TeaModel):
         self,
         result: CallbackRegiesterResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -433,8 +443,11 @@ class CloseTopBoxInteractiveOTOMessageRequestDetail(TeaModel):
         card_template_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.card_biz_id = card_biz_id
+        # This parameter is required.
         self.card_template_id = card_template_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -470,6 +483,7 @@ class CloseTopBoxInteractiveOTOMessageRequest(TeaModel):
         self,
         detail: CloseTopBoxInteractiveOTOMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -608,6 +622,7 @@ class GetFollowerAuthInfoRequest(TeaModel):
         user_id: str = None,
     ):
         self.account_id = account_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -778,6 +793,7 @@ class GetFollowerAuthInfoResponseBody(TeaModel):
         self,
         result: GetFollowerAuthInfoResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -990,6 +1006,7 @@ class GetFollowerInfoResponseBody(TeaModel):
         result: GetFollowerInfoResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1098,7 +1115,9 @@ class GetPictureDownloadUrlRequest(TeaModel):
         download_code: str = None,
         session_id: str = None,
     ):
+        # This parameter is required.
         self.download_code = download_code
+        # This parameter is required.
         self.session_id = session_id
 
     def validate(self):
@@ -1130,6 +1149,7 @@ class GetPictureDownloadUrlResponseBodyResult(TeaModel):
         self,
         url: str = None,
     ):
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -1159,6 +1179,7 @@ class GetPictureDownloadUrlResponseBody(TeaModel):
         result: GetPictureDownloadUrlResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1332,6 +1353,7 @@ class GetUserFollowStatusResponseBody(TeaModel):
         self,
         result: GetUserFollowStatusResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1840,6 +1862,7 @@ class ListFollowerResponseBody(TeaModel):
         result: ListFollowerResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1948,6 +1971,7 @@ class QueryUserFollowStatusRequest(TeaModel):
         account_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.account_id = account_id
         self.union_id = union_id
 
@@ -2007,6 +2031,7 @@ class QueryUserFollowStatusResponseBody(TeaModel):
         self,
         result: QueryUserFollowStatusResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2463,10 +2488,15 @@ class SendAgentOTOMessageRequestDetail(TeaModel):
         user_id: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.message_body = message_body
+        # This parameter is required.
         self.msg_type = msg_type
+        # This parameter is required.
         self.session_id = session_id
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -2512,6 +2542,7 @@ class SendAgentOTOMessageRequest(TeaModel):
         self,
         detail: SendAgentOTOMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -2541,6 +2572,7 @@ class SendAgentOTOMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -2570,6 +2602,7 @@ class SendAgentOTOMessageResponseBody(TeaModel):
         result: SendAgentOTOMessageResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2683,9 +2716,13 @@ class SendInteractiveOTOMessageRequestDetail(TeaModel):
         user_id_private_data_map: str = None,
     ):
         self.callback_url = callback_url
+        # This parameter is required.
         self.card_biz_id = card_biz_id
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
+        # This parameter is required.
         self.user_id = user_id
         self.user_id_private_data_map = user_id_private_data_map
 
@@ -2734,6 +2771,7 @@ class SendInteractiveOTOMessageRequest(TeaModel):
         self,
         detail: SendInteractiveOTOMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -2763,6 +2801,7 @@ class SendInteractiveOTOMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -2792,6 +2831,7 @@ class SendInteractiveOTOMessageResponseBody(TeaModel):
         result: SendInteractiveOTOMessageResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -2939,10 +2979,15 @@ class SendTopBoxInteractiveOTOMessageRequestDetail(TeaModel):
         user_id_private_data_map: Dict[str, DetailUserIdPrivateDataMapValue] = None,
     ):
         self.callback_url = callback_url
+        # This parameter is required.
         self.card_biz_id = card_biz_id
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
+        # This parameter is required.
         self.expired_time = expired_time
+        # This parameter is required.
         self.user_id = user_id
         self.user_id_private_data_map = user_id_private_data_map
 
@@ -3006,6 +3051,7 @@ class SendTopBoxInteractiveOTOMessageRequest(TeaModel):
         self,
         detail: SendTopBoxInteractiveOTOMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -3178,6 +3224,7 @@ class UpdateInteractiveOTOMessageRequestDetail(TeaModel):
         update_options: UpdateInteractiveOTOMessageRequestDetailUpdateOptions = None,
         user_id_private_data_map: str = None,
     ):
+        # This parameter is required.
         self.card_biz_id = card_biz_id
         self.card_data = card_data
         self.update_options = update_options
@@ -3222,6 +3269,7 @@ class UpdateInteractiveOTOMessageRequest(TeaModel):
         self,
         detail: UpdateInteractiveOTOMessageRequestDetail = None,
     ):
+        # This parameter is required.
         self.detail = detail
 
     def validate(self):
@@ -3251,6 +3299,7 @@ class UpdateInteractiveOTOMessageResponseBodyResult(TeaModel):
         self,
         open_push_id: str = None,
     ):
+        # This parameter is required.
         self.open_push_id = open_push_id
 
     def validate(self):
@@ -3280,6 +3329,7 @@ class UpdateInteractiveOTOMessageResponseBody(TeaModel):
         result: UpdateInteractiveOTOMessageResponseBodyResult = None,
     ):
         self.request_id = request_id
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -3396,9 +3446,12 @@ class UpdateShortcutsRequestDetails(TeaModel):
         self.action_url = action_url
         self.callback_key = callback_key
         self.icon_font = icon_font
+        # This parameter is required.
         self.icon_media_id = icon_media_id
+        # This parameter is required.
         self.shortcut_id = shortcut_id
         self.slide_icon_media_id = slide_icon_media_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -3453,7 +3506,9 @@ class UpdateShortcutsRequest(TeaModel):
         user_id: str = None,
     ):
         self.details = details
+        # This parameter is required.
         self.session_id = session_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

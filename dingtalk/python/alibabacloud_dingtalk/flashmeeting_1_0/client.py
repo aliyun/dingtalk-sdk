@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.CreateFlashMeetingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.CreateFlashMeetingResponse:
+        """
+        @summary 创建钉闪会并绑定日程
+        
+        @param request: CreateFlashMeetingRequest
+        @param headers: CreateFlashMeetingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFlashMeetingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.CreateFlashMeetingHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.CreateFlashMeetingResponse:
+        """
+        @summary 创建钉闪会并绑定日程
+        
+        @param request: CreateFlashMeetingRequest
+        @param headers: CreateFlashMeetingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFlashMeetingResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.creator):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.CreateFlashMeetingRequest,
     ) -> dingtalkflashmeeting__1__0_models.CreateFlashMeetingResponse:
+        """
+        @summary 创建钉闪会并绑定日程
+        
+        @param request: CreateFlashMeetingRequest
+        @return: CreateFlashMeetingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.CreateFlashMeetingHeaders()
         return self.create_flash_meeting_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.CreateFlashMeetingRequest,
     ) -> dingtalkflashmeeting__1__0_models.CreateFlashMeetingResponse:
+        """
+        @summary 创建钉闪会并绑定日程
+        
+        @param request: CreateFlashMeetingRequest
+        @return: CreateFlashMeetingResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.CreateFlashMeetingHeaders()
         return await self.create_flash_meeting_with_options_async(request, headers, runtime)
@@ -129,6 +157,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        """
+        @summary 根据日程获取闪会的信息
+        
+        @param request: GetShanhuiByCalendarRequest
+        @param headers: GetShanhuiByCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetShanhuiByCalendarResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.event_id):
@@ -166,6 +202,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        """
+        @summary 根据日程获取闪会的信息
+        
+        @param request: GetShanhuiByCalendarRequest
+        @param headers: GetShanhuiByCalendarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetShanhuiByCalendarResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.event_id):
@@ -201,6 +245,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        """
+        @summary 根据日程获取闪会的信息
+        
+        @param request: GetShanhuiByCalendarRequest
+        @return: GetShanhuiByCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders()
         return self.get_shanhui_by_calendar_with_options(request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarRequest,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarResponse:
+        """
+        @summary 根据日程获取闪会的信息
+        
+        @param request: GetShanhuiByCalendarRequest
+        @return: GetShanhuiByCalendarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetShanhuiByCalendarHeaders()
         return await self.get_shanhui_by_calendar_with_options_async(request, headers, runtime)
@@ -219,6 +275,13 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyResponse:
+        """
+        @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+        
+        @param headers: GetShanhuiByShanhuiKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetShanhuiByShanhuiKeyResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -249,6 +312,13 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyResponse:
+        """
+        @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+        
+        @param headers: GetShanhuiByShanhuiKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetShanhuiByShanhuiKeyResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -277,6 +347,11 @@ class Client(OpenApiClient):
         self,
         flashmeeting_key: str,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyResponse:
+        """
+        @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+        
+        @return: GetShanhuiByShanhuiKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyHeaders()
         return self.get_shanhui_by_shanhui_key_with_options(flashmeeting_key, headers, runtime)
@@ -285,6 +360,11 @@ class Client(OpenApiClient):
         self,
         flashmeeting_key: str,
     ) -> dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyResponse:
+        """
+        @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+        
+        @return: GetShanhuiByShanhuiKeyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetShanhuiByShanhuiKeyHeaders()
         return await self.get_shanhui_by_shanhui_key_with_options_async(flashmeeting_key, headers, runtime)
@@ -295,6 +375,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        """
+        @summary 根据闪会文档id获取待办任务
+        
+        @param request: GetTaskFromShanhuiDocRequest
+        @param headers: GetTaskFromShanhuiDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskFromShanhuiDocResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.doc_key):
@@ -336,6 +424,14 @@ class Client(OpenApiClient):
         headers: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        """
+        @summary 根据闪会文档id获取待办任务
+        
+        @param request: GetTaskFromShanhuiDocRequest
+        @param headers: GetTaskFromShanhuiDocHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskFromShanhuiDocResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.doc_key):
@@ -375,6 +471,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
     ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        """
+        @summary 根据闪会文档id获取待办任务
+        
+        @param request: GetTaskFromShanhuiDocRequest
+        @return: GetTaskFromShanhuiDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders()
         return self.get_task_from_shanhui_doc_with_options(request, headers, runtime)
@@ -383,6 +485,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocRequest,
     ) -> dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocResponse:
+        """
+        @summary 根据闪会文档id获取待办任务
+        
+        @param request: GetTaskFromShanhuiDocRequest
+        @return: GetTaskFromShanhuiDocResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkflashmeeting__1__0_models.GetTaskFromShanhuiDocHeaders()
         return await self.get_task_from_shanhui_doc_with_options_async(request, headers, runtime)

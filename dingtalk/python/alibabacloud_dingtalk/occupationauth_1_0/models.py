@@ -42,6 +42,7 @@ class CheckUserTaskStatusRequest(TeaModel):
         self,
         province_code: str = None,
     ):
+        # This parameter is required.
         self.province_code = province_code
 
     def validate(self):
@@ -170,6 +171,7 @@ class CheckUserTasksStatusRequest(TeaModel):
         self,
         province_code: str = None,
     ):
+        # This parameter is required.
         self.province_code = province_code
 
     def validate(self):

@@ -36,6 +36,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.AddShareCidListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
+        """
+        @summary 添加云导播联播群列表
+        
+        @param request: AddShareCidListRequest
+        @param headers: AddShareCidListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddShareCidListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_id_type):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.AddShareCidListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
+        """
+        @summary 添加云导播联播群列表
+        
+        @param request: AddShareCidListRequest
+        @param headers: AddShareCidListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddShareCidListResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.group_id_type):
@@ -114,6 +130,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.AddShareCidListRequest,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
+        """
+        @summary 添加云导播联播群列表
+        
+        @param request: AddShareCidListRequest
+        @return: AddShareCidListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.AddShareCidListHeaders()
         return self.add_share_cid_list_with_options(feed_id, request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.AddShareCidListRequest,
     ) -> dingtalklive__1__0_models.AddShareCidListResponse:
+        """
+        @summary 添加云导播联播群列表
+        
+        @param request: AddShareCidListRequest
+        @return: AddShareCidListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.AddShareCidListHeaders()
         return await self.add_share_cid_list_with_options_async(feed_id, request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.CreateCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.CreateCloudFeedResponse:
+        """
+        @summary 创建云导播课程
+        
+        @param request: CreateCloudFeedRequest
+        @param headers: CreateCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -178,6 +214,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.CreateCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.CreateCloudFeedResponse:
+        """
+        @summary 创建云导播课程
+        
+        @param request: CreateCloudFeedRequest
+        @param headers: CreateCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -221,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.CreateCloudFeedRequest,
     ) -> dingtalklive__1__0_models.CreateCloudFeedResponse:
+        """
+        @summary 创建云导播课程
+        
+        @param request: CreateCloudFeedRequest
+        @return: CreateCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.CreateCloudFeedHeaders()
         return self.create_cloud_feed_with_options(request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.CreateCloudFeedRequest,
     ) -> dingtalklive__1__0_models.CreateCloudFeedResponse:
+        """
+        @summary 创建云导播课程
+        
+        @param request: CreateCloudFeedRequest
+        @return: CreateCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.CreateCloudFeedHeaders()
         return await self.create_cloud_feed_with_options_async(request, headers, runtime)
@@ -239,6 +295,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.CreateLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.CreateLiveResponse:
+        """
+        @summary 创建直播
+        
+        @param request: CreateLiveRequest
+        @param headers: CreateLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateLiveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -286,6 +350,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.CreateLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.CreateLiveResponse:
+        """
+        @summary 创建直播
+        
+        @param request: CreateLiveRequest
+        @param headers: CreateLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateLiveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -331,6 +403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.CreateLiveRequest,
     ) -> dingtalklive__1__0_models.CreateLiveResponse:
+        """
+        @summary 创建直播
+        
+        @param request: CreateLiveRequest
+        @return: CreateLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.CreateLiveHeaders()
         return self.create_live_with_options(request, headers, runtime)
@@ -339,6 +417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.CreateLiveRequest,
     ) -> dingtalklive__1__0_models.CreateLiveResponse:
+        """
+        @summary 创建直播
+        
+        @param request: CreateLiveRequest
+        @return: CreateLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.CreateLiveHeaders()
         return await self.create_live_with_options_async(request, headers, runtime)
@@ -349,6 +433,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.DeleteLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveResponse:
+        """
+        @summary 删除直播
+        
+        @param request: DeleteLiveRequest
+        @param headers: DeleteLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLiveResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -386,6 +478,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.DeleteLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveResponse:
+        """
+        @summary 删除直播
+        
+        @param request: DeleteLiveRequest
+        @param headers: DeleteLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLiveResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -421,6 +521,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.DeleteLiveRequest,
     ) -> dingtalklive__1__0_models.DeleteLiveResponse:
+        """
+        @summary 删除直播
+        
+        @param request: DeleteLiveRequest
+        @return: DeleteLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.DeleteLiveHeaders()
         return self.delete_live_with_options(request, headers, runtime)
@@ -429,6 +535,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.DeleteLiveRequest,
     ) -> dingtalklive__1__0_models.DeleteLiveResponse:
+        """
+        @summary 删除直播
+        
+        @param request: DeleteLiveRequest
+        @return: DeleteLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.DeleteLiveHeaders()
         return await self.delete_live_with_options_async(request, headers, runtime)
@@ -440,6 +552,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.DeleteLiveFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
+        """
+        @summary 删除直播培训课程
+        
+        @param request: DeleteLiveFeedRequest
+        @param headers: DeleteLiveFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLiveFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -476,6 +596,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.DeleteLiveFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
+        """
+        @summary 删除直播培训课程
+        
+        @param request: DeleteLiveFeedRequest
+        @param headers: DeleteLiveFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteLiveFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -510,6 +638,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.DeleteLiveFeedRequest,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
+        """
+        @summary 删除直播培训课程
+        
+        @param request: DeleteLiveFeedRequest
+        @return: DeleteLiveFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.DeleteLiveFeedHeaders()
         return self.delete_live_feed_with_options(feed_id, request, headers, runtime)
@@ -519,6 +653,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.DeleteLiveFeedRequest,
     ) -> dingtalklive__1__0_models.DeleteLiveFeedResponse:
+        """
+        @summary 删除直播培训课程
+        
+        @param request: DeleteLiveFeedRequest
+        @return: DeleteLiveFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.DeleteLiveFeedHeaders()
         return await self.delete_live_feed_with_options_async(feed_id, request, headers, runtime)
@@ -530,6 +670,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.EditFeedReplayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
+        """
+        @summary 剪辑直播课程的回放
+        
+        @param request: EditFeedReplayRequest
+        @param headers: EditFeedReplayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditFeedReplayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.edit_end_time):
@@ -570,6 +718,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.EditFeedReplayHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
+        """
+        @summary 剪辑直播课程的回放
+        
+        @param request: EditFeedReplayRequest
+        @param headers: EditFeedReplayHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditFeedReplayResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.edit_end_time):
@@ -608,6 +764,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.EditFeedReplayRequest,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
+        """
+        @summary 剪辑直播课程的回放
+        
+        @param request: EditFeedReplayRequest
+        @return: EditFeedReplayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.EditFeedReplayHeaders()
         return self.edit_feed_replay_with_options(feed_id, request, headers, runtime)
@@ -617,6 +779,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.EditFeedReplayRequest,
     ) -> dingtalklive__1__0_models.EditFeedReplayResponse:
+        """
+        @summary 剪辑直播课程的回放
+        
+        @param request: EditFeedReplayRequest
+        @return: EditFeedReplayResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.EditFeedReplayHeaders()
         return await self.edit_feed_replay_with_options_async(feed_id, request, headers, runtime)
@@ -627,6 +795,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetLiveReplayUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        """
+        @summary 获取直播的可下载回放地址
+        
+        @param request: GetLiveReplayUrlRequest
+        @param headers: GetLiveReplayUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetLiveReplayUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -664,6 +840,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetLiveReplayUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        """
+        @summary 获取直播的可下载回放地址
+        
+        @param request: GetLiveReplayUrlRequest
+        @param headers: GetLiveReplayUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetLiveReplayUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -699,6 +883,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
     ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        """
+        @summary 获取直播的可下载回放地址
+        
+        @param request: GetLiveReplayUrlRequest
+        @return: GetLiveReplayUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetLiveReplayUrlHeaders()
         return self.get_live_replay_url_with_options(request, headers, runtime)
@@ -707,6 +897,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetLiveReplayUrlRequest,
     ) -> dingtalklive__1__0_models.GetLiveReplayUrlResponse:
+        """
+        @summary 获取直播的可下载回放地址
+        
+        @param request: GetLiveReplayUrlRequest
+        @return: GetLiveReplayUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetLiveReplayUrlHeaders()
         return await self.get_live_replay_url_with_options_async(request, headers, runtime)
@@ -717,6 +913,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserAllLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        """
+        @summary 根据状态拉我相关的直播
+        
+        @param request: GetUserAllLiveListRequest
+        @param headers: GetUserAllLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserAllLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -766,6 +970,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserAllLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        """
+        @summary 根据状态拉我相关的直播
+        
+        @param request: GetUserAllLiveListRequest
+        @param headers: GetUserAllLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserAllLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.page_number):
@@ -813,6 +1025,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        """
+        @summary 根据状态拉我相关的直播
+        
+        @param request: GetUserAllLiveListRequest
+        @return: GetUserAllLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserAllLiveListHeaders()
         return self.get_user_all_live_list_with_options(request, headers, runtime)
@@ -821,6 +1039,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserAllLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserAllLiveListResponse:
+        """
+        @summary 根据状态拉我相关的直播
+        
+        @param request: GetUserAllLiveListRequest
+        @return: GetUserAllLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserAllLiveListHeaders()
         return await self.get_user_all_live_list_with_options_async(request, headers, runtime)
@@ -831,6 +1055,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        """
+        @summary 根据状态获取用户创建的直播
+        
+        @param request: GetUserCreateLiveListRequest
+        @param headers: GetUserCreateLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserCreateLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -880,6 +1112,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserCreateLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        """
+        @summary 根据状态获取用户创建的直播
+        
+        @param request: GetUserCreateLiveListRequest
+        @param headers: GetUserCreateLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserCreateLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -927,6 +1167,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        """
+        @summary 根据状态获取用户创建的直播
+        
+        @param request: GetUserCreateLiveListRequest
+        @return: GetUserCreateLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserCreateLiveListHeaders()
         return self.get_user_create_live_list_with_options(request, headers, runtime)
@@ -935,6 +1181,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserCreateLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserCreateLiveListResponse:
+        """
+        @summary 根据状态获取用户创建的直播
+        
+        @param request: GetUserCreateLiveListRequest
+        @return: GetUserCreateLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserCreateLiveListHeaders()
         return await self.get_user_create_live_list_with_options_async(request, headers, runtime)
@@ -945,6 +1197,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserWatchLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        """
+        @summary 获取用户观看直播记录
+        
+        @param request: GetUserWatchLiveListRequest
+        @param headers: GetUserWatchLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserWatchLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.filter_type):
@@ -986,6 +1246,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.GetUserWatchLiveListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        """
+        @summary 获取用户观看直播记录
+        
+        @param request: GetUserWatchLiveListRequest
+        @param headers: GetUserWatchLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserWatchLiveListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.filter_type):
@@ -1025,6 +1293,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        """
+        @summary 获取用户观看直播记录
+        
+        @param request: GetUserWatchLiveListRequest
+        @return: GetUserWatchLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserWatchLiveListHeaders()
         return self.get_user_watch_live_list_with_options(request, headers, runtime)
@@ -1033,6 +1307,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.GetUserWatchLiveListRequest,
     ) -> dingtalklive__1__0_models.GetUserWatchLiveListResponse:
+        """
+        @summary 获取用户观看直播记录
+        
+        @param request: GetUserWatchLiveListRequest
+        @return: GetUserWatchLiveListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.GetUserWatchLiveListHeaders()
         return await self.get_user_watch_live_list_with_options_async(request, headers, runtime)
@@ -1044,6 +1324,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.ModifyFeedWhiteListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
+        """
+        @summary 修改直播课程可见白名单
+        
+        @param tmp_req: ModifyFeedWhiteListRequest
+        @param headers: ModifyFeedWhiteListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyFeedWhiteListResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalklive__1__0_models.ModifyFeedWhiteListShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -1088,6 +1376,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.ModifyFeedWhiteListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
+        """
+        @summary 修改直播课程可见白名单
+        
+        @param tmp_req: ModifyFeedWhiteListRequest
+        @param headers: ModifyFeedWhiteListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ModifyFeedWhiteListResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalklive__1__0_models.ModifyFeedWhiteListShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -1130,6 +1426,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.ModifyFeedWhiteListRequest,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
+        """
+        @summary 修改直播课程可见白名单
+        
+        @param request: ModifyFeedWhiteListRequest
+        @return: ModifyFeedWhiteListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.ModifyFeedWhiteListHeaders()
         return self.modify_feed_white_list_with_options(feed_id, request, headers, runtime)
@@ -1139,6 +1441,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.ModifyFeedWhiteListRequest,
     ) -> dingtalklive__1__0_models.ModifyFeedWhiteListResponse:
+        """
+        @summary 修改直播课程可见白名单
+        
+        @param request: ModifyFeedWhiteListRequest
+        @return: ModifyFeedWhiteListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.ModifyFeedWhiteListHeaders()
         return await self.modify_feed_white_list_with_options_async(feed_id, request, headers, runtime)
@@ -1150,6 +1458,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryFeedWhiteListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
+        """
+        @summary 查询直播课程的观看白名单
+        
+        @param request: QueryFeedWhiteListRequest
+        @param headers: QueryFeedWhiteListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFeedWhiteListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1186,6 +1502,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryFeedWhiteListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
+        """
+        @summary 查询直播课程的观看白名单
+        
+        @param request: QueryFeedWhiteListRequest
+        @param headers: QueryFeedWhiteListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFeedWhiteListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1220,6 +1544,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.QueryFeedWhiteListRequest,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
+        """
+        @summary 查询直播课程的观看白名单
+        
+        @param request: QueryFeedWhiteListRequest
+        @return: QueryFeedWhiteListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryFeedWhiteListHeaders()
         return self.query_feed_white_list_with_options(feed_id, request, headers, runtime)
@@ -1229,6 +1559,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.QueryFeedWhiteListRequest,
     ) -> dingtalklive__1__0_models.QueryFeedWhiteListResponse:
+        """
+        @summary 查询直播课程的观看白名单
+        
+        @param request: QueryFeedWhiteListRequest
+        @return: QueryFeedWhiteListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryFeedWhiteListHeaders()
         return await self.query_feed_white_list_with_options_async(feed_id, request, headers, runtime)
@@ -1239,6 +1575,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveInfoResponse:
+        """
+        @summary 查询直播详情
+        
+        @param request: QueryLiveInfoRequest
+        @param headers: QueryLiveInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1276,6 +1620,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveInfoResponse:
+        """
+        @summary 查询直播详情
+        
+        @param request: QueryLiveInfoRequest
+        @param headers: QueryLiveInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1311,6 +1663,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveInfoRequest,
     ) -> dingtalklive__1__0_models.QueryLiveInfoResponse:
+        """
+        @summary 查询直播详情
+        
+        @param request: QueryLiveInfoRequest
+        @return: QueryLiveInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveInfoHeaders()
         return self.query_live_info_with_options(request, headers, runtime)
@@ -1319,6 +1677,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveInfoRequest,
     ) -> dingtalklive__1__0_models.QueryLiveInfoResponse:
+        """
+        @summary 查询直播详情
+        
+        @param request: QueryLiveInfoRequest
+        @return: QueryLiveInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveInfoHeaders()
         return await self.query_live_info_with_options_async(request, headers, runtime)
@@ -1329,6 +1693,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveWatchDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveWatchDetailResponse:
+        """
+        @summary 获取直播的观看数据
+        
+        @param request: QueryLiveWatchDetailRequest
+        @param headers: QueryLiveWatchDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveWatchDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1366,6 +1738,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveWatchDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveWatchDetailResponse:
+        """
+        @summary 获取直播的观看数据
+        
+        @param request: QueryLiveWatchDetailRequest
+        @param headers: QueryLiveWatchDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveWatchDetailResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1401,6 +1781,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveWatchDetailRequest,
     ) -> dingtalklive__1__0_models.QueryLiveWatchDetailResponse:
+        """
+        @summary 获取直播的观看数据
+        
+        @param request: QueryLiveWatchDetailRequest
+        @return: QueryLiveWatchDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveWatchDetailHeaders()
         return self.query_live_watch_detail_with_options(request, headers, runtime)
@@ -1409,6 +1795,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveWatchDetailRequest,
     ) -> dingtalklive__1__0_models.QueryLiveWatchDetailResponse:
+        """
+        @summary 获取直播的观看数据
+        
+        @param request: QueryLiveWatchDetailRequest
+        @return: QueryLiveWatchDetailResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveWatchDetailHeaders()
         return await self.query_live_watch_detail_with_options_async(request, headers, runtime)
@@ -1419,6 +1811,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveWatchUserListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveWatchUserListResponse:
+        """
+        @summary 获取直播观看用户列表
+        
+        @param request: QueryLiveWatchUserListRequest
+        @param headers: QueryLiveWatchUserListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveWatchUserListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1460,6 +1860,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QueryLiveWatchUserListHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QueryLiveWatchUserListResponse:
+        """
+        @summary 获取直播观看用户列表
+        
+        @param request: QueryLiveWatchUserListRequest
+        @param headers: QueryLiveWatchUserListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveWatchUserListResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1499,6 +1907,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveWatchUserListRequest,
     ) -> dingtalklive__1__0_models.QueryLiveWatchUserListResponse:
+        """
+        @summary 获取直播观看用户列表
+        
+        @param request: QueryLiveWatchUserListRequest
+        @return: QueryLiveWatchUserListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveWatchUserListHeaders()
         return self.query_live_watch_user_list_with_options(request, headers, runtime)
@@ -1507,6 +1921,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QueryLiveWatchUserListRequest,
     ) -> dingtalklive__1__0_models.QueryLiveWatchUserListResponse:
+        """
+        @summary 获取直播观看用户列表
+        
+        @param request: QueryLiveWatchUserListRequest
+        @return: QueryLiveWatchUserListResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QueryLiveWatchUserListHeaders()
         return await self.query_live_watch_user_list_with_options_async(request, headers, runtime)
@@ -1517,6 +1937,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QuerySubscribeStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        """
+        @summary 批量查询直播是否订阅
+        
+        @param tmp_req: QuerySubscribeStatusRequest
+        @param headers: QuerySubscribeStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySubscribeStatusResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -1558,6 +1986,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.QuerySubscribeStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        """
+        @summary 批量查询直播是否订阅
+        
+        @param tmp_req: QuerySubscribeStatusRequest
+        @param headers: QuerySubscribeStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySubscribeStatusResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalklive__1__0_models.QuerySubscribeStatusShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -1597,6 +2033,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
     ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        """
+        @summary 批量查询直播是否订阅
+        
+        @param request: QuerySubscribeStatusRequest
+        @return: QuerySubscribeStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QuerySubscribeStatusHeaders()
         return self.query_subscribe_status_with_options(request, headers, runtime)
@@ -1605,6 +2047,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.QuerySubscribeStatusRequest,
     ) -> dingtalklive__1__0_models.QuerySubscribeStatusResponse:
+        """
+        @summary 批量查询直播是否订阅
+        
+        @param request: QuerySubscribeStatusRequest
+        @return: QuerySubscribeStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QuerySubscribeStatusHeaders()
         return await self.query_subscribe_status_with_options_async(request, headers, runtime)
@@ -1616,6 +2064,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.StartCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
+        """
+        @summary 开始一场云导播
+        
+        @param request: StartCloudFeedRequest
+        @param headers: StartCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1652,6 +2108,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.StartCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
+        """
+        @summary 开始一场云导播
+        
+        @param request: StartCloudFeedRequest
+        @param headers: StartCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StartCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1686,6 +2150,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.StartCloudFeedRequest,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
+        """
+        @summary 开始一场云导播
+        
+        @param request: StartCloudFeedRequest
+        @return: StartCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.StartCloudFeedHeaders()
         return self.start_cloud_feed_with_options(feed_id, request, headers, runtime)
@@ -1695,6 +2165,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.StartCloudFeedRequest,
     ) -> dingtalklive__1__0_models.StartCloudFeedResponse:
+        """
+        @summary 开始一场云导播
+        
+        @param request: StartCloudFeedRequest
+        @return: StartCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.StartCloudFeedHeaders()
         return await self.start_cloud_feed_with_options_async(feed_id, request, headers, runtime)
@@ -1706,6 +2182,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.StopCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
+        """
+        @summary 结束一场云导播
+        
+        @param request: StopCloudFeedRequest
+        @param headers: StopCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1742,6 +2226,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.StopCloudFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
+        """
+        @summary 结束一场云导播
+        
+        @param request: StopCloudFeedRequest
+        @param headers: StopCloudFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StopCloudFeedResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1776,6 +2268,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.StopCloudFeedRequest,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
+        """
+        @summary 结束一场云导播
+        
+        @param request: StopCloudFeedRequest
+        @return: StopCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.StopCloudFeedHeaders()
         return self.stop_cloud_feed_with_options(feed_id, request, headers, runtime)
@@ -1785,6 +2283,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.StopCloudFeedRequest,
     ) -> dingtalklive__1__0_models.StopCloudFeedResponse:
+        """
+        @summary 结束一场云导播
+        
+        @param request: StopCloudFeedRequest
+        @return: StopCloudFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.StopCloudFeedHeaders()
         return await self.stop_cloud_feed_with_options_async(feed_id, request, headers, runtime)
@@ -1795,6 +2299,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.SubscribeLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        """
+        @summary 预约直播
+        
+        @param request: SubscribeLiveRequest
+        @param headers: SubscribeLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubscribeLiveResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1834,6 +2346,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.SubscribeLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        """
+        @summary 预约直播
+        
+        @param request: SubscribeLiveRequest
+        @param headers: SubscribeLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubscribeLiveResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.live_id):
@@ -1871,6 +2391,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.SubscribeLiveRequest,
     ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        """
+        @summary 预约直播
+        
+        @param request: SubscribeLiveRequest
+        @return: SubscribeLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.SubscribeLiveHeaders()
         return self.subscribe_live_with_options(request, headers, runtime)
@@ -1879,6 +2405,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.SubscribeLiveRequest,
     ) -> dingtalklive__1__0_models.SubscribeLiveResponse:
+        """
+        @summary 预约直播
+        
+        @param request: SubscribeLiveRequest
+        @return: SubscribeLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.SubscribeLiveHeaders()
         return await self.subscribe_live_with_options_async(request, headers, runtime)
@@ -1889,6 +2421,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.UpdateLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveResponse:
+        """
+        @summary 修改直播
+        
+        @param request: UpdateLiveRequest
+        @param headers: UpdateLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -1936,6 +2476,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.UpdateLiveHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveResponse:
+        """
+        @summary 修改直播
+        
+        @param request: UpdateLiveRequest
+        @param headers: UpdateLiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -1981,6 +2529,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.UpdateLiveRequest,
     ) -> dingtalklive__1__0_models.UpdateLiveResponse:
+        """
+        @summary 修改直播
+        
+        @param request: UpdateLiveRequest
+        @return: UpdateLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.UpdateLiveHeaders()
         return self.update_live_with_options(request, headers, runtime)
@@ -1989,6 +2543,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive__1__0_models.UpdateLiveRequest,
     ) -> dingtalklive__1__0_models.UpdateLiveResponse:
+        """
+        @summary 修改直播
+        
+        @param request: UpdateLiveRequest
+        @return: UpdateLiveResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.UpdateLiveHeaders()
         return await self.update_live_with_options_async(request, headers, runtime)
@@ -2000,6 +2560,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.UpdateLiveFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
+        """
+        @summary 修改培训课程信息
+        
+        @param request: UpdateLiveFeedRequest
+        @param headers: UpdateLiveFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -2044,6 +2612,14 @@ class Client(OpenApiClient):
         headers: dingtalklive__1__0_models.UpdateLiveFeedHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
+        """
+        @summary 修改培训课程信息
+        
+        @param request: UpdateLiveFeedRequest
+        @param headers: UpdateLiveFeedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveFeedResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.cover_url):
@@ -2086,6 +2662,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.UpdateLiveFeedRequest,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
+        """
+        @summary 修改培训课程信息
+        
+        @param request: UpdateLiveFeedRequest
+        @return: UpdateLiveFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.UpdateLiveFeedHeaders()
         return self.update_live_feed_with_options(feed_id, request, headers, runtime)
@@ -2095,6 +2677,12 @@ class Client(OpenApiClient):
         feed_id: str,
         request: dingtalklive__1__0_models.UpdateLiveFeedRequest,
     ) -> dingtalklive__1__0_models.UpdateLiveFeedResponse:
+        """
+        @summary 修改培训课程信息
+        
+        @param request: UpdateLiveFeedRequest
+        @return: UpdateLiveFeedResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.UpdateLiveFeedHeaders()
         return await self.update_live_feed_with_options_async(feed_id, request, headers, runtime)

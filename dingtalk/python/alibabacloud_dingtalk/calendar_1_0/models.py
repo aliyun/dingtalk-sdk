@@ -83,6 +83,7 @@ class AddAttendeeRequest(TeaModel):
         chat_notification: bool = None,
         push_notification: bool = None,
     ):
+        # This parameter is required.
         self.attendees_to_add = attendees_to_add
         self.chat_notification = chat_notification
         self.push_notification = push_notification
@@ -227,6 +228,7 @@ class AddMeetingRoomsRequest(TeaModel):
         self,
         meeting_rooms_to_add: List[AddMeetingRoomsRequestMeetingRoomsToAdd] = None,
     ):
+        # This parameter is required.
         self.meeting_rooms_to_add = meeting_rooms_to_add
 
     def validate(self):
@@ -464,6 +466,7 @@ class ConvertLegacyEventIdRequest(TeaModel):
         self,
         legacy_event_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.legacy_event_ids = legacy_event_ids
 
     def validate(self):
@@ -593,7 +596,9 @@ class CreateAclsRequestScope(TeaModel):
         scope_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.scope_type = scope_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -627,8 +632,11 @@ class CreateAclsRequest(TeaModel):
         scope: CreateAclsRequestScope = None,
         send_msg: bool = None,
     ):
+        # This parameter is required.
         self.privilege = privilege
+        # This parameter is required.
         self.scope = scope
+        # This parameter is required.
         self.send_msg = send_msg
 
     def validate(self):
@@ -1005,6 +1013,7 @@ class CreateEventRequestRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -1234,7 +1243,9 @@ class CreateEventRequest(TeaModel):
         self.recurrence = recurrence
         self.reminders = reminders
         self.rich_text_description = rich_text_description
+        # This parameter is required.
         self.start = start
+        # This parameter is required.
         self.summary = summary
         self.ui_configs = ui_configs
 
@@ -1621,6 +1632,7 @@ class CreateEventResponseBodyRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -1844,6 +1856,7 @@ class CreateEventResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -1855,9 +1868,11 @@ class CreateEventResponseBody(TeaModel):
         self.recurrence = recurrence
         self.reminders = reminders
         self.rich_text_description = rich_text_description
+        # This parameter is required.
         self.start = start
         self.summary = summary
         self.ui_configs = ui_configs
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -2257,6 +2272,7 @@ class CreateEventByMeRequestRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -2486,7 +2502,9 @@ class CreateEventByMeRequest(TeaModel):
         self.recurrence = recurrence
         self.reminders = reminders
         self.rich_text_description = rich_text_description
+        # This parameter is required.
         self.start = start
+        # This parameter is required.
         self.summary = summary
         self.ui_configs = ui_configs
 
@@ -2873,6 +2891,7 @@ class CreateEventByMeResponseBodyRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -3096,6 +3115,7 @@ class CreateEventByMeResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -3107,9 +3127,11 @@ class CreateEventByMeResponseBody(TeaModel):
         self.recurrence = recurrence
         self.reminders = reminders
         self.rich_text_description = rich_text_description
+        # This parameter is required.
         self.start = start
         self.summary = summary
         self.ui_configs = ui_configs
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -3362,7 +3384,9 @@ class CreateSubscribedCalendarRequest(TeaModel):
     ):
         self.description = description
         self.managers = managers
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.subscribe_scope = subscribe_scope
 
     def validate(self):
@@ -3777,6 +3801,7 @@ class GenerateCaldavAccountRequest(TeaModel):
         self,
         device: str = None,
     ):
+        # This parameter is required.
         self.device = device
 
     def validate(self):
@@ -4371,6 +4396,7 @@ class GetEventResponseBodyRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -4567,6 +4593,7 @@ class GetEventResponseBody(TeaModel):
     ):
         self.attendees = attendees
         self.categories = categories
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -4583,8 +4610,10 @@ class GetEventResponseBody(TeaModel):
         self.rich_text_description = rich_text_description
         self.series_master_id = series_master_id
         self.start = start
+        # This parameter is required.
         self.status = status
         self.summary = summary
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -4830,8 +4859,15 @@ class GetMeetingRoomsScheduleRequest(TeaModel):
         room_ids: List[str] = None,
         start_time: str = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_time = end_time
+        # This parameter is required.
         self.room_ids = room_ids
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.start_time = start_time
 
     def validate(self):
@@ -5177,8 +5213,15 @@ class GetScheduleRequest(TeaModel):
         start_time: str = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_time = end_time
+        # This parameter is required.
+        # 
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.start_time = start_time
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -5595,8 +5638,10 @@ class GetSignInListRequest(TeaModel):
         next_token: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -5889,8 +5934,10 @@ class GetSignOutListRequest(TeaModel):
         next_token: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -6641,11 +6688,16 @@ class ListCalendarsResponseBodyResponseCalendars(TeaModel):
         type: str = None,
     ):
         self.description = description
+        # This parameter is required.
         self.e_tag = e_tag
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.privilege = privilege
+        # This parameter is required.
         self.summary = summary
         self.time_zone = time_zone
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -6697,6 +6749,7 @@ class ListCalendarsResponseBodyResponse(TeaModel):
         self,
         calendars: List[ListCalendarsResponseBodyResponseCalendars] = None,
     ):
+        # This parameter is required.
         self.calendars = calendars
 
     def validate(self):
@@ -6848,7 +6901,9 @@ class ListEventsRequest(TeaModel):
         self.series_master_id = series_master_id
         self.show_deleted = show_deleted
         self.sync_token = sync_token
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_max = time_max
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_min = time_min
 
     def validate(self):
@@ -7331,6 +7386,7 @@ class ListEventsResponseBodyEventsRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -7527,6 +7583,7 @@ class ListEventsResponseBodyEvents(TeaModel):
     ):
         self.attendees = attendees
         self.categories = categories
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -7545,6 +7602,7 @@ class ListEventsResponseBodyEvents(TeaModel):
         self.start = start
         self.status = status
         self.summary = summary
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -7840,6 +7898,7 @@ class ListEventsInstancesRequest(TeaModel):
     ):
         self.max_attendees = max_attendees
         self.max_results = max_results
+        # This parameter is required.
         self.series_master_id = series_master_id
         self.start_recurrence_id = start_recurrence_id
 
@@ -8196,6 +8255,7 @@ class ListEventsInstancesResponseBodyEventsRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -8360,6 +8420,7 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -8375,6 +8436,7 @@ class ListEventsInstancesResponseBodyEvents(TeaModel):
         self.start = start
         self.status = status
         self.summary = summary
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -8620,7 +8682,9 @@ class ListEventsViewRequest(TeaModel):
         self.max_attendees = max_attendees
         self.max_results = max_results
         self.next_token = next_token
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_max = time_max
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_min = time_min
 
     def validate(self):
@@ -9091,6 +9155,7 @@ class ListEventsViewResponseBodyEventsRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -9253,6 +9318,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
     ):
         self.attendees = attendees
         self.categories = categories
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -9270,6 +9336,7 @@ class ListEventsViewResponseBodyEvents(TeaModel):
         self.start = start
         self.status = status
         self.summary = summary
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -9548,7 +9615,9 @@ class ListInstancesRequest(TeaModel):
         self.max_attendees = max_attendees
         self.max_results = max_results
         self.next_token = next_token
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_max = time_max
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.time_min = time_min
 
     def validate(self):
@@ -9953,6 +10022,7 @@ class ListInstancesResponseBodyEventsRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -10118,6 +10188,7 @@ class ListInstancesResponseBodyEvents(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -10134,6 +10205,7 @@ class ListInstancesResponseBodyEvents(TeaModel):
         self.start = start
         self.status = status
         self.summary = summary
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -10588,6 +10660,7 @@ class PatchEventRequestRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -10763,7 +10836,9 @@ class PatchEventRequestUiConfigs(TeaModel):
         ui_name: str = None,
         ui_status: str = None,
     ):
+        # This parameter is required.
         self.ui_name = ui_name
+        # This parameter is required.
         self.ui_status = ui_status
 
     def validate(self):
@@ -10812,6 +10887,7 @@ class PatchEventRequest(TeaModel):
         self.description = description
         self.end = end
         self.extra = extra
+        # This parameter is required.
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
@@ -11210,6 +11286,7 @@ class PatchEventResponseBodyRecurrenceRange(TeaModel):
         number_of_occurrences: int = None,
         type: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_date = end_date
         self.number_of_occurrences = number_of_occurrences
         self.type = type
@@ -11385,7 +11462,9 @@ class PatchEventResponseBodyUiConfigs(TeaModel):
         ui_name: str = None,
         ui_status: str = None,
     ):
+        # This parameter is required.
         self.ui_name = ui_name
+        # This parameter is required.
         self.ui_status = ui_status
 
     def validate(self):
@@ -11433,6 +11512,7 @@ class PatchEventResponseBody(TeaModel):
         update_time: str = None,
     ):
         self.attendees = attendees
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.description = description
         self.end = end
@@ -11444,9 +11524,11 @@ class PatchEventResponseBody(TeaModel):
         self.recurrence = recurrence
         self.reminders = reminders
         self.rich_text_description = rich_text_description
+        # This parameter is required.
         self.start = start
         self.summary = summary
         self.ui_configs = ui_configs
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.update_time = update_time
 
     def validate(self):
@@ -11964,6 +12046,7 @@ class RespondEventRequest(TeaModel):
         self,
         response_status: str = None,
     ):
+        # This parameter is required.
         self.response_status = response_status
 
     def validate(self):
@@ -12335,6 +12418,7 @@ class TransferEventRequest(TeaModel):
     ):
         self.is_exit_calendar = is_exit_calendar
         self.need_notify_via_o2o = need_notify_via_o2o
+        # This parameter is required.
         self.new_organizer_id = new_organizer_id
 
     def validate(self):

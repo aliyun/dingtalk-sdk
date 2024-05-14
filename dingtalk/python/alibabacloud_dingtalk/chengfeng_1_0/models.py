@@ -22,19 +22,33 @@ class CfEmploymentRecordResp(TeaModel):
         start_date: str = None,
         work_numbers: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.employee_status = employee_status
+        # This parameter is required.
         self.end_date = end_date
+        # This parameter is required.
         self.is_latest_record = is_latest_record
+        # This parameter is required.
         self.job_level_name = job_level_name
+        # This parameter is required.
         self.job_position_code = job_position_code
+        # This parameter is required.
         self.job_position_name = job_position_name
+        # This parameter is required.
         self.job_post_code = job_post_code
+        # This parameter is required.
         self.job_post_name = job_post_name
+        # This parameter is required.
         self.service_status = service_status
+        # This parameter is required.
         self.service_type = service_type
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.work_numbers = work_numbers
 
     def validate(self):
@@ -117,9 +131,13 @@ class CfJobLevelResp(TeaModel):
         start_date: str = None,
         stop_date: str = None,
     ):
+        # This parameter is required.
         self.level = level
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.stop_date = stop_date
 
     def validate(self):
@@ -160,7 +178,9 @@ class CfJobPositionResp(TeaModel):
         job_position_code: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.job_position_code = job_position_code
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -193,7 +213,9 @@ class CfJobPostResp(TeaModel):
         job_post_code: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.job_post_code = job_post_code
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -230,11 +252,17 @@ class CfOrgResp(TeaModel):
         organization_path: str = None,
         parent_dept_code: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.level = level
+        # This parameter is required.
         self.organization_code_path = organization_code_path
+        # This parameter is required.
         self.organization_path = organization_path
+        # This parameter is required.
         self.parent_dept_code = parent_dept_code
 
     def validate(self):
@@ -288,12 +316,19 @@ class CfStaffResp(TeaModel):
         nick_name: str = None,
         work_numbers: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.email = email
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.nick_name = nick_name
+        # This parameter is required.
         self.work_numbers = work_numbers
 
     def validate(self):
@@ -356,17 +391,29 @@ class OpenAnalyzeDataDTO(TeaModel):
         progress_update_rate_last_30days: float = None,
         progress_update_rate_last_7days: float = None,
     ):
+        # This parameter is required.
         self.dept_count = dept_count
+        # This parameter is required.
         self.no_align_objective_count = no_align_objective_count
+        # This parameter is required.
         self.no_key_action_count = no_key_action_count
+        # This parameter is required.
         self.objective_align_rate = objective_align_rate
+        # This parameter is required.
         self.objective_no_set_count = objective_no_set_count
+        # This parameter is required.
         self.objective_risk_count = objective_risk_count
+        # This parameter is required.
         self.objective_set_rate = objective_set_rate
+        # This parameter is required.
         self.only_one_key_result_count = only_one_key_result_count
+        # This parameter is required.
         self.only_one_objective_count = only_one_objective_count
+        # This parameter is required.
         self.progress_update_rate_last_15days = progress_update_rate_last_15days
+        # This parameter is required.
         self.progress_update_rate_last_30days = progress_update_rate_last_30days
+        # This parameter is required.
         self.progress_update_rate_last_7days = progress_update_rate_last_7days
 
     def validate(self):
@@ -440,8 +487,11 @@ class OpenUserDTO(TeaModel):
         name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -479,8 +529,11 @@ class TitleMention(TeaModel):
         offset: int = None,
         user: OpenUserDTO = None,
     ):
+        # This parameter is required.
         self.length = length
+        # This parameter is required.
         self.offset = offset
+        # This parameter is required.
         self.user = user
 
     def validate(self):
@@ -523,11 +576,17 @@ class OpenKeyResultDTO(TeaModel):
         title_mentions: List[TitleMention] = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.progress = progress
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.title_mentions = title_mentions
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -587,10 +646,15 @@ class OpenPeriodDTO(TeaModel):
         period_biz_type: str = None,
         start_date: int = None,
     ):
+        # This parameter is required.
         self.end_date = end_date
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.period_biz_type = period_biz_type
+        # This parameter is required.
         self.start_date = start_date
 
     def validate(self):
@@ -636,8 +700,11 @@ class OpenTeamDTO(TeaModel):
         name: str = None,
         open_id: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.open_id = open_id
 
     def validate(self):
@@ -680,13 +747,21 @@ class OpenObjectiveDTO(TeaModel):
         teams: List[OpenTeamDTO] = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.executor = executor
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.key_results = key_results
+        # This parameter is required.
         self.period = period
+        # This parameter is required.
         self.progress = progress
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.teams = teams
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -770,11 +845,17 @@ class OpenProgressDTO(TeaModel):
         modifier: OpenUserDTO = None,
         updated: int = None,
     ):
+        # This parameter is required.
         self.created = created
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.html_content = html_content
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.modifier = modifier
+        # This parameter is required.
         self.updated = updated
 
     def validate(self):
@@ -1091,6 +1172,7 @@ class GetAllJobPostResponseBody(TeaModel):
         content: List[CfJobPostResp] = None,
         request_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
         self.request_id = request_id
 
@@ -1207,6 +1289,7 @@ class GetAnalyzeDataRequest(TeaModel):
         dept_id: str = None,
     ):
         self.period_ids = period_ids
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -1353,6 +1436,7 @@ class GetChildOrgListRequest(TeaModel):
         self,
         dept_code: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
 
     def validate(self):
@@ -1557,6 +1641,7 @@ class GetEmployeeInfoByWorkNoResponseBody(TeaModel):
         success: bool = None,
     ):
         self.content = content
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1779,6 +1864,7 @@ class GetJobPositionRequest(TeaModel):
         self,
         job_position_code: str = None,
     ):
+        # This parameter is required.
         self.job_position_code = job_position_code
 
     def validate(self):
@@ -1814,8 +1900,10 @@ class GetJobPositionResponseBodyContent(TeaModel):
     ):
         self.description = description
         self.establish_date = establish_date
+        # This parameter is required.
         self.job_code = job_code
         self.job_requirements = job_requirements
+        # This parameter is required.
         self.name = name
         self.start_date = start_date
         self.stop_date = stop_date
@@ -1978,6 +2066,7 @@ class GetJobPostRequest(TeaModel):
         self,
         job_post_code: str = None,
     ):
+        # This parameter is required.
         self.job_post_code = job_post_code
 
     def validate(self):
@@ -2010,9 +2099,12 @@ class GetJobPostResponseBodyContent(TeaModel):
         stop_date: str = None,
     ):
         self.code = code
+        # This parameter is required.
         self.establish_date = establish_date
         self.name = name
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.stop_date = stop_date
 
     def validate(self):
@@ -2165,6 +2257,7 @@ class GetOrgInfoRequest(TeaModel):
         self,
         dept_code: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
 
     def validate(self):
@@ -2382,6 +2475,7 @@ class GetStaffInfoByWorkNoRequest(TeaModel):
         self,
         work_numbers: str = None,
     ):
+        # This parameter is required.
         self.work_numbers = work_numbers
 
     def validate(self):
@@ -2422,19 +2516,29 @@ class GetStaffInfoByWorkNoResponseBodyContent(TeaModel):
         nick_name: str = None,
         work_numbers: str = None,
     ):
+        # This parameter is required.
         self.dept_code = dept_code
+        # This parameter is required.
         self.dept_name = dept_name
+        # This parameter is required.
         self.email = email
         self.employ_type = employ_type
         self.employee_status = employee_status
+        # This parameter is required.
         self.job_level_name = job_level_name
         self.job_position_code = job_position_code
         self.job_position_name = job_position_name
+        # This parameter is required.
         self.job_post_code = job_post_code
+        # This parameter is required.
         self.job_post_name = job_post_name
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.nick_name = nick_name
+        # This parameter is required.
         self.work_numbers = work_numbers
 
     def validate(self):
@@ -2629,7 +2733,9 @@ class GetStaffPageQueryRequest(TeaModel):
     ):
         self.dept_code = dept_code
         self.name = name
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.work_no = work_no
 
@@ -3105,6 +3211,7 @@ class ListObjectiveByIdsRequest(TeaModel):
         self,
         objective_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.objective_ids = objective_ids
 
     def validate(self):
@@ -3257,6 +3364,7 @@ class ListObjectiveByUserRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3448,6 +3556,7 @@ class ListProgressByIdsRequest(TeaModel):
         self,
         progress_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.progress_ids = progress_ids
 
     def validate(self):
@@ -3598,6 +3707,7 @@ class PageListObjectiveProgressRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.objective_id = objective_id
         self.page_number = page_number
         self.page_size = page_size
@@ -3792,7 +3902,9 @@ class TransferUserObjectiveRequest(TeaModel):
         objective_id: str = None,
         target_user_id: str = None,
     ):
+        # This parameter is required.
         self.objective_id = objective_id
+        # This parameter is required.
         self.target_user_id = target_user_id
 
     def validate(self):

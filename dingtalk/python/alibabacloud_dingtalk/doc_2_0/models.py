@@ -10,7 +10,9 @@ class DentryModelCreator(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -70,7 +72,9 @@ class DentryModelUpdater(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -228,7 +232,9 @@ class SpaceModelHdIconVO(TeaModel):
         icon: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -261,7 +267,9 @@ class SpaceModelIconVO(TeaModel):
         icon: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -294,7 +302,9 @@ class SpaceModelOwner(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -379,7 +389,9 @@ class SpaceModel(TeaModel):
         self.description = description
         self.hd_icon_vo = hd_icon_vo
         self.icon_vo = icon_vo
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.owner = owner
         self.recent_list = recent_list
@@ -491,20 +503,28 @@ class DentryModel(TeaModel):
         visitor_info: DentryModelVisitorInfo = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
         self.created_time = created_time
         self.creator = creator
+        # This parameter is required.
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.dentry_type = dentry_type
+        # This parameter is required.
         self.dentry_uuid = dentry_uuid
         self.doc_key = doc_key
         self.extension = extension
+        # This parameter is required.
         self.has_children = has_children
         self.link_source_info = link_source_info
+        # This parameter is required.
         self.name = name
         self.path = path
         self.space = space
+        # This parameter is required.
         self.space_id = space_id
         self.statistical_info = statistical_info
+        # This parameter is required.
         self.updated_time = updated_time
         self.updater = updater
         self.url = url
@@ -625,7 +645,9 @@ class DentryVOCreator(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -658,7 +680,9 @@ class DentryVOUpdater(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -747,19 +771,27 @@ class DentryVO(TeaModel):
         visitor_info: DentryVOVisitorInfo = None,
     ):
         self.content_type = content_type
+        # This parameter is required.
         self.created_time = created_time
         self.creator = creator
+        # This parameter is required.
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.dentry_type = dentry_type
+        # This parameter is required.
         self.dentry_uuid = dentry_uuid
         self.doc_key = doc_key
         self.extension = extension
+        # This parameter is required.
         self.has_children = has_children
         self.link_source_info = link_source_info
+        # This parameter is required.
         self.name = name
         self.path = path
         self.space = space
+        # This parameter is required.
         self.space_id = space_id
+        # This parameter is required.
         self.updated_time = updated_time
         self.updater = updater
         self.url = url
@@ -906,7 +938,9 @@ class SpaceVOIconVO(TeaModel):
         icon: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -939,7 +973,9 @@ class SpaceVOOwner(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1021,7 +1057,9 @@ class SpaceVO(TeaModel):
         self.cover = cover
         self.description = description
         self.icon_vo = icon_vo
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.owner = owner
         self.type = type
@@ -1193,6 +1231,7 @@ class TeamModelVisitInfo(TeaModel):
         join_time: str = None,
         role_code: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.join_time = join_time
         self.role_code = role_code
 
@@ -1243,13 +1282,17 @@ class TeamModel(TeaModel):
         self.creator = creator
         self.description = description
         self.icon = icon
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.related_dept_info = related_dept_info
         self.status = status
+        # This parameter is required.
         self.type = type
         self.updated_time = updated_time
         self.updater = updater
+        # This parameter is required.
         self.url = url
         self.visit_info = visit_info
 
@@ -1519,14 +1562,18 @@ class TeamVO(TeaModel):
         self.creator = creator
         self.description = description
         self.icon = icon
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.related_dept_info = related_dept_info
         self.share_scope_info = share_scope_info
         self.status = status
+        # This parameter is required.
         self.type = type
         self.updated_time = updated_time
         self.updater = updater
+        # This parameter is required.
         self.url = url
         self.visit_info = visit_info
 
@@ -1761,8 +1808,11 @@ class BatchCreateTeamRequestParamCreateTeamParamList(TeaModel):
         team_name: str = None,
     ):
         self.admin_union_id_list = admin_union_id_list
+        # This parameter is required.
         self.creator_union_id = creator_union_id
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.team_name = team_name
 
     def validate(self):
@@ -1802,6 +1852,7 @@ class BatchCreateTeamRequestParam(TeaModel):
         self,
         create_team_param_list: List[BatchCreateTeamRequestParamCreateTeamParamList] = None,
     ):
+        # This parameter is required.
         self.create_team_param_list = create_team_param_list
 
     def validate(self):
@@ -1838,7 +1889,9 @@ class BatchCreateTeamRequest(TeaModel):
         param: BatchCreateTeamRequestParam = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1974,7 +2027,9 @@ class BatchDeleteRecentsRequest(TeaModel):
         dentry_uuids: List[str] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_uuids = dentry_uuids
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2152,6 +2207,7 @@ class CategoriesTemplatesRequestParam(TeaModel):
         self,
         category_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.category_ids = category_ids
 
     def validate(self):
@@ -2182,7 +2238,9 @@ class CategoriesTemplatesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2372,6 +2430,7 @@ class CategoryTemplatesRequestParam(TeaModel):
         self,
         category_id: str = None,
     ):
+        # This parameter is required.
         self.category_id = category_id
 
     def validate(self):
@@ -2402,7 +2461,9 @@ class CategoryTemplatesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2656,8 +2717,11 @@ class CopyDentryRequest(TeaModel):
         to_parent_dentry_id: str = None,
         to_prev_dentry_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.target_space_id = target_space_id
         self.to_next_dentry_id = to_next_dentry_id
         self.to_parent_dentry_id = to_parent_dentry_id
@@ -2786,9 +2850,12 @@ class CreateDentryRequest(TeaModel):
         operator_id: str = None,
         parent_dentry_id: str = None,
     ):
+        # This parameter is required.
         self.dentry_type = dentry_type
         self.document_type = document_type
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
         self.parent_dentry_id = parent_dentry_id
 
@@ -2907,6 +2974,7 @@ class CreateSpaceRequestShareScope(TeaModel):
         self,
         scope: int = None,
     ):
+        # This parameter is required.
         self.scope = scope
 
     def validate(self):
@@ -2942,9 +3010,12 @@ class CreateSpaceRequest(TeaModel):
     ):
         self.description = description
         self.icon = icon
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
         self.section_id = section_id
+        # This parameter is required.
         self.share_scope = share_scope
         self.team_id = team_id
 
@@ -3075,8 +3146,11 @@ class CreateTeamRequestMembers(TeaModel):
         member_type: int = None,
         role_code: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.role_code = role_code
 
     def validate(self):
@@ -3122,8 +3196,11 @@ class CreateTeamRequest(TeaModel):
         self.description = description
         self.icon = icon
         self.members = members
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.team_type = team_type
 
     def validate(self):
@@ -3362,7 +3439,9 @@ class CrossOrgMigrateRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3504,6 +3583,7 @@ class DeleteTeamRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3634,6 +3714,7 @@ class DocContentRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3768,6 +3849,7 @@ class GetDentryIdByUuidRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4200,6 +4282,7 @@ class GetSchemaRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4338,8 +4421,10 @@ class GetSpaceDirectoriesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.dentry_id = dentry_id
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4500,6 +4585,7 @@ class GetStarInfoRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4628,6 +4714,7 @@ class GetTeamRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4732,6 +4819,7 @@ class GetTotalNumberOfDentriesRequest(TeaModel):
         space_types: str = None,
     ):
         self.include_folder = include_folder
+        # This parameter is required.
         self.operator_id = operator_id
         self.space_types = space_types
 
@@ -4869,6 +4957,7 @@ class GetTotalNumberOfSpacesRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4998,7 +5087,9 @@ class GetUserInfoByOpenTokenRequest(TeaModel):
         doc_key: str = None,
         open_token: str = None,
     ):
+        # This parameter is required.
         self.doc_key = doc_key
+        # This parameter is required.
         self.open_token = open_token
 
     def validate(self):
@@ -5138,7 +5229,9 @@ class GetUuidByDentryIdRequest(TeaModel):
         operator_id: str = None,
         space_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.space_id = space_id
 
     def validate(self):
@@ -5287,8 +5380,10 @@ class ListFeedsRequest(TeaModel):
         operator_id: str = None,
     ):
         self.exclude_file = exclude_file
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5488,6 +5583,7 @@ class ListHotDocsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5683,6 +5779,7 @@ class ListPinSpacesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -6117,9 +6214,11 @@ class ListRecentsRequestParam(TeaModel):
         next_token: str = None,
         operate_types: List[int] = None,
     ):
+        # This parameter is required.
         self.file_types = file_types
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operate_types = operate_types
 
     def validate(self):
@@ -6159,6 +6258,7 @@ class ListRecentsRequest(TeaModel):
         self,
         param: ListRecentsRequestParam = None,
     ):
+        # This parameter is required.
         self.param = param
 
     def validate(self):
@@ -6455,6 +6555,7 @@ class ListRelatedSpaceTeamsRequest(TeaModel):
         operator_id: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
         self.type = type
 
@@ -6599,8 +6700,10 @@ class ListRelatedTeamsRequest(TeaModel):
         operator_id: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
         self.type = type
 
@@ -6762,6 +6865,7 @@ class ListSpaceSectionsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7058,6 +7162,7 @@ class ListStarsRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7531,6 +7636,7 @@ class ListTeamMembersRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7718,6 +7824,7 @@ class MarkStarRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7850,7 +7957,9 @@ class MoveDentryRequest(TeaModel):
         to_parent_dentry_id: str = None,
         to_prev_dentry_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.target_space_id = target_space_id
         self.to_next_dentry_id = to_next_dentry_id
         self.to_parent_dentry_id = to_parent_dentry_id
@@ -7971,6 +8080,7 @@ class PinSpaceRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8101,6 +8211,7 @@ class QueryDentryRequest(TeaModel):
         operator_id: str = None,
     ):
         self.include_space = include_space
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8207,6 +8318,7 @@ class QueryDocContentRequest(TeaModel):
         operator_id: str = None,
         target_format: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
         self.target_format = target_format
 
@@ -8342,7 +8454,9 @@ class QueryItemByUrlRequest(TeaModel):
         url: str = None,
         with_statistical_info: bool = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.url = url
         self.with_statistical_info = with_statistical_info
 
@@ -8670,9 +8784,12 @@ class QueryRecentListRequest(TeaModel):
     ):
         self.creator_type = creator_type
         self.file_type = file_type
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.recent_type = recent_type
 
     def validate(self):
@@ -8924,6 +9041,7 @@ class QuerySpaceRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9028,8 +9146,10 @@ class RelatedSpacesRequest(TeaModel):
         operator_id: str = None,
         team_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
         self.team_id = team_id
 
@@ -9071,7 +9191,9 @@ class RelatedSpacesResponseBodyItemsHdIconVO(TeaModel):
         icon: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -9104,7 +9226,9 @@ class RelatedSpacesResponseBodyItemsIconVO(TeaModel):
         icon: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.icon = icon
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -9137,7 +9261,9 @@ class RelatedSpacesResponseBodyItemsOwner(TeaModel):
         name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -9228,7 +9354,9 @@ class RelatedSpacesResponseBodyItems(TeaModel):
         self.description = description
         self.hd_icon_vo = hd_icon_vo
         self.icon_vo = icon_vo
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.name = name
         self.owner = owner
         self.recent_list = recent_list
@@ -9444,7 +9572,9 @@ class RemoveTeamMembersRequestMembers(TeaModel):
         member_type: int = None,
         role_code: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
         self.role_code = role_code
 
@@ -9483,8 +9613,10 @@ class RemoveTeamMembersRequest(TeaModel):
         notify: bool = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.notify = notify
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9689,7 +9821,9 @@ class RenameDentryRequest(TeaModel):
         name: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9797,7 +9931,9 @@ class SaveTeamMembersRequestMembers(TeaModel):
         member_type: int = None,
         role_code: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
         self.role_code = role_code
 
@@ -9836,8 +9972,10 @@ class SaveTeamMembersRequest(TeaModel):
         notify: bool = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
         self.notify = notify
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -10081,6 +10219,7 @@ class SearchRequestDentryRequest(TeaModel):
         summary_length: int = None,
         visit_time_range: SearchRequestDentryRequestVisitTimeRange = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.search_field = search_field
@@ -10147,6 +10286,7 @@ class SearchRequestSpaceRequest(TeaModel):
         next_token: str = None,
         with_team_info: bool = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
         self.with_team_info = with_team_info
@@ -10188,7 +10328,9 @@ class SearchRequest(TeaModel):
         space_request: SearchRequestSpaceRequest = None,
     ):
         self.dentry_request = dentry_request
+        # This parameter is required.
         self.keyword = keyword
+        # This parameter is required.
         self.operator_id = operator_id
         self.space_request = space_request
 
@@ -10790,7 +10932,9 @@ class SearchTemplatesRequestParam(TeaModel):
         belong: str = None,
         search_name: str = None,
     ):
+        # This parameter is required.
         self.belong = belong
+        # This parameter is required.
         self.search_name = search_name
 
     def validate(self):
@@ -10825,7 +10969,9 @@ class SearchTemplatesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -11081,6 +11227,7 @@ class ShareUrlRequestParam(TeaModel):
         dentry_uuid: str = None,
         trigger_share: bool = None,
     ):
+        # This parameter is required.
         self.dentry_uuid = dentry_uuid
         self.trigger_share = trigger_share
 
@@ -11113,6 +11260,7 @@ class ShareUrlRequest(TeaModel):
         self,
         param: ShareUrlRequestParam = None,
     ):
+        # This parameter is required.
         self.param = param
 
     def validate(self):
@@ -11343,6 +11491,7 @@ class TeamTemplatesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -11623,6 +11772,7 @@ class TemplateCategoriesRequestParam(TeaModel):
         self,
         tenant_id: str = None,
     ):
+        # This parameter is required.
         self.tenant_id = tenant_id
 
     def validate(self):
@@ -11653,7 +11803,9 @@ class TemplateCategoriesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.param = param
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -11842,6 +11994,7 @@ class UnmarkStarRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -11970,6 +12123,7 @@ class UnpinSpaceRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -12102,6 +12256,7 @@ class UpdateTeamRequest(TeaModel):
     ):
         self.description = description
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -12264,6 +12419,7 @@ class UserTemplatesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):

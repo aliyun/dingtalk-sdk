@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupResponse:
+        """
+        @summary 群酷应用排序
+        
+        @param request: InstallCoolAppOrderToGroupRequest
+        @param headers: InstallCoolAppOrderToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppOrderToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupResponse:
+        """
+        @summary 群酷应用排序
+        
+        @param request: InstallCoolAppOrderToGroupRequest
+        @param headers: InstallCoolAppOrderToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppOrderToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupRequest,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupResponse:
+        """
+        @summary 群酷应用排序
+        
+        @param request: InstallCoolAppOrderToGroupRequest
+        @return: InstallCoolAppOrderToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupHeaders()
         return self.install_cool_app_order_to_group_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupRequest,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupResponse:
+        """
+        @summary 群酷应用排序
+        
+        @param request: InstallCoolAppOrderToGroupRequest
+        @return: InstallCoolAppOrderToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.InstallCoolAppOrderToGroupHeaders()
         return await self.install_cool_app_order_to_group_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.InstallCoolAppToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppToGroupResponse:
+        """
+        @summary 安装酷应用到群
+        
+        @param request: InstallCoolAppToGroupRequest
+        @param headers: InstallCoolAppToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.InstallCoolAppToGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppToGroupResponse:
+        """
+        @summary 安装酷应用到群
+        
+        @param request: InstallCoolAppToGroupRequest
+        @param headers: InstallCoolAppToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InstallCoolAppToGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.InstallCoolAppToGroupRequest,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppToGroupResponse:
+        """
+        @summary 安装酷应用到群
+        
+        @param request: InstallCoolAppToGroupRequest
+        @return: InstallCoolAppToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.InstallCoolAppToGroupHeaders()
         return self.install_cool_app_to_group_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.InstallCoolAppToGroupRequest,
     ) -> dingtalkdpaas__1__0_models.InstallCoolAppToGroupResponse:
+        """
+        @summary 安装酷应用到群
+        
+        @param request: InstallCoolAppToGroupRequest
+        @return: InstallCoolAppToGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.InstallCoolAppToGroupHeaders()
         return await self.install_cool_app_to_group_with_options_async(request, headers, runtime)
@@ -231,6 +287,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderResponse:
+        """
+        @summary 查询群插件栏
+        
+        @param request: QueryCoolAppShortcutOrderRequest
+        @param headers: QueryCoolAppShortcutOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCoolAppShortcutOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -270,6 +334,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderResponse:
+        """
+        @summary 查询群插件栏
+        
+        @param request: QueryCoolAppShortcutOrderRequest
+        @param headers: QueryCoolAppShortcutOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCoolAppShortcutOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -307,6 +379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderRequest,
     ) -> dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderResponse:
+        """
+        @summary 查询群插件栏
+        
+        @param request: QueryCoolAppShortcutOrderRequest
+        @return: QueryCoolAppShortcutOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderHeaders()
         return self.query_cool_app_shortcut_order_with_options(request, headers, runtime)
@@ -315,6 +393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderRequest,
     ) -> dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderResponse:
+        """
+        @summary 查询群插件栏
+        
+        @param request: QueryCoolAppShortcutOrderRequest
+        @return: QueryCoolAppShortcutOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.QueryCoolAppShortcutOrderHeaders()
         return await self.query_cool_app_shortcut_order_with_options_async(request, headers, runtime)
@@ -325,6 +409,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupResponse:
+        """
+        @summary 从群内卸载酷应用
+        
+        @param request: UninstallCoolAppFromGroupRequest
+        @param headers: UninstallCoolAppFromGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UninstallCoolAppFromGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -366,6 +458,14 @@ class Client(OpenApiClient):
         headers: dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupResponse:
+        """
+        @summary 从群内卸载酷应用
+        
+        @param request: UninstallCoolAppFromGroupRequest
+        @param headers: UninstallCoolAppFromGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UninstallCoolAppFromGroupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_id):
@@ -405,6 +505,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupRequest,
     ) -> dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupResponse:
+        """
+        @summary 从群内卸载酷应用
+        
+        @param request: UninstallCoolAppFromGroupRequest
+        @return: UninstallCoolAppFromGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupHeaders()
         return self.uninstall_cool_app_from_group_with_options(request, headers, runtime)
@@ -413,6 +519,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupRequest,
     ) -> dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupResponse:
+        """
+        @summary 从群内卸载酷应用
+        
+        @param request: UninstallCoolAppFromGroupRequest
+        @return: UninstallCoolAppFromGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdpaas__1__0_models.UninstallCoolAppFromGroupHeaders()
         return await self.uninstall_cool_app_from_group_with_options_async(request, headers, runtime)

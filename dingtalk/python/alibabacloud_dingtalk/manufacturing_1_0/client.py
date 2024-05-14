@@ -38,6 +38,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
+        """
+        @summary 日清月结-计件报工接口
+        
+        @param request: IndustrializeManufactureJobBookRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IndustrializeManufactureJobBookResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -107,6 +115,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
+        """
+        @summary 日清月结-计件报工接口
+        
+        @param request: IndustrializeManufactureJobBookRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IndustrializeManufactureJobBookResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -174,6 +190,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookRequest,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
+        """
+        @summary 日清月结-计件报工接口
+        
+        @param request: IndustrializeManufactureJobBookRequest
+        @return: IndustrializeManufactureJobBookResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.industrialize_manufacture_job_book_with_options(user_id, request, headers, runtime)
@@ -183,6 +205,12 @@ class Client(OpenApiClient):
         user_id: str,
         request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookRequest,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureJobBookResponse:
+        """
+        @summary 日清月结-计件报工接口
+        
+        @param request: IndustrializeManufactureJobBookRequest
+        @return: IndustrializeManufactureJobBookResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.industrialize_manufacture_job_book_with_options_async(user_id, request, headers, runtime)
@@ -193,6 +221,14 @@ class Client(OpenApiClient):
         headers: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        """
+        @summary 日清月结-计件报工查询接口
+        
+        @param request: IndustrializeManufactureQueryJobsRequest
+        @param headers: IndustrializeManufactureQueryJobsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IndustrializeManufactureQueryJobsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_page):
@@ -256,6 +292,14 @@ class Client(OpenApiClient):
         headers: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        """
+        @summary 日清月结-计件报工查询接口
+        
+        @param request: IndustrializeManufactureQueryJobsRequest
+        @param headers: IndustrializeManufactureQueryJobsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IndustrializeManufactureQueryJobsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.current_page):
@@ -317,6 +361,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        """
+        @summary 日清月结-计件报工查询接口
+        
+        @param request: IndustrializeManufactureQueryJobsRequest
+        @return: IndustrializeManufactureQueryJobsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders()
         return self.industrialize_manufacture_query_jobs_with_options(request, headers, runtime)
@@ -325,6 +375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsRequest,
     ) -> dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsResponse:
+        """
+        @summary 日清月结-计件报工查询接口
+        
+        @param request: IndustrializeManufactureQueryJobsRequest
+        @return: IndustrializeManufactureQueryJobsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmanufacturing__1__0_models.IndustrializeManufactureQueryJobsHeaders()
         return await self.industrialize_manufacture_query_jobs_with_options_async(request, headers, runtime)

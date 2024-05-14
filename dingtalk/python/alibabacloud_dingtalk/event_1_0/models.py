@@ -388,13 +388,19 @@ class InstallCoolAppRequest(TeaModel):
         options: Dict[str, Any] = None,
         suite_id: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.corp_id = corp_id
         self.feature = feature
+        # This parameter is required.
         self.install_uid = install_uid
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.options = options
+        # This parameter is required.
         self.suite_id = suite_id
 
     def validate(self):
@@ -457,13 +463,19 @@ class InstallCoolAppShrinkRequest(TeaModel):
         options_shrink: str = None,
         suite_id: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.corp_id = corp_id
         self.feature_shrink = feature_shrink
+        # This parameter is required.
         self.install_uid = install_uid
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.options_shrink = options_shrink
+        # This parameter is required.
         self.suite_id = suite_id
 
     def validate(self):

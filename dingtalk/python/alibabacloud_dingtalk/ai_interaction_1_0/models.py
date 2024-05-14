@@ -42,6 +42,7 @@ class FinishRequest(TeaModel):
         self,
         conversation_token: str = None,
     ):
+        # This parameter is required.
         self.conversation_token = conversation_token
 
     def validate(self):
@@ -203,6 +204,7 @@ class PrepareRequest(TeaModel):
         union_id: str = None,
     ):
         self.content = content
+        # This parameter is required.
         self.content_type = content_type
         self.open_conversation_id = open_conversation_id
         self.union_id = union_id
@@ -377,7 +379,9 @@ class ReplyRequest(TeaModel):
         conversation_token: str = None,
     ):
         self.content = content
+        # This parameter is required.
         self.content_type = content_type
+        # This parameter is required.
         self.conversation_token = conversation_token
 
     def validate(self):
@@ -547,6 +551,7 @@ class SendRequest(TeaModel):
         union_id: str = None,
     ):
         self.content = content
+        # This parameter is required.
         self.content_type = content_type
         self.open_conversation_id = open_conversation_id
         self.union_id = union_id
@@ -720,8 +725,11 @@ class UpdateRequest(TeaModel):
         content_type: str = None,
         conversation_token: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.content_type = content_type
+        # This parameter is required.
         self.conversation_token = conversation_token
 
     def validate(self):

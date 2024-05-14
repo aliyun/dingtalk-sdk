@@ -42,6 +42,7 @@ class AddProjectMemberRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -486,6 +487,7 @@ class CreateOrganizationTaskRequest(TeaModel):
         priority: int = None,
         visible: str = None,
     ):
+        # This parameter is required.
         self.content = content
         self.create_time = create_time
         self.disable_activity = disable_activity
@@ -494,7 +496,9 @@ class CreateOrganizationTaskRequest(TeaModel):
         self.executor_id = executor_id
         self.involve_members = involve_members
         self.note = note
+        # This parameter is required.
         self.priority = priority
+        # This parameter is required.
         self.visible = visible
 
     def validate(self):
@@ -936,15 +940,25 @@ class CreatePlanTimeRequest(TeaModel):
         submitter_id: str = None,
         tenant_type: str = None,
     ):
+        # This parameter is required.
         self.end_date = end_date
+        # This parameter is required.
         self.executor_id = executor_id
+        # This parameter is required.
         self.includes_holidays = includes_holidays
+        # This parameter is required.
         self.is_duration = is_duration
+        # This parameter is required.
         self.object_id = object_id
+        # This parameter is required.
         self.object_type = object_type
+        # This parameter is required.
         self.plan_time = plan_time
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.submitter_id = submitter_id
+        # This parameter is required.
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -1539,7 +1553,9 @@ class CreateProjectByTemplateRequest(TeaModel):
         name: str = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -1764,6 +1780,7 @@ class CreateProjectCustomfieldStatusRequest(TeaModel):
         self.custom_field_id = custom_field_id
         self.custom_field_instance_id = custom_field_instance_id
         self.custom_field_name = custom_field_name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -2103,6 +2120,7 @@ class CreateTaskRequest(TeaModel):
         start_date: str = None,
         visible: str = None,
     ):
+        # This parameter is required.
         self.content = content
         self.customfields = customfields
         self.due_date = due_date
@@ -2110,6 +2128,7 @@ class CreateTaskRequest(TeaModel):
         self.note = note
         self.parent_task_id = parent_task_id
         self.priority = priority
+        # This parameter is required.
         self.project_id = project_id
         self.scenariofieldconfig_id = scenariofieldconfig_id
         self.stage_id = stage_id
@@ -2470,7 +2489,9 @@ class CreateTaskObjectLinkRequestLinkedData(TeaModel):
     ):
         self.content = content
         self.thumbnail_url = thumbnail_url
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -2686,15 +2707,25 @@ class CreateWorkTimeRequest(TeaModel):
         tenant_type: str = None,
     ):
         self.description = description
+        # This parameter is required.
         self.end_date = end_date
+        # This parameter is required.
         self.executor_id = executor_id
+        # This parameter is required.
         self.includes_holidays = includes_holidays
+        # This parameter is required.
         self.is_duration = is_duration
+        # This parameter is required.
         self.object_id = object_id
+        # This parameter is required.
         self.object_type = object_type
+        # This parameter is required.
         self.start_date = start_date
+        # This parameter is required.
         self.submitter_id = submitter_id
+        # This parameter is required.
         self.work_time = work_time
+        # This parameter is required.
         self.tenant_type = tenant_type
 
     def validate(self):
@@ -2951,6 +2982,7 @@ class CreateWorkTimeApproveRequest(TeaModel):
         self,
         work_time_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.work_time_ids = work_time_ids
 
     def validate(self):
@@ -3174,6 +3206,7 @@ class DeleteProjectMemberRequest(TeaModel):
         self,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -3861,6 +3894,7 @@ class GetOrganizatioTaskByIdsRequest(TeaModel):
         self,
         task_ids: str = None,
     ):
+        # This parameter is required.
         self.task_ids = task_ids
 
     def validate(self):
@@ -5471,6 +5505,7 @@ class GetTbOrgIdByDingOrgIdRequest(TeaModel):
         self,
         opt_user_id: str = None,
     ):
+        # This parameter is required.
         self.opt_user_id = opt_user_id
 
     def validate(self):
@@ -5498,6 +5533,7 @@ class GetTbOrgIdByDingOrgIdResponseBodyResult(TeaModel):
         self,
         tb_organization_id: str = None,
     ):
+        # This parameter is required.
         self.tb_organization_id = tb_organization_id
 
     def validate(self):
@@ -5525,6 +5561,7 @@ class GetTbOrgIdByDingOrgIdResponseBody(TeaModel):
         self,
         result: GetTbOrgIdByDingOrgIdResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -5658,6 +5695,7 @@ class GetTbProjectGrayRequest(TeaModel):
         self,
         label: str = None,
     ):
+        # This parameter is required.
         self.label = label
 
     def validate(self):
@@ -5924,7 +5962,9 @@ class GetTbUserIdByStaffIdRequest(TeaModel):
         opt_user_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.opt_user_id = opt_user_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5956,6 +5996,7 @@ class GetTbUserIdByStaffIdResponseBodyResult(TeaModel):
         self,
         tb_user_id: str = None,
     ):
+        # This parameter is required.
         self.tb_user_id = tb_user_id
 
     def validate(self):
@@ -5983,6 +6024,7 @@ class GetTbUserIdByStaffIdResponseBody(TeaModel):
         self,
         result: GetTbUserIdByStaffIdResponseBodyResult = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -6868,8 +6910,10 @@ class QueryTaskOfProjectResponseBody(TeaModel):
         result: List[QueryTaskOfProjectResponseBodyResult] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.next_token = next_token
         self.result = result
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -8949,6 +8993,7 @@ class SearchUserTaskRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.role_types = role_types
         self.tql = tql
 
@@ -9653,6 +9698,7 @@ class UpdateCustomfieldValueRequestValue(TeaModel):
         self,
         title: str = None,
     ):
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -9684,6 +9730,7 @@ class UpdateCustomfieldValueRequest(TeaModel):
     ):
         self.custom_field_id = custom_field_id
         self.custom_field_name = custom_field_name
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -9935,6 +9982,7 @@ class UpdateOrganizationTaskContentRequest(TeaModel):
         disable_activity: bool = None,
         disable_notification: bool = None,
     ):
+        # This parameter is required.
         self.content = content
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
@@ -10112,6 +10160,7 @@ class UpdateOrganizationTaskDueDateRequest(TeaModel):
     ):
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
+        # This parameter is required.
         self.due_date = due_date
 
     def validate(self):
@@ -10287,6 +10336,7 @@ class UpdateOrganizationTaskExecutorRequest(TeaModel):
     ):
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
+        # This parameter is required.
         self.executor_id = executor_id
 
     def validate(self):
@@ -10797,6 +10847,7 @@ class UpdateOrganizationTaskNoteRequest(TeaModel):
     ):
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
+        # This parameter is required.
         self.note = note
 
     def validate(self):
@@ -10972,6 +11023,7 @@ class UpdateOrganizationTaskPriorityRequest(TeaModel):
     ):
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
+        # This parameter is required.
         self.priority = priority
 
     def validate(self):
@@ -11147,6 +11199,7 @@ class UpdateOrganizationTaskStatusRequest(TeaModel):
     ):
         self.disable_activity = disable_activity
         self.disable_notification = disable_notification
+        # This parameter is required.
         self.is_done = is_done
 
     def validate(self):

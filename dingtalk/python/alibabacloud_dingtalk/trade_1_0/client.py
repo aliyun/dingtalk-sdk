@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.CheckOpportunityResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        """
+        @summary isv检查商机创建是否符合预期
+        
+        @param request: CheckOpportunityResultRequest
+        @param headers: CheckOpportunityResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckOpportunityResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.belong_to_phone_num):
@@ -78,6 +86,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.CheckOpportunityResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        """
+        @summary isv检查商机创建是否符合预期
+        
+        @param request: CheckOpportunityResultRequest
+        @param headers: CheckOpportunityResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckOpportunityResultResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.belong_to_phone_num):
@@ -119,6 +135,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
     ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        """
+        @summary isv检查商机创建是否符合预期
+        
+        @param request: CheckOpportunityResultRequest
+        @return: CheckOpportunityResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.CheckOpportunityResultHeaders()
         return self.check_opportunity_result_with_options(request, headers, runtime)
@@ -127,6 +149,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.CheckOpportunityResultRequest,
     ) -> dingtalktrade__1__0_models.CheckOpportunityResultResponse:
+        """
+        @summary isv检查商机创建是否符合预期
+        
+        @param request: CheckOpportunityResultRequest
+        @return: CheckOpportunityResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.CheckOpportunityResultHeaders()
         return await self.check_opportunity_result_with_options_async(request, headers, runtime)
@@ -137,6 +165,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.CreateOpportunityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        """
+        @summary isv创建商机
+        
+        @param request: CreateOpportunityRequest
+        @param headers: CreateOpportunityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOpportunityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.belong_to_phone_num):
@@ -180,6 +216,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.CreateOpportunityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        """
+        @summary isv创建商机
+        
+        @param request: CreateOpportunityRequest
+        @param headers: CreateOpportunityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateOpportunityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.belong_to_phone_num):
@@ -221,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.CreateOpportunityRequest,
     ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        """
+        @summary isv创建商机
+        
+        @param request: CreateOpportunityRequest
+        @return: CreateOpportunityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.CreateOpportunityHeaders()
         return self.create_opportunity_with_options(request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.CreateOpportunityRequest,
     ) -> dingtalktrade__1__0_models.CreateOpportunityResponse:
+        """
+        @summary isv创建商机
+        
+        @param request: CreateOpportunityRequest
+        @return: CreateOpportunityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.CreateOpportunityHeaders()
         return await self.create_opportunity_with_options_async(request, headers, runtime)
@@ -239,6 +295,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.QueryTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.QueryTradeOrderResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: QueryTradeOrderRequest
+        @param headers: QueryTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order_id):
@@ -276,6 +340,14 @@ class Client(OpenApiClient):
         headers: dingtalktrade__1__0_models.QueryTradeOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrade__1__0_models.QueryTradeOrderResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: QueryTradeOrderRequest
+        @param headers: QueryTradeOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTradeOrderResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.order_id):
@@ -311,6 +383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.QueryTradeOrderRequest,
     ) -> dingtalktrade__1__0_models.QueryTradeOrderResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: QueryTradeOrderRequest
+        @return: QueryTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.QueryTradeOrderHeaders()
         return self.query_trade_order_with_options(request, headers, runtime)
@@ -319,6 +397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrade__1__0_models.QueryTradeOrderRequest,
     ) -> dingtalktrade__1__0_models.QueryTradeOrderResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: QueryTradeOrderRequest
+        @return: QueryTradeOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrade__1__0_models.QueryTradeOrderHeaders()
         return await self.query_trade_order_with_options_async(request, headers, runtime)

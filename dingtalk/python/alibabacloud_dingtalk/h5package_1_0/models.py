@@ -364,6 +364,7 @@ class GetCreateStatusRequest(TeaModel):
         self,
         task_id: str = None,
     ):
+        # This parameter is required.
         self.task_id = task_id
 
     def validate(self):
@@ -526,6 +527,7 @@ class PublishPackageRequest(TeaModel):
     ):
         self.agent_id = agent_id
         self.app_id = app_id
+        # This parameter is required.
         self.version = version
 
     def validate(self):

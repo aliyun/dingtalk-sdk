@@ -4,6 +4,146 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BankGatewayInvokeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BankGatewayInvokeRequest(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        input_data: str = None,
+        url: str = None,
+    ):
+        self.action_type = action_type
+        self.input_data = input_data
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.input_data is not None:
+            result['inputData'] = self.input_data
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('inputData') is not None:
+            self.input_data = m.get('inputData')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class BankGatewayInvokeResponseBody(TeaModel):
+    def __init__(
+        self,
+        output_data: str = None,
+    ):
+        self.output_data = output_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.output_data is not None:
+            result['outputData'] = self.output_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('outputData') is not None:
+            self.output_data = m.get('outputData')
+        return self
+
+
+class BankGatewayInvokeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BankGatewayInvokeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BankGatewayInvokeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchDeleteReceiptHeaders(TeaModel):
     def __init__(
         self,
@@ -357,6 +497,7 @@ class GetCategoryRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -391,11 +532,16 @@ class GetCategoryResponseBody(TeaModel):
         type: str = None,
     ):
         self.accountant_book_id_list = accountant_book_id_list
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.is_dir = is_dir
+        # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -521,6 +667,7 @@ class GetFinanceAccountRequest(TeaModel):
         self,
         account_code: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
 
     def validate(self):
@@ -558,16 +705,21 @@ class GetFinanceAccountResponseBody(TeaModel):
         create_time: int = None,
         creator: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
         self.account_id = account_id
+        # This parameter is required.
         self.account_name = account_name
         self.account_remark = account_remark
+        # This parameter is required.
         self.account_type = account_type
         self.accountant_book_id_list = accountant_book_id_list
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
 
     def validate(self):
@@ -709,6 +861,7 @@ class GetProjectRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -747,12 +900,18 @@ class GetProjectResponseBody(TeaModel):
     ):
         self.accountant_book_id_list = accountant_book_id_list
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
+        # This parameter is required.
         self.description = description
         self.name = name
+        # This parameter is required.
         self.project_code = project_code
+        # This parameter is required.
         self.project_name = project_name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -892,7 +1051,9 @@ class GetReceiptRequest(TeaModel):
         code: str = None,
         model_id: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.model_id = model_id
 
     def validate(self):
@@ -927,9 +1088,13 @@ class GetReceiptResponseBody(TeaModel):
         model_id: str = None,
         source: str = None,
     ):
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.model_id = model_id
+        # This parameter is required.
         self.source = source
 
     def validate(self):
@@ -1043,6 +1208,7 @@ class GetSupplierRequest(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -1077,10 +1243,15 @@ class GetSupplierResponseBody(TeaModel):
         user_define_code: str = None,
     ):
         self.accountant_book_id_list = accountant_book_id_list
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -1367,8 +1538,11 @@ class QueryCategoryByPageRequest(TeaModel):
         page_size: int = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -1409,11 +1583,16 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         status: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.is_dir = is_dir
+        # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -1462,7 +1641,9 @@ class QueryCategoryByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryCategoryByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -1577,7 +1758,9 @@ class QueryCustomerByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -1614,10 +1797,15 @@ class QueryCustomerByPageResponseBodyList(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -1667,7 +1855,9 @@ class QueryCustomerByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryCustomerByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -1782,7 +1972,9 @@ class QueryEnterpriseAccountByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -1823,15 +2015,20 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         create_time: int = None,
         creator: str = None,
     ):
+        # This parameter is required.
         self.account_code = account_code
         self.account_id = account_id
+        # This parameter is required.
         self.account_name = account_name
         self.account_remark = account_remark
+        # This parameter is required.
         self.account_type = account_type
         self.amount = amount
         self.bank_code = bank_code
         self.bank_name = bank_name
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
 
     def validate(self):
@@ -1896,7 +2093,9 @@ class QueryEnterpriseAccountByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryEnterpriseAccountByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -2370,7 +2569,9 @@ class QueryProjectByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -2413,12 +2614,17 @@ class QueryProjectByPageResponseBodyList(TeaModel):
     ):
         self.caode = caode
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.creator = creator
         self.description = description
         self.name = name
+        # This parameter is required.
         self.project_code = project_code
+        # This parameter is required.
         self.project_name = project_name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -2484,7 +2690,9 @@ class QueryProjectByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QueryProjectByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):
@@ -2599,7 +2807,9 @@ class QuerySupplierByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -2636,10 +2846,15 @@ class QuerySupplierByPageResponseBodyList(TeaModel):
         status: str = None,
         user_define_code: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.create_time = create_time
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.status = status
         self.user_define_code = user_define_code
 
@@ -2689,7 +2904,9 @@ class QuerySupplierByPageResponseBody(TeaModel):
         has_more: bool = None,
         list: List[QuerySupplierByPageResponseBodyList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.list = list
 
     def validate(self):

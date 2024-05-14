@@ -82,13 +82,18 @@ class CreateTicketRequest(TeaModel):
         template_id: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.foreign_id = foreign_id
+        # This parameter is required.
         self.foreign_name = foreign_name
         self.open_instance_id = open_instance_id
         self.production_type = production_type
         self.properties = properties
+        # This parameter is required.
         self.source_id = source_id
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -292,12 +297,16 @@ class ExecuteActivityRequest(TeaModel):
         properties: List[ExecuteActivityRequestProperties] = None,
         source_id: str = None,
     ):
+        # This parameter is required.
         self.activity_code = activity_code
+        # This parameter is required.
         self.foreign_id = foreign_id
+        # This parameter is required.
         self.foreign_name = foreign_name
         self.open_instance_id = open_instance_id
         self.production_type = production_type
         self.properties = properties
+        # This parameter is required.
         self.source_id = source_id
 
     def validate(self):
@@ -684,7 +693,9 @@ class PageListActionRequest(TeaModel):
         open_instance_id: str = None,
         production_type: int = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.open_instance_id = open_instance_id
         self.production_type = production_type
@@ -961,8 +972,11 @@ class PageListRobotRequest(TeaModel):
         open_instance_id: str = None,
         production_type: int = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.open_instance_id = open_instance_id
         self.production_type = production_type
@@ -1198,12 +1212,15 @@ class PageListTicketRequest(TeaModel):
     ):
         self.end_time = end_time
         self.foreign_id = foreign_id
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.open_instance_id = open_instance_id
         self.production_type = production_type
         self.source_id = source_id
         self.start_time = start_time
+        # This parameter is required.
         self.template_id = template_id
         self.ticket_id = ticket_id
         self.ticket_status = ticket_status

@@ -193,9 +193,12 @@ class PediaWordsAddRequest(TeaModel):
         self.pic_list = pic_list
         self.related_doc = related_doc
         self.related_link = related_link
+        # This parameter is required.
         self.user_id = user_id
         self.word_alias = word_alias
+        # This parameter is required.
         self.word_name = word_name
+        # This parameter is required.
         self.word_paraphrase = word_paraphrase
 
     def validate(self):
@@ -403,10 +406,15 @@ class PediaWordsApproveRequest(TeaModel):
         uuid: int = None,
     ):
         self.approve_reason = approve_reason
+        # This parameter is required.
         self.approve_status = approve_status
+        # This parameter is required.
         self.im_high_light = im_high_light
+        # This parameter is required.
         self.sim_high_light = sim_high_light
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -556,7 +564,9 @@ class PediaWordsDeleteRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -696,7 +706,9 @@ class PediaWordsQueryRequest(TeaModel):
         user_id: str = None,
         uuid: int = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -1221,9 +1233,13 @@ class PediaWordsSearchRequest(TeaModel):
         user_id: str = None,
         word_name: str = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.user_id = user_id
         self.word_name = word_name
 
@@ -1969,9 +1985,12 @@ class PediaWordsUpdateRequest(TeaModel):
         self.related_doc = related_doc
         self.related_link = related_link
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
         self.word_alias = word_alias
+        # This parameter is required.
         self.word_name = word_name
+        # This parameter is required.
         self.word_paraphrase = word_paraphrase
 
     def validate(self):

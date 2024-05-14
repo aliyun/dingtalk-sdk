@@ -42,6 +42,7 @@ class AddRecentUserAppListRequestUsedAppDetailList(TeaModel):
         self,
         agent_id: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
 
     def validate(self):
@@ -71,8 +72,11 @@ class AddRecentUserAppListRequest(TeaModel):
         used_app_detail_list: List[AddRecentUserAppListRequestUsedAppDetailList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.used_app_detail_list = used_app_detail_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -116,6 +120,7 @@ class AddRecentUserAppListResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -660,7 +665,9 @@ class ListWorkBenchGroupRequest(TeaModel):
         op_union_id: str = None,
     ):
         self.ecological_corp_id = ecological_corp_id
+        # This parameter is required.
         self.group_type = group_type
+        # This parameter is required.
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -845,9 +852,13 @@ class ModifyWorkbenchBadgeRequest(TeaModel):
     ):
         self.biz_id_list = biz_id_list
         self.is_added = is_added
+        # This parameter is required.
         self.modify_mode = modify_mode
+        # This parameter is required.
         self.red_dot_relation_id = red_dot_relation_id
+        # This parameter is required.
         self.red_dot_type = red_dot_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1213,9 +1224,13 @@ class UndoDeletionRequest(TeaModel):
         red_dot_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_id_list = biz_id_list
+        # This parameter is required.
         self.red_dot_relation_id = red_dot_relation_id
+        # This parameter is required.
         self.red_dot_type = red_dot_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1359,6 +1374,7 @@ class UpdateDingPortalPageScopeRequest(TeaModel):
         role_ids: List[int] = None,
         userids: List[str] = None,
     ):
+        # This parameter is required.
         self.all_visible = all_visible
         self.dept_ids = dept_ids
         self.role_ids = role_ids

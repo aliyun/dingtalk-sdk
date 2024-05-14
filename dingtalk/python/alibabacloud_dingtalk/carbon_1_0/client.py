@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        """
+        @summary 获取用户的减碳明细
+        
+        @param request: GetPersonalCarbonInfoRequest
+        @param headers: GetPersonalCarbonInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalCarbonInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_type):
@@ -72,6 +80,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        """
+        @summary 获取用户的减碳明细
+        
+        @param request: GetPersonalCarbonInfoRequest
+        @param headers: GetPersonalCarbonInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPersonalCarbonInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_type):
@@ -107,6 +123,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
     ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        """
+        @summary 获取用户的减碳明细
+        
+        @param request: GetPersonalCarbonInfoRequest
+        @return: GetPersonalCarbonInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
         return self.get_personal_carbon_info_with_options(request, headers, runtime)
@@ -115,6 +137,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.GetPersonalCarbonInfoRequest,
     ) -> dingtalkcarbon__1__0_models.GetPersonalCarbonInfoResponse:
+        """
+        @summary 获取用户的减碳明细
+        
+        @param request: GetPersonalCarbonInfoRequest
+        @return: GetPersonalCarbonInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.GetPersonalCarbonInfoHeaders()
         return await self.get_personal_carbon_info_with_options_async(request, headers, runtime)
@@ -125,6 +153,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日组织明细碳能量数据
+        
+        @param request: WriteAlibabaOrgCarbonRequest
+        @param headers: WriteAlibabaOrgCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteAlibabaOrgCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.org_details_list):
@@ -160,6 +196,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日组织明细碳能量数据
+        
+        @param request: WriteAlibabaOrgCarbonRequest
+        @param headers: WriteAlibabaOrgCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteAlibabaOrgCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.org_details_list):
@@ -193,6 +237,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日组织明细碳能量数据
+        
+        @param request: WriteAlibabaOrgCarbonRequest
+        @return: WriteAlibabaOrgCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
         return self.write_alibaba_org_carbon_with_options(request, headers, runtime)
@@ -201,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日组织明细碳能量数据
+        
+        @param request: WriteAlibabaOrgCarbonRequest
+        @return: WriteAlibabaOrgCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteAlibabaOrgCarbonHeaders()
         return await self.write_alibaba_org_carbon_with_options_async(request, headers, runtime)
@@ -211,6 +267,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日用户碳能量数据
+        
+        @param request: WriteAlibabaUserCarbonRequest
+        @param headers: WriteAlibabaUserCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteAlibabaUserCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -246,6 +310,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日用户碳能量数据
+        
+        @param request: WriteAlibabaUserCarbonRequest
+        @param headers: WriteAlibabaUserCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteAlibabaUserCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -279,6 +351,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日用户碳能量数据
+        
+        @param request: WriteAlibabaUserCarbonRequest
+        @return: WriteAlibabaUserCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
         return self.write_alibaba_user_carbon_with_options(request, headers, runtime)
@@ -287,6 +365,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonResponse:
+        """
+        @summary 写入阿里巴巴每日用户碳能量数据
+        
+        @param request: WriteAlibabaUserCarbonRequest
+        @return: WriteAlibabaUserCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteAlibabaUserCarbonHeaders()
         return await self.write_alibaba_user_carbon_with_options_async(request, headers, runtime)
@@ -297,6 +381,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteIsvStateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        """
+        @summary ISV记录数据传输当前状态
+        
+        @param request: WriteIsvStateRequest
+        @param headers: WriteIsvStateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteIsvStateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.isv_name):
@@ -334,6 +426,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteIsvStateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        """
+        @summary ISV记录数据传输当前状态
+        
+        @param request: WriteIsvStateRequest
+        @param headers: WriteIsvStateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteIsvStateResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.isv_name):
@@ -369,6 +469,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
     ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        """
+        @summary ISV记录数据传输当前状态
+        
+        @param request: WriteIsvStateRequest
+        @return: WriteIsvStateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
         return self.write_isv_state_with_options(request, headers, runtime)
@@ -377,6 +483,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteIsvStateRequest,
     ) -> dingtalkcarbon__1__0_models.WriteIsvStateResponse:
+        """
+        @summary ISV记录数据传输当前状态
+        
+        @param request: WriteIsvStateRequest
+        @return: WriteIsvStateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteIsvStateHeaders()
         return await self.write_isv_state_with_options_async(request, headers, runtime)
@@ -387,6 +499,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        """
+        @summary 写入isv每日组织明细碳能量数据
+        
+        @param request: WriteOrgCarbonRequest
+        @param headers: WriteOrgCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteOrgCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.org_details_list):
@@ -422,6 +542,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        """
+        @summary 写入isv每日组织明细碳能量数据
+        
+        @param request: WriteOrgCarbonRequest
+        @param headers: WriteOrgCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteOrgCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.org_details_list):
@@ -455,6 +583,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        """
+        @summary 写入isv每日组织明细碳能量数据
+        
+        @param request: WriteOrgCarbonRequest
+        @return: WriteOrgCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
         return self.write_org_carbon_with_options(request, headers, runtime)
@@ -463,6 +597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteOrgCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteOrgCarbonResponse:
+        """
+        @summary 写入isv每日组织明细碳能量数据
+        
+        @param request: WriteOrgCarbonRequest
+        @return: WriteOrgCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteOrgCarbonHeaders()
         return await self.write_org_carbon_with_options_async(request, headers, runtime)
@@ -473,6 +613,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteUserCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        """
+        @summary 写入isv每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonRequest
+        @param headers: WriteUserCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteUserCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -508,6 +656,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteUserCarbonHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        """
+        @summary 写入isv每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonRequest
+        @param headers: WriteUserCarbonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteUserCarbonResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -541,6 +697,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        """
+        @summary 写入isv每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonRequest
+        @return: WriteUserCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
         return self.write_user_carbon_with_options(request, headers, runtime)
@@ -549,6 +711,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteUserCarbonRequest,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonResponse:
+        """
+        @summary 写入isv每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonRequest
+        @return: WriteUserCarbonResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteUserCarbonHeaders()
         return await self.write_user_carbon_with_options_async(request, headers, runtime)
@@ -559,6 +727,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        """
+        @summary 写入isv能耗每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonEnergyRequest
+        @param headers: WriteUserCarbonEnergyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteUserCarbonEnergyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -594,6 +770,14 @@ class Client(OpenApiClient):
         headers: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        """
+        @summary 写入isv能耗每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonEnergyRequest
+        @param headers: WriteUserCarbonEnergyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WriteUserCarbonEnergyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_details_list):
@@ -627,6 +811,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        """
+        @summary 写入isv能耗每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonEnergyRequest
+        @return: WriteUserCarbonEnergyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
         return self.write_user_carbon_energy_with_options(request, headers, runtime)
@@ -635,6 +825,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcarbon__1__0_models.WriteUserCarbonEnergyRequest,
     ) -> dingtalkcarbon__1__0_models.WriteUserCarbonEnergyResponse:
+        """
+        @summary 写入isv能耗每日用户明细碳能量数据
+        
+        @param request: WriteUserCarbonEnergyRequest
+        @return: WriteUserCarbonEnergyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcarbon__1__0_models.WriteUserCarbonEnergyHeaders()
         return await self.write_user_carbon_energy_with_options_async(request, headers, runtime)

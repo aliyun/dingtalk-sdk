@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkbay_max__1__0_models.QueryBaymaxSkillLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbay_max__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @param headers: QueryBaymaxSkillLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBaymaxSkillLogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.from_):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalkbay_max__1__0_models.QueryBaymaxSkillLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbay_max__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @param headers: QueryBaymaxSkillLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBaymaxSkillLogResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.from_):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbay_max__1__0_models.QueryBaymaxSkillLogRequest,
     ) -> dingtalkbay_max__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @return: QueryBaymaxSkillLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbay_max__1__0_models.QueryBaymaxSkillLogHeaders()
         return self.query_baymax_skill_log_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbay_max__1__0_models.QueryBaymaxSkillLogRequest,
     ) -> dingtalkbay_max__1__0_models.QueryBaymaxSkillLogResponse:
+        """
+        @summary Baymax技能执行日志
+        
+        @param request: QueryBaymaxSkillLogRequest
+        @return: QueryBaymaxSkillLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbay_max__1__0_models.QueryBaymaxSkillLogHeaders()
         return await self.query_baymax_skill_log_with_options_async(request, headers, runtime)

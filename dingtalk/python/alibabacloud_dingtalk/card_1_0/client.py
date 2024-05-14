@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.AppendSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceRequest
+        @param headers: AppendSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_space_model):
@@ -78,6 +86,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.AppendSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceRequest
+        @param headers: AppendSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_space_model):
@@ -119,6 +135,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.AppendSpaceRequest,
     ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceRequest
+        @return: AppendSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
         return self.append_space_with_options(request, headers, runtime)
@@ -127,6 +149,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.AppendSpaceRequest,
     ) -> dingtalkcard__1__0_models.AppendSpaceResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceRequest
+        @return: AppendSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.AppendSpaceHeaders()
         return await self.append_space_with_options_async(request, headers, runtime)
@@ -137,6 +165,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.AppendSpaceWithDelegateResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceWithDelegateRequest
+        @param headers: AppendSpaceWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendSpaceWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_space_model):
@@ -180,6 +216,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.AppendSpaceWithDelegateResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceWithDelegateRequest
+        @param headers: AppendSpaceWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendSpaceWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_space_model):
@@ -221,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.AppendSpaceWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.AppendSpaceWithDelegateResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceWithDelegateRequest
+        @return: AppendSpaceWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders()
         return self.append_space_with_delegate_with_options(request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.AppendSpaceWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.AppendSpaceWithDelegateResponse:
+        """
+        @summary 新增或更新卡片的场域信息
+        
+        @param request: AppendSpaceWithDelegateRequest
+        @return: AppendSpaceWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders()
         return await self.append_space_with_delegate_with_options_async(request, headers, runtime)
@@ -239,6 +295,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateAndDeliverHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverRequest
+        @param headers: CreateAndDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -314,6 +378,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateAndDeliverHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverRequest
+        @param headers: CreateAndDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -387,6 +459,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverRequest
+        @return: CreateAndDeliverResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
         return self.create_and_deliver_with_options(request, headers, runtime)
@@ -395,6 +473,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverRequest
+        @return: CreateAndDeliverResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
         return await self.create_and_deliver_with_options_async(request, headers, runtime)
@@ -405,6 +489,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateAndDeliverWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverWithDelegateResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverWithDelegateRequest
+        @param headers: CreateAndDeliverWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -480,6 +572,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateAndDeliverWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverWithDelegateResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverWithDelegateRequest
+        @param headers: CreateAndDeliverWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -553,6 +653,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverWithDelegateResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverWithDelegateRequest
+        @return: CreateAndDeliverWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateAndDeliverWithDelegateHeaders()
         return self.create_and_deliver_with_delegate_with_options(request, headers, runtime)
@@ -561,6 +667,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.CreateAndDeliverWithDelegateResponse:
+        """
+        @summary 创建并投放卡片
+        
+        @param request: CreateAndDeliverWithDelegateRequest
+        @return: CreateAndDeliverWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateAndDeliverWithDelegateHeaders()
         return await self.create_and_deliver_with_delegate_with_options_async(request, headers, runtime)
@@ -571,6 +683,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardRequest
+        @param headers: CreateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -632,6 +752,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardRequest
+        @param headers: CreateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -691,6 +819,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateCardRequest,
     ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardRequest
+        @return: CreateCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateCardHeaders()
         return self.create_card_with_options(request, headers, runtime)
@@ -699,6 +833,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateCardRequest,
     ) -> dingtalkcard__1__0_models.CreateCardResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardRequest
+        @return: CreateCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateCardHeaders()
         return await self.create_card_with_options_async(request, headers, runtime)
@@ -709,6 +849,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateCardWithDelegateResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardWithDelegateRequest
+        @param headers: CreateCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -770,6 +918,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.CreateCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.CreateCardWithDelegateResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardWithDelegateRequest
+        @param headers: CreateCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
@@ -829,6 +985,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.CreateCardWithDelegateResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardWithDelegateRequest
+        @return: CreateCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateCardWithDelegateHeaders()
         return self.create_card_with_delegate_with_options(request, headers, runtime)
@@ -837,6 +999,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.CreateCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.CreateCardWithDelegateResponse:
+        """
+        @summary 创建卡片
+        
+        @param request: CreateCardWithDelegateRequest
+        @return: CreateCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.CreateCardWithDelegateHeaders()
         return await self.create_card_with_delegate_with_options_async(request, headers, runtime)
@@ -847,6 +1015,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.DeliverCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardRequest
+        @param headers: DeliverCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
@@ -898,6 +1074,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.DeliverCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardRequest
+        @param headers: DeliverCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
@@ -947,6 +1131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.DeliverCardRequest,
     ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardRequest
+        @return: DeliverCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.DeliverCardHeaders()
         return self.deliver_card_with_options(request, headers, runtime)
@@ -955,6 +1145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.DeliverCardRequest,
     ) -> dingtalkcard__1__0_models.DeliverCardResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardRequest
+        @return: DeliverCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.DeliverCardHeaders()
         return await self.deliver_card_with_options_async(request, headers, runtime)
@@ -965,6 +1161,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.DeliverCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.DeliverCardWithDelegateResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardWithDelegateRequest
+        @param headers: DeliverCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
@@ -1016,6 +1220,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.DeliverCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.DeliverCardWithDelegateResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardWithDelegateRequest
+        @param headers: DeliverCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeliverCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.co_feed_open_deliver_model):
@@ -1065,6 +1277,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.DeliverCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.DeliverCardWithDelegateResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardWithDelegateRequest
+        @return: DeliverCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.DeliverCardWithDelegateHeaders()
         return self.deliver_card_with_delegate_with_options(request, headers, runtime)
@@ -1073,6 +1291,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.DeliverCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.DeliverCardWithDelegateResponse:
+        """
+        @summary 投放卡片
+        
+        @param request: DeliverCardWithDelegateRequest
+        @return: DeliverCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.DeliverCardWithDelegateHeaders()
         return await self.deliver_card_with_delegate_with_options_async(request, headers, runtime)
@@ -1083,6 +1307,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.RegisterCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackRequest
+        @param headers: RegisterCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -1124,6 +1356,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.RegisterCallbackHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackRequest
+        @param headers: RegisterCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterCallbackResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -1163,6 +1403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.RegisterCallbackRequest,
     ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackRequest
+        @return: RegisterCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
         return self.register_callback_with_options(request, headers, runtime)
@@ -1171,6 +1417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.RegisterCallbackRequest,
     ) -> dingtalkcard__1__0_models.RegisterCallbackResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackRequest
+        @return: RegisterCallbackResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.RegisterCallbackHeaders()
         return await self.register_callback_with_options_async(request, headers, runtime)
@@ -1181,6 +1433,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.RegisterCallbackWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.RegisterCallbackWithDelegateResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackWithDelegateRequest
+        @param headers: RegisterCallbackWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterCallbackWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -1222,6 +1482,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.RegisterCallbackWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.RegisterCallbackWithDelegateResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackWithDelegateRequest
+        @param headers: RegisterCallbackWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegisterCallbackWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -1261,6 +1529,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.RegisterCallbackWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.RegisterCallbackWithDelegateResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackWithDelegateRequest
+        @return: RegisterCallbackWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.RegisterCallbackWithDelegateHeaders()
         return self.register_callback_with_delegate_with_options(request, headers, runtime)
@@ -1269,6 +1543,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.RegisterCallbackWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.RegisterCallbackWithDelegateResponse:
+        """
+        @summary 注册卡片回调地址
+        
+        @param request: RegisterCallbackWithDelegateRequest
+        @return: RegisterCallbackWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.RegisterCallbackWithDelegateHeaders()
         return await self.register_callback_with_delegate_with_options_async(request, headers, runtime)
@@ -1279,6 +1559,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.StreamingUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        """
+        @summary AI互动卡片流式更新
+        
+        @param request: StreamingUpdateRequest
+        @param headers: StreamingUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StreamingUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -1326,6 +1614,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.StreamingUpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        """
+        @summary AI互动卡片流式更新
+        
+        @param request: StreamingUpdateRequest
+        @param headers: StreamingUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StreamingUpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -1371,6 +1667,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.StreamingUpdateRequest,
     ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        """
+        @summary AI互动卡片流式更新
+        
+        @param request: StreamingUpdateRequest
+        @return: StreamingUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.StreamingUpdateHeaders()
         return self.streaming_update_with_options(request, headers, runtime)
@@ -1379,6 +1681,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.StreamingUpdateRequest,
     ) -> dingtalkcard__1__0_models.StreamingUpdateResponse:
+        """
+        @summary AI互动卡片流式更新
+        
+        @param request: StreamingUpdateRequest
+        @return: StreamingUpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.StreamingUpdateHeaders()
         return await self.streaming_update_with_options_async(request, headers, runtime)
@@ -1389,6 +1697,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.UpdateCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardRequest
+        @param headers: UpdateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -1432,6 +1748,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.UpdateCardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardRequest
+        @param headers: UpdateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -1473,6 +1797,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.UpdateCardRequest,
     ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardRequest
+        @return: UpdateCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.UpdateCardHeaders()
         return self.update_card_with_options(request, headers, runtime)
@@ -1481,6 +1811,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.UpdateCardRequest,
     ) -> dingtalkcard__1__0_models.UpdateCardResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardRequest
+        @return: UpdateCardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.UpdateCardHeaders()
         return await self.update_card_with_options_async(request, headers, runtime)
@@ -1491,6 +1827,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.UpdateCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.UpdateCardWithDelegateResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardWithDelegateRequest
+        @param headers: UpdateCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -1534,6 +1878,14 @@ class Client(OpenApiClient):
         headers: dingtalkcard__1__0_models.UpdateCardWithDelegateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcard__1__0_models.UpdateCardWithDelegateResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardWithDelegateRequest
+        @param headers: UpdateCardWithDelegateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCardWithDelegateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.card_data):
@@ -1575,6 +1927,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.UpdateCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.UpdateCardWithDelegateResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardWithDelegateRequest
+        @return: UpdateCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.UpdateCardWithDelegateHeaders()
         return self.update_card_with_delegate_with_options(request, headers, runtime)
@@ -1583,6 +1941,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcard__1__0_models.UpdateCardWithDelegateRequest,
     ) -> dingtalkcard__1__0_models.UpdateCardWithDelegateResponse:
+        """
+        @summary 更新卡片
+        
+        @param request: UpdateCardWithDelegateRequest
+        @return: UpdateCardWithDelegateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.UpdateCardWithDelegateHeaders()
         return await self.update_card_with_delegate_with_options_async(request, headers, runtime)

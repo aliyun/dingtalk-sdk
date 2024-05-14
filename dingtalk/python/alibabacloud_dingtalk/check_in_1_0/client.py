@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcheck_in__1__0_models.GetCheckinRecordByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcheck_in__1__0_models.GetCheckinRecordByUserResponse:
+        """
+        @summary 调用本接口，获取用户签到记录
+        
+        @param request: GetCheckinRecordByUserRequest
+        @param headers: GetCheckinRecordByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCheckinRecordByUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkcheck_in__1__0_models.GetCheckinRecordByUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcheck_in__1__0_models.GetCheckinRecordByUserResponse:
+        """
+        @summary 调用本接口，获取用户签到记录
+        
+        @param request: GetCheckinRecordByUserRequest
+        @param headers: GetCheckinRecordByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCheckinRecordByUserResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.end_time):
@@ -123,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcheck_in__1__0_models.GetCheckinRecordByUserRequest,
     ) -> dingtalkcheck_in__1__0_models.GetCheckinRecordByUserResponse:
+        """
+        @summary 调用本接口，获取用户签到记录
+        
+        @param request: GetCheckinRecordByUserRequest
+        @return: GetCheckinRecordByUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcheck_in__1__0_models.GetCheckinRecordByUserHeaders()
         return self.get_checkin_record_by_user_with_options(request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcheck_in__1__0_models.GetCheckinRecordByUserRequest,
     ) -> dingtalkcheck_in__1__0_models.GetCheckinRecordByUserResponse:
+        """
+        @summary 调用本接口，获取用户签到记录
+        
+        @param request: GetCheckinRecordByUserRequest
+        @return: GetCheckinRecordByUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcheck_in__1__0_models.GetCheckinRecordByUserHeaders()
         return await self.get_checkin_record_by_user_with_options_async(request, headers, runtime)

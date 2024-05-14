@@ -35,6 +35,13 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.GetTranscribeBriefHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.GetTranscribeBriefResponse:
+        """
+        @summary 获取闪记任务的概要信息
+        
+        @param headers: GetTranscribeBriefHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTranscribeBriefResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -65,6 +72,13 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.GetTranscribeBriefHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.GetTranscribeBriefResponse:
+        """
+        @summary 获取闪记任务的概要信息
+        
+        @param headers: GetTranscribeBriefHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTranscribeBriefResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -93,6 +107,11 @@ class Client(OpenApiClient):
         self,
         task_uuid: str,
     ) -> dingtalktranscribe__1__0_models.GetTranscribeBriefResponse:
+        """
+        @summary 获取闪记任务的概要信息
+        
+        @return: GetTranscribeBriefResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.GetTranscribeBriefHeaders()
         return self.get_transcribe_brief_with_options(task_uuid, headers, runtime)
@@ -101,6 +120,11 @@ class Client(OpenApiClient):
         self,
         task_uuid: str,
     ) -> dingtalktranscribe__1__0_models.GetTranscribeBriefResponse:
+        """
+        @summary 获取闪记任务的概要信息
+        
+        @return: GetTranscribeBriefResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.GetTranscribeBriefHeaders()
         return await self.get_transcribe_brief_with_options_async(task_uuid, headers, runtime)
@@ -112,6 +136,14 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.RemovePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.RemovePermissionResponse:
+        """
+        @summary 移除指定用户对闪记任务的权限
+        
+        @param request: RemovePermissionRequest
+        @param headers: RemovePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemovePermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -154,6 +186,14 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.RemovePermissionHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.RemovePermissionResponse:
+        """
+        @summary 移除指定用户对闪记任务的权限
+        
+        @param request: RemovePermissionRequest
+        @param headers: RemovePermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemovePermissionResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.biz_type):
@@ -194,6 +234,12 @@ class Client(OpenApiClient):
         task_uuid: str,
         request: dingtalktranscribe__1__0_models.RemovePermissionRequest,
     ) -> dingtalktranscribe__1__0_models.RemovePermissionResponse:
+        """
+        @summary 移除指定用户对闪记任务的权限
+        
+        @param request: RemovePermissionRequest
+        @return: RemovePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.RemovePermissionHeaders()
         return self.remove_permission_with_options(task_uuid, request, headers, runtime)
@@ -203,6 +249,12 @@ class Client(OpenApiClient):
         task_uuid: str,
         request: dingtalktranscribe__1__0_models.RemovePermissionRequest,
     ) -> dingtalktranscribe__1__0_models.RemovePermissionResponse:
+        """
+        @summary 移除指定用户对闪记任务的权限
+        
+        @param request: RemovePermissionRequest
+        @return: RemovePermissionResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.RemovePermissionHeaders()
         return await self.remove_permission_with_options_async(task_uuid, request, headers, runtime)
@@ -214,6 +266,14 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.UpdatePermissionForUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.UpdatePermissionForUsersResponse:
+        """
+        @summary 针对指定的闪记，修改或者授予指定用户权限
+        
+        @param request: UpdatePermissionForUsersRequest
+        @param headers: UpdatePermissionForUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePermissionForUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_uid):
@@ -258,6 +318,14 @@ class Client(OpenApiClient):
         headers: dingtalktranscribe__1__0_models.UpdatePermissionForUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktranscribe__1__0_models.UpdatePermissionForUsersResponse:
+        """
+        @summary 针对指定的闪记，修改或者授予指定用户权限
+        
+        @param request: UpdatePermissionForUsersRequest
+        @param headers: UpdatePermissionForUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePermissionForUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operator_uid):
@@ -300,6 +368,12 @@ class Client(OpenApiClient):
         task_uuid: str,
         request: dingtalktranscribe__1__0_models.UpdatePermissionForUsersRequest,
     ) -> dingtalktranscribe__1__0_models.UpdatePermissionForUsersResponse:
+        """
+        @summary 针对指定的闪记，修改或者授予指定用户权限
+        
+        @param request: UpdatePermissionForUsersRequest
+        @return: UpdatePermissionForUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.UpdatePermissionForUsersHeaders()
         return self.update_permission_for_users_with_options(task_uuid, request, headers, runtime)
@@ -309,6 +383,12 @@ class Client(OpenApiClient):
         task_uuid: str,
         request: dingtalktranscribe__1__0_models.UpdatePermissionForUsersRequest,
     ) -> dingtalktranscribe__1__0_models.UpdatePermissionForUsersResponse:
+        """
+        @summary 针对指定的闪记，修改或者授予指定用户权限
+        
+        @param request: UpdatePermissionForUsersRequest
+        @return: UpdatePermissionForUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktranscribe__1__0_models.UpdatePermissionForUsersHeaders()
         return await self.update_permission_for_users_with_options_async(task_uuid, request, headers, runtime)

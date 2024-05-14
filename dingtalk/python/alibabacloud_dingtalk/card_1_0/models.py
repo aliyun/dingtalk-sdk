@@ -374,6 +374,7 @@ class AppendSpaceRequest(TeaModel):
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.top_open_space_model = top_open_space_model
 
@@ -841,6 +842,7 @@ class AppendSpaceWithDelegateRequest(TeaModel):
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.top_open_space_model = top_open_space_model
 
@@ -1809,7 +1811,9 @@ class CreateAndDeliverRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
         self.co_feed_open_space_model = co_feed_open_space_model
@@ -1821,7 +1825,9 @@ class CreateAndDeliverRequest(TeaModel):
         self.im_single_open_deliver_model = im_single_open_deliver_model
         self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
+        # This parameter is required.
         self.open_space_id = open_space_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.top_open_deliver_model = top_open_deliver_model
@@ -2988,7 +2994,9 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
         self.co_feed_open_space_model = co_feed_open_space_model
@@ -3000,7 +3008,9 @@ class CreateAndDeliverWithDelegateRequest(TeaModel):
         self.im_single_open_deliver_model = im_single_open_deliver_model
         self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
+        # This parameter is required.
         self.open_space_id = open_space_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.top_open_deliver_model = top_open_deliver_model
@@ -3938,13 +3948,16 @@ class CreateCardRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
         self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.top_open_space_model = top_open_space_model
@@ -4741,13 +4754,16 @@ class CreateCardWithDelegateRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        # This parameter is required.
         self.card_data = card_data
+        # This parameter is required.
         self.card_template_id = card_template_id
         self.co_feed_open_space_model = co_feed_open_space_model
         self.im_group_open_space_model = im_group_open_space_model
         self.im_robot_open_space_model = im_robot_open_space_model
         self.im_single_open_space_model = im_single_open_space_model
         self.open_dynamic_data_config = open_dynamic_data_config
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.top_open_space_model = top_open_space_model
@@ -5196,7 +5212,9 @@ class DeliverCardRequest(TeaModel):
         self.im_group_open_deliver_model = im_group_open_deliver_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
         self.im_single_open_deliver_model = im_single_open_deliver_model
+        # This parameter is required.
         self.open_space_id = open_space_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.top_open_deliver_model = top_open_deliver_model
         self.user_id_type = user_id_type
@@ -5670,7 +5688,9 @@ class DeliverCardWithDelegateRequest(TeaModel):
         self.im_group_open_deliver_model = im_group_open_deliver_model
         self.im_robot_open_deliver_model = im_robot_open_deliver_model
         self.im_single_open_deliver_model = im_single_open_deliver_model
+        # This parameter is required.
         self.open_space_id = open_space_id
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.top_open_deliver_model = top_open_deliver_model
         self.user_id_type = user_id_type
@@ -5919,7 +5939,9 @@ class RegisterCallbackRequest(TeaModel):
         force_update: bool = None,
     ):
         self.api_secret = api_secret
+        # This parameter is required.
         self.callback_route_key = callback_route_key
+        # This parameter is required.
         self.callback_url = callback_url
         self.force_update = force_update
 
@@ -6106,7 +6128,9 @@ class RegisterCallbackWithDelegateRequest(TeaModel):
         force_update: bool = None,
     ):
         self.api_secret = api_secret
+        # This parameter is required.
         self.callback_route_key = callback_route_key
+        # This parameter is required.
         self.callback_url = callback_url
         self.force_update = force_update
 
@@ -6295,12 +6319,16 @@ class StreamingUpdateRequest(TeaModel):
         key: str = None,
         out_track_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.guid = guid
         self.is_error = is_error
         self.is_finalize = is_finalize
         self.is_full = is_full
+        # This parameter is required.
         self.key = key
+        # This parameter is required.
         self.out_track_id = out_track_id
 
     def validate(self):
@@ -6525,6 +6553,7 @@ class UpdateCardRequest(TeaModel):
     ):
         self.card_data = card_data
         self.card_update_options = card_update_options
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.user_id_type = user_id_type
@@ -6757,6 +6786,7 @@ class UpdateCardWithDelegateRequest(TeaModel):
     ):
         self.card_data = card_data
         self.card_update_options = card_update_options
+        # This parameter is required.
         self.out_track_id = out_track_id
         self.private_data = private_data
         self.user_id_type = user_id_type

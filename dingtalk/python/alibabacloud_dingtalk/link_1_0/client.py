@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        """
+        @summary 发送用户授权信息申请
+        
+        @param request: ApplyFollowerAuthInfoRequest
+        @param headers: ApplyFollowerAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApplyFollowerAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_auth_key):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        """
+        @summary 发送用户授权信息申请
+        
+        @param request: ApplyFollowerAuthInfoRequest
+        @param headers: ApplyFollowerAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApplyFollowerAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.app_auth_key):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        """
+        @summary 发送用户授权信息申请
+        
+        @param request: ApplyFollowerAuthInfoRequest
+        @return: ApplyFollowerAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders()
         return self.apply_follower_auth_info_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.ApplyFollowerAuthInfoRequest,
     ) -> dingtalklink__1__0_models.ApplyFollowerAuthInfoResponse:
+        """
+        @summary 发送用户授权信息申请
+        
+        @param request: ApplyFollowerAuthInfoRequest
+        @return: ApplyFollowerAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ApplyFollowerAuthInfoHeaders()
         return await self.apply_follower_auth_info_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.CallbackRegiesterHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        """
+        @summary 注册服务窗消息回调服务
+        
+        @param request: CallbackRegiesterRequest
+        @param headers: CallbackRegiesterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CallbackRegiesterResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -174,6 +210,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.CallbackRegiesterHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        """
+        @summary 注册服务窗消息回调服务
+        
+        @param request: CallbackRegiesterRequest
+        @param headers: CallbackRegiesterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CallbackRegiesterResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.api_secret):
@@ -213,6 +257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.CallbackRegiesterRequest,
     ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        """
+        @summary 注册服务窗消息回调服务
+        
+        @param request: CallbackRegiesterRequest
+        @return: CallbackRegiesterResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.CallbackRegiesterHeaders()
         return self.callback_regiester_with_options(request, headers, runtime)
@@ -221,6 +271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.CallbackRegiesterRequest,
     ) -> dingtalklink__1__0_models.CallbackRegiesterResponse:
+        """
+        @summary 注册服务窗消息回调服务
+        
+        @param request: CallbackRegiesterRequest
+        @return: CallbackRegiesterResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.CallbackRegiesterHeaders()
         return await self.callback_regiester_with_options_async(request, headers, runtime)
@@ -231,6 +287,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片关闭接口
+        
+        @param request: CloseTopBoxInteractiveOTOMessageRequest
+        @param headers: CloseTopBoxInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopBoxInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -266,6 +330,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片关闭接口
+        
+        @param request: CloseTopBoxInteractiveOTOMessageRequest
+        @param headers: CloseTopBoxInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopBoxInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -299,6 +371,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片关闭接口
+        
+        @param request: CloseTopBoxInteractiveOTOMessageRequest
+        @return: CloseTopBoxInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders()
         return self.close_top_box_interactive_otomessage_with_options(request, headers, runtime)
@@ -307,6 +385,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片关闭接口
+        
+        @param request: CloseTopBoxInteractiveOTOMessageRequest
+        @return: CloseTopBoxInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.CloseTopBoxInteractiveOTOMessageHeaders()
         return await self.close_top_box_interactive_otomessage_with_options_async(request, headers, runtime)
@@ -317,6 +401,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetFollowerAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        """
+        @summary 获取用户授权信息
+        
+        @param request: GetFollowerAuthInfoRequest
+        @param headers: GetFollowerAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFollowerAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -354,6 +446,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetFollowerAuthInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        """
+        @summary 获取用户授权信息
+        
+        @param request: GetFollowerAuthInfoRequest
+        @param headers: GetFollowerAuthInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFollowerAuthInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -389,6 +489,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
     ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        """
+        @summary 获取用户授权信息
+        
+        @param request: GetFollowerAuthInfoRequest
+        @return: GetFollowerAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetFollowerAuthInfoHeaders()
         return self.get_follower_auth_info_with_options(request, headers, runtime)
@@ -397,6 +503,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetFollowerAuthInfoRequest,
     ) -> dingtalklink__1__0_models.GetFollowerAuthInfoResponse:
+        """
+        @summary 获取用户授权信息
+        
+        @param request: GetFollowerAuthInfoRequest
+        @return: GetFollowerAuthInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetFollowerAuthInfoHeaders()
         return await self.get_follower_auth_info_with_options_async(request, headers, runtime)
@@ -407,6 +519,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetFollowerInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetFollowerInfoResponse:
+        """
+        @summary 获取服务窗关注人信息
+        
+        @param request: GetFollowerInfoRequest
+        @param headers: GetFollowerInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFollowerInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -446,6 +566,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetFollowerInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetFollowerInfoResponse:
+        """
+        @summary 获取服务窗关注人信息
+        
+        @param request: GetFollowerInfoRequest
+        @param headers: GetFollowerInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFollowerInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -483,6 +611,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetFollowerInfoRequest,
     ) -> dingtalklink__1__0_models.GetFollowerInfoResponse:
+        """
+        @summary 获取服务窗关注人信息
+        
+        @param request: GetFollowerInfoRequest
+        @return: GetFollowerInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetFollowerInfoHeaders()
         return self.get_follower_info_with_options(request, headers, runtime)
@@ -491,6 +625,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetFollowerInfoRequest,
     ) -> dingtalklink__1__0_models.GetFollowerInfoResponse:
+        """
+        @summary 获取服务窗关注人信息
+        
+        @param request: GetFollowerInfoRequest
+        @return: GetFollowerInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetFollowerInfoHeaders()
         return await self.get_follower_info_with_options_async(request, headers, runtime)
@@ -501,6 +641,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetPictureDownloadUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetPictureDownloadUrlResponse:
+        """
+        @summary 服务窗图片消息下载地址获取接口
+        
+        @param request: GetPictureDownloadUrlRequest
+        @param headers: GetPictureDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPictureDownloadUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.download_code):
@@ -538,6 +686,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetPictureDownloadUrlHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetPictureDownloadUrlResponse:
+        """
+        @summary 服务窗图片消息下载地址获取接口
+        
+        @param request: GetPictureDownloadUrlRequest
+        @param headers: GetPictureDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPictureDownloadUrlResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.download_code):
@@ -573,6 +729,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetPictureDownloadUrlRequest,
     ) -> dingtalklink__1__0_models.GetPictureDownloadUrlResponse:
+        """
+        @summary 服务窗图片消息下载地址获取接口
+        
+        @param request: GetPictureDownloadUrlRequest
+        @return: GetPictureDownloadUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetPictureDownloadUrlHeaders()
         return self.get_picture_download_url_with_options(request, headers, runtime)
@@ -581,6 +743,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetPictureDownloadUrlRequest,
     ) -> dingtalklink__1__0_models.GetPictureDownloadUrlResponse:
+        """
+        @summary 服务窗图片消息下载地址获取接口
+        
+        @param request: GetPictureDownloadUrlRequest
+        @return: GetPictureDownloadUrlResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetPictureDownloadUrlHeaders()
         return await self.get_picture_download_url_with_options_async(request, headers, runtime)
@@ -591,6 +759,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetUserFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        """
+        @summary 获取用户关注状态
+        
+        @param request: GetUserFollowStatusRequest
+        @param headers: GetUserFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -630,6 +806,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.GetUserFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        """
+        @summary 获取用户关注状态
+        
+        @param request: GetUserFollowStatusRequest
+        @param headers: GetUserFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -667,6 +851,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
     ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        """
+        @summary 获取用户关注状态
+        
+        @param request: GetUserFollowStatusRequest
+        @return: GetUserFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetUserFollowStatusHeaders()
         return self.get_user_follow_status_with_options(request, headers, runtime)
@@ -675,6 +865,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.GetUserFollowStatusRequest,
     ) -> dingtalklink__1__0_models.GetUserFollowStatusResponse:
+        """
+        @summary 获取用户关注状态
+        
+        @param request: GetUserFollowStatusRequest
+        @return: GetUserFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.GetUserFollowStatusHeaders()
         return await self.get_user_follow_status_with_options_async(request, headers, runtime)
@@ -684,6 +880,13 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListAccountResponse:
+        """
+        @summary 获取企业下服务窗帐号列表
+        
+        @param headers: ListAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAccountResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -713,6 +916,13 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListAccountHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListAccountResponse:
+        """
+        @summary 获取企业下服务窗帐号列表
+        
+        @param headers: ListAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAccountResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -738,11 +948,21 @@ class Client(OpenApiClient):
         )
 
     def list_account(self) -> dingtalklink__1__0_models.ListAccountResponse:
+        """
+        @summary 获取企业下服务窗帐号列表
+        
+        @return: ListAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListAccountHeaders()
         return self.list_account_with_options(headers, runtime)
 
     async def list_account_async(self) -> dingtalklink__1__0_models.ListAccountResponse:
+        """
+        @summary 获取企业下服务窗帐号列表
+        
+        @return: ListAccountResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListAccountHeaders()
         return await self.list_account_with_options_async(headers, runtime)
@@ -752,6 +972,13 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListAccountInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        """
+        @summary 第三方企业应用查询服务窗帐号列表
+        
+        @param headers: ListAccountInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAccountInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -781,6 +1008,13 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListAccountInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        """
+        @summary 第三方企业应用查询服务窗帐号列表
+        
+        @param headers: ListAccountInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAccountInfoResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -806,11 +1040,21 @@ class Client(OpenApiClient):
         )
 
     def list_account_info(self) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        """
+        @summary 第三方企业应用查询服务窗帐号列表
+        
+        @return: ListAccountInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListAccountInfoHeaders()
         return self.list_account_info_with_options(headers, runtime)
 
     async def list_account_info_async(self) -> dingtalklink__1__0_models.ListAccountInfoResponse:
+        """
+        @summary 第三方企业应用查询服务窗帐号列表
+        
+        @return: ListAccountInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListAccountInfoHeaders()
         return await self.list_account_info_with_options_async(headers, runtime)
@@ -821,6 +1065,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListFollowerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListFollowerResponse:
+        """
+        @summary 批量获取服务窗关注人列表
+        
+        @param request: ListFollowerRequest
+        @param headers: ListFollowerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFollowerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -860,6 +1112,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.ListFollowerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.ListFollowerResponse:
+        """
+        @summary 批量获取服务窗关注人列表
+        
+        @param request: ListFollowerRequest
+        @param headers: ListFollowerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListFollowerResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -897,6 +1157,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.ListFollowerRequest,
     ) -> dingtalklink__1__0_models.ListFollowerResponse:
+        """
+        @summary 批量获取服务窗关注人列表
+        
+        @param request: ListFollowerRequest
+        @return: ListFollowerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListFollowerHeaders()
         return self.list_follower_with_options(request, headers, runtime)
@@ -905,6 +1171,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.ListFollowerRequest,
     ) -> dingtalklink__1__0_models.ListFollowerResponse:
+        """
+        @summary 批量获取服务窗关注人列表
+        
+        @param request: ListFollowerRequest
+        @return: ListFollowerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.ListFollowerHeaders()
         return await self.list_follower_with_options_async(request, headers, runtime)
@@ -915,6 +1187,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.QueryUserFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        """
+        @summary 第三方企业应用查询用户是否关注服务窗
+        
+        @param request: QueryUserFollowStatusRequest
+        @param headers: QueryUserFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -952,6 +1232,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.QueryUserFollowStatusHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        """
+        @summary 第三方企业应用查询用户是否关注服务窗
+        
+        @param request: QueryUserFollowStatusRequest
+        @param headers: QueryUserFollowStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserFollowStatusResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.account_id):
@@ -987,6 +1275,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
     ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        """
+        @summary 第三方企业应用查询用户是否关注服务窗
+        
+        @param request: QueryUserFollowStatusRequest
+        @return: QueryUserFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.QueryUserFollowStatusHeaders()
         return self.query_user_follow_status_with_options(request, headers, runtime)
@@ -995,6 +1289,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.QueryUserFollowStatusRequest,
     ) -> dingtalklink__1__0_models.QueryUserFollowStatusResponse:
+        """
+        @summary 第三方企业应用查询用户是否关注服务窗
+        
+        @param request: QueryUserFollowStatusRequest
+        @return: QueryUserFollowStatusResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.QueryUserFollowStatusHeaders()
         return await self.query_user_follow_status_with_options_async(request, headers, runtime)
@@ -1005,6 +1305,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendAgentOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendAgentOTOMessageResponse:
+        """
+        @summary 发送服务窗客服消息
+        
+        @param request: SendAgentOTOMessageRequest
+        @param headers: SendAgentOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendAgentOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1040,6 +1348,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendAgentOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendAgentOTOMessageResponse:
+        """
+        @summary 发送服务窗客服消息
+        
+        @param request: SendAgentOTOMessageRequest
+        @param headers: SendAgentOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendAgentOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1073,6 +1389,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendAgentOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendAgentOTOMessageResponse:
+        """
+        @summary 发送服务窗客服消息
+        
+        @param request: SendAgentOTOMessageRequest
+        @return: SendAgentOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendAgentOTOMessageHeaders()
         return self.send_agent_otomessage_with_options(request, headers, runtime)
@@ -1081,6 +1403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendAgentOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendAgentOTOMessageResponse:
+        """
+        @summary 发送服务窗客服消息
+        
+        @param request: SendAgentOTOMessageRequest
+        @return: SendAgentOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendAgentOTOMessageHeaders()
         return await self.send_agent_otomessage_with_options_async(request, headers, runtime)
@@ -1091,6 +1419,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片单发接口
+        
+        @param request: SendInteractiveOTOMessageRequest
+        @param headers: SendInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1126,6 +1462,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片单发接口
+        
+        @param request: SendInteractiveOTOMessageRequest
+        @param headers: SendInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1159,6 +1503,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片单发接口
+        
+        @param request: SendInteractiveOTOMessageRequest
+        @return: SendInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendInteractiveOTOMessageHeaders()
         return self.send_interactive_otomessage_with_options(request, headers, runtime)
@@ -1167,6 +1517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片单发接口
+        
+        @param request: SendInteractiveOTOMessageRequest
+        @return: SendInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendInteractiveOTOMessageHeaders()
         return await self.send_interactive_otomessage_with_options_async(request, headers, runtime)
@@ -1177,6 +1533,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片发送接口
+        
+        @param request: SendTopBoxInteractiveOTOMessageRequest
+        @param headers: SendTopBoxInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendTopBoxInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1212,6 +1576,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片发送接口
+        
+        @param request: SendTopBoxInteractiveOTOMessageRequest
+        @param headers: SendTopBoxInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendTopBoxInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1245,6 +1617,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片发送接口
+        
+        @param request: SendTopBoxInteractiveOTOMessageRequest
+        @return: SendTopBoxInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders()
         return self.send_top_box_interactive_otomessage_with_options(request, headers, runtime)
@@ -1253,6 +1631,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗吊顶卡片发送接口
+        
+        @param request: SendTopBoxInteractiveOTOMessageRequest
+        @return: SendTopBoxInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.SendTopBoxInteractiveOTOMessageHeaders()
         return await self.send_top_box_interactive_otomessage_with_options_async(request, headers, runtime)
@@ -1263,6 +1647,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.UpdateInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.UpdateInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片修改接口
+        
+        @param request: UpdateInteractiveOTOMessageRequest
+        @param headers: UpdateInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1298,6 +1690,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.UpdateInteractiveOTOMessageHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.UpdateInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片修改接口
+        
+        @param request: UpdateInteractiveOTOMessageRequest
+        @param headers: UpdateInteractiveOTOMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInteractiveOTOMessageResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.detail):
@@ -1331,6 +1731,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.UpdateInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.UpdateInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片修改接口
+        
+        @param request: UpdateInteractiveOTOMessageRequest
+        @return: UpdateInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.UpdateInteractiveOTOMessageHeaders()
         return self.update_interactive_otomessage_with_options(request, headers, runtime)
@@ -1339,6 +1745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.UpdateInteractiveOTOMessageRequest,
     ) -> dingtalklink__1__0_models.UpdateInteractiveOTOMessageResponse:
+        """
+        @summary 服务窗互动卡片修改接口
+        
+        @param request: UpdateInteractiveOTOMessageRequest
+        @return: UpdateInteractiveOTOMessageResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.UpdateInteractiveOTOMessageHeaders()
         return await self.update_interactive_otomessage_with_options_async(request, headers, runtime)
@@ -1349,6 +1761,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.UpdateShortcutsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        """
+        @summary 服务窗会话窗口快捷栏配置接口
+        
+        @param request: UpdateShortcutsRequest
+        @param headers: UpdateShortcutsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateShortcutsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.details):
@@ -1388,6 +1808,14 @@ class Client(OpenApiClient):
         headers: dingtalklink__1__0_models.UpdateShortcutsHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        """
+        @summary 服务窗会话窗口快捷栏配置接口
+        
+        @param request: UpdateShortcutsRequest
+        @param headers: UpdateShortcutsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateShortcutsResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.details):
@@ -1425,6 +1853,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.UpdateShortcutsRequest,
     ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        """
+        @summary 服务窗会话窗口快捷栏配置接口
+        
+        @param request: UpdateShortcutsRequest
+        @return: UpdateShortcutsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.UpdateShortcutsHeaders()
         return self.update_shortcuts_with_options(request, headers, runtime)
@@ -1433,6 +1867,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklink__1__0_models.UpdateShortcutsRequest,
     ) -> dingtalklink__1__0_models.UpdateShortcutsResponse:
+        """
+        @summary 服务窗会话窗口快捷栏配置接口
+        
+        @param request: UpdateShortcutsRequest
+        @return: UpdateShortcutsResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklink__1__0_models.UpdateShortcutsHeaders()
         return await self.update_shortcuts_with_options_async(request, headers, runtime)

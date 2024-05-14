@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadResponse:
+        """
+        @summary 查询公告已读未读人员列表
+        
+        @param request: QueryBlackboardReadUnReadRequest
+        @param headers: QueryBlackboardReadUnReadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBlackboardReadUnReadResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadResponse:
+        """
+        @summary 查询公告已读未读人员列表
+        
+        @param request: QueryBlackboardReadUnReadRequest
+        @param headers: QueryBlackboardReadUnReadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBlackboardReadUnReadResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadRequest,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadResponse:
+        """
+        @summary 查询公告已读未读人员列表
+        
+        @param request: QueryBlackboardReadUnReadRequest
+        @return: QueryBlackboardReadUnReadResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadHeaders()
         return self.query_blackboard_read_un_read_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadRequest,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadResponse:
+        """
+        @summary 查询公告已读未读人员列表
+        
+        @param request: QueryBlackboardReadUnReadRequest
+        @return: QueryBlackboardReadUnReadResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkblackboard__1__0_models.QueryBlackboardReadUnReadHeaders()
         return await self.query_blackboard_read_un_read_with_options_async(request, headers, runtime)
@@ -133,6 +161,14 @@ class Client(OpenApiClient):
         headers: dingtalkblackboard__1__0_models.QueryBlackboardSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardSpaceResponse:
+        """
+        @summary 获取公告钉盘空间信息
+        
+        @param request: QueryBlackboardSpaceRequest
+        @param headers: QueryBlackboardSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBlackboardSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operation_user_id):
@@ -168,6 +204,14 @@ class Client(OpenApiClient):
         headers: dingtalkblackboard__1__0_models.QueryBlackboardSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardSpaceResponse:
+        """
+        @summary 获取公告钉盘空间信息
+        
+        @param request: QueryBlackboardSpaceRequest
+        @param headers: QueryBlackboardSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBlackboardSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.operation_user_id):
@@ -201,6 +245,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkblackboard__1__0_models.QueryBlackboardSpaceRequest,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardSpaceResponse:
+        """
+        @summary 获取公告钉盘空间信息
+        
+        @param request: QueryBlackboardSpaceRequest
+        @return: QueryBlackboardSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkblackboard__1__0_models.QueryBlackboardSpaceHeaders()
         return self.query_blackboard_space_with_options(request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkblackboard__1__0_models.QueryBlackboardSpaceRequest,
     ) -> dingtalkblackboard__1__0_models.QueryBlackboardSpaceResponse:
+        """
+        @summary 获取公告钉盘空间信息
+        
+        @param request: QueryBlackboardSpaceRequest
+        @return: QueryBlackboardSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkblackboard__1__0_models.QueryBlackboardSpaceHeaders()
         return await self.query_blackboard_space_with_options_async(request, headers, runtime)

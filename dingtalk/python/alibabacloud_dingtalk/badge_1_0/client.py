@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
+        """
+        @summary 创建钉工牌码用户实例
+        
+        @param request: CreateBadgeCodeUserInstanceRequest
+        @param headers: CreateBadgeCodeUserInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBadgeCodeUserInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -90,6 +98,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
+        """
+        @summary 创建钉工牌码用户实例
+        
+        @param request: CreateBadgeCodeUserInstanceRequest
+        @param headers: CreateBadgeCodeUserInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBadgeCodeUserInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -143,6 +159,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
     ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
+        """
+        @summary 创建钉工牌码用户实例
+        
+        @param request: CreateBadgeCodeUserInstanceRequest
+        @return: CreateBadgeCodeUserInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
         return self.create_badge_code_user_instance_with_options(request, headers, runtime)
@@ -151,6 +173,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceRequest,
     ) -> dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceResponse:
+        """
+        @summary 创建钉工牌码用户实例
+        
+        @param request: CreateBadgeCodeUserInstanceRequest
+        @return: CreateBadgeCodeUserInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.CreateBadgeCodeUserInstanceHeaders()
         return await self.create_badge_code_user_instance_with_options_async(request, headers, runtime)
@@ -161,6 +189,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        """
+        @summary 创建钉工牌通知消息
+        
+        @param request: CreateBadgeNotifyRequest
+        @param headers: CreateBadgeNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBadgeNotifyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -202,6 +238,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        """
+        @summary 创建钉工牌通知消息
+        
+        @param request: CreateBadgeNotifyRequest
+        @param headers: CreateBadgeNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBadgeNotifyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -241,6 +285,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
     ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        """
+        @summary 创建钉工牌通知消息
+        
+        @param request: CreateBadgeNotifyRequest
+        @return: CreateBadgeNotifyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
         return self.create_badge_notify_with_options(request, headers, runtime)
@@ -249,6 +299,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.CreateBadgeNotifyRequest,
     ) -> dingtalkbadge__1__0_models.CreateBadgeNotifyResponse:
+        """
+        @summary 创建钉工牌通知消息
+        
+        @param request: CreateBadgeNotifyRequest
+        @return: CreateBadgeNotifyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.CreateBadgeNotifyHeaders()
         return await self.create_badge_notify_with_options_async(request, headers, runtime)
@@ -259,6 +315,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        """
+        @summary 钉工牌解码
+        
+        @param request: DecodeBadgeCodeRequest
+        @param headers: DecodeBadgeCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DecodeBadgeCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.pay_code):
@@ -296,6 +360,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        """
+        @summary 钉工牌解码
+        
+        @param request: DecodeBadgeCodeRequest
+        @param headers: DecodeBadgeCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DecodeBadgeCodeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.pay_code):
@@ -331,6 +403,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
     ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        """
+        @summary 钉工牌解码
+        
+        @param request: DecodeBadgeCodeRequest
+        @return: DecodeBadgeCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
         return self.decode_badge_code_with_options(request, headers, runtime)
@@ -339,6 +417,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.DecodeBadgeCodeRequest,
     ) -> dingtalkbadge__1__0_models.DecodeBadgeCodeResponse:
+        """
+        @summary 钉工牌解码
+        
+        @param request: DecodeBadgeCodeRequest
+        @return: DecodeBadgeCodeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.DecodeBadgeCodeHeaders()
         return await self.decode_badge_code_with_options_async(request, headers, runtime)
@@ -349,6 +433,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        """
+        @summary 通知钉工牌码付款结果
+        
+        @param request: NotifyBadgeCodePayResultRequest
+        @param headers: NotifyBadgeCodePayResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodePayResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -416,6 +508,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        """
+        @summary 通知钉工牌码付款结果
+        
+        @param request: NotifyBadgeCodePayResultRequest
+        @param headers: NotifyBadgeCodePayResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodePayResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.amount):
@@ -481,6 +581,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        """
+        @summary 通知钉工牌码付款结果
+        
+        @param request: NotifyBadgeCodePayResultRequest
+        @return: NotifyBadgeCodePayResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
         return self.notify_badge_code_pay_result_with_options(request, headers, runtime)
@@ -489,6 +595,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodePayResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodePayResultResponse:
+        """
+        @summary 通知钉工牌码付款结果
+        
+        @param request: NotifyBadgeCodePayResultRequest
+        @return: NotifyBadgeCodePayResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodePayResultHeaders()
         return await self.notify_badge_code_pay_result_with_options_async(request, headers, runtime)
@@ -499,6 +611,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        """
+        @summary 通知钉工牌码退款结果
+        
+        @param request: NotifyBadgeCodeRefundResultRequest
+        @param headers: NotifyBadgeCodeRefundResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodeRefundResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -552,6 +672,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        """
+        @summary 通知钉工牌码退款结果
+        
+        @param request: NotifyBadgeCodeRefundResultRequest
+        @param headers: NotifyBadgeCodeRefundResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodeRefundResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -603,6 +731,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        """
+        @summary 通知钉工牌码退款结果
+        
+        @param request: NotifyBadgeCodeRefundResultRequest
+        @return: NotifyBadgeCodeRefundResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
         return self.notify_badge_code_refund_result_with_options(request, headers, runtime)
@@ -611,6 +745,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultResponse:
+        """
+        @summary 通知钉工牌码退款结果
+        
+        @param request: NotifyBadgeCodeRefundResultRequest
+        @return: NotifyBadgeCodeRefundResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodeRefundResultHeaders()
         return await self.notify_badge_code_refund_result_with_options_async(request, headers, runtime)
@@ -621,6 +761,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        """
+        @summary 通知钉工牌码验证结果
+        
+        @param request: NotifyBadgeCodeVerifyResultRequest
+        @param headers: NotifyBadgeCodeVerifyResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodeVerifyResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -674,6 +822,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        """
+        @summary 通知钉工牌码验证结果
+        
+        @param request: NotifyBadgeCodeVerifyResultRequest
+        @param headers: NotifyBadgeCodeVerifyResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NotifyBadgeCodeVerifyResultResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -725,6 +881,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        """
+        @summary 通知钉工牌码验证结果
+        
+        @param request: NotifyBadgeCodeVerifyResultRequest
+        @return: NotifyBadgeCodeVerifyResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
         return self.notify_badge_code_verify_result_with_options(request, headers, runtime)
@@ -733,6 +895,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultRequest,
     ) -> dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultResponse:
+        """
+        @summary 通知钉工牌码验证结果
+        
+        @param request: NotifyBadgeCodeVerifyResultRequest
+        @return: NotifyBadgeCodeVerifyResultResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.NotifyBadgeCodeVerifyResultHeaders()
         return await self.notify_badge_code_verify_result_with_options_async(request, headers, runtime)
@@ -743,6 +911,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        """
+        @summary 保存钉工牌企业实例
+        
+        @param request: SaveBadgeCodeCorpInstanceRequest
+        @param headers: SaveBadgeCodeCorpInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveBadgeCodeCorpInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code_identity):
@@ -784,6 +960,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        """
+        @summary 保存钉工牌企业实例
+        
+        @param request: SaveBadgeCodeCorpInstanceRequest
+        @param headers: SaveBadgeCodeCorpInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveBadgeCodeCorpInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.code_identity):
@@ -823,6 +1007,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
     ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        """
+        @summary 保存钉工牌企业实例
+        
+        @param request: SaveBadgeCodeCorpInstanceRequest
+        @return: SaveBadgeCodeCorpInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
         return self.save_badge_code_corp_instance_with_options(request, headers, runtime)
@@ -831,6 +1021,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceRequest,
     ) -> dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceResponse:
+        """
+        @summary 保存钉工牌企业实例
+        
+        @param request: SaveBadgeCodeCorpInstanceRequest
+        @return: SaveBadgeCodeCorpInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.SaveBadgeCodeCorpInstanceHeaders()
         return await self.save_badge_code_corp_instance_with_options_async(request, headers, runtime)
@@ -841,6 +1037,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        """
+        @summary 更新钉工牌码用户实例
+        
+        @param request: UpdateBadgeCodeUserInstanceRequest
+        @param headers: UpdateBadgeCodeUserInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateBadgeCodeUserInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -894,6 +1098,14 @@ class Client(OpenApiClient):
         headers: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        """
+        @summary 更新钉工牌码用户实例
+        
+        @param request: UpdateBadgeCodeUserInstanceRequest
+        @param headers: UpdateBadgeCodeUserInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateBadgeCodeUserInstanceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.available_times):
@@ -945,6 +1157,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
     ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        """
+        @summary 更新钉工牌码用户实例
+        
+        @param request: UpdateBadgeCodeUserInstanceRequest
+        @return: UpdateBadgeCodeUserInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
         return self.update_badge_code_user_instance_with_options(request, headers, runtime)
@@ -953,6 +1171,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceRequest,
     ) -> dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceResponse:
+        """
+        @summary 更新钉工牌码用户实例
+        
+        @param request: UpdateBadgeCodeUserInstanceRequest
+        @return: UpdateBadgeCodeUserInstanceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbadge__1__0_models.UpdateBadgeCodeUserInstanceHeaders()
         return await self.update_badge_code_user_instance_with_options_async(request, headers, runtime)

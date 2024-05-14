@@ -58,21 +58,32 @@ class BatchCreateTemplateRequestTemplateList(TeaModel):
         template_key: str = None,
         use_cases_media_list: List[str] = None,
     ):
+        # This parameter is required.
         self.adapt_env = adapt_env
+        # This parameter is required.
         self.app_desc = app_desc
+        # This parameter is required.
         self.app_icon = app_icon
         self.case_video_list = case_video_list
+        # This parameter is required.
         self.category_code = category_code
         self.cover_img_list = cover_img_list
         self.exp_url = exp_url
+        # This parameter is required.
         self.industry_label_list = industry_label_list
+        # This parameter is required.
         self.install_times = install_times
         self.mobile_preview_media_list = mobile_preview_media_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.preview_media_list = preview_media_list
         self.provider_name = provider_name
+        # This parameter is required.
         self.role_label_list = role_label_list
+        # This parameter is required.
         self.simple_desc = simple_desc
+        # This parameter is required.
         self.template_key = template_key
         self.use_cases_media_list = use_cases_media_list
 
@@ -165,6 +176,7 @@ class BatchCreateTemplateRequest(TeaModel):
         self,
         template_list: List[BatchCreateTemplateRequestTemplateList] = None,
     ):
+        # This parameter is required.
         self.template_list = template_list
 
     def validate(self):
@@ -201,7 +213,9 @@ class BatchCreateTemplateResponseBodyCreateResultList(TeaModel):
         template_key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.template_key = template_key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -233,6 +247,7 @@ class BatchCreateTemplateResponseBody(TeaModel):
         self,
         create_result_list: List[BatchCreateTemplateResponseBodyCreateResultList] = None,
     ):
+        # This parameter is required.
         self.create_result_list = create_result_list
 
     def validate(self):
@@ -342,6 +357,7 @@ class BatchQueryByTemplateKeyRequest(TeaModel):
         self,
         template_keys: List[str] = None,
     ):
+        # This parameter is required.
         self.template_keys = template_keys
 
     def validate(self):
@@ -385,22 +401,39 @@ class BatchQueryByTemplateKeyResponseBodyTemplateList(TeaModel):
         template_key: str = None,
         use_cases_media_list: List[str] = None,
     ):
+        # This parameter is required.
         self.adapt_env = adapt_env
+        # This parameter is required.
         self.app_desc = app_desc
+        # This parameter is required.
         self.app_icon = app_icon
+        # This parameter is required.
         self.case_video_list = case_video_list
+        # This parameter is required.
         self.category = category
+        # This parameter is required.
         self.cover_img_list = cover_img_list
+        # This parameter is required.
         self.exp_url = exp_url
+        # This parameter is required.
         self.industry_label_list = industry_label_list
+        # This parameter is required.
         self.install_times = install_times
+        # This parameter is required.
         self.mobile_preview_media_list = mobile_preview_media_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.preview_media_list = preview_media_list
+        # This parameter is required.
         self.provider_name = provider_name
+        # This parameter is required.
         self.role_label_list = role_label_list
+        # This parameter is required.
         self.simple_desc = simple_desc
+        # This parameter is required.
         self.template_key = template_key
+        # This parameter is required.
         self.use_cases_media_list = use_cases_media_list
 
     def validate(self):
@@ -492,6 +525,7 @@ class BatchQueryByTemplateKeyResponseBody(TeaModel):
         self,
         template_list: List[BatchQueryByTemplateKeyResponseBodyTemplateList] = None,
     ):
+        # This parameter is required.
         self.template_list = template_list
 
     def validate(self):
@@ -616,20 +650,30 @@ class BatchUpdateTemplateRequestTemplateList(TeaModel):
         template_key: str = None,
         use_cases_media_list: List[str] = None,
     ):
+        # This parameter is required.
         self.adapt_env = adapt_env
+        # This parameter is required.
         self.app_desc = app_desc
+        # This parameter is required.
         self.app_icon = app_icon
         self.case_video_list = case_video_list
+        # This parameter is required.
         self.category_code = category_code
         self.cover_img_list = cover_img_list
         self.exp_url = exp_url
+        # This parameter is required.
         self.industry_label_list = industry_label_list
         self.mobile_preview_media_list = mobile_preview_media_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.preview_media_list = preview_media_list
         self.provider_name = provider_name
+        # This parameter is required.
         self.role_label_list = role_label_list
+        # This parameter is required.
         self.simple_desc = simple_desc
+        # This parameter is required.
         self.template_key = template_key
         self.use_cases_media_list = use_cases_media_list
 
@@ -718,6 +762,7 @@ class BatchUpdateTemplateRequest(TeaModel):
         self,
         template_list: List[BatchUpdateTemplateRequestTemplateList] = None,
     ):
+        # This parameter is required.
         self.template_list = template_list
 
     def validate(self):
@@ -754,7 +799,9 @@ class BatchUpdateTemplateResponseBodyUpdateResultList(TeaModel):
         template_key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.template_key = template_key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -786,6 +833,7 @@ class BatchUpdateTemplateResponseBody(TeaModel):
         self,
         update_result_list: List[BatchUpdateTemplateResponseBodyUpdateResultList] = None,
     ):
+        # This parameter is required.
         self.update_result_list = update_result_list
 
     def validate(self):
@@ -895,6 +943,7 @@ class QueryIndustryTagListResponseBody(TeaModel):
         self,
         industry_list: List[str] = None,
     ):
+        # This parameter is required.
         self.industry_list = industry_list
 
     def validate(self):
@@ -996,6 +1045,7 @@ class QueryRoleTagListResponseBody(TeaModel):
         self,
         role_list: List[str] = None,
     ):
+        # This parameter is required.
         self.role_list = role_list
 
     def validate(self):
@@ -1098,7 +1148,9 @@ class QueryTemplateCategorysResponseBodyCategoryList(TeaModel):
         code: str = None,
         name: str = None,
     ):
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.name = name
 
     def validate(self):
@@ -1131,6 +1183,7 @@ class QueryTemplateCategorysResponseBody(TeaModel):
         category_list: List[QueryTemplateCategorysResponseBodyCategoryList] = None,
         total: str = None,
     ):
+        # This parameter is required.
         self.category_list = category_list
         self.total = total
 
@@ -1245,6 +1298,7 @@ class RecallAuditTemplateRequest(TeaModel):
         self,
         template_keys: List[str] = None,
     ):
+        # This parameter is required.
         self.template_keys = template_keys
 
     def validate(self):
@@ -1273,7 +1327,9 @@ class RecallAuditTemplateResponseBodyRecallResult(TeaModel):
         template_key: str = None,
         value: str = None,
     ):
+        # This parameter is required.
         self.template_key = template_key
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -1305,6 +1361,7 @@ class RecallAuditTemplateResponseBody(TeaModel):
         self,
         recall_result: List[RecallAuditTemplateResponseBodyRecallResult] = None,
     ):
+        # This parameter is required.
         self.recall_result = recall_result
 
     def validate(self):

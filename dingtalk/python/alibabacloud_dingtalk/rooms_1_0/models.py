@@ -76,6 +76,7 @@ class CreateDeviceCustomTemplateRequest(TeaModel):
         self.show_calendar_card = show_calendar_card
         self.show_calendar_title = show_calendar_title
         self.show_function_card = show_function_card
+        # This parameter is required.
         self.template_name = template_name
 
     def validate(self):
@@ -391,14 +392,18 @@ class CreateMeetingRoomRequest(TeaModel):
     ):
         self.enable_cycle_reservation = enable_cycle_reservation
         self.group_id = group_id
+        # This parameter is required.
         self.isv_room_id = isv_room_id
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         self.room_label_ids = room_label_ids
         self.room_location = room_location
+        # This parameter is required.
         self.room_name = room_name
         self.room_picture = room_picture
+        # This parameter is required.
         self.room_status = room_status
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -534,6 +539,262 @@ class CreateMeetingRoomResponse(TeaModel):
         return self
 
 
+class CreateMeetingRoomControlPanelHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateMeetingRoomControlPanelRequestExtra(TeaModel):
+    def __init__(
+        self,
+        param: Dict[str, str] = None,
+    ):
+        self.param = param
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.param is not None:
+            result['param'] = self.param
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('param') is not None:
+            self.param = m.get('param')
+        return self
+
+
+class CreateMeetingRoomControlPanelRequestRoomConfig(TeaModel):
+    def __init__(
+        self,
+        en_name: str = None,
+        icon: str = None,
+        name: str = None,
+        show_time: int = None,
+        sort: int = None,
+        url: str = None,
+    ):
+        # This parameter is required.
+        self.en_name = en_name
+        # This parameter is required.
+        self.icon = icon
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.show_time = show_time
+        # This parameter is required.
+        self.sort = sort
+        # This parameter is required.
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_name is not None:
+            result['enName'] = self.en_name
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.show_time is not None:
+            result['showTime'] = self.show_time
+        if self.sort is not None:
+            result['sort'] = self.sort
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enName') is not None:
+            self.en_name = m.get('enName')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('showTime') is not None:
+            self.show_time = m.get('showTime')
+        if m.get('sort') is not None:
+            self.sort = m.get('sort')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreateMeetingRoomControlPanelRequest(TeaModel):
+    def __init__(
+        self,
+        extra: CreateMeetingRoomControlPanelRequestExtra = None,
+        room_config: List[CreateMeetingRoomControlPanelRequestRoomConfig] = None,
+        room_id: str = None,
+        status: int = None,
+        union_id: str = None,
+    ):
+        self.extra = extra
+        # This parameter is required.
+        self.room_config = room_config
+        # This parameter is required.
+        self.room_id = room_id
+        self.status = status
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        if self.extra:
+            self.extra.validate()
+        if self.room_config:
+            for k in self.room_config:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extra is not None:
+            result['extra'] = self.extra.to_map()
+        result['roomConfig'] = []
+        if self.room_config is not None:
+            for k in self.room_config:
+                result['roomConfig'].append(k.to_map() if k else None)
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extra') is not None:
+            temp_model = CreateMeetingRoomControlPanelRequestExtra()
+            self.extra = temp_model.from_map(m['extra'])
+        self.room_config = []
+        if m.get('roomConfig') is not None:
+            for k in m.get('roomConfig'):
+                temp_model = CreateMeetingRoomControlPanelRequestRoomConfig()
+                self.room_config.append(temp_model.from_map(k))
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CreateMeetingRoomControlPanelResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CreateMeetingRoomControlPanelResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateMeetingRoomControlPanelResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateMeetingRoomControlPanelResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateMeetingRoomGroupHeaders(TeaModel):
     def __init__(
         self,
@@ -575,7 +836,9 @@ class CreateMeetingRoomGroupRequest(TeaModel):
         union_id: str = None,
     ):
         self.group_name = group_name
+        # This parameter is required.
         self.parent_group_id = parent_group_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -712,6 +975,7 @@ class DeleteDeviceCustomTemplateRequest(TeaModel):
         self,
         template_id: int = None,
     ):
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -840,6 +1104,7 @@ class DeleteMeetingRoomRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -930,6 +1195,198 @@ class DeleteMeetingRoomResponse(TeaModel):
         return self
 
 
+class DeleteMeetingRoomControlPanelHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteMeetingRoomControlPanelRequestBody(TeaModel):
+    def __init__(
+        self,
+        room_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.room_ids = room_ids
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.room_ids is not None:
+            result['roomIds'] = self.room_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roomIds') is not None:
+            self.room_ids = m.get('roomIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeleteMeetingRoomControlPanelRequest(TeaModel):
+    def __init__(
+        self,
+        body: DeleteMeetingRoomControlPanelRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = DeleteMeetingRoomControlPanelRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteMeetingRoomControlPanelShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class DeleteMeetingRoomControlPanelResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteMeetingRoomControlPanelResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteMeetingRoomControlPanelResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteMeetingRoomControlPanelResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteMeetingRoomGroupHeaders(TeaModel):
     def __init__(
         self,
@@ -968,6 +1425,7 @@ class DeleteMeetingRoomGroupRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1841,6 +2299,7 @@ class QueryDevicePropertiesRequest(TeaModel):
         self.property_names = property_names
         self.device_id = device_id
         self.device_union_id = device_union_id
+        # This parameter is required.
         self.operator_union_id = operator_union_id
 
     def validate(self):
@@ -2022,6 +2481,7 @@ class QueryMeetingRoomRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2415,6 +2875,276 @@ class QueryMeetingRoomResponse(TeaModel):
         return self
 
 
+class QueryMeetingRoomControlPanelListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMeetingRoomControlPanelListRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        room_id: str = None,
+        union_id: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.room_id = room_id
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig(TeaModel):
+    def __init__(
+        self,
+        en_name: str = None,
+        icon: str = None,
+        name: str = None,
+        show_time: int = None,
+        sort: int = None,
+        url: str = None,
+    ):
+        self.en_name = en_name
+        self.icon = icon
+        self.name = name
+        self.show_time = show_time
+        self.sort = sort
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_name is not None:
+            result['enName'] = self.en_name
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.show_time is not None:
+            result['showTime'] = self.show_time
+        if self.sort is not None:
+            result['sort'] = self.sort
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enName') is not None:
+            self.en_name = m.get('enName')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('showTime') is not None:
+            self.show_time = m.get('showTime')
+        if m.get('sort') is not None:
+            self.sort = m.get('sort')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class QueryMeetingRoomControlPanelListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        room_id: str = None,
+        room_iot_config: List[QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig] = None,
+    ):
+        self.room_id = room_id
+        self.room_iot_config = room_iot_config
+
+    def validate(self):
+        if self.room_iot_config:
+            for k in self.room_iot_config:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.room_id is not None:
+            result['roomId'] = self.room_id
+        result['roomIotConfig'] = []
+        if self.room_iot_config is not None:
+            for k in self.room_iot_config:
+                result['roomIotConfig'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roomId') is not None:
+            self.room_id = m.get('roomId')
+        self.room_iot_config = []
+        if m.get('roomIotConfig') is not None:
+            for k in m.get('roomIotConfig'):
+                temp_model = QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig()
+                self.room_iot_config.append(temp_model.from_map(k))
+        return self
+
+
+class QueryMeetingRoomControlPanelListResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: int = None,
+        result: List[QueryMeetingRoomControlPanelListResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryMeetingRoomControlPanelListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryMeetingRoomControlPanelListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMeetingRoomControlPanelListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMeetingRoomControlPanelListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMeetingRoomDeviceHeaders(TeaModel):
     def __init__(
         self,
@@ -2457,6 +3187,7 @@ class QueryMeetingRoomDeviceRequest(TeaModel):
     ):
         self.device_id = device_id
         self.device_union_id = device_union_id
+        # This parameter is required.
         self.operator_union_id = operator_union_id
 
     def validate(self):
@@ -2885,6 +3616,7 @@ class QueryMeetingRoomGroupRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3025,6 +3757,7 @@ class QueryMeetingRoomGroupListRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3204,6 +3937,7 @@ class QueryMeetingRoomListRequest(TeaModel):
     ):
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3567,7 +4301,9 @@ class RemoveSuperUserMeetingRoomRequest(TeaModel):
         room_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.room_id = room_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3704,7 +4440,9 @@ class SetSuperUserMeetingRoomRequest(TeaModel):
         user_id_white_list: List[str] = None,
     ):
         self.dept_id_white_list = dept_id_white_list
+        # This parameter is required.
         self.room_id = room_id
+        # This parameter is required.
         self.union_id = union_id
         self.user_id_white_list = user_id_white_list
 
@@ -3881,7 +4619,9 @@ class UpdateDeviceCustomTemplateRequest(TeaModel):
         self.show_calendar_card = show_calendar_card
         self.show_calendar_title = show_calendar_title
         self.show_function_card = show_function_card
+        # This parameter is required.
         self.template_id = template_id
+        # This parameter is required.
         self.template_name = template_name
 
     def validate(self):
@@ -4205,12 +4945,14 @@ class UpdateMeetingRoomRequest(TeaModel):
         self.isv_room_id = isv_room_id
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
+        # This parameter is required.
         self.room_id = room_id
         self.room_label_ids = room_label_ids
         self.room_location = room_location
         self.room_name = room_name
         self.room_picture = room_picture
         self.room_status = room_status
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4390,8 +5132,10 @@ class UpdateMeetingRoomGroupRequest(TeaModel):
         group_name: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.group_id = group_id
         self.group_name = group_name
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):

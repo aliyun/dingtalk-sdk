@@ -37,6 +37,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.CheckInCrowdsByMobileResponse:
+        """
+        @summary 根据加密后的用户手机号检查该用户是否在某人群中
+        
+        @param request: CheckInCrowdsByMobileRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckInCrowdsByMobileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.crowd_ids):
@@ -69,6 +77,14 @@ class Client(OpenApiClient):
         headers: Dict[str, str],
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.CheckInCrowdsByMobileResponse:
+        """
+        @summary 根据加密后的用户手机号检查该用户是否在某人群中
+        
+        @param request: CheckInCrowdsByMobileRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckInCrowdsByMobileResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.crowd_ids):
@@ -99,6 +115,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.CheckInCrowdsByMobileRequest,
     ) -> dingtalkwatt__1__0_models.CheckInCrowdsByMobileResponse:
+        """
+        @summary 根据加密后的用户手机号检查该用户是否在某人群中
+        
+        @param request: CheckInCrowdsByMobileRequest
+        @return: CheckInCrowdsByMobileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return self.check_in_crowds_by_mobile_with_options(request, headers, runtime)
@@ -107,6 +129,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.CheckInCrowdsByMobileRequest,
     ) -> dingtalkwatt__1__0_models.CheckInCrowdsByMobileResponse:
+        """
+        @summary 根据加密后的用户手机号检查该用户是否在某人群中
+        
+        @param request: CheckInCrowdsByMobileRequest
+        @return: CheckInCrowdsByMobileResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.check_in_crowds_by_mobile_with_options_async(request, headers, runtime)
@@ -117,6 +145,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.ConsumePointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        """
+        @summary 消耗用户积分
+        
+        @param tmp_req: ConsumePointRequest
+        @param headers: ConsumePointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumePointResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkwatt__1__0_models.ConsumePointShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -156,6 +192,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.ConsumePointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        """
+        @summary 消耗用户积分
+        
+        @param tmp_req: ConsumePointRequest
+        @param headers: ConsumePointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumePointResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkwatt__1__0_models.ConsumePointShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -193,6 +237,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.ConsumePointRequest,
     ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        """
+        @summary 消耗用户积分
+        
+        @param request: ConsumePointRequest
+        @return: ConsumePointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.ConsumePointHeaders()
         return self.consume_point_with_options(request, headers, runtime)
@@ -201,6 +251,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.ConsumePointRequest,
     ) -> dingtalkwatt__1__0_models.ConsumePointResponse:
+        """
+        @summary 消耗用户积分
+        
+        @param request: ConsumePointRequest
+        @return: ConsumePointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.ConsumePointHeaders()
         return await self.consume_point_with_options_async(request, headers, runtime)
@@ -211,6 +267,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        """
+        @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+        
+        @param request: CreateDeliveryPlanRequest
+        @param headers: CreateDeliveryPlanHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeliveryPlanResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -254,6 +318,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        """
+        @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+        
+        @param request: CreateDeliveryPlanRequest
+        @param headers: CreateDeliveryPlanHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDeliveryPlanResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -295,6 +367,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
     ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        """
+        @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+        
+        @param request: CreateDeliveryPlanRequest
+        @return: CreateDeliveryPlanResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders()
         return self.create_delivery_plan_with_options(request, headers, runtime)
@@ -303,6 +381,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.CreateDeliveryPlanRequest,
     ) -> dingtalkwatt__1__0_models.CreateDeliveryPlanResponse:
+        """
+        @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+        
+        @param request: CreateDeliveryPlanRequest
+        @return: CreateDeliveryPlanResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.CreateDeliveryPlanHeaders()
         return await self.create_delivery_plan_with_options_async(request, headers, runtime)
@@ -313,6 +397,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.GetPointInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        """
+        @summary 查询用户积分
+        
+        @param request: GetPointInfoRequest
+        @param headers: GetPointInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPointInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.point_pool_code):
@@ -348,6 +440,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.GetPointInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        """
+        @summary 查询用户积分
+        
+        @param request: GetPointInfoRequest
+        @param headers: GetPointInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPointInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.point_pool_code):
@@ -381,6 +481,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.GetPointInfoRequest,
     ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        """
+        @summary 查询用户积分
+        
+        @param request: GetPointInfoRequest
+        @return: GetPointInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.GetPointInfoHeaders()
         return self.get_point_info_with_options(request, headers, runtime)
@@ -389,6 +495,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.GetPointInfoRequest,
     ) -> dingtalkwatt__1__0_models.GetPointInfoResponse:
+        """
+        @summary 查询用户积分
+        
+        @param request: GetPointInfoRequest
+        @return: GetPointInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.GetPointInfoHeaders()
         return await self.get_point_info_with_options_async(request, headers, runtime)
@@ -399,6 +511,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.RevertPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        """
+        @summary 撤销用户单笔积分消耗
+        
+        @param tmp_req: RevertPointRequest
+        @param headers: RevertPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevertPointResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkwatt__1__0_models.RevertPointShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -438,6 +558,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.RevertPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        """
+        @summary 撤销用户单笔积分消耗
+        
+        @param tmp_req: RevertPointRequest
+        @param headers: RevertPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevertPointResponse
+        """
         UtilClient.validate_model(tmp_req)
         request = dingtalkwatt__1__0_models.RevertPointShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
@@ -475,6 +603,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.RevertPointRequest,
     ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        """
+        @summary 撤销用户单笔积分消耗
+        
+        @param request: RevertPointRequest
+        @return: RevertPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.RevertPointHeaders()
         return self.revert_point_with_options(request, headers, runtime)
@@ -483,6 +617,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.RevertPointRequest,
     ) -> dingtalkwatt__1__0_models.RevertPointResponse:
+        """
+        @summary 撤销用户单笔积分消耗
+        
+        @param request: RevertPointRequest
+        @return: RevertPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.RevertPointHeaders()
         return await self.revert_point_with_options_async(request, headers, runtime)
@@ -493,6 +633,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendBannerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendBannerResponse:
+        """
+        @summary 发送钉钉统一引导Banner
+        
+        @param request: SendBannerRequest
+        @param headers: SendBannerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendBannerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -534,6 +682,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendBannerHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendBannerResponse:
+        """
+        @summary 发送钉钉统一引导Banner
+        
+        @param request: SendBannerRequest
+        @param headers: SendBannerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendBannerResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -573,6 +729,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendBannerRequest,
     ) -> dingtalkwatt__1__0_models.SendBannerResponse:
+        """
+        @summary 发送钉钉统一引导Banner
+        
+        @param request: SendBannerRequest
+        @return: SendBannerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendBannerHeaders()
         return self.send_banner_with_options(request, headers, runtime)
@@ -581,6 +743,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendBannerRequest,
     ) -> dingtalkwatt__1__0_models.SendBannerResponse:
+        """
+        @summary 发送钉钉统一引导Banner
+        
+        @param request: SendBannerRequest
+        @return: SendBannerResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendBannerHeaders()
         return await self.send_banner_with_options_async(request, headers, runtime)
@@ -591,6 +759,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendPopupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendPopupResponse:
+        """
+        @summary 发送钉钉首页弹窗
+        
+        @param request: SendPopupRequest
+        @param headers: SendPopupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPopupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -632,6 +808,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendPopupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendPopupResponse:
+        """
+        @summary 发送钉钉首页弹窗
+        
+        @param request: SendPopupRequest
+        @param headers: SendPopupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPopupResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -671,6 +855,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendPopupRequest,
     ) -> dingtalkwatt__1__0_models.SendPopupResponse:
+        """
+        @summary 发送钉钉首页弹窗
+        
+        @param request: SendPopupRequest
+        @return: SendPopupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendPopupHeaders()
         return self.send_popup_with_options(request, headers, runtime)
@@ -679,6 +869,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendPopupRequest,
     ) -> dingtalkwatt__1__0_models.SendPopupResponse:
+        """
+        @summary 发送钉钉首页弹窗
+        
+        @param request: SendPopupRequest
+        @return: SendPopupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendPopupHeaders()
         return await self.send_popup_with_options_async(request, headers, runtime)
@@ -689,6 +885,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendSearchShadeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendSearchShadeResponse:
+        """
+        @summary 发送钉钉搜索底纹
+        
+        @param request: SendSearchShadeRequest
+        @param headers: SendSearchShadeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendSearchShadeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -730,6 +934,14 @@ class Client(OpenApiClient):
         headers: dingtalkwatt__1__0_models.SendSearchShadeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkwatt__1__0_models.SendSearchShadeResponse:
+        """
+        @summary 发送钉钉搜索底纹
+        
+        @param request: SendSearchShadeRequest
+        @param headers: SendSearchShadeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendSearchShadeResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -769,6 +981,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendSearchShadeRequest,
     ) -> dingtalkwatt__1__0_models.SendSearchShadeResponse:
+        """
+        @summary 发送钉钉搜索底纹
+        
+        @param request: SendSearchShadeRequest
+        @return: SendSearchShadeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendSearchShadeHeaders()
         return self.send_search_shade_with_options(request, headers, runtime)
@@ -777,6 +995,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkwatt__1__0_models.SendSearchShadeRequest,
     ) -> dingtalkwatt__1__0_models.SendSearchShadeResponse:
+        """
+        @summary 发送钉钉搜索底纹
+        
+        @param request: SendSearchShadeRequest
+        @return: SendSearchShadeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkwatt__1__0_models.SendSearchShadeHeaders()
         return await self.send_search_shade_with_options_async(request, headers, runtime)

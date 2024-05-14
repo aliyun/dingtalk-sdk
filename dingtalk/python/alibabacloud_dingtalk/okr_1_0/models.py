@@ -174,6 +174,7 @@ class OpenPeriodDTO(TeaModel):
         self.end_date = end_date
         self.name_cn = name_cn
         self.name_en = name_en
+        # This parameter is required.
         self.period_id = period_id
         self.start_date = start_date
         self.status = status
@@ -395,8 +396,11 @@ class AlignObjectiveRequest(TeaModel):
         target_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.period_id = period_id
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -467,6 +471,7 @@ class AlignObjectiveResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -575,7 +580,9 @@ class BatchAddPermissionRequestListMember(TeaModel):
         id: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -608,7 +615,9 @@ class BatchAddPermissionRequestList(TeaModel):
         member: BatchAddPermissionRequestListMember = None,
         policy_type: int = None,
     ):
+        # This parameter is required.
         self.member = member
+        # This parameter is required.
         self.policy_type = policy_type
 
     def validate(self):
@@ -645,9 +654,13 @@ class BatchAddPermissionRequest(TeaModel):
         target_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.list = list
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.target_type = target_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -697,8 +710,10 @@ class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList(TeaMo
         nickname: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
         self.nickname = nickname
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -736,8 +751,11 @@ class BatchAddPermissionResponseBodyDataPermissionTreePolicyList(TeaModel):
         name: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.member_list = member_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -784,9 +802,13 @@ class BatchAddPermissionResponseBodyDataPermissionTree(TeaModel):
         privacy: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.policy_list = policy_list
+        # This parameter is required.
         self.privacy = privacy
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -835,7 +857,9 @@ class BatchAddPermissionResponseBodyData(TeaModel):
         has_invalid_user: bool = None,
         permission_tree: BatchAddPermissionResponseBodyDataPermissionTree = None,
     ):
+        # This parameter is required.
         self.has_invalid_user = has_invalid_user
+        # This parameter is required.
         self.permission_tree = permission_tree
 
     def validate(self):
@@ -870,6 +894,7 @@ class BatchAddPermissionResponseBody(TeaModel):
         data: BatchAddPermissionResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
         self.success = success
 
@@ -983,11 +1008,15 @@ class BatchQueryObjectiveRequest(TeaModel):
         with_progress: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.objective_ids = objective_ids
+        # This parameter is required.
         self.period_id = period_id
         self.with_align = with_align
         self.with_kr = with_kr
+        # This parameter is required.
         self.with_progress = with_progress
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1074,6 +1103,7 @@ class BatchQueryObjectiveResponseBodyDataKrList(TeaModel):
         self.content = content
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.id = id
         self.objective_id = objective_id
         self.permission = permission
@@ -1368,6 +1398,7 @@ class BatchQueryObjectiveResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1520,6 +1551,7 @@ class BatchQueryUserResponseBodyData(TeaModel):
         user_id: BinaryIO = None,
     ):
         self.avatar_media_id = avatar_media_id
+        # This parameter is required.
         self.avatar_url = avatar_url
         self.corp_id = corp_id
         self.id = id
@@ -1572,7 +1604,9 @@ class BatchQueryUserResponseBody(TeaModel):
         data: List[BatchQueryUserResponseBodyData] = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1691,11 +1725,15 @@ class CreateKeyResultRequest(TeaModel):
         weight: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.objective_id = objective_id
+        # This parameter is required.
         self.period_id = period_id
         self.prev_position = prev_position
         self.weight = weight
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1745,8 +1783,11 @@ class CreateKeyResultResponseBodyData(TeaModel):
         position: int = None,
         weight: int = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.position = position
+        # This parameter is required.
         self.weight = weight
 
     def validate(self):
@@ -1783,7 +1824,9 @@ class CreateKeyResultResponseBody(TeaModel):
         data: CreateKeyResultResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1894,9 +1937,13 @@ class CreateObjectiveRequest(TeaModel):
         prev_position: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.period_id = period_id
+        # This parameter is required.
         self.prev_position = prev_position
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1937,7 +1984,9 @@ class CreateObjectiveResponseBodyData(TeaModel):
         id: str = None,
         position: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.position = position
 
     def validate(self):
@@ -2079,7 +2128,9 @@ class DeleteKeyResultRequest(TeaModel):
         kr_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.kr_id = kr_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2112,7 +2163,9 @@ class DeleteKeyResultResponseBody(TeaModel):
         data: bool = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2218,6 +2271,7 @@ class DeleteObjectiveRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2245,6 +2299,7 @@ class DeleteObjectiveResponseBodyData(TeaModel):
         self,
         id: str = None,
     ):
+        # This parameter is required.
         self.id = id
 
     def validate(self):
@@ -2274,6 +2329,7 @@ class DeleteObjectiveResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2386,11 +2442,17 @@ class DeletePermissionRequest(TeaModel):
         type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.policy_type = policy_type
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.target_type = target_type
+        # This parameter is required.
         self.type = type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2440,8 +2502,10 @@ class DeletePermissionResponseBodyDataPolicyListMemberList(TeaModel):
         nickname: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
         self.nickname = nickname
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2479,8 +2543,11 @@ class DeletePermissionResponseBodyDataPolicyList(TeaModel):
         name: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.member_list = member_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2527,9 +2594,13 @@ class DeletePermissionResponseBodyData(TeaModel):
         privacy: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.policy_list = policy_list
+        # This parameter is required.
         self.privacy = privacy
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2578,6 +2649,7 @@ class DeletePermissionResponseBody(TeaModel):
         data: DeletePermissionResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
         self.success = success
 
@@ -2691,11 +2763,17 @@ class GetPeriodListResponseBodyDataPeriodList(TeaModel):
         name: BinaryIO = None,
         start_time: float = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.is_current = is_current
+        # This parameter is required.
         self.is_yearly = is_yearly
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.start_time = start_time
 
     def validate(self):
@@ -2743,6 +2821,7 @@ class GetPeriodListResponseBodyData(TeaModel):
         self,
         period_list: List[GetPeriodListResponseBodyDataPeriodList] = None,
     ):
+        # This parameter is required.
         self.period_list = period_list
 
     def validate(self):
@@ -2891,8 +2970,11 @@ class GetPermissionRequest(TeaModel):
         with_kr: bool = None,
         with_objective: bool = None,
     ):
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.target_type = target_type
+        # This parameter is required.
         self.user_id = user_id
         self.with_kr = with_kr
         self.with_objective = with_objective
@@ -2940,8 +3022,10 @@ class GetPermissionResponseBodyDataPolicyListMemberList(TeaModel):
         nickname: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
         self.nickname = nickname
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -2979,8 +3063,11 @@ class GetPermissionResponseBodyDataPolicyList(TeaModel):
         name: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.member_list = member_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3027,9 +3114,13 @@ class GetPermissionResponseBodyData(TeaModel):
         privacy: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.policy_list = policy_list
+        # This parameter is required.
         self.privacy = privacy
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3078,6 +3169,7 @@ class GetPermissionResponseBody(TeaModel):
         data: GetPermissionResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
         self.success = success
 
@@ -3191,7 +3283,9 @@ class GetUserOkrRequest(TeaModel):
     ):
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.period_id = period_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3270,6 +3364,7 @@ class GetUserOkrResponseBodyDataListKrList(TeaModel):
         self.content = content
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.id = id
         self.objective_id = objective_id
         self.permission = permission
@@ -3568,6 +3663,7 @@ class GetUserOkrResponseBodyData(TeaModel):
         self.list = list
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -3617,6 +3713,7 @@ class GetUserOkrResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4169,6 +4266,7 @@ class OkrPeriodsResponseBody(TeaModel):
     ):
         self.content = content
         self.request_id = request_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4282,8 +4380,11 @@ class UnAlignObjectiveRequest(TeaModel):
         target_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.period_id = period_id
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4354,6 +4455,7 @@ class UnAlignObjectiveResponseBody(TeaModel):
         success: bool = None,
     ):
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4464,9 +4566,12 @@ class UpdateKROfContentRequest(TeaModel):
         kr_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
         self.update_quote_list = update_quote_list
+        # This parameter is required.
         self.kr_id = kr_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4507,7 +4612,9 @@ class UpdateKROfContentResponseBody(TeaModel):
         data: bool = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4615,8 +4722,11 @@ class UpdateKROfScoreRequest(TeaModel):
         kr_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.score = score
+        # This parameter is required.
         self.kr_id = kr_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4652,6 +4762,7 @@ class UpdateKROfScoreResponseBodyData(TeaModel):
         self,
         objective_score: int = None,
     ):
+        # This parameter is required.
         self.objective_score = objective_score
 
     def validate(self):
@@ -4680,7 +4791,9 @@ class UpdateKROfScoreResponseBody(TeaModel):
         data: UpdateKROfScoreResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4790,8 +4903,11 @@ class UpdateKROfWeightRequest(TeaModel):
         kr_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.weight = weight
+        # This parameter is required.
         self.kr_id = kr_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4827,6 +4943,7 @@ class UpdateKROfWeightResponseBodyDataObjectiveProgress(TeaModel):
         self,
         percent: int = None,
     ):
+        # This parameter is required.
         self.percent = percent
 
     def validate(self):
@@ -4855,7 +4972,9 @@ class UpdateKROfWeightResponseBodyData(TeaModel):
         objective_progress: UpdateKROfWeightResponseBodyDataObjectiveProgress = None,
         objective_score: int = None,
     ):
+        # This parameter is required.
         self.objective_progress = objective_progress
+        # This parameter is required.
         self.objective_score = objective_score
 
     def validate(self):
@@ -4890,7 +5009,9 @@ class UpdateKROfWeightResponseBody(TeaModel):
         data: UpdateKROfWeightResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4999,7 +5120,9 @@ class UpdateObjectiveRequest(TeaModel):
         content: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5032,7 +5155,9 @@ class UpdateObjectiveResponseBodyData(TeaModel):
         id: str = None,
         position: float = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.position = position
 
     def validate(self):
@@ -5176,9 +5301,13 @@ class UpdatePrivacyRequest(TeaModel):
         target_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.privacy = privacy
+        # This parameter is required.
         self.target_id = target_id
+        # This parameter is required.
         self.target_type = target_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -5220,8 +5349,10 @@ class UpdatePrivacyResponseBodyDataPolicyListMemberList(TeaModel):
         nickname: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
         self.nickname = nickname
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -5259,8 +5390,11 @@ class UpdatePrivacyResponseBodyDataPolicyList(TeaModel):
         name: str = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.member_list = member_list
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -5307,9 +5441,13 @@ class UpdatePrivacyResponseBodyData(TeaModel):
         privacy: str = None,
         type: str = None,
     ):
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.policy_list = policy_list
+        # This parameter is required.
         self.privacy = privacy
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -5358,6 +5496,7 @@ class UpdatePrivacyResponseBody(TeaModel):
         data: UpdatePrivacyResponseBodyData = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.data = data
         self.success = success
 

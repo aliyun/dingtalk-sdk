@@ -43,7 +43,9 @@ class AddAppRolesToMemberRequestRoleList(TeaModel):
         role_id: int = None,
         scope_version: int = None,
     ):
+        # This parameter is required.
         self.role_id = role_id
+        # This parameter is required.
         self.scope_version = scope_version
 
     def validate(self):
@@ -78,9 +80,13 @@ class AddAppRolesToMemberRequest(TeaModel):
         op_user_id: str = None,
         role_list: List[AddAppRolesToMemberRequestRoleList] = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.role_list = role_list
 
     def validate(self):
@@ -290,6 +296,7 @@ class AddAppToWorkBenchGroupRequest(TeaModel):
         ecological_corp_id: str = None,
         op_union_id: str = None,
     ):
+        # This parameter is required.
         self.component_id = component_id
         self.ecological_corp_id = ecological_corp_id
         self.op_union_id = op_union_id
@@ -432,7 +439,9 @@ class AddMemberToAppRoleRequest(TeaModel):
         user_id_list: List[str] = None,
     ):
         self.dept_id_list = dept_id_list
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.scope_version = scope_version
         self.user_id_list = user_id_list
 
@@ -1088,16 +1097,24 @@ class CreateApaasAppRequest(TeaModel):
         pc_homepage_link: str = None,
         template_key: str = None,
     ):
+        # This parameter is required.
         self.app_desc = app_desc
+        # This parameter is required.
         self.app_icon = app_icon
+        # This parameter is required.
         self.app_name = app_name
+        # This parameter is required.
         self.biz_app_id = biz_app_id
         self.homepage_edit_link = homepage_edit_link
+        # This parameter is required.
         self.homepage_link = homepage_link
         self.is_short_cut = is_short_cut
         self.omp_link = omp_link
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.pc_homepage_edit_link = pc_homepage_edit_link
+        # This parameter is required.
         self.pc_homepage_link = pc_homepage_link
         self.template_key = template_key
 
@@ -1171,7 +1188,9 @@ class CreateApaasAppResponseBody(TeaModel):
         agent_id: int = None,
         biz_app_id: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.biz_app_id = biz_app_id
 
     def validate(self):
@@ -1286,13 +1305,16 @@ class CreateInnerAppRequest(TeaModel):
         pc_homepage_link: str = None,
         scope_type: str = None,
     ):
+        # This parameter is required.
         self.desc = desc
         self.develop_type = develop_type
         self.homepage_link = homepage_link
         self.icon = icon
         self.ip_white_list = ip_white_list
+        # This parameter is required.
         self.name = name
         self.omp_link = omp_link
+        # This parameter is required.
         self.op_union_id = op_union_id
         self.pc_homepage_link = pc_homepage_link
         self.scope_type = scope_type
@@ -1471,6 +1493,7 @@ class DeleteAppRoleRequest(TeaModel):
         self,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -1599,6 +1622,7 @@ class DeleteInnerAppRequest(TeaModel):
         self,
         op_union_id: str = None,
     ):
+        # This parameter is required.
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -1729,8 +1753,11 @@ class GetApaasAppResponseBody(TeaModel):
         biz_app_id: str = None,
         publish_status: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.biz_app_id = biz_app_id
+        # This parameter is required.
         self.publish_status = publish_status
 
     def validate(self):
@@ -2185,6 +2212,7 @@ class GetInnerAppResponseBody(TeaModel):
     ):
         self.agent_id = agent_id
         self.app_key = app_key
+        # This parameter is required.
         self.app_secret = app_secret
         self.desc = desc
         self.homepage_link = homepage_link
@@ -2332,9 +2360,13 @@ class GetMicroAppScopeResponseBodyResult(TeaModel):
         role_ids: List[int] = None,
         user_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.only_admin_visible = only_admin_visible
+        # This parameter is required.
         self.role_ids = role_ids
+        # This parameter is required.
         self.user_ids = user_ids
 
     def validate(self):
@@ -2688,10 +2720,14 @@ class ListAllAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.app_status = app_status
         self.desc = desc
+        # This parameter is required.
         self.develop_type = develop_type
         self.homepage_link = homepage_link
         self.icon = icon
@@ -2878,10 +2914,14 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.app_status = app_status
         self.desc = desc
+        # This parameter is required.
         self.develop_type = develop_type
         self.homepage_link = homepage_link
         self.icon = icon
@@ -3309,6 +3349,7 @@ class ListInnerAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
         self.desc = desc
         self.homepage_link = homepage_link
@@ -3482,13 +3523,19 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
         mini_app_on_pc: bool = None,
         modify_time: str = None,
     ):
+        # This parameter is required.
         self.app_version = app_version
+        # This parameter is required.
         self.app_version_id = app_version_id
+        # This parameter is required.
         self.app_version_type = app_version_type
+        # This parameter is required.
         self.create_time = create_time
         self.entrance_link = entrance_link
+        # This parameter is required.
         self.mini_app_id = mini_app_id
         self.mini_app_on_pc = mini_app_on_pc
+        # This parameter is required.
         self.modify_time = modify_time
 
     def validate(self):
@@ -3810,10 +3857,14 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.app_id = app_id
+        # This parameter is required.
         self.app_status = app_status
         self.desc = desc
+        # This parameter is required.
         self.develop_type = develop_type
         self.homepage_link = homepage_link
         self.icon = icon
@@ -3992,7 +4043,9 @@ class PageInnerAppHistoryVersionRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -4030,12 +4083,18 @@ class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList(TeaModel):
         mini_app_on_pc: bool = None,
         modify_time: str = None,
     ):
+        # This parameter is required.
         self.app_version = app_version
+        # This parameter is required.
         self.app_version_id = app_version_id
+        # This parameter is required.
         self.app_version_type = app_version_type
+        # This parameter is required.
         self.create_time = create_time
         self.mini_app_id = mini_app_id
+        # This parameter is required.
         self.mini_app_on_pc = mini_app_on_pc
+        # This parameter is required.
         self.modify_time = modify_time
 
     def validate(self):
@@ -4205,8 +4264,10 @@ class PublishInnerAppVersionRequest(TeaModel):
         op_union_id: str = None,
         publish_type: str = None,
     ):
+        # This parameter is required.
         self.app_version_id = app_version_id
         self.mini_app_on_pc = mini_app_on_pc
+        # This parameter is required.
         self.op_union_id = op_union_id
         self.publish_type = publish_type
 
@@ -4353,8 +4414,11 @@ class RebuildRoleScopeForAppRoleRequest(TeaModel):
         user_id_list: List[str] = None,
     ):
         self.dept_id_list = dept_id_list
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.scope_type = scope_type
+        # This parameter is required.
         self.scope_version = scope_version
         self.user_id_list = user_id_list
 
@@ -4503,7 +4567,9 @@ class RegisterCustomAppRoleRequest(TeaModel):
         role_name: str = None,
     ):
         self.can_manage_role = can_manage_role
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.role_name = role_name
 
     def validate(self):
@@ -4647,7 +4713,9 @@ class RemoveApaasAppRequest(TeaModel):
         biz_app_id: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_app_id = biz_app_id
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -4679,6 +4747,7 @@ class RemoveApaasAppResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4784,7 +4853,9 @@ class RemoveMemberForAppRoleRequest(TeaModel):
         user_id_list: List[str] = None,
     ):
         self.dept_id_list = dept_id_list
+        # This parameter is required.
         self.op_user_id = op_user_id
+        # This parameter is required.
         self.scope_version = scope_version
         self.user_id_list = user_id_list
 
@@ -4927,7 +4998,9 @@ class RollbackInnerAppVersionRequest(TeaModel):
         app_version_id: int = None,
         op_union_id: str = None,
     ):
+        # This parameter is required.
         self.app_version_id = app_version_id
+        # This parameter is required.
         self.op_union_id = op_union_id
 
     def validate(self):
@@ -5228,10 +5301,14 @@ class UpdateApaasAppRequest(TeaModel):
         biz_app_id: str = None,
         op_user_id: str = None,
     ):
+        # This parameter is required.
         self.app_icon = app_icon
+        # This parameter is required.
         self.app_name = app_name
         self.app_status = app_status
+        # This parameter is required.
         self.biz_app_id = biz_app_id
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -5276,7 +5353,9 @@ class UpdateApaasAppResponseBody(TeaModel):
         agent_id: int = None,
         biz_app_id: str = None,
     ):
+        # This parameter is required.
         self.agent_id = agent_id
+        # This parameter is required.
         self.biz_app_id = biz_app_id
 
     def validate(self):
@@ -5386,6 +5465,7 @@ class UpdateAppRoleInfoRequest(TeaModel):
     ):
         self.can_manage_role = can_manage_role
         self.new_role_name = new_role_name
+        # This parameter is required.
         self.op_user_id = op_user_id
 
     def validate(self):
@@ -5535,6 +5615,7 @@ class UpdateInnerAppRequest(TeaModel):
         self.ip_white_list = ip_white_list
         self.name = name
         self.omp_link = omp_link
+        # This parameter is required.
         self.op_union_id = op_union_id
         self.pc_homepage_link = pc_homepage_link
 

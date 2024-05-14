@@ -11,7 +11,9 @@ class AttachmentsMapValue(TeaModel):
         name: str = None,
         media_type: str = None,
     ):
+        # This parameter is required.
         self.upload_key = upload_key
+        # This parameter is required.
         self.name = name
         self.media_type = media_type
 
@@ -117,9 +119,12 @@ class AddCommentRequest(TeaModel):
         option: AddCommentRequestOption = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.comment_content = comment_content
+        # This parameter is required.
         self.comment_type = comment_type
         self.option = option
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -264,8 +269,11 @@ class AddWorkspaceDocMembersRequestMembers(TeaModel):
         member_type: str = None,
         role_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.role_type = role_type
 
     def validate(self):
@@ -302,7 +310,9 @@ class AddWorkspaceDocMembersRequest(TeaModel):
         members: List[AddWorkspaceDocMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -410,8 +420,11 @@ class AddWorkspaceMembersRequestMembers(TeaModel):
         member_type: str = None,
         role_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.role_type = role_type
 
     def validate(self):
@@ -448,7 +461,9 @@ class AddWorkspaceMembersRequest(TeaModel):
         members: List[AddWorkspaceMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -488,6 +503,7 @@ class AddWorkspaceMembersResponseBody(TeaModel):
         self,
         not_in_org_list: List[str] = None,
     ):
+        # This parameter is required.
         self.not_in_org_list = not_in_org_list
 
     def validate(self):
@@ -590,7 +606,9 @@ class AppendRowsRequest(TeaModel):
         values: List[List[str]] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.values = values
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -691,7 +709,9 @@ class BatchRequestRequests(TeaModel):
         path: str = None,
     ):
         self.body = body
+        # This parameter is required.
         self.method = method
+        # This parameter is required.
         self.path = path
 
     def validate(self):
@@ -728,7 +748,9 @@ class BatchRequest(TeaModel):
         requests: List[BatchRequestRequests] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.requests = requests
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -870,7 +892,9 @@ class BatchGetWorkspaceDocsRequest(TeaModel):
         node_ids: List[str] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.node_ids = node_ids
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -994,6 +1018,7 @@ class BatchGetWorkspaceDocsResponseBodyResult(TeaModel):
         node_bo: BatchGetWorkspaceDocsResponseBodyResultNodeBO = None,
         workspace_bo: BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO = None,
     ):
+        # This parameter is required.
         self.has_permission = has_permission
         self.node_bo = node_bo
         self.workspace_bo = workspace_bo
@@ -1036,6 +1061,7 @@ class BatchGetWorkspaceDocsResponseBody(TeaModel):
         self,
         result: List[BatchGetWorkspaceDocsResponseBodyResult] = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1148,7 +1174,9 @@ class BatchGetWorkspacesRequest(TeaModel):
         workspace_ids: List[str] = None,
     ):
         self.include_recent = include_recent
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.workspace_ids = workspace_ids
 
     def validate(self):
@@ -1295,6 +1323,7 @@ class BatchGetWorkspacesResponseBodyWorkspaces(TeaModel):
         has_permission: bool = None,
         workspace: BatchGetWorkspacesResponseBodyWorkspacesWorkspace = None,
     ):
+        # This parameter is required.
         self.has_permission = has_permission
         self.workspace = workspace
 
@@ -1440,6 +1469,7 @@ class BindCoolAppToSheetRequest(TeaModel):
         operator_id: str = None,
     ):
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1572,6 +1602,7 @@ class ClearRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1700,6 +1731,7 @@ class ClearDataRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -1887,7 +1919,9 @@ class CreateConditionalFormattingRuleRequest(TeaModel):
     ):
         self.cell_style = cell_style
         self.duplicate_condition = duplicate_condition
+        # This parameter is required.
         self.ranges = ranges
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2034,7 +2068,9 @@ class CreateDeveloperMetadataRequestAssociatedColumn(TeaModel):
         column: int = None,
         sheet: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.sheet = sheet
 
     def validate(self):
@@ -2067,7 +2103,9 @@ class CreateDeveloperMetadataRequestAssociatedRow(TeaModel):
         row: int = None,
         sheet: str = None,
     ):
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.sheet = sheet
 
     def validate(self):
@@ -2105,6 +2143,7 @@ class CreateDeveloperMetadataRequest(TeaModel):
         self.associated_column = associated_column
         self.associated_row = associated_row
         self.value = value
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2322,7 +2361,9 @@ class CreateRangeProtectionRequest(TeaModel):
         operator_id: str = None,
     ):
         self.editable_setting = editable_setting
+        # This parameter is required.
         self.other_user_permission = other_user_permission
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2462,7 +2503,9 @@ class CreateSheetRequest(TeaModel):
         name: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2610,7 +2653,9 @@ class CreateWorkspaceRequest(TeaModel):
         operator_id: str = None,
     ):
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -2650,8 +2695,11 @@ class CreateWorkspaceResponseBody(TeaModel):
         workspace_id: str = None,
     ):
         self.description = description
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.url = url
+        # This parameter is required.
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -2770,8 +2818,11 @@ class CreateWorkspaceDocRequest(TeaModel):
         template_id: str = None,
         template_type: str = None,
     ):
+        # This parameter is required.
         self.doc_type = doc_type
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.operator_id = operator_id
         self.parent_node_id = parent_node_id
         self.template_id = template_id
@@ -2827,9 +2878,13 @@ class CreateWorkspaceDocResponseBody(TeaModel):
         workspace_id: str = None,
     ):
         self.dentry_uuid = dentry_uuid
+        # This parameter is required.
         self.doc_key = doc_key
+        # This parameter is required.
         self.node_id = node_id
+        # This parameter is required.
         self.url = url
+        # This parameter is required.
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -2949,8 +3004,11 @@ class DeleteColumnsRequest(TeaModel):
         column_count: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.column_count = column_count
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3087,6 +3145,7 @@ class DeleteDropdownListsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3215,6 +3274,7 @@ class DeleteRangeProtectionRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3345,8 +3405,11 @@ class DeleteRowsRequest(TeaModel):
         row_count: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.row_count = row_count
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3483,6 +3546,7 @@ class DeleteSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3611,6 +3675,7 @@ class DeleteWorkspaceDocRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3705,7 +3770,9 @@ class DeleteWorkspaceDocMembersRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -3738,7 +3805,9 @@ class DeleteWorkspaceDocMembersRequest(TeaModel):
         members: List[DeleteWorkspaceDocMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3845,7 +3914,9 @@ class DeleteWorkspaceMembersRequestMembers(TeaModel):
         member_id: str = None,
         member_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
 
     def validate(self):
@@ -3878,7 +3949,9 @@ class DeleteWorkspaceMembersRequest(TeaModel):
         members: List[DeleteWorkspaceMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -3986,8 +4059,11 @@ class DocAppendParagraphRequest(TeaModel):
         properties: Dict[str, Any] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.element_type = element_type
+        # This parameter is required.
         self.properties = properties
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4160,7 +4236,9 @@ class DocAppendTextRequest(TeaModel):
         text: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4333,6 +4411,7 @@ class DocBlocksQueryRequest(TeaModel):
     ):
         self.block_type = block_type
         self.end_index = end_index
+        # This parameter is required.
         self.operator_id = operator_id
         self.start_index = start_index
 
@@ -4509,6 +4588,7 @@ class DocDeleteBlockRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4677,9 +4757,11 @@ class DocInsertBlocksRequest(TeaModel):
         operator_id: str = None,
     ):
         self.block_id = block_id
+        # This parameter is required.
         self.element = element
         self.index = index
         self.where = where
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4861,8 +4943,10 @@ class DocUpdateContentRequest(TeaModel):
         data_type: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.content = content
         self.data_type = data_type
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -4999,6 +5083,7 @@ class GetAllSheetsRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5168,6 +5253,7 @@ class GetDeveloperMetadataRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5196,7 +5282,9 @@ class GetDeveloperMetadataResponseBodyAssociatedColumn(TeaModel):
         column: int = None,
         sheet_id: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.sheet_id = sheet_id
 
     def validate(self):
@@ -5229,7 +5317,9 @@ class GetDeveloperMetadataResponseBodyAssociatedRow(TeaModel):
         row: int = None,
         sheet_id: str = None,
     ):
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.sheet_id = sheet_id
 
     def validate(self):
@@ -5380,6 +5470,7 @@ class GetRangeRequest(TeaModel):
         operator_id: str = None,
         select: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
         self.select = select
 
@@ -5617,8 +5708,10 @@ class GetRecentEditDocsRequest(TeaModel):
         next_token: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5664,10 +5757,14 @@ class GetRecentEditDocsResponseBodyRecentListNodeBO(TeaModel):
         self.create_time = create_time
         self.doc_type = doc_type
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.last_edit_time = last_edit_time
+        # This parameter is required.
         self.node_id = node_id
+        # This parameter is required.
         self.node_name = node_name
         self.update_time = update_time
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -5726,7 +5823,9 @@ class GetRecentEditDocsResponseBodyRecentListWorkspaceBO(TeaModel):
         workspace_name: str = None,
     ):
         self.url = url
+        # This parameter is required.
         self.workspace_id = workspace_id
+        # This parameter is required.
         self.workspace_name = workspace_name
 
     def validate(self):
@@ -5763,7 +5862,9 @@ class GetRecentEditDocsResponseBodyRecentList(TeaModel):
         node_bo: GetRecentEditDocsResponseBodyRecentListNodeBO = None,
         workspace_bo: GetRecentEditDocsResponseBodyRecentListWorkspaceBO = None,
     ):
+        # This parameter is required.
         self.node_bo = node_bo
+        # This parameter is required.
         self.workspace_bo = workspace_bo
 
     def validate(self):
@@ -5917,8 +6018,10 @@ class GetRecentOpenDocsRequest(TeaModel):
         next_token: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -5964,10 +6067,14 @@ class GetRecentOpenDocsResponseBodyRecentListNodeBO(TeaModel):
         self.create_time = create_time
         self.doc_type = doc_type
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.last_open_time = last_open_time
+        # This parameter is required.
         self.node_id = node_id
+        # This parameter is required.
         self.node_name = node_name
         self.update_time = update_time
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -6026,7 +6133,9 @@ class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO(TeaModel):
         workspace_name: str = None,
     ):
         self.url = url
+        # This parameter is required.
         self.workspace_id = workspace_id
+        # This parameter is required.
         self.workspace_name = workspace_name
 
     def validate(self):
@@ -6063,7 +6172,9 @@ class GetRecentOpenDocsResponseBodyRecentList(TeaModel):
         node_bo: GetRecentOpenDocsResponseBodyRecentListNodeBO = None,
         workspace_bo: GetRecentOpenDocsResponseBodyRecentListWorkspaceBO = None,
     ):
+        # This parameter is required.
         self.node_bo = node_bo
+        # This parameter is required.
         self.workspace_bo = workspace_bo
 
     def validate(self):
@@ -6217,6 +6328,7 @@ class GetRelatedWorkspacesRequest(TeaModel):
         operator_id: str = None,
     ):
         self.include_recent = include_recent
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -6252,8 +6364,11 @@ class GetRelatedWorkspacesResponseBodyWorkspacesRecentList(TeaModel):
         url: str = None,
     ):
         self.last_edit_time = last_edit_time
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.node_id = node_id
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -6301,12 +6416,16 @@ class GetRelatedWorkspacesResponseBodyWorkspaces(TeaModel):
         workspace_id: str = None,
     ):
         self.create_time = create_time
+        # This parameter is required.
         self.deleted = deleted
+        # This parameter is required.
         self.name = name
         self.owner = owner
         self.recent_list = recent_list
         self.role = role
+        # This parameter is required.
         self.url = url
+        # This parameter is required.
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -6370,6 +6489,7 @@ class GetRelatedWorkspacesResponseBody(TeaModel):
         self,
         workspaces: List[GetRelatedWorkspacesResponseBodyWorkspaces] = None,
     ):
+        # This parameter is required.
         self.workspaces = workspaces
 
     def validate(self):
@@ -6479,6 +6599,7 @@ class GetSheetRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -6644,7 +6765,9 @@ class GetTemplateByIdRequest(TeaModel):
         belong: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.belong = belong
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -6822,9 +6945,12 @@ class GetWorkspaceResponseBody(TeaModel):
         root_dentry_uuid: str = None,
         url: str = None,
     ):
+        # This parameter is required.
         self.is_deleted = is_deleted
+        # This parameter is required.
         self.owner = owner
         self.root_dentry_uuid = root_dentry_uuid
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -6938,6 +7064,7 @@ class GetWorkspaceNodeRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7051,6 +7178,7 @@ class GetWorkspaceNodeResponseBody(TeaModel):
         node_bo: GetWorkspaceNodeResponseBodyNodeBO = None,
         workspace_bo: GetWorkspaceNodeResponseBodyWorkspaceBO = None,
     ):
+        # This parameter is required.
         self.has_permission = has_permission
         self.node_bo = node_bo
         self.workspace_bo = workspace_bo
@@ -7171,8 +7299,10 @@ class InitDocumentRequest(TeaModel):
         operator_id: str = None,
     ):
         self.attachments_map = attachments_map
+        # This parameter is required.
         self.import_type = import_type
         self.links_key = links_key
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7325,6 +7455,7 @@ class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle(TeaModel):
         size_unit: str = None,
     ):
         self.bold = bold
+        # This parameter is required.
         self.data_type = data_type
         self.font_size = font_size
         self.size_unit = size_unit
@@ -7367,6 +7498,7 @@ class InsertBlocksRequestBlocksParagraphChildrenText(TeaModel):
         content: str = None,
         text_style: InsertBlocksRequestBlocksParagraphChildrenTextTextStyle = None,
     ):
+        # This parameter is required.
         self.content = content
         self.text_style = text_style
 
@@ -7402,6 +7534,7 @@ class InsertBlocksRequestBlocksParagraphChildren(TeaModel):
         element_type: str = None,
         text: InsertBlocksRequestBlocksParagraphChildrenText = None,
     ):
+        # This parameter is required.
         self.element_type = element_type
         self.text = text
 
@@ -7508,6 +7641,7 @@ class InsertBlocksRequestBlocks(TeaModel):
         block_type: str = None,
         paragraph: InsertBlocksRequestBlocksParagraph = None,
     ):
+        # This parameter is required.
         self.block_type = block_type
         self.paragraph = paragraph
 
@@ -7571,8 +7705,10 @@ class InsertBlocksRequest(TeaModel):
         location: InsertBlocksRequestLocation = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.blocks = blocks
         self.location = location
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7687,8 +7823,11 @@ class InsertColumnsBeforeRequest(TeaModel):
         column_count: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.column_count = column_count
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -7827,6 +7966,7 @@ class InsertDropdownListsRequestOptions(TeaModel):
         value: str = None,
     ):
         self.color = color
+        # This parameter is required.
         self.value = value
 
     def validate(self):
@@ -7859,7 +7999,9 @@ class InsertDropdownListsRequest(TeaModel):
         options: List[InsertDropdownListsRequestOptions] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.options = options
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8002,8 +8144,11 @@ class InsertRowsBeforeRequest(TeaModel):
         row_count: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.row_count = row_count
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8144,9 +8289,12 @@ class ListTemplateRequest(TeaModel):
         template_type: str = None,
         workspace_id: str = None,
     ):
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
+        # This parameter is required.
         self.template_type = template_type
         self.workspace_id = workspace_id
 
@@ -8198,11 +8346,16 @@ class ListTemplateResponseBodyTemplateList(TeaModel):
         update_time: int = None,
         workspace_id: str = None,
     ):
+        # This parameter is required.
         self.cover_url = cover_url
         self.create_time = create_time
+        # This parameter is required.
         self.doc_type = doc_type
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.template_type = template_type
+        # This parameter is required.
         self.title = title
         self.update_time = update_time
         self.workspace_id = workspace_id
@@ -8262,8 +8415,10 @@ class ListTemplateResponseBody(TeaModel):
         next_token: str = None,
         template_list: List[ListTemplateResponseBodyTemplateList] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
         self.next_token = next_token
+        # This parameter is required.
         self.template_list = template_list
 
     def validate(self):
@@ -8381,6 +8536,7 @@ class MergeRangeRequest(TeaModel):
         self,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8569,7 +8725,9 @@ class RangeFindNextRequest(TeaModel):
         operator_id: str = None,
     ):
         self.find_options = find_options
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -8607,6 +8765,7 @@ class RangeFindNextResponseBody(TeaModel):
         self,
         a_1notation: str = None,
     ):
+        # This parameter is required.
         self.a_1notation = a_1notation
 
     def validate(self):
@@ -8712,9 +8871,12 @@ class SearchWorkspaceDocsRequest(TeaModel):
         operator_id: str = None,
         workspace_id: str = None,
     ):
+        # This parameter is required.
         self.keyword = keyword
+        # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.operator_id = operator_id
         self.workspace_id = workspace_id
 
@@ -8766,9 +8928,13 @@ class SearchWorkspaceDocsResponseBodyDocsNodeBO(TeaModel):
     ):
         self.doc_type = doc_type
         self.last_edit_time = last_edit_time
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.node_id = node_id
+        # This parameter is required.
         self.origin_name = origin_name
+        # This parameter is required.
         self.url = url
 
     def validate(self):
@@ -8818,6 +8984,7 @@ class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO(TeaModel):
         workspace_id: str = None,
     ):
         self.name = name
+        # This parameter is required.
         self.workspace_id = workspace_id
 
     def validate(self):
@@ -8890,6 +9057,7 @@ class SearchWorkspaceDocsResponseBody(TeaModel):
         next_token: str = None,
     ):
         self.docs = docs
+        # This parameter is required.
         self.has_more = has_more
         self.next_token = next_token
 
@@ -9010,8 +9178,11 @@ class SetColumnWidthRequest(TeaModel):
         width: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.width = width
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9157,9 +9328,13 @@ class SetColumnsVisibilityRequest(TeaModel):
         visibility: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.column = column
+        # This parameter is required.
         self.column_count = column_count
+        # This parameter is required.
         self.visibility = visibility
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9304,6 +9479,7 @@ class SetRowHeightRequest(TeaModel):
     ):
         self.height = height
         self.row = row
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9449,9 +9625,13 @@ class SetRowsVisibilityRequest(TeaModel):
         visibility: str = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.row_count = row_count
+        # This parameter is required.
         self.visibility = visibility
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9595,9 +9775,13 @@ class SheetAutofitRowsRequest(TeaModel):
         row_count: int = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.font_width = font_width
+        # This parameter is required.
         self.row = row
+        # This parameter is required.
         self.row_count = row_count
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -9637,6 +9821,7 @@ class SheetAutofitRowsResponseBody(TeaModel):
         self,
         id: str = None,
     ):
+        # This parameter is required.
         self.id = id
 
     def validate(self):
@@ -9749,6 +9934,7 @@ class SheetFindAllRequestFindOptions(TeaModel):
         self.match_entire_cell = match_entire_cell
         self.match_formula_text = match_formula_text
         self.scope = scope
+        # This parameter is required.
         self.union_cells = union_cells
         self.use_reg_exp = use_reg_exp
 
@@ -9804,8 +9990,11 @@ class SheetFindAllRequest(TeaModel):
         operator_id: str = None,
         select: str = None,
     ):
+        # This parameter is required.
         self.find_options = find_options
+        # This parameter is required.
         self.text = text
+        # This parameter is required.
         self.operator_id = operator_id
         self.select = select
 
@@ -9992,6 +10181,7 @@ class UnbindCoolAppToSheetRequest(TeaModel):
         operator_id: str = None,
     ):
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -10179,6 +10369,7 @@ class UpdateRangeRequest(TeaModel):
         self.number_format = number_format
         self.values = values
         self.vertical_alignments = vertical_alignments
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -10358,6 +10549,7 @@ class UpdateSheetRequest(TeaModel):
     ):
         self.name = name
         self.visibility = visibility
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -10461,8 +10653,11 @@ class UpdateWorkspaceDocMembersRequestMembers(TeaModel):
         member_type: str = None,
         role_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.role_type = role_type
 
     def validate(self):
@@ -10499,7 +10694,9 @@ class UpdateWorkspaceDocMembersRequest(TeaModel):
         members: List[UpdateWorkspaceDocMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):
@@ -10607,8 +10804,11 @@ class UpdateWorkspaceMembersRequestMembers(TeaModel):
         member_type: str = None,
         role_type: str = None,
     ):
+        # This parameter is required.
         self.member_id = member_id
+        # This parameter is required.
         self.member_type = member_type
+        # This parameter is required.
         self.role_type = role_type
 
     def validate(self):
@@ -10645,7 +10845,9 @@ class UpdateWorkspaceMembersRequest(TeaModel):
         members: List[UpdateWorkspaceMembersRequestMembers] = None,
         operator_id: str = None,
     ):
+        # This parameter is required.
         self.members = members
+        # This parameter is required.
         self.operator_id = operator_id
 
     def validate(self):

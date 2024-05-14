@@ -43,7 +43,9 @@ class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList(TeaModel):
         out_id: str = None,
         target_user_id: str = None,
     ):
+        # This parameter is required.
         self.out_id = out_id
+        # This parameter is required.
         self.target_user_id = target_user_id
 
     def validate(self):
@@ -81,10 +83,15 @@ class AssignOrgHoldingToEmpHoldingBatchRequest(TeaModel):
         target_user_list: List[AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList] = None,
     ):
         self.remark = remark
+        # This parameter is required.
         self.send_org_culture_inform = send_org_culture_inform
+        # This parameter is required.
         self.single_amount = single_amount
+        # This parameter is required.
         self.source_usage = source_usage
+        # This parameter is required.
         self.target_usage = target_usage
+        # This parameter is required.
         self.target_user_list = target_user_list
 
     def validate(self):
@@ -145,9 +152,12 @@ class AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDT
         user_id: str = None,
     ):
         self.code = code
+        # This parameter is required.
         self.invoke_status = invoke_status
         self.msg = msg
+        # This parameter is required.
         self.out_id = out_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -338,7 +348,9 @@ class ConsumeUserPointsRequest(TeaModel):
         remark: str = None,
         usage: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.out_id = out_id
         self.remark = remark
         self.usage = usage
@@ -380,6 +392,7 @@ class ConsumeUserPointsResponseBodyResult(TeaModel):
         self,
         amount: int = None,
     ):
+        # This parameter is required.
         self.amount = amount
 
     def validate(self):
@@ -408,6 +421,7 @@ class ConsumeUserPointsResponseBody(TeaModel):
         result: ConsumeUserPointsResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
         self.success = success
 
@@ -521,11 +535,17 @@ class CreateOrgHonorRequest(TeaModel):
         medal_name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.avatar_frame_media_id = avatar_frame_media_id
+        # This parameter is required.
         self.default_bg_color = default_bg_color
+        # This parameter is required.
         self.medal_desc = medal_desc
+        # This parameter is required.
         self.medal_media_id = medal_media_id
+        # This parameter is required.
         self.medal_name = medal_name
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -710,7 +730,9 @@ class DeductionPointBatchRequestTargetUserList(TeaModel):
         out_id: str = None,
         target_user_id: str = None,
     ):
+        # This parameter is required.
         self.out_id = out_id
+        # This parameter is required.
         self.target_user_id = target_user_id
 
     def validate(self):
@@ -746,10 +768,14 @@ class DeductionPointBatchRequest(TeaModel):
         target_user_list: List[DeductionPointBatchRequestTargetUserList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.deduction_amount = deduction_amount
+        # This parameter is required.
         self.remark = remark
         self.send_org_culture_inform = send_org_culture_inform
+        # This parameter is required.
         self.target_user_list = target_user_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -806,9 +832,12 @@ class DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS(TeaModel):
         user_id: str = None,
     ):
         self.code = code
+        # This parameter is required.
         self.invoke_status = invoke_status
         self.msg = msg
+        # This parameter is required.
         self.out_id = out_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -889,6 +918,7 @@ class DeductionPointBatchResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -999,7 +1029,9 @@ class ExportPointOpenRequest(TeaModel):
         user_id: str = None,
     ):
         self.export_date = export_date
+        # This parameter is required.
         self.export_type = export_type
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1150,12 +1182,16 @@ class GrantHonorRequest(TeaModel):
         sender_user_id: str = None,
     ):
         self.expiration_time = expiration_time
+        # This parameter is required.
         self.grant_reason = grant_reason
+        # This parameter is required.
         self.granter_name = granter_name
         self.notice_announcer = notice_announcer
         self.notice_single = notice_single
         self.open_conversation_ids = open_conversation_ids
+        # This parameter is required.
         self.receiver_user_ids = receiver_user_ids
+        # This parameter is required.
         self.sender_user_id = sender_user_id
 
     def validate(self):
@@ -1353,6 +1389,7 @@ class QueryCorpPointsRequest(TeaModel):
         self,
         opt_user_id: str = None,
     ):
+        # This parameter is required.
         self.opt_user_id = opt_user_id
 
     def validate(self):
@@ -1518,8 +1555,10 @@ class QueryEmpPointDetailsRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1639,6 +1678,7 @@ class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         self.account_source = account_source
         self.account_target = account_target
         self.remark = remark
+        # This parameter is required.
         self.usage = usage
 
     def validate(self):
@@ -1687,10 +1727,13 @@ class QueryEmpPointDetailsResponseBodyResultDetails(TeaModel):
         point_operate_feature_response_dto: QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO = None,
         source_biz_code: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.gmt_create = gmt_create
         self.out_id = out_id
         self.point_operate_feature_response_dto = point_operate_feature_response_dto
+        # This parameter is required.
         self.source_biz_code = source_biz_code
 
     def validate(self):
@@ -1738,6 +1781,7 @@ class QueryEmpPointDetailsResponseBodyResult(TeaModel):
         has_more: bool = None,
     ):
         self.details = details
+        # This parameter is required.
         self.has_more = has_more
 
     def validate(self):
@@ -1779,6 +1823,7 @@ class QueryEmpPointDetailsResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1888,6 +1933,7 @@ class QueryOrgHonorsRequest(TeaModel):
         next_token: str = None,
     ):
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -2123,9 +2169,12 @@ class QueryOrgPointDetailsRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.account_type = account_type
+        # This parameter is required.
         self.page_number = page_number
         self.page_size = page_size
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2167,6 +2216,7 @@ class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         emp_name: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.account_type = account_type
         self.emp_name = emp_name
         self.user_id = user_id
@@ -2249,6 +2299,7 @@ class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDT
         self.account_source = account_source
         self.account_target = account_target
         self.remark = remark
+        # This parameter is required.
         self.usage = usage
 
     def validate(self):
@@ -2297,10 +2348,13 @@ class QueryOrgPointDetailsResponseBodyResultDetails(TeaModel):
         point_operate_feature_response_dto: QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO = None,
         source_biz_code: str = None,
     ):
+        # This parameter is required.
         self.amount = amount
+        # This parameter is required.
         self.gmt_create = gmt_create
         self.out_id = out_id
         self.point_operate_feature_response_dto = point_operate_feature_response_dto
+        # This parameter is required.
         self.source_biz_code = source_biz_code
 
     def validate(self):
@@ -2349,7 +2403,9 @@ class QueryOrgPointDetailsResponseBodyResult(TeaModel):
         success: bool = None,
     ):
         self.details = details
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2500,10 +2556,15 @@ class QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS
         description: str = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.award_score = award_score
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.day_limit_times = day_limit_times
+        # This parameter is required.
         self.description = description
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -2693,8 +2754,11 @@ class QueryPointAutoIssueSettingResponseBodyResult(TeaModel):
         point_auto_state: bool = None,
         point_auto_time: int = None,
     ):
+        # This parameter is required.
         self.point_auto_num = point_auto_num
+        # This parameter is required.
         self.point_auto_state = point_auto_state
+        # This parameter is required.
         self.point_auto_time = point_auto_time
 
     def validate(self):
@@ -2732,6 +2796,7 @@ class QueryPointAutoIssueSettingResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -2841,6 +2906,7 @@ class QueryUserHonorsRequest(TeaModel):
         next_token: str = None,
     ):
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -3114,6 +3180,7 @@ class QueryUserPointsResponseBodyResult(TeaModel):
         self,
         amount: int = None,
     ):
+        # This parameter is required.
         self.amount = amount
 
     def validate(self):
@@ -3142,6 +3209,7 @@ class QueryUserPointsResponseBody(TeaModel):
         result: QueryUserPointsResponseBodyResult = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.result = result
         self.success = success
 
@@ -3250,6 +3318,7 @@ class RecallHonorRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3416,9 +3485,13 @@ class UpdateAutoIssuePointRequest(TeaModel):
         point_auto_time: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.point_auto_num = point_auto_num
+        # This parameter is required.
         self.point_auto_state = point_auto_state
+        # This parameter is required.
         self.point_auto_time = point_auto_time
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3458,6 +3531,7 @@ class UpdateAutoIssuePointResponseBodyResult(TeaModel):
         self,
         next_auto_issue_point_time: int = None,
     ):
+        # This parameter is required.
         self.next_auto_issue_point_time = next_auto_issue_point_time
 
     def validate(self):
@@ -3487,6 +3561,7 @@ class UpdateAutoIssuePointResponseBody(TeaModel):
         success: bool = None,
     ):
         self.result = result
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -3597,9 +3672,13 @@ class UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList(TeaMod
         day_limit_times: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.award_score = award_score
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.day_limit_times = day_limit_times
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -3640,7 +3719,9 @@ class UpdatePointActionAutoAssignRuleRequest(TeaModel):
         update_point_rule_request_dtolist: List[UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.update_point_rule_request_dtolist = update_point_rule_request_dtolist
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):

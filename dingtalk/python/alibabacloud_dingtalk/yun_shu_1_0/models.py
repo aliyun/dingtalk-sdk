@@ -45,9 +45,13 @@ class SaveOpenExternalLogRequest(TeaModel):
         log_type: str = None,
         open_ext: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.log_source = log_source
+        # This parameter is required.
         self.log_type = log_type
+        # This parameter is required.
         self.open_ext = open_ext
 
     def validate(self):

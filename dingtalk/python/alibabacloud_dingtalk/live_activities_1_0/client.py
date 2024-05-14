@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalklive_activities__1__0_models.PushLiveActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        """
+        @summary 实时活动发送接口
+        
+        @param request: PushLiveActivityRequest
+        @param headers: PushLiveActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushLiveActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_event_data):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalklive_activities__1__0_models.PushLiveActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        """
+        @summary 实时活动发送接口
+        
+        @param request: PushLiveActivityRequest
+        @param headers: PushLiveActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PushLiveActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_event_data):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
     ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        """
+        @summary 实时活动发送接口
+        
+        @param request: PushLiveActivityRequest
+        @return: PushLiveActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive_activities__1__0_models.PushLiveActivityHeaders()
         return self.push_live_activity_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive_activities__1__0_models.PushLiveActivityRequest,
     ) -> dingtalklive_activities__1__0_models.PushLiveActivityResponse:
+        """
+        @summary 实时活动发送接口
+        
+        @param request: PushLiveActivityRequest
+        @return: PushLiveActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive_activities__1__0_models.PushLiveActivityHeaders()
         return await self.push_live_activity_with_options_async(request, headers, runtime)
@@ -129,6 +157,14 @@ class Client(OpenApiClient):
         headers: dingtalklive_activities__1__0_models.SendLiveActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive_activities__1__0_models.SendLiveActivityResponse:
+        """
+        @summary 发送实时活动
+        
+        @param request: SendLiveActivityRequest
+        @param headers: SendLiveActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLiveActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_event_data):
@@ -168,6 +204,14 @@ class Client(OpenApiClient):
         headers: dingtalklive_activities__1__0_models.SendLiveActivityHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive_activities__1__0_models.SendLiveActivityResponse:
+        """
+        @summary 发送实时活动
+        
+        @param request: SendLiveActivityRequest
+        @param headers: SendLiveActivityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLiveActivityResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.activity_event_data):
@@ -205,6 +249,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive_activities__1__0_models.SendLiveActivityRequest,
     ) -> dingtalklive_activities__1__0_models.SendLiveActivityResponse:
+        """
+        @summary 发送实时活动
+        
+        @param request: SendLiveActivityRequest
+        @return: SendLiveActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive_activities__1__0_models.SendLiveActivityHeaders()
         return self.send_live_activity_with_options(request, headers, runtime)
@@ -213,6 +263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalklive_activities__1__0_models.SendLiveActivityRequest,
     ) -> dingtalklive_activities__1__0_models.SendLiveActivityResponse:
+        """
+        @summary 发送实时活动
+        
+        @param request: SendLiveActivityRequest
+        @return: SendLiveActivityResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive_activities__1__0_models.SendLiveActivityHeaders()
         return await self.send_live_activity_with_options_async(request, headers, runtime)

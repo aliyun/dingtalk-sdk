@@ -94,7 +94,9 @@ class AddPluginRuleRequestRules(TeaModel):
         item_id: str = None,
         item_name: str = None,
     ):
+        # This parameter is required.
         self.item_id = item_id
+        # This parameter is required.
         self.item_name = item_name
 
     def validate(self):
@@ -130,10 +132,15 @@ class AddPluginRuleRequest(TeaModel):
         rules: List[AddPluginRuleRequestRules] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.chat_type = chat_type
+        # This parameter is required.
         self.code = code
+        # This parameter is required.
         self.item_type = item_type
+        # This parameter is required.
         self.rules = rules
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -287,7 +294,9 @@ class DeletePlguinRuleRequest(TeaModel):
         biz_id_list: List[str] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_id_list = biz_id_list
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -420,6 +429,7 @@ class GetBaseProfileListRequest(TeaModel):
         self,
         body: List[str] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -608,6 +618,7 @@ class GetConversationRequest(TeaModel):
         open_conversation_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.user_id = user_id
 
@@ -791,8 +802,11 @@ class GetMemberListRequest(TeaModel):
         page_size: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
         self.user_id = user_id
 
@@ -943,7 +957,9 @@ class QueryPluginRuleRequest(TeaModel):
         self.code = code
         self.item_id = item_id
         self.item_type = item_type
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
 
     def validate(self):
@@ -1208,8 +1224,10 @@ class SendDingTipRequestLink(TeaModel):
         text: str = None,
     ):
         self.extension = extension
+        # This parameter is required.
         self.link_url = link_url
         self.pic_media_id = pic_media_id
+        # This parameter is required.
         self.text = text
 
     def validate(self):
@@ -1256,9 +1274,12 @@ class SendDingTipRequest(TeaModel):
     ):
         self.extension = extension
         self.link = link
+        # This parameter is required.
         self.message_id = message_id
+        # This parameter is required.
         self.receiver_user_id = receiver_user_id
         self.sender_user_id = sender_user_id
+        # This parameter is required.
         self.text_content = text_content
 
     def validate(self):
@@ -1560,10 +1581,13 @@ class SendMessageTipRequest(TeaModel):
         sender_user_id: str = None,
     ):
         self.default_view = default_view
+        # This parameter is required.
         self.message_id = message_id
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         self.private_field_map = private_field_map
         self.public_field = public_field
+        # This parameter is required.
         self.receiver_user_id = receiver_user_id
         self.sender_user_id = sender_user_id
 

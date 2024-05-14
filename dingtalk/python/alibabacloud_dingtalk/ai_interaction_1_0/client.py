@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.FinishHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.FinishResponse:
+        """
+        @summary 在主动模式下完结会话框
+        
+        @param request: FinishRequest
+        @param headers: FinishHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinishResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_token):
@@ -70,6 +78,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.FinishHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.FinishResponse:
+        """
+        @summary 在主动模式下完结会话框
+        
+        @param request: FinishRequest
+        @param headers: FinishHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinishResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.conversation_token):
@@ -103,6 +119,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.FinishRequest,
     ) -> dingtalkai_interaction__1__0_models.FinishResponse:
+        """
+        @summary 在主动模式下完结会话框
+        
+        @param request: FinishRequest
+        @return: FinishResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.FinishHeaders()
         return self.finish_with_options(request, headers, runtime)
@@ -111,6 +133,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.FinishRequest,
     ) -> dingtalkai_interaction__1__0_models.FinishResponse:
+        """
+        @summary 在主动模式下完结会话框
+        
+        @param request: FinishRequest
+        @return: FinishResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.FinishHeaders()
         return await self.finish_with_options_async(request, headers, runtime)
@@ -121,6 +149,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.PrepareHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.PrepareResponse:
+        """
+        @summary 在主动模式下准备会话框
+        
+        @param request: PrepareRequest
+        @param headers: PrepareHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -162,6 +198,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.PrepareHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.PrepareResponse:
+        """
+        @summary 在主动模式下准备会话框
+        
+        @param request: PrepareRequest
+        @param headers: PrepareHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -201,6 +245,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.PrepareRequest,
     ) -> dingtalkai_interaction__1__0_models.PrepareResponse:
+        """
+        @summary 在主动模式下准备会话框
+        
+        @param request: PrepareRequest
+        @return: PrepareResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.PrepareHeaders()
         return self.prepare_with_options(request, headers, runtime)
@@ -209,6 +259,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.PrepareRequest,
     ) -> dingtalkai_interaction__1__0_models.PrepareResponse:
+        """
+        @summary 在主动模式下准备会话框
+        
+        @param request: PrepareRequest
+        @return: PrepareResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.PrepareHeaders()
         return await self.prepare_with_options_async(request, headers, runtime)
@@ -219,6 +275,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.ReplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.ReplyResponse:
+        """
+        @summary 在回复模式下更新会话框
+        
+        @param request: ReplyRequest
+        @param headers: ReplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -258,6 +322,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.ReplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.ReplyResponse:
+        """
+        @summary 在回复模式下更新会话框
+        
+        @param request: ReplyRequest
+        @param headers: ReplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -295,6 +367,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.ReplyRequest,
     ) -> dingtalkai_interaction__1__0_models.ReplyResponse:
+        """
+        @summary 在回复模式下更新会话框
+        
+        @param request: ReplyRequest
+        @return: ReplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.ReplyHeaders()
         return self.reply_with_options(request, headers, runtime)
@@ -303,6 +381,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.ReplyRequest,
     ) -> dingtalkai_interaction__1__0_models.ReplyResponse:
+        """
+        @summary 在回复模式下更新会话框
+        
+        @param request: ReplyRequest
+        @return: ReplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.ReplyHeaders()
         return await self.reply_with_options_async(request, headers, runtime)
@@ -313,6 +397,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.SendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        """
+        @summary 直接发送消息
+        
+        @param request: SendRequest
+        @param headers: SendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -354,6 +446,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.SendHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        """
+        @summary 直接发送消息
+        
+        @param request: SendRequest
+        @param headers: SendHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -393,6 +493,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.SendRequest,
     ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        """
+        @summary 直接发送消息
+        
+        @param request: SendRequest
+        @return: SendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.SendHeaders()
         return self.send_with_options(request, headers, runtime)
@@ -401,6 +507,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.SendRequest,
     ) -> dingtalkai_interaction__1__0_models.SendResponse:
+        """
+        @summary 直接发送消息
+        
+        @param request: SendRequest
+        @return: SendResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.SendHeaders()
         return await self.send_with_options_async(request, headers, runtime)
@@ -411,6 +523,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.UpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.UpdateResponse:
+        """
+        @summary 在主动模式下更新会话框
+        
+        @param request: UpdateRequest
+        @param headers: UpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -450,6 +570,14 @@ class Client(OpenApiClient):
         headers: dingtalkai_interaction__1__0_models.UpdateHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkai_interaction__1__0_models.UpdateResponse:
+        """
+        @summary 在主动模式下更新会话框
+        
+        @param request: UpdateRequest
+        @param headers: UpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.content):
@@ -487,6 +615,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.UpdateRequest,
     ) -> dingtalkai_interaction__1__0_models.UpdateResponse:
+        """
+        @summary 在主动模式下更新会话框
+        
+        @param request: UpdateRequest
+        @return: UpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.UpdateHeaders()
         return self.update_with_options(request, headers, runtime)
@@ -495,6 +629,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkai_interaction__1__0_models.UpdateRequest,
     ) -> dingtalkai_interaction__1__0_models.UpdateResponse:
+        """
+        @summary 在主动模式下更新会话框
+        
+        @param request: UpdateRequest
+        @return: UpdateResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_interaction__1__0_models.UpdateHeaders()
         return await self.update_with_options_async(request, headers, runtime)

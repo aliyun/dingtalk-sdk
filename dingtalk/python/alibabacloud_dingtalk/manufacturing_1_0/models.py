@@ -30,9 +30,12 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
     ):
         self.corp_id = corp_id
         self.extend = extend
+        # This parameter is required.
         self.inst_no = inst_no
         self.is_batch_job = is_batch_job
+        # This parameter is required.
         self.manufacture_date = manufacture_date
+        # This parameter is required.
         self.mes_app_key = mes_app_key
         self.process_en_name = process_en_name
         self.process_name = process_name
@@ -40,6 +43,7 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         self.product_en_name = product_en_name
         self.product_name = product_name
         self.product_specification = product_specification
+        # This parameter is required.
         self.qualified_quantity = qualified_quantity
         self.reworkable_quantity = reworkable_quantity
         self.scrapped_quantity = scrapped_quantity
@@ -47,6 +51,7 @@ class IndustrializeManufactureJobBookRequest(TeaModel):
         self.user_id_list = user_id_list
         self.user_name = user_name
         self.user_name_list = user_name_list
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -194,6 +199,7 @@ class IndustrializeManufactureJobBookResponseBody(TeaModel):
         self.error_level = error_level
         self.error_msg = error_msg
         self.http_code = http_code
+        # This parameter is required.
         self.success = success
         self.uuid = uuid
 
@@ -449,22 +455,39 @@ class IndustrializeManufactureQueryJobsResponseBodyContent(TeaModel):
         user_name_list: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.gmt_create = gmt_create
+        # This parameter is required.
         self.gmt_modified = gmt_modified
+        # This parameter is required.
         self.id = id
+        # This parameter is required.
         self.inst_no = inst_no
+        # This parameter is required.
         self.is_batch_job = is_batch_job
+        # This parameter is required.
         self.manufacture_date = manufacture_date
+        # This parameter is required.
         self.manufacture_day = manufacture_day
+        # This parameter is required.
         self.mes_app_key = mes_app_key
+        # This parameter is required.
         self.process_name = process_name
+        # This parameter is required.
         self.qualified_quantity = qualified_quantity
+        # This parameter is required.
         self.scrapped_quantity = scrapped_quantity
+        # This parameter is required.
         self.unit_price = unit_price
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_id_list = user_id_list
+        # This parameter is required.
         self.user_name_list = user_name_list
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):

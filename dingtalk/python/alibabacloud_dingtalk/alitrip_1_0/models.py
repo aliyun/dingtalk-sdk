@@ -57,21 +57,34 @@ class AddCityCarApplyRequest(TeaModel):
         title: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.cause = cause
+        # This parameter is required.
         self.city = city
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.date = date
         self.finished_date = finished_date
         self.project_code = project_code
         self.project_name = project_name
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.third_part_apply_id = third_part_apply_id
+        # This parameter is required.
         self.third_part_cost_center_id = third_part_cost_center_id
+        # This parameter is required.
         self.third_part_invoice_id = third_part_invoice_id
+        # This parameter is required.
         self.times_total = times_total
+        # This parameter is required.
         self.times_type = times_type
+        # This parameter is required.
         self.times_used = times_used
+        # This parameter is required.
         self.title = title
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -265,11 +278,15 @@ class ApproveCityCarApplyRequest(TeaModel):
         third_part_apply_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
         self.operate_time = operate_time
         self.remark = remark
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.third_part_apply_id = third_part_apply_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2867,7 +2884,9 @@ class GetFlightExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -2911,18 +2930,31 @@ class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         price: int = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.arr_city = arr_city
+        # This parameter is required.
         self.arr_city_name = arr_city_name
+        # This parameter is required.
         self.arr_time = arr_time
+        # This parameter is required.
         self.cabin = cabin
+        # This parameter is required.
         self.cabin_class = cabin_class
+        # This parameter is required.
         self.cabin_class_str = cabin_class_str
+        # This parameter is required.
         self.dep_city = dep_city
+        # This parameter is required.
         self.dep_city_name = dep_city_name
+        # This parameter is required.
         self.dep_time = dep_time
+        # This parameter is required.
         self.discount = discount
+        # This parameter is required.
         self.flight_no = flight_no
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3008,16 +3040,27 @@ class GetFlightExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.apply_intention_info_do = apply_intention_info_do
+        # This parameter is required.
         self.btrip_cause = btrip_cause
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.exceed_reason = exceed_reason
+        # This parameter is required.
         self.exceed_type = exceed_type
+        # This parameter is required.
         self.origin_standard = origin_standard
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.submit_time = submit_time
+        # This parameter is required.
         self.thirdpart_apply_id = thirdpart_apply_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3162,7 +3205,9 @@ class GetHotelExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3200,12 +3245,19 @@ class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         together: bool = None,
         type: int = None,
     ):
+        # This parameter is required.
         self.check_in = check_in
+        # This parameter is required.
         self.check_out = check_out
+        # This parameter is required.
         self.city_code = city_code
+        # This parameter is required.
         self.city_name = city_name
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.together = together
+        # This parameter is required.
         self.type = type
 
     def validate(self):
@@ -3267,16 +3319,27 @@ class GetHotelExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.apply_intention_info_do = apply_intention_info_do
+        # This parameter is required.
         self.btrip_cause = btrip_cause
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.exceed_reason = exceed_reason
+        # This parameter is required.
         self.exceed_type = exceed_type
+        # This parameter is required.
         self.origin_standard = origin_standard
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.submit_time = submit_time
+        # This parameter is required.
         self.thirdpart_apply_id = thirdpart_apply_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3421,7 +3484,9 @@ class GetTrainExceedApplyRequest(TeaModel):
         apply_id: str = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -3464,17 +3529,29 @@ class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO(TeaModel):
         train_no: str = None,
         train_type_desc: str = None,
     ):
+        # This parameter is required.
         self.arr_city = arr_city
+        # This parameter is required.
         self.arr_city_name = arr_city_name
+        # This parameter is required.
         self.arr_station = arr_station
+        # This parameter is required.
         self.arr_time = arr_time
+        # This parameter is required.
         self.dep_city = dep_city
+        # This parameter is required.
         self.dep_city_name = dep_city_name
+        # This parameter is required.
         self.dep_station = dep_station
+        # This parameter is required.
         self.dep_time = dep_time
+        # This parameter is required.
         self.price = price
+        # This parameter is required.
         self.seat_name = seat_name
+        # This parameter is required.
         self.train_no = train_no
+        # This parameter is required.
         self.train_type_desc = train_type_desc
 
     def validate(self):
@@ -3556,16 +3633,27 @@ class GetTrainExceedApplyResponseBody(TeaModel):
         thirdpart_apply_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.apply_intention_info_do = apply_intention_info_do
+        # This parameter is required.
         self.btrip_cause = btrip_cause
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.exceed_reason = exceed_reason
+        # This parameter is required.
         self.exceed_type = exceed_type
+        # This parameter is required.
         self.origin_standard = origin_standard
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.submit_time = submit_time
+        # This parameter is required.
         self.thirdpart_apply_id = thirdpart_apply_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3715,6 +3803,7 @@ class QueryCityCarApplyRequest(TeaModel):
         third_part_apply_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
         self.created_end_at = created_end_at
         self.created_start_at = created_start_at
@@ -4173,6 +4262,7 @@ class QueryUnionOrderRequest(TeaModel):
         third_part_apply_id: str = None,
         union_no: str = None,
     ):
+        # This parameter is required.
         self.corp_id = corp_id
         self.third_part_apply_id = third_part_apply_id
         self.union_no = union_no
@@ -4507,11 +4597,17 @@ class SyncExceedApplyRequest(TeaModel):
         thirdparty_flow_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.apply_id = apply_id
+        # This parameter is required.
         self.corp_id = corp_id
+        # This parameter is required.
         self.remark = remark
+        # This parameter is required.
         self.status = status
+        # This parameter is required.
         self.thirdparty_flow_id = thirdparty_flow_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4559,6 +4655,7 @@ class SyncExceedApplyResponseBody(TeaModel):
         self,
         module: bool = None,
     ):
+        # This parameter is required.
         self.module = module
 
     def validate(self):

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkcredit__1__0_models.QueryScoreHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcredit__1__0_models.QueryScoreResponse:
+        """
+        @summary 查询用户金融评分数据
+        
+        @param request: QueryScoreRequest
+        @param headers: QueryScoreHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScoreResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.encryption):
@@ -80,6 +88,14 @@ class Client(OpenApiClient):
         headers: dingtalkcredit__1__0_models.QueryScoreHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcredit__1__0_models.QueryScoreResponse:
+        """
+        @summary 查询用户金融评分数据
+        
+        @param request: QueryScoreRequest
+        @param headers: QueryScoreHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScoreResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.encryption):
@@ -123,6 +139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcredit__1__0_models.QueryScoreRequest,
     ) -> dingtalkcredit__1__0_models.QueryScoreResponse:
+        """
+        @summary 查询用户金融评分数据
+        
+        @param request: QueryScoreRequest
+        @return: QueryScoreResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcredit__1__0_models.QueryScoreHeaders()
         return self.query_score_with_options(request, headers, runtime)
@@ -131,6 +153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkcredit__1__0_models.QueryScoreRequest,
     ) -> dingtalkcredit__1__0_models.QueryScoreResponse:
+        """
+        @summary 查询用户金融评分数据
+        
+        @param request: QueryScoreRequest
+        @return: QueryScoreResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcredit__1__0_models.QueryScoreHeaders()
         return await self.query_score_with_options_async(request, headers, runtime)

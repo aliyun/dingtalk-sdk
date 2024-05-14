@@ -139,6 +139,7 @@ class BatchDeleteDeviceRequest(TeaModel):
         device_ids: List[str] = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.device_ids = device_ids
 
     def validate(self):
@@ -319,15 +320,21 @@ class BatchRegisterDeviceRequestDevices(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
+        # This parameter is required.
         self.device_id = device_id
+        # This parameter is required.
         self.device_name = device_name
+        # This parameter is required.
         self.device_status = device_status
+        # This parameter is required.
         self.device_type = device_type
+        # This parameter is required.
         self.device_type_name = device_type_name
         self.extra_data = extra_data
         self.live_urls = live_urls
         self.location = location
         self.parent_id = parent_id
+        # This parameter is required.
         self.product_type = product_type
 
     def validate(self):
@@ -395,6 +402,7 @@ class BatchRegisterDeviceRequest(TeaModel):
         devices: List[BatchRegisterDeviceRequestDevices] = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.devices = devices
 
     def validate(self):
@@ -434,6 +442,7 @@ class BatchRegisterDeviceResponseBody(TeaModel):
         self,
         device_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.device_ids = device_ids
 
     def validate(self):
@@ -536,7 +545,9 @@ class BatchRegisterEventTypeRequestEventTypes(TeaModel):
         event_type: str = None,
         event_type_name: str = None,
     ):
+        # This parameter is required.
         self.event_type = event_type
+        # This parameter is required.
         self.event_type_name = event_type_name
 
     def validate(self):
@@ -570,6 +581,7 @@ class BatchRegisterEventTypeRequest(TeaModel):
         event_types: List[BatchRegisterEventTypeRequestEventTypes] = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.event_types = event_types
 
     def validate(self):
@@ -754,6 +766,7 @@ class BatchUpdateDeviceRequestDevices(TeaModel):
         live_urls: BatchUpdateDeviceRequestDevicesLiveUrls = None,
         location: str = None,
     ):
+        # This parameter is required.
         self.device_id = device_id
         self.device_name = device_name
         self.device_status = device_status
@@ -810,6 +823,7 @@ class BatchUpdateDeviceRequest(TeaModel):
         devices: List[BatchUpdateDeviceRequestDevices] = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.devices = devices
 
     def validate(self):
@@ -849,6 +863,7 @@ class BatchUpdateDeviceResponseBody(TeaModel):
         self,
         device_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.device_ids = device_ids
 
     def validate(self):
@@ -955,8 +970,11 @@ class BindSystemRequest(TeaModel):
         extra_data: Dict[str, Any] = None,
     ):
         self.auth_code = auth_code
+        # This parameter is required.
         self.client_id = client_id
+        # This parameter is required.
         self.client_name = client_name
+        # This parameter is required.
         self.corp_id = corp_id
         self.extra_data = extra_data
 
@@ -1002,7 +1020,9 @@ class BindSystemResponseBody(TeaModel):
         client_id: str = None,
         corp_id: str = None,
     ):
+        # This parameter is required.
         self.client_id = client_id
+        # This parameter is required.
         self.corp_id = corp_id
 
     def validate(self):
@@ -1111,9 +1131,11 @@ class DeviceConferenceRequest(TeaModel):
         conference_password: str = None,
         device_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.conf_title = conf_title
         self.conference_id = conference_id
         self.conference_password = conference_password
+        # This parameter is required.
         self.device_ids = device_ids
 
     def validate(self):
@@ -1537,12 +1559,16 @@ class PushEventRequest(TeaModel):
     ):
         self.corp_id = corp_id
         self.device_id = device_id
+        # This parameter is required.
         self.event_id = event_id
+        # This parameter is required.
         self.event_name = event_name
+        # This parameter is required.
         self.event_type = event_type
         self.extra_data = extra_data
         self.location = location
         self.msg = msg
+        # This parameter is required.
         self.occurrence_time = occurrence_time
         self.pic_urls = pic_urls
 
@@ -1794,6 +1820,7 @@ class QueryDeviceResponseBodyData(TeaModel):
         parent_id: str = None,
         product_type: str = None,
     ):
+        # This parameter is required.
         self.device_id = device_id
         self.device_name = device_name
         self.device_status = device_status
@@ -1866,6 +1893,7 @@ class QueryDeviceResponseBody(TeaModel):
         page_size: int = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.data = data
         self.page_number = page_number
         self.page_size = page_size
@@ -2433,15 +2461,21 @@ class RegisterDeviceRequest(TeaModel):
         product_type: str = None,
     ):
         self.corp_id = corp_id
+        # This parameter is required.
         self.device_name = device_name
+        # This parameter is required.
         self.device_status = device_status
+        # This parameter is required.
         self.device_type = device_type
+        # This parameter is required.
         self.device_type_name = device_type_name
+        # This parameter is required.
         self.id = id
         self.live_urls = live_urls
         self.location = location
         self.nick_name = nick_name
         self.parent_id = parent_id
+        # This parameter is required.
         self.product_type = product_type
 
     def validate(self):
@@ -2511,6 +2545,7 @@ class RegisterDeviceResponseBody(TeaModel):
         self,
         device_id: str = None,
     ):
+        # This parameter is required.
         self.device_id = device_id
 
     def validate(self):

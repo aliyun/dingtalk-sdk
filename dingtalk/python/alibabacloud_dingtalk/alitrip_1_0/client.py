@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.AddCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
+        """
+        @summary 同步第三方市内用车申请单
+        
+        @param request: AddCityCarApplyRequest
+        @param headers: AddCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cause):
@@ -100,6 +108,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.AddCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
+        """
+        @summary 同步第三方市内用车申请单
+        
+        @param request: AddCityCarApplyRequest
+        @param headers: AddCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.cause):
@@ -163,6 +179,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
+        """
+        @summary 同步第三方市内用车申请单
+        
+        @param request: AddCityCarApplyRequest
+        @return: AddCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
         return self.add_city_car_apply_with_options(request, headers, runtime)
@@ -171,6 +193,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.AddCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.AddCityCarApplyResponse:
+        """
+        @summary 同步第三方市内用车申请单
+        
+        @param request: AddCityCarApplyRequest
+        @return: AddCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.AddCityCarApplyHeaders()
         return await self.add_city_car_apply_with_options_async(request, headers, runtime)
@@ -181,6 +209,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单审批
+        
+        @param request: ApproveCityCarApplyRequest
+        @param headers: ApproveCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApproveCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -226,6 +262,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单审批
+        
+        @param request: ApproveCityCarApplyRequest
+        @param headers: ApproveCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ApproveCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -269,6 +313,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单审批
+        
+        @param request: ApproveCityCarApplyRequest
+        @return: ApproveCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
         return self.approve_city_car_apply_with_options(request, headers, runtime)
@@ -277,6 +327,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.ApproveCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.ApproveCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单审批
+        
+        @param request: ApproveCityCarApplyRequest
+        @return: ApproveCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.ApproveCityCarApplyHeaders()
         return await self.approve_city_car_apply_with_options_async(request, headers, runtime)
@@ -287,6 +343,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        """
+        @summary 商旅火车票结算记账查询接口
+        
+        @param request: BillSettementBtripTrainRequest
+        @param headers: BillSettementBtripTrainHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementBtripTrainResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -332,6 +396,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        """
+        @summary 商旅火车票结算记账查询接口
+        
+        @param request: BillSettementBtripTrainRequest
+        @param headers: BillSettementBtripTrainHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementBtripTrainResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -375,6 +447,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        """
+        @summary 商旅火车票结算记账查询接口
+        
+        @param request: BillSettementBtripTrainRequest
+        @return: BillSettementBtripTrainResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
         return self.bill_settement_btrip_train_with_options(request, headers, runtime)
@@ -383,6 +461,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementBtripTrainRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementBtripTrainResponse:
+        """
+        @summary 商旅火车票结算记账查询接口
+        
+        @param request: BillSettementBtripTrainRequest
+        @return: BillSettementBtripTrainResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementBtripTrainHeaders()
         return await self.bill_settement_btrip_train_with_options_async(request, headers, runtime)
@@ -393,6 +477,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementCarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        """
+        @summary 用车结算记账查询接口
+        
+        @param request: BillSettementCarRequest
+        @param headers: BillSettementCarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementCarResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -438,6 +530,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementCarHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        """
+        @summary 用车结算记账查询接口
+        
+        @param request: BillSettementCarRequest
+        @param headers: BillSettementCarHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementCarResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -481,6 +581,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        """
+        @summary 用车结算记账查询接口
+        
+        @param request: BillSettementCarRequest
+        @return: BillSettementCarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
         return self.bill_settement_car_with_options(request, headers, runtime)
@@ -489,6 +595,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementCarRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementCarResponse:
+        """
+        @summary 用车结算记账查询接口
+        
+        @param request: BillSettementCarRequest
+        @return: BillSettementCarResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementCarHeaders()
         return await self.bill_settement_car_with_options_async(request, headers, runtime)
@@ -499,6 +611,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementFlightHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        """
+        @summary 机票结算记账查询接口
+        
+        @param request: BillSettementFlightRequest
+        @param headers: BillSettementFlightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementFlightResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -544,6 +664,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementFlightHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        """
+        @summary 机票结算记账查询接口
+        
+        @param request: BillSettementFlightRequest
+        @param headers: BillSettementFlightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementFlightResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -587,6 +715,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        """
+        @summary 机票结算记账查询接口
+        
+        @param request: BillSettementFlightRequest
+        @return: BillSettementFlightResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
         return self.bill_settement_flight_with_options(request, headers, runtime)
@@ -595,6 +729,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementFlightRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementFlightResponse:
+        """
+        @summary 机票结算记账查询接口
+        
+        @param request: BillSettementFlightRequest
+        @return: BillSettementFlightResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementFlightHeaders()
         return await self.bill_settement_flight_with_options_async(request, headers, runtime)
@@ -605,6 +745,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementHotelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        """
+        @summary 酒店结算记账查询接口
+        
+        @param request: BillSettementHotelRequest
+        @param headers: BillSettementHotelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementHotelResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -650,6 +798,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.BillSettementHotelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        """
+        @summary 酒店结算记账查询接口
+        
+        @param request: BillSettementHotelRequest
+        @param headers: BillSettementHotelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BillSettementHotelResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.category):
@@ -693,6 +849,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        """
+        @summary 酒店结算记账查询接口
+        
+        @param request: BillSettementHotelRequest
+        @return: BillSettementHotelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
         return self.bill_settement_hotel_with_options(request, headers, runtime)
@@ -701,6 +863,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.BillSettementHotelRequest,
     ) -> dingtalkalitrip__1__0_models.BillSettementHotelResponse:
+        """
+        @summary 酒店结算记账查询接口
+        
+        @param request: BillSettementHotelRequest
+        @return: BillSettementHotelResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.BillSettementHotelHeaders()
         return await self.bill_settement_hotel_with_options_async(request, headers, runtime)
@@ -711,6 +879,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        """
+        @summary 商旅机票第三方超标审批单搜索接口
+        
+        @param request: GetFlightExceedApplyRequest
+        @param headers: GetFlightExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlightExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -748,6 +924,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        """
+        @summary 商旅机票第三方超标审批单搜索接口
+        
+        @param request: GetFlightExceedApplyRequest
+        @param headers: GetFlightExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFlightExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -783,6 +967,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        """
+        @summary 商旅机票第三方超标审批单搜索接口
+        
+        @param request: GetFlightExceedApplyRequest
+        @return: GetFlightExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
         return self.get_flight_exceed_apply_with_options(request, headers, runtime)
@@ -791,6 +981,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetFlightExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetFlightExceedApplyResponse:
+        """
+        @summary 商旅机票第三方超标审批单搜索接口
+        
+        @param request: GetFlightExceedApplyRequest
+        @return: GetFlightExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetFlightExceedApplyHeaders()
         return await self.get_flight_exceed_apply_with_options_async(request, headers, runtime)
@@ -801,6 +997,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        """
+        @summary 搜索酒店超标审批单
+        
+        @param request: GetHotelExceedApplyRequest
+        @param headers: GetHotelExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHotelExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -838,6 +1042,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        """
+        @summary 搜索酒店超标审批单
+        
+        @param request: GetHotelExceedApplyRequest
+        @param headers: GetHotelExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHotelExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -873,6 +1085,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        """
+        @summary 搜索酒店超标审批单
+        
+        @param request: GetHotelExceedApplyRequest
+        @return: GetHotelExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
         return self.get_hotel_exceed_apply_with_options(request, headers, runtime)
@@ -881,6 +1099,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetHotelExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetHotelExceedApplyResponse:
+        """
+        @summary 搜索酒店超标审批单
+        
+        @param request: GetHotelExceedApplyRequest
+        @return: GetHotelExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetHotelExceedApplyHeaders()
         return await self.get_hotel_exceed_apply_with_options_async(request, headers, runtime)
@@ -891,6 +1115,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        """
+        @summary 商旅火车票第三方超标审批单搜索接口
+        
+        @param request: GetTrainExceedApplyRequest
+        @param headers: GetTrainExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTrainExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -928,6 +1160,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        """
+        @summary 商旅火车票第三方超标审批单搜索接口
+        
+        @param request: GetTrainExceedApplyRequest
+        @param headers: GetTrainExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTrainExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -963,6 +1203,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        """
+        @summary 商旅火车票第三方超标审批单搜索接口
+        
+        @param request: GetTrainExceedApplyRequest
+        @return: GetTrainExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
         return self.get_train_exceed_apply_with_options(request, headers, runtime)
@@ -971,6 +1217,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.GetTrainExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.GetTrainExceedApplyResponse:
+        """
+        @summary 商旅火车票第三方超标审批单搜索接口
+        
+        @param request: GetTrainExceedApplyRequest
+        @return: GetTrainExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.GetTrainExceedApplyHeaders()
         return await self.get_train_exceed_apply_with_options_async(request, headers, runtime)
@@ -981,6 +1233,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单查询
+        
+        @param request: QueryCityCarApplyRequest
+        @param headers: QueryCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1028,6 +1288,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单查询
+        
+        @param request: QueryCityCarApplyRequest
+        @param headers: QueryCityCarApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCityCarApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1073,6 +1341,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单查询
+        
+        @param request: QueryCityCarApplyRequest
+        @return: QueryCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
         return self.query_city_car_apply_with_options(request, headers, runtime)
@@ -1081,6 +1355,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.QueryCityCarApplyRequest,
     ) -> dingtalkalitrip__1__0_models.QueryCityCarApplyResponse:
+        """
+        @summary 三方市内用车申请单查询
+        
+        @param request: QueryCityCarApplyRequest
+        @return: QueryCityCarApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.QueryCityCarApplyHeaders()
         return await self.query_city_car_apply_with_options_async(request, headers, runtime)
@@ -1091,6 +1371,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.QueryUnionOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        """
+        @summary 申请单关联单号查询相关订单信息
+        
+        @param request: QueryUnionOrderRequest
+        @param headers: QueryUnionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnionOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1130,6 +1418,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.QueryUnionOrderHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        """
+        @summary 申请单关联单号查询相关订单信息
+        
+        @param request: QueryUnionOrderRequest
+        @param headers: QueryUnionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnionOrderResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -1167,6 +1463,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
     ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        """
+        @summary 申请单关联单号查询相关订单信息
+        
+        @param request: QueryUnionOrderRequest
+        @return: QueryUnionOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
         return self.query_union_order_with_options(request, headers, runtime)
@@ -1175,6 +1477,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.QueryUnionOrderRequest,
     ) -> dingtalkalitrip__1__0_models.QueryUnionOrderResponse:
+        """
+        @summary 申请单关联单号查询相关订单信息
+        
+        @param request: QueryUnionOrderRequest
+        @return: QueryUnionOrderResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.QueryUnionOrderHeaders()
         return await self.query_union_order_with_options_async(request, headers, runtime)
@@ -1185,6 +1493,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.SyncExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        """
+        @summary 同步超标审批结果
+        
+        @param request: SyncExceedApplyRequest
+        @param headers: SyncExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -1230,6 +1546,14 @@ class Client(OpenApiClient):
         headers: dingtalkalitrip__1__0_models.SyncExceedApplyHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        """
+        @summary 同步超标审批结果
+        
+        @param request: SyncExceedApplyRequest
+        @param headers: SyncExceedApplyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncExceedApplyResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.apply_id):
@@ -1273,6 +1597,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        """
+        @summary 同步超标审批结果
+        
+        @param request: SyncExceedApplyRequest
+        @return: SyncExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
         return self.sync_exceed_apply_with_options(request, headers, runtime)
@@ -1281,6 +1611,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkalitrip__1__0_models.SyncExceedApplyRequest,
     ) -> dingtalkalitrip__1__0_models.SyncExceedApplyResponse:
+        """
+        @summary 同步超标审批结果
+        
+        @param request: SyncExceedApplyRequest
+        @return: SyncExceedApplyResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalitrip__1__0_models.SyncExceedApplyHeaders()
         return await self.sync_exceed_apply_with_options_async(request, headers, runtime)

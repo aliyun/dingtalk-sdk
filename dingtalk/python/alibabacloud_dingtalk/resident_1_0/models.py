@@ -49,11 +49,16 @@ class AddPointRequest(TeaModel):
         uuid: str = None,
     ):
         self.action_time = action_time
+        # This parameter is required.
         self.is_circle = is_circle
         self.rule_code = rule_code
+        # This parameter is required.
         self.rule_name = rule_name
+        # This parameter is required.
         self.score = score
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -173,8 +178,10 @@ class AddResidentDepartmentRequest(TeaModel):
         is_residence_group: bool = None,
         parent_department_id: int = None,
     ):
+        # This parameter is required.
         self.department_name = department_name
         self.is_residence_group = is_residence_group
+        # This parameter is required.
         self.parent_department_id = parent_department_id
 
     def validate(self):
@@ -210,6 +217,7 @@ class AddResidentDepartmentResponseBody(TeaModel):
         self,
         result: int = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -316,10 +324,13 @@ class AddResidentMemberRequestResidentAddInfo(TeaModel):
         name: str = None,
         relate_type: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
         self.is_property_owner = is_property_owner
         self.member_dept_extension = member_dept_extension
+        # This parameter is required.
         self.mobile = mobile
+        # This parameter is required.
         self.name = name
         self.relate_type = relate_type
 
@@ -368,6 +379,7 @@ class AddResidentMemberRequest(TeaModel):
         self,
         resident_add_info: AddResidentMemberRequestResidentAddInfo = None,
     ):
+        # This parameter is required.
         self.resident_add_info = resident_add_info
 
     def validate(self):
@@ -550,11 +562,13 @@ class AddResidentUsersRequest(TeaModel):
         user_name: str = None,
     ):
         self.address = address
+        # This parameter is required.
         self.department_id = department_id
         self.ext_field = ext_field
         self.is_leaseholder = is_leaseholder
         self.mobile = mobile
         self.relate_type = relate_type
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -614,6 +628,7 @@ class AddResidentUsersResponseBody(TeaModel):
         self,
         result: str = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -718,9 +733,11 @@ class CreateResidentBlackBoardRequest(TeaModel):
         send_time: str = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.context = context
         self.media_id = media_id
         self.send_time = send_time
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -872,8 +889,11 @@ class CreateSpaceRequest(TeaModel):
         self.building_area = building_area
         self.floor = floor
         self.house_state = house_state
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.parent_dept_id = parent_dept_id
+        # This parameter is required.
         self.tag_code = tag_code
         self.type = type
 
@@ -1031,6 +1051,7 @@ class DeleteResidentBlackBoardRequest(TeaModel):
         self,
         blackboard_id: str = None,
     ):
+        # This parameter is required.
         self.blackboard_id = blackboard_id
 
     def validate(self):
@@ -1159,6 +1180,7 @@ class DeleteResidentDepartmentRequest(TeaModel):
         self,
         department_id: int = None,
     ):
+        # This parameter is required.
         self.department_id = department_id
 
     def validate(self):
@@ -1186,6 +1208,7 @@ class DeleteResidentDepartmentResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -1314,6 +1337,7 @@ class DeleteSpaceResponseBodyDelFailedDept(TeaModel):
         self,
         dept_id: int = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
 
     def validate(self):
@@ -1342,7 +1366,9 @@ class DeleteSpaceResponseBody(TeaModel):
         del_failed_dept: List[DeleteSpaceResponseBodyDelFailedDept] = None,
         del_success_count: bool = None,
     ):
+        # This parameter is required.
         self.del_failed_dept = del_failed_dept
+        # This parameter is required.
         self.del_success_count = del_success_count
 
     def validate(self):
@@ -1456,6 +1482,7 @@ class GetConversationIdRequest(TeaModel):
         self,
         chat_id: str = None,
     ):
+        # This parameter is required.
         self.chat_id = chat_id
 
     def validate(self):
@@ -1584,6 +1611,7 @@ class GetIndustryTypeResponseBody(TeaModel):
         self,
         industry_type: str = None,
     ):
+        # This parameter is required.
         self.industry_type = industry_type
 
     def validate(self):
@@ -1924,7 +1952,9 @@ class GetResidentInfoResponseBody(TeaModel):
         type: int = None,
     ):
         self.address = address
+        # This parameter is required.
         self.all_user_group_open_conversation_id = all_user_group_open_conversation_id
+        # This parameter is required.
         self.all_user_group_owner_user_id = all_user_group_owner_user_id
         self.building_area = building_area
         self.city_id = city_id
@@ -1934,7 +1964,9 @@ class GetResidentInfoResponseBody(TeaModel):
         self.location = location
         self.name = name
         self.project_manager = project_manager
+        # This parameter is required.
         self.property_dept_group_open_conversation_id = property_dept_group_open_conversation_id
+        # This parameter is required.
         self.property_dept_group_owner_user_id = property_dept_group_owner_user_id
         self.prov_id = prov_id
         self.scope_east = scope_east
@@ -2127,7 +2159,9 @@ class GetResidentMembersInfoRequest(TeaModel):
         resident_crop_id: str = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.resident_crop_id = resident_crop_id
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -2319,6 +2353,7 @@ class GetSpaceIdByTypeRequest(TeaModel):
         self,
         department_type: str = None,
     ):
+        # This parameter is required.
         self.department_type = department_type
 
     def validate(self):
@@ -2346,6 +2381,7 @@ class GetSpaceIdByTypeResponseBody(TeaModel):
         self,
         refer_id: int = None,
     ):
+        # This parameter is required.
         self.refer_id = refer_id
 
     def validate(self):
@@ -2448,7 +2484,9 @@ class GetSpacesInfoRequest(TeaModel):
         refer_ids: List[int] = None,
         resident_corp_id: str = None,
     ):
+        # This parameter is required.
         self.refer_ids = refer_ids
+        # This parameter is required.
         self.resident_corp_id = resident_corp_id
 
     def validate(self):
@@ -2670,6 +2708,7 @@ class ListIndustryRoleUsersRequest(TeaModel):
         self,
         tag_code: str = None,
     ):
+        # This parameter is required.
         self.tag_code = tag_code
 
     def validate(self):
@@ -2798,6 +2837,7 @@ class ListPointRulesRequest(TeaModel):
         self,
         is_circle: bool = None,
     ):
+        # This parameter is required.
         self.is_circle = is_circle
 
     def validate(self):
@@ -2832,13 +2872,20 @@ class ListPointRulesResponseBodyPointRuleList(TeaModel):
         score: int = None,
         status: int = None,
     ):
+        # This parameter is required.
         self.day_limit_times = day_limit_times
+        # This parameter is required.
         self.extension = extension
+        # This parameter is required.
         self.group_id = group_id
+        # This parameter is required.
         self.order_id = order_id
         self.rule_code = rule_code
+        # This parameter is required.
         self.rule_name = rule_name
+        # This parameter is required.
         self.score = score
+        # This parameter is required.
         self.status = status
 
     def validate(self):
@@ -2894,6 +2941,7 @@ class ListPointRulesResponseBody(TeaModel):
         self,
         point_rule_list: List[ListPointRulesResponseBodyPointRuleList] = None,
     ):
+        # This parameter is required.
         self.point_rule_list = point_rule_list
 
     def validate(self):
@@ -3342,7 +3390,9 @@ class ListUncheckUsersResponseBody(TeaModel):
         next_token: int = None,
         values: List[ListUncheckUsersResponseBodyValues] = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.next_token = next_token
         self.values = values
 
@@ -3461,6 +3511,7 @@ class ListUserIndustryRolesRequest(TeaModel):
         self,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -3642,8 +3693,11 @@ class PagePointHistoryRequest(TeaModel):
         user_id: str = None,
     ):
         self.end_time = end_time
+        # This parameter is required.
         self.is_circle = is_circle
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
         self.start_time = start_time
         self.user_id = user_id
@@ -3698,11 +3752,16 @@ class PagePointHistoryResponseBodyPointRecordList(TeaModel):
         user_id: str = None,
         uuid: str = None,
     ):
+        # This parameter is required.
         self.create_at = create_at
         self.rule_code = rule_code
+        # This parameter is required.
         self.rule_name = rule_name
+        # This parameter is required.
         self.score = score
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.uuid = uuid
 
     def validate(self):
@@ -3753,9 +3812,13 @@ class PagePointHistoryResponseBody(TeaModel):
         point_record_list: List[PagePointHistoryResponseBodyPointRecordList] = None,
         total_count: int = None,
     ):
+        # This parameter is required.
         self.has_more = has_more
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.point_record_list = point_record_list
+        # This parameter is required.
         self.total_count = total_count
 
     def validate(self):
@@ -3879,7 +3942,9 @@ class RemoveResidentMemberRequest(TeaModel):
         union_id: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
+        # This parameter is required.
         self.union_id = union_id
         self.user_id = user_id
 
@@ -4018,7 +4083,9 @@ class RemoveResidentUserRequest(TeaModel):
         department_id: int = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.department_id = department_id
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -4050,6 +4117,7 @@ class RemoveResidentUserResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4152,7 +4220,9 @@ class SearchResidentRequest(TeaModel):
         resident_crop_id: str = None,
         search_word: str = None,
     ):
+        # This parameter is required.
         self.resident_crop_id = resident_crop_id
+        # This parameter is required.
         self.search_word = search_word
 
     def validate(self):
@@ -4346,7 +4416,9 @@ class UpdateResideceGroupRequest(TeaModel):
         department_name: str = None,
         manager_user_id: str = None,
     ):
+        # This parameter is required.
         self.department_id = department_id
+        # This parameter is required.
         self.department_name = department_name
         self.manager_user_id = manager_user_id
 
@@ -4383,6 +4455,7 @@ class UpdateResideceGroupResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4490,12 +4563,15 @@ class UpdateResidenceRequest(TeaModel):
         manager_user_id: str = None,
         parent_department_id: int = None,
     ):
+        # This parameter is required.
         self.department_id = department_id
+        # This parameter is required.
         self.department_name = department_name
         self.destitute = destitute
         self.grid = grid
         self.home_tel = home_tel
         self.manager_user_id = manager_user_id
+        # This parameter is required.
         self.parent_department_id = parent_department_id
 
     def validate(self):
@@ -4547,6 +4623,7 @@ class UpdateResidenceResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -4652,8 +4729,10 @@ class UpdateResidentBlackBoardRequest(TeaModel):
         title: str = None,
     ):
         self.blackboard_id = blackboard_id
+        # This parameter is required.
         self.context = context
         self.media_id = media_id
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -4693,6 +4772,7 @@ class UpdateResidentBlackBoardResponseBody(TeaModel):
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -4809,8 +4889,10 @@ class UpdateResidentInfoRequest(TeaModel):
         self.community_type = community_type
         self.county_name = county_name
         self.location = location
+        # This parameter is required.
         self.name = name
         self.prov_name = prov_name
+        # This parameter is required.
         self.state = state
         self.telephone = telephone
 
@@ -4982,10 +5064,13 @@ class UpdateResidentMemberRequestResidentUpdateInfo(TeaModel):
         relate_type: str = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.dept_id = dept_id
         self.is_property_owner = is_property_owner
         self.member_dept_extension = member_dept_extension
+        # This parameter is required.
         self.name = name
+        # This parameter is required.
         self.old_dept_id = old_dept_id
         self.relate_type = relate_type
         self.user_id = user_id
@@ -5040,7 +5125,9 @@ class UpdateResidentMemberRequest(TeaModel):
         resident_update_info: UpdateResidentMemberRequestResidentUpdateInfo = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.resident_update_info = resident_update_info
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5217,13 +5304,17 @@ class UpdateResidentUserRequest(TeaModel):
         user_name: str = None,
     ):
         self.address = address
+        # This parameter is required.
         self.department_id = department_id
         self.ext_field = ext_field
         self.is_retain_old_dept = is_retain_old_dept
         self.mobile = mobile
+        # This parameter is required.
         self.old_department_id = old_department_id
         self.relate_type = relate_type
+        # This parameter is required.
         self.user_id = user_id
+        # This parameter is required.
         self.user_name = user_name
 
     def validate(self):
@@ -5291,6 +5382,7 @@ class UpdateResidentUserResponseBody(TeaModel):
         self,
         result: bool = None,
     ):
+        # This parameter is required.
         self.result = result
 
     def validate(self):
@@ -5404,12 +5496,14 @@ class UpdateSpaceRequestSpaceInfoVOList(TeaModel):
         self.billing_area = billing_area
         self.building_area = building_area
         self.building_type = building_type
+        # This parameter is required.
         self.dept_id = dept_id
         self.floor = floor
         self.house_state = house_state
         self.house_type = house_type
         self.name = name
         self.parent_dept_id = parent_dept_id
+        # This parameter is required.
         self.tag_code = tag_code
 
     def validate(self):
@@ -5473,6 +5567,7 @@ class UpdateSpaceRequest(TeaModel):
         self,
         space_info_volist: List[UpdateSpaceRequestSpaceInfoVOList] = None,
     ):
+        # This parameter is required.
         self.space_info_volist = space_info_volist
 
     def validate(self):

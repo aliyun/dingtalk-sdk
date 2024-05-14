@@ -47,11 +47,17 @@ class GetCheckinRecordByUserRequest(TeaModel):
         start_time: int = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
+        # This parameter is required.
         self.operator_user_id = operator_user_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):

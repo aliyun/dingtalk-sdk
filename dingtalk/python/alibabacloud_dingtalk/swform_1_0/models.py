@@ -113,10 +113,12 @@ class GetFormInstanceResponseBodyResult(TeaModel):
         modify_time: str = None,
         title: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.creator = creator
         self.form_code = form_code
         self.forms = forms
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.title = title
 
@@ -287,7 +289,9 @@ class ListFormInstancesRequest(TeaModel):
     ):
         self.action_date = action_date
         self.biz_type = biz_type
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -377,10 +381,12 @@ class ListFormInstancesResponseBodyResultList(TeaModel):
         submitter_user_name: str = None,
         title: str = None,
     ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
         self.form_code = form_code
         self.form_instance_id = form_instance_id
         self.forms = forms
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.modify_time = modify_time
         self.student_class_id = student_class_id
         self.student_class_name = student_class_name
@@ -628,7 +634,9 @@ class ListFormSchemasByCreatorRequest(TeaModel):
     ):
         self.biz_type = biz_type
         self.creator = creator
+        # This parameter is required.
         self.max_results = max_results
+        # This parameter is required.
         self.next_token = next_token
 
     def validate(self):
@@ -675,7 +683,9 @@ class ListFormSchemasByCreatorResponseBodyResultListSetting(TeaModel):
         stop: bool = None,
     ):
         self.biz_type = biz_type
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_time = create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.end_time = end_time
         self.form_type = form_type
         self.loop_days = loop_days

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        """
+        @summary 查询APP当前开启轨迹采集的用户
+        
+        @param request: QueryAppActiveUsersRequest
+        @param headers: QueryAppActiveUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAppActiveUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -74,6 +82,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        """
+        @summary 查询APP当前开启轨迹采集的用户
+        
+        @param request: QueryAppActiveUsersRequest
+        @param headers: QueryAppActiveUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAppActiveUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -111,6 +127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
     ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        """
+        @summary 查询APP当前开启轨迹采集的用户
+        
+        @param request: QueryAppActiveUsersRequest
+        @return: QueryAppActiveUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
         return self.query_app_active_users_with_options(request, headers, runtime)
@@ -119,6 +141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryAppActiveUsersRequest,
     ) -> dingtalktrajectory__1__0_models.QueryAppActiveUsersResponse:
+        """
+        @summary 查询APP当前开启轨迹采集的用户
+        
+        @param request: QueryAppActiveUsersRequest
+        @return: QueryAppActiveUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryAppActiveUsersHeaders()
         return await self.query_app_active_users_with_options_async(request, headers, runtime)
@@ -129,6 +157,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        """
+        @summary 查询应用采集中的轨迹任务
+        
+        @param request: QueryCollectingTraceTaskRequest
+        @param headers: QueryCollectingTraceTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectingTraceTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -164,6 +200,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        """
+        @summary 查询应用采集中的轨迹任务
+        
+        @param request: QueryCollectingTraceTaskRequest
+        @param headers: QueryCollectingTraceTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectingTraceTaskResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.user_ids):
@@ -197,6 +241,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        """
+        @summary 查询应用采集中的轨迹任务
+        
+        @param request: QueryCollectingTraceTaskRequest
+        @return: QueryCollectingTraceTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
         return self.query_collecting_trace_task_with_options(request, headers, runtime)
@@ -205,6 +255,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryCollectingTraceTaskRequest,
     ) -> dingtalktrajectory__1__0_models.QueryCollectingTraceTaskResponse:
+        """
+        @summary 查询应用采集中的轨迹任务
+        
+        @param request: QueryCollectingTraceTaskRequest
+        @return: QueryCollectingTraceTaskResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryCollectingTraceTaskHeaders()
         return await self.query_collecting_trace_task_with_options_async(request, headers, runtime)
@@ -215,6 +271,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        """
+        @summary 查询轨迹数据
+        
+        @param request: QueryPageTraceDataRequest
+        @param headers: QueryPageTraceDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPageTraceDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -260,6 +324,14 @@ class Client(OpenApiClient):
         headers: dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        """
+        @summary 查询轨迹数据
+        
+        @param request: QueryPageTraceDataRequest
+        @param headers: QueryPageTraceDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPageTraceDataResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -303,6 +375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
     ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        """
+        @summary 查询轨迹数据
+        
+        @param request: QueryPageTraceDataRequest
+        @return: QueryPageTraceDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
         return self.query_page_trace_data_with_options(request, headers, runtime)
@@ -311,6 +389,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalktrajectory__1__0_models.QueryPageTraceDataRequest,
     ) -> dingtalktrajectory__1__0_models.QueryPageTraceDataResponse:
+        """
+        @summary 查询轨迹数据
+        
+        @param request: QueryPageTraceDataRequest
+        @return: QueryPageTraceDataResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalktrajectory__1__0_models.QueryPageTraceDataHeaders()
         return await self.query_page_trace_data_with_options_async(request, headers, runtime)

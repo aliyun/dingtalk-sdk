@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkyun_shu__1__0_models.SaveOpenExternalLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyun_shu__1__0_models.SaveOpenExternalLogResponse:
+        """
+        @summary 生态日志数据互通
+        
+        @param request: SaveOpenExternalLogRequest
+        @param headers: SaveOpenExternalLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveOpenExternalLogResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -76,6 +84,14 @@ class Client(OpenApiClient):
         headers: dingtalkyun_shu__1__0_models.SaveOpenExternalLogHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkyun_shu__1__0_models.SaveOpenExternalLogResponse:
+        """
+        @summary 生态日志数据互通
+        
+        @param request: SaveOpenExternalLogRequest
+        @param headers: SaveOpenExternalLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveOpenExternalLogResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.corp_id):
@@ -115,6 +131,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyun_shu__1__0_models.SaveOpenExternalLogRequest,
     ) -> dingtalkyun_shu__1__0_models.SaveOpenExternalLogResponse:
+        """
+        @summary 生态日志数据互通
+        
+        @param request: SaveOpenExternalLogRequest
+        @return: SaveOpenExternalLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyun_shu__1__0_models.SaveOpenExternalLogHeaders()
         return self.save_open_external_log_with_options(request, headers, runtime)
@@ -123,6 +145,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkyun_shu__1__0_models.SaveOpenExternalLogRequest,
     ) -> dingtalkyun_shu__1__0_models.SaveOpenExternalLogResponse:
+        """
+        @summary 生态日志数据互通
+        
+        @param request: SaveOpenExternalLogRequest
+        @return: SaveOpenExternalLogResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkyun_shu__1__0_models.SaveOpenExternalLogHeaders()
         return await self.save_open_external_log_with_options_async(request, headers, runtime)

@@ -35,6 +35,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddPointResponse:
+        """
+        @summary 增加积分
+        
+        @param request: AddPointRequest
+        @param headers: AddPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPointResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_time):
@@ -82,6 +90,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddPointHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddPointResponse:
+        """
+        @summary 增加积分
+        
+        @param request: AddPointRequest
+        @param headers: AddPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddPointResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.action_time):
@@ -127,6 +143,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddPointRequest,
     ) -> dingtalkresident__1__0_models.AddPointResponse:
+        """
+        @summary 增加积分
+        
+        @param request: AddPointRequest
+        @return: AddPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddPointHeaders()
         return self.add_point_with_options(request, headers, runtime)
@@ -135,6 +157,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddPointRequest,
     ) -> dingtalkresident__1__0_models.AddPointResponse:
+        """
+        @summary 增加积分
+        
+        @param request: AddPointRequest
+        @return: AddPointResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddPointHeaders()
         return await self.add_point_with_options_async(request, headers, runtime)
@@ -145,6 +173,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        """
+        @summary 增加组户
+        
+        @param request: AddResidentDepartmentRequest
+        @param headers: AddResidentDepartmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentDepartmentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_name):
@@ -184,6 +220,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentDepartmentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        """
+        @summary 增加组户
+        
+        @param request: AddResidentDepartmentRequest
+        @param headers: AddResidentDepartmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentDepartmentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_name):
@@ -221,6 +265,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
     ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        """
+        @summary 增加组户
+        
+        @param request: AddResidentDepartmentRequest
+        @return: AddResidentDepartmentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
         return self.add_resident_department_with_options(request, headers, runtime)
@@ -229,6 +279,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentDepartmentRequest,
     ) -> dingtalkresident__1__0_models.AddResidentDepartmentResponse:
+        """
+        @summary 增加组户
+        
+        @param request: AddResidentDepartmentRequest
+        @return: AddResidentDepartmentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentDepartmentHeaders()
         return await self.add_resident_department_with_options_async(request, headers, runtime)
@@ -239,6 +295,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        """
+        @summary 添加小区成员
+        
+        @param request: AddResidentMemberRequest
+        @param headers: AddResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_add_info):
@@ -274,6 +338,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        """
+        @summary 添加小区成员
+        
+        @param request: AddResidentMemberRequest
+        @param headers: AddResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_add_info):
@@ -307,6 +379,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        """
+        @summary 添加小区成员
+        
+        @param request: AddResidentMemberRequest
+        @return: AddResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
         return self.add_resident_member_with_options(request, headers, runtime)
@@ -315,6 +393,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.AddResidentMemberResponse:
+        """
+        @summary 添加小区成员
+        
+        @param request: AddResidentMemberRequest
+        @return: AddResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentMemberHeaders()
         return await self.add_resident_member_with_options_async(request, headers, runtime)
@@ -325,6 +409,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        """
+        @summary 新增居民
+        
+        @param request: AddResidentUsersRequest
+        @param headers: AddResidentUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.address):
@@ -372,6 +464,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.AddResidentUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        """
+        @summary 新增居民
+        
+        @param request: AddResidentUsersRequest
+        @param headers: AddResidentUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddResidentUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.address):
@@ -417,6 +517,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentUsersRequest,
     ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        """
+        @summary 新增居民
+        
+        @param request: AddResidentUsersRequest
+        @return: AddResidentUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
         return self.add_resident_users_with_options(request, headers, runtime)
@@ -425,6 +531,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.AddResidentUsersRequest,
     ) -> dingtalkresident__1__0_models.AddResidentUsersResponse:
+        """
+        @summary 新增居民
+        
+        @param request: AddResidentUsersRequest
+        @return: AddResidentUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.AddResidentUsersHeaders()
         return await self.add_resident_users_with_options_async(request, headers, runtime)
@@ -435,6 +547,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        """
+        @summary 创建小区公告
+        
+        @param request: CreateResidentBlackBoardRequest
+        @param headers: CreateResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.context):
@@ -476,6 +596,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        """
+        @summary 创建小区公告
+        
+        @param request: CreateResidentBlackBoardRequest
+        @param headers: CreateResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.context):
@@ -515,6 +643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        """
+        @summary 创建小区公告
+        
+        @param request: CreateResidentBlackBoardRequest
+        @return: CreateResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
         return self.create_resident_black_board_with_options(request, headers, runtime)
@@ -523,6 +657,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.CreateResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.CreateResidentBlackBoardResponse:
+        """
+        @summary 创建小区公告
+        
+        @param request: CreateResidentBlackBoardRequest
+        @return: CreateResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.CreateResidentBlackBoardHeaders()
         return await self.create_resident_black_board_with_options_async(request, headers, runtime)
@@ -533,6 +673,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.CreateSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        """
+        @summary 创建小区空间，含分区，楼栋，单元，房屋等
+        
+        @param request: CreateSpaceRequest
+        @param headers: CreateSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.billing_area):
@@ -582,6 +730,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.CreateSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        """
+        @summary 创建小区空间，含分区，楼栋，单元，房屋等
+        
+        @param request: CreateSpaceRequest
+        @param headers: CreateSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.billing_area):
@@ -629,6 +785,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.CreateSpaceRequest,
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        """
+        @summary 创建小区空间，含分区，楼栋，单元，房屋等
+        
+        @param request: CreateSpaceRequest
+        @return: CreateSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
         return self.create_space_with_options(request, headers, runtime)
@@ -637,6 +799,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.CreateSpaceRequest,
     ) -> dingtalkresident__1__0_models.CreateSpaceResponse:
+        """
+        @summary 创建小区空间，含分区，楼栋，单元，房屋等
+        
+        @param request: CreateSpaceRequest
+        @return: CreateSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.CreateSpaceHeaders()
         return await self.create_space_with_options_async(request, headers, runtime)
@@ -647,6 +815,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        """
+        @summary 删除小区公告
+        
+        @param request: DeleteResidentBlackBoardRequest
+        @param headers: DeleteResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -682,6 +858,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        """
+        @summary 删除小区公告
+        
+        @param request: DeleteResidentBlackBoardRequest
+        @param headers: DeleteResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -715,6 +899,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        """
+        @summary 删除小区公告
+        
+        @param request: DeleteResidentBlackBoardRequest
+        @return: DeleteResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
         return self.delete_resident_black_board_with_options(request, headers, runtime)
@@ -723,6 +913,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.DeleteResidentBlackBoardResponse:
+        """
+        @summary 删除小区公告
+        
+        @param request: DeleteResidentBlackBoardRequest
+        @return: DeleteResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteResidentBlackBoardHeaders()
         return await self.delete_resident_black_board_with_options_async(request, headers, runtime)
@@ -733,6 +929,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        """
+        @summary 删除组户信息
+        
+        @param request: DeleteResidentDepartmentRequest
+        @param headers: DeleteResidentDepartmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteResidentDepartmentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -768,6 +972,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        """
+        @summary 删除组户信息
+        
+        @param request: DeleteResidentDepartmentRequest
+        @param headers: DeleteResidentDepartmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteResidentDepartmentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -801,6 +1013,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
     ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        """
+        @summary 删除组户信息
+        
+        @param request: DeleteResidentDepartmentRequest
+        @return: DeleteResidentDepartmentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
         return self.delete_resident_department_with_options(request, headers, runtime)
@@ -809,6 +1027,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteResidentDepartmentRequest,
     ) -> dingtalkresident__1__0_models.DeleteResidentDepartmentResponse:
+        """
+        @summary 删除组户信息
+        
+        @param request: DeleteResidentDepartmentRequest
+        @return: DeleteResidentDepartmentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteResidentDepartmentHeaders()
         return await self.delete_resident_department_with_options_async(request, headers, runtime)
@@ -819,6 +1043,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除小区空间，含分区，楼栋，单元，房屋
+        
+        @param request: DeleteSpaceRequest
+        @param headers: DeleteSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_ids):
@@ -854,6 +1086,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.DeleteSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除小区空间，含分区，楼栋，单元，房屋
+        
+        @param request: DeleteSpaceRequest
+        @param headers: DeleteSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_ids):
@@ -887,6 +1127,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteSpaceRequest,
     ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除小区空间，含分区，楼栋，单元，房屋
+        
+        @param request: DeleteSpaceRequest
+        @return: DeleteSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
         return self.delete_space_with_options(request, headers, runtime)
@@ -895,6 +1141,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.DeleteSpaceRequest,
     ) -> dingtalkresident__1__0_models.DeleteSpaceResponse:
+        """
+        @summary 删除小区空间，含分区，楼栋，单元，房屋
+        
+        @param request: DeleteSpaceRequest
+        @return: DeleteSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.DeleteSpaceHeaders()
         return await self.delete_space_with_options_async(request, headers, runtime)
@@ -905,6 +1157,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetConversationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        """
+        @summary 获取指定群的openConversationId
+        
+        @param request: GetConversationIdRequest
+        @param headers: GetConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.chat_id):
@@ -940,6 +1200,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetConversationIdHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        """
+        @summary 获取指定群的openConversationId
+        
+        @param request: GetConversationIdRequest
+        @param headers: GetConversationIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationIdResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.chat_id):
@@ -973,6 +1241,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetConversationIdRequest,
     ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        """
+        @summary 获取指定群的openConversationId
+        
+        @param request: GetConversationIdRequest
+        @return: GetConversationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
         return self.get_conversation_id_with_options(request, headers, runtime)
@@ -981,6 +1255,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetConversationIdRequest,
     ) -> dingtalkresident__1__0_models.GetConversationIdResponse:
+        """
+        @summary 获取指定群的openConversationId
+        
+        @param request: GetConversationIdRequest
+        @return: GetConversationIdResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetConversationIdHeaders()
         return await self.get_conversation_id_with_options_async(request, headers, runtime)
@@ -990,6 +1270,13 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetIndustryTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+        """
+        @summary 获取组织的行业类型
+        
+        @param headers: GetIndustryTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIndustryTypeResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1019,6 +1306,13 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetIndustryTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+        """
+        @summary 获取组织的行业类型
+        
+        @param headers: GetIndustryTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetIndustryTypeResponse
+        """
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1044,11 +1338,21 @@ class Client(OpenApiClient):
         )
 
     def get_industry_type(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+        """
+        @summary 获取组织的行业类型
+        
+        @return: GetIndustryTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
         return self.get_industry_type_with_options(headers, runtime)
 
     async def get_industry_type_async(self) -> dingtalkresident__1__0_models.GetIndustryTypeResponse:
+        """
+        @summary 获取组织的行业类型
+        
+        @return: GetIndustryTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetIndustryTypeHeaders()
         return await self.get_industry_type_with_options_async(headers, runtime)
@@ -1059,6 +1363,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetPropertyInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        """
+        @summary 获取物业公司信息
+        
+        @param request: GetPropertyInfoRequest
+        @param headers: GetPropertyInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPropertyInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.property_corp_id):
@@ -1094,6 +1406,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetPropertyInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        """
+        @summary 获取物业公司信息
+        
+        @param request: GetPropertyInfoRequest
+        @param headers: GetPropertyInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPropertyInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.property_corp_id):
@@ -1127,6 +1447,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
     ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        """
+        @summary 获取物业公司信息
+        
+        @param request: GetPropertyInfoRequest
+        @return: GetPropertyInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
         return self.get_property_info_with_options(request, headers, runtime)
@@ -1135,6 +1461,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetPropertyInfoRequest,
     ) -> dingtalkresident__1__0_models.GetPropertyInfoResponse:
+        """
+        @summary 获取物业公司信息
+        
+        @param request: GetPropertyInfoRequest
+        @return: GetPropertyInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetPropertyInfoHeaders()
         return await self.get_property_info_with_options_async(request, headers, runtime)
@@ -1145,6 +1477,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetResidentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        """
+        @summary 获取小区信息
+        
+        @param request: GetResidentInfoRequest
+        @param headers: GetResidentInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResidentInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.resident_corp_id):
@@ -1180,6 +1520,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetResidentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        """
+        @summary 获取小区信息
+        
+        @param request: GetResidentInfoRequest
+        @param headers: GetResidentInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResidentInfoResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.resident_corp_id):
@@ -1213,6 +1561,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetResidentInfoRequest,
     ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        """
+        @summary 获取小区信息
+        
+        @param request: GetResidentInfoRequest
+        @return: GetResidentInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
         return self.get_resident_info_with_options(request, headers, runtime)
@@ -1221,6 +1575,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetResidentInfoRequest,
     ) -> dingtalkresident__1__0_models.GetResidentInfoResponse:
+        """
+        @summary 获取小区信息
+        
+        @param request: GetResidentInfoRequest
+        @return: GetResidentInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetResidentInfoHeaders()
         return await self.get_resident_info_with_options_async(request, headers, runtime)
@@ -1231,6 +1591,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetResidentMembersInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        """
+        @summary 获取小区人员信息，包括居民和物业人员
+        
+        @param request: GetResidentMembersInfoRequest
+        @param headers: GetResidentMembersInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResidentMembersInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_crop_id):
@@ -1268,6 +1636,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetResidentMembersInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        """
+        @summary 获取小区人员信息，包括居民和物业人员
+        
+        @param request: GetResidentMembersInfoRequest
+        @param headers: GetResidentMembersInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResidentMembersInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_crop_id):
@@ -1303,6 +1679,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
     ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        """
+        @summary 获取小区人员信息，包括居民和物业人员
+        
+        @param request: GetResidentMembersInfoRequest
+        @return: GetResidentMembersInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
         return self.get_resident_members_info_with_options(request, headers, runtime)
@@ -1311,6 +1693,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetResidentMembersInfoRequest,
     ) -> dingtalkresident__1__0_models.GetResidentMembersInfoResponse:
+        """
+        @summary 获取小区人员信息，包括居民和物业人员
+        
+        @param request: GetResidentMembersInfoRequest
+        @return: GetResidentMembersInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetResidentMembersInfoHeaders()
         return await self.get_resident_members_info_with_options_async(request, headers, runtime)
@@ -1321,6 +1709,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        """
+        @summary 根据类型获取部门id
+        
+        @param request: GetSpaceIdByTypeRequest
+        @param headers: GetSpaceIdByTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpaceIdByTypeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_type):
@@ -1356,6 +1752,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        """
+        @summary 根据类型获取部门id
+        
+        @param request: GetSpaceIdByTypeRequest
+        @param headers: GetSpaceIdByTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpaceIdByTypeResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_type):
@@ -1389,6 +1793,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
     ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        """
+        @summary 根据类型获取部门id
+        
+        @param request: GetSpaceIdByTypeRequest
+        @return: GetSpaceIdByTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
         return self.get_space_id_by_type_with_options(request, headers, runtime)
@@ -1397,6 +1807,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetSpaceIdByTypeRequest,
     ) -> dingtalkresident__1__0_models.GetSpaceIdByTypeResponse:
+        """
+        @summary 根据类型获取部门id
+        
+        @param request: GetSpaceIdByTypeRequest
+        @return: GetSpaceIdByTypeResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetSpaceIdByTypeHeaders()
         return await self.get_space_id_by_type_with_options_async(request, headers, runtime)
@@ -1407,6 +1823,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetSpacesInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: GetSpacesInfoRequest
+        @param headers: GetSpacesInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpacesInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.refer_ids):
@@ -1444,6 +1868,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.GetSpacesInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: GetSpacesInfoRequest
+        @param headers: GetSpacesInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSpacesInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.refer_ids):
@@ -1479,6 +1911,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
     ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: GetSpacesInfoRequest
+        @return: GetSpacesInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
         return self.get_spaces_info_with_options(request, headers, runtime)
@@ -1487,6 +1925,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.GetSpacesInfoRequest,
     ) -> dingtalkresident__1__0_models.GetSpacesInfoResponse:
+        """
+        @summary 获取空间信息
+        
+        @param request: GetSpacesInfoRequest
+        @return: GetSpacesInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.GetSpacesInfoHeaders()
         return await self.get_spaces_info_with_options_async(request, headers, runtime)
@@ -1497,6 +1941,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        """
+        @summary 获取行业角色下的用户列表
+        
+        @param request: ListIndustryRoleUsersRequest
+        @param headers: ListIndustryRoleUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListIndustryRoleUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.tag_code):
@@ -1532,6 +1984,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        """
+        @summary 获取行业角色下的用户列表
+        
+        @param request: ListIndustryRoleUsersRequest
+        @param headers: ListIndustryRoleUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListIndustryRoleUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.tag_code):
@@ -1565,6 +2025,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
     ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        """
+        @summary 获取行业角色下的用户列表
+        
+        @param request: ListIndustryRoleUsersRequest
+        @return: ListIndustryRoleUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
         return self.list_industry_role_users_with_options(request, headers, runtime)
@@ -1573,6 +2039,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListIndustryRoleUsersRequest,
     ) -> dingtalkresident__1__0_models.ListIndustryRoleUsersResponse:
+        """
+        @summary 获取行业角色下的用户列表
+        
+        @param request: ListIndustryRoleUsersRequest
+        @return: ListIndustryRoleUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListIndustryRoleUsersHeaders()
         return await self.list_industry_role_users_with_options_async(request, headers, runtime)
@@ -1583,6 +2055,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListPointRulesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        """
+        @summary 查询组织维度配置的的积分规则
+        
+        @param request: ListPointRulesRequest
+        @param headers: ListPointRulesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPointRulesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.is_circle):
@@ -1618,6 +2098,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListPointRulesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        """
+        @summary 查询组织维度配置的的积分规则
+        
+        @param request: ListPointRulesRequest
+        @param headers: ListPointRulesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPointRulesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.is_circle):
@@ -1651,6 +2139,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListPointRulesRequest,
     ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        """
+        @summary 查询组织维度配置的的积分规则
+        
+        @param request: ListPointRulesRequest
+        @return: ListPointRulesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
         return self.list_point_rules_with_options(request, headers, runtime)
@@ -1659,6 +2153,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListPointRulesRequest,
     ) -> dingtalkresident__1__0_models.ListPointRulesResponse:
+        """
+        @summary 查询组织维度配置的的积分规则
+        
+        @param request: ListPointRulesRequest
+        @return: ListPointRulesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListPointRulesHeaders()
         return await self.list_point_rules_with_options_async(request, headers, runtime)
@@ -1669,6 +2169,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListSubSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        """
+        @summary 获取子空间信息
+        
+        @param request: ListSubSpaceRequest
+        @param headers: ListSubSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSubSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.refer_id):
@@ -1706,6 +2214,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListSubSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        """
+        @summary 获取子空间信息
+        
+        @param request: ListSubSpaceRequest
+        @param headers: ListSubSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSubSpaceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.refer_id):
@@ -1741,6 +2257,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListSubSpaceRequest,
     ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        """
+        @summary 获取子空间信息
+        
+        @param request: ListSubSpaceRequest
+        @return: ListSubSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
         return self.list_sub_space_with_options(request, headers, runtime)
@@ -1749,6 +2271,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListSubSpaceRequest,
     ) -> dingtalkresident__1__0_models.ListSubSpaceResponse:
+        """
+        @summary 获取子空间信息
+        
+        @param request: ListSubSpaceRequest
+        @return: ListSubSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListSubSpaceHeaders()
         return await self.list_sub_space_with_options_async(request, headers, runtime)
@@ -1759,6 +2287,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListUncheckUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        """
+        @summary 获取未确认加入组织的用户
+        
+        @param request: ListUncheckUsersRequest
+        @param headers: ListUncheckUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUncheckUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1800,6 +2336,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListUncheckUsersHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        """
+        @summary 获取未确认加入组织的用户
+        
+        @param request: ListUncheckUsersRequest
+        @param headers: ListUncheckUsersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUncheckUsersResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.max_results):
@@ -1839,6 +2383,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
     ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        """
+        @summary 获取未确认加入组织的用户
+        
+        @param request: ListUncheckUsersRequest
+        @return: ListUncheckUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
         return self.list_uncheck_users_with_options(request, headers, runtime)
@@ -1847,6 +2397,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListUncheckUsersRequest,
     ) -> dingtalkresident__1__0_models.ListUncheckUsersResponse:
+        """
+        @summary 获取未确认加入组织的用户
+        
+        @param request: ListUncheckUsersRequest
+        @return: ListUncheckUsersResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListUncheckUsersHeaders()
         return await self.list_uncheck_users_with_options_async(request, headers, runtime)
@@ -1857,6 +2413,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListUserIndustryRolesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        """
+        @summary 获取用户行业化角色
+        
+        @param request: ListUserIndustryRolesRequest
+        @param headers: ListUserIndustryRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserIndustryRolesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1892,6 +2456,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.ListUserIndustryRolesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        """
+        @summary 获取用户行业化角色
+        
+        @param request: ListUserIndustryRolesRequest
+        @param headers: ListUserIndustryRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserIndustryRolesResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.user_id):
@@ -1925,6 +2497,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
     ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        """
+        @summary 获取用户行业化角色
+        
+        @param request: ListUserIndustryRolesRequest
+        @return: ListUserIndustryRolesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
         return self.list_user_industry_roles_with_options(request, headers, runtime)
@@ -1933,6 +2511,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.ListUserIndustryRolesRequest,
     ) -> dingtalkresident__1__0_models.ListUserIndustryRolesResponse:
+        """
+        @summary 获取用户行业化角色
+        
+        @param request: ListUserIndustryRolesRequest
+        @return: ListUserIndustryRolesResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.ListUserIndustryRolesHeaders()
         return await self.list_user_industry_roles_with_options_async(request, headers, runtime)
@@ -1943,6 +2527,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        """
+        @summary 查询数字区县居民积分流水
+        
+        @param request: PagePointHistoryRequest
+        @param headers: PagePointHistoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PagePointHistoryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -1988,6 +2580,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.PagePointHistoryHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        """
+        @summary 查询数字区县居民积分流水
+        
+        @param request: PagePointHistoryRequest
+        @param headers: PagePointHistoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PagePointHistoryResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.end_time):
@@ -2031,6 +2631,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.PagePointHistoryRequest,
     ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        """
+        @summary 查询数字区县居民积分流水
+        
+        @param request: PagePointHistoryRequest
+        @return: PagePointHistoryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
         return self.page_point_history_with_options(request, headers, runtime)
@@ -2039,6 +2645,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.PagePointHistoryRequest,
     ) -> dingtalkresident__1__0_models.PagePointHistoryResponse:
+        """
+        @summary 查询数字区县居民积分流水
+        
+        @param request: PagePointHistoryRequest
+        @return: PagePointHistoryResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.PagePointHistoryHeaders()
         return await self.page_point_history_with_options_async(request, headers, runtime)
@@ -2049,6 +2661,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.RemoveResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        """
+        @summary 从空间中删除人员
+        
+        @param request: RemoveResidentMemberRequest
+        @param headers: RemoveResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_id):
@@ -2088,6 +2708,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.RemoveResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        """
+        @summary 从空间中删除人员
+        
+        @param request: RemoveResidentMemberRequest
+        @param headers: RemoveResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.dept_id):
@@ -2125,6 +2753,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        """
+        @summary 从空间中删除人员
+        
+        @param request: RemoveResidentMemberRequest
+        @return: RemoveResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
         return self.remove_resident_member_with_options(request, headers, runtime)
@@ -2133,6 +2767,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.RemoveResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.RemoveResidentMemberResponse:
+        """
+        @summary 从空间中删除人员
+        
+        @param request: RemoveResidentMemberRequest
+        @return: RemoveResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.RemoveResidentMemberHeaders()
         return await self.remove_resident_member_with_options_async(request, headers, runtime)
@@ -2143,6 +2783,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.RemoveResidentUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        """
+        @summary 从户内移除居民
+        
+        @param request: RemoveResidentUserRequest
+        @param headers: RemoveResidentUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveResidentUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2180,6 +2828,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.RemoveResidentUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        """
+        @summary 从户内移除居民
+        
+        @param request: RemoveResidentUserRequest
+        @param headers: RemoveResidentUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveResidentUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2215,6 +2871,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
     ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        """
+        @summary 从户内移除居民
+        
+        @param request: RemoveResidentUserRequest
+        @return: RemoveResidentUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
         return self.remove_resident_user_with_options(request, headers, runtime)
@@ -2223,6 +2885,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.RemoveResidentUserRequest,
     ) -> dingtalkresident__1__0_models.RemoveResidentUserResponse:
+        """
+        @summary 从户内移除居民
+        
+        @param request: RemoveResidentUserRequest
+        @return: RemoveResidentUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.RemoveResidentUserHeaders()
         return await self.remove_resident_user_with_options_async(request, headers, runtime)
@@ -2233,6 +2901,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.SearchResidentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        """
+        @summary 搜索指定人员
+        
+        @param request: SearchResidentRequest
+        @param headers: SearchResidentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchResidentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.resident_crop_id):
@@ -2270,6 +2946,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.SearchResidentHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        """
+        @summary 搜索指定人员
+        
+        @param request: SearchResidentRequest
+        @param headers: SearchResidentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchResidentResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.resident_crop_id):
@@ -2305,6 +2989,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.SearchResidentRequest,
     ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        """
+        @summary 搜索指定人员
+        
+        @param request: SearchResidentRequest
+        @return: SearchResidentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.SearchResidentHeaders()
         return self.search_resident_with_options(request, headers, runtime)
@@ -2313,6 +3003,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.SearchResidentRequest,
     ) -> dingtalkresident__1__0_models.SearchResidentResponse:
+        """
+        @summary 搜索指定人员
+        
+        @param request: SearchResidentRequest
+        @return: SearchResidentResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.SearchResidentHeaders()
         return await self.search_resident_with_options_async(request, headers, runtime)
@@ -2323,6 +3019,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResideceGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        """
+        @summary 更新组信息
+        
+        @param request: UpdateResideceGroupRequest
+        @param headers: UpdateResideceGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResideceGroupResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2362,6 +3066,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResideceGroupHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        """
+        @summary 更新组信息
+        
+        @param request: UpdateResideceGroupRequest
+        @param headers: UpdateResideceGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResideceGroupResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2399,6 +3111,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
     ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        """
+        @summary 更新组信息
+        
+        @param request: UpdateResideceGroupRequest
+        @return: UpdateResideceGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
         return self.update_residece_group_with_options(request, headers, runtime)
@@ -2407,6 +3125,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResideceGroupRequest,
     ) -> dingtalkresident__1__0_models.UpdateResideceGroupResponse:
+        """
+        @summary 更新组信息
+        
+        @param request: UpdateResideceGroupRequest
+        @return: UpdateResideceGroupResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResideceGroupHeaders()
         return await self.update_residece_group_with_options_async(request, headers, runtime)
@@ -2417,6 +3141,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        """
+        @summary 更新户信息
+        
+        @param request: UpdateResidenceRequest
+        @param headers: UpdateResidenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2464,6 +3196,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidenceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        """
+        @summary 更新户信息
+        
+        @param request: UpdateResidenceRequest
+        @param headers: UpdateResidenceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidenceResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.department_id):
@@ -2509,6 +3249,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidenceRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        """
+        @summary 更新户信息
+        
+        @param request: UpdateResidenceRequest
+        @return: UpdateResidenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
         return self.update_residence_with_options(request, headers, runtime)
@@ -2517,6 +3263,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidenceRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidenceResponse:
+        """
+        @summary 更新户信息
+        
+        @param request: UpdateResidenceRequest
+        @return: UpdateResidenceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidenceHeaders()
         return await self.update_residence_with_options_async(request, headers, runtime)
@@ -2527,6 +3279,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        """
+        @summary 更新小区公告
+        
+        @param request: UpdateResidentBlackBoardRequest
+        @param headers: UpdateResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -2568,6 +3328,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        """
+        @summary 更新小区公告
+        
+        @param request: UpdateResidentBlackBoardRequest
+        @param headers: UpdateResidentBlackBoardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentBlackBoardResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.blackboard_id):
@@ -2607,6 +3375,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        """
+        @summary 更新小区公告
+        
+        @param request: UpdateResidentBlackBoardRequest
+        @return: UpdateResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
         return self.update_resident_black_board_with_options(request, headers, runtime)
@@ -2615,6 +3389,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentBlackBoardRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentBlackBoardResponse:
+        """
+        @summary 更新小区公告
+        
+        @param request: UpdateResidentBlackBoardRequest
+        @return: UpdateResidentBlackBoardResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentBlackBoardHeaders()
         return await self.update_resident_black_board_with_options_async(request, headers, runtime)
@@ -2625,6 +3405,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        """
+        @summary 更新小区信息
+        
+        @param request: UpdateResidentInfoRequest
+        @param headers: UpdateResidentInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.address):
@@ -2678,6 +3466,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        """
+        @summary 更新小区信息
+        
+        @param request: UpdateResidentInfoRequest
+        @param headers: UpdateResidentInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentInfoResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.address):
@@ -2729,6 +3525,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        """
+        @summary 更新小区信息
+        
+        @param request: UpdateResidentInfoRequest
+        @return: UpdateResidentInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
         return self.update_resident_info_with_options(request, headers, runtime)
@@ -2737,6 +3539,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentInfoRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentInfoResponse:
+        """
+        @summary 更新小区信息
+        
+        @param request: UpdateResidentInfoRequest
+        @return: UpdateResidentInfoResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentInfoHeaders()
         return await self.update_resident_info_with_options_async(request, headers, runtime)
@@ -2747,6 +3555,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        """
+        @summary 更新小区成员
+        
+        @param request: UpdateResidentMemberRequest
+        @param headers: UpdateResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_update_info):
@@ -2784,6 +3600,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentMemberHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        """
+        @summary 更新小区成员
+        
+        @param request: UpdateResidentMemberRequest
+        @param headers: UpdateResidentMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentMemberResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.resident_update_info):
@@ -2819,6 +3643,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        """
+        @summary 更新小区成员
+        
+        @param request: UpdateResidentMemberRequest
+        @return: UpdateResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
         return self.update_resident_member_with_options(request, headers, runtime)
@@ -2827,6 +3657,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentMemberRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentMemberResponse:
+        """
+        @summary 更新小区成员
+        
+        @param request: UpdateResidentMemberRequest
+        @return: UpdateResidentMemberResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentMemberHeaders()
         return await self.update_resident_member_with_options_async(request, headers, runtime)
@@ -2837,6 +3673,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        """
+        @summary 更新居民信息
+        
+        @param request: UpdateResidentUserRequest
+        @param headers: UpdateResidentUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.address):
@@ -2888,6 +3732,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateResidentUserHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        """
+        @summary 更新居民信息
+        
+        @param request: UpdateResidentUserRequest
+        @param headers: UpdateResidentUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateResidentUserResponse
+        """
         UtilClient.validate_model(request)
         query = {}
         if not UtilClient.is_unset(request.address):
@@ -2937,6 +3789,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        """
+        @summary 更新居民信息
+        
+        @param request: UpdateResidentUserRequest
+        @return: UpdateResidentUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
         return self.update_resident_user_with_options(request, headers, runtime)
@@ -2945,6 +3803,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateResidentUserRequest,
     ) -> dingtalkresident__1__0_models.UpdateResidentUserResponse:
+        """
+        @summary 更新居民信息
+        
+        @param request: UpdateResidentUserRequest
+        @return: UpdateResidentUserResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateResidentUserHeaders()
         return await self.update_resident_user_with_options_async(request, headers, runtime)
@@ -2955,6 +3819,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        """
+        @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+        
+        @param request: UpdateSpaceRequest
+        @param headers: UpdateSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.space_info_volist):
@@ -2990,6 +3862,14 @@ class Client(OpenApiClient):
         headers: dingtalkresident__1__0_models.UpdateSpaceHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        """
+        @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+        
+        @param request: UpdateSpaceRequest
+        @param headers: UpdateSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSpaceResponse
+        """
         UtilClient.validate_model(request)
         body = {}
         if not UtilClient.is_unset(request.space_info_volist):
@@ -3023,6 +3903,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateSpaceRequest,
     ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        """
+        @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+        
+        @param request: UpdateSpaceRequest
+        @return: UpdateSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
         return self.update_space_with_options(request, headers, runtime)
@@ -3031,6 +3917,12 @@ class Client(OpenApiClient):
         self,
         request: dingtalkresident__1__0_models.UpdateSpaceRequest,
     ) -> dingtalkresident__1__0_models.UpdateSpaceResponse:
+        """
+        @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+        
+        @param request: UpdateSpaceRequest
+        @return: UpdateSpaceResponse
+        """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkresident__1__0_models.UpdateSpaceHeaders()
         return await self.update_space_with_options_async(request, headers, runtime)

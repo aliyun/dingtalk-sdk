@@ -295,7 +295,9 @@ class CancelScheduleConferenceRequest(TeaModel):
         creator_union_id: str = None,
         schedule_conference_id: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
+        # This parameter is required.
         self.schedule_conference_id = schedule_conference_id
 
     def validate(self):
@@ -428,6 +430,7 @@ class CloseVideoConferenceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -457,6 +460,7 @@ class CloseVideoConferenceResponseBody(TeaModel):
         code: int = None,
     ):
         self.cause = cause
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -562,6 +566,7 @@ class CohostsRequestUserList(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -590,7 +595,9 @@ class CohostsRequest(TeaModel):
         action: str = None,
         user_list: List[CohostsRequestUserList] = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.user_list = user_list
 
     def validate(self):
@@ -915,9 +922,13 @@ class CreateScheduleConferenceRequest(TeaModel):
         start_time: int = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.title = title
 
     def validate(self):
@@ -1085,9 +1096,11 @@ class CreateVideoConferenceRequest(TeaModel):
         invite_user_ids: List[str] = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.conf_title = conf_title
         self.invite_caller = invite_caller
         self.invite_user_ids = invite_user_ids
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1132,6 +1145,7 @@ class CreateVideoConferenceResponseBody(TeaModel):
         phone_numbers: List[str] = None,
         room_code: str = None,
     ):
+        # This parameter is required.
         self.conference_id = conference_id
         self.conference_password = conference_password
         self.external_link_url = external_link_url
@@ -1259,7 +1273,9 @@ class FocusRequest(TeaModel):
         action: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -1392,6 +1408,7 @@ class GetConfDataByConferenceIdRequest(TeaModel):
         self,
         real_data: bool = None,
     ):
+        # This parameter is required.
         self.real_data = real_data
 
     def validate(self):
@@ -1842,12 +1859,15 @@ class GetHistoryConfDataListRequest(TeaModel):
         title: str = None,
     ):
         self.creator_nike = creator_nike
+        # This parameter is required.
         self.end_time = end_time
         self.free_type = free_type
         self.max_results = max_results
         self.next_token = next_token
+        # This parameter is required.
         self.real_data = real_data
         self.scene = scene
+        # This parameter is required.
         self.start_time = start_time
         self.title = title
 
@@ -2110,6 +2130,7 @@ class GetUserLastMetricRequest(TeaModel):
         self,
         union_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.union_id_list = union_id_list
 
     def validate(self):
@@ -2248,8 +2269,11 @@ class GetUserMetricDataRequest(TeaModel):
         end_time: int = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.begin_time = begin_time
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2542,6 +2566,7 @@ class InviteUsersRequestInviteeList(TeaModel):
         nick: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.nick = nick
         self.union_id = union_id
 
@@ -2766,6 +2791,7 @@ class KickMembersRequestUserList(TeaModel):
         union_id: str = None,
     ):
         self.participant_id = participant_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -2799,6 +2825,7 @@ class KickMembersRequest(TeaModel):
         user_list: List[KickMembersRequestUserList] = None,
     ):
         self.forbidden_rejoin = forbidden_rejoin
+        # This parameter is required.
         self.user_list = user_list
 
     def validate(self):
@@ -2939,6 +2966,7 @@ class LockConferenceRequest(TeaModel):
         self,
         action: str = None,
     ):
+        # This parameter is required.
         self.action = action
 
     def validate(self):
@@ -3068,6 +3096,7 @@ class MuteAllRequest(TeaModel):
         action: str = None,
         force_mute: bool = None,
     ):
+        # This parameter is required.
         self.action = action
         self.force_mute = force_mute
 
@@ -3203,6 +3232,7 @@ class MuteMembersRequestUserList(TeaModel):
         union_id: str = None,
     ):
         self.participant_id = participant_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3235,7 +3265,9 @@ class MuteMembersRequest(TeaModel):
         action: str = None,
         user_list: List[MuteMembersRequestUserList] = None,
     ):
+        # This parameter is required.
         self.action = action
+        # This parameter is required.
         self.user_list = user_list
 
     def validate(self):
@@ -3729,6 +3761,7 @@ class QueryCloudRecordVideoRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -3942,8 +3975,11 @@ class QueryCloudRecordVideoPlayInfoRequest(TeaModel):
         region_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.media_id = media_id
+        # This parameter is required.
         self.region_id = region_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -4306,6 +4342,7 @@ class QueryConferenceInfoBatchRequest(TeaModel):
         self,
         conference_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.conference_id_list = conference_id_list
 
     def validate(self):
@@ -5116,6 +5153,7 @@ class QueryScheduleConferenceRequest(TeaModel):
         self,
         request_union_id: str = None,
     ):
+        # This parameter is required.
         self.request_union_id = request_union_id
 
     def validate(self):
@@ -5379,6 +5417,7 @@ class QueryScheduleConferenceInfoResponseBody(TeaModel):
         total_count: int = None,
     ):
         self.conference_list = conference_list
+        # This parameter is required.
         self.next_token = next_token
         self.total_count = total_count
 
@@ -5497,6 +5536,7 @@ class QueryUserOnGoingConferenceRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5643,6 +5683,7 @@ class StartCloudRecordRequest(TeaModel):
     ):
         self.mode = mode
         self.small_window_position = small_window_position
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5784,11 +5825,17 @@ class StartStreamOutRequest(TeaModel):
         stream_url_list: List[str] = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.mode = mode
+        # This parameter is required.
         self.need_host_join = need_host_join
+        # This parameter is required.
         self.small_window_position = small_window_position
+        # This parameter is required.
         self.stream_name = stream_name
+        # This parameter is required.
         self.stream_url_list = stream_url_list
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -5943,6 +5990,7 @@ class StopCloudRecordRequest(TeaModel):
         self,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6073,8 +6121,11 @@ class StopStreamOutRequest(TeaModel):
         stream_id: str = None,
         union_id: str = None,
     ):
+        # This parameter is required.
         self.stop_all_stream = stop_all_stream
+        # This parameter is required.
         self.stream_id = stream_id
+        # This parameter is required.
         self.union_id = union_id
 
     def validate(self):
@@ -6110,6 +6161,7 @@ class StopStreamOutResponseBody(TeaModel):
         self,
         code: str = None,
     ):
+        # This parameter is required.
         self.code = code
 
     def validate(self):
@@ -6532,10 +6584,15 @@ class UpdateScheduleConferenceRequest(TeaModel):
         start_time: int = None,
         title: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
+        # This parameter is required.
         self.end_time = end_time
+        # This parameter is required.
         self.schedule_conference_id = schedule_conference_id
+        # This parameter is required.
         self.start_time = start_time
+        # This parameter is required.
         self.title = title
 
     def validate(self):
