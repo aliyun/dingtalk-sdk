@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("contentType")]
         [Validation(Required=false)]
         public string ContentType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("conversationToken")]
         [Validation(Required=false)]
         public string ConversationToken { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class MasterDataSaveResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("allSuccess")]
         [Validation(Required=false)]
         public bool? AllSuccess { get; set; }

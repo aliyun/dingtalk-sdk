@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class MasterDataDeleteRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<MasterDataDeleteRequestBody> Body { get; set; }
         public class MasterDataDeleteRequestBody : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("bizTime")]
             [Validation(Required=false)]
             public long? BizTime { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("bizUk")]
             [Validation(Required=false)]
             public string BizUk { get; set; }
@@ -39,10 +48,16 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("scope")]
             [Validation(Required=false)]
             public MasterDataDeleteRequestBodyScope Scope { get; set; }
             public class MasterDataDeleteRequestBodyScope : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("scopeCode")]
                 [Validation(Required=false)]
                 public string ScopeCode { get; set; }
@@ -55,6 +70,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tenantId")]
         [Validation(Required=false)]
         public long? TenantId { get; set; }

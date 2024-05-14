@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0.Models
 {
     public class GetDentriesRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dentryIds")]
         [Validation(Required=false)]
         public List<string> DentryIds { get; set; }
@@ -23,6 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

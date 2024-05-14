@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class CreateReceiptResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("results")]
         [Validation(Required=false)]
         public List<CreateReceiptResponseBodyResults> Results { get; set; }
         public class CreateReceiptResponseBodyResults : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
@@ -25,6 +31,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }

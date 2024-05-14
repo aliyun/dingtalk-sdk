@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyListSubDeptRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("supplyDeptId")]
         [Validation(Required=false)]
         public long? SupplyDeptId { get; set; }

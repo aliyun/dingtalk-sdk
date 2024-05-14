@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class UpdateLeaveTypeResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public UpdateLeaveTypeResponseBodyResult Result { get; set; }

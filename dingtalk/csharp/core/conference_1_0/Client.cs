@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
         }
 
 
+        /**
+         * @summary 取消预约会议
+         *
+         * @param request CancelScheduleConferenceRequest
+         * @param headers CancelScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CancelScheduleConferenceResponse
+         */
         public CancelScheduleConferenceResponse CancelScheduleConferenceWithOptions(CancelScheduleConferenceRequest request, CancelScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -70,6 +78,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CancelScheduleConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 取消预约会议
+         *
+         * @param request CancelScheduleConferenceRequest
+         * @param headers CancelScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CancelScheduleConferenceResponse
+         */
         public async Task<CancelScheduleConferenceResponse> CancelScheduleConferenceWithOptionsAsync(CancelScheduleConferenceRequest request, CancelScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -111,6 +127,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CancelScheduleConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 取消预约会议
+         *
+         * @param request CancelScheduleConferenceRequest
+         * @return CancelScheduleConferenceResponse
+         */
         public CancelScheduleConferenceResponse CancelScheduleConference(CancelScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -118,6 +140,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CancelScheduleConferenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 取消预约会议
+         *
+         * @param request CancelScheduleConferenceRequest
+         * @return CancelScheduleConferenceResponse
+         */
         public async Task<CancelScheduleConferenceResponse> CancelScheduleConferenceAsync(CancelScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -125,6 +153,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CancelScheduleConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 关闭视频会议
+         *
+         * @param request CloseVideoConferenceRequest
+         * @param headers CloseVideoConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseVideoConferenceResponse
+         */
         public CloseVideoConferenceResponse CloseVideoConferenceWithOptions(string conferenceId, CloseVideoConferenceRequest request, CloseVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -162,6 +198,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CloseVideoConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 关闭视频会议
+         *
+         * @param request CloseVideoConferenceRequest
+         * @param headers CloseVideoConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseVideoConferenceResponse
+         */
         public async Task<CloseVideoConferenceResponse> CloseVideoConferenceWithOptionsAsync(string conferenceId, CloseVideoConferenceRequest request, CloseVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -199,6 +243,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CloseVideoConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 关闭视频会议
+         *
+         * @param request CloseVideoConferenceRequest
+         * @return CloseVideoConferenceResponse
+         */
         public CloseVideoConferenceResponse CloseVideoConference(string conferenceId, CloseVideoConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -206,6 +256,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CloseVideoConferenceWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 关闭视频会议
+         *
+         * @param request CloseVideoConferenceRequest
+         * @return CloseVideoConferenceResponse
+         */
         public async Task<CloseVideoConferenceResponse> CloseVideoConferenceAsync(string conferenceId, CloseVideoConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -213,6 +269,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CloseVideoConferenceWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 设置联席主持人
+         *
+         * @param request CohostsRequest
+         * @param headers CohostsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CohostsResponse
+         */
         public CohostsResponse CohostsWithOptions(string conferenceId, CohostsRequest request, CohostsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -254,6 +318,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CohostsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置联席主持人
+         *
+         * @param request CohostsRequest
+         * @param headers CohostsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CohostsResponse
+         */
         public async Task<CohostsResponse> CohostsWithOptionsAsync(string conferenceId, CohostsRequest request, CohostsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -295,6 +367,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CohostsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置联席主持人
+         *
+         * @param request CohostsRequest
+         * @return CohostsResponse
+         */
         public CohostsResponse Cohosts(string conferenceId, CohostsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -302,6 +380,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CohostsWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 设置联席主持人
+         *
+         * @param request CohostsRequest
+         * @return CohostsResponse
+         */
         public async Task<CohostsResponse> CohostsAsync(string conferenceId, CohostsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -309,6 +393,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CohostsWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 创建专属短链
+         *
+         * @param request CreateCustomShortLinkRequest
+         * @param headers CreateCustomShortLinkHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCustomShortLinkResponse
+         */
         public CreateCustomShortLinkResponse CreateCustomShortLinkWithOptions(CreateCustomShortLinkRequest request, CreateCustomShortLinkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -362,6 +454,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateCustomShortLinkResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建专属短链
+         *
+         * @param request CreateCustomShortLinkRequest
+         * @param headers CreateCustomShortLinkHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCustomShortLinkResponse
+         */
         public async Task<CreateCustomShortLinkResponse> CreateCustomShortLinkWithOptionsAsync(CreateCustomShortLinkRequest request, CreateCustomShortLinkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -415,6 +515,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateCustomShortLinkResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建专属短链
+         *
+         * @param request CreateCustomShortLinkRequest
+         * @return CreateCustomShortLinkResponse
+         */
         public CreateCustomShortLinkResponse CreateCustomShortLink(CreateCustomShortLinkRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -422,6 +528,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CreateCustomShortLinkWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建专属短链
+         *
+         * @param request CreateCustomShortLinkRequest
+         * @return CreateCustomShortLinkResponse
+         */
         public async Task<CreateCustomShortLinkResponse> CreateCustomShortLinkAsync(CreateCustomShortLinkRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -429,6 +541,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CreateCustomShortLinkWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建预约会议
+         *
+         * @param request CreateScheduleConferenceRequest
+         * @param headers CreateScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateScheduleConferenceResponse
+         */
         public CreateScheduleConferenceResponse CreateScheduleConferenceWithOptions(CreateScheduleConferenceRequest request, CreateScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -478,6 +598,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateScheduleConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建预约会议
+         *
+         * @param request CreateScheduleConferenceRequest
+         * @param headers CreateScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateScheduleConferenceResponse
+         */
         public async Task<CreateScheduleConferenceResponse> CreateScheduleConferenceWithOptionsAsync(CreateScheduleConferenceRequest request, CreateScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -527,6 +655,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateScheduleConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建预约会议
+         *
+         * @param request CreateScheduleConferenceRequest
+         * @return CreateScheduleConferenceResponse
+         */
         public CreateScheduleConferenceResponse CreateScheduleConference(CreateScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -534,6 +668,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CreateScheduleConferenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建预约会议
+         *
+         * @param request CreateScheduleConferenceRequest
+         * @return CreateScheduleConferenceResponse
+         */
         public async Task<CreateScheduleConferenceResponse> CreateScheduleConferenceAsync(CreateScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -541,6 +681,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CreateScheduleConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建视频会议
+         *
+         * @param request CreateVideoConferenceRequest
+         * @param headers CreateVideoConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateVideoConferenceResponse
+         */
         public CreateVideoConferenceResponse CreateVideoConferenceWithOptions(CreateVideoConferenceRequest request, CreateVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -590,6 +738,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateVideoConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建视频会议
+         *
+         * @param request CreateVideoConferenceRequest
+         * @param headers CreateVideoConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateVideoConferenceResponse
+         */
         public async Task<CreateVideoConferenceResponse> CreateVideoConferenceWithOptionsAsync(CreateVideoConferenceRequest request, CreateVideoConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -639,6 +795,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<CreateVideoConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建视频会议
+         *
+         * @param request CreateVideoConferenceRequest
+         * @return CreateVideoConferenceResponse
+         */
         public CreateVideoConferenceResponse CreateVideoConference(CreateVideoConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -646,6 +808,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return CreateVideoConferenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建视频会议
+         *
+         * @param request CreateVideoConferenceRequest
+         * @return CreateVideoConferenceResponse
+         */
         public async Task<CreateVideoConferenceResponse> CreateVideoConferenceAsync(CreateVideoConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -653,6 +821,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await CreateVideoConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 设置全员看他
+         *
+         * @param request FocusRequest
+         * @param headers FocusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FocusResponse
+         */
         public FocusResponse FocusWithOptions(string conferenceId, FocusRequest request, FocusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -694,6 +870,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<FocusResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置全员看他
+         *
+         * @param request FocusRequest
+         * @param headers FocusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FocusResponse
+         */
         public async Task<FocusResponse> FocusWithOptionsAsync(string conferenceId, FocusRequest request, FocusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -735,6 +919,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<FocusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置全员看他
+         *
+         * @param request FocusRequest
+         * @return FocusResponse
+         */
         public FocusResponse Focus(string conferenceId, FocusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -742,6 +932,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return FocusWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 设置全员看他
+         *
+         * @param request FocusRequest
+         * @return FocusResponse
+         */
         public async Task<FocusResponse> FocusAsync(string conferenceId, FocusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -749,6 +945,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await FocusWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议信息
+         *
+         * @param request GetConfDataByConferenceIdRequest
+         * @param headers GetConfDataByConferenceIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConfDataByConferenceIdResponse
+         */
         public GetConfDataByConferenceIdResponse GetConfDataByConferenceIdWithOptions(string conferenceId, GetConfDataByConferenceIdRequest request, GetConfDataByConferenceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -786,6 +990,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetConfDataByConferenceIdResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议信息
+         *
+         * @param request GetConfDataByConferenceIdRequest
+         * @param headers GetConfDataByConferenceIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConfDataByConferenceIdResponse
+         */
         public async Task<GetConfDataByConferenceIdResponse> GetConfDataByConferenceIdWithOptionsAsync(string conferenceId, GetConfDataByConferenceIdRequest request, GetConfDataByConferenceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -823,6 +1035,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetConfDataByConferenceIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议信息
+         *
+         * @param request GetConfDataByConferenceIdRequest
+         * @return GetConfDataByConferenceIdResponse
+         */
         public GetConfDataByConferenceIdResponse GetConfDataByConferenceId(string conferenceId, GetConfDataByConferenceIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -830,6 +1048,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return GetConfDataByConferenceIdWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议信息
+         *
+         * @param request GetConfDataByConferenceIdRequest
+         * @return GetConfDataByConferenceIdResponse
+         */
         public async Task<GetConfDataByConferenceIdResponse> GetConfDataByConferenceIdAsync(string conferenceId, GetConfDataByConferenceIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -837,6 +1061,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetConfDataByConferenceIdWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议成员信息
+         *
+         * @param request GetConfDetailDataRequest
+         * @param headers GetConfDetailDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConfDetailDataResponse
+         */
         public GetConfDetailDataResponse GetConfDetailDataWithOptions(string conferenceId, GetConfDetailDataRequest request, GetConfDetailDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -882,6 +1114,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetConfDetailDataResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议成员信息
+         *
+         * @param request GetConfDetailDataRequest
+         * @param headers GetConfDetailDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConfDetailDataResponse
+         */
         public async Task<GetConfDetailDataResponse> GetConfDetailDataWithOptionsAsync(string conferenceId, GetConfDetailDataRequest request, GetConfDetailDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -927,6 +1167,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetConfDetailDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议成员信息
+         *
+         * @param request GetConfDetailDataRequest
+         * @return GetConfDetailDataResponse
+         */
         public GetConfDetailDataResponse GetConfDetailData(string conferenceId, GetConfDetailDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -934,6 +1180,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return GetConfDetailDataWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId获取指定音视频会议成员信息
+         *
+         * @param request GetConfDetailDataRequest
+         * @return GetConfDetailDataResponse
+         */
         public async Task<GetConfDetailDataResponse> GetConfDetailDataAsync(string conferenceId, GetConfDetailDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -941,6 +1193,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetConfDetailDataWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取音视频会议列表数据
+         *
+         * @param request GetHistoryConfDataListRequest
+         * @param headers GetHistoryConfDataListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHistoryConfDataListResponse
+         */
         public GetHistoryConfDataListResponse GetHistoryConfDataListWithOptions(GetHistoryConfDataListRequest request, GetHistoryConfDataListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1010,6 +1270,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetHistoryConfDataListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取音视频会议列表数据
+         *
+         * @param request GetHistoryConfDataListRequest
+         * @param headers GetHistoryConfDataListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHistoryConfDataListResponse
+         */
         public async Task<GetHistoryConfDataListResponse> GetHistoryConfDataListWithOptionsAsync(GetHistoryConfDataListRequest request, GetHistoryConfDataListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1079,6 +1347,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetHistoryConfDataListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取音视频会议列表数据
+         *
+         * @param request GetHistoryConfDataListRequest
+         * @return GetHistoryConfDataListResponse
+         */
         public GetHistoryConfDataListResponse GetHistoryConfDataList(GetHistoryConfDataListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1086,6 +1360,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return GetHistoryConfDataListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取音视频会议列表数据
+         *
+         * @param request GetHistoryConfDataListRequest
+         * @return GetHistoryConfDataListResponse
+         */
         public async Task<GetHistoryConfDataListResponse> GetHistoryConfDataListAsync(GetHistoryConfDataListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1093,6 +1373,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetHistoryConfDataListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取最新会议质量数据
+         *
+         * @param request GetUserLastMetricRequest
+         * @param headers GetUserLastMetricHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserLastMetricResponse
+         */
         public GetUserLastMetricResponse GetUserLastMetricWithOptions(string conferenceId, GetUserLastMetricRequest request, GetUserLastMetricHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1130,6 +1418,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetUserLastMetricResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取最新会议质量数据
+         *
+         * @param request GetUserLastMetricRequest
+         * @param headers GetUserLastMetricHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserLastMetricResponse
+         */
         public async Task<GetUserLastMetricResponse> GetUserLastMetricWithOptionsAsync(string conferenceId, GetUserLastMetricRequest request, GetUserLastMetricHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1167,6 +1463,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetUserLastMetricResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取最新会议质量数据
+         *
+         * @param request GetUserLastMetricRequest
+         * @return GetUserLastMetricResponse
+         */
         public GetUserLastMetricResponse GetUserLastMetric(string conferenceId, GetUserLastMetricRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1174,6 +1476,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return GetUserLastMetricWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取最新会议质量数据
+         *
+         * @param request GetUserLastMetricRequest
+         * @return GetUserLastMetricResponse
+         */
         public async Task<GetUserLastMetricResponse> GetUserLastMetricAsync(string conferenceId, GetUserLastMetricRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1181,6 +1489,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetUserLastMetricWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+         *
+         * @param request GetUserMetricDataRequest
+         * @param headers GetUserMetricDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserMetricDataResponse
+         */
         public GetUserMetricDataResponse GetUserMetricDataWithOptions(string conferenceId, GetUserMetricDataRequest request, GetUserMetricDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1226,6 +1542,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetUserMetricDataResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+         *
+         * @param request GetUserMetricDataRequest
+         * @param headers GetUserMetricDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserMetricDataResponse
+         */
         public async Task<GetUserMetricDataResponse> GetUserMetricDataWithOptionsAsync(string conferenceId, GetUserMetricDataRequest request, GetUserMetricDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1271,6 +1595,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<GetUserMetricDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+         *
+         * @param request GetUserMetricDataRequest
+         * @return GetUserMetricDataResponse
+         */
         public GetUserMetricDataResponse GetUserMetricData(string conferenceId, GetUserMetricDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1278,6 +1608,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return GetUserMetricDataWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+         *
+         * @param request GetUserMetricDataRequest
+         * @return GetUserMetricDataResponse
+         */
         public async Task<GetUserMetricDataResponse> GetUserMetricDataAsync(string conferenceId, GetUserMetricDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1285,6 +1621,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await GetUserMetricDataWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 邀请其他人员
+         *
+         * @param request InviteUsersRequest
+         * @param headers InviteUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InviteUsersResponse
+         */
         public InviteUsersResponse InviteUsersWithOptions(string conferenceId, InviteUsersRequest request, InviteUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1330,6 +1674,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<InviteUsersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 邀请其他人员
+         *
+         * @param request InviteUsersRequest
+         * @param headers InviteUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InviteUsersResponse
+         */
         public async Task<InviteUsersResponse> InviteUsersWithOptionsAsync(string conferenceId, InviteUsersRequest request, InviteUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1375,6 +1727,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<InviteUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 邀请其他人员
+         *
+         * @param request InviteUsersRequest
+         * @return InviteUsersResponse
+         */
         public InviteUsersResponse InviteUsers(string conferenceId, InviteUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1382,6 +1740,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return InviteUsersWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 邀请其他人员
+         *
+         * @param request InviteUsersRequest
+         * @return InviteUsersResponse
+         */
         public async Task<InviteUsersResponse> InviteUsersAsync(string conferenceId, InviteUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1389,6 +1753,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await InviteUsersWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议踢出成员
+         *
+         * @param request KickMembersRequest
+         * @param headers KickMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return KickMembersResponse
+         */
         public KickMembersResponse KickMembersWithOptions(string conferenceId, KickMembersRequest request, KickMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1430,6 +1802,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<KickMembersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议踢出成员
+         *
+         * @param request KickMembersRequest
+         * @param headers KickMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return KickMembersResponse
+         */
         public async Task<KickMembersResponse> KickMembersWithOptionsAsync(string conferenceId, KickMembersRequest request, KickMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1471,6 +1851,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<KickMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议踢出成员
+         *
+         * @param request KickMembersRequest
+         * @return KickMembersResponse
+         */
         public KickMembersResponse KickMembers(string conferenceId, KickMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1478,6 +1864,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return KickMembersWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议踢出成员
+         *
+         * @param request KickMembersRequest
+         * @return KickMembersResponse
+         */
         public async Task<KickMembersResponse> KickMembersAsync(string conferenceId, KickMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1485,6 +1877,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await KickMembersWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 锁定会议
+         *
+         * @param request LockConferenceRequest
+         * @param headers LockConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LockConferenceResponse
+         */
         public LockConferenceResponse LockConferenceWithOptions(string conferenceId, LockConferenceRequest request, LockConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1522,6 +1922,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<LockConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 锁定会议
+         *
+         * @param request LockConferenceRequest
+         * @param headers LockConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LockConferenceResponse
+         */
         public async Task<LockConferenceResponse> LockConferenceWithOptionsAsync(string conferenceId, LockConferenceRequest request, LockConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1559,6 +1967,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<LockConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 锁定会议
+         *
+         * @param request LockConferenceRequest
+         * @return LockConferenceResponse
+         */
         public LockConferenceResponse LockConference(string conferenceId, LockConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1566,6 +1980,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return LockConferenceWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 锁定会议
+         *
+         * @param request LockConferenceRequest
+         * @return LockConferenceResponse
+         */
         public async Task<LockConferenceResponse> LockConferenceAsync(string conferenceId, LockConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1573,6 +1993,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await LockConferenceWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议全员静音或解除静音
+         *
+         * @param request MuteAllRequest
+         * @param headers MuteAllHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MuteAllResponse
+         */
         public MuteAllResponse MuteAllWithOptions(string conferenceId, MuteAllRequest request, MuteAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1614,6 +2042,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<MuteAllResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议全员静音或解除静音
+         *
+         * @param request MuteAllRequest
+         * @param headers MuteAllHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MuteAllResponse
+         */
         public async Task<MuteAllResponse> MuteAllWithOptionsAsync(string conferenceId, MuteAllRequest request, MuteAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1655,6 +2091,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<MuteAllResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议全员静音或解除静音
+         *
+         * @param request MuteAllRequest
+         * @return MuteAllResponse
+         */
         public MuteAllResponse MuteAll(string conferenceId, MuteAllRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1662,6 +2104,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return MuteAllWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议全员静音或解除静音
+         *
+         * @param request MuteAllRequest
+         * @return MuteAllResponse
+         */
         public async Task<MuteAllResponse> MuteAllAsync(string conferenceId, MuteAllRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1669,6 +2117,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await MuteAllWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 指定人员静音或取消静音
+         *
+         * @param request MuteMembersRequest
+         * @param headers MuteMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MuteMembersResponse
+         */
         public MuteMembersResponse MuteMembersWithOptions(string conferenceId, MuteMembersRequest request, MuteMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1710,6 +2166,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<MuteMembersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 指定人员静音或取消静音
+         *
+         * @param request MuteMembersRequest
+         * @param headers MuteMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MuteMembersResponse
+         */
         public async Task<MuteMembersResponse> MuteMembersWithOptionsAsync(string conferenceId, MuteMembersRequest request, MuteMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1751,6 +2215,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<MuteMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 指定人员静音或取消静音
+         *
+         * @param request MuteMembersRequest
+         * @return MuteMembersResponse
+         */
         public MuteMembersResponse MuteMembers(string conferenceId, MuteMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1758,6 +2228,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return MuteMembersWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 指定人员静音或取消静音
+         *
+         * @param request MuteMembersRequest
+         * @return MuteMembersResponse
+         */
         public async Task<MuteMembersResponse> MuteMembersAsync(string conferenceId, MuteMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1765,6 +2241,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await MuteMembersWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制文本信息
+         *
+         * @param request QueryCloudRecordTextRequest
+         * @param headers QueryCloudRecordTextHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordTextResponse
+         */
         public QueryCloudRecordTextResponse QueryCloudRecordTextWithOptions(string conferenceId, QueryCloudRecordTextRequest request, QueryCloudRecordTextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1818,6 +2302,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordTextResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制文本信息
+         *
+         * @param request QueryCloudRecordTextRequest
+         * @param headers QueryCloudRecordTextHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordTextResponse
+         */
         public async Task<QueryCloudRecordTextResponse> QueryCloudRecordTextWithOptionsAsync(string conferenceId, QueryCloudRecordTextRequest request, QueryCloudRecordTextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1871,6 +2363,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordTextResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制文本信息
+         *
+         * @param request QueryCloudRecordTextRequest
+         * @return QueryCloudRecordTextResponse
+         */
         public QueryCloudRecordTextResponse QueryCloudRecordText(string conferenceId, QueryCloudRecordTextRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1878,6 +2376,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryCloudRecordTextWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制文本信息
+         *
+         * @param request QueryCloudRecordTextRequest
+         * @return QueryCloudRecordTextResponse
+         */
         public async Task<QueryCloudRecordTextResponse> QueryCloudRecordTextAsync(string conferenceId, QueryCloudRecordTextRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1885,6 +2389,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryCloudRecordTextWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制视频
+         *
+         * @param request QueryCloudRecordVideoRequest
+         * @param headers QueryCloudRecordVideoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordVideoResponse
+         */
         public QueryCloudRecordVideoResponse QueryCloudRecordVideoWithOptions(string conferenceId, QueryCloudRecordVideoRequest request, QueryCloudRecordVideoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1922,6 +2434,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordVideoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制视频
+         *
+         * @param request QueryCloudRecordVideoRequest
+         * @param headers QueryCloudRecordVideoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordVideoResponse
+         */
         public async Task<QueryCloudRecordVideoResponse> QueryCloudRecordVideoWithOptionsAsync(string conferenceId, QueryCloudRecordVideoRequest request, QueryCloudRecordVideoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1959,6 +2479,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordVideoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制视频
+         *
+         * @param request QueryCloudRecordVideoRequest
+         * @return QueryCloudRecordVideoResponse
+         */
         public QueryCloudRecordVideoResponse QueryCloudRecordVideo(string conferenceId, QueryCloudRecordVideoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1966,6 +2492,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryCloudRecordVideoWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制视频
+         *
+         * @param request QueryCloudRecordVideoRequest
+         * @return QueryCloudRecordVideoResponse
+         */
         public async Task<QueryCloudRecordVideoResponse> QueryCloudRecordVideoAsync(string conferenceId, QueryCloudRecordVideoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1973,6 +2505,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryCloudRecordVideoWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制视频播放信息
+         *
+         * @param request QueryCloudRecordVideoPlayInfoRequest
+         * @param headers QueryCloudRecordVideoPlayInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordVideoPlayInfoResponse
+         */
         public QueryCloudRecordVideoPlayInfoResponse QueryCloudRecordVideoPlayInfoWithOptions(string conferenceId, QueryCloudRecordVideoPlayInfoRequest request, QueryCloudRecordVideoPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2018,6 +2558,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordVideoPlayInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制视频播放信息
+         *
+         * @param request QueryCloudRecordVideoPlayInfoRequest
+         * @param headers QueryCloudRecordVideoPlayInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCloudRecordVideoPlayInfoResponse
+         */
         public async Task<QueryCloudRecordVideoPlayInfoResponse> QueryCloudRecordVideoPlayInfoWithOptionsAsync(string conferenceId, QueryCloudRecordVideoPlayInfoRequest request, QueryCloudRecordVideoPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2063,6 +2611,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryCloudRecordVideoPlayInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询云录制视频播放信息
+         *
+         * @param request QueryCloudRecordVideoPlayInfoRequest
+         * @return QueryCloudRecordVideoPlayInfoResponse
+         */
         public QueryCloudRecordVideoPlayInfoResponse QueryCloudRecordVideoPlayInfo(string conferenceId, QueryCloudRecordVideoPlayInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2070,6 +2624,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryCloudRecordVideoPlayInfoWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询云录制视频播放信息
+         *
+         * @param request QueryCloudRecordVideoPlayInfoRequest
+         * @return QueryCloudRecordVideoPlayInfoResponse
+         */
         public async Task<QueryCloudRecordVideoPlayInfoResponse> QueryCloudRecordVideoPlayInfoAsync(string conferenceId, QueryCloudRecordVideoPlayInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2077,6 +2637,13 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryCloudRecordVideoPlayInfoWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询视频会议信息
+         *
+         * @param headers QueryConferenceInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceInfoResponse
+         */
         public QueryConferenceInfoResponse QueryConferenceInfoWithOptions(string conferenceId, QueryConferenceInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2107,6 +2674,13 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询视频会议信息
+         *
+         * @param headers QueryConferenceInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceInfoResponse
+         */
         public async Task<QueryConferenceInfoResponse> QueryConferenceInfoWithOptionsAsync(string conferenceId, QueryConferenceInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2137,6 +2711,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询视频会议信息
+         *
+         * @return QueryConferenceInfoResponse
+         */
         public QueryConferenceInfoResponse QueryConferenceInfo(string conferenceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2144,6 +2723,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryConferenceInfoWithOptions(conferenceId, headers, runtime);
         }
 
+        /**
+         * @summary 查询视频会议信息
+         *
+         * @return QueryConferenceInfoResponse
+         */
         public async Task<QueryConferenceInfoResponse> QueryConferenceInfoAsync(string conferenceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2151,6 +2735,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryConferenceInfoWithOptionsAsync(conferenceId, headers, runtime);
         }
 
+        /**
+         * @summary 批量查询视频会议信息
+         *
+         * @param request QueryConferenceInfoBatchRequest
+         * @param headers QueryConferenceInfoBatchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceInfoBatchResponse
+         */
         public QueryConferenceInfoBatchResponse QueryConferenceInfoBatchWithOptions(QueryConferenceInfoBatchRequest request, QueryConferenceInfoBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2188,6 +2780,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceInfoBatchResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量查询视频会议信息
+         *
+         * @param request QueryConferenceInfoBatchRequest
+         * @param headers QueryConferenceInfoBatchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceInfoBatchResponse
+         */
         public async Task<QueryConferenceInfoBatchResponse> QueryConferenceInfoBatchWithOptionsAsync(QueryConferenceInfoBatchRequest request, QueryConferenceInfoBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2225,6 +2825,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceInfoBatchResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量查询视频会议信息
+         *
+         * @param request QueryConferenceInfoBatchRequest
+         * @return QueryConferenceInfoBatchResponse
+         */
         public QueryConferenceInfoBatchResponse QueryConferenceInfoBatch(QueryConferenceInfoBatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2232,6 +2838,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryConferenceInfoBatchWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 批量查询视频会议信息
+         *
+         * @param request QueryConferenceInfoBatchRequest
+         * @return QueryConferenceInfoBatchResponse
+         */
         public async Task<QueryConferenceInfoBatchResponse> QueryConferenceInfoBatchAsync(QueryConferenceInfoBatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2239,6 +2851,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryConferenceInfoBatchWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询视频会议成员
+         *
+         * @param request QueryConferenceMembersRequest
+         * @param headers QueryConferenceMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceMembersResponse
+         */
         public QueryConferenceMembersResponse QueryConferenceMembersWithOptions(string conferenceId, QueryConferenceMembersRequest request, QueryConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2280,6 +2900,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceMembersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询视频会议成员
+         *
+         * @param request QueryConferenceMembersRequest
+         * @param headers QueryConferenceMembersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConferenceMembersResponse
+         */
         public async Task<QueryConferenceMembersResponse> QueryConferenceMembersWithOptionsAsync(string conferenceId, QueryConferenceMembersRequest request, QueryConferenceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2321,6 +2949,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryConferenceMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询视频会议成员
+         *
+         * @param request QueryConferenceMembersRequest
+         * @return QueryConferenceMembersResponse
+         */
         public QueryConferenceMembersResponse QueryConferenceMembers(string conferenceId, QueryConferenceMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2328,6 +2962,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询视频会议成员
+         *
+         * @param request QueryConferenceMembersRequest
+         * @return QueryConferenceMembersResponse
+         */
         public async Task<QueryConferenceMembersResponse> QueryConferenceMembersAsync(string conferenceId, QueryConferenceMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2335,6 +2975,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryConferenceMembersWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询预约会议设置
+         *
+         * @param request QueryScheduleConfSettingsRequest
+         * @param headers QueryScheduleConfSettingsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConfSettingsResponse
+         */
         public QueryScheduleConfSettingsResponse QueryScheduleConfSettingsWithOptions(QueryScheduleConfSettingsRequest request, QueryScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2372,6 +3020,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConfSettingsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询预约会议设置
+         *
+         * @param request QueryScheduleConfSettingsRequest
+         * @param headers QueryScheduleConfSettingsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConfSettingsResponse
+         */
         public async Task<QueryScheduleConfSettingsResponse> QueryScheduleConfSettingsWithOptionsAsync(QueryScheduleConfSettingsRequest request, QueryScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2409,6 +3065,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConfSettingsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询预约会议设置
+         *
+         * @param request QueryScheduleConfSettingsRequest
+         * @return QueryScheduleConfSettingsResponse
+         */
         public QueryScheduleConfSettingsResponse QueryScheduleConfSettings(QueryScheduleConfSettingsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2416,6 +3078,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryScheduleConfSettingsWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询预约会议设置
+         *
+         * @param request QueryScheduleConfSettingsRequest
+         * @return QueryScheduleConfSettingsResponse
+         */
         public async Task<QueryScheduleConfSettingsResponse> QueryScheduleConfSettingsAsync(QueryScheduleConfSettingsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2423,6 +3091,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryScheduleConfSettingsWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询预约会议信息
+         *
+         * @param request QueryScheduleConferenceRequest
+         * @param headers QueryScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConferenceResponse
+         */
         public QueryScheduleConferenceResponse QueryScheduleConferenceWithOptions(string scheduleConferenceId, QueryScheduleConferenceRequest request, QueryScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2460,6 +3136,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询预约会议信息
+         *
+         * @param request QueryScheduleConferenceRequest
+         * @param headers QueryScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConferenceResponse
+         */
         public async Task<QueryScheduleConferenceResponse> QueryScheduleConferenceWithOptionsAsync(string scheduleConferenceId, QueryScheduleConferenceRequest request, QueryScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2497,6 +3181,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询预约会议信息
+         *
+         * @param request QueryScheduleConferenceRequest
+         * @return QueryScheduleConferenceResponse
+         */
         public QueryScheduleConferenceResponse QueryScheduleConference(string scheduleConferenceId, QueryScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2504,6 +3194,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryScheduleConferenceWithOptions(scheduleConferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询预约会议信息
+         *
+         * @param request QueryScheduleConferenceRequest
+         * @return QueryScheduleConferenceResponse
+         */
         public async Task<QueryScheduleConferenceResponse> QueryScheduleConferenceAsync(string scheduleConferenceId, QueryScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2511,6 +3207,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryScheduleConferenceWithOptionsAsync(scheduleConferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+         *
+         * @param request QueryScheduleConferenceInfoRequest
+         * @param headers QueryScheduleConferenceInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConferenceInfoResponse
+         */
         public QueryScheduleConferenceInfoResponse QueryScheduleConferenceInfoWithOptions(string scheduleConferenceId, QueryScheduleConferenceInfoRequest request, QueryScheduleConferenceInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2552,6 +3256,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConferenceInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+         *
+         * @param request QueryScheduleConferenceInfoRequest
+         * @param headers QueryScheduleConferenceInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScheduleConferenceInfoResponse
+         */
         public async Task<QueryScheduleConferenceInfoResponse> QueryScheduleConferenceInfoWithOptionsAsync(string scheduleConferenceId, QueryScheduleConferenceInfoRequest request, QueryScheduleConferenceInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2593,6 +3305,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryScheduleConferenceInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+         *
+         * @param request QueryScheduleConferenceInfoRequest
+         * @return QueryScheduleConferenceInfoResponse
+         */
         public QueryScheduleConferenceInfoResponse QueryScheduleConferenceInfo(string scheduleConferenceId, QueryScheduleConferenceInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2600,6 +3318,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryScheduleConferenceInfoWithOptions(scheduleConferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+         *
+         * @param request QueryScheduleConferenceInfoRequest
+         * @return QueryScheduleConferenceInfoResponse
+         */
         public async Task<QueryScheduleConferenceInfoResponse> QueryScheduleConferenceInfoAsync(string scheduleConferenceId, QueryScheduleConferenceInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2607,6 +3331,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryScheduleConferenceInfoWithOptionsAsync(scheduleConferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询用户进行中会议
+         *
+         * @param request QueryUserOnGoingConferenceRequest
+         * @param headers QueryUserOnGoingConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserOnGoingConferenceResponse
+         */
         public QueryUserOnGoingConferenceResponse QueryUserOnGoingConferenceWithOptions(QueryUserOnGoingConferenceRequest request, QueryUserOnGoingConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2644,6 +3376,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryUserOnGoingConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户进行中会议
+         *
+         * @param request QueryUserOnGoingConferenceRequest
+         * @param headers QueryUserOnGoingConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserOnGoingConferenceResponse
+         */
         public async Task<QueryUserOnGoingConferenceResponse> QueryUserOnGoingConferenceWithOptionsAsync(QueryUserOnGoingConferenceRequest request, QueryUserOnGoingConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2681,6 +3421,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<QueryUserOnGoingConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户进行中会议
+         *
+         * @param request QueryUserOnGoingConferenceRequest
+         * @return QueryUserOnGoingConferenceResponse
+         */
         public QueryUserOnGoingConferenceResponse QueryUserOnGoingConference(QueryUserOnGoingConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2688,6 +3434,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return QueryUserOnGoingConferenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询用户进行中会议
+         *
+         * @param request QueryUserOnGoingConferenceRequest
+         * @return QueryUserOnGoingConferenceResponse
+         */
         public async Task<QueryUserOnGoingConferenceResponse> QueryUserOnGoingConferenceAsync(QueryUserOnGoingConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2695,6 +3447,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await QueryUserOnGoingConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 开启云录制
+         *
+         * @param request StartCloudRecordRequest
+         * @param headers StartCloudRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StartCloudRecordResponse
+         */
         public StartCloudRecordResponse StartCloudRecordWithOptions(string conferenceId, StartCloudRecordRequest request, StartCloudRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2740,6 +3500,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StartCloudRecordResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 开启云录制
+         *
+         * @param request StartCloudRecordRequest
+         * @param headers StartCloudRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StartCloudRecordResponse
+         */
         public async Task<StartCloudRecordResponse> StartCloudRecordWithOptionsAsync(string conferenceId, StartCloudRecordRequest request, StartCloudRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2785,6 +3553,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StartCloudRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 开启云录制
+         *
+         * @param request StartCloudRecordRequest
+         * @return StartCloudRecordResponse
+         */
         public StartCloudRecordResponse StartCloudRecord(string conferenceId, StartCloudRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2792,6 +3566,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return StartCloudRecordWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 开启云录制
+         *
+         * @param request StartCloudRecordRequest
+         * @return StartCloudRecordResponse
+         */
         public async Task<StartCloudRecordResponse> StartCloudRecordAsync(string conferenceId, StartCloudRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2799,6 +3579,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await StartCloudRecordWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议开始直播推流
+         *
+         * @param request StartStreamOutRequest
+         * @param headers StartStreamOutHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StartStreamOutResponse
+         */
         public StartStreamOutResponse StartStreamOutWithOptions(string conferenceId, StartStreamOutRequest request, StartStreamOutHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2856,6 +3644,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StartStreamOutResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议开始直播推流
+         *
+         * @param request StartStreamOutRequest
+         * @param headers StartStreamOutHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StartStreamOutResponse
+         */
         public async Task<StartStreamOutResponse> StartStreamOutWithOptionsAsync(string conferenceId, StartStreamOutRequest request, StartStreamOutHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2913,6 +3709,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StartStreamOutResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议开始直播推流
+         *
+         * @param request StartStreamOutRequest
+         * @return StartStreamOutResponse
+         */
         public StartStreamOutResponse StartStreamOut(string conferenceId, StartStreamOutRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2920,6 +3722,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return StartStreamOutWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议开始直播推流
+         *
+         * @param request StartStreamOutRequest
+         * @return StartStreamOutResponse
+         */
         public async Task<StartStreamOutResponse> StartStreamOutAsync(string conferenceId, StartStreamOutRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2927,6 +3735,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await StartStreamOutWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 关闭云录制
+         *
+         * @param request StopCloudRecordRequest
+         * @param headers StopCloudRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StopCloudRecordResponse
+         */
         public StopCloudRecordResponse StopCloudRecordWithOptions(string conferenceId, StopCloudRecordRequest request, StopCloudRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2964,6 +3780,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StopCloudRecordResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 关闭云录制
+         *
+         * @param request StopCloudRecordRequest
+         * @param headers StopCloudRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StopCloudRecordResponse
+         */
         public async Task<StopCloudRecordResponse> StopCloudRecordWithOptionsAsync(string conferenceId, StopCloudRecordRequest request, StopCloudRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3001,6 +3825,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StopCloudRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 关闭云录制
+         *
+         * @param request StopCloudRecordRequest
+         * @return StopCloudRecordResponse
+         */
         public StopCloudRecordResponse StopCloudRecord(string conferenceId, StopCloudRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3008,6 +3838,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return StopCloudRecordWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 关闭云录制
+         *
+         * @param request StopCloudRecordRequest
+         * @return StopCloudRecordResponse
+         */
         public async Task<StopCloudRecordResponse> StopCloudRecordAsync(string conferenceId, StopCloudRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3015,6 +3851,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await StopCloudRecordWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议停止直播推流
+         *
+         * @param request StopStreamOutRequest
+         * @param headers StopStreamOutHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StopStreamOutResponse
+         */
         public StopStreamOutResponse StopStreamOutWithOptions(string conferenceId, StopStreamOutRequest request, StopStreamOutHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3060,6 +3904,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StopStreamOutResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议停止直播推流
+         *
+         * @param request StopStreamOutRequest
+         * @param headers StopStreamOutHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StopStreamOutResponse
+         */
         public async Task<StopStreamOutResponse> StopStreamOutWithOptionsAsync(string conferenceId, StopStreamOutRequest request, StopStreamOutHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3105,6 +3957,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<StopStreamOutResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 会议停止直播推流
+         *
+         * @param request StopStreamOutRequest
+         * @return StopStreamOutResponse
+         */
         public StopStreamOutResponse StopStreamOut(string conferenceId, StopStreamOutRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3112,6 +3970,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return StopStreamOutWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 会议停止直播推流
+         *
+         * @param request StopStreamOutRequest
+         * @return StopStreamOutResponse
+         */
         public async Task<StopStreamOutResponse> StopStreamOutAsync(string conferenceId, StopStreamOutRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3119,6 +3983,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await StopStreamOutWithOptionsAsync(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新预约会议设置
+         *
+         * @param request UpdateScheduleConfSettingsRequest
+         * @param headers UpdateScheduleConfSettingsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateScheduleConfSettingsResponse
+         */
         public UpdateScheduleConfSettingsResponse UpdateScheduleConfSettingsWithOptions(UpdateScheduleConfSettingsRequest request, UpdateScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3164,6 +4036,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateScheduleConfSettingsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新预约会议设置
+         *
+         * @param request UpdateScheduleConfSettingsRequest
+         * @param headers UpdateScheduleConfSettingsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateScheduleConfSettingsResponse
+         */
         public async Task<UpdateScheduleConfSettingsResponse> UpdateScheduleConfSettingsWithOptionsAsync(UpdateScheduleConfSettingsRequest request, UpdateScheduleConfSettingsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3209,6 +4089,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateScheduleConfSettingsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新预约会议设置
+         *
+         * @param request UpdateScheduleConfSettingsRequest
+         * @return UpdateScheduleConfSettingsResponse
+         */
         public UpdateScheduleConfSettingsResponse UpdateScheduleConfSettings(UpdateScheduleConfSettingsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3216,6 +4102,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return UpdateScheduleConfSettingsWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新预约会议设置
+         *
+         * @param request UpdateScheduleConfSettingsRequest
+         * @return UpdateScheduleConfSettingsResponse
+         */
         public async Task<UpdateScheduleConfSettingsResponse> UpdateScheduleConfSettingsAsync(UpdateScheduleConfSettingsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3223,6 +4115,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await UpdateScheduleConfSettingsWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新预约会议
+         *
+         * @param request UpdateScheduleConferenceRequest
+         * @param headers UpdateScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateScheduleConferenceResponse
+         */
         public UpdateScheduleConferenceResponse UpdateScheduleConferenceWithOptions(UpdateScheduleConferenceRequest request, UpdateScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3276,6 +4176,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateScheduleConferenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新预约会议
+         *
+         * @param request UpdateScheduleConferenceRequest
+         * @param headers UpdateScheduleConferenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateScheduleConferenceResponse
+         */
         public async Task<UpdateScheduleConferenceResponse> UpdateScheduleConferenceWithOptionsAsync(UpdateScheduleConferenceRequest request, UpdateScheduleConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3329,6 +4237,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateScheduleConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新预约会议
+         *
+         * @param request UpdateScheduleConferenceRequest
+         * @return UpdateScheduleConferenceResponse
+         */
         public UpdateScheduleConferenceResponse UpdateScheduleConference(UpdateScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3336,6 +4250,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return UpdateScheduleConferenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新预约会议
+         *
+         * @param request UpdateScheduleConferenceRequest
+         * @return UpdateScheduleConferenceResponse
+         */
         public async Task<UpdateScheduleConferenceResponse> UpdateScheduleConferenceAsync(UpdateScheduleConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3343,6 +4263,13 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await UpdateScheduleConferenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新会议额外信息
+         *
+         * @param headers UpdateVideoConferenceExtInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVideoConferenceExtInfoResponse
+         */
         public UpdateVideoConferenceExtInfoResponse UpdateVideoConferenceExtInfoWithOptions(string conferenceId, UpdateVideoConferenceExtInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3373,6 +4300,13 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateVideoConferenceExtInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新会议额外信息
+         *
+         * @param headers UpdateVideoConferenceExtInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVideoConferenceExtInfoResponse
+         */
         public async Task<UpdateVideoConferenceExtInfoResponse> UpdateVideoConferenceExtInfoWithOptionsAsync(string conferenceId, UpdateVideoConferenceExtInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3403,6 +4337,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateVideoConferenceExtInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新会议额外信息
+         *
+         * @return UpdateVideoConferenceExtInfoResponse
+         */
         public UpdateVideoConferenceExtInfoResponse UpdateVideoConferenceExtInfo(string conferenceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3410,6 +4349,11 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return UpdateVideoConferenceExtInfoWithOptions(conferenceId, headers, runtime);
         }
 
+        /**
+         * @summary 更新会议额外信息
+         *
+         * @return UpdateVideoConferenceExtInfoResponse
+         */
         public async Task<UpdateVideoConferenceExtInfoResponse> UpdateVideoConferenceExtInfoAsync(string conferenceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3417,6 +4361,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return await UpdateVideoConferenceExtInfoWithOptionsAsync(conferenceId, headers, runtime);
         }
 
+        /**
+         * @summary 设置会议中的会议属性
+         *
+         * @param request UpdateVideoConferenceSettingRequest
+         * @param headers UpdateVideoConferenceSettingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVideoConferenceSettingResponse
+         */
         public UpdateVideoConferenceSettingResponse UpdateVideoConferenceSettingWithOptions(string conferenceId, UpdateVideoConferenceSettingRequest request, UpdateVideoConferenceSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3474,6 +4426,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateVideoConferenceSettingResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置会议中的会议属性
+         *
+         * @param request UpdateVideoConferenceSettingRequest
+         * @param headers UpdateVideoConferenceSettingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVideoConferenceSettingResponse
+         */
         public async Task<UpdateVideoConferenceSettingResponse> UpdateVideoConferenceSettingWithOptionsAsync(string conferenceId, UpdateVideoConferenceSettingRequest request, UpdateVideoConferenceSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3531,6 +4491,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return TeaModel.ToObject<UpdateVideoConferenceSettingResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 设置会议中的会议属性
+         *
+         * @param request UpdateVideoConferenceSettingRequest
+         * @return UpdateVideoConferenceSettingResponse
+         */
         public UpdateVideoConferenceSettingResponse UpdateVideoConferenceSetting(string conferenceId, UpdateVideoConferenceSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3538,6 +4504,12 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             return UpdateVideoConferenceSettingWithOptions(conferenceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 设置会议中的会议属性
+         *
+         * @param request UpdateVideoConferenceSettingRequest
+         * @return UpdateVideoConferenceSettingResponse
+         */
         public async Task<UpdateVideoConferenceSettingResponse> UpdateVideoConferenceSettingAsync(string conferenceId, UpdateVideoConferenceSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

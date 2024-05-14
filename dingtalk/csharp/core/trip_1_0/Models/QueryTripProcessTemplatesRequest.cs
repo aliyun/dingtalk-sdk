@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class QueryTripProcessTemplatesRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("customerCorpId")]
         [Validation(Required=false)]
         public string CustomerCorpId { get; set; }

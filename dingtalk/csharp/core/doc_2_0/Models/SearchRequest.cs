@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SearchRequestDentryRequest DentryRequest { get; set; }
         public class SearchRequestDentryRequest : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public int? MaxResults { get; set; }
@@ -57,10 +60,16 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("keyword")]
         [Validation(Required=false)]
         public string Keyword { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
@@ -69,6 +78,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public SearchRequestSpaceRequest SpaceRequest { get; set; }
         public class SearchRequestSpaceRequest : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public int? MaxResults { get; set; }

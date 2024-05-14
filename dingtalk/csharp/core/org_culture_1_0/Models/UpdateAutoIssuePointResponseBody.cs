@@ -13,12 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public UpdateAutoIssuePointResponseBodyResult Result { get; set; }
         public class UpdateAutoIssuePointResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("nextAutoIssuePointTime")]
             [Validation(Required=false)]
             public long? NextAutoIssuePointTime { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string ChannelType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("currency")]
         [Validation(Required=false)]
         public string Currency { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dingUserId")]
         [Validation(Required=false)]
         public string DingUserId { get; set; }
@@ -33,20 +39,32 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public bool? EndorseFlag { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("event")]
         [Validation(Required=false)]
         public SyncTripOrderRequestEvent Event { get; set; }
         public class SyncTripOrderRequestEvent : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("action")]
             [Validation(Required=false)]
             public string Action { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("gmtAction")]
             [Validation(Required=false)]
             public string GmtAction { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("gmtOrder")]
         [Validation(Required=false)]
         public string GmtOrder { get; set; }
@@ -245,10 +263,16 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("orderNo")]
         [Validation(Required=false)]
         public string OrderNo { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("orderUrl")]
         [Validation(Required=false)]
         public string OrderUrl { get; set; }
@@ -293,6 +317,9 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string TotalAmount { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public string Type { get; set; }

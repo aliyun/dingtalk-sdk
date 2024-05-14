@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetCommentListResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<GetCommentListResponseBodyData> Data { get; set; }
@@ -31,6 +34,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

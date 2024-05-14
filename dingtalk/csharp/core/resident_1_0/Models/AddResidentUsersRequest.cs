@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public string Address { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("departmentId")]
         [Validation(Required=false)]
         public long? DepartmentId { get; set; }
@@ -43,6 +46,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public string RelateType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userName")]
         [Validation(Required=false)]
         public string UserName { get; set; }

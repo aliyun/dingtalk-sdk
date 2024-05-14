@@ -29,10 +29,16 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("ranges")]
         [Validation(Required=false)]
         public List<string> Ranges { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

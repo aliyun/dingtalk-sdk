@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class LoadBizFieldsRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("schemaCode")]
         [Validation(Required=false)]
         public string SchemaCode { get; set; }

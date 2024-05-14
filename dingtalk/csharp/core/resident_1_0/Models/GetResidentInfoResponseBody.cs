@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public string Address { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("allUserGroupOpenConversationId")]
         [Validation(Required=false)]
         public string AllUserGroupOpenConversationId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("allUserGroupOwnerUserId")]
         [Validation(Required=false)]
         public string AllUserGroupOwnerUserId { get; set; }
@@ -67,10 +73,16 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("propertyDeptGroupOpenConversationId")]
         [Validation(Required=false)]
         public string PropertyDeptGroupOpenConversationId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("propertyDeptGroupOwnerUserId")]
         [Validation(Required=false)]
         public string PropertyDeptGroupOwnerUserId { get; set; }

@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
@@ -25,6 +31,9 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string OuterId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

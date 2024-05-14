@@ -77,10 +77,16 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public bool? ShowFunctionCard { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public long? TemplateId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateName")]
         [Validation(Required=false)]
         public string TemplateName { get; set; }

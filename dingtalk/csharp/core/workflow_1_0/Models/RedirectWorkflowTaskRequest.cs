@@ -49,6 +49,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operateUserId")]
         [Validation(Required=false)]
         public string OperateUserId { get; set; }
@@ -57,10 +60,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string Remark { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public long? TaskId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("toUserId")]
         [Validation(Required=false)]
         public string ToUserId { get; set; }

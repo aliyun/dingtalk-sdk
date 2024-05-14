@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string CustomFieldName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]
         public List<UpdateCustomfieldValueRequestValue> Value { get; set; }
         public class UpdateCustomfieldValueRequestValue : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

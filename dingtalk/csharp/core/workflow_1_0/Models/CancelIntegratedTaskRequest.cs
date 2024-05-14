@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class CancelIntegratedTaskRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("activityId")]
         [Validation(Required=false)]
         public string ActivityId { get; set; }
@@ -17,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public List<string> ActivityIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }

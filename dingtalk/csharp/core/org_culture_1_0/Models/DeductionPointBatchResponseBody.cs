@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                 [Validation(Required=false)]
                 public string Code { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("invokeStatus")]
                 [Validation(Required=false)]
                 public string InvokeStatus { get; set; }
@@ -29,10 +32,16 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                 [Validation(Required=false)]
                 public string Msg { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("outId")]
                 [Validation(Required=false)]
                 public string OutId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
@@ -41,6 +50,9 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

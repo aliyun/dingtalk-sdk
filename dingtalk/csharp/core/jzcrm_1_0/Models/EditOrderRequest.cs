@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string ChildMx { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
@@ -33,6 +36,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtContract { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_customerid")]
             [Validation(Required=false)]
             public string HtCustomerid { get; set; }
@@ -41,6 +47,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtCusub { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_date")]
             [Validation(Required=false)]
             public string HtDate { get; set; }
@@ -81,6 +90,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtNumber { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_order")]
             [Validation(Required=false)]
             public string HtOrder { get; set; }
@@ -89,6 +101,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtPaymode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_preside")]
             [Validation(Required=false)]
             public string HtPreside { get; set; }
@@ -97,6 +112,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtRemark { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_state")]
             [Validation(Required=false)]
             public string HtState { get; set; }
@@ -105,6 +123,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HtSummemo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ht_summoney")]
             [Validation(Required=false)]
             public string HtSummoney { get; set; }
@@ -135,6 +156,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
@@ -143,6 +167,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]
         public long? Stamp { get; set; }

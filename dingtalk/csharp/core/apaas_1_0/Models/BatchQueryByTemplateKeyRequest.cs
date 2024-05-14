@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class BatchQueryByTemplateKeyRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateKeys")]
         [Validation(Required=false)]
         public List<string> TemplateKeys { get; set; }

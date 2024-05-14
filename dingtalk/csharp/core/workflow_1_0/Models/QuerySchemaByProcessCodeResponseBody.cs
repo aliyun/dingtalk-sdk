@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class QuerySchemaByProcessCodeResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public QuerySchemaByProcessCodeResponseBodyResult Result { get; set; }
         public class QuerySchemaByProcessCodeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appType")]
             [Validation(Required=false)]
             public int? AppType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appUuid")]
             [Validation(Required=false)]
             public string AppUuid { get; set; }
@@ -25,6 +34,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string BizType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
@@ -37,18 +49,30 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public int? EngineType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("formCode")]
             [Validation(Required=false)]
             public string FormCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("formUuid")]
             [Validation(Required=false)]
             public string FormUuid { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public string GmtCreate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
             public string GmtModified { get; set; }
@@ -69,6 +93,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ownerIdType")]
             [Validation(Required=false)]
             public string OwnerIdType { get; set; }
@@ -77,6 +104,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string ProcType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("schemaContent")]
             [Validation(Required=false)]
             public QuerySchemaByProcessCodeResponseBodyResultSchemaContent SchemaContent { get; set; }
@@ -85,6 +115,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public string Icon { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("items")]
                 [Validation(Required=false)]
                 public List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems> Items { get; set; }
@@ -93,10 +126,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     [Validation(Required=false)]
                     public List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> Children { get; set; }
                     public class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren : TeaModel {
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("componentName")]
                         [Validation(Required=false)]
                         public string ComponentName { get; set; }
 
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("props")]
                         [Validation(Required=false)]
                         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps Props { get; set; }
@@ -105,6 +144,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                             [Validation(Required=false)]
                             public string BizAlias { get; set; }
 
+                            /// <summary>
+                            /// This parameter is required.
+                            /// </summary>
                             [NameInMap("id")]
                             [Validation(Required=false)]
                             public string Id { get; set; }
@@ -125,10 +167,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                     }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("componentName")]
                     [Validation(Required=false)]
                     public string ComponentName { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("props")]
                     [Validation(Required=false)]
                     public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps Props { get; set; }
@@ -245,10 +293,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                         [Validation(Required=false)]
                         public List<Dictionary<string, string>> HolidayOptions { get; set; }
 
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("id")]
                         [Validation(Required=false)]
                         public string Id { get; set; }
 
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("label")]
                         [Validation(Required=false)]
                         public string Label { get; set; }
@@ -379,6 +433,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }

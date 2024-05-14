@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public long? DueTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("executorIds")]
         [Validation(Required=false)]
         public List<string> ExecutorIds { get; set; }
@@ -35,6 +38,9 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public List<string> ParticipantIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subject")]
         [Validation(Required=false)]
         public string Subject { get; set; }

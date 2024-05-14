@@ -49,6 +49,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public int? RoomCapacity { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("roomId")]
         [Validation(Required=false)]
         public string RoomId { get; set; }
@@ -83,6 +86,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public int? RoomStatus { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class SendOfficialAccountSNSMessageRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("bindingToken")]
         [Validation(Required=false)]
         public string BindingToken { get; set; }
@@ -17,10 +20,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string BizId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public SendOfficialAccountSNSMessageRequestDetail Detail { get; set; }
         public class SendOfficialAccountSNSMessageRequestDetail : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
             public SendOfficialAccountSNSMessageRequestDetailMessageBody MessageBody { get; set; }
@@ -113,10 +122,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]
             public string Uuid { get; set; }

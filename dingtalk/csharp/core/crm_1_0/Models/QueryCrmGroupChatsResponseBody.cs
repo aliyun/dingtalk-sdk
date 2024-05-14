@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryCrmGroupChatsResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
@@ -21,18 +24,30 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<QueryCrmGroupChatsResponseBodyResultList> ResultList { get; set; }
         public class QueryCrmGroupChatsResponseBodyResultList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public long? GmtCreate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("memberCount")]
             [Validation(Required=false)]
             public int? MemberCount { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("openConversationId")]
             [Validation(Required=false)]
             public string OpenConversationId { get; set; }
@@ -41,10 +56,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string OpenGroupSetId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ownerUserId")]
             [Validation(Required=false)]
             public string OwnerUserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("ownerUserName")]
             [Validation(Required=false)]
             public string OwnerUserName { get; set; }

@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tasks")]
         [Validation(Required=false)]
         public List<UpdateIntegratedTaskRequestTasks> Tasks { get; set; }
@@ -21,10 +24,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string Result { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("taskId")]
             [Validation(Required=false)]
             public long? TaskId { get; set; }

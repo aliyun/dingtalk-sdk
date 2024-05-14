@@ -9,22 +9,37 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetDeptResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("departmentId")]
         [Validation(Required=false)]
         public long? DepartmentId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("departmentName")]
         [Validation(Required=false)]
         public string DepartmentName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("fromUnionOrg")]
         [Validation(Required=false)]
         public bool? FromUnionOrg { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("order")]
         [Validation(Required=false)]
         public long? Order { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("parentDepartmentId")]
         [Validation(Required=false)]
         public long? ParentDepartmentId { get; set; }

@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("personalCarbonAmount")]
         [Validation(Required=false)]
         public double? PersonalCarbonAmount { get; set; }

@@ -29,6 +29,9 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
         [Validation(Required=false)]
         public List<string> AuthUserIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
         public string Creator { get; set; }
@@ -45,10 +48,16 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
         [Validation(Required=false)]
         public List<string> DefaultReceivers { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("fields")]
         [Validation(Required=false)]
         public List<CreateTemplatesRequestFields> Fields { get; set; }
         public class CreateTemplatesRequestFields : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("dataType")]
             [Validation(Required=false)]
             public int? DataType { get; set; }
@@ -81,18 +90,30 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("fieldName")]
             [Validation(Required=false)]
             public string FieldName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("need")]
             [Validation(Required=false)]
             public bool? Need { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("order")]
             [Validation(Required=false)]
             public int? Order { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sort")]
             [Validation(Required=false)]
             public int? Sort { get; set; }
@@ -111,6 +132,9 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
         [Validation(Required=false)]
         public int? MinWordCount { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }

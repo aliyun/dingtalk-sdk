@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         [Validation(Required=false)]
         public int? From { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("logLevel")]
         [Validation(Required=false)]
         public string LogLevel { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("skillExecuteId")]
         [Validation(Required=false)]
         public string SkillExecuteId { get; set; }

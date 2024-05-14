@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
         }
 
 
+        /**
+         * @summary 实时活动发送接口
+         *
+         * @param request PushLiveActivityRequest
+         * @param headers PushLiveActivityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PushLiveActivityResponse
+         */
         public PushLiveActivityResponse PushLiveActivityWithOptions(PushLiveActivityRequest request, PushLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return TeaModel.ToObject<PushLiveActivityResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 实时活动发送接口
+         *
+         * @param request PushLiveActivityRequest
+         * @param headers PushLiveActivityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PushLiveActivityResponse
+         */
         public async Task<PushLiveActivityResponse> PushLiveActivityWithOptionsAsync(PushLiveActivityRequest request, PushLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return TeaModel.ToObject<PushLiveActivityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 实时活动发送接口
+         *
+         * @param request PushLiveActivityRequest
+         * @return PushLiveActivityResponse
+         */
         public PushLiveActivityResponse PushLiveActivity(PushLiveActivityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return PushLiveActivityWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 实时活动发送接口
+         *
+         * @param request PushLiveActivityRequest
+         * @return PushLiveActivityResponse
+         */
         public async Task<PushLiveActivityResponse> PushLiveActivityAsync(PushLiveActivityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,14 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return await PushLiveActivityWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送实时活动
+         *
+         * @param request SendLiveActivityRequest
+         * @param headers SendLiveActivityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendLiveActivityResponse
+         */
         public SendLiveActivityResponse SendLiveActivityWithOptions(SendLiveActivityRequest request, SendLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -178,6 +214,14 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return TeaModel.ToObject<SendLiveActivityResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送实时活动
+         *
+         * @param request SendLiveActivityRequest
+         * @param headers SendLiveActivityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendLiveActivityResponse
+         */
         public async Task<SendLiveActivityResponse> SendLiveActivityWithOptionsAsync(SendLiveActivityRequest request, SendLiveActivityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -223,6 +267,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return TeaModel.ToObject<SendLiveActivityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送实时活动
+         *
+         * @param request SendLiveActivityRequest
+         * @return SendLiveActivityResponse
+         */
         public SendLiveActivityResponse SendLiveActivity(SendLiveActivityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -230,6 +280,12 @@ namespace AlibabaCloud.SDK.Dingtalklive_activities_1_0
             return SendLiveActivityWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送实时活动
+         *
+         * @param request SendLiveActivityRequest
+         * @return SendLiveActivityResponse
+         */
         public async Task<SendLiveActivityResponse> SendLiveActivityAsync(SendLiveActivityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

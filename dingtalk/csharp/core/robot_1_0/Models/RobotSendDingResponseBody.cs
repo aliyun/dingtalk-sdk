@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class RobotSendDingResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("failedList")]
         [Validation(Required=false)]
         public Dictionary<string, object> FailedList { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openDingId")]
         [Validation(Required=false)]
         public string OpenDingId { get; set; }

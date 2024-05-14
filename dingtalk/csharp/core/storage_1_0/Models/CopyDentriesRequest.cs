@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class CopyDentriesRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dentryIds")]
         [Validation(Required=false)]
         public List<string> DentryIds { get; set; }
@@ -23,14 +26,23 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("targetFolderId")]
         [Validation(Required=false)]
         public string TargetFolderId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("targetSpaceId")]
         [Validation(Required=false)]
         public string TargetSpaceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

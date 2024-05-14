@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class BatchQueryUserResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<BatchQueryUserResponseBodyData> Data { get; set; }
@@ -17,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public Stream AvatarMediaId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("avatarUrl")]
             [Validation(Required=false)]
             public Stream AvatarUrl { get; set; }
@@ -39,6 +45,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

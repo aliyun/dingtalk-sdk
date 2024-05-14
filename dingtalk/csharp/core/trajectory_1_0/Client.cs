@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
         }
 
 
+        /**
+         * @summary 查询APP当前开启轨迹采集的用户
+         *
+         * @param request QueryAppActiveUsersRequest
+         * @param headers QueryAppActiveUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAppActiveUsersResponse
+         */
         public QueryAppActiveUsersResponse QueryAppActiveUsersWithOptions(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryAppActiveUsersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询APP当前开启轨迹采集的用户
+         *
+         * @param request QueryAppActiveUsersRequest
+         * @param headers QueryAppActiveUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAppActiveUsersResponse
+         */
         public async Task<QueryAppActiveUsersResponse> QueryAppActiveUsersWithOptionsAsync(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryAppActiveUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询APP当前开启轨迹采集的用户
+         *
+         * @param request QueryAppActiveUsersRequest
+         * @return QueryAppActiveUsersResponse
+         */
         public QueryAppActiveUsersResponse QueryAppActiveUsers(QueryAppActiveUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return QueryAppActiveUsersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询APP当前开启轨迹采集的用户
+         *
+         * @param request QueryAppActiveUsersRequest
+         * @return QueryAppActiveUsersResponse
+         */
         public async Task<QueryAppActiveUsersResponse> QueryAppActiveUsersAsync(QueryAppActiveUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return await QueryAppActiveUsersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询应用采集中的轨迹任务
+         *
+         * @param request QueryCollectingTraceTaskRequest
+         * @param headers QueryCollectingTraceTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCollectingTraceTaskResponse
+         */
         public QueryCollectingTraceTaskResponse QueryCollectingTraceTaskWithOptions(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -170,6 +206,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询应用采集中的轨迹任务
+         *
+         * @param request QueryCollectingTraceTaskRequest
+         * @param headers QueryCollectingTraceTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCollectingTraceTaskResponse
+         */
         public async Task<QueryCollectingTraceTaskResponse> QueryCollectingTraceTaskWithOptionsAsync(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -207,6 +251,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询应用采集中的轨迹任务
+         *
+         * @param request QueryCollectingTraceTaskRequest
+         * @return QueryCollectingTraceTaskResponse
+         */
         public QueryCollectingTraceTaskResponse QueryCollectingTraceTask(QueryCollectingTraceTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -214,6 +264,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return QueryCollectingTraceTaskWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询应用采集中的轨迹任务
+         *
+         * @param request QueryCollectingTraceTaskRequest
+         * @return QueryCollectingTraceTaskResponse
+         */
         public async Task<QueryCollectingTraceTaskResponse> QueryCollectingTraceTaskAsync(QueryCollectingTraceTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -221,6 +277,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return await QueryCollectingTraceTaskWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询轨迹数据
+         *
+         * @param request QueryPageTraceDataRequest
+         * @param headers QueryPageTraceDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPageTraceDataResponse
+         */
         public QueryPageTraceDataResponse QueryPageTraceDataWithOptions(QueryPageTraceDataRequest request, QueryPageTraceDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -278,6 +342,14 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryPageTraceDataResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询轨迹数据
+         *
+         * @param request QueryPageTraceDataRequest
+         * @param headers QueryPageTraceDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPageTraceDataResponse
+         */
         public async Task<QueryPageTraceDataResponse> QueryPageTraceDataWithOptionsAsync(QueryPageTraceDataRequest request, QueryPageTraceDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -335,6 +407,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return TeaModel.ToObject<QueryPageTraceDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询轨迹数据
+         *
+         * @param request QueryPageTraceDataRequest
+         * @return QueryPageTraceDataResponse
+         */
         public QueryPageTraceDataResponse QueryPageTraceData(QueryPageTraceDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -342,6 +420,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             return QueryPageTraceDataWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询轨迹数据
+         *
+         * @param request QueryPageTraceDataRequest
+         * @return QueryPageTraceDataResponse
+         */
         public async Task<QueryPageTraceDataResponse> QueryPageTraceDataAsync(QueryPageTraceDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

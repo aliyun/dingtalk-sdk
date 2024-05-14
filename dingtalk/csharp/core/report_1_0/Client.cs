@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
         }
 
 
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplatesRequest
+         * @param headers CreateTemplatesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateTemplatesResponse
+         */
         public CreateTemplatesResponse CreateTemplatesWithOptions(CreateTemplatesRequest request, CreateTemplatesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -122,6 +130,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<CreateTemplatesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplatesRequest
+         * @param headers CreateTemplatesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateTemplatesResponse
+         */
         public async Task<CreateTemplatesResponse> CreateTemplatesWithOptionsAsync(CreateTemplatesRequest request, CreateTemplatesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -215,6 +231,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<CreateTemplatesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplatesRequest
+         * @return CreateTemplatesResponse
+         */
         public CreateTemplatesResponse CreateTemplates(CreateTemplatesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -222,6 +244,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return CreateTemplatesWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplatesRequest
+         * @return CreateTemplatesResponse
+         */
         public async Task<CreateTemplatesResponse> CreateTemplatesAsync(CreateTemplatesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -229,6 +257,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return await CreateTemplatesWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询员工提交和收到的日志列表
+         *
+         * @param request GetSendAndReceiveReportListRequest
+         * @param headers GetSendAndReceiveReportListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSendAndReceiveReportListResponse
+         */
         public GetSendAndReceiveReportListResponse GetSendAndReceiveReportListWithOptions(GetSendAndReceiveReportListRequest request, GetSendAndReceiveReportListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -282,6 +318,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<GetSendAndReceiveReportListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询员工提交和收到的日志列表
+         *
+         * @param request GetSendAndReceiveReportListRequest
+         * @param headers GetSendAndReceiveReportListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSendAndReceiveReportListResponse
+         */
         public async Task<GetSendAndReceiveReportListResponse> GetSendAndReceiveReportListWithOptionsAsync(GetSendAndReceiveReportListRequest request, GetSendAndReceiveReportListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -335,6 +379,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<GetSendAndReceiveReportListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询员工提交和收到的日志列表
+         *
+         * @param request GetSendAndReceiveReportListRequest
+         * @return GetSendAndReceiveReportListResponse
+         */
         public GetSendAndReceiveReportListResponse GetSendAndReceiveReportList(GetSendAndReceiveReportListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -342,6 +392,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return GetSendAndReceiveReportListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询员工提交和收到的日志列表
+         *
+         * @param request GetSendAndReceiveReportListRequest
+         * @return GetSendAndReceiveReportListResponse
+         */
         public async Task<GetSendAndReceiveReportListResponse> GetSendAndReceiveReportListAsync(GetSendAndReceiveReportListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -349,6 +405,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return await GetSendAndReceiveReportListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定周期的提交统计结果
+         *
+         * @param request GetSubmitStatisticsRequest
+         * @param headers GetSubmitStatisticsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSubmitStatisticsResponse
+         */
         public GetSubmitStatisticsResponse GetSubmitStatisticsWithOptions(GetSubmitStatisticsRequest request, GetSubmitStatisticsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -402,6 +466,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<GetSubmitStatisticsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定周期的提交统计结果
+         *
+         * @param request GetSubmitStatisticsRequest
+         * @param headers GetSubmitStatisticsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSubmitStatisticsResponse
+         */
         public async Task<GetSubmitStatisticsResponse> GetSubmitStatisticsWithOptionsAsync(GetSubmitStatisticsRequest request, GetSubmitStatisticsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -455,6 +527,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<GetSubmitStatisticsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定周期的提交统计结果
+         *
+         * @param request GetSubmitStatisticsRequest
+         * @return GetSubmitStatisticsResponse
+         */
         public GetSubmitStatisticsResponse GetSubmitStatistics(GetSubmitStatisticsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -462,6 +540,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return GetSubmitStatisticsWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定周期的提交统计结果
+         *
+         * @param request GetSubmitStatisticsRequest
+         * @return GetSubmitStatisticsResponse
+         */
         public async Task<GetSubmitStatisticsResponse> GetSubmitStatisticsAsync(GetSubmitStatisticsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -469,6 +553,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return await GetSubmitStatisticsWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取创建的统计规则信息
+         *
+         * @param request QueryRemindResultsRequest
+         * @param headers QueryRemindResultsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRemindResultsResponse
+         */
         public QueryRemindResultsResponse QueryRemindResultsWithOptions(QueryRemindResultsRequest request, QueryRemindResultsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -518,6 +610,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<QueryRemindResultsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取创建的统计规则信息
+         *
+         * @param request QueryRemindResultsRequest
+         * @param headers QueryRemindResultsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRemindResultsResponse
+         */
         public async Task<QueryRemindResultsResponse> QueryRemindResultsWithOptionsAsync(QueryRemindResultsRequest request, QueryRemindResultsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -567,6 +667,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<QueryRemindResultsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取创建的统计规则信息
+         *
+         * @param request QueryRemindResultsRequest
+         * @return QueryRemindResultsResponse
+         */
         public QueryRemindResultsResponse QueryRemindResults(QueryRemindResultsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -574,6 +680,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return QueryRemindResultsWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取创建的统计规则信息
+         *
+         * @param request QueryRemindResultsRequest
+         * @return QueryRemindResultsResponse
+         */
         public async Task<QueryRemindResultsResponse> QueryRemindResultsAsync(QueryRemindResultsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -581,6 +693,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return await QueryRemindResultsWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取日志详情
+         *
+         * @param request QueryReportDetailRequest
+         * @param headers QueryReportDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryReportDetailResponse
+         */
         public QueryReportDetailResponse QueryReportDetailWithOptions(QueryReportDetailRequest request, QueryReportDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -618,6 +738,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<QueryReportDetailResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取日志详情
+         *
+         * @param request QueryReportDetailRequest
+         * @param headers QueryReportDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryReportDetailResponse
+         */
         public async Task<QueryReportDetailResponse> QueryReportDetailWithOptionsAsync(QueryReportDetailRequest request, QueryReportDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -655,6 +783,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return TeaModel.ToObject<QueryReportDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取日志详情
+         *
+         * @param request QueryReportDetailRequest
+         * @return QueryReportDetailResponse
+         */
         public QueryReportDetailResponse QueryReportDetail(QueryReportDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -662,6 +796,12 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
             return QueryReportDetailWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取日志详情
+         *
+         * @param request QueryReportDetailRequest
+         * @return QueryReportDetailResponse
+         */
         public async Task<QueryReportDetailResponse> QueryReportDetailAsync(QueryReportDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string CreatorNike { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
@@ -29,6 +32,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("realData")]
         [Validation(Required=false)]
         public bool? RealData { get; set; }
@@ -37,6 +43,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string Scene { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }

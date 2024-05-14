@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class ConvertLegacyEventIdRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("legacyEventIds")]
         [Validation(Required=false)]
         public List<string> LegacyEventIds { get; set; }

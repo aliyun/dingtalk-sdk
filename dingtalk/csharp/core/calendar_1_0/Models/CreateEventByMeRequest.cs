@@ -111,6 +111,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public CreateEventByMeRequestRecurrenceRange Range { get; set; }
             public class CreateEventByMeRequestRecurrenceRange : TeaModel {
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
                 public string EndDate { get; set; }
@@ -151,6 +154,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public CreateEventByMeRequestStart Start { get; set; }
@@ -169,6 +175,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]
         public string Summary { get; set; }

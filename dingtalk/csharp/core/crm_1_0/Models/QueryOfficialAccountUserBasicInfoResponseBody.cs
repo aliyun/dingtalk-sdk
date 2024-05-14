@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public QueryOfficialAccountUserBasicInfoResponseBodyResult Result { get; set; }
         public class QueryOfficialAccountUserBasicInfoResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }

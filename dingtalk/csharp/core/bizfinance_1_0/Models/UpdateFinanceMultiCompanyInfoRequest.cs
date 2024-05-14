@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class UpdateFinanceMultiCompanyInfoRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("companyCode")]
         [Validation(Required=false)]
         public string CompanyCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("companyName")]
         [Validation(Required=false)]
         public string CompanyName { get; set; }

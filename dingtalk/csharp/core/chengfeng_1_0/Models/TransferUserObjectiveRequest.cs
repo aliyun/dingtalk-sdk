@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class TransferUserObjectiveRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("objectiveId")]
         [Validation(Required=false)]
         public string ObjectiveId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("targetUserId")]
         [Validation(Required=false)]
         public string TargetUserId { get; set; }

@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         [Validation(Required=false)]
         public string EcologicalCorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("groupType")]
         [Validation(Required=false)]
         public string GroupType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("opUnionId")]
         [Validation(Required=false)]
         public string OpUnionId { get; set; }

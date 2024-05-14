@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public EditProductionRequestData Data { get; set; }
         public class EditProductionRequestData : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
@@ -37,10 +40,16 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string SchMakeemp { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sch_number")]
             [Validation(Required=false)]
             public string SchNumber { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sch_planendtime")]
             [Validation(Required=false)]
             public string SchPlanendtime { get; set; }
@@ -53,6 +62,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string SchRemark { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sch_starttime")]
             [Validation(Required=false)]
             public string SchStarttime { get; set; }
@@ -61,12 +73,18 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string SchStatesstr { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sch_title")]
             [Validation(Required=false)]
             public string SchTitle { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
@@ -75,6 +93,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]
         public long? Stamp { get; set; }

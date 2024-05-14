@@ -21,14 +21,23 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public string Ext { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outerId")]
         [Validation(Required=false)]
         public string OuterId { get; set; }
@@ -55,10 +64,16 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("taskType")]
         [Validation(Required=false)]
         public string TaskType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("solutionType")]
         [Validation(Required=false)]
         public string SolutionType { get; set; }

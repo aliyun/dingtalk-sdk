@@ -21,10 +21,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        /// <summary>
+        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// </summary>
         [NameInMap("timeMax")]
         [Validation(Required=false)]
         public string TimeMax { get; set; }
 
+        /// <summary>
+        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// </summary>
         [NameInMap("timeMin")]
         [Validation(Required=false)]
         public string TimeMin { get; set; }

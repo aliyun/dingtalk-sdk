@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string BizId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public ServiceWindowMessageBatchPushRequestDetail Detail { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string BizRequestId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
             public ServiceWindowMessageBatchPushRequestDetailMessageBody MessageBody { get; set; }
@@ -33,10 +39,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [Validation(Required=false)]
                     public List<ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList> ButtonList { get; set; }
                     public class ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList : TeaModel {
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("actionUrl")]
                         [Validation(Required=false)]
                         public string ActionUrl { get; set; }
 
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("title")]
                         [Validation(Required=false)]
                         public string Title { get; set; }
@@ -91,10 +103,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown Markdown { get; set; }
                 public class ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("text")]
                     [Validation(Required=false)]
                     public string Text { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
@@ -105,6 +123,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public ServiceWindowMessageBatchPushRequestDetailMessageBodyText Text { get; set; }
                 public class ServiceWindowMessageBatchPushRequestDetailMessageBodyText : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("content")]
                     [Validation(Required=false)]
                     public string Content { get; set; }
@@ -113,6 +134,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
@@ -121,10 +145,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public bool? SendToAll { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("userIdList")]
             [Validation(Required=false)]
             public List<string> UserIdList { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]
             public string Uuid { get; set; }

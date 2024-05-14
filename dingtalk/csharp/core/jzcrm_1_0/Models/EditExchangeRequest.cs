@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string ChildMx { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
@@ -33,6 +36,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HhInempid { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hh_inlibid")]
             [Validation(Required=false)]
             public string HhInlibid { get; set; }
@@ -41,6 +47,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HhIntime { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hh_number")]
             [Validation(Required=false)]
             public string HhNumber { get; set; }
@@ -53,6 +62,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HhOutempid { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hh_outlibid")]
             [Validation(Required=false)]
             public string HhOutlibid { get; set; }
@@ -69,6 +81,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string HhState { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hh_title")]
             [Validation(Required=false)]
             public string HhTitle { get; set; }
@@ -79,6 +94,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
@@ -87,6 +105,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]
         public long? Stamp { get; set; }

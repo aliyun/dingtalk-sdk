@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public string NameEn { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("periodId")]
         [Validation(Required=false)]
         public string PeriodId { get; set; }

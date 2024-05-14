@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class AddProcessInstanceCommentRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("commentUserId")]
         [Validation(Required=false)]
         public string CommentUserId { get; set; }
@@ -49,10 +52,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("text")]
         [Validation(Required=false)]
         public string Text { get; set; }

@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 {
     public class ExecuteAgentRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("agentCode")]
         [Validation(Required=false)]
         public string AgentCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("inputs")]
         [Validation(Required=false)]
         public ExecuteAgentRequestInputs Inputs { get; set; }

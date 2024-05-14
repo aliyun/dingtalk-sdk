@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0
         }
 
 
+        /**
+         * @summary 获取物料列表
+         *
+         * @param request QueryGoodsListRequest
+         * @param headers QueryGoodsListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGoodsListResponse
+         */
         public QueryGoodsListResponse QueryGoodsListWithOptions(QueryGoodsListRequest request, QueryGoodsListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -78,6 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0
             return TeaModel.ToObject<QueryGoodsListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取物料列表
+         *
+         * @param request QueryGoodsListRequest
+         * @param headers QueryGoodsListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGoodsListResponse
+         */
         public async Task<QueryGoodsListResponse> QueryGoodsListWithOptionsAsync(QueryGoodsListRequest request, QueryGoodsListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -127,6 +143,12 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0
             return TeaModel.ToObject<QueryGoodsListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取物料列表
+         *
+         * @param request QueryGoodsListRequest
+         * @return QueryGoodsListResponse
+         */
         public QueryGoodsListResponse QueryGoodsList(QueryGoodsListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -134,6 +156,12 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0
             return QueryGoodsListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取物料列表
+         *
+         * @param request QueryGoodsListRequest
+         * @return QueryGoodsListResponse
+         */
         public async Task<QueryGoodsListResponse> QueryGoodsListAsync(QueryGoodsListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

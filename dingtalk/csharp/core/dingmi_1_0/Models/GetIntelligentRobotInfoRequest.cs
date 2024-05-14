@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetIntelligentRobotInfoRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("robotAppKey")]
         [Validation(Required=false)]
         public string RobotAppKey { get; set; }

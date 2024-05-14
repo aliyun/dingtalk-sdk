@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class CreateOpportunityRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("belongToPhoneNum")]
         [Validation(Required=false)]
         public string BelongToPhoneNum { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("contactPhoneNum")]
         [Validation(Required=false)]
         public string ContactPhoneNum { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
@@ -25,6 +34,9 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("marketCode")]
         [Validation(Required=false)]
         public string MarketCode { get; set; }

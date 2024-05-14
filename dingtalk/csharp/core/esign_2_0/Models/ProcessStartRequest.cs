@@ -25,6 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("accountType")]
             [Validation(Required=false)]
             public string AccountType { get; set; }
@@ -39,20 +42,32 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("files")]
         [Validation(Required=false)]
         public List<ProcessStartRequestFiles> Files { get; set; }
         public class ProcessStartRequestFiles : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("fileName")]
             [Validation(Required=false)]
             public string FileName { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("initiatorUserId")]
         [Validation(Required=false)]
         public string InitiatorUserId { get; set; }
@@ -69,6 +84,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("accountType")]
             [Validation(Required=false)]
             public string AccountType { get; set; }

@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
         [Validation(Required=false)]
         public string ExtendParam { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("goodsCode")]
         [Validation(Required=false)]
         public string GoodsCode { get; set; }

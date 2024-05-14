@@ -13,22 +13,37 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public ProcessForecastResponseBodyResult Result { get; set; }
         public class ProcessForecastResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("isForecastSuccess")]
             [Validation(Required=false)]
             public bool? IsForecastSuccess { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("isStaticWorkflow")]
             [Validation(Required=false)]
             public bool? IsStaticWorkflow { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("processId")]
             [Validation(Required=false)]
             public long? ProcessId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
@@ -131,14 +146,23 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("workflowForecastNodes")]
             [Validation(Required=false)]
             public List<ProcessForecastResponseBodyResultWorkflowForecastNodes> WorkflowForecastNodes { get; set; }
             public class ProcessForecastResponseBodyResultWorkflowForecastNodes : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("activityId")]
                 [Validation(Required=false)]
                 public string ActivityId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("outId")]
                 [Validation(Required=false)]
                 public string OutId { get; set; }

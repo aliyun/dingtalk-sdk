@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string ActivityId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tasks")]
         [Validation(Required=false)]
         public List<CreateIntegratedTaskRequestTasks> Tasks { get; set; }

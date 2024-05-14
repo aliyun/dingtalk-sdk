@@ -45,10 +45,16 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
                     [Validation(Required=false)]
                     public int? BizType { get; set; }
 
+                    /// <summary>
+                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// </summary>
                     [NameInMap("createTime")]
                     [Validation(Required=false)]
                     public string CreateTime { get; set; }
 
+                    /// <summary>
+                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// </summary>
                     [NameInMap("endTime")]
                     [Validation(Required=false)]
                     public string EndTime { get; set; }

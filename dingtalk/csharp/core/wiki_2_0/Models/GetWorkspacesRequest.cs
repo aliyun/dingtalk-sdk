@@ -19,10 +19,16 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("workspaceIds")]
         [Validation(Required=false)]
         public List<string> WorkspaceIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

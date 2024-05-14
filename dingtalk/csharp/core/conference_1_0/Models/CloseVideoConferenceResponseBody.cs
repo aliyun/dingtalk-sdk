@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string Cause { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public long? Code { get; set; }

@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public bool? DisableNotification { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dueDate")]
         [Validation(Required=false)]
         public string DueDate { get; set; }

@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string CustomFieldName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]
         public List<CreateProjectCustomfieldStatusRequestValue> Value { get; set; }

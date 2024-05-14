@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> Extension { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("linkUrl")]
             [Validation(Required=false)]
             public string LinkUrl { get; set; }
@@ -29,16 +32,25 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public string PicMediaId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("text")]
             [Validation(Required=false)]
             public string Text { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("receiverUserId")]
         [Validation(Required=false)]
         public List<string> ReceiverUserId { get; set; }
@@ -47,6 +59,9 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         [Validation(Required=false)]
         public string SenderUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("textContent")]
         [Validation(Required=false)]
         public string TextContent { get; set; }

@@ -83,6 +83,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }

@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string AppUuid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("formCode")]
         [Validation(Required=false)]
         public string FormCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("formInstanceId")]
         [Validation(Required=false)]
         public string FormInstanceId { get; set; }

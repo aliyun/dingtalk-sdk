@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public List<InviteUsersRequestInviteeList> InviteeList { get; set; }
         public class InviteUsersRequestInviteeList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("nick")]
             [Validation(Required=false)]
             public string Nick { get; set; }

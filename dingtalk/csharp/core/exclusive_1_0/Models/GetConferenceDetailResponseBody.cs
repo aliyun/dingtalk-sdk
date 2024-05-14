@@ -41,18 +41,30 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<GetConferenceDetailResponseBodyMemberList> MemberList { get; set; }
         public class GetConferenceDetailResponseBodyMemberList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("attendDuration")]
             [Validation(Required=false)]
             public float? AttendDuration { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("staffId")]
             [Validation(Required=false)]
             public string StaffId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }

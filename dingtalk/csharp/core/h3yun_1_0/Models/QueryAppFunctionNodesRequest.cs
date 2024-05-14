@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class QueryAppFunctionNodesRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("appCode")]
         [Validation(Required=false)]
         public string AppCode { get; set; }

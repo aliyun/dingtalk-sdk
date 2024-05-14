@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
 {
     public class GetTaskFromShanhuiDocRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("docKey")]
         [Validation(Required=false)]
         public string DocKey { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class RobotMessageFileDownloadResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("downloadUrl")]
         [Validation(Required=false)]
         public string DownloadUrl { get; set; }

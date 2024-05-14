@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class SearchActionsRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("connectorId")]
         [Validation(Required=false)]
         public string ConnectorId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("connectorProviderCorpId")]
         [Validation(Required=false)]
         public string ConnectorProviderCorpId { get; set; }

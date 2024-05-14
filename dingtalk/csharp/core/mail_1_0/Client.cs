@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
         }
 
 
+        /**
+         * @summary 创建企业邮箱用户
+         *
+         * @param request CreateUserRequest
+         * @param headers CreateUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateUserResponse
+         */
         public CreateUserResponse CreateUserWithOptions(CreateUserRequest request, CreateUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -78,6 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<CreateUserResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建企业邮箱用户
+         *
+         * @param request CreateUserRequest
+         * @param headers CreateUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateUserResponse
+         */
         public async Task<CreateUserResponse> CreateUserWithOptionsAsync(CreateUserRequest request, CreateUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -127,6 +143,12 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<CreateUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建企业邮箱用户
+         *
+         * @param request CreateUserRequest
+         * @return CreateUserResponse
+         */
         public CreateUserResponse CreateUser(CreateUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -134,6 +156,12 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return CreateUserWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建企业邮箱用户
+         *
+         * @param request CreateUserRequest
+         * @return CreateUserResponse
+         */
         public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

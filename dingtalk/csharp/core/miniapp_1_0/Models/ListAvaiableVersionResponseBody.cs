@@ -13,22 +13,37 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         [Validation(Required=false)]
         public List<ListAvaiableVersionResponseBodyVersions> Versions { get; set; }
         public class ListAvaiableVersionResponseBodyVersions : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("buildStatus")]
             [Validation(Required=false)]
             public long? BuildStatus { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("h5Bundle")]
             [Validation(Required=false)]
             public string H5Bundle { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("packageSize")]
             [Validation(Required=false)]
             public string PackageSize { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("packageUrl")]
             [Validation(Required=false)]
             public string PackageUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]
             public string Version { get; set; }

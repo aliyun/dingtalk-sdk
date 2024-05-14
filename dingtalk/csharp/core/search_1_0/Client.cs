@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
         }
 
 
+        /**
+         * @summary 为指定的数据源批量添加数据项
+         *
+         * @param request BatchInsertSearchItemRequest
+         * @param headers BatchInsertSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BatchInsertSearchItemResponse
+         */
         public BatchInsertSearchItemResponse BatchInsertSearchItemWithOptions(string tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -66,6 +74,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<BatchInsertSearchItemResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 为指定的数据源批量添加数据项
+         *
+         * @param request BatchInsertSearchItemRequest
+         * @param headers BatchInsertSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BatchInsertSearchItemResponse
+         */
         public async Task<BatchInsertSearchItemResponse> BatchInsertSearchItemWithOptionsAsync(string tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -103,6 +119,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<BatchInsertSearchItemResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 为指定的数据源批量添加数据项
+         *
+         * @param request BatchInsertSearchItemRequest
+         * @return BatchInsertSearchItemResponse
+         */
         public BatchInsertSearchItemResponse BatchInsertSearchItem(string tabId, BatchInsertSearchItemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -110,6 +132,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return BatchInsertSearchItemWithOptions(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 为指定的数据源批量添加数据项
+         *
+         * @param request BatchInsertSearchItemRequest
+         * @return BatchInsertSearchItemResponse
+         */
         public async Task<BatchInsertSearchItemResponse> BatchInsertSearchItemAsync(string tabId, BatchInsertSearchItemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -117,6 +145,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await BatchInsertSearchItemWithOptionsAsync(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 创建搜索数据源
+         *
+         * @param request CreateSearchTabRequest
+         * @param headers CreateSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSearchTabResponse
+         */
         public CreateSearchTabResponse CreateSearchTabWithOptions(CreateSearchTabRequest request, CreateSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -174,6 +210,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<CreateSearchTabResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建搜索数据源
+         *
+         * @param request CreateSearchTabRequest
+         * @param headers CreateSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSearchTabResponse
+         */
         public async Task<CreateSearchTabResponse> CreateSearchTabWithOptionsAsync(CreateSearchTabRequest request, CreateSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -231,6 +275,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<CreateSearchTabResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建搜索数据源
+         *
+         * @param request CreateSearchTabRequest
+         * @return CreateSearchTabResponse
+         */
         public CreateSearchTabResponse CreateSearchTab(CreateSearchTabRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -238,6 +288,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return CreateSearchTabWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建搜索数据源
+         *
+         * @param request CreateSearchTabRequest
+         * @return CreateSearchTabResponse
+         */
         public async Task<CreateSearchTabResponse> CreateSearchTabAsync(CreateSearchTabRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -245,6 +301,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await CreateSearchTabWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 从指定的数据源中删除一条数据项
+         *
+         * @param headers DeleteSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSearchItemResponse
+         */
         public DeleteSearchItemResponse DeleteSearchItemWithOptions(string tabId, string itemId, DeleteSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -275,6 +338,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<DeleteSearchItemResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 从指定的数据源中删除一条数据项
+         *
+         * @param headers DeleteSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSearchItemResponse
+         */
         public async Task<DeleteSearchItemResponse> DeleteSearchItemWithOptionsAsync(string tabId, string itemId, DeleteSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -305,6 +375,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<DeleteSearchItemResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 从指定的数据源中删除一条数据项
+         *
+         * @return DeleteSearchItemResponse
+         */
         public DeleteSearchItemResponse DeleteSearchItem(string tabId, string itemId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -312,6 +387,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return DeleteSearchItemWithOptions(tabId, itemId, headers, runtime);
         }
 
+        /**
+         * @summary 从指定的数据源中删除一条数据项
+         *
+         * @return DeleteSearchItemResponse
+         */
         public async Task<DeleteSearchItemResponse> DeleteSearchItemAsync(string tabId, string itemId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -319,6 +399,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await DeleteSearchItemWithOptionsAsync(tabId, itemId, headers, runtime);
         }
 
+        /**
+         * @summary 删除搜索数据源
+         *
+         * @param headers DeleteSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSearchTabResponse
+         */
         public DeleteSearchTabResponse DeleteSearchTabWithOptions(string tabId, DeleteSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -349,6 +436,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<DeleteSearchTabResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除搜索数据源
+         *
+         * @param headers DeleteSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSearchTabResponse
+         */
         public async Task<DeleteSearchTabResponse> DeleteSearchTabWithOptionsAsync(string tabId, DeleteSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -379,6 +473,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<DeleteSearchTabResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除搜索数据源
+         *
+         * @return DeleteSearchTabResponse
+         */
         public DeleteSearchTabResponse DeleteSearchTab(string tabId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -386,6 +485,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return DeleteSearchTabWithOptions(tabId, headers, runtime);
         }
 
+        /**
+         * @summary 删除搜索数据源
+         *
+         * @return DeleteSearchTabResponse
+         */
         public async Task<DeleteSearchTabResponse> DeleteSearchTabAsync(string tabId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -393,6 +497,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await DeleteSearchTabWithOptionsAsync(tabId, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定数据源中的一条数据项
+         *
+         * @param headers GetSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchItemResponse
+         */
         public GetSearchItemResponse GetSearchItemWithOptions(string tabId, string itemId, GetSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -423,6 +534,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchItemResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定数据源中的一条数据项
+         *
+         * @param headers GetSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchItemResponse
+         */
         public async Task<GetSearchItemResponse> GetSearchItemWithOptionsAsync(string tabId, string itemId, GetSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -453,6 +571,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchItemResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定数据源中的一条数据项
+         *
+         * @return GetSearchItemResponse
+         */
         public GetSearchItemResponse GetSearchItem(string tabId, string itemId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -460,6 +583,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return GetSearchItemWithOptions(tabId, itemId, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定数据源中的一条数据项
+         *
+         * @return GetSearchItemResponse
+         */
         public async Task<GetSearchItemResponse> GetSearchItemAsync(string tabId, string itemId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -467,6 +595,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await GetSearchItemWithOptionsAsync(tabId, itemId, headers, runtime);
         }
 
+        /**
+         * @summary 根据搜索关键词获取相关数据项
+         *
+         * @param request GetSearchItemsByKeyWordRequest
+         * @param headers GetSearchItemsByKeyWordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchItemsByKeyWordResponse
+         */
         public GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWordWithOptions(string tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -512,6 +648,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchItemsByKeyWordResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据搜索关键词获取相关数据项
+         *
+         * @param request GetSearchItemsByKeyWordRequest
+         * @param headers GetSearchItemsByKeyWordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchItemsByKeyWordResponse
+         */
         public async Task<GetSearchItemsByKeyWordResponse> GetSearchItemsByKeyWordWithOptionsAsync(string tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -557,6 +701,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchItemsByKeyWordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据搜索关键词获取相关数据项
+         *
+         * @param request GetSearchItemsByKeyWordRequest
+         * @return GetSearchItemsByKeyWordResponse
+         */
         public GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWord(string tabId, GetSearchItemsByKeyWordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -564,6 +714,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return GetSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 根据搜索关键词获取相关数据项
+         *
+         * @param request GetSearchItemsByKeyWordRequest
+         * @return GetSearchItemsByKeyWordResponse
+         */
         public async Task<GetSearchItemsByKeyWordResponse> GetSearchItemsByKeyWordAsync(string tabId, GetSearchItemsByKeyWordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -571,6 +727,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await GetSearchItemsByKeyWordWithOptionsAsync(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取搜索数据源
+         *
+         * @param headers GetSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchTabResponse
+         */
         public GetSearchTabResponse GetSearchTabWithOptions(string tabId, GetSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -601,6 +764,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchTabResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取搜索数据源
+         *
+         * @param headers GetSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSearchTabResponse
+         */
         public async Task<GetSearchTabResponse> GetSearchTabWithOptionsAsync(string tabId, GetSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -631,6 +801,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<GetSearchTabResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取搜索数据源
+         *
+         * @return GetSearchTabResponse
+         */
         public GetSearchTabResponse GetSearchTab(string tabId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -638,6 +813,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return GetSearchTabWithOptions(tabId, headers, runtime);
         }
 
+        /**
+         * @summary 获取搜索数据源
+         *
+         * @return GetSearchTabResponse
+         */
         public async Task<GetSearchTabResponse> GetSearchTabAsync(string tabId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -645,6 +825,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await GetSearchTabWithOptionsAsync(tabId, headers, runtime);
         }
 
+        /**
+         * @summary 为指定的数据源添加一条数据项
+         *
+         * @param request InsertSearchItemRequest
+         * @param headers InsertSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertSearchItemResponse
+         */
         public InsertSearchItemResponse InsertSearchItemWithOptions(string tabId, InsertSearchItemRequest request, InsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -710,6 +898,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<InsertSearchItemResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 为指定的数据源添加一条数据项
+         *
+         * @param request InsertSearchItemRequest
+         * @param headers InsertSearchItemHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertSearchItemResponse
+         */
         public async Task<InsertSearchItemResponse> InsertSearchItemWithOptionsAsync(string tabId, InsertSearchItemRequest request, InsertSearchItemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -775,6 +971,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<InsertSearchItemResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 为指定的数据源添加一条数据项
+         *
+         * @param request InsertSearchItemRequest
+         * @return InsertSearchItemResponse
+         */
         public InsertSearchItemResponse InsertSearchItem(string tabId, InsertSearchItemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -782,6 +984,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return InsertSearchItemWithOptions(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 为指定的数据源添加一条数据项
+         *
+         * @param request InsertSearchItemRequest
+         * @return InsertSearchItemResponse
+         */
         public async Task<InsertSearchItemResponse> InsertSearchItemAsync(string tabId, InsertSearchItemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -789,6 +997,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await InsertSearchItemWithOptionsAsync(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 列出企业所有的搜索数据源
+         *
+         * @param headers ListSearchTabsByOrgIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSearchTabsByOrgIdResponse
+         */
         public ListSearchTabsByOrgIdResponse ListSearchTabsByOrgIdWithOptions(ListSearchTabsByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -819,6 +1034,13 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<ListSearchTabsByOrgIdResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 列出企业所有的搜索数据源
+         *
+         * @param headers ListSearchTabsByOrgIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSearchTabsByOrgIdResponse
+         */
         public async Task<ListSearchTabsByOrgIdResponse> ListSearchTabsByOrgIdWithOptionsAsync(ListSearchTabsByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -849,6 +1071,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<ListSearchTabsByOrgIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 列出企业所有的搜索数据源
+         *
+         * @return ListSearchTabsByOrgIdResponse
+         */
         public ListSearchTabsByOrgIdResponse ListSearchTabsByOrgId()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -856,6 +1083,11 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return ListSearchTabsByOrgIdWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 列出企业所有的搜索数据源
+         *
+         * @return ListSearchTabsByOrgIdResponse
+         */
         public async Task<ListSearchTabsByOrgIdResponse> ListSearchTabsByOrgIdAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -863,6 +1095,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return await ListSearchTabsByOrgIdWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 更新搜索数据源
+         *
+         * @param request UpdateSearchTabRequest
+         * @param headers UpdateSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSearchTabResponse
+         */
         public UpdateSearchTabResponse UpdateSearchTabWithOptions(string tabId, UpdateSearchTabRequest request, UpdateSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -920,6 +1160,14 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<UpdateSearchTabResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新搜索数据源
+         *
+         * @param request UpdateSearchTabRequest
+         * @param headers UpdateSearchTabHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSearchTabResponse
+         */
         public async Task<UpdateSearchTabResponse> UpdateSearchTabWithOptionsAsync(string tabId, UpdateSearchTabRequest request, UpdateSearchTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -977,6 +1225,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return TeaModel.ToObject<UpdateSearchTabResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新搜索数据源
+         *
+         * @param request UpdateSearchTabRequest
+         * @return UpdateSearchTabResponse
+         */
         public UpdateSearchTabResponse UpdateSearchTab(string tabId, UpdateSearchTabRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -984,6 +1238,12 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0
             return UpdateSearchTabWithOptions(tabId, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新搜索数据源
+         *
+         * @param request UpdateSearchTabRequest
+         * @return UpdateSearchTabResponse
+         */
         public async Task<UpdateSearchTabResponse> UpdateSearchTabAsync(string tabId, UpdateSearchTabRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

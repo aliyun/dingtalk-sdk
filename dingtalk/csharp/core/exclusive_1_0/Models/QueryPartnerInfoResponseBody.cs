@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<QueryPartnerInfoResponseBodyPartnerDeptList> PartnerDeptList { get; set; }
         public class QueryPartnerInfoResponseBodyPartnerDeptList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("memberCount")]
             [Validation(Required=false)]
             public long? MemberCount { get; set; }
@@ -35,10 +38,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string PartnerNum { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }

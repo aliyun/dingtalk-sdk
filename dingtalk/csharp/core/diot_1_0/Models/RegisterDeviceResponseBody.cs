@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class RegisterDeviceResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("deviceId")]
         [Validation(Required=false)]
         public string DeviceId { get; set; }

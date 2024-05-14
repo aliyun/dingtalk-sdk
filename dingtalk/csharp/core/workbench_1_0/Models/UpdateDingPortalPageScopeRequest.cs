@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
     public class UpdateDingPortalPageScopeRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("allVisible")]
         [Validation(Required=false)]
         public bool? AllVisible { get; set; }

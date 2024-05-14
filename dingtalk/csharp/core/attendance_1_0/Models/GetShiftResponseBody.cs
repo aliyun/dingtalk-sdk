@@ -49,6 +49,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     [Validation(Required=false)]
                     public long? BeginMin { get; set; }
 
+                    /// <summary>
+                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// </summary>
                     [NameInMap("checkTime")]
                     [Validation(Required=false)]
                     public string CheckTime { get; set; }
@@ -111,6 +114,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     [Validation(Required=false)]
                     public long? Across { get; set; }
 
+                    /// <summary>
+                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// </summary>
                     [NameInMap("checkTime")]
                     [Validation(Required=false)]
                     public string CheckTime { get; set; }
@@ -151,10 +157,16 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
 
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public string GmtCreate { get; set; }
 
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("gmtModified")]
                 [Validation(Required=false)]
                 public string GmtModified { get; set; }

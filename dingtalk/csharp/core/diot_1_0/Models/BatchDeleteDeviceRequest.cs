@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("deviceIds")]
         [Validation(Required=false)]
         public List<string> DeviceIds { get; set; }

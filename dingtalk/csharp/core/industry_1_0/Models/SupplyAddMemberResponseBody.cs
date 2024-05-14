@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public SupplyAddMemberResponseBodyResult Result { get; set; }
         public class SupplyAddMemberResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("dingMemberStatus")]
             [Validation(Required=false)]
             public string DingMemberStatus { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }

@@ -13,14 +13,23 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("eventTypes")]
         [Validation(Required=false)]
         public List<BatchRegisterEventTypeRequestEventTypes> EventTypes { get; set; }
         public class BatchRegisterEventTypeRequestEventTypes : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("eventType")]
             [Validation(Required=false)]
             public string EventType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("eventTypeName")]
             [Validation(Required=false)]
             public string EventTypeName { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetFormTemplateInfoResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("receiptFormTemplateInfoList")]
         [Validation(Required=false)]
         public List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList> ReceiptFormTemplateInfoList { get; set; }

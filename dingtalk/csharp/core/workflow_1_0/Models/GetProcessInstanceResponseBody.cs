@@ -37,6 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<string> CcUserIds { get; set; }
 
+            /// <summary>
+            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
@@ -109,6 +112,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public List<string> CcUserIds { get; set; }
 
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("date")]
                 [Validation(Required=false)]
                 public string Date { get; set; }
@@ -159,10 +165,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public string ActivityId { get; set; }
 
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("createTime")]
                 [Validation(Required=false)]
                 public string CreateTime { get; set; }
 
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("finishTime")]
                 [Validation(Required=false)]
                 public string FinishTime { get; set; }

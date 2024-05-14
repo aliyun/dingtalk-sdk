@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public string Introduction { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("preEndTime")]
         [Validation(Required=false)]
         public long? PreEndTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("preStartTime")]
         [Validation(Required=false)]
         public long? PreStartTime { get; set; }
@@ -29,10 +35,16 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public long? PublicType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

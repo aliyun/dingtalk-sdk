@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
 {
     public class QueryCollectingTraceTaskRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]
         public List<string> UserIds { get; set; }

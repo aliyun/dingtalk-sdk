@@ -33,6 +33,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
         public string OutTrackId { get; set; }

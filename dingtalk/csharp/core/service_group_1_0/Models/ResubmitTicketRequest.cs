@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class ResubmitTicketRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creatorUnionId")]
         [Validation(Required=false)]
         public string CreatorUnionId { get; set; }
@@ -35,22 +38,37 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openTemplateBizId")]
         [Validation(Required=false)]
         public string OpenTemplateBizId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processorUnionIds")]
         [Validation(Required=false)]
         public List<string> ProcessorUnionIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("scene")]
         [Validation(Required=false)]
         public string Scene { get; set; }
@@ -111,6 +129,9 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }

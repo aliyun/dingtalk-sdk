@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateOrderFlowRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("actualAmount")]
         [Validation(Required=false)]
         public long? ActualAmount { get; set; }
@@ -21,14 +24,23 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detailList")]
         [Validation(Required=false)]
         public List<CreateOrderFlowRequestDetailList> DetailList { get; set; }
         public class CreateOrderFlowRequestDetailList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("actualAmount")]
             [Validation(Required=false)]
             public long? ActualAmount { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("itemAmount")]
             [Validation(Required=false)]
             public long? ItemAmount { get; set; }
@@ -37,10 +49,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? ItemId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("itemName")]
             [Validation(Required=false)]
             public string ItemName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("scene")]
             [Validation(Required=false)]
             public long? Scene { get; set; }
@@ -55,10 +73,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public string GuardianUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("merchantId")]
         [Validation(Required=false)]
         public string MerchantId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("orderNo")]
         [Validation(Required=false)]
         public string OrderNo { get; set; }
@@ -75,10 +99,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? Timestamp { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("totalAmount")]
         [Validation(Required=false)]
         public long? TotalAmount { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

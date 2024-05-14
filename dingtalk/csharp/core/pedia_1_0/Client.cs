@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
         }
 
 
+        /**
+         * @summary 企业百科增加当前企业词条信息
+         *
+         * @param request PediaWordsAddRequest
+         * @param headers PediaWordsAddHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsAddResponse
+         */
         public PediaWordsAddResponse PediaWordsAddWithOptions(PediaWordsAddRequest request, PediaWordsAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -98,6 +106,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsAddResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科增加当前企业词条信息
+         *
+         * @param request PediaWordsAddRequest
+         * @param headers PediaWordsAddHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsAddResponse
+         */
         public async Task<PediaWordsAddResponse> PediaWordsAddWithOptionsAsync(PediaWordsAddRequest request, PediaWordsAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -167,6 +183,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsAddResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科增加当前企业词条信息
+         *
+         * @param request PediaWordsAddRequest
+         * @return PediaWordsAddResponse
+         */
         public PediaWordsAddResponse PediaWordsAdd(PediaWordsAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -174,6 +196,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsAddWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科增加当前企业词条信息
+         *
+         * @param request PediaWordsAddRequest
+         * @return PediaWordsAddResponse
+         */
         public async Task<PediaWordsAddResponse> PediaWordsAddAsync(PediaWordsAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -181,6 +209,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return await PediaWordsAddWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科针对待审核词条进行审核
+         *
+         * @param request PediaWordsApproveRequest
+         * @param headers PediaWordsApproveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsApproveResponse
+         */
         public PediaWordsApproveResponse PediaWordsApproveWithOptions(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -238,6 +274,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsApproveResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科针对待审核词条进行审核
+         *
+         * @param request PediaWordsApproveRequest
+         * @param headers PediaWordsApproveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsApproveResponse
+         */
         public async Task<PediaWordsApproveResponse> PediaWordsApproveWithOptionsAsync(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -295,6 +339,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsApproveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科针对待审核词条进行审核
+         *
+         * @param request PediaWordsApproveRequest
+         * @return PediaWordsApproveResponse
+         */
         public PediaWordsApproveResponse PediaWordsApprove(PediaWordsApproveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -302,6 +352,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsApproveWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科针对待审核词条进行审核
+         *
+         * @param request PediaWordsApproveRequest
+         * @return PediaWordsApproveResponse
+         */
         public async Task<PediaWordsApproveResponse> PediaWordsApproveAsync(PediaWordsApproveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -309,6 +365,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return await PediaWordsApproveWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科针对uuid删除当前词条
+         *
+         * @param request PediaWordsDeleteRequest
+         * @param headers PediaWordsDeleteHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsDeleteResponse
+         */
         public PediaWordsDeleteResponse PediaWordsDeleteWithOptions(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -350,6 +414,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsDeleteResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科针对uuid删除当前词条
+         *
+         * @param request PediaWordsDeleteRequest
+         * @param headers PediaWordsDeleteHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsDeleteResponse
+         */
         public async Task<PediaWordsDeleteResponse> PediaWordsDeleteWithOptionsAsync(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -391,6 +463,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科针对uuid删除当前词条
+         *
+         * @param request PediaWordsDeleteRequest
+         * @return PediaWordsDeleteResponse
+         */
         public PediaWordsDeleteResponse PediaWordsDelete(PediaWordsDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -398,6 +476,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsDeleteWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科针对uuid删除当前词条
+         *
+         * @param request PediaWordsDeleteRequest
+         * @return PediaWordsDeleteResponse
+         */
         public async Task<PediaWordsDeleteResponse> PediaWordsDeleteAsync(PediaWordsDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -405,6 +489,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return await PediaWordsDeleteWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据词条主键ID查询当前词条详情
+         *
+         * @param request PediaWordsQueryRequest
+         * @param headers PediaWordsQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsQueryResponse
+         */
         public PediaWordsQueryResponse PediaWordsQueryWithOptions(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -446,6 +538,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsQueryResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据词条主键ID查询当前词条详情
+         *
+         * @param request PediaWordsQueryRequest
+         * @param headers PediaWordsQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsQueryResponse
+         */
         public async Task<PediaWordsQueryResponse> PediaWordsQueryWithOptionsAsync(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -487,6 +587,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsQueryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据词条主键ID查询当前词条详情
+         *
+         * @param request PediaWordsQueryRequest
+         * @return PediaWordsQueryResponse
+         */
         public PediaWordsQueryResponse PediaWordsQuery(PediaWordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -494,6 +600,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsQueryWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据词条主键ID查询当前词条详情
+         *
+         * @param request PediaWordsQueryRequest
+         * @return PediaWordsQueryResponse
+         */
         public async Task<PediaWordsQueryResponse> PediaWordsQueryAsync(PediaWordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -501,6 +613,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return await PediaWordsQueryWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 分页获取企业词条信息
+         *
+         * @param request PediaWordsSearchRequest
+         * @param headers PediaWordsSearchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsSearchResponse
+         */
         public PediaWordsSearchResponse PediaWordsSearchWithOptions(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -554,6 +674,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsSearchResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 分页获取企业词条信息
+         *
+         * @param request PediaWordsSearchRequest
+         * @param headers PediaWordsSearchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsSearchResponse
+         */
         public async Task<PediaWordsSearchResponse> PediaWordsSearchWithOptionsAsync(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -607,6 +735,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsSearchResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 分页获取企业词条信息
+         *
+         * @param request PediaWordsSearchRequest
+         * @return PediaWordsSearchResponse
+         */
         public PediaWordsSearchResponse PediaWordsSearch(PediaWordsSearchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -614,6 +748,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsSearchWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 分页获取企业词条信息
+         *
+         * @param request PediaWordsSearchRequest
+         * @return PediaWordsSearchResponse
+         */
         public async Task<PediaWordsSearchResponse> PediaWordsSearchAsync(PediaWordsSearchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -621,6 +761,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return await PediaWordsSearchWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科对当前已经生效词条进行编辑
+         *
+         * @param request PediaWordsUpdateRequest
+         * @param headers PediaWordsUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsUpdateResponse
+         */
         public PediaWordsUpdateResponse PediaWordsUpdateWithOptions(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -698,6 +846,14 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsUpdateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科对当前已经生效词条进行编辑
+         *
+         * @param request PediaWordsUpdateRequest
+         * @param headers PediaWordsUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PediaWordsUpdateResponse
+         */
         public async Task<PediaWordsUpdateResponse> PediaWordsUpdateWithOptionsAsync(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -775,6 +931,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return TeaModel.ToObject<PediaWordsUpdateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 企业百科对当前已经生效词条进行编辑
+         *
+         * @param request PediaWordsUpdateRequest
+         * @return PediaWordsUpdateResponse
+         */
         public PediaWordsUpdateResponse PediaWordsUpdate(PediaWordsUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -782,6 +944,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             return PediaWordsUpdateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 企业百科对当前已经生效词条进行编辑
+         *
+         * @param request PediaWordsUpdateRequest
+         * @return PediaWordsUpdateResponse
+         */
         public async Task<PediaWordsUpdateResponse> PediaWordsUpdateAsync(PediaWordsUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

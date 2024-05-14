@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportDeptInfoRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportDeptInfoRequestBody> Body { get; set; }
@@ -17,10 +20,16 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string CreateDate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptNo")]
             [Validation(Required=false)]
             public string DeptNo { get; set; }
@@ -41,6 +50,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string SuperDeptName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("superDeptNo")]
             [Validation(Required=false)]
             public string SuperDeptNo { get; set; }
@@ -55,6 +67,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }

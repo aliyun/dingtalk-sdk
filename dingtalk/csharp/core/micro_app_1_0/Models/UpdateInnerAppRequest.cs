@@ -33,6 +33,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string OmpLink { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("opUnionId")]
         [Validation(Required=false)]
         public string OpUnionId { get; set; }

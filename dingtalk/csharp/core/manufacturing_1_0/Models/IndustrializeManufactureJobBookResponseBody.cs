@@ -39,6 +39,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string HttpCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

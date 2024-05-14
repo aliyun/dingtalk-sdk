@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class UpdateConnectorRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("connectorInfo")]
         [Validation(Required=false)]
         public List<UpdateConnectorRequestConnectorInfo> ConnectorInfo { get; set; }
@@ -45,6 +48,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public string IconMediaId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
             public string IntegratorConnectorId { get; set; }
@@ -55,6 +61,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("integratorFlag")]
         [Validation(Required=false)]
         public string IntegratorFlag { get; set; }

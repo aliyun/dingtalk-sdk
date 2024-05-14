@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
         }
 
 
+        /**
+         * @summary 调用本接口，获取用户签到记录
+         *
+         * @param request GetCheckinRecordByUserRequest
+         * @param headers GetCheckinRecordByUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCheckinRecordByUserResponse
+         */
         public GetCheckinRecordByUserResponse GetCheckinRecordByUserWithOptions(GetCheckinRecordByUserRequest request, GetCheckinRecordByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -86,6 +94,14 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return TeaModel.ToObject<GetCheckinRecordByUserResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 调用本接口，获取用户签到记录
+         *
+         * @param request GetCheckinRecordByUserRequest
+         * @param headers GetCheckinRecordByUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCheckinRecordByUserResponse
+         */
         public async Task<GetCheckinRecordByUserResponse> GetCheckinRecordByUserWithOptionsAsync(GetCheckinRecordByUserRequest request, GetCheckinRecordByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -143,6 +159,12 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return TeaModel.ToObject<GetCheckinRecordByUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 调用本接口，获取用户签到记录
+         *
+         * @param request GetCheckinRecordByUserRequest
+         * @return GetCheckinRecordByUserResponse
+         */
         public GetCheckinRecordByUserResponse GetCheckinRecordByUser(GetCheckinRecordByUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -150,6 +172,12 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return GetCheckinRecordByUserWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 调用本接口，获取用户签到记录
+         *
+         * @param request GetCheckinRecordByUserRequest
+         * @return GetCheckinRecordByUserResponse
+         */
         public async Task<GetCheckinRecordByUserResponse> GetCheckinRecordByUserAsync(GetCheckinRecordByUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

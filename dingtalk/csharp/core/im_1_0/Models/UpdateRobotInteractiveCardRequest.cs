@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateRobotInteractiveCardRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("cardBizId")]
         [Validation(Required=false)]
         public string CardBizId { get; set; }

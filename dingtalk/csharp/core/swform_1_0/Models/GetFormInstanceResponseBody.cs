@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
         [Validation(Required=false)]
         public GetFormInstanceResponseBodyResult Result { get; set; }
         public class GetFormInstanceResponseBodyResult : TeaModel {
+            /// <summary>
+            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
@@ -43,6 +46,9 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0.Models
 
             }
 
+            /// <summary>
+            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// </summary>
             [NameInMap("modifyTime")]
             [Validation(Required=false)]
             public string ModifyTime { get; set; }

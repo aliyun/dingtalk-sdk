@@ -29,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
         }
 
 
+        /**
+         * @summary 获取流程任务用印审批列表
+         *
+         * @param headers ApprovalListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApprovalListResponse
+         */
         public ApprovalListResponse ApprovalListWithOptions(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -63,6 +70,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ApprovalListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程任务用印审批列表
+         *
+         * @param headers ApprovalListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApprovalListResponse
+         */
         public async Task<ApprovalListResponse> ApprovalListWithOptionsAsync(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -97,6 +111,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ApprovalListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程任务用印审批列表
+         *
+         * @return ApprovalListResponse
+         */
         public ApprovalListResponse ApprovalList(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -104,6 +123,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return ApprovalListWithOptions(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程任务用印审批列表
+         *
+         * @return ApprovalListResponse
+         */
         public async Task<ApprovalListResponse> ApprovalListAsync(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -111,6 +135,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await ApprovalListWithOptionsAsync(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 取消企业的授权
+         *
+         * @param request CancelCorpAuthRequest
+         * @param headers CancelCorpAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CancelCorpAuthResponse
+         */
         public CancelCorpAuthResponse CancelCorpAuthWithOptions(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -146,6 +178,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CancelCorpAuthResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 取消企业的授权
+         *
+         * @param request CancelCorpAuthRequest
+         * @param headers CancelCorpAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CancelCorpAuthResponse
+         */
         public async Task<CancelCorpAuthResponse> CancelCorpAuthWithOptionsAsync(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -181,6 +221,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CancelCorpAuthResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 取消企业的授权
+         *
+         * @param request CancelCorpAuthRequest
+         * @return CancelCorpAuthResponse
+         */
         public CancelCorpAuthResponse CancelCorpAuth(CancelCorpAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -188,6 +234,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return CancelCorpAuthWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 取消企业的授权
+         *
+         * @param request CancelCorpAuthRequest
+         * @return CancelCorpAuthResponse
+         */
         public async Task<CancelCorpAuthResponse> CancelCorpAuthAsync(CancelCorpAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -195,6 +247,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await CancelCorpAuthWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 套餐转售1（分润模式）
+         *
+         * @param request ChannelOrdersRequest
+         * @param headers ChannelOrdersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ChannelOrdersResponse
+         */
         public ChannelOrdersResponse ChannelOrdersWithOptions(ChannelOrdersRequest request, ChannelOrdersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -256,6 +316,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ChannelOrdersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 套餐转售1（分润模式）
+         *
+         * @param request ChannelOrdersRequest
+         * @param headers ChannelOrdersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ChannelOrdersResponse
+         */
         public async Task<ChannelOrdersResponse> ChannelOrdersWithOptionsAsync(ChannelOrdersRequest request, ChannelOrdersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -317,6 +385,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ChannelOrdersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 套餐转售1（分润模式）
+         *
+         * @param request ChannelOrdersRequest
+         * @return ChannelOrdersResponse
+         */
         public ChannelOrdersResponse ChannelOrders(ChannelOrdersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -324,6 +398,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return ChannelOrdersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 套餐转售1（分润模式）
+         *
+         * @param request ChannelOrdersRequest
+         * @return ChannelOrdersResponse
+         */
         public async Task<ChannelOrdersResponse> ChannelOrdersAsync(ChannelOrdersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -331,6 +411,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await ChannelOrdersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 生成企业实名的跳转地址
+         *
+         * @param request CorpRealnameRequest
+         * @param headers CorpRealnameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CorpRealnameResponse
+         */
         public CorpRealnameResponse CorpRealnameWithOptions(CorpRealnameRequest request, CorpRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -376,6 +464,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CorpRealnameResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 生成企业实名的跳转地址
+         *
+         * @param request CorpRealnameRequest
+         * @param headers CorpRealnameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CorpRealnameResponse
+         */
         public async Task<CorpRealnameResponse> CorpRealnameWithOptionsAsync(CorpRealnameRequest request, CorpRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -421,6 +517,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CorpRealnameResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 生成企业实名的跳转地址
+         *
+         * @param request CorpRealnameRequest
+         * @return CorpRealnameResponse
+         */
         public CorpRealnameResponse CorpRealname(CorpRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -428,6 +530,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return CorpRealnameWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 生成企业实名的跳转地址
+         *
+         * @param request CorpRealnameRequest
+         * @return CorpRealnameResponse
+         */
         public async Task<CorpRealnameResponse> CorpRealnameAsync(CorpRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -435,6 +543,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await CorpRealnameWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 钉钉ISV服务商数据初始化
+         *
+         * @param request CreateDevelopersRequest
+         * @param headers CreateDevelopersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDevelopersResponse
+         */
         public CreateDevelopersResponse CreateDevelopersWithOptions(CreateDevelopersRequest request, CreateDevelopersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -476,6 +592,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CreateDevelopersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 钉钉ISV服务商数据初始化
+         *
+         * @param request CreateDevelopersRequest
+         * @param headers CreateDevelopersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDevelopersResponse
+         */
         public async Task<CreateDevelopersResponse> CreateDevelopersWithOptionsAsync(CreateDevelopersRequest request, CreateDevelopersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -517,6 +641,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CreateDevelopersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 钉钉ISV服务商数据初始化
+         *
+         * @param request CreateDevelopersRequest
+         * @return CreateDevelopersResponse
+         */
         public CreateDevelopersResponse CreateDevelopers(CreateDevelopersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -524,6 +654,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return CreateDevelopersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 钉钉ISV服务商数据初始化
+         *
+         * @param request CreateDevelopersRequest
+         * @return CreateDevelopersResponse
+         */
         public async Task<CreateDevelopersResponse> CreateDevelopersAsync(CreateDevelopersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -531,6 +667,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await CreateDevelopersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 通过API发起签署流程
+         *
+         * @param request CreateProcessRequest
+         * @param headers CreateProcessHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateProcessResponse
+         */
         public CreateProcessResponse CreateProcessWithOptions(CreateProcessRequest request, CreateProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -596,6 +740,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CreateProcessResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过API发起签署流程
+         *
+         * @param request CreateProcessRequest
+         * @param headers CreateProcessHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateProcessResponse
+         */
         public async Task<CreateProcessResponse> CreateProcessWithOptionsAsync(CreateProcessRequest request, CreateProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -661,6 +813,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<CreateProcessResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过API发起签署流程
+         *
+         * @param request CreateProcessRequest
+         * @return CreateProcessResponse
+         */
         public CreateProcessResponse CreateProcess(CreateProcessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -668,6 +826,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return CreateProcessWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 通过API发起签署流程
+         *
+         * @param request CreateProcessRequest
+         * @return CreateProcessResponse
+         */
         public async Task<CreateProcessResponse> CreateProcessAsync(CreateProcessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -675,6 +839,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await CreateProcessWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取钉钉审批实例-电子附件信息
+         *
+         * @param headers GetAttachsApprovalHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAttachsApprovalResponse
+         */
         public GetAttachsApprovalResponse GetAttachsApprovalWithOptions(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -713,6 +884,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetAttachsApprovalResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取钉钉审批实例-电子附件信息
+         *
+         * @param headers GetAttachsApprovalHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAttachsApprovalResponse
+         */
         public async Task<GetAttachsApprovalResponse> GetAttachsApprovalWithOptionsAsync(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -751,6 +929,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetAttachsApprovalResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取钉钉审批实例-电子附件信息
+         *
+         * @return GetAttachsApprovalResponse
+         */
         public GetAttachsApprovalResponse GetAttachsApproval(string instanceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -758,6 +941,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetAttachsApprovalWithOptions(instanceId, headers, runtime);
         }
 
+        /**
+         * @summary 获取钉钉审批实例-电子附件信息
+         *
+         * @return GetAttachsApprovalResponse
+         */
         public async Task<GetAttachsApprovalResponse> GetAttachsApprovalAsync(string instanceId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -765,6 +953,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetAttachsApprovalWithOptionsAsync(instanceId, headers, runtime);
         }
 
+        /**
+         * @summary 生成授权页面地址
+         *
+         * @param request GetAuthUrlRequest
+         * @param headers GetAuthUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAuthUrlResponse
+         */
         public GetAuthUrlResponse GetAuthUrlWithOptions(GetAuthUrlRequest request, GetAuthUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -806,6 +1002,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetAuthUrlResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 生成授权页面地址
+         *
+         * @param request GetAuthUrlRequest
+         * @param headers GetAuthUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAuthUrlResponse
+         */
         public async Task<GetAuthUrlResponse> GetAuthUrlWithOptionsAsync(GetAuthUrlRequest request, GetAuthUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -847,6 +1051,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetAuthUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 生成授权页面地址
+         *
+         * @param request GetAuthUrlRequest
+         * @return GetAuthUrlResponse
+         */
         public GetAuthUrlResponse GetAuthUrl(GetAuthUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -854,6 +1064,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetAuthUrlWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 生成授权页面地址
+         *
+         * @param request GetAuthUrlRequest
+         * @return GetAuthUrlResponse
+         */
         public async Task<GetAuthUrlResponse> GetAuthUrlAsync(GetAuthUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -861,6 +1077,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetAuthUrlWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询套餐余量
+         *
+         * @param headers GetContractMarginHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetContractMarginResponse
+         */
         public GetContractMarginResponse GetContractMarginWithOptions(GetContractMarginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -895,6 +1118,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetContractMarginResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询套餐余量
+         *
+         * @param headers GetContractMarginHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetContractMarginResponse
+         */
         public async Task<GetContractMarginResponse> GetContractMarginWithOptionsAsync(GetContractMarginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -929,6 +1159,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetContractMarginResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询套餐余量
+         *
+         * @return GetContractMarginResponse
+         */
         public GetContractMarginResponse GetContractMargin()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -936,6 +1171,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetContractMarginWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 查询套餐余量
+         *
+         * @return GetContractMarginResponse
+         */
         public async Task<GetContractMarginResponse> GetContractMarginAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -943,6 +1183,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetContractMarginWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 获取企业控制台地址
+         *
+         * @param headers GetCorpConsoleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCorpConsoleResponse
+         */
         public GetCorpConsoleResponse GetCorpConsoleWithOptions(GetCorpConsoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -977,6 +1224,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetCorpConsoleResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取企业控制台地址
+         *
+         * @param headers GetCorpConsoleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCorpConsoleResponse
+         */
         public async Task<GetCorpConsoleResponse> GetCorpConsoleWithOptionsAsync(GetCorpConsoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1011,6 +1265,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetCorpConsoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取企业控制台地址
+         *
+         * @return GetCorpConsoleResponse
+         */
         public GetCorpConsoleResponse GetCorpConsole()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1018,6 +1277,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetCorpConsoleWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 获取企业控制台地址
+         *
+         * @return GetCorpConsoleResponse
+         */
         public async Task<GetCorpConsoleResponse> GetCorpConsoleAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1025,6 +1289,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetCorpConsoleWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 查询企业信息
+         *
+         * @param headers GetCorpInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCorpInfoResponse
+         */
         public GetCorpInfoResponse GetCorpInfoWithOptions(GetCorpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1059,6 +1330,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetCorpInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询企业信息
+         *
+         * @param headers GetCorpInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCorpInfoResponse
+         */
         public async Task<GetCorpInfoResponse> GetCorpInfoWithOptionsAsync(GetCorpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1093,6 +1371,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetCorpInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询企业信息
+         *
+         * @return GetCorpInfoResponse
+         */
         public GetCorpInfoResponse GetCorpInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1100,6 +1383,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetCorpInfoWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 查询企业信息
+         *
+         * @return GetCorpInfoResponse
+         */
         public async Task<GetCorpInfoResponse> GetCorpInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1107,6 +1395,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetCorpInfoWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 获取签署人签署地址
+         *
+         * @param request GetExecuteUrlRequest
+         * @param headers GetExecuteUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetExecuteUrlResponse
+         */
         public GetExecuteUrlResponse GetExecuteUrlWithOptions(GetExecuteUrlRequest request, GetExecuteUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1156,6 +1452,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetExecuteUrlResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取签署人签署地址
+         *
+         * @param request GetExecuteUrlRequest
+         * @param headers GetExecuteUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetExecuteUrlResponse
+         */
         public async Task<GetExecuteUrlResponse> GetExecuteUrlWithOptionsAsync(GetExecuteUrlRequest request, GetExecuteUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1205,6 +1509,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetExecuteUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取签署人签署地址
+         *
+         * @param request GetExecuteUrlRequest
+         * @return GetExecuteUrlResponse
+         */
         public GetExecuteUrlResponse GetExecuteUrl(GetExecuteUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1212,6 +1522,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetExecuteUrlWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取签署人签署地址
+         *
+         * @param request GetExecuteUrlRequest
+         * @return GetExecuteUrlResponse
+         */
         public async Task<GetExecuteUrlResponse> GetExecuteUrlAsync(GetExecuteUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1219,6 +1535,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetExecuteUrlWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取文件详情
+         *
+         * @param headers GetFileInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileInfoResponse
+         */
         public GetFileInfoResponse GetFileInfoWithOptions(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1253,6 +1576,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFileInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取文件详情
+         *
+         * @param headers GetFileInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileInfoResponse
+         */
         public async Task<GetFileInfoResponse> GetFileInfoWithOptionsAsync(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1287,6 +1617,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFileInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取文件详情
+         *
+         * @return GetFileInfoResponse
+         */
         public GetFileInfoResponse GetFileInfo(string fileId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1294,6 +1629,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetFileInfoWithOptions(fileId, headers, runtime);
         }
 
+        /**
+         * @summary 获取文件详情
+         *
+         * @return GetFileInfoResponse
+         */
         public async Task<GetFileInfoResponse> GetFileInfoAsync(string fileId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1301,6 +1641,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetFileInfoWithOptionsAsync(fileId, headers, runtime);
         }
 
+        /**
+         * @summary 获取文件上传地址
+         *
+         * @param request GetFileUploadUrlRequest
+         * @param headers GetFileUploadUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileUploadUrlResponse
+         */
         public GetFileUploadUrlResponse GetFileUploadUrlWithOptions(GetFileUploadUrlRequest request, GetFileUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1358,6 +1706,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFileUploadUrlResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取文件上传地址
+         *
+         * @param request GetFileUploadUrlRequest
+         * @param headers GetFileUploadUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileUploadUrlResponse
+         */
         public async Task<GetFileUploadUrlResponse> GetFileUploadUrlWithOptionsAsync(GetFileUploadUrlRequest request, GetFileUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1415,6 +1771,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFileUploadUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取文件上传地址
+         *
+         * @param request GetFileUploadUrlRequest
+         * @return GetFileUploadUrlResponse
+         */
         public GetFileUploadUrlResponse GetFileUploadUrl(GetFileUploadUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1422,6 +1784,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetFileUploadUrlWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取文件上传地址
+         *
+         * @param request GetFileUploadUrlRequest
+         * @return GetFileUploadUrlResponse
+         */
         public async Task<GetFileUploadUrlResponse> GetFileUploadUrlAsync(GetFileUploadUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1429,6 +1797,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetFileUploadUrlWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程详细信息及操作记录
+         *
+         * @param headers GetFlowDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlowDetailResponse
+         */
         public GetFlowDetailResponse GetFlowDetailWithOptions(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1463,6 +1838,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFlowDetailResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程详细信息及操作记录
+         *
+         * @param headers GetFlowDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlowDetailResponse
+         */
         public async Task<GetFlowDetailResponse> GetFlowDetailWithOptionsAsync(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1497,6 +1879,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFlowDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程详细信息及操作记录
+         *
+         * @return GetFlowDetailResponse
+         */
         public GetFlowDetailResponse GetFlowDetail(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1504,6 +1891,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetFlowDetailWithOptions(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程详细信息及操作记录
+         *
+         * @return GetFlowDetailResponse
+         */
         public async Task<GetFlowDetailResponse> GetFlowDetailAsync(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1511,6 +1903,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetFlowDetailWithOptionsAsync(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+         *
+         * @param headers GetFlowDocsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlowDocsResponse
+         */
         public GetFlowDocsResponse GetFlowDocsWithOptions(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1545,6 +1944,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFlowDocsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+         *
+         * @param headers GetFlowDocsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlowDocsResponse
+         */
         public async Task<GetFlowDocsResponse> GetFlowDocsWithOptionsAsync(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1579,6 +1985,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetFlowDocsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+         *
+         * @return GetFlowDocsResponse
+         */
         public GetFlowDocsResponse GetFlowDocs(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1586,6 +1997,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetFlowDocsWithOptions(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
+         *
+         * @return GetFlowDocsResponse
+         */
         public async Task<GetFlowDocsResponse> GetFlowDocsAsync(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1593,6 +2009,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetFlowDocsWithOptionsAsync(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取企业的e签宝微应用当前状态
+         *
+         * @param headers GetIsvStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetIsvStatusResponse
+         */
         public GetIsvStatusResponse GetIsvStatusWithOptions(GetIsvStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1627,6 +2050,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetIsvStatusResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取企业的e签宝微应用当前状态
+         *
+         * @param headers GetIsvStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetIsvStatusResponse
+         */
         public async Task<GetIsvStatusResponse> GetIsvStatusWithOptionsAsync(GetIsvStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1661,6 +2091,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetIsvStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取企业的e签宝微应用当前状态
+         *
+         * @return GetIsvStatusResponse
+         */
         public GetIsvStatusResponse GetIsvStatus()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1668,6 +2103,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetIsvStatusWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 获取企业的e签宝微应用当前状态
+         *
+         * @return GetIsvStatusResponse
+         */
         public async Task<GetIsvStatusResponse> GetIsvStatusAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1675,6 +2115,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetIsvStatusWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 获取流程签署的详细信息
+         *
+         * @param headers GetSignDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignDetailResponse
+         */
         public GetSignDetailResponse GetSignDetailWithOptions(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1709,6 +2156,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetSignDetailResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程签署的详细信息
+         *
+         * @param headers GetSignDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignDetailResponse
+         */
         public async Task<GetSignDetailResponse> GetSignDetailWithOptionsAsync(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1743,6 +2197,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetSignDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取流程签署的详细信息
+         *
+         * @return GetSignDetailResponse
+         */
         public GetSignDetailResponse GetSignDetail(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1750,6 +2209,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetSignDetailWithOptions(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 获取流程签署的详细信息
+         *
+         * @return GetSignDetailResponse
+         */
         public async Task<GetSignDetailResponse> GetSignDetailAsync(string taskId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1757,6 +2221,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetSignDetailWithOptionsAsync(taskId, headers, runtime);
         }
 
+        /**
+         * @summary 查询个人信息
+         *
+         * @param headers GetUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserInfoResponse
+         */
         public GetUserInfoResponse GetUserInfoWithOptions(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1791,6 +2262,13 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetUserInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询个人信息
+         *
+         * @param headers GetUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetUserInfoResponse
+         */
         public async Task<GetUserInfoResponse> GetUserInfoWithOptionsAsync(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1825,6 +2303,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<GetUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询个人信息
+         *
+         * @return GetUserInfoResponse
+         */
         public GetUserInfoResponse GetUserInfo(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1832,6 +2315,11 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return GetUserInfoWithOptions(userId, headers, runtime);
         }
 
+        /**
+         * @summary 查询个人信息
+         *
+         * @return GetUserInfoResponse
+         */
         public async Task<GetUserInfoResponse> GetUserInfoAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1839,6 +2327,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetUserInfoWithOptionsAsync(userId, headers, runtime);
         }
 
+        /**
+         * @summary 获取发起签署任务的地址
+         *
+         * @param request ProcessStartRequest
+         * @param headers ProcessStartHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ProcessStartResponse
+         */
         public ProcessStartResponse ProcessStartWithOptions(ProcessStartRequest request, ProcessStartHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1908,6 +2404,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ProcessStartResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取发起签署任务的地址
+         *
+         * @param request ProcessStartRequest
+         * @param headers ProcessStartHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ProcessStartResponse
+         */
         public async Task<ProcessStartResponse> ProcessStartWithOptionsAsync(ProcessStartRequest request, ProcessStartHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1977,6 +2481,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ProcessStartResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取发起签署任务的地址
+         *
+         * @param request ProcessStartRequest
+         * @return ProcessStartResponse
+         */
         public ProcessStartResponse ProcessStart(ProcessStartRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1984,6 +2494,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return ProcessStartWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取发起签署任务的地址
+         *
+         * @param request ProcessStartRequest
+         * @return ProcessStartResponse
+         */
         public async Task<ProcessStartResponse> ProcessStartAsync(ProcessStartRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1991,6 +2507,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await ProcessStartWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 套餐转售2（底价结算模式）
+         *
+         * @param request ResaleOrderRequest
+         * @param headers ResaleOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ResaleOrderResponse
+         */
         public ResaleOrderResponse ResaleOrderWithOptions(ResaleOrderRequest request, ResaleOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2048,6 +2572,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ResaleOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 套餐转售2（底价结算模式）
+         *
+         * @param request ResaleOrderRequest
+         * @param headers ResaleOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ResaleOrderResponse
+         */
         public async Task<ResaleOrderResponse> ResaleOrderWithOptionsAsync(ResaleOrderRequest request, ResaleOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2105,6 +2637,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<ResaleOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 套餐转售2（底价结算模式）
+         *
+         * @param request ResaleOrderRequest
+         * @return ResaleOrderResponse
+         */
         public ResaleOrderResponse ResaleOrder(ResaleOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2112,6 +2650,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return ResaleOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 套餐转售2（底价结算模式）
+         *
+         * @param request ResaleOrderRequest
+         * @return ResaleOrderResponse
+         */
         public async Task<ResaleOrderResponse> ResaleOrderAsync(ResaleOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2119,6 +2663,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await ResaleOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取跳转到个人实名的地址
+         *
+         * @param request UsersRealnameRequest
+         * @param headers UsersRealnameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UsersRealnameResponse
+         */
         public UsersRealnameResponse UsersRealnameWithOptions(UsersRealnameRequest request, UsersRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2164,6 +2716,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<UsersRealnameResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取跳转到个人实名的地址
+         *
+         * @param request UsersRealnameRequest
+         * @param headers UsersRealnameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UsersRealnameResponse
+         */
         public async Task<UsersRealnameResponse> UsersRealnameWithOptionsAsync(UsersRealnameRequest request, UsersRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2209,6 +2769,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return TeaModel.ToObject<UsersRealnameResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取跳转到个人实名的地址
+         *
+         * @param request UsersRealnameRequest
+         * @return UsersRealnameResponse
+         */
         public UsersRealnameResponse UsersRealname(UsersRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2216,6 +2782,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return UsersRealnameWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取跳转到个人实名的地址
+         *
+         * @param request UsersRealnameRequest
+         * @return UsersRealnameResponse
+         */
         public async Task<UsersRealnameResponse> UsersRealnameAsync(UsersRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

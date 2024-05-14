@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         }
 
 
+        /**
+         * @summary 创建内容
+         *
+         * @param request CreateFeedRequest
+         * @param headers CreateFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFeedResponse
+         */
         public CreateFeedResponse CreateFeedWithOptions(CreateFeedRequest request, CreateFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<CreateFeedResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建内容
+         *
+         * @param request CreateFeedRequest
+         * @param headers CreateFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFeedResponse
+         */
         public async Task<CreateFeedResponse> CreateFeedWithOptionsAsync(CreateFeedRequest request, CreateFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<CreateFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建内容
+         *
+         * @param request CreateFeedRequest
+         * @return CreateFeedResponse
+         */
         public CreateFeedResponse CreateFeed(CreateFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return CreateFeedWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建内容
+         *
+         * @param request CreateFeedRequest
+         * @return CreateFeedResponse
+         */
         public async Task<CreateFeedResponse> CreateFeedAsync(CreateFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return await CreateFeedWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取feed的详细信息，包括子课程的信息
+         *
+         * @param request GetFeedRequest
+         * @param headers GetFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFeedResponse
+         */
         public GetFeedResponse GetFeedWithOptions(string feedId, GetFeedRequest request, GetFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -170,6 +206,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<GetFeedResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取feed的详细信息，包括子课程的信息
+         *
+         * @param request GetFeedRequest
+         * @param headers GetFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFeedResponse
+         */
         public async Task<GetFeedResponse> GetFeedWithOptionsAsync(string feedId, GetFeedRequest request, GetFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -207,6 +251,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<GetFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取feed的详细信息，包括子课程的信息
+         *
+         * @param request GetFeedRequest
+         * @return GetFeedResponse
+         */
         public GetFeedResponse GetFeed(string feedId, GetFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -214,6 +264,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return GetFeedWithOptions(feedId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取feed的详细信息，包括子课程的信息
+         *
+         * @param request GetFeedRequest
+         * @return GetFeedResponse
+         */
         public async Task<GetFeedResponse> GetFeedAsync(string feedId, GetFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -221,6 +277,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return await GetFeedWithOptionsAsync(feedId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取oss上传凭证
+         *
+         * @param request GetMediaCerficateRequest
+         * @param headers GetMediaCerficateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMediaCerficateResponse
+         */
         public GetMediaCerficateResponse GetMediaCerficateWithOptions(GetMediaCerficateRequest request, GetMediaCerficateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -282,6 +346,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<GetMediaCerficateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取oss上传凭证
+         *
+         * @param request GetMediaCerficateRequest
+         * @param headers GetMediaCerficateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMediaCerficateResponse
+         */
         public async Task<GetMediaCerficateResponse> GetMediaCerficateWithOptionsAsync(GetMediaCerficateRequest request, GetMediaCerficateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -343,6 +415,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<GetMediaCerficateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取oss上传凭证
+         *
+         * @param request GetMediaCerficateRequest
+         * @return GetMediaCerficateResponse
+         */
         public GetMediaCerficateResponse GetMediaCerficate(GetMediaCerficateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -350,6 +428,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return GetMediaCerficateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取oss上传凭证
+         *
+         * @param request GetMediaCerficateRequest
+         * @return GetMediaCerficateResponse
+         */
         public async Task<GetMediaCerficateResponse> GetMediaCerficateAsync(GetMediaCerficateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -357,6 +441,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return await GetMediaCerficateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 展示机构内观看内容的统计信息
+         *
+         * @param request ListItemUserDataRequest
+         * @param headers ListItemUserDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListItemUserDataResponse
+         */
         public ListItemUserDataResponse ListItemUserDataWithOptions(string itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -389,6 +481,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<ListItemUserDataResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 展示机构内观看内容的统计信息
+         *
+         * @param request ListItemUserDataRequest
+         * @param headers ListItemUserDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListItemUserDataResponse
+         */
         public async Task<ListItemUserDataResponse> ListItemUserDataWithOptionsAsync(string itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -421,6 +521,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<ListItemUserDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 展示机构内观看内容的统计信息
+         *
+         * @param request ListItemUserDataRequest
+         * @return ListItemUserDataResponse
+         */
         public ListItemUserDataResponse ListItemUserData(string itemId, ListItemUserDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -428,6 +534,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return ListItemUserDataWithOptions(itemId, request, headers, runtime);
         }
 
+        /**
+         * @summary 展示机构内观看内容的统计信息
+         *
+         * @param request ListItemUserDataRequest
+         * @return ListItemUserDataResponse
+         */
         public async Task<ListItemUserDataResponse> ListItemUserDataAsync(string itemId, ListItemUserDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -435,6 +547,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return await ListItemUserDataWithOptionsAsync(itemId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取机构下课程列表
+         *
+         * @param request PageFeedRequest
+         * @param headers PageFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PageFeedResponse
+         */
         public PageFeedResponse PageFeedWithOptions(PageFeedRequest request, PageFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -481,6 +601,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<PageFeedResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取机构下课程列表
+         *
+         * @param request PageFeedRequest
+         * @param headers PageFeedHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PageFeedResponse
+         */
         public async Task<PageFeedResponse> PageFeedWithOptionsAsync(PageFeedRequest request, PageFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -527,6 +655,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return TeaModel.ToObject<PageFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取机构下课程列表
+         *
+         * @param request PageFeedRequest
+         * @return PageFeedResponse
+         */
         public PageFeedResponse PageFeed(PageFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -534,6 +668,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             return PageFeedWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取机构下课程列表
+         *
+         * @param request PageFeedRequest
+         * @return PageFeedResponse
+         */
         public async Task<PageFeedResponse> PageFeedAsync(PageFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

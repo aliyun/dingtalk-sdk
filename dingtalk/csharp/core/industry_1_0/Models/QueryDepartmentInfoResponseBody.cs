@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public QueryDepartmentInfoResponseBodyContent Content { get; set; }
         public class QueryDepartmentInfoResponseBodyContent : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("department")]
             [Validation(Required=false)]
             public QueryDepartmentInfoResponseBodyContentDepartment Department { get; set; }
@@ -37,10 +40,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public int? DeptType { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtCreateStr")]
                 [Validation(Required=false)]
                 public string GmtCreateStr { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtModifiedStr")]
                 [Validation(Required=false)]
                 public string GmtModifiedStr { get; set; }
@@ -71,6 +80,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<QueryDepartmentInfoResponseBodyContentExtendInfos> ExtendInfos { get; set; }
             public class QueryDepartmentInfoResponseBodyContentExtendInfos : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("deptCode")]
                 [Validation(Required=false)]
                 public string DeptCode { get; set; }
@@ -87,10 +99,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string DeptExtendValue { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtCreateStr")]
                 [Validation(Required=false)]
                 public string GmtCreateStr { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtModifiedStr")]
                 [Validation(Required=false)]
                 public string GmtModifiedStr { get; set; }

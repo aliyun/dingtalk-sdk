@@ -21,14 +21,23 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string AtDingUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("msgContent")]
         [Validation(Required=false)]
         public string MsgContent { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("msgType")]
         [Validation(Required=false)]
         public string MsgType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openConversationIds")]
         [Validation(Required=false)]
         public List<string> OpenConversationIds { get; set; }

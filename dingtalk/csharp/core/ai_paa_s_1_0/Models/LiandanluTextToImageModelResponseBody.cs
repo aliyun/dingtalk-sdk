@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 {
     public class LiandanluTextToImageModelResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public LiandanluTextToImageModelResponseBodyResult Result { get; set; }
@@ -27,6 +30,9 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

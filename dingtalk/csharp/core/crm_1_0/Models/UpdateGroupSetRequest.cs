@@ -29,6 +29,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public int? NoticeToped { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openGroupSetId")]
         [Validation(Required=false)]
         public string OpenGroupSetId { get; set; }

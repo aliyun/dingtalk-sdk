@@ -97,10 +97,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields> RollUpSummaryFields { get; set; }
             public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("aggregator")]
                 [Validation(Required=false)]
                 public string Aggregator { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }

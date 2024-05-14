@@ -19,6 +19,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("customerInstanceId")]
         [Validation(Required=false)]
         public string CustomerInstanceId { get; set; }

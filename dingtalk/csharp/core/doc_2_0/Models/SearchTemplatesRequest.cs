@@ -43,20 +43,32 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("param")]
         [Validation(Required=false)]
         public SearchTemplatesRequestParam Param { get; set; }
         public class SearchTemplatesRequestParam : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("belong")]
             [Validation(Required=false)]
             public string Belong { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("searchName")]
             [Validation(Required=false)]
             public string SearchName { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

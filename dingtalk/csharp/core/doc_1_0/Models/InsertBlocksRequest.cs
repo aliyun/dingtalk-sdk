@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class InsertBlocksRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("blocks")]
         [Validation(Required=false)]
         public List<InsertBlocksRequestBlocks> Blocks { get; set; }
         public class InsertBlocksRequestBlocks : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("blockType")]
             [Validation(Required=false)]
             public string BlockType { get; set; }
@@ -25,6 +31,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [Validation(Required=false)]
                 public List<InsertBlocksRequestBlocksParagraphChildren> Children { get; set; }
                 public class InsertBlocksRequestBlocksParagraphChildren : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("elementType")]
                     [Validation(Required=false)]
                     public string ElementType { get; set; }
@@ -33,6 +42,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                     [Validation(Required=false)]
                     public InsertBlocksRequestBlocksParagraphChildrenText Text { get; set; }
                     public class InsertBlocksRequestBlocksParagraphChildrenText : TeaModel {
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("content")]
                         [Validation(Required=false)]
                         public string Content { get; set; }
@@ -45,6 +57,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                             [Validation(Required=false)]
                             public bool? Bold { get; set; }
 
+                            /// <summary>
+                            /// This parameter is required.
+                            /// </summary>
                             [NameInMap("dataType")]
                             [Validation(Required=false)]
                             public string DataType { get; set; }
@@ -87,6 +102,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

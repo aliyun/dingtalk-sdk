@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateInterconnectionRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("interconnections")]
         [Validation(Required=false)]
         public List<CreateInterconnectionRequestInterconnections> Interconnections { get; set; }
@@ -25,18 +28,30 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [Validation(Required=false)]
             public string AppUserDynamics { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appUserMobile")]
             [Validation(Required=false)]
             public string AppUserMobile { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appUserName")]
             [Validation(Required=false)]
             public string AppUserName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("channelCode")]
             [Validation(Required=false)]
             public string ChannelCode { get; set; }

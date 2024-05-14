@@ -19,10 +19,16 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("recycleItemIds")]
         [Validation(Required=false)]
         public List<string> RecycleItemIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

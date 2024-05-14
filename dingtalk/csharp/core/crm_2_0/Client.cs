@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_2_0
         }
 
 
+        /**
+         * @summary 获取关系数据查重规则
+         *
+         * @param request GetRelationUkSettingRequest
+         * @param headers GetRelationUkSettingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelationUkSettingResponse
+         */
         public GetRelationUkSettingResponse GetRelationUkSettingWithOptions(GetRelationUkSettingRequest request, GetRelationUkSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -66,6 +74,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_2_0
             return TeaModel.ToObject<GetRelationUkSettingResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取关系数据查重规则
+         *
+         * @param request GetRelationUkSettingRequest
+         * @param headers GetRelationUkSettingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelationUkSettingResponse
+         */
         public async Task<GetRelationUkSettingResponse> GetRelationUkSettingWithOptionsAsync(GetRelationUkSettingRequest request, GetRelationUkSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -103,6 +119,12 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_2_0
             return TeaModel.ToObject<GetRelationUkSettingResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取关系数据查重规则
+         *
+         * @param request GetRelationUkSettingRequest
+         * @return GetRelationUkSettingResponse
+         */
         public GetRelationUkSettingResponse GetRelationUkSetting(GetRelationUkSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -110,6 +132,12 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_2_0
             return GetRelationUkSettingWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取关系数据查重规则
+         *
+         * @param request GetRelationUkSettingRequest
+         * @return GetRelationUkSettingResponse
+         */
         public async Task<GetRelationUkSettingResponse> GetRelationUkSettingAsync(GetRelationUkSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -25,10 +25,16 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string ChannelTalentId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("deliverJobId")]
         [Validation(Required=false)]
         public string DeliverJobId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
@@ -37,10 +43,16 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string ResumeChannelUrl { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("resumeData")]
         [Validation(Required=false)]
         public CollectResumeDetailRequestResumeData ResumeData { get; set; }
         public class CollectResumeDetailRequestResumeData : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("baseInfo")]
             [Validation(Required=false)]
             public CollectResumeDetailRequestResumeDataBaseInfo BaseInfo { get; set; }
@@ -89,6 +101,9 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
                 [Validation(Required=false)]
                 public int? Married { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }

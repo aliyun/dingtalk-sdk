@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkbay_max_1_0
         }
 
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @param headers QueryBaymaxSkillLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBaymaxSkillLogResponse
+         */
         public QueryBaymaxSkillLogResponse QueryBaymaxSkillLogWithOptions(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkbay_max_1_0
             return TeaModel.ToObject<QueryBaymaxSkillLogResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @param headers QueryBaymaxSkillLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBaymaxSkillLogResponse
+         */
         public async Task<QueryBaymaxSkillLogResponse> QueryBaymaxSkillLogWithOptionsAsync(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalkbay_max_1_0
             return TeaModel.ToObject<QueryBaymaxSkillLogResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @return QueryBaymaxSkillLogResponse
+         */
         public QueryBaymaxSkillLogResponse QueryBaymaxSkillLog(QueryBaymaxSkillLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalkbay_max_1_0
             return QueryBaymaxSkillLogWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @return QueryBaymaxSkillLogResponse
+         */
         public async Task<QueryBaymaxSkillLogResponse> QueryBaymaxSkillLogAsync(QueryBaymaxSkillLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

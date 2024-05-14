@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListSeniorSettingsRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("seniorStaffId")]
         [Validation(Required=false)]
         public string SeniorStaffId { get; set; }

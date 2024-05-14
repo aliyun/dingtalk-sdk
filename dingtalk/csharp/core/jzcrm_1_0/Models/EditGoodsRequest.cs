@@ -49,6 +49,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string Cpimg { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("cpname")]
             [Validation(Required=false)]
             public string Cpname { get; set; }
@@ -65,6 +68,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string Cptype { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("cpunit")]
             [Validation(Required=false)]
             public string Cpunit { get; set; }
@@ -73,6 +79,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string Cpweight { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
@@ -125,12 +134,18 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string Typeid { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("unitrate")]
             [Validation(Required=false)]
             public string Unitrate { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
@@ -139,6 +154,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]
         public long? Stamp { get; set; }

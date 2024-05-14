@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public EditCustomerRequestData Data { get; set; }
         public class EditCustomerRequestData : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
@@ -37,6 +40,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string KhCity { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("kh_class")]
             [Validation(Required=false)]
             public string KhClass { get; set; }
@@ -125,6 +131,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string KhJibie { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("kh_name")]
             [Validation(Required=false)]
             public string KhName { get; set; }
@@ -207,6 +216,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
@@ -215,6 +227,9 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]
         public long? Stamp { get; set; }

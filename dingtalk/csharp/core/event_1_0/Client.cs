@@ -30,6 +30,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
         }
 
 
+        /**
+         * @summary 调用本获取推送失败的变更事件。
+         *
+         * @param request GetCallBackFaileResultRequest
+         * @param headers GetCallBackFaileResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCallBackFaileResultResponse
+         */
         public GetCallBackFaileResultResponse GetCallBackFaileResultWithOptions(GetCallBackFaileResultRequest request, GetCallBackFaileResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -71,6 +79,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<GetCallBackFaileResultResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 调用本获取推送失败的变更事件。
+         *
+         * @param request GetCallBackFaileResultRequest
+         * @param headers GetCallBackFaileResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCallBackFaileResultResponse
+         */
         public async Task<GetCallBackFaileResultResponse> GetCallBackFaileResultWithOptionsAsync(GetCallBackFaileResultRequest request, GetCallBackFaileResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -112,6 +128,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<GetCallBackFaileResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 调用本获取推送失败的变更事件。
+         *
+         * @param request GetCallBackFaileResultRequest
+         * @return GetCallBackFaileResultResponse
+         */
         public GetCallBackFaileResultResponse GetCallBackFaileResult(GetCallBackFaileResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -119,6 +141,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return GetCallBackFaileResultWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 调用本获取推送失败的变更事件。
+         *
+         * @param request GetCallBackFaileResultRequest
+         * @return GetCallBackFaileResultResponse
+         */
         public async Task<GetCallBackFaileResultResponse> GetCallBackFaileResultAsync(GetCallBackFaileResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +154,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return await GetCallBackFaileResultWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 安装一方应用
+         *
+         * @param request InstallAppRequest
+         * @param headers InstallAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InstallAppResponse
+         */
         public InstallAppResponse InstallAppWithOptions(InstallAppRequest request, InstallAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -175,6 +211,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<InstallAppResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 安装一方应用
+         *
+         * @param request InstallAppRequest
+         * @param headers InstallAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InstallAppResponse
+         */
         public async Task<InstallAppResponse> InstallAppWithOptionsAsync(InstallAppRequest request, InstallAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -224,6 +268,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<InstallAppResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 安装一方应用
+         *
+         * @param request InstallAppRequest
+         * @return InstallAppResponse
+         */
         public InstallAppResponse InstallApp(InstallAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -231,6 +281,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return InstallAppWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 安装一方应用
+         *
+         * @param request InstallAppRequest
+         * @return InstallAppResponse
+         */
         public async Task<InstallAppResponse> InstallAppAsync(InstallAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -238,6 +294,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return await InstallAppWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 安装酷应用
+         *
+         * @param tmpReq InstallCoolAppRequest
+         * @param headers InstallCoolAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InstallCoolAppResponse
+         */
         public InstallCoolAppResponse InstallCoolAppWithOptions(InstallCoolAppRequest tmpReq, InstallCoolAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -313,6 +377,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<InstallCoolAppResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 安装酷应用
+         *
+         * @param tmpReq InstallCoolAppRequest
+         * @param headers InstallCoolAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InstallCoolAppResponse
+         */
         public async Task<InstallCoolAppResponse> InstallCoolAppWithOptionsAsync(InstallCoolAppRequest tmpReq, InstallCoolAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -388,6 +460,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<InstallCoolAppResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 安装酷应用
+         *
+         * @param request InstallCoolAppRequest
+         * @return InstallCoolAppResponse
+         */
         public InstallCoolAppResponse InstallCoolApp(InstallCoolAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -395,6 +473,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return InstallCoolAppWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 安装酷应用
+         *
+         * @param request InstallCoolAppRequest
+         * @return InstallCoolAppResponse
+         */
         public async Task<InstallCoolAppResponse> InstallCoolAppAsync(InstallCoolAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -402,6 +486,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return await InstallCoolAppWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 重新获取suiteTicket
+         *
+         * @param request RePushSuiteTicketRequest
+         * @param headers map
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RePushSuiteTicketResponse
+         */
         public RePushSuiteTicketResponse RePushSuiteTicketWithOptions(RePushSuiteTicketRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -434,6 +526,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<RePushSuiteTicketResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 重新获取suiteTicket
+         *
+         * @param request RePushSuiteTicketRequest
+         * @param headers map
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RePushSuiteTicketResponse
+         */
         public async Task<RePushSuiteTicketResponse> RePushSuiteTicketWithOptionsAsync(RePushSuiteTicketRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -466,6 +566,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return TeaModel.ToObject<RePushSuiteTicketResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 重新获取suiteTicket
+         *
+         * @param request RePushSuiteTicketRequest
+         * @return RePushSuiteTicketResponse
+         */
         public RePushSuiteTicketResponse RePushSuiteTicket(RePushSuiteTicketRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -473,6 +579,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             return RePushSuiteTicketWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 重新获取suiteTicket
+         *
+         * @param request RePushSuiteTicketRequest
+         * @return RePushSuiteTicketResponse
+         */
         public async Task<RePushSuiteTicketResponse> RePushSuiteTicketAsync(RePushSuiteTicketRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -19,10 +19,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sourceCorpId")]
         [Validation(Required=false)]
         public string SourceCorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sourceProcessVOList")]
         [Validation(Required=false)]
         public List<CopyProcessRequestSourceProcessVOList> SourceProcessVOList { get; set; }
@@ -35,6 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }

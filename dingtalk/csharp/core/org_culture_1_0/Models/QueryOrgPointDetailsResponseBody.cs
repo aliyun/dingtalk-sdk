@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             [Validation(Required=false)]
             public List<QueryOrgPointDetailsResponseBodyResultDetails> Details { get; set; }
             public class QueryOrgPointDetailsResponseBodyResultDetails : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public long? Amount { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public long? GmtCreate { get; set; }
@@ -37,6 +43,9 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     [Validation(Required=false)]
                     public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource AccountSource { get; set; }
                     public class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource : TeaModel {
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("accountType")]
                         [Validation(Required=false)]
                         public string AccountType { get; set; }
@@ -73,22 +82,34 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     [Validation(Required=false)]
                     public string Remark { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("usage")]
                     [Validation(Required=false)]
                     public string Usage { get; set; }
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("sourceBizCode")]
                 [Validation(Required=false)]
                 public string SourceBizCode { get; set; }
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }

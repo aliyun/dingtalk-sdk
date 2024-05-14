@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public ListCalendarsResponseBodyResponse Response { get; set; }
         public class ListCalendarsResponseBodyResponse : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("calendars")]
             [Validation(Required=false)]
             public List<ListCalendarsResponseBodyResponseCalendars> Calendars { get; set; }
@@ -21,18 +24,30 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string Description { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("eTag")]
                 [Validation(Required=false)]
                 public string ETag { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("privilege")]
                 [Validation(Required=false)]
                 public string Privilege { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("summary")]
                 [Validation(Required=false)]
                 public string Summary { get; set; }
@@ -41,6 +56,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public string TimeZone { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }

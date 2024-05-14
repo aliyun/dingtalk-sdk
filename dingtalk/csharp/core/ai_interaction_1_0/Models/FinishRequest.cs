@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
 {
     public class FinishRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("conversationToken")]
         [Validation(Required=false)]
         public string ConversationToken { get; set; }

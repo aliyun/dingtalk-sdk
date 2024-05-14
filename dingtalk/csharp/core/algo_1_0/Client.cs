@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
         }
 
 
+        /**
+         * @summary 自然语言处理之关键词识别
+         *
+         * @param request NlpWordDistinguishRequest
+         * @param headers NlpWordDistinguishHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NlpWordDistinguishResponse
+         */
         public NlpWordDistinguishResponse NlpWordDistinguishWithOptions(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return TeaModel.ToObject<NlpWordDistinguishResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 自然语言处理之关键词识别
+         *
+         * @param request NlpWordDistinguishRequest
+         * @param headers NlpWordDistinguishHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NlpWordDistinguishResponse
+         */
         public async Task<NlpWordDistinguishResponse> NlpWordDistinguishWithOptionsAsync(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return TeaModel.ToObject<NlpWordDistinguishResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 自然语言处理之关键词识别
+         *
+         * @param request NlpWordDistinguishRequest
+         * @return NlpWordDistinguishResponse
+         */
         public NlpWordDistinguishResponse NlpWordDistinguish(NlpWordDistinguishRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return NlpWordDistinguishWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 自然语言处理之关键词识别
+         *
+         * @param request NlpWordDistinguishRequest
+         * @return NlpWordDistinguishResponse
+         */
         public async Task<NlpWordDistinguishResponse> NlpWordDistinguishAsync(NlpWordDistinguishRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,14 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return await NlpWordDistinguishWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary Okr内容推荐
+         *
+         * @param request OkrOpenRecommendRequest
+         * @param headers OkrOpenRecommendHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OkrOpenRecommendResponse
+         */
         public OkrOpenRecommendResponse OkrOpenRecommendWithOptions(OkrOpenRecommendRequest request, OkrOpenRecommendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -190,6 +226,14 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return TeaModel.ToObject<OkrOpenRecommendResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary Okr内容推荐
+         *
+         * @param request OkrOpenRecommendRequest
+         * @param headers OkrOpenRecommendHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OkrOpenRecommendResponse
+         */
         public async Task<OkrOpenRecommendResponse> OkrOpenRecommendWithOptionsAsync(OkrOpenRecommendRequest request, OkrOpenRecommendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -247,6 +291,12 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return TeaModel.ToObject<OkrOpenRecommendResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary Okr内容推荐
+         *
+         * @param request OkrOpenRecommendRequest
+         * @return OkrOpenRecommendResponse
+         */
         public OkrOpenRecommendResponse OkrOpenRecommend(OkrOpenRecommendRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -254,6 +304,12 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return OkrOpenRecommendWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary Okr内容推荐
+         *
+         * @param request OkrOpenRecommendRequest
+         * @return OkrOpenRecommendResponse
+         */
         public async Task<OkrOpenRecommendResponse> OkrOpenRecommendAsync(OkrOpenRecommendRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

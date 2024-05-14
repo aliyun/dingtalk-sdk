@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public int? SortType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]
         public List<string> UserIdList { get; set; }

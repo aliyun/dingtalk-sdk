@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public List<GetFieldModifiedHistoryResponseBodyResult> Result { get; set; }
         public class GetFieldModifiedHistoryResponseBodyResult : TeaModel {
+            /// <summary>
+            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }

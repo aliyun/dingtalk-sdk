@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
 {
     public class WikiWordsDetailRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("wordName")]
         [Validation(Required=false)]
         public string WordName { get; set; }

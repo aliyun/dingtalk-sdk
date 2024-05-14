@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
         }
 
 
+        /**
+         * @summary 获取IM会话存储空间信息
+         *
+         * @param request GetSpaceRequest
+         * @param headers GetSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpaceResponse
+         */
         public GetSpaceResponse GetSpaceWithOptions(GetSpaceRequest request, GetSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -72,6 +80,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<GetSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取IM会话存储空间信息
+         *
+         * @param request GetSpaceRequest
+         * @param headers GetSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpaceResponse
+         */
         public async Task<GetSpaceResponse> GetSpaceWithOptionsAsync(GetSpaceRequest request, GetSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -115,6 +131,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<GetSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取IM会话存储空间信息
+         *
+         * @param request GetSpaceRequest
+         * @return GetSpaceResponse
+         */
         public GetSpaceResponse GetSpace(GetSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -122,6 +144,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return GetSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取IM会话存储空间信息
+         *
+         * @param request GetSpaceRequest
+         * @return GetSpaceResponse
+         */
         public async Task<GetSpaceResponse> GetSpaceAsync(GetSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -129,6 +157,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return await GetSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送文件到指定会话
+         *
+         * @param request SendRequest
+         * @param headers SendHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendResponse
+         */
         public SendResponse SendWithOptions(SendRequest request, SendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -180,6 +216,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送文件到指定会话
+         *
+         * @param request SendRequest
+         * @param headers SendHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendResponse
+         */
         public async Task<SendResponse> SendWithOptionsAsync(SendRequest request, SendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -231,6 +275,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送文件到指定会话
+         *
+         * @param request SendRequest
+         * @return SendResponse
+         */
         public SendResponse Send(SendRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -238,6 +288,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return SendWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送文件到指定会话
+         *
+         * @param request SendRequest
+         * @return SendResponse
+         */
         public async Task<SendResponse> SendAsync(SendRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -245,6 +301,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return await SendWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 以应用身份发送文件给自己
+         *
+         * @param request SendByAppRequest
+         * @param headers SendByAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendByAppResponse
+         */
         public SendByAppResponse SendByAppWithOptions(SendByAppRequest request, SendByAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -292,6 +356,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendByAppResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 以应用身份发送文件给自己
+         *
+         * @param request SendByAppRequest
+         * @param headers SendByAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendByAppResponse
+         */
         public async Task<SendByAppResponse> SendByAppWithOptionsAsync(SendByAppRequest request, SendByAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -339,6 +411,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendByAppResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 以应用身份发送文件给自己
+         *
+         * @param request SendByAppRequest
+         * @return SendByAppResponse
+         */
         public SendByAppResponse SendByApp(SendByAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -346,6 +424,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return SendByAppWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 以应用身份发送文件给自己
+         *
+         * @param request SendByAppRequest
+         * @return SendByAppResponse
+         */
         public async Task<SendByAppResponse> SendByAppAsync(SendByAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -353,6 +437,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return await SendByAppWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送文件链接到指定会话
+         *
+         * @param request SendLinkRequest
+         * @param headers SendLinkHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendLinkResponse
+         */
         public SendLinkResponse SendLinkWithOptions(SendLinkRequest request, SendLinkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -404,6 +496,14 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendLinkResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送文件链接到指定会话
+         *
+         * @param request SendLinkRequest
+         * @param headers SendLinkHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendLinkResponse
+         */
         public async Task<SendLinkResponse> SendLinkWithOptionsAsync(SendLinkRequest request, SendLinkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -455,6 +555,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return TeaModel.ToObject<SendLinkResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送文件链接到指定会话
+         *
+         * @param request SendLinkRequest
+         * @return SendLinkResponse
+         */
         public SendLinkResponse SendLink(SendLinkRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -462,6 +568,12 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0
             return SendLinkWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送文件链接到指定会话
+         *
+         * @param request SendLinkRequest
+         * @return SendLinkResponse
+         */
         public async Task<SendLinkResponse> SendLinkAsync(SendLinkRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

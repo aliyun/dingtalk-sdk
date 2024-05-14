@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetCooperateOrgInviteInfoResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("inviteUrl")]
         [Validation(Required=false)]
         public string InviteUrl { get; set; }

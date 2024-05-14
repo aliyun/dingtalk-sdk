@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class NotifyVerifyResultRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("payCode")]
         [Validation(Required=false)]
         public string PayCode { get; set; }
@@ -21,10 +27,16 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string Remark { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userCorpRelationType")]
         [Validation(Required=false)]
         public string UserCorpRelationType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userIdentity")]
         [Validation(Required=false)]
         public string UserIdentity { get; set; }
@@ -41,10 +53,16 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string VerifyNo { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("verifyResult")]
         [Validation(Required=false)]
         public bool? VerifyResult { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("verifyTime")]
         [Validation(Required=false)]
         public string VerifyTime { get; set; }

@@ -25,6 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public long? SuperId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("supplyDeptId")]
         [Validation(Required=false)]
         public long? SupplyDeptId { get; set; }

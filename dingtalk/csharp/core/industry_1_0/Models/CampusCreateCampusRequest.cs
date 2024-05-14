@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public long? BelongProjectGroupId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("campusName")]
         [Validation(Required=false)]
         public string CampusName { get; set; }
@@ -41,6 +44,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public int? CountyId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creatorUnionId")]
         [Validation(Required=false)]
         public string CreatorUnionId { get; set; }

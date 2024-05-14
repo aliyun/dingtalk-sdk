@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetUserTokenRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("clientId")]
         [Validation(Required=false)]
         public string ClientId { get; set; }

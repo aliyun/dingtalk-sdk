@@ -13,24 +13,39 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public string BindingAlipayLogonId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("contactInfo")]
         [Validation(Required=false)]
         public ModifySubInstitutionRequestContactInfo ContactInfo { get; set; }
         public class ModifySubInstitutionRequestContactInfo : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("contactName")]
             [Validation(Required=false)]
             public string ContactName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("mobile")]
             [Validation(Required=false)]
             public string Mobile { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("instId")]
         [Validation(Required=false)]
         public string InstId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("legalPersonCertInfo")]
         [Validation(Required=false)]
         public ModifySubInstitutionRequestLegalPersonCertInfo LegalPersonCertInfo { get; set; }
@@ -43,6 +58,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string CertFrontImage { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("certName")]
             [Validation(Required=false)]
             public string CertName { get; set; }
@@ -51,16 +69,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string CertType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("idCardNo")]
             [Validation(Required=false)]
             public string IdCardNo { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outTradeNo")]
         [Validation(Required=false)]
         public string OutTradeNo { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("payChannel")]
         [Validation(Required=false)]
         public string PayChannel { get; set; }
@@ -69,24 +96,39 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public List<ModifySubInstitutionRequestQualificationInfos> QualificationInfos { get; set; }
         public class ModifySubInstitutionRequestQualificationInfos : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("qualificationImage")]
             [Validation(Required=false)]
             public string QualificationImage { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("qualificationType")]
             [Validation(Required=false)]
             public string QualificationType { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("services")]
         [Validation(Required=false)]
         public List<string> Services { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("settleInfo")]
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSettleInfo SettleInfo { get; set; }
         public class ModifySubInstitutionRequestSettleInfo : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("accountId")]
             [Validation(Required=false)]
             public string AccountId { get; set; }
@@ -123,6 +165,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string BankShortNameCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
@@ -165,6 +210,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subInstBasicInfo")]
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstBasicInfo SubInstBasicInfo { get; set; }
@@ -173,20 +221,32 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string AliasName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("mcc")]
             [Validation(Required=false)]
             public string Mcc { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("subInstName")]
             [Validation(Required=false)]
             public string SubInstName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subInstCertifyInfo")]
         [Validation(Required=false)]
         public ModifySubInstitutionRequestSubInstCertifyInfo SubInstCertifyInfo { get; set; }
@@ -195,16 +255,25 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string CertImage { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("certNo")]
             [Validation(Required=false)]
             public string CertNo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("certType")]
             [Validation(Required=false)]
             public string CertType { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subInstId")]
         [Validation(Required=false)]
         public string SubInstId { get; set; }

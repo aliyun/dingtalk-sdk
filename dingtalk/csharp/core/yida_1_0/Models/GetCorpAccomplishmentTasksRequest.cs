@@ -41,6 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string ProcessCodes { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("token")]
         [Validation(Required=false)]
         public string Token { get; set; }

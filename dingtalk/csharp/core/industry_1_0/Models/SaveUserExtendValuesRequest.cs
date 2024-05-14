@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string UserDisplayName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userExtendKey")]
         [Validation(Required=false)]
         public string UserExtendKey { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userExtendValue")]
         [Validation(Required=false)]
         public string UserExtendValue { get; set; }

@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         [Validation(Required=false)]
         public UploadInvoiceRequestExtension Extension { get; set; }
         public class UploadInvoiceRequestExtension : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("bizCode")]
             [Validation(Required=false)]
             public string BizCode { get; set; }
@@ -32,26 +35,44 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("invoices")]
         [Validation(Required=false)]
         public List<UploadInvoiceRequestInvoices> Invoices { get; set; }
         public class UploadInvoiceRequestInvoices : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("invoiceAmount")]
             [Validation(Required=false)]
             public string InvoiceAmount { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("invoiceCode")]
             [Validation(Required=false)]
             public string InvoiceCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("invoiceDate")]
             [Validation(Required=false)]
             public string InvoiceDate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("invoiceNo")]
             [Validation(Required=false)]
             public string InvoiceNo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("invoiceType")]
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
@@ -60,14 +81,23 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string LogoUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("payeeName")]
             [Validation(Required=false)]
             public string PayeeName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("payeeTaxNo")]
             [Validation(Required=false)]
             public string PayeeTaxNo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("payerName")]
             [Validation(Required=false)]
             public string PayerName { get; set; }
@@ -76,6 +106,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string PayerTaxNo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("pdfUrl")]
             [Validation(Required=false)]
             public string PdfUrl { get; set; }
@@ -110,6 +143,9 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             [Validation(Required=false)]
             public string TargetCorpId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }

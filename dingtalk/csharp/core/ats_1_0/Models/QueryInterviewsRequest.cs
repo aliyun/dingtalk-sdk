@@ -13,14 +13,23 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("candidateId")]
         [Validation(Required=false)]
         public string CandidateId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("startTimeBeginMillis")]
         [Validation(Required=false)]
         public long? StartTimeBeginMillis { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("startTimeEndMillis")]
         [Validation(Required=false)]
         public long? StartTimeEndMillis { get; set; }

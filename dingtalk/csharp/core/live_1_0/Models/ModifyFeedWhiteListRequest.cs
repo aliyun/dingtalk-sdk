@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class ModifyFeedWhiteListRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public long? Action { get; set; }
@@ -17,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public List<string> ModifyUserList { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

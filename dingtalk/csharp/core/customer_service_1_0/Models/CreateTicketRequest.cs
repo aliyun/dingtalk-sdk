@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class CreateTicketRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("foreignId")]
         [Validation(Required=false)]
         public string ForeignId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("foreignName")]
         [Validation(Required=false)]
         public string ForeignName { get; set; }
@@ -39,14 +45,23 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sourceId")]
         [Validation(Required=false)]
         public string SourceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }

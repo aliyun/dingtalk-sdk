@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class QueryBatchTradeOrderRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outBatchNos")]
         [Validation(Required=false)]
         public List<string> OutBatchNos { get; set; }

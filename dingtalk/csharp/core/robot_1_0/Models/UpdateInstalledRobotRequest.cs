@@ -25,10 +25,16 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("updateType")]
         [Validation(Required=false)]
         public int? UpdateType { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryUnReadMessageResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unReadCount")]
         [Validation(Required=false)]
         public long? UnReadCount { get; set; }

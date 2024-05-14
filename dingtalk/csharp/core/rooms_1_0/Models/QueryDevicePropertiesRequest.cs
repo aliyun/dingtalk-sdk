@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public string DeviceUnionId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorUnionId")]
         [Validation(Required=false)]
         public string OperatorUnionId { get; set; }

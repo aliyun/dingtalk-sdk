@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         }
 
 
+        /**
+         * @summary 批量付款
+         *
+         * @param request ApplyBatchPayRequest
+         * @param headers ApplyBatchPayHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApplyBatchPayResponse
+         */
         public ApplyBatchPayResponse ApplyBatchPayWithOptions(ApplyBatchPayRequest request, ApplyBatchPayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -94,6 +102,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ApplyBatchPayResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量付款
+         *
+         * @param request ApplyBatchPayRequest
+         * @param headers ApplyBatchPayHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApplyBatchPayResponse
+         */
         public async Task<ApplyBatchPayResponse> ApplyBatchPayWithOptionsAsync(ApplyBatchPayRequest request, ApplyBatchPayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -159,6 +175,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ApplyBatchPayResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量付款
+         *
+         * @param request ApplyBatchPayRequest
+         * @return ApplyBatchPayResponse
+         */
         public ApplyBatchPayResponse ApplyBatchPay(ApplyBatchPayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -166,6 +188,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return ApplyBatchPayWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 批量付款
+         *
+         * @param request ApplyBatchPayRequest
+         * @return ApplyBatchPayResponse
+         */
         public async Task<ApplyBatchPayResponse> ApplyBatchPayAsync(ApplyBatchPayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -173,6 +201,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await ApplyBatchPayWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 助贷业务关闭借款入口
+         *
+         * @param request CloseLoanEntranceRequest
+         * @param headers CloseLoanEntranceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseLoanEntranceResponse
+         */
         public CloseLoanEntranceResponse CloseLoanEntranceWithOptions(CloseLoanEntranceRequest request, CloseLoanEntranceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -210,6 +246,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CloseLoanEntranceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 助贷业务关闭借款入口
+         *
+         * @param request CloseLoanEntranceRequest
+         * @param headers CloseLoanEntranceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseLoanEntranceResponse
+         */
         public async Task<CloseLoanEntranceResponse> CloseLoanEntranceWithOptionsAsync(CloseLoanEntranceRequest request, CloseLoanEntranceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -247,6 +291,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CloseLoanEntranceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 助贷业务关闭借款入口
+         *
+         * @param request CloseLoanEntranceRequest
+         * @return CloseLoanEntranceResponse
+         */
         public CloseLoanEntranceResponse CloseLoanEntrance(CloseLoanEntranceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -254,6 +304,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CloseLoanEntranceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 助贷业务关闭借款入口
+         *
+         * @param request CloseLoanEntranceRequest
+         * @return CloseLoanEntranceResponse
+         */
         public async Task<CloseLoanEntranceResponse> CloseLoanEntranceAsync(CloseLoanEntranceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -261,6 +317,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CloseLoanEntranceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 子机构创建进件预校验
+         *
+         * @param request ConsultCreateSubInstitutionRequest
+         * @param headers ConsultCreateSubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ConsultCreateSubInstitutionResponse
+         */
         public ConsultCreateSubInstitutionResponse ConsultCreateSubInstitutionWithOptions(ConsultCreateSubInstitutionRequest request, ConsultCreateSubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -362,6 +426,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ConsultCreateSubInstitutionResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 子机构创建进件预校验
+         *
+         * @param request ConsultCreateSubInstitutionRequest
+         * @param headers ConsultCreateSubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ConsultCreateSubInstitutionResponse
+         */
         public async Task<ConsultCreateSubInstitutionResponse> ConsultCreateSubInstitutionWithOptionsAsync(ConsultCreateSubInstitutionRequest request, ConsultCreateSubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -463,6 +535,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ConsultCreateSubInstitutionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 子机构创建进件预校验
+         *
+         * @param request ConsultCreateSubInstitutionRequest
+         * @return ConsultCreateSubInstitutionResponse
+         */
         public ConsultCreateSubInstitutionResponse ConsultCreateSubInstitution(ConsultCreateSubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -470,6 +548,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return ConsultCreateSubInstitutionWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 子机构创建进件预校验
+         *
+         * @param request ConsultCreateSubInstitutionRequest
+         * @return ConsultCreateSubInstitutionResponse
+         */
         public async Task<ConsultCreateSubInstitutionResponse> ConsultCreateSubInstitutionAsync(ConsultCreateSubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -477,6 +561,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await ConsultCreateSubInstitutionWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发起代扣交易
+         *
+         * @param request CreatWithholdingOrderAndPayRequest
+         * @param headers CreatWithholdingOrderAndPayHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreatWithholdingOrderAndPayResponse
+         */
         public CreatWithholdingOrderAndPayResponse CreatWithholdingOrderAndPayWithOptions(CreatWithholdingOrderAndPayRequest request, CreatWithholdingOrderAndPayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -550,6 +642,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreatWithholdingOrderAndPayResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发起代扣交易
+         *
+         * @param request CreatWithholdingOrderAndPayRequest
+         * @param headers CreatWithholdingOrderAndPayHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreatWithholdingOrderAndPayResponse
+         */
         public async Task<CreatWithholdingOrderAndPayResponse> CreatWithholdingOrderAndPayWithOptionsAsync(CreatWithholdingOrderAndPayRequest request, CreatWithholdingOrderAndPayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -623,6 +723,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreatWithholdingOrderAndPayResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发起代扣交易
+         *
+         * @param request CreatWithholdingOrderAndPayRequest
+         * @return CreatWithholdingOrderAndPayResponse
+         */
         public CreatWithholdingOrderAndPayResponse CreatWithholdingOrderAndPay(CreatWithholdingOrderAndPayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -630,6 +736,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CreatWithholdingOrderAndPayWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发起代扣交易
+         *
+         * @param request CreatWithholdingOrderAndPayRequest
+         * @return CreatWithholdingOrderAndPayResponse
+         */
         public async Task<CreatWithholdingOrderAndPayResponse> CreatWithholdingOrderAndPayAsync(CreatWithholdingOrderAndPayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -637,6 +749,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CreatWithholdingOrderAndPayWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 收单退款交易
+         *
+         * @param request CreateAcquireRefundOrderRequest
+         * @param headers CreateAcquireRefundOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAcquireRefundOrderResponse
+         */
         public CreateAcquireRefundOrderResponse CreateAcquireRefundOrderWithOptions(CreateAcquireRefundOrderRequest request, CreateAcquireRefundOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -706,6 +826,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateAcquireRefundOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 收单退款交易
+         *
+         * @param request CreateAcquireRefundOrderRequest
+         * @param headers CreateAcquireRefundOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAcquireRefundOrderResponse
+         */
         public async Task<CreateAcquireRefundOrderResponse> CreateAcquireRefundOrderWithOptionsAsync(CreateAcquireRefundOrderRequest request, CreateAcquireRefundOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -775,6 +903,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateAcquireRefundOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 收单退款交易
+         *
+         * @param request CreateAcquireRefundOrderRequest
+         * @return CreateAcquireRefundOrderResponse
+         */
         public CreateAcquireRefundOrderResponse CreateAcquireRefundOrder(CreateAcquireRefundOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -782,6 +916,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CreateAcquireRefundOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 收单退款交易
+         *
+         * @param request CreateAcquireRefundOrderRequest
+         * @return CreateAcquireRefundOrderResponse
+         */
         public async Task<CreateAcquireRefundOrderResponse> CreateAcquireRefundOrderAsync(CreateAcquireRefundOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -789,6 +929,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CreateAcquireRefundOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建批量支付单
+         *
+         * @param request CreateBatchTradeOrderRequest
+         * @param headers CreateBatchTradeOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateBatchTradeOrderResponse
+         */
         public CreateBatchTradeOrderResponse CreateBatchTradeOrderWithOptions(CreateBatchTradeOrderRequest request, CreateBatchTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -858,6 +1006,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateBatchTradeOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建批量支付单
+         *
+         * @param request CreateBatchTradeOrderRequest
+         * @param headers CreateBatchTradeOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateBatchTradeOrderResponse
+         */
         public async Task<CreateBatchTradeOrderResponse> CreateBatchTradeOrderWithOptionsAsync(CreateBatchTradeOrderRequest request, CreateBatchTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -927,6 +1083,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateBatchTradeOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建批量支付单
+         *
+         * @param request CreateBatchTradeOrderRequest
+         * @return CreateBatchTradeOrderResponse
+         */
         public CreateBatchTradeOrderResponse CreateBatchTradeOrder(CreateBatchTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -934,6 +1096,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CreateBatchTradeOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建批量支付单
+         *
+         * @param request CreateBatchTradeOrderRequest
+         * @return CreateBatchTradeOrderResponse
+         */
         public async Task<CreateBatchTradeOrderResponse> CreateBatchTradeOrderAsync(CreateBatchTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -941,6 +1109,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CreateBatchTradeOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建子机构
+         *
+         * @param request CreateSubInstitutionRequest
+         * @param headers CreateSubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSubInstitutionResponse
+         */
         public CreateSubInstitutionResponse CreateSubInstitutionWithOptions(CreateSubInstitutionRequest request, CreateSubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1042,6 +1218,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateSubInstitutionResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建子机构
+         *
+         * @param request CreateSubInstitutionRequest
+         * @param headers CreateSubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSubInstitutionResponse
+         */
         public async Task<CreateSubInstitutionResponse> CreateSubInstitutionWithOptionsAsync(CreateSubInstitutionRequest request, CreateSubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1143,6 +1327,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateSubInstitutionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建子机构
+         *
+         * @param request CreateSubInstitutionRequest
+         * @return CreateSubInstitutionResponse
+         */
         public CreateSubInstitutionResponse CreateSubInstitution(CreateSubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1150,6 +1340,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CreateSubInstitutionWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建子机构
+         *
+         * @param request CreateSubInstitutionRequest
+         * @return CreateSubInstitutionResponse
+         */
         public async Task<CreateSubInstitutionResponse> CreateSubInstitutionAsync(CreateSubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1157,6 +1353,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CreateSubInstitutionWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建用户码实例
+         *
+         * @param request CreateUserCodeInstanceRequest
+         * @param headers CreateUserCodeInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateUserCodeInstanceResponse
+         */
         public CreateUserCodeInstanceResponse CreateUserCodeInstanceWithOptions(CreateUserCodeInstanceRequest request, CreateUserCodeInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1234,6 +1438,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateUserCodeInstanceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建用户码实例
+         *
+         * @param request CreateUserCodeInstanceRequest
+         * @param headers CreateUserCodeInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateUserCodeInstanceResponse
+         */
         public async Task<CreateUserCodeInstanceResponse> CreateUserCodeInstanceWithOptionsAsync(CreateUserCodeInstanceRequest request, CreateUserCodeInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1311,6 +1523,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<CreateUserCodeInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建用户码实例
+         *
+         * @param request CreateUserCodeInstanceRequest
+         * @return CreateUserCodeInstanceResponse
+         */
         public CreateUserCodeInstanceResponse CreateUserCodeInstance(CreateUserCodeInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1318,6 +1536,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return CreateUserCodeInstanceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建用户码实例
+         *
+         * @param request CreateUserCodeInstanceRequest
+         * @return CreateUserCodeInstanceResponse
+         */
         public async Task<CreateUserCodeInstanceResponse> CreateUserCodeInstanceAsync(CreateUserCodeInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1325,6 +1549,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await CreateUserCodeInstanceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 解码付款码
+         *
+         * @param request DecodePayCodeRequest
+         * @param headers DecodePayCodeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DecodePayCodeResponse
+         */
         public DecodePayCodeResponse DecodePayCodeWithOptions(DecodePayCodeRequest request, DecodePayCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1366,6 +1598,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<DecodePayCodeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 解码付款码
+         *
+         * @param request DecodePayCodeRequest
+         * @param headers DecodePayCodeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DecodePayCodeResponse
+         */
         public async Task<DecodePayCodeResponse> DecodePayCodeWithOptionsAsync(DecodePayCodeRequest request, DecodePayCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1407,6 +1647,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<DecodePayCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 解码付款码
+         *
+         * @param request DecodePayCodeRequest
+         * @return DecodePayCodeResponse
+         */
         public DecodePayCodeResponse DecodePayCode(DecodePayCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1414,6 +1660,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return DecodePayCodeWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 解码付款码
+         *
+         * @param request DecodePayCodeRequest
+         * @return DecodePayCodeResponse
+         */
         public async Task<DecodePayCodeResponse> DecodePayCodeAsync(DecodePayCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1421,6 +1673,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await DecodePayCodeWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 修改子机构信息
+         *
+         * @param request ModifySubInstitutionRequest
+         * @param headers ModifySubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ModifySubInstitutionResponse
+         */
         public ModifySubInstitutionResponse ModifySubInstitutionWithOptions(ModifySubInstitutionRequest request, ModifySubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1518,6 +1778,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ModifySubInstitutionResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 修改子机构信息
+         *
+         * @param request ModifySubInstitutionRequest
+         * @param headers ModifySubInstitutionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ModifySubInstitutionResponse
+         */
         public async Task<ModifySubInstitutionResponse> ModifySubInstitutionWithOptionsAsync(ModifySubInstitutionRequest request, ModifySubInstitutionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1615,6 +1883,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<ModifySubInstitutionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 修改子机构信息
+         *
+         * @param request ModifySubInstitutionRequest
+         * @return ModifySubInstitutionResponse
+         */
         public ModifySubInstitutionResponse ModifySubInstitution(ModifySubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1622,6 +1896,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return ModifySubInstitutionWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 修改子机构信息
+         *
+         * @param request ModifySubInstitutionRequest
+         * @return ModifySubInstitutionResponse
+         */
         public async Task<ModifySubInstitutionResponse> ModifySubInstitutionAsync(ModifySubInstitutionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1629,6 +1909,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await ModifySubInstitutionWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 通知付款码支付结果
+         *
+         * @param request NotifyPayCodePayResultRequest
+         * @param headers NotifyPayCodePayResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyPayCodePayResultResponse
+         */
         public NotifyPayCodePayResultResponse NotifyPayCodePayResultWithOptions(NotifyPayCodePayResultRequest request, NotifyPayCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1730,6 +2018,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyPayCodePayResultResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通知付款码支付结果
+         *
+         * @param request NotifyPayCodePayResultRequest
+         * @param headers NotifyPayCodePayResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyPayCodePayResultResponse
+         */
         public async Task<NotifyPayCodePayResultResponse> NotifyPayCodePayResultWithOptionsAsync(NotifyPayCodePayResultRequest request, NotifyPayCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1831,6 +2127,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyPayCodePayResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通知付款码支付结果
+         *
+         * @param request NotifyPayCodePayResultRequest
+         * @return NotifyPayCodePayResultResponse
+         */
         public NotifyPayCodePayResultResponse NotifyPayCodePayResult(NotifyPayCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1838,6 +2140,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return NotifyPayCodePayResultWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 通知付款码支付结果
+         *
+         * @param request NotifyPayCodePayResultRequest
+         * @return NotifyPayCodePayResultResponse
+         */
         public async Task<NotifyPayCodePayResultResponse> NotifyPayCodePayResultAsync(NotifyPayCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1845,6 +2153,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await NotifyPayCodePayResultWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 通知付款码退款结果
+         *
+         * @param request NotifyPayCodeRefundResultRequest
+         * @param headers NotifyPayCodeRefundResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyPayCodeRefundResultResponse
+         */
         public NotifyPayCodeRefundResultResponse NotifyPayCodeRefundResultWithOptions(NotifyPayCodeRefundResultRequest request, NotifyPayCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1918,6 +2234,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyPayCodeRefundResultResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通知付款码退款结果
+         *
+         * @param request NotifyPayCodeRefundResultRequest
+         * @param headers NotifyPayCodeRefundResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyPayCodeRefundResultResponse
+         */
         public async Task<NotifyPayCodeRefundResultResponse> NotifyPayCodeRefundResultWithOptionsAsync(NotifyPayCodeRefundResultRequest request, NotifyPayCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1991,6 +2315,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyPayCodeRefundResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通知付款码退款结果
+         *
+         * @param request NotifyPayCodeRefundResultRequest
+         * @return NotifyPayCodeRefundResultResponse
+         */
         public NotifyPayCodeRefundResultResponse NotifyPayCodeRefundResult(NotifyPayCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1998,6 +2328,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return NotifyPayCodeRefundResultWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 通知付款码退款结果
+         *
+         * @param request NotifyPayCodeRefundResultRequest
+         * @return NotifyPayCodeRefundResultResponse
+         */
         public async Task<NotifyPayCodeRefundResultResponse> NotifyPayCodeRefundResultAsync(NotifyPayCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2005,6 +2341,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await NotifyPayCodeRefundResultWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 上报码验证结果
+         *
+         * @param request NotifyVerifyResultRequest
+         * @param headers NotifyVerifyResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyVerifyResultResponse
+         */
         public NotifyVerifyResultResponse NotifyVerifyResultWithOptions(NotifyVerifyResultRequest request, NotifyVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2078,6 +2422,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyVerifyResultResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 上报码验证结果
+         *
+         * @param request NotifyVerifyResultRequest
+         * @param headers NotifyVerifyResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NotifyVerifyResultResponse
+         */
         public async Task<NotifyVerifyResultResponse> NotifyVerifyResultWithOptionsAsync(NotifyVerifyResultRequest request, NotifyVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2151,6 +2503,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<NotifyVerifyResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 上报码验证结果
+         *
+         * @param request NotifyVerifyResultRequest
+         * @return NotifyVerifyResultResponse
+         */
         public NotifyVerifyResultResponse NotifyVerifyResult(NotifyVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2158,6 +2516,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return NotifyVerifyResultWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 上报码验证结果
+         *
+         * @param request NotifyVerifyResultRequest
+         * @return NotifyVerifyResultResponse
+         */
         public async Task<NotifyVerifyResultResponse> NotifyVerifyResultAsync(NotifyVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2165,6 +2529,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await NotifyVerifyResultWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 预创建群收款订单返回订单号
+         *
+         * @param request PreCreateGroupBillOrderRequest
+         * @param headers PreCreateGroupBillOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PreCreateGroupBillOrderResponse
+         */
         public PreCreateGroupBillOrderResponse PreCreateGroupBillOrderWithOptions(PreCreateGroupBillOrderRequest request, PreCreateGroupBillOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2242,6 +2614,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<PreCreateGroupBillOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 预创建群收款订单返回订单号
+         *
+         * @param request PreCreateGroupBillOrderRequest
+         * @param headers PreCreateGroupBillOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PreCreateGroupBillOrderResponse
+         */
         public async Task<PreCreateGroupBillOrderResponse> PreCreateGroupBillOrderWithOptionsAsync(PreCreateGroupBillOrderRequest request, PreCreateGroupBillOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2319,6 +2699,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<PreCreateGroupBillOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 预创建群收款订单返回订单号
+         *
+         * @param request PreCreateGroupBillOrderRequest
+         * @return PreCreateGroupBillOrderResponse
+         */
         public PreCreateGroupBillOrderResponse PreCreateGroupBillOrder(PreCreateGroupBillOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2326,6 +2712,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return PreCreateGroupBillOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 预创建群收款订单返回订单号
+         *
+         * @param request PreCreateGroupBillOrderRequest
+         * @return PreCreateGroupBillOrderResponse
+         */
         public async Task<PreCreateGroupBillOrderResponse> PreCreateGroupBillOrderAsync(PreCreateGroupBillOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2333,6 +2725,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await PreCreateGroupBillOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询收单退款交易
+         *
+         * @param request QueryAcquireRefundOrderRequest
+         * @param headers QueryAcquireRefundOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAcquireRefundOrderResponse
+         */
         public QueryAcquireRefundOrderResponse QueryAcquireRefundOrderWithOptions(QueryAcquireRefundOrderRequest request, QueryAcquireRefundOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2370,6 +2770,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryAcquireRefundOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询收单退款交易
+         *
+         * @param request QueryAcquireRefundOrderRequest
+         * @param headers QueryAcquireRefundOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAcquireRefundOrderResponse
+         */
         public async Task<QueryAcquireRefundOrderResponse> QueryAcquireRefundOrderWithOptionsAsync(QueryAcquireRefundOrderRequest request, QueryAcquireRefundOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2407,6 +2815,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryAcquireRefundOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询收单退款交易
+         *
+         * @param request QueryAcquireRefundOrderRequest
+         * @return QueryAcquireRefundOrderResponse
+         */
         public QueryAcquireRefundOrderResponse QueryAcquireRefundOrder(QueryAcquireRefundOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2414,6 +2828,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryAcquireRefundOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询收单退款交易
+         *
+         * @param request QueryAcquireRefundOrderRequest
+         * @return QueryAcquireRefundOrderResponse
+         */
         public async Task<QueryAcquireRefundOrderResponse> QueryAcquireRefundOrderAsync(QueryAcquireRefundOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2421,6 +2841,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryAcquireRefundOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询批量付款明细列表
+         *
+         * @param request QueryBatchTradeDetailListRequest
+         * @param headers QueryBatchTradeDetailListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBatchTradeDetailListResponse
+         */
         public QueryBatchTradeDetailListResponse QueryBatchTradeDetailListWithOptions(QueryBatchTradeDetailListRequest request, QueryBatchTradeDetailListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2466,6 +2894,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryBatchTradeDetailListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询批量付款明细列表
+         *
+         * @param request QueryBatchTradeDetailListRequest
+         * @param headers QueryBatchTradeDetailListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBatchTradeDetailListResponse
+         */
         public async Task<QueryBatchTradeDetailListResponse> QueryBatchTradeDetailListWithOptionsAsync(QueryBatchTradeDetailListRequest request, QueryBatchTradeDetailListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2511,6 +2947,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryBatchTradeDetailListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询批量付款明细列表
+         *
+         * @param request QueryBatchTradeDetailListRequest
+         * @return QueryBatchTradeDetailListResponse
+         */
         public QueryBatchTradeDetailListResponse QueryBatchTradeDetailList(QueryBatchTradeDetailListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2518,6 +2960,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryBatchTradeDetailListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询批量付款明细列表
+         *
+         * @param request QueryBatchTradeDetailListRequest
+         * @return QueryBatchTradeDetailListResponse
+         */
         public async Task<QueryBatchTradeDetailListResponse> QueryBatchTradeDetailListAsync(QueryBatchTradeDetailListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2525,6 +2973,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryBatchTradeDetailListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据请求对象查询批量交易订单信息
+         *
+         * @param request QueryBatchTradeOrderRequest
+         * @param headers QueryBatchTradeOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBatchTradeOrderResponse
+         */
         public QueryBatchTradeOrderResponse QueryBatchTradeOrderWithOptions(QueryBatchTradeOrderRequest request, QueryBatchTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2562,6 +3018,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryBatchTradeOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据请求对象查询批量交易订单信息
+         *
+         * @param request QueryBatchTradeOrderRequest
+         * @param headers QueryBatchTradeOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBatchTradeOrderResponse
+         */
         public async Task<QueryBatchTradeOrderResponse> QueryBatchTradeOrderWithOptionsAsync(QueryBatchTradeOrderRequest request, QueryBatchTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2599,6 +3063,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryBatchTradeOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据请求对象查询批量交易订单信息
+         *
+         * @param request QueryBatchTradeOrderRequest
+         * @return QueryBatchTradeOrderResponse
+         */
         public QueryBatchTradeOrderResponse QueryBatchTradeOrder(QueryBatchTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2606,6 +3076,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryBatchTradeOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据请求对象查询批量交易订单信息
+         *
+         * @param request QueryBatchTradeOrderRequest
+         * @return QueryBatchTradeOrderResponse
+         */
         public async Task<QueryBatchTradeOrderResponse> QueryBatchTradeOrderAsync(QueryBatchTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2613,6 +3089,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryBatchTradeOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询付款账号列表
+         *
+         * @param headers QueryPayAccountListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPayAccountListResponse
+         */
         public QueryPayAccountListResponse QueryPayAccountListWithOptions(QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2643,6 +3126,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryPayAccountListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询付款账号列表
+         *
+         * @param headers QueryPayAccountListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPayAccountListResponse
+         */
         public async Task<QueryPayAccountListResponse> QueryPayAccountListWithOptionsAsync(QueryPayAccountListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2673,6 +3163,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryPayAccountListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询付款账号列表
+         *
+         * @return QueryPayAccountListResponse
+         */
         public QueryPayAccountListResponse QueryPayAccountList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2680,6 +3175,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryPayAccountListWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 查询付款账号列表
+         *
+         * @return QueryPayAccountListResponse
+         */
         public async Task<QueryPayAccountListResponse> QueryPayAccountListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2687,6 +3187,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryPayAccountListWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 查询子机构申请单状态
+         *
+         * @param request QueryRegisterOrderRequest
+         * @param headers QueryRegisterOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRegisterOrderResponse
+         */
         public QueryRegisterOrderResponse QueryRegisterOrderWithOptions(QueryRegisterOrderRequest request, QueryRegisterOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2736,6 +3244,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryRegisterOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询子机构申请单状态
+         *
+         * @param request QueryRegisterOrderRequest
+         * @param headers QueryRegisterOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRegisterOrderResponse
+         */
         public async Task<QueryRegisterOrderResponse> QueryRegisterOrderWithOptionsAsync(QueryRegisterOrderRequest request, QueryRegisterOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2785,6 +3301,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryRegisterOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询子机构申请单状态
+         *
+         * @param request QueryRegisterOrderRequest
+         * @return QueryRegisterOrderResponse
+         */
         public QueryRegisterOrderResponse QueryRegisterOrder(QueryRegisterOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2792,6 +3314,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryRegisterOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询子机构申请单状态
+         *
+         * @param request QueryRegisterOrderRequest
+         * @return QueryRegisterOrderResponse
+         */
         public async Task<QueryRegisterOrderResponse> QueryRegisterOrderAsync(QueryRegisterOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2799,6 +3327,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryRegisterOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询用户协议
+         *
+         * @param request QueryUserAgreementRequest
+         * @param headers QueryUserAgreementHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserAgreementResponse
+         */
         public QueryUserAgreementResponse QueryUserAgreementWithOptions(QueryUserAgreementRequest request, QueryUserAgreementHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2852,6 +3388,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryUserAgreementResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户协议
+         *
+         * @param request QueryUserAgreementRequest
+         * @param headers QueryUserAgreementHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserAgreementResponse
+         */
         public async Task<QueryUserAgreementResponse> QueryUserAgreementWithOptionsAsync(QueryUserAgreementRequest request, QueryUserAgreementHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2905,6 +3449,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryUserAgreementResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户协议
+         *
+         * @param request QueryUserAgreementRequest
+         * @return QueryUserAgreementResponse
+         */
         public QueryUserAgreementResponse QueryUserAgreement(QueryUserAgreementRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2912,6 +3462,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryUserAgreementWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询用户协议
+         *
+         * @param request QueryUserAgreementRequest
+         * @return QueryUserAgreementResponse
+         */
         public async Task<QueryUserAgreementResponse> QueryUserAgreementAsync(QueryUserAgreementRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2919,6 +3475,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryUserAgreementWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取用户绑定支付宝信息
+         *
+         * @param headers QueryUserAlipayAccountHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserAlipayAccountResponse
+         */
         public QueryUserAlipayAccountResponse QueryUserAlipayAccountWithOptions(QueryUserAlipayAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2949,6 +3512,13 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryUserAlipayAccountResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户绑定支付宝信息
+         *
+         * @param headers QueryUserAlipayAccountHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUserAlipayAccountResponse
+         */
         public async Task<QueryUserAlipayAccountResponse> QueryUserAlipayAccountWithOptionsAsync(QueryUserAlipayAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2979,6 +3549,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryUserAlipayAccountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户绑定支付宝信息
+         *
+         * @return QueryUserAlipayAccountResponse
+         */
         public QueryUserAlipayAccountResponse QueryUserAlipayAccount()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2986,6 +3561,11 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryUserAlipayAccountWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 获取用户绑定支付宝信息
+         *
+         * @return QueryUserAlipayAccountResponse
+         */
         public async Task<QueryUserAlipayAccountResponse> QueryUserAlipayAccountAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2993,6 +3573,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryUserAlipayAccountWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 查询代扣交易订单信息
+         *
+         * @param request QueryWithholdingOrderRequest
+         * @param headers QueryWithholdingOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryWithholdingOrderResponse
+         */
         public QueryWithholdingOrderResponse QueryWithholdingOrderWithOptions(QueryWithholdingOrderRequest request, QueryWithholdingOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3030,6 +3618,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryWithholdingOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询代扣交易订单信息
+         *
+         * @param request QueryWithholdingOrderRequest
+         * @param headers QueryWithholdingOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryWithholdingOrderResponse
+         */
         public async Task<QueryWithholdingOrderResponse> QueryWithholdingOrderWithOptionsAsync(QueryWithholdingOrderRequest request, QueryWithholdingOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3067,6 +3663,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<QueryWithholdingOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询代扣交易订单信息
+         *
+         * @param request QueryWithholdingOrderRequest
+         * @return QueryWithholdingOrderResponse
+         */
         public QueryWithholdingOrderResponse QueryWithholdingOrder(QueryWithholdingOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3074,6 +3676,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return QueryWithholdingOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询代扣交易订单信息
+         *
+         * @param request QueryWithholdingOrderRequest
+         * @return QueryWithholdingOrderResponse
+         */
         public async Task<QueryWithholdingOrderResponse> QueryWithholdingOrderAsync(QueryWithholdingOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3081,6 +3689,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await QueryWithholdingOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 保存付款码企业配置信息
+         *
+         * @param request SaveCorpPayCodeRequest
+         * @param headers SaveCorpPayCodeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveCorpPayCodeResponse
+         */
         public SaveCorpPayCodeResponse SaveCorpPayCodeWithOptions(SaveCorpPayCodeRequest request, SaveCorpPayCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3130,6 +3746,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<SaveCorpPayCodeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 保存付款码企业配置信息
+         *
+         * @param request SaveCorpPayCodeRequest
+         * @param headers SaveCorpPayCodeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveCorpPayCodeResponse
+         */
         public async Task<SaveCorpPayCodeResponse> SaveCorpPayCodeWithOptionsAsync(SaveCorpPayCodeRequest request, SaveCorpPayCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3179,6 +3803,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<SaveCorpPayCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 保存付款码企业配置信息
+         *
+         * @param request SaveCorpPayCodeRequest
+         * @return SaveCorpPayCodeResponse
+         */
         public SaveCorpPayCodeResponse SaveCorpPayCode(SaveCorpPayCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3186,6 +3816,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return SaveCorpPayCodeWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 保存付款码企业配置信息
+         *
+         * @param request SaveCorpPayCodeRequest
+         * @return SaveCorpPayCodeResponse
+         */
         public async Task<SaveCorpPayCodeResponse> SaveCorpPayCodeAsync(SaveCorpPayCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3193,6 +3829,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await SaveCorpPayCodeWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 解约用户协议
+         *
+         * @param request UnsignUserAgreementRequest
+         * @param headers UnsignUserAgreementHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UnsignUserAgreementResponse
+         */
         public UnsignUserAgreementResponse UnsignUserAgreementWithOptions(UnsignUserAgreementRequest request, UnsignUserAgreementHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3250,6 +3894,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UnsignUserAgreementResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 解约用户协议
+         *
+         * @param request UnsignUserAgreementRequest
+         * @param headers UnsignUserAgreementHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UnsignUserAgreementResponse
+         */
         public async Task<UnsignUserAgreementResponse> UnsignUserAgreementWithOptionsAsync(UnsignUserAgreementRequest request, UnsignUserAgreementHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3307,6 +3959,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UnsignUserAgreementResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 解约用户协议
+         *
+         * @param request UnsignUserAgreementRequest
+         * @return UnsignUserAgreementResponse
+         */
         public UnsignUserAgreementResponse UnsignUserAgreement(UnsignUserAgreementRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3314,6 +3972,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UnsignUserAgreementWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 解约用户协议
+         *
+         * @param request UnsignUserAgreementRequest
+         * @return UnsignUserAgreementResponse
+         */
         public async Task<UnsignUserAgreementResponse> UnsignUserAgreementAsync(UnsignUserAgreementRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3321,6 +3985,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UnsignUserAgreementWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新用户码实例
+         *
+         * @param request UpateUserCodeInstanceRequest
+         * @param headers UpateUserCodeInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpateUserCodeInstanceResponse
+         */
         public UpateUserCodeInstanceResponse UpateUserCodeInstanceWithOptions(UpateUserCodeInstanceRequest request, UpateUserCodeInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3394,6 +4066,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UpateUserCodeInstanceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新用户码实例
+         *
+         * @param request UpateUserCodeInstanceRequest
+         * @param headers UpateUserCodeInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpateUserCodeInstanceResponse
+         */
         public async Task<UpateUserCodeInstanceResponse> UpateUserCodeInstanceWithOptionsAsync(UpateUserCodeInstanceRequest request, UpateUserCodeInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3467,6 +4147,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UpateUserCodeInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新用户码实例
+         *
+         * @param request UpateUserCodeInstanceRequest
+         * @return UpateUserCodeInstanceResponse
+         */
         public UpateUserCodeInstanceResponse UpateUserCodeInstance(UpateUserCodeInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3474,6 +4160,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UpateUserCodeInstanceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新用户码实例
+         *
+         * @param request UpateUserCodeInstanceRequest
+         * @return UpateUserCodeInstanceResponse
+         */
         public async Task<UpateUserCodeInstanceResponse> UpateUserCodeInstanceAsync(UpateUserCodeInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3481,6 +4173,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UpateUserCodeInstanceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 用来给第三方企业提供发票验真结果更新的oapi
+         *
+         * @param request UpdateInvoiceVerifyStatusRequest
+         * @param headers UpdateInvoiceVerifyStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateInvoiceVerifyStatusResponse
+         */
         public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3562,6 +4262,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 用来给第三方企业提供发票验真结果更新的oapi
+         *
+         * @param request UpdateInvoiceVerifyStatusRequest
+         * @param headers UpdateInvoiceVerifyStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateInvoiceVerifyStatusResponse
+         */
         public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusWithOptionsAsync(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3643,6 +4351,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 用来给第三方企业提供发票验真结果更新的oapi
+         *
+         * @param request UpdateInvoiceVerifyStatusRequest
+         * @return UpdateInvoiceVerifyStatusResponse
+         */
         public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3650,6 +4364,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UpdateInvoiceVerifyStatusWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 用来给第三方企业提供发票验真结果更新的oapi
+         *
+         * @param request UpdateInvoiceVerifyStatusRequest
+         * @return UpdateInvoiceVerifyStatusResponse
+         */
         public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusAsync(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3657,6 +4377,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UpdateInvoiceVerifyStatusWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 上传发票
+         *
+         * @param request UploadInvoiceRequest
+         * @param headers UploadInvoiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceResponse
+         */
         public UploadInvoiceResponse UploadInvoiceWithOptions(UploadInvoiceRequest request, UploadInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3702,6 +4430,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 上传发票
+         *
+         * @param request UploadInvoiceRequest
+         * @param headers UploadInvoiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceResponse
+         */
         public async Task<UploadInvoiceResponse> UploadInvoiceWithOptionsAsync(UploadInvoiceRequest request, UploadInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3747,6 +4483,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 上传发票
+         *
+         * @param request UploadInvoiceRequest
+         * @return UploadInvoiceResponse
+         */
         public UploadInvoiceResponse UploadInvoice(UploadInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3754,6 +4496,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UploadInvoiceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 上传发票
+         *
+         * @param request UploadInvoiceRequest
+         * @return UploadInvoiceResponse
+         */
         public async Task<UploadInvoiceResponse> UploadInvoiceAsync(UploadInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3761,6 +4509,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UploadInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 用户授权上传发票oapi
+         *
+         * @param request UploadInvoiceByAuthRequest
+         * @param headers UploadInvoiceByAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceByAuthResponse
+         */
         public UploadInvoiceByAuthResponse UploadInvoiceByAuthWithOptions(UploadInvoiceByAuthRequest request, UploadInvoiceByAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3802,6 +4558,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceByAuthResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 用户授权上传发票oapi
+         *
+         * @param request UploadInvoiceByAuthRequest
+         * @param headers UploadInvoiceByAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceByAuthResponse
+         */
         public async Task<UploadInvoiceByAuthResponse> UploadInvoiceByAuthWithOptionsAsync(UploadInvoiceByAuthRequest request, UploadInvoiceByAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3843,6 +4607,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceByAuthResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 用户授权上传发票oapi
+         *
+         * @param request UploadInvoiceByAuthRequest
+         * @return UploadInvoiceByAuthResponse
+         */
         public UploadInvoiceByAuthResponse UploadInvoiceByAuth(UploadInvoiceByAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3850,6 +4620,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UploadInvoiceByAuthWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 用户授权上传发票oapi
+         *
+         * @param request UploadInvoiceByAuthRequest
+         * @return UploadInvoiceByAuthResponse
+         */
         public async Task<UploadInvoiceByAuthResponse> UploadInvoiceByAuthAsync(UploadInvoiceByAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3857,6 +4633,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UploadInvoiceByAuthWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 通过手机号上传发票
+         *
+         * @param request UploadInvoiceByMobileRequest
+         * @param headers UploadInvoiceByMobileHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceByMobileResponse
+         */
         public UploadInvoiceByMobileResponse UploadInvoiceByMobileWithOptions(UploadInvoiceByMobileRequest request, UploadInvoiceByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3902,6 +4686,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceByMobileResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过手机号上传发票
+         *
+         * @param request UploadInvoiceByMobileRequest
+         * @param headers UploadInvoiceByMobileHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadInvoiceByMobileResponse
+         */
         public async Task<UploadInvoiceByMobileResponse> UploadInvoiceByMobileWithOptionsAsync(UploadInvoiceByMobileRequest request, UploadInvoiceByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3947,6 +4739,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadInvoiceByMobileResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 通过手机号上传发票
+         *
+         * @param request UploadInvoiceByMobileRequest
+         * @return UploadInvoiceByMobileResponse
+         */
         public UploadInvoiceByMobileResponse UploadInvoiceByMobile(UploadInvoiceByMobileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3954,6 +4752,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UploadInvoiceByMobileWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 通过手机号上传发票
+         *
+         * @param request UploadInvoiceByMobileRequest
+         * @return UploadInvoiceByMobileResponse
+         */
         public async Task<UploadInvoiceByMobileResponse> UploadInvoiceByMobileAsync(UploadInvoiceByMobileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3961,6 +4765,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UploadInvoiceByMobileWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 上传进件中的图片获得图片链接
+         *
+         * @param request UploadRegisterImageRequest
+         * @param headers UploadRegisterImageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadRegisterImageResponse
+         */
         public UploadRegisterImageResponse UploadRegisterImageWithOptions(UploadRegisterImageRequest request, UploadRegisterImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4014,6 +4826,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadRegisterImageResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 上传进件中的图片获得图片链接
+         *
+         * @param request UploadRegisterImageRequest
+         * @param headers UploadRegisterImageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadRegisterImageResponse
+         */
         public async Task<UploadRegisterImageResponse> UploadRegisterImageWithOptionsAsync(UploadRegisterImageRequest request, UploadRegisterImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4067,6 +4887,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UploadRegisterImageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 上传进件中的图片获得图片链接
+         *
+         * @param request UploadRegisterImageRequest
+         * @return UploadRegisterImageResponse
+         */
         public UploadRegisterImageResponse UploadRegisterImage(UploadRegisterImageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4074,6 +4900,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UploadRegisterImageWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 上传进件中的图片获得图片链接
+         *
+         * @param request UploadRegisterImageRequest
+         * @return UploadRegisterImageResponse
+         */
         public async Task<UploadRegisterImageResponse> UploadRegisterImageAsync(UploadRegisterImageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4081,6 +4913,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return await UploadRegisterImageWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 用户协议签约
+         *
+         * @param request UserAgreementPageSignRequest
+         * @param headers UserAgreementPageSignHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UserAgreementPageSignResponse
+         */
         public UserAgreementPageSignResponse UserAgreementPageSignWithOptions(UserAgreementPageSignRequest request, UserAgreementPageSignHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4162,6 +5002,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UserAgreementPageSignResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 用户协议签约
+         *
+         * @param request UserAgreementPageSignRequest
+         * @param headers UserAgreementPageSignHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UserAgreementPageSignResponse
+         */
         public async Task<UserAgreementPageSignResponse> UserAgreementPageSignWithOptionsAsync(UserAgreementPageSignRequest request, UserAgreementPageSignHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4243,6 +5091,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return TeaModel.ToObject<UserAgreementPageSignResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 用户协议签约
+         *
+         * @param request UserAgreementPageSignRequest
+         * @return UserAgreementPageSignResponse
+         */
         public UserAgreementPageSignResponse UserAgreementPageSign(UserAgreementPageSignRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4250,6 +5104,12 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
             return UserAgreementPageSignWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 用户协议签约
+         *
+         * @param request UserAgreementPageSignRequest
+         * @return UserAgreementPageSignResponse
+         */
         public async Task<UserAgreementPageSignResponse> UserAgreementPageSignAsync(UserAgreementPageSignRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

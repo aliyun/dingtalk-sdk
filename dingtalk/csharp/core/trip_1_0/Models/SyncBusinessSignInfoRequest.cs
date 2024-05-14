@@ -21,14 +21,23 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string GmtSign { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("orgPayStatus")]
         [Validation(Required=false)]
         public string OrgPayStatus { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("signStatus")]
         [Validation(Required=false)]
         public string SignStatus { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }
@@ -45,6 +54,9 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string PayType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("product")]
             [Validation(Required=false)]
             public string Product { get; set; }
@@ -75,12 +87,18 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [Validation(Required=false)]
                 public string PayType { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("product")]
                 [Validation(Required=false)]
                 public string Product { get; set; }
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("tmcCorpId")]
             [Validation(Required=false)]
             public string TmcCorpId { get; set; }

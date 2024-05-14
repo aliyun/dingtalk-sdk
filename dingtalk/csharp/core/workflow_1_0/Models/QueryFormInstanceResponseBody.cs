@@ -21,44 +21,74 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public long? CreateTimestamp { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
         public string Creator { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("formCode")]
         [Validation(Required=false)]
         public string FormCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("formInstDataList")]
         [Validation(Required=false)]
         public List<QueryFormInstanceResponseBodyFormInstDataList> FormInstDataList { get; set; }
         public class QueryFormInstanceResponseBodyFormInstDataList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("bizAlias")]
             [Validation(Required=false)]
             public string BizAlias { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("componentType")]
             [Validation(Required=false)]
             public string ComponentType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("extendValue")]
             [Validation(Required=false)]
             public string ExtendValue { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("key")]
             [Validation(Required=false)]
             public string Key { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("label")]
             [Validation(Required=false)]
             public string Label { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("formInstanceId")]
         [Validation(Required=false)]
         public string FormInstanceId { get; set; }

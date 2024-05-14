@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class SendAgentOTOMessageRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public SendAgentOTOMessageRequestDetail Detail { get; set; }
         public class SendAgentOTOMessageRequestDetail : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
             public SendAgentOTOMessageRequestDetailMessageBody MessageBody { get; set; }
@@ -137,18 +143,30 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("sessionId")]
             [Validation(Required=false)]
             public string SessionId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]
             public string Uuid { get; set; }

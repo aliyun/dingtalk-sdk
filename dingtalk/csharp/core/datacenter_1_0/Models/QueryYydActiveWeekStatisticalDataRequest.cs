@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryYydActiveWeekStatisticalDataRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("statDate")]
         [Validation(Required=false)]
         public string StatDate { get; set; }

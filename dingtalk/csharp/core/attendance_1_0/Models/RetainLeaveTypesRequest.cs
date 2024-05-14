@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("source")]
         [Validation(Required=false)]
         public long? Source { get; set; }

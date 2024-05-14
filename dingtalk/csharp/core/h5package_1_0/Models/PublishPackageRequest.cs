@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0.Models
         [Validation(Required=false)]
         public long? AppId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("version")]
         [Validation(Required=false)]
         public string Version { get; set; }

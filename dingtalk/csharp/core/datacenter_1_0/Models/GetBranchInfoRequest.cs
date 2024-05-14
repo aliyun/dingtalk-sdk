@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("searchKey")]
         [Validation(Required=false)]
         public string SearchKey { get; set; }

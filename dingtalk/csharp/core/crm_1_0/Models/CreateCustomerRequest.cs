@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<CreateCustomerRequestContacts> Contacts { get; set; }
         public class CreateCustomerRequestContacts : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("data")]
             [Validation(Required=false)]
             public Dictionary<string, object> Data { get; set; }
@@ -23,10 +26,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creatorUserId")]
         [Validation(Required=false)]
         public string CreatorUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public Dictionary<string, object> Data { get; set; }
@@ -57,6 +66,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("saveOption")]
         [Validation(Required=false)]
         public CreateCustomerRequestSaveOption SaveOption { get; set; }

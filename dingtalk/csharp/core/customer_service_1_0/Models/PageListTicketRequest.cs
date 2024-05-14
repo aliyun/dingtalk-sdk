@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [Validation(Required=false)]
         public string ForeignId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
@@ -41,6 +47,9 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }

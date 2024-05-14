@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class ShiftAddRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
@@ -17,14 +20,23 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string Owner { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sections")]
         [Validation(Required=false)]
         public List<ShiftAddRequestSections> Sections { get; set; }
         public class ShiftAddRequestSections : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("times")]
             [Validation(Required=false)]
             public List<ShiftAddRequestSectionsTimes> Times { get; set; }
             public class ShiftAddRequestSectionsTimes : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("across")]
                 [Validation(Required=false)]
                 public int? Across { get; set; }
@@ -33,10 +45,16 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public int? BeginMin { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("checkTime")]
                 [Validation(Required=false)]
                 public long? CheckTime { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("checkType")]
                 [Validation(Required=false)]
                 public string CheckType { get; set; }
@@ -109,6 +127,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public long? ShiftId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

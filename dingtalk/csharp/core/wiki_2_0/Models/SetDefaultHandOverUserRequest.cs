@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         [Validation(Required=false)]
         public string DefaultHandoverUserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class UpdateSpaceRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("spaceInfoVOList")]
         [Validation(Required=false)]
         public List<UpdateSpaceRequestSpaceInfoVOList> SpaceInfoVOList { get; set; }
@@ -25,6 +28,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public long? BuildingType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
@@ -49,6 +55,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public long? ParentDeptId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("tagCode")]
             [Validation(Required=false)]
             public string TagCode { get; set; }

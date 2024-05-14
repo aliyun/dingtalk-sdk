@@ -129,10 +129,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public List<FormComponentPropsStatField> StatField { get; set; }
         public class FormComponentPropsStatField : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("componentId")]
             [Validation(Required=false)]
             public string ComponentId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("label")]
             [Validation(Required=false)]
             public string Label { get; set; }

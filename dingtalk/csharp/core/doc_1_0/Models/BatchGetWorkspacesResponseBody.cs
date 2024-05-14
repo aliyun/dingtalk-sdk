@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<BatchGetWorkspacesResponseBodyWorkspaces> Workspaces { get; set; }
         public class BatchGetWorkspacesResponseBodyWorkspaces : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hasPermission")]
             [Validation(Required=false)]
             public bool? HasPermission { get; set; }

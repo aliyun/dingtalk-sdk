@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0.Models
         [Validation(Required=false)]
         public string DataId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

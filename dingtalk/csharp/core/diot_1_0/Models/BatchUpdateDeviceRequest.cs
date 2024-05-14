@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("devices")]
         [Validation(Required=false)]
         public List<BatchUpdateDeviceRequestDevices> Devices { get; set; }
         public class BatchUpdateDeviceRequestDevices : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceId")]
             [Validation(Required=false)]
             public string DeviceId { get; set; }

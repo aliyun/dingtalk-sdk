@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         [Validation(Required=false)]
         public string DarkIcon { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("gmtCreate")]
         [Validation(Required=false)]
         public string GmtCreate { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("gmtModified")]
         [Validation(Required=false)]
         public string GmtModified { get; set; }
@@ -25,10 +31,16 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         [Validation(Required=false)]
         public string Icon { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("priority")]
         [Validation(Required=false)]
         public int? Priority { get; set; }
@@ -37,10 +49,16 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         [Validation(Required=false)]
         public string Source { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tabId")]
         [Validation(Required=false)]
         public int? TabId { get; set; }

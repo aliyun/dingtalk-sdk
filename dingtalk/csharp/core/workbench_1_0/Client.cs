@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
         }
 
 
+        /**
+         * @summary 批量添加最近使用记录
+         *
+         * @param request AddRecentUserAppListRequest
+         * @param headers AddRecentUserAppListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddRecentUserAppListResponse
+         */
         public AddRecentUserAppListResponse AddRecentUserAppListWithOptions(AddRecentUserAppListRequest request, AddRecentUserAppListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<AddRecentUserAppListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量添加最近使用记录
+         *
+         * @param request AddRecentUserAppListRequest
+         * @param headers AddRecentUserAppListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddRecentUserAppListResponse
+         */
         public async Task<AddRecentUserAppListResponse> AddRecentUserAppListWithOptionsAsync(AddRecentUserAppListRequest request, AddRecentUserAppListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<AddRecentUserAppListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 批量添加最近使用记录
+         *
+         * @param request AddRecentUserAppListRequest
+         * @return AddRecentUserAppListResponse
+         */
         public AddRecentUserAppListResponse AddRecentUserAppList(AddRecentUserAppListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return AddRecentUserAppListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 批量添加最近使用记录
+         *
+         * @param request AddRecentUserAppListRequest
+         * @return AddRecentUserAppListResponse
+         */
         public async Task<AddRecentUserAppListResponse> AddRecentUserAppListAsync(AddRecentUserAppListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await AddRecentUserAppListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询自定义工作台
+         *
+         * @param headers GetDingPortalDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDingPortalDetailResponse
+         */
         public GetDingPortalDetailResponse GetDingPortalDetailWithOptions(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -163,6 +198,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetDingPortalDetailResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询自定义工作台
+         *
+         * @param headers GetDingPortalDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDingPortalDetailResponse
+         */
         public async Task<GetDingPortalDetailResponse> GetDingPortalDetailWithOptionsAsync(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -193,6 +235,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetDingPortalDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询自定义工作台
+         *
+         * @return GetDingPortalDetailResponse
+         */
         public GetDingPortalDetailResponse GetDingPortalDetail(string appUuid)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -200,6 +247,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return GetDingPortalDetailWithOptions(appUuid, headers, runtime);
         }
 
+        /**
+         * @summary 查询自定义工作台
+         *
+         * @return GetDingPortalDetailResponse
+         */
         public async Task<GetDingPortalDetailResponse> GetDingPortalDetailAsync(string appUuid)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -207,6 +259,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await GetDingPortalDetailWithOptionsAsync(appUuid, headers, runtime);
         }
 
+        /**
+         * @summary 获取工作台插件的权限点
+         *
+         * @param request GetPluginPermissionPointRequest
+         * @param headers GetPluginPermissionPointHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPluginPermissionPointResponse
+         */
         public GetPluginPermissionPointResponse GetPluginPermissionPointWithOptions(GetPluginPermissionPointRequest request, GetPluginPermissionPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -244,6 +304,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetPluginPermissionPointResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取工作台插件的权限点
+         *
+         * @param request GetPluginPermissionPointRequest
+         * @param headers GetPluginPermissionPointHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPluginPermissionPointResponse
+         */
         public async Task<GetPluginPermissionPointResponse> GetPluginPermissionPointWithOptionsAsync(GetPluginPermissionPointRequest request, GetPluginPermissionPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -281,6 +349,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetPluginPermissionPointResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取工作台插件的权限点
+         *
+         * @param request GetPluginPermissionPointRequest
+         * @return GetPluginPermissionPointResponse
+         */
         public GetPluginPermissionPointResponse GetPluginPermissionPoint(GetPluginPermissionPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -288,6 +362,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return GetPluginPermissionPointWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取工作台插件的权限点
+         *
+         * @param request GetPluginPermissionPointRequest
+         * @return GetPluginPermissionPointResponse
+         */
         public async Task<GetPluginPermissionPointResponse> GetPluginPermissionPointAsync(GetPluginPermissionPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -295,6 +375,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await GetPluginPermissionPointWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取插件的校验规则
+         *
+         * @param request GetPluginRuleCheckInfoRequest
+         * @param headers GetPluginRuleCheckInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPluginRuleCheckInfoResponse
+         */
         public GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfoWithOptions(GetPluginRuleCheckInfoRequest request, GetPluginRuleCheckInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -332,6 +420,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取插件的校验规则
+         *
+         * @param request GetPluginRuleCheckInfoRequest
+         * @param headers GetPluginRuleCheckInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPluginRuleCheckInfoResponse
+         */
         public async Task<GetPluginRuleCheckInfoResponse> GetPluginRuleCheckInfoWithOptionsAsync(GetPluginRuleCheckInfoRequest request, GetPluginRuleCheckInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -369,6 +465,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取插件的校验规则
+         *
+         * @param request GetPluginRuleCheckInfoRequest
+         * @return GetPluginRuleCheckInfoResponse
+         */
         public GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfo(GetPluginRuleCheckInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -376,6 +478,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return GetPluginRuleCheckInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取插件的校验规则
+         *
+         * @param request GetPluginRuleCheckInfoRequest
+         * @return GetPluginRuleCheckInfoResponse
+         */
         public async Task<GetPluginRuleCheckInfoResponse> GetPluginRuleCheckInfoAsync(GetPluginRuleCheckInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -383,6 +491,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await GetPluginRuleCheckInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取工作台分组列表
+         *
+         * @param request ListWorkBenchGroupRequest
+         * @param headers ListWorkBenchGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListWorkBenchGroupResponse
+         */
         public ListWorkBenchGroupResponse ListWorkBenchGroupWithOptions(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -428,6 +544,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<ListWorkBenchGroupResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取工作台分组列表
+         *
+         * @param request ListWorkBenchGroupRequest
+         * @param headers ListWorkBenchGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListWorkBenchGroupResponse
+         */
         public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupWithOptionsAsync(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -473,6 +597,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<ListWorkBenchGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取工作台分组列表
+         *
+         * @param request ListWorkBenchGroupRequest
+         * @return ListWorkBenchGroupResponse
+         */
         public ListWorkBenchGroupResponse ListWorkBenchGroup(ListWorkBenchGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -480,6 +610,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return ListWorkBenchGroupWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取工作台分组列表
+         *
+         * @param request ListWorkBenchGroupRequest
+         * @return ListWorkBenchGroupResponse
+         */
         public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupAsync(ListWorkBenchGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -487,6 +623,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await ListWorkBenchGroupWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 工作台支持数字红点
+         *
+         * @param request ModifyWorkbenchBadgeRequest
+         * @param headers ModifyWorkbenchBadgeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ModifyWorkbenchBadgeResponse
+         */
         public ModifyWorkbenchBadgeResponse ModifyWorkbenchBadgeWithOptions(ModifyWorkbenchBadgeRequest request, ModifyWorkbenchBadgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -544,6 +688,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<ModifyWorkbenchBadgeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台支持数字红点
+         *
+         * @param request ModifyWorkbenchBadgeRequest
+         * @param headers ModifyWorkbenchBadgeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ModifyWorkbenchBadgeResponse
+         */
         public async Task<ModifyWorkbenchBadgeResponse> ModifyWorkbenchBadgeWithOptionsAsync(ModifyWorkbenchBadgeRequest request, ModifyWorkbenchBadgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -601,6 +753,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<ModifyWorkbenchBadgeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台支持数字红点
+         *
+         * @param request ModifyWorkbenchBadgeRequest
+         * @return ModifyWorkbenchBadgeResponse
+         */
         public ModifyWorkbenchBadgeResponse ModifyWorkbenchBadge(ModifyWorkbenchBadgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -608,6 +766,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return ModifyWorkbenchBadgeWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 工作台支持数字红点
+         *
+         * @param request ModifyWorkbenchBadgeRequest
+         * @return ModifyWorkbenchBadgeResponse
+         */
         public async Task<ModifyWorkbenchBadgeResponse> ModifyWorkbenchBadgeAsync(ModifyWorkbenchBadgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -615,6 +779,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await ModifyWorkbenchBadgeWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 工作台组件授权范围查询
+         *
+         * @param headers QueryComponentScopesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryComponentScopesResponse
+         */
         public QueryComponentScopesResponse QueryComponentScopesWithOptions(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -645,6 +816,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<QueryComponentScopesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台组件授权范围查询
+         *
+         * @param headers QueryComponentScopesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryComponentScopesResponse
+         */
         public async Task<QueryComponentScopesResponse> QueryComponentScopesWithOptionsAsync(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -675,6 +853,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<QueryComponentScopesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台组件授权范围查询
+         *
+         * @return QueryComponentScopesResponse
+         */
         public QueryComponentScopesResponse QueryComponentScopes(string componentId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -682,6 +865,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return QueryComponentScopesWithOptions(componentId, headers, runtime);
         }
 
+        /**
+         * @summary 工作台组件授权范围查询
+         *
+         * @return QueryComponentScopesResponse
+         */
         public async Task<QueryComponentScopesResponse> QueryComponentScopesAsync(string componentId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -689,6 +877,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await QueryComponentScopesWithOptionsAsync(componentId, headers, runtime);
         }
 
+        /**
+         * @summary 查询快捷方式可见范围
+         *
+         * @param headers QueryShortcutScopesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryShortcutScopesResponse
+         */
         public QueryShortcutScopesResponse QueryShortcutScopesWithOptions(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -719,6 +914,13 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<QueryShortcutScopesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询快捷方式可见范围
+         *
+         * @param headers QueryShortcutScopesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryShortcutScopesResponse
+         */
         public async Task<QueryShortcutScopesResponse> QueryShortcutScopesWithOptionsAsync(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -749,6 +951,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<QueryShortcutScopesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询快捷方式可见范围
+         *
+         * @return QueryShortcutScopesResponse
+         */
         public QueryShortcutScopesResponse QueryShortcutScopes(string shortcutKey)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -756,6 +963,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return QueryShortcutScopesWithOptions(shortcutKey, headers, runtime);
         }
 
+        /**
+         * @summary 查询快捷方式可见范围
+         *
+         * @return QueryShortcutScopesResponse
+         */
         public async Task<QueryShortcutScopesResponse> QueryShortcutScopesAsync(string shortcutKey)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -763,6 +975,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await QueryShortcutScopesWithOptionsAsync(shortcutKey, headers, runtime);
         }
 
+        /**
+         * @summary 工作台数字红点支持撤销已被删除的资源
+         *
+         * @param request UndoDeletionRequest
+         * @param headers UndoDeletionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UndoDeletionResponse
+         */
         public UndoDeletionResponse UndoDeletionWithOptions(UndoDeletionRequest request, UndoDeletionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -812,6 +1032,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<UndoDeletionResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台数字红点支持撤销已被删除的资源
+         *
+         * @param request UndoDeletionRequest
+         * @param headers UndoDeletionHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UndoDeletionResponse
+         */
         public async Task<UndoDeletionResponse> UndoDeletionWithOptionsAsync(UndoDeletionRequest request, UndoDeletionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -861,6 +1089,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<UndoDeletionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 工作台数字红点支持撤销已被删除的资源
+         *
+         * @param request UndoDeletionRequest
+         * @return UndoDeletionResponse
+         */
         public UndoDeletionResponse UndoDeletion(UndoDeletionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -868,6 +1102,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return UndoDeletionWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 工作台数字红点支持撤销已被删除的资源
+         *
+         * @param request UndoDeletionRequest
+         * @return UndoDeletionResponse
+         */
         public async Task<UndoDeletionResponse> UndoDeletionAsync(UndoDeletionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -875,6 +1115,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await UndoDeletionWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新自定义工作台页面可见性
+         *
+         * @param request UpdateDingPortalPageScopeRequest
+         * @param headers UpdateDingPortalPageScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateDingPortalPageScopeResponse
+         */
         public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeWithOptions(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -924,6 +1172,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新自定义工作台页面可见性
+         *
+         * @param request UpdateDingPortalPageScopeRequest
+         * @param headers UpdateDingPortalPageScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateDingPortalPageScopeResponse
+         */
         public async Task<UpdateDingPortalPageScopeResponse> UpdateDingPortalPageScopeWithOptionsAsync(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -973,6 +1229,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新自定义工作台页面可见性
+         *
+         * @param request UpdateDingPortalPageScopeRequest
+         * @return UpdateDingPortalPageScopeResponse
+         */
         public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScope(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -980,6 +1242,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return UpdateDingPortalPageScopeWithOptions(pageUuid, appUuid, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新自定义工作台页面可见性
+         *
+         * @param request UpdateDingPortalPageScopeRequest
+         * @return UpdateDingPortalPageScopeResponse
+         */
         public async Task<UpdateDingPortalPageScopeResponse> UpdateDingPortalPageScopeAsync(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

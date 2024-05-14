@@ -20,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string Extend { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("instNo")]
         [Validation(Required=false)]
         public string InstNo { get; set; }
@@ -28,10 +31,16 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string IsBatchJob { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("manufactureDate")]
         [Validation(Required=false)]
         public string ManufactureDate { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("mesAppKey")]
         [Validation(Required=false)]
         public string MesAppKey { get; set; }
@@ -60,6 +69,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string ProductSpecification { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("qualifiedQuantity")]
         [Validation(Required=false)]
         public string QualifiedQuantity { get; set; }
@@ -88,6 +100,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public string UserNameList { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public string Uuid { get; set; }

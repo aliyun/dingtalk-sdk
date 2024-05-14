@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public int? SignContainer { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }

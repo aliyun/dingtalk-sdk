@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class PushBadgeRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public string AgentId { get; set; }
@@ -27,6 +30,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("pushType")]
         [Validation(Required=false)]
         public string PushType { get; set; }

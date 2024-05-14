@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class UpdateResidentMemberRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("residentUpdateInfo")]
         [Validation(Required=false)]
         public UpdateResidentMemberRequestResidentUpdateInfo ResidentUpdateInfo { get; set; }
         public class UpdateResidentMemberRequestResidentUpdateInfo : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
@@ -25,10 +31,16 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> MemberDeptExtension { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("oldDeptId")]
             [Validation(Required=false)]
             public long? OldDeptId { get; set; }
@@ -43,6 +55,9 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

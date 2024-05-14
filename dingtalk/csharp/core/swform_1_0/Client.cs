@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
         }
 
 
+        /**
+         * @summary 获取单个填表实例详情接口
+         *
+         * @param request GetFormInstanceRequest
+         * @param headers GetFormInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFormInstanceResponse
+         */
         public GetFormInstanceResponse GetFormInstanceWithOptions(string formInstanceId, GetFormInstanceRequest request, GetFormInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -66,6 +74,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<GetFormInstanceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取单个填表实例详情接口
+         *
+         * @param request GetFormInstanceRequest
+         * @param headers GetFormInstanceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFormInstanceResponse
+         */
         public async Task<GetFormInstanceResponse> GetFormInstanceWithOptionsAsync(string formInstanceId, GetFormInstanceRequest request, GetFormInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -103,6 +119,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<GetFormInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取单个填表实例详情接口
+         *
+         * @param request GetFormInstanceRequest
+         * @return GetFormInstanceResponse
+         */
         public GetFormInstanceResponse GetFormInstance(string formInstanceId, GetFormInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -110,6 +132,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return GetFormInstanceWithOptions(formInstanceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取单个填表实例详情接口
+         *
+         * @param request GetFormInstanceRequest
+         * @return GetFormInstanceResponse
+         */
         public async Task<GetFormInstanceResponse> GetFormInstanceAsync(string formInstanceId, GetFormInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -117,6 +145,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return await GetFormInstanceWithOptionsAsync(formInstanceId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取填表模版下的填表实例列表接口
+         *
+         * @param request ListFormInstancesRequest
+         * @param headers ListFormInstancesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListFormInstancesResponse
+         */
         public ListFormInstancesResponse ListFormInstancesWithOptions(string formCode, ListFormInstancesRequest request, ListFormInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -166,6 +202,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<ListFormInstancesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取填表模版下的填表实例列表接口
+         *
+         * @param request ListFormInstancesRequest
+         * @param headers ListFormInstancesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListFormInstancesResponse
+         */
         public async Task<ListFormInstancesResponse> ListFormInstancesWithOptionsAsync(string formCode, ListFormInstancesRequest request, ListFormInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -215,6 +259,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<ListFormInstancesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取填表模版下的填表实例列表接口
+         *
+         * @param request ListFormInstancesRequest
+         * @return ListFormInstancesResponse
+         */
         public ListFormInstancesResponse ListFormInstances(string formCode, ListFormInstancesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -222,6 +272,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return ListFormInstancesWithOptions(formCode, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取填表模版下的填表实例列表接口
+         *
+         * @param request ListFormInstancesRequest
+         * @return ListFormInstancesResponse
+         */
         public async Task<ListFormInstancesResponse> ListFormInstancesAsync(string formCode, ListFormInstancesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -229,6 +285,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return await ListFormInstancesWithOptionsAsync(formCode, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取用户创建的填表模板列表接口
+         *
+         * @param request ListFormSchemasByCreatorRequest
+         * @param headers ListFormSchemasByCreatorHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListFormSchemasByCreatorResponse
+         */
         public ListFormSchemasByCreatorResponse ListFormSchemasByCreatorWithOptions(ListFormSchemasByCreatorRequest request, ListFormSchemasByCreatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -278,6 +342,14 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<ListFormSchemasByCreatorResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户创建的填表模板列表接口
+         *
+         * @param request ListFormSchemasByCreatorRequest
+         * @param headers ListFormSchemasByCreatorHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListFormSchemasByCreatorResponse
+         */
         public async Task<ListFormSchemasByCreatorResponse> ListFormSchemasByCreatorWithOptionsAsync(ListFormSchemasByCreatorRequest request, ListFormSchemasByCreatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -327,6 +399,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return TeaModel.ToObject<ListFormSchemasByCreatorResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户创建的填表模板列表接口
+         *
+         * @param request ListFormSchemasByCreatorRequest
+         * @return ListFormSchemasByCreatorResponse
+         */
         public ListFormSchemasByCreatorResponse ListFormSchemasByCreator(ListFormSchemasByCreatorRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -334,6 +412,12 @@ namespace AlibabaCloud.SDK.Dingtalkswform_1_0
             return ListFormSchemasByCreatorWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取用户创建的填表模板列表接口
+         *
+         * @param request ListFormSchemasByCreatorRequest
+         * @return ListFormSchemasByCreatorResponse
+         */
         public async Task<ListFormSchemasByCreatorResponse> ListFormSchemasByCreatorAsync(ListFormSchemasByCreatorRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

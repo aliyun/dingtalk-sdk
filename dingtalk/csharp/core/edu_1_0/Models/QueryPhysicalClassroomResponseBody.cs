@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryPhysicalClassroomResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public QueryPhysicalClassroomResponseBodyResult Result { get; set; }
@@ -25,6 +28,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public string ClassroomFloor { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("classroomId")]
             [Validation(Required=false)]
             public long? ClassroomId { get; set; }
@@ -43,6 +49,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

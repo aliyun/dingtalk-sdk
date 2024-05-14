@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class UpdateInteractiveOTOMessageRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public UpdateInteractiveOTOMessageRequestDetail Detail { get; set; }
         public class UpdateInteractiveOTOMessageRequestDetail : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("cardBizId")]
             [Validation(Required=false)]
             public string CardBizId { get; set; }

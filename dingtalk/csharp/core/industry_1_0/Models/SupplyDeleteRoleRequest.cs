@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyDeleteRoleRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("isRoleGroup")]
         [Validation(Required=false)]
         public bool? IsRoleGroup { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("roleId")]
         [Validation(Required=false)]
         public string RoleId { get; set; }

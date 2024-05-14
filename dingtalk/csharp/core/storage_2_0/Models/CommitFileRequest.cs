@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 {
     public class CommitFileRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
@@ -21,14 +24,23 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [Validation(Required=false)]
             public List<CommitFileRequestOptionAppProperties> AppProperties { get; set; }
             public class CommitFileRequestOptionAppProperties : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("value")]
                 [Validation(Required=false)]
                 public string Value { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("visibility")]
                 [Validation(Required=false)]
                 public string Visibility { get; set; }
@@ -53,10 +65,16 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("uploadKey")]
         [Validation(Required=false)]
         public string UploadKey { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

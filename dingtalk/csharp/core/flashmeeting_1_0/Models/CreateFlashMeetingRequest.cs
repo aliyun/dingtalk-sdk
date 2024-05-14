@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
 {
     public class CreateFlashMeetingRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
         public string Creator { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("eventId")]
         [Validation(Required=false)]
         public string EventId { get; set; }

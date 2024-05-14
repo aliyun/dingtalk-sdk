@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
         }
 
 
+        /**
+         * @summary 执行AI技能
+         *
+         * @param request ExecuteAgentRequest
+         * @param headers ExecuteAgentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExecuteAgentResponse
+         */
         public ExecuteAgentResponse ExecuteAgentWithOptions(ExecuteAgentRequest request, ExecuteAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -82,6 +90,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<ExecuteAgentResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 执行AI技能
+         *
+         * @param request ExecuteAgentRequest
+         * @param headers ExecuteAgentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExecuteAgentResponse
+         */
         public async Task<ExecuteAgentResponse> ExecuteAgentWithOptionsAsync(ExecuteAgentRequest request, ExecuteAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -135,6 +151,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<ExecuteAgentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 执行AI技能
+         *
+         * @param request ExecuteAgentRequest
+         * @return ExecuteAgentResponse
+         */
         public ExecuteAgentResponse ExecuteAgent(ExecuteAgentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -142,6 +164,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return ExecuteAgentWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 执行AI技能
+         *
+         * @param request ExecuteAgentRequest
+         * @return ExecuteAgentResponse
+         */
         public async Task<ExecuteAgentResponse> ExecuteAgentAsync(ExecuteAgentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -149,6 +177,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await ExecuteAgentWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉文生图任务结果获取
+         *
+         * @param request LiandanTextImageGetRequest
+         * @param headers LiandanTextImageGetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanTextImageGetResponse
+         */
         public LiandanTextImageGetResponse LiandanTextImageGetWithOptions(LiandanTextImageGetRequest request, LiandanTextImageGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -194,6 +230,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanTextImageGetResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉文生图任务结果获取
+         *
+         * @param request LiandanTextImageGetRequest
+         * @param headers LiandanTextImageGetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanTextImageGetResponse
+         */
         public async Task<LiandanTextImageGetResponse> LiandanTextImageGetWithOptionsAsync(LiandanTextImageGetRequest request, LiandanTextImageGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -239,6 +283,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanTextImageGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉文生图任务结果获取
+         *
+         * @param request LiandanTextImageGetRequest
+         * @return LiandanTextImageGetResponse
+         */
         public LiandanTextImageGetResponse LiandanTextImageGet(LiandanTextImageGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -246,6 +296,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return LiandanTextImageGetWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉文生图任务结果获取
+         *
+         * @param request LiandanTextImageGetRequest
+         * @return LiandanTextImageGetResponse
+         */
         public async Task<LiandanTextImageGetResponse> LiandanTextImageGetAsync(LiandanTextImageGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -253,6 +309,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await LiandanTextImageGetWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉专属模型接口
+         *
+         * @param request LiandanluExclusiveModelRequest
+         * @param headers LiandanluExclusiveModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanluExclusiveModelResponse
+         */
         public LiandanluExclusiveModelResponse LiandanluExclusiveModelWithOptions(LiandanluExclusiveModelRequest request, LiandanluExclusiveModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -302,6 +366,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanluExclusiveModelResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉专属模型接口
+         *
+         * @param request LiandanluExclusiveModelRequest
+         * @param headers LiandanluExclusiveModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanluExclusiveModelResponse
+         */
         public async Task<LiandanluExclusiveModelResponse> LiandanluExclusiveModelWithOptionsAsync(LiandanluExclusiveModelRequest request, LiandanluExclusiveModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -351,6 +423,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanluExclusiveModelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉专属模型接口
+         *
+         * @param request LiandanluExclusiveModelRequest
+         * @return LiandanluExclusiveModelResponse
+         */
         public LiandanluExclusiveModelResponse LiandanluExclusiveModel(LiandanluExclusiveModelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -358,6 +436,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return LiandanluExclusiveModelWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉专属模型接口
+         *
+         * @param request LiandanluExclusiveModelRequest
+         * @return LiandanluExclusiveModelResponse
+         */
         public async Task<LiandanluExclusiveModelResponse> LiandanluExclusiveModelAsync(LiandanluExclusiveModelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -365,6 +449,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await LiandanluExclusiveModelWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉通过提示词生成图片
+         *
+         * @param request LiandanluTextToImageModelRequest
+         * @param headers LiandanluTextToImageModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanluTextToImageModelResponse
+         */
         public LiandanluTextToImageModelResponse LiandanluTextToImageModelWithOptions(LiandanluTextToImageModelRequest request, LiandanluTextToImageModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -418,6 +510,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanluTextToImageModelResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉通过提示词生成图片
+         *
+         * @param request LiandanluTextToImageModelRequest
+         * @param headers LiandanluTextToImageModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return LiandanluTextToImageModelResponse
+         */
         public async Task<LiandanluTextToImageModelResponse> LiandanluTextToImageModelWithOptionsAsync(LiandanluTextToImageModelRequest request, LiandanluTextToImageModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -471,6 +571,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<LiandanluTextToImageModelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 炼丹炉通过提示词生成图片
+         *
+         * @param request LiandanluTextToImageModelRequest
+         * @return LiandanluTextToImageModelResponse
+         */
         public LiandanluTextToImageModelResponse LiandanluTextToImageModel(LiandanluTextToImageModelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -478,6 +584,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return LiandanluTextToImageModelWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 炼丹炉通过提示词生成图片
+         *
+         * @param request LiandanluTextToImageModelRequest
+         * @return LiandanluTextToImageModelResponse
+         */
         public async Task<LiandanluTextToImageModelResponse> LiandanluTextToImageModelAsync(LiandanluTextToImageModelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -485,6 +597,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await LiandanluTextToImageModelWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @param headers QueryBaymaxSkillLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBaymaxSkillLogResponse
+         */
         public QueryBaymaxSkillLogResponse QueryBaymaxSkillLogWithOptions(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -534,6 +654,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryBaymaxSkillLogResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @param headers QueryBaymaxSkillLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBaymaxSkillLogResponse
+         */
         public async Task<QueryBaymaxSkillLogResponse> QueryBaymaxSkillLogWithOptionsAsync(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -583,6 +711,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryBaymaxSkillLogResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @return QueryBaymaxSkillLogResponse
+         */
         public QueryBaymaxSkillLogResponse QueryBaymaxSkillLog(QueryBaymaxSkillLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -590,6 +724,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return QueryBaymaxSkillLogWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary Baymax技能执行日志
+         *
+         * @param request QueryBaymaxSkillLogRequest
+         * @return QueryBaymaxSkillLogResponse
+         */
         public async Task<QueryBaymaxSkillLogResponse> QueryBaymaxSkillLogAsync(QueryBaymaxSkillLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -597,6 +737,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await QueryBaymaxSkillLogWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询会话消息并以大模型友好的协议返回
+         *
+         * @param tmpReq QueryConversationMessageForAIRequest
+         * @param headers QueryConversationMessageForAIHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConversationMessageForAIResponse
+         */
         public QueryConversationMessageForAIResponse QueryConversationMessageForAIWithOptions(string cid, QueryConversationMessageForAIRequest tmpReq, QueryConversationMessageForAIHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -652,6 +800,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryConversationMessageForAIResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询会话消息并以大模型友好的协议返回
+         *
+         * @param tmpReq QueryConversationMessageForAIRequest
+         * @param headers QueryConversationMessageForAIHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryConversationMessageForAIResponse
+         */
         public async Task<QueryConversationMessageForAIResponse> QueryConversationMessageForAIWithOptionsAsync(string cid, QueryConversationMessageForAIRequest tmpReq, QueryConversationMessageForAIHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -707,6 +863,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryConversationMessageForAIResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询会话消息并以大模型友好的协议返回
+         *
+         * @param request QueryConversationMessageForAIRequest
+         * @return QueryConversationMessageForAIResponse
+         */
         public QueryConversationMessageForAIResponse QueryConversationMessageForAI(string cid, QueryConversationMessageForAIRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -714,6 +876,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return QueryConversationMessageForAIWithOptions(cid, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询会话消息并以大模型友好的协议返回
+         *
+         * @param request QueryConversationMessageForAIRequest
+         * @return QueryConversationMessageForAIResponse
+         */
         public async Task<QueryConversationMessageForAIResponse> QueryConversationMessageForAIAsync(string cid, QueryConversationMessageForAIRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -721,6 +889,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await QueryConversationMessageForAIWithOptionsAsync(cid, request, headers, runtime);
         }
 
+        /**
+         * @summary 查询记忆学习进度
+         *
+         * @param request QueryMemoryLearningTaskRequest
+         * @param headers QueryMemoryLearningTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMemoryLearningTaskResponse
+         */
         public QueryMemoryLearningTaskResponse QueryMemoryLearningTaskWithOptions(QueryMemoryLearningTaskRequest request, QueryMemoryLearningTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -762,6 +938,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryMemoryLearningTaskResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询记忆学习进度
+         *
+         * @param request QueryMemoryLearningTaskRequest
+         * @param headers QueryMemoryLearningTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMemoryLearningTaskResponse
+         */
         public async Task<QueryMemoryLearningTaskResponse> QueryMemoryLearningTaskWithOptionsAsync(QueryMemoryLearningTaskRequest request, QueryMemoryLearningTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -803,6 +987,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<QueryMemoryLearningTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询记忆学习进度
+         *
+         * @param request QueryMemoryLearningTaskRequest
+         * @return QueryMemoryLearningTaskResponse
+         */
         public QueryMemoryLearningTaskResponse QueryMemoryLearningTask(QueryMemoryLearningTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -810,6 +1000,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return QueryMemoryLearningTaskWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询记忆学习进度
+         *
+         * @param request QueryMemoryLearningTaskRequest
+         * @return QueryMemoryLearningTaskResponse
+         */
         public async Task<QueryMemoryLearningTaskResponse> QueryMemoryLearningTaskAsync(QueryMemoryLearningTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -817,6 +1013,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return await QueryMemoryLearningTaskWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 提交记忆学习任务
+         *
+         * @param tmpReq SubmitMemoryLearningTaskRequest
+         * @param headers SubmitMemoryLearningTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SubmitMemoryLearningTaskResponse
+         */
         public SubmitMemoryLearningTaskResponse SubmitMemoryLearningTaskWithOptions(SubmitMemoryLearningTaskRequest tmpReq, SubmitMemoryLearningTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -872,6 +1076,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<SubmitMemoryLearningTaskResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 提交记忆学习任务
+         *
+         * @param tmpReq SubmitMemoryLearningTaskRequest
+         * @param headers SubmitMemoryLearningTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SubmitMemoryLearningTaskResponse
+         */
         public async Task<SubmitMemoryLearningTaskResponse> SubmitMemoryLearningTaskWithOptionsAsync(SubmitMemoryLearningTaskRequest tmpReq, SubmitMemoryLearningTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -927,6 +1139,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return TeaModel.ToObject<SubmitMemoryLearningTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 提交记忆学习任务
+         *
+         * @param request SubmitMemoryLearningTaskRequest
+         * @return SubmitMemoryLearningTaskResponse
+         */
         public SubmitMemoryLearningTaskResponse SubmitMemoryLearningTask(SubmitMemoryLearningTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -934,6 +1152,12 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             return SubmitMemoryLearningTaskWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 提交记忆学习任务
+         *
+         * @param request SubmitMemoryLearningTaskRequest
+         * @return SubmitMemoryLearningTaskResponse
+         */
         public async Task<SubmitMemoryLearningTaskResponse> SubmitMemoryLearningTaskAsync(SubmitMemoryLearningTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

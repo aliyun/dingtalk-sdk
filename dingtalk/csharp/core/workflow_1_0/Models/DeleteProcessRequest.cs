@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public bool? CleanRunningTask { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processCode")]
         [Validation(Required=false)]
         public string ProcessCode { get; set; }

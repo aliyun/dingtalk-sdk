@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class QueryBatchSendResultResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("results")]
         [Validation(Required=false)]
         public List<QueryBatchSendResultResponseBodyResults> Results { get; set; }
@@ -35,6 +38,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }

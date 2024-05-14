@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string BizId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public SendOfficialAccountOTOMessageRequestDetail Detail { get; set; }
         public class SendOfficialAccountOTOMessageRequestDetail : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
             public SendOfficialAccountOTOMessageRequestDetailMessageBody MessageBody { get; set; }
@@ -33,10 +39,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [Validation(Required=false)]
                     public List<SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList> ButtonList { get; set; }
                     public class SendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList : TeaModel {
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("actionUrl")]
                         [Validation(Required=false)]
                         public string ActionUrl { get; set; }
 
+                        /// <summary>
+                        /// This parameter is required.
+                        /// </summary>
                         [NameInMap("title")]
                         [Validation(Required=false)]
                         public string Title { get; set; }
@@ -59,6 +71,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [Validation(Required=false)]
                     public string SingleUrl { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
@@ -79,18 +94,30 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public SendOfficialAccountOTOMessageRequestDetailMessageBodyLink Link { get; set; }
                 public class SendOfficialAccountOTOMessageRequestDetailMessageBodyLink : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("messageUrl")]
                     [Validation(Required=false)]
                     public string MessageUrl { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("picUrl")]
                     [Validation(Required=false)]
                     public string PicUrl { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("text")]
                     [Validation(Required=false)]
                     public string Text { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
@@ -101,10 +128,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown Markdown { get; set; }
                 public class SendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("text")]
                     [Validation(Required=false)]
                     public string Text { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
@@ -115,6 +148,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public SendOfficialAccountOTOMessageRequestDetailMessageBodyText Text { get; set; }
                 public class SendOfficialAccountOTOMessageRequestDetailMessageBodyText : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("content")]
                     [Validation(Required=false)]
                     public string Content { get; set; }
@@ -123,6 +159,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
@@ -135,6 +174,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string UserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]
             public string Uuid { get; set; }

@@ -9,22 +9,37 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportRegistRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportRegistRequestBody> Body { get; set; }
         public class HrbrainImportRegistRequestBody : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deptNo")]
             [Validation(Required=false)]
             public string DeptNo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("empSource")]
             [Validation(Required=false)]
             public string EmpSource { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("empType")]
             [Validation(Required=false)]
             public string EmpType { get; set; }
@@ -41,6 +56,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string JobLevel { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -49,6 +67,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string PostName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("registDate")]
             [Validation(Required=false)]
             public string RegistDate { get; set; }
@@ -61,12 +82,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string WorkLocAddr { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
             public string WorkNo { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }

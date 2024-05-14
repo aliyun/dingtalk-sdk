@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public GetProcessCodeByNameResponseBodyResult Result { get; set; }
         public class GetProcessCodeByNameResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// 
+            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// </summary>
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
             public string GmtModified { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }

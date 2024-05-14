@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyUpdateMemberRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("isCopyDept")]
         [Validation(Required=false)]
         public bool? IsCopyDept { get; set; }
@@ -25,10 +28,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Mobile { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("newDeptId")]
         [Validation(Required=false)]
         public long? NewDeptId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("oldDeptId")]
         [Validation(Required=false)]
         public long? OldDeptId { get; set; }

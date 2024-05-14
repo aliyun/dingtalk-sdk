@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class QueryDeviceResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<QueryDeviceResponseBodyData> Data { get; set; }
         public class QueryDeviceResponseBodyData : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceId")]
             [Validation(Required=false)]
             public string DeviceId { get; set; }

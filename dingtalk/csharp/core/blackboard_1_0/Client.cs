@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
         }
 
 
+        /**
+         * @summary 查询公告已读未读人员列表
+         *
+         * @param request QueryBlackboardReadUnReadRequest
+         * @param headers QueryBlackboardReadUnReadHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBlackboardReadUnReadResponse
+         */
         public QueryBlackboardReadUnReadResponse QueryBlackboardReadUnReadWithOptions(QueryBlackboardReadUnReadRequest request, QueryBlackboardReadUnReadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -78,6 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return TeaModel.ToObject<QueryBlackboardReadUnReadResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询公告已读未读人员列表
+         *
+         * @param request QueryBlackboardReadUnReadRequest
+         * @param headers QueryBlackboardReadUnReadHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBlackboardReadUnReadResponse
+         */
         public async Task<QueryBlackboardReadUnReadResponse> QueryBlackboardReadUnReadWithOptionsAsync(QueryBlackboardReadUnReadRequest request, QueryBlackboardReadUnReadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -127,6 +143,12 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return TeaModel.ToObject<QueryBlackboardReadUnReadResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询公告已读未读人员列表
+         *
+         * @param request QueryBlackboardReadUnReadRequest
+         * @return QueryBlackboardReadUnReadResponse
+         */
         public QueryBlackboardReadUnReadResponse QueryBlackboardReadUnRead(QueryBlackboardReadUnReadRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -134,6 +156,12 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return QueryBlackboardReadUnReadWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询公告已读未读人员列表
+         *
+         * @param request QueryBlackboardReadUnReadRequest
+         * @return QueryBlackboardReadUnReadResponse
+         */
         public async Task<QueryBlackboardReadUnReadResponse> QueryBlackboardReadUnReadAsync(QueryBlackboardReadUnReadRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -141,6 +169,14 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return await QueryBlackboardReadUnReadWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取公告钉盘空间信息
+         *
+         * @param request QueryBlackboardSpaceRequest
+         * @param headers QueryBlackboardSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBlackboardSpaceResponse
+         */
         public QueryBlackboardSpaceResponse QueryBlackboardSpaceWithOptions(QueryBlackboardSpaceRequest request, QueryBlackboardSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -178,6 +214,14 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return TeaModel.ToObject<QueryBlackboardSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取公告钉盘空间信息
+         *
+         * @param request QueryBlackboardSpaceRequest
+         * @param headers QueryBlackboardSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryBlackboardSpaceResponse
+         */
         public async Task<QueryBlackboardSpaceResponse> QueryBlackboardSpaceWithOptionsAsync(QueryBlackboardSpaceRequest request, QueryBlackboardSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -215,6 +259,12 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return TeaModel.ToObject<QueryBlackboardSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取公告钉盘空间信息
+         *
+         * @param request QueryBlackboardSpaceRequest
+         * @return QueryBlackboardSpaceResponse
+         */
         public QueryBlackboardSpaceResponse QueryBlackboardSpace(QueryBlackboardSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -222,6 +272,12 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0
             return QueryBlackboardSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取公告钉盘空间信息
+         *
+         * @param request QueryBlackboardSpaceRequest
+         * @return QueryBlackboardSpaceResponse
+         */
         public async Task<QueryBlackboardSpaceResponse> QueryBlackboardSpaceAsync(QueryBlackboardSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

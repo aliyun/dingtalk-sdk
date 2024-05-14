@@ -59,10 +59,16 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
@@ -101,6 +107,9 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("receiverUserId")]
         [Validation(Required=false)]
         public List<string> ReceiverUserId { get; set; }

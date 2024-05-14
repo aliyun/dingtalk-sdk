@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
         }
 
 
+        /**
+         * @summary 查询个人单企业待办数
+         *
+         * @param request CountWorkRecordRequest
+         * @param headers CountWorkRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CountWorkRecordResponse
+         */
         public CountWorkRecordResponse CountWorkRecordWithOptions(CountWorkRecordRequest request, CountWorkRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -66,6 +74,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
             return TeaModel.ToObject<CountWorkRecordResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询个人单企业待办数
+         *
+         * @param request CountWorkRecordRequest
+         * @param headers CountWorkRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CountWorkRecordResponse
+         */
         public async Task<CountWorkRecordResponse> CountWorkRecordWithOptionsAsync(CountWorkRecordRequest request, CountWorkRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -103,6 +119,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
             return TeaModel.ToObject<CountWorkRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询个人单企业待办数
+         *
+         * @param request CountWorkRecordRequest
+         * @return CountWorkRecordResponse
+         */
         public CountWorkRecordResponse CountWorkRecord(CountWorkRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -110,6 +132,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
             return CountWorkRecordWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询个人单企业待办数
+         *
+         * @param request CountWorkRecordRequest
+         * @return CountWorkRecordResponse
+         */
         public async Task<CountWorkRecordResponse> CountWorkRecordAsync(CountWorkRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

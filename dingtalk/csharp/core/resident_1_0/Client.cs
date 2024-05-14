@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
         }
 
 
+        /**
+         * @summary 增加积分
+         *
+         * @param request AddPointRequest
+         * @param headers AddPointHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddPointResponse
+         */
         public AddPointResponse AddPointWithOptions(AddPointRequest request, AddPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -90,6 +98,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddPointResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 增加积分
+         *
+         * @param request AddPointRequest
+         * @param headers AddPointHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddPointResponse
+         */
         public async Task<AddPointResponse> AddPointWithOptionsAsync(AddPointRequest request, AddPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -151,6 +167,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddPointResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 增加积分
+         *
+         * @param request AddPointRequest
+         * @return AddPointResponse
+         */
         public AddPointResponse AddPoint(AddPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -158,6 +180,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return AddPointWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 增加积分
+         *
+         * @param request AddPointRequest
+         * @return AddPointResponse
+         */
         public async Task<AddPointResponse> AddPointAsync(AddPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -165,6 +193,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await AddPointWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 增加组户
+         *
+         * @param request AddResidentDepartmentRequest
+         * @param headers AddResidentDepartmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentDepartmentResponse
+         */
         public AddResidentDepartmentResponse AddResidentDepartmentWithOptions(AddResidentDepartmentRequest request, AddResidentDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -210,6 +246,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentDepartmentResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 增加组户
+         *
+         * @param request AddResidentDepartmentRequest
+         * @param headers AddResidentDepartmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentDepartmentResponse
+         */
         public async Task<AddResidentDepartmentResponse> AddResidentDepartmentWithOptionsAsync(AddResidentDepartmentRequest request, AddResidentDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -255,6 +299,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentDepartmentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 增加组户
+         *
+         * @param request AddResidentDepartmentRequest
+         * @return AddResidentDepartmentResponse
+         */
         public AddResidentDepartmentResponse AddResidentDepartment(AddResidentDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -262,6 +312,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return AddResidentDepartmentWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 增加组户
+         *
+         * @param request AddResidentDepartmentRequest
+         * @return AddResidentDepartmentResponse
+         */
         public async Task<AddResidentDepartmentResponse> AddResidentDepartmentAsync(AddResidentDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -269,6 +325,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await AddResidentDepartmentWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 添加小区成员
+         *
+         * @param request AddResidentMemberRequest
+         * @param headers AddResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentMemberResponse
+         */
         public AddResidentMemberResponse AddResidentMemberWithOptions(AddResidentMemberRequest request, AddResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -306,6 +370,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentMemberResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 添加小区成员
+         *
+         * @param request AddResidentMemberRequest
+         * @param headers AddResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentMemberResponse
+         */
         public async Task<AddResidentMemberResponse> AddResidentMemberWithOptionsAsync(AddResidentMemberRequest request, AddResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -343,6 +415,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 添加小区成员
+         *
+         * @param request AddResidentMemberRequest
+         * @return AddResidentMemberResponse
+         */
         public AddResidentMemberResponse AddResidentMember(AddResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -350,6 +428,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return AddResidentMemberWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 添加小区成员
+         *
+         * @param request AddResidentMemberRequest
+         * @return AddResidentMemberResponse
+         */
         public async Task<AddResidentMemberResponse> AddResidentMemberAsync(AddResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -357,6 +441,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await AddResidentMemberWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 新增居民
+         *
+         * @param request AddResidentUsersRequest
+         * @param headers AddResidentUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentUsersResponse
+         */
         public AddResidentUsersResponse AddResidentUsersWithOptions(AddResidentUsersRequest request, AddResidentUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -418,6 +510,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentUsersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增居民
+         *
+         * @param request AddResidentUsersRequest
+         * @param headers AddResidentUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddResidentUsersResponse
+         */
         public async Task<AddResidentUsersResponse> AddResidentUsersWithOptionsAsync(AddResidentUsersRequest request, AddResidentUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -479,6 +579,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<AddResidentUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增居民
+         *
+         * @param request AddResidentUsersRequest
+         * @return AddResidentUsersResponse
+         */
         public AddResidentUsersResponse AddResidentUsers(AddResidentUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -486,6 +592,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return AddResidentUsersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 新增居民
+         *
+         * @param request AddResidentUsersRequest
+         * @return AddResidentUsersResponse
+         */
         public async Task<AddResidentUsersResponse> AddResidentUsersAsync(AddResidentUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -493,6 +605,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await AddResidentUsersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建小区公告
+         *
+         * @param request CreateResidentBlackBoardRequest
+         * @param headers CreateResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateResidentBlackBoardResponse
+         */
         public CreateResidentBlackBoardResponse CreateResidentBlackBoardWithOptions(CreateResidentBlackBoardRequest request, CreateResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -542,6 +662,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<CreateResidentBlackBoardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建小区公告
+         *
+         * @param request CreateResidentBlackBoardRequest
+         * @param headers CreateResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateResidentBlackBoardResponse
+         */
         public async Task<CreateResidentBlackBoardResponse> CreateResidentBlackBoardWithOptionsAsync(CreateResidentBlackBoardRequest request, CreateResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -591,6 +719,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<CreateResidentBlackBoardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建小区公告
+         *
+         * @param request CreateResidentBlackBoardRequest
+         * @return CreateResidentBlackBoardResponse
+         */
         public CreateResidentBlackBoardResponse CreateResidentBlackBoard(CreateResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -598,6 +732,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return CreateResidentBlackBoardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建小区公告
+         *
+         * @param request CreateResidentBlackBoardRequest
+         * @return CreateResidentBlackBoardResponse
+         */
         public async Task<CreateResidentBlackBoardResponse> CreateResidentBlackBoardAsync(CreateResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -605,6 +745,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await CreateResidentBlackBoardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+         *
+         * @param request CreateSpaceRequest
+         * @param headers CreateSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSpaceResponse
+         */
         public CreateSpaceResponse CreateSpaceWithOptions(CreateSpaceRequest request, CreateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -670,6 +818,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<CreateSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+         *
+         * @param request CreateSpaceRequest
+         * @param headers CreateSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSpaceResponse
+         */
         public async Task<CreateSpaceResponse> CreateSpaceWithOptionsAsync(CreateSpaceRequest request, CreateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -735,6 +891,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<CreateSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+         *
+         * @param request CreateSpaceRequest
+         * @return CreateSpaceResponse
+         */
         public CreateSpaceResponse CreateSpace(CreateSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -742,6 +904,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return CreateSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+         *
+         * @param request CreateSpaceRequest
+         * @return CreateSpaceResponse
+         */
         public async Task<CreateSpaceResponse> CreateSpaceAsync(CreateSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -749,6 +917,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await CreateSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除小区公告
+         *
+         * @param request DeleteResidentBlackBoardRequest
+         * @param headers DeleteResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteResidentBlackBoardResponse
+         */
         public DeleteResidentBlackBoardResponse DeleteResidentBlackBoardWithOptions(DeleteResidentBlackBoardRequest request, DeleteResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -786,6 +962,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteResidentBlackBoardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除小区公告
+         *
+         * @param request DeleteResidentBlackBoardRequest
+         * @param headers DeleteResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteResidentBlackBoardResponse
+         */
         public async Task<DeleteResidentBlackBoardResponse> DeleteResidentBlackBoardWithOptionsAsync(DeleteResidentBlackBoardRequest request, DeleteResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -823,6 +1007,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteResidentBlackBoardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除小区公告
+         *
+         * @param request DeleteResidentBlackBoardRequest
+         * @return DeleteResidentBlackBoardResponse
+         */
         public DeleteResidentBlackBoardResponse DeleteResidentBlackBoard(DeleteResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -830,6 +1020,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return DeleteResidentBlackBoardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除小区公告
+         *
+         * @param request DeleteResidentBlackBoardRequest
+         * @return DeleteResidentBlackBoardResponse
+         */
         public async Task<DeleteResidentBlackBoardResponse> DeleteResidentBlackBoardAsync(DeleteResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -837,6 +1033,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await DeleteResidentBlackBoardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除组户信息
+         *
+         * @param request DeleteResidentDepartmentRequest
+         * @param headers DeleteResidentDepartmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteResidentDepartmentResponse
+         */
         public DeleteResidentDepartmentResponse DeleteResidentDepartmentWithOptions(DeleteResidentDepartmentRequest request, DeleteResidentDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -874,6 +1078,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteResidentDepartmentResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除组户信息
+         *
+         * @param request DeleteResidentDepartmentRequest
+         * @param headers DeleteResidentDepartmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteResidentDepartmentResponse
+         */
         public async Task<DeleteResidentDepartmentResponse> DeleteResidentDepartmentWithOptionsAsync(DeleteResidentDepartmentRequest request, DeleteResidentDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -911,6 +1123,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteResidentDepartmentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除组户信息
+         *
+         * @param request DeleteResidentDepartmentRequest
+         * @return DeleteResidentDepartmentResponse
+         */
         public DeleteResidentDepartmentResponse DeleteResidentDepartment(DeleteResidentDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -918,6 +1136,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return DeleteResidentDepartmentWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除组户信息
+         *
+         * @param request DeleteResidentDepartmentRequest
+         * @return DeleteResidentDepartmentResponse
+         */
         public async Task<DeleteResidentDepartmentResponse> DeleteResidentDepartmentAsync(DeleteResidentDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -925,6 +1149,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await DeleteResidentDepartmentWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除小区空间，含分区，楼栋，单元，房屋
+         *
+         * @param request DeleteSpaceRequest
+         * @param headers DeleteSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSpaceResponse
+         */
         public DeleteSpaceResponse DeleteSpaceWithOptions(DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -962,6 +1194,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除小区空间，含分区，楼栋，单元，房屋
+         *
+         * @param request DeleteSpaceRequest
+         * @param headers DeleteSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSpaceResponse
+         */
         public async Task<DeleteSpaceResponse> DeleteSpaceWithOptionsAsync(DeleteSpaceRequest request, DeleteSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -999,6 +1239,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<DeleteSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除小区空间，含分区，楼栋，单元，房屋
+         *
+         * @param request DeleteSpaceRequest
+         * @return DeleteSpaceResponse
+         */
         public DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1006,6 +1252,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return DeleteSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除小区空间，含分区，楼栋，单元，房屋
+         *
+         * @param request DeleteSpaceRequest
+         * @return DeleteSpaceResponse
+         */
         public async Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1013,6 +1265,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await DeleteSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定群的openConversationId
+         *
+         * @param request GetConversationIdRequest
+         * @param headers GetConversationIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConversationIdResponse
+         */
         public GetConversationIdResponse GetConversationIdWithOptions(GetConversationIdRequest request, GetConversationIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1050,6 +1310,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetConversationIdResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定群的openConversationId
+         *
+         * @param request GetConversationIdRequest
+         * @param headers GetConversationIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConversationIdResponse
+         */
         public async Task<GetConversationIdResponse> GetConversationIdWithOptionsAsync(GetConversationIdRequest request, GetConversationIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1087,6 +1355,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetConversationIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取指定群的openConversationId
+         *
+         * @param request GetConversationIdRequest
+         * @return GetConversationIdResponse
+         */
         public GetConversationIdResponse GetConversationId(GetConversationIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1094,6 +1368,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetConversationIdWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取指定群的openConversationId
+         *
+         * @param request GetConversationIdRequest
+         * @return GetConversationIdResponse
+         */
         public async Task<GetConversationIdResponse> GetConversationIdAsync(GetConversationIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1101,6 +1381,13 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetConversationIdWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取组织的行业类型
+         *
+         * @param headers GetIndustryTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetIndustryTypeResponse
+         */
         public GetIndustryTypeResponse GetIndustryTypeWithOptions(GetIndustryTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1131,6 +1418,13 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetIndustryTypeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取组织的行业类型
+         *
+         * @param headers GetIndustryTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetIndustryTypeResponse
+         */
         public async Task<GetIndustryTypeResponse> GetIndustryTypeWithOptionsAsync(GetIndustryTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1161,6 +1455,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetIndustryTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取组织的行业类型
+         *
+         * @return GetIndustryTypeResponse
+         */
         public GetIndustryTypeResponse GetIndustryType()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1168,6 +1467,11 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetIndustryTypeWithOptions(headers, runtime);
         }
 
+        /**
+         * @summary 获取组织的行业类型
+         *
+         * @return GetIndustryTypeResponse
+         */
         public async Task<GetIndustryTypeResponse> GetIndustryTypeAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1175,6 +1479,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetIndustryTypeWithOptionsAsync(headers, runtime);
         }
 
+        /**
+         * @summary 获取物业公司信息
+         *
+         * @param request GetPropertyInfoRequest
+         * @param headers GetPropertyInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPropertyInfoResponse
+         */
         public GetPropertyInfoResponse GetPropertyInfoWithOptions(GetPropertyInfoRequest request, GetPropertyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1212,6 +1524,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetPropertyInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取物业公司信息
+         *
+         * @param request GetPropertyInfoRequest
+         * @param headers GetPropertyInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPropertyInfoResponse
+         */
         public async Task<GetPropertyInfoResponse> GetPropertyInfoWithOptionsAsync(GetPropertyInfoRequest request, GetPropertyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1249,6 +1569,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetPropertyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取物业公司信息
+         *
+         * @param request GetPropertyInfoRequest
+         * @return GetPropertyInfoResponse
+         */
         public GetPropertyInfoResponse GetPropertyInfo(GetPropertyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1256,6 +1582,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetPropertyInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取物业公司信息
+         *
+         * @param request GetPropertyInfoRequest
+         * @return GetPropertyInfoResponse
+         */
         public async Task<GetPropertyInfoResponse> GetPropertyInfoAsync(GetPropertyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1263,6 +1595,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetPropertyInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取小区信息
+         *
+         * @param request GetResidentInfoRequest
+         * @param headers GetResidentInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetResidentInfoResponse
+         */
         public GetResidentInfoResponse GetResidentInfoWithOptions(GetResidentInfoRequest request, GetResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1300,6 +1640,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetResidentInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取小区信息
+         *
+         * @param request GetResidentInfoRequest
+         * @param headers GetResidentInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetResidentInfoResponse
+         */
         public async Task<GetResidentInfoResponse> GetResidentInfoWithOptionsAsync(GetResidentInfoRequest request, GetResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1337,6 +1685,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetResidentInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取小区信息
+         *
+         * @param request GetResidentInfoRequest
+         * @return GetResidentInfoResponse
+         */
         public GetResidentInfoResponse GetResidentInfo(GetResidentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1344,6 +1698,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetResidentInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取小区信息
+         *
+         * @param request GetResidentInfoRequest
+         * @return GetResidentInfoResponse
+         */
         public async Task<GetResidentInfoResponse> GetResidentInfoAsync(GetResidentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1351,6 +1711,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetResidentInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取小区人员信息，包括居民和物业人员
+         *
+         * @param request GetResidentMembersInfoRequest
+         * @param headers GetResidentMembersInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetResidentMembersInfoResponse
+         */
         public GetResidentMembersInfoResponse GetResidentMembersInfoWithOptions(GetResidentMembersInfoRequest request, GetResidentMembersInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1392,6 +1760,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetResidentMembersInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取小区人员信息，包括居民和物业人员
+         *
+         * @param request GetResidentMembersInfoRequest
+         * @param headers GetResidentMembersInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetResidentMembersInfoResponse
+         */
         public async Task<GetResidentMembersInfoResponse> GetResidentMembersInfoWithOptionsAsync(GetResidentMembersInfoRequest request, GetResidentMembersInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1433,6 +1809,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetResidentMembersInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取小区人员信息，包括居民和物业人员
+         *
+         * @param request GetResidentMembersInfoRequest
+         * @return GetResidentMembersInfoResponse
+         */
         public GetResidentMembersInfoResponse GetResidentMembersInfo(GetResidentMembersInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1440,6 +1822,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetResidentMembersInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取小区人员信息，包括居民和物业人员
+         *
+         * @param request GetResidentMembersInfoRequest
+         * @return GetResidentMembersInfoResponse
+         */
         public async Task<GetResidentMembersInfoResponse> GetResidentMembersInfoAsync(GetResidentMembersInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1447,6 +1835,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetResidentMembersInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据类型获取部门id
+         *
+         * @param request GetSpaceIdByTypeRequest
+         * @param headers GetSpaceIdByTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpaceIdByTypeResponse
+         */
         public GetSpaceIdByTypeResponse GetSpaceIdByTypeWithOptions(GetSpaceIdByTypeRequest request, GetSpaceIdByTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1484,6 +1880,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetSpaceIdByTypeResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据类型获取部门id
+         *
+         * @param request GetSpaceIdByTypeRequest
+         * @param headers GetSpaceIdByTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpaceIdByTypeResponse
+         */
         public async Task<GetSpaceIdByTypeResponse> GetSpaceIdByTypeWithOptionsAsync(GetSpaceIdByTypeRequest request, GetSpaceIdByTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1521,6 +1925,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetSpaceIdByTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据类型获取部门id
+         *
+         * @param request GetSpaceIdByTypeRequest
+         * @return GetSpaceIdByTypeResponse
+         */
         public GetSpaceIdByTypeResponse GetSpaceIdByType(GetSpaceIdByTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1528,6 +1938,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetSpaceIdByTypeWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据类型获取部门id
+         *
+         * @param request GetSpaceIdByTypeRequest
+         * @return GetSpaceIdByTypeResponse
+         */
         public async Task<GetSpaceIdByTypeResponse> GetSpaceIdByTypeAsync(GetSpaceIdByTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1535,6 +1951,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetSpaceIdByTypeWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取空间信息
+         *
+         * @param request GetSpacesInfoRequest
+         * @param headers GetSpacesInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpacesInfoResponse
+         */
         public GetSpacesInfoResponse GetSpacesInfoWithOptions(GetSpacesInfoRequest request, GetSpacesInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1576,6 +2000,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetSpacesInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取空间信息
+         *
+         * @param request GetSpacesInfoRequest
+         * @param headers GetSpacesInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSpacesInfoResponse
+         */
         public async Task<GetSpacesInfoResponse> GetSpacesInfoWithOptionsAsync(GetSpacesInfoRequest request, GetSpacesInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1617,6 +2049,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<GetSpacesInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取空间信息
+         *
+         * @param request GetSpacesInfoRequest
+         * @return GetSpacesInfoResponse
+         */
         public GetSpacesInfoResponse GetSpacesInfo(GetSpacesInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1624,6 +2062,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return GetSpacesInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取空间信息
+         *
+         * @param request GetSpacesInfoRequest
+         * @return GetSpacesInfoResponse
+         */
         public async Task<GetSpacesInfoResponse> GetSpacesInfoAsync(GetSpacesInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1631,6 +2075,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await GetSpacesInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取行业角色下的用户列表
+         *
+         * @param request ListIndustryRoleUsersRequest
+         * @param headers ListIndustryRoleUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListIndustryRoleUsersResponse
+         */
         public ListIndustryRoleUsersResponse ListIndustryRoleUsersWithOptions(ListIndustryRoleUsersRequest request, ListIndustryRoleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1668,6 +2120,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListIndustryRoleUsersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取行业角色下的用户列表
+         *
+         * @param request ListIndustryRoleUsersRequest
+         * @param headers ListIndustryRoleUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListIndustryRoleUsersResponse
+         */
         public async Task<ListIndustryRoleUsersResponse> ListIndustryRoleUsersWithOptionsAsync(ListIndustryRoleUsersRequest request, ListIndustryRoleUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1705,6 +2165,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListIndustryRoleUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取行业角色下的用户列表
+         *
+         * @param request ListIndustryRoleUsersRequest
+         * @return ListIndustryRoleUsersResponse
+         */
         public ListIndustryRoleUsersResponse ListIndustryRoleUsers(ListIndustryRoleUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1712,6 +2178,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return ListIndustryRoleUsersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取行业角色下的用户列表
+         *
+         * @param request ListIndustryRoleUsersRequest
+         * @return ListIndustryRoleUsersResponse
+         */
         public async Task<ListIndustryRoleUsersResponse> ListIndustryRoleUsersAsync(ListIndustryRoleUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1719,6 +2191,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await ListIndustryRoleUsersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询组织维度配置的的积分规则
+         *
+         * @param request ListPointRulesRequest
+         * @param headers ListPointRulesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListPointRulesResponse
+         */
         public ListPointRulesResponse ListPointRulesWithOptions(ListPointRulesRequest request, ListPointRulesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1756,6 +2236,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListPointRulesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询组织维度配置的的积分规则
+         *
+         * @param request ListPointRulesRequest
+         * @param headers ListPointRulesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListPointRulesResponse
+         */
         public async Task<ListPointRulesResponse> ListPointRulesWithOptionsAsync(ListPointRulesRequest request, ListPointRulesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1793,6 +2281,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListPointRulesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询组织维度配置的的积分规则
+         *
+         * @param request ListPointRulesRequest
+         * @return ListPointRulesResponse
+         */
         public ListPointRulesResponse ListPointRules(ListPointRulesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1800,6 +2294,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return ListPointRulesWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询组织维度配置的的积分规则
+         *
+         * @param request ListPointRulesRequest
+         * @return ListPointRulesResponse
+         */
         public async Task<ListPointRulesResponse> ListPointRulesAsync(ListPointRulesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1807,6 +2307,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await ListPointRulesWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取子空间信息
+         *
+         * @param request ListSubSpaceRequest
+         * @param headers ListSubSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSubSpaceResponse
+         */
         public ListSubSpaceResponse ListSubSpaceWithOptions(ListSubSpaceRequest request, ListSubSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1848,6 +2356,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListSubSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取子空间信息
+         *
+         * @param request ListSubSpaceRequest
+         * @param headers ListSubSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSubSpaceResponse
+         */
         public async Task<ListSubSpaceResponse> ListSubSpaceWithOptionsAsync(ListSubSpaceRequest request, ListSubSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1889,6 +2405,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListSubSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取子空间信息
+         *
+         * @param request ListSubSpaceRequest
+         * @return ListSubSpaceResponse
+         */
         public ListSubSpaceResponse ListSubSpace(ListSubSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1896,6 +2418,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return ListSubSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取子空间信息
+         *
+         * @param request ListSubSpaceRequest
+         * @return ListSubSpaceResponse
+         */
         public async Task<ListSubSpaceResponse> ListSubSpaceAsync(ListSubSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1903,6 +2431,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await ListSubSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取未确认加入组织的用户
+         *
+         * @param request ListUncheckUsersRequest
+         * @param headers ListUncheckUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListUncheckUsersResponse
+         */
         public ListUncheckUsersResponse ListUncheckUsersWithOptions(ListUncheckUsersRequest request, ListUncheckUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1952,6 +2488,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListUncheckUsersResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取未确认加入组织的用户
+         *
+         * @param request ListUncheckUsersRequest
+         * @param headers ListUncheckUsersHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListUncheckUsersResponse
+         */
         public async Task<ListUncheckUsersResponse> ListUncheckUsersWithOptionsAsync(ListUncheckUsersRequest request, ListUncheckUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2001,6 +2545,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListUncheckUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取未确认加入组织的用户
+         *
+         * @param request ListUncheckUsersRequest
+         * @return ListUncheckUsersResponse
+         */
         public ListUncheckUsersResponse ListUncheckUsers(ListUncheckUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2008,6 +2558,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return ListUncheckUsersWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取未确认加入组织的用户
+         *
+         * @param request ListUncheckUsersRequest
+         * @return ListUncheckUsersResponse
+         */
         public async Task<ListUncheckUsersResponse> ListUncheckUsersAsync(ListUncheckUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2015,6 +2571,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await ListUncheckUsersWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取用户行业化角色
+         *
+         * @param request ListUserIndustryRolesRequest
+         * @param headers ListUserIndustryRolesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListUserIndustryRolesResponse
+         */
         public ListUserIndustryRolesResponse ListUserIndustryRolesWithOptions(ListUserIndustryRolesRequest request, ListUserIndustryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2052,6 +2616,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListUserIndustryRolesResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户行业化角色
+         *
+         * @param request ListUserIndustryRolesRequest
+         * @param headers ListUserIndustryRolesHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListUserIndustryRolesResponse
+         */
         public async Task<ListUserIndustryRolesResponse> ListUserIndustryRolesWithOptionsAsync(ListUserIndustryRolesRequest request, ListUserIndustryRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2089,6 +2661,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<ListUserIndustryRolesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取用户行业化角色
+         *
+         * @param request ListUserIndustryRolesRequest
+         * @return ListUserIndustryRolesResponse
+         */
         public ListUserIndustryRolesResponse ListUserIndustryRoles(ListUserIndustryRolesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2096,6 +2674,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return ListUserIndustryRolesWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获取用户行业化角色
+         *
+         * @param request ListUserIndustryRolesRequest
+         * @return ListUserIndustryRolesResponse
+         */
         public async Task<ListUserIndustryRolesResponse> ListUserIndustryRolesAsync(ListUserIndustryRolesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2103,6 +2687,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await ListUserIndustryRolesWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询数字区县居民积分流水
+         *
+         * @param request PagePointHistoryRequest
+         * @param headers PagePointHistoryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PagePointHistoryResponse
+         */
         public PagePointHistoryResponse PagePointHistoryWithOptions(PagePointHistoryRequest request, PagePointHistoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2160,6 +2752,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<PagePointHistoryResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询数字区县居民积分流水
+         *
+         * @param request PagePointHistoryRequest
+         * @param headers PagePointHistoryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PagePointHistoryResponse
+         */
         public async Task<PagePointHistoryResponse> PagePointHistoryWithOptionsAsync(PagePointHistoryRequest request, PagePointHistoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2217,6 +2817,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<PagePointHistoryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询数字区县居民积分流水
+         *
+         * @param request PagePointHistoryRequest
+         * @return PagePointHistoryResponse
+         */
         public PagePointHistoryResponse PagePointHistory(PagePointHistoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2224,6 +2830,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return PagePointHistoryWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询数字区县居民积分流水
+         *
+         * @param request PagePointHistoryRequest
+         * @return PagePointHistoryResponse
+         */
         public async Task<PagePointHistoryResponse> PagePointHistoryAsync(PagePointHistoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2231,6 +2843,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await PagePointHistoryWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 从空间中删除人员
+         *
+         * @param request RemoveResidentMemberRequest
+         * @param headers RemoveResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RemoveResidentMemberResponse
+         */
         public RemoveResidentMemberResponse RemoveResidentMemberWithOptions(RemoveResidentMemberRequest request, RemoveResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2276,6 +2896,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<RemoveResidentMemberResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 从空间中删除人员
+         *
+         * @param request RemoveResidentMemberRequest
+         * @param headers RemoveResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RemoveResidentMemberResponse
+         */
         public async Task<RemoveResidentMemberResponse> RemoveResidentMemberWithOptionsAsync(RemoveResidentMemberRequest request, RemoveResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2321,6 +2949,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<RemoveResidentMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 从空间中删除人员
+         *
+         * @param request RemoveResidentMemberRequest
+         * @return RemoveResidentMemberResponse
+         */
         public RemoveResidentMemberResponse RemoveResidentMember(RemoveResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2328,6 +2962,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return RemoveResidentMemberWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 从空间中删除人员
+         *
+         * @param request RemoveResidentMemberRequest
+         * @return RemoveResidentMemberResponse
+         */
         public async Task<RemoveResidentMemberResponse> RemoveResidentMemberAsync(RemoveResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2335,6 +2975,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await RemoveResidentMemberWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 从户内移除居民
+         *
+         * @param request RemoveResidentUserRequest
+         * @param headers RemoveResidentUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RemoveResidentUserResponse
+         */
         public RemoveResidentUserResponse RemoveResidentUserWithOptions(RemoveResidentUserRequest request, RemoveResidentUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2376,6 +3024,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<RemoveResidentUserResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 从户内移除居民
+         *
+         * @param request RemoveResidentUserRequest
+         * @param headers RemoveResidentUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RemoveResidentUserResponse
+         */
         public async Task<RemoveResidentUserResponse> RemoveResidentUserWithOptionsAsync(RemoveResidentUserRequest request, RemoveResidentUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2417,6 +3073,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<RemoveResidentUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 从户内移除居民
+         *
+         * @param request RemoveResidentUserRequest
+         * @return RemoveResidentUserResponse
+         */
         public RemoveResidentUserResponse RemoveResidentUser(RemoveResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2424,6 +3086,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return RemoveResidentUserWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 从户内移除居民
+         *
+         * @param request RemoveResidentUserRequest
+         * @return RemoveResidentUserResponse
+         */
         public async Task<RemoveResidentUserResponse> RemoveResidentUserAsync(RemoveResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2431,6 +3099,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await RemoveResidentUserWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 搜索指定人员
+         *
+         * @param request SearchResidentRequest
+         * @param headers SearchResidentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SearchResidentResponse
+         */
         public SearchResidentResponse SearchResidentWithOptions(SearchResidentRequest request, SearchResidentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2472,6 +3148,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<SearchResidentResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 搜索指定人员
+         *
+         * @param request SearchResidentRequest
+         * @param headers SearchResidentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SearchResidentResponse
+         */
         public async Task<SearchResidentResponse> SearchResidentWithOptionsAsync(SearchResidentRequest request, SearchResidentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2513,6 +3197,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<SearchResidentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 搜索指定人员
+         *
+         * @param request SearchResidentRequest
+         * @return SearchResidentResponse
+         */
         public SearchResidentResponse SearchResident(SearchResidentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2520,6 +3210,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return SearchResidentWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 搜索指定人员
+         *
+         * @param request SearchResidentRequest
+         * @return SearchResidentResponse
+         */
         public async Task<SearchResidentResponse> SearchResidentAsync(SearchResidentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2527,6 +3223,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await SearchResidentWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新组信息
+         *
+         * @param request UpdateResideceGroupRequest
+         * @param headers UpdateResideceGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResideceGroupResponse
+         */
         public UpdateResideceGroupResponse UpdateResideceGroupWithOptions(UpdateResideceGroupRequest request, UpdateResideceGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2572,6 +3276,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResideceGroupResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新组信息
+         *
+         * @param request UpdateResideceGroupRequest
+         * @param headers UpdateResideceGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResideceGroupResponse
+         */
         public async Task<UpdateResideceGroupResponse> UpdateResideceGroupWithOptionsAsync(UpdateResideceGroupRequest request, UpdateResideceGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2617,6 +3329,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResideceGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新组信息
+         *
+         * @param request UpdateResideceGroupRequest
+         * @return UpdateResideceGroupResponse
+         */
         public UpdateResideceGroupResponse UpdateResideceGroup(UpdateResideceGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2624,6 +3342,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResideceGroupWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新组信息
+         *
+         * @param request UpdateResideceGroupRequest
+         * @return UpdateResideceGroupResponse
+         */
         public async Task<UpdateResideceGroupResponse> UpdateResideceGroupAsync(UpdateResideceGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2631,6 +3355,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResideceGroupWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新户信息
+         *
+         * @param request UpdateResidenceRequest
+         * @param headers UpdateResidenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidenceResponse
+         */
         public UpdateResidenceResponse UpdateResidenceWithOptions(UpdateResidenceRequest request, UpdateResidenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2692,6 +3424,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidenceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新户信息
+         *
+         * @param request UpdateResidenceRequest
+         * @param headers UpdateResidenceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidenceResponse
+         */
         public async Task<UpdateResidenceResponse> UpdateResidenceWithOptionsAsync(UpdateResidenceRequest request, UpdateResidenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2753,6 +3493,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新户信息
+         *
+         * @param request UpdateResidenceRequest
+         * @return UpdateResidenceResponse
+         */
         public UpdateResidenceResponse UpdateResidence(UpdateResidenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2760,6 +3506,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResidenceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新户信息
+         *
+         * @param request UpdateResidenceRequest
+         * @return UpdateResidenceResponse
+         */
         public async Task<UpdateResidenceResponse> UpdateResidenceAsync(UpdateResidenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2767,6 +3519,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResidenceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区公告
+         *
+         * @param request UpdateResidentBlackBoardRequest
+         * @param headers UpdateResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentBlackBoardResponse
+         */
         public UpdateResidentBlackBoardResponse UpdateResidentBlackBoardWithOptions(UpdateResidentBlackBoardRequest request, UpdateResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2816,6 +3576,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentBlackBoardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区公告
+         *
+         * @param request UpdateResidentBlackBoardRequest
+         * @param headers UpdateResidentBlackBoardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentBlackBoardResponse
+         */
         public async Task<UpdateResidentBlackBoardResponse> UpdateResidentBlackBoardWithOptionsAsync(UpdateResidentBlackBoardRequest request, UpdateResidentBlackBoardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2865,6 +3633,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentBlackBoardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区公告
+         *
+         * @param request UpdateResidentBlackBoardRequest
+         * @return UpdateResidentBlackBoardResponse
+         */
         public UpdateResidentBlackBoardResponse UpdateResidentBlackBoard(UpdateResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2872,6 +3646,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResidentBlackBoardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区公告
+         *
+         * @param request UpdateResidentBlackBoardRequest
+         * @return UpdateResidentBlackBoardResponse
+         */
         public async Task<UpdateResidentBlackBoardResponse> UpdateResidentBlackBoardAsync(UpdateResidentBlackBoardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2879,6 +3659,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResidentBlackBoardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区信息
+         *
+         * @param request UpdateResidentInfoRequest
+         * @param headers UpdateResidentInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentInfoResponse
+         */
         public UpdateResidentInfoResponse UpdateResidentInfoWithOptions(UpdateResidentInfoRequest request, UpdateResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2952,6 +3740,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentInfoResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区信息
+         *
+         * @param request UpdateResidentInfoRequest
+         * @param headers UpdateResidentInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentInfoResponse
+         */
         public async Task<UpdateResidentInfoResponse> UpdateResidentInfoWithOptionsAsync(UpdateResidentInfoRequest request, UpdateResidentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3025,6 +3821,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区信息
+         *
+         * @param request UpdateResidentInfoRequest
+         * @return UpdateResidentInfoResponse
+         */
         public UpdateResidentInfoResponse UpdateResidentInfo(UpdateResidentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3032,6 +3834,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResidentInfoWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区信息
+         *
+         * @param request UpdateResidentInfoRequest
+         * @return UpdateResidentInfoResponse
+         */
         public async Task<UpdateResidentInfoResponse> UpdateResidentInfoAsync(UpdateResidentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3039,6 +3847,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResidentInfoWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区成员
+         *
+         * @param request UpdateResidentMemberRequest
+         * @param headers UpdateResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentMemberResponse
+         */
         public UpdateResidentMemberResponse UpdateResidentMemberWithOptions(UpdateResidentMemberRequest request, UpdateResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3080,6 +3896,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentMemberResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区成员
+         *
+         * @param request UpdateResidentMemberRequest
+         * @param headers UpdateResidentMemberHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentMemberResponse
+         */
         public async Task<UpdateResidentMemberResponse> UpdateResidentMemberWithOptionsAsync(UpdateResidentMemberRequest request, UpdateResidentMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3121,6 +3945,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区成员
+         *
+         * @param request UpdateResidentMemberRequest
+         * @return UpdateResidentMemberResponse
+         */
         public UpdateResidentMemberResponse UpdateResidentMember(UpdateResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3128,6 +3958,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResidentMemberWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区成员
+         *
+         * @param request UpdateResidentMemberRequest
+         * @return UpdateResidentMemberResponse
+         */
         public async Task<UpdateResidentMemberResponse> UpdateResidentMemberAsync(UpdateResidentMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3135,6 +3971,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResidentMemberWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新居民信息
+         *
+         * @param request UpdateResidentUserRequest
+         * @param headers UpdateResidentUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentUserResponse
+         */
         public UpdateResidentUserResponse UpdateResidentUserWithOptions(UpdateResidentUserRequest request, UpdateResidentUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3204,6 +4048,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentUserResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新居民信息
+         *
+         * @param request UpdateResidentUserRequest
+         * @param headers UpdateResidentUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateResidentUserResponse
+         */
         public async Task<UpdateResidentUserResponse> UpdateResidentUserWithOptionsAsync(UpdateResidentUserRequest request, UpdateResidentUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3273,6 +4125,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateResidentUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新居民信息
+         *
+         * @param request UpdateResidentUserRequest
+         * @return UpdateResidentUserResponse
+         */
         public UpdateResidentUserResponse UpdateResidentUser(UpdateResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3280,6 +4138,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateResidentUserWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新居民信息
+         *
+         * @param request UpdateResidentUserRequest
+         * @return UpdateResidentUserResponse
+         */
         public async Task<UpdateResidentUserResponse> UpdateResidentUserAsync(UpdateResidentUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3287,6 +4151,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return await UpdateResidentUserWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+         *
+         * @param request UpdateSpaceRequest
+         * @param headers UpdateSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSpaceResponse
+         */
         public UpdateSpaceResponse UpdateSpaceWithOptions(UpdateSpaceRequest request, UpdateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3324,6 +4196,14 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+         *
+         * @param request UpdateSpaceRequest
+         * @param headers UpdateSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSpaceResponse
+         */
         public async Task<UpdateSpaceResponse> UpdateSpaceWithOptionsAsync(UpdateSpaceRequest request, UpdateSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3361,6 +4241,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return TeaModel.ToObject<UpdateSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+         *
+         * @param request UpdateSpaceRequest
+         * @return UpdateSpaceResponse
+         */
         public UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3368,6 +4254,12 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0
             return UpdateSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+         *
+         * @param request UpdateSpaceRequest
+         * @return UpdateSpaceResponse
+         */
         public async Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

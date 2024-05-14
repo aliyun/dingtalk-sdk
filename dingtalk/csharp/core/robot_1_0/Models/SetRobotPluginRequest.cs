@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public List<SetRobotPluginRequestPluginInfoList> PluginInfoList { get; set; }
         public class SetRobotPluginRequestPluginInfoList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("icon")]
             [Validation(Required=false)]
             public string Icon { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

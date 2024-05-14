@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class GetResidentMembersInfoRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("residentCropId")]
         [Validation(Required=false)]
         public string ResidentCropId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]
         public List<string> UserIdList { get; set; }

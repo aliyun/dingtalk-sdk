@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("resultList")]
         [Validation(Required=false)]
         public List<ListGroupSetResponseBodyResultList> ResultList { get; set; }
@@ -33,10 +36,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public int? GroupChatCount { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("lastOpenConversationId")]
             [Validation(Required=false)]
             public string LastOpenConversationId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("manager")]
             [Validation(Required=false)]
             public List<ListGroupSetResponseBodyResultListManager> Manager { get; set; }
@@ -79,6 +88,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string OpenGroupSetId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("owner")]
             [Validation(Required=false)]
             public ListGroupSetResponseBodyResultListOwner Owner { get; set; }

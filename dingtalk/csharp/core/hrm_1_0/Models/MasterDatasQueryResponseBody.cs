@@ -25,6 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public string ObjId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("relationId")]
             [Validation(Required=false)]
             public string RelationId { get; set; }
@@ -71,6 +74,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -47,6 +47,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string TagName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userid")]
         [Validation(Required=false)]
         public string Userid { get; set; }

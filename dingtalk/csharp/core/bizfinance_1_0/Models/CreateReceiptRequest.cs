@@ -9,18 +9,30 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class CreateReceiptRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("receipts")]
         [Validation(Required=false)]
         public List<CreateReceiptRequestReceipts> Receipts { get; set; }
         public class CreateReceiptRequestReceipts : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("categoryCode")]
             [Validation(Required=false)]
             public string CategoryCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
@@ -29,6 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("createUserId")]
             [Validation(Required=false)]
             public string CreateUserId { get; set; }
@@ -53,6 +68,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ProjectCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("receiptType")]
             [Validation(Required=false)]
             public long? ReceiptType { get; set; }

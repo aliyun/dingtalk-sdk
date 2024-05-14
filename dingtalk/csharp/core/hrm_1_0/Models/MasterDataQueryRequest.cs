@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public string BizUK { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public int? NextToken { get; set; }
@@ -53,18 +59,30 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("relationIds")]
         [Validation(Required=false)]
         public List<string> RelationIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("scopeCode")]
         [Validation(Required=false)]
         public string ScopeCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tenantId")]
         [Validation(Required=false)]
         public long? TenantId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("viewEntityCode")]
         [Validation(Required=false)]
         public string ViewEntityCode { get; set; }

@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
         }
 
 
+        /**
+         * @summary 创建群公告
+         *
+         * @param request CreateGroupBlackboardRequest
+         * @param headers CreateGroupBlackboardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateGroupBlackboardResponse
+         */
         public CreateGroupBlackboardResponse CreateGroupBlackboardWithOptions(CreateGroupBlackboardRequest request, CreateGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -86,6 +94,14 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return TeaModel.ToObject<CreateGroupBlackboardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建群公告
+         *
+         * @param request CreateGroupBlackboardRequest
+         * @param headers CreateGroupBlackboardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateGroupBlackboardResponse
+         */
         public async Task<CreateGroupBlackboardResponse> CreateGroupBlackboardWithOptionsAsync(CreateGroupBlackboardRequest request, CreateGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -143,6 +159,12 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return TeaModel.ToObject<CreateGroupBlackboardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建群公告
+         *
+         * @param request CreateGroupBlackboardRequest
+         * @return CreateGroupBlackboardResponse
+         */
         public CreateGroupBlackboardResponse CreateGroupBlackboard(CreateGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -150,6 +172,12 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return CreateGroupBlackboardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建群公告
+         *
+         * @param request CreateGroupBlackboardRequest
+         * @return CreateGroupBlackboardResponse
+         */
         public async Task<CreateGroupBlackboardResponse> CreateGroupBlackboardAsync(CreateGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -157,6 +185,14 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return await CreateGroupBlackboardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除群公告
+         *
+         * @param request DeleteGroupBlackboardRequest
+         * @param headers DeleteGroupBlackboardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteGroupBlackboardResponse
+         */
         public DeleteGroupBlackboardResponse DeleteGroupBlackboardWithOptions(DeleteGroupBlackboardRequest request, DeleteGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -202,6 +238,14 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return TeaModel.ToObject<DeleteGroupBlackboardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除群公告
+         *
+         * @param request DeleteGroupBlackboardRequest
+         * @param headers DeleteGroupBlackboardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteGroupBlackboardResponse
+         */
         public async Task<DeleteGroupBlackboardResponse> DeleteGroupBlackboardWithOptionsAsync(DeleteGroupBlackboardRequest request, DeleteGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -247,6 +291,12 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return TeaModel.ToObject<DeleteGroupBlackboardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除群公告
+         *
+         * @param request DeleteGroupBlackboardRequest
+         * @return DeleteGroupBlackboardResponse
+         */
         public DeleteGroupBlackboardResponse DeleteGroupBlackboard(DeleteGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -254,6 +304,12 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             return DeleteGroupBlackboardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除群公告
+         *
+         * @param request DeleteGroupBlackboardRequest
+         * @return DeleteGroupBlackboardResponse
+         */
         public async Task<DeleteGroupBlackboardResponse> DeleteGroupBlackboardAsync(DeleteGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

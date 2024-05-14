@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class DeviceConferenceRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("confTitle")]
         [Validation(Required=false)]
         public string ConfTitle { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string ConferencePassword { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("deviceIds")]
         [Validation(Required=false)]
         public List<string> DeviceIds { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
 {
     public class CreateCoupleGroupRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("groupTemplateId")]
         [Validation(Required=false)]
         public string GroupTemplateId { get; set; }
@@ -25,6 +28,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("groupOwner")]
             [Validation(Required=false)]
             public bool? GroupOwner { get; set; }

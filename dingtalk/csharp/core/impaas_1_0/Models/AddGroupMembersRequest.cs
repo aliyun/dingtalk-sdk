@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class AddGroupMembersRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<AddGroupMembersRequestMembers> Members { get; set; }
@@ -21,6 +27,9 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
             [Validation(Required=false)]
             public string Nick { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uid")]
             [Validation(Required=false)]
             public string Uid { get; set; }

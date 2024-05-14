@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string Approver { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("baseDataName")]
         [Validation(Required=false)]
         public string BaseDataName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outSourceProjectCode")]
         [Validation(Required=false)]
         public string OutSourceProjectCode { get; set; }
@@ -77,6 +83,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string TotalWage { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public string Uuid { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
 {
     public class BatchInsertSearchItemRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("searchItemModels")]
         [Validation(Required=false)]
         public List<BatchInsertSearchItemRequestSearchItemModels> SearchItemModels { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             [Validation(Required=false)]
             public string Icon { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("itemId")]
             [Validation(Required=false)]
             public string ItemId { get; set; }
@@ -37,6 +43,9 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             [Validation(Required=false)]
             public string Summary { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

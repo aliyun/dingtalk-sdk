@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [Validation(Required=false)]
             public int? DeviceCategory { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceCode")]
             [Validation(Required=false)]
             public string DeviceCode { get; set; }
@@ -29,6 +32,9 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             [Validation(Required=false)]
             public string DeviceDetailUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceName")]
             [Validation(Required=false)]
             public string DeviceName { get; set; }

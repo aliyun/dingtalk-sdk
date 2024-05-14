@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<GetATManageScopeResponseBodyResult> Result { get; set; }
         public class GetATManageScopeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("manageScope")]
             [Validation(Required=false)]
             public string ManageScope { get; set; }

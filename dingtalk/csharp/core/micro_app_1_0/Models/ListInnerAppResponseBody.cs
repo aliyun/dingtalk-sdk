@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public List<ListInnerAppResponseBodyAppList> AppList { get; set; }
         public class ListInnerAppResponseBodyAppList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("agentId")]
             [Validation(Required=false)]
             public long? AgentId { get; set; }

@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 {
     public class QueryReportDetailRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("reportId")]
         [Validation(Required=false)]
         public string ReportId { get; set; }

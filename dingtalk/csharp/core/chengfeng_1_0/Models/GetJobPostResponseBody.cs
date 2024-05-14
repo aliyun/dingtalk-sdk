@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
             [Validation(Required=false)]
             public string Code { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("establishDate")]
             [Validation(Required=false)]
             public string EstablishDate { get; set; }
@@ -25,10 +28,16 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("startDate")]
             [Validation(Required=false)]
             public string StartDate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("stopDate")]
             [Validation(Required=false)]
             public string StopDate { get; set; }

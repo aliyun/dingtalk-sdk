@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<GetRecentEditDocsResponseBodyRecentList> RecentList { get; set; }
         public class GetRecentEditDocsResponseBodyRecentList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("nodeBO")]
             [Validation(Required=false)]
             public GetRecentEditDocsResponseBodyRecentListNodeBO NodeBO { get; set; }
@@ -33,14 +36,23 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [Validation(Required=false)]
                 public bool? IsDeleted { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("lastEditTime")]
                 [Validation(Required=false)]
                 public long? LastEditTime { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("nodeName")]
                 [Validation(Required=false)]
                 public string NodeName { get; set; }
@@ -49,12 +61,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [Validation(Required=false)]
                 public long? UpdateTime { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
             public GetRecentEditDocsResponseBodyRecentListWorkspaceBO WorkspaceBO { get; set; }
@@ -63,10 +81,16 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [Validation(Required=false)]
                 public string Url { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("workspaceName")]
                 [Validation(Required=false)]
                 public string WorkspaceName { get; set; }

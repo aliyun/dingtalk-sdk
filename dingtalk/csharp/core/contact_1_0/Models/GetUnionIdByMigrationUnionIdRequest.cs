@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetUnionIdByMigrationUnionIdRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("migrationUnionId")]
         [Validation(Required=false)]
         public string MigrationUnionId { get; set; }

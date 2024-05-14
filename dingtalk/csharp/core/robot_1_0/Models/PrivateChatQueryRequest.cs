@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processQueryKey")]
         [Validation(Required=false)]
         public string ProcessQueryKey { get; set; }

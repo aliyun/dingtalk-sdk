@@ -13,26 +13,44 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("devices")]
         [Validation(Required=false)]
         public List<BatchRegisterDeviceRequestDevices> Devices { get; set; }
         public class BatchRegisterDeviceRequestDevices : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceId")]
             [Validation(Required=false)]
             public string DeviceId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceName")]
             [Validation(Required=false)]
             public string DeviceName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceStatus")]
             [Validation(Required=false)]
             public int? DeviceStatus { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceType")]
             [Validation(Required=false)]
             public string DeviceType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("deviceTypeName")]
             [Validation(Required=false)]
             public string DeviceTypeName { get; set; }
@@ -67,6 +85,9 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
             [Validation(Required=false)]
             public string ParentId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("productType")]
             [Validation(Required=false)]
             public string ProductType { get; set; }

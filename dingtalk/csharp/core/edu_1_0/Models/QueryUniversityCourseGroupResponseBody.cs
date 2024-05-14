@@ -13,96 +13,162 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo UniversityCourseGroupInfo { get; set; }
         public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("courseGroupCode")]
             [Validation(Required=false)]
             public string CourseGroupCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("courseGroupIntroduce")]
             [Validation(Required=false)]
             public string CourseGroupIntroduce { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("courseGroupName")]
             [Validation(Required=false)]
             public string CourseGroupName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("courserGroupItemModels")]
             [Validation(Required=false)]
             public List<QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels> CourserGroupItemModels { get; set; }
             public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("classPeriodType")]
                 [Validation(Required=false)]
                 public int? ClassPeriodType { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("classroomId")]
                 [Validation(Required=false)]
                 public long? ClassroomId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("courseType")]
                 [Validation(Required=false)]
                 public int? CourseType { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("courserGroupItemEndDate")]
                 [Validation(Required=false)]
                 public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
                 public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("dayOfMonth")]
                     [Validation(Required=false)]
                     public int? DayOfMonth { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("month")]
                     [Validation(Required=false)]
                     public int? Month { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("year")]
                     [Validation(Required=false)]
                     public int? Year { get; set; }
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("courserGroupItemStartDate")]
                 [Validation(Required=false)]
                 public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
                 public class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("dayOfMonth")]
                     [Validation(Required=false)]
                     public int? DayOfMonth { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("month")]
                     [Validation(Required=false)]
                     public int? Month { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("year")]
                     [Validation(Required=false)]
                     public int? Year { get; set; }
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("dayOfWeek")]
                 [Validation(Required=false)]
                 public int? DayOfWeek { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("sectionIndex")]
                 [Validation(Required=false)]
                 public List<int?> SectionIndex { get; set; }
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("isvCourseGroupCode")]
             [Validation(Required=false)]
             public string IsvCourseGroupCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("periodCode")]
             [Validation(Required=false)]
             public string PeriodCode { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("schoolYear")]
             [Validation(Required=false)]
             public string SchoolYear { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("semester")]
             [Validation(Required=false)]
             public int? Semester { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("subjectName")]
             [Validation(Required=false)]
             public string SubjectName { get; set; }

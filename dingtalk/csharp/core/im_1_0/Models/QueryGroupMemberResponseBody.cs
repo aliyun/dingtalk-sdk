@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryGroupMemberResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("groupMembers")]
         [Validation(Required=false)]
         public List<QueryGroupMemberResponseBodyGroupMembers> GroupMembers { get; set; }
@@ -25,16 +28,25 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [Validation(Required=false)]
             public string GroupMemberId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("groupMemberName")]
             [Validation(Required=false)]
             public string GroupMemberName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("groupMemberType")]
             [Validation(Required=false)]
             public int? GroupMemberType { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.Dingtalkwatt_1_0.Models
         [Validation(Required=false)]
         public byte[] CrowdIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }

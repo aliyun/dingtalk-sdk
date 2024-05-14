@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class PageListObjectiveProgressRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("objectiveId")]
         [Validation(Required=false)]
         public string ObjectiveId { get; set; }

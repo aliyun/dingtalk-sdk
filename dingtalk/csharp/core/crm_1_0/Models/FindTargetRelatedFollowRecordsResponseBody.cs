@@ -71,6 +71,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public string ModifierUserId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("recordInstId")]
                 [Validation(Required=false)]
                 public string RecordInstId { get; set; }

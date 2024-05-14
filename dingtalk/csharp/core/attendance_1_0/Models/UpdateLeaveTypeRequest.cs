@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class UpdateLeaveTypeRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("bizType")]
         [Validation(Required=false)]
         public string BizType { get; set; }
@@ -43,6 +46,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("leaveCode")]
         [Validation(Required=false)]
         public string LeaveCode { get; set; }
@@ -51,6 +57,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string LeaveName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("leaveViewUnit")]
         [Validation(Required=false)]
         public string LeaveViewUnit { get; set; }
@@ -95,6 +104,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

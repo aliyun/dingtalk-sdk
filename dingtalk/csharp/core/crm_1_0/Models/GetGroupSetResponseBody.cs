@@ -29,6 +29,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string LastOpenConversationId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("manager")]
         [Validation(Required=false)]
         public List<GetGroupSetResponseBodyManager> Manager { get; set; }
@@ -71,6 +74,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string OpenGroupSetId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("owner")]
         [Validation(Required=false)]
         public GetGroupSetResponseBodyOwner Owner { get; set; }

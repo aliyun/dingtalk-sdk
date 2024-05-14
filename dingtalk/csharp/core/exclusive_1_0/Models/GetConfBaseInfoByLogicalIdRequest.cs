@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetConfBaseInfoByLogicalIdRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("logicalConferenceId")]
         [Validation(Required=false)]
         public string LogicalConferenceId { get; set; }

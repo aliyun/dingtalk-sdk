@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class OrgGroupSendResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("processQueryKey")]
         [Validation(Required=false)]
         public string ProcessQueryKey { get; set; }

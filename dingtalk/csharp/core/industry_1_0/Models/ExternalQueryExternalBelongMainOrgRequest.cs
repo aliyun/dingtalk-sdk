@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class ExternalQueryExternalBelongMainOrgRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("externalType")]
         [Validation(Required=false)]
         public string ExternalType { get; set; }

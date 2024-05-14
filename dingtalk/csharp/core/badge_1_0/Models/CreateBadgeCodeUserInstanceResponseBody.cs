@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [Validation(Required=false)]
         public string CodeDetailUrl { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("codeId")]
         [Validation(Required=false)]
         public string CodeId { get; set; }

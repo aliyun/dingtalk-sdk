@@ -53,6 +53,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
                 [Validation(Required=false)]
                 public float? GmtModified { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public Stream Id { get; set; }
@@ -163,6 +166,9 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

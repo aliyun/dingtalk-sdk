@@ -13,10 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
         [Validation(Required=false)]
         public string GroupAvatar { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("groupTemplateId")]
         [Validation(Required=false)]
         public string GroupTemplateId { get; set; }
@@ -25,6 +31,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("users")]
         [Validation(Required=false)]
         public List<CreateGroupRequestUsers> Users { get; set; }
@@ -33,6 +42,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("groupOwner")]
             [Validation(Required=false)]
             public bool? GroupOwner { get; set; }

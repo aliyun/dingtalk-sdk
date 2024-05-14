@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetFlowIdByRelationEntityIdResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("flowId")]
         [Validation(Required=false)]
         public string FlowId { get; set; }

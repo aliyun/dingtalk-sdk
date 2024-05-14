@@ -13,18 +13,30 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, object> Attr { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("bizTraceId")]
         [Validation(Required=false)]
         public string BizTraceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("module")]
         [Validation(Required=false)]
         public string Module { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("navData")]
         [Validation(Required=false)]
         public UpdateMenuDataRequestNavData NavData { get; set; }
         public class UpdateMenuDataRequestNavData : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("displayStatus")]
             [Validation(Required=false)]
             public string DisplayStatus { get; set; }
@@ -45,6 +57,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string IntegrationProtocol { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("mobileNavName")]
             [Validation(Required=false)]
             public string MobileNavName { get; set; }
@@ -53,6 +68,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string MobileUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("navCode")]
             [Validation(Required=false)]
             public string NavCode { get; set; }
@@ -71,14 +89,23 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("navId")]
             [Validation(Required=false)]
             public string NavId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("navName")]
             [Validation(Required=false)]
             public string NavName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("navStatus")]
             [Validation(Required=false)]
             public string NavStatus { get; set; }
@@ -105,10 +132,16 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operateType")]
         [Validation(Required=false)]
         public string OperateType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }

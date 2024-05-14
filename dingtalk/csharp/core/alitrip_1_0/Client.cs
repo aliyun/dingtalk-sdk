@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
         }
 
 
+        /**
+         * @summary 同步第三方市内用车申请单
+         *
+         * @param request AddCityCarApplyRequest
+         * @param headers AddCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCityCarApplyResponse
+         */
         public AddCityCarApplyResponse AddCityCarApplyWithOptions(AddCityCarApplyRequest request, AddCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -126,6 +134,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<AddCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 同步第三方市内用车申请单
+         *
+         * @param request AddCityCarApplyRequest
+         * @param headers AddCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCityCarApplyResponse
+         */
         public async Task<AddCityCarApplyResponse> AddCityCarApplyWithOptionsAsync(AddCityCarApplyRequest request, AddCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -223,6 +239,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<AddCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 同步第三方市内用车申请单
+         *
+         * @param request AddCityCarApplyRequest
+         * @return AddCityCarApplyResponse
+         */
         public AddCityCarApplyResponse AddCityCarApply(AddCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -230,6 +252,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return AddCityCarApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 同步第三方市内用车申请单
+         *
+         * @param request AddCityCarApplyRequest
+         * @return AddCityCarApplyResponse
+         */
         public async Task<AddCityCarApplyResponse> AddCityCarApplyAsync(AddCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -237,6 +265,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await AddCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 三方市内用车申请单审批
+         *
+         * @param request ApproveCityCarApplyRequest
+         * @param headers ApproveCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApproveCityCarApplyResponse
+         */
         public ApproveCityCarApplyResponse ApproveCityCarApplyWithOptions(ApproveCityCarApplyRequest request, ApproveCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -294,6 +330,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<ApproveCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 三方市内用车申请单审批
+         *
+         * @param request ApproveCityCarApplyRequest
+         * @param headers ApproveCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ApproveCityCarApplyResponse
+         */
         public async Task<ApproveCityCarApplyResponse> ApproveCityCarApplyWithOptionsAsync(ApproveCityCarApplyRequest request, ApproveCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -351,6 +395,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<ApproveCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 三方市内用车申请单审批
+         *
+         * @param request ApproveCityCarApplyRequest
+         * @return ApproveCityCarApplyResponse
+         */
         public ApproveCityCarApplyResponse ApproveCityCarApply(ApproveCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -358,6 +408,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return ApproveCityCarApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 三方市内用车申请单审批
+         *
+         * @param request ApproveCityCarApplyRequest
+         * @return ApproveCityCarApplyResponse
+         */
         public async Task<ApproveCityCarApplyResponse> ApproveCityCarApplyAsync(ApproveCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -365,6 +421,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await ApproveCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅火车票结算记账查询接口
+         *
+         * @param request BillSettementBtripTrainRequest
+         * @param headers BillSettementBtripTrainHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementBtripTrainResponse
+         */
         public BillSettementBtripTrainResponse BillSettementBtripTrainWithOptions(BillSettementBtripTrainRequest request, BillSettementBtripTrainHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -422,6 +486,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementBtripTrainResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅火车票结算记账查询接口
+         *
+         * @param request BillSettementBtripTrainRequest
+         * @param headers BillSettementBtripTrainHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementBtripTrainResponse
+         */
         public async Task<BillSettementBtripTrainResponse> BillSettementBtripTrainWithOptionsAsync(BillSettementBtripTrainRequest request, BillSettementBtripTrainHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -479,6 +551,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementBtripTrainResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅火车票结算记账查询接口
+         *
+         * @param request BillSettementBtripTrainRequest
+         * @return BillSettementBtripTrainResponse
+         */
         public BillSettementBtripTrainResponse BillSettementBtripTrain(BillSettementBtripTrainRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -486,6 +564,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return BillSettementBtripTrainWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅火车票结算记账查询接口
+         *
+         * @param request BillSettementBtripTrainRequest
+         * @return BillSettementBtripTrainResponse
+         */
         public async Task<BillSettementBtripTrainResponse> BillSettementBtripTrainAsync(BillSettementBtripTrainRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -493,6 +577,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await BillSettementBtripTrainWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 用车结算记账查询接口
+         *
+         * @param request BillSettementCarRequest
+         * @param headers BillSettementCarHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementCarResponse
+         */
         public BillSettementCarResponse BillSettementCarWithOptions(BillSettementCarRequest request, BillSettementCarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -550,6 +642,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementCarResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 用车结算记账查询接口
+         *
+         * @param request BillSettementCarRequest
+         * @param headers BillSettementCarHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementCarResponse
+         */
         public async Task<BillSettementCarResponse> BillSettementCarWithOptionsAsync(BillSettementCarRequest request, BillSettementCarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -607,6 +707,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementCarResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 用车结算记账查询接口
+         *
+         * @param request BillSettementCarRequest
+         * @return BillSettementCarResponse
+         */
         public BillSettementCarResponse BillSettementCar(BillSettementCarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -614,6 +720,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return BillSettementCarWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 用车结算记账查询接口
+         *
+         * @param request BillSettementCarRequest
+         * @return BillSettementCarResponse
+         */
         public async Task<BillSettementCarResponse> BillSettementCarAsync(BillSettementCarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -621,6 +733,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await BillSettementCarWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 机票结算记账查询接口
+         *
+         * @param request BillSettementFlightRequest
+         * @param headers BillSettementFlightHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementFlightResponse
+         */
         public BillSettementFlightResponse BillSettementFlightWithOptions(BillSettementFlightRequest request, BillSettementFlightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -678,6 +798,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementFlightResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 机票结算记账查询接口
+         *
+         * @param request BillSettementFlightRequest
+         * @param headers BillSettementFlightHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementFlightResponse
+         */
         public async Task<BillSettementFlightResponse> BillSettementFlightWithOptionsAsync(BillSettementFlightRequest request, BillSettementFlightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -735,6 +863,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementFlightResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 机票结算记账查询接口
+         *
+         * @param request BillSettementFlightRequest
+         * @return BillSettementFlightResponse
+         */
         public BillSettementFlightResponse BillSettementFlight(BillSettementFlightRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -742,6 +876,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return BillSettementFlightWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 机票结算记账查询接口
+         *
+         * @param request BillSettementFlightRequest
+         * @return BillSettementFlightResponse
+         */
         public async Task<BillSettementFlightResponse> BillSettementFlightAsync(BillSettementFlightRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -749,6 +889,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await BillSettementFlightWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 酒店结算记账查询接口
+         *
+         * @param request BillSettementHotelRequest
+         * @param headers BillSettementHotelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementHotelResponse
+         */
         public BillSettementHotelResponse BillSettementHotelWithOptions(BillSettementHotelRequest request, BillSettementHotelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -806,6 +954,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementHotelResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 酒店结算记账查询接口
+         *
+         * @param request BillSettementHotelRequest
+         * @param headers BillSettementHotelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BillSettementHotelResponse
+         */
         public async Task<BillSettementHotelResponse> BillSettementHotelWithOptionsAsync(BillSettementHotelRequest request, BillSettementHotelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -863,6 +1019,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<BillSettementHotelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 酒店结算记账查询接口
+         *
+         * @param request BillSettementHotelRequest
+         * @return BillSettementHotelResponse
+         */
         public BillSettementHotelResponse BillSettementHotel(BillSettementHotelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -870,6 +1032,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return BillSettementHotelWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 酒店结算记账查询接口
+         *
+         * @param request BillSettementHotelRequest
+         * @return BillSettementHotelResponse
+         */
         public async Task<BillSettementHotelResponse> BillSettementHotelAsync(BillSettementHotelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -877,6 +1045,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await BillSettementHotelWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅机票第三方超标审批单搜索接口
+         *
+         * @param request GetFlightExceedApplyRequest
+         * @param headers GetFlightExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlightExceedApplyResponse
+         */
         public GetFlightExceedApplyResponse GetFlightExceedApplyWithOptions(GetFlightExceedApplyRequest request, GetFlightExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -918,6 +1094,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetFlightExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅机票第三方超标审批单搜索接口
+         *
+         * @param request GetFlightExceedApplyRequest
+         * @param headers GetFlightExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFlightExceedApplyResponse
+         */
         public async Task<GetFlightExceedApplyResponse> GetFlightExceedApplyWithOptionsAsync(GetFlightExceedApplyRequest request, GetFlightExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -959,6 +1143,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetFlightExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅机票第三方超标审批单搜索接口
+         *
+         * @param request GetFlightExceedApplyRequest
+         * @return GetFlightExceedApplyResponse
+         */
         public GetFlightExceedApplyResponse GetFlightExceedApply(GetFlightExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -966,6 +1156,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return GetFlightExceedApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅机票第三方超标审批单搜索接口
+         *
+         * @param request GetFlightExceedApplyRequest
+         * @return GetFlightExceedApplyResponse
+         */
         public async Task<GetFlightExceedApplyResponse> GetFlightExceedApplyAsync(GetFlightExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -973,6 +1169,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await GetFlightExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 搜索酒店超标审批单
+         *
+         * @param request GetHotelExceedApplyRequest
+         * @param headers GetHotelExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHotelExceedApplyResponse
+         */
         public GetHotelExceedApplyResponse GetHotelExceedApplyWithOptions(GetHotelExceedApplyRequest request, GetHotelExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1014,6 +1218,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetHotelExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 搜索酒店超标审批单
+         *
+         * @param request GetHotelExceedApplyRequest
+         * @param headers GetHotelExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHotelExceedApplyResponse
+         */
         public async Task<GetHotelExceedApplyResponse> GetHotelExceedApplyWithOptionsAsync(GetHotelExceedApplyRequest request, GetHotelExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1055,6 +1267,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetHotelExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 搜索酒店超标审批单
+         *
+         * @param request GetHotelExceedApplyRequest
+         * @return GetHotelExceedApplyResponse
+         */
         public GetHotelExceedApplyResponse GetHotelExceedApply(GetHotelExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1062,6 +1280,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return GetHotelExceedApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 搜索酒店超标审批单
+         *
+         * @param request GetHotelExceedApplyRequest
+         * @return GetHotelExceedApplyResponse
+         */
         public async Task<GetHotelExceedApplyResponse> GetHotelExceedApplyAsync(GetHotelExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1069,6 +1293,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await GetHotelExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅火车票第三方超标审批单搜索接口
+         *
+         * @param request GetTrainExceedApplyRequest
+         * @param headers GetTrainExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTrainExceedApplyResponse
+         */
         public GetTrainExceedApplyResponse GetTrainExceedApplyWithOptions(GetTrainExceedApplyRequest request, GetTrainExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1110,6 +1342,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetTrainExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅火车票第三方超标审批单搜索接口
+         *
+         * @param request GetTrainExceedApplyRequest
+         * @param headers GetTrainExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTrainExceedApplyResponse
+         */
         public async Task<GetTrainExceedApplyResponse> GetTrainExceedApplyWithOptionsAsync(GetTrainExceedApplyRequest request, GetTrainExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1151,6 +1391,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<GetTrainExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 商旅火车票第三方超标审批单搜索接口
+         *
+         * @param request GetTrainExceedApplyRequest
+         * @return GetTrainExceedApplyResponse
+         */
         public GetTrainExceedApplyResponse GetTrainExceedApply(GetTrainExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1158,6 +1404,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return GetTrainExceedApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 商旅火车票第三方超标审批单搜索接口
+         *
+         * @param request GetTrainExceedApplyRequest
+         * @return GetTrainExceedApplyResponse
+         */
         public async Task<GetTrainExceedApplyResponse> GetTrainExceedApplyAsync(GetTrainExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1165,6 +1417,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await GetTrainExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 三方市内用车申请单查询
+         *
+         * @param request QueryCityCarApplyRequest
+         * @param headers QueryCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCityCarApplyResponse
+         */
         public QueryCityCarApplyResponse QueryCityCarApplyWithOptions(QueryCityCarApplyRequest request, QueryCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1226,6 +1486,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<QueryCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 三方市内用车申请单查询
+         *
+         * @param request QueryCityCarApplyRequest
+         * @param headers QueryCityCarApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCityCarApplyResponse
+         */
         public async Task<QueryCityCarApplyResponse> QueryCityCarApplyWithOptionsAsync(QueryCityCarApplyRequest request, QueryCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1287,6 +1555,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<QueryCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 三方市内用车申请单查询
+         *
+         * @param request QueryCityCarApplyRequest
+         * @return QueryCityCarApplyResponse
+         */
         public QueryCityCarApplyResponse QueryCityCarApply(QueryCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1294,6 +1568,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return QueryCityCarApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 三方市内用车申请单查询
+         *
+         * @param request QueryCityCarApplyRequest
+         * @return QueryCityCarApplyResponse
+         */
         public async Task<QueryCityCarApplyResponse> QueryCityCarApplyAsync(QueryCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1301,6 +1581,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await QueryCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 申请单关联单号查询相关订单信息
+         *
+         * @param request QueryUnionOrderRequest
+         * @param headers QueryUnionOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnionOrderResponse
+         */
         public QueryUnionOrderResponse QueryUnionOrderWithOptions(QueryUnionOrderRequest request, QueryUnionOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1346,6 +1634,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<QueryUnionOrderResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 申请单关联单号查询相关订单信息
+         *
+         * @param request QueryUnionOrderRequest
+         * @param headers QueryUnionOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnionOrderResponse
+         */
         public async Task<QueryUnionOrderResponse> QueryUnionOrderWithOptionsAsync(QueryUnionOrderRequest request, QueryUnionOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1391,6 +1687,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<QueryUnionOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 申请单关联单号查询相关订单信息
+         *
+         * @param request QueryUnionOrderRequest
+         * @return QueryUnionOrderResponse
+         */
         public QueryUnionOrderResponse QueryUnionOrder(QueryUnionOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1398,6 +1700,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return QueryUnionOrderWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 申请单关联单号查询相关订单信息
+         *
+         * @param request QueryUnionOrderRequest
+         * @return QueryUnionOrderResponse
+         */
         public async Task<QueryUnionOrderResponse> QueryUnionOrderAsync(QueryUnionOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1405,6 +1713,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return await QueryUnionOrderWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 同步超标审批结果
+         *
+         * @param request SyncExceedApplyRequest
+         * @param headers SyncExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SyncExceedApplyResponse
+         */
         public SyncExceedApplyResponse SyncExceedApplyWithOptions(SyncExceedApplyRequest request, SyncExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1462,6 +1778,14 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<SyncExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 同步超标审批结果
+         *
+         * @param request SyncExceedApplyRequest
+         * @param headers SyncExceedApplyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SyncExceedApplyResponse
+         */
         public async Task<SyncExceedApplyResponse> SyncExceedApplyWithOptionsAsync(SyncExceedApplyRequest request, SyncExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1519,6 +1843,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return TeaModel.ToObject<SyncExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 同步超标审批结果
+         *
+         * @param request SyncExceedApplyRequest
+         * @return SyncExceedApplyResponse
+         */
         public SyncExceedApplyResponse SyncExceedApply(SyncExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1526,6 +1856,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             return SyncExceedApplyWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 同步超标审批结果
+         *
+         * @param request SyncExceedApplyRequest
+         * @return SyncExceedApplyResponse
+         */
         public async Task<SyncExceedApplyResponse> SyncExceedApplyAsync(SyncExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

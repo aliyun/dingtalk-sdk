@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 {
     public class SendContractCardRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("cardType")]
         [Validation(Required=false)]
         public string CardType { get; set; }
@@ -35,6 +38,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
@@ -51,6 +57,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
         [Validation(Required=false)]
         public List<string> ReceiveGroups { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("receivers")]
         [Validation(Required=false)]
         public List<SendContractCardRequestReceivers> Receivers { get; set; }
@@ -69,6 +78,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sender")]
         [Validation(Required=false)]
         public SendContractCardRequestSender Sender { get; set; }
@@ -87,6 +99,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("syncSingleChat")]
         [Validation(Required=false)]
         public bool? SyncSingleChat { get; set; }

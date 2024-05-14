@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
 {
     public class ConsumeUserPointsResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public ConsumeUserPointsResponseBodyResult Result { get; set; }
         public class ConsumeUserPointsResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public long? Amount { get; set; }

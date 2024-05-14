@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetOutGroupsByPageResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("responseBody")]
         [Validation(Required=false)]
         public GetOutGroupsByPageResponseBodyResponseBody ResponseBody { get; set; }

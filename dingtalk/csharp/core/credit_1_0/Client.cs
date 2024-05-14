@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkcredit_1_0
         }
 
 
+        /**
+         * @summary 查询用户金融评分数据
+         *
+         * @param request QueryScoreRequest
+         * @param headers QueryScoreHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScoreResponse
+         */
         public QueryScoreResponse QueryScoreWithOptions(QueryScoreRequest request, QueryScoreHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -86,6 +94,14 @@ namespace AlibabaCloud.SDK.Dingtalkcredit_1_0
             return TeaModel.ToObject<QueryScoreResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户金融评分数据
+         *
+         * @param request QueryScoreRequest
+         * @param headers QueryScoreHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScoreResponse
+         */
         public async Task<QueryScoreResponse> QueryScoreWithOptionsAsync(QueryScoreRequest request, QueryScoreHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -143,6 +159,12 @@ namespace AlibabaCloud.SDK.Dingtalkcredit_1_0
             return TeaModel.ToObject<QueryScoreResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询用户金融评分数据
+         *
+         * @param request QueryScoreRequest
+         * @return QueryScoreResponse
+         */
         public QueryScoreResponse QueryScore(QueryScoreRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -150,6 +172,12 @@ namespace AlibabaCloud.SDK.Dingtalkcredit_1_0
             return QueryScoreWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询用户金融评分数据
+         *
+         * @param request QueryScoreRequest
+         * @return QueryScoreResponse
+         */
         public async Task<QueryScoreResponse> QueryScoreAsync(QueryScoreRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -12,10 +12,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
 {
     public class OpenConnectionRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("clientId")]
         [Validation(Required=false)]
         public string ClientId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("clientSecret")]
         [Validation(Required=false)]
         public string ClientSecret { get; set; }
@@ -28,14 +34,23 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
         [Validation(Required=false)]
         public string LocalIp { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subscriptions")]
         [Validation(Required=false)]
         public List<OpenConnectionRequestSubscriptions> Subscriptions { get; set; }
         public class OpenConnectionRequestSubscriptions : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("topic")]
             [Validation(Required=false)]
             public string Topic { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }

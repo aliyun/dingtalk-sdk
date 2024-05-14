@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         }
 
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceRequest
+         * @param headers AppendSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendSpaceResponse
+         */
         public AppendSpaceResponse AppendSpaceWithOptions(AppendSpaceRequest request, AppendSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -82,6 +90,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<AppendSpaceResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceRequest
+         * @param headers AppendSpaceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendSpaceResponse
+         */
         public async Task<AppendSpaceResponse> AppendSpaceWithOptionsAsync(AppendSpaceRequest request, AppendSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -135,6 +151,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<AppendSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceRequest
+         * @return AppendSpaceResponse
+         */
         public AppendSpaceResponse AppendSpace(AppendSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -142,6 +164,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return AppendSpaceWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceRequest
+         * @return AppendSpaceResponse
+         */
         public async Task<AppendSpaceResponse> AppendSpaceAsync(AppendSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -149,6 +177,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await AppendSpaceWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceWithDelegateRequest
+         * @param headers AppendSpaceWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendSpaceWithDelegateResponse
+         */
         public AppendSpaceWithDelegateResponse AppendSpaceWithDelegateWithOptions(AppendSpaceWithDelegateRequest request, AppendSpaceWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -202,6 +238,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<AppendSpaceWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceWithDelegateRequest
+         * @param headers AppendSpaceWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendSpaceWithDelegateResponse
+         */
         public async Task<AppendSpaceWithDelegateResponse> AppendSpaceWithDelegateWithOptionsAsync(AppendSpaceWithDelegateRequest request, AppendSpaceWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -255,6 +299,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<AppendSpaceWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceWithDelegateRequest
+         * @return AppendSpaceWithDelegateResponse
+         */
         public AppendSpaceWithDelegateResponse AppendSpaceWithDelegate(AppendSpaceWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -262,6 +312,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return AppendSpaceWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 新增或更新卡片的场域信息
+         *
+         * @param request AppendSpaceWithDelegateRequest
+         * @return AppendSpaceWithDelegateResponse
+         */
         public async Task<AppendSpaceWithDelegateResponse> AppendSpaceWithDelegateAsync(AppendSpaceWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -269,6 +325,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await AppendSpaceWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverRequest
+         * @param headers CreateAndDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAndDeliverResponse
+         */
         public CreateAndDeliverResponse CreateAndDeliverWithOptions(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -386,6 +450,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateAndDeliverResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverRequest
+         * @param headers CreateAndDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAndDeliverResponse
+         */
         public async Task<CreateAndDeliverResponse> CreateAndDeliverWithOptionsAsync(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -503,6 +575,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateAndDeliverResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverRequest
+         * @return CreateAndDeliverResponse
+         */
         public CreateAndDeliverResponse CreateAndDeliver(CreateAndDeliverRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -510,6 +588,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return CreateAndDeliverWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverRequest
+         * @return CreateAndDeliverResponse
+         */
         public async Task<CreateAndDeliverResponse> CreateAndDeliverAsync(CreateAndDeliverRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -517,6 +601,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateAndDeliverWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverWithDelegateRequest
+         * @param headers CreateAndDeliverWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAndDeliverWithDelegateResponse
+         */
         public CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegateWithOptions(CreateAndDeliverWithDelegateRequest request, CreateAndDeliverWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -634,6 +726,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateAndDeliverWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverWithDelegateRequest
+         * @param headers CreateAndDeliverWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateAndDeliverWithDelegateResponse
+         */
         public async Task<CreateAndDeliverWithDelegateResponse> CreateAndDeliverWithDelegateWithOptionsAsync(CreateAndDeliverWithDelegateRequest request, CreateAndDeliverWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -751,6 +851,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateAndDeliverWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverWithDelegateRequest
+         * @return CreateAndDeliverWithDelegateResponse
+         */
         public CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegate(CreateAndDeliverWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -758,6 +864,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return CreateAndDeliverWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建并投放卡片
+         *
+         * @param request CreateAndDeliverWithDelegateRequest
+         * @return CreateAndDeliverWithDelegateResponse
+         */
         public async Task<CreateAndDeliverWithDelegateResponse> CreateAndDeliverWithDelegateAsync(CreateAndDeliverWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -765,6 +877,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateAndDeliverWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardRequest
+         * @param headers CreateCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCardResponse
+         */
         public CreateCardResponse CreateCardWithOptions(CreateCardRequest request, CreateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -854,6 +974,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardRequest
+         * @param headers CreateCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCardResponse
+         */
         public async Task<CreateCardResponse> CreateCardWithOptionsAsync(CreateCardRequest request, CreateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -943,6 +1071,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardRequest
+         * @return CreateCardResponse
+         */
         public CreateCardResponse CreateCard(CreateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -950,6 +1084,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return CreateCardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardRequest
+         * @return CreateCardResponse
+         */
         public async Task<CreateCardResponse> CreateCardAsync(CreateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -957,6 +1097,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateCardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardWithDelegateRequest
+         * @param headers CreateCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCardWithDelegateResponse
+         */
         public CreateCardWithDelegateResponse CreateCardWithDelegateWithOptions(CreateCardWithDelegateRequest request, CreateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1046,6 +1194,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateCardWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardWithDelegateRequest
+         * @param headers CreateCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCardWithDelegateResponse
+         */
         public async Task<CreateCardWithDelegateResponse> CreateCardWithDelegateWithOptionsAsync(CreateCardWithDelegateRequest request, CreateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1135,6 +1291,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<CreateCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardWithDelegateRequest
+         * @return CreateCardWithDelegateResponse
+         */
         public CreateCardWithDelegateResponse CreateCardWithDelegate(CreateCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1142,6 +1304,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return CreateCardWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建卡片
+         *
+         * @param request CreateCardWithDelegateRequest
+         * @return CreateCardWithDelegateResponse
+         */
         public async Task<CreateCardWithDelegateResponse> CreateCardWithDelegateAsync(CreateCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1149,6 +1317,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await CreateCardWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardRequest
+         * @param headers DeliverCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeliverCardResponse
+         */
         public DeliverCardResponse DeliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1218,6 +1394,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<DeliverCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardRequest
+         * @param headers DeliverCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeliverCardResponse
+         */
         public async Task<DeliverCardResponse> DeliverCardWithOptionsAsync(DeliverCardRequest request, DeliverCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1287,6 +1471,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<DeliverCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardRequest
+         * @return DeliverCardResponse
+         */
         public DeliverCardResponse DeliverCard(DeliverCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1294,6 +1484,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return DeliverCardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardRequest
+         * @return DeliverCardResponse
+         */
         public async Task<DeliverCardResponse> DeliverCardAsync(DeliverCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1301,6 +1497,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await DeliverCardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardWithDelegateRequest
+         * @param headers DeliverCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeliverCardWithDelegateResponse
+         */
         public DeliverCardWithDelegateResponse DeliverCardWithDelegateWithOptions(DeliverCardWithDelegateRequest request, DeliverCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1370,6 +1574,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<DeliverCardWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardWithDelegateRequest
+         * @param headers DeliverCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeliverCardWithDelegateResponse
+         */
         public async Task<DeliverCardWithDelegateResponse> DeliverCardWithDelegateWithOptionsAsync(DeliverCardWithDelegateRequest request, DeliverCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1439,6 +1651,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<DeliverCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardWithDelegateRequest
+         * @return DeliverCardWithDelegateResponse
+         */
         public DeliverCardWithDelegateResponse DeliverCardWithDelegate(DeliverCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1446,6 +1664,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return DeliverCardWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 投放卡片
+         *
+         * @param request DeliverCardWithDelegateRequest
+         * @return DeliverCardWithDelegateResponse
+         */
         public async Task<DeliverCardWithDelegateResponse> DeliverCardWithDelegateAsync(DeliverCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1453,6 +1677,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await DeliverCardWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackRequest
+         * @param headers RegisterCallbackHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RegisterCallbackResponse
+         */
         public RegisterCallbackResponse RegisterCallbackWithOptions(RegisterCallbackRequest request, RegisterCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1502,6 +1734,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<RegisterCallbackResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackRequest
+         * @param headers RegisterCallbackHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RegisterCallbackResponse
+         */
         public async Task<RegisterCallbackResponse> RegisterCallbackWithOptionsAsync(RegisterCallbackRequest request, RegisterCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1551,6 +1791,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<RegisterCallbackResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackRequest
+         * @return RegisterCallbackResponse
+         */
         public RegisterCallbackResponse RegisterCallback(RegisterCallbackRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1558,6 +1804,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return RegisterCallbackWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackRequest
+         * @return RegisterCallbackResponse
+         */
         public async Task<RegisterCallbackResponse> RegisterCallbackAsync(RegisterCallbackRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1565,6 +1817,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await RegisterCallbackWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackWithDelegateRequest
+         * @param headers RegisterCallbackWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RegisterCallbackWithDelegateResponse
+         */
         public RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegateWithOptions(RegisterCallbackWithDelegateRequest request, RegisterCallbackWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1614,6 +1874,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<RegisterCallbackWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackWithDelegateRequest
+         * @param headers RegisterCallbackWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RegisterCallbackWithDelegateResponse
+         */
         public async Task<RegisterCallbackWithDelegateResponse> RegisterCallbackWithDelegateWithOptionsAsync(RegisterCallbackWithDelegateRequest request, RegisterCallbackWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1663,6 +1931,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<RegisterCallbackWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackWithDelegateRequest
+         * @return RegisterCallbackWithDelegateResponse
+         */
         public RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegate(RegisterCallbackWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1670,6 +1944,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return RegisterCallbackWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 注册卡片回调地址
+         *
+         * @param request RegisterCallbackWithDelegateRequest
+         * @return RegisterCallbackWithDelegateResponse
+         */
         public async Task<RegisterCallbackWithDelegateResponse> RegisterCallbackWithDelegateAsync(RegisterCallbackWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1677,6 +1957,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await RegisterCallbackWithDelegateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary AI互动卡片流式更新
+         *
+         * @param request StreamingUpdateRequest
+         * @param headers StreamingUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StreamingUpdateResponse
+         */
         public StreamingUpdateResponse StreamingUpdateWithOptions(StreamingUpdateRequest request, StreamingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1738,6 +2026,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<StreamingUpdateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary AI互动卡片流式更新
+         *
+         * @param request StreamingUpdateRequest
+         * @param headers StreamingUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StreamingUpdateResponse
+         */
         public async Task<StreamingUpdateResponse> StreamingUpdateWithOptionsAsync(StreamingUpdateRequest request, StreamingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1799,6 +2095,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<StreamingUpdateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary AI互动卡片流式更新
+         *
+         * @param request StreamingUpdateRequest
+         * @return StreamingUpdateResponse
+         */
         public StreamingUpdateResponse StreamingUpdate(StreamingUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1806,6 +2108,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return StreamingUpdateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary AI互动卡片流式更新
+         *
+         * @param request StreamingUpdateRequest
+         * @return StreamingUpdateResponse
+         */
         public async Task<StreamingUpdateResponse> StreamingUpdateAsync(StreamingUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1813,6 +2121,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await StreamingUpdateWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardRequest
+         * @param headers UpdateCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCardResponse
+         */
         public UpdateCardResponse UpdateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1866,6 +2182,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<UpdateCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardRequest
+         * @param headers UpdateCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCardResponse
+         */
         public async Task<UpdateCardResponse> UpdateCardWithOptionsAsync(UpdateCardRequest request, UpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1919,6 +2243,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<UpdateCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardRequest
+         * @return UpdateCardResponse
+         */
         public UpdateCardResponse UpdateCard(UpdateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1926,6 +2256,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return UpdateCardWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardRequest
+         * @return UpdateCardResponse
+         */
         public async Task<UpdateCardResponse> UpdateCardAsync(UpdateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1933,6 +2269,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return await UpdateCardWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardWithDelegateRequest
+         * @param headers UpdateCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCardWithDelegateResponse
+         */
         public UpdateCardWithDelegateResponse UpdateCardWithDelegateWithOptions(UpdateCardWithDelegateRequest request, UpdateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1986,6 +2330,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<UpdateCardWithDelegateResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardWithDelegateRequest
+         * @param headers UpdateCardWithDelegateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCardWithDelegateResponse
+         */
         public async Task<UpdateCardWithDelegateResponse> UpdateCardWithDelegateWithOptionsAsync(UpdateCardWithDelegateRequest request, UpdateCardWithDelegateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2039,6 +2391,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return TeaModel.ToObject<UpdateCardWithDelegateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardWithDelegateRequest
+         * @return UpdateCardWithDelegateResponse
+         */
         public UpdateCardWithDelegateResponse UpdateCardWithDelegate(UpdateCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2046,6 +2404,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             return UpdateCardWithDelegateWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 更新卡片
+         *
+         * @param request UpdateCardWithDelegateRequest
+         * @return UpdateCardWithDelegateResponse
+         */
         public async Task<UpdateCardWithDelegateResponse> UpdateCardWithDelegateAsync(UpdateCardWithDelegateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

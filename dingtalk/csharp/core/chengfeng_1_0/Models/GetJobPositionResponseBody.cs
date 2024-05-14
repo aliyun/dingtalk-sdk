@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
             [Validation(Required=false)]
             public string EstablishDate { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("jobCode")]
             [Validation(Required=false)]
             public string JobCode { get; set; }
@@ -29,6 +32,9 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
             [Validation(Required=false)]
             public string JobRequirements { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

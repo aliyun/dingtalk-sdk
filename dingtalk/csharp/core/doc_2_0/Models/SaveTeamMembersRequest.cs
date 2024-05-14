@@ -9,14 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class SaveTeamMembersRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<SaveTeamMembersRequestMembers> Members { get; set; }
         public class SaveTeamMembersRequestMembers : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public string MemberId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("memberType")]
             [Validation(Required=false)]
             public int? MemberType { get; set; }
@@ -31,6 +40,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public bool? Notify { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

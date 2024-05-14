@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class AddMeetingRoomsRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("meetingRoomsToAdd")]
         [Validation(Required=false)]
         public List<AddMeetingRoomsRequestMeetingRoomsToAdd> MeetingRoomsToAdd { get; set; }

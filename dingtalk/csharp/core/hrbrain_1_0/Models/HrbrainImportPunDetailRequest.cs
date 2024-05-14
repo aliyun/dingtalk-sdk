@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportPunDetailRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportPunDetailRequestBody> Body { get; set; }
@@ -17,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string Comment { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("effectiveDate")]
             [Validation(Required=false)]
             public string EffectiveDate { get; set; }
@@ -25,10 +31,16 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, object> ExtendInfo { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("punName")]
             [Validation(Required=false)]
             public string PunName { get; set; }
@@ -37,12 +49,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string PunOrg { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
             public string WorkNo { get; set; }
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }

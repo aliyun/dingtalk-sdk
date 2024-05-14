@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("seriesMasterId")]
         [Validation(Required=false)]
         public string SeriesMasterId { get; set; }

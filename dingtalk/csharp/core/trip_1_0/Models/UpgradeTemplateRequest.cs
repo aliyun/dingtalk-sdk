@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class UpgradeTemplateRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("channelCorpId")]
         [Validation(Required=false)]
         public string ChannelCorpId { get; set; }
@@ -17,6 +20,9 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public bool? ForceUpgrade { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("tmcCorpId")]
         [Validation(Required=false)]
         public string TmcCorpId { get; set; }

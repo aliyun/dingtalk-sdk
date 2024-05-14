@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusUpdateCampusGroupRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("campusProjectGroupId")]
         [Validation(Required=false)]
         public long? CampusProjectGroupId { get; set; }

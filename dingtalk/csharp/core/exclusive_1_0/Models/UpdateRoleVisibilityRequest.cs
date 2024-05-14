@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<long?> DeptIds { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("labelId")]
         [Validation(Required=false)]
         public long? LabelId { get; set; }

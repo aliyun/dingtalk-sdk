@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public bool? NeedNotifyViaO2O { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("newOrganizerId")]
         [Validation(Required=false)]
         public string NewOrganizerId { get; set; }

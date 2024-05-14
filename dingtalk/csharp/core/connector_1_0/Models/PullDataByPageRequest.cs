@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         [Validation(Required=false)]
         public string AppId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dataModelId")]
         [Validation(Required=false)]
         public string DataModelId { get; set; }

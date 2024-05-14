@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         [Validation(Required=false)]
         public string FieldScope { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sessionId")]
         [Validation(Required=false)]
         public string SessionId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

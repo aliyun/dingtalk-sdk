@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("staffId")]
         [Validation(Required=false)]
         public string StaffId { get; set; }

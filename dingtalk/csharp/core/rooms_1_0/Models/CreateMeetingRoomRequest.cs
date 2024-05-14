@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public long? GroupId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("isvRoomId")]
         [Validation(Required=false)]
         public string IsvRoomId { get; set; }
@@ -67,6 +70,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("roomName")]
         [Validation(Required=false)]
         public string RoomName { get; set; }
@@ -75,10 +81,16 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public string RoomPicture { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("roomStatus")]
         [Validation(Required=false)]
         public int? RoomStatus { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

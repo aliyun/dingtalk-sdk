@@ -29,6 +29,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
         }
 
 
+        /**
+         * @summary 在项目事件会话中加人
+         *
+         * @param headers AddAttendeeToEventGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddAttendeeToEventGroupResponse
+         */
         public AddAttendeeToEventGroupResponse AddAttendeeToEventGroupWithOptions(string userId, string groupId, AddAttendeeToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -59,6 +66,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<AddAttendeeToEventGroupResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 在项目事件会话中加人
+         *
+         * @param headers AddAttendeeToEventGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddAttendeeToEventGroupResponse
+         */
         public async Task<AddAttendeeToEventGroupResponse> AddAttendeeToEventGroupWithOptionsAsync(string userId, string groupId, AddAttendeeToEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -89,6 +103,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<AddAttendeeToEventGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 在项目事件会话中加人
+         *
+         * @return AddAttendeeToEventGroupResponse
+         */
         public AddAttendeeToEventGroupResponse AddAttendeeToEventGroup(string userId, string groupId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -96,6 +115,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return AddAttendeeToEventGroupWithOptions(userId, groupId, headers, runtime);
         }
 
+        /**
+         * @summary 在项目事件会话中加人
+         *
+         * @return AddAttendeeToEventGroupResponse
+         */
         public async Task<AddAttendeeToEventGroupResponse> AddAttendeeToEventGroupAsync(string userId, string groupId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -103,6 +127,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return await AddAttendeeToEventGroupWithOptionsAsync(userId, groupId, headers, runtime);
         }
 
+        /**
+         * @summary 创建项目事件会话
+         *
+         * @param headers CreateEventGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateEventGroupResponse
+         */
         public CreateEventGroupResponse CreateEventGroupWithOptions(string userId, CreateEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -133,6 +164,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<CreateEventGroupResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建项目事件会话
+         *
+         * @param headers CreateEventGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateEventGroupResponse
+         */
         public async Task<CreateEventGroupResponse> CreateEventGroupWithOptionsAsync(string userId, CreateEventGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -163,6 +201,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<CreateEventGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建项目事件会话
+         *
+         * @return CreateEventGroupResponse
+         */
         public CreateEventGroupResponse CreateEventGroup(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -170,6 +213,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return CreateEventGroupWithOptions(userId, headers, runtime);
         }
 
+        /**
+         * @summary 创建项目事件会话
+         *
+         * @return CreateEventGroupResponse
+         */
         public async Task<CreateEventGroupResponse> CreateEventGroupAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -177,6 +225,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return await CreateEventGroupWithOptionsAsync(userId, headers, runtime);
         }
 
+        /**
+         * @summary 在群会话发送项目卡片消息
+         *
+         * @param headers SendInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendInteractiveCardResponse
+         */
         public SendInteractiveCardResponse SendInteractiveCardWithOptions(string userId, SendInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -207,6 +262,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<SendInteractiveCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 在群会话发送项目卡片消息
+         *
+         * @param headers SendInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendInteractiveCardResponse
+         */
         public async Task<SendInteractiveCardResponse> SendInteractiveCardWithOptionsAsync(string userId, SendInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -237,6 +299,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<SendInteractiveCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 在群会话发送项目卡片消息
+         *
+         * @return SendInteractiveCardResponse
+         */
         public SendInteractiveCardResponse SendInteractiveCard(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -244,6 +311,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return SendInteractiveCardWithOptions(userId, headers, runtime);
         }
 
+        /**
+         * @summary 在群会话发送项目卡片消息
+         *
+         * @return SendInteractiveCardResponse
+         */
         public async Task<SendInteractiveCardResponse> SendInteractiveCardAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -251,6 +323,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return await SendInteractiveCardWithOptionsAsync(userId, headers, runtime);
         }
 
+        /**
+         * @summary 单聊会话发送项目卡片消息
+         *
+         * @param headers SendSingleInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendSingleInteractiveCardResponse
+         */
         public SendSingleInteractiveCardResponse SendSingleInteractiveCardWithOptions(string userId, SendSingleInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -281,6 +360,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<SendSingleInteractiveCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 单聊会话发送项目卡片消息
+         *
+         * @param headers SendSingleInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendSingleInteractiveCardResponse
+         */
         public async Task<SendSingleInteractiveCardResponse> SendSingleInteractiveCardWithOptionsAsync(string userId, SendSingleInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -311,6 +397,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<SendSingleInteractiveCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 单聊会话发送项目卡片消息
+         *
+         * @return SendSingleInteractiveCardResponse
+         */
         public SendSingleInteractiveCardResponse SendSingleInteractiveCard(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -318,6 +409,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return SendSingleInteractiveCardWithOptions(userId, headers, runtime);
         }
 
+        /**
+         * @summary 单聊会话发送项目卡片消息
+         *
+         * @return SendSingleInteractiveCardResponse
+         */
         public async Task<SendSingleInteractiveCardResponse> SendSingleInteractiveCardAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -325,6 +421,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return await SendSingleInteractiveCardWithOptionsAsync(userId, headers, runtime);
         }
 
+        /**
+         * @summary 更新项目卡片消息
+         *
+         * @param headers UpdateInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateInteractiveCardResponse
+         */
         public UpdateInteractiveCardResponse UpdateInteractiveCardWithOptions(string userId, UpdateInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -355,6 +458,13 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<UpdateInteractiveCardResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新项目卡片消息
+         *
+         * @param headers UpdateInteractiveCardHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateInteractiveCardResponse
+         */
         public async Task<UpdateInteractiveCardResponse> UpdateInteractiveCardWithOptionsAsync(string userId, UpdateInteractiveCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -385,6 +495,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return TeaModel.ToObject<UpdateInteractiveCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新项目卡片消息
+         *
+         * @return UpdateInteractiveCardResponse
+         */
         public UpdateInteractiveCardResponse UpdateInteractiveCard(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -392,6 +507,11 @@ namespace AlibabaCloud.SDK.Dingtalkproject_integration_1_0
             return UpdateInteractiveCardWithOptions(userId, headers, runtime);
         }
 
+        /**
+         * @summary 更新项目卡片消息
+         *
+         * @return UpdateInteractiveCardResponse
+         */
         public async Task<UpdateInteractiveCardResponse> UpdateInteractiveCardAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

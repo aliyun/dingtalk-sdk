@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetQuotaInfosResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("quotas")]
         [Validation(Required=false)]
         public List<GetQuotaInfosResponseBodyQuotas> Quotas { get; set; }

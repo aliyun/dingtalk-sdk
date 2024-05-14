@@ -21,6 +21,9 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public string AuthorityUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("authorized")]
             [Validation(Required=false)]
             public bool? Authorized { get; set; }

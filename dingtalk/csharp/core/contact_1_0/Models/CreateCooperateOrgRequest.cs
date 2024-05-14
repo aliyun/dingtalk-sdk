@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public string LogoMediaId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("orgName")]
         [Validation(Required=false)]
         public string OrgName { get; set; }

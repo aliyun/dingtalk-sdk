@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public ProcessApproveCreateResponseBodyResult Result { get; set; }
         public class ProcessApproveCreateResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("dingtalkApproveId")]
             [Validation(Required=false)]
             public string DingtalkApproveId { get; set; }

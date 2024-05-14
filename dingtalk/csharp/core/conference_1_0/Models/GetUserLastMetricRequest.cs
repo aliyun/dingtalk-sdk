@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class GetUserLastMetricRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionIdList")]
         [Validation(Required=false)]
         public List<string> UnionIdList { get; set; }

@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
         }
 
 
+        /**
+         * @summary 添加插件规则
+         *
+         * @param request AddPluginRuleRequest
+         * @param headers AddPluginRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddPluginRuleResponse
+         */
         public AddPluginRuleResponse AddPluginRuleWithOptions(AddPluginRuleRequest request, AddPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -82,6 +90,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<AddPluginRuleResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 添加插件规则
+         *
+         * @param request AddPluginRuleRequest
+         * @param headers AddPluginRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddPluginRuleResponse
+         */
         public async Task<AddPluginRuleResponse> AddPluginRuleWithOptionsAsync(AddPluginRuleRequest request, AddPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -135,6 +151,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<AddPluginRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 添加插件规则
+         *
+         * @param request AddPluginRuleRequest
+         * @return AddPluginRuleResponse
+         */
         public AddPluginRuleResponse AddPluginRule(AddPluginRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -142,6 +164,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return AddPluginRuleWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 添加插件规则
+         *
+         * @param request AddPluginRuleRequest
+         * @return AddPluginRuleResponse
+         */
         public async Task<AddPluginRuleResponse> AddPluginRuleAsync(AddPluginRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -149,6 +177,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await AddPluginRuleWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除插件规则
+         *
+         * @param request DeletePlguinRuleRequest
+         * @param headers DeletePlguinRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeletePlguinRuleResponse
+         */
         public DeletePlguinRuleResponse DeletePlguinRuleWithOptions(DeletePlguinRuleRequest request, DeletePlguinRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -190,6 +226,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<DeletePlguinRuleResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除插件规则
+         *
+         * @param request DeletePlguinRuleRequest
+         * @param headers DeletePlguinRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeletePlguinRuleResponse
+         */
         public async Task<DeletePlguinRuleResponse> DeletePlguinRuleWithOptionsAsync(DeletePlguinRuleRequest request, DeletePlguinRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -231,6 +275,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<DeletePlguinRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除插件规则
+         *
+         * @param request DeletePlguinRuleRequest
+         * @return DeletePlguinRuleResponse
+         */
         public DeletePlguinRuleResponse DeletePlguinRule(DeletePlguinRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -238,6 +288,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return DeletePlguinRuleWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 删除插件规则
+         *
+         * @param request DeletePlguinRuleRequest
+         * @return DeletePlguinRuleResponse
+         */
         public async Task<DeletePlguinRuleResponse> DeletePlguinRuleAsync(DeletePlguinRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -245,6 +301,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await DeletePlguinRuleWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 闪读用户基础信息查询
+         *
+         * @param request GetBaseProfileListRequest
+         * @param headers GetBaseProfileListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetBaseProfileListResponse
+         */
         public GetBaseProfileListResponse GetBaseProfileListWithOptions(GetBaseProfileListRequest request, GetBaseProfileListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -277,6 +341,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetBaseProfileListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 闪读用户基础信息查询
+         *
+         * @param request GetBaseProfileListRequest
+         * @param headers GetBaseProfileListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetBaseProfileListResponse
+         */
         public async Task<GetBaseProfileListResponse> GetBaseProfileListWithOptionsAsync(GetBaseProfileListRequest request, GetBaseProfileListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -309,6 +381,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetBaseProfileListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 闪读用户基础信息查询
+         *
+         * @param request GetBaseProfileListRequest
+         * @return GetBaseProfileListResponse
+         */
         public GetBaseProfileListResponse GetBaseProfileList(GetBaseProfileListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -316,6 +394,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return GetBaseProfileListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 闪读用户基础信息查询
+         *
+         * @param request GetBaseProfileListRequest
+         * @return GetBaseProfileListResponse
+         */
         public async Task<GetBaseProfileListResponse> GetBaseProfileListAsync(GetBaseProfileListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -323,6 +407,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await GetBaseProfileListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获得闪读会话信息
+         *
+         * @param request GetConversationRequest
+         * @param headers GetConversationHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConversationResponse
+         */
         public GetConversationResponse GetConversationWithOptions(GetConversationRequest request, GetConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -364,6 +456,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetConversationResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获得闪读会话信息
+         *
+         * @param request GetConversationRequest
+         * @param headers GetConversationHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetConversationResponse
+         */
         public async Task<GetConversationResponse> GetConversationWithOptionsAsync(GetConversationRequest request, GetConversationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -405,6 +505,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetConversationResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获得闪读会话信息
+         *
+         * @param request GetConversationRequest
+         * @return GetConversationResponse
+         */
         public GetConversationResponse GetConversation(GetConversationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -412,6 +518,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return GetConversationWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获得闪读会话信息
+         *
+         * @param request GetConversationRequest
+         * @return GetConversationResponse
+         */
         public async Task<GetConversationResponse> GetConversationAsync(GetConversationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -419,6 +531,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await GetConversationWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 获得成员ID列表
+         *
+         * @param request GetMemberListRequest
+         * @param headers GetMemberListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMemberListResponse
+         */
         public GetMemberListResponse GetMemberListWithOptions(GetMemberListRequest request, GetMemberListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -468,6 +588,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetMemberListResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获得成员ID列表
+         *
+         * @param request GetMemberListRequest
+         * @param headers GetMemberListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMemberListResponse
+         */
         public async Task<GetMemberListResponse> GetMemberListWithOptionsAsync(GetMemberListRequest request, GetMemberListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -517,6 +645,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<GetMemberListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获得成员ID列表
+         *
+         * @param request GetMemberListRequest
+         * @return GetMemberListResponse
+         */
         public GetMemberListResponse GetMemberList(GetMemberListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -524,6 +658,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return GetMemberListWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 获得成员ID列表
+         *
+         * @param request GetMemberListRequest
+         * @return GetMemberListResponse
+         */
         public async Task<GetMemberListResponse> GetMemberListAsync(GetMemberListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -531,6 +671,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await GetMemberListWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询插件规则
+         *
+         * @param request QueryPluginRuleRequest
+         * @param headers QueryPluginRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPluginRuleResponse
+         */
         public QueryPluginRuleResponse QueryPluginRuleWithOptions(QueryPluginRuleRequest request, QueryPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -588,6 +736,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<QueryPluginRuleResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询插件规则
+         *
+         * @param request QueryPluginRuleRequest
+         * @param headers QueryPluginRuleHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPluginRuleResponse
+         */
         public async Task<QueryPluginRuleResponse> QueryPluginRuleWithOptionsAsync(QueryPluginRuleRequest request, QueryPluginRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -645,6 +801,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<QueryPluginRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 查询插件规则
+         *
+         * @param request QueryPluginRuleRequest
+         * @return QueryPluginRuleResponse
+         */
         public QueryPluginRuleResponse QueryPluginRule(QueryPluginRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -652,6 +814,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return QueryPluginRuleWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 查询插件规则
+         *
+         * @param request QueryPluginRuleRequest
+         * @return QueryPluginRuleResponse
+         */
         public async Task<QueryPluginRuleResponse> QueryPluginRuleAsync(QueryPluginRuleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -659,6 +827,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await QueryPluginRuleWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送Ding提示消息
+         *
+         * @param request SendDingTipRequest
+         * @param headers SendDingTipHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendDingTipResponse
+         */
         public SendDingTipResponse SendDingTipWithOptions(SendDingTipRequest request, SendDingTipHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -716,6 +892,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<SendDingTipResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送Ding提示消息
+         *
+         * @param request SendDingTipRequest
+         * @param headers SendDingTipHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendDingTipResponse
+         */
         public async Task<SendDingTipResponse> SendDingTipWithOptionsAsync(SendDingTipRequest request, SendDingTipHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -773,6 +957,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<SendDingTipResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送Ding提示消息
+         *
+         * @param request SendDingTipRequest
+         * @return SendDingTipResponse
+         */
         public SendDingTipResponse SendDingTip(SendDingTipRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -780,6 +970,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return SendDingTipWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送Ding提示消息
+         *
+         * @param request SendDingTipRequest
+         * @return SendDingTipResponse
+         */
         public async Task<SendDingTipResponse> SendDingTipAsync(SendDingTipRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -787,6 +983,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return await SendDingTipWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送闪读消息提示
+         *
+         * @param request SendMessageTipRequest
+         * @param headers SendMessageTipHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendMessageTipResponse
+         */
         public SendMessageTipResponse SendMessageTipWithOptions(SendMessageTipRequest request, SendMessageTipHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -848,6 +1052,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<SendMessageTipResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送闪读消息提示
+         *
+         * @param request SendMessageTipRequest
+         * @param headers SendMessageTipHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SendMessageTipResponse
+         */
         public async Task<SendMessageTipResponse> SendMessageTipWithOptionsAsync(SendMessageTipRequest request, SendMessageTipHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -909,6 +1121,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return TeaModel.ToObject<SendMessageTipResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 发送闪读消息提示
+         *
+         * @param request SendMessageTipRequest
+         * @return SendMessageTipResponse
+         */
         public SendMessageTipResponse SendMessageTip(SendMessageTipRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -916,6 +1134,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0
             return SendMessageTipWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 发送闪读消息提示
+         *
+         * @param request SendMessageTipRequest
+         * @return SendMessageTipResponse
+         */
         public async Task<SendMessageTipResponse> SendMessageTipAsync(SendMessageTipRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

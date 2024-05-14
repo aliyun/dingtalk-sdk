@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
         }
 
 
+        /**
+         * @summary 创建钉闪会并绑定日程
+         *
+         * @param request CreateFlashMeetingRequest
+         * @param headers CreateFlashMeetingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFlashMeetingResponse
+         */
         public CreateFlashMeetingResponse CreateFlashMeetingWithOptions(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,6 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<CreateFlashMeetingResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建钉闪会并绑定日程
+         *
+         * @param request CreateFlashMeetingRequest
+         * @param headers CreateFlashMeetingHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFlashMeetingResponse
+         */
         public async Task<CreateFlashMeetingResponse> CreateFlashMeetingWithOptionsAsync(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -119,6 +135,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<CreateFlashMeetingResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建钉闪会并绑定日程
+         *
+         * @param request CreateFlashMeetingRequest
+         * @return CreateFlashMeetingResponse
+         */
         public CreateFlashMeetingResponse CreateFlashMeeting(CreateFlashMeetingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,6 +148,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return CreateFlashMeetingWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 创建钉闪会并绑定日程
+         *
+         * @param request CreateFlashMeetingRequest
+         * @return CreateFlashMeetingResponse
+         */
         public async Task<CreateFlashMeetingResponse> CreateFlashMeetingAsync(CreateFlashMeetingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,6 +161,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return await CreateFlashMeetingWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据日程获取闪会的信息
+         *
+         * @param request GetShanhuiByCalendarRequest
+         * @param headers GetShanhuiByCalendarHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetShanhuiByCalendarResponse
+         */
         public GetShanhuiByCalendarResponse GetShanhuiByCalendarWithOptions(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -174,6 +210,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetShanhuiByCalendarResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据日程获取闪会的信息
+         *
+         * @param request GetShanhuiByCalendarRequest
+         * @param headers GetShanhuiByCalendarHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetShanhuiByCalendarResponse
+         */
         public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarWithOptionsAsync(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -215,6 +259,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetShanhuiByCalendarResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据日程获取闪会的信息
+         *
+         * @param request GetShanhuiByCalendarRequest
+         * @return GetShanhuiByCalendarResponse
+         */
         public GetShanhuiByCalendarResponse GetShanhuiByCalendar(GetShanhuiByCalendarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -222,6 +272,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return GetShanhuiByCalendarWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据日程获取闪会的信息
+         *
+         * @param request GetShanhuiByCalendarRequest
+         * @return GetShanhuiByCalendarResponse
+         */
         public async Task<GetShanhuiByCalendarResponse> GetShanhuiByCalendarAsync(GetShanhuiByCalendarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -229,6 +285,13 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return await GetShanhuiByCalendarWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+         *
+         * @param headers GetShanhuiByShanhuiKeyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetShanhuiByShanhuiKeyResponse
+         */
         public GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKeyWithOptions(string flashmeetingKey, GetShanhuiByShanhuiKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -259,6 +322,13 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetShanhuiByShanhuiKeyResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+         *
+         * @param headers GetShanhuiByShanhuiKeyHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetShanhuiByShanhuiKeyResponse
+         */
         public async Task<GetShanhuiByShanhuiKeyResponse> GetShanhuiByShanhuiKeyWithOptionsAsync(string flashmeetingKey, GetShanhuiByShanhuiKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -289,6 +359,11 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetShanhuiByShanhuiKeyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+         *
+         * @return GetShanhuiByShanhuiKeyResponse
+         */
         public GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKey(string flashmeetingKey)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -296,6 +371,11 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return GetShanhuiByShanhuiKeyWithOptions(flashmeetingKey, headers, runtime);
         }
 
+        /**
+         * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+         *
+         * @return GetShanhuiByShanhuiKeyResponse
+         */
         public async Task<GetShanhuiByShanhuiKeyResponse> GetShanhuiByShanhuiKeyAsync(string flashmeetingKey)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -303,6 +383,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return await GetShanhuiByShanhuiKeyWithOptionsAsync(flashmeetingKey, headers, runtime);
         }
 
+        /**
+         * @summary 根据闪会文档id获取待办任务
+         *
+         * @param request GetTaskFromShanhuiDocRequest
+         * @param headers GetTaskFromShanhuiDocHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTaskFromShanhuiDocResponse
+         */
         public GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDocWithOptions(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -352,6 +440,14 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetTaskFromShanhuiDocResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据闪会文档id获取待办任务
+         *
+         * @param request GetTaskFromShanhuiDocRequest
+         * @param headers GetTaskFromShanhuiDocHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTaskFromShanhuiDocResponse
+         */
         public async Task<GetTaskFromShanhuiDocResponse> GetTaskFromShanhuiDocWithOptionsAsync(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -401,6 +497,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return TeaModel.ToObject<GetTaskFromShanhuiDocResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 根据闪会文档id获取待办任务
+         *
+         * @param request GetTaskFromShanhuiDocRequest
+         * @return GetTaskFromShanhuiDocResponse
+         */
         public GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDoc(GetTaskFromShanhuiDocRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -408,6 +510,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             return GetTaskFromShanhuiDocWithOptions(request, headers, runtime);
         }
 
+        /**
+         * @summary 根据闪会文档id获取待办任务
+         *
+         * @param request GetTaskFromShanhuiDocRequest
+         * @return GetTaskFromShanhuiDocResponse
+         */
         public async Task<GetTaskFromShanhuiDocResponse> GetTaskFromShanhuiDocAsync(GetTaskFromShanhuiDocRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

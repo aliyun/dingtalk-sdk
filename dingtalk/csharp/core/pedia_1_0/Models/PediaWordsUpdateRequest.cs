@@ -99,6 +99,9 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0.Models
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public long? Uuid { get; set; }
@@ -107,10 +110,16 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0.Models
         [Validation(Required=false)]
         public List<string> WordAlias { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("wordName")]
         [Validation(Required=false)]
         public string WordName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("wordParaphrase")]
         [Validation(Required=false)]
         public string WordParaphrase { get; set; }

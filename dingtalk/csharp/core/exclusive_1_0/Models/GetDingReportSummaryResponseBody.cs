@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetDingReportSummaryResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("reportCommentUserCnt1d")]
         [Validation(Required=false)]
         public string ReportCommentUserCnt1d { get; set; }

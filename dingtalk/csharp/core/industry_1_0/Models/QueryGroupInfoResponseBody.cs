@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<QueryGroupInfoResponseBodyContentExtendInfos> ExtendInfos { get; set; }
             public class QueryGroupInfoResponseBodyContentExtendInfos : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("deptCode")]
                 [Validation(Required=false)]
                 public string DeptCode { get; set; }
@@ -25,26 +28,44 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string DeptExtendDisplayName { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("deptExtendKey")]
                 [Validation(Required=false)]
                 public string DeptExtendKey { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("deptExtendValue")]
                 [Validation(Required=false)]
                 public string DeptExtendValue { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtCreateStr")]
                 [Validation(Required=false)]
                 public string GmtCreateStr { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("gmtModifiedStr")]
                 [Validation(Required=false)]
                 public string GmtModifiedStr { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public long? Id { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public int? Status { get; set; }

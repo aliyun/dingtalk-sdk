@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class ChatFormGetDataForApiAccessRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("dingTalkTraceId")]
         [Validation(Required=false)]
         public string DingTalkTraceId { get; set; }

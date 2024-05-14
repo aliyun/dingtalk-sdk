@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public PagesExportInstancesResponseBodyResult Result { get; set; }
         public class PagesExportInstancesResponseBodyResult : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
@@ -21,22 +24,37 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<PagesExportInstancesResponseBodyResultList> List { get; set; }
             public class PagesExportInstancesResponseBodyResultList : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("attachedProcessInstanceIds")]
                 [Validation(Required=false)]
                 public string AttachedProcessInstanceIds { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("businessId")]
                 [Validation(Required=false)]
                 public string BusinessId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("createTime")]
                 [Validation(Required=false)]
                 public long? CreateTime { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("finishTime")]
                 [Validation(Required=false)]
                 public long? FinishTime { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("formComponentValues")]
                 [Validation(Required=false)]
                 public List<PagesExportInstancesResponseBodyResultListFormComponentValues> FormComponentValues { get; set; }
@@ -49,20 +67,32 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     [Validation(Required=false)]
                     public string ExtValue { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("id")]
                     [Validation(Required=false)]
                     public string Id { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("name")]
                     [Validation(Required=false)]
                     public string Name { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("value")]
                     [Validation(Required=false)]
                     public string Value { get; set; }
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("mainProcessInstanceId")]
                 [Validation(Required=false)]
                 public string MainProcessInstanceId { get; set; }
@@ -127,22 +157,37 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("originatorDeptId")]
                 [Validation(Required=false)]
                 public string OriginatorDeptId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("originatorUserid")]
                 [Validation(Required=false)]
                 public string OriginatorUserid { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("processInstanceId")]
                 [Validation(Required=false)]
                 public string ProcessInstanceId { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("result")]
                 [Validation(Required=false)]
                 public string Result { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public string Status { get; set; }
@@ -167,10 +212,16 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     [Validation(Required=false)]
                     public string Result { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("status")]
                     [Validation(Required=false)]
                     public string Status { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("taskId")]
                     [Validation(Required=false)]
                     public long? TaskId { get; set; }
@@ -181,12 +232,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                 }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }

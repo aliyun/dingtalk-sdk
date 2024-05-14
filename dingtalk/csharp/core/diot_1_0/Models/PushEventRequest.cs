@@ -17,14 +17,23 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string DeviceId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("eventId")]
         [Validation(Required=false)]
         public string EventId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("eventName")]
         [Validation(Required=false)]
         public string EventName { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("eventType")]
         [Validation(Required=false)]
         public string EventType { get; set; }
@@ -41,6 +50,9 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
         [Validation(Required=false)]
         public string Msg { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("occurrenceTime")]
         [Validation(Required=false)]
         public long? OccurrenceTime { get; set; }

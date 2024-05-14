@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateWorkTimeApproveRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("workTimeIds")]
         [Validation(Required=false)]
         public List<string> WorkTimeIds { get; set; }

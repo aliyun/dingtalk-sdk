@@ -29,6 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
         }
 
 
+        /**
+         * @summary 新增数据表字段
+         *
+         * @param request CreateFieldRequest
+         * @param headers CreateFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFieldResponse
+         */
         public CreateFieldResponse CreateFieldWithOptions(string baseId, string sheetIdOrName, CreateFieldRequest request, CreateFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -80,6 +88,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<CreateFieldResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增数据表字段
+         *
+         * @param request CreateFieldRequest
+         * @param headers CreateFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateFieldResponse
+         */
         public async Task<CreateFieldResponse> CreateFieldWithOptionsAsync(string baseId, string sheetIdOrName, CreateFieldRequest request, CreateFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -131,6 +147,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<CreateFieldResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增数据表字段
+         *
+         * @param request CreateFieldRequest
+         * @return CreateFieldResponse
+         */
         public CreateFieldResponse CreateField(string baseId, string sheetIdOrName, CreateFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -138,6 +160,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return CreateFieldWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 新增数据表字段
+         *
+         * @param request CreateFieldRequest
+         * @return CreateFieldResponse
+         */
         public async Task<CreateFieldResponse> CreateFieldAsync(string baseId, string sheetIdOrName, CreateFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -145,6 +173,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await CreateFieldWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 创建数据表
+         *
+         * @param request CreateSheetRequest
+         * @param headers CreateSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSheetResponse
+         */
         public CreateSheetResponse CreateSheetWithOptions(string baseId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -192,6 +228,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<CreateSheetResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建数据表
+         *
+         * @param request CreateSheetRequest
+         * @param headers CreateSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateSheetResponse
+         */
         public async Task<CreateSheetResponse> CreateSheetWithOptionsAsync(string baseId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -239,6 +283,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<CreateSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 创建数据表
+         *
+         * @param request CreateSheetRequest
+         * @return CreateSheetResponse
+         */
         public CreateSheetResponse CreateSheet(string baseId, CreateSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -246,6 +296,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return CreateSheetWithOptions(baseId, request, headers, runtime);
         }
 
+        /**
+         * @summary 创建数据表
+         *
+         * @param request CreateSheetRequest
+         * @return CreateSheetResponse
+         */
         public async Task<CreateSheetResponse> CreateSheetAsync(string baseId, CreateSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -253,6 +309,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await CreateSheetWithOptionsAsync(baseId, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表字段
+         *
+         * @param request DeleteFieldRequest
+         * @param headers DeleteFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteFieldResponse
+         */
         public DeleteFieldResponse DeleteFieldWithOptions(string baseId, string sheetIdOrName, string fieldIdOrName, DeleteFieldRequest request, DeleteFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -290,6 +354,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteFieldResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表字段
+         *
+         * @param request DeleteFieldRequest
+         * @param headers DeleteFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteFieldResponse
+         */
         public async Task<DeleteFieldResponse> DeleteFieldWithOptionsAsync(string baseId, string sheetIdOrName, string fieldIdOrName, DeleteFieldRequest request, DeleteFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -327,6 +399,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteFieldResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表字段
+         *
+         * @param request DeleteFieldRequest
+         * @return DeleteFieldResponse
+         */
         public DeleteFieldResponse DeleteField(string baseId, string sheetIdOrName, string fieldIdOrName, DeleteFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -334,6 +412,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return DeleteFieldWithOptions(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表字段
+         *
+         * @param request DeleteFieldRequest
+         * @return DeleteFieldResponse
+         */
         public async Task<DeleteFieldResponse> DeleteFieldAsync(string baseId, string sheetIdOrName, string fieldIdOrName, DeleteFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -341,6 +425,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await DeleteFieldWithOptionsAsync(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表多行记录
+         *
+         * @param request DeleteRecordsRequest
+         * @param headers DeleteRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteRecordsResponse
+         */
         public DeleteRecordsResponse DeleteRecordsWithOptions(string baseId, string sheetIdOrName, DeleteRecordsRequest request, DeleteRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -384,6 +476,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteRecordsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表多行记录
+         *
+         * @param request DeleteRecordsRequest
+         * @param headers DeleteRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteRecordsResponse
+         */
         public async Task<DeleteRecordsResponse> DeleteRecordsWithOptionsAsync(string baseId, string sheetIdOrName, DeleteRecordsRequest request, DeleteRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -427,6 +527,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteRecordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表多行记录
+         *
+         * @param request DeleteRecordsRequest
+         * @return DeleteRecordsResponse
+         */
         public DeleteRecordsResponse DeleteRecords(string baseId, string sheetIdOrName, DeleteRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -434,6 +540,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return DeleteRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表多行记录
+         *
+         * @param request DeleteRecordsRequest
+         * @return DeleteRecordsResponse
+         */
         public async Task<DeleteRecordsResponse> DeleteRecordsAsync(string baseId, string sheetIdOrName, DeleteRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -441,6 +553,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await DeleteRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表
+         *
+         * @param request DeleteSheetRequest
+         * @param headers DeleteSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSheetResponse
+         */
         public DeleteSheetResponse DeleteSheetWithOptions(string baseId, string sheetIdOrName, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -478,6 +598,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteSheetResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表
+         *
+         * @param request DeleteSheetRequest
+         * @param headers DeleteSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteSheetResponse
+         */
         public async Task<DeleteSheetResponse> DeleteSheetWithOptionsAsync(string baseId, string sheetIdOrName, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -515,6 +643,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<DeleteSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 删除数据表
+         *
+         * @param request DeleteSheetRequest
+         * @return DeleteSheetResponse
+         */
         public DeleteSheetResponse DeleteSheet(string baseId, string sheetIdOrName, DeleteSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -522,6 +656,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return DeleteSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 删除数据表
+         *
+         * @param request DeleteSheetRequest
+         * @return DeleteSheetResponse
+         */
         public async Task<DeleteSheetResponse> DeleteSheetAsync(string baseId, string sheetIdOrName, DeleteSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -529,6 +669,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await DeleteSheetWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取所有字段
+         *
+         * @param request GetAllFieldsRequest
+         * @param headers GetAllFieldsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAllFieldsResponse
+         */
         public GetAllFieldsResponse GetAllFieldsWithOptions(string baseId, string sheetIdOrName, GetAllFieldsRequest request, GetAllFieldsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -566,6 +714,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetAllFieldsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取所有字段
+         *
+         * @param request GetAllFieldsRequest
+         * @param headers GetAllFieldsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAllFieldsResponse
+         */
         public async Task<GetAllFieldsResponse> GetAllFieldsWithOptionsAsync(string baseId, string sheetIdOrName, GetAllFieldsRequest request, GetAllFieldsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -603,6 +759,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetAllFieldsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取所有字段
+         *
+         * @param request GetAllFieldsRequest
+         * @return GetAllFieldsResponse
+         */
         public GetAllFieldsResponse GetAllFields(string baseId, string sheetIdOrName, GetAllFieldsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -610,6 +772,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return GetAllFieldsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取所有字段
+         *
+         * @param request GetAllFieldsRequest
+         * @return GetAllFieldsResponse
+         */
         public async Task<GetAllFieldsResponse> GetAllFieldsAsync(string baseId, string sheetIdOrName, GetAllFieldsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -617,6 +785,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await GetAllFieldsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取所有数据表
+         *
+         * @param request GetAllSheetsRequest
+         * @param headers GetAllSheetsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAllSheetsResponse
+         */
         public GetAllSheetsResponse GetAllSheetsWithOptions(string baseId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -654,6 +830,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetAllSheetsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取所有数据表
+         *
+         * @param request GetAllSheetsRequest
+         * @param headers GetAllSheetsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAllSheetsResponse
+         */
         public async Task<GetAllSheetsResponse> GetAllSheetsWithOptionsAsync(string baseId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -691,6 +875,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetAllSheetsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取所有数据表
+         *
+         * @param request GetAllSheetsRequest
+         * @return GetAllSheetsResponse
+         */
         public GetAllSheetsResponse GetAllSheets(string baseId, GetAllSheetsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -698,6 +888,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return GetAllSheetsWithOptions(baseId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取所有数据表
+         *
+         * @param request GetAllSheetsRequest
+         * @return GetAllSheetsResponse
+         */
         public async Task<GetAllSheetsResponse> GetAllSheetsAsync(string baseId, GetAllSheetsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -705,6 +901,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await GetAllSheetsWithOptionsAsync(baseId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取记录
+         *
+         * @param request GetRecordRequest
+         * @param headers GetRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRecordResponse
+         */
         public GetRecordResponse GetRecordWithOptions(string baseId, string sheetIdOrName, string recordId, GetRecordRequest request, GetRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -742,6 +946,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetRecordResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取记录
+         *
+         * @param request GetRecordRequest
+         * @param headers GetRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRecordResponse
+         */
         public async Task<GetRecordResponse> GetRecordWithOptionsAsync(string baseId, string sheetIdOrName, string recordId, GetRecordRequest request, GetRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -779,6 +991,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取记录
+         *
+         * @param request GetRecordRequest
+         * @return GetRecordResponse
+         */
         public GetRecordResponse GetRecord(string baseId, string sheetIdOrName, string recordId, GetRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -786,6 +1004,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return GetRecordWithOptions(baseId, sheetIdOrName, recordId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取记录
+         *
+         * @param request GetRecordRequest
+         * @return GetRecordResponse
+         */
         public async Task<GetRecordResponse> GetRecordAsync(string baseId, string sheetIdOrName, string recordId, GetRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -793,6 +1017,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await GetRecordWithOptionsAsync(baseId, sheetIdOrName, recordId, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取多行记录
+         *
+         * @param request GetRecordsRequest
+         * @param headers GetRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRecordsResponse
+         */
         public GetRecordsResponse GetRecordsWithOptions(string baseId, string sheetIdOrName, GetRecordsRequest request, GetRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -838,6 +1070,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetRecordsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取多行记录
+         *
+         * @param request GetRecordsRequest
+         * @param headers GetRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRecordsResponse
+         */
         public async Task<GetRecordsResponse> GetRecordsWithOptionsAsync(string baseId, string sheetIdOrName, GetRecordsRequest request, GetRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -883,6 +1123,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetRecordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取多行记录
+         *
+         * @param request GetRecordsRequest
+         * @return GetRecordsResponse
+         */
         public GetRecordsResponse GetRecords(string baseId, string sheetIdOrName, GetRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -890,6 +1136,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return GetRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取多行记录
+         *
+         * @param request GetRecordsRequest
+         * @return GetRecordsResponse
+         */
         public async Task<GetRecordsResponse> GetRecordsAsync(string baseId, string sheetIdOrName, GetRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -897,6 +1149,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await GetRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取数据表
+         *
+         * @param request GetSheetRequest
+         * @param headers GetSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSheetResponse
+         */
         public GetSheetResponse GetSheetWithOptions(string baseId, string sheetIdOrName, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -934,6 +1194,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetSheetResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取数据表
+         *
+         * @param request GetSheetRequest
+         * @param headers GetSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSheetResponse
+         */
         public async Task<GetSheetResponse> GetSheetWithOptionsAsync(string baseId, string sheetIdOrName, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -971,6 +1239,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<GetSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 获取数据表
+         *
+         * @param request GetSheetRequest
+         * @return GetSheetResponse
+         */
         public GetSheetResponse GetSheet(string baseId, string sheetIdOrName, GetSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -978,6 +1252,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return GetSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 获取数据表
+         *
+         * @param request GetSheetRequest
+         * @return GetSheetResponse
+         */
         public async Task<GetSheetResponse> GetSheetAsync(string baseId, string sheetIdOrName, GetSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -985,6 +1265,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await GetSheetWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 新增记录
+         *
+         * @param request InsertRecordsRequest
+         * @param headers InsertRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertRecordsResponse
+         */
         public InsertRecordsResponse InsertRecordsWithOptions(string baseId, string sheetIdOrName, InsertRecordsRequest request, InsertRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1028,6 +1316,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<InsertRecordsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增记录
+         *
+         * @param request InsertRecordsRequest
+         * @param headers InsertRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertRecordsResponse
+         */
         public async Task<InsertRecordsResponse> InsertRecordsWithOptionsAsync(string baseId, string sheetIdOrName, InsertRecordsRequest request, InsertRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1071,6 +1367,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<InsertRecordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 新增记录
+         *
+         * @param request InsertRecordsRequest
+         * @return InsertRecordsResponse
+         */
         public InsertRecordsResponse InsertRecords(string baseId, string sheetIdOrName, InsertRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1078,6 +1380,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return InsertRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 新增记录
+         *
+         * @param request InsertRecordsRequest
+         * @return InsertRecordsResponse
+         */
         public async Task<InsertRecordsResponse> InsertRecordsAsync(string baseId, string sheetIdOrName, InsertRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1085,6 +1393,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await InsertRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表字段
+         *
+         * @param request UpdateFieldRequest
+         * @param headers UpdateFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateFieldResponse
+         */
         public UpdateFieldResponse UpdateFieldWithOptions(string baseId, string sheetIdOrName, string fieldIdOrName, UpdateFieldRequest request, UpdateFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1132,6 +1448,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateFieldResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表字段
+         *
+         * @param request UpdateFieldRequest
+         * @param headers UpdateFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateFieldResponse
+         */
         public async Task<UpdateFieldResponse> UpdateFieldWithOptionsAsync(string baseId, string sheetIdOrName, string fieldIdOrName, UpdateFieldRequest request, UpdateFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1179,6 +1503,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateFieldResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表字段
+         *
+         * @param request UpdateFieldRequest
+         * @return UpdateFieldResponse
+         */
         public UpdateFieldResponse UpdateField(string baseId, string sheetIdOrName, string fieldIdOrName, UpdateFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1186,6 +1516,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return UpdateFieldWithOptions(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表字段
+         *
+         * @param request UpdateFieldRequest
+         * @return UpdateFieldResponse
+         */
         public async Task<UpdateFieldResponse> UpdateFieldAsync(string baseId, string sheetIdOrName, string fieldIdOrName, UpdateFieldRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1193,6 +1529,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await UpdateFieldWithOptionsAsync(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表多行记录
+         *
+         * @param request UpdateRecordsRequest
+         * @param headers UpdateRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateRecordsResponse
+         */
         public UpdateRecordsResponse UpdateRecordsWithOptions(string baseId, string sheetIdOrName, UpdateRecordsRequest request, UpdateRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1236,6 +1580,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateRecordsResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表多行记录
+         *
+         * @param request UpdateRecordsRequest
+         * @param headers UpdateRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateRecordsResponse
+         */
         public async Task<UpdateRecordsResponse> UpdateRecordsWithOptionsAsync(string baseId, string sheetIdOrName, UpdateRecordsRequest request, UpdateRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1279,6 +1631,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateRecordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表多行记录
+         *
+         * @param request UpdateRecordsRequest
+         * @return UpdateRecordsResponse
+         */
         public UpdateRecordsResponse UpdateRecords(string baseId, string sheetIdOrName, UpdateRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1286,6 +1644,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return UpdateRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表多行记录
+         *
+         * @param request UpdateRecordsRequest
+         * @return UpdateRecordsResponse
+         */
         public async Task<UpdateRecordsResponse> UpdateRecordsAsync(string baseId, string sheetIdOrName, UpdateRecordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1293,6 +1657,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return await UpdateRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表
+         *
+         * @param request UpdateSheetRequest
+         * @param headers UpdateSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSheetResponse
+         */
         public UpdateSheetResponse UpdateSheetWithOptions(string baseId, string sheetIdOrName, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1336,6 +1708,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateSheetResponse>(Execute(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表
+         *
+         * @param request UpdateSheetRequest
+         * @param headers UpdateSheetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateSheetResponse
+         */
         public async Task<UpdateSheetResponse> UpdateSheetWithOptionsAsync(string baseId, string sheetIdOrName, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1379,6 +1759,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return TeaModel.ToObject<UpdateSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
+        /**
+         * @summary 更新数据表
+         *
+         * @param request UpdateSheetRequest
+         * @return UpdateSheetResponse
+         */
         public UpdateSheetResponse UpdateSheet(string baseId, string sheetIdOrName, UpdateSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1386,6 +1772,12 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             return UpdateSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
         }
 
+        /**
+         * @summary 更新数据表
+         *
+         * @param request UpdateSheetRequest
+         * @return UpdateSheetResponse
+         */
         public async Task<UpdateSheetResponse> UpdateSheetAsync(string baseId, string sheetIdOrName, UpdateSheetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

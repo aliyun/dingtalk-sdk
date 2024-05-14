@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string AccessKey { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("callerUid")]
         [Validation(Required=false)]
         public string CallerUid { get; set; }

@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
         [Validation(Required=false)]
         public List<CreateSheetRequestFields> Fields { get; set; }
         public class CreateSheetRequestFields : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -21,6 +24,9 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, object> Property { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
@@ -31,6 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

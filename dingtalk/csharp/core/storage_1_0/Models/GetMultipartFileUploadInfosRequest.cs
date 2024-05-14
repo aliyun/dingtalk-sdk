@@ -19,14 +19,23 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("partNumbers")]
         [Validation(Required=false)]
         public List<int?> PartNumbers { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("uploadKey")]
         [Validation(Required=false)]
         public string UploadKey { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

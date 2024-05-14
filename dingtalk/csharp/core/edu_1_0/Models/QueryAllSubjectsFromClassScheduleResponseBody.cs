@@ -37,18 +37,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
                 [Validation(Required=false)]
                 public List<QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList> TeacherList { get; set; }
                 public class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList : TeaModel {
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("avator")]
                     [Validation(Required=false)]
                     public string Avator { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("name")]
                     [Validation(Required=false)]
                     public string Name { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("uid")]
                     [Validation(Required=false)]
                     public long? Uid { get; set; }
 
+                    /// <summary>
+                    /// This parameter is required.
+                    /// </summary>
                     [NameInMap("userId")]
                     [Validation(Required=false)]
                     public string UserId { get; set; }

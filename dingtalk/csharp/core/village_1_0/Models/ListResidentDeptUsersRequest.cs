@@ -17,10 +17,16 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [Validation(Required=false)]
         public string Role { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("size")]
         [Validation(Required=false)]
         public int? Size { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }

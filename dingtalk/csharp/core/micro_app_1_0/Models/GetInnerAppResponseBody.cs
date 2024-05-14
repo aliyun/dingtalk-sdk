@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string AppKey { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("appSecret")]
         [Validation(Required=false)]
         public string AppSecret { get; set; }

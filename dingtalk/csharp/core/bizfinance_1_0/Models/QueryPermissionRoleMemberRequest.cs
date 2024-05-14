@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string CompanyCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("roleCodeList")]
         [Validation(Required=false)]
         public List<string> RoleCodeList { get; set; }

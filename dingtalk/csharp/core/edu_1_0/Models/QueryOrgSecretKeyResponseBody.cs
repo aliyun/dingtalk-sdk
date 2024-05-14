@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryOrgSecretKeyResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("universitySecretKeyInfo")]
         [Validation(Required=false)]
         public QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo UniversitySecretKeyInfo { get; set; }
         public class QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("secretKey")]
             [Validation(Required=false)]
             public string SecretKey { get; set; }

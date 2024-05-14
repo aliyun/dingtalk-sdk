@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListEmpAttributeVisibilityResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
@@ -71,6 +74,9 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("nextCursor")]
         [Validation(Required=false)]
         public long? NextCursor { get; set; }

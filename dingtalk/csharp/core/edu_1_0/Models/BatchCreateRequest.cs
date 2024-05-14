@@ -9,10 +9,16 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class BatchCreateRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("cardBizCode")]
         [Validation(Required=false)]
         public string CardBizCode { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public BatchCreateRequestData Data { get; set; }
@@ -25,10 +31,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public int? CardCycle { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("cardFrequency")]
             [Validation(Required=false)]
             public List<int?> CardFrequency { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("cardRuleItemParamList")]
             [Validation(Required=false)]
             public List<BatchCreateRequestDataCardRuleItemParamList> CardRuleItemParamList { get; set; }
@@ -67,6 +79,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<string> ClassNames { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("content")]
             [Validation(Required=false)]
             public string Content { get; set; }
@@ -83,6 +98,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public string NeedMetering { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("orgClassStudentGroupList")]
             [Validation(Required=false)]
             public List<BatchCreateRequestDataOrgClassStudentGroupList> OrgClassStudentGroupList { get; set; }
@@ -121,10 +139,16 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("remindHour")]
             [Validation(Required=false)]
             public int? RemindHour { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("remindMinute")]
             [Validation(Required=false)]
             public int? RemindMinute { get; set; }
@@ -137,6 +161,9 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public long? TemplateId { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -147,14 +174,23 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("identifier")]
         [Validation(Required=false)]
         public string Identifier { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("jsVersion")]
         [Validation(Required=false)]
         public int? JsVersion { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sourceType")]
         [Validation(Required=false)]
         public string SourceType { get; set; }

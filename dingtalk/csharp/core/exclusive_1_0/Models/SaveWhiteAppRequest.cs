@@ -14,6 +14,9 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Obsolete]
         public List<long?> AgentIdList { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("agentIdMap")]
         [Validation(Required=false)]
         public string AgentIdMap { get; set; }

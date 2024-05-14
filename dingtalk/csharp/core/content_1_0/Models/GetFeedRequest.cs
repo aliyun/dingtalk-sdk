@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
 {
     public class GetFeedRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("mcnId")]
         [Validation(Required=false)]
         public string McnId { get; set; }

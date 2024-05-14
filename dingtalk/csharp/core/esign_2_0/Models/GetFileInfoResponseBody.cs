@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         [Validation(Required=false)]
         public string DownloadUrl { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }

@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string BizAlias { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("fieldId")]
             [Validation(Required=false)]
             public string FieldId { get; set; }

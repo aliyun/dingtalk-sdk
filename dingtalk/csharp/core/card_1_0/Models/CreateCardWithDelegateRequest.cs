@@ -17,6 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
         public CreateCardWithDelegateRequestCardData CardData { get; set; }
@@ -27,6 +30,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
         public string CardTemplateId { get; set; }
@@ -217,6 +223,9 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
         public string OutTrackId { get; set; }

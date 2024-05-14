@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class DecodeBadgeCodeResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("alipayCode")]
         [Validation(Required=false)]
         public string AlipayCode { get; set; }
@@ -21,10 +24,16 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [Validation(Required=false)]
         public string CodeIdentity { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("codeType")]
         [Validation(Required=false)]
         public string CodeType { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
@@ -37,6 +46,9 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         [Validation(Required=false)]
         public string OutBizId { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("userCorpRelationType")]
         [Validation(Required=false)]
         public string UserCorpRelationType { get; set; }

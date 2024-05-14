@@ -35,6 +35,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        /// <summary>
+        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public string CreateTime { get; set; }
@@ -161,6 +164,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public PatchEventResponseBodyRecurrenceRange Range { get; set; }
             public class PatchEventResponseBodyRecurrenceRange : TeaModel {
+                /// <summary>
+                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
                 public string EndDate { get; set; }
@@ -201,6 +207,9 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public PatchEventResponseBodyStart Start { get; set; }
@@ -227,16 +236,25 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public List<PatchEventResponseBodyUiConfigs> UiConfigs { get; set; }
         public class PatchEventResponseBodyUiConfigs : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uiName")]
             [Validation(Required=false)]
             public string UiName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("uiStatus")]
             [Validation(Required=false)]
             public string UiStatus { get; set; }
 
         }
 
+        /// <summary>
+        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// </summary>
         [NameInMap("updateTime")]
         [Validation(Required=false)]
         public string UpdateTime { get; set; }

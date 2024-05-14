@@ -9,18 +9,30 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class BatchCreateTemplateRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("templateList")]
         [Validation(Required=false)]
         public List<BatchCreateTemplateRequestTemplateList> TemplateList { get; set; }
         public class BatchCreateTemplateRequestTemplateList : TeaModel {
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("adaptEnv")]
             [Validation(Required=false)]
             public List<string> AdaptEnv { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appDesc")]
             [Validation(Required=false)]
             public string AppDesc { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("appIcon")]
             [Validation(Required=false)]
             public string AppIcon { get; set; }
@@ -29,6 +41,9 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [Validation(Required=false)]
             public List<string> CaseVideoList { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("categoryCode")]
             [Validation(Required=false)]
             public string CategoryCode { get; set; }
@@ -41,10 +56,16 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [Validation(Required=false)]
             public string ExpUrl { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("industryLabelList")]
             [Validation(Required=false)]
             public List<string> IndustryLabelList { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("installTimes")]
             [Validation(Required=false)]
             public long? InstallTimes { get; set; }
@@ -53,10 +74,16 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [Validation(Required=false)]
             public List<string> MobilePreviewMediaList { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("previewMediaList")]
             [Validation(Required=false)]
             public List<string> PreviewMediaList { get; set; }
@@ -65,14 +92,23 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [Validation(Required=false)]
             public string ProviderName { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("roleLabelList")]
             [Validation(Required=false)]
             public List<string> RoleLabelList { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("simpleDesc")]
             [Validation(Required=false)]
             public string SimpleDesc { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("templateKey")]
             [Validation(Required=false)]
             public string TemplateKey { get; set; }

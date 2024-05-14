@@ -39,6 +39,9 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

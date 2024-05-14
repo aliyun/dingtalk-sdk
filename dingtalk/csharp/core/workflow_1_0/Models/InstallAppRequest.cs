@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string BizGroup { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("installOption")]
         [Validation(Required=false)]
         public InstallAppRequestInstallOption InstallOption { get; set; }
@@ -23,6 +26,9 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("sourceDirName")]
         [Validation(Required=false)]
         public string SourceDirName { get; set; }

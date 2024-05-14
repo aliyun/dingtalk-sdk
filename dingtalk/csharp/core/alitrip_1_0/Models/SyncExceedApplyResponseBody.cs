@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
 {
     public class SyncExceedApplyResponseBody : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("module")]
         [Validation(Required=false)]
         public bool? Module { get; set; }

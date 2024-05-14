@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkbay_max_1_0.Models
         [Validation(Required=false)]
         public int? From { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("skillExecuteId")]
         [Validation(Required=false)]
         public string SkillExecuteId { get; set; }

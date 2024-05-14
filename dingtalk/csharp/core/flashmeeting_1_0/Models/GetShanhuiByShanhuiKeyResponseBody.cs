@@ -45,10 +45,16 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
             [Validation(Required=false)]
             public List<GetShanhuiByShanhuiKeyResponseBodyResultTopics> Topics { get; set; }
             public class GetShanhuiByShanhuiKeyResponseBodyResultTopics : TeaModel {
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("docKey")]
                 [Validation(Required=false)]
                 public string DocKey { get; set; }
 
+                /// <summary>
+                /// This parameter is required.
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }

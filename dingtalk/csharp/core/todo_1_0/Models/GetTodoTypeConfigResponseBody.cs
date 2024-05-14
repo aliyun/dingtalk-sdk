@@ -25,6 +25,9 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public int? ButtonStyleType { get; set; }
 
+            /// <summary>
+            /// This parameter is required.
+            /// </summary>
             [NameInMap("nameI18n")]
             [Validation(Required=false)]
             public Dictionary<string, object> NameI18n { get; set; }
@@ -61,10 +64,16 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 
         }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("createdTime")]
         [Validation(Required=false)]
         public long? CreatedTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("creatorId")]
         [Validation(Required=false)]
         public string CreatorId { get; set; }
@@ -77,14 +86,23 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public string Icon { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("modifiedTime")]
         [Validation(Required=false)]
         public long? ModifiedTime { get; set; }
 
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("modifierId")]
         [Validation(Required=false)]
         public string ModifierId { get; set; }
