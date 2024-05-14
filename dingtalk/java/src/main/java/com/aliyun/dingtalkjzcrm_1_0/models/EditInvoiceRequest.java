@@ -7,12 +7,18 @@ public class EditInvoiceRequest extends TeaModel {
     @NameInMap("data")
     public EditInvoiceRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -57,15 +63,24 @@ public class EditInvoiceRequest extends TeaModel {
         @NameInMap("child_mx")
         public String childMx;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
         @NameInMap("fh_address")
         public String fhAddress;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fh_customerid")
         public String fhCustomerid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fh_date")
         public String fhDate;
 
@@ -90,12 +105,18 @@ public class EditInvoiceRequest extends TeaModel {
         @NameInMap("fh_lxrid")
         public String fhLxrid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fh_mode")
         public String fhMode;
 
         @NameInMap("fh_msn")
         public String fhMsn;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fh_number")
         public String fhNumber;
 

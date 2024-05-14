@@ -4,9 +4,15 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyBatchPayResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payData")
     public String payData;
 

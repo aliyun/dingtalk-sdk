@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 新增日程参与人
+     *
+     * @param request AddAttendeeRequest
+     * @param headers AddAttendeeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddAttendeeResponse
+     */
     public AddAttendeeResponse addAttendeeWithOptions(String userId, String calendarId, String eventId, AddAttendeeRequest request, AddAttendeeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddAttendeeResponse());
     }
 
+    /**
+     * @summary 新增日程参与人
+     *
+     * @param request AddAttendeeRequest
+     * @return AddAttendeeResponse
+     */
     public AddAttendeeResponse addAttendee(String userId, String calendarId, String eventId, AddAttendeeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddAttendeeHeaders headers = new AddAttendeeHeaders();
         return this.addAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 添加会议室
+     *
+     * @param request AddMeetingRoomsRequest
+     * @param headers AddMeetingRoomsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddMeetingRoomsResponse
+     */
     public AddMeetingRoomsResponse addMeetingRoomsWithOptions(String userId, String calendarId, String eventId, AddMeetingRoomsRequest request, AddMeetingRoomsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -109,12 +131,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddMeetingRoomsResponse());
     }
 
+    /**
+     * @summary 添加会议室
+     *
+     * @param request AddMeetingRoomsRequest
+     * @return AddMeetingRoomsResponse
+     */
     public AddMeetingRoomsResponse addMeetingRooms(String userId, String calendarId, String eventId, AddMeetingRoomsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddMeetingRoomsHeaders headers = new AddMeetingRoomsHeaders();
         return this.addMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 签到
+     *
+     * @param headers CheckInHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckInResponse
+     */
     public CheckInResponse checkInWithOptions(String userId, String calendarId, String eventId, CheckInHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -142,12 +177,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CheckInResponse());
     }
 
+    /**
+     * @summary 签到
+     *
+     * @return CheckInResponse
+     */
     public CheckInResponse checkIn(String userId, String calendarId, String eventId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckInHeaders headers = new CheckInHeaders();
         return this.checkInWithOptions(userId, calendarId, eventId, headers, runtime);
     }
 
+    /**
+     * @summary 转换老版本的eventId
+     *
+     * @param request ConvertLegacyEventIdRequest
+     * @param headers ConvertLegacyEventIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConvertLegacyEventIdResponse
+     */
     public ConvertLegacyEventIdResponse convertLegacyEventIdWithOptions(String userId, ConvertLegacyEventIdRequest request, ConvertLegacyEventIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -182,12 +230,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ConvertLegacyEventIdResponse());
     }
 
+    /**
+     * @summary 转换老版本的eventId
+     *
+     * @param request ConvertLegacyEventIdRequest
+     * @return ConvertLegacyEventIdResponse
+     */
     public ConvertLegacyEventIdResponse convertLegacyEventId(String userId, ConvertLegacyEventIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ConvertLegacyEventIdHeaders headers = new ConvertLegacyEventIdHeaders();
         return this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建访问控制
+     *
+     * @param request CreateAclsRequest
+     * @param headers CreateAclsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAclsResponse
+     */
     public CreateAclsResponse createAclsWithOptions(String userId, String calendarId, CreateAclsRequest request, CreateAclsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -230,12 +292,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateAclsResponse());
     }
 
+    /**
+     * @summary 创建访问控制
+     *
+     * @param request CreateAclsRequest
+     * @return CreateAclsResponse
+     */
     public CreateAclsResponse createAcls(String userId, String calendarId, CreateAclsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateAclsHeaders headers = new CreateAclsHeaders();
         return this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建日程
+     *
+     * @param request CreateEventRequest
+     * @param headers CreateEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateEventResponse
+     */
     public CreateEventResponse createEventWithOptions(String userId, String calendarId, CreateEventRequest request, CreateEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -322,12 +398,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateEventResponse());
     }
 
+    /**
+     * @summary 创建日程
+     *
+     * @param request CreateEventRequest
+     * @return CreateEventResponse
+     */
     public CreateEventResponse createEvent(String userId, String calendarId, CreateEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateEventHeaders headers = new CreateEventHeaders();
         return this.createEventWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建日程(me接口)
+     *
+     * @param request CreateEventByMeRequest
+     * @param headers CreateEventByMeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateEventByMeResponse
+     */
     public CreateEventByMeResponse createEventByMeWithOptions(String calendarId, CreateEventByMeRequest request, CreateEventByMeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -414,12 +504,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateEventByMeResponse());
     }
 
+    /**
+     * @summary 创建日程(me接口)
+     *
+     * @param request CreateEventByMeRequest
+     * @return CreateEventByMeResponse
+     */
     public CreateEventByMeResponse createEventByMe(String calendarId, CreateEventByMeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateEventByMeHeaders headers = new CreateEventByMeHeaders();
         return this.createEventByMeWithOptions(calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 快速创建订阅日历
+     *
+     * @param request CreateSubscribedCalendarRequest
+     * @param headers CreateSubscribedCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateSubscribedCalendarResponse
+     */
     public CreateSubscribedCalendarResponse createSubscribedCalendarWithOptions(String userId, CreateSubscribedCalendarRequest request, CreateSubscribedCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -466,12 +570,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateSubscribedCalendarResponse());
     }
 
+    /**
+     * @summary 快速创建订阅日历
+     *
+     * @param request CreateSubscribedCalendarRequest
+     * @return CreateSubscribedCalendarResponse
+     */
     public CreateSubscribedCalendarResponse createSubscribedCalendar(String userId, CreateSubscribedCalendarRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateSubscribedCalendarHeaders headers = new CreateSubscribedCalendarHeaders();
         return this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除访问控制
+     *
+     * @param headers DeleteAclHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteAclResponse
+     */
     public DeleteAclResponse deleteAclWithOptions(String userId, String calendarId, String aclId, DeleteAclHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -499,12 +616,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteAclResponse());
     }
 
+    /**
+     * @summary 删除访问控制
+     *
+     * @return DeleteAclResponse
+     */
     public DeleteAclResponse deleteAcl(String userId, String calendarId, String aclId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteAclHeaders headers = new DeleteAclHeaders();
         return this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
     }
 
+    /**
+     * @summary 删除指定日程
+     *
+     * @param request DeleteEventRequest
+     * @param headers DeleteEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteEventResponse
+     */
     public DeleteEventResponse deleteEventWithOptions(String userId, String calendarId, String eventId, DeleteEventRequest request, DeleteEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -543,12 +673,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteEventResponse());
     }
 
+    /**
+     * @summary 删除指定日程
+     *
+     * @param request DeleteEventRequest
+     * @return DeleteEventResponse
+     */
     public DeleteEventResponse deleteEvent(String userId, String calendarId, String eventId, DeleteEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteEventHeaders headers = new DeleteEventHeaders();
         return this.deleteEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除指定订阅日历
+     *
+     * @param headers DeleteSubscribedCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSubscribedCalendarResponse
+     */
     public DeleteSubscribedCalendarResponse deleteSubscribedCalendarWithOptions(String userId, String calendarId, DeleteSubscribedCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -576,12 +719,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSubscribedCalendarResponse());
     }
 
+    /**
+     * @summary 删除指定订阅日历
+     *
+     * @return DeleteSubscribedCalendarResponse
+     */
     public DeleteSubscribedCalendarResponse deleteSubscribedCalendar(String userId, String calendarId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSubscribedCalendarHeaders headers = new DeleteSubscribedCalendarHeaders();
         return this.deleteSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
     }
 
+    /**
+     * @summary 生成caldav账户
+     *
+     * @param request GenerateCaldavAccountRequest
+     * @param headers GenerateCaldavAccountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GenerateCaldavAccountResponse
+     */
     public GenerateCaldavAccountResponse generateCaldavAccountWithOptions(String userId, GenerateCaldavAccountRequest request, GenerateCaldavAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -620,12 +776,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GenerateCaldavAccountResponse());
     }
 
+    /**
+     * @summary 生成caldav账户
+     *
+     * @param request GenerateCaldavAccountRequest
+     * @return GenerateCaldavAccountResponse
+     */
     public GenerateCaldavAccountResponse generateCaldavAccount(String userId, GenerateCaldavAccountRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GenerateCaldavAccountHeaders headers = new GenerateCaldavAccountHeaders();
         return this.generateCaldavAccountWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询日程列表
+     *
+     * @param request GetEventRequest
+     * @param headers GetEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetEventResponse
+     */
     public GetEventResponse getEventWithOptions(String userId, String calendarId, String eventId, GetEventRequest request, GetEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -660,12 +830,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetEventResponse());
     }
 
+    /**
+     * @summary 查询日程列表
+     *
+     * @param request GetEventRequest
+     * @return GetEventResponse
+     */
     public GetEventResponse getEvent(String userId, String calendarId, String eventId, GetEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetEventHeaders headers = new GetEventHeaders();
         return this.getEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会议室忙闲
+     *
+     * @param request GetMeetingRoomsScheduleRequest
+     * @param headers GetMeetingRoomsScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMeetingRoomsScheduleResponse
+     */
     public GetMeetingRoomsScheduleResponse getMeetingRoomsScheduleWithOptions(String userId, GetMeetingRoomsScheduleRequest request, GetMeetingRoomsScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -708,12 +892,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMeetingRoomsScheduleResponse());
     }
 
+    /**
+     * @summary 查询会议室忙闲
+     *
+     * @param request GetMeetingRoomsScheduleRequest
+     * @return GetMeetingRoomsScheduleResponse
+     */
     public GetMeetingRoomsScheduleResponse getMeetingRoomsSchedule(String userId, GetMeetingRoomsScheduleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMeetingRoomsScheduleHeaders headers = new GetMeetingRoomsScheduleHeaders();
         return this.getMeetingRoomsScheduleWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询闲忙
+     *
+     * @param request GetScheduleRequest
+     * @param headers GetScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetScheduleResponse
+     */
     public GetScheduleResponse getScheduleWithOptions(String userId, GetScheduleRequest request, GetScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -756,12 +954,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetScheduleResponse());
     }
 
+    /**
+     * @summary 查询闲忙
+     *
+     * @param request GetScheduleRequest
+     * @return GetScheduleResponse
+     */
     public GetScheduleResponse getSchedule(String userId, GetScheduleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetScheduleHeaders headers = new GetScheduleHeaders();
         return this.getScheduleWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取签到链接
+     *
+     * @param headers GetSignInLinkHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignInLinkResponse
+     */
     public GetSignInLinkResponse getSignInLinkWithOptions(String calendarId, String userId, String eventId, GetSignInLinkHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -789,12 +1000,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSignInLinkResponse());
     }
 
+    /**
+     * @summary 获取签到链接
+     *
+     * @return GetSignInLinkResponse
+     */
     public GetSignInLinkResponse getSignInLink(String calendarId, String userId, String eventId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSignInLinkHeaders headers = new GetSignInLinkHeaders();
         return this.getSignInLinkWithOptions(calendarId, userId, eventId, headers, runtime);
     }
 
+    /**
+     * @summary 获取签到信息详情
+     *
+     * @param request GetSignInListRequest
+     * @param headers GetSignInListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignInListResponse
+     */
     public GetSignInListResponse getSignInListWithOptions(String userId, String calendarId, String eventId, GetSignInListRequest request, GetSignInListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -837,12 +1061,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSignInListResponse());
     }
 
+    /**
+     * @summary 获取签到信息详情
+     *
+     * @param request GetSignInListRequest
+     * @return GetSignInListResponse
+     */
     public GetSignInListResponse getSignInList(String userId, String calendarId, String eventId, GetSignInListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSignInListHeaders headers = new GetSignInListHeaders();
         return this.getSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取签退链接
+     *
+     * @param headers GetSignOutLinkHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignOutLinkResponse
+     */
     public GetSignOutLinkResponse getSignOutLinkWithOptions(String calendarId, String userId, String eventId, GetSignOutLinkHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -870,12 +1107,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSignOutLinkResponse());
     }
 
+    /**
+     * @summary 获取签退链接
+     *
+     * @return GetSignOutLinkResponse
+     */
     public GetSignOutLinkResponse getSignOutLink(String calendarId, String userId, String eventId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSignOutLinkHeaders headers = new GetSignOutLinkHeaders();
         return this.getSignOutLinkWithOptions(calendarId, userId, eventId, headers, runtime);
     }
 
+    /**
+     * @summary 获取签退信息详情
+     *
+     * @param request GetSignOutListRequest
+     * @param headers GetSignOutListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignOutListResponse
+     */
     public GetSignOutListResponse getSignOutListWithOptions(String userId, String calendarId, String eventId, GetSignOutListRequest request, GetSignOutListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -918,12 +1168,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSignOutListResponse());
     }
 
+    /**
+     * @summary 获取签退信息详情
+     *
+     * @param request GetSignOutListRequest
+     * @return GetSignOutListResponse
+     */
     public GetSignOutListResponse getSignOutList(String userId, String calendarId, String eventId, GetSignOutListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSignOutListHeaders headers = new GetSignOutListHeaders();
         return this.getSignOutListWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取指定订阅日历详情
+     *
+     * @param headers GetSubscribedCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSubscribedCalendarResponse
+     */
     public GetSubscribedCalendarResponse getSubscribedCalendarWithOptions(String userId, String calendarId, GetSubscribedCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -951,12 +1214,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSubscribedCalendarResponse());
     }
 
+    /**
+     * @summary 获取指定订阅日历详情
+     *
+     * @return GetSubscribedCalendarResponse
+     */
     public GetSubscribedCalendarResponse getSubscribedCalendar(String userId, String calendarId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSubscribedCalendarHeaders headers = new GetSubscribedCalendarHeaders();
         return this.getSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
     }
 
+    /**
+     * @summary 获取访问控制列表
+     *
+     * @param headers ListAclsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAclsResponse
+     */
     public ListAclsResponse listAclsWithOptions(String userId, String calendarId, ListAclsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -984,12 +1259,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAclsResponse());
     }
 
+    /**
+     * @summary 获取访问控制列表
+     *
+     * @return ListAclsResponse
+     */
     public ListAclsResponse listAcls(String userId, String calendarId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAclsHeaders headers = new ListAclsHeaders();
         return this.listAclsWithOptions(userId, calendarId, headers, runtime);
     }
 
+    /**
+     * @summary 分页获取参与人列表
+     *
+     * @param request ListAttendeesRequest
+     * @param headers ListAttendeesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAttendeesResponse
+     */
     public ListAttendeesResponse listAttendeesWithOptions(String userId, String calendarId, String eventId, ListAttendeesRequest request, ListAttendeesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1028,12 +1316,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAttendeesResponse());
     }
 
+    /**
+     * @summary 分页获取参与人列表
+     *
+     * @param request ListAttendeesRequest
+     * @return ListAttendeesResponse
+     */
     public ListAttendeesResponse listAttendees(String userId, String calendarId, String eventId, ListAttendeesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAttendeesHeaders headers = new ListAttendeesHeaders();
         return this.listAttendeesWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 日历本查询
+     *
+     * @param headers ListCalendarsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListCalendarsResponse
+     */
     public ListCalendarsResponse listCalendarsWithOptions(String userId, ListCalendarsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1061,12 +1362,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListCalendarsResponse());
     }
 
+    /**
+     * @summary 日历本查询
+     *
+     * @return ListCalendarsResponse
+     */
     public ListCalendarsResponse listCalendars(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListCalendarsHeaders headers = new ListCalendarsHeaders();
         return this.listCalendarsWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 查询日程列表
+     *
+     * @param request ListEventsRequest
+     * @param headers ListEventsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListEventsResponse
+     */
     public ListEventsResponse listEventsWithOptions(String userId, String calendarId, ListEventsRequest request, ListEventsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1129,12 +1443,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListEventsResponse());
     }
 
+    /**
+     * @summary 查询日程列表
+     *
+     * @param request ListEventsRequest
+     * @return ListEventsResponse
+     */
     public ListEventsResponse listEvents(String userId, String calendarId, ListEventsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListEventsHeaders headers = new ListEventsHeaders();
         return this.listEventsWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询同一个循环日程序列下已生成的实例
+     *
+     * @param request ListEventsInstancesRequest
+     * @param headers ListEventsInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListEventsInstancesResponse
+     */
     public ListEventsInstancesResponse listEventsInstancesWithOptions(String userId, String calendarId, ListEventsInstancesRequest request, ListEventsInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1181,12 +1509,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListEventsInstancesResponse());
     }
 
+    /**
+     * @summary 查询同一个循环日程序列下已生成的实例
+     *
+     * @param request ListEventsInstancesRequest
+     * @return ListEventsInstancesResponse
+     */
     public ListEventsInstancesResponse listEventsInstances(String userId, String calendarId, ListEventsInstancesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListEventsInstancesHeaders headers = new ListEventsInstancesHeaders();
         return this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程
+     *
+     * @param request ListEventsViewRequest
+     * @param headers ListEventsViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListEventsViewResponse
+     */
     public ListEventsViewResponse listEventsViewWithOptions(String userId, String calendarId, ListEventsViewRequest request, ListEventsViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1237,12 +1579,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListEventsViewResponse());
     }
 
+    /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程
+     *
+     * @param request ListEventsViewRequest
+     * @return ListEventsViewResponse
+     */
     public ListEventsViewResponse listEventsView(String userId, String calendarId, ListEventsViewRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListEventsViewHeaders headers = new ListEventsViewHeaders();
         return this.listEventsViewWithOptions(userId, calendarId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询循环日程实例列表
+     *
+     * @param request ListInstancesRequest
+     * @param headers ListInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListInstancesResponse
+     */
     public ListInstancesResponse listInstancesWithOptions(String userId, String calendarId, String eventId, ListInstancesRequest request, ListInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1293,12 +1649,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListInstancesResponse());
     }
 
+    /**
+     * @summary 查询循环日程实例列表
+     *
+     * @param request ListInstancesRequest
+     * @return ListInstancesResponse
+     */
     public ListInstancesResponse listInstances(String userId, String calendarId, String eventId, ListInstancesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListInstancesHeaders headers = new ListInstancesHeaders();
         return this.listInstancesWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 修改日程
+     *
+     * @param request PatchEventRequest
+     * @param headers PatchEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PatchEventResponse
+     */
     public PatchEventResponse patchEventWithOptions(String userId, String calendarId, String eventId, PatchEventRequest request, PatchEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1389,12 +1759,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PatchEventResponse());
     }
 
+    /**
+     * @summary 修改日程
+     *
+     * @param request PatchEventRequest
+     * @return PatchEventResponse
+     */
     public PatchEventResponse patchEvent(String userId, String calendarId, String eventId, PatchEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PatchEventHeaders headers = new PatchEventHeaders();
         return this.patchEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除日程参与人
+     *
+     * @param request RemoveAttendeeRequest
+     * @param headers RemoveAttendeeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveAttendeeResponse
+     */
     public RemoveAttendeeResponse removeAttendeeWithOptions(String userId, String calendarId, String eventId, RemoveAttendeeRequest request, RemoveAttendeeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1433,12 +1817,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemoveAttendeeResponse());
     }
 
+    /**
+     * @summary 删除日程参与人
+     *
+     * @param request RemoveAttendeeRequest
+     * @return RemoveAttendeeResponse
+     */
     public RemoveAttendeeResponse removeAttendee(String userId, String calendarId, String eventId, RemoveAttendeeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveAttendeeHeaders headers = new RemoveAttendeeHeaders();
         return this.removeAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除会议室
+     *
+     * @param request RemoveMeetingRoomsRequest
+     * @param headers RemoveMeetingRoomsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveMeetingRoomsResponse
+     */
     public RemoveMeetingRoomsResponse removeMeetingRoomsWithOptions(String userId, String calendarId, String eventId, RemoveMeetingRoomsRequest request, RemoveMeetingRoomsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1477,12 +1875,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemoveMeetingRoomsResponse());
     }
 
+    /**
+     * @summary 删除会议室
+     *
+     * @param request RemoveMeetingRoomsRequest
+     * @return RemoveMeetingRoomsResponse
+     */
     public RemoveMeetingRoomsResponse removeMeetingRooms(String userId, String calendarId, String eventId, RemoveMeetingRoomsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveMeetingRoomsHeaders headers = new RemoveMeetingRoomsHeaders();
         return this.removeMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 回复日程邀请
+     *
+     * @param request RespondEventRequest
+     * @param headers RespondEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RespondEventResponse
+     */
     public RespondEventResponse respondEventWithOptions(String userId, String calendarId, String eventId, RespondEventRequest request, RespondEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1521,12 +1933,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RespondEventResponse());
     }
 
+    /**
+     * @summary 回复日程邀请
+     *
+     * @param request RespondEventRequest
+     * @return RespondEventResponse
+     */
     public RespondEventResponse respondEvent(String userId, String calendarId, String eventId, RespondEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RespondEventHeaders headers = new RespondEventHeaders();
         return this.respondEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 签到
+     *
+     * @param headers SignInHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SignInResponse
+     */
     public SignInResponse signInWithOptions(String userId, String calendarId, String eventId, SignInHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1554,12 +1979,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SignInResponse());
     }
 
+    /**
+     * @summary 签到
+     *
+     * @return SignInResponse
+     */
     public SignInResponse signIn(String userId, String calendarId, String eventId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SignInHeaders headers = new SignInHeaders();
         return this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
     }
 
+    /**
+     * @summary 签退
+     *
+     * @param headers SignOutHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SignOutResponse
+     */
     public SignOutResponse signOutWithOptions(String userId, String calendarId, String eventId, SignOutHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1587,12 +2024,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SignOutResponse());
     }
 
+    /**
+     * @summary 签退
+     *
+     * @return SignOutResponse
+     */
     public SignOutResponse signOut(String userId, String calendarId, String eventId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SignOutHeaders headers = new SignOutHeaders();
         return this.signOutWithOptions(userId, calendarId, eventId, headers, runtime);
     }
 
+    /**
+     * @summary 订阅公共日历
+     *
+     * @param headers SubscribeCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubscribeCalendarResponse
+     */
     public SubscribeCalendarResponse subscribeCalendarWithOptions(String userId, String calendarId, SubscribeCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1620,12 +2069,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SubscribeCalendarResponse());
     }
 
+    /**
+     * @summary 订阅公共日历
+     *
+     * @return SubscribeCalendarResponse
+     */
     public SubscribeCalendarResponse subscribeCalendar(String userId, String calendarId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SubscribeCalendarHeaders headers = new SubscribeCalendarHeaders();
         return this.subscribeCalendarWithOptions(userId, calendarId, headers, runtime);
     }
 
+    /**
+     * @summary 日程转让
+     *
+     * @param request TransferEventRequest
+     * @param headers TransferEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TransferEventResponse
+     */
     public TransferEventResponse transferEventWithOptions(String calendarId, String userId, String eventId, TransferEventRequest request, TransferEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1672,12 +2134,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new TransferEventResponse());
     }
 
+    /**
+     * @summary 日程转让
+     *
+     * @param request TransferEventRequest
+     * @return TransferEventResponse
+     */
     public TransferEventResponse transferEvent(String calendarId, String userId, String eventId, TransferEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TransferEventHeaders headers = new TransferEventHeaders();
         return this.transferEventWithOptions(calendarId, userId, eventId, request, headers, runtime);
     }
 
+    /**
+     * @summary 取消订阅公共日历
+     *
+     * @param headers UnsubscribeCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UnsubscribeCalendarResponse
+     */
     public UnsubscribeCalendarResponse unsubscribeCalendarWithOptions(String userId, String calendarId, UnsubscribeCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1705,12 +2180,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UnsubscribeCalendarResponse());
     }
 
+    /**
+     * @summary 取消订阅公共日历
+     *
+     * @return UnsubscribeCalendarResponse
+     */
     public UnsubscribeCalendarResponse unsubscribeCalendar(String userId, String calendarId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UnsubscribeCalendarHeaders headers = new UnsubscribeCalendarHeaders();
         return this.unsubscribeCalendarWithOptions(userId, calendarId, headers, runtime);
     }
 
+    /**
+     * @summary 更新指定订阅日历
+     *
+     * @param request UpdateSubscribedCalendarsRequest
+     * @param headers UpdateSubscribedCalendarsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateSubscribedCalendarsResponse
+     */
     public UpdateSubscribedCalendarsResponse updateSubscribedCalendarsWithOptions(String calendarId, String userId, UpdateSubscribedCalendarsRequest request, UpdateSubscribedCalendarsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1757,6 +2245,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateSubscribedCalendarsResponse());
     }
 
+    /**
+     * @summary 更新指定订阅日历
+     *
+     * @param request UpdateSubscribedCalendarsRequest
+     * @return UpdateSubscribedCalendarsResponse
+     */
     public UpdateSubscribedCalendarsResponse updateSubscribedCalendars(String calendarId, String userId, UpdateSubscribedCalendarsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateSubscribedCalendarsHeaders headers = new UpdateSubscribedCalendarsHeaders();

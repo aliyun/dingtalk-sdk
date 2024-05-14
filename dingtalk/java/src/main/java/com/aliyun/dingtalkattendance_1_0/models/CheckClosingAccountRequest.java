@@ -4,12 +4,21 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckClosingAccountRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userTimeRange")
     public java.util.List<CheckClosingAccountRequestUserTimeRange> userTimeRange;
 
@@ -43,9 +52,15 @@ public class CheckClosingAccountRequest extends TeaModel {
     }
 
     public static class CheckClosingAccountRequestUserTimeRange extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 

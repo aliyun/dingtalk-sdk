@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTrustDeviceListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<GetTrustDeviceListResponseBodyData> data;
 
@@ -39,6 +42,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

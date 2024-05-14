@@ -4,6 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSpaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceInfoVOList")
     public java.util.List<UpdateSpaceRequestSpaceInfoVOList> spaceInfoVOList;
 
@@ -30,6 +33,9 @@ public class UpdateSpaceRequest extends TeaModel {
         @NameInMap("buildingType")
         public Long buildingType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
@@ -48,6 +54,9 @@ public class UpdateSpaceRequest extends TeaModel {
         @NameInMap("parentDeptId")
         public Long parentDeptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 

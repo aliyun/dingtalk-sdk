@@ -4,15 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeAddCollegeDeptRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptType")
     public String deptType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sortFactor")
     public Long sortFactor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("superId")
     public Long superId;
 

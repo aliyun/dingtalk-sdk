@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
@@ -34,12 +43,18 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outCorpId")
     public String outCorpId;
 
     @NameInMap("processIds")
     public java.util.List<String> processIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -153,15 +168,24 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesSubCooperationTeamRequestExtendData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -205,9 +229,15 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesSubCooperationTeamRequestGroupPlugins extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -235,9 +265,15 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesSubCooperationTeamRequestLeaders extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -265,9 +301,15 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesSubCooperationTeamRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

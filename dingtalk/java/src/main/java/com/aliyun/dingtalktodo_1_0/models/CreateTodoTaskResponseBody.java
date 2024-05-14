@@ -10,9 +10,15 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("contentFieldList")
     public java.util.List<CreateTodoTaskResponseBodyContentFieldList> contentFieldList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorId")
     public String creatorId;
 
@@ -34,6 +40,9 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("finishTime")
     public Long finishTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
@@ -67,6 +76,9 @@ public class CreateTodoTaskResponseBody extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subject")
     public String subject;
 

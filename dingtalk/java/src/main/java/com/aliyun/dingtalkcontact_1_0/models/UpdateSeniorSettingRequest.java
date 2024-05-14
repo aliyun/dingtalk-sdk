@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSeniorSettingRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("open")
     public Boolean open;
 
@@ -19,6 +22,9 @@ public class UpdateSeniorSettingRequest extends TeaModel {
     @NameInMap("protectScenes")
     public java.util.List<String> protectScenes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("seniorStaffId")
     public String seniorStaffId;
 

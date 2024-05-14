@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRelationMetaRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationMetaDTO")
     public CreateRelationMetaRequestRelationMetaDTO relationMetaDTO;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenant")
     public String tenant;
 
@@ -76,6 +85,9 @@ public class CreateRelationMetaRequest extends TeaModel {
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
@@ -100,6 +112,9 @@ public class CreateRelationMetaRequest extends TeaModel {
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
@@ -127,6 +142,9 @@ public class CreateRelationMetaRequest extends TeaModel {
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
@@ -323,9 +341,15 @@ public class CreateRelationMetaRequest extends TeaModel {
     }
 
     public static class CreateRelationMetaRequestRelationMetaDTOItems extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public CreateRelationMetaRequestRelationMetaDTOItemsProps props;
 
@@ -353,15 +377,27 @@ public class CreateRelationMetaRequest extends TeaModel {
     }
 
     public static class CreateRelationMetaRequestRelationMetaDTO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("items")
         public java.util.List<CreateRelationMetaRequestRelationMetaDTOItems> items;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationType")
         public String relationType;
 

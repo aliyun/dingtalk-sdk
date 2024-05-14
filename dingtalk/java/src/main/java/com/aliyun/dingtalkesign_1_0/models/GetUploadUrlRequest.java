@@ -4,18 +4,33 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contentMd5")
     public String contentMd5;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contentType")
     public String contentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("convert2Pdf")
     public Boolean convert2Pdf;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 

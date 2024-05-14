@@ -4,6 +4,9 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetPermissionInheritanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

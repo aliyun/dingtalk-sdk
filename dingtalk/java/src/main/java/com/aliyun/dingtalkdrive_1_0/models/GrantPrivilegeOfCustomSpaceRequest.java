@@ -4,18 +4,33 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantPrivilegeOfCustomSpaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("duration")
     public Long duration;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileIds")
     public java.util.List<String> fileIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

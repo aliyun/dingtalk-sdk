@@ -21,27 +21,45 @@ public class ListInnerAppVersionResponseBody extends TeaModel {
     }
 
     public static class ListInnerAppVersionResponseBodyAppVersionList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appVersion")
         public String appVersion;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appVersionId")
         public Long appVersionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appVersionType")
         public Integer appVersionType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
         @NameInMap("entranceLink")
         public String entranceLink;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("miniAppId")
         public String miniAppId;
 
         @NameInMap("miniAppOnPc")
         public Boolean miniAppOnPc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 

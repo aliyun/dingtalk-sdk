@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAttendeeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("attendeesToAdd")
     public java.util.List<AddAttendeeRequestAttendeesToAdd> attendeesToAdd;
 

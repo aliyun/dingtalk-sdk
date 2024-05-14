@@ -4,6 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormDataSource extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("target")
     public FormDataSourceTarget target;
 
@@ -32,6 +35,9 @@ public class FormDataSource extends TeaModel {
     }
 
     public static class FormDataSourceTarget extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Integer appType;
 
@@ -41,6 +47,9 @@ public class FormDataSource extends TeaModel {
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 

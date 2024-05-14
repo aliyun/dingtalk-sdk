@@ -4,9 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfWeightResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public UpdateKROfWeightResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +38,9 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfWeightResponseBodyDataObjectiveProgress extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("percent")
         public Long percent;
 
@@ -51,9 +60,15 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfWeightResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectiveProgress")
         public UpdateKROfWeightResponseBodyDataObjectiveProgress objectiveProgress;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectiveScore")
         public Long objectiveScore;
 

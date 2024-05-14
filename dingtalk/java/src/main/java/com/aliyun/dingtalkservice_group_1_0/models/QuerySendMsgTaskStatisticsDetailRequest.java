@@ -10,12 +10,21 @@ public class QuerySendMsgTaskStatisticsDetailRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openBatchTaskId")
     public String openBatchTaskId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

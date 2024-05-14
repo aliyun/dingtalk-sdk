@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetWorkspaceDocsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nodeIds")
     public java.util.List<String> nodeIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

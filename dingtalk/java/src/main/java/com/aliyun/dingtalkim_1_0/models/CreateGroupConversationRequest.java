@@ -10,18 +10,30 @@ public class CreateGroupConversationRequest extends TeaModel {
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

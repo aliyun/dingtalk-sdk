@@ -43,6 +43,9 @@ public class InviteUsersRequest extends TeaModel {
     }
 
     public static class InviteUsersRequestInviteeList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nick")
         public String nick;
 

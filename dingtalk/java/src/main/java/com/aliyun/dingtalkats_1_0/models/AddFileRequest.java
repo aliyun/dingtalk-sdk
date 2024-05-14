@@ -7,9 +7,15 @@ public class AddFileRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 

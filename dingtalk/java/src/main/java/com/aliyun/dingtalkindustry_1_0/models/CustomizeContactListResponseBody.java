@@ -21,15 +21,27 @@ public class CustomizeContactListResponseBody extends TeaModel {
     }
 
     public static class CustomizeContactListResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("order")
         public Long order;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("rootDeptId")
         public Long rootDeptId;
 

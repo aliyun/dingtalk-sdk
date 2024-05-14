@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creator")
     public String creator;
 
@@ -16,6 +19,9 @@ public class CreateCustomerRequest extends TeaModel {
     @NameInMap("drawerTelephone")
     public String drawerTelephone;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

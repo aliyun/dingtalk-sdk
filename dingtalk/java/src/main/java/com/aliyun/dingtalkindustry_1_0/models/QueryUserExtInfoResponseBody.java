@@ -21,24 +21,45 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserExtInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userExtendDisplayName")
         public String userExtendDisplayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userExtendKey")
         public String userExtendKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userExtendValue")
         public String userExtendValue;
 

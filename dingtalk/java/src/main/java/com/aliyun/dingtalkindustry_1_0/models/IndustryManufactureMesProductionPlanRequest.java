@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 
@@ -13,9 +16,15 @@ public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     @NameInMap("actualStartTime")
     public String actualStartTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
@@ -76,6 +85,9 @@ public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     @NameInMap("unit")
     public String unit;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

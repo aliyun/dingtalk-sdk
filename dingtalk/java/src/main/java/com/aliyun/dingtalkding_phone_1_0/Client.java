@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 添加外呼码号配置
+     *
+     * @param request AddCallConfigRequest
+     * @param headers AddCallConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddCallConfigResponse
+     */
     public AddCallConfigResponse addCallConfigWithOptions(AddCallConfigRequest request, AddCallConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddCallConfigResponse());
     }
 
+    /**
+     * @summary 添加外呼码号配置
+     *
+     * @param request AddCallConfigRequest
+     * @return AddCallConfigResponse
+     */
     public AddCallConfigResponse addCallConfig(AddCallConfigRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddCallConfigHeaders headers = new AddCallConfigHeaders();
         return this.addCallConfigWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除码号配置
+     *
+     * @param request DelCallConfigRequest
+     * @param headers DelCallConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DelCallConfigResponse
+     */
     public DelCallConfigResponse delCallConfigWithOptions(DelCallConfigRequest request, DelCallConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -113,12 +135,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DelCallConfigResponse());
     }
 
+    /**
+     * @summary 删除码号配置
+     *
+     * @param request DelCallConfigRequest
+     * @return DelCallConfigResponse
+     */
     public DelCallConfigResponse delCallConfig(DelCallConfigRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DelCallConfigHeaders headers = new DelCallConfigHeaders();
         return this.delCallConfigWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询外呼码号配置
+     *
+     * @param request QueryCallConfigRequest
+     * @param headers QueryCallConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCallConfigResponse
+     */
     public QueryCallConfigResponse queryCallConfigWithOptions(QueryCallConfigRequest request, QueryCallConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -165,6 +201,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCallConfigResponse());
     }
 
+    /**
+     * @summary 查询外呼码号配置
+     *
+     * @param request QueryCallConfigRequest
+     * @return QueryCallConfigResponse
+     */
     public QueryCallConfigResponse queryCallConfig(QueryCallConfigRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCallConfigHeaders headers = new QueryCallConfigHeaders();

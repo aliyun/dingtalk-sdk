@@ -10,21 +10,39 @@ public class ReportCustomerDetailRequest extends TeaModel {
     @NameInMap("hasOpenConv")
     public Boolean hasOpenConv;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxDt")
     public String maxDt;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("minDt")
     public String minDt;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

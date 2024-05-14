@@ -10,9 +10,15 @@ public class AddRobotToConversationRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalkai_interaction_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contentType")
     public String contentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationToken")
     public String conversationToken;
 

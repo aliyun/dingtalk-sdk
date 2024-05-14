@@ -4,6 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public QuerySchemaByProcessCodeResponseBodyResult result;
 
@@ -24,6 +27,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
@@ -84,9 +90,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps props;
 
@@ -355,9 +367,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("holidayOptions")
         public java.util.List<java.util.Map<String, String>> holidayOptions;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
@@ -803,9 +821,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("children")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> children;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps props;
 
@@ -844,9 +868,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("items")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems> items;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -882,15 +912,24 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Integer appType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
@@ -900,15 +939,27 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("engineType")
         public Integer engineType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
@@ -924,12 +975,18 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ownerIdType")
         public String ownerIdType;
 
         @NameInMap("procType")
         public String procType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("schemaContent")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContent schemaContent;
 

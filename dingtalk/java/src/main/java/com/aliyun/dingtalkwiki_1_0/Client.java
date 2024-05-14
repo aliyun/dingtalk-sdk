@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 根据词条名称获取该词条释义
+     *
+     * @param request WikiWordsDetailRequest
+     * @param headers WikiWordsDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WikiWordsDetailResponse
+     */
     public WikiWordsDetailResponse wikiWordsDetailWithOptions(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WikiWordsDetailResponse());
     }
 
+    /**
+     * @summary 根据词条名称获取该词条释义
+     *
+     * @param request WikiWordsDetailRequest
+     * @return WikiWordsDetailResponse
+     */
     public WikiWordsDetailResponse wikiWordsDetail(WikiWordsDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WikiWordsDetailHeaders headers = new WikiWordsDetailHeaders();
         return this.wikiWordsDetailWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 外部传递过来的消息根据百科词库分词
+     *
+     * @param request WikiWordsParseRequest
+     * @param headers WikiWordsParseHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WikiWordsParseResponse
+     */
     public WikiWordsParseResponse wikiWordsParseWithOptions(WikiWordsParseRequest request, WikiWordsParseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,6 +115,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WikiWordsParseResponse());
     }
 
+    /**
+     * @summary 外部传递过来的消息根据百科词库分词
+     *
+     * @param request WikiWordsParseRequest
+     * @return WikiWordsParseResponse
+     */
     public WikiWordsParseResponse wikiWordsParse(WikiWordsParseRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WikiWordsParseHeaders headers = new WikiWordsParseHeaders();

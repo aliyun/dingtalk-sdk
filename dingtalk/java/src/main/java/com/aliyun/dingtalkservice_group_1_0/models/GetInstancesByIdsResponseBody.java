@@ -27,12 +27,21 @@ public class GetInstancesByIdsResponseBody extends TeaModel {
         @NameInMap("fields")
         public String fields;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
@@ -42,6 +51,9 @@ public class GetInstancesByIdsResponseBody extends TeaModel {
         @NameInMap("openDataInstanceId")
         public String openDataInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openTeamId")
         public String openTeamId;
 

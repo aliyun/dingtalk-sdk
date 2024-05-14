@@ -4,12 +4,21 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSearchItemsByKeyWordRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyWord")
     public String keyWord;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

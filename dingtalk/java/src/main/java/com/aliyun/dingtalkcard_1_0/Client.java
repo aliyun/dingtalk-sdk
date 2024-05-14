@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 新增或更新卡片的场域信息
+     *
+     * @param request AppendSpaceRequest
+     * @param headers AppendSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppendSpaceResponse
+     */
     public AppendSpaceResponse appendSpaceWithOptions(AppendSpaceRequest request, AppendSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -69,12 +77,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AppendSpaceResponse());
     }
 
+    /**
+     * @summary 新增或更新卡片的场域信息
+     *
+     * @param request AppendSpaceRequest
+     * @return AppendSpaceResponse
+     */
     public AppendSpaceResponse appendSpace(AppendSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AppendSpaceHeaders headers = new AppendSpaceHeaders();
         return this.appendSpaceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 新增或更新卡片的场域信息
+     *
+     * @param request AppendSpaceWithDelegateRequest
+     * @param headers AppendSpaceWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppendSpaceWithDelegateResponse
+     */
     public AppendSpaceWithDelegateResponse appendSpaceWithDelegateWithOptions(AppendSpaceWithDelegateRequest request, AppendSpaceWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -125,12 +147,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AppendSpaceWithDelegateResponse());
     }
 
+    /**
+     * @summary 新增或更新卡片的场域信息
+     *
+     * @param request AppendSpaceWithDelegateRequest
+     * @return AppendSpaceWithDelegateResponse
+     */
     public AppendSpaceWithDelegateResponse appendSpaceWithDelegate(AppendSpaceWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AppendSpaceWithDelegateHeaders headers = new AppendSpaceWithDelegateHeaders();
         return this.appendSpaceWithDelegateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建并投放卡片
+     *
+     * @param request CreateAndDeliverRequest
+     * @param headers CreateAndDeliverHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAndDeliverResponse
+     */
     public CreateAndDeliverResponse createAndDeliverWithOptions(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -245,12 +281,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateAndDeliverResponse());
     }
 
+    /**
+     * @summary 创建并投放卡片
+     *
+     * @param request CreateAndDeliverRequest
+     * @return CreateAndDeliverResponse
+     */
     public CreateAndDeliverResponse createAndDeliver(CreateAndDeliverRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
         return this.createAndDeliverWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建并投放卡片
+     *
+     * @param request CreateAndDeliverWithDelegateRequest
+     * @param headers CreateAndDeliverWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAndDeliverWithDelegateResponse
+     */
     public CreateAndDeliverWithDelegateResponse createAndDeliverWithDelegateWithOptions(CreateAndDeliverWithDelegateRequest request, CreateAndDeliverWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -365,12 +415,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateAndDeliverWithDelegateResponse());
     }
 
+    /**
+     * @summary 创建并投放卡片
+     *
+     * @param request CreateAndDeliverWithDelegateRequest
+     * @return CreateAndDeliverWithDelegateResponse
+     */
     public CreateAndDeliverWithDelegateResponse createAndDeliverWithDelegate(CreateAndDeliverWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateAndDeliverWithDelegateHeaders headers = new CreateAndDeliverWithDelegateHeaders();
         return this.createAndDeliverWithDelegateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建卡片
+     *
+     * @param request CreateCardRequest
+     * @param headers CreateCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCardResponse
+     */
     public CreateCardResponse createCardWithOptions(CreateCardRequest request, CreateCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -457,12 +521,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateCardResponse());
     }
 
+    /**
+     * @summary 创建卡片
+     *
+     * @param request CreateCardRequest
+     * @return CreateCardResponse
+     */
     public CreateCardResponse createCard(CreateCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateCardHeaders headers = new CreateCardHeaders();
         return this.createCardWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建卡片
+     *
+     * @param request CreateCardWithDelegateRequest
+     * @param headers CreateCardWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCardWithDelegateResponse
+     */
     public CreateCardWithDelegateResponse createCardWithDelegateWithOptions(CreateCardWithDelegateRequest request, CreateCardWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -549,12 +627,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateCardWithDelegateResponse());
     }
 
+    /**
+     * @summary 创建卡片
+     *
+     * @param request CreateCardWithDelegateRequest
+     * @return CreateCardWithDelegateResponse
+     */
     public CreateCardWithDelegateResponse createCardWithDelegate(CreateCardWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateCardWithDelegateHeaders headers = new CreateCardWithDelegateHeaders();
         return this.createCardWithDelegateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 投放卡片
+     *
+     * @param request DeliverCardRequest
+     * @param headers DeliverCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeliverCardResponse
+     */
     public DeliverCardResponse deliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -621,12 +713,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeliverCardResponse());
     }
 
+    /**
+     * @summary 投放卡片
+     *
+     * @param request DeliverCardRequest
+     * @return DeliverCardResponse
+     */
     public DeliverCardResponse deliverCard(DeliverCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeliverCardHeaders headers = new DeliverCardHeaders();
         return this.deliverCardWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 投放卡片
+     *
+     * @param request DeliverCardWithDelegateRequest
+     * @param headers DeliverCardWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeliverCardWithDelegateResponse
+     */
     public DeliverCardWithDelegateResponse deliverCardWithDelegateWithOptions(DeliverCardWithDelegateRequest request, DeliverCardWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -693,12 +799,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeliverCardWithDelegateResponse());
     }
 
+    /**
+     * @summary 投放卡片
+     *
+     * @param request DeliverCardWithDelegateRequest
+     * @return DeliverCardWithDelegateResponse
+     */
     public DeliverCardWithDelegateResponse deliverCardWithDelegate(DeliverCardWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeliverCardWithDelegateHeaders headers = new DeliverCardWithDelegateHeaders();
         return this.deliverCardWithDelegateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 注册卡片回调地址
+     *
+     * @param request RegisterCallbackRequest
+     * @param headers RegisterCallbackHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RegisterCallbackResponse
+     */
     public RegisterCallbackResponse registerCallbackWithOptions(RegisterCallbackRequest request, RegisterCallbackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -745,12 +865,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RegisterCallbackResponse());
     }
 
+    /**
+     * @summary 注册卡片回调地址
+     *
+     * @param request RegisterCallbackRequest
+     * @return RegisterCallbackResponse
+     */
     public RegisterCallbackResponse registerCallback(RegisterCallbackRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
         return this.registerCallbackWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 注册卡片回调地址
+     *
+     * @param request RegisterCallbackWithDelegateRequest
+     * @param headers RegisterCallbackWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RegisterCallbackWithDelegateResponse
+     */
     public RegisterCallbackWithDelegateResponse registerCallbackWithDelegateWithOptions(RegisterCallbackWithDelegateRequest request, RegisterCallbackWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -797,12 +931,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RegisterCallbackWithDelegateResponse());
     }
 
+    /**
+     * @summary 注册卡片回调地址
+     *
+     * @param request RegisterCallbackWithDelegateRequest
+     * @return RegisterCallbackWithDelegateResponse
+     */
     public RegisterCallbackWithDelegateResponse registerCallbackWithDelegate(RegisterCallbackWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RegisterCallbackWithDelegateHeaders headers = new RegisterCallbackWithDelegateHeaders();
         return this.registerCallbackWithDelegateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary AI互动卡片流式更新
+     *
+     * @param request StreamingUpdateRequest
+     * @param headers StreamingUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StreamingUpdateResponse
+     */
     public StreamingUpdateResponse streamingUpdateWithOptions(StreamingUpdateRequest request, StreamingUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -861,12 +1009,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new StreamingUpdateResponse());
     }
 
+    /**
+     * @summary AI互动卡片流式更新
+     *
+     * @param request StreamingUpdateRequest
+     * @return StreamingUpdateResponse
+     */
     public StreamingUpdateResponse streamingUpdate(StreamingUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         StreamingUpdateHeaders headers = new StreamingUpdateHeaders();
         return this.streamingUpdateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新卡片
+     *
+     * @param request UpdateCardRequest
+     * @param headers UpdateCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCardResponse
+     */
     public UpdateCardResponse updateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -917,12 +1079,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCardResponse());
     }
 
+    /**
+     * @summary 更新卡片
+     *
+     * @param request UpdateCardRequest
+     * @return UpdateCardResponse
+     */
     public UpdateCardResponse updateCard(UpdateCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCardHeaders headers = new UpdateCardHeaders();
         return this.updateCardWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新卡片
+     *
+     * @param request UpdateCardWithDelegateRequest
+     * @param headers UpdateCardWithDelegateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCardWithDelegateResponse
+     */
     public UpdateCardWithDelegateResponse updateCardWithDelegateWithOptions(UpdateCardWithDelegateRequest request, UpdateCardWithDelegateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -973,6 +1149,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCardWithDelegateResponse());
     }
 
+    /**
+     * @summary 更新卡片
+     *
+     * @param request UpdateCardWithDelegateRequest
+     * @return UpdateCardWithDelegateResponse
+     */
     public UpdateCardWithDelegateResponse updateCardWithDelegate(UpdateCardWithDelegateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCardWithDelegateHeaders headers = new UpdateCardWithDelegateHeaders();

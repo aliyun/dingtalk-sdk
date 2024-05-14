@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTriggerResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("item")
     public java.util.List<UpdateTriggerResponseBodyItem> item;
 
@@ -21,24 +24,45 @@ public class UpdateTriggerResponseBody extends TeaModel {
     }
 
     public static class UpdateTriggerResponseBodyItem extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dingTriggerId")
         public String dingTriggerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrCode")
         public String subErrCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

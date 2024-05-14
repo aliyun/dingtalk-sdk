@@ -21,6 +21,9 @@ public class ListInnerAppResponseBody extends TeaModel {
     }
 
     public static class ListInnerAppResponseBodyAppList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 

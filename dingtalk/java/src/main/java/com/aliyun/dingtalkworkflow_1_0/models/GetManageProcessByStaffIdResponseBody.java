@@ -38,6 +38,9 @@ public class GetManageProcessByStaffIdResponseBody extends TeaModel {
         @NameInMap("flowTitle")
         public String flowTitle;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 

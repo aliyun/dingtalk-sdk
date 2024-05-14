@@ -4,21 +4,39 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMsgByTaskSupportInviteJoinOrgRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageContent")
     public SendMsgByTaskSupportInviteJoinOrgRequestMessageContent messageContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobilePhones")
     public java.util.List<String> mobilePhones;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("needUrlTrack")
     public Boolean needUrlTrack;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sendChannel")
     public String sendChannel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -109,12 +127,21 @@ public class SendMsgByTaskSupportInviteJoinOrgRequest extends TeaModel {
         @NameInMap("btns")
         public java.util.List<SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns> btns;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageType")
         public String messageType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

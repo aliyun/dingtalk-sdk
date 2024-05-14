@@ -4,9 +4,15 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumeUserPointsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public Long amount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outId")
     public String outId;
 

@@ -4,18 +4,33 @@ package com.aliyun.dingtalkreport_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSendAndReceiveReportListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operationUserId")
     public String operationUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

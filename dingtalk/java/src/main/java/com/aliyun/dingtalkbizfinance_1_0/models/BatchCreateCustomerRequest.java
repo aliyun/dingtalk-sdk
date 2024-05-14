@@ -7,6 +7,9 @@ public class BatchCreateCustomerRequest extends TeaModel {
     @NameInMap("createCustomerRequestList")
     public java.util.List<BatchCreateCustomerRequestCreateCustomerRequestList> createCustomerRequestList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operator")
     public String operator;
 
@@ -41,6 +44,9 @@ public class BatchCreateCustomerRequest extends TeaModel {
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

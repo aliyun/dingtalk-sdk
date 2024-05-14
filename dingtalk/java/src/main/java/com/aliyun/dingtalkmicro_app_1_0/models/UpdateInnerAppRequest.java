@@ -22,6 +22,9 @@ public class UpdateInnerAppRequest extends TeaModel {
     @NameInMap("ompLink")
     public String ompLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderFlowRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
@@ -13,6 +16,9 @@ public class CreateOrderFlowRequest extends TeaModel {
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detailList")
     public java.util.List<CreateOrderFlowRequestDetailList> detailList;
 
@@ -22,9 +28,15 @@ public class CreateOrderFlowRequest extends TeaModel {
     @NameInMap("guardianUserId")
     public String guardianUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
@@ -37,9 +49,15 @@ public class CreateOrderFlowRequest extends TeaModel {
     @NameInMap("timestamp")
     public Long timestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalAmount")
     public Long totalAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -153,18 +171,30 @@ public class CreateOrderFlowRequest extends TeaModel {
     }
 
     public static class CreateOrderFlowRequestDetailList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemAmount")
         public Long itemAmount;
 
         @NameInMap("itemId")
         public Long itemId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scene")
         public Long scene;
 

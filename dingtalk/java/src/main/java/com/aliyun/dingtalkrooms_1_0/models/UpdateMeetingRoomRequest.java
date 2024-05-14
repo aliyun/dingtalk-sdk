@@ -19,6 +19,9 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     @NameInMap("roomCapacity")
     public Integer roomCapacity;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roomId")
     public String roomId;
 
@@ -37,6 +40,9 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     @NameInMap("roomStatus")
     public Integer roomStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

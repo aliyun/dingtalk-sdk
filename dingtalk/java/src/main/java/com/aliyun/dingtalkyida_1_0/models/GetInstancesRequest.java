@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -16,6 +19,9 @@ public class GetInstancesRequest extends TeaModel {
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -40,12 +46,18 @@ public class GetInstancesRequest extends TeaModel {
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
     @NameInMap("taskId")
     public String taskId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

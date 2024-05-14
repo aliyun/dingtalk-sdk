@@ -4,21 +4,33 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteProcessInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actionerUserId")
     public String actionerUserId;
 
     @NameInMap("file")
     public ExecuteProcessInstanceRequestFile file;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public String result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 

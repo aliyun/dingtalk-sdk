@@ -21,6 +21,9 @@ public class UpdateReceiptResponseBody extends TeaModel {
     }
 
     public static class UpdateReceiptResponseBodyResults extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
@@ -30,6 +33,9 @@ public class UpdateReceiptResponseBody extends TeaModel {
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

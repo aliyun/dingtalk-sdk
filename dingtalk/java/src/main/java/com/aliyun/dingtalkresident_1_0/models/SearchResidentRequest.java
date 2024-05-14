@@ -4,9 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchResidentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("residentCropId")
     public String residentCropId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("searchWord")
     public String searchWord;
 

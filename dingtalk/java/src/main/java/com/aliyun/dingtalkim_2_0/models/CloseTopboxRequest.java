@@ -4,6 +4,9 @@ package com.aliyun.dingtalkim_2_0.models;
 import com.aliyun.tea.*;
 
 public class CloseTopboxRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
@@ -16,6 +19,9 @@ public class CloseTopboxRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

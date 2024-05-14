@@ -7,6 +7,9 @@ public class RestoreRecycleItemRequest extends TeaModel {
     @NameInMap("option")
     public RestoreRecycleItemRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

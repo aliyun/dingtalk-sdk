@@ -4,15 +4,24 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishFileChangeNoticeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
     @NameInMap("operateType")
     public String operateType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 

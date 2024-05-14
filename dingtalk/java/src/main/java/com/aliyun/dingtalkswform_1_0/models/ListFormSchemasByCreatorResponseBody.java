@@ -35,9 +35,15 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
         @NameInMap("bizType")
         public Integer bizType;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 

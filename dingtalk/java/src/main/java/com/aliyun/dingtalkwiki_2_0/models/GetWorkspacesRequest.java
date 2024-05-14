@@ -7,9 +7,15 @@ public class GetWorkspacesRequest extends TeaModel {
     @NameInMap("option")
     public GetWorkspacesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workspaceIds")
     public java.util.List<String> workspaceIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

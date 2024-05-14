@@ -4,24 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRemoteClassCourseRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("attendParticipants")
     public java.util.List<UpdateRemoteClassCourseRequestAttendParticipants> attendParticipants;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authCode")
     public String authCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseCode")
     public String courseCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseName")
     public String courseName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teachingParticipant")
     public UpdateRemoteClassCourseRequestTeachingParticipant teachingParticipant;
 
@@ -87,9 +108,15 @@ public class UpdateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class UpdateRemoteClassCourseRequestAttendParticipants extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 
@@ -117,9 +144,15 @@ public class UpdateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class UpdateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 

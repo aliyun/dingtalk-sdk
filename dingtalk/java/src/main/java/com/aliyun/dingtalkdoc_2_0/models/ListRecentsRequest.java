@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecentsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public ListRecentsRequestParam param;
 
@@ -21,6 +24,9 @@ public class ListRecentsRequest extends TeaModel {
     }
 
     public static class ListRecentsRequestParam extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileTypes")
         public java.util.List<Integer> fileTypes;
 
@@ -30,6 +36,9 @@ public class ListRecentsRequest extends TeaModel {
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("operateTypes")
         public java.util.List<Integer> operateTypes;
 

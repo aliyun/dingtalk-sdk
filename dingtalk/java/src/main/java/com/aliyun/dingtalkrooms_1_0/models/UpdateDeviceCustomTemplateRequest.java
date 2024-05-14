@@ -55,9 +55,15 @@ public class UpdateDeviceCustomTemplateRequest extends TeaModel {
     @NameInMap("showFunctionCard")
     public Boolean showFunctionCard;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public Long templateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 

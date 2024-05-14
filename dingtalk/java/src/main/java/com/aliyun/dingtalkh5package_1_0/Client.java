@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 上传H5离线包
+     *
+     * @param request CreatePackageRequest
+     * @param headers CreatePackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreatePackageResponse
+     */
     public CreatePackageResponse createPackageWithOptions(CreatePackageRequest request, CreatePackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreatePackageResponse());
     }
 
+    /**
+     * @summary 上传H5离线包
+     *
+     * @param request CreatePackageRequest
+     * @return CreatePackageResponse
+     */
     public CreatePackageResponse createPackage(CreatePackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreatePackageHeaders headers = new CreatePackageHeaders();
         return this.createPackageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取包上传一次性AccessToken
+     *
+     * @param request GetAccessTokenRequest
+     * @param headers GetAccessTokenHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAccessTokenResponse
+     */
     public GetAccessTokenResponse getAccessTokenWithOptions(GetAccessTokenRequest request, GetAccessTokenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -109,12 +131,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAccessTokenResponse());
     }
 
+    /**
+     * @summary 获取包上传一次性AccessToken
+     *
+     * @param request GetAccessTokenRequest
+     * @return GetAccessTokenResponse
+     */
     public GetAccessTokenResponse getAccessToken(GetAccessTokenRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
         return this.getAccessTokenWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取H5离线包版本创建状态
+     *
+     * @param request GetCreateStatusRequest
+     * @param headers GetCreateStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCreateStatusResponse
+     */
     public GetCreateStatusResponse getCreateStatusWithOptions(GetCreateStatusRequest request, GetCreateStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -149,12 +185,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetCreateStatusResponse());
     }
 
+    /**
+     * @summary 获取H5离线包版本创建状态
+     *
+     * @param request GetCreateStatusRequest
+     * @return GetCreateStatusResponse
+     */
     public GetCreateStatusResponse getCreateStatus(GetCreateStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
         return this.getCreateStatusWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发布离线包
+     *
+     * @param request PublishPackageRequest
+     * @param headers PublishPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PublishPackageResponse
+     */
     public PublishPackageResponse publishPackageWithOptions(PublishPackageRequest request, PublishPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -197,6 +247,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PublishPackageResponse());
     }
 
+    /**
+     * @summary 发布离线包
+     *
+     * @param request PublishPackageRequest
+     * @return PublishPackageResponse
+     */
     public PublishPackageResponse publishPackage(PublishPackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PublishPackageHeaders headers = new PublishPackageHeaders();

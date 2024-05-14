@@ -4,6 +4,9 @@ package com.aliyun.dingtalkreport_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTemplatesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

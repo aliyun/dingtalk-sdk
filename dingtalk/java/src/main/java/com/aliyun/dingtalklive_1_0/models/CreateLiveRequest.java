@@ -10,18 +10,30 @@ public class CreateLiveRequest extends TeaModel {
     @NameInMap("introduction")
     public String introduction;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("preEndTime")
     public Long preEndTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("preStartTime")
     public Long preStartTime;
 
     @NameInMap("publicType")
     public Long publicType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

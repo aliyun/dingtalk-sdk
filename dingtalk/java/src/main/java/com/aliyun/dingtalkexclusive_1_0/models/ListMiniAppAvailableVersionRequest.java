@@ -7,12 +7,21 @@ public class ListMiniAppAvailableVersionRequest extends TeaModel {
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("versionTypeSet")
     public java.util.List<Integer> versionTypeSet;
 

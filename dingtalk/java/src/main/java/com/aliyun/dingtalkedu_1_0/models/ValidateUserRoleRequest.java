@@ -7,6 +7,9 @@ public class ValidateUserRoleRequest extends TeaModel {
     @NameInMap("timeThreshold")
     public Long timeThreshold;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodeBadgeCodeResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("alipayCode")
     public String alipayCode;
 
@@ -13,9 +16,15 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("codeType")
     public String codeType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -25,6 +34,9 @@ public class DecodeBadgeCodeResponseBody extends TeaModel {
     @NameInMap("outBizId")
     public String outBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 

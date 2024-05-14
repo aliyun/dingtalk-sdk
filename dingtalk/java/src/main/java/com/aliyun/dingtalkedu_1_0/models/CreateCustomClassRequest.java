@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomClassRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("customClass")
     public CreateCustomClassRequestCustomClass customClass;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("superId")
     public Long superId;
 
@@ -43,6 +52,9 @@ public class CreateCustomClassRequest extends TeaModel {
     }
 
     public static class CreateCustomClassRequestCustomClass extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,18 +4,33 @@ package com.aliyun.dingtalkreport_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSubmitStatisticsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operationUserId")
     public String operationUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("remindId")
     public Long remindId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

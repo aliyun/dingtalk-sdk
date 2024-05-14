@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 查询APP当前开启轨迹采集的用户
+     *
+     * @param request QueryAppActiveUsersRequest
+     * @param headers QueryAppActiveUsersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryAppActiveUsersResponse
+     */
     public QueryAppActiveUsersResponse queryAppActiveUsersWithOptions(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryAppActiveUsersResponse());
     }
 
+    /**
+     * @summary 查询APP当前开启轨迹采集的用户
+     *
+     * @param request QueryAppActiveUsersRequest
+     * @return QueryAppActiveUsersResponse
+     */
     public QueryAppActiveUsersResponse queryAppActiveUsers(QueryAppActiveUsersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
         return this.queryAppActiveUsersWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询应用采集中的轨迹任务
+     *
+     * @param request QueryCollectingTraceTaskRequest
+     * @param headers QueryCollectingTraceTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCollectingTraceTaskResponse
+     */
     public QueryCollectingTraceTaskResponse queryCollectingTraceTaskWithOptions(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -101,12 +123,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCollectingTraceTaskResponse());
     }
 
+    /**
+     * @summary 查询应用采集中的轨迹任务
+     *
+     * @param request QueryCollectingTraceTaskRequest
+     * @return QueryCollectingTraceTaskResponse
+     */
     public QueryCollectingTraceTaskResponse queryCollectingTraceTask(QueryCollectingTraceTaskRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
         return this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询轨迹数据
+     *
+     * @param request QueryPageTraceDataRequest
+     * @param headers QueryPageTraceDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPageTraceDataResponse
+     */
     public QueryPageTraceDataResponse queryPageTraceDataWithOptions(QueryPageTraceDataRequest request, QueryPageTraceDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -161,6 +197,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryPageTraceDataResponse());
     }
 
+    /**
+     * @summary 查询轨迹数据
+     *
+     * @param request QueryPageTraceDataRequest
+     * @return QueryPageTraceDataResponse
+     */
     public QueryPageTraceDataResponse queryPageTraceData(QueryPageTraceDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPageTraceDataHeaders headers = new QueryPageTraceDataHeaders();

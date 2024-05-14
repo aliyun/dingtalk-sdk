@@ -4,21 +4,39 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartStreamOutRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mode")
     public String mode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("needHostJoin")
     public Boolean needHostJoin;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("smallWindowPosition")
     public String smallWindowPosition;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("streamName")
     public String streamName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("streamUrlList")
     public java.util.List<String> streamUrlList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

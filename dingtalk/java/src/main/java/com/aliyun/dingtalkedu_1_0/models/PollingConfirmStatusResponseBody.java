@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PollingConfirmStatusResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("universityPollingCourseStatusResponse")
     public PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse universityPollingCourseStatusResponse;
 
@@ -21,15 +24,27 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     }
 
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("liveOutputUrl")
         public String liveOutputUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("liveType")
         public Long liveType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("replayUrl")
         public String replayUrl;
 
@@ -73,12 +88,21 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     }
 
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("confirmStatus")
         public Boolean confirmStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseCode")
         public String courseCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("livePlayInfoList")
         public java.util.List<PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList> livePlayInfoList;
 

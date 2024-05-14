@@ -16,9 +16,15 @@ public class QueryPositionsRequest extends TeaModel {
     @NameInMap("positionName")
     public String positionName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 

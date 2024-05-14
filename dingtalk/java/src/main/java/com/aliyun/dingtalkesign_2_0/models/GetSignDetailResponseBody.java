@@ -4,12 +4,21 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignDetailResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("businessScene")
     public String businessScene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("flowStatus")
     public Float flowStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signers")
     public java.util.List<GetSignDetailResponseBodySigners> signers;
 
@@ -43,9 +52,15 @@ public class GetSignDetailResponseBody extends TeaModel {
     }
 
     public static class GetSignDetailResponseBodySigners extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("signStatus")
         public Float signStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("signerName")
         public String signerName;
 

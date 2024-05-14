@@ -7,6 +7,9 @@ public class QueryUserExtendValuesRequest extends TeaModel {
     @NameInMap("userExtendKey")
     public String userExtendKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApproveProcessCallbackRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("request")
     public ApproveProcessCallbackRequestRequest request;
 
@@ -54,27 +63,45 @@ public class ApproveProcessCallbackRequest extends TeaModel {
     }
 
     public static class ApproveProcessCallbackRequestRequest extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("approveResult")
         public String approveResult;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("approveType")
         public String approveType;
 
         @NameInMap("approvers")
         public java.util.List<String> approvers;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("eventType")
         public String eventType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("finishTime")
         public Long finishTime;
 
         @NameInMap("params")
         public String params;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 

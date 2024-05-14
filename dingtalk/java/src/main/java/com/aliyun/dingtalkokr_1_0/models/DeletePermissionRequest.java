@@ -4,21 +4,39 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeletePermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("policyType")
     public Long policyType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetId")
     public String targetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetType")
     public String targetType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

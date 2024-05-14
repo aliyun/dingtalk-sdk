@@ -4,9 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplAddRoleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentRoleGroupId")
     public String parentRoleGroupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleName")
     public String roleName;
 

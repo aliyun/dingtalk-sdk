@@ -4,12 +4,18 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class AddWorkspaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("option")
     public AddWorkspaceRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAgentIdByRelatedAppIdRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

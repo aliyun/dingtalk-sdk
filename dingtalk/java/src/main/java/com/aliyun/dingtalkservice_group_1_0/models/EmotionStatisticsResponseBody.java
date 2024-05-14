@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class EmotionStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("emotionStatisticsRecords")
     public java.util.List<EmotionStatisticsResponseBodyEmotionStatisticsRecords> emotionStatisticsRecords;
 
@@ -21,12 +24,21 @@ public class EmotionStatisticsResponseBody extends TeaModel {
     }
 
     public static class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dt")
         public String dt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("emotionScore")
         public Double emotionScore;
 

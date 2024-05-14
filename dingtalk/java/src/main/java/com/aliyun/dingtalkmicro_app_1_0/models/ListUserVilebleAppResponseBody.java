@@ -21,18 +21,30 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
     }
 
     public static class ListUserVilebleAppResponseBodyAppList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appId")
         public Long appId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appStatus")
         public Integer appStatus;
 
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("developType")
         public Integer developType;
 

@@ -21,6 +21,9 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
     }
 
     public static class QueryFormByBizTypeResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Integer appType;
 
@@ -30,6 +33,9 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -39,9 +45,15 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
@@ -51,12 +63,18 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         @NameInMap("modifedTime")
         public Long modifedTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("ownerId")
         public String ownerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 

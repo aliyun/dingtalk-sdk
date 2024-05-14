@@ -4,15 +4,27 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCityCarApplyRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cause")
     public String cause;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("city")
     public String city;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("date")
     public String date;
 
@@ -25,30 +37,57 @@ public class AddCityCarApplyRequest extends TeaModel {
     @NameInMap("projectName")
     public String projectName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Long status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdPartCostCenterId")
     public String thirdPartCostCenterId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdPartInvoiceId")
     public String thirdPartInvoiceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("timesTotal")
     public Long timesTotal;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("timesType")
     public Long timesType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("timesUsed")
     public Long timesUsed;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

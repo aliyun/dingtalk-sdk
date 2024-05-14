@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary Baymax技能执行日志
+     *
+     * @param request QueryBaymaxSkillLogRequest
+     * @param headers QueryBaymaxSkillLogHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryBaymaxSkillLogResponse
+     */
     public QueryBaymaxSkillLogResponse queryBaymaxSkillLogWithOptions(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -61,6 +69,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryBaymaxSkillLogResponse());
     }
 
+    /**
+     * @summary Baymax技能执行日志
+     *
+     * @param request QueryBaymaxSkillLogRequest
+     * @return QueryBaymaxSkillLogResponse
+     */
     public QueryBaymaxSkillLogResponse queryBaymaxSkillLog(QueryBaymaxSkillLogRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryBaymaxSkillLogHeaders headers = new QueryBaymaxSkillLogHeaders();

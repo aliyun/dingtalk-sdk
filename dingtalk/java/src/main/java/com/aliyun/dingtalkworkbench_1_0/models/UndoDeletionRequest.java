@@ -4,15 +4,27 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class UndoDeletionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizIdList")
     public java.util.List<String> bizIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("redDotRelationId")
     public String redDotRelationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("redDotType")
     public String redDotType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,36 +4,69 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHotelExceedApplyResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("applyId")
     public Long applyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("applyIntentionInfoDO")
     public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("btripCause")
     public String btripCause;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("exceedReason")
     public String exceedReason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("exceedType")
     public Integer exceedType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("originStandard")
     public String originStandard;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("submitTime")
     public String submitTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -131,24 +164,45 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
     }
 
     public static class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("checkIn")
         public String checkIn;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("checkOut")
         public String checkOut;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("price")
         public Long price;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("together")
         public Boolean together;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 

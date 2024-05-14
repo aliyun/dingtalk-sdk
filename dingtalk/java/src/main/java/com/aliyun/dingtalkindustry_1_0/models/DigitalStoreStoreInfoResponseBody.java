@@ -4,45 +4,84 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreStoreInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("address")
     public String address;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("businessHours")
     public String businessHours;
 
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("latitude")
     public String latitude;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("locationAddress")
     public String locationAddress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("longitude")
     public String longitude;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentId")
     public Long parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("storeAcreage")
     public String storeAcreage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("storeBandwidth")
     public String storeBandwidth;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("storeCode")
     public String storeCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("storeId")
     public Long storeId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

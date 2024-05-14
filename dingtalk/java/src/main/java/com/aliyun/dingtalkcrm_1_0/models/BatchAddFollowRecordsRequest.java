@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddFollowRecordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instanceList")
     public java.util.List<BatchAddFollowRecordsRequestInstanceList> instanceList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
@@ -35,9 +41,15 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -73,6 +85,9 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
     }
 
     public static class BatchAddFollowRecordsRequestInstanceList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataArray")
         public java.util.List<BatchAddFollowRecordsRequestInstanceListDataArray> dataArray;
 

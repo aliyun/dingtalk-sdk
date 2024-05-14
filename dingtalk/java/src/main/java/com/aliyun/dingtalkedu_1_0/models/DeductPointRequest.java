@@ -4,18 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeductPointRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deductDesc")
     public String deductDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deductDetailUrl")
     public String deductDetailUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deductNum")
     public Integer deductNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointType")
     public String pointType;
 

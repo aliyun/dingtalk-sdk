@@ -4,9 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateConnectorRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("connectorInfo")
     public java.util.List<UpdateConnectorRequestConnectorInfo> connectorInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("integratorFlag")
     public String integratorFlag;
 
@@ -56,6 +62,9 @@ public class UpdateConnectorRequest extends TeaModel {
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 

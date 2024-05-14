@@ -7,6 +7,9 @@ public class SearchActivationCodeRequest extends TeaModel {
     @NameInMap("accessKey")
     public String accessKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("callerUid")
     public String callerUid;
 

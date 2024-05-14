@@ -7,6 +7,9 @@ public class QueryPermissionRoleMemberRequest extends TeaModel {
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleCodeList")
     public java.util.List<String> roleCodeList;
 

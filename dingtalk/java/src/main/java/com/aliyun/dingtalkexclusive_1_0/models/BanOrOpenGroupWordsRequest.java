@@ -4,9 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class BanOrOpenGroupWordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("banWordsType")
     public Integer banWordsType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConverationId")
     public String openConverationId;
 

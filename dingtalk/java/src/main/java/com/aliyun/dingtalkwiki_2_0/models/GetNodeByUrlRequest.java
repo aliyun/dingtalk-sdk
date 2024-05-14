@@ -7,9 +7,15 @@ public class GetNodeByUrlRequest extends TeaModel {
     @NameInMap("option")
     public GetNodeByUrlRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

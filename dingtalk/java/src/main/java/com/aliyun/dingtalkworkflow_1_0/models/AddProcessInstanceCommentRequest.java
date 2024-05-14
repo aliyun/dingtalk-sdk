@@ -4,15 +4,24 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProcessInstanceCommentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("commentUserId")
     public String commentUserId;
 
     @NameInMap("file")
     public AddProcessInstanceCommentRequestFile file;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("text")
     public String text;
 

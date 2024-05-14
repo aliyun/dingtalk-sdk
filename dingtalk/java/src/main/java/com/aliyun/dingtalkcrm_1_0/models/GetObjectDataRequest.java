@@ -7,9 +7,15 @@ public class GetObjectDataRequest extends TeaModel {
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

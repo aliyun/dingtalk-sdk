@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMachineUserResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public GetMachineUserResponseBodyResult result;
 
@@ -21,12 +24,21 @@ public class GetMachineUserResponseBody extends TeaModel {
     }
 
     public static class GetMachineUserResponseBodyResultUserList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasFace")
         public Boolean hasFace;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,12 +74,21 @@ public class GetMachineUserResponseBody extends TeaModel {
     }
 
     public static class GetMachineUserResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userList")
         public java.util.List<GetMachineUserResponseBodyResultUserList> userList;
 

@@ -7,6 +7,9 @@ public class GetAnalyzeDataRequest extends TeaModel {
     @NameInMap("periodIds")
     public java.util.List<String> periodIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public String deptId;
 

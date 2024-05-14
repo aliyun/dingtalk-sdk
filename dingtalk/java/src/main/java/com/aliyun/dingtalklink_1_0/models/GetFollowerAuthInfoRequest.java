@@ -7,6 +7,9 @@ public class GetFollowerAuthInfoRequest extends TeaModel {
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

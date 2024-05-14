@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertDropdownListsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("options")
     public java.util.List<InsertDropdownListsRequestOptions> options;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -35,6 +41,9 @@ public class InsertDropdownListsRequest extends TeaModel {
         @NameInMap("color")
         public String color;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

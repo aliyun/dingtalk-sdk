@@ -19,6 +19,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 银行接入层通用接口
+     *
+     * @param request BankGatewayInvokeRequest
+     * @param headers BankGatewayInvokeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BankGatewayInvokeResponse
+     */
+    public BankGatewayInvokeResponse bankGatewayInvokeWithOptions(BankGatewayInvokeRequest request, BankGatewayInvokeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            body.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.inputData)) {
+            body.put("inputData", request.inputData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.url)) {
+            body.put("url", request.url);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BankGatewayInvoke"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/bankGateways/invoke"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BankGatewayInvokeResponse());
+    }
+
+    /**
+     * @summary 银行接入层通用接口
+     *
+     * @param request BankGatewayInvokeRequest
+     * @return BankGatewayInvokeResponse
+     */
+    public BankGatewayInvokeResponse bankGatewayInvoke(BankGatewayInvokeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BankGatewayInvokeHeaders headers = new BankGatewayInvokeHeaders();
+        return this.bankGatewayInvokeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 批量删除智能财务单据
+     *
+     * @param request BatchDeleteReceiptRequest
+     * @param headers BatchDeleteReceiptHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchDeleteReceiptResponse
+     */
     public BatchDeleteReceiptResponse batchDeleteReceiptWithOptions(BatchDeleteReceiptRequest request, BatchDeleteReceiptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -57,12 +127,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchDeleteReceiptResponse());
     }
 
+    /**
+     * @summary 批量删除智能财务单据
+     *
+     * @param request BatchDeleteReceiptRequest
+     * @return BatchDeleteReceiptResponse
+     */
     public BatchDeleteReceiptResponse batchDeleteReceipt(BatchDeleteReceiptRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchDeleteReceiptHeaders headers = new BatchDeleteReceiptHeaders();
         return this.batchDeleteReceiptWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量同步银行回单
+     *
+     * @param request BatchSyncBankReceiptRequest
+     * @param headers BatchSyncBankReceiptHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchSyncBankReceiptResponse
+     */
     public BatchSyncBankReceiptResponse batchSyncBankReceiptWithOptions(BatchSyncBankReceiptRequest request, BatchSyncBankReceiptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -92,12 +176,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchSyncBankReceiptResponse());
     }
 
+    /**
+     * @summary 批量同步银行回单
+     *
+     * @param request BatchSyncBankReceiptRequest
+     * @return BatchSyncBankReceiptResponse
+     */
     public BatchSyncBankReceiptResponse batchSyncBankReceipt(BatchSyncBankReceiptRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchSyncBankReceiptHeaders headers = new BatchSyncBankReceiptHeaders();
         return this.batchSyncBankReceiptWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取费用类别
+     *
+     * @param request GetCategoryRequest
+     * @param headers GetCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCategoryResponse
+     */
     public GetCategoryResponse getCategoryWithOptions(GetCategoryRequest request, GetCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -132,12 +230,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetCategoryResponse());
     }
 
+    /**
+     * @summary 获取费用类别
+     *
+     * @param request GetCategoryRequest
+     * @return GetCategoryResponse
+     */
     public GetCategoryResponse getCategory(GetCategoryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCategoryHeaders headers = new GetCategoryHeaders();
         return this.getCategoryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业账户
+     *
+     * @param request GetFinanceAccountRequest
+     * @param headers GetFinanceAccountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFinanceAccountResponse
+     */
     public GetFinanceAccountResponse getFinanceAccountWithOptions(GetFinanceAccountRequest request, GetFinanceAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -172,12 +284,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetFinanceAccountResponse());
     }
 
+    /**
+     * @summary 获取企业账户
+     *
+     * @param request GetFinanceAccountRequest
+     * @return GetFinanceAccountResponse
+     */
     public GetFinanceAccountResponse getFinanceAccount(GetFinanceAccountRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFinanceAccountHeaders headers = new GetFinanceAccountHeaders();
         return this.getFinanceAccountWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取单条项目
+     *
+     * @param request GetProjectRequest
+     * @param headers GetProjectHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetProjectResponse
+     */
     public GetProjectResponse getProjectWithOptions(GetProjectRequest request, GetProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -212,12 +338,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectResponse());
     }
 
+    /**
+     * @summary 获取单条项目
+     *
+     * @param request GetProjectRequest
+     * @return GetProjectResponse
+     */
     public GetProjectResponse getProject(GetProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetProjectHeaders headers = new GetProjectHeaders();
         return this.getProjectWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取智能财务单据详情
+     *
+     * @param request GetReceiptRequest
+     * @param headers GetReceiptHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetReceiptResponse
+     */
     public GetReceiptResponse getReceiptWithOptions(GetReceiptRequest request, GetReceiptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -256,12 +396,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetReceiptResponse());
     }
 
+    /**
+     * @summary 获取智能财务单据详情
+     *
+     * @param request GetReceiptRequest
+     * @return GetReceiptResponse
+     */
     public GetReceiptResponse getReceipt(GetReceiptRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetReceiptHeaders headers = new GetReceiptHeaders();
         return this.getReceiptWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取智能财务应用内维护的供应商信息
+     *
+     * @param request GetSupplierRequest
+     * @param headers GetSupplierHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSupplierResponse
+     */
     public GetSupplierResponse getSupplierWithOptions(GetSupplierRequest request, GetSupplierHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -296,12 +450,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSupplierResponse());
     }
 
+    /**
+     * @summary 获取智能财务应用内维护的供应商信息
+     *
+     * @param request GetSupplierRequest
+     * @return GetSupplierResponse
+     */
     public GetSupplierResponse getSupplier(GetSupplierRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSupplierHeaders headers = new GetSupplierHeaders();
         return this.getSupplierWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据不同的bizType查询不同的数据
+     *
+     * @param request LinkCommonInvokeRequest
+     * @param headers LinkCommonInvokeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LinkCommonInvokeResponse
+     */
     public LinkCommonInvokeResponse linkCommonInvokeWithOptions(LinkCommonInvokeRequest request, LinkCommonInvokeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -348,12 +516,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new LinkCommonInvokeResponse());
     }
 
+    /**
+     * @summary 根据不同的bizType查询不同的数据
+     *
+     * @param request LinkCommonInvokeRequest
+     * @return LinkCommonInvokeResponse
+     */
     public LinkCommonInvokeResponse linkCommonInvoke(LinkCommonInvokeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         LinkCommonInvokeHeaders headers = new LinkCommonInvokeHeaders();
         return this.linkCommonInvokeWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量获取费用类别
+     *
+     * @param request QueryCategoryByPageRequest
+     * @param headers QueryCategoryByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCategoryByPageResponse
+     */
     public QueryCategoryByPageResponse queryCategoryByPageWithOptions(QueryCategoryByPageRequest request, QueryCategoryByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -396,12 +578,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCategoryByPageResponse());
     }
 
+    /**
+     * @summary 批量获取费用类别
+     *
+     * @param request QueryCategoryByPageRequest
+     * @return QueryCategoryByPageResponse
+     */
     public QueryCategoryByPageResponse queryCategoryByPage(QueryCategoryByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
         return this.queryCategoryByPageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页批量获取智能财务应用内维护的客户信息
+     *
+     * @param request QueryCustomerByPageRequest
+     * @param headers QueryCustomerByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCustomerByPageResponse
+     */
     public QueryCustomerByPageResponse queryCustomerByPageWithOptions(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -440,12 +636,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCustomerByPageResponse());
     }
 
+    /**
+     * @summary 分页批量获取智能财务应用内维护的客户信息
+     *
+     * @param request QueryCustomerByPageRequest
+     * @return QueryCustomerByPageResponse
+     */
     public QueryCustomerByPageResponse queryCustomerByPage(QueryCustomerByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCustomerByPageHeaders headers = new QueryCustomerByPageHeaders();
         return this.queryCustomerByPageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量获取企业账户
+     *
+     * @param request QueryEnterpriseAccountByPageRequest
+     * @param headers QueryEnterpriseAccountByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryEnterpriseAccountByPageResponse
+     */
     public QueryEnterpriseAccountByPageResponse queryEnterpriseAccountByPageWithOptions(QueryEnterpriseAccountByPageRequest request, QueryEnterpriseAccountByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -484,12 +694,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryEnterpriseAccountByPageResponse());
     }
 
+    /**
+     * @summary 批量获取企业账户
+     *
+     * @param request QueryEnterpriseAccountByPageRequest
+     * @return QueryEnterpriseAccountByPageResponse
+     */
     public QueryEnterpriseAccountByPageResponse queryEnterpriseAccountByPage(QueryEnterpriseAccountByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryEnterpriseAccountByPageHeaders headers = new QueryEnterpriseAccountByPageHeaders();
         return this.queryEnterpriseAccountByPageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询支付订单详情
+     *
+     * @param request QueryInstancePaymentOrderDetailRequest
+     * @param headers QueryInstancePaymentOrderDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryInstancePaymentOrderDetailResponse
+     */
     public QueryInstancePaymentOrderDetailResponse queryInstancePaymentOrderDetailWithOptions(String instanceId, QueryInstancePaymentOrderDetailRequest request, QueryInstancePaymentOrderDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -524,12 +748,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryInstancePaymentOrderDetailResponse());
     }
 
+    /**
+     * @summary 查询支付订单详情
+     *
+     * @param request QueryInstancePaymentOrderDetailRequest
+     * @return QueryInstancePaymentOrderDetailResponse
+     */
     public QueryInstancePaymentOrderDetailResponse queryInstancePaymentOrderDetail(String instanceId, QueryInstancePaymentOrderDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryInstancePaymentOrderDetailHeaders headers = new QueryInstancePaymentOrderDetailHeaders();
         return this.queryInstancePaymentOrderDetailWithOptions(instanceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 批量获取项目信息
+     *
+     * @param request QueryProjectByPageRequest
+     * @param headers QueryProjectByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryProjectByPageResponse
+     */
     public QueryProjectByPageResponse queryProjectByPageWithOptions(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -568,12 +806,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryProjectByPageResponse());
     }
 
+    /**
+     * @summary 批量获取项目信息
+     *
+     * @param request QueryProjectByPageRequest
+     * @return QueryProjectByPageResponse
+     */
     public QueryProjectByPageResponse queryProjectByPage(QueryProjectByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryProjectByPageHeaders headers = new QueryProjectByPageHeaders();
         return this.queryProjectByPageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页批量获取智能财务应用内维护的供应商信息
+     *
+     * @param request QuerySupplierByPageRequest
+     * @param headers QuerySupplierByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySupplierByPageResponse
+     */
     public QuerySupplierByPageResponse querySupplierByPageWithOptions(QuerySupplierByPageRequest request, QuerySupplierByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -612,12 +864,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QuerySupplierByPageResponse());
     }
 
+    /**
+     * @summary 分页批量获取智能财务应用内维护的供应商信息
+     *
+     * @param request QuerySupplierByPageRequest
+     * @return QuerySupplierByPageResponse
+     */
     public QuerySupplierByPageResponse querySupplierByPage(QuerySupplierByPageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
         return this.querySupplierByPageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
+     *
+     * @param request QueryUserRoleListRequest
+     * @param headers QueryUserRoleListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUserRoleListResponse
+     */
     public QueryUserRoleListResponse queryUserRoleListWithOptions(QueryUserRoleListRequest request, QueryUserRoleListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -656,12 +922,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryUserRoleListResponse());
     }
 
+    /**
+     * @summary 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
+     *
+     * @param request QueryUserRoleListRequest
+     * @return QueryUserRoleListResponse
+     */
     public QueryUserRoleListResponse queryUserRoleList(QueryUserRoleListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryUserRoleListHeaders headers = new QueryUserRoleListHeaders();
         return this.queryUserRoleListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 签约企业账户
+     *
+     * @param request SignEnterpriseAccountRequest
+     * @param headers SignEnterpriseAccountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SignEnterpriseAccountResponse
+     */
     public SignEnterpriseAccountResponse signEnterpriseAccountWithOptions(SignEnterpriseAccountRequest request, SignEnterpriseAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -712,12 +992,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SignEnterpriseAccountResponse());
     }
 
+    /**
+     * @summary 签约企业账户
+     *
+     * @param request SignEnterpriseAccountRequest
+     * @return SignEnterpriseAccountResponse
+     */
     public SignEnterpriseAccountResponse signEnterpriseAccount(SignEnterpriseAccountRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SignEnterpriseAccountHeaders headers = new SignEnterpriseAccountHeaders();
         return this.signEnterpriseAccountWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送银企支付回单文件信息
+     *
+     * @param request SyncReceiptRecallRequest
+     * @param headers SyncReceiptRecallHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncReceiptRecallResponse
+     */
     public SyncReceiptRecallResponse syncReceiptRecallWithOptions(SyncReceiptRecallRequest request, SyncReceiptRecallHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -760,12 +1054,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncReceiptRecallResponse());
     }
 
+    /**
+     * @summary 发送银企支付回单文件信息
+     *
+     * @param request SyncReceiptRecallRequest
+     * @return SyncReceiptRecallResponse
+     */
     public SyncReceiptRecallResponse syncReceiptRecall(SyncReceiptRecallRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncReceiptRecallHeaders headers = new SyncReceiptRecallHeaders();
         return this.syncReceiptRecallWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新单据的支付状态
+     *
+     * @param tmpReq UpdateInstanceOrderInfoRequest
+     * @param headers UpdateInstanceOrderInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateInstanceOrderInfoResponse
+     */
     public UpdateInstanceOrderInfoResponse updateInstanceOrderInfoWithOptions(String instanceId, UpdateInstanceOrderInfoRequest tmpReq, UpdateInstanceOrderInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         UpdateInstanceOrderInfoShrinkRequest request = new UpdateInstanceOrderInfoShrinkRequest();
@@ -830,6 +1138,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInstanceOrderInfoResponse());
     }
 
+    /**
+     * @summary 更新单据的支付状态
+     *
+     * @param request UpdateInstanceOrderInfoRequest
+     * @return UpdateInstanceOrderInfoResponse
+     */
     public UpdateInstanceOrderInfoResponse updateInstanceOrderInfo(String instanceId, UpdateInstanceOrderInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateInstanceOrderInfoHeaders headers = new UpdateInstanceOrderInfoHeaders();

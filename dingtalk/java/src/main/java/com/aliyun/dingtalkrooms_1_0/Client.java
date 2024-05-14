@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建自定义屏幕模版
+     *
+     * @param request CreateDeviceCustomTemplateRequest
+     * @param headers CreateDeviceCustomTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateDeviceCustomTemplateResponse
+     */
     public CreateDeviceCustomTemplateResponse createDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,12 +129,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateDeviceCustomTemplateResponse());
     }
 
+    /**
+     * @summary 创建自定义屏幕模版
+     *
+     * @param request CreateDeviceCustomTemplateRequest
+     * @return CreateDeviceCustomTemplateResponse
+     */
     public CreateDeviceCustomTemplateResponse createDeviceCustomTemplate(CreateDeviceCustomTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateDeviceCustomTemplateHeaders headers = new CreateDeviceCustomTemplateHeaders();
         return this.createDeviceCustomTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建智能会议室
+     *
+     * @param request CreateMeetingRoomRequest
+     * @param headers CreateMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMeetingRoomResponse
+     */
     public CreateMeetingRoomResponse createMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -201,12 +223,96 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateMeetingRoomResponse());
     }
 
+    /**
+     * @summary 创建智能会议室
+     *
+     * @param request CreateMeetingRoomRequest
+     * @return CreateMeetingRoomResponse
+     */
     public CreateMeetingRoomResponse createMeetingRoom(CreateMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateMeetingRoomHeaders headers = new CreateMeetingRoomHeaders();
         return this.createMeetingRoomWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建智能会议室IOT配置
+     *
+     * @param request CreateMeetingRoomControlPanelRequest
+     * @param headers CreateMeetingRoomControlPanelHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMeetingRoomControlPanelResponse
+     */
+    public CreateMeetingRoomControlPanelResponse createMeetingRoomControlPanelWithOptions(CreateMeetingRoomControlPanelRequest request, CreateMeetingRoomControlPanelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.extra)) {
+            body.put("extra", request.extra);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomConfig)) {
+            body.put("roomConfig", request.roomConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomId)) {
+            body.put("roomId", request.roomId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateMeetingRoomControlPanel"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/panels"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateMeetingRoomControlPanelResponse());
+    }
+
+    /**
+     * @summary 创建智能会议室IOT配置
+     *
+     * @param request CreateMeetingRoomControlPanelRequest
+     * @return CreateMeetingRoomControlPanelResponse
+     */
+    public CreateMeetingRoomControlPanelResponse createMeetingRoomControlPanel(CreateMeetingRoomControlPanelRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateMeetingRoomControlPanelHeaders headers = new CreateMeetingRoomControlPanelHeaders();
+        return this.createMeetingRoomControlPanelWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 创建会议室分组
+     *
+     * @param request CreateMeetingRoomGroupRequest
+     * @param headers CreateMeetingRoomGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMeetingRoomGroupResponse
+     */
     public CreateMeetingRoomGroupResponse createMeetingRoomGroupWithOptions(CreateMeetingRoomGroupRequest request, CreateMeetingRoomGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -249,12 +355,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateMeetingRoomGroupResponse());
     }
 
+    /**
+     * @summary 创建会议室分组
+     *
+     * @param request CreateMeetingRoomGroupRequest
+     * @return CreateMeetingRoomGroupResponse
+     */
     public CreateMeetingRoomGroupResponse createMeetingRoomGroup(CreateMeetingRoomGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
         return this.createMeetingRoomGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除自定义屏幕模板
+     *
+     * @param request DeleteDeviceCustomTemplateRequest
+     * @param headers DeleteDeviceCustomTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteDeviceCustomTemplateResponse
+     */
     public DeleteDeviceCustomTemplateResponse deleteDeviceCustomTemplateWithOptions(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +409,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteDeviceCustomTemplateResponse());
     }
 
+    /**
+     * @summary 删除自定义屏幕模板
+     *
+     * @param request DeleteDeviceCustomTemplateRequest
+     * @return DeleteDeviceCustomTemplateResponse
+     */
     public DeleteDeviceCustomTemplateResponse deleteDeviceCustomTemplate(DeleteDeviceCustomTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteDeviceCustomTemplateHeaders headers = new DeleteDeviceCustomTemplateHeaders();
         return this.deleteDeviceCustomTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除会议室
+     *
+     * @param request DeleteMeetingRoomRequest
+     * @param headers DeleteMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMeetingRoomResponse
+     */
     public DeleteMeetingRoomResponse deleteMeetingRoomWithOptions(String roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -329,12 +463,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMeetingRoomResponse());
     }
 
+    /**
+     * @summary 删除会议室
+     *
+     * @param request DeleteMeetingRoomRequest
+     * @return DeleteMeetingRoomResponse
+     */
     public DeleteMeetingRoomResponse deleteMeetingRoom(String roomId, DeleteMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteMeetingRoomHeaders headers = new DeleteMeetingRoomHeaders();
         return this.deleteMeetingRoomWithOptions(roomId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除会议室配置
+     *
+     * @param tmpReq DeleteMeetingRoomControlPanelRequest
+     * @param headers DeleteMeetingRoomControlPanelHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMeetingRoomControlPanelResponse
+     */
+    public DeleteMeetingRoomControlPanelResponse deleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest tmpReq, DeleteMeetingRoomControlPanelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        DeleteMeetingRoomControlPanelShrinkRequest request = new DeleteMeetingRoomControlPanelShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
+            query.put("body", request.bodyShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteMeetingRoomControlPanel"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/panels/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMeetingRoomControlPanelResponse());
+    }
+
+    /**
+     * @summary 删除会议室配置
+     *
+     * @param request DeleteMeetingRoomControlPanelRequest
+     * @return DeleteMeetingRoomControlPanelResponse
+     */
+    public DeleteMeetingRoomControlPanelResponse deleteMeetingRoomControlPanel(DeleteMeetingRoomControlPanelRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteMeetingRoomControlPanelHeaders headers = new DeleteMeetingRoomControlPanelHeaders();
+        return this.deleteMeetingRoomControlPanelWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 删除会议室分组
+     *
+     * @param request DeleteMeetingRoomGroupRequest
+     * @param headers DeleteMeetingRoomGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMeetingRoomGroupResponse
+     */
     public DeleteMeetingRoomGroupResponse deleteMeetingRoomGroupWithOptions(String groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -369,12 +577,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMeetingRoomGroupResponse());
     }
 
+    /**
+     * @summary 删除会议室分组
+     *
+     * @param request DeleteMeetingRoomGroupRequest
+     * @return DeleteMeetingRoomGroupResponse
+     */
     public DeleteMeetingRoomGroupResponse deleteMeetingRoomGroup(String groupId, DeleteMeetingRoomGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteMeetingRoomGroupHeaders headers = new DeleteMeetingRoomGroupHeaders();
         return this.deleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询自定义屏幕模板
+     *
+     * @param headers QueryDeviceCustomTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDeviceCustomTemplateResponse
+     */
     public QueryDeviceCustomTemplateResponse queryDeviceCustomTemplateWithOptions(String templateId, QueryDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -402,12 +623,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceCustomTemplateResponse());
     }
 
+    /**
+     * @summary 查询自定义屏幕模板
+     *
+     * @return QueryDeviceCustomTemplateResponse
+     */
     public QueryDeviceCustomTemplateResponse queryDeviceCustomTemplate(String templateId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDeviceCustomTemplateHeaders headers = new QueryDeviceCustomTemplateHeaders();
         return this.queryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
     }
 
+    /**
+     * @summary 查询自定义屏幕模板列表
+     *
+     * @param headers QueryDeviceCustomTemplateListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDeviceCustomTemplateListResponse
+     */
     public QueryDeviceCustomTemplateListResponse queryDeviceCustomTemplateListWithOptions(QueryDeviceCustomTemplateListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -435,12 +668,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceCustomTemplateListResponse());
     }
 
+    /**
+     * @summary 查询自定义屏幕模板列表
+     *
+     * @return QueryDeviceCustomTemplateListResponse
+     */
     public QueryDeviceCustomTemplateListResponse queryDeviceCustomTemplateList() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDeviceCustomTemplateListHeaders headers = new QueryDeviceCustomTemplateListHeaders();
         return this.queryDeviceCustomTemplateListWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 根据设备投屏码查询设备ip
+     *
+     * @param request QueryDeviceIpByCodeRequest
+     * @param headers QueryDeviceIpByCodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDeviceIpByCodeResponse
+     */
     public QueryDeviceIpByCodeResponse queryDeviceIpByCodeWithOptions(String shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -475,12 +721,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceIpByCodeResponse());
     }
 
+    /**
+     * @summary 根据设备投屏码查询设备ip
+     *
+     * @param request QueryDeviceIpByCodeRequest
+     * @return QueryDeviceIpByCodeResponse
+     */
     public QueryDeviceIpByCodeResponse queryDeviceIpByCode(String shareCode, QueryDeviceIpByCodeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDeviceIpByCodeHeaders headers = new QueryDeviceIpByCodeHeaders();
         return this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询设备属性
+     *
+     * @param request QueryDevicePropertiesRequest
+     * @param headers QueryDevicePropertiesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDevicePropertiesResponse
+     */
     public QueryDevicePropertiesResponse queryDevicePropertiesWithOptions(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -529,12 +789,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDevicePropertiesResponse());
     }
 
+    /**
+     * @summary 查询设备属性
+     *
+     * @param request QueryDevicePropertiesRequest
+     * @return QueryDevicePropertiesResponse
+     */
     public QueryDevicePropertiesResponse queryDeviceProperties(QueryDevicePropertiesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
         return this.queryDevicePropertiesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会议室详情
+     *
+     * @param request QueryMeetingRoomRequest
+     * @param headers QueryMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomResponse
+     */
     public QueryMeetingRoomResponse queryMeetingRoomWithOptions(String roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -569,12 +843,92 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomResponse());
     }
 
+    /**
+     * @summary 查询会议室详情
+     *
+     * @param request QueryMeetingRoomRequest
+     * @return QueryMeetingRoomResponse
+     */
     public QueryMeetingRoomResponse queryMeetingRoom(String roomId, QueryMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomHeaders headers = new QueryMeetingRoomHeaders();
         return this.queryMeetingRoomWithOptions(roomId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取会议室IOT配置列表
+     *
+     * @param request QueryMeetingRoomControlPanelListRequest
+     * @param headers QueryMeetingRoomControlPanelListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomControlPanelListResponse
+     */
+    public QueryMeetingRoomControlPanelListResponse queryMeetingRoomControlPanelListWithOptions(QueryMeetingRoomControlPanelListRequest request, QueryMeetingRoomControlPanelListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomId)) {
+            query.put("roomId", request.roomId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMeetingRoomControlPanelList"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/panels/lists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomControlPanelListResponse());
+    }
+
+    /**
+     * @summary 获取会议室IOT配置列表
+     *
+     * @param request QueryMeetingRoomControlPanelListRequest
+     * @return QueryMeetingRoomControlPanelListResponse
+     */
+    public QueryMeetingRoomControlPanelListResponse queryMeetingRoomControlPanelList(QueryMeetingRoomControlPanelListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMeetingRoomControlPanelListHeaders headers = new QueryMeetingRoomControlPanelListHeaders();
+        return this.queryMeetingRoomControlPanelListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询设备信息
+     *
+     * @param request QueryMeetingRoomDeviceRequest
+     * @param headers QueryMeetingRoomDeviceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomDeviceResponse
+     */
     public QueryMeetingRoomDeviceResponse queryMeetingRoomDeviceWithOptions(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -617,12 +971,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomDeviceResponse());
     }
 
+    /**
+     * @summary 查询设备信息
+     *
+     * @param request QueryMeetingRoomDeviceRequest
+     * @return QueryMeetingRoomDeviceResponse
+     */
     public QueryMeetingRoomDeviceResponse queryMeetingRoomDevice(QueryMeetingRoomDeviceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
         return this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会议室分组信息
+     *
+     * @param request QueryMeetingRoomGroupRequest
+     * @param headers QueryMeetingRoomGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomGroupResponse
+     */
     public QueryMeetingRoomGroupResponse queryMeetingRoomGroupWithOptions(String groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -657,12 +1025,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomGroupResponse());
     }
 
+    /**
+     * @summary 查询会议室分组信息
+     *
+     * @param request QueryMeetingRoomGroupRequest
+     * @return QueryMeetingRoomGroupResponse
+     */
     public QueryMeetingRoomGroupResponse queryMeetingRoomGroup(String groupId, QueryMeetingRoomGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomGroupHeaders headers = new QueryMeetingRoomGroupHeaders();
         return this.queryMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会议室分组列表
+     *
+     * @param request QueryMeetingRoomGroupListRequest
+     * @param headers QueryMeetingRoomGroupListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomGroupListResponse
+     */
     public QueryMeetingRoomGroupListResponse queryMeetingRoomGroupListWithOptions(QueryMeetingRoomGroupListRequest request, QueryMeetingRoomGroupListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -697,12 +1079,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomGroupListResponse());
     }
 
+    /**
+     * @summary 查询会议室分组列表
+     *
+     * @param request QueryMeetingRoomGroupListRequest
+     * @return QueryMeetingRoomGroupListResponse
+     */
     public QueryMeetingRoomGroupListResponse queryMeetingRoomGroupList(QueryMeetingRoomGroupListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomGroupListHeaders headers = new QueryMeetingRoomGroupListHeaders();
         return this.queryMeetingRoomGroupListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会议室列表
+     *
+     * @param request QueryMeetingRoomListRequest
+     * @param headers QueryMeetingRoomListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMeetingRoomListResponse
+     */
     public QueryMeetingRoomListResponse queryMeetingRoomListWithOptions(QueryMeetingRoomListRequest request, QueryMeetingRoomListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -745,12 +1141,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMeetingRoomListResponse());
     }
 
+    /**
+     * @summary 查询会议室列表
+     *
+     * @param request QueryMeetingRoomListRequest
+     * @return QueryMeetingRoomListResponse
+     */
     public QueryMeetingRoomListResponse queryMeetingRoomList(QueryMeetingRoomListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMeetingRoomListHeaders headers = new QueryMeetingRoomListHeaders();
         return this.queryMeetingRoomListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 取消会议室高级用户模式。
+     *
+     * @param request RemoveSuperUserMeetingRoomRequest
+     * @param headers RemoveSuperUserMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveSuperUserMeetingRoomResponse
+     */
     public RemoveSuperUserMeetingRoomResponse removeSuperUserMeetingRoomWithOptions(RemoveSuperUserMeetingRoomRequest request, RemoveSuperUserMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -789,12 +1199,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemoveSuperUserMeetingRoomResponse());
     }
 
+    /**
+     * @summary 取消会议室高级用户模式。
+     *
+     * @param request RemoveSuperUserMeetingRoomRequest
+     * @return RemoveSuperUserMeetingRoomResponse
+     */
     public RemoveSuperUserMeetingRoomResponse removeSuperUserMeetingRoom(RemoveSuperUserMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveSuperUserMeetingRoomHeaders headers = new RemoveSuperUserMeetingRoomHeaders();
         return this.removeSuperUserMeetingRoomWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+     *
+     * @param request SetSuperUserMeetingRoomRequest
+     * @param headers SetSuperUserMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetSuperUserMeetingRoomResponse
+     */
     public SetSuperUserMeetingRoomResponse setSuperUserMeetingRoomWithOptions(SetSuperUserMeetingRoomRequest request, SetSuperUserMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -841,12 +1265,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SetSuperUserMeetingRoomResponse());
     }
 
+    /**
+     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+     *
+     * @param request SetSuperUserMeetingRoomRequest
+     * @return SetSuperUserMeetingRoomResponse
+     */
     public SetSuperUserMeetingRoomResponse setSuperUserMeetingRoom(SetSuperUserMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetSuperUserMeetingRoomHeaders headers = new SetSuperUserMeetingRoomHeaders();
         return this.setSuperUserMeetingRoomWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新自定义屏幕模板
+     *
+     * @param request UpdateDeviceCustomTemplateRequest
+     * @param headers UpdateDeviceCustomTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateDeviceCustomTemplateResponse
+     */
     public UpdateDeviceCustomTemplateResponse updateDeviceCustomTemplateWithOptions(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -953,12 +1391,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateDeviceCustomTemplateResponse());
     }
 
+    /**
+     * @summary 更新自定义屏幕模板
+     *
+     * @param request UpdateDeviceCustomTemplateRequest
+     * @return UpdateDeviceCustomTemplateResponse
+     */
     public UpdateDeviceCustomTemplateResponse updateDeviceCustomTemplate(UpdateDeviceCustomTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateDeviceCustomTemplateHeaders headers = new UpdateDeviceCustomTemplateHeaders();
         return this.updateDeviceCustomTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新会议室信息
+     *
+     * @param request UpdateMeetingRoomRequest
+     * @param headers UpdateMeetingRoomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateMeetingRoomResponse
+     */
     public UpdateMeetingRoomResponse updateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1037,12 +1489,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateMeetingRoomResponse());
     }
 
+    /**
+     * @summary 更新会议室信息
+     *
+     * @param request UpdateMeetingRoomRequest
+     * @return UpdateMeetingRoomResponse
+     */
     public UpdateMeetingRoomResponse updateMeetingRoom(UpdateMeetingRoomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateMeetingRoomHeaders headers = new UpdateMeetingRoomHeaders();
         return this.updateMeetingRoomWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新会议室分组
+     *
+     * @param request UpdateMeetingRoomGroupRequest
+     * @param headers UpdateMeetingRoomGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateMeetingRoomGroupResponse
+     */
     public UpdateMeetingRoomGroupResponse updateMeetingRoomGroupWithOptions(UpdateMeetingRoomGroupRequest request, UpdateMeetingRoomGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1085,6 +1551,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateMeetingRoomGroupResponse());
     }
 
+    /**
+     * @summary 更新会议室分组
+     *
+     * @param request UpdateMeetingRoomGroupRequest
+     * @return UpdateMeetingRoomGroupResponse
+     */
     public UpdateMeetingRoomGroupResponse updateMeetingRoomGroup(UpdateMeetingRoomGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateMeetingRoomGroupHeaders headers = new UpdateMeetingRoomGroupHeaders();

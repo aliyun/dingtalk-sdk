@@ -16,6 +16,9 @@ public class TopboxOpenRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

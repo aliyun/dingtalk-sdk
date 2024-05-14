@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupSetResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("records")
     public java.util.List<QueryGroupSetResponseBodyRecords> records;
 
@@ -21,18 +24,33 @@ public class QueryGroupSetResponseBody extends TeaModel {
     }
 
     public static class QueryGroupSetResponseBodyRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupSetName")
         public String groupSetName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 

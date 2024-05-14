@@ -4,6 +4,9 @@ package com.aliyun.dingtalkapaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateTemplateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateList")
     public java.util.List<BatchUpdateTemplateRequestTemplateList> templateList;
 
@@ -21,18 +24,30 @@ public class BatchUpdateTemplateRequest extends TeaModel {
     }
 
     public static class BatchUpdateTemplateRequestTemplateList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("adaptEnv")
         public java.util.List<String> adaptEnv;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appDesc")
         public String appDesc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appIcon")
         public String appIcon;
 
         @NameInMap("caseVideoList")
         public java.util.List<String> caseVideoList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
@@ -42,27 +57,45 @@ public class BatchUpdateTemplateRequest extends TeaModel {
         @NameInMap("expUrl")
         public String expUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industryLabelList")
         public java.util.List<String> industryLabelList;
 
         @NameInMap("mobilePreviewMediaList")
         public java.util.List<String> mobilePreviewMediaList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("previewMediaList")
         public java.util.List<String> previewMediaList;
 
         @NameInMap("providerName")
         public String providerName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleLabelList")
         public java.util.List<String> roleLabelList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("simpleDesc")
         public String simpleDesc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateKey")
         public String templateKey;
 

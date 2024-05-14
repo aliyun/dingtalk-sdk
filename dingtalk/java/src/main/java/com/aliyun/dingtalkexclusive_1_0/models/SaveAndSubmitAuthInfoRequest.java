@@ -10,33 +10,60 @@ public class SaveAndSubmitAuthInfoRequest extends TeaModel {
     @NameInMap("authorizeMediaId")
     public String authorizeMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("industry")
     public String industry;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("legalPerson")
     public String legalPerson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("legalPersonIdCard")
     public String legalPersonIdCard;
 
     @NameInMap("licenseMediaId")
     public String licenseMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("locCity")
     public Long locCity;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("locCityName")
     public String locCityName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("locProvince")
     public Long locProvince;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("locProvinceName")
     public String locProvinceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobileNum")
     public String mobileNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
@@ -46,12 +73,18 @@ public class SaveAndSubmitAuthInfoRequest extends TeaModel {
     @NameInMap("organizationCodeMediaId")
     public String organizationCodeMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("registLocation")
     public String registLocation;
 
     @NameInMap("registNum")
     public String registNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

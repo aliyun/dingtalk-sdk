@@ -10,9 +10,15 @@ public class QueryCandidatesRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statId")
     public String statId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

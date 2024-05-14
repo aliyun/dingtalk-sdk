@@ -4,12 +4,21 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditFeedReplayRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("editEndTime")
     public Long editEndTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("editStartTime")
     public Long editStartTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

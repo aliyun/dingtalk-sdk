@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DescribeRelationMetaResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationMetaDTOList")
     public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOList> relationMetaDTOList;
 
@@ -51,15 +54,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filterType")
         public String filterType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -103,6 +118,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParams extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filters")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParamsFilters> filters;
 
@@ -122,15 +140,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Long appType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
@@ -174,12 +204,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("params")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceParams params;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("target")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSourceTarget target;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -215,6 +254,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptionsExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -234,12 +276,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptionsExtension extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -275,15 +326,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -327,87 +390,171 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public Boolean duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("limit")
         public Long limit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mode")
         public String mode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ratio")
         public Long ratio;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spread")
         public Boolean spread;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelatePropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("watermark")
         public Boolean watermark;
 
@@ -643,9 +790,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFieldsRelateProps relateProps;
 
@@ -673,6 +826,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -692,12 +848,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptionsExtension extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -733,15 +898,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filterType")
         public String filterType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -785,6 +962,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParams extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filters")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParamsFilters> filters;
 
@@ -804,15 +984,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Long appType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
@@ -856,12 +1048,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("params")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceParams params;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("target")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSourceTarget target;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -897,9 +1098,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -927,15 +1134,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -979,75 +1198,147 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public String duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("multi")
         public Long multi;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("quote")
         public Long quote;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -1251,9 +1542,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps relateProps;
 
@@ -1281,12 +1578,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource dataSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields> fields;
 
@@ -1322,9 +1625,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -1352,15 +1661,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -1404,21 +1725,36 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionName")
         public String actionName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
         @NameInMap("availableTemplates")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates> availableTemplates;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -1428,99 +1764,195 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("defaultColor")
         public String defaultColor;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public Boolean duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsFields> fields;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("limit")
         public Long limit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mode")
         public String mode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("multiple")
         public Boolean multiple;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notPrint")
         public String notPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("quote")
         public Long quote;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ratio")
         public Long ratio;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateSource")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSource> relateSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("rule")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRule> rule;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sortable")
         public Boolean sortable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spread")
         public Boolean spread;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tableViewMode")
         public String tableViewMode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("watermark")
         public Boolean watermark;
 
@@ -1852,9 +2284,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenProps props;
 
@@ -1912,15 +2350,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filterType")
         public String filterType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -1964,6 +2414,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filters")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters> filters;
 
@@ -2035,6 +2488,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("params")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams params;
 
@@ -2076,6 +2532,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -2095,12 +2554,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -2136,15 +2604,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -2188,87 +2668,171 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public String duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("limit")
         public Long limit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mode")
         public String mode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ratio")
         public Long ratio;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spread")
         public Boolean spread;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("watermark")
         public Boolean watermark;
 
@@ -2504,9 +3068,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps relateProps;
 
@@ -2534,6 +3104,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -2553,15 +3126,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("warn")
         public Boolean warn;
 
@@ -2605,15 +3190,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filterType")
         public String filterType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -2657,6 +3254,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParams extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filters")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParamsFilters> filters;
 
@@ -2676,15 +3276,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appType")
         public Long appType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
@@ -2728,12 +3340,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("params")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceParams params;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("target")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSourceTarget target;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -2769,6 +3390,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -2788,12 +3412,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -2829,15 +3462,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -2881,75 +3526,147 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public String duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("multi")
         public Long multi;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("quote")
         public Long quote;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -3153,9 +3870,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps relateProps;
 
@@ -3183,12 +3906,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource dataSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields> fields;
 
@@ -3224,9 +3953,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -3254,15 +3989,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -3306,21 +4053,36 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionName")
         public String actionName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("align")
         public String align;
 
         @NameInMap("availableTemplates")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> availableTemplates;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("choice")
         public Long choice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -3330,105 +4092,207 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("defaultColor")
         public String defaultColor;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("duration")
         public Boolean duration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields> fields;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("limit")
         public Long limit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mode")
         public String mode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("multi")
         public Long multi;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("multiple")
         public Boolean multiple;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("needDetail")
         public String needDetail;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notPrint")
         public String notPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions> options;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("quote")
         public Long quote;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ratio")
         public Long ratio;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relateSource")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource> relateSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("rule")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule> rule;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sortable")
         public Boolean sortable;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spread")
         public Boolean spread;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField> statField;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tableViewMode")
         public String tableViewMode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("watermark")
         public Boolean watermark;
 
@@ -3776,12 +4640,21 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItems extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("children")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren> children;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps props;
 
@@ -3817,30 +4690,57 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("items")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItems> items;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationMetaCode")
         public String relationMetaCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationMetaStatus")
         public String relationMetaStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationType")
         public String relationType;
 

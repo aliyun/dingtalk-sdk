@@ -7,12 +7,21 @@ public class GetInActiveUserListRequest extends TeaModel {
     @NameInMap("deptIds")
     public java.util.List<String> deptIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

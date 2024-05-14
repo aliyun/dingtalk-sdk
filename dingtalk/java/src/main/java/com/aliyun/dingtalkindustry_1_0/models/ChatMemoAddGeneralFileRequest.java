@@ -7,15 +7,24 @@ public class ChatMemoAddGeneralFileRequest extends TeaModel {
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datasetId")
     public Long datasetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("downloadUrl")
     public String downloadUrl;
 
     @NameInMap("fileDesc")
     public String fileDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 

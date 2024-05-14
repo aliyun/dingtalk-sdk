@@ -10,12 +10,18 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     @NameInMap("macAddress")
     public String macAddress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("platform")
     public String platform;
 
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

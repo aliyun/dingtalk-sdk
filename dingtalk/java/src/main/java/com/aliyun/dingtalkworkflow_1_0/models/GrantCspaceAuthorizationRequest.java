@@ -7,12 +7,21 @@ public class GrantCspaceAuthorizationRequest extends TeaModel {
     @NameInMap("durationSeconds")
     public Long durationSeconds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

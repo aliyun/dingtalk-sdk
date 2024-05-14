@@ -4,15 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CardBatchQueryCardsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardIds")
     public java.util.List<Long> cardIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceType")
     public String sourceType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

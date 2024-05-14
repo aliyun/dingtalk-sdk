@@ -7,6 +7,9 @@ public class QueryGeneralDataServiceRequest extends TeaModel {
     @NameInMap("deptId")
     public String deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDate")
     public String endDate;
 
@@ -16,12 +19,21 @@ public class QueryGeneralDataServiceRequest extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceId")
     public String serviceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

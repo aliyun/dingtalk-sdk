@@ -22,9 +22,15 @@ public class ListEventsRequest extends TeaModel {
     @NameInMap("syncToken")
     public String syncToken;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("timeMax")
     public String timeMax;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("timeMin")
     public String timeMin;
 

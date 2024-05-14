@@ -4,15 +4,27 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserAgreementPageSignRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizScene")
     public String bizScene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
@@ -22,21 +34,39 @@ public class UserAgreementPageSignRequest extends TeaModel {
     @NameInMap("returnUrl")
     public String returnUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signScene")
     public String signScene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subMerchantName")
     public String subMerchantName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subMerchantServiceDesc")
     public String subMerchantServiceDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subMerchantServiceName")
     public String subMerchantServiceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建企业邮箱用户
+     *
+     * @param request CreateUserRequest
+     * @param headers CreateUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateUserResponse
+     */
     public CreateUserResponse createUserWithOptions(CreateUserRequest request, CreateUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,6 +73,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateUserResponse());
     }
 
+    /**
+     * @summary 创建企业邮箱用户
+     *
+     * @param request CreateUserRequest
+     * @return CreateUserResponse
+     */
     public CreateUserResponse createUser(CreateUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateUserHeaders headers = new CreateUserHeaders();

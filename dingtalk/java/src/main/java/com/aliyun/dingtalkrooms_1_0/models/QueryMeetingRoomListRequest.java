@@ -10,6 +10,9 @@ public class QueryMeetingRoomListRequest extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

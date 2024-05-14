@@ -21,18 +21,33 @@ public class ListAvaiableVersionResponseBody extends TeaModel {
     }
 
     public static class ListAvaiableVersionResponseBodyVersions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("buildStatus")
         public Long buildStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("h5Bundle")
         public String h5Bundle;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("packageSize")
         public String packageSize;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("packageUrl")
         public String packageUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("version")
         public String version;
 

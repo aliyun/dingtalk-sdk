@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 添加智能客服机器人到钉钉群
+     *
+     * @param request AddRobotInstanceToGroupRequest
+     * @param headers AddRobotInstanceToGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddRobotInstanceToGroupResponse
+     */
     public AddRobotInstanceToGroupResponse addRobotInstanceToGroupWithOptions(AddRobotInstanceToGroupRequest request, AddRobotInstanceToGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -57,12 +65,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddRobotInstanceToGroupResponse());
     }
 
+    /**
+     * @summary 添加智能客服机器人到钉钉群
+     *
+     * @param request AddRobotInstanceToGroupRequest
+     * @return AddRobotInstanceToGroupResponse
+     */
     public AddRobotInstanceToGroupResponse addRobotInstanceToGroup(AddRobotInstanceToGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddRobotInstanceToGroupHeaders headers = new AddRobotInstanceToGroupHeaders();
         return this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 调用小蜜机器人的问答能力
+     *
+     * @param request AskRobotRequest
+     * @param headers AskRobotHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AskRobotResponse
+     */
     public AskRobotResponse askRobotWithOptions(AskRobotRequest request, AskRobotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -109,12 +131,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AskRobotResponse());
     }
 
+    /**
+     * @summary 调用小蜜机器人的问答能力
+     *
+     * @param request AskRobotRequest
+     * @return AskRobotResponse
+     */
     public AskRobotResponse askRobot(AskRobotRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AskRobotHeaders headers = new AskRobotHeaders();
         return this.askRobotWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 小蜜机器人数据统计指标
+     *
+     * @param request GetDingMeBaseDataRequest
+     * @param headers GetDingMeBaseDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDingMeBaseDataResponse
+     */
     public GetDingMeBaseDataResponse getDingMeBaseDataWithOptions(GetDingMeBaseDataRequest request, GetDingMeBaseDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -161,12 +197,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetDingMeBaseDataResponse());
     }
 
+    /**
+     * @summary 小蜜机器人数据统计指标
+     *
+     * @param request GetDingMeBaseDataRequest
+     * @return GetDingMeBaseDataResponse
+     */
     public GetDingMeBaseDataResponse getDingMeBaseData(GetDingMeBaseDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDingMeBaseDataHeaders headers = new GetDingMeBaseDataHeaders();
         return this.getDingMeBaseDataWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取智能客服机器人信息
+     *
+     * @param request GetIntelligentRobotInfoRequest
+     * @param headers GetIntelligentRobotInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetIntelligentRobotInfoResponse
+     */
     public GetIntelligentRobotInfoResponse getIntelligentRobotInfoWithOptions(GetIntelligentRobotInfoRequest request, GetIntelligentRobotInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -201,12 +251,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetIntelligentRobotInfoResponse());
     }
 
+    /**
+     * @summary 获取智能客服机器人信息
+     *
+     * @param request GetIntelligentRobotInfoRequest
+     * @return GetIntelligentRobotInfoResponse
+     */
     public GetIntelligentRobotInfoResponse getIntelligentRobotInfo(GetIntelligentRobotInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetIntelligentRobotInfoHeaders headers = new GetIntelligentRobotInfoHeaders();
         return this.getIntelligentRobotInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取服务窗机器人信息
+     *
+     * @param request GetOfficialAccountRobotInfoRequest
+     * @param headers GetOfficialAccountRobotInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetOfficialAccountRobotInfoResponse
+     */
     public GetOfficialAccountRobotInfoResponse getOfficialAccountRobotInfoWithOptions(GetOfficialAccountRobotInfoRequest request, GetOfficialAccountRobotInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -241,12 +305,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetOfficialAccountRobotInfoResponse());
     }
 
+    /**
+     * @summary 获取服务窗机器人信息
+     *
+     * @param request GetOfficialAccountRobotInfoRequest
+     * @return GetOfficialAccountRobotInfoResponse
+     */
     public GetOfficialAccountRobotInfoResponse getOfficialAccountRobotInfo(GetOfficialAccountRobotInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetOfficialAccountRobotInfoHeaders headers = new GetOfficialAccountRobotInfoHeaders();
         return this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 小蜜客服网页渠道获取三方用户token
+     *
+     * @param request GetWebChannelUserTokenRequest
+     * @param headers GetWebChannelUserTokenHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetWebChannelUserTokenResponse
+     */
     public GetWebChannelUserTokenResponse getWebChannelUserTokenWithOptions(GetWebChannelUserTokenRequest request, GetWebChannelUserTokenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +367,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetWebChannelUserTokenResponse());
     }
 
+    /**
+     * @summary 小蜜客服网页渠道获取三方用户token
+     *
+     * @param request GetWebChannelUserTokenRequest
+     * @return GetWebChannelUserTokenResponse
+     */
     public GetWebChannelUserTokenResponse getWebChannelUserToken(GetWebChannelUserTokenRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetWebChannelUserTokenHeaders headers = new GetWebChannelUserTokenHeaders();
         return this.getWebChannelUserTokenWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通过小蜜机器人在客户群内推送消息
+     *
+     * @param request PushCustomerGroupMessageRequest
+     * @param headers PushCustomerGroupMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushCustomerGroupMessageResponse
+     */
     public PushCustomerGroupMessageResponse pushCustomerGroupMessageWithOptions(PushCustomerGroupMessageRequest request, PushCustomerGroupMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -337,12 +429,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushCustomerGroupMessageResponse());
     }
 
+    /**
+     * @summary 通过小蜜机器人在客户群内推送消息
+     *
+     * @param request PushCustomerGroupMessageRequest
+     * @return PushCustomerGroupMessageResponse
+     */
     public PushCustomerGroupMessageResponse pushCustomerGroupMessage(PushCustomerGroupMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushCustomerGroupMessageHeaders headers = new PushCustomerGroupMessageHeaders();
         return this.pushCustomerGroupMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 推送智能客服机器人钉钉群聊消息
+     *
+     * @param request PushIntelligentRobotGroupMessageRequest
+     * @param headers PushIntelligentRobotGroupMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushIntelligentRobotGroupMessageResponse
+     */
     public PushIntelligentRobotGroupMessageResponse pushIntelligentRobotGroupMessageWithOptions(PushIntelligentRobotGroupMessageRequest request, PushIntelligentRobotGroupMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -389,12 +495,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushIntelligentRobotGroupMessageResponse());
     }
 
+    /**
+     * @summary 推送智能客服机器人钉钉群聊消息
+     *
+     * @param request PushIntelligentRobotGroupMessageRequest
+     * @return PushIntelligentRobotGroupMessageResponse
+     */
     public PushIntelligentRobotGroupMessageResponse pushIntelligentRobotGroupMessage(PushIntelligentRobotGroupMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushIntelligentRobotGroupMessageHeaders headers = new PushIntelligentRobotGroupMessageHeaders();
         return this.pushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能客服机器人推送消息
+     *
+     * @param request PushIntelligentRobotMessageRequest
+     * @param headers PushIntelligentRobotMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushIntelligentRobotMessageResponse
+     */
     public PushIntelligentRobotMessageResponse pushIntelligentRobotMessageWithOptions(PushIntelligentRobotMessageRequest request, PushIntelligentRobotMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -441,12 +561,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushIntelligentRobotMessageResponse());
     }
 
+    /**
+     * @summary 智能客服机器人推送消息
+     *
+     * @param request PushIntelligentRobotMessageRequest
+     * @return PushIntelligentRobotMessageResponse
+     */
     public PushIntelligentRobotMessageResponse pushIntelligentRobotMessage(PushIntelligentRobotMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushIntelligentRobotMessageHeaders headers = new PushIntelligentRobotMessageHeaders();
         return this.pushIntelligentRobotMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通过服务窗机器人推送单聊消息
+     *
+     * @param request PushOfficialAccountMessageRequest
+     * @param headers PushOfficialAccountMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushOfficialAccountMessageResponse
+     */
     public PushOfficialAccountMessageResponse pushOfficialAccountMessageWithOptions(PushOfficialAccountMessageRequest request, PushOfficialAccountMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -489,12 +623,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushOfficialAccountMessageResponse());
     }
 
+    /**
+     * @summary 通过服务窗机器人推送单聊消息
+     *
+     * @param request PushOfficialAccountMessageRequest
+     * @return PushOfficialAccountMessageResponse
+     */
     public PushOfficialAccountMessageResponse pushOfficialAccountMessage(PushOfficialAccountMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushOfficialAccountMessageHeaders headers = new PushOfficialAccountMessageHeaders();
         return this.pushOfficialAccountMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通过小蜜客服机器人推送单聊消息
+     *
+     * @param request PushRobotMessageRequest
+     * @param headers PushRobotMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushRobotMessageResponse
+     */
     public PushRobotMessageResponse pushRobotMessageWithOptions(PushRobotMessageRequest request, PushRobotMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -541,12 +689,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushRobotMessageResponse());
     }
 
+    /**
+     * @summary 通过小蜜客服机器人推送单聊消息
+     *
+     * @param request PushRobotMessageRequest
+     * @return PushRobotMessageResponse
+     */
     public PushRobotMessageResponse pushRobotMessage(PushRobotMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushRobotMessageHeaders headers = new PushRobotMessageHeaders();
         return this.pushRobotMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 异步回复机器人消息
+     *
+     * @param request ReplyRobotRequest
+     * @param headers ReplyRobotHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReplyRobotResponse
+     */
     public ReplyRobotResponse replyRobotWithOptions(ReplyRobotRequest request, ReplyRobotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -581,12 +743,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReplyRobotResponse());
     }
 
+    /**
+     * @summary 异步回复机器人消息
+     *
+     * @param request ReplyRobotRequest
+     * @return ReplyRobotResponse
+     */
     public ReplyRobotResponse replyRobot(ReplyRobotRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReplyRobotHeaders headers = new ReplyRobotHeaders();
         return this.replyRobotWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新服务窗机器人信息
+     *
+     * @param request UpdateOfficialAccountRobotInfoRequest
+     * @param headers UpdateOfficialAccountRobotInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateOfficialAccountRobotInfoResponse
+     */
     public UpdateOfficialAccountRobotInfoResponse updateOfficialAccountRobotInfoWithOptions(UpdateOfficialAccountRobotInfoRequest request, UpdateOfficialAccountRobotInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -643,6 +819,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOfficialAccountRobotInfoResponse());
     }
 
+    /**
+     * @summary 更新服务窗机器人信息
+     *
+     * @param request UpdateOfficialAccountRobotInfoRequest
+     * @return UpdateOfficialAccountRobotInfoResponse
+     */
     public UpdateOfficialAccountRobotInfoResponse updateOfficialAccountRobotInfo(UpdateOfficialAccountRobotInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateOfficialAccountRobotInfoHeaders headers = new UpdateOfficialAccountRobotInfoHeaders();

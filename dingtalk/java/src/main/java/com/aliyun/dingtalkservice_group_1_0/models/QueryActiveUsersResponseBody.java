@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryActiveUsersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("activeUserInfos")
     public java.util.List<QueryActiveUsersResponseBodyActiveUserInfos> activeUserInfos;
 
@@ -21,24 +24,45 @@ public class QueryActiveUsersResponseBody extends TeaModel {
     }
 
     public static class QueryActiveUsersResponseBodyActiveUserInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionIndexL14d")
         public Double actionIndexL14d;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionIndexL30d")
         public Double actionIndexL30d;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionIndexL7d")
         public Double actionIndexL7d;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("activeScore")
         public Double activeScore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ranking")
         public Long ranking;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

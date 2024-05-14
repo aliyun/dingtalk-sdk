@@ -4,9 +4,15 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRecallPrivateChatResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("failedResult")
     public java.util.Map<String, String> failedResult;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("successResult")
     public java.util.List<String> successResult;
 

@@ -4,12 +4,18 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     @NameInMap("openRoleIds")
     public java.util.List<String> openRoleIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

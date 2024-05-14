@@ -4,12 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchDepartmentResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<Long> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 

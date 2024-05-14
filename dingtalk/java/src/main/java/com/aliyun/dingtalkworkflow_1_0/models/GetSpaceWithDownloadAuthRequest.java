@@ -7,15 +7,24 @@ public class GetSpaceWithDownloadAuthRequest extends TeaModel {
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
     @NameInMap("fileIdList")
     public java.util.List<String> fileIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

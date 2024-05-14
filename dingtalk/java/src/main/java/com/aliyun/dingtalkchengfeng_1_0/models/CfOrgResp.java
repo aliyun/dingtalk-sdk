@@ -4,21 +4,39 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfOrgResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptCode")
     public String deptCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("level")
     public Long level;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("organizationCodePath")
     public String organizationCodePath;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("organizationPath")
     public String organizationPath;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentDeptCode")
     public String parentDeptCode;
 

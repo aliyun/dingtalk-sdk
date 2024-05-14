@@ -7,6 +7,9 @@ public class CorpRealnameRequest extends TeaModel {
     @NameInMap("redirectUrl")
     public String redirectUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

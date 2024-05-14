@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreRolesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public java.util.List<DigitalStoreRolesResponseBodyContent> content;
 
@@ -21,15 +24,27 @@ public class DigitalStoreRolesResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreRolesResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("level")
         public Long level;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

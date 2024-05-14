@@ -4,9 +4,15 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPictureDownloadUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("downloadCode")
     public String downloadCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sessionId")
     public String sessionId;
 

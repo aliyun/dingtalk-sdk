@@ -4,12 +4,21 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterOpenInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openInfos")
     public java.util.List<RegisterOpenInfoRequestOpenInfos> openInfos;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("provider")
     public String provider;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -43,9 +52,15 @@ public class RegisterOpenInfoRequest extends TeaModel {
     }
 
     public static class RegisterOpenInfoRequestOpenInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openType")
         public String openType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

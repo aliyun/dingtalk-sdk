@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveFormInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formDataList")
     public String formDataList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

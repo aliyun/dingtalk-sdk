@@ -7,6 +7,9 @@ public class PullDataByPageRequest extends TeaModel {
     @NameInMap("appId")
     public String appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dataModelId")
     public String dataModelId;
 

@@ -76,12 +76,18 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("groupId")
     public Long groupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
     @NameInMap("managerList")
     public java.util.List<String> managerList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<GroupAddRequestMembers> members;
 
@@ -124,6 +130,9 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("trimDistance")
     public Integer trimDistance;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
@@ -133,6 +142,9 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("workdayClassList")
     public java.util.List<Long> workdayClassList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -573,12 +585,21 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("role")
         public String role;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -32,18 +32,33 @@ public class QueryPointActionAutoAssignRuleResponseBody extends TeaModel {
     }
 
     public static class QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("awardScore")
         public Long awardScore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayLimitTimes")
         public Long dayLimitTimes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Long status;
 

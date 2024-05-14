@@ -7,6 +7,9 @@ public class CheckInCrowdsByMobileRequest extends TeaModel {
     @NameInMap("crowdIds")
     public byte[] crowdIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 

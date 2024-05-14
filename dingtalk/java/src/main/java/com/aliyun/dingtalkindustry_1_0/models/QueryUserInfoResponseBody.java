@@ -27,9 +27,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -84,9 +90,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentGroup extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
@@ -96,9 +108,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -169,15 +187,27 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJob extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -221,15 +251,27 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJobStatus extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -273,15 +315,27 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJobStatusList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -325,15 +379,27 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentUserProb extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -377,33 +443,63 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("comments")
         public String comments;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dept")
         public java.util.List<QueryUserInfoResponseBodyContentDept> dept;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("group")
         public java.util.List<QueryUserInfoResponseBodyContentGroup> group;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("job")
         public QueryUserInfoResponseBodyContentJob job;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobNum")
         public String jobNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobStatus")
         public QueryUserInfoResponseBodyContentJobStatus jobStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobStatusList")
         public java.util.List<QueryUserInfoResponseBodyContentJobStatusList> jobStatusList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userName")
         public String userName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userProb")
         public QueryUserInfoResponseBodyContentUserProb userProb;
 

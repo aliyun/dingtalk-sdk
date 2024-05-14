@@ -4,12 +4,21 @@ package com.aliyun.dingtalkalgo_1_0.models;
 import com.aliyun.tea.*;
 
 public class NlpWordDistinguishRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("attachExtractDecisionInfo")
     public NlpWordDistinguishRequestAttachExtractDecisionInfo attachExtractDecisionInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvAppId")
     public String isvAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("text")
     public String text;
 
@@ -49,12 +58,21 @@ public class NlpWordDistinguishRequest extends TeaModel {
         @NameInMap("candidateWords")
         public java.util.List<String> candidateWords;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptIds")
         public java.util.List<String> deptIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

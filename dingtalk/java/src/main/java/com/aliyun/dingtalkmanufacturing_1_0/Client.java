@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 日清月结-计件报工接口
+     *
+     * @param request IndustrializeManufactureJobBookRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return IndustrializeManufactureJobBookResponse
+     */
     public IndustrializeManufactureJobBookResponse industrializeManufactureJobBookWithOptions(String userId, IndustrializeManufactureJobBookRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,12 +129,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new IndustrializeManufactureJobBookResponse());
     }
 
+    /**
+     * @summary 日清月结-计件报工接口
+     *
+     * @param request IndustrializeManufactureJobBookRequest
+     * @return IndustrializeManufactureJobBookResponse
+     */
     public IndustrializeManufactureJobBookResponse industrializeManufactureJobBook(String userId, IndustrializeManufactureJobBookRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.industrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 日清月结-计件报工查询接口
+     *
+     * @param request IndustrializeManufactureQueryJobsRequest
+     * @param headers IndustrializeManufactureQueryJobsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return IndustrializeManufactureQueryJobsResponse
+     */
     public IndustrializeManufactureQueryJobsResponse industrializeManufactureQueryJobsWithOptions(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -217,6 +239,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new IndustrializeManufactureQueryJobsResponse());
     }
 
+    /**
+     * @summary 日清月结-计件报工查询接口
+     *
+     * @param request IndustrializeManufactureQueryJobsRequest
+     * @return IndustrializeManufactureQueryJobsResponse
+     */
     public IndustrializeManufactureQueryJobsResponse industrializeManufactureQueryJobs(IndustrializeManufactureQueryJobsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();

@@ -73,6 +73,9 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResult extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
@@ -85,6 +88,9 @@ public class GetFormInstanceResponseBody extends TeaModel {
         @NameInMap("forms")
         public java.util.List<GetFormInstanceResponseBodyResultForms> forms;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 

@@ -7,6 +7,9 @@ public class QuerySchemaAndProcessRequest extends TeaModel {
     @NameInMap("appUuid")
     public String appUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 

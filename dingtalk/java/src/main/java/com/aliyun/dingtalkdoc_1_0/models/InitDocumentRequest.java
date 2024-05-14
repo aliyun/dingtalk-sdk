@@ -7,12 +7,18 @@ public class InitDocumentRequest extends TeaModel {
     @NameInMap("attachmentsMap")
     public java.util.Map<String, AttachmentsMapValue> attachmentsMap;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("importType")
     public Integer importType;
 
     @NameInMap("linksKey")
     public String linksKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

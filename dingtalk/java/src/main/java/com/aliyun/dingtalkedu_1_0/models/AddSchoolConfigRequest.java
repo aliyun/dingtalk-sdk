@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddSchoolConfigRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorName")
     public String operatorName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("temperatureUpLimit")
     public Long temperatureUpLimit;
 

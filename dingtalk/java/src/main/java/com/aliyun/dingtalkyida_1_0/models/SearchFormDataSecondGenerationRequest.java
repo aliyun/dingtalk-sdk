@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataSecondGenerationRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -13,6 +16,9 @@ public class SearchFormDataSecondGenerationRequest extends TeaModel {
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -37,9 +43,15 @@ public class SearchFormDataSecondGenerationRequest extends TeaModel {
     @NameInMap("searchCondition")
     public String searchCondition;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

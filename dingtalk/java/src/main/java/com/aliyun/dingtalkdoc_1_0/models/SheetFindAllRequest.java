@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SheetFindAllRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("findOptions")
     public SheetFindAllRequestFindOptions findOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("text")
     public String text;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -69,6 +78,9 @@ public class SheetFindAllRequest extends TeaModel {
         @NameInMap("scope")
         public String scope;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionCells")
         public Boolean unionCells;
 

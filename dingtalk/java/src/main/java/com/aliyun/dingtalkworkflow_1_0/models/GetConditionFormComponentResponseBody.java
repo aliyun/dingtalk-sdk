@@ -21,9 +21,15 @@ public class GetConditionFormComponentResponseBody extends TeaModel {
     }
 
     public static class GetConditionFormComponentResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 

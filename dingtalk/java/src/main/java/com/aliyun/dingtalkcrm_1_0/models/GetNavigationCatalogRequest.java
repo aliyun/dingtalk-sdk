@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNavigationCatalogRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizTraceId")
     public String bizTraceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("module")
     public String module;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomerSendMsgTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageContent")
     public CustomerSendMsgTaskRequestMessageContent messageContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
@@ -16,6 +22,9 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
     @NameInMap("sendConfig")
     public CustomerSendMsgTaskRequestSendConfig sendConfig;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -98,12 +107,21 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
         @NameInMap("btns")
         public java.util.List<CustomerSendMsgTaskRequestMessageContentBtns> btns;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageType")
         public String messageType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -240,12 +258,18 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
     }
 
     public static class CustomerSendMsgTaskRequestSendConfig extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("needUrlTrack")
         public Boolean needUrlTrack;
 
         @NameInMap("sendTime")
         public String sendTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sendType")
         public String sendType;
 

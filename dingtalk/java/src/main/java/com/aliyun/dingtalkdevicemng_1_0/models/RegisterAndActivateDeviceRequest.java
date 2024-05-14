@@ -10,12 +10,18 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
     @NameInMap("deviceCategory")
     public Integer deviceCategory;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
     @NameInMap("deviceDetailUrl")
     public String deviceDetailUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceName")
     public String deviceName;
 

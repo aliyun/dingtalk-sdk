@@ -10,6 +10,9 @@ public class GetInnerAppResponseBody extends TeaModel {
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appSecret")
     public String appSecret;
 

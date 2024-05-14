@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncDataResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<SyncDataResponseBodyList> list;
 
@@ -21,18 +24,33 @@ public class SyncDataResponseBody extends TeaModel {
     }
 
     public static class SyncDataResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizPrimaryKey")
         public String bizPrimaryKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrCode")
         public String subErrCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("triggerId")
         public String triggerId;
 

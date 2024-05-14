@@ -4,12 +4,18 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpgradeTemplateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
     @NameInMap("forceUpgrade")
     public Boolean forceUpgrade;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tmcCorpId")
     public String tmcCorpId;
 

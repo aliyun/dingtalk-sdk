@@ -7,12 +7,18 @@ public class EditExchangeRequest extends TeaModel {
     @NameInMap("data")
     public EditExchangeRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -57,6 +63,9 @@ public class EditExchangeRequest extends TeaModel {
         @NameInMap("child_mx")
         public String childMx;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -69,12 +78,18 @@ public class EditExchangeRequest extends TeaModel {
         @NameInMap("hh_inempid")
         public String hhInempid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hh_inlibid")
         public String hhInlibid;
 
         @NameInMap("hh_intime")
         public String hhIntime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hh_number")
         public String hhNumber;
 
@@ -84,6 +99,9 @@ public class EditExchangeRequest extends TeaModel {
         @NameInMap("hh_outempid")
         public String hhOutempid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hh_outlibid")
         public String hhOutlibid;
 
@@ -96,6 +114,9 @@ public class EditExchangeRequest extends TeaModel {
         @NameInMap("hh_state")
         public String hhState;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hh_title")
         public String hhTitle;
 

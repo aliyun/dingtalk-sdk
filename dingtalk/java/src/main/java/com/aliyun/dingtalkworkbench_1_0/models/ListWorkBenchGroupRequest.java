@@ -7,9 +7,15 @@ public class ListWorkBenchGroupRequest extends TeaModel {
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupType")
     public String groupType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

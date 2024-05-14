@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ShareUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public ShareUrlRequestParam param;
 
@@ -21,6 +24,9 @@ public class ShareUrlRequest extends TeaModel {
     }
 
     public static class ShareUrlRequestParam extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 

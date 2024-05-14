@@ -4,15 +4,27 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingMeBaseDataRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("byDay")
     public Boolean byDay;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDay")
     public String endDay;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDay")
     public String startDay;
 

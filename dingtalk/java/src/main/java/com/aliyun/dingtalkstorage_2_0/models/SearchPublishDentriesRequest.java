@@ -4,15 +4,24 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class SearchPublishDentriesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
     @NameInMap("option")
     public SearchPublishDentriesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workspaceId")
     public String workspaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

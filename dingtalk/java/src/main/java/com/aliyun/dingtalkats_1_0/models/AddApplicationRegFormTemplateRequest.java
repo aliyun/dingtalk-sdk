@@ -7,15 +7,24 @@ public class AddApplicationRegFormTemplateRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("outerId")
     public String outerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

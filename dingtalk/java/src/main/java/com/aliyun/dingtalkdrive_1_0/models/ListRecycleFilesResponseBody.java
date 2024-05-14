@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleFilesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("recycleItems")
     public java.util.List<ListRecycleFilesResponseBodyRecycleItems> recycleItems;
 
@@ -35,24 +41,47 @@ public class ListRecycleFilesResponseBody extends TeaModel {
         @NameInMap("contentType")
         public String contentType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deleteStaffId")
         public String deleteStaffId;
 
+        /**
+         * <p>This parameter is required.</p>
+         * <br>
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("deleteTime")
         public String deleteTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filePath")
         public String filePath;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("recycleItemId")
         public String recycleItemId;
 

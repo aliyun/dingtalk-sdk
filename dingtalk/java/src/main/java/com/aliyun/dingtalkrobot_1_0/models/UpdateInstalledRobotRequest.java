@@ -16,9 +16,15 @@ public class UpdateInstalledRobotRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updateType")
     public Integer updateType;
 

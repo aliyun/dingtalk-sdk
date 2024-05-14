@@ -4,18 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppLoginCodeGenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signTimestampStr")
     public String signTimestampStr;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signature")
     public String signature;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fullUrl")
     public String fullUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

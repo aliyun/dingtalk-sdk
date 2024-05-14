@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactDeptInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public CustomizeContactDeptInfoResponseBodyContent content;
 
@@ -21,27 +24,51 @@ public class CustomizeContactDeptInfoResponseBody extends TeaModel {
     }
 
     public static class CustomizeContactDeptInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("managerIdList")
         public java.util.List<String> managerIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("order")
         public Long order;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("parentDeptId")
         public Long parentDeptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("refId")
         public Long refId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Long type;
 

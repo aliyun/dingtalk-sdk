@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -19,21 +22,39 @@ public class ExecuteTaskRequest extends TeaModel {
     @NameInMap("noExecuteExpressions")
     public String noExecuteExpressions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outResult")
     public String outResult;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

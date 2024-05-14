@@ -10,15 +10,24 @@ public class ListOrderRequest extends TeaModel {
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

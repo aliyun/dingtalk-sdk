@@ -4,15 +4,27 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureFeeListGetResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<IndustryManufactureFeeListGetResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,54 +66,105 @@ public class IndustryManufactureFeeListGetResponseBody extends TeaModel {
     }
 
     public static class IndustryManufactureFeeListGetResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Float count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ext")
         public String ext;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isDeleted")
         public String isDeleted;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("materialName")
         public String materialName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("materialNo")
         public String materialNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("perAmount")
         public Float perAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("productionTaskNo")
         public String productionTaskNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 

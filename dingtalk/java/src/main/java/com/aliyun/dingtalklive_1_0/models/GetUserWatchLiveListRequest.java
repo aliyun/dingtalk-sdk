@@ -4,15 +4,24 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserWatchLiveListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("filterType")
     public Integer filterType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

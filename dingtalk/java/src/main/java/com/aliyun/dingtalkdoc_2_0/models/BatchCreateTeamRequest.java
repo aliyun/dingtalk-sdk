@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateTeamRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public BatchCreateTeamRequestParam param;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -35,12 +41,21 @@ public class BatchCreateTeamRequest extends TeaModel {
         @NameInMap("adminUnionIdList")
         public java.util.List<String> adminUnionIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorUnionId")
         public String creatorUnionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("teamName")
         public String teamName;
 
@@ -84,6 +99,9 @@ public class BatchCreateTeamRequest extends TeaModel {
     }
 
     public static class BatchCreateTeamRequestParam extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTeamParamList")
         public java.util.List<BatchCreateTeamRequestParamCreateTeamParamList> createTeamParamList;
 

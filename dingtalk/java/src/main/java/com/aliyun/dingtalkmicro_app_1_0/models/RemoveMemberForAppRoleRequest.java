@@ -7,9 +7,15 @@ public class RemoveMemberForAppRoleRequest extends TeaModel {
     @NameInMap("deptIdList")
     public java.util.List<Long> deptIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeVersion")
     public Long scopeVersion;
 

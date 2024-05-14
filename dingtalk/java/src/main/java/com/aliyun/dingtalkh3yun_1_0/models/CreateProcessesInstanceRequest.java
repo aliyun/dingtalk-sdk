@@ -4,12 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProcessesInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

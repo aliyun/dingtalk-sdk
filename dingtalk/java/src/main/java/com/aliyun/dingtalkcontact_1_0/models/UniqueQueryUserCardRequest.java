@@ -7,6 +7,9 @@ public class UniqueQueryUserCardRequest extends TeaModel {
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

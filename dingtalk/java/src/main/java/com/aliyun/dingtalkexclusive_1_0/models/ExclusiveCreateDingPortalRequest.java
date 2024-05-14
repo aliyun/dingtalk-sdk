@@ -7,12 +7,21 @@ public class ExclusiveCreateDingPortalRequest extends TeaModel {
     @NameInMap("dingPortalName")
     public String dingPortalName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateAppUuid")
     public String templateAppUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateCorpId")
     public String templateCorpId;
 

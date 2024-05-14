@@ -7,9 +7,15 @@ public class CrossOrgMigrateRequest extends TeaModel {
     @NameInMap("option")
     public CrossOrgMigrateRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public CrossOrgMigrateRequestParam param;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

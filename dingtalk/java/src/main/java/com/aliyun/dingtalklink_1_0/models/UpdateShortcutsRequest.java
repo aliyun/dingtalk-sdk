@@ -7,9 +7,15 @@ public class UpdateShortcutsRequest extends TeaModel {
     @NameInMap("details")
     public java.util.List<UpdateShortcutsRequestDetails> details;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sessionId")
     public String sessionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -52,15 +58,24 @@ public class UpdateShortcutsRequest extends TeaModel {
         @NameInMap("iconFont")
         public String iconFont;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("shortcutId")
         public String shortcutId;
 
         @NameInMap("slideIconMediaId")
         public String slideIconMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrbrain_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrbrainImportEmpInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<HrbrainImportEmpInfoRequestBody> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -32,30 +38,51 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
     }
 
     public static class HrbrainImportEmpInfoRequestBody extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("birthday")
         public String birthday;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptNo")
         public String deptNo;
 
         @NameInMap("dimissionDate")
         public String dimissionDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("empSource")
         public String empSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("empStatus")
         public String empStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("empType")
         public String empType;
 
         @NameInMap("extendInfo")
         public java.util.Map<String, ?> extendInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gender")
         public String gender;
 
@@ -68,6 +95,9 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
         @NameInMap("isDimission")
         public String isDimission;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobCodeName")
         public String jobCodeName;
 
@@ -80,18 +110,33 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
         @NameInMap("marriage")
         public String marriage;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nation")
         public String nation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nationCtry")
         public String nationCtry;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("politicalStatus")
         public String politicalStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("postName")
         public String postName;
 
@@ -116,6 +161,9 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
         @NameInMap("workLocCity")
         public String workLocCity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workNo")
         public String workNo;
 

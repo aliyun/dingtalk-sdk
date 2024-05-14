@@ -7,9 +7,15 @@ public class ExportPointOpenRequest extends TeaModel {
     @NameInMap("exportDate")
     public String exportDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("exportType")
     public Long exportType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

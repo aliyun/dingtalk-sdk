@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+     *
+     * @param request RunCallUserRequest
+     * @param headers RunCallUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RunCallUserResponse
+     */
     public RunCallUserResponse runCallUserWithOptions(RunCallUserRequest request, RunCallUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -65,6 +73,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RunCallUserResponse());
     }
 
+    /**
+     * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+     *
+     * @param request RunCallUserRequest
+     * @return RunCallUserResponse
+     */
     public RunCallUserResponse runCallUser(RunCallUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RunCallUserHeaders headers = new RunCallUserHeaders();

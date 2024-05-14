@@ -4,12 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<ListEmpAttributeVisibilityResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 

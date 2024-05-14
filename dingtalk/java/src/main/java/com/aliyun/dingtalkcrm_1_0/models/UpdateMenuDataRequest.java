@@ -7,18 +7,33 @@ public class UpdateMenuDataRequest extends TeaModel {
     @NameInMap("attr")
     public java.util.Map<String, ?> attr;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizTraceId")
     public String bizTraceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("module")
     public String module;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("navData")
     public UpdateMenuDataRequestNavData navData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operateType")
     public String operateType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
@@ -106,6 +121,9 @@ public class UpdateMenuDataRequest extends TeaModel {
     }
 
     public static class UpdateMenuDataRequestNavData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayStatus")
         public String displayStatus;
 
@@ -121,24 +139,39 @@ public class UpdateMenuDataRequest extends TeaModel {
         @NameInMap("integrationProtocol")
         public String integrationProtocol;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobileNavName")
         public String mobileNavName;
 
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("navCode")
         public String navCode;
 
         @NameInMap("navExtInfo")
         public UpdateMenuDataRequestNavDataNavExtInfo navExtInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("navId")
         public String navId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("navName")
         public String navName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("navStatus")
         public String navStatus;
 

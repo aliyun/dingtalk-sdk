@@ -4,21 +4,39 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessApproveCreateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("approveId")
     public String approveId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("punchParam")
     public ProcessApproveCreateRequestPunchParam punchParam;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subType")
     public String subType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tagName")
     public String tagName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -85,6 +103,9 @@ public class ProcessApproveCreateRequest extends TeaModel {
         @NameInMap("positionType")
         public String positionType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("punchTime")
         public Long punchTime;
 

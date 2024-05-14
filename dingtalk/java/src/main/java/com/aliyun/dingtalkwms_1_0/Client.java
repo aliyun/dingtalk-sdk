@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取物料列表
+     *
+     * @param request QueryGoodsListRequest
+     * @param headers QueryGoodsListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryGoodsListResponse
+     */
     public QueryGoodsListResponse queryGoodsListWithOptions(QueryGoodsListRequest request, QueryGoodsListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -65,6 +73,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryGoodsListResponse());
     }
 
+    /**
+     * @summary 获取物料列表
+     *
+     * @param request QueryGoodsListRequest
+     * @return QueryGoodsListResponse
+     */
     public QueryGoodsListResponse queryGoodsList(QueryGoodsListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryGoodsListHeaders headers = new QueryGoodsListHeaders();

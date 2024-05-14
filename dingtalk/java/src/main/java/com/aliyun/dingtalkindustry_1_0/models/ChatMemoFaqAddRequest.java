@@ -4,15 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChatMemoFaqAddRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("answer")
     public String answer;
 
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datasetId")
     public Long datasetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("question")
     public String question;
 

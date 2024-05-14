@@ -4,21 +4,39 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSimpleCubeModelListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cubeCode")
     public String cubeCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cubeTenantId")
     public String cubeTenantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

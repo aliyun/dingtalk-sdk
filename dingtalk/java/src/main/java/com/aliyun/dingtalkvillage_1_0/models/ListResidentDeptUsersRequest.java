@@ -10,9 +10,15 @@ public class ListResidentDeptUsersRequest extends TeaModel {
     @NameInMap("role")
     public String role;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("size")
     public Integer size;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

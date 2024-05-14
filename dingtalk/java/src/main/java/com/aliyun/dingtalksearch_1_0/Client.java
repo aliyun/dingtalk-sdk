@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 为指定的数据源批量添加数据项
+     *
+     * @param request BatchInsertSearchItemRequest
+     * @param headers BatchInsertSearchItemHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchInsertSearchItemResponse
+     */
     public BatchInsertSearchItemResponse batchInsertSearchItemWithOptions(String tabId, BatchInsertSearchItemRequest request, BatchInsertSearchItemHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchInsertSearchItemResponse());
     }
 
+    /**
+     * @summary 为指定的数据源批量添加数据项
+     *
+     * @param request BatchInsertSearchItemRequest
+     * @return BatchInsertSearchItemResponse
+     */
     public BatchInsertSearchItemResponse batchInsertSearchItem(String tabId, BatchInsertSearchItemRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchInsertSearchItemHeaders headers = new BatchInsertSearchItemHeaders();
         return this.batchInsertSearchItemWithOptions(tabId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建搜索数据源
+     *
+     * @param request CreateSearchTabRequest
+     * @param headers CreateSearchTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateSearchTabResponse
+     */
     public CreateSearchTabResponse createSearchTabWithOptions(CreateSearchTabRequest request, CreateSearchTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -113,12 +135,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateSearchTabResponse());
     }
 
+    /**
+     * @summary 创建搜索数据源
+     *
+     * @param request CreateSearchTabRequest
+     * @return CreateSearchTabResponse
+     */
     public CreateSearchTabResponse createSearchTab(CreateSearchTabRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateSearchTabHeaders headers = new CreateSearchTabHeaders();
         return this.createSearchTabWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 从指定的数据源中删除一条数据项
+     *
+     * @param headers DeleteSearchItemHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSearchItemResponse
+     */
     public DeleteSearchItemResponse deleteSearchItemWithOptions(String tabId, String itemId, DeleteSearchItemHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -146,12 +181,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSearchItemResponse());
     }
 
+    /**
+     * @summary 从指定的数据源中删除一条数据项
+     *
+     * @return DeleteSearchItemResponse
+     */
     public DeleteSearchItemResponse deleteSearchItem(String tabId, String itemId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSearchItemHeaders headers = new DeleteSearchItemHeaders();
         return this.deleteSearchItemWithOptions(tabId, itemId, headers, runtime);
     }
 
+    /**
+     * @summary 删除搜索数据源
+     *
+     * @param headers DeleteSearchTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSearchTabResponse
+     */
     public DeleteSearchTabResponse deleteSearchTabWithOptions(String tabId, DeleteSearchTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -179,12 +226,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSearchTabResponse());
     }
 
+    /**
+     * @summary 删除搜索数据源
+     *
+     * @return DeleteSearchTabResponse
+     */
     public DeleteSearchTabResponse deleteSearchTab(String tabId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSearchTabHeaders headers = new DeleteSearchTabHeaders();
         return this.deleteSearchTabWithOptions(tabId, headers, runtime);
     }
 
+    /**
+     * @summary 获取指定数据源中的一条数据项
+     *
+     * @param headers GetSearchItemHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSearchItemResponse
+     */
     public GetSearchItemResponse getSearchItemWithOptions(String tabId, String itemId, GetSearchItemHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -212,12 +271,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSearchItemResponse());
     }
 
+    /**
+     * @summary 获取指定数据源中的一条数据项
+     *
+     * @return GetSearchItemResponse
+     */
     public GetSearchItemResponse getSearchItem(String tabId, String itemId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSearchItemHeaders headers = new GetSearchItemHeaders();
         return this.getSearchItemWithOptions(tabId, itemId, headers, runtime);
     }
 
+    /**
+     * @summary 根据搜索关键词获取相关数据项
+     *
+     * @param request GetSearchItemsByKeyWordRequest
+     * @param headers GetSearchItemsByKeyWordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSearchItemsByKeyWordResponse
+     */
     public GetSearchItemsByKeyWordResponse getSearchItemsByKeyWordWithOptions(String tabId, GetSearchItemsByKeyWordRequest request, GetSearchItemsByKeyWordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -260,12 +332,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSearchItemsByKeyWordResponse());
     }
 
+    /**
+     * @summary 根据搜索关键词获取相关数据项
+     *
+     * @param request GetSearchItemsByKeyWordRequest
+     * @return GetSearchItemsByKeyWordResponse
+     */
     public GetSearchItemsByKeyWordResponse getSearchItemsByKeyWord(String tabId, GetSearchItemsByKeyWordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSearchItemsByKeyWordHeaders headers = new GetSearchItemsByKeyWordHeaders();
         return this.getSearchItemsByKeyWordWithOptions(tabId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取搜索数据源
+     *
+     * @param headers GetSearchTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSearchTabResponse
+     */
     public GetSearchTabResponse getSearchTabWithOptions(String tabId, GetSearchTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -293,12 +378,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSearchTabResponse());
     }
 
+    /**
+     * @summary 获取搜索数据源
+     *
+     * @return GetSearchTabResponse
+     */
     public GetSearchTabResponse getSearchTab(String tabId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSearchTabHeaders headers = new GetSearchTabHeaders();
         return this.getSearchTabWithOptions(tabId, headers, runtime);
     }
 
+    /**
+     * @summary 为指定的数据源添加一条数据项
+     *
+     * @param request InsertSearchItemRequest
+     * @param headers InsertSearchItemHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InsertSearchItemResponse
+     */
     public InsertSearchItemResponse insertSearchItemWithOptions(String tabId, InsertSearchItemRequest request, InsertSearchItemHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -361,12 +459,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InsertSearchItemResponse());
     }
 
+    /**
+     * @summary 为指定的数据源添加一条数据项
+     *
+     * @param request InsertSearchItemRequest
+     * @return InsertSearchItemResponse
+     */
     public InsertSearchItemResponse insertSearchItem(String tabId, InsertSearchItemRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertSearchItemHeaders headers = new InsertSearchItemHeaders();
         return this.insertSearchItemWithOptions(tabId, request, headers, runtime);
     }
 
+    /**
+     * @summary 列出企业所有的搜索数据源
+     *
+     * @param headers ListSearchTabsByOrgIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListSearchTabsByOrgIdResponse
+     */
     public ListSearchTabsByOrgIdResponse listSearchTabsByOrgIdWithOptions(ListSearchTabsByOrgIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -394,12 +505,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListSearchTabsByOrgIdResponse());
     }
 
+    /**
+     * @summary 列出企业所有的搜索数据源
+     *
+     * @return ListSearchTabsByOrgIdResponse
+     */
     public ListSearchTabsByOrgIdResponse listSearchTabsByOrgId() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListSearchTabsByOrgIdHeaders headers = new ListSearchTabsByOrgIdHeaders();
         return this.listSearchTabsByOrgIdWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 更新搜索数据源
+     *
+     * @param request UpdateSearchTabRequest
+     * @param headers UpdateSearchTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateSearchTabResponse
+     */
     public UpdateSearchTabResponse updateSearchTabWithOptions(String tabId, UpdateSearchTabRequest request, UpdateSearchTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -454,6 +578,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateSearchTabResponse());
     }
 
+    /**
+     * @summary 更新搜索数据源
+     *
+     * @param request UpdateSearchTabRequest
+     * @return UpdateSearchTabResponse
+     */
     public UpdateSearchTabResponse updateSearchTab(String tabId, UpdateSearchTabRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateSearchTabHeaders headers = new UpdateSearchTabHeaders();

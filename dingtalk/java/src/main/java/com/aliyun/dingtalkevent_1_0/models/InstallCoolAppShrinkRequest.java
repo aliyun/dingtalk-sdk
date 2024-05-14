@@ -4,27 +4,45 @@ package com.aliyun.dingtalkevent_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallCoolAppShrinkRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("feature")
     public String featureShrink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("installUid")
     public String installUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     @NameInMap("options")
     public String optionsShrink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("suiteId")
     public String suiteId;
 

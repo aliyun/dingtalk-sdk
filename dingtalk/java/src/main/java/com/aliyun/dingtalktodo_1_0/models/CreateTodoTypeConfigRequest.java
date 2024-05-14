@@ -7,6 +7,9 @@ public class CreateTodoTypeConfigRequest extends TeaModel {
     @NameInMap("actionList")
     public java.util.List<CreateTodoTypeConfigRequestActionList> actionList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardType")
     public Integer cardType;
 
@@ -16,9 +19,15 @@ public class CreateTodoTypeConfigRequest extends TeaModel {
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pcDetailUrlOpenMode")
     public String pcDetailUrlOpenMode;
 

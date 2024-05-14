@@ -7,6 +7,9 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public ServiceWindowMessageBatchPushRequestDetail detail;
 
@@ -32,9 +35,15 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
     }
 
     public static class ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -188,9 +197,15 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
     }
 
     public static class ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("text")
         public String text;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -218,6 +233,9 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
     }
 
     public static class ServiceWindowMessageBatchPushRequestDetailMessageBodyText extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -292,18 +310,30 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
         @NameInMap("bizRequestId")
         public String bizRequestId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageBody")
         public ServiceWindowMessageBatchPushRequestDetailMessageBody messageBody;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
         @NameInMap("sendToAll")
         public Boolean sendToAll;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

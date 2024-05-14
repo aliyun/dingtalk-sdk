@@ -4,6 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbOrgIdByDingOrgIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public GetTbOrgIdByDingOrgIdResponseBodyResult result;
 
@@ -21,6 +24,9 @@ public class GetTbOrgIdByDingOrgIdResponseBody extends TeaModel {
     }
 
     public static class GetTbOrgIdByDingOrgIdResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tbOrganizationId")
         public String tbOrganizationId;
 

@@ -4,15 +4,24 @@ package com.aliyun.dingtalknotable_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFieldRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("property")
     public java.util.Map<String, ?> property;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

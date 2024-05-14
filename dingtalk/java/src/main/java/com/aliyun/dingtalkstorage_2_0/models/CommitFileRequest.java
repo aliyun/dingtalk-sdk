@@ -4,15 +4,24 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class CommitFileRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("option")
     public CommitFileRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uploadKey")
     public String uploadKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -54,12 +63,21 @@ public class CommitFileRequest extends TeaModel {
     }
 
     public static class CommitFileRequestOptionAppProperties extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 

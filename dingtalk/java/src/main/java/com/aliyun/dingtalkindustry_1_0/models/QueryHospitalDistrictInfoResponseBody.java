@@ -7,12 +7,21 @@ public class QueryHospitalDistrictInfoResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryHospitalDistrictInfoResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -54,27 +63,51 @@ public class QueryHospitalDistrictInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalDistrictInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deleted")
         public Integer deleted;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("districtName")
         public String districtName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("districtType")
         public Integer districtType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("parentDistrictId")
         public Long parentDistrictId;
 

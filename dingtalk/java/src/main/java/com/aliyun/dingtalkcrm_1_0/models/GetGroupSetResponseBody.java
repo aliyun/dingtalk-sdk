@@ -19,6 +19,9 @@ public class GetGroupSetResponseBody extends TeaModel {
     @NameInMap("lastOpenConversationId")
     public String lastOpenConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("manager")
     public java.util.List<GetGroupSetResponseBodyManager> manager;
 
@@ -43,6 +46,9 @@ public class GetGroupSetResponseBody extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("owner")
     public GetGroupSetResponseBodyOwner owner;
 

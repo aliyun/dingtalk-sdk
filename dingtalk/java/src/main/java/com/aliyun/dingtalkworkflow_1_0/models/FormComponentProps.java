@@ -384,9 +384,15 @@ public class FormComponentProps extends TeaModel {
     }
 
     public static class FormComponentPropsStatField extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentId")
         public String componentId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 

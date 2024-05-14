@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建模板
+     *
+     * @param request CreateTemplatesRequest
+     * @param headers CreateTemplatesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateTemplatesResponse
+     */
     public CreateTemplatesResponse createTemplatesWithOptions(CreateTemplatesRequest request, CreateTemplatesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -109,12 +117,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateTemplatesResponse());
     }
 
+    /**
+     * @summary 创建模板
+     *
+     * @param request CreateTemplatesRequest
+     * @return CreateTemplatesResponse
+     */
     public CreateTemplatesResponse createTemplates(CreateTemplatesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTemplatesHeaders headers = new CreateTemplatesHeaders();
         return this.createTemplatesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询员工提交和收到的日志列表
+     *
+     * @param request GetSendAndReceiveReportListRequest
+     * @param headers GetSendAndReceiveReportListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSendAndReceiveReportListResponse
+     */
     public GetSendAndReceiveReportListResponse getSendAndReceiveReportListWithOptions(GetSendAndReceiveReportListRequest request, GetSendAndReceiveReportListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -165,12 +187,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSendAndReceiveReportListResponse());
     }
 
+    /**
+     * @summary 查询员工提交和收到的日志列表
+     *
+     * @param request GetSendAndReceiveReportListRequest
+     * @return GetSendAndReceiveReportListResponse
+     */
     public GetSendAndReceiveReportListResponse getSendAndReceiveReportList(GetSendAndReceiveReportListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSendAndReceiveReportListHeaders headers = new GetSendAndReceiveReportListHeaders();
         return this.getSendAndReceiveReportListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取指定周期的提交统计结果
+     *
+     * @param request GetSubmitStatisticsRequest
+     * @param headers GetSubmitStatisticsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSubmitStatisticsResponse
+     */
     public GetSubmitStatisticsResponse getSubmitStatisticsWithOptions(GetSubmitStatisticsRequest request, GetSubmitStatisticsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -221,12 +257,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSubmitStatisticsResponse());
     }
 
+    /**
+     * @summary 获取指定周期的提交统计结果
+     *
+     * @param request GetSubmitStatisticsRequest
+     * @return GetSubmitStatisticsResponse
+     */
     public GetSubmitStatisticsResponse getSubmitStatistics(GetSubmitStatisticsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSubmitStatisticsHeaders headers = new GetSubmitStatisticsHeaders();
         return this.getSubmitStatisticsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取创建的统计规则信息
+     *
+     * @param request QueryRemindResultsRequest
+     * @param headers QueryRemindResultsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryRemindResultsResponse
+     */
     public QueryRemindResultsResponse queryRemindResultsWithOptions(QueryRemindResultsRequest request, QueryRemindResultsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -273,12 +323,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryRemindResultsResponse());
     }
 
+    /**
+     * @summary 获取创建的统计规则信息
+     *
+     * @param request QueryRemindResultsRequest
+     * @return QueryRemindResultsResponse
+     */
     public QueryRemindResultsResponse queryRemindResults(QueryRemindResultsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryRemindResultsHeaders headers = new QueryRemindResultsHeaders();
         return this.queryRemindResultsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取日志详情
+     *
+     * @param request QueryReportDetailRequest
+     * @param headers QueryReportDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryReportDetailResponse
+     */
     public QueryReportDetailResponse queryReportDetailWithOptions(QueryReportDetailRequest request, QueryReportDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -313,6 +377,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryReportDetailResponse());
     }
 
+    /**
+     * @summary 获取日志详情
+     *
+     * @param request QueryReportDetailRequest
+     * @return QueryReportDetailResponse
+     */
     public QueryReportDetailResponse queryReportDetail(QueryReportDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryReportDetailHeaders headers = new QueryReportDetailHeaders();

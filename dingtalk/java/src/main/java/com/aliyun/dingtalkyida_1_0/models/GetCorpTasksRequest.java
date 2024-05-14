@@ -7,6 +7,9 @@ public class GetCorpTasksRequest extends TeaModel {
     @NameInMap("appTypes")
     public String appTypes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -31,9 +34,15 @@ public class GetCorpTasksRequest extends TeaModel {
     @NameInMap("processCodes")
     public String processCodes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("token")
     public String token;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -27,9 +27,15 @@ public class CreateTaskObjectLinkRequest extends TeaModel {
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

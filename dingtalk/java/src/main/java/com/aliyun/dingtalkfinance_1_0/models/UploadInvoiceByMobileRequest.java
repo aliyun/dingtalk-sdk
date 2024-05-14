@@ -4,12 +4,21 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadInvoiceByMobileRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoices")
     public java.util.List<UploadInvoiceByMobileRequestInvoices> invoices;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobileStateCode")
     public String mobileStateCode;
 
@@ -43,45 +52,78 @@ public class UploadInvoiceByMobileRequest extends TeaModel {
     }
 
     public static class UploadInvoiceByMobileRequestInvoices extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceAmount")
         public String invoiceAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceDate")
         public String invoiceDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
         @NameInMap("logoUrl")
         public String logoUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeName")
         public String payeeName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeTaxNo")
         public String payeeTaxNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payerName")
         public String payerName;
 
         @NameInMap("payerTaxNo")
         public String payerTaxNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pdfUrl")
         public String pdfUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
         @NameInMap("verifyCode")
         public String verifyCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("withoutTaxAmount")
         public String withoutTaxAmount;
 

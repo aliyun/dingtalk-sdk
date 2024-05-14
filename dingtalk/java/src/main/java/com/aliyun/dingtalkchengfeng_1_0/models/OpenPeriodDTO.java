@@ -4,18 +4,33 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenPeriodDTO extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDate")
     public Long endDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodBizType")
     public String periodBizType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public Long startDate;
 

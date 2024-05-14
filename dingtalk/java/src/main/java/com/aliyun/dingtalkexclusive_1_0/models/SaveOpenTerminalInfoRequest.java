@@ -4,15 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveOpenTerminalInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("logSource")
     public String logSource;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("logType")
     public String logType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openExt")
     public String openExt;
 

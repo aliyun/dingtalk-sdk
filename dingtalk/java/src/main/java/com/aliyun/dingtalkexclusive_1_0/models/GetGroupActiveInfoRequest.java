@@ -10,12 +10,21 @@ public class GetGroupActiveInfoRequest extends TeaModel {
     @NameInMap("groupType")
     public Long groupType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetShareRoleMembersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<GetShareRoleMembersResponseBodyResult> result;
 
@@ -21,9 +24,15 @@ public class GetShareRoleMembersResponseBody extends TeaModel {
     }
 
     public static class GetShareRoleMembersResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberUserIdListInTrunkOrg")
         public java.util.List<String> memberUserIdListInTrunkOrg;
 

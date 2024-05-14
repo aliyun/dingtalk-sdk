@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建群公告
+     *
+     * @param request CreateGroupBlackboardRequest
+     * @param headers CreateGroupBlackboardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateGroupBlackboardResponse
+     */
     public CreateGroupBlackboardResponse createGroupBlackboardWithOptions(CreateGroupBlackboardRequest request, CreateGroupBlackboardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -73,12 +81,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateGroupBlackboardResponse());
     }
 
+    /**
+     * @summary 创建群公告
+     *
+     * @param request CreateGroupBlackboardRequest
+     * @return CreateGroupBlackboardResponse
+     */
     public CreateGroupBlackboardResponse createGroupBlackboard(CreateGroupBlackboardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateGroupBlackboardHeaders headers = new CreateGroupBlackboardHeaders();
         return this.createGroupBlackboardWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除群公告
+     *
+     * @param request DeleteGroupBlackboardRequest
+     * @param headers DeleteGroupBlackboardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteGroupBlackboardResponse
+     */
     public DeleteGroupBlackboardResponse deleteGroupBlackboardWithOptions(DeleteGroupBlackboardRequest request, DeleteGroupBlackboardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,6 +143,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteGroupBlackboardResponse());
     }
 
+    /**
+     * @summary 删除群公告
+     *
+     * @param request DeleteGroupBlackboardRequest
+     * @return DeleteGroupBlackboardResponse
+     */
     public DeleteGroupBlackboardResponse deleteGroupBlackboard(DeleteGroupBlackboardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();

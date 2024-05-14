@@ -7,6 +7,9 @@ public class DeleteProcessRequest extends TeaModel {
     @NameInMap("cleanRunningTask")
     public Boolean cleanRunningTask;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 

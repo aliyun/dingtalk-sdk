@@ -7,6 +7,9 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("devices")
     public java.util.List<BatchUpdateDeviceRequestDevices> devices;
 
@@ -73,6 +76,9 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     }
 
     public static class BatchUpdateDeviceRequestDevices extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceId")
         public String deviceId;
 

@@ -10,15 +10,24 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instNo")
     public String instNo;
 
     @NameInMap("isBatchJob")
     public String isBatchJob;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("manufactureDate")
     public String manufactureDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mesAppKey")
     public String mesAppKey;
 
@@ -40,6 +49,9 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
@@ -61,6 +73,9 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("userNameList")
     public String userNameList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

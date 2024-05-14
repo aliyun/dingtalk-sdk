@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 检查用户任务状态
+     *
+     * @param request CheckUserTaskStatusRequest
+     * @param headers CheckUserTaskStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckUserTaskStatusResponse
+     */
     public CheckUserTaskStatusResponse checkUserTaskStatusWithOptions(CheckUserTaskStatusRequest request, CheckUserTaskStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CheckUserTaskStatusResponse());
     }
 
+    /**
+     * @summary 检查用户任务状态
+     *
+     * @param request CheckUserTaskStatusRequest
+     * @return CheckUserTaskStatusResponse
+     */
     public CheckUserTaskStatusResponse checkUserTaskStatus(CheckUserTaskStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckUserTaskStatusHeaders headers = new CheckUserTaskStatusHeaders();
         return this.checkUserTaskStatusWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 检查用户任务状态
+     *
+     * @param request CheckUserTasksStatusRequest
+     * @param headers CheckUserTasksStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckUserTasksStatusResponse
+     */
     public CheckUserTasksStatusResponse checkUserTasksStatusWithOptions(CheckUserTasksStatusRequest request, CheckUserTasksStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -93,6 +115,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CheckUserTasksStatusResponse());
     }
 
+    /**
+     * @summary 检查用户任务状态
+     *
+     * @param request CheckUserTasksStatusRequest
+     * @return CheckUserTasksStatusResponse
+     */
     public CheckUserTasksStatusResponse checkUserTasksStatus(CheckUserTasksStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckUserTasksStatusHeaders headers = new CheckUserTasksStatusHeaders();

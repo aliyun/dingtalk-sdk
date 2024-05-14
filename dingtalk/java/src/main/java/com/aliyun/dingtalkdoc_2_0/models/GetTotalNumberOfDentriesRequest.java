@@ -7,6 +7,9 @@ public class GetTotalNumberOfDentriesRequest extends TeaModel {
     @NameInMap("includeFolder")
     public Boolean includeFolder;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

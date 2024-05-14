@@ -4,9 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("needRetry")
     public Boolean needRetry;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tradeAction")
     public String tradeAction;
 

@@ -7,18 +7,30 @@ public class HUploadPackageStatusResponseBody extends TeaModel {
     @NameInMap("buildTime")
     public Long buildTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("finished")
     public Boolean finished;
 
     @NameInMap("packageSize")
     public Long packageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("version")
     public String version;
 

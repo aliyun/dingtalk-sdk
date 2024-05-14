@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 生态日志数据互通
+     *
+     * @param request SaveOpenExternalLogRequest
+     * @param headers SaveOpenExternalLogHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveOpenExternalLogResponse
+     */
     public SaveOpenExternalLogResponse saveOpenExternalLogWithOptions(SaveOpenExternalLogRequest request, SaveOpenExternalLogHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,6 +73,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SaveOpenExternalLogResponse());
     }
 
+    /**
+     * @summary 生态日志数据互通
+     *
+     * @param request SaveOpenExternalLogRequest
+     * @return SaveOpenExternalLogResponse
+     */
     public SaveOpenExternalLogResponse saveOpenExternalLog(SaveOpenExternalLogRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SaveOpenExternalLogHeaders headers = new SaveOpenExternalLogHeaders();

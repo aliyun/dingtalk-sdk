@@ -4,9 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActionsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("connectorId")
     public String connectorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("connectorProviderCorpId")
     public String connectorProviderCorpId;
 

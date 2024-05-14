@@ -4,27 +4,51 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDepartmentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authInfo")
     public String authInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authType")
     public String authType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizExt")
     public String bizExt;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentType")
     public String departmentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemUrl")
     public String systemUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

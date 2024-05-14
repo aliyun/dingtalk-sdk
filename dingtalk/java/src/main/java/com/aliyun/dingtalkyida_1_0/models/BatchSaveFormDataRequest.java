@@ -4,15 +4,24 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSaveFormDataRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
     @NameInMap("asynchronousExecution")
     public Boolean asynchronousExecution;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formDataJsonList")
     public java.util.List<String> formDataJsonList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -22,9 +31,15 @@ public class BatchSaveFormDataRequest extends TeaModel {
     @NameInMap("noExecuteExpression")
     public Boolean noExecuteExpression;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

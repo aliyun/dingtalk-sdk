@@ -4,36 +4,69 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTrainExceedApplyResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("applyId")
     public Long applyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("applyIntentionInfoDO")
     public GetTrainExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("btripCause")
     public String btripCause;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("exceedReason")
     public String exceedReason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("exceedType")
     public Integer exceedType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("originStandard")
     public String originStandard;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("submitTime")
     public String submitTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -131,39 +164,75 @@ public class GetTrainExceedApplyResponseBody extends TeaModel {
     }
 
     public static class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("arrCity")
         public String arrCity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("arrCityName")
         public String arrCityName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("arrStation")
         public String arrStation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("arrTime")
         public String arrTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("depCity")
         public String depCity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("depCityName")
         public String depCityName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("depStation")
         public String depStation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("depTime")
         public String depTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("price")
         public Long price;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("seatName")
         public String seatName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("trainNo")
         public String trainNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("trainTypeDesc")
         public String trainTypeDesc;
 

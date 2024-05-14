@@ -7,9 +7,15 @@ public class FormCreateRequest extends TeaModel {
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formComponents")
     public java.util.List<FormComponent> formComponents;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

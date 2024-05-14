@@ -10,6 +10,9 @@ public class UpdateOrganizationTaskPriorityRequest extends TeaModel {
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 

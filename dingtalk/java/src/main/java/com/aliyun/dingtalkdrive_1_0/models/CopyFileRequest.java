@@ -10,9 +10,15 @@ public class CopyFileRequest extends TeaModel {
     @NameInMap("targetParentId")
     public String targetParentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

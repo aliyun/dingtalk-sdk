@@ -4,18 +4,33 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotDingMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contentParams")
     public java.util.Map<String, String> contentParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dingTemplateId")
     public String dingTemplateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

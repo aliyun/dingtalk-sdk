@@ -4,15 +4,24 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchExecuteProcessInstancesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actionerUserId")
     public String actionerUserId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public String result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskInfoList")
     public java.util.List<BatchExecuteProcessInstancesRequestTaskInfoList> taskInfoList;
 
@@ -54,9 +63,15 @@ public class BatchExecuteProcessInstancesRequest extends TeaModel {
     }
 
     public static class BatchExecuteProcessInstancesRequestTaskInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 

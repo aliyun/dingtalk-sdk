@@ -4,9 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteSpaceResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("delFailedDept")
     public java.util.List<DeleteSpaceResponseBodyDelFailedDept> delFailedDept;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("delSuccessCount")
     public Boolean delSuccessCount;
 
@@ -32,6 +38,9 @@ public class DeleteSpaceResponseBody extends TeaModel {
     }
 
     public static class DeleteSpaceResponseBodyDelFailedDept extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 

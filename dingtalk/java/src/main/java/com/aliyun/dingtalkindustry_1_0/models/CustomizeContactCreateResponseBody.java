@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactCreateResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public CustomizeContactCreateResponseBodyContent content;
 
@@ -21,15 +24,27 @@ public class CustomizeContactCreateResponseBody extends TeaModel {
     }
 
     public static class CustomizeContactCreateResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("order")
         public Long order;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("rootDeptId")
         public Long rootDeptId;
 

@@ -21,12 +21,21 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -62,12 +71,21 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -103,24 +121,45 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseType")
         public Integer courseType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courserGroupItemEndDate")
         public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courserGroupItemStartDate")
         public QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 
@@ -188,30 +227,57 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseGroupIntroduce")
         public String courseGroupIntroduce;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseGroupName")
         public String courseGroupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courserGroupItemModels")
         public java.util.List<QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels> courserGroupItemModels;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isvCourseGroupCode")
         public String isvCourseGroupCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("periodCode")
         public String periodCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("schoolYear")
         public String schoolYear;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semester")
         public Integer semester;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subjectName")
         public String subjectName;
 

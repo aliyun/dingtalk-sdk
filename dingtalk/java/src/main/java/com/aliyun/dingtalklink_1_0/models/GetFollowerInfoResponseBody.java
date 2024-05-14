@@ -7,6 +7,9 @@ public class GetFollowerInfoResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public GetFollowerInfoResponseBodyResult result;
 

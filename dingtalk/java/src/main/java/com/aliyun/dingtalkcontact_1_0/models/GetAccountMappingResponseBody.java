@@ -21,6 +21,9 @@ public class GetAccountMappingResponseBody extends TeaModel {
     }
 
     public static class GetAccountMappingResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("domain")
         public String domain;
 
@@ -33,6 +36,9 @@ public class GetAccountMappingResponseBody extends TeaModel {
         @NameInMap("outTenantId")
         public String outTenantId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

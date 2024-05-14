@@ -7,15 +7,27 @@ public class AddLeadsRequest extends TeaModel {
     @NameInMap("assignTimestamp")
     public Long assignTimestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("assignUserId")
     public String assignUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("assignedUserId")
     public String assignedUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leads")
     public java.util.List<AddLeadsRequestLeads> leads;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTaskId")
     public String outTaskId;
 
@@ -65,9 +77,15 @@ public class AddLeadsRequest extends TeaModel {
     }
 
     public static class AddLeadsRequestLeads extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("leadsName")
         public String leadsName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outLeadsId")
         public String outLeadsId;
 

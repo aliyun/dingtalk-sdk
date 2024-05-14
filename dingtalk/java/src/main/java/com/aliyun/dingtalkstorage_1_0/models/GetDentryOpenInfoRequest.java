@@ -7,6 +7,9 @@ public class GetDentryOpenInfoRequest extends TeaModel {
     @NameInMap("option")
     public GetDentryOpenInfoRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

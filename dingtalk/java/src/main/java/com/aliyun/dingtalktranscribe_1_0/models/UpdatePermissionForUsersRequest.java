@@ -4,12 +4,21 @@ package com.aliyun.dingtalktranscribe_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePermissionForUsersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<UpdatePermissionForUsersRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskCreator")
     public Long taskCreator;
 
@@ -54,12 +63,21 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
     }
 
     public static class UpdatePermissionForUsersRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public Long memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("policyType")
         public String policyType;
 

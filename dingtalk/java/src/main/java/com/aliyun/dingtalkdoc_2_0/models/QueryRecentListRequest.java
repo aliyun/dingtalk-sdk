@@ -10,15 +10,24 @@ public class QueryRecentListRequest extends TeaModel {
     @NameInMap("fileType")
     public Integer fileType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("recentType")
     public Integer recentType;
 

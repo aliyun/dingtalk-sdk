@@ -54,39 +54,75 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptOrder")
         public Long deptOrder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptType")
         public Integer deptType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wardIdList")
         public java.util.List<Long> wardIdList;
 
@@ -194,27 +230,51 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -290,9 +350,15 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentDeptAndExt extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("department")
         public QueryAllDepartmentResponseBodyContentDeptAndExtDepartment department;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extendInfos")
         public java.util.List<QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos> extendInfos;
 
@@ -320,27 +386,51 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -416,12 +506,21 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -457,30 +556,57 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("leader")
         public QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader leader;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("remark")
         public String remark;
 
@@ -564,9 +690,15 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extendInfos")
         public java.util.List<QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos> extendInfos;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("group")
         public QueryAllDepartmentResponseBodyContentGroupAndExtListGroup group;
 
@@ -594,15 +726,27 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     }
 
     public static class QueryAllDepartmentResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptAndExt")
         public QueryAllDepartmentResponseBodyContentDeptAndExt deptAndExt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupAndExtList")
         public java.util.List<QueryAllDepartmentResponseBodyContentGroupAndExtList> groupAndExtList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

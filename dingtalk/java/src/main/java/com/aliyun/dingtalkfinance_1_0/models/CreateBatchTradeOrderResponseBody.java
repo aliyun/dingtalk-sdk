@@ -7,9 +7,15 @@ public class CreateBatchTradeOrderResponseBody extends TeaModel {
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderStatus")
     public String orderStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 

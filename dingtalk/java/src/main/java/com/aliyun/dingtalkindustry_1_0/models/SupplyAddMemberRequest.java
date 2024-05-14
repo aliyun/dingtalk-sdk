@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyAddMemberRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isPartnerManager")
     public Boolean isPartnerManager;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberMobile")
     public String memberMobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberName")
     public String memberName;
 
@@ -19,6 +28,9 @@ public class SupplyAddMemberRequest extends TeaModel {
     @NameInMap("memberWorkNumber")
     public String memberWorkNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("supplyDeptId")
     public Long supplyDeptId;
 

@@ -4,39 +4,72 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveStudentLearningDataRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("assignNum")
     public Integer assignNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("correctNum")
     public Integer correctNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
     @NameInMap("fileSuffix")
     public String fileSuffix;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("generatedTime")
     public Long generatedTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("questionNum")
     public Integer questionNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentUserId")
     public String studentUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subjectCode")
     public String subjectCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("submitNum")
     public Integer submitNum;
 

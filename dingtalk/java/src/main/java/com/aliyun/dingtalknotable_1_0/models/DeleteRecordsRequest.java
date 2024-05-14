@@ -4,9 +4,15 @@ package com.aliyun.dingtalknotable_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRecordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("recordIds")
     public java.util.List<String> recordIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -10,15 +10,27 @@ public class CreateCloudFeedRequest extends TeaModel {
     @NameInMap("intro")
     public String intro;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("videoUrl")
     public String videoUrl;
 

@@ -7,6 +7,9 @@ public class ListPermissionsRequest extends TeaModel {
     @NameInMap("option")
     public ListPermissionsRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outBatchNos")
     public java.util.List<String> outBatchNos;
 

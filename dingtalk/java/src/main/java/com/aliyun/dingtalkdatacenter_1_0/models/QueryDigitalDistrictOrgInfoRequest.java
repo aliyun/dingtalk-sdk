@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDigitalDistrictOrgInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpIds")
     public java.util.List<String> corpIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statDates")
     public java.util.List<String> statDates;
 

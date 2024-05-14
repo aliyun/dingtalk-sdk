@@ -4,15 +4,24 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
     @NameInMap("memberUserIds")
     public String memberUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

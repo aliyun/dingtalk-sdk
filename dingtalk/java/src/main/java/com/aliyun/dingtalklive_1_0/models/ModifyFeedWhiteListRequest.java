@@ -4,12 +4,18 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyFeedWhiteListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public Long action;
 
     @NameInMap("modifyUserList")
     public java.util.List<String> modifyUserList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

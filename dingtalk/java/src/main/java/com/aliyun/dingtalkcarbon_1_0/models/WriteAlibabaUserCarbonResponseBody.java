@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteAlibabaUserCarbonResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public Integer result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

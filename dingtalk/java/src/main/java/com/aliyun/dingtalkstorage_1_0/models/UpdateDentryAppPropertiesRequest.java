@@ -4,9 +4,15 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateDentryAppPropertiesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appProperties")
     public java.util.List<UpdateDentryAppPropertiesRequestAppProperties> appProperties;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -32,12 +38,21 @@ public class UpdateDentryAppPropertiesRequest extends TeaModel {
     }
 
     public static class UpdateDentryAppPropertiesRequestAppProperties extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 

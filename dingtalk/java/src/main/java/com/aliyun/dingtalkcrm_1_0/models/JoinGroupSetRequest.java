@@ -7,12 +7,21 @@ public class JoinGroupSetRequest extends TeaModel {
     @NameInMap("bizDataList")
     public java.util.List<JoinGroupSetRequestBizDataList> bizDataList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

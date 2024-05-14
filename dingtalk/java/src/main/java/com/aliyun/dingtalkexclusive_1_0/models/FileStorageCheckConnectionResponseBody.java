@@ -7,6 +7,9 @@ public class FileStorageCheckConnectionResponseBody extends TeaModel {
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("checkState")
     public Integer checkState;
 

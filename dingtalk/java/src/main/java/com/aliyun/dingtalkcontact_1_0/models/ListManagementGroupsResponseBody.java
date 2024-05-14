@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListManagementGroupsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groups")
     public java.util.List<ListManagementGroupsResponseBodyGroups> groups;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -43,9 +49,15 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     }
 
     public static class ListManagementGroupsResponseBodyGroupsMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -76,6 +88,9 @@ public class ListManagementGroupsResponseBody extends TeaModel {
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeType")
         public Integer scopeType;
 
@@ -103,6 +118,9 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     }
 
     public static class ListManagementGroupsResponseBodyGroups extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
@@ -115,6 +133,9 @@ public class ListManagementGroupsResponseBody extends TeaModel {
         @NameInMap("resourceIds")
         public java.util.List<String> resourceIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scope")
         public ListManagementGroupsResponseBodyGroupsScope scope;
 

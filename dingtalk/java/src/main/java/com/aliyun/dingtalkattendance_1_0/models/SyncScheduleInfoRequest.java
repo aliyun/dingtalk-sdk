@@ -4,9 +4,15 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncScheduleInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scheduleInfos")
     public java.util.List<SyncScheduleInfoRequestScheduleInfos> scheduleInfos;
 
@@ -32,6 +38,9 @@ public class SyncScheduleInfoRequest extends TeaModel {
     }
 
     public static class SyncScheduleInfoRequestScheduleInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("planId")
         public Long planId;
 

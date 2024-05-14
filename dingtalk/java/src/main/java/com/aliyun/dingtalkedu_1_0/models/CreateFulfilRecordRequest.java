@@ -4,21 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFulfilRecordRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizTime")
     public Long bizTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sn")
     public String sn;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -10,9 +10,15 @@ public class ReportCustomerStatisticsRequest extends TeaModel {
     @NameInMap("groupTags")
     public java.util.List<String> groupTags;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxDt")
     public String maxDt;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("minDt")
     public String minDt;
 
@@ -22,12 +28,21 @@ public class ReportCustomerStatisticsRequest extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

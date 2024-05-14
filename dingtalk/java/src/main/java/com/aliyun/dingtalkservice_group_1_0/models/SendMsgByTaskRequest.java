@@ -4,18 +4,33 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMsgByTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageContent")
     public SendMsgByTaskRequestMessageContent messageContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("queryGroup")
     public SendMsgByTaskRequestQueryGroup queryGroup;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sendConfig")
     public SendMsgByTaskRequestSendConfig sendConfig;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -113,6 +128,9 @@ public class SendMsgByTaskRequest extends TeaModel {
         @NameInMap("images")
         public java.util.List<String> images;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageType")
         public String messageType;
 
@@ -231,6 +249,9 @@ public class SendMsgByTaskRequest extends TeaModel {
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("queryType")
         public String queryType;
 
@@ -345,6 +366,9 @@ public class SendMsgByTaskRequest extends TeaModel {
         @NameInMap("sendTime")
         public String sendTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sendType")
         public String sendType;
 

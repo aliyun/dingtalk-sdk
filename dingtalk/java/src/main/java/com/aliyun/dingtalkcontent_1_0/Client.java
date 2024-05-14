@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建内容
+     *
+     * @param request CreateFeedRequest
+     * @param headers CreateFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFeedResponse
+     */
     public CreateFeedResponse createFeedWithOptions(CreateFeedRequest request, CreateFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateFeedResponse());
     }
 
+    /**
+     * @summary 创建内容
+     *
+     * @param request CreateFeedRequest
+     * @return CreateFeedResponse
+     */
     public CreateFeedResponse createFeed(CreateFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateFeedHeaders headers = new CreateFeedHeaders();
         return this.createFeedWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取feed的详细信息，包括子课程的信息
+     *
+     * @param request GetFeedRequest
+     * @param headers GetFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFeedResponse
+     */
     public GetFeedResponse getFeedWithOptions(String feedId, GetFeedRequest request, GetFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -101,12 +123,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetFeedResponse());
     }
 
+    /**
+     * @summary 获取feed的详细信息，包括子课程的信息
+     *
+     * @param request GetFeedRequest
+     * @return GetFeedResponse
+     */
     public GetFeedResponse getFeed(String feedId, GetFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFeedHeaders headers = new GetFeedHeaders();
         return this.getFeedWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取oss上传凭证
+     *
+     * @param request GetMediaCerficateRequest
+     * @param headers GetMediaCerficateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMediaCerficateResponse
+     */
     public GetMediaCerficateResponse getMediaCerficateWithOptions(GetMediaCerficateRequest request, GetMediaCerficateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -165,12 +201,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMediaCerficateResponse());
     }
 
+    /**
+     * @summary 获取oss上传凭证
+     *
+     * @param request GetMediaCerficateRequest
+     * @return GetMediaCerficateResponse
+     */
     public GetMediaCerficateResponse getMediaCerficate(GetMediaCerficateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMediaCerficateHeaders headers = new GetMediaCerficateHeaders();
         return this.getMediaCerficateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 展示机构内观看内容的统计信息
+     *
+     * @param request ListItemUserDataRequest
+     * @param headers ListItemUserDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListItemUserDataResponse
+     */
     public ListItemUserDataResponse listItemUserDataWithOptions(String itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -200,12 +250,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListItemUserDataResponse());
     }
 
+    /**
+     * @summary 展示机构内观看内容的统计信息
+     *
+     * @param request ListItemUserDataRequest
+     * @return ListItemUserDataResponse
+     */
     public ListItemUserDataResponse listItemUserData(String itemId, ListItemUserDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListItemUserDataHeaders headers = new ListItemUserDataHeaders();
         return this.listItemUserDataWithOptions(itemId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取机构下课程列表
+     *
+     * @param request PageFeedRequest
+     * @param headers PageFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PageFeedResponse
+     */
     public PageFeedResponse pageFeedWithOptions(PageFeedRequest request, PageFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -249,6 +313,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PageFeedResponse());
     }
 
+    /**
+     * @summary 获取机构下课程列表
+     *
+     * @param request PageFeedRequest
+     * @return PageFeedResponse
+     */
     public PageFeedResponse pageFeed(PageFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PageFeedHeaders headers = new PageFeedHeaders();

@@ -4,12 +4,18 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ShiftAddRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("owner")
     public String owner;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sections")
     public java.util.List<ShiftAddRequestSections> sections;
 
@@ -22,6 +28,9 @@ public class ShiftAddRequest extends TeaModel {
     @NameInMap("shiftId")
     public Long shiftId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -87,15 +96,24 @@ public class ShiftAddRequest extends TeaModel {
     }
 
     public static class ShiftAddRequestSectionsTimes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("across")
         public Integer across;
 
         @NameInMap("beginMin")
         public Integer beginMin;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("checkTime")
         public Long checkTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("checkType")
         public String checkType;
 
@@ -172,6 +190,9 @@ public class ShiftAddRequest extends TeaModel {
     }
 
     public static class ShiftAddRequestSections extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("times")
         public java.util.List<ShiftAddRequestSectionsTimes> times;
 

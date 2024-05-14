@@ -4,30 +4,54 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMarketOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizOrderId")
     public Long bizOrderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
     @NameInMap("endTimestamp")
     public Long endTimestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("goodsName")
     public String goodsName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("inAppOrder")
     public Boolean inAppOrder;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemCode")
     public String itemCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemName")
     public String itemName;
 
@@ -40,9 +64,15 @@ public class QueryMarketOrderResponseBody extends TeaModel {
     @NameInMap("startTimestamp")
     public Long startTimestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Long status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalActualPayFee")
     public Long totalActualPayFee;
 

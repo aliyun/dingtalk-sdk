@@ -4,12 +4,21 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetId")
     public String targetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetType")
     public String targetType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

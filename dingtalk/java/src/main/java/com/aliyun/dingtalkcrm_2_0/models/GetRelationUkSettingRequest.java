@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelationUkSettingRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

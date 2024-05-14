@@ -4,12 +4,21 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthUrlResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobileUrl")
     public String mobileUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pcUrl")
     public String pcUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

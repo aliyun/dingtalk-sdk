@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 给指定成员添加角色
+     *
+     * @param request AddAppRolesToMemberRequest
+     * @param headers AddAppRolesToMemberHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddAppRolesToMemberResponse
+     */
     public AddAppRolesToMemberResponse addAppRolesToMemberWithOptions(String agentId, AddAppRolesToMemberRequest request, AddAppRolesToMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -66,12 +74,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddAppRolesToMemberResponse());
     }
 
+    /**
+     * @summary 给指定成员添加角色
+     *
+     * @param request AddAppRolesToMemberRequest
+     * @return AddAppRolesToMemberResponse
+     */
     public AddAppRolesToMemberResponse addAppRolesToMember(String agentId, AddAppRolesToMemberRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddAppRolesToMemberHeaders headers = new AddAppRolesToMemberHeaders();
         return this.addAppRolesToMemberWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 添加应用到工作台分组
+     *
+     * @param request AddAppToWorkBenchGroupRequest
+     * @param headers AddAppToWorkBenchGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddAppToWorkBenchGroupResponse
+     */
     public AddAppToWorkBenchGroupResponse addAppToWorkBenchGroupWithOptions(String agentId, AddAppToWorkBenchGroupRequest request, AddAppToWorkBenchGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -114,12 +136,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddAppToWorkBenchGroupResponse());
     }
 
+    /**
+     * @summary 添加应用到工作台分组
+     *
+     * @param request AddAppToWorkBenchGroupRequest
+     * @return AddAppToWorkBenchGroupResponse
+     */
     public AddAppToWorkBenchGroupResponse addAppToWorkBenchGroup(String agentId, AddAppToWorkBenchGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddAppToWorkBenchGroupHeaders headers = new AddAppToWorkBenchGroupHeaders();
         return this.addAppToWorkBenchGroupWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 给指定角色添加人员
+     *
+     * @param request AddMemberToAppRoleRequest
+     * @param headers AddMemberToAppRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddMemberToAppRoleResponse
+     */
     public AddMemberToAppRoleResponse addMemberToAppRoleWithOptions(String agentId, String roleId, AddMemberToAppRoleRequest request, AddMemberToAppRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -166,12 +202,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddMemberToAppRoleResponse());
     }
 
+    /**
+     * @summary 给指定角色添加人员
+     *
+     * @param request AddMemberToAppRoleRequest
+     * @return AddMemberToAppRoleResponse
+     */
     public AddMemberToAppRoleResponse addMemberToAppRole(String agentId, String roleId, AddMemberToAppRoleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddMemberToAppRoleHeaders headers = new AddMemberToAppRoleHeaders();
         return this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
     }
 
+    /**
+     * @summary AnheiP
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AnheiPResponse
+     */
     public AnheiPResponse anheiPWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -190,12 +239,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AnheiPResponse());
     }
 
+    /**
+     * @summary AnheiP
+     *
+     * @return AnheiPResponse
+     */
     public AnheiPResponse anheiP() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.anheiPWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary AnheiTest888
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AnheiTest888Response
+     */
     public AnheiTest888Response anheiTest888WithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -214,12 +275,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTest888Response());
     }
 
+    /**
+     * @summary AnheiTest888
+     *
+     * @return AnheiTest888Response
+     */
     public AnheiTest888Response anheiTest888() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.anheiTest888WithOptions(headers, runtime);
     }
 
+    /**
+     * @summary AnheiTestB
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AnheiTestBResponse
+     */
     public AnheiTestBResponse anheiTestBWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -238,12 +311,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTestBResponse());
     }
 
+    /**
+     * @summary AnheiTestB
+     *
+     * @return AnheiTestBResponse
+     */
     public AnheiTestBResponse anheiTestB() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.anheiTestBWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 暗黑测试
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AnheiTestNineResponse
+     */
     public AnheiTestNineResponse anheiTestNineWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -262,12 +347,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTestNineResponse());
     }
 
+    /**
+     * @summary 暗黑测试
+     *
+     * @return AnheiTestNineResponse
+     */
     public AnheiTestNineResponse anheiTestNine() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.anheiTestNineWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 应用状态管理测试
+     *
+     * @param request AppStatusManagerTestRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppStatusManagerTestResponse
+     */
     public AppStatusManagerTestResponse appStatusManagerTestWithOptions(AppStatusManagerTestRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -293,12 +391,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AppStatusManagerTestResponse());
     }
 
+    /**
+     * @summary 应用状态管理测试
+     *
+     * @param request AppStatusManagerTestRequest
+     * @return AppStatusManagerTestResponse
+     */
     public AppStatusManagerTestResponse appStatusManagerTest(AppStatusManagerTestRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.appStatusManagerTestWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 能力开放中心录入测试数据
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AyunTestResponse
+     */
     public AyunTestResponse ayunTestWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -317,12 +428,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AyunTestResponse());
     }
 
+    /**
+     * @summary 能力开放中心录入测试数据
+     *
+     * @return AyunTestResponse
+     */
     public AyunTestResponse ayunTest() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.ayunTestWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary openAPI录入上线后的测试
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AyunTestOnlineResponse
+     */
     public AyunTestOnlineResponse ayunTestOnlineWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -341,12 +464,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AyunTestOnlineResponse());
     }
 
+    /**
+     * @summary openAPI录入上线后的测试
+     *
+     * @return AyunTestOnlineResponse
+     */
     public AyunTestOnlineResponse ayunTestOnline() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.ayunTestOnlineWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 创建Apaas应用
+     *
+     * @param request CreateApaasAppRequest
+     * @param headers CreateApaasAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateApaasAppResponse
+     */
     public CreateApaasAppResponse createApaasAppWithOptions(CreateApaasAppRequest request, CreateApaasAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -425,12 +561,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateApaasAppResponse());
     }
 
+    /**
+     * @summary 创建Apaas应用
+     *
+     * @param request CreateApaasAppRequest
+     * @return CreateApaasAppResponse
+     */
     public CreateApaasAppResponse createApaasApp(CreateApaasAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateApaasAppHeaders headers = new CreateApaasAppHeaders();
         return this.createApaasAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建企业内部应用
+     *
+     * @param request CreateInnerAppRequest
+     * @param headers CreateInnerAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateInnerAppResponse
+     */
     public CreateInnerAppResponse createInnerAppWithOptions(CreateInnerAppRequest request, CreateInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -501,12 +651,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateInnerAppResponse());
     }
 
+    /**
+     * @summary 创建企业内部应用
+     *
+     * @param request CreateInnerAppRequest
+     * @return CreateInnerAppResponse
+     */
     public CreateInnerAppResponse createInnerApp(CreateInnerAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateInnerAppHeaders headers = new CreateInnerAppHeaders();
         return this.createInnerAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除应用角色
+     *
+     * @param request DeleteAppRoleRequest
+     * @param headers DeleteAppRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteAppRoleResponse
+     */
     public DeleteAppRoleResponse deleteAppRoleWithOptions(String agentId, String roleId, DeleteAppRoleRequest request, DeleteAppRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -541,12 +705,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteAppRoleResponse());
     }
 
+    /**
+     * @summary 删除应用角色
+     *
+     * @param request DeleteAppRoleRequest
+     * @return DeleteAppRoleResponse
+     */
     public DeleteAppRoleResponse deleteAppRole(String agentId, String roleId, DeleteAppRoleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteAppRoleHeaders headers = new DeleteAppRoleHeaders();
         return this.deleteAppRoleWithOptions(agentId, roleId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除企业内部应用
+     *
+     * @param request DeleteInnerAppRequest
+     * @param headers DeleteInnerAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteInnerAppResponse
+     */
     public DeleteInnerAppResponse deleteInnerAppWithOptions(String agentId, DeleteInnerAppRequest request, DeleteInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -581,12 +759,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteInnerAppResponse());
     }
 
+    /**
+     * @summary 删除企业内部应用
+     *
+     * @param request DeleteInnerAppRequest
+     * @return DeleteInnerAppResponse
+     */
     public DeleteInnerAppResponse deleteInnerApp(String agentId, DeleteInnerAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteInnerAppHeaders headers = new DeleteInnerAppHeaders();
         return this.deleteInnerAppWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询Apaas应用
+     *
+     * @param headers GetApaasAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetApaasAppResponse
+     */
     public GetApaasAppResponse getApaasAppWithOptions(String bizAppId, GetApaasAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -614,12 +805,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetApaasAppResponse());
     }
 
+    /**
+     * @summary 查询Apaas应用
+     *
+     * @return GetApaasAppResponse
+     */
     public GetApaasAppResponse getApaasApp(String bizAppId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetApaasAppHeaders headers = new GetApaasAppHeaders();
         return this.getApaasAppWithOptions(bizAppId, headers, runtime);
     }
 
+    /**
+     * @summary 获取应用资源用量信息
+     *
+     * @param request GetAppResourceUseInfoRequest
+     * @param headers GetAppResourceUseInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAppResourceUseInfoResponse
+     */
     public GetAppResourceUseInfoResponse getAppResourceUseInfoWithOptions(GetAppResourceUseInfoRequest request, GetAppResourceUseInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -666,12 +870,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAppResourceUseInfoResponse());
     }
 
+    /**
+     * @summary 获取应用资源用量信息
+     *
+     * @param request GetAppResourceUseInfoRequest
+     * @return GetAppResourceUseInfoResponse
+     */
     public GetAppResourceUseInfoResponse getAppResourceUseInfo(GetAppResourceUseInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAppResourceUseInfoHeaders headers = new GetAppResourceUseInfoHeaders();
         return this.getAppResourceUseInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询指定角色的角色范围
+     *
+     * @param headers GetAppRoleScopeByRoleIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAppRoleScopeByRoleIdResponse
+     */
     public GetAppRoleScopeByRoleIdResponse getAppRoleScopeByRoleIdWithOptions(String agentId, String roleId, GetAppRoleScopeByRoleIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -699,12 +916,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAppRoleScopeByRoleIdResponse());
     }
 
+    /**
+     * @summary 查询指定角色的角色范围
+     *
+     * @return GetAppRoleScopeByRoleIdResponse
+     */
     public GetAppRoleScopeByRoleIdResponse getAppRoleScopeByRoleId(String agentId, String roleId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAppRoleScopeByRoleIdHeaders headers = new GetAppRoleScopeByRoleIdHeaders();
         return this.getAppRoleScopeByRoleIdWithOptions(agentId, roleId, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业内部H5应用
+     *
+     * @param request GetInnerAppRequest
+     * @param headers GetInnerAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetInnerAppResponse
+     */
     public GetInnerAppResponse getInnerAppWithOptions(String agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -743,12 +973,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetInnerAppResponse());
     }
 
+    /**
+     * @summary 获取企业内部H5应用
+     *
+     * @param request GetInnerAppRequest
+     * @return GetInnerAppResponse
+     */
     public GetInnerAppResponse getInnerApp(String agentId, GetInnerAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetInnerAppHeaders headers = new GetInnerAppHeaders();
         return this.getInnerAppWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取应用可见范围
+     *
+     * @param headers GetMicroAppScopeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMicroAppScopeResponse
+     */
     public GetMicroAppScopeResponse getMicroAppScopeWithOptions(String agentId, GetMicroAppScopeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -776,12 +1019,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMicroAppScopeResponse());
     }
 
+    /**
+     * @summary 获取应用可见范围
+     *
+     * @return GetMicroAppScopeResponse
+     */
     public GetMicroAppScopeResponse getMicroAppScope(String agentId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMicroAppScopeHeaders headers = new GetMicroAppScopeHeaders();
         return this.getMicroAppScopeWithOptions(agentId, headers, runtime);
     }
 
+    /**
+     * @summary 获取用户对应用的管理权限
+     *
+     * @param headers GetMicroAppUserAccessHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMicroAppUserAccessResponse
+     */
     public GetMicroAppUserAccessResponse getMicroAppUserAccessWithOptions(String agentId, String userId, GetMicroAppUserAccessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -809,12 +1064,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMicroAppUserAccessResponse());
     }
 
+    /**
+     * @summary 获取用户对应用的管理权限
+     *
+     * @return GetMicroAppUserAccessResponse
+     */
     public GetMicroAppUserAccessResponse getMicroAppUserAccess(String agentId, String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMicroAppUserAccessHeaders headers = new GetMicroAppUserAccessHeaders();
         return this.getMicroAppUserAccessWithOptions(agentId, userId, headers, runtime);
     }
 
+    /**
+     * @summary 用户是否拥有开发者权限
+     *
+     * @param headers GetUserAppDevAccessHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserAppDevAccessResponse
+     */
     public GetUserAppDevAccessResponse getUserAppDevAccessWithOptions(String userId, GetUserAppDevAccessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -842,12 +1109,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUserAppDevAccessResponse());
     }
 
+    /**
+     * @summary 用户是否拥有开发者权限
+     *
+     * @return GetUserAppDevAccessResponse
+     */
     public GetUserAppDevAccessResponse getUserAppDevAccess(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserAppDevAccessHeaders headers = new GetUserAppDevAccessHeaders();
         return this.getUserAppDevAccessWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业所有应用列表
+     *
+     * @param headers ListAllAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAllAppResponse
+     */
     public ListAllAppResponse listAllAppWithOptions(ListAllAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -875,12 +1154,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAllAppResponse());
     }
 
+    /**
+     * @summary 获取企业所有应用列表
+     *
+     * @return ListAllAppResponse
+     */
     public ListAllAppResponse listAllApp() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAllAppHeaders headers = new ListAllAppHeaders();
         return this.listAllAppWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 获取企业所有内部应用列表
+     *
+     * @param headers ListAllInnerAppsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAllInnerAppsResponse
+     */
     public ListAllInnerAppsResponse listAllInnerAppsWithOptions(ListAllInnerAppsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -908,12 +1199,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAllInnerAppsResponse());
     }
 
+    /**
+     * @summary 获取企业所有内部应用列表
+     *
+     * @return ListAllInnerAppsResponse
+     */
     public ListAllInnerAppsResponse listAllInnerApps() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAllInnerAppsHeaders headers = new ListAllInnerAppsHeaders();
         return this.listAllInnerAppsWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 获取企业应用的角色完整信息
+     *
+     * @param request ListAppRoleScopesRequest
+     * @param headers ListAppRoleScopesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAppRoleScopesResponse
+     */
     public ListAppRoleScopesResponse listAppRoleScopesWithOptions(String agentId, ListAppRoleScopesRequest request, ListAppRoleScopesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -952,12 +1256,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAppRoleScopesResponse());
     }
 
+    /**
+     * @summary 获取企业应用的角色完整信息
+     *
+     * @param request ListAppRoleScopesRequest
+     * @return ListAppRoleScopesResponse
+     */
     public ListAppRoleScopesResponse listAppRoleScopes(String agentId, ListAppRoleScopesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAppRoleScopesHeaders headers = new ListAppRoleScopesHeaders();
         return this.listAppRoleScopesWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 列出企业内部H5应用
+     *
+     * @param request ListInnerAppRequest
+     * @param headers ListInnerAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListInnerAppResponse
+     */
     public ListInnerAppResponse listInnerAppWithOptions(ListInnerAppRequest request, ListInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -992,12 +1310,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListInnerAppResponse());
     }
 
+    /**
+     * @summary 列出企业内部H5应用
+     *
+     * @param request ListInnerAppRequest
+     * @return ListInnerAppResponse
+     */
     public ListInnerAppResponse listInnerApp(ListInnerAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListInnerAppHeaders headers = new ListInnerAppHeaders();
         return this.listInnerAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业内部小程序的版本列表
+     *
+     * @param headers ListInnerAppVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListInnerAppVersionResponse
+     */
     public ListInnerAppVersionResponse listInnerAppVersionWithOptions(String agentId, ListInnerAppVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1025,12 +1356,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListInnerAppVersionResponse());
     }
 
+    /**
+     * @summary 获取企业内部小程序的版本列表
+     *
+     * @return ListInnerAppVersionResponse
+     */
     public ListInnerAppVersionResponse listInnerAppVersion(String agentId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListInnerAppVersionHeaders headers = new ListInnerAppVersionHeaders();
         return this.listInnerAppVersionWithOptions(agentId, headers, runtime);
     }
 
+    /**
+     * @summary 获取用户在应用中的角色信息列表
+     *
+     * @param headers ListRoleInfoByUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListRoleInfoByUserResponse
+     */
     public ListRoleInfoByUserResponse listRoleInfoByUserWithOptions(String agentId, String userId, ListRoleInfoByUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1058,12 +1401,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListRoleInfoByUserResponse());
     }
 
+    /**
+     * @summary 获取用户在应用中的角色信息列表
+     *
+     * @return ListRoleInfoByUserResponse
+     */
     public ListRoleInfoByUserResponse listRoleInfoByUser(String agentId, String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListRoleInfoByUserHeaders headers = new ListRoleInfoByUserHeaders();
         return this.listRoleInfoByUserWithOptions(agentId, userId, headers, runtime);
     }
 
+    /**
+     * @summary 列出用户可见的企业应用
+     *
+     * @param headers ListUserVilebleAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListUserVilebleAppResponse
+     */
     public ListUserVilebleAppResponse listUserVilebleAppWithOptions(String userId, ListUserVilebleAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -1091,12 +1446,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListUserVilebleAppResponse());
     }
 
+    /**
+     * @summary 列出用户可见的企业应用
+     *
+     * @return ListUserVilebleAppResponse
+     */
     public ListUserVilebleAppResponse listUserVilebleApp(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListUserVilebleAppHeaders headers = new ListUserVilebleAppHeaders();
         return this.listUserVilebleAppWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业内部小程序历史版本列表
+     *
+     * @param request PageInnerAppHistoryVersionRequest
+     * @param headers PageInnerAppHistoryVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PageInnerAppHistoryVersionResponse
+     */
     public PageInnerAppHistoryVersionResponse pageInnerAppHistoryVersionWithOptions(String agentId, PageInnerAppHistoryVersionRequest request, PageInnerAppHistoryVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1135,12 +1503,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PageInnerAppHistoryVersionResponse());
     }
 
+    /**
+     * @summary 获取企业内部小程序历史版本列表
+     *
+     * @param request PageInnerAppHistoryVersionRequest
+     * @return PageInnerAppHistoryVersionResponse
+     */
     public PageInnerAppHistoryVersionResponse pageInnerAppHistoryVersion(String agentId, PageInnerAppHistoryVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PageInnerAppHistoryVersionHeaders headers = new PageInnerAppHistoryVersionHeaders();
         return this.pageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 发布企业内部小程序版本
+     *
+     * @param request PublishInnerAppVersionRequest
+     * @param headers PublishInnerAppVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PublishInnerAppVersionResponse
+     */
     public PublishInnerAppVersionResponse publishInnerAppVersionWithOptions(String agentId, PublishInnerAppVersionRequest request, PublishInnerAppVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1187,12 +1569,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PublishInnerAppVersionResponse());
     }
 
+    /**
+     * @summary 发布企业内部小程序版本
+     *
+     * @param request PublishInnerAppVersionRequest
+     * @return PublishInnerAppVersionResponse
+     */
     public PublishInnerAppVersionResponse publishInnerAppVersion(String agentId, PublishInnerAppVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PublishInnerAppVersionHeaders headers = new PublishInnerAppVersionHeaders();
         return this.publishInnerAppVersionWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 重设角色范围
+     *
+     * @param request RebuildRoleScopeForAppRoleRequest
+     * @param headers RebuildRoleScopeForAppRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RebuildRoleScopeForAppRoleResponse
+     */
     public RebuildRoleScopeForAppRoleResponse rebuildRoleScopeForAppRoleWithOptions(String agentId, String roleId, RebuildRoleScopeForAppRoleRequest request, RebuildRoleScopeForAppRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1243,12 +1639,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RebuildRoleScopeForAppRoleResponse());
     }
 
+    /**
+     * @summary 重设角色范围
+     *
+     * @param request RebuildRoleScopeForAppRoleRequest
+     * @return RebuildRoleScopeForAppRoleResponse
+     */
     public RebuildRoleScopeForAppRoleResponse rebuildRoleScopeForAppRole(String agentId, String roleId, RebuildRoleScopeForAppRoleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RebuildRoleScopeForAppRoleHeaders headers = new RebuildRoleScopeForAppRoleHeaders();
         return this.rebuildRoleScopeForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
     }
 
+    /**
+     * @summary 注册自定义应用角色
+     *
+     * @param request RegisterCustomAppRoleRequest
+     * @param headers RegisterCustomAppRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RegisterCustomAppRoleResponse
+     */
     public RegisterCustomAppRoleResponse registerCustomAppRoleWithOptions(String agentId, RegisterCustomAppRoleRequest request, RegisterCustomAppRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1291,12 +1701,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RegisterCustomAppRoleResponse());
     }
 
+    /**
+     * @summary 注册自定义应用角色
+     *
+     * @param request RegisterCustomAppRoleRequest
+     * @return RegisterCustomAppRoleResponse
+     */
     public RegisterCustomAppRoleResponse registerCustomAppRole(String agentId, RegisterCustomAppRoleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RegisterCustomAppRoleHeaders headers = new RegisterCustomAppRoleHeaders();
         return this.registerCustomAppRoleWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除apaas应用
+     *
+     * @param request RemoveApaasAppRequest
+     * @param headers RemoveApaasAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveApaasAppResponse
+     */
     public RemoveApaasAppResponse removeApaasAppWithOptions(RemoveApaasAppRequest request, RemoveApaasAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1335,12 +1759,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemoveApaasAppResponse());
     }
 
+    /**
+     * @summary 删除apaas应用
+     *
+     * @param request RemoveApaasAppRequest
+     * @return RemoveApaasAppResponse
+     */
     public RemoveApaasAppResponse removeApaasApp(RemoveApaasAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveApaasAppHeaders headers = new RemoveApaasAppHeaders();
         return this.removeApaasAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除指定角色下的成员
+     *
+     * @param request RemoveMemberForAppRoleRequest
+     * @param headers RemoveMemberForAppRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveMemberForAppRoleResponse
+     */
     public RemoveMemberForAppRoleResponse removeMemberForAppRoleWithOptions(String agentId, String roleId, RemoveMemberForAppRoleRequest request, RemoveMemberForAppRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1387,12 +1825,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemoveMemberForAppRoleResponse());
     }
 
+    /**
+     * @summary 删除指定角色下的成员
+     *
+     * @param request RemoveMemberForAppRoleRequest
+     * @return RemoveMemberForAppRoleResponse
+     */
     public RemoveMemberForAppRoleResponse removeMemberForAppRole(String agentId, String roleId, RemoveMemberForAppRoleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveMemberForAppRoleHeaders headers = new RemoveMemberForAppRoleHeaders();
         return this.removeMemberForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
     }
 
+    /**
+     * @summary 回滚企业内部小程序版本
+     *
+     * @param request RollbackInnerAppVersionRequest
+     * @param headers RollbackInnerAppVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RollbackInnerAppVersionResponse
+     */
     public RollbackInnerAppVersionResponse rollbackInnerAppVersionWithOptions(String agentId, RollbackInnerAppVersionRequest request, RollbackInnerAppVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1431,12 +1883,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RollbackInnerAppVersionResponse());
     }
 
+    /**
+     * @summary 回滚企业内部小程序版本
+     *
+     * @param request RollbackInnerAppVersionRequest
+     * @return RollbackInnerAppVersionResponse
+     */
     public RollbackInnerAppVersionResponse rollbackInnerAppVersion(String agentId, RollbackInnerAppVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RollbackInnerAppVersionHeaders headers = new RollbackInnerAppVersionHeaders();
         return this.rollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 设置应用可见范围
+     *
+     * @param request SetMicroAppScopeRequest
+     * @param headers SetMicroAppScopeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetMicroAppScopeResponse
+     */
     public SetMicroAppScopeResponse setMicroAppScopeWithOptions(String agentId, SetMicroAppScopeRequest request, SetMicroAppScopeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1495,12 +1961,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SetMicroAppScopeResponse());
     }
 
+    /**
+     * @summary 设置应用可见范围
+     *
+     * @param request SetMicroAppScopeRequest
+     * @return SetMicroAppScopeResponse
+     */
     public SetMicroAppScopeResponse setMicroAppScope(String agentId, SetMicroAppScopeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetMicroAppScopeHeaders headers = new SetMicroAppScopeHeaders();
         return this.setMicroAppScopeWithOptions(agentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新apaas应用
+     *
+     * @param request UpdateApaasAppRequest
+     * @param headers UpdateApaasAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateApaasAppResponse
+     */
     public UpdateApaasAppResponse updateApaasAppWithOptions(UpdateApaasAppRequest request, UpdateApaasAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1551,12 +2031,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateApaasAppResponse());
     }
 
+    /**
+     * @summary 更新apaas应用
+     *
+     * @param request UpdateApaasAppRequest
+     * @return UpdateApaasAppResponse
+     */
     public UpdateApaasAppResponse updateApaasApp(UpdateApaasAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateApaasAppHeaders headers = new UpdateApaasAppHeaders();
         return this.updateApaasAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新应用角色信息
+     *
+     * @param request UpdateAppRoleInfoRequest
+     * @param headers UpdateAppRoleInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateAppRoleInfoResponse
+     */
     public UpdateAppRoleInfoResponse updateAppRoleInfoWithOptions(String agentId, String roleId, UpdateAppRoleInfoRequest request, UpdateAppRoleInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1599,12 +2093,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateAppRoleInfoResponse());
     }
 
+    /**
+     * @summary 更新应用角色信息
+     *
+     * @param request UpdateAppRoleInfoRequest
+     * @return UpdateAppRoleInfoResponse
+     */
     public UpdateAppRoleInfoResponse updateAppRoleInfo(String agentId, String roleId, UpdateAppRoleInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateAppRoleInfoHeaders headers = new UpdateAppRoleInfoHeaders();
         return this.updateAppRoleInfoWithOptions(agentId, roleId, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新企业内部应用
+     *
+     * @param request UpdateInnerAppRequest
+     * @param headers UpdateInnerAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateInnerAppResponse
+     */
     public UpdateInnerAppResponse updateInnerAppWithOptions(String agentId, UpdateInnerAppRequest request, UpdateInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1667,6 +2175,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInnerAppResponse());
     }
 
+    /**
+     * @summary 更新企业内部应用
+     *
+     * @param request UpdateInnerAppRequest
+     * @return UpdateInnerAppResponse
+     */
     public UpdateInnerAppResponse updateInnerApp(String agentId, UpdateInnerAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateInnerAppHeaders headers = new UpdateInnerAppHeaders();

@@ -4,18 +4,30 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAccountMappingRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("domain")
     public String domain;
 
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outId")
     public String outId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTenantId")
     public String outTenantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

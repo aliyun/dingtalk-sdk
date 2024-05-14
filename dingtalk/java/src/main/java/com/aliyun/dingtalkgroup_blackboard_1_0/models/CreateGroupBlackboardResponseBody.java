@@ -7,6 +7,9 @@ public class CreateGroupBlackboardResponseBody extends TeaModel {
     @NameInMap("dataId")
     public String dataId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

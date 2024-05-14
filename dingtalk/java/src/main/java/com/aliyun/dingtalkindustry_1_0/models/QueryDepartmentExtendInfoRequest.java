@@ -4,9 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDepartmentExtendInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptCode")
     public Long deptCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("propCode")
     public String propCode;
 

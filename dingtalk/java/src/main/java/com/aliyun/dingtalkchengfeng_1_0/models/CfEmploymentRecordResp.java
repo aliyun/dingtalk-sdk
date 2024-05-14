@@ -4,45 +4,87 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfEmploymentRecordResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptCode")
     public String deptCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("employeeStatus")
     public String employeeStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDate")
     public String endDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isLatestRecord")
     public Boolean isLatestRecord;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobLevelName")
     public String jobLevelName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobPositionName")
     public String jobPositionName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobPostCode")
     public String jobPostCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobPostName")
     public String jobPostName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceStatus")
     public String serviceStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceType")
     public String serviceType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workNumbers")
     public String workNumbers;
 

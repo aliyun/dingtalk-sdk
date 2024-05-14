@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAuditLogRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDate")
     public Long endDate;
 
@@ -13,9 +16,15 @@ public class ListAuditLogRequest extends TeaModel {
     @NameInMap("nextGmtCreate")
     public Long nextGmtCreate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public Long startDate;
 

@@ -10,15 +10,27 @@ public class ModifyWorkbenchBadgeRequest extends TeaModel {
     @NameInMap("isAdded")
     public Boolean isAdded;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifyMode")
     public String modifyMode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("redDotRelationId")
     public String redDotRelationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("redDotType")
     public String redDotType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

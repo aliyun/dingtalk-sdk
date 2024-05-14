@@ -13,6 +13,9 @@ public class CampusUpdateCampusRequest extends TeaModel {
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 

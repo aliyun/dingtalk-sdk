@@ -7,9 +7,15 @@ public class RangeFindNextRequest extends TeaModel {
     @NameInMap("findOptions")
     public RangeFindNextRequestFindOptions findOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("text")
     public String text;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -7,6 +7,9 @@ public class ListSubDeptRequest extends TeaModel {
     @NameInMap("language")
     public String language;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

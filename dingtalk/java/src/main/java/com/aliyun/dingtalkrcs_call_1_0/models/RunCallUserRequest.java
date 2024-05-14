@@ -4,15 +4,27 @@ package com.aliyun.dingtalkrcs_call_1_0.models;
 import com.aliyun.tea.*;
 
 public class RunCallUserRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authorizeCorpId")
     public String authorizeCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authorizeUserId")
     public String authorizeUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

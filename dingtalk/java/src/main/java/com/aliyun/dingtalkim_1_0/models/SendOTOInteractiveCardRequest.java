@@ -10,18 +10,27 @@ public class SendOTOInteractiveCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public SendOTOInteractiveCardRequestCardData cardData;
 
     @NameInMap("cardOptions")
     public SendOTOInteractiveCardRequestCardOptions cardOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

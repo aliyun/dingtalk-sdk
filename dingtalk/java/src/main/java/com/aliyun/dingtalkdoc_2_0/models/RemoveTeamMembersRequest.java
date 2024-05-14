@@ -4,12 +4,18 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveTeamMembersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<RemoveTeamMembersRequestMembers> members;
 
     @NameInMap("notify")
     public Boolean notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -43,9 +49,15 @@ public class RemoveTeamMembersRequest extends TeaModel {
     }
 
     public static class RemoveTeamMembersRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 

@@ -10,6 +10,9 @@ public class InsertSearchItemRequest extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemId")
     public String itemId;
 
@@ -22,6 +25,9 @@ public class InsertSearchItemRequest extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

@@ -4,18 +4,27 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetFinanceAccountResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountCode")
     public String accountCode;
 
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountName")
     public String accountName;
 
     @NameInMap("accountRemark")
     public String accountRemark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountType")
     public String accountType;
 
@@ -31,9 +40,15 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("bankName")
     public String bankName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creator")
     public String creator;
 

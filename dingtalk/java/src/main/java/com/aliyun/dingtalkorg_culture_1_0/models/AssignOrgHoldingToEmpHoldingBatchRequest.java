@@ -7,18 +7,33 @@ public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("singleAmount")
     public Long singleAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceUsage")
     public String sourceUsage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetUsage")
     public String targetUsage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetUserList")
     public java.util.List<AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList> targetUserList;
 
@@ -76,9 +91,15 @@ public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
     }
 
     public static class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outId")
         public String outId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("targetUserId")
         public String targetUserId;
 

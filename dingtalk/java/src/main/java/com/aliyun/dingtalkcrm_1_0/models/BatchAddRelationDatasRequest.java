@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddRelationDatasRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationList")
     public java.util.List<BatchAddRelationDatasRequestRelationList> relationList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
@@ -57,9 +66,15 @@ public class BatchAddRelationDatasRequest extends TeaModel {
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -125,6 +140,9 @@ public class BatchAddRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchAddRelationDatasRequestRelationList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizDataList")
         public java.util.List<BatchAddRelationDatasRequestRelationListBizDataList> bizDataList;
 

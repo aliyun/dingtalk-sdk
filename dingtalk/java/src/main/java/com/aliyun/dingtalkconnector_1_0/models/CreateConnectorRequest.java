@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateConnectorRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("connectorInfo")
     public java.util.List<CreateConnectorRequestConnectorInfo> connectorInfo;
 
@@ -44,6 +47,9 @@ public class CreateConnectorRequest extends TeaModel {
         @NameInMap("authValueEnv")
         public Boolean authValueEnv;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -53,9 +59,15 @@ public class CreateConnectorRequest extends TeaModel {
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

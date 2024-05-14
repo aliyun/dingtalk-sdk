@@ -4,6 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
@@ -16,9 +19,15 @@ public class SendMessageRequest extends TeaModel {
     @NameInMap("receiverUid")
     public String receiverUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("senderUid")
     public String senderUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

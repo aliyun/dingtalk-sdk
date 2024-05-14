@@ -4,15 +4,27 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class HandOverWorkspaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceOwnerId")
     public String sourceOwnerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetOwnerId")
     public String targetOwnerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workspaceId")
     public String workspaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

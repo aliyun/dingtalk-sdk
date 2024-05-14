@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
@@ -28,6 +37,9 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     @NameInMap("groupType")
     public String groupType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
@@ -175,15 +187,24 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestExtendData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -227,9 +248,15 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestGroupPlugins extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -257,9 +284,15 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestLeaders extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -287,9 +320,15 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

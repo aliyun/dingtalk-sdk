@@ -7,9 +7,15 @@ public class RetractTicketRequest extends TeaModel {
     @NameInMap("notify")
     public RetractTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 

@@ -4,12 +4,18 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelIntegratedTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("activityId")
     public String activityId;
 
     @NameInMap("activityIds")
     public java.util.List<String> activityIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

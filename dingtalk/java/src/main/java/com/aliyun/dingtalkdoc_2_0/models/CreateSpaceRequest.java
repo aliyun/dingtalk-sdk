@@ -10,15 +10,24 @@ public class CreateSpaceRequest extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
     @NameInMap("sectionId")
     public String sectionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("shareScope")
     public CreateSpaceRequestShareScope shareScope;
 
@@ -87,6 +96,9 @@ public class CreateSpaceRequest extends TeaModel {
     }
 
     public static class CreateSpaceRequestShareScope extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scope")
         public Integer scope;
 

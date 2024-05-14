@@ -4,12 +4,21 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authAppInfo")
     public GetAuthInfoResponseBodyAuthAppInfo authAppInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authCorpInfo")
     public GetAuthInfoResponseBodyAuthCorpInfo authCorpInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authUserInfo")
     public GetAuthInfoResponseBodyAuthUserInfo authUserInfo;
 
@@ -43,15 +52,27 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthAppInfoAgentList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("adminList")
         public java.util.List<String> adminList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentName")
         public String agentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appId")
         public Long appId;
 
@@ -95,6 +116,9 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthAppInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentList")
         public java.util.List<GetAuthInfoResponseBodyAuthAppInfoAgentList> agentList;
 
@@ -114,30 +138,57 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthCorpInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("authChannel")
         public String authChannel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("authChannelType")
         public String authChannelType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("authLevel")
         public Long authLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpLogoUrl")
         public String corpLogoUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industry")
         public String industry;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("inviteCode")
         public String inviteCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("inviteUrl")
         public String inviteUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("licenseCode")
         public String licenseCode;
 
@@ -221,6 +272,9 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthUserInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

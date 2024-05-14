@@ -4,6 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkTimeApproveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workTimeIds")
     public java.util.List<String> workTimeIds;
 

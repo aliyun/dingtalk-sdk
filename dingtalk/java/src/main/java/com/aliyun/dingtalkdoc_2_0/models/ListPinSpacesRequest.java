@@ -7,6 +7,9 @@ public class ListPinSpacesRequest extends TeaModel {
     @NameInMap("option")
     public ListPinSpacesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -7,9 +7,15 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
     @NameInMap("features")
     public java.util.Map<String, String> features;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
@@ -19,6 +25,9 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
     @NameInMap("managementOptions")
     public CreateSceneGroupConversationRequestManagementOptions managementOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

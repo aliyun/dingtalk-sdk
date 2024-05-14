@@ -13,15 +13,27 @@ public class QueryFormInstanceResponseBody extends TeaModel {
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creator")
     public String creator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formInstDataList")
     public java.util.List<QueryFormInstanceResponseBodyFormInstDataList> formInstDataList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
@@ -142,21 +154,39 @@ public class QueryFormInstanceResponseBody extends TeaModel {
     }
 
     public static class QueryFormInstanceResponseBodyFormInstDataList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

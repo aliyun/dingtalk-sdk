@@ -13,6 +13,9 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("campusName")
     public String campusName;
 
@@ -28,6 +31,9 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("countyId")
     public Integer countyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 

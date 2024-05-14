@@ -4,15 +4,27 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptSimpleUsersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListDeptSimpleUsersResponseBodyUserList> userList;
 
@@ -54,9 +66,15 @@ public class ListDeptSimpleUsersResponseBody extends TeaModel {
     }
 
     public static class ListDeptSimpleUsersResponseBodyUserList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

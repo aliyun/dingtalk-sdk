@@ -7,6 +7,9 @@ public class BatchRegisterEventTypeRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventTypes")
     public java.util.List<BatchRegisterEventTypeRequestEventTypes> eventTypes;
 
@@ -32,9 +35,15 @@ public class BatchRegisterEventTypeRequest extends TeaModel {
     }
 
     public static class BatchRegisterEventTypeRequestEventTypes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("eventType")
         public String eventType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("eventTypeName")
         public String eventTypeName;
 

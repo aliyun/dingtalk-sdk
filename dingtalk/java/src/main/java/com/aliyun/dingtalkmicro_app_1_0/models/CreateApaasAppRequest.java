@@ -4,21 +4,36 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateApaasAppRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appDesc")
     public String appDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appIcon")
     public String appIcon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appName")
     public String appName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizAppId")
     public String bizAppId;
 
     @NameInMap("homepageEditLink")
     public String homepageEditLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("homepageLink")
     public String homepageLink;
 
@@ -28,12 +43,21 @@ public class CreateApaasAppRequest extends TeaModel {
     @NameInMap("ompLink")
     public String ompLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pcHomepageEditLink")
     public String pcHomepageEditLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pcHomepageLink")
     public String pcHomepageLink;
 

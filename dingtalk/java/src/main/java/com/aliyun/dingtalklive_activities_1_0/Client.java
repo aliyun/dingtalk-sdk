@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 实时活动发送接口
+     *
+     * @param request PushLiveActivityRequest
+     * @param headers PushLiveActivityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PushLiveActivityResponse
+     */
     public PushLiveActivityResponse pushLiveActivityWithOptions(PushLiveActivityRequest request, PushLiveActivityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PushLiveActivityResponse());
     }
 
+    /**
+     * @summary 实时活动发送接口
+     *
+     * @param request PushLiveActivityRequest
+     * @return PushLiveActivityResponse
+     */
     public PushLiveActivityResponse pushLiveActivity(PushLiveActivityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushLiveActivityHeaders headers = new PushLiveActivityHeaders();
         return this.pushLiveActivityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送实时活动
+     *
+     * @param request SendLiveActivityRequest
+     * @param headers SendLiveActivityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendLiveActivityResponse
+     */
     public SendLiveActivityResponse sendLiveActivityWithOptions(SendLiveActivityRequest request, SendLiveActivityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -109,6 +131,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendLiveActivityResponse());
     }
 
+    /**
+     * @summary 发送实时活动
+     *
+     * @param request SendLiveActivityRequest
+     * @return SendLiveActivityResponse
+     */
     public SendLiveActivityResponse sendLiveActivity(SendLiveActivityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendLiveActivityHeaders headers = new SendLiveActivityHeaders();

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskInitRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("category")
     public String category;
 
@@ -16,18 +19,33 @@ public class SolutionTaskInitRequest extends TeaModel {
     @NameInMap("finishTime")
     public Long finishTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outerId")
     public String outerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("solutionType")
     public String solutionType;
 

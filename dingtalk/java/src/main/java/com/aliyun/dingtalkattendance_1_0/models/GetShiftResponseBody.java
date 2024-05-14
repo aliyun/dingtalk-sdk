@@ -79,6 +79,9 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("beginMin")
         public Long beginMin;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -213,6 +216,9 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("across")
         public Long across;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -309,9 +315,15 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 

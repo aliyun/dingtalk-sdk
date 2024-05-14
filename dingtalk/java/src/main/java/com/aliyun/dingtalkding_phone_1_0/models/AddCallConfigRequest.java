@@ -4,6 +4,9 @@ package com.aliyun.dingtalkding_phone_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCallConfigRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

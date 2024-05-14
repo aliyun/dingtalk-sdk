@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserInfoByOpenTokenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("docKey")
     public String docKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openToken")
     public String openToken;
 

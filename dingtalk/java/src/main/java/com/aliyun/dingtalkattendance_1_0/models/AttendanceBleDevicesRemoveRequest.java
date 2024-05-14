@@ -4,9 +4,15 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesRemoveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceIdList")
     public java.util.List<Long> deviceIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupKey")
     public String groupKey;
 

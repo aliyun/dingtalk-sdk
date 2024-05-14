@@ -4,12 +4,21 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTokenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("client_id")
     public String clientId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("client_secret")
     public String clientSecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("grant_type")
     public String grantType;
 

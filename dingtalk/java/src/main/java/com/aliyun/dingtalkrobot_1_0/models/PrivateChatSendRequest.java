@@ -7,9 +7,15 @@ public class PrivateChatSendRequest extends TeaModel {
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgKey")
     public String msgKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgParam")
     public String msgParam;
 

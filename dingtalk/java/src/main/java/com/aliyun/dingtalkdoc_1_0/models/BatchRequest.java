@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("requests")
     public java.util.List<BatchRequestRequests> requests;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -35,9 +41,15 @@ public class BatchRequest extends TeaModel {
         @NameInMap("body")
         public Object body;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("method")
         public String method;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("path")
         public String path;
 

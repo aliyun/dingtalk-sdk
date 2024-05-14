@@ -4,6 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataTenantQueyResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<MasterDataTenantQueyResponseBodyResult> result;
 
@@ -27,15 +30,24 @@ public class MasterDataTenantQueyResponseBody extends TeaModel {
         @NameInMap("integrateDataAuth")
         public Boolean integrateDataAuth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("readAuth")
         public Boolean readAuth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tenantId")
         public Long tenantId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 

@@ -7,12 +7,21 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllDoctorsResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -54,39 +63,75 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     }
 
     public static class QueryAllDoctorsResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("assessGroupId")
         public String assessGroupId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("assessGroupName")
         public String assessGroupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptType")
         public String deptType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobNum")
         public String jobNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userName")
         public String userName;
 

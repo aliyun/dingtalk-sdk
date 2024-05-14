@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relations")
     public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelations> relations;
 
@@ -21,12 +24,21 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -62,15 +74,27 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelations extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizDataList")
         public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationIds")
         public java.util.List<String> openConversationIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationType")
         public String relationType;
 

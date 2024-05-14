@@ -19,6 +19,9 @@ public class UpdateGroupSetRequest extends TeaModel {
     @NameInMap("noticeToped")
     public Integer noticeToped;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 

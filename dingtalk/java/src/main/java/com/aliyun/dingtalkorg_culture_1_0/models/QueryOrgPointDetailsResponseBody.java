@@ -21,6 +21,9 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
@@ -112,6 +115,9 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("usage")
         public String usage;
 
@@ -155,9 +161,15 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryOrgPointDetailsResponseBodyResultDetails extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public Long amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
@@ -167,6 +179,9 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
         @NameInMap("pointOperateFeatureResponseDTO")
         public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO pointOperateFeatureResponseDTO;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
 
@@ -221,9 +236,15 @@ public class QueryOrgPointDetailsResponseBody extends TeaModel {
         @NameInMap("details")
         public java.util.List<QueryOrgPointDetailsResponseBodyResultDetails> details;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

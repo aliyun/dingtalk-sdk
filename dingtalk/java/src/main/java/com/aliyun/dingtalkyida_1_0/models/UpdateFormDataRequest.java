@@ -7,21 +7,33 @@ public class UpdateFormDataRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
     @NameInMap("language")
     public String language;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updateFormDataJson")
     public String updateFormDataJson;
 
     @NameInMap("useLatestVersion")
     public Boolean useLatestVersion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

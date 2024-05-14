@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 批量创建模板
+     *
+     * @param request BatchCreateTemplateRequest
+     * @param headers BatchCreateTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchCreateTemplateResponse
+     */
     public BatchCreateTemplateResponse batchCreateTemplateWithOptions(BatchCreateTemplateRequest request, BatchCreateTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchCreateTemplateResponse());
     }
 
+    /**
+     * @summary 批量创建模板
+     *
+     * @param request BatchCreateTemplateRequest
+     * @return BatchCreateTemplateResponse
+     */
     public BatchCreateTemplateResponse batchCreateTemplate(BatchCreateTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchCreateTemplateHeaders headers = new BatchCreateTemplateHeaders();
         return this.batchCreateTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量查询模板
+     *
+     * @param request BatchQueryByTemplateKeyRequest
+     * @param headers BatchQueryByTemplateKeyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryByTemplateKeyResponse
+     */
     public BatchQueryByTemplateKeyResponse batchQueryByTemplateKeyWithOptions(BatchQueryByTemplateKeyRequest request, BatchQueryByTemplateKeyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,12 +115,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryByTemplateKeyResponse());
     }
 
+    /**
+     * @summary 批量查询模板
+     *
+     * @param request BatchQueryByTemplateKeyRequest
+     * @return BatchQueryByTemplateKeyResponse
+     */
     public BatchQueryByTemplateKeyResponse batchQueryByTemplateKey(BatchQueryByTemplateKeyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchQueryByTemplateKeyHeaders headers = new BatchQueryByTemplateKeyHeaders();
         return this.batchQueryByTemplateKeyWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量修改模板
+     *
+     * @param request BatchUpdateTemplateRequest
+     * @param headers BatchUpdateTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchUpdateTemplateResponse
+     */
     public BatchUpdateTemplateResponse batchUpdateTemplateWithOptions(BatchUpdateTemplateRequest request, BatchUpdateTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -133,12 +169,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchUpdateTemplateResponse());
     }
 
+    /**
+     * @summary 批量修改模板
+     *
+     * @param request BatchUpdateTemplateRequest
+     * @return BatchUpdateTemplateResponse
+     */
     public BatchUpdateTemplateResponse batchUpdateTemplate(BatchUpdateTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchUpdateTemplateHeaders headers = new BatchUpdateTemplateHeaders();
         return this.batchUpdateTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询行业标签
+     *
+     * @param headers QueryIndustryTagListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryIndustryTagListResponse
+     */
     public QueryIndustryTagListResponse queryIndustryTagListWithOptions(QueryIndustryTagListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -166,12 +215,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryIndustryTagListResponse());
     }
 
+    /**
+     * @summary 查询行业标签
+     *
+     * @return QueryIndustryTagListResponse
+     */
     public QueryIndustryTagListResponse queryIndustryTagList() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryIndustryTagListHeaders headers = new QueryIndustryTagListHeaders();
         return this.queryIndustryTagListWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 查询角色
+     *
+     * @param headers QueryRoleTagListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryRoleTagListResponse
+     */
     public QueryRoleTagListResponse queryRoleTagListWithOptions(QueryRoleTagListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -199,12 +260,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryRoleTagListResponse());
     }
 
+    /**
+     * @summary 查询角色
+     *
+     * @return QueryRoleTagListResponse
+     */
     public QueryRoleTagListResponse queryRoleTagList() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryRoleTagListHeaders headers = new QueryRoleTagListHeaders();
         return this.queryRoleTagListWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 查询模板分类
+     *
+     * @param headers QueryTemplateCategorysHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTemplateCategorysResponse
+     */
     public QueryTemplateCategorysResponse queryTemplateCategorysWithOptions(QueryTemplateCategorysHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -232,12 +305,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryTemplateCategorysResponse());
     }
 
+    /**
+     * @summary 查询模板分类
+     *
+     * @return QueryTemplateCategorysResponse
+     */
     public QueryTemplateCategorysResponse queryTemplateCategorys() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryTemplateCategorysHeaders headers = new QueryTemplateCategorysHeaders();
         return this.queryTemplateCategorysWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 撤回模板审核
+     *
+     * @param request RecallAuditTemplateRequest
+     * @param headers RecallAuditTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RecallAuditTemplateResponse
+     */
     public RecallAuditTemplateResponse recallAuditTemplateWithOptions(RecallAuditTemplateRequest request, RecallAuditTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -272,6 +358,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RecallAuditTemplateResponse());
     }
 
+    /**
+     * @summary 撤回模板审核
+     *
+     * @param request RecallAuditTemplateRequest
+     * @return RecallAuditTemplateResponse
+     */
     public RecallAuditTemplateResponse recallAuditTemplate(RecallAuditTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RecallAuditTemplateHeaders headers = new RecallAuditTemplateHeaders();

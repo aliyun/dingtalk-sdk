@@ -7,12 +7,18 @@ public class EditOrderRequest extends TeaModel {
     @NameInMap("data")
     public EditOrderRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -57,6 +63,9 @@ public class EditOrderRequest extends TeaModel {
         @NameInMap("child_mx")
         public String childMx;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -69,12 +78,18 @@ public class EditOrderRequest extends TeaModel {
         @NameInMap("ht_contract")
         public String htContract;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_customerid")
         public String htCustomerid;
 
         @NameInMap("ht_cusub")
         public String htCusub;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_date")
         public String htDate;
 
@@ -105,24 +120,36 @@ public class EditOrderRequest extends TeaModel {
         @NameInMap("ht_number")
         public String htNumber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_order")
         public String htOrder;
 
         @NameInMap("ht_paymode")
         public String htPaymode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_preside")
         public String htPreside;
 
         @NameInMap("ht_remark")
         public String htRemark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_state")
         public String htState;
 
         @NameInMap("ht_summemo")
         public String htSummemo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ht_summoney")
         public String htSummoney;
 

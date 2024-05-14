@@ -10,6 +10,9 @@ public class SearchUserTaskRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleTypes")
     public String roleTypes;
 

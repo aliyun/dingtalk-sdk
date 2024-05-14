@@ -4,9 +4,15 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncCostCenterRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("costCenterId")
     public String costCenterId;
 
@@ -16,6 +22,9 @@ public class SyncCostCenterRequest extends TeaModel {
     @NameInMap("extension")
     public String extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtAction")
     public String gmtAction;
 
@@ -31,9 +40,15 @@ public class SyncCostCenterRequest extends TeaModel {
     @NameInMap("thirdPartId")
     public String thirdPartId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

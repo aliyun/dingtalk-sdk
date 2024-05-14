@@ -10,6 +10,9 @@ public class UpdateOrganizationTaskStatusRequest extends TeaModel {
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isDone")
     public Boolean isDone;
 

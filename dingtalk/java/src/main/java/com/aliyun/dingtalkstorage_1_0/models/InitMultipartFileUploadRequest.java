@@ -7,6 +7,9 @@ public class InitMultipartFileUploadRequest extends TeaModel {
     @NameInMap("option")
     public InitMultipartFileUploadRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

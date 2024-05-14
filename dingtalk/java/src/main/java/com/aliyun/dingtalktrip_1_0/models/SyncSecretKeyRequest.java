@@ -4,12 +4,18 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncSecretKeyRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actionType")
     public String actionType;
 
     @NameInMap("secretString")
     public String secretString;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

@@ -10,6 +10,9 @@ public class SetRowHeightRequest extends TeaModel {
     @NameInMap("row")
     public Integer row;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

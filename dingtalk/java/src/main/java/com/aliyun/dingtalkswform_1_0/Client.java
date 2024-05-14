@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取单个填表实例详情接口
+     *
+     * @param request GetFormInstanceRequest
+     * @param headers GetFormInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFormInstanceResponse
+     */
     public GetFormInstanceResponse getFormInstanceWithOptions(String formInstanceId, GetFormInstanceRequest request, GetFormInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetFormInstanceResponse());
     }
 
+    /**
+     * @summary 获取单个填表实例详情接口
+     *
+     * @param request GetFormInstanceRequest
+     * @return GetFormInstanceResponse
+     */
     public GetFormInstanceResponse getFormInstance(String formInstanceId, GetFormInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFormInstanceHeaders headers = new GetFormInstanceHeaders();
         return this.getFormInstanceWithOptions(formInstanceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取填表模版下的填表实例列表接口
+     *
+     * @param request ListFormInstancesRequest
+     * @param headers ListFormInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListFormInstancesResponse
+     */
     public ListFormInstancesResponse listFormInstancesWithOptions(String formCode, ListFormInstancesRequest request, ListFormInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -105,12 +127,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListFormInstancesResponse());
     }
 
+    /**
+     * @summary 获取填表模版下的填表实例列表接口
+     *
+     * @param request ListFormInstancesRequest
+     * @return ListFormInstancesResponse
+     */
     public ListFormInstancesResponse listFormInstances(String formCode, ListFormInstancesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListFormInstancesHeaders headers = new ListFormInstancesHeaders();
         return this.listFormInstancesWithOptions(formCode, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取用户创建的填表模板列表接口
+     *
+     * @param request ListFormSchemasByCreatorRequest
+     * @param headers ListFormSchemasByCreatorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListFormSchemasByCreatorResponse
+     */
     public ListFormSchemasByCreatorResponse listFormSchemasByCreatorWithOptions(ListFormSchemasByCreatorRequest request, ListFormSchemasByCreatorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -157,6 +193,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListFormSchemasByCreatorResponse());
     }
 
+    /**
+     * @summary 获取用户创建的填表模板列表接口
+     *
+     * @param request ListFormSchemasByCreatorRequest
+     * @return ListFormSchemasByCreatorResponse
+     */
     public ListFormSchemasByCreatorResponse listFormSchemasByCreator(ListFormSchemasByCreatorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListFormSchemasByCreatorHeaders headers = new ListFormSchemasByCreatorHeaders();

@@ -180,9 +180,15 @@ public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel 
     }
 
     public static class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("aggregator")
         public String aggregator;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

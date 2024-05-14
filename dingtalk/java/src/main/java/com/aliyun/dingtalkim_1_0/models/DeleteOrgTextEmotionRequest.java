@@ -4,9 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteOrgTextEmotionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("emotionIds")
     public java.util.List<String> emotionIds;
 

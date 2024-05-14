@@ -4,15 +4,24 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
     @NameInMap("departmentId")
     public String departmentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -25,9 +34,15 @@ public class StartInstanceRequest extends TeaModel {
     @NameInMap("processData")
     public String processData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

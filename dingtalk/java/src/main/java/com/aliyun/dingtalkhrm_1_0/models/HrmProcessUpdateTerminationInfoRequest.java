@@ -4,12 +4,21 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessUpdateTerminationInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dismissionMemo")
     public String dismissionMemo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("lastWorkDate")
     public Long lastWorkDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

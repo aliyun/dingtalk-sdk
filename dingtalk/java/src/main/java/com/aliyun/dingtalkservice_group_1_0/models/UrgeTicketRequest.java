@@ -4,15 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UrgeTicketRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ticketMemo")
     public UrgeTicketRequestTicketMemo ticketMemo;
 
@@ -87,6 +99,9 @@ public class UrgeTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<UrgeTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memo")
         public String memo;
 

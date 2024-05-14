@@ -4,9 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCode")
     public String channelCode;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopicStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("topicStatisticsRecords")
     public java.util.List<TopicStatisticsResponseBodyTopicStatisticsRecords> topicStatisticsRecords;
 
@@ -21,15 +24,27 @@ public class TopicStatisticsResponseBody extends TeaModel {
     }
 
     public static class TopicStatisticsResponseBodyTopicStatisticsRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dt")
         public String dt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("msgCount")
         public Long msgCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantsNum")
         public Long participantsNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("topicNum")
         public Long topicNum;
 

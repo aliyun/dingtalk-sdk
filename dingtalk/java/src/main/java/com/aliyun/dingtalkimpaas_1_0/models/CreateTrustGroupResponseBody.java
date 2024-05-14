@@ -4,12 +4,21 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustGroupResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("chatId")
     public String chatId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

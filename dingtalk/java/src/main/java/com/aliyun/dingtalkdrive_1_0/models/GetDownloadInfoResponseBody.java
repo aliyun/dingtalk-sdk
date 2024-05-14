@@ -32,15 +32,24 @@ public class GetDownloadInfoResponseBody extends TeaModel {
     }
 
     public static class GetDownloadInfoResponseBodyDownloadInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("resourceUrl")
         public String resourceUrl;
 

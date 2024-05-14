@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllCustomerRecyclesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,9 +49,15 @@ public class GetAllCustomerRecyclesResponseBody extends TeaModel {
     }
 
     public static class GetAllCustomerRecyclesResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("customerId")
         public String customerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("followUpActionTime")
         public String followUpActionTime;
 

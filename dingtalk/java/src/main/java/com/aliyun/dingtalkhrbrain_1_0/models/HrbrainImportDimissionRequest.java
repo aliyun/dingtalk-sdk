@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrbrain_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrbrainImportDimissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<HrbrainImportDimissionRequestBody> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -32,21 +38,39 @@ public class HrbrainImportDimissionRequest extends TeaModel {
     }
 
     public static class HrbrainImportDimissionRequestBody extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptNo")
         public String deptNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dimissionDate")
         public String dimissionDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dimissionReaasonDesc")
         public String dimissionReaasonDesc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dimissionReason")
         public String dimissionReason;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("empType")
         public String empType;
 
@@ -59,18 +83,27 @@ public class HrbrainImportDimissionRequest extends TeaModel {
         @NameInMap("jobLevel")
         public String jobLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("postName")
         public String postName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("superName")
         public String superName;
 
         @NameInMap("workLocAddr")
         public String workLocAddr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workNo")
         public String workNo;
 

@@ -13,6 +13,9 @@ public class CreateDeveloperMetadataRequest extends TeaModel {
     @NameInMap("value")
     public String value;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -54,9 +57,15 @@ public class CreateDeveloperMetadataRequest extends TeaModel {
     }
 
     public static class CreateDeveloperMetadataRequestAssociatedColumn extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("column")
         public Integer column;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sheet")
         public String sheet;
 
@@ -84,9 +93,15 @@ public class CreateDeveloperMetadataRequest extends TeaModel {
     }
 
     public static class CreateDeveloperMetadataRequestAssociatedRow extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("row")
         public Integer row;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sheet")
         public String sheet;
 

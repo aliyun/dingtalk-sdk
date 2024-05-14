@@ -4,21 +4,36 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReduceQuotaWithLeaveRecordRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leaveCode")
     public String leaveCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outerId")
     public String outerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quotaNum")
     public Integer quotaNum;
 
     @NameInMap("reason")
     public String reason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

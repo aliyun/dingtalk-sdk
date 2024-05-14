@@ -7,12 +7,18 @@ public class EditQuotationRecordRequest extends TeaModel {
     @NameInMap("data")
     public EditQuotationRecordRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -54,15 +60,24 @@ public class EditQuotationRecordRequest extends TeaModel {
     }
 
     public static class EditQuotationRecordRequestData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bj_bjren")
         public String bjBjren;
 
         @NameInMap("bj_bzremark")
         public String bjBzremark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bj_customerid")
         public String bjCustomerid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bj_date")
         public String bjDate;
 
@@ -93,6 +108,9 @@ public class EditQuotationRecordRequest extends TeaModel {
         @NameInMap("bj_number")
         public String bjNumber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bj_price")
         public String bjPrice;
 
@@ -111,6 +129,9 @@ public class EditQuotationRecordRequest extends TeaModel {
         @NameInMap("child_mx")
         public String childMx;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 

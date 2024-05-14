@@ -7,6 +7,9 @@ public class CampusGetRenterMemberRequest extends TeaModel {
     @NameInMap("renterId")
     public Long renterId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

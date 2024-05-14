@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class PullDataByPageResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<PullDataByPageResponseBodyList> list;
 
@@ -43,24 +46,45 @@ public class PullDataByPageResponseBody extends TeaModel {
     }
 
     public static class PullDataByPageResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataCreateAppId")
         public String dataCreateAppId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataCreateAppType")
         public String dataCreateAppType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataGmtCreate")
         public Long dataGmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataGmtModified")
         public Long dataGmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataModifiedAppId")
         public String dataModifiedAppId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataModifiedAppType")
         public String dataModifiedAppType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jsonData")
         public String jsonData;
 

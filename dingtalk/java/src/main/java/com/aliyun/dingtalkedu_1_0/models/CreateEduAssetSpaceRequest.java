@@ -4,18 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateEduAssetSpaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceDesc")
     public String spaceDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceIcon")
     public String spaceIcon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceName")
     public String spaceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,27 +4,51 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveCustomWaterMarkTemplateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("layoutDesignId")
     public String layoutDesignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sceneCode")
     public String sceneCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaContent")
     public String schemaContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

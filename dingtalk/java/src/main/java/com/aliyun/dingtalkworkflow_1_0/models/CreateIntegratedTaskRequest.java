@@ -7,9 +7,15 @@ public class CreateIntegratedTaskRequest extends TeaModel {
     @NameInMap("activityId")
     public String activityId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tasks")
     public java.util.List<CreateIntegratedTaskRequestTasks> tasks;
 

@@ -4,21 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantName")
     public String merchantName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pid")
     public String pid;
 

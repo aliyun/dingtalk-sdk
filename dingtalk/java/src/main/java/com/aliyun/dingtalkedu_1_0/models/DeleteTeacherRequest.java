@@ -4,9 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTeacherRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("adviser")
     public Integer adviser;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operator")
     public String operator;
 

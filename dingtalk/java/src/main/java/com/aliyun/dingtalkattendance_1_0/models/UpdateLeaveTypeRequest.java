@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateLeaveTypeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
@@ -16,12 +19,18 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     @NameInMap("leaveCertificate")
     public UpdateLeaveTypeRequestLeaveCertificate leaveCertificate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leaveCode")
     public String leaveCode;
 
     @NameInMap("leaveName")
     public String leaveName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leaveViewUnit")
     public String leaveViewUnit;
 
@@ -34,6 +43,9 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     @NameInMap("visibilityRules")
     public java.util.List<UpdateLeaveTypeRequestVisibilityRules> visibilityRules;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

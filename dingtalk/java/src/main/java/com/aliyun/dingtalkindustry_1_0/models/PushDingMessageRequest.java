@@ -7,9 +7,15 @@ public class PushDingMessageRequest extends TeaModel {
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
@@ -28,6 +34,9 @@ public class PushDingMessageRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

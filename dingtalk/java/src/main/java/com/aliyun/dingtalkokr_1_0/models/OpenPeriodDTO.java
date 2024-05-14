@@ -13,6 +13,9 @@ public class OpenPeriodDTO extends TeaModel {
     @NameInMap("nameEn")
     public String nameEn;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 

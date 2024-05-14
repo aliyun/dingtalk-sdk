@@ -4,15 +4,24 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumePointRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public Long amount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 

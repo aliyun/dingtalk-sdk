@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFilesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("files")
     public java.util.List<ListFilesResponseBodyFiles> files;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -35,6 +41,11 @@ public class ListFilesResponseBody extends TeaModel {
         @NameInMap("contentType")
         public String contentType;
 
+        /**
+         * <p>This parameter is required.</p>
+         * <br>
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
@@ -44,18 +55,30 @@ public class ListFilesResponseBody extends TeaModel {
         @NameInMap("fileExtension")
         public String fileExtension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("filePath")
         public String filePath;
 
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
@@ -65,12 +88,20 @@ public class ListFilesResponseBody extends TeaModel {
         @NameInMap("modifier")
         public String modifier;
 
+        /**
+         * <p>This parameter is required.</p>
+         * <br>
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
         @NameInMap("parentId")
         public String parentId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 

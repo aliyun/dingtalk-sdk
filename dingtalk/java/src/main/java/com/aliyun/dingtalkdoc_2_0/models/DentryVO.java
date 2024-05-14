@@ -7,18 +7,30 @@ public class DentryVO extends TeaModel {
     @NameInMap("contentType")
     public String contentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
     @NameInMap("creator")
     public DentryVOCreator creator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryType")
     public String dentryType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryUuid")
     public String dentryUuid;
 
@@ -28,12 +40,18 @@ public class DentryVO extends TeaModel {
     @NameInMap("extension")
     public String extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasChildren")
     public Boolean hasChildren;
 
     @NameInMap("linkSourceInfo")
     public LinkSourceInfo linkSourceInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -43,9 +61,15 @@ public class DentryVO extends TeaModel {
     @NameInMap("space")
     public SpaceModel space;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
@@ -208,9 +232,15 @@ public class DentryVO extends TeaModel {
     }
 
     public static class DentryVOCreator extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -238,9 +268,15 @@ public class DentryVO extends TeaModel {
     }
 
     public static class DentryVOUpdater extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

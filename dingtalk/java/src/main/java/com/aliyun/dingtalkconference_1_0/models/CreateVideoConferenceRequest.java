@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateVideoConferenceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("confTitle")
     public String confTitle;
 
@@ -13,6 +16,9 @@ public class CreateVideoConferenceRequest extends TeaModel {
     @NameInMap("inviteUserIds")
     public java.util.List<String> inviteUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -7,6 +7,9 @@ public class FinishBeginnerTaskRequest extends TeaModel {
     @NameInMap("scope")
     public String scope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

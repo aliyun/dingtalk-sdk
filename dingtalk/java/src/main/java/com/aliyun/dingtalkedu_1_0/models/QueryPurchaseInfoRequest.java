@@ -4,15 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPurchaseInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scene")
     public Integer scene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sn")
     public String sn;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

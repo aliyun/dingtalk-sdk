@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateBranchVisibleSettingInCooperateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<UpdateBranchVisibleSettingInCooperateRequestBody> body;
 
@@ -21,12 +24,21 @@ public class UpdateBranchVisibleSettingInCooperateRequest extends TeaModel {
     }
 
     public static class UpdateBranchVisibleSettingInCooperateRequestBody extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("open")
         public Boolean open;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Long type;
 

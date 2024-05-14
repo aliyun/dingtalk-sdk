@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EduTeacherListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public EduTeacherListResponseBodyResult result;
 
@@ -21,15 +24,27 @@ public class EduTeacherListResponseBody extends TeaModel {
     }
 
     public static class EduTeacherListResponseBodyResultTeacherDetails extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("role")
         public String role;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -73,6 +88,9 @@ public class EduTeacherListResponseBody extends TeaModel {
     }
 
     public static class EduTeacherListResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

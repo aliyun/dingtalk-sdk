@@ -7,15 +7,24 @@ public class MoveFilesRequest extends TeaModel {
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileIds")
     public java.util.List<String> fileIds;
 
     @NameInMap("targetParentId")
     public String targetParentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

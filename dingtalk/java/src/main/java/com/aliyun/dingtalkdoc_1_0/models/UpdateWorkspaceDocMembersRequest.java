@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateWorkspaceDocMembersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<UpdateWorkspaceDocMembersRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -32,12 +38,21 @@ public class UpdateWorkspaceDocMembersRequest extends TeaModel {
     }
 
     public static class UpdateWorkspaceDocMembersRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleType")
         public String roleType;
 

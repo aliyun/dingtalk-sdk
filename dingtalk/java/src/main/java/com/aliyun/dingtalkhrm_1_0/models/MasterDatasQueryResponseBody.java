@@ -13,6 +13,9 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<MasterDatasQueryResponseBodyResult> result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -150,6 +153,9 @@ public class MasterDatasQueryResponseBody extends TeaModel {
         @NameInMap("objId")
         public String objId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 

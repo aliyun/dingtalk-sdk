@@ -7,9 +7,15 @@ public class GetFormComponentDefinitionListRequest extends TeaModel {
     @NameInMap("language")
     public String language;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

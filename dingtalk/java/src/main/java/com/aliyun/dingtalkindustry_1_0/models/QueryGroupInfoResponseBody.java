@@ -21,27 +21,48 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentExtendInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 

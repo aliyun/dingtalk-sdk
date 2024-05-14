@@ -4,15 +4,24 @@ package com.aliyun.dingtalkblackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBlackboardReadUnReadRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("blackboardId")
     public String blackboardId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operationUserId")
     public String operationUserId;
 

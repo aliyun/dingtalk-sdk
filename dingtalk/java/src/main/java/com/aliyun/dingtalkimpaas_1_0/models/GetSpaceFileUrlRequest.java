@@ -4,12 +4,21 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceFileUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("senderUid")
     public String senderUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 

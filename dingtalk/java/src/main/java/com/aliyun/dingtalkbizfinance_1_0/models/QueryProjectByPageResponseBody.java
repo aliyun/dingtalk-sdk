@@ -4,9 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProjectByPageResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryProjectByPageResponseBodyList> list;
 
@@ -38,9 +44,15 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creator")
         public String creator;
 
@@ -50,12 +62,21 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("projectName")
         public String projectName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 

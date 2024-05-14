@@ -4,18 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadRegisterImageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("imageContent")
     public String imageContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("imageName")
     public String imageName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("imageType")
     public String imageType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 

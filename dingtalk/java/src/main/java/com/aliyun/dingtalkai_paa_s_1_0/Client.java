@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 执行AI技能
+     *
+     * @param request ExecuteAgentRequest
+     * @param headers ExecuteAgentHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ExecuteAgentResponse
+     */
     public ExecuteAgentResponse executeAgentWithOptions(ExecuteAgentRequest request, ExecuteAgentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -69,12 +77,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ExecuteAgentResponse());
     }
 
+    /**
+     * @summary 执行AI技能
+     *
+     * @param request ExecuteAgentRequest
+     * @return ExecuteAgentResponse
+     */
     public ExecuteAgentResponse executeAgent(ExecuteAgentRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ExecuteAgentHeaders headers = new ExecuteAgentHeaders();
         return this.executeAgentWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 炼丹炉文生图任务结果获取
+     *
+     * @param request LiandanTextImageGetRequest
+     * @param headers LiandanTextImageGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LiandanTextImageGetResponse
+     */
     public LiandanTextImageGetResponse liandanTextImageGetWithOptions(LiandanTextImageGetRequest request, LiandanTextImageGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -117,12 +139,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new LiandanTextImageGetResponse());
     }
 
+    /**
+     * @summary 炼丹炉文生图任务结果获取
+     *
+     * @param request LiandanTextImageGetRequest
+     * @return LiandanTextImageGetResponse
+     */
     public LiandanTextImageGetResponse liandanTextImageGet(LiandanTextImageGetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         LiandanTextImageGetHeaders headers = new LiandanTextImageGetHeaders();
         return this.liandanTextImageGetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 炼丹炉专属模型接口
+     *
+     * @param request LiandanluExclusiveModelRequest
+     * @param headers LiandanluExclusiveModelHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LiandanluExclusiveModelResponse
+     */
     public LiandanluExclusiveModelResponse liandanluExclusiveModelWithOptions(LiandanluExclusiveModelRequest request, LiandanluExclusiveModelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -169,12 +205,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new LiandanluExclusiveModelResponse());
     }
 
+    /**
+     * @summary 炼丹炉专属模型接口
+     *
+     * @param request LiandanluExclusiveModelRequest
+     * @return LiandanluExclusiveModelResponse
+     */
     public LiandanluExclusiveModelResponse liandanluExclusiveModel(LiandanluExclusiveModelRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         LiandanluExclusiveModelHeaders headers = new LiandanluExclusiveModelHeaders();
         return this.liandanluExclusiveModelWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 炼丹炉通过提示词生成图片
+     *
+     * @param request LiandanluTextToImageModelRequest
+     * @param headers LiandanluTextToImageModelHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return LiandanluTextToImageModelResponse
+     */
     public LiandanluTextToImageModelResponse liandanluTextToImageModelWithOptions(LiandanluTextToImageModelRequest request, LiandanluTextToImageModelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -225,12 +275,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new LiandanluTextToImageModelResponse());
     }
 
+    /**
+     * @summary 炼丹炉通过提示词生成图片
+     *
+     * @param request LiandanluTextToImageModelRequest
+     * @return LiandanluTextToImageModelResponse
+     */
     public LiandanluTextToImageModelResponse liandanluTextToImageModel(LiandanluTextToImageModelRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         LiandanluTextToImageModelHeaders headers = new LiandanluTextToImageModelHeaders();
         return this.liandanluTextToImageModelWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary Baymax技能执行日志
+     *
+     * @param request QueryBaymaxSkillLogRequest
+     * @param headers QueryBaymaxSkillLogHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryBaymaxSkillLogResponse
+     */
     public QueryBaymaxSkillLogResponse queryBaymaxSkillLogWithOptions(QueryBaymaxSkillLogRequest request, QueryBaymaxSkillLogHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -277,12 +341,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryBaymaxSkillLogResponse());
     }
 
+    /**
+     * @summary Baymax技能执行日志
+     *
+     * @param request QueryBaymaxSkillLogRequest
+     * @return QueryBaymaxSkillLogResponse
+     */
     public QueryBaymaxSkillLogResponse queryBaymaxSkillLog(QueryBaymaxSkillLogRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryBaymaxSkillLogHeaders headers = new QueryBaymaxSkillLogHeaders();
         return this.queryBaymaxSkillLogWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询会话消息并以大模型友好的协议返回
+     *
+     * @param tmpReq QueryConversationMessageForAIRequest
+     * @param headers QueryConversationMessageForAIHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryConversationMessageForAIResponse
+     */
     public QueryConversationMessageForAIResponse queryConversationMessageForAIWithOptions(String cid, QueryConversationMessageForAIRequest tmpReq, QueryConversationMessageForAIHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         QueryConversationMessageForAIShrinkRequest request = new QueryConversationMessageForAIShrinkRequest();
@@ -335,12 +413,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryConversationMessageForAIResponse());
     }
 
+    /**
+     * @summary 查询会话消息并以大模型友好的协议返回
+     *
+     * @param request QueryConversationMessageForAIRequest
+     * @return QueryConversationMessageForAIResponse
+     */
     public QueryConversationMessageForAIResponse queryConversationMessageForAI(String cid, QueryConversationMessageForAIRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryConversationMessageForAIHeaders headers = new QueryConversationMessageForAIHeaders();
         return this.queryConversationMessageForAIWithOptions(cid, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询记忆学习进度
+     *
+     * @param request QueryMemoryLearningTaskRequest
+     * @param headers QueryMemoryLearningTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMemoryLearningTaskResponse
+     */
     public QueryMemoryLearningTaskResponse queryMemoryLearningTaskWithOptions(QueryMemoryLearningTaskRequest request, QueryMemoryLearningTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -379,12 +471,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMemoryLearningTaskResponse());
     }
 
+    /**
+     * @summary 查询记忆学习进度
+     *
+     * @param request QueryMemoryLearningTaskRequest
+     * @return QueryMemoryLearningTaskResponse
+     */
     public QueryMemoryLearningTaskResponse queryMemoryLearningTask(QueryMemoryLearningTaskRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMemoryLearningTaskHeaders headers = new QueryMemoryLearningTaskHeaders();
         return this.queryMemoryLearningTaskWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 提交记忆学习任务
+     *
+     * @param tmpReq SubmitMemoryLearningTaskRequest
+     * @param headers SubmitMemoryLearningTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubmitMemoryLearningTaskResponse
+     */
     public SubmitMemoryLearningTaskResponse submitMemoryLearningTaskWithOptions(SubmitMemoryLearningTaskRequest tmpReq, SubmitMemoryLearningTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         SubmitMemoryLearningTaskShrinkRequest request = new SubmitMemoryLearningTaskShrinkRequest();
@@ -437,6 +543,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SubmitMemoryLearningTaskResponse());
     }
 
+    /**
+     * @summary 提交记忆学习任务
+     *
+     * @param request SubmitMemoryLearningTaskRequest
+     * @return SubmitMemoryLearningTaskResponse
+     */
     public SubmitMemoryLearningTaskResponse submitMemoryLearningTask(SubmitMemoryLearningTaskRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SubmitMemoryLearningTaskHeaders headers = new SubmitMemoryLearningTaskHeaders();

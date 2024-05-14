@@ -7,9 +7,15 @@ public class SearchTemplatesRequest extends TeaModel {
     @NameInMap("option")
     public SearchTemplatesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public SearchTemplatesRequestParam param;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -128,9 +134,15 @@ public class SearchTemplatesRequest extends TeaModel {
     }
 
     public static class SearchTemplatesRequestParam extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("belong")
         public String belong;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("searchName")
         public String searchName;
 

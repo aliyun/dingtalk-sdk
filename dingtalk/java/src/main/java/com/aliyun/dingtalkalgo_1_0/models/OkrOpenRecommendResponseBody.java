@@ -7,6 +7,9 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     @NameInMap("okrRecommendItems")
     public java.util.List<OkrOpenRecommendResponseBodyOkrRecommendItems> okrRecommendItems;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -32,12 +35,21 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     }
 
     public static class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("krId")
         public String krId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("words")
         public java.util.List<String> words;
 
@@ -73,12 +85,21 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     }
 
     public static class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectiveId")
         public String objectiveId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("words")
         public java.util.List<String> words;
 
@@ -120,12 +141,21 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
         @NameInMap("objectiveRelatedResults")
         public java.util.List<OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults> objectiveRelatedResults;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relatedLevel")
         public Long relatedLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

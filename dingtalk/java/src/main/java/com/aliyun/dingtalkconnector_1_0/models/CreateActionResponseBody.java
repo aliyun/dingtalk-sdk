@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateActionResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("item")
     public java.util.List<CreateActionResponseBodyItem> item;
 
@@ -21,24 +24,45 @@ public class CreateActionResponseBody extends TeaModel {
     }
 
     public static class CreateActionResponseBodyItem extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dingActionId")
         public String dingActionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorActionId")
         public String integratorActionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrCode")
         public String subErrCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public String success;
 

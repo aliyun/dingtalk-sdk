@@ -10,6 +10,9 @@ public class UpdateTeamRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

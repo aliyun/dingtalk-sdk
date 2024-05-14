@@ -164,6 +164,9 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("ccUserIds")
         public java.util.List<String> ccUserIds;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("date")
         public String date;
 
@@ -246,9 +249,15 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("finishTime")
         public String finishTime;
 
@@ -379,6 +388,9 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("ccUserIds")
         public java.util.List<String> ccUserIds;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 

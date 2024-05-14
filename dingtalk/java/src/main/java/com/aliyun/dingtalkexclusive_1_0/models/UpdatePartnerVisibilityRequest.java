@@ -7,6 +7,9 @@ public class UpdatePartnerVisibilityRequest extends TeaModel {
     @NameInMap("deptIds")
     public java.util.List<Long> deptIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("labelId")
     public Long labelId;
 

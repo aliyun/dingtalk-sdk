@@ -7,6 +7,9 @@ public class GetOfficialAccountOTOMessageResultRequest extends TeaModel {
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openPushId")
     public String openPushId;
 

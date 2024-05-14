@@ -7,6 +7,9 @@ public class GetEduUserIdentityResponseBody extends TeaModel {
     @NameInMap("data")
     public GetEduUserIdentityResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

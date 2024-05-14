@@ -32,12 +32,18 @@ public class SetRobotPluginRequest extends TeaModel {
     }
 
     public static class SetRobotPluginRequestPluginInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("icon")
         public String icon;
 
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

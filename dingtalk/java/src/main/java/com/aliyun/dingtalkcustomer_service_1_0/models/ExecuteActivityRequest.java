@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteActivityRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("activityCode")
     public String activityCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("foreignId")
     public String foreignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("foreignName")
     public String foreignName;
 
@@ -22,6 +31,9 @@ public class ExecuteActivityRequest extends TeaModel {
     @NameInMap("properties")
     public java.util.List<ExecuteActivityRequestProperties> properties;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 

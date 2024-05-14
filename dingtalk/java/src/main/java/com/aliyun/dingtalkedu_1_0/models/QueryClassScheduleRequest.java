@@ -4,15 +4,24 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sectionIndexList")
     public java.util.List<Long> sectionIndexList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subscriberIds")
     public java.util.List<String> subscriberIds;
 
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

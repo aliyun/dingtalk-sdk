@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 关闭企业自建应用H5离线包
+     *
+     * @param request CloseHPackageRequest
+     * @param headers CloseHPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CloseHPackageResponse
+     */
     public CloseHPackageResponse closeHPackageWithOptions(CloseHPackageRequest request, CloseHPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CloseHPackageResponse());
     }
 
+    /**
+     * @summary 关闭企业自建应用H5离线包
+     *
+     * @param request CloseHPackageRequest
+     * @return CloseHPackageResponse
+     */
     public CloseHPackageResponse closeHPackage(CloseHPackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CloseHPackageHeaders headers = new CloseHPackageHeaders();
         return this.closeHPackageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取离线包上传凭证
+     *
+     * @param request GetUploadTokenRequest
+     * @param headers GetUploadTokenHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUploadTokenResponse
+     */
     public GetUploadTokenResponse getUploadTokenWithOptions(GetUploadTokenRequest request, GetUploadTokenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -93,12 +115,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUploadTokenResponse());
     }
 
+    /**
+     * @summary 获取离线包上传凭证
+     *
+     * @param request GetUploadTokenRequest
+     * @return GetUploadTokenResponse
+     */
     public GetUploadTokenResponse getUploadToken(GetUploadTokenRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUploadTokenHeaders headers = new GetUploadTokenHeaders();
         return this.getUploadTokenWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取H5离线包版本列表
+     *
+     * @param request HPackageListGetRequest
+     * @param headers HPackageListGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HPackageListGetResponse
+     */
     public HPackageListGetResponse hPackageListGetWithOptions(HPackageListGetRequest request, HPackageListGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -141,12 +177,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HPackageListGetResponse());
     }
 
+    /**
+     * @summary 获取H5离线包版本列表
+     *
+     * @param request HPackageListGetRequest
+     * @return HPackageListGetResponse
+     */
     public HPackageListGetResponse hPackageListGet(HPackageListGetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HPackageListGetHeaders headers = new HPackageListGetHeaders();
         return this.hPackageListGetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发布离线包
+     *
+     * @param request HPublishPackageRequest
+     * @param headers HPublishPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HPublishPackageResponse
+     */
     public HPublishPackageResponse hPublishPackageWithOptions(HPublishPackageRequest request, HPublishPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -185,12 +235,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HPublishPackageResponse());
     }
 
+    /**
+     * @summary 发布离线包
+     *
+     * @param request HPublishPackageRequest
+     * @return HPublishPackageResponse
+     */
     public HPublishPackageResponse hPublishPackage(HPublishPackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HPublishPackageHeaders headers = new HPublishPackageHeaders();
         return this.hPublishPackageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 上传H5离线包
+     *
+     * @param request HUploadPackageRequest
+     * @param headers HUploadPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HUploadPackageResponse
+     */
     public HUploadPackageResponse hUploadPackageWithOptions(HUploadPackageRequest request, HUploadPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -229,12 +293,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HUploadPackageResponse());
     }
 
+    /**
+     * @summary 上传H5离线包
+     *
+     * @param request HUploadPackageRequest
+     * @return HUploadPackageResponse
+     */
     public HUploadPackageResponse hUploadPackage(HUploadPackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HUploadPackageHeaders headers = new HUploadPackageHeaders();
         return this.hUploadPackageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 上传H5离线包进度
+     *
+     * @param request HUploadPackageStatusRequest
+     * @param headers HUploadPackageStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HUploadPackageStatusResponse
+     */
     public HUploadPackageStatusResponse hUploadPackageStatusWithOptions(HUploadPackageStatusRequest request, HUploadPackageStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -273,12 +351,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HUploadPackageStatusResponse());
     }
 
+    /**
+     * @summary 上传H5离线包进度
+     *
+     * @param request HUploadPackageStatusRequest
+     * @return HUploadPackageStatusResponse
+     */
     public HUploadPackageStatusResponse hUploadPackageStatus(HUploadPackageStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HUploadPackageStatusHeaders headers = new HUploadPackageStatusHeaders();
         return this.hUploadPackageStatusWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 开启企业自建应用H5离线包
+     *
+     * @param request OpenMicroAppPackageRequest
+     * @param headers OpenMicroAppPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OpenMicroAppPackageResponse
+     */
     public OpenMicroAppPackageResponse openMicroAppPackageWithOptions(OpenMicroAppPackageRequest request, OpenMicroAppPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -313,12 +405,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new OpenMicroAppPackageResponse());
     }
 
+    /**
+     * @summary 开启企业自建应用H5离线包
+     *
+     * @param request OpenMicroAppPackageRequest
+     * @return OpenMicroAppPackageResponse
+     */
     public OpenMicroAppPackageResponse openMicroAppPackage(OpenMicroAppPackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         OpenMicroAppPackageHeaders headers = new OpenMicroAppPackageHeaders();
         return this.openMicroAppPackageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发布离线包到灰度
+     *
+     * @param request ReleaseGrayDeployRequest
+     * @param headers ReleaseGrayDeployHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayDeployResponse
+     */
     public ReleaseGrayDeployResponse releaseGrayDeployWithOptions(ReleaseGrayDeployRequest request, ReleaseGrayDeployHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -357,12 +463,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayDeployResponse());
     }
 
+    /**
+     * @summary 发布离线包到灰度
+     *
+     * @param request ReleaseGrayDeployRequest
+     * @return ReleaseGrayDeployResponse
+     */
     public ReleaseGrayDeployResponse releaseGrayDeploy(ReleaseGrayDeployRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayDeployHeaders headers = new ReleaseGrayDeployHeaders();
         return this.releaseGrayDeployWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 退出灰度
+     *
+     * @param request ReleaseGrayExitRequest
+     * @param headers ReleaseGrayExitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayExitResponse
+     */
     public ReleaseGrayExitResponse releaseGrayExitWithOptions(ReleaseGrayExitRequest request, ReleaseGrayExitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -401,12 +521,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayExitResponse());
     }
 
+    /**
+     * @summary 退出灰度
+     *
+     * @param request ReleaseGrayExitRequest
+     * @return ReleaseGrayExitResponse
+     */
     public ReleaseGrayExitResponse releaseGrayExit(ReleaseGrayExitRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayExitHeaders headers = new ReleaseGrayExitHeaders();
         return this.releaseGrayExitWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取企业灰度白名单
+     *
+     * @param request ReleaseGrayOrgGetRequest
+     * @param headers ReleaseGrayOrgGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayOrgGetResponse
+     */
     public ReleaseGrayOrgGetResponse releaseGrayOrgGetWithOptions(ReleaseGrayOrgGetRequest request, ReleaseGrayOrgGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -445,12 +579,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayOrgGetResponse());
     }
 
+    /**
+     * @summary 获取企业灰度白名单
+     *
+     * @param request ReleaseGrayOrgGetRequest
+     * @return ReleaseGrayOrgGetResponse
+     */
     public ReleaseGrayOrgGetResponse releaseGrayOrgGet(ReleaseGrayOrgGetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayOrgGetHeaders headers = new ReleaseGrayOrgGetHeaders();
         return this.releaseGrayOrgGetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 设置企业灰度白名单
+     *
+     * @param request ReleaseGrayOrgSetRequest
+     * @param headers ReleaseGrayOrgSetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayOrgSetResponse
+     */
     public ReleaseGrayOrgSetResponse releaseGrayOrgSetWithOptions(ReleaseGrayOrgSetRequest request, ReleaseGrayOrgSetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -493,12 +641,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayOrgSetResponse());
     }
 
+    /**
+     * @summary 设置企业灰度白名单
+     *
+     * @param request ReleaseGrayOrgSetRequest
+     * @return ReleaseGrayOrgSetResponse
+     */
     public ReleaseGrayOrgSetResponse releaseGrayOrgSet(ReleaseGrayOrgSetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayOrgSetHeaders headers = new ReleaseGrayOrgSetHeaders();
         return this.releaseGrayOrgSetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取灰度离线包百分比值
+     *
+     * @param request ReleaseGrayPercentGetRequest
+     * @param headers ReleaseGrayPercentGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayPercentGetResponse
+     */
     public ReleaseGrayPercentGetResponse releaseGrayPercentGetWithOptions(ReleaseGrayPercentGetRequest request, ReleaseGrayPercentGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -537,12 +699,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayPercentGetResponse());
     }
 
+    /**
+     * @summary 获取灰度离线包百分比值
+     *
+     * @param request ReleaseGrayPercentGetRequest
+     * @return ReleaseGrayPercentGetResponse
+     */
     public ReleaseGrayPercentGetResponse releaseGrayPercentGet(ReleaseGrayPercentGetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayPercentGetHeaders headers = new ReleaseGrayPercentGetHeaders();
         return this.releaseGrayPercentGetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 设置灰度离线包百分比值
+     *
+     * @param request ReleaseGrayPercentSetRequest
+     * @param headers ReleaseGrayPercentSetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayPercentSetResponse
+     */
     public ReleaseGrayPercentSetResponse releaseGrayPercentSetWithOptions(ReleaseGrayPercentSetRequest request, ReleaseGrayPercentSetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -585,12 +761,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayPercentSetResponse());
     }
 
+    /**
+     * @summary 设置灰度离线包百分比值
+     *
+     * @param request ReleaseGrayPercentSetRequest
+     * @return ReleaseGrayPercentSetResponse
+     */
     public ReleaseGrayPercentSetResponse releaseGrayPercentSet(ReleaseGrayPercentSetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayPercentSetHeaders headers = new ReleaseGrayPercentSetHeaders();
         return this.releaseGrayPercentSetWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取用户灰度名单
+     *
+     * @param request ReleaseGrayUserIdGetRequest
+     * @param headers ReleaseGrayUserIdGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseGrayUserIdGetResponse
+     */
     public ReleaseGrayUserIdGetResponse releaseGrayUserIdGetWithOptions(ReleaseGrayUserIdGetRequest request, ReleaseGrayUserIdGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -629,6 +819,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseGrayUserIdGetResponse());
     }
 
+    /**
+     * @summary 获取用户灰度名单
+     *
+     * @param request ReleaseGrayUserIdGetRequest
+     * @return ReleaseGrayUserIdGetResponse
+     */
     public ReleaseGrayUserIdGetResponse releaseGrayUserIdGet(ReleaseGrayUserIdGetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReleaseGrayUserIdGetHeaders headers = new ReleaseGrayUserIdGetHeaders();

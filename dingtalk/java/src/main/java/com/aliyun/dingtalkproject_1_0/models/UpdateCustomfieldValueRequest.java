@@ -10,6 +10,9 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
     @NameInMap("customFieldName")
     public String customFieldName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("value")
     public java.util.List<UpdateCustomfieldValueRequestValue> value;
 
@@ -43,6 +46,9 @@ public class UpdateCustomfieldValueRequest extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueRequestValue extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

@@ -7,6 +7,9 @@ public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public GetOfficialAccountOTOMessageResultResponseBodyResult result;
 
@@ -32,9 +35,15 @@ public class GetOfficialAccountOTOMessageResultResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountOTOMessageResultResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("readUserIdList")
         public java.util.List<String> readUserIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Long status;
 

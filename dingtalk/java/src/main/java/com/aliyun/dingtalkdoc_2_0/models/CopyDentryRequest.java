@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CopyDentryRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 

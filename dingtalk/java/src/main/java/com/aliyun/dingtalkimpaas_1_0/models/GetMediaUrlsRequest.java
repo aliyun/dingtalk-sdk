@@ -4,6 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaUrlsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaIds")
     public java.util.List<String> mediaIds;
 

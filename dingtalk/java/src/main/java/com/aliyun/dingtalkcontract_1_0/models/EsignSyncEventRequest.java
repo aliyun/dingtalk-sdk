@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class EsignSyncEventRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 

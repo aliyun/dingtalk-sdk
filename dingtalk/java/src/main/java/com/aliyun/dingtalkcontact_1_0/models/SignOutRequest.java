@@ -7,6 +7,9 @@ public class SignOutRequest extends TeaModel {
     @NameInMap("reason")
     public String reason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

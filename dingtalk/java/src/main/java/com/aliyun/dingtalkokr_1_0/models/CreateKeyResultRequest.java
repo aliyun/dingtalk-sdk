@@ -4,12 +4,21 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateKeyResultRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 
@@ -19,6 +28,9 @@ public class CreateKeyResultRequest extends TeaModel {
     @NameInMap("weight")
     public Long weight;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

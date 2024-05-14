@@ -4,30 +4,57 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenCourseDetailResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseId")
     public String courseId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseType")
     public Long courseType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("introduction")
     public String introduction;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pushModel")
     public GetOpenCourseDetailResponseBodyPushModel pushModel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherId")
     public String teacherId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherName")
     public String teacherName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -109,9 +136,15 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
     }
 
     public static class GetOpenCourseDetailResponseBodyPushModel extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pushOrgNameList")
         public java.util.List<String> pushOrgNameList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pushRoleNameList")
         public java.util.List<String> pushRoleNameList;
 

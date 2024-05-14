@@ -4,15 +4,27 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddPermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<BatchAddPermissionRequestList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetId")
     public String targetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetType")
     public String targetType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -54,9 +66,15 @@ public class BatchAddPermissionRequest extends TeaModel {
     }
 
     public static class BatchAddPermissionRequestListMember extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -84,9 +102,15 @@ public class BatchAddPermissionRequest extends TeaModel {
     }
 
     public static class BatchAddPermissionRequestList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("member")
         public BatchAddPermissionRequestListMember member;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("policyType")
         public Long policyType;
 

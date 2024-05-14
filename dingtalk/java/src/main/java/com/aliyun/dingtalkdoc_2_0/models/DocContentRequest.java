@@ -7,6 +7,9 @@ public class DocContentRequest extends TeaModel {
     @NameInMap("option")
     public DocContentRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

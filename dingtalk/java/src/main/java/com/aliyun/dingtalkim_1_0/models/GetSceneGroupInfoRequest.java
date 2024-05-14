@@ -7,6 +7,9 @@ public class GetSceneGroupInfoRequest extends TeaModel {
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

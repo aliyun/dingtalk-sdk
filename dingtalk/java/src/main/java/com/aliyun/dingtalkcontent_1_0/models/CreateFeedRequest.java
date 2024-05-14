@@ -7,9 +7,15 @@ public class CreateFeedRequest extends TeaModel {
     @NameInMap("courseInfo")
     public CreateFeedRequestCourseInfo courseInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createUserId")
     public String createUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("feedInfo")
     public CreateFeedRequestFeedInfo feedInfo;
 
@@ -46,9 +52,15 @@ public class CreateFeedRequest extends TeaModel {
         @NameInMap("avatar")
         public String avatar;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -87,9 +99,15 @@ public class CreateFeedRequest extends TeaModel {
         @NameInMap("avatar")
         public String avatar;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -125,12 +143,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("price")
         public Long price;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTimeMillis")
         public Long startTimeMillis;
 
@@ -166,12 +193,18 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("csUserInfo")
         public CreateFeedRequestCourseInfoPayInfoCsUserInfo csUserInfo;
 
         @NameInMap("discountInfo")
         public CreateFeedRequestCourseInfoPayInfoDiscountInfo discountInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("price")
         public Long price;
 
@@ -207,6 +240,9 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lectorUserInfo")
         public CreateFeedRequestCourseInfoLectorUserInfo lectorUserInfo;
 
@@ -248,12 +284,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfoMediaContents extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -289,9 +334,15 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfoRecommends extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectId")
         public String objectId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -319,12 +370,21 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestFeedInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionType")
         public Integer actionType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("belongsTo")
         public Integer belongsTo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedCategory")
         public Long feedCategory;
 
@@ -334,30 +394,48 @@ public class CreateFeedRequest extends TeaModel {
         @NameInMap("feedTag")
         public String feedTag;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedType")
         public Integer feedType;
 
         @NameInMap("industryId")
         public Long industryId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("introduction")
         public String introduction;
 
         @NameInMap("introductionPicUrl")
         public String introductionPicUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mcnId")
         public String mcnId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mediaContents")
         public java.util.List<CreateFeedRequestFeedInfoMediaContents> mediaContents;
 
         @NameInMap("recommends")
         public java.util.List<CreateFeedRequestFeedInfoRecommends> recommends;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

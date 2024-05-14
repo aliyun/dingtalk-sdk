@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetClosingAccountsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<GetClosingAccountsResponseBodyResult> result;
 
@@ -21,21 +24,39 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResultClosingAccountModel extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("closingDay")
         public Integer closingDay;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("closingHourMinutes")
         public Long closingHourMinutes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endDay")
         public Integer endDay;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endMonth")
         public Integer endMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startDay")
         public Integer startDay;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startMonth")
         public Integer startMonth;
 
@@ -95,6 +116,9 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invalidTimeStamp")
         public Long invalidTimeStamp;
 
@@ -114,15 +138,27 @@ public class GetClosingAccountsResponseBody extends TeaModel {
     }
 
     public static class GetClosingAccountsResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("closingAccountModel")
         public GetClosingAccountsResponseBodyResultClosingAccountModel closingAccountModel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("switchOn")
         public Boolean switchOn;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unsealClosingAccountModel")
         public GetClosingAccountsResponseBodyResultUnsealClosingAccountModel unsealClosingAccountModel;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

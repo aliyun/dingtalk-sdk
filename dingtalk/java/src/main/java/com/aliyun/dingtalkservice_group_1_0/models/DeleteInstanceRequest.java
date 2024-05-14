@@ -4,12 +4,21 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

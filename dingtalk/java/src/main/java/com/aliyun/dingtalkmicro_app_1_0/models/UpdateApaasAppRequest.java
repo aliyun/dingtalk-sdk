@@ -4,18 +4,30 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApaasAppRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appIcon")
     public String appIcon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appName")
     public String appName;
 
     @NameInMap("appStatus")
     public Integer appStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizAppId")
     public String bizAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

@@ -4,21 +4,36 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BoundTemplateToTeamRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotConfig")
     public String robotConfig;
 
     @NameInMap("templateDesc")
     public String templateDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateType")
     public String templateType;
 

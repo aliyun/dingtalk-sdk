@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushCustomerGroupMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgKey")
     public String msgKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgParam")
     public String msgParam;
 

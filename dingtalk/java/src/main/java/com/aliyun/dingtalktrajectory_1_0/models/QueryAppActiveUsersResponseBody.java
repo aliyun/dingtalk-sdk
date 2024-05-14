@@ -4,15 +4,27 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppActiveUsersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryAppActiveUsersResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,21 +66,39 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     }
 
     public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appTraceId")
         public String appTraceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("latitude")
         public Float latitude;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("longitude")
         public Float longitude;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("reportTime")
         public Long reportTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建钉工牌码用户实例
+     *
+     * @param request CreateBadgeCodeUserInstanceRequest
+     * @param headers CreateBadgeCodeUserInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateBadgeCodeUserInstanceResponse
+     */
     public CreateBadgeCodeUserInstanceResponse createBadgeCodeUserInstanceWithOptions(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,12 +101,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateBadgeCodeUserInstanceResponse());
     }
 
+    /**
+     * @summary 创建钉工牌码用户实例
+     *
+     * @param request CreateBadgeCodeUserInstanceRequest
+     * @return CreateBadgeCodeUserInstanceResponse
+     */
     public CreateBadgeCodeUserInstanceResponse createBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
         return this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建钉工牌通知消息
+     *
+     * @param request CreateBadgeNotifyRequest
+     * @param headers CreateBadgeNotifyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateBadgeNotifyResponse
+     */
     public CreateBadgeNotifyResponse createBadgeNotifyWithOptions(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -145,12 +167,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateBadgeNotifyResponse());
     }
 
+    /**
+     * @summary 创建钉工牌通知消息
+     *
+     * @param request CreateBadgeNotifyRequest
+     * @return CreateBadgeNotifyResponse
+     */
     public CreateBadgeNotifyResponse createBadgeNotify(CreateBadgeNotifyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
         return this.createBadgeNotifyWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 钉工牌解码
+     *
+     * @param request DecodeBadgeCodeRequest
+     * @param headers DecodeBadgeCodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DecodeBadgeCodeResponse
+     */
     public DecodeBadgeCodeResponse decodeBadgeCodeWithOptions(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -189,12 +225,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DecodeBadgeCodeResponse());
     }
 
+    /**
+     * @summary 钉工牌解码
+     *
+     * @param request DecodeBadgeCodeRequest
+     * @return DecodeBadgeCodeResponse
+     */
     public DecodeBadgeCodeResponse decodeBadgeCode(DecodeBadgeCodeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
         return this.decodeBadgeCodeWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通知钉工牌码付款结果
+     *
+     * @param request NotifyBadgeCodePayResultRequest
+     * @param headers NotifyBadgeCodePayResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return NotifyBadgeCodePayResultResponse
+     */
     public NotifyBadgeCodePayResultResponse notifyBadgeCodePayResultWithOptions(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -293,12 +343,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodePayResultResponse());
     }
 
+    /**
+     * @summary 通知钉工牌码付款结果
+     *
+     * @param request NotifyBadgeCodePayResultRequest
+     * @return NotifyBadgeCodePayResultResponse
+     */
     public NotifyBadgeCodePayResultResponse notifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
         return this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通知钉工牌码退款结果
+     *
+     * @param request NotifyBadgeCodeRefundResultRequest
+     * @param headers NotifyBadgeCodeRefundResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return NotifyBadgeCodeRefundResultResponse
+     */
     public NotifyBadgeCodeRefundResultResponse notifyBadgeCodeRefundResultWithOptions(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -369,12 +433,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodeRefundResultResponse());
     }
 
+    /**
+     * @summary 通知钉工牌码退款结果
+     *
+     * @param request NotifyBadgeCodeRefundResultRequest
+     * @return NotifyBadgeCodeRefundResultResponse
+     */
     public NotifyBadgeCodeRefundResultResponse notifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
         return this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 通知钉工牌码验证结果
+     *
+     * @param request NotifyBadgeCodeVerifyResultRequest
+     * @param headers NotifyBadgeCodeVerifyResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return NotifyBadgeCodeVerifyResultResponse
+     */
     public NotifyBadgeCodeVerifyResultResponse notifyBadgeCodeVerifyResultWithOptions(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -445,12 +523,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodeVerifyResultResponse());
     }
 
+    /**
+     * @summary 通知钉工牌码验证结果
+     *
+     * @param request NotifyBadgeCodeVerifyResultRequest
+     * @return NotifyBadgeCodeVerifyResultResponse
+     */
     public NotifyBadgeCodeVerifyResultResponse notifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
         return this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 保存钉工牌企业实例
+     *
+     * @param request SaveBadgeCodeCorpInstanceRequest
+     * @param headers SaveBadgeCodeCorpInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveBadgeCodeCorpInstanceResponse
+     */
     public SaveBadgeCodeCorpInstanceResponse saveBadgeCodeCorpInstanceWithOptions(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -497,12 +589,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SaveBadgeCodeCorpInstanceResponse());
     }
 
+    /**
+     * @summary 保存钉工牌企业实例
+     *
+     * @param request SaveBadgeCodeCorpInstanceRequest
+     * @return SaveBadgeCodeCorpInstanceResponse
+     */
     public SaveBadgeCodeCorpInstanceResponse saveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
         return this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新钉工牌码用户实例
+     *
+     * @param request UpdateBadgeCodeUserInstanceRequest
+     * @param headers UpdateBadgeCodeUserInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateBadgeCodeUserInstanceResponse
+     */
     public UpdateBadgeCodeUserInstanceResponse updateBadgeCodeUserInstanceWithOptions(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -573,6 +679,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateBadgeCodeUserInstanceResponse());
     }
 
+    /**
+     * @summary 更新钉工牌码用户实例
+     *
+     * @param request UpdateBadgeCodeUserInstanceRequest
+     * @return UpdateBadgeCodeUserInstanceResponse
+     */
     public UpdateBadgeCodeUserInstanceResponse updateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();

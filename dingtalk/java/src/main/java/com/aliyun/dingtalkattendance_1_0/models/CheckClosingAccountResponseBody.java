@@ -4,12 +4,21 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckClosingAccountResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mesage")
     public String mesage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pass")
     public Boolean pass;
 

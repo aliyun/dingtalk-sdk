@@ -4,12 +4,18 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendContractCardRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardType")
     public String cardType;
 
     @NameInMap("contractInfo")
     public SendContractCardRequestContractInfo contractInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -22,12 +28,21 @@ public class SendContractCardRequest extends TeaModel {
     @NameInMap("receiveGroups")
     public java.util.List<String> receiveGroups;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receivers")
     public java.util.List<SendContractCardRequestReceivers> receivers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sender")
     public SendContractCardRequestSender sender;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("syncSingleChat")
     public Boolean syncSingleChat;
 

@@ -13,9 +13,15 @@ public class TransformToExclusiveAccountRequest extends TeaModel {
     @NameInMap("loginId")
     public String loginId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("transformType")
     public String transformType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

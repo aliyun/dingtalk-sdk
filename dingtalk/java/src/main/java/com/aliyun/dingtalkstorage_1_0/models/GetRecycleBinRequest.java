@@ -4,12 +4,21 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecycleBinRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("recycleBinScope")
     public String recycleBinScope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeId")
     public String scopeId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProjectByPageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

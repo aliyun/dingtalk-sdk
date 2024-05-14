@@ -10,9 +10,15 @@ public class IndustryManufactureMesOutPlanRequest extends TeaModel {
     @NameInMap("approver")
     public String approver;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outSourceProjectCode")
     public String outSourceProjectCode;
 
@@ -55,6 +61,9 @@ public class IndustryManufactureMesOutPlanRequest extends TeaModel {
     @NameInMap("totalWage")
     public String totalWage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

@@ -35,15 +35,24 @@ public class AssignOrgHoldingToEmpHoldingBatchResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
         @NameInMap("msg")
         public String msg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outId")
         public String outId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

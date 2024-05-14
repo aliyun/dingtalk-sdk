@@ -13,12 +13,21 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("atDingUserId")
     public String atDingUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgContent")
     public String msgContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgType")
     public String msgType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

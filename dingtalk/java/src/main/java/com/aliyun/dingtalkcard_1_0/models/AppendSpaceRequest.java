@@ -13,6 +13,9 @@ public class AppendSpaceRequest extends TeaModel {
     @NameInMap("imRobotOpenSpaceModel")
     public AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

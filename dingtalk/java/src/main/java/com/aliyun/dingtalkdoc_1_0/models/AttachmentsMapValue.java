@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttachmentsMapValue extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uploadKey")
     public String uploadKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

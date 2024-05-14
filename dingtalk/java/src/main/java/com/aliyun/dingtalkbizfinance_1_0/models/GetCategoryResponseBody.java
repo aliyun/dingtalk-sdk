@@ -7,21 +7,36 @@ public class GetCategoryResponseBody extends TeaModel {
     @NameInMap("accountantBookIdList")
     public java.util.List<String> accountantBookIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isDir")
     public Boolean isDir;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("parentCode")
     public String parentCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 

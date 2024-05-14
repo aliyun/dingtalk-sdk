@@ -7,9 +7,15 @@ public class CreateSectionConfigRequest extends TeaModel {
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sectionConfigs")
     public java.util.List<CreateSectionConfigRequestSectionConfigs> sectionConfigs;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -43,12 +49,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionEndDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -84,9 +99,15 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -114,9 +135,15 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -144,18 +171,33 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionModels extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionEndTime")
         public CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime sectionEndTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionStartTime")
         public CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime sectionStartTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
@@ -207,12 +249,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSectionStartDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -248,12 +299,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSemesterEndDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -289,12 +349,21 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigsSemesterStartDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -330,27 +399,51 @@ public class CreateSectionConfigRequest extends TeaModel {
     }
 
     public static class CreateSectionConfigRequestSectionConfigs extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scheduleName")
         public String scheduleName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("schoolYear")
         public String schoolYear;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionEndDate")
         public CreateSectionConfigRequestSectionConfigsSectionEndDate sectionEndDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionModels")
         public java.util.List<CreateSectionConfigRequestSectionConfigsSectionModels> sectionModels;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionStartDate")
         public CreateSectionConfigRequestSectionConfigsSectionStartDate sectionStartDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semester")
         public Integer semester;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semesterEndDate")
         public CreateSectionConfigRequestSectionConfigsSemesterEndDate semesterEndDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("semesterStartDate")
         public CreateSectionConfigRequestSectionConfigsSemesterStartDate semesterStartDate;
 

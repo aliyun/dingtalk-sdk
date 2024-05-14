@@ -7,9 +7,15 @@ public class CategoryTemplatesRequest extends TeaModel {
     @NameInMap("option")
     public CategoryTemplatesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("param")
     public CategoryTemplatesRequestParam param;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -73,6 +79,9 @@ public class CategoryTemplatesRequest extends TeaModel {
     }
 
     public static class CategoryTemplatesRequestParam extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("categoryId")
         public String categoryId;
 

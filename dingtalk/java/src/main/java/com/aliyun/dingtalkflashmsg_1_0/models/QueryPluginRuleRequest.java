@@ -16,9 +16,15 @@ public class QueryPluginRuleRequest extends TeaModel {
     @NameInMap("itemType")
     public String itemType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

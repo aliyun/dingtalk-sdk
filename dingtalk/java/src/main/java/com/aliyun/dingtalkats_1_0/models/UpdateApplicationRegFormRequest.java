@@ -7,9 +7,15 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dingPanFile")
     public UpdateApplicationRegFormRequestDingPanFile dingPanFile;
 
@@ -43,18 +49,30 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
     }
 
     public static class UpdateApplicationRegFormRequestDingPanFile extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

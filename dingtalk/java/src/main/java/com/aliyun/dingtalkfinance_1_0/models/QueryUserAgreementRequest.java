@@ -4,18 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizScene")
     public String bizScene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

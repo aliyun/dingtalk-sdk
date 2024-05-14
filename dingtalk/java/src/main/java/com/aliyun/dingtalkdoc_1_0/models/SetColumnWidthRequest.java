@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetColumnWidthRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("column")
     public Integer column;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("width")
     public Integer width;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

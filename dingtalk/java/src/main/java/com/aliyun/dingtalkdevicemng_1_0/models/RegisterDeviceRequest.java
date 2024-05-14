@@ -7,21 +7,33 @@ public class RegisterDeviceRequest extends TeaModel {
     @NameInMap("collaborators")
     public String collaborators;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceKey")
     public String deviceKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceName")
     public String deviceName;
 
     @NameInMap("managers")
     public String managers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

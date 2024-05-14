@@ -4,30 +4,54 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBatchTradeOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountNo")
     public String accountNo;
 
     @NameInMap("batchRemark")
     public String batchRemark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("batchTradeDetails")
     public java.util.List<CreateBatchTradeOrderRequestBatchTradeDetails> batchTradeDetails;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("staffId")
     public String staffId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tradeTitle")
     public String tradeTitle;
 
@@ -109,21 +133,36 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     }
 
     public static class CreateBatchTradeOrderRequestBatchTradeDetails extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
         @NameInMap("memo")
         public String memo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("serialNo")
         public Long serialNo;
 

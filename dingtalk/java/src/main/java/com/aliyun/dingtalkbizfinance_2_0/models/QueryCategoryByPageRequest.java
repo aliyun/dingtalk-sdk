@@ -4,12 +4,21 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCategoryByPageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 

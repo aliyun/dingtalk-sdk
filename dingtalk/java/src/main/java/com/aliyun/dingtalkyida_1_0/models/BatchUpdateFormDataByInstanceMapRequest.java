@@ -4,12 +4,18 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateFormDataByInstanceMapRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
     @NameInMap("asynchronousExecution")
     public Boolean asynchronousExecution;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -19,15 +25,24 @@ public class BatchUpdateFormDataByInstanceMapRequest extends TeaModel {
     @NameInMap("noExecuteExpression")
     public Boolean noExecuteExpression;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updateFormDataJsonMap")
     public java.util.Map<String, ?> updateFormDataJsonMap;
 
     @NameInMap("useLatestFormSchemaVersion")
     public Boolean useLatestFormSchemaVersion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

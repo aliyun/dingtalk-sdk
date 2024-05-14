@@ -4,18 +4,33 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFlashMeetingResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("flashMeetingKey")
     public String flashMeetingKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 

@@ -7,6 +7,9 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<BatchQueryObjectiveResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -60,6 +63,9 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public Float gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 

@@ -7,6 +7,9 @@ public class QueryEduAssetSpacesResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,27 +46,51 @@ public class QueryEduAssetSpacesResponseBody extends TeaModel {
     }
 
     public static class QueryEduAssetSpacesResponseBodySpaces extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTimeMillis")
         public Long createTimeMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("modifyTimeMillis")
         public Long modifyTimeMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("permissionMode")
         public String permissionMode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("quota")
         public Long quota;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceName")
         public String spaceName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

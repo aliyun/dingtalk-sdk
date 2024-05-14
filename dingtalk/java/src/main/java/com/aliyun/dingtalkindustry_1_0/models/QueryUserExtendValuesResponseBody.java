@@ -7,9 +7,15 @@ public class QueryUserExtendValuesResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryUserExtendValuesResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,15 +49,24 @@ public class QueryUserExtendValuesResponseBody extends TeaModel {
     }
 
     public static class QueryUserExtendValuesResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
         @NameInMap("userExtendDisplayName")
         public String userExtendDisplayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userExtendKey")
         public String userExtendKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userExtendValue")
         public String userExtendValue;
 

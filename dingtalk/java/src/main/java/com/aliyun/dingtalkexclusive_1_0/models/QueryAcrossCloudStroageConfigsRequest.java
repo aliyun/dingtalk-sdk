@@ -4,9 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAcrossCloudStroageConfigsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCloudType")
     public Integer targetCloudType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

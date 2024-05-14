@@ -35,6 +35,9 @@ public class CopyFileResponseBody extends TeaModel {
         @NameInMap("contentType")
         public String contentType;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
@@ -62,6 +65,9 @@ public class CopyFileResponseBody extends TeaModel {
         @NameInMap("modifier")
         public String modifier;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 

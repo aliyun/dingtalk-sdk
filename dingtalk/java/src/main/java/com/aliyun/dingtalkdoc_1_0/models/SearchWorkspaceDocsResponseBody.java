@@ -7,6 +7,9 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     @NameInMap("docs")
     public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -49,15 +52,27 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("originName")
         public String originName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -120,6 +135,9 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

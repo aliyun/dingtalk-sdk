@@ -4,6 +4,9 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExtractFacialFeatureResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

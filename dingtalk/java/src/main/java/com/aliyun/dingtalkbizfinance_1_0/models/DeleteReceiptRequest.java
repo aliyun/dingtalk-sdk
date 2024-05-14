@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteReceiptRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receipts")
     public java.util.List<DeleteReceiptRequestReceipts> receipts;
 
@@ -21,12 +24,21 @@ public class DeleteReceiptRequest extends TeaModel {
     }
 
     public static class DeleteReceiptRequestReceipts extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deleteUserId")
         public String deleteUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("receiptType")
         public Long receiptType;
 

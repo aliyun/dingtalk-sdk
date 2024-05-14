@@ -4,6 +4,9 @@ package com.aliyun.dingtalkactivity_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateActivityRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public CreateActivityRequestDetail detail;
 
@@ -76,33 +79,63 @@ public class CreateActivityRequest extends TeaModel {
         @NameInMap("address")
         public CreateActivityRequestDetailAddress address;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bannerMediaId")
         public String bannerMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("foreignId")
         public String foreignId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industry")
         public String industry;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("source")
         public String source;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

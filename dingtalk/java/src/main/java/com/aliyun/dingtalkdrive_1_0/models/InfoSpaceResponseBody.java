@@ -4,27 +4,52 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class InfoSpaceResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     * <br>
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     * <br>
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("modifyTime")
     public String modifyTime;
 
     @NameInMap("permissionMode")
     public String permissionMode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quota")
     public Long quota;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceName")
     public String spaceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceType")
     public String spaceType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("usedQuota")
     public Long usedQuota;
 

@@ -19,6 +19,9 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     @NameInMap("httpCode")
     public String httpCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

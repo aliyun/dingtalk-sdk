@@ -7,12 +7,18 @@ public class PushVerifyEventRequest extends TeaModel {
     @NameInMap("callerDeviceId")
     public String callerDeviceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("factorCodeList")
     public java.util.List<String> factorCodeList;
 
     @NameInMap("state")
     public String state;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

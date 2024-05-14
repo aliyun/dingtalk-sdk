@@ -4,15 +4,27 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class PagePointHistoryResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointRecordList")
     public java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,21 +66,36 @@ public class PagePointHistoryResponseBody extends TeaModel {
     }
 
     public static class PagePointHistoryResponseBodyPointRecordList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createAt")
         public Long createAt;
 
         @NameInMap("ruleCode")
         public String ruleCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ruleName")
         public String ruleName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("score")
         public Integer score;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

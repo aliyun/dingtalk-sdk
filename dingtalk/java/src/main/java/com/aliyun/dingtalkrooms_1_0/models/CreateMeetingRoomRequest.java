@@ -10,6 +10,9 @@ public class CreateMeetingRoomRequest extends TeaModel {
     @NameInMap("groupId")
     public Long groupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvRoomId")
     public String isvRoomId;
 
@@ -25,15 +28,24 @@ public class CreateMeetingRoomRequest extends TeaModel {
     @NameInMap("roomLocation")
     public CreateMeetingRoomRequestRoomLocation roomLocation;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roomName")
     public String roomName;
 
     @NameInMap("roomPicture")
     public String roomPicture;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roomStatus")
     public Integer roomStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

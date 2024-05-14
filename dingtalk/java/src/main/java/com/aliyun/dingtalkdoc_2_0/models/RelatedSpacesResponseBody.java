@@ -43,9 +43,15 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsHdIconVO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,9 +79,15 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsIconVO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -103,9 +115,15 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsOwner extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -197,9 +215,15 @@ public class RelatedSpacesResponseBody extends TeaModel {
         @NameInMap("iconVO")
         public RelatedSpacesResponseBodyItemsIconVO iconVO;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSearchItemsByKeyWordResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("value")
     public java.util.List<GetSearchItemsByKeyWordResponseBodyValue> value;
 
@@ -43,36 +52,69 @@ public class GetSearchItemsByKeyWordResponseBody extends TeaModel {
     }
 
     public static class GetSearchItemsByKeyWordResponseBodyValue extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("footer")
         public String footer;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tabId")
         public Integer tabId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

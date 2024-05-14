@@ -16,15 +16,24 @@ public class StartProcessInstanceRequest extends TeaModel {
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formComponentValues")
     public java.util.List<StartProcessInstanceRequestFormComponentValues> formComponentValues;
 
     @NameInMap("microappAgentId")
     public Long microappAgentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("originatorUserId")
     public String originatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
@@ -302,9 +311,15 @@ public class StartProcessInstanceRequest extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

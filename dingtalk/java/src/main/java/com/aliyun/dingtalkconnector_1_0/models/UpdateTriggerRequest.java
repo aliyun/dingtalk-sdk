@@ -4,9 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTriggerRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("integratorFlag")
     public String integratorFlag;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("triggerInfo")
     public java.util.List<UpdateTriggerRequestTriggerInfo> triggerInfo;
 
@@ -44,9 +50,15 @@ public class UpdateTriggerRequest extends TeaModel {
         @NameInMap("inputSchema")
         public String inputSchema;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 

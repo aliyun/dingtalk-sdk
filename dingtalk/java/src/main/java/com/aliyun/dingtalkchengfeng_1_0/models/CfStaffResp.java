@@ -4,24 +4,45 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfStaffResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptCode")
     public String deptCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("email")
     public String email;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nickName")
     public String nickName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workNumbers")
     public String workNumbers;
 

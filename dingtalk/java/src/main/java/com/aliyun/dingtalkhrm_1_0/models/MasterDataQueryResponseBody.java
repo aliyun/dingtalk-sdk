@@ -10,9 +10,15 @@ public class MasterDataQueryResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<MasterDataQueryResponseBodyResult> result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -150,12 +156,21 @@ public class MasterDataQueryResponseBody extends TeaModel {
         @NameInMap("outerId")
         public String outerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relationId")
         public String relationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("viewEntityCode")
         public String viewEntityCode;
 

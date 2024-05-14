@@ -10,6 +10,9 @@ public class UpdateLiveRequest extends TeaModel {
     @NameInMap("introduction")
     public String introduction;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("liveId")
     public String liveId;
 
@@ -22,6 +25,9 @@ public class UpdateLiveRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

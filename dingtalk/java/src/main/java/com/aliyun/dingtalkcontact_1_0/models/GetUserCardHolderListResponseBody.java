@@ -7,9 +7,15 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<GetUserCardHolderListResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -54,6 +60,9 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
     }
 
     public static class GetUserCardHolderListResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
@@ -63,30 +72,54 @@ public class GetUserCardHolderListResponseBody extends TeaModel {
         @NameInMap("cardAcceptTimeLong")
         public Long cardAcceptTimeLong;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cardId")
         public String cardId;
 
         @NameInMap("cardSource")
         public Integer cardSource;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public java.util.Map<String, ?> extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industryName")
         public String industryName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("introduce")
         public String introduce;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

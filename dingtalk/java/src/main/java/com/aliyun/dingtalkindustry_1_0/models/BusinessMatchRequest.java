@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class BusinessMatchRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("businessInfo")
     public String businessInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpName")
     public String corpName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

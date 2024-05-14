@@ -4,33 +4,63 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("candidateId")
     public String candidateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("flowId")
     public String flowId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formId")
     public String formId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtCreateMillis")
     public Long gmtCreateMillis;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtModifiedMillis")
     public Long gmtModifiedMillis;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateVersion")
     public Integer templateVersion;
 

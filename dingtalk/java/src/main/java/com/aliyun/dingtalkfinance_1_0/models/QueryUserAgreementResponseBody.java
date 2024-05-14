@@ -4,39 +4,75 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agreementNo")
     public String agreementNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtExpire")
     public String gmtExpire;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtSign")
     public String gmtSign;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtValid")
     public String gmtValid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannelAccountName")
     public String payChannelAccountName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

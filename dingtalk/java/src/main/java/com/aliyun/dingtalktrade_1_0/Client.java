@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary isv检查商机创建是否符合预期
+     *
+     * @param request CheckOpportunityResultRequest
+     * @param headers CheckOpportunityResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckOpportunityResultResponse
+     */
     public CheckOpportunityResultResponse checkOpportunityResultWithOptions(CheckOpportunityResultRequest request, CheckOpportunityResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -69,12 +77,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CheckOpportunityResultResponse());
     }
 
+    /**
+     * @summary isv检查商机创建是否符合预期
+     *
+     * @param request CheckOpportunityResultRequest
+     * @return CheckOpportunityResultResponse
+     */
     public CheckOpportunityResultResponse checkOpportunityResult(CheckOpportunityResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckOpportunityResultHeaders headers = new CheckOpportunityResultHeaders();
         return this.checkOpportunityResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary isv创建商机
+     *
+     * @param request CreateOpportunityRequest
+     * @param headers CreateOpportunityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateOpportunityResponse
+     */
     public CreateOpportunityResponse createOpportunityWithOptions(CreateOpportunityRequest request, CreateOpportunityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -125,12 +147,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateOpportunityResponse());
     }
 
+    /**
+     * @summary isv创建商机
+     *
+     * @param request CreateOpportunityRequest
+     * @return CreateOpportunityResponse
+     */
     public CreateOpportunityResponse createOpportunity(CreateOpportunityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateOpportunityHeaders headers = new CreateOpportunityHeaders();
         return this.createOpportunityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询订单信息
+     *
+     * @param request QueryTradeOrderRequest
+     * @param headers QueryTradeOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTradeOrderResponse
+     */
     public QueryTradeOrderResponse queryTradeOrderWithOptions(QueryTradeOrderRequest request, QueryTradeOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -169,6 +205,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryTradeOrderResponse());
     }
 
+    /**
+     * @summary 查询订单信息
+     *
+     * @param request QueryTradeOrderRequest
+     * @return QueryTradeOrderResponse
+     */
     public QueryTradeOrderResponse queryTradeOrder(QueryTradeOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryTradeOrderHeaders headers = new QueryTradeOrderHeaders();

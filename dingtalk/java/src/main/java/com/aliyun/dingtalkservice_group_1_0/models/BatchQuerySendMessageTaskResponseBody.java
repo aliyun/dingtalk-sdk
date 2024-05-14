@@ -75,6 +75,9 @@ public class BatchQuerySendMessageTaskResponseBody extends TeaModel {
         @NameInMap("sendMessageStatus")
         public String sendMessageStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sendTaskTimeStr")
         public String sendTaskTimeStr;
 

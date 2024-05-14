@@ -4,12 +4,18 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishInnerAppVersionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appVersionId")
     public Long appVersionId;
 
     @NameInMap("miniAppOnPc")
     public Boolean miniAppOnPc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

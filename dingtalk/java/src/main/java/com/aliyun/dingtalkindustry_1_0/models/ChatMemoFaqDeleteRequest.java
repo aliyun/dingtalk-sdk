@@ -4,9 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChatMemoFaqDeleteRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datasetId")
     public Long datasetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 

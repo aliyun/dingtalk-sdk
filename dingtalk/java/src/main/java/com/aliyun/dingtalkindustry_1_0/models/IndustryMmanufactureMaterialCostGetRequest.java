@@ -13,6 +13,9 @@ public class IndustryMmanufactureMaterialCostGetRequest extends TeaModel {
     @NameInMap("appName")
     public String appName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -37,9 +40,15 @@ public class IndustryMmanufactureMaterialCostGetRequest extends TeaModel {
     @NameInMap("orgId")
     public Long orgId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

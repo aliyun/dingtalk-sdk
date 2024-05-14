@@ -55,6 +55,9 @@ public class CreateDeviceCustomTemplateRequest extends TeaModel {
     @NameInMap("showFunctionCard")
     public Boolean showFunctionCard;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 

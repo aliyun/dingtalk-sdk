@@ -7,18 +7,33 @@ public class UpdateIsvCardMessageRequest extends TeaModel {
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sceneType")
     public String sceneType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scope")
     public String scope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("valueMap")
     public java.util.Map<String, String> valueMap;
 

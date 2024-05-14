@@ -4,6 +4,9 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListParentByUserResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentIdList")
     public java.util.List<Long> departmentIdList;
 

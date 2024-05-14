@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTeamRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorDingUnionId")
     public String creatorDingUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teamName")
     public String teamName;
 

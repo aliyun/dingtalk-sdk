@@ -7,9 +7,15 @@ public class GrantHonorRequest extends TeaModel {
     @NameInMap("expirationTime")
     public Long expirationTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("grantReason")
     public String grantReason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("granterName")
     public String granterName;
 
@@ -22,9 +28,15 @@ public class GrantHonorRequest extends TeaModel {
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("senderUserId")
     public String senderUserId;
 

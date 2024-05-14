@@ -4,15 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRelationMetaFieldRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fieldIdList")
     public java.util.List<String> fieldIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenant")
     public String tenant;
 

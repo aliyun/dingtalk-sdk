@@ -4,15 +4,27 @@ package com.aliyun.dingtalkmail_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUserRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("email")
     public String email;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("employeeType")
     public String employeeType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("password")
     public String password;
 

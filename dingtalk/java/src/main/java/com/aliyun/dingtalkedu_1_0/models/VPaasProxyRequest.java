@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class VPaasProxyRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actionCode")
     public String actionCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("params")
     public String params;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("publicKey")
     public String publicKey;
 

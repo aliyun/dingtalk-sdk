@@ -7,6 +7,9 @@ public class SortUserRequest extends TeaModel {
     @NameInMap("sortType")
     public Integer sortType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

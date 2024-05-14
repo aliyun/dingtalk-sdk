@@ -13,6 +13,9 @@ public class IndustryManufactureMaterialListRequest extends TeaModel {
     @NameInMap("appName")
     public String appName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

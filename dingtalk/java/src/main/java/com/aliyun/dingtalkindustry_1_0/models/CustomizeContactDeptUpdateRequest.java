@@ -4,9 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactDeptUpdateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
@@ -19,6 +25,9 @@ public class CustomizeContactDeptUpdateRequest extends TeaModel {
     @NameInMap("order")
     public Long order;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentDeptId")
     public Long parentDeptId;
 

@@ -7,21 +7,33 @@ public class InteractiveCardCreateInstanceRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public InteractiveCardCreateInstanceRequestCardData cardData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
     @NameInMap("chatBotId")
     public String chatBotId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

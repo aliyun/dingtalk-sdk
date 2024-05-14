@@ -4,6 +4,9 @@ package com.aliyun.dingtalkreport_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReportDetailRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("reportId")
     public String reportId;
 

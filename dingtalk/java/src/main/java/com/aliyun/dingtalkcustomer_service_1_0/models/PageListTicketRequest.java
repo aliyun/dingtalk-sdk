@@ -10,9 +10,15 @@ public class PageListTicketRequest extends TeaModel {
     @NameInMap("foreignId")
     public String foreignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -28,6 +34,9 @@ public class PageListTicketRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

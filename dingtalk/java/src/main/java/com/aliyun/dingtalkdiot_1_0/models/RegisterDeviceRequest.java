@@ -7,18 +7,33 @@ public class RegisterDeviceRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceName")
     public String deviceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceStatus")
     public Integer deviceStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceType")
     public String deviceType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceTypeName")
     public String deviceTypeName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
@@ -34,6 +49,9 @@ public class RegisterDeviceRequest extends TeaModel {
     @NameInMap("parentId")
     public String parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("productType")
     public String productType;
 

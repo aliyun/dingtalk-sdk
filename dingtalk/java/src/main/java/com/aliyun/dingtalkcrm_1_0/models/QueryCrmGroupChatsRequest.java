@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupChatsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
@@ -13,6 +16,9 @@ public class QueryCrmGroupChatsRequest extends TeaModel {
     @NameInMap("queryDsl")
     public String queryDsl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

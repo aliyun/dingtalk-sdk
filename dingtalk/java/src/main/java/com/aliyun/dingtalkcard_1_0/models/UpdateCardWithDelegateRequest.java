@@ -10,6 +10,9 @@ public class UpdateCardWithDelegateRequest extends TeaModel {
     @NameInMap("cardUpdateOptions")
     public UpdateCardWithDelegateRequestCardUpdateOptions cardUpdateOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

@@ -21,9 +21,17 @@ public class GetProcessCodeByNameResponseBody extends TeaModel {
     }
 
     public static class GetProcessCodeByNameResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         * <br>
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

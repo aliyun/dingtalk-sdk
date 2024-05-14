@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 批量发放积分或额度
+     *
+     * @param request AssignOrgHoldingToEmpHoldingBatchRequest
+     * @param headers AssignOrgHoldingToEmpHoldingBatchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     */
     public AssignOrgHoldingToEmpHoldingBatchResponse assignOrgHoldingToEmpHoldingBatchWithOptions(AssignOrgHoldingToEmpHoldingBatchRequest request, AssignOrgHoldingToEmpHoldingBatchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -73,12 +81,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AssignOrgHoldingToEmpHoldingBatchResponse());
     }
 
+    /**
+     * @summary 批量发放积分或额度
+     *
+     * @param request AssignOrgHoldingToEmpHoldingBatchRequest
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     */
     public AssignOrgHoldingToEmpHoldingBatchResponse assignOrgHoldingToEmpHoldingBatch(AssignOrgHoldingToEmpHoldingBatchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AssignOrgHoldingToEmpHoldingBatchHeaders headers = new AssignOrgHoldingToEmpHoldingBatchHeaders();
         return this.assignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 扣减员工积分
+     *
+     * @param request ConsumeUserPointsRequest
+     * @param headers ConsumeUserPointsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConsumeUserPointsResponse
+     */
     public ConsumeUserPointsResponse consumeUserPointsWithOptions(String userId, ConsumeUserPointsRequest request, ConsumeUserPointsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -125,12 +147,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ConsumeUserPointsResponse());
     }
 
+    /**
+     * @summary 扣减员工积分
+     *
+     * @param request ConsumeUserPointsRequest
+     * @return ConsumeUserPointsResponse
+     */
     public ConsumeUserPointsResponse consumeUserPoints(String userId, ConsumeUserPointsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ConsumeUserPointsHeaders headers = new ConsumeUserPointsHeaders();
         return this.consumeUserPointsWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建荣誉勋章模板
+     *
+     * @param request CreateOrgHonorRequest
+     * @param headers CreateOrgHonorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateOrgHonorResponse
+     */
     public CreateOrgHonorResponse createOrgHonorWithOptions(CreateOrgHonorRequest request, CreateOrgHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -185,12 +221,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateOrgHonorResponse());
     }
 
+    /**
+     * @summary 创建荣誉勋章模板
+     *
+     * @param request CreateOrgHonorRequest
+     * @return CreateOrgHonorResponse
+     */
     public CreateOrgHonorResponse createOrgHonor(CreateOrgHonorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
         return this.createOrgHonorWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量扣减积分
+     *
+     * @param request DeductionPointBatchRequest
+     * @param headers DeductionPointBatchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeductionPointBatchResponse
+     */
     public DeductionPointBatchResponse deductionPointBatchWithOptions(DeductionPointBatchRequest request, DeductionPointBatchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -241,12 +291,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeductionPointBatchResponse());
     }
 
+    /**
+     * @summary 批量扣减积分
+     *
+     * @param request DeductionPointBatchRequest
+     * @return DeductionPointBatchResponse
+     */
     public DeductionPointBatchResponse deductionPointBatch(DeductionPointBatchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
         return this.deductionPointBatchWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 积分榜单导出
+     *
+     * @param request ExportPointOpenRequest
+     * @param headers ExportPointOpenHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ExportPointOpenResponse
+     */
     public ExportPointOpenResponse exportPointOpenWithOptions(ExportPointOpenRequest request, ExportPointOpenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +353,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ExportPointOpenResponse());
     }
 
+    /**
+     * @summary 积分榜单导出
+     *
+     * @param request ExportPointOpenRequest
+     * @return ExportPointOpenResponse
+     */
     public ExportPointOpenResponse exportPointOpen(ExportPointOpenRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ExportPointOpenHeaders headers = new ExportPointOpenHeaders();
         return this.exportPointOpenWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 授予荣誉 异步执行
+     *
+     * @param request GrantHonorRequest
+     * @param headers GrantHonorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GrantHonorResponse
+     */
     public GrantHonorResponse grantHonorWithOptions(String honorId, GrantHonorRequest request, GrantHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -357,12 +435,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GrantHonorResponse());
     }
 
+    /**
+     * @summary 授予荣誉 异步执行
+     *
+     * @param request GrantHonorRequest
+     * @return GrantHonorResponse
+     */
     public GrantHonorResponse grantHonor(String honorId, GrantHonorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GrantHonorHeaders headers = new GrantHonorHeaders();
         return this.grantHonorWithOptions(honorId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询当前企业下可兑换的积分
+     *
+     * @param request QueryCorpPointsRequest
+     * @param headers QueryCorpPointsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCorpPointsResponse
+     */
     public QueryCorpPointsResponse queryCorpPointsWithOptions(QueryCorpPointsRequest request, QueryCorpPointsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -397,12 +489,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCorpPointsResponse());
     }
 
+    /**
+     * @summary 查询当前企业下可兑换的积分
+     *
+     * @param request QueryCorpPointsRequest
+     * @return QueryCorpPointsResponse
+     */
     public QueryCorpPointsResponse queryCorpPoints(QueryCorpPointsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCorpPointsHeaders headers = new QueryCorpPointsHeaders();
         return this.queryCorpPointsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询个人积分使用明细
+     *
+     * @param request QueryEmpPointDetailsRequest
+     * @param headers QueryEmpPointDetailsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryEmpPointDetailsResponse
+     */
     public QueryEmpPointDetailsResponse queryEmpPointDetailsWithOptions(QueryEmpPointDetailsRequest request, QueryEmpPointDetailsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -445,12 +551,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryEmpPointDetailsResponse());
     }
 
+    /**
+     * @summary 查询个人积分使用明细
+     *
+     * @param request QueryEmpPointDetailsRequest
+     * @return QueryEmpPointDetailsResponse
+     */
     public QueryEmpPointDetailsResponse queryEmpPointDetails(QueryEmpPointDetailsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryEmpPointDetailsHeaders headers = new QueryEmpPointDetailsHeaders();
         return this.queryEmpPointDetailsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取组织荣誉
+     *
+     * @param request QueryOrgHonorsRequest
+     * @param headers QueryOrgHonorsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOrgHonorsResponse
+     */
     public QueryOrgHonorsResponse queryOrgHonorsWithOptions(QueryOrgHonorsRequest request, QueryOrgHonorsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -489,12 +609,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryOrgHonorsResponse());
     }
 
+    /**
+     * @summary 获取组织荣誉
+     *
+     * @param request QueryOrgHonorsRequest
+     * @return QueryOrgHonorsResponse
+     */
     public QueryOrgHonorsResponse queryOrgHonors(QueryOrgHonorsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryOrgHonorsHeaders headers = new QueryOrgHonorsHeaders();
         return this.queryOrgHonorsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询组织发放扣除积分明细
+     *
+     * @param request QueryOrgPointDetailsRequest
+     * @param headers QueryOrgPointDetailsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOrgPointDetailsResponse
+     */
     public QueryOrgPointDetailsResponse queryOrgPointDetailsWithOptions(QueryOrgPointDetailsRequest request, QueryOrgPointDetailsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -541,12 +675,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryOrgPointDetailsResponse());
     }
 
+    /**
+     * @summary 查询组织发放扣除积分明细
+     *
+     * @param request QueryOrgPointDetailsRequest
+     * @return QueryOrgPointDetailsResponse
+     */
     public QueryOrgPointDetailsResponse queryOrgPointDetails(QueryOrgPointDetailsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryOrgPointDetailsHeaders headers = new QueryOrgPointDetailsHeaders();
         return this.queryOrgPointDetailsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询积分自动发放行为规则
+     *
+     * @param headers QueryPointActionAutoAssignRuleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPointActionAutoAssignRuleResponse
+     */
     public QueryPointActionAutoAssignRuleResponse queryPointActionAutoAssignRuleWithOptions(QueryPointActionAutoAssignRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -574,12 +721,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryPointActionAutoAssignRuleResponse());
     }
 
+    /**
+     * @summary 查询积分自动发放行为规则
+     *
+     * @return QueryPointActionAutoAssignRuleResponse
+     */
     public QueryPointActionAutoAssignRuleResponse queryPointActionAutoAssignRule() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPointActionAutoAssignRuleHeaders headers = new QueryPointActionAutoAssignRuleHeaders();
         return this.queryPointActionAutoAssignRuleWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 每月自动发放额度查询
+     *
+     * @param headers QueryPointAutoIssueSettingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPointAutoIssueSettingResponse
+     */
     public QueryPointAutoIssueSettingResponse queryPointAutoIssueSettingWithOptions(QueryPointAutoIssueSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -607,12 +766,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryPointAutoIssueSettingResponse());
     }
 
+    /**
+     * @summary 每月自动发放额度查询
+     *
+     * @return QueryPointAutoIssueSettingResponse
+     */
     public QueryPointAutoIssueSettingResponse queryPointAutoIssueSetting() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPointAutoIssueSettingHeaders headers = new QueryPointAutoIssueSettingHeaders();
         return this.queryPointAutoIssueSettingWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 查询员工已获得的组织荣誉列表
+     *
+     * @param request QueryUserHonorsRequest
+     * @param headers QueryUserHonorsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUserHonorsResponse
+     */
     public QueryUserHonorsResponse queryUserHonorsWithOptions(String userId, QueryUserHonorsRequest request, QueryUserHonorsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -651,12 +823,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryUserHonorsResponse());
     }
 
+    /**
+     * @summary 查询员工已获得的组织荣誉列表
+     *
+     * @param request QueryUserHonorsRequest
+     * @return QueryUserHonorsResponse
+     */
     public QueryUserHonorsResponse queryUserHonors(String userId, QueryUserHonorsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryUserHonorsHeaders headers = new QueryUserHonorsHeaders();
         return this.queryUserHonorsWithOptions(userId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询员工已获得的积分
+     *
+     * @param headers QueryUserPointsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUserPointsResponse
+     */
     public QueryUserPointsResponse queryUserPointsWithOptions(String userId, QueryUserPointsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -684,12 +869,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryUserPointsResponse());
     }
 
+    /**
+     * @summary 查询员工已获得的积分
+     *
+     * @return QueryUserPointsResponse
+     */
     public QueryUserPointsResponse queryUserPoints(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryUserPointsHeaders headers = new QueryUserPointsHeaders();
         return this.queryUserPointsWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 撤销员工获得的荣誉勋章
+     *
+     * @param request RecallHonorRequest
+     * @param headers RecallHonorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RecallHonorResponse
+     */
     public RecallHonorResponse recallHonorWithOptions(String honorId, RecallHonorRequest request, RecallHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -724,12 +922,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RecallHonorResponse());
     }
 
+    /**
+     * @summary 撤销员工获得的荣誉勋章
+     *
+     * @param request RecallHonorRequest
+     * @return RecallHonorResponse
+     */
     public RecallHonorResponse recallHonor(String honorId, RecallHonorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RecallHonorHeaders headers = new RecallHonorHeaders();
         return this.recallHonorWithOptions(honorId, request, headers, runtime);
     }
 
+    /**
+     * @summary 每月自动发放额度修改
+     *
+     * @param request UpdateAutoIssuePointRequest
+     * @param headers UpdateAutoIssuePointHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateAutoIssuePointResponse
+     */
     public UpdateAutoIssuePointResponse updateAutoIssuePointWithOptions(UpdateAutoIssuePointRequest request, UpdateAutoIssuePointHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -776,12 +988,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateAutoIssuePointResponse());
     }
 
+    /**
+     * @summary 每月自动发放额度修改
+     *
+     * @param request UpdateAutoIssuePointRequest
+     * @return UpdateAutoIssuePointResponse
+     */
     public UpdateAutoIssuePointResponse updateAutoIssuePoint(UpdateAutoIssuePointRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateAutoIssuePointHeaders headers = new UpdateAutoIssuePointHeaders();
         return this.updateAutoIssuePointWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改积分系统行为规则
+     *
+     * @param request UpdatePointActionAutoAssignRuleRequest
+     * @param headers UpdatePointActionAutoAssignRuleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePointActionAutoAssignRuleResponse
+     */
     public UpdatePointActionAutoAssignRuleResponse updatePointActionAutoAssignRuleWithOptions(UpdatePointActionAutoAssignRuleRequest request, UpdatePointActionAutoAssignRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -820,12 +1046,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePointActionAutoAssignRuleResponse());
     }
 
+    /**
+     * @summary 修改积分系统行为规则
+     *
+     * @param request UpdatePointActionAutoAssignRuleRequest
+     * @return UpdatePointActionAutoAssignRuleResponse
+     */
     public UpdatePointActionAutoAssignRuleResponse updatePointActionAutoAssignRule(UpdatePointActionAutoAssignRuleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdatePointActionAutoAssignRuleHeaders headers = new UpdatePointActionAutoAssignRuleHeaders();
         return this.updatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 佩戴/卸下荣誉勋章
+     *
+     * @param request WearOrgHonorRequest
+     * @param headers WearOrgHonorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WearOrgHonorResponse
+     */
     public WearOrgHonorResponse wearOrgHonorWithOptions(String honorId, WearOrgHonorRequest request, WearOrgHonorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -864,6 +1104,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WearOrgHonorResponse());
     }
 
+    /**
+     * @summary 佩戴/卸下荣誉勋章
+     *
+     * @param request WearOrgHonorRequest
+     * @return WearOrgHonorResponse
+     */
     public WearOrgHonorResponse wearOrgHonor(String honorId, WearOrgHonorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WearOrgHonorHeaders headers = new WearOrgHonorHeaders();

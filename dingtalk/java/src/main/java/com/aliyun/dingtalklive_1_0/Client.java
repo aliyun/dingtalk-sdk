@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 添加云导播联播群列表
+     *
+     * @param request AddShareCidListRequest
+     * @param headers AddShareCidListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddShareCidListResponse
+     */
     public AddShareCidListResponse addShareCidListWithOptions(String feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddShareCidListResponse());
     }
 
+    /**
+     * @summary 添加云导播联播群列表
+     *
+     * @param request AddShareCidListRequest
+     * @return AddShareCidListResponse
+     */
     public AddShareCidListResponse addShareCidList(String feedId, AddShareCidListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddShareCidListHeaders headers = new AddShareCidListHeaders();
         return this.addShareCidListWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建云导播课程
+     *
+     * @param request CreateCloudFeedRequest
+     * @param headers CreateCloudFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCloudFeedResponse
+     */
     public CreateCloudFeedResponse createCloudFeedWithOptions(CreateCloudFeedRequest request, CreateCloudFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,12 +143,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateCloudFeedResponse());
     }
 
+    /**
+     * @summary 创建云导播课程
+     *
+     * @param request CreateCloudFeedRequest
+     * @return CreateCloudFeedResponse
+     */
     public CreateCloudFeedResponse createCloudFeed(CreateCloudFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateCloudFeedHeaders headers = new CreateCloudFeedHeaders();
         return this.createCloudFeedWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建直播
+     *
+     * @param request CreateLiveRequest
+     * @param headers CreateLiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateLiveResponse
+     */
     public CreateLiveResponse createLiveWithOptions(CreateLiveRequest request, CreateLiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -185,12 +221,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateLiveResponse());
     }
 
+    /**
+     * @summary 创建直播
+     *
+     * @param request CreateLiveRequest
+     * @return CreateLiveResponse
+     */
     public CreateLiveResponse createLive(CreateLiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateLiveHeaders headers = new CreateLiveHeaders();
         return this.createLiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除直播
+     *
+     * @param request DeleteLiveRequest
+     * @param headers DeleteLiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteLiveResponse
+     */
     public DeleteLiveResponse deleteLiveWithOptions(DeleteLiveRequest request, DeleteLiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -229,12 +279,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteLiveResponse());
     }
 
+    /**
+     * @summary 删除直播
+     *
+     * @param request DeleteLiveRequest
+     * @return DeleteLiveResponse
+     */
     public DeleteLiveResponse deleteLive(DeleteLiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteLiveHeaders headers = new DeleteLiveHeaders();
         return this.deleteLiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除直播培训课程
+     *
+     * @param request DeleteLiveFeedRequest
+     * @param headers DeleteLiveFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteLiveFeedResponse
+     */
     public DeleteLiveFeedResponse deleteLiveFeedWithOptions(String feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -269,12 +333,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteLiveFeedResponse());
     }
 
+    /**
+     * @summary 删除直播培训课程
+     *
+     * @param request DeleteLiveFeedRequest
+     * @return DeleteLiveFeedResponse
+     */
     public DeleteLiveFeedResponse deleteLiveFeed(String feedId, DeleteLiveFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteLiveFeedHeaders headers = new DeleteLiveFeedHeaders();
         return this.deleteLiveFeedWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 剪辑直播课程的回放
+     *
+     * @param request EditFeedReplayRequest
+     * @param headers EditFeedReplayHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditFeedReplayResponse
+     */
     public EditFeedReplayResponse editFeedReplayWithOptions(String feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -317,12 +395,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditFeedReplayResponse());
     }
 
+    /**
+     * @summary 剪辑直播课程的回放
+     *
+     * @param request EditFeedReplayRequest
+     * @return EditFeedReplayResponse
+     */
     public EditFeedReplayResponse editFeedReplay(String feedId, EditFeedReplayRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditFeedReplayHeaders headers = new EditFeedReplayHeaders();
         return this.editFeedReplayWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取直播的可下载回放地址
+     *
+     * @param request GetLiveReplayUrlRequest
+     * @param headers GetLiveReplayUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetLiveReplayUrlResponse
+     */
     public GetLiveReplayUrlResponse getLiveReplayUrlWithOptions(GetLiveReplayUrlRequest request, GetLiveReplayUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -361,12 +453,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetLiveReplayUrlResponse());
     }
 
+    /**
+     * @summary 获取直播的可下载回放地址
+     *
+     * @param request GetLiveReplayUrlRequest
+     * @return GetLiveReplayUrlResponse
+     */
     public GetLiveReplayUrlResponse getLiveReplayUrl(GetLiveReplayUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetLiveReplayUrlHeaders headers = new GetLiveReplayUrlHeaders();
         return this.getLiveReplayUrlWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据状态拉我相关的直播
+     *
+     * @param request GetUserAllLiveListRequest
+     * @param headers GetUserAllLiveListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserAllLiveListResponse
+     */
     public GetUserAllLiveListResponse getUserAllLiveListWithOptions(GetUserAllLiveListRequest request, GetUserAllLiveListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -427,12 +533,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUserAllLiveListResponse());
     }
 
+    /**
+     * @summary 根据状态拉我相关的直播
+     *
+     * @param request GetUserAllLiveListRequest
+     * @return GetUserAllLiveListResponse
+     */
     public GetUserAllLiveListResponse getUserAllLiveList(GetUserAllLiveListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserAllLiveListHeaders headers = new GetUserAllLiveListHeaders();
         return this.getUserAllLiveListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据状态获取用户创建的直播
+     *
+     * @param request GetUserCreateLiveListRequest
+     * @param headers GetUserCreateLiveListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserCreateLiveListResponse
+     */
     public GetUserCreateLiveListResponse getUserCreateLiveListWithOptions(GetUserCreateLiveListRequest request, GetUserCreateLiveListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -493,12 +613,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUserCreateLiveListResponse());
     }
 
+    /**
+     * @summary 根据状态获取用户创建的直播
+     *
+     * @param request GetUserCreateLiveListRequest
+     * @return GetUserCreateLiveListResponse
+     */
     public GetUserCreateLiveListResponse getUserCreateLiveList(GetUserCreateLiveListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserCreateLiveListHeaders headers = new GetUserCreateLiveListHeaders();
         return this.getUserCreateLiveListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取用户观看直播记录
+     *
+     * @param request GetUserWatchLiveListRequest
+     * @param headers GetUserWatchLiveListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserWatchLiveListResponse
+     */
     public GetUserWatchLiveListResponse getUserWatchLiveListWithOptions(GetUserWatchLiveListRequest request, GetUserWatchLiveListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -545,12 +679,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUserWatchLiveListResponse());
     }
 
+    /**
+     * @summary 获取用户观看直播记录
+     *
+     * @param request GetUserWatchLiveListRequest
+     * @return GetUserWatchLiveListResponse
+     */
     public GetUserWatchLiveListResponse getUserWatchLiveList(GetUserWatchLiveListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserWatchLiveListHeaders headers = new GetUserWatchLiveListHeaders();
         return this.getUserWatchLiveListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改直播课程可见白名单
+     *
+     * @param tmpReq ModifyFeedWhiteListRequest
+     * @param headers ModifyFeedWhiteListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ModifyFeedWhiteListResponse
+     */
     public ModifyFeedWhiteListResponse modifyFeedWhiteListWithOptions(String feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         ModifyFeedWhiteListShrinkRequest request = new ModifyFeedWhiteListShrinkRequest();
@@ -599,12 +747,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ModifyFeedWhiteListResponse());
     }
 
+    /**
+     * @summary 修改直播课程可见白名单
+     *
+     * @param request ModifyFeedWhiteListRequest
+     * @return ModifyFeedWhiteListResponse
+     */
     public ModifyFeedWhiteListResponse modifyFeedWhiteList(String feedId, ModifyFeedWhiteListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ModifyFeedWhiteListHeaders headers = new ModifyFeedWhiteListHeaders();
         return this.modifyFeedWhiteListWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询直播课程的观看白名单
+     *
+     * @param request QueryFeedWhiteListRequest
+     * @param headers QueryFeedWhiteListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryFeedWhiteListResponse
+     */
     public QueryFeedWhiteListResponse queryFeedWhiteListWithOptions(String feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -639,12 +801,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryFeedWhiteListResponse());
     }
 
+    /**
+     * @summary 查询直播课程的观看白名单
+     *
+     * @param request QueryFeedWhiteListRequest
+     * @return QueryFeedWhiteListResponse
+     */
     public QueryFeedWhiteListResponse queryFeedWhiteList(String feedId, QueryFeedWhiteListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryFeedWhiteListHeaders headers = new QueryFeedWhiteListHeaders();
         return this.queryFeedWhiteListWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 查询直播详情
+     *
+     * @param request QueryLiveInfoRequest
+     * @param headers QueryLiveInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryLiveInfoResponse
+     */
     public QueryLiveInfoResponse queryLiveInfoWithOptions(QueryLiveInfoRequest request, QueryLiveInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -683,12 +859,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryLiveInfoResponse());
     }
 
+    /**
+     * @summary 查询直播详情
+     *
+     * @param request QueryLiveInfoRequest
+     * @return QueryLiveInfoResponse
+     */
     public QueryLiveInfoResponse queryLiveInfo(QueryLiveInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryLiveInfoHeaders headers = new QueryLiveInfoHeaders();
         return this.queryLiveInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取直播的观看数据
+     *
+     * @param request QueryLiveWatchDetailRequest
+     * @param headers QueryLiveWatchDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryLiveWatchDetailResponse
+     */
     public QueryLiveWatchDetailResponse queryLiveWatchDetailWithOptions(QueryLiveWatchDetailRequest request, QueryLiveWatchDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -727,12 +917,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryLiveWatchDetailResponse());
     }
 
+    /**
+     * @summary 获取直播的观看数据
+     *
+     * @param request QueryLiveWatchDetailRequest
+     * @return QueryLiveWatchDetailResponse
+     */
     public QueryLiveWatchDetailResponse queryLiveWatchDetail(QueryLiveWatchDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryLiveWatchDetailHeaders headers = new QueryLiveWatchDetailHeaders();
         return this.queryLiveWatchDetailWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取直播观看用户列表
+     *
+     * @param request QueryLiveWatchUserListRequest
+     * @param headers QueryLiveWatchUserListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryLiveWatchUserListResponse
+     */
     public QueryLiveWatchUserListResponse queryLiveWatchUserListWithOptions(QueryLiveWatchUserListRequest request, QueryLiveWatchUserListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -779,12 +983,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryLiveWatchUserListResponse());
     }
 
+    /**
+     * @summary 获取直播观看用户列表
+     *
+     * @param request QueryLiveWatchUserListRequest
+     * @return QueryLiveWatchUserListResponse
+     */
     public QueryLiveWatchUserListResponse queryLiveWatchUserList(QueryLiveWatchUserListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryLiveWatchUserListHeaders headers = new QueryLiveWatchUserListHeaders();
         return this.queryLiveWatchUserListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量查询直播是否订阅
+     *
+     * @param tmpReq QuerySubscribeStatusRequest
+     * @param headers QuerySubscribeStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySubscribeStatusResponse
+     */
     public QuerySubscribeStatusResponse querySubscribeStatusWithOptions(QuerySubscribeStatusRequest tmpReq, QuerySubscribeStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         QuerySubscribeStatusShrinkRequest request = new QuerySubscribeStatusShrinkRequest();
@@ -829,12 +1047,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QuerySubscribeStatusResponse());
     }
 
+    /**
+     * @summary 批量查询直播是否订阅
+     *
+     * @param request QuerySubscribeStatusRequest
+     * @return QuerySubscribeStatusResponse
+     */
     public QuerySubscribeStatusResponse querySubscribeStatus(QuerySubscribeStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QuerySubscribeStatusHeaders headers = new QuerySubscribeStatusHeaders();
         return this.querySubscribeStatusWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 开始一场云导播
+     *
+     * @param request StartCloudFeedRequest
+     * @param headers StartCloudFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StartCloudFeedResponse
+     */
     public StartCloudFeedResponse startCloudFeedWithOptions(String feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -869,12 +1101,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new StartCloudFeedResponse());
     }
 
+    /**
+     * @summary 开始一场云导播
+     *
+     * @param request StartCloudFeedRequest
+     * @return StartCloudFeedResponse
+     */
     public StartCloudFeedResponse startCloudFeed(String feedId, StartCloudFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         StartCloudFeedHeaders headers = new StartCloudFeedHeaders();
         return this.startCloudFeedWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 结束一场云导播
+     *
+     * @param request StopCloudFeedRequest
+     * @param headers StopCloudFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StopCloudFeedResponse
+     */
     public StopCloudFeedResponse stopCloudFeedWithOptions(String feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -909,12 +1155,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new StopCloudFeedResponse());
     }
 
+    /**
+     * @summary 结束一场云导播
+     *
+     * @param request StopCloudFeedRequest
+     * @return StopCloudFeedResponse
+     */
     public StopCloudFeedResponse stopCloudFeed(String feedId, StopCloudFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         StopCloudFeedHeaders headers = new StopCloudFeedHeaders();
         return this.stopCloudFeedWithOptions(feedId, request, headers, runtime);
     }
 
+    /**
+     * @summary 预约直播
+     *
+     * @param request SubscribeLiveRequest
+     * @param headers SubscribeLiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubscribeLiveResponse
+     */
     public SubscribeLiveResponse subscribeLiveWithOptions(SubscribeLiveRequest request, SubscribeLiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -957,12 +1217,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SubscribeLiveResponse());
     }
 
+    /**
+     * @summary 预约直播
+     *
+     * @param request SubscribeLiveRequest
+     * @return SubscribeLiveResponse
+     */
     public SubscribeLiveResponse subscribeLive(SubscribeLiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SubscribeLiveHeaders headers = new SubscribeLiveHeaders();
         return this.subscribeLiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改直播
+     *
+     * @param request UpdateLiveRequest
+     * @param headers UpdateLiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateLiveResponse
+     */
     public UpdateLiveResponse updateLiveWithOptions(UpdateLiveRequest request, UpdateLiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1021,12 +1295,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateLiveResponse());
     }
 
+    /**
+     * @summary 修改直播
+     *
+     * @param request UpdateLiveRequest
+     * @return UpdateLiveResponse
+     */
     public UpdateLiveResponse updateLive(UpdateLiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateLiveHeaders headers = new UpdateLiveHeaders();
         return this.updateLiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改培训课程信息
+     *
+     * @param request UpdateLiveFeedRequest
+     * @param headers UpdateLiveFeedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateLiveFeedResponse
+     */
     public UpdateLiveFeedResponse updateLiveFeedWithOptions(String feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1077,6 +1365,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateLiveFeedResponse());
     }
 
+    /**
+     * @summary 修改培训课程信息
+     *
+     * @param request UpdateLiveFeedRequest
+     * @return UpdateLiveFeedResponse
+     */
     public UpdateLiveFeedResponse updateLiveFeed(String feedId, UpdateLiveFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateLiveFeedHeaders headers = new UpdateLiveFeedHeaders();

@@ -7,6 +7,9 @@ public class GetHistoryConfDataListRequest extends TeaModel {
     @NameInMap("creatorNike")
     public String creatorNike;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
@@ -19,12 +22,18 @@ public class GetHistoryConfDataListRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("realData")
     public Boolean realData;
 
     @NameInMap("scene")
     public String scene;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

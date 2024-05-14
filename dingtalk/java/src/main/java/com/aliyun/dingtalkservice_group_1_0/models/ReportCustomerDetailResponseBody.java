@@ -4,15 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerDetailResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("records")
     public java.util.List<ReportCustomerDetailResponseBodyRecords> records;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,27 +66,51 @@ public class ReportCustomerDetailResponseBody extends TeaModel {
     }
 
     public static class ReportCustomerDetailResponseBodyRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("customerName")
         public String customerName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasLogin")
         public Boolean hasLogin;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasOpenConv")
         public Boolean hasOpenConv;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

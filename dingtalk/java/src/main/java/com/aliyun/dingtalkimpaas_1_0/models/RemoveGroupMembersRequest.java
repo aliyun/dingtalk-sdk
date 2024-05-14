@@ -4,9 +4,15 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveGroupMembersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberUids")
     public java.util.List<String> memberUids;
 

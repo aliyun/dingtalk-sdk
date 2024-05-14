@@ -4,15 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

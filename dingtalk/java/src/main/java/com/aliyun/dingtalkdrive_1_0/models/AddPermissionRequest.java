@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddPermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<AddPermissionRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("role")
     public String role;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -43,12 +52,21 @@ public class AddPermissionRequest extends TeaModel {
     }
 
     public static class AddPermissionRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 

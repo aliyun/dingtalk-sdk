@@ -7,9 +7,15 @@ public class ExecuteRobotAiSkillRequest extends TeaModel {
     @NameInMap("context")
     public java.util.Map<String, ?> context;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("input")
     public String input;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

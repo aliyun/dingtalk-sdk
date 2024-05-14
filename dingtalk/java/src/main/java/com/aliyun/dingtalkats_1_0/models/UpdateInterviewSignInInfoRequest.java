@@ -7,6 +7,9 @@ public class UpdateInterviewSignInInfoRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signInTimeMillis")
     public Long signInTimeMillis;
 

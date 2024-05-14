@@ -4,21 +4,36 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMiniAppPluginRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
     @NameInMap("bundleId")
     public String bundleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("desc")
     public String desc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

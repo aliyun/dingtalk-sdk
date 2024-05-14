@@ -4,9 +4,15 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class MuteMembersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userList")
     public java.util.List<MuteMembersRequestUserList> userList;
 
@@ -35,6 +41,9 @@ public class MuteMembersRequest extends TeaModel {
         @NameInMap("participantId")
         public String participantId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

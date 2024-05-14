@@ -7,9 +7,15 @@ public class QueryMedicalEventsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryMedicalEventsResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,12 +49,18 @@ public class QueryMedicalEventsResponseBody extends TeaModel {
     }
 
     public static class QueryMedicalEventsResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("eventId")
         public Long eventId;
 

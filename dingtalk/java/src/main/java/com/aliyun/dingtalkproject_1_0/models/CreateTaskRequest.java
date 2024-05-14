@@ -4,6 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
@@ -25,6 +28,9 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("priority")
     public Integer priority;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 

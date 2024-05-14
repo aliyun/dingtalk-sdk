@@ -21,27 +21,51 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalRolesResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isDeleted")
         public Long isDeleted;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("readOnly")
         public Long readOnly;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sort")
         public Long sort;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageUpdateStorageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

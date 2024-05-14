@@ -4,24 +4,45 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessToken")
     public String accessToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessTokenExpirationMillis")
     public Long accessTokenExpirationMillis;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bucket")
     public String bucket;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endPoint")
     public String endPoint;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 

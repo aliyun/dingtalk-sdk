@@ -4,39 +4,69 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatWithholdingOrderAndPayResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public String amount;
 
     @NameInMap("gmtPay")
     public String gmtPay;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payerStaffId")
     public String payerStaffId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

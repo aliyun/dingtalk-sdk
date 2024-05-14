@@ -7,6 +7,9 @@ public class GetRelatedWorkspacesRequest extends TeaModel {
     @NameInMap("includeRecent")
     public Boolean includeRecent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

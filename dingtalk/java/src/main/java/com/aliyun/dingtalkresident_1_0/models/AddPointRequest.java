@@ -7,21 +7,36 @@ public class AddPointRequest extends TeaModel {
     @NameInMap("actionTime")
     public Long actionTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isCircle")
     public Boolean isCircle;
 
     @NameInMap("ruleCode")
     public String ruleCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ruleName")
     public String ruleName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("score")
     public Integer score;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

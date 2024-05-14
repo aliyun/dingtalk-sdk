@@ -10,6 +10,9 @@ public class TransferEventRequest extends TeaModel {
     @NameInMap("needNotifyViaO2O")
     public Boolean needNotifyViaO2O;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("newOrganizerId")
     public String newOrganizerId;
 

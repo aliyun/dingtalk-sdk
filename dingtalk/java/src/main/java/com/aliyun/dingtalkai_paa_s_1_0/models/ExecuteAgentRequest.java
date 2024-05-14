@@ -4,9 +4,15 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteAgentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentCode")
     public String agentCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("inputs")
     public ExecuteAgentRequestInputs inputs;
 

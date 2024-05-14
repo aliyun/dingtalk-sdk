@@ -32,6 +32,9 @@ public class SendOTOInteractiveCardResponseBody extends TeaModel {
     }
 
     public static class SendOTOInteractiveCardResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processQueryKey")
         public String processQueryKey;
 

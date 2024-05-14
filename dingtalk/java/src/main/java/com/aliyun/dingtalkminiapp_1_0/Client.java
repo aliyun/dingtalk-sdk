@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建小程序
+     *
+     * @param request CreateMiniAppRequest
+     * @param headers CreateMiniAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMiniAppResponse
+     */
     public CreateMiniAppResponse createMiniAppWithOptions(CreateMiniAppRequest request, CreateMiniAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -74,12 +82,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateMiniAppResponse());
     }
 
+    /**
+     * @summary 创建小程序
+     *
+     * @param request CreateMiniAppRequest
+     * @return CreateMiniAppResponse
+     */
     public CreateMiniAppResponse createMiniApp(CreateMiniAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
         return this.createMiniAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建小程序组件
+     *
+     * @param request CreateMiniAppPluginRequest
+     * @param headers CreateMiniAppPluginHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateMiniAppPluginResponse
+     */
     public CreateMiniAppPluginResponse createMiniAppPluginWithOptions(CreateMiniAppPluginRequest request, CreateMiniAppPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -134,12 +156,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateMiniAppPluginResponse());
     }
 
+    /**
+     * @summary 创建小程序组件
+     *
+     * @param request CreateMiniAppPluginRequest
+     * @return CreateMiniAppPluginResponse
+     */
     public CreateMiniAppPluginResponse createMiniAppPlugin(CreateMiniAppPluginRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
         return this.createMiniAppPluginWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 小程序多端发布版本
+     *
+     * @param request CreateVersionAcrossBundleRequest
+     * @param headers CreateVersionAcrossBundleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateVersionAcrossBundleResponse
+     */
     public CreateVersionAcrossBundleResponse createVersionAcrossBundleWithOptions(CreateVersionAcrossBundleRequest request, CreateVersionAcrossBundleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -190,12 +226,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateVersionAcrossBundleResponse());
     }
 
+    /**
+     * @summary 小程序多端发布版本
+     *
+     * @param request CreateVersionAcrossBundleRequest
+     * @return CreateVersionAcrossBundleResponse
+     */
     public CreateVersionAcrossBundleResponse createVersionAcrossBundle(CreateVersionAcrossBundleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
         return this.createVersionAcrossBundleWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取小程序最大的构建版本
+     *
+     * @param request GetMaxVersionRequest
+     * @param headers GetMaxVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMaxVersionResponse
+     */
     public GetMaxVersionResponse getMaxVersionWithOptions(GetMaxVersionRequest request, GetMaxVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -238,12 +288,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMaxVersionResponse());
     }
 
+    /**
+     * @summary 获取小程序最大的构建版本
+     *
+     * @param request GetMaxVersionRequest
+     * @return GetMaxVersionResponse
+     */
     public GetMaxVersionResponse getMaxVersion(GetMaxVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
         return this.getMaxVersionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 同步小程序元数据
+     *
+     * @param request GetMiniAppMetaDataRequest
+     * @param headers GetMiniAppMetaDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMiniAppMetaDataResponse
+     */
     public GetMiniAppMetaDataResponse getMiniAppMetaDataWithOptions(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -290,12 +354,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMiniAppMetaDataResponse());
     }
 
+    /**
+     * @summary 同步小程序元数据
+     *
+     * @param request GetMiniAppMetaDataRequest
+     * @return GetMiniAppMetaDataResponse
+     */
     public GetMiniAppMetaDataResponse getMiniAppMetaData(GetMiniAppMetaDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
         return this.getMiniAppMetaDataWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询小程序配置
+     *
+     * @param headers GetSettingByMiniAppIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSettingByMiniAppIdResponse
+     */
     public GetSettingByMiniAppIdResponse getSettingByMiniAppIdWithOptions(String miniAppId, GetSettingByMiniAppIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -323,12 +400,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSettingByMiniAppIdResponse());
     }
 
+    /**
+     * @summary 查询小程序配置
+     *
+     * @return GetSettingByMiniAppIdResponse
+     */
     public GetSettingByMiniAppIdResponse getSettingByMiniAppId(String miniAppId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSettingByMiniAppIdHeaders headers = new GetSettingByMiniAppIdHeaders();
         return this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
     }
 
+    /**
+     * @summary 构建H5Bundle
+     *
+     * @param request InvokeHtmlBundleBuildRequest
+     * @param headers InvokeHtmlBundleBuildHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InvokeHtmlBundleBuildResponse
+     */
     public InvokeHtmlBundleBuildResponse invokeHtmlBundleBuildWithOptions(InvokeHtmlBundleBuildRequest request, InvokeHtmlBundleBuildHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -371,12 +461,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InvokeHtmlBundleBuildResponse());
     }
 
+    /**
+     * @summary 构建H5Bundle
+     *
+     * @param request InvokeHtmlBundleBuildRequest
+     * @return InvokeHtmlBundleBuildResponse
+     */
     public InvokeHtmlBundleBuildResponse invokeHtmlBundleBuild(InvokeHtmlBundleBuildRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
         return this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取小程序版本列表
+     *
+     * @param request ListAvaiableVersionRequest
+     * @param headers ListAvaiableVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAvaiableVersionResponse
+     */
     public ListAvaiableVersionResponse listAvaiableVersionWithOptions(ListAvaiableVersionRequest request, ListAvaiableVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -427,12 +531,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListAvaiableVersionResponse());
     }
 
+    /**
+     * @summary 获取小程序版本列表
+     *
+     * @param request ListAvaiableVersionRequest
+     * @return ListAvaiableVersionResponse
+     */
     public ListAvaiableVersionResponse listAvaiableVersion(ListAvaiableVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
         return this.listAvaiableVersionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询H5构建结果
+     *
+     * @param request QueryHtmlBundleBuildRequest
+     * @param headers QueryHtmlBundleBuildHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryHtmlBundleBuildResponse
+     */
     public QueryHtmlBundleBuildResponse queryHtmlBundleBuildWithOptions(QueryHtmlBundleBuildRequest request, QueryHtmlBundleBuildHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -475,12 +593,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryHtmlBundleBuildResponse());
     }
 
+    /**
+     * @summary 查询H5构建结果
+     *
+     * @param request QueryHtmlBundleBuildRequest
+     * @return QueryHtmlBundleBuildResponse
+     */
     public QueryHtmlBundleBuildResponse queryHtmlBundleBuild(QueryHtmlBundleBuildRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
         return this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 回滚版本
+     *
+     * @param request RollBackVersionRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RollBackVersionResponse
+     */
     public RollBackVersionResponse rollBackVersionWithOptions(RollBackVersionRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -518,12 +650,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RollBackVersionResponse());
     }
 
+    /**
+     * @summary 回滚版本
+     *
+     * @param request RollBackVersionRequest
+     * @return RollBackVersionResponse
+     */
     public RollBackVersionResponse rollBackVersion(RollBackVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.rollBackVersionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改小程序配置
+     *
+     * @param request SetExtendSettingRequest
+     * @param headers SetExtendSettingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetExtendSettingResponse
+     */
     public SetExtendSettingResponse setExtendSettingWithOptions(SetExtendSettingRequest request, SetExtendSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -562,12 +708,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SetExtendSettingResponse());
     }
 
+    /**
+     * @summary 修改小程序配置
+     *
+     * @param request SetExtendSettingRequest
+     * @return SetExtendSettingResponse
+     */
     public SetExtendSettingResponse setExtendSetting(SetExtendSettingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
         return this.setExtendSettingWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发布版本
+     *
+     * @param request UpdateVersionStatusRequest
+     * @param headers UpdateVersionStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateVersionStatusResponse
+     */
     public UpdateVersionStatusResponse updateVersionStatusWithOptions(UpdateVersionStatusRequest request, UpdateVersionStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -614,6 +774,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateVersionStatusResponse());
     }
 
+    /**
+     * @summary 发布版本
+     *
+     * @param request UpdateVersionStatusRequest
+     * @return UpdateVersionStatusResponse
+     */
     public UpdateVersionStatusResponse updateVersionStatus(UpdateVersionStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();

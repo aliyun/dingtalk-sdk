@@ -4,18 +4,27 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmPtsServiceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("env")
     public String env;
 
     @NameInMap("method")
     public String method;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outerId")
     public String outerId;
 
     @NameInMap("params")
     public Object params;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("path")
     public String path;
 

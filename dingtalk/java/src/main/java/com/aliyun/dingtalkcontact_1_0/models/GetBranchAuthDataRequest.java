@@ -7,9 +7,15 @@ public class GetBranchAuthDataRequest extends TeaModel {
     @NameInMap("body")
     public java.util.Map<String, String> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("branchCorpId")
     public String branchCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 

@@ -7,15 +7,27 @@ public class AssignTicketRequest extends TeaModel {
     @NameInMap("notify")
     public AssignTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
@@ -150,6 +162,9 @@ public class AssignTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<AssignTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memo")
         public String memo;
 

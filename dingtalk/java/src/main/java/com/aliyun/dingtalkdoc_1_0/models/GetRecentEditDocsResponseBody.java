@@ -41,18 +41,30 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nodeName")
         public String nodeName;
 
         @NameInMap("updateTime")
         public Long updateTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -131,9 +143,15 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
         @NameInMap("url")
         public String url;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workspaceName")
         public String workspaceName;
 
@@ -169,9 +187,15 @@ public class GetRecentEditDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentEditDocsResponseBodyRecentList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nodeBO")
         public GetRecentEditDocsResponseBodyRecentListNodeBO nodeBO;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workspaceBO")
         public GetRecentEditDocsResponseBodyRecentListWorkspaceBO workspaceBO;
 

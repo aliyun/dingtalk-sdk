@@ -4,15 +4,27 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollBackVersionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bundleId")
     public String bundleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rollbackVersion")
     public String rollbackVersion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetVersion")
     public String targetVersion;
 

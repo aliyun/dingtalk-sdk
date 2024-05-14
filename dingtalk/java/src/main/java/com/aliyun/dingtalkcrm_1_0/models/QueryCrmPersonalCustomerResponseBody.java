@@ -65,9 +65,15 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryCrmPersonalCustomerResponseBodyValuesPermission extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ownerStaffIds")
         public java.util.List<String> ownerStaffIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantStaffIds")
         public java.util.List<String> participantStaffIds;
 
@@ -95,36 +101,69 @@ public class QueryCrmPersonalCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryCrmPersonalCustomerResponseBodyValues extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectType")
         public String objectType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("permission")
         public QueryCrmPersonalCustomerResponseBodyValuesPermission permission;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("procInstStatus")
         public String procInstStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("procOutResult")
         public String procOutResult;
 

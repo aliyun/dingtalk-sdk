@@ -4,6 +4,9 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBaymaxSkillLogResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public String result;
 

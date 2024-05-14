@@ -22,6 +22,9 @@ public class BatchQuerySendMessageTaskRequest extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

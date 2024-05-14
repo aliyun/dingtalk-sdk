@@ -10,12 +10,21 @@ public class PushEventRequest extends TeaModel {
     @NameInMap("deviceId")
     public String deviceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventId")
     public String eventId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventName")
     public String eventName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventType")
     public String eventType;
 
@@ -28,6 +37,9 @@ public class PushEventRequest extends TeaModel {
     @NameInMap("msg")
     public String msg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("occurrenceTime")
     public Long occurrenceTime;
 

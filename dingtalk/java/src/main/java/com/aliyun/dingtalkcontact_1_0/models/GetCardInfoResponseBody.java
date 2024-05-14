@@ -7,9 +7,15 @@ public class GetCardInfoResponseBody extends TeaModel {
     @NameInMap("adminRole")
     public Long adminRole;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardId")
     public String cardId;
 
@@ -22,9 +28,15 @@ public class GetCardInfoResponseBody extends TeaModel {
     @NameInMap("introduce")
     public java.util.Map<String, ?> introduce;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 

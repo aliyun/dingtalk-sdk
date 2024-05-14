@@ -21,15 +21,27 @@ public class GetMicroAppScopeResponseBody extends TeaModel {
     }
 
     public static class GetMicroAppScopeResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("onlyAdminVisible")
         public Boolean onlyAdminVisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleIds")
         public java.util.List<Long> roleIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

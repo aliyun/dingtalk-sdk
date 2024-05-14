@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 新增数据表字段
+     *
+     * @param request CreateFieldRequest
+     * @param headers CreateFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFieldResponse
+     */
     public CreateFieldResponse createFieldWithOptions(String baseId, String sheetIdOrName, CreateFieldRequest request, CreateFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -67,12 +75,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateFieldResponse());
     }
 
+    /**
+     * @summary 新增数据表字段
+     *
+     * @param request CreateFieldRequest
+     * @return CreateFieldResponse
+     */
     public CreateFieldResponse createField(String baseId, String sheetIdOrName, CreateFieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateFieldHeaders headers = new CreateFieldHeaders();
         return this.createFieldWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建数据表
+     *
+     * @param request CreateSheetRequest
+     * @param headers CreateSheetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateSheetResponse
+     */
     public CreateSheetResponse createSheetWithOptions(String baseId, CreateSheetRequest request, CreateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -117,12 +139,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateSheetResponse());
     }
 
+    /**
+     * @summary 创建数据表
+     *
+     * @param request CreateSheetRequest
+     * @return CreateSheetResponse
+     */
     public CreateSheetResponse createSheet(String baseId, CreateSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateSheetHeaders headers = new CreateSheetHeaders();
         return this.createSheetWithOptions(baseId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除数据表字段
+     *
+     * @param request DeleteFieldRequest
+     * @param headers DeleteFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFieldResponse
+     */
     public DeleteFieldResponse deleteFieldWithOptions(String baseId, String sheetIdOrName, String fieldIdOrName, DeleteFieldRequest request, DeleteFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -157,12 +193,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFieldResponse());
     }
 
+    /**
+     * @summary 删除数据表字段
+     *
+     * @param request DeleteFieldRequest
+     * @return DeleteFieldResponse
+     */
     public DeleteFieldResponse deleteField(String baseId, String sheetIdOrName, String fieldIdOrName, DeleteFieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteFieldHeaders headers = new DeleteFieldHeaders();
         return this.deleteFieldWithOptions(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除数据表多行记录
+     *
+     * @param request DeleteRecordsRequest
+     * @param headers DeleteRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteRecordsResponse
+     */
     public DeleteRecordsResponse deleteRecordsWithOptions(String baseId, String sheetIdOrName, DeleteRecordsRequest request, DeleteRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -203,12 +253,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRecordsResponse());
     }
 
+    /**
+     * @summary 删除数据表多行记录
+     *
+     * @param request DeleteRecordsRequest
+     * @return DeleteRecordsResponse
+     */
     public DeleteRecordsResponse deleteRecords(String baseId, String sheetIdOrName, DeleteRecordsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRecordsHeaders headers = new DeleteRecordsHeaders();
         return this.deleteRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除数据表
+     *
+     * @param request DeleteSheetRequest
+     * @param headers DeleteSheetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSheetResponse
+     */
     public DeleteSheetResponse deleteSheetWithOptions(String baseId, String sheetIdOrName, DeleteSheetRequest request, DeleteSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -243,12 +307,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSheetResponse());
     }
 
+    /**
+     * @summary 删除数据表
+     *
+     * @param request DeleteSheetRequest
+     * @return DeleteSheetResponse
+     */
     public DeleteSheetResponse deleteSheet(String baseId, String sheetIdOrName, DeleteSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSheetHeaders headers = new DeleteSheetHeaders();
         return this.deleteSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取所有字段
+     *
+     * @param request GetAllFieldsRequest
+     * @param headers GetAllFieldsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAllFieldsResponse
+     */
     public GetAllFieldsResponse getAllFieldsWithOptions(String baseId, String sheetIdOrName, GetAllFieldsRequest request, GetAllFieldsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -283,12 +361,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAllFieldsResponse());
     }
 
+    /**
+     * @summary 获取所有字段
+     *
+     * @param request GetAllFieldsRequest
+     * @return GetAllFieldsResponse
+     */
     public GetAllFieldsResponse getAllFields(String baseId, String sheetIdOrName, GetAllFieldsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAllFieldsHeaders headers = new GetAllFieldsHeaders();
         return this.getAllFieldsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取所有数据表
+     *
+     * @param request GetAllSheetsRequest
+     * @param headers GetAllSheetsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAllSheetsResponse
+     */
     public GetAllSheetsResponse getAllSheetsWithOptions(String baseId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -323,12 +415,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAllSheetsResponse());
     }
 
+    /**
+     * @summary 获取所有数据表
+     *
+     * @param request GetAllSheetsRequest
+     * @return GetAllSheetsResponse
+     */
     public GetAllSheetsResponse getAllSheets(String baseId, GetAllSheetsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAllSheetsHeaders headers = new GetAllSheetsHeaders();
         return this.getAllSheetsWithOptions(baseId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取记录
+     *
+     * @param request GetRecordRequest
+     * @param headers GetRecordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRecordResponse
+     */
     public GetRecordResponse getRecordWithOptions(String baseId, String sheetIdOrName, String recordId, GetRecordRequest request, GetRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -363,12 +469,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetRecordResponse());
     }
 
+    /**
+     * @summary 获取记录
+     *
+     * @param request GetRecordRequest
+     * @return GetRecordResponse
+     */
     public GetRecordResponse getRecord(String baseId, String sheetIdOrName, String recordId, GetRecordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRecordHeaders headers = new GetRecordHeaders();
         return this.getRecordWithOptions(baseId, sheetIdOrName, recordId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取多行记录
+     *
+     * @param request GetRecordsRequest
+     * @param headers GetRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRecordsResponse
+     */
     public GetRecordsResponse getRecordsWithOptions(String baseId, String sheetIdOrName, GetRecordsRequest request, GetRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -411,12 +531,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetRecordsResponse());
     }
 
+    /**
+     * @summary 获取多行记录
+     *
+     * @param request GetRecordsRequest
+     * @return GetRecordsResponse
+     */
     public GetRecordsResponse getRecords(String baseId, String sheetIdOrName, GetRecordsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRecordsHeaders headers = new GetRecordsHeaders();
         return this.getRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取数据表
+     *
+     * @param request GetSheetRequest
+     * @param headers GetSheetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSheetResponse
+     */
     public GetSheetResponse getSheetWithOptions(String baseId, String sheetIdOrName, GetSheetRequest request, GetSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -451,12 +585,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetSheetResponse());
     }
 
+    /**
+     * @summary 获取数据表
+     *
+     * @param request GetSheetRequest
+     * @return GetSheetResponse
+     */
     public GetSheetResponse getSheet(String baseId, String sheetIdOrName, GetSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetSheetHeaders headers = new GetSheetHeaders();
         return this.getSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 新增记录
+     *
+     * @param request InsertRecordsRequest
+     * @param headers InsertRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InsertRecordsResponse
+     */
     public InsertRecordsResponse insertRecordsWithOptions(String baseId, String sheetIdOrName, InsertRecordsRequest request, InsertRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -497,12 +645,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InsertRecordsResponse());
     }
 
+    /**
+     * @summary 新增记录
+     *
+     * @param request InsertRecordsRequest
+     * @return InsertRecordsResponse
+     */
     public InsertRecordsResponse insertRecords(String baseId, String sheetIdOrName, InsertRecordsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertRecordsHeaders headers = new InsertRecordsHeaders();
         return this.insertRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新数据表字段
+     *
+     * @param request UpdateFieldRequest
+     * @param headers UpdateFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateFieldResponse
+     */
     public UpdateFieldResponse updateFieldWithOptions(String baseId, String sheetIdOrName, String fieldIdOrName, UpdateFieldRequest request, UpdateFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -547,12 +709,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFieldResponse());
     }
 
+    /**
+     * @summary 更新数据表字段
+     *
+     * @param request UpdateFieldRequest
+     * @return UpdateFieldResponse
+     */
     public UpdateFieldResponse updateField(String baseId, String sheetIdOrName, String fieldIdOrName, UpdateFieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateFieldHeaders headers = new UpdateFieldHeaders();
         return this.updateFieldWithOptions(baseId, sheetIdOrName, fieldIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新数据表多行记录
+     *
+     * @param request UpdateRecordsRequest
+     * @param headers UpdateRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateRecordsResponse
+     */
     public UpdateRecordsResponse updateRecordsWithOptions(String baseId, String sheetIdOrName, UpdateRecordsRequest request, UpdateRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -593,12 +769,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateRecordsResponse());
     }
 
+    /**
+     * @summary 更新数据表多行记录
+     *
+     * @param request UpdateRecordsRequest
+     * @return UpdateRecordsResponse
+     */
     public UpdateRecordsResponse updateRecords(String baseId, String sheetIdOrName, UpdateRecordsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateRecordsHeaders headers = new UpdateRecordsHeaders();
         return this.updateRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新数据表
+     *
+     * @param request UpdateSheetRequest
+     * @param headers UpdateSheetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateSheetResponse
+     */
     public UpdateSheetResponse updateSheetWithOptions(String baseId, String sheetIdOrName, UpdateSheetRequest request, UpdateSheetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -639,6 +829,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateSheetResponse());
     }
 
+    /**
+     * @summary 更新数据表
+     *
+     * @param request UpdateSheetRequest
+     * @return UpdateSheetResponse
+     */
     public UpdateSheetResponse updateSheet(String baseId, String sheetIdOrName, UpdateSheetRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateSheetHeaders headers = new UpdateSheetHeaders();

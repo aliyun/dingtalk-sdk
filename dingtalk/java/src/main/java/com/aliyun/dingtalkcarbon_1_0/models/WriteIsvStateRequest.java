@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteIsvStateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvName")
     public String isvName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

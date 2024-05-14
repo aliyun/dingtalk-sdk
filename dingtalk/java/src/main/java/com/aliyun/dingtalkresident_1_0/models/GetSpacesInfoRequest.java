@@ -4,9 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpacesInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("referIds")
     public java.util.List<Long> referIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("residentCorpId")
     public String residentCorpId;
 

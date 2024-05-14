@@ -4,15 +4,24 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<UpdatePermissionRequestMembers> members;
 
     @NameInMap("option")
     public UpdatePermissionRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleId")
     public String roleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -57,9 +66,15 @@ public class UpdatePermissionRequest extends TeaModel {
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 

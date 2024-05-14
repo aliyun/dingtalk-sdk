@@ -10,6 +10,9 @@ public class GetCustomerTracksByRelationIdRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationId")
     public String relationId;
 

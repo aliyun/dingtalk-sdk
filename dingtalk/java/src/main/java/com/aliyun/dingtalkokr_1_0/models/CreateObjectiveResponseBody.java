@@ -32,9 +32,15 @@ public class CreateObjectiveResponseBody extends TeaModel {
     }
 
     public static class CreateObjectiveResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("position")
         public String position;
 

@@ -66,6 +66,9 @@ public class QueryAllTracksResponseBody extends TeaModel {
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 

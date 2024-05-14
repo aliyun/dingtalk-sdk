@@ -4,9 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryServiceRecordRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -16,6 +22,9 @@ public class QueryServiceRecordRequest extends TeaModel {
     @NameInMap("hookUuid")
     public String hookUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
@@ -43,9 +52,15 @@ public class QueryServiceRecordRequest extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

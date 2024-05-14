@@ -7,18 +7,30 @@ public class SendTemplateInteractiveCardRequest extends TeaModel {
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

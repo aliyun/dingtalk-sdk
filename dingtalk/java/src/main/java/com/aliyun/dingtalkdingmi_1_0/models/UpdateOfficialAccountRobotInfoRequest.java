@@ -4,21 +4,39 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOfficialAccountRobotInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("avatar")
     public String avatar;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("brief")
     public String brief;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("previewMediaUrl")
     public String previewMediaUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 

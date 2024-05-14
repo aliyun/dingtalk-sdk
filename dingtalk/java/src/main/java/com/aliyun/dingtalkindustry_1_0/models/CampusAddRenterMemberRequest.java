@@ -7,12 +7,21 @@ public class CampusAddRenterMemberRequest extends TeaModel {
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("renterId")
     public Long renterId;
 

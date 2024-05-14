@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 集成奖励记录
+     *
+     * @param request HrbrainImportAwardDetailRequest
+     * @param headers HrbrainImportAwardDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportAwardDetailResponse
+     */
     public HrbrainImportAwardDetailResponse hrbrainImportAwardDetailWithOptions(HrbrainImportAwardDetailRequest request, HrbrainImportAwardDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -54,12 +62,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportAwardDetailResponse());
     }
 
+    /**
+     * @summary 集成奖励记录
+     *
+     * @param request HrbrainImportAwardDetailRequest
+     * @return HrbrainImportAwardDetailResponse
+     */
     public HrbrainImportAwardDetailResponse hrbrainImportAwardDetail(HrbrainImportAwardDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportAwardDetailHeaders headers = new HrbrainImportAwardDetailHeaders();
         return this.hrbrainImportAwardDetailWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成组织架构
+     *
+     * @param request HrbrainImportDeptInfoRequest
+     * @param headers HrbrainImportDeptInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportDeptInfoResponse
+     */
     public HrbrainImportDeptInfoResponse hrbrainImportDeptInfoWithOptions(HrbrainImportDeptInfoRequest request, HrbrainImportDeptInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -95,12 +117,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportDeptInfoResponse());
     }
 
+    /**
+     * @summary 集成组织架构
+     *
+     * @param request HrbrainImportDeptInfoRequest
+     * @return HrbrainImportDeptInfoResponse
+     */
     public HrbrainImportDeptInfoResponse hrbrainImportDeptInfo(HrbrainImportDeptInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportDeptInfoHeaders headers = new HrbrainImportDeptInfoHeaders();
         return this.hrbrainImportDeptInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成离职信息
+     *
+     * @param request HrbrainImportDimissionRequest
+     * @param headers HrbrainImportDimissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportDimissionResponse
+     */
     public HrbrainImportDimissionResponse hrbrainImportDimissionWithOptions(HrbrainImportDimissionRequest request, HrbrainImportDimissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -136,12 +172,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportDimissionResponse());
     }
 
+    /**
+     * @summary 集成离职信息
+     *
+     * @param request HrbrainImportDimissionRequest
+     * @return HrbrainImportDimissionResponse
+     */
     public HrbrainImportDimissionResponse hrbrainImportDimission(HrbrainImportDimissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportDimissionHeaders headers = new HrbrainImportDimissionHeaders();
         return this.hrbrainImportDimissionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成教育经历
+     *
+     * @param request HrbrainImportEduExpRequest
+     * @param headers HrbrainImportEduExpHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportEduExpResponse
+     */
     public HrbrainImportEduExpResponse hrbrainImportEduExpWithOptions(HrbrainImportEduExpRequest request, HrbrainImportEduExpHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -177,12 +227,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportEduExpResponse());
     }
 
+    /**
+     * @summary 集成教育经历
+     *
+     * @param request HrbrainImportEduExpRequest
+     * @return HrbrainImportEduExpResponse
+     */
     public HrbrainImportEduExpResponse hrbrainImportEduExp(HrbrainImportEduExpRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportEduExpHeaders headers = new HrbrainImportEduExpHeaders();
         return this.hrbrainImportEduExpWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成人员信息
+     *
+     * @param request HrbrainImportEmpInfoRequest
+     * @param headers HrbrainImportEmpInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportEmpInfoResponse
+     */
     public HrbrainImportEmpInfoResponse hrbrainImportEmpInfoWithOptions(HrbrainImportEmpInfoRequest request, HrbrainImportEmpInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -218,12 +282,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportEmpInfoResponse());
     }
 
+    /**
+     * @summary 集成人员信息
+     *
+     * @param request HrbrainImportEmpInfoRequest
+     * @return HrbrainImportEmpInfoResponse
+     */
     public HrbrainImportEmpInfoResponse hrbrainImportEmpInfo(HrbrainImportEmpInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportEmpInfoHeaders headers = new HrbrainImportEmpInfoHeaders();
         return this.hrbrainImportEmpInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成基础标签
+     *
+     * @param request HrbrainImportLabelBaseRequest
+     * @param headers HrbrainImportLabelBaseHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportLabelBaseResponse
+     */
     public HrbrainImportLabelBaseResponse hrbrainImportLabelBaseWithOptions(HrbrainImportLabelBaseRequest request, HrbrainImportLabelBaseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -259,12 +337,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportLabelBaseResponse());
     }
 
+    /**
+     * @summary 集成基础标签
+     *
+     * @param request HrbrainImportLabelBaseRequest
+     * @return HrbrainImportLabelBaseResponse
+     */
     public HrbrainImportLabelBaseResponse hrbrainImportLabelBase(HrbrainImportLabelBaseRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportLabelBaseHeaders headers = new HrbrainImportLabelBaseHeaders();
         return this.hrbrainImportLabelBaseWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成自定义标签
+     *
+     * @param request HrbrainImportLabelCustomRequest
+     * @param headers HrbrainImportLabelCustomHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportLabelCustomResponse
+     */
     public HrbrainImportLabelCustomResponse hrbrainImportLabelCustomWithOptions(HrbrainImportLabelCustomRequest request, HrbrainImportLabelCustomHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -300,12 +392,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportLabelCustomResponse());
     }
 
+    /**
+     * @summary 集成自定义标签
+     *
+     * @param request HrbrainImportLabelCustomRequest
+     * @return HrbrainImportLabelCustomResponse
+     */
     public HrbrainImportLabelCustomResponse hrbrainImportLabelCustom(HrbrainImportLabelCustomRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportLabelCustomHeaders headers = new HrbrainImportLabelCustomHeaders();
         return this.hrbrainImportLabelCustomWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成领域经验
+     *
+     * @param request HrbrainImportLabelIndustryRequest
+     * @param headers HrbrainImportLabelIndustryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportLabelIndustryResponse
+     */
     public HrbrainImportLabelIndustryResponse hrbrainImportLabelIndustryWithOptions(HrbrainImportLabelIndustryRequest request, HrbrainImportLabelIndustryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -341,12 +447,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportLabelIndustryResponse());
     }
 
+    /**
+     * @summary 集成领域经验
+     *
+     * @param request HrbrainImportLabelIndustryRequest
+     * @return HrbrainImportLabelIndustryResponse
+     */
     public HrbrainImportLabelIndustryResponse hrbrainImportLabelIndustry(HrbrainImportLabelIndustryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportLabelIndustryHeaders headers = new HrbrainImportLabelIndustryHeaders();
         return this.hrbrainImportLabelIndustryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成盘点数据
+     *
+     * @param request HrbrainImportLabelInventoryRequest
+     * @param headers HrbrainImportLabelInventoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportLabelInventoryResponse
+     */
     public HrbrainImportLabelInventoryResponse hrbrainImportLabelInventoryWithOptions(HrbrainImportLabelInventoryRequest request, HrbrainImportLabelInventoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -382,12 +502,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportLabelInventoryResponse());
     }
 
+    /**
+     * @summary 集成盘点数据
+     *
+     * @param request HrbrainImportLabelInventoryRequest
+     * @return HrbrainImportLabelInventoryResponse
+     */
     public HrbrainImportLabelInventoryResponse hrbrainImportLabelInventory(HrbrainImportLabelInventoryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportLabelInventoryHeaders headers = new HrbrainImportLabelInventoryHeaders();
         return this.hrbrainImportLabelInventoryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成专业技能
+     *
+     * @param request HrbrainImportLabelProfSkillRequest
+     * @param headers HrbrainImportLabelProfSkillHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportLabelProfSkillResponse
+     */
     public HrbrainImportLabelProfSkillResponse hrbrainImportLabelProfSkillWithOptions(HrbrainImportLabelProfSkillRequest request, HrbrainImportLabelProfSkillHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -423,12 +557,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportLabelProfSkillResponse());
     }
 
+    /**
+     * @summary 集成专业技能
+     *
+     * @param request HrbrainImportLabelProfSkillRequest
+     * @return HrbrainImportLabelProfSkillResponse
+     */
     public HrbrainImportLabelProfSkillResponse hrbrainImportLabelProfSkill(HrbrainImportLabelProfSkillRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportLabelProfSkillHeaders headers = new HrbrainImportLabelProfSkillHeaders();
         return this.hrbrainImportLabelProfSkillWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成绩效记录
+     *
+     * @param request HrbrainImportPerfEvalRequest
+     * @param headers HrbrainImportPerfEvalHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportPerfEvalResponse
+     */
     public HrbrainImportPerfEvalResponse hrbrainImportPerfEvalWithOptions(HrbrainImportPerfEvalRequest request, HrbrainImportPerfEvalHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -464,12 +612,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportPerfEvalResponse());
     }
 
+    /**
+     * @summary 集成绩效记录
+     *
+     * @param request HrbrainImportPerfEvalRequest
+     * @return HrbrainImportPerfEvalResponse
+     */
     public HrbrainImportPerfEvalResponse hrbrainImportPerfEval(HrbrainImportPerfEvalRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportPerfEvalHeaders headers = new HrbrainImportPerfEvalHeaders();
         return this.hrbrainImportPerfEvalWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成晋升记录
+     *
+     * @param request HrbrainImportPromEvalRequest
+     * @param headers HrbrainImportPromEvalHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportPromEvalResponse
+     */
     public HrbrainImportPromEvalResponse hrbrainImportPromEvalWithOptions(HrbrainImportPromEvalRequest request, HrbrainImportPromEvalHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -505,12 +667,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportPromEvalResponse());
     }
 
+    /**
+     * @summary 集成晋升记录
+     *
+     * @param request HrbrainImportPromEvalRequest
+     * @return HrbrainImportPromEvalResponse
+     */
     public HrbrainImportPromEvalResponse hrbrainImportPromEval(HrbrainImportPromEvalRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportPromEvalHeaders headers = new HrbrainImportPromEvalHeaders();
         return this.hrbrainImportPromEvalWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成处分记录
+     *
+     * @param request HrbrainImportPunDetailRequest
+     * @param headers HrbrainImportPunDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportPunDetailResponse
+     */
     public HrbrainImportPunDetailResponse hrbrainImportPunDetailWithOptions(HrbrainImportPunDetailRequest request, HrbrainImportPunDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -546,12 +722,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportPunDetailResponse());
     }
 
+    /**
+     * @summary 集成处分记录
+     *
+     * @param request HrbrainImportPunDetailRequest
+     * @return HrbrainImportPunDetailResponse
+     */
     public HrbrainImportPunDetailResponse hrbrainImportPunDetail(HrbrainImportPunDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportPunDetailHeaders headers = new HrbrainImportPunDetailHeaders();
         return this.hrbrainImportPunDetailWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成入职信息
+     *
+     * @param request HrbrainImportRegistRequest
+     * @param headers HrbrainImportRegistHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportRegistResponse
+     */
     public HrbrainImportRegistResponse hrbrainImportRegistWithOptions(HrbrainImportRegistRequest request, HrbrainImportRegistHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -587,12 +777,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportRegistResponse());
     }
 
+    /**
+     * @summary 集成入职信息
+     *
+     * @param request HrbrainImportRegistRequest
+     * @return HrbrainImportRegistResponse
+     */
     public HrbrainImportRegistResponse hrbrainImportRegist(HrbrainImportRegistRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportRegistHeaders headers = new HrbrainImportRegistHeaders();
         return this.hrbrainImportRegistWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成异动记录
+     *
+     * @param request HrbrainImportTransferEvalRequest
+     * @param headers HrbrainImportTransferEvalHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportTransferEvalResponse
+     */
     public HrbrainImportTransferEvalResponse hrbrainImportTransferEvalWithOptions(HrbrainImportTransferEvalRequest request, HrbrainImportTransferEvalHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -628,12 +832,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportTransferEvalResponse());
     }
 
+    /**
+     * @summary 集成异动记录
+     *
+     * @param request HrbrainImportTransferEvalRequest
+     * @return HrbrainImportTransferEvalResponse
+     */
     public HrbrainImportTransferEvalResponse hrbrainImportTransferEval(HrbrainImportTransferEvalRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportTransferEvalHeaders headers = new HrbrainImportTransferEvalHeaders();
         return this.hrbrainImportTransferEvalWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 集成工作经历
+     *
+     * @param request HrbrainImportWorkExpRequest
+     * @param headers HrbrainImportWorkExpHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainImportWorkExpResponse
+     */
     public HrbrainImportWorkExpResponse hrbrainImportWorkExpWithOptions(HrbrainImportWorkExpRequest request, HrbrainImportWorkExpHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -669,12 +887,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainImportWorkExpResponse());
     }
 
+    /**
+     * @summary 集成工作经历
+     *
+     * @param request HrbrainImportWorkExpRequest
+     * @return HrbrainImportWorkExpResponse
+     */
     public HrbrainImportWorkExpResponse hrbrainImportWorkExp(HrbrainImportWorkExpRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainImportWorkExpHeaders headers = new HrbrainImportWorkExpHeaders();
         return this.hrbrainImportWorkExpWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 同步统计基础数据
+     *
+     * @param request SyncDataRequest
+     * @param headers SyncDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncDataResponse
+     */
     public SyncDataResponse syncDataWithOptions(SyncDataRequest request, SyncDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -725,6 +957,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncDataResponse());
     }
 
+    /**
+     * @summary 同步统计基础数据
+     *
+     * @param request SyncDataRequest
+     * @return SyncDataResponse
+     */
     public SyncDataResponse syncData(SyncDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncDataHeaders headers = new SyncDataHeaders();

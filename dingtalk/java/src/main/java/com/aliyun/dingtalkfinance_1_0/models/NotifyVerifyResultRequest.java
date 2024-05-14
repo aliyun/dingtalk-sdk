@@ -4,18 +4,30 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyVerifyResultRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
@@ -28,9 +40,15 @@ public class NotifyVerifyResultRequest extends TeaModel {
     @NameInMap("verifyNo")
     public String verifyNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("verifyResult")
     public Boolean verifyResult;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("verifyTime")
     public String verifyTime;
 

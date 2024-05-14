@@ -25,9 +25,15 @@ public class SearchFormDataIdListRequest extends TeaModel {
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

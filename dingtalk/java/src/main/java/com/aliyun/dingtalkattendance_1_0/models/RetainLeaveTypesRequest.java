@@ -10,6 +10,9 @@ public class RetainLeaveTypesRequest extends TeaModel {
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("source")
     public Long source;
 

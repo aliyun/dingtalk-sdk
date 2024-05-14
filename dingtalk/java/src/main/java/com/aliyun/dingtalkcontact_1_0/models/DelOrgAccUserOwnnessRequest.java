@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class DelOrgAccUserOwnnessRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownenssType")
     public Long ownenssType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownnessId")
     public Long ownnessId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

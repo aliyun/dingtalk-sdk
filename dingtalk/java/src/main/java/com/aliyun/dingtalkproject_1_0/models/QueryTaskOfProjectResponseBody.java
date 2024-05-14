@@ -4,12 +4,18 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTaskOfProjectResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     @NameInMap("result")
     public java.util.List<QueryTaskOfProjectResponseBodyResult> result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 

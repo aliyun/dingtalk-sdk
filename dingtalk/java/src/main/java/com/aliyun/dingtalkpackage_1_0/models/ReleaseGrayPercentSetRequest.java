@@ -4,12 +4,21 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayPercentSetRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("value")
     public Double value;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("version")
     public String version;
 

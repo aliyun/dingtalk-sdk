@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckWritePermissionResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("entityPermissionMap")
     public java.util.Map<String, Boolean> entityPermissionMap;
 

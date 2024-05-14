@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrbrain_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrbrainImportLabelProfSkillRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<HrbrainImportLabelProfSkillRequestBody> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -35,18 +41,33 @@ public class HrbrainImportLabelProfSkillRequest extends TeaModel {
         @NameInMap("extendInfo")
         public java.util.Map<String, ?> extendInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("level1")
         public String level1;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("level2")
         public String level2;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("level3")
         public String level3;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workNo")
         public String workNo;
 

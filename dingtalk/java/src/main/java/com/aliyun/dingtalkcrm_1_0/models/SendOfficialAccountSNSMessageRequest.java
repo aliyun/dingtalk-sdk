@@ -4,12 +4,18 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendOfficialAccountSNSMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bindingToken")
     public String bindingToken;
 
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public SendOfficialAccountSNSMessageRequestDetail detail;
 
@@ -300,12 +306,21 @@ public class SendOfficialAccountSNSMessageRequest extends TeaModel {
     }
 
     public static class SendOfficialAccountSNSMessageRequestDetail extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageBody")
         public SendOfficialAccountSNSMessageRequestDetailMessageBody messageBody;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

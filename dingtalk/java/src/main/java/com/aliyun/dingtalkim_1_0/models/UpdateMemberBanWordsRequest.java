@@ -4,15 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMemberBanWordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("muteDuration")
     public Long muteDuration;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("muteStatus")
     public Integer muteStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

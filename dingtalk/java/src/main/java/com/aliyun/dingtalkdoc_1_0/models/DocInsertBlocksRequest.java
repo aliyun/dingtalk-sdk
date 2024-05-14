@@ -7,6 +7,9 @@ public class DocInsertBlocksRequest extends TeaModel {
     @NameInMap("blockId")
     public String blockId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("element")
     public java.util.Map<String, ?> element;
 
@@ -16,6 +19,9 @@ public class DocInsertBlocksRequest extends TeaModel {
     @NameInMap("where")
     public String where;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

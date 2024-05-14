@@ -7,6 +7,9 @@ public class UpdateInteractiveOTOMessageResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public UpdateInteractiveOTOMessageResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class UpdateInteractiveOTOMessageResponseBody extends TeaModel {
     }
 
     public static class UpdateInteractiveOTOMessageResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openPushId")
         public String openPushId;
 

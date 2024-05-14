@@ -4,15 +4,27 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateManagementGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<CreateManagementGroupRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scope")
     public CreateManagementGroupRequestScope scope;
 
@@ -54,9 +66,15 @@ public class CreateManagementGroupRequest extends TeaModel {
     }
 
     public static class CreateManagementGroupRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -87,6 +105,9 @@ public class CreateManagementGroupRequest extends TeaModel {
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeType")
         public Integer scopeType;
 

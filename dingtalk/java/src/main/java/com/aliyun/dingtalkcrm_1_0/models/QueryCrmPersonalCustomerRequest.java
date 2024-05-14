@@ -7,6 +7,9 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 

@@ -4,15 +4,27 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOTORequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgKey")
     public String msgKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgParam")
     public String msgParam;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

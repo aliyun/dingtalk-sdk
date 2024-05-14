@@ -7,9 +7,15 @@ public class AddFileRequest extends TeaModel {
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileType")
     public String fileType;
 
@@ -19,6 +25,9 @@ public class AddFileRequest extends TeaModel {
     @NameInMap("parentId")
     public String parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

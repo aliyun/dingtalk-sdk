@@ -38,12 +38,18 @@ public class GetJobPositionResponseBody extends TeaModel {
         @NameInMap("establishDate")
         public String establishDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobCode")
         public String jobCode;
 
         @NameInMap("jobRequirements")
         public String jobRequirements;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

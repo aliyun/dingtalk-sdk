@@ -4,15 +4,27 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingMeBaseDataResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fromCache")
     public Boolean fromCache;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rawset")
     public java.util.List<java.util.Map<String, String>> rawset;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("runtime")
     public Long runtime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tips")
     public java.util.Map<String, ?> tips;
 

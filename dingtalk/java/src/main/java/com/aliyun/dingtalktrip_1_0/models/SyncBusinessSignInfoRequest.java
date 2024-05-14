@@ -13,12 +13,21 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     @NameInMap("gmtSign")
     public String gmtSign;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgPayStatus")
     public String orgPayStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signStatus")
     public String signStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
@@ -104,6 +113,9 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
         @NameInMap("payType")
         public String payType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("product")
         public String product;
 
@@ -151,6 +163,9 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
         @NameInMap("payType")
         public String payType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("product")
         public String product;
 
@@ -205,6 +220,9 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
         @NameInMap("productDetailList")
         public java.util.List<SyncBusinessSignInfoRequestTmcProductListProductDetailList> productDetailList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tmcCorpId")
         public String tmcCorpId;
 

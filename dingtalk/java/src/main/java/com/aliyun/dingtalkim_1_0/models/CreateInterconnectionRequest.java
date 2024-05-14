@@ -4,6 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInterconnectionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("interconnections")
     public java.util.List<CreateInterconnectionRequestInterconnections> interconnections;
 
@@ -30,15 +33,27 @@ public class CreateInterconnectionRequest extends TeaModel {
         @NameInMap("appUserDynamics")
         public String appUserDynamics;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUserMobile")
         public String appUserMobile;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUserName")
         public String appUserName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("channelCode")
         public String channelCode;
 

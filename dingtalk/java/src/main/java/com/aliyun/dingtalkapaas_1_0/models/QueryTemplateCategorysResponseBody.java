@@ -4,6 +4,9 @@ package com.aliyun.dingtalkapaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTemplateCategorysResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("categoryList")
     public java.util.List<QueryTemplateCategorysResponseBodyCategoryList> categoryList;
 
@@ -32,9 +35,15 @@ public class QueryTemplateCategorysResponseBody extends TeaModel {
     }
 
     public static class QueryTemplateCategorysResponseBodyCategoryList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

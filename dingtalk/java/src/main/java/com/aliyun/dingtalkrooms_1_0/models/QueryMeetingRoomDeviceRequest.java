@@ -10,6 +10,9 @@ public class QueryMeetingRoomDeviceRequest extends TeaModel {
     @NameInMap("deviceUnionId")
     public String deviceUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 

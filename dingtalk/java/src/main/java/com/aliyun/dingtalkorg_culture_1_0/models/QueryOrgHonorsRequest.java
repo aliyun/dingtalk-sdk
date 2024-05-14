@@ -7,6 +7,9 @@ public class QueryOrgHonorsRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

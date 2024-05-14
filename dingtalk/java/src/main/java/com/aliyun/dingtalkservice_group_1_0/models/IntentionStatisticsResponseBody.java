@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class IntentionStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("intentionStatisticsRecords")
     public java.util.List<IntentionStatisticsResponseBodyIntentionStatisticsRecords> intentionStatisticsRecords;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("intentionTrend")
     public java.util.List<IntentionStatisticsResponseBodyIntentionTrend> intentionTrend;
 
@@ -32,12 +38,21 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     }
 
     public static class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("intention")
         public String intention;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lastCount")
         public Long lastCount;
 
@@ -73,12 +88,21 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     }
 
     public static class IntentionStatisticsResponseBodyIntentionTrend extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dt")
         public String dt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("intention")
         public String intention;
 

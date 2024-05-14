@@ -4,33 +4,63 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatePlanTimeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endDate")
     public String endDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("includesHolidays")
     public Boolean includesHolidays;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isDuration")
     public Boolean isDuration;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectId")
     public String objectId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("planTime")
     public Long planTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("submitterId")
     public String submitterId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenantType")
     public String tenantType;
 

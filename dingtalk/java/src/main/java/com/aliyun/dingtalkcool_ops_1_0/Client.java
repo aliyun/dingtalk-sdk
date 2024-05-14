@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary ISV批量查询商机标签
+     *
+     * @param request BatchQueryOpportunityTagRequest
+     * @param headers BatchQueryOpportunityTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryOpportunityTagResponse
+     */
     public BatchQueryOpportunityTagResponse batchQueryOpportunityTagWithOptions(BatchQueryOpportunityTagRequest request, BatchQueryOpportunityTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryOpportunityTagResponse());
     }
 
+    /**
+     * @summary ISV批量查询商机标签
+     *
+     * @param request BatchQueryOpportunityTagRequest
+     * @return BatchQueryOpportunityTagResponse
+     */
     public BatchQueryOpportunityTagResponse batchQueryOpportunityTag(BatchQueryOpportunityTagRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchQueryOpportunityTagHeaders headers = new BatchQueryOpportunityTagHeaders();
         return this.batchQueryOpportunityTagWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary ISV商机状态同步
+     *
+     * @param request UpdateIsvOppStatusRequest
+     * @param headers UpdateIsvOppStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateIsvOppStatusResponse
+     */
     public UpdateIsvOppStatusResponse updateIsvOppStatusWithOptions(UpdateIsvOppStatusRequest request, UpdateIsvOppStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,6 +115,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateIsvOppStatusResponse());
     }
 
+    /**
+     * @summary ISV商机状态同步
+     *
+     * @param request UpdateIsvOppStatusRequest
+     * @return UpdateIsvOppStatusResponse
+     */
     public UpdateIsvOppStatusResponse updateIsvOppStatus(UpdateIsvOppStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateIsvOppStatusHeaders headers = new UpdateIsvOppStatusHeaders();

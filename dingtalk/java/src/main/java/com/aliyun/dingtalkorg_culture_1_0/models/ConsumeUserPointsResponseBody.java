@@ -4,6 +4,9 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumeUserPointsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public ConsumeUserPointsResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class ConsumeUserPointsResponseBody extends TeaModel {
     }
 
     public static class ConsumeUserPointsResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public Long amount;
 

@@ -19,9 +19,15 @@ public class TeamVO extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -34,6 +40,9 @@ public class TeamVO extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public Integer type;
 
@@ -43,6 +52,9 @@ public class TeamVO extends TeaModel {
     @NameInMap("updater")
     public TeamVOUpdater updater;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 

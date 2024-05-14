@@ -4,12 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentDeptUsersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userList")
     public java.util.List<ListResidentDeptUsersResponseBodyUserList> userList;
 
@@ -43,12 +52,21 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
     }
 
     public static class ListResidentDeptUsersResponseBodyUserListRoles extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagId")
         public Long tagId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagName")
         public String tagName;
 
@@ -84,18 +102,33 @@ public class ListResidentDeptUsersResponseBody extends TeaModel {
     }
 
     public static class ListResidentDeptUsersResponseBodyUserList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feature")
         public String feature;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roles")
         public java.util.List<ListResidentDeptUsersResponseBodyUserListRoles> roles;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

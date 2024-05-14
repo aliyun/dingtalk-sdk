@@ -7,6 +7,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<PatchEventResponseBodyAttendees> attendees;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
@@ -40,6 +43,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("richTextDescription")
     public PatchEventResponseBodyRichTextDescription richTextDescription;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("start")
     public PatchEventResponseBodyStart start;
 
@@ -49,6 +55,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("uiConfigs")
     public java.util.List<PatchEventResponseBodyUiConfigs> uiConfigs;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -487,6 +496,9 @@ public class PatchEventResponseBody extends TeaModel {
     }
 
     public static class PatchEventResponseBodyRecurrenceRange extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
@@ -648,9 +660,15 @@ public class PatchEventResponseBody extends TeaModel {
     }
 
     public static class PatchEventResponseBodyUiConfigs extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uiName")
         public String uiName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uiStatus")
         public String uiStatus;
 

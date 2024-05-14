@@ -57,6 +57,9 @@ public class SearchActionsResponseBody extends TeaModel {
         @NameInMap("authorityUrl")
         public String authorityUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("authorized")
         public Boolean authorized;
 

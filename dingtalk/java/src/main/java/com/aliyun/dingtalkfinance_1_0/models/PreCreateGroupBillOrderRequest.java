@@ -4,36 +4,57 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class PreCreateGroupBillOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("billItemList")
     public java.util.List<PreCreateGroupBillOrderRequestBillItemList> billItemList;
 
     @NameInMap("extParams")
     public java.util.Map<String, String> extParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("headCount")
     public Long headCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isAverageAmount")
     public Integer isAverageAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
     @NameInMap("openCid")
     public String openCid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outBizNo")
     public String outBizNo;
 
     @NameInMap("payeeCorpId")
     public String payeeCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payeeUnionId")
     public String payeeUnionId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
@@ -131,9 +152,15 @@ public class PreCreateGroupBillOrderRequest extends TeaModel {
     }
 
     public static class PreCreateGroupBillOrderRequestBillItemList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payerUnionId")
         public String payerUnionId;
 

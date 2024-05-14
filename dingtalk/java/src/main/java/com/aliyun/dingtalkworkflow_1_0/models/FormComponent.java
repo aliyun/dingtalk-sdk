@@ -7,9 +7,15 @@ public class FormComponent extends TeaModel {
     @NameInMap("children")
     public java.util.List<FormComponent> children;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("componentType")
     public String componentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("props")
     public FormComponentProps props;
 

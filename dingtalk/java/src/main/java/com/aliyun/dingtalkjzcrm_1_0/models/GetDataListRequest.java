@@ -4,12 +4,21 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public String datatype;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("page")
     public Long page;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pagesize")
     public Long pagesize;
 

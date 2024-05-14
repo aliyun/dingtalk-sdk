@@ -4,9 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfScoreResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public UpdateKROfScoreResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +38,9 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfScoreResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("objectiveScore")
         public Long objectiveScore;
 

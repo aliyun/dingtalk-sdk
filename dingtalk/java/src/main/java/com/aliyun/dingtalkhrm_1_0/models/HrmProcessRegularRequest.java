@@ -4,15 +4,24 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessRegularRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operationId")
     public String operationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("regularDate")
     public Long regularDate;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmMailSendRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mail")
     public HrmMailSendRequestMail mail;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operator")
     public HrmMailSendRequestOperator operator;
 
@@ -32,12 +38,21 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestMailAttachments extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("path")
         public String path;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,12 +88,21 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestMailMeetingAlarm extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("alarmDesc")
         public String alarmDesc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("alarmMinutes")
         public Integer alarmMinutes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("alarmSummary")
         public String alarmSummary;
 
@@ -114,9 +138,15 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestMailMeetingAttendees extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -144,9 +174,15 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestMailMeetingOrganizer extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -183,12 +219,18 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
         @NameInMap("location")
         public String location;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("method")
         public String method;
 
@@ -198,12 +240,21 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("sequence")
         public Integer sequence;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 
@@ -312,18 +363,30 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("ccAddress")
         public String ccAddress;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
         @NameInMap("meeting")
         public HrmMailSendRequestMailMeeting meeting;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("receiverAddress")
         public String receiverAddress;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("senderAlias")
         public String senderAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subject")
         public String subject;
 
@@ -399,12 +462,21 @@ public class HrmMailSendRequest extends TeaModel {
     }
 
     public static class HrmMailSendRequestOperator extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mailAccountType")
         public String mailAccountType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("token")
         public String token;
 

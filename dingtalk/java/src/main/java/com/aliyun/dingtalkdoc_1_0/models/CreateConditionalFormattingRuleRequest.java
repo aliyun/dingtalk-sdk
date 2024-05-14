@@ -10,9 +10,15 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
     @NameInMap("duplicateCondition")
     public CreateConditionalFormattingRuleRequestDuplicateCondition duplicateCondition;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ranges")
     public java.util.List<String> ranges;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

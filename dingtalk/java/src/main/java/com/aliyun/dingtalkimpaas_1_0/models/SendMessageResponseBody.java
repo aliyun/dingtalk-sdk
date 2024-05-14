@@ -4,12 +4,21 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageId")
     public String messageId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgId")
     public String msgId;
 

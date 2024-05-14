@@ -4,12 +4,21 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAcquireRefundOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("refundOrderNo")
     public String refundOrderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 

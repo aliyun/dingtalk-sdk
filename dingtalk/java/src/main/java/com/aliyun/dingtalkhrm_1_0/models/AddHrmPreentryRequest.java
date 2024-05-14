@@ -10,9 +10,15 @@ public class AddHrmPreentryRequest extends TeaModel {
     @NameInMap("groups")
     public java.util.List<AddHrmPreentryRequestGroups> groups;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

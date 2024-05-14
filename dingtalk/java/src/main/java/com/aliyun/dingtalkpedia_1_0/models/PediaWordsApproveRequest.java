@@ -7,18 +7,33 @@ public class PediaWordsApproveRequest extends TeaModel {
     @NameInMap("approveReason")
     public String approveReason;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("approveStatus")
     public String approveStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("imHighLight")
     public Boolean imHighLight;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("simHighLight")
     public Boolean simHighLight;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public Long uuid;
 

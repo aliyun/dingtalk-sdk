@@ -7,12 +7,21 @@ public class MoveDentryRequest extends TeaModel {
     @NameInMap("option")
     public MoveDentryRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetFolderId")
     public String targetFolderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

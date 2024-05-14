@@ -4,15 +4,27 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetColumnsVisibilityRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("column")
     public Long column;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("columnCount")
     public Long columnCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

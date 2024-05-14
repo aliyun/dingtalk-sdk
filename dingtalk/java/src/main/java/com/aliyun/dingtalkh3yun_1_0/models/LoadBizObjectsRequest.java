@@ -7,15 +7,24 @@ public class LoadBizObjectsRequest extends TeaModel {
     @NameInMap("matcherJson")
     public String matcherJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     @NameInMap("returnFields")
     public java.util.List<String> returnFields;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

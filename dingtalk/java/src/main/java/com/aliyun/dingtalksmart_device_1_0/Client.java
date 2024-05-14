@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 添加硬件视频会议参会人
+     *
+     * @param request AddDeviceVideoConferenceMembersRequest
+     * @param headers AddDeviceVideoConferenceMembersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddDeviceVideoConferenceMembersResponse
+     */
     public AddDeviceVideoConferenceMembersResponse addDeviceVideoConferenceMembersWithOptions(String deviceId, String conferenceId, AddDeviceVideoConferenceMembersRequest request, AddDeviceVideoConferenceMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddDeviceVideoConferenceMembersResponse());
     }
 
+    /**
+     * @summary 添加硬件视频会议参会人
+     *
+     * @param request AddDeviceVideoConferenceMembersRequest
+     * @return AddDeviceVideoConferenceMembersResponse
+     */
     public AddDeviceVideoConferenceMembersResponse addDeviceVideoConferenceMembers(String deviceId, String conferenceId, AddDeviceVideoConferenceMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddDeviceVideoConferenceMembersHeaders headers = new AddDeviceVideoConferenceMembersHeaders();
         return this.addDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 创建硬件视频会议
+     *
+     * @param request CreateDeviceVideoConferenceRequest
+     * @param headers CreateDeviceVideoConferenceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateDeviceVideoConferenceResponse
+     */
     public CreateDeviceVideoConferenceResponse createDeviceVideoConferenceWithOptions(String deviceId, CreateDeviceVideoConferenceRequest request, CreateDeviceVideoConferenceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,12 +115,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateDeviceVideoConferenceResponse());
     }
 
+    /**
+     * @summary 创建硬件视频会议
+     *
+     * @param request CreateDeviceVideoConferenceRequest
+     * @return CreateDeviceVideoConferenceResponse
+     */
     public CreateDeviceVideoConferenceResponse createDeviceVideoConference(String deviceId, CreateDeviceVideoConferenceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateDeviceVideoConferenceHeaders headers = new CreateDeviceVideoConferenceHeaders();
         return this.createDeviceVideoConferenceWithOptions(deviceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 基于企业员工照片为终端提取人脸识别特征
+     *
+     * @param request ExtractFacialFeatureRequest
+     * @param headers ExtractFacialFeatureHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ExtractFacialFeatureResponse
+     */
     public ExtractFacialFeatureResponse extractFacialFeatureWithOptions(ExtractFacialFeatureRequest request, ExtractFacialFeatureHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -137,12 +173,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ExtractFacialFeatureResponse());
     }
 
+    /**
+     * @summary 基于企业员工照片为终端提取人脸识别特征
+     *
+     * @param request ExtractFacialFeatureRequest
+     * @return ExtractFacialFeatureResponse
+     */
     public ExtractFacialFeatureResponse extractFacialFeature(ExtractFacialFeatureRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ExtractFacialFeatureHeaders headers = new ExtractFacialFeatureHeaders();
         return this.extractFacialFeatureWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 踢出硬件视频会议参会人
+     *
+     * @param request KickDeviceVideoConferenceMembersRequest
+     * @param headers KickDeviceVideoConferenceMembersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return KickDeviceVideoConferenceMembersResponse
+     */
     public KickDeviceVideoConferenceMembersResponse kickDeviceVideoConferenceMembersWithOptions(String deviceId, String conferenceId, KickDeviceVideoConferenceMembersRequest request, KickDeviceVideoConferenceMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -177,12 +227,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new KickDeviceVideoConferenceMembersResponse());
     }
 
+    /**
+     * @summary 踢出硬件视频会议参会人
+     *
+     * @param request KickDeviceVideoConferenceMembersRequest
+     * @return KickDeviceVideoConferenceMembersResponse
+     */
     public KickDeviceVideoConferenceMembersResponse kickDeviceVideoConferenceMembers(String deviceId, String conferenceId, KickDeviceVideoConferenceMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         KickDeviceVideoConferenceMembersHeaders headers = new KickDeviceVideoConferenceMembersHeaders();
         return this.kickDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 变更智能考勤机设备管理员
+     *
+     * @param request MachineManagerUpdateRequest
+     * @param headers MachineManagerUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MachineManagerUpdateResponse
+     */
     public MachineManagerUpdateResponse machineManagerUpdateWithOptions(MachineManagerUpdateRequest request, MachineManagerUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -229,12 +293,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MachineManagerUpdateResponse());
     }
 
+    /**
+     * @summary 变更智能考勤机设备管理员
+     *
+     * @param request MachineManagerUpdateRequest
+     * @return MachineManagerUpdateResponse
+     */
     public MachineManagerUpdateResponse machineManagerUpdate(MachineManagerUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MachineManagerUpdateHeaders headers = new MachineManagerUpdateHeaders();
         return this.machineManagerUpdateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 变更智能考勤机员工
+     *
+     * @param request MachineUsersUpdateRequest
+     * @param headers MachineUsersUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MachineUsersUpdateResponse
+     */
     public MachineUsersUpdateResponse machineUsersUpdateWithOptions(MachineUsersUpdateRequest request, MachineUsersUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +367,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MachineUsersUpdateResponse());
     }
 
+    /**
+     * @summary 变更智能考勤机员工
+     *
+     * @param request MachineUsersUpdateRequest
+     * @return MachineUsersUpdateResponse
+     */
     public MachineUsersUpdateResponse machineUsersUpdate(MachineUsersUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MachineUsersUpdateHeaders headers = new MachineUsersUpdateHeaders();
         return this.machineUsersUpdateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询硬件视频会议预约信息
+     *
+     * @param headers QueryDeviceVideoConferenceBookHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
     public QueryDeviceVideoConferenceBookResponse queryDeviceVideoConferenceBookWithOptions(String deviceId, String bookId, QueryDeviceVideoConferenceBookHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -322,6 +413,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDeviceVideoConferenceBookResponse());
     }
 
+    /**
+     * @summary 查询硬件视频会议预约信息
+     *
+     * @return QueryDeviceVideoConferenceBookResponse
+     */
     public QueryDeviceVideoConferenceBookResponse queryDeviceVideoConferenceBook(String deviceId, String bookId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDeviceVideoConferenceBookHeaders headers = new QueryDeviceVideoConferenceBookHeaders();

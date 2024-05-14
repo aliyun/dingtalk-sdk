@@ -4,9 +4,15 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetExtendSettingRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("buildH5Bundle")
     public Boolean buildH5Bundle;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 

@@ -7,6 +7,9 @@ public class GetUserOkrResponseBody extends TeaModel {
     @NameInMap("data")
     public GetUserOkrResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -60,6 +63,9 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public Float gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -466,6 +472,9 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("pageSize")
         public Long pageSize;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

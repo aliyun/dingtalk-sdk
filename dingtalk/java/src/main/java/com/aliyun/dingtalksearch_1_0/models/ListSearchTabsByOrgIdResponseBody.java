@@ -4,6 +4,9 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("searchTabResult")
     public java.util.List<ListSearchTabsByOrgIdResponseBodySearchTabResult> searchTabResult;
 
@@ -24,27 +27,45 @@ public class ListSearchTabsByOrgIdResponseBody extends TeaModel {
         @NameInMap("darkIcon")
         public String darkIcon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
         @NameInMap("source")
         public String source;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tabId")
         public Integer tabId;
 

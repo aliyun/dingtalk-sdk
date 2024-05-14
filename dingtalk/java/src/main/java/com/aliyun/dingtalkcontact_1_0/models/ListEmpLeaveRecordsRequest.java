@@ -7,12 +7,18 @@ public class ListEmpLeaveRecordsRequest extends TeaModel {
     @NameInMap("endTime")
     public String endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public String startTime;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryConferenceInfoBatchRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conferenceIdList")
     public java.util.List<String> conferenceIdList;
 

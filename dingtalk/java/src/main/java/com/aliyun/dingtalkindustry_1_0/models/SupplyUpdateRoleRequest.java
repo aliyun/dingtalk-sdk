@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyUpdateRoleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isRoleGroup")
     public Boolean isRoleGroup;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleId")
     public String roleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleName")
     public String roleName;
 

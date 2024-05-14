@@ -4,12 +4,21 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class TitleMention extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("length")
     public Integer length;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("offset")
     public Integer offset;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("user")
     public OpenUserDTO user;
 

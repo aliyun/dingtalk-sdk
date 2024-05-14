@@ -4,9 +4,15 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RobotSendDingResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("failedList")
     public java.util.Map<String, ?> failedList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openDingId")
     public String openDingId;
 

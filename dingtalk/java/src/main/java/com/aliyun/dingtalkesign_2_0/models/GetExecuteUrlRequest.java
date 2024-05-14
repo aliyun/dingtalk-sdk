@@ -10,6 +10,9 @@ public class GetExecuteUrlRequest extends TeaModel {
     @NameInMap("signContainer")
     public Integer signContainer;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

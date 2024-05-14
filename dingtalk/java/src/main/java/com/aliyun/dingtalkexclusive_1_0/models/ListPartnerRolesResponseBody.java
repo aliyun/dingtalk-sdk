@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPartnerRolesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<ListPartnerRolesResponseBodyList> list;
 
@@ -21,9 +24,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleDepts extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -51,9 +60,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleUsers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -81,9 +96,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningDepts extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -111,9 +132,15 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningUsers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -144,21 +171,39 @@ public class ListPartnerRolesResponseBody extends TeaModel {
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isNecessary")
         public Integer isNecessary;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("visibleDepts")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleDepts> visibleDepts;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("visibleUsers")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleUsers> visibleUsers;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("warningDepts")
         public java.util.List<ListPartnerRolesResponseBodyListWarningDepts> warningDepts;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("warningUsers")
         public java.util.List<ListPartnerRolesResponseBodyListWarningUsers> warningUsers;
 

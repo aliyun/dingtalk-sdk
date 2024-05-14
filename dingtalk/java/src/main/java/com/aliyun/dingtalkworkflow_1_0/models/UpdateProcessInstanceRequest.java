@@ -7,12 +7,18 @@ public class UpdateProcessInstanceRequest extends TeaModel {
     @NameInMap("notifiers")
     public java.util.List<UpdateProcessInstanceRequestNotifiers> notifiers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
     @NameInMap("result")
     public String result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
@@ -54,6 +60,9 @@ public class UpdateProcessInstanceRequest extends TeaModel {
     }
 
     public static class UpdateProcessInstanceRequestNotifiers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

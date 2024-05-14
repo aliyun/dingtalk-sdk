@@ -4,18 +4,33 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DingTalkSecurityCheckRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("clientVer")
     public String clientVer;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("platform")
     public String platform;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("platformVer")
     public String platformVer;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sec")
     public String sec;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

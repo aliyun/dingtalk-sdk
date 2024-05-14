@@ -4,12 +4,21 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPageTraceDataResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryPageTraceDataResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,9 +52,15 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
     }
 
     public static class QueryPageTraceDataResponseBodyListCoordinates extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("latitude")
         public Float latitude;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("longitude")
         public Float longitude;
 
@@ -73,12 +88,21 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
     }
 
     public static class QueryPageTraceDataResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("coordinates")
         public QueryPageTraceDataResponseBodyListCoordinates coordinates;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtLocation")
         public Long gmtLocation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtUpload")
         public Long gmtUpload;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

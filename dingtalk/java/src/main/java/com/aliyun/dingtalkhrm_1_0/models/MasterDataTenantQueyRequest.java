@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataTenantQueyRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("entityCode")
     public String entityCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeCode")
     public String scopeCode;
 

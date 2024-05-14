@@ -32,6 +32,9 @@ public class GetFieldModifiedHistoryResponseBody extends TeaModel {
     }
 
     public static class GetFieldModifiedHistoryResponseBodyResult extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 

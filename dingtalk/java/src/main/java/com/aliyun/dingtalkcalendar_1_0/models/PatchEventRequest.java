@@ -16,6 +16,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
@@ -358,6 +361,9 @@ public class PatchEventRequest extends TeaModel {
     }
 
     public static class PatchEventRequestRecurrenceRange extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
@@ -519,9 +525,15 @@ public class PatchEventRequest extends TeaModel {
     }
 
     public static class PatchEventRequestUiConfigs extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uiName")
         public String uiName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uiStatus")
         public String uiStatus;
 

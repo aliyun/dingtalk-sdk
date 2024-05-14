@@ -16,9 +16,15 @@ public class GetTodoTypeConfigResponseBody extends TeaModel {
     @NameInMap("contentFieldList")
     public java.util.List<GetTodoTypeConfigResponseBodyContentFieldList> contentFieldList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorId")
     public String creatorId;
 
@@ -28,12 +34,21 @@ public class GetTodoTypeConfigResponseBody extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifierId")
     public String modifierId;
 
@@ -162,6 +177,9 @@ public class GetTodoTypeConfigResponseBody extends TeaModel {
         @NameInMap("buttonStyleType")
         public Integer buttonStyleType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nameI18n")
         public java.util.Map<String, ?> nameI18n;
 

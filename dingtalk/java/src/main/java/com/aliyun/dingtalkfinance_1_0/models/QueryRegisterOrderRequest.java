@@ -4,6 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRegisterOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
@@ -13,6 +16,9 @@ public class QueryRegisterOrderRequest extends TeaModel {
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 

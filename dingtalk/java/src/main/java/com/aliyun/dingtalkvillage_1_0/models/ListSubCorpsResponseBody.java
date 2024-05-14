@@ -21,15 +21,27 @@ public class ListSubCorpsResponseBody extends TeaModel {
     }
 
     public static class ListSubCorpsResponseBodyCorpList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industry")
         public String industry;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("industryCode")
         public Integer industryCode;
 
@@ -39,6 +51,9 @@ public class ListSubCorpsResponseBody extends TeaModel {
         @NameInMap("regionLocation")
         public String regionLocation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("regionType")
         public String regionType;
 

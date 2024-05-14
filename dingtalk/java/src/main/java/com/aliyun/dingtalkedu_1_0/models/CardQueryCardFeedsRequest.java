@@ -4,39 +4,63 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CardQueryCardFeedsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
     @NameInMap("cardBizId")
     public String cardBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardId")
     public Long cardId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("count")
     public Integer count;
 
     @NameInMap("cursor")
     public Long cursor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("feedType")
     public Integer feedType;
 
     @NameInMap("needFinishProcess")
     public Boolean needFinishProcess;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceType")
     public String sourceType;
 
     @NameInMap("studentId")
     public String studentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subBizId")
     public String subBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

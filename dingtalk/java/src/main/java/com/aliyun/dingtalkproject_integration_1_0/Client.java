@@ -19,6 +19,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 在项目事件会话中加人
+     *
+     * @param headers AddAttendeeToEventGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddAttendeeToEventGroupResponse
+     */
     public AddAttendeeToEventGroupResponse addAttendeeToEventGroupWithOptions(String userId, String groupId, AddAttendeeToEventGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -46,12 +53,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddAttendeeToEventGroupResponse());
     }
 
+    /**
+     * @summary 在项目事件会话中加人
+     *
+     * @return AddAttendeeToEventGroupResponse
+     */
     public AddAttendeeToEventGroupResponse addAttendeeToEventGroup(String userId, String groupId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddAttendeeToEventGroupHeaders headers = new AddAttendeeToEventGroupHeaders();
         return this.addAttendeeToEventGroupWithOptions(userId, groupId, headers, runtime);
     }
 
+    /**
+     * @summary 创建项目事件会话
+     *
+     * @param headers CreateEventGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateEventGroupResponse
+     */
     public CreateEventGroupResponse createEventGroupWithOptions(String userId, CreateEventGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -79,12 +98,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateEventGroupResponse());
     }
 
+    /**
+     * @summary 创建项目事件会话
+     *
+     * @return CreateEventGroupResponse
+     */
     public CreateEventGroupResponse createEventGroup(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateEventGroupHeaders headers = new CreateEventGroupHeaders();
         return this.createEventGroupWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 在群会话发送项目卡片消息
+     *
+     * @param headers SendInteractiveCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendInteractiveCardResponse
+     */
     public SendInteractiveCardResponse sendInteractiveCardWithOptions(String userId, SendInteractiveCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -112,12 +143,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendInteractiveCardResponse());
     }
 
+    /**
+     * @summary 在群会话发送项目卡片消息
+     *
+     * @return SendInteractiveCardResponse
+     */
     public SendInteractiveCardResponse sendInteractiveCard(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendInteractiveCardHeaders headers = new SendInteractiveCardHeaders();
         return this.sendInteractiveCardWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 单聊会话发送项目卡片消息
+     *
+     * @param headers SendSingleInteractiveCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendSingleInteractiveCardResponse
+     */
     public SendSingleInteractiveCardResponse sendSingleInteractiveCardWithOptions(String userId, SendSingleInteractiveCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -145,12 +188,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendSingleInteractiveCardResponse());
     }
 
+    /**
+     * @summary 单聊会话发送项目卡片消息
+     *
+     * @return SendSingleInteractiveCardResponse
+     */
     public SendSingleInteractiveCardResponse sendSingleInteractiveCard(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendSingleInteractiveCardHeaders headers = new SendSingleInteractiveCardHeaders();
         return this.sendSingleInteractiveCardWithOptions(userId, headers, runtime);
     }
 
+    /**
+     * @summary 更新项目卡片消息
+     *
+     * @param headers UpdateInteractiveCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateInteractiveCardResponse
+     */
     public UpdateInteractiveCardResponse updateInteractiveCardWithOptions(String userId, UpdateInteractiveCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -178,6 +233,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInteractiveCardResponse());
     }
 
+    /**
+     * @summary 更新项目卡片消息
+     *
+     * @return UpdateInteractiveCardResponse
+     */
     public UpdateInteractiveCardResponse updateInteractiveCard(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateInteractiveCardHeaders headers = new UpdateInteractiveCardHeaders();

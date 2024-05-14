@@ -19,6 +19,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取闪记任务的概要信息
+     *
+     * @param headers GetTranscribeBriefHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTranscribeBriefResponse
+     */
     public GetTranscribeBriefResponse getTranscribeBriefWithOptions(String taskUuid, GetTranscribeBriefHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -46,12 +53,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetTranscribeBriefResponse());
     }
 
+    /**
+     * @summary 获取闪记任务的概要信息
+     *
+     * @return GetTranscribeBriefResponse
+     */
     public GetTranscribeBriefResponse getTranscribeBrief(String taskUuid) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetTranscribeBriefHeaders headers = new GetTranscribeBriefHeaders();
         return this.getTranscribeBriefWithOptions(taskUuid, headers, runtime);
     }
 
+    /**
+     * @summary 移除指定用户对闪记任务的权限
+     *
+     * @param request RemovePermissionRequest
+     * @param headers RemovePermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemovePermissionResponse
+     */
     public RemovePermissionResponse removePermissionWithOptions(String taskUuid, RemovePermissionRequest request, RemovePermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -98,12 +118,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RemovePermissionResponse());
     }
 
+    /**
+     * @summary 移除指定用户对闪记任务的权限
+     *
+     * @param request RemovePermissionRequest
+     * @return RemovePermissionResponse
+     */
     public RemovePermissionResponse removePermission(String taskUuid, RemovePermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemovePermissionHeaders headers = new RemovePermissionHeaders();
         return this.removePermissionWithOptions(taskUuid, request, headers, runtime);
     }
 
+    /**
+     * @summary 针对指定的闪记，修改或者授予指定用户权限
+     *
+     * @param request UpdatePermissionForUsersRequest
+     * @param headers UpdatePermissionForUsersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePermissionForUsersResponse
+     */
     public UpdatePermissionForUsersResponse updatePermissionForUsersWithOptions(String taskUuid, UpdatePermissionForUsersRequest request, UpdatePermissionForUsersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -152,6 +186,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePermissionForUsersResponse());
     }
 
+    /**
+     * @summary 针对指定的闪记，修改或者授予指定用户权限
+     *
+     * @param request UpdatePermissionForUsersRequest
+     * @return UpdatePermissionForUsersResponse
+     */
     public UpdatePermissionForUsersResponse updatePermissionForUsers(String taskUuid, UpdatePermissionForUsersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdatePermissionForUsersHeaders headers = new UpdatePermissionForUsersHeaders();

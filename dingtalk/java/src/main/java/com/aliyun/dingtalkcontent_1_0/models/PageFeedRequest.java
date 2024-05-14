@@ -7,12 +7,21 @@ public class PageFeedRequest extends TeaModel {
     @NameInMap("body")
     public java.util.List<String> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mcnId")
     public String mcnId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 

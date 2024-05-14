@@ -7,15 +7,27 @@ public class UpdateInstanceRequest extends TeaModel {
     @NameInMap("externalBizId")
     public String externalBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formDataList")
     public String formDataList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

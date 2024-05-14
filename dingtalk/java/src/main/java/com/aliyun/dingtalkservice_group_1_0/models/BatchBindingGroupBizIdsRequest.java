@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchBindingGroupBizIdsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bindingGroupBizIds")
     public java.util.List<BatchBindingGroupBizIdsRequestBindingGroupBizIds> bindingGroupBizIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
@@ -32,9 +38,15 @@ public class BatchBindingGroupBizIdsRequest extends TeaModel {
     }
 
     public static class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

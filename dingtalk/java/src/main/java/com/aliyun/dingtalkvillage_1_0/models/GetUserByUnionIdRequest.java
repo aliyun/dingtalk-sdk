@@ -7,9 +7,15 @@ public class GetUserByUnionIdRequest extends TeaModel {
     @NameInMap("language")
     public String language;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

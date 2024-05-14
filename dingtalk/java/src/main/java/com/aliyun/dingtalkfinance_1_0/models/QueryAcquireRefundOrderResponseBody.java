@@ -4,45 +4,81 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAcquireRefundOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public String amount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
     @NameInMap("gmtRefund")
     public String gmtRefund;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("originOutTradeNo")
     public String originOutTradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payerUserId")
     public String payerUserId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

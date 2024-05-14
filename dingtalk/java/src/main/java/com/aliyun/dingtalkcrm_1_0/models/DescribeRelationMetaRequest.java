@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DescribeRelationMetaRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationTypes")
     public java.util.List<String> relationTypes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenant")
     public String tenant;
 

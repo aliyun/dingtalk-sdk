@@ -4,18 +4,33 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class OrderResaleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderCreateTime")
     public Long orderCreateTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceStartTime")
     public Long serviceStartTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceStopTime")
     public Long serviceStopTime;
 

@@ -4,15 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyAddDeptRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
     @NameInMap("partnerNumber")
     public String partnerNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("superDeptId")
     public Long superDeptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("supplyDeptType")
     public String supplyDeptType;
 

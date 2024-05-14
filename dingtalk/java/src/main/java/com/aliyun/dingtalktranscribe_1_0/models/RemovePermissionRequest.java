@@ -4,9 +4,15 @@ package com.aliyun.dingtalktranscribe_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemovePermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<RemovePermissionRequestMembers> members;
 
@@ -54,12 +60,21 @@ public class RemovePermissionRequest extends TeaModel {
     }
 
     public static class RemovePermissionRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public Long memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("policyType")
         public String policyType;
 

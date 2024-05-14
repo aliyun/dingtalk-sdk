@@ -4,6 +4,9 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCreateStatusRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

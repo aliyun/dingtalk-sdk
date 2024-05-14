@@ -7,6 +7,9 @@ public class GetPictureDownloadUrlResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public GetPictureDownloadUrlResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class GetPictureDownloadUrlResponseBody extends TeaModel {
     }
 
     public static class GetPictureDownloadUrlResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

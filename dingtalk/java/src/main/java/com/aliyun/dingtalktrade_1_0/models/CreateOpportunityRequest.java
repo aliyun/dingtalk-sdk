@@ -4,18 +4,30 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOpportunityRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("belongToPhoneNum")
     public String belongToPhoneNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contactPhoneNum")
     public String contactPhoneNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("marketCode")
     public String marketCode;
 

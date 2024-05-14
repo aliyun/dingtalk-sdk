@@ -4,9 +4,15 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadUrlResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uploadUrl")
     public String uploadUrl;
 

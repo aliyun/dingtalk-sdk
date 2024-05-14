@@ -13,6 +13,9 @@ public class GetDefaultChildResponseBody extends TeaModel {
     @NameInMap("grade")
     public Integer grade;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -22,6 +25,9 @@ public class GetDefaultChildResponseBody extends TeaModel {
     @NameInMap("period")
     public String period;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -90,12 +96,18 @@ public class GetDefaultChildResponseBody extends TeaModel {
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
         @NameInMap("period")
         public String period;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 

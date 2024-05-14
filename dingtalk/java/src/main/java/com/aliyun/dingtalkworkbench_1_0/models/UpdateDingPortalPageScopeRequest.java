@@ -4,6 +4,9 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateDingPortalPageScopeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("allVisible")
     public Boolean allVisible;
 

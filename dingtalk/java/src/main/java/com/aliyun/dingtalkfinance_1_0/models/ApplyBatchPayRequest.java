@@ -4,24 +4,39 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyBatchPayRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
     @NameInMap("passBackParams")
     public java.util.Map<String, ?> passBackParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payTerminal")
     public String payTerminal;
 
     @NameInMap("returnUrl")
     public String returnUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("staffId")
     public String staffId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("transAmount")
     public String transAmount;
 

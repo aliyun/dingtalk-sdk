@@ -7,6 +7,9 @@ public class SearchGroupResponseBody extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -54,18 +57,33 @@ public class SearchGroupResponseBody extends TeaModel {
     }
 
     public static class SearchGroupResponseBodyRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupUrl")
         public String groupUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openTeamId")
         public String openTeamId;
 

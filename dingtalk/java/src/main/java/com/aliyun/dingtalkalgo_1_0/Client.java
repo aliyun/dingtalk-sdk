@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 自然语言处理之关键词识别
+     *
+     * @param request NlpWordDistinguishRequest
+     * @param headers NlpWordDistinguishHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return NlpWordDistinguishResponse
+     */
     public NlpWordDistinguishResponse nlpWordDistinguishWithOptions(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new NlpWordDistinguishResponse());
     }
 
+    /**
+     * @summary 自然语言处理之关键词识别
+     *
+     * @param request NlpWordDistinguishRequest
+     * @return NlpWordDistinguishResponse
+     */
     public NlpWordDistinguishResponse nlpWordDistinguish(NlpWordDistinguishRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         NlpWordDistinguishHeaders headers = new NlpWordDistinguishHeaders();
         return this.nlpWordDistinguishWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary Okr内容推荐
+     *
+     * @param request OkrOpenRecommendRequest
+     * @param headers OkrOpenRecommendHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OkrOpenRecommendResponse
+     */
     public OkrOpenRecommendResponse okrOpenRecommendWithOptions(OkrOpenRecommendRequest request, OkrOpenRecommendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -121,6 +143,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new OkrOpenRecommendResponse());
     }
 
+    /**
+     * @summary Okr内容推荐
+     *
+     * @param request OkrOpenRecommendRequest
+     * @return OkrOpenRecommendResponse
+     */
     public OkrOpenRecommendResponse okrOpenRecommend(OkrOpenRecommendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();

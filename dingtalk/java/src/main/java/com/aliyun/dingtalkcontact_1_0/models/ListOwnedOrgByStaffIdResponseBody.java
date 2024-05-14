@@ -21,9 +21,15 @@ public class ListOwnedOrgByStaffIdResponseBody extends TeaModel {
     }
 
     public static class ListOwnedOrgByStaffIdResponseBodyOrgList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 

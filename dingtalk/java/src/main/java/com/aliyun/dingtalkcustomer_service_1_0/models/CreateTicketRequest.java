@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTicketRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("foreignId")
     public String foreignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("foreignName")
     public String foreignName;
 
@@ -19,12 +25,21 @@ public class CreateTicketRequest extends TeaModel {
     @NameInMap("properties")
     public java.util.List<CreateTicketRequestProperties> properties;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceId")
     public String sourceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

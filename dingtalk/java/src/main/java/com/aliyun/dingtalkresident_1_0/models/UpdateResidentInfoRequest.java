@@ -22,12 +22,18 @@ public class UpdateResidentInfoRequest extends TeaModel {
     @NameInMap("location")
     public String location;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("provName")
     public String provName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("state")
     public Long state;
 

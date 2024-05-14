@@ -73,6 +73,9 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerDeptList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberCount")
         public Long memberCount;
 
@@ -82,9 +85,15 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
         @NameInMap("partnerNum")
         public String partnerNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

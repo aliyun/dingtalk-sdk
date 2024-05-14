@@ -7,9 +7,15 @@ public class RegisterCustomAppRoleRequest extends TeaModel {
     @NameInMap("canManageRole")
     public Boolean canManageRole;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleName")
     public String roleName;
 

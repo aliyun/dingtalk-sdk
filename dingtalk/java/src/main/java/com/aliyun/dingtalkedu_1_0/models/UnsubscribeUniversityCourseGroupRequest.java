@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnsubscribeUniversityCourseGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentUserIds")
     public java.util.List<String> studentUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

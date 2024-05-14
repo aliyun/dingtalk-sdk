@@ -4,15 +4,27 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfJobLevelResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("level")
     public Long level;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stopDate")
     public String stopDate;
 

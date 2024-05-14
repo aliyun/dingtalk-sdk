@@ -7,6 +7,9 @@ public class QueryDentryRequest extends TeaModel {
     @NameInMap("includeSpace")
     public Boolean includeSpace;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

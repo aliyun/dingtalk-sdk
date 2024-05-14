@@ -7,6 +7,9 @@ public class GetTravelProcessDetailRequest extends TeaModel {
     @NameInMap("processCorpId")
     public String processCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

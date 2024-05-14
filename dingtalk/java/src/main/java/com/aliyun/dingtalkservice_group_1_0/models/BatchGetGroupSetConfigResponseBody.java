@@ -21,9 +21,15 @@ public class BatchGetGroupSetConfigResponseBody extends TeaModel {
     }
 
     public static class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("configKey")
         public String configKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("configValue")
         public String configValue;
 

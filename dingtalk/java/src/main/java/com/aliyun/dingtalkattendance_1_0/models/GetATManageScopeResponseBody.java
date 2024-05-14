@@ -21,9 +21,15 @@ public class GetATManageScopeResponseBody extends TeaModel {
     }
 
     public static class GetATManageScopeResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("manageScope")
         public String manageScope;
 

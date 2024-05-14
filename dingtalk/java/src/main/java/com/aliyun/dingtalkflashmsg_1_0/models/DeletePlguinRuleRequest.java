@@ -4,9 +4,15 @@ package com.aliyun.dingtalkflashmsg_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeletePlguinRuleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizIdList")
     public java.util.List<String> bizIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

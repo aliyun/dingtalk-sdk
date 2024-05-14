@@ -7,6 +7,9 @@ public class CustomizeContactCreateRequest extends TeaModel {
     @NameInMap("managerIdList")
     public java.util.List<String> managerIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

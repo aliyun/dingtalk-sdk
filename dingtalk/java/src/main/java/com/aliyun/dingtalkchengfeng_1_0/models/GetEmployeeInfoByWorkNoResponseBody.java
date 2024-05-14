@@ -7,6 +7,9 @@ public class GetEmployeeInfoByWorkNoResponseBody extends TeaModel {
     @NameInMap("content")
     public GetEmployeeInfoByWorkNoResponseBodyContent content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

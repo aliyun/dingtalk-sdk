@@ -4,27 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRefundFlowRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorName")
     public String operatorName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
     @NameInMap("signature")
     public String signature;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sn")
     public String sn;
 
     @NameInMap("timestamp")
     public Long timestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

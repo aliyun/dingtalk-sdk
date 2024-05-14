@@ -10,6 +10,9 @@ public class UpdateSheetRequest extends TeaModel {
     @NameInMap("visibility")
     public String visibility;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

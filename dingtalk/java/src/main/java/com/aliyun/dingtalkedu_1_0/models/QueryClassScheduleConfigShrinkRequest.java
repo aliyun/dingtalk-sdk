@@ -7,6 +7,9 @@ public class QueryClassScheduleConfigShrinkRequest extends TeaModel {
     @NameInMap("classIds")
     public String classIdsShrink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

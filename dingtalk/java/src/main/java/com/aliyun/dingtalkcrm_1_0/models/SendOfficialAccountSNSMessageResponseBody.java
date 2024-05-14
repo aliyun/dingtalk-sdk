@@ -7,6 +7,9 @@ public class SendOfficialAccountSNSMessageResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public SendOfficialAccountSNSMessageResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class SendOfficialAccountSNSMessageResponseBody extends TeaModel {
     }
 
     public static class SendOfficialAccountSNSMessageResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openPushId")
         public String openPushId;
 

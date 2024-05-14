@@ -4,21 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CardGetCardFinishProgressRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
     @NameInMap("cardBizId")
     public String cardBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardId")
     public Long cardId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceType")
     public String sourceType;
 
     @NameInMap("studentId")
     public String studentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

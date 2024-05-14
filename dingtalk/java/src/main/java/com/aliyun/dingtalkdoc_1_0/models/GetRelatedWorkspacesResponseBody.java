@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedWorkspacesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workspaces")
     public java.util.List<GetRelatedWorkspacesResponseBodyWorkspaces> workspaces;
 
@@ -24,12 +27,21 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -76,9 +88,15 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deleted")
         public Boolean deleted;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -91,9 +109,15 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("role")
         public String role;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

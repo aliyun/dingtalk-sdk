@@ -10,6 +10,9 @@ public class TerminateProcessInstanceRequest extends TeaModel {
     @NameInMap("operatingUserId")
     public String operatingUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

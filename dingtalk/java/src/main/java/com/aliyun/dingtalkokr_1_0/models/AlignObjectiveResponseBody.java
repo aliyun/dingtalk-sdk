@@ -7,6 +7,9 @@ public class AlignObjectiveResponseBody extends TeaModel {
     @NameInMap("data")
     public AlignObjectiveResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

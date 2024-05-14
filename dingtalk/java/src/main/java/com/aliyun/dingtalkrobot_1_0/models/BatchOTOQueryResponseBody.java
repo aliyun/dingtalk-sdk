@@ -32,15 +32,27 @@ public class BatchOTOQueryResponseBody extends TeaModel {
     }
 
     public static class BatchOTOQueryResponseBodyMessageReadInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("readStatus")
         public String readStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("readTimestamp")
         public Long readTimestamp;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

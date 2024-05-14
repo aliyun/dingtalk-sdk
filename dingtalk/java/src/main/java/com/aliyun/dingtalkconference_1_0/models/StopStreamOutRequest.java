@@ -4,12 +4,21 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StopStreamOutRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stopAllStream")
     public Boolean stopAllStream;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("streamId")
     public String streamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

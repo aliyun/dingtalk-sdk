@@ -4,6 +4,9 @@ package com.aliyun.dingtalkapaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateTemplateResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createResultList")
     public java.util.List<BatchCreateTemplateResponseBodyCreateResultList> createResultList;
 
@@ -21,9 +24,15 @@ public class BatchCreateTemplateResponseBody extends TeaModel {
     }
 
     public static class BatchCreateTemplateResponseBodyCreateResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateKey")
         public String templateKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

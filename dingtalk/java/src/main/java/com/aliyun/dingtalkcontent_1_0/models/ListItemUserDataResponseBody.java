@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListItemUserDataResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studyInfos")
     public java.util.List<ListItemUserDataResponseBodyStudyInfos> studyInfos;
 
@@ -21,9 +24,15 @@ public class ListItemUserDataResponseBody extends TeaModel {
     }
 
     public static class ListItemUserDataResponseBodyStudyInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationMillis")
         public Long durationMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 

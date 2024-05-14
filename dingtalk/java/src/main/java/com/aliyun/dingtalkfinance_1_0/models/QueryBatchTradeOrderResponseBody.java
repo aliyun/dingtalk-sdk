@@ -4,6 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("batchTradeOrderVOs")
     public java.util.List<QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs> batchTradeOrderVOs;
 
@@ -21,45 +24,87 @@ public class QueryBatchTradeOrderResponseBody extends TeaModel {
     }
 
     public static class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("alipayTransId")
         public String alipayTransId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("failAmount")
         public String failAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("failCount")
         public Long failCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("failReason")
         public String failReason;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtSubmit")
         public String gmtSubmit;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outBatchNo")
         public String outBatchNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payerStaffId")
         public String payerStaffId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("paymentAmount")
         public String paymentAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("paymentCurrency")
         public String paymentCurrency;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("successAmount")
         public String successAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("successCount")
         public Long successCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("totalAmount")
         public String totalAmount;
 

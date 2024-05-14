@@ -4,15 +4,27 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class CallbackRegiesterRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("apiSecret")
     public String apiSecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("callbackKey")
     public String callbackKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 

@@ -32,18 +32,33 @@ public class QueryGoodsListResponseBody extends TeaModel {
     }
 
     public static class QueryGoodsListResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("goodsName")
         public String goodsName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("goodsNo")
         public String goodsNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("productSpecs")
         public String productSpecs;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 
@@ -95,15 +110,24 @@ public class QueryGoodsListResponseBody extends TeaModel {
     }
 
     public static class QueryGoodsListResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<QueryGoodsListResponseBodyResultList> list;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

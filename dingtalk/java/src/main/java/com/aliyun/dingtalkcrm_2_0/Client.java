@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取关系数据查重规则
+     *
+     * @param request GetRelationUkSettingRequest
+     * @param headers GetRelationUkSettingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRelationUkSettingResponse
+     */
     public GetRelationUkSettingResponse getRelationUkSettingWithOptions(GetRelationUkSettingRequest request, GetRelationUkSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -53,6 +61,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetRelationUkSettingResponse());
     }
 
+    /**
+     * @summary 获取关系数据查重规则
+     *
+     * @param request GetRelationUkSettingRequest
+     * @return GetRelationUkSettingResponse
+     */
     public GetRelationUkSettingResponse getRelationUkSetting(GetRelationUkSettingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetRelationUkSettingHeaders headers = new GetRelationUkSettingHeaders();

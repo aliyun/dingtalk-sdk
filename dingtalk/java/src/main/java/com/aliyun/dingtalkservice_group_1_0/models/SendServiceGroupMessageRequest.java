@@ -19,6 +19,9 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("btns")
     public java.util.List<SendServiceGroupMessageRequestBtns> btns;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
@@ -28,6 +31,9 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("isAtAll")
     public Boolean isAtAll;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
@@ -40,9 +46,15 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("receiverUnionIds")
     public java.util.List<String> receiverUnionIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

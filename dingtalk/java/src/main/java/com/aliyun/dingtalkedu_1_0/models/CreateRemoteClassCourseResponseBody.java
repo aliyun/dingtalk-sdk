@@ -7,6 +7,9 @@ public class CreateRemoteClassCourseResponseBody extends TeaModel {
     @NameInMap("result")
     public CreateRemoteClassCourseResponseBodyResult result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

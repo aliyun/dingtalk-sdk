@@ -4,12 +4,18 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceDingRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceKey")
     public String deviceKey;
 
     @NameInMap("paramsJson")
     public String paramsJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 

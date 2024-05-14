@@ -10,15 +10,24 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     @NameInMap("file")
     public RedirectWorkflowTaskRequestFile file;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operateUserId")
     public String operateUserId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("toUserId")
     public String toUserId;
 

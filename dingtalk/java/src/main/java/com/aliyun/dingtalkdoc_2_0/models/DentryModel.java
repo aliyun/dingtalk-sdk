@@ -7,18 +7,30 @@ public class DentryModel extends TeaModel {
     @NameInMap("contentType")
     public String contentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
     @NameInMap("creator")
     public DentryModelCreator creator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryType")
     public String dentryType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dentryUuid")
     public String dentryUuid;
 
@@ -28,12 +40,18 @@ public class DentryModel extends TeaModel {
     @NameInMap("extension")
     public String extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasChildren")
     public Boolean hasChildren;
 
     @NameInMap("linkSourceInfo")
     public LinkSourceInfo linkSourceInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -43,12 +61,18 @@ public class DentryModel extends TeaModel {
     @NameInMap("space")
     public SpaceModel space;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
     @NameInMap("statisticalInfo")
     public DentryModelStatisticalInfo statisticalInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
@@ -219,9 +243,15 @@ public class DentryModel extends TeaModel {
     }
 
     public static class DentryModelCreator extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -268,9 +298,15 @@ public class DentryModel extends TeaModel {
     }
 
     public static class DentryModelUpdater extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

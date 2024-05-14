@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupSetRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
@@ -13,6 +16,9 @@ public class CreateGroupSetRequest extends TeaModel {
     @NameInMap("memberQuota")
     public Integer memberQuota;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -22,9 +28,15 @@ public class CreateGroupSetRequest extends TeaModel {
     @NameInMap("noticeToped")
     public Integer noticeToped;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

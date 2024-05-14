@@ -4,6 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyFollowerAuthInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public ApplyFollowerAuthInfoResponseBodyResult result;
 
@@ -21,6 +24,9 @@ public class ApplyFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class ApplyFollowerAuthInfoResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openApplyId")
         public String openApplyId;
 

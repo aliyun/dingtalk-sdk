@@ -4,36 +4,66 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityCourseGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseGroupIntroduce")
     public String courseGroupIntroduce;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseGroupName")
     public String courseGroupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courserGroupItemModels")
     public java.util.List<CreateUniversityCourseGroupRequestCourserGroupItemModels> courserGroupItemModels;
 
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvCourseGroupCode")
     public String isvCourseGroupCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodCode")
     public String periodCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schoolYear")
     public String schoolYear;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("semester")
     public Integer semester;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subjectName")
     public String subjectName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherInfos")
     public java.util.List<CreateUniversityCourseGroupRequestTeacherInfos> teacherInfos;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -131,12 +161,21 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -172,12 +211,21 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -213,24 +261,45 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModels extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseType")
         public Integer courseType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courserGroupItemEndDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courserGroupItemStartDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 

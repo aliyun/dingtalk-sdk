@@ -13,12 +13,18 @@ public class CreateDeviceChatRoomRequest extends TeaModel {
     @NameInMap("deviceUuids")
     public java.util.List<String> deviceUuids;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

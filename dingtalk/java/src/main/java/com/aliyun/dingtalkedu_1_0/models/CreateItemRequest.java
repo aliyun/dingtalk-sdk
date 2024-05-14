@@ -4,39 +4,66 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateItemRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("effectType")
     public Long effectType;
 
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("optUser")
     public String optUser;
 
     @NameInMap("periodType")
     public Long periodType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("price")
     public Long price;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public Long type;
 

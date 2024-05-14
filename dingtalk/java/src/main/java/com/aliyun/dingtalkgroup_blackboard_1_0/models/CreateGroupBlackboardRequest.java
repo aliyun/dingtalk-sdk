@@ -4,9 +4,15 @@ package com.aliyun.dingtalkgroup_blackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupBlackboardRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -16,9 +22,15 @@ public class CreateGroupBlackboardRequest extends TeaModel {
     @NameInMap("sticky")
     public Boolean sticky;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uniqueId")
     public String uniqueId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

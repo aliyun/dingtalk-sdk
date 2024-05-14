@@ -7,6 +7,11 @@ public class MoveFileResponseBody extends TeaModel {
     @NameInMap("contentType")
     public String contentType;
 
+    /**
+     * <p>This parameter is required.</p>
+     * <br>
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
@@ -16,30 +21,50 @@ public class MoveFileResponseBody extends TeaModel {
     @NameInMap("fileExtension")
     public String fileExtension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("filePath")
     public String filePath;
 
     @NameInMap("fileSize")
     public Long fileSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileType")
     public String fileType;
 
     @NameInMap("modifier")
     public String modifier;
 
+    /**
+     * <p>This parameter is required.</p>
+     * <br>
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("modifyTime")
     public String modifyTime;
 
     @NameInMap("parentId")
     public String parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 

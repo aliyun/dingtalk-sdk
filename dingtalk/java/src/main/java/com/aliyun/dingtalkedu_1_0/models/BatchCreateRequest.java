@@ -4,18 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public BatchCreateRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("identifier")
     public String identifier;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jsVersion")
     public Integer jsVersion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceType")
     public String sourceType;
 
@@ -257,9 +272,15 @@ public class BatchCreateRequest extends TeaModel {
         @NameInMap("cardCycle")
         public Integer cardCycle;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cardFrequency")
         public java.util.List<Integer> cardFrequency;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cardRuleItemParamList")
         public java.util.List<BatchCreateRequestDataCardRuleItemParamList> cardRuleItemParamList;
 
@@ -269,6 +290,9 @@ public class BatchCreateRequest extends TeaModel {
         @NameInMap("classNames")
         public java.util.List<String> classNames;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -281,12 +305,21 @@ public class BatchCreateRequest extends TeaModel {
         @NameInMap("needMetering")
         public String needMetering;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orgClassStudentGroupList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupList> orgClassStudentGroupList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("remindHour")
         public Integer remindHour;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("remindMinute")
         public Integer remindMinute;
 
@@ -296,6 +329,9 @@ public class BatchCreateRequest extends TeaModel {
         @NameInMap("templateId")
         public Long templateId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

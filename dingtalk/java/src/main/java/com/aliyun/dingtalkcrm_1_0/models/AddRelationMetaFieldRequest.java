@@ -4,15 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRelationMetaFieldRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fieldDTOList")
     public java.util.List<AddRelationMetaFieldRequestFieldDTOList> fieldDTOList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenant")
     public String tenant;
 
@@ -87,6 +99,9 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         @NameInMap("align")
         public String align;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
@@ -111,6 +126,9 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         @NameInMap("invisible")
         public Boolean invisible;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
@@ -138,6 +156,9 @@ public class AddRelationMetaFieldRequest extends TeaModel {
         @NameInMap("placeholder")
         public String placeholder;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
@@ -334,9 +355,15 @@ public class AddRelationMetaFieldRequest extends TeaModel {
     }
 
     public static class AddRelationMetaFieldRequestFieldDTOList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("props")
         public AddRelationMetaFieldRequestFieldDTOListProps props;
 

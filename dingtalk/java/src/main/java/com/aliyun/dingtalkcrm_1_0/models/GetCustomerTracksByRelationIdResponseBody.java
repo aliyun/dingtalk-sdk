@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -73,18 +79,30 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     }
 
     public static class GetCustomerTracksByRelationIdResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
@@ -94,9 +112,15 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Integer type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("typeGroup")
         public Integer typeGroup;
 

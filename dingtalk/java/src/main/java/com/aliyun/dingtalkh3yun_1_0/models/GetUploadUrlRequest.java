@@ -4,15 +4,27 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fieldName")
     public String fieldName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isOverwrite")
     public Boolean isOverwrite;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

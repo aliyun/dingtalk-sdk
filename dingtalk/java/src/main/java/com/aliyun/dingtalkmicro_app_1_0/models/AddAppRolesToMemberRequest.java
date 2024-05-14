@@ -4,15 +4,27 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddAppRolesToMemberRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberId")
     public String memberId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberType")
     public String memberType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleList")
     public java.util.List<AddAppRolesToMemberRequestRoleList> roleList;
 
@@ -54,9 +66,15 @@ public class AddAppRolesToMemberRequest extends TeaModel {
     }
 
     public static class AddAppRolesToMemberRequestRoleList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeVersion")
         public Long scopeVersion;
 

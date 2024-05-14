@@ -7,12 +7,21 @@ public class GetFileUploadInfoRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("md5")
     public String md5;
 

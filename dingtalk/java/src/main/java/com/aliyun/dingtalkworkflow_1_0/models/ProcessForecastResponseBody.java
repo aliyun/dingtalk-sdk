@@ -292,9 +292,15 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowForecastNodes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outId")
         public String outId;
 
@@ -322,24 +328,42 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isForecastSuccess")
         public Boolean isForecastSuccess;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isStaticWorkflow")
         public Boolean isStaticWorkflow;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processId")
         public Long processId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
         @NameInMap("workflowActivityRules")
         public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRules> workflowActivityRules;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workflowForecastNodes")
         public java.util.List<ProcessForecastResponseBodyResultWorkflowForecastNodes> workflowForecastNodes;
 

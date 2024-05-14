@@ -7,6 +7,9 @@ public class AddSpaceRequest extends TeaModel {
     @NameInMap("option")
     public AddSpaceRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

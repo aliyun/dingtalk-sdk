@@ -4,15 +4,24 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateVersionStatusRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bundleId")
     public String bundleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
     @NameInMap("version")
     public String version;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("versionType")
     public Integer versionType;
 

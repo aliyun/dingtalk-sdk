@@ -4,12 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupTagRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
     @NameInMap("tagNames")
     public java.util.List<String> tagNames;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updateType")
     public String updateType;
 

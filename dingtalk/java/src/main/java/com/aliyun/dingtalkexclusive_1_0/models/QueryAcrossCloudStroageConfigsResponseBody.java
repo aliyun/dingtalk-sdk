@@ -4,18 +4,33 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAcrossCloudStroageConfigsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bucketName")
     public String bucketName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cloudType")
     public Integer cloudType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endpoint")
     public String endpoint;
 

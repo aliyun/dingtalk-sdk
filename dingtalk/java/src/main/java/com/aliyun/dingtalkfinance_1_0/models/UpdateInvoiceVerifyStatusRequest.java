@@ -4,18 +4,30 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
     @NameInMap("checkingResult")
     public Integer checkingResult;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("checkingStatus")
     public Integer checkingStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -25,18 +37,30 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
     @NameInMap("invoiceStatus")
     public Integer invoiceStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoiceVerifyId")
     public String invoiceVerifyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msg")
     public String msg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

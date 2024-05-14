@@ -21,6 +21,9 @@ public class BatchUpdateProcessInstanceRequest extends TeaModel {
     }
 
     public static class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -43,12 +46,18 @@ public class BatchUpdateProcessInstanceRequest extends TeaModel {
         @NameInMap("notifiers")
         public java.util.List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> notifiers;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
         @NameInMap("result")
         public String result;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 

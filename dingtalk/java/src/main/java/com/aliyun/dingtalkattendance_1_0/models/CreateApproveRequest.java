@@ -19,6 +19,9 @@ public class CreateApproveRequest extends TeaModel {
     @NameInMap("tagName")
     public String tagName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userid")
     public String userid;
 

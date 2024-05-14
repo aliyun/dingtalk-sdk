@@ -7,6 +7,9 @@ public class PageAutoFlowLogRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -16,9 +19,15 @@ public class PageAutoFlowLogRequest extends TeaModel {
     @NameInMap("formUuid")
     public String formUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
@@ -31,9 +40,15 @@ public class PageAutoFlowLogRequest extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("token")
     public String token;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

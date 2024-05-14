@@ -13,6 +13,9 @@ public class ListGroupSetRequest extends TeaModel {
     @NameInMap("queryDsl")
     public String queryDsl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

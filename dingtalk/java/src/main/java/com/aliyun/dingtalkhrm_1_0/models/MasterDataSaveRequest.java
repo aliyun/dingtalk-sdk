@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataSaveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<MasterDataSaveRequestBody> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenantId")
     public Long tenantId;
 
@@ -32,9 +38,15 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBodyFieldList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("valueStr")
         public String valueStr;
 
@@ -62,6 +74,9 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBodyScope extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
@@ -92,21 +107,36 @@ public class MasterDataSaveRequest extends TeaModel {
     }
 
     public static class MasterDataSaveRequestBody extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizTime")
         public Long bizTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizUk")
         public String bizUk;
 
         @NameInMap("entityCode")
         public String entityCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldList")
         public java.util.List<MasterDataSaveRequestBodyFieldList> fieldList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scope")
         public MasterDataSaveRequestBodyScope scope;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

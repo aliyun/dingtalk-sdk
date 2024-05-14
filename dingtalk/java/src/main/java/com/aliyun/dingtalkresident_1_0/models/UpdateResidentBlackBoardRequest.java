@@ -7,12 +7,18 @@ public class UpdateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("blackboardId")
     public String blackboardId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("context")
     public String context;
 
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

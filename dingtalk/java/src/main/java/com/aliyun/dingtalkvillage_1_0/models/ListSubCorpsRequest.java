@@ -4,9 +4,15 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSubCorpsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isOnlyDirect")
     public Boolean isOnlyDirect;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

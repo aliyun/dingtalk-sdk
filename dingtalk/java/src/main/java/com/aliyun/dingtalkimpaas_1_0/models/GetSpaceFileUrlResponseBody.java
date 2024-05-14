@@ -4,12 +4,21 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceFileUrlResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("headers")
     public java.util.Map<String, ?> headers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("internalResourceUrl")
     public String internalResourceUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resourceUrl")
     public String resourceUrl;
 

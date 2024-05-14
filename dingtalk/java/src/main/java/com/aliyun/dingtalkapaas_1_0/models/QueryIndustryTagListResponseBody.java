@@ -4,6 +4,9 @@ package com.aliyun.dingtalkapaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryIndustryTagListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("industryList")
     public java.util.List<String> industryList;
 

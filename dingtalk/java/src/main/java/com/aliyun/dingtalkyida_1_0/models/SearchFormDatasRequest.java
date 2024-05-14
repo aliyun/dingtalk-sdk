@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDatasRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -19,6 +22,9 @@ public class SearchFormDatasRequest extends TeaModel {
     @NameInMap("dynamicOrder")
     public String dynamicOrder;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -40,9 +46,15 @@ public class SearchFormDatasRequest extends TeaModel {
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

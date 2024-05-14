@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 合同权益核销
+     *
+     * @param request ContractBenefitConsumeRequest
+     * @param headers ContractBenefitConsumeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ContractBenefitConsumeResponse
+     */
     public ContractBenefitConsumeResponse contractBenefitConsumeWithOptions(ContractBenefitConsumeRequest request, ContractBenefitConsumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -77,12 +85,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ContractBenefitConsumeResponse());
     }
 
+    /**
+     * @summary 合同权益核销
+     *
+     * @param request ContractBenefitConsumeRequest
+     * @return ContractBenefitConsumeResponse
+     */
     public ContractBenefitConsumeResponse contractBenefitConsume(ContractBenefitConsumeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ContractBenefitConsumeHeaders headers = new ContractBenefitConsumeHeaders();
         return this.contractBenefitConsumeWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 天谷侧查询审批单
+     *
+     * @param request EsignQueryApprovalInfoRequest
+     * @param headers EsignQueryApprovalInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EsignQueryApprovalInfoResponse
+     */
     public EsignQueryApprovalInfoResponse esignQueryApprovalInfoWithOptions(EsignQueryApprovalInfoRequest request, EsignQueryApprovalInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -125,12 +147,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EsignQueryApprovalInfoResponse());
     }
 
+    /**
+     * @summary 天谷侧查询审批单
+     *
+     * @param request EsignQueryApprovalInfoRequest
+     * @return EsignQueryApprovalInfoResponse
+     */
     public EsignQueryApprovalInfoResponse esignQueryApprovalInfo(EsignQueryApprovalInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignQueryApprovalInfoHeaders headers = new EsignQueryApprovalInfoHeaders();
         return this.esignQueryApprovalInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 天谷侧查询授权信息接口
+     *
+     * @param request EsignQueryGrantInfoRequest
+     * @param headers EsignQueryGrantInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EsignQueryGrantInfoResponse
+     */
     public EsignQueryGrantInfoResponse esignQueryGrantInfoWithOptions(EsignQueryGrantInfoRequest request, EsignQueryGrantInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -173,12 +209,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EsignQueryGrantInfoResponse());
     }
 
+    /**
+     * @summary 天谷侧查询授权信息接口
+     *
+     * @param request EsignQueryGrantInfoRequest
+     * @return EsignQueryGrantInfoResponse
+     */
     public EsignQueryGrantInfoResponse esignQueryGrantInfo(EsignQueryGrantInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignQueryGrantInfoHeaders headers = new EsignQueryGrantInfoHeaders();
         return this.esignQueryGrantInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 天谷侧查询获取免登信息
+     *
+     * @param request EsignQueryIdentityByTicketRequest
+     * @param headers EsignQueryIdentityByTicketHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EsignQueryIdentityByTicketResponse
+     */
     public EsignQueryIdentityByTicketResponse esignQueryIdentityByTicketWithOptions(EsignQueryIdentityByTicketRequest request, EsignQueryIdentityByTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -221,12 +271,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EsignQueryIdentityByTicketResponse());
     }
 
+    /**
+     * @summary 天谷侧查询获取免登信息
+     *
+     * @param request EsignQueryIdentityByTicketRequest
+     * @return EsignQueryIdentityByTicketResponse
+     */
     public EsignQueryIdentityByTicketResponse esignQueryIdentityByTicket(EsignQueryIdentityByTicketRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignQueryIdentityByTicketHeaders headers = new EsignQueryIdentityByTicketHeaders();
         return this.esignQueryIdentityByTicketWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary e签宝电子签事件同步回传接口
+     *
+     * @param request EsignSyncEventRequest
+     * @param headers EsignSyncEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EsignSyncEventResponse
+     */
     public EsignSyncEventResponse esignSyncEventWithOptions(EsignSyncEventRequest request, EsignSyncEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -277,12 +341,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EsignSyncEventResponse());
     }
 
+    /**
+     * @summary e签宝电子签事件同步回传接口
+     *
+     * @param request EsignSyncEventRequest
+     * @return EsignSyncEventResponse
+     */
     public EsignSyncEventResponse esignSyncEvent(EsignSyncEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignSyncEventHeaders headers = new EsignSyncEventHeaders();
         return this.esignSyncEventWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary e签宝查询智能合同版本接口
+     *
+     * @param request QueryAdvancedContractVersionRequest
+     * @param headers QueryAdvancedContractVersionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryAdvancedContractVersionResponse
+     */
     public QueryAdvancedContractVersionResponse queryAdvancedContractVersionWithOptions(QueryAdvancedContractVersionRequest request, QueryAdvancedContractVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -321,12 +399,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryAdvancedContractVersionResponse());
     }
 
+    /**
+     * @summary e签宝查询智能合同版本接口
+     *
+     * @param request QueryAdvancedContractVersionRequest
+     * @return QueryAdvancedContractVersionResponse
+     */
     public QueryAdvancedContractVersionResponse queryAdvancedContractVersion(QueryAdvancedContractVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryAdvancedContractVersionHeaders headers = new QueryAdvancedContractVersionHeaders();
         return this.queryAdvancedContractVersionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送合同相关卡片
+     *
+     * @param request SendContractCardRequest
+     * @param headers SendContractCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendContractCardResponse
+     */
     public SendContractCardResponse sendContractCardWithOptions(SendContractCardRequest request, SendContractCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -393,6 +485,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendContractCardResponse());
     }
 
+    /**
+     * @summary 发送合同相关卡片
+     *
+     * @param request SendContractCardRequest
+     * @return SendContractCardResponse
+     */
     public SendContractCardResponse sendContractCard(SendContractCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendContractCardHeaders headers = new SendContractCardHeaders();

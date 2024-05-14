@@ -4,27 +4,51 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaCerficateResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossAccessKeyId")
     public String ossAccessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossAccessKeySecret")
     public String ossAccessKeySecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossBucketName")
     public String ossBucketName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossEndpoint")
     public String ossEndpoint;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossExpiration")
     public String ossExpiration;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossFileName")
     public String ossFileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ossSecurityToken")
     public String ossSecurityToken;
 

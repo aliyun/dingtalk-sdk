@@ -21,15 +21,27 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("avator")
         public String avator;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public Long uid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

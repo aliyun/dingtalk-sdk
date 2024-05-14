@@ -7,9 +7,15 @@ public class InitAndGetLeaveALlocationQuotasRequest extends TeaModel {
     @NameInMap("leaveCode")
     public String leaveCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

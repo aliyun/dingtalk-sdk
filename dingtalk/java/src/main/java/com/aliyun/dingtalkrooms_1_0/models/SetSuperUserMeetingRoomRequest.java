@@ -7,9 +7,15 @@ public class SetSuperUserMeetingRoomRequest extends TeaModel {
     @NameInMap("deptIdWhiteList")
     public java.util.List<Long> deptIdWhiteList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roomId")
     public String roomId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

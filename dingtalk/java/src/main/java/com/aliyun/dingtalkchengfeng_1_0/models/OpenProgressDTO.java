@@ -4,21 +4,39 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenProgressDTO extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("created")
     public Long created;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creator")
     public OpenUserDTO creator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("htmlContent")
     public String htmlContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifier")
     public OpenUserDTO modifier;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updated")
     public Long updated;
 

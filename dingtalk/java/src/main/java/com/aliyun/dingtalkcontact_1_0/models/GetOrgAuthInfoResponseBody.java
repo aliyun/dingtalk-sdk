@@ -4,18 +4,27 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrgAuthInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authLevel")
     public Long authLevel;
 
     @NameInMap("legalPerson")
     public String legalPerson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("licenseOrgName")
     public String licenseOrgName;
 
     @NameInMap("licenseUrl")
     public String licenseUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 

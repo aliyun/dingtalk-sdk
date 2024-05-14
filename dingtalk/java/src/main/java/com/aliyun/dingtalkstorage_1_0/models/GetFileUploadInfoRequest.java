@@ -4,15 +4,24 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFileUploadInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("multipart")
     public Boolean multipart;
 
     @NameInMap("option")
     public GetFileUploadInfoRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("protocol")
     public String protocol;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

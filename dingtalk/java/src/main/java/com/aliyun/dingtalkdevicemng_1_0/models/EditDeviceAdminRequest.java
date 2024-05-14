@@ -10,6 +10,9 @@ public class EditDeviceAdminRequest extends TeaModel {
     @NameInMap("roleUuid")
     public String roleUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

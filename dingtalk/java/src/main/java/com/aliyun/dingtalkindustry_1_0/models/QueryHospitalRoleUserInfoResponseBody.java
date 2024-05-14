@@ -7,12 +7,21 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryHospitalRoleUserInfoResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -54,27 +63,48 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalRoleUserInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userCode")
         public String userCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userName")
         public String userName;
 

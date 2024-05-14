@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 调用本接口，获取用户签到记录
+     *
+     * @param request GetCheckinRecordByUserRequest
+     * @param headers GetCheckinRecordByUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCheckinRecordByUserResponse
+     */
     public GetCheckinRecordByUserResponse getCheckinRecordByUserWithOptions(GetCheckinRecordByUserRequest request, GetCheckinRecordByUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -73,6 +81,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetCheckinRecordByUserResponse());
     }
 
+    /**
+     * @summary 调用本接口，获取用户签到记录
+     *
+     * @param request GetCheckinRecordByUserRequest
+     * @return GetCheckinRecordByUserResponse
+     */
     public GetCheckinRecordByUserResponse getCheckinRecordByUser(GetCheckinRecordByUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCheckinRecordByUserHeaders headers = new GetCheckinRecordByUserHeaders();

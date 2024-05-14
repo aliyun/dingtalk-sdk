@@ -4,12 +4,21 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddShareCidListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupIdType")
     public Long groupIdType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupIds")
     public java.util.List<String> groupIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

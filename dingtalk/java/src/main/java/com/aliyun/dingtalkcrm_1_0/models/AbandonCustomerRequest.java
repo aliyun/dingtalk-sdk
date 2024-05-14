@@ -7,9 +7,15 @@ public class AbandonCustomerRequest extends TeaModel {
     @NameInMap("customTrackDesc")
     public String customTrackDesc;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 

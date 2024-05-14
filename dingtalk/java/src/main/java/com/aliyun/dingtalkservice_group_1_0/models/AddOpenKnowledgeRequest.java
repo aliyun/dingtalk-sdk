@@ -7,9 +7,15 @@ public class AddOpenKnowledgeRequest extends TeaModel {
     @NameInMap("attachments")
     public java.util.List<AddOpenKnowledgeRequestAttachments> attachments;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("categoryId")
     public Long categoryId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
@@ -19,33 +25,57 @@ public class AddOpenKnowledgeRequest extends TeaModel {
     @NameInMap("effectTimestart")
     public String effectTimestart;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("extTitle")
     public String extTitle;
 
     @NameInMap("keyword")
     public String keyword;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("libraryId")
     public Long libraryId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("source")
     public String source;
 
     @NameInMap("tags")
     public String tags;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userName")
     public String userName;
 

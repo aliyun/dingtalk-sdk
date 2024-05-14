@@ -7,9 +7,15 @@ public class GetFlowIdByRelationEntityIdRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationEntity")
     public String relationEntity;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationEntityId")
     public String relationEntityId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class LiandanluTextToImageModelResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public LiandanluTextToImageModelResponseBodyResult result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

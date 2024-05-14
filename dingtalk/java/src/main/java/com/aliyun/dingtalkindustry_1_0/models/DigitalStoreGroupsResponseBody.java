@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreGroupsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public java.util.List<DigitalStoreGroupsResponseBodyContent> content;
 
@@ -21,9 +24,15 @@ public class DigitalStoreGroupsResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreGroupsResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 

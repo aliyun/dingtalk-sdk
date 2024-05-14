@@ -10,9 +10,15 @@ public class ProcessStartRequest extends TeaModel {
     @NameInMap("ccs")
     public java.util.List<ProcessStartRequestCcs> ccs;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("files")
     public java.util.List<ProcessStartRequestFiles> files;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("initiatorUserId")
     public String initiatorUserId;
 
@@ -104,6 +110,9 @@ public class ProcessStartRequest extends TeaModel {
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
@@ -161,9 +170,15 @@ public class ProcessStartRequest extends TeaModel {
     }
 
     public static class ProcessStartRequestFiles extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
@@ -197,6 +212,9 @@ public class ProcessStartRequest extends TeaModel {
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 

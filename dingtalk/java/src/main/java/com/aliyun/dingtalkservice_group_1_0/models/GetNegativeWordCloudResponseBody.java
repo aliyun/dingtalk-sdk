@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNegativeWordCloudResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("words")
     public java.util.List<GetNegativeWordCloudResponseBodyWords> words;
 
@@ -21,9 +24,15 @@ public class GetNegativeWordCloudResponseBody extends TeaModel {
     }
 
     public static class GetNegativeWordCloudResponseBodyWords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("word")
         public String word;
 

@@ -7,15 +7,27 @@ public class FinishTicketRequest extends TeaModel {
     @NameInMap("notify")
     public FinishTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ticketMemo")
     public FinishTicketRequestTicketMemo ticketMemo;
 
@@ -139,6 +151,9 @@ public class FinishTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<FinishTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memo")
         public String memo;
 

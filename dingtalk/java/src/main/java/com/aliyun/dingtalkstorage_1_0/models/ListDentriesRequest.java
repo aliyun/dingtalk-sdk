@@ -16,9 +16,15 @@ public class ListDentriesRequest extends TeaModel {
     @NameInMap("orderBy")
     public String orderBy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentId")
     public String parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

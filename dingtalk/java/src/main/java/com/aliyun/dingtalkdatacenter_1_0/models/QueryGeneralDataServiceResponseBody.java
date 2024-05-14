@@ -32,15 +32,27 @@ public class QueryGeneralDataServiceResponseBody extends TeaModel {
     }
 
     public static class QueryGeneralDataServiceResponseBodyMetaList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldDesc")
         public String fieldDesc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 

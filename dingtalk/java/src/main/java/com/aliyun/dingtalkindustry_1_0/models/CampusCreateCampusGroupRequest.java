@@ -7,6 +7,9 @@ public class CampusCreateCampusGroupRequest extends TeaModel {
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

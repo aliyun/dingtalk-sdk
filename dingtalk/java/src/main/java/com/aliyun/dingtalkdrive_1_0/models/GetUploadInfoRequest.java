@@ -10,18 +10,30 @@ public class GetUploadInfoRequest extends TeaModel {
     @NameInMap("callerRegion")
     public String callerRegion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("md5")
     public String md5;
 
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

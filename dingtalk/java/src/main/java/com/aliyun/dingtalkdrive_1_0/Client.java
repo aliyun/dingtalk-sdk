@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 新建自定义空间
+     *
+     * @param request AddCustomSpaceRequest
+     * @param headers AddCustomSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddCustomSpaceResponse
+     */
     public AddCustomSpaceResponse addCustomSpaceWithOptions(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddCustomSpaceResponse());
     }
 
+    /**
+     * @summary 新建自定义空间
+     *
+     * @param request AddCustomSpaceRequest
+     * @return AddCustomSpaceResponse
+     */
     public AddCustomSpaceResponse addCustomSpace(AddCustomSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
         return this.addCustomSpaceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 添加文件
+     *
+     * @param request AddFileRequest
+     * @param headers AddFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddFileResponse
+     */
     public AddFileResponse addFileWithOptions(String spaceId, AddFileRequest request, AddFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -125,12 +147,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddFileResponse());
     }
 
+    /**
+     * @summary 添加文件
+     *
+     * @param request AddFileRequest
+     * @return AddFileResponse
+     */
     public AddFileResponse addFile(String spaceId, AddFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddFileHeaders headers = new AddFileHeaders();
         return this.addFileWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 添加权限
+     *
+     * @param request AddPermissionRequest
+     * @param headers AddPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddPermissionResponse
+     */
     public AddPermissionResponse addPermissionWithOptions(String spaceId, String fileId, AddPermissionRequest request, AddPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -173,12 +209,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddPermissionResponse());
     }
 
+    /**
+     * @summary 添加权限
+     *
+     * @param request AddPermissionRequest
+     * @return AddPermissionResponse
+     */
     public AddPermissionResponse addPermission(String spaceId, String fileId, AddPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddPermissionHeaders headers = new AddPermissionHeaders();
         return this.addPermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 新建空间
+     *
+     * @param request AddSpaceRequest
+     * @param headers AddSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddSpaceResponse
+     */
     public AddSpaceResponse addSpaceWithOptions(AddSpaceRequest request, AddSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -217,12 +267,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddSpaceResponse());
     }
 
+    /**
+     * @summary 新建空间
+     *
+     * @param request AddSpaceRequest
+     * @return AddSpaceResponse
+     */
     public AddSpaceResponse addSpace(AddSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddSpaceHeaders headers = new AddSpaceHeaders();
         return this.addSpaceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 清空回收站文件
+     *
+     * @param request ClearRecycleFilesRequest
+     * @param headers ClearRecycleFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ClearRecycleFilesResponse
+     */
     public ClearRecycleFilesResponse clearRecycleFilesWithOptions(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -261,12 +325,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ClearRecycleFilesResponse());
     }
 
+    /**
+     * @summary 清空回收站文件
+     *
+     * @param request ClearRecycleFilesRequest
+     * @return ClearRecycleFilesResponse
+     */
     public ClearRecycleFilesResponse clearRecycleFiles(ClearRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
         return this.clearRecycleFilesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 拷贝文件
+     *
+     * @param request CopyFileRequest
+     * @param headers CopyFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CopyFileResponse
+     */
     public CopyFileResponse copyFileWithOptions(String spaceId, String fileId, CopyFileRequest request, CopyFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -313,12 +391,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CopyFileResponse());
     }
 
+    /**
+     * @summary 拷贝文件
+     *
+     * @param request CopyFileRequest
+     * @return CopyFileResponse
+     */
     public CopyFileResponse copyFile(String spaceId, String fileId, CopyFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CopyFileHeaders headers = new CopyFileHeaders();
         return this.copyFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除文件
+     *
+     * @param request DeleteFileRequest
+     * @param headers DeleteFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFileResponse
+     */
     public DeleteFileResponse deleteFileWithOptions(String spaceId, String fileId, DeleteFileRequest request, DeleteFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -357,12 +449,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFileResponse());
     }
 
+    /**
+     * @summary 删除文件
+     *
+     * @param request DeleteFileRequest
+     * @return DeleteFileResponse
+     */
     public DeleteFileResponse deleteFile(String spaceId, String fileId, DeleteFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteFileHeaders headers = new DeleteFileHeaders();
         return this.deleteFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 批量删除文件（夹）
+     *
+     * @param request DeleteFilesRequest
+     * @param headers DeleteFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFilesResponse
+     */
     public DeleteFilesResponse deleteFilesWithOptions(String spaceId, DeleteFilesRequest request, DeleteFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -405,12 +511,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFilesResponse());
     }
 
+    /**
+     * @summary 批量删除文件（夹）
+     *
+     * @param request DeleteFilesRequest
+     * @return DeleteFilesResponse
+     */
     public DeleteFilesResponse deleteFiles(String spaceId, DeleteFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteFilesHeaders headers = new DeleteFilesHeaders();
         return this.deleteFilesWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 删除权限
+     *
+     * @param request DeletePermissionRequest
+     * @param headers DeletePermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeletePermissionResponse
+     */
     public DeletePermissionResponse deletePermissionWithOptions(String spaceId, String fileId, DeletePermissionRequest request, DeletePermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -453,12 +573,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeletePermissionResponse());
     }
 
+    /**
+     * @summary 删除权限
+     *
+     * @param request DeletePermissionRequest
+     * @return DeletePermissionResponse
+     */
     public DeletePermissionResponse deletePermission(String spaceId, String fileId, DeletePermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeletePermissionHeaders headers = new DeletePermissionHeaders();
         return this.deletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 彻底删除回收站文件
+     *
+     * @param request DeleteRecycleFilesRequest
+     * @param headers DeleteRecycleFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteRecycleFilesResponse
+     */
     public DeleteRecycleFilesResponse deleteRecycleFilesWithOptions(DeleteRecycleFilesRequest request, DeleteRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -501,12 +635,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRecycleFilesResponse());
     }
 
+    /**
+     * @summary 彻底删除回收站文件
+     *
+     * @param request DeleteRecycleFilesRequest
+     * @return DeleteRecycleFilesResponse
+     */
     public DeleteRecycleFilesResponse deleteRecycleFiles(DeleteRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRecycleFilesHeaders headers = new DeleteRecycleFilesHeaders();
         return this.deleteRecycleFilesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除空间
+     *
+     * @param request DeleteSpaceRequest
+     * @param headers DeleteSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSpaceResponse
+     */
     public DeleteSpaceResponse deleteSpaceWithOptions(String spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -541,12 +689,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSpaceResponse());
     }
 
+    /**
+     * @summary 删除空间
+     *
+     * @param request DeleteSpaceRequest
+     * @return DeleteSpaceResponse
+     */
     public DeleteSpaceResponse deleteSpace(String spaceId, DeleteSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSpaceHeaders headers = new DeleteSpaceHeaders();
         return this.deleteSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取异步任务信息
+     *
+     * @param request GetAsyncTaskInfoRequest
+     * @param headers GetAsyncTaskInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAsyncTaskInfoResponse
+     */
     public GetAsyncTaskInfoResponse getAsyncTaskInfoWithOptions(String taskId, GetAsyncTaskInfoRequest request, GetAsyncTaskInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -581,12 +743,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetAsyncTaskInfoResponse());
     }
 
+    /**
+     * @summary 获取异步任务信息
+     *
+     * @param request GetAsyncTaskInfoRequest
+     * @return GetAsyncTaskInfoResponse
+     */
     public GetAsyncTaskInfoResponse getAsyncTaskInfo(String taskId, GetAsyncTaskInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAsyncTaskInfoHeaders headers = new GetAsyncTaskInfoHeaders();
         return this.getAsyncTaskInfoWithOptions(taskId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取下载信息
+     *
+     * @param request GetDownloadInfoRequest
+     * @param headers GetDownloadInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDownloadInfoResponse
+     */
     public GetDownloadInfoResponse getDownloadInfoWithOptions(String spaceId, String fileId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -629,12 +805,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetDownloadInfoResponse());
     }
 
+    /**
+     * @summary 获取下载信息
+     *
+     * @param request GetDownloadInfoRequest
+     * @return GetDownloadInfoResponse
+     */
     public GetDownloadInfoResponse getDownloadInfo(String spaceId, String fileId, GetDownloadInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
         return this.getDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取文件信息
+     *
+     * @param request GetFileInfoRequest
+     * @param headers GetFileInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFileInfoResponse
+     */
     public GetFileInfoResponse getFileInfoWithOptions(String spaceId, String fileId, GetFileInfoRequest request, GetFileInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -669,12 +859,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetFileInfoResponse());
     }
 
+    /**
+     * @summary 获取文件信息
+     *
+     * @param request GetFileInfoRequest
+     * @return GetFileInfoResponse
+     */
     public GetFileInfoResponse getFileInfo(String spaceId, String fileId, GetFileInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFileInfoHeaders headers = new GetFileInfoHeaders();
         return this.getFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取我的工作空间信息
+     *
+     * @param request GetMySpaceInfoRequest
+     * @param headers GetMySpaceInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetMySpaceInfoResponse
+     */
     public GetMySpaceInfoResponse getMySpaceInfoWithOptions(GetMySpaceInfoRequest request, GetMySpaceInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -709,12 +913,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetMySpaceInfoResponse());
     }
 
+    /**
+     * @summary 获取我的工作空间信息
+     *
+     * @param request GetMySpaceInfoRequest
+     * @return GetMySpaceInfoResponse
+     */
     public GetMySpaceInfoResponse getMySpaceInfo(GetMySpaceInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetMySpaceInfoHeaders headers = new GetMySpaceInfoHeaders();
         return this.getMySpaceInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取预览信息
+     *
+     * @param request GetPreviewInfoRequest
+     * @param headers GetPreviewInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPreviewInfoResponse
+     */
     public GetPreviewInfoResponse getPreviewInfoWithOptions(String spaceId, String fileId, GetPreviewInfoRequest request, GetPreviewInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -757,12 +975,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPreviewInfoResponse());
     }
 
+    /**
+     * @summary 获取预览信息
+     *
+     * @param request GetPreviewInfoRequest
+     * @return GetPreviewInfoResponse
+     */
     public GetPreviewInfoResponse getPreviewInfo(String spaceId, String fileId, GetPreviewInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPreviewInfoHeaders headers = new GetPreviewInfoHeaders();
         return this.getPreviewInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取权限点信息
+     *
+     * @param request GetPrivilegeInfoRequest
+     * @param headers GetPrivilegeInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPrivilegeInfoResponse
+     */
     public GetPrivilegeInfoResponse getPrivilegeInfoWithOptions(String spaceId, String fileId, GetPrivilegeInfoRequest request, GetPrivilegeInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -797,12 +1029,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPrivilegeInfoResponse());
     }
 
+    /**
+     * @summary 获取权限点信息
+     *
+     * @param request GetPrivilegeInfoRequest
+     * @return GetPrivilegeInfoResponse
+     */
     public GetPrivilegeInfoResponse getPrivilegeInfo(String spaceId, String fileId, GetPrivilegeInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPrivilegeInfoHeaders headers = new GetPrivilegeInfoHeaders();
         return this.getPrivilegeInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取容量信息列表
+     *
+     * @param request GetQuotaInfosRequest
+     * @param headers GetQuotaInfosHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetQuotaInfosResponse
+     */
     public GetQuotaInfosResponse getQuotaInfosWithOptions(GetQuotaInfosRequest request, GetQuotaInfosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -845,12 +1091,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetQuotaInfosResponse());
     }
 
+    /**
+     * @summary 获取容量信息列表
+     *
+     * @param request GetQuotaInfosRequest
+     * @return GetQuotaInfosResponse
+     */
     public GetQuotaInfosResponse getQuotaInfos(GetQuotaInfosRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetQuotaInfosHeaders headers = new GetQuotaInfosHeaders();
         return this.getQuotaInfosWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取上传信息
+     *
+     * @param request GetUploadInfoRequest
+     * @param headers GetUploadInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUploadInfoResponse
+     */
     public GetUploadInfoResponse getUploadInfoWithOptions(String spaceId, String parentId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -917,12 +1177,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUploadInfoResponse());
     }
 
+    /**
+     * @summary 获取上传信息
+     *
+     * @param request GetUploadInfoRequest
+     * @return GetUploadInfoResponse
+     */
     public GetUploadInfoResponse getUploadInfo(String spaceId, String parentId, GetUploadInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
         return this.getUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
     }
 
+    /**
+     * @summary 添加自定义空间权限
+     *
+     * @param request GrantPrivilegeOfCustomSpaceRequest
+     * @param headers GrantPrivilegeOfCustomSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
     public GrantPrivilegeOfCustomSpaceResponse grantPrivilegeOfCustomSpaceWithOptions(String spaceId, GrantPrivilegeOfCustomSpaceRequest request, GrantPrivilegeOfCustomSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -973,12 +1247,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GrantPrivilegeOfCustomSpaceResponse());
     }
 
+    /**
+     * @summary 添加自定义空间权限
+     *
+     * @param request GrantPrivilegeOfCustomSpaceRequest
+     * @return GrantPrivilegeOfCustomSpaceResponse
+     */
     public GrantPrivilegeOfCustomSpaceResponse grantPrivilegeOfCustomSpace(String spaceId, GrantPrivilegeOfCustomSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GrantPrivilegeOfCustomSpaceHeaders headers = new GrantPrivilegeOfCustomSpaceHeaders();
         return this.grantPrivilegeOfCustomSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取空间信息
+     *
+     * @param request InfoSpaceRequest
+     * @param headers InfoSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InfoSpaceResponse
+     */
     public InfoSpaceResponse infoSpaceWithOptions(String spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1013,12 +1301,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InfoSpaceResponse());
     }
 
+    /**
+     * @summary 获取空间信息
+     *
+     * @param request InfoSpaceRequest
+     * @return InfoSpaceResponse
+     */
     public InfoSpaceResponse infoSpace(String spaceId, InfoSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InfoSpaceHeaders headers = new InfoSpaceHeaders();
         return this.infoSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取文件列表
+     *
+     * @param request ListFilesRequest
+     * @param headers ListFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListFilesResponse
+     */
     public ListFilesResponse listFilesWithOptions(String spaceId, ListFilesRequest request, ListFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1073,12 +1375,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListFilesResponse());
     }
 
+    /**
+     * @summary 获取文件列表
+     *
+     * @param request ListFilesRequest
+     * @return ListFilesResponse
+     */
     public ListFilesResponse listFiles(String spaceId, ListFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListFilesHeaders headers = new ListFilesHeaders();
         return this.listFilesWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取权限列表
+     *
+     * @param request ListPermissionsRequest
+     * @param headers ListPermissionsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListPermissionsResponse
+     */
     public ListPermissionsResponse listPermissionsWithOptions(String spaceId, String fileId, ListPermissionsRequest request, ListPermissionsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1113,12 +1429,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListPermissionsResponse());
     }
 
+    /**
+     * @summary 获取权限列表
+     *
+     * @param request ListPermissionsRequest
+     * @return ListPermissionsResponse
+     */
     public ListPermissionsResponse listPermissions(String spaceId, String fileId, ListPermissionsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListPermissionsHeaders headers = new ListPermissionsHeaders();
         return this.listPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取回收站文件列表
+     *
+     * @param request ListRecycleFilesRequest
+     * @param headers ListRecycleFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListRecycleFilesResponse
+     */
     public ListRecycleFilesResponse listRecycleFilesWithOptions(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1169,12 +1499,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListRecycleFilesResponse());
     }
 
+    /**
+     * @summary 获取回收站文件列表
+     *
+     * @param request ListRecycleFilesRequest
+     * @return ListRecycleFilesResponse
+     */
     public ListRecycleFilesResponse listRecycleFiles(ListRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
         return this.listRecycleFilesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取空间列表
+     *
+     * @param request ListSpacesRequest
+     * @param headers ListSpacesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListSpacesResponse
+     */
     public ListSpacesResponse listSpacesWithOptions(ListSpacesRequest request, ListSpacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1221,12 +1565,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListSpacesResponse());
     }
 
+    /**
+     * @summary 获取空间列表
+     *
+     * @param request ListSpacesRequest
+     * @return ListSpacesResponse
+     */
     public ListSpacesResponse listSpaces(ListSpacesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListSpacesHeaders headers = new ListSpacesHeaders();
         return this.listSpacesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 管理侧购买容量
+     *
+     * @param request ManagementBuyQuotaRequest
+     * @param headers ManagementBuyQuotaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ManagementBuyQuotaResponse
+     */
     public ManagementBuyQuotaResponse managementBuyQuotaWithOptions(ManagementBuyQuotaRequest request, ManagementBuyQuotaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1269,12 +1627,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ManagementBuyQuotaResponse());
     }
 
+    /**
+     * @summary 管理侧购买容量
+     *
+     * @param request ManagementBuyQuotaRequest
+     * @return ManagementBuyQuotaResponse
+     */
     public ManagementBuyQuotaResponse managementBuyQuota(ManagementBuyQuotaRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ManagementBuyQuotaHeaders headers = new ManagementBuyQuotaHeaders();
         return this.managementBuyQuotaWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 管理侧获取空间列表
+     *
+     * @param request ManagementListSpacesRequest
+     * @param headers ManagementListSpacesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ManagementListSpacesResponse
+     */
     public ManagementListSpacesResponse managementListSpacesWithOptions(ManagementListSpacesRequest request, ManagementListSpacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1313,12 +1685,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ManagementListSpacesResponse());
     }
 
+    /**
+     * @summary 管理侧获取空间列表
+     *
+     * @param request ManagementListSpacesRequest
+     * @return ManagementListSpacesResponse
+     */
     public ManagementListSpacesResponse managementListSpaces(ManagementListSpacesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ManagementListSpacesHeaders headers = new ManagementListSpacesHeaders();
         return this.managementListSpacesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 管理侧修改空间信息
+     *
+     * @param request ManagementModifySpaceRequest
+     * @param headers ManagementModifySpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ManagementModifySpaceResponse
+     */
     public ManagementModifySpaceResponse managementModifySpaceWithOptions(ManagementModifySpaceRequest request, ManagementModifySpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1361,12 +1747,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ManagementModifySpaceResponse());
     }
 
+    /**
+     * @summary 管理侧修改空间信息
+     *
+     * @param request ManagementModifySpaceRequest
+     * @return ManagementModifySpaceResponse
+     */
     public ManagementModifySpaceResponse managementModifySpace(ManagementModifySpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ManagementModifySpaceHeaders headers = new ManagementModifySpaceHeaders();
         return this.managementModifySpaceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改权限
+     *
+     * @param request ModifyPermissionRequest
+     * @param headers ModifyPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ModifyPermissionResponse
+     */
     public ModifyPermissionResponse modifyPermissionWithOptions(String spaceId, String fileId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1409,12 +1809,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ModifyPermissionResponse());
     }
 
+    /**
+     * @summary 修改权限
+     *
+     * @param request ModifyPermissionRequest
+     * @return ModifyPermissionResponse
+     */
     public ModifyPermissionResponse modifyPermission(String spaceId, String fileId, ModifyPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
         return this.modifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 移动文件
+     *
+     * @param request MoveFileRequest
+     * @param headers MoveFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MoveFileResponse
+     */
     public MoveFileResponse moveFileWithOptions(String spaceId, String fileId, MoveFileRequest request, MoveFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1461,12 +1875,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MoveFileResponse());
     }
 
+    /**
+     * @summary 移动文件
+     *
+     * @param request MoveFileRequest
+     * @return MoveFileResponse
+     */
     public MoveFileResponse moveFile(String spaceId, String fileId, MoveFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MoveFileHeaders headers = new MoveFileHeaders();
         return this.moveFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
+    /**
+     * @summary 批量移动文件（夹）
+     *
+     * @param request MoveFilesRequest
+     * @param headers MoveFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MoveFilesResponse
+     */
     public MoveFilesResponse moveFilesWithOptions(String spaceId, MoveFilesRequest request, MoveFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1517,12 +1945,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MoveFilesResponse());
     }
 
+    /**
+     * @summary 批量移动文件（夹）
+     *
+     * @param request MoveFilesRequest
+     * @return MoveFilesResponse
+     */
     public MoveFilesResponse moveFiles(String spaceId, MoveFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MoveFilesHeaders headers = new MoveFilesHeaders();
         return this.moveFilesWithOptions(spaceId, request, headers, runtime);
     }
 
+    /**
+     * @summary 还原回收站文件
+     *
+     * @param request RecoverRecycleFilesRequest
+     * @param headers RecoverRecycleFilesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RecoverRecycleFilesResponse
+     */
     public RecoverRecycleFilesResponse recoverRecycleFilesWithOptions(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1565,12 +2007,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RecoverRecycleFilesResponse());
     }
 
+    /**
+     * @summary 还原回收站文件
+     *
+     * @param request RecoverRecycleFilesRequest
+     * @return RecoverRecycleFilesResponse
+     */
     public RecoverRecycleFilesResponse recoverRecycleFiles(RecoverRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
         return this.recoverRecycleFilesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 重命名文件
+     *
+     * @param request RenameFileRequest
+     * @param headers RenameFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RenameFileResponse
+     */
     public RenameFileResponse renameFileWithOptions(String spaceId, String fileId, RenameFileRequest request, RenameFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -1609,6 +2065,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RenameFileResponse());
     }
 
+    /**
+     * @summary 重命名文件
+     *
+     * @param request RenameFileRequest
+     * @return RenameFileResponse
+     */
     public RenameFileResponse renameFile(String spaceId, String fileId, RenameFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RenameFileHeaders headers = new RenameFileHeaders();

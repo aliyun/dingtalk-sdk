@@ -7,9 +7,15 @@ public class GetFileUploadInfoRequest extends TeaModel {
     @NameInMap("option")
     public GetFileUploadInfoRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("protocol")
     public String protocol;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

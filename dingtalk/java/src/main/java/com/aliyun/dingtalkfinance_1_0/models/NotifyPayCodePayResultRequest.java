@@ -4,39 +4,72 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyPayCodePayResultRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public String amount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("chargeAmount")
     public String chargeAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("extInfo")
     public String extInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtTradeCreate")
     public String gmtTradeCreate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("merchantName")
     public String merchantName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannelDetailList")
     public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -46,12 +79,21 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tradeStatus")
     public String tradeStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -197,21 +239,36 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
         @NameInMap("extInfo")
         public String extInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -271,9 +328,15 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fundToolDetailList")
         public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
@@ -283,15 +346,27 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

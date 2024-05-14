@@ -4,18 +4,30 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class AssignClassRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("classId")
     public Long classId;
 
     @NameInMap("isFinish")
     public Boolean isFinish;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 

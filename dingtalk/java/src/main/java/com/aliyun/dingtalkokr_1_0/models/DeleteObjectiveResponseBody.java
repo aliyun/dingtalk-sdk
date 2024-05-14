@@ -7,6 +7,9 @@ public class DeleteObjectiveResponseBody extends TeaModel {
     @NameInMap("data")
     public DeleteObjectiveResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +35,9 @@ public class DeleteObjectiveResponseBody extends TeaModel {
     }
 
     public static class DeleteObjectiveResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 

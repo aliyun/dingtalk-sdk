@@ -4,9 +4,15 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePointActionAutoAssignRuleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("updatePointRuleRequestDTOList")
     public java.util.List<UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList> updatePointRuleRequestDTOList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -32,15 +38,27 @@ public class UpdatePointActionAutoAssignRuleRequest extends TeaModel {
     }
 
     public static class UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("awardScore")
         public Long awardScore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayLimitTimes")
         public Long dayLimitTimes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Long status;
 

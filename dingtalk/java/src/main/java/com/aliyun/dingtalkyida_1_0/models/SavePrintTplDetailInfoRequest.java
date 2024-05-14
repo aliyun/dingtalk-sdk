@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SavePrintTplDetailInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -13,6 +16,9 @@ public class SavePrintTplDetailInfoRequest extends TeaModel {
     @NameInMap("fileNameConfig")
     public String fileNameConfig;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
@@ -28,6 +34,9 @@ public class SavePrintTplDetailInfoRequest extends TeaModel {
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

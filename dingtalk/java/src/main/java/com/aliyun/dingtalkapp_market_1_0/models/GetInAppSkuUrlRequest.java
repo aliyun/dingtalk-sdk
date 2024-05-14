@@ -10,6 +10,9 @@ public class GetInAppSkuUrlRequest extends TeaModel {
     @NameInMap("extendParam")
     public String extendParam;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 

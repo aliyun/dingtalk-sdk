@@ -4,15 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupCount")
     public Long groupCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupTrend")
     public java.util.List<GroupStatisticsResponseBodyGroupTrend> groupTrend;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("increaseGroupCount")
     public Long increaseGroupCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("increaseRate")
     public String increaseRate;
 
@@ -54,9 +66,15 @@ public class GroupStatisticsResponseBody extends TeaModel {
     }
 
     public static class GroupStatisticsResponseBodyGroupTrend extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dt")
         public String dt;
 

@@ -4,15 +4,27 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateAutoIssuePointRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointAutoNum")
     public Long pointAutoNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointAutoState")
     public Boolean pointAutoState;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointAutoTime")
     public Long pointAutoTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

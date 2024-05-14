@@ -7,15 +7,24 @@ public class CreateTopboxRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public CreateTopboxRequestCardData cardData;
 
     @NameInMap("cardSettings")
     public CreateTopboxRequestCardSettings cardSettings;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
@@ -31,6 +40,9 @@ public class CreateTopboxRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

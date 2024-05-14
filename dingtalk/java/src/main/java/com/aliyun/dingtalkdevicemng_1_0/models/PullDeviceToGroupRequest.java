@@ -10,6 +10,9 @@ public class PullDeviceToGroupRequest extends TeaModel {
     @NameInMap("deviceUuids")
     public java.util.List<String> deviceUuids;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

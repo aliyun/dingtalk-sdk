@@ -7,12 +7,18 @@ public class EditContactRequest extends TeaModel {
     @NameInMap("data")
     public EditContactRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -54,6 +60,9 @@ public class EditContactRequest extends TeaModel {
     }
 
     public static class EditContactRequestData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -72,6 +81,9 @@ public class EditContactRequest extends TeaModel {
         @NameInMap("lxr_cttype")
         public String lxrCttype;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lxr_customerid")
         public String lxrCustomerid;
 
@@ -99,6 +111,9 @@ public class EditContactRequest extends TeaModel {
         @NameInMap("lxr_like")
         public String lxrLike;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lxr_name")
         public String lxrName;
 

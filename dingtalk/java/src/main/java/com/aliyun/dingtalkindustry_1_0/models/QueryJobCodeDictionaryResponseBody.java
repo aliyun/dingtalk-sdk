@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobCodeDictionaryResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public java.util.List<QueryJobCodeDictionaryResponseBodyContent> content;
 
@@ -21,15 +24,27 @@ public class QueryJobCodeDictionaryResponseBody extends TeaModel {
     }
 
     public static class QueryJobCodeDictionaryResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("doctorType")
         public String doctorType;
 

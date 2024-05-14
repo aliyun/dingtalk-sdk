@@ -4,6 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeAddStudentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
@@ -16,15 +19,24 @@ public class CollegeAddStudentRequest extends TeaModel {
     @NameInMap("identifyId")
     public String identifyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
     @NameInMap("startYear")
     public String startYear;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentName")
     public String studentName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentNumber")
     public String studentNumber;
 

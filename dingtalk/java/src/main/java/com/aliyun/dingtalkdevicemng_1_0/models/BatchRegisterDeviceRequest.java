@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceList")
     public java.util.List<BatchRegisterDeviceRequestDeviceList> deviceList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -32,21 +38,39 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDeviceList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("collaborators")
         public String collaborators;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("departmentId")
         public Long departmentId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceKey")
         public String deviceKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("managers")
         public String managers;
 

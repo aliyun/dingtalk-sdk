@@ -4,9 +4,15 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodeBadgeCodeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payCode")
     public String payCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

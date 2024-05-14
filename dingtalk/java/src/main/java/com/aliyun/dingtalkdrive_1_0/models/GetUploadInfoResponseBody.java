@@ -43,18 +43,30 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("resourceUrl")
         public String resourceUrl;
 
@@ -106,27 +118,48 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyStsUploadInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accessKeyId")
         public String accessKeyId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accessKeySecret")
         public String accessKeySecret;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accessToken")
         public String accessToken;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accessTokenExpirationMillis")
         public Long accessTokenExpirationMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bucket")
         public String bucket;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endPoint")
         public String endPoint;
 
         @NameInMap("internalEndPoint")
         public String internalEndPoint;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 

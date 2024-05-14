@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWebChannelUserTokenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("foreignId")
     public String foreignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nick")
     public String nick;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("source")
     public Long source;
 

@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 调用本获取推送失败的变更事件。
+     *
+     * @param request GetCallBackFaileResultRequest
+     * @param headers GetCallBackFaileResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCallBackFaileResultResponse
+     */
     public GetCallBackFaileResultResponse getCallBackFaileResultWithOptions(GetCallBackFaileResultRequest request, GetCallBackFaileResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -58,12 +66,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetCallBackFaileResultResponse());
     }
 
+    /**
+     * @summary 调用本获取推送失败的变更事件。
+     *
+     * @param request GetCallBackFaileResultRequest
+     * @return GetCallBackFaileResultResponse
+     */
     public GetCallBackFaileResultResponse getCallBackFaileResult(GetCallBackFaileResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
         return this.getCallBackFaileResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 安装一方应用
+     *
+     * @param request InstallAppRequest
+     * @param headers InstallAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InstallAppResponse
+     */
     public InstallAppResponse installAppWithOptions(InstallAppRequest request, InstallAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -110,12 +132,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InstallAppResponse());
     }
 
+    /**
+     * @summary 安装一方应用
+     *
+     * @param request InstallAppRequest
+     * @return InstallAppResponse
+     */
     public InstallAppResponse installApp(InstallAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InstallAppHeaders headers = new InstallAppHeaders();
         return this.installAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 安装酷应用
+     *
+     * @param tmpReq InstallCoolAppRequest
+     * @param headers InstallCoolAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InstallCoolAppResponse
+     */
     public InstallCoolAppResponse installCoolAppWithOptions(InstallCoolAppRequest tmpReq, InstallCoolAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         InstallCoolAppShrinkRequest request = new InstallCoolAppShrinkRequest();
@@ -188,12 +224,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InstallCoolAppResponse());
     }
 
+    /**
+     * @summary 安装酷应用
+     *
+     * @param request InstallCoolAppRequest
+     * @return InstallCoolAppResponse
+     */
     public InstallCoolAppResponse installCoolApp(InstallCoolAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InstallCoolAppHeaders headers = new InstallCoolAppHeaders();
         return this.installCoolAppWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 重新获取suiteTicket
+     *
+     * @param request RePushSuiteTicketRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RePushSuiteTicketResponse
+     */
     public RePushSuiteTicketResponse rePushSuiteTicketWithOptions(RePushSuiteTicketRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -223,6 +273,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RePushSuiteTicketResponse());
     }
 
+    /**
+     * @summary 重新获取suiteTicket
+     *
+     * @param request RePushSuiteTicketRequest
+     * @return RePushSuiteTicketResponse
+     */
     public RePushSuiteTicketResponse rePushSuiteTicket(RePushSuiteTicketRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();

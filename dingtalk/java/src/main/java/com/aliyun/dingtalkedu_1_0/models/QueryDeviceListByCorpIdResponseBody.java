@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public QueryDeviceListByCorpIdResponseBodyResult result;
 
@@ -32,12 +35,21 @@ public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceListByCorpIdResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appStatus")
         public Integer appStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
@@ -73,9 +85,15 @@ public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceListByCorpIdResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("list")
         public java.util.List<QueryDeviceListByCorpIdResponseBodyResultList> list;
 

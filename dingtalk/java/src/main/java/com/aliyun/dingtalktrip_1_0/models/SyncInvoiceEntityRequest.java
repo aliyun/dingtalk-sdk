@@ -4,6 +4,9 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncInvoiceEntityRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
@@ -13,9 +16,15 @@ public class SyncInvoiceEntityRequest extends TeaModel {
     @NameInMap("entityList")
     public java.util.List<SyncInvoiceEntityRequestEntityList> entityList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoiceId")
     public String invoiceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -65,9 +74,15 @@ public class SyncInvoiceEntityRequest extends TeaModel {
     }
 
     public static class SyncInvoiceEntityRequestEntityList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("entityId")
         public String entityId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("entityType")
         public String entityType;
 

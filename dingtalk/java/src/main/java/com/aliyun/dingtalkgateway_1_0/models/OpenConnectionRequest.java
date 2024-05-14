@@ -4,9 +4,15 @@ package com.aliyun.dingtalkgateway_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenConnectionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("clientId")
     public String clientId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("clientSecret")
     public String clientSecret;
 
@@ -16,6 +22,9 @@ public class OpenConnectionRequest extends TeaModel {
     @NameInMap("localIp")
     public String localIp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subscriptions")
     public java.util.List<OpenConnectionRequestSubscriptions> subscriptions;
 
@@ -65,9 +74,15 @@ public class OpenConnectionRequest extends TeaModel {
     }
 
     public static class OpenConnectionRequestSubscriptions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("topic")
         public String topic;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 

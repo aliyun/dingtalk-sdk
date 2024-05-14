@@ -4,6 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySingleGroupResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversations")
     public java.util.List<QuerySingleGroupResponseBodyOpenConversations> openConversations;
 
@@ -21,12 +24,18 @@ public class QuerySingleGroupResponseBody extends TeaModel {
     }
 
     public static class QuerySingleGroupResponseBodyOpenConversations extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

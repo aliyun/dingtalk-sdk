@@ -4,12 +4,21 @@ package com.aliyun.dingtalkwiki_1_0.models;
 import com.aliyun.tea.*;
 
 public class WikiWordsDetailResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<WikiWordsDetailResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("errMsg")
     public String errMsg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -43,18 +52,33 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataAppLink extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appId")
         public Long appId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appName")
         public String appName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("iconLink")
         public String iconLink;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pcLink")
         public String pcLink;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -106,12 +130,21 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataRelatedDoc extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -147,12 +180,21 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataRelatedLink extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -188,63 +230,123 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appLink")
         public java.util.List<WikiWordsDetailResponseBodyDataAppLink> appLink;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("approveName")
         public String approveName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModify")
         public Long gmtModify;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("highLightWordAlias")
         public java.util.List<String> highLightWordAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("imHighLight")
         public Boolean imHighLight;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relatedDoc")
         public java.util.List<WikiWordsDetailResponseBodyDataRelatedDoc> relatedDoc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relatedLink")
         public java.util.List<WikiWordsDetailResponseBodyDataRelatedLink> relatedLink;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("updaterName")
         public String updaterName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public Long uuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wordFullName")
         public String wordFullName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wordName")
         public String wordName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

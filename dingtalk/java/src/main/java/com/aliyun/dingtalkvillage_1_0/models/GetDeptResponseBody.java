@@ -4,18 +4,33 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeptResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentName")
     public String departmentName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fromUnionOrg")
     public Boolean fromUnionOrg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("order")
     public Long order;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentDepartmentId")
     public Long parentDepartmentId;
 

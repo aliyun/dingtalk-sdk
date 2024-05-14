@@ -7,18 +7,27 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("action")
     public String action;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
     @NameInMap("modifierNick")
     public String modifierNick;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifierUserId")
     public String modifierUserId;
 

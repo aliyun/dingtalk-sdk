@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DocAppendParagraphRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("elementType")
     public String elementType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("properties")
     public java.util.Map<String, ?> properties;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

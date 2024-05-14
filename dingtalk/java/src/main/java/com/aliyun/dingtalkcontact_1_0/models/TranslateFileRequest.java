@@ -4,12 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TranslateFileRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("medias")
     public java.util.Map<String, String> medias;
 
     @NameInMap("outputFileName")
     public String outputFileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

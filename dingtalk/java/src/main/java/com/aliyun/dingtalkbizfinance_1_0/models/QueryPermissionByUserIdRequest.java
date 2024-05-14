@@ -7,6 +7,9 @@ public class QueryPermissionByUserIdRequest extends TeaModel {
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteBatchTaskResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("failNumber")
     public Integer failNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("successNumber")
     public Integer successNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("total")
     public Integer total;
 

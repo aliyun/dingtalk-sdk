@@ -7,6 +7,9 @@ public class ListStarsRequest extends TeaModel {
     @NameInMap("option")
     public ListStarsRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

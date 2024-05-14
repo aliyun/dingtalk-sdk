@@ -4,42 +4,69 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectResumeMailRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCode")
     public String channelCode;
 
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fromMailAddress")
     public String fromMailAddress;
 
     @NameInMap("historyMailImport")
     public Boolean historyMailImport;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mailId")
     public String mailId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mailTitle")
     public String mailTitle;
 
     @NameInMap("optUserId")
     public String optUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiveMailAddress")
     public String receiveMailAddress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiveMailType")
     public Integer receiveMailType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receivedTime")
     public Long receivedTime;
 
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resumeFile")
     public CollectResumeMailRequestResumeFile resumeFile;
 
@@ -153,12 +180,21 @@ public class CollectResumeMailRequest extends TeaModel {
     }
 
     public static class CollectResumeMailRequestResumeFile extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 

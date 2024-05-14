@@ -4,24 +4,42 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApplyInviteInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("auditType")
     public Long auditType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("empApplyJoinDept")
     public Boolean empApplyJoinDept;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("inviteSwitch")
     public Boolean inviteSwitch;
 
     @NameInMap("inviteUrl")
     public String inviteUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("linkInvite")
     public Boolean linkInvite;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgApplyCodeInvite")
     public Boolean orgApplyCodeInvite;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("searchNameInvite")
     public Boolean searchNameInvite;
 

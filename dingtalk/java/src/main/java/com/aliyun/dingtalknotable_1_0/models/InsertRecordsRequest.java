@@ -4,9 +4,15 @@ package com.aliyun.dingtalknotable_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertRecordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("records")
     public java.util.List<InsertRecordsRequestRecords> records;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -32,6 +38,9 @@ public class InsertRecordsRequest extends TeaModel {
     }
 
     public static class InsertRecordsRequestRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fields")
         public java.util.Map<String, ?> fields;
 

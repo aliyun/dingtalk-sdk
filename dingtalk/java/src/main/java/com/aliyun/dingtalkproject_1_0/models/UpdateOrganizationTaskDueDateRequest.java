@@ -10,6 +10,9 @@ public class UpdateOrganizationTaskDueDateRequest extends TeaModel {
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dueDate")
     public String dueDate;
 

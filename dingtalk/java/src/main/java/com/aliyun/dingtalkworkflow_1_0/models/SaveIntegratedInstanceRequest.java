@@ -13,15 +13,24 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     @NameInMap("notifiers")
     public java.util.List<SaveIntegratedInstanceRequestNotifiers> notifiers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("originatorUserId")
     public String originatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 

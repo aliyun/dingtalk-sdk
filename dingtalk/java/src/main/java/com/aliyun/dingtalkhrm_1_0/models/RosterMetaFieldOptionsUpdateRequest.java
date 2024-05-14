@@ -7,15 +7,27 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
     @NameInMap("appAgentId")
     public Long appAgentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fieldCode")
     public String fieldCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("labels")
     public java.util.List<String> labels;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifyType")
     public String modifyType;
 

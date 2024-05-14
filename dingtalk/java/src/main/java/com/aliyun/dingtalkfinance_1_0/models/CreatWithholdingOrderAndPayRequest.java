@@ -4,33 +4,54 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatWithholdingOrderAndPayRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("amount")
     public String amount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
     @NameInMap("otherPayChannelDetailInfoList")
     public java.util.List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList> otherPayChannelDetailInfoList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payerUserId")
     public String payerUserId;
 
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
     @NameInMap("timeOutExpress")
     public String timeOutExpress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -120,21 +141,36 @@ public class CreatWithholdingOrderAndPayRequest extends TeaModel {
     }
 
     public static class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
         @NameInMap("extInfo")
         public String extInfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -194,21 +230,39 @@ public class CreatWithholdingOrderAndPayRequest extends TeaModel {
     }
 
     public static class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fundToolDetailInfoList")
         public java.util.List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList> fundToolDetailInfoList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

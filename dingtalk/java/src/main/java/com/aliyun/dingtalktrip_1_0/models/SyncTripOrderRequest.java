@@ -10,9 +10,15 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("channelType")
     public String channelType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currency")
     public String currency;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
@@ -22,9 +28,15 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("endorseFlag")
     public Boolean endorseFlag;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("event")
     public SyncTripOrderRequestEvent event;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtOrder")
     public String gmtOrder;
 
@@ -43,9 +55,15 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("orderDetails")
     public java.util.List<SyncTripOrderRequestOrderDetails> orderDetails;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderUrl")
     public String orderUrl;
 
@@ -79,6 +97,9 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("totalAmount")
     public String totalAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 
@@ -296,9 +317,15 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestEvent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("action")
         public String action;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtAction")
         public String gmtAction;
 

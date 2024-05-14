@@ -21,15 +21,27 @@ public class ListJoinOrgInfoResponseBody extends TeaModel {
     }
 
     public static class ListJoinOrgInfoResponseBodyOrgInfoList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("domain")
         public String domain;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orgFullName")
         public String orgFullName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orgName")
         public Long orgName;
 

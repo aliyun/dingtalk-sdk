@@ -4,18 +4,33 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class IsvCardEventPushRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventParams")
     public java.util.Map<String, ?> eventParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventType")
     public String eventType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvCardId")
     public String isvCardId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvToken")
     public String isvToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvUid")
     public String isvUid;
 

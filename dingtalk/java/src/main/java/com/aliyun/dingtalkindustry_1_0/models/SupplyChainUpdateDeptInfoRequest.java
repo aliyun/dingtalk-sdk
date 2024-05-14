@@ -16,6 +16,9 @@ public class SupplyChainUpdateDeptInfoRequest extends TeaModel {
     @NameInMap("superId")
     public Long superId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("supplyDeptId")
     public Long supplyDeptId;
 

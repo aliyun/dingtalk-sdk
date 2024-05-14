@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyWaterMarkTemplateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
@@ -13,6 +16,9 @@ public class ModifyWaterMarkTemplateRequest extends TeaModel {
     @NameInMap("layoutDesignId")
     public String layoutDesignId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaContent")
     public String schemaContent;
 
@@ -22,9 +28,15 @@ public class ModifyWaterMarkTemplateRequest extends TeaModel {
     @NameInMap("waterMarkId")
     public String waterMarkId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

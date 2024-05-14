@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建应用商品服务群
+     *
+     * @param request CreateAppGoodsServiceConversationRequest
+     * @param headers CreateAppGoodsServiceConversationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAppGoodsServiceConversationResponse
+     */
     public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversationWithOptions(CreateAppGoodsServiceConversationRequest request, CreateAppGoodsServiceConversationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -57,12 +65,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateAppGoodsServiceConversationResponse());
     }
 
+    /**
+     * @summary 创建应用商品服务群
+     *
+     * @param request CreateAppGoodsServiceConversationRequest
+     * @return CreateAppGoodsServiceConversationResponse
+     */
     public CreateAppGoodsServiceConversationResponse createAppGoodsServiceConversation(CreateAppGoodsServiceConversationRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateAppGoodsServiceConversationHeaders headers = new CreateAppGoodsServiceConversationHeaders();
         return this.createAppGoodsServiceConversationWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取酷应用访问状态
+     *
+     * @param request GetCoolAppAccessStatusRequest
+     * @param headers GetCoolAppAccessStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCoolAppAccessStatusResponse
+     */
     public GetCoolAppAccessStatusResponse getCoolAppAccessStatusWithOptions(GetCoolAppAccessStatusRequest request, GetCoolAppAccessStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -105,12 +127,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetCoolAppAccessStatusResponse());
     }
 
+    /**
+     * @summary 获取酷应用访问状态
+     *
+     * @param request GetCoolAppAccessStatusRequest
+     * @return GetCoolAppAccessStatusResponse
+     */
     public GetCoolAppAccessStatusResponse getCoolAppAccessStatus(GetCoolAppAccessStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCoolAppAccessStatusHeaders headers = new GetCoolAppAccessStatusHeaders();
         return this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取内购商品SKU页面地址
+     *
+     * @param request GetInAppSkuUrlRequest
+     * @param headers GetInAppSkuUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetInAppSkuUrlResponse
+     */
     public GetInAppSkuUrlResponse getInAppSkuUrlWithOptions(GetInAppSkuUrlRequest request, GetInAppSkuUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -157,12 +193,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetInAppSkuUrlResponse());
     }
 
+    /**
+     * @summary 获取内购商品SKU页面地址
+     *
+     * @param request GetInAppSkuUrlRequest
+     * @return GetInAppSkuUrlResponse
+     */
     public GetInAppSkuUrlResponse getInAppSkuUrl(GetInAppSkuUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetInAppSkuUrlHeaders headers = new GetInAppSkuUrlHeaders();
         return this.getInAppSkuUrlWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取个人体验相关信息
+     *
+     * @param request GetPersonalExperienceInfoRequest
+     * @param headers GetPersonalExperienceInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPersonalExperienceInfoResponse
+     */
     public GetPersonalExperienceInfoResponse getPersonalExperienceInfoWithOptions(GetPersonalExperienceInfoRequest request, GetPersonalExperienceInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -197,12 +247,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPersonalExperienceInfoResponse());
     }
 
+    /**
+     * @summary 获取个人体验相关信息
+     *
+     * @param request GetPersonalExperienceInfoRequest
+     * @return GetPersonalExperienceInfoResponse
+     */
     public GetPersonalExperienceInfoResponse getPersonalExperienceInfo(GetPersonalExperienceInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPersonalExperienceInfoHeaders headers = new GetPersonalExperienceInfoHeaders();
         return this.getPersonalExperienceInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 应用市场订单查询
+     *
+     * @param headers QueryMarketOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMarketOrderResponse
+     */
     public QueryMarketOrderResponse queryMarketOrderWithOptions(String orderId, QueryMarketOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -230,12 +293,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryMarketOrderResponse());
     }
 
+    /**
+     * @summary 应用市场订单查询
+     *
+     * @return QueryMarketOrderResponse
+     */
     public QueryMarketOrderResponse queryMarketOrder(String orderId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMarketOrderHeaders headers = new QueryMarketOrderHeaders();
         return this.queryMarketOrderWithOptions(orderId, headers, runtime);
     }
 
+    /**
+     * @summary app内用户操作任务同步
+     *
+     * @param request UserTaskReportRequest
+     * @param headers UserTaskReportHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UserTaskReportResponse
+     */
     public UserTaskReportResponse userTaskReportWithOptions(UserTaskReportRequest request, UserTaskReportHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -282,6 +358,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UserTaskReportResponse());
     }
 
+    /**
+     * @summary app内用户操作任务同步
+     *
+     * @param request UserTaskReportRequest
+     * @return UserTaskReportResponse
+     */
     public UserTaskReportResponse userTaskReport(UserTaskReportRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UserTaskReportHeaders headers = new UserTaskReportHeaders();

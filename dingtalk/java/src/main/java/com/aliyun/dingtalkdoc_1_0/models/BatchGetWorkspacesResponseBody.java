@@ -147,6 +147,9 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspaces extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasPermission")
         public Boolean hasPermission;
 

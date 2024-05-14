@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaCerficateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mcnId")
     public String mcnId;
 
@@ -16,12 +22,18 @@ public class GetMediaCerficateRequest extends TeaModel {
     @NameInMap("mediaIntroduction")
     public String mediaIntroduction;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaTitle")
     public String mediaTitle;
 
     @NameInMap("thumbUrl")
     public String thumbUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

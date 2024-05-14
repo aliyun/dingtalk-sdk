@@ -7,6 +7,9 @@ public class PullDataByPkRequest extends TeaModel {
     @NameInMap("appId")
     public String appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("primaryKey")
     public String primaryKey;
 

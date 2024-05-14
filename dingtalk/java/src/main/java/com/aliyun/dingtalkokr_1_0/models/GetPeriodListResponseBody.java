@@ -32,21 +32,39 @@ public class GetPeriodListResponseBody extends TeaModel {
     }
 
     public static class GetPeriodListResponseBodyDataPeriodList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTime")
         public Float endTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isCurrent")
         public Boolean isCurrent;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isYearly")
         public Boolean isYearly;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public java.io.InputStream name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Float startTime;
 
@@ -106,6 +124,9 @@ public class GetPeriodListResponseBody extends TeaModel {
     }
 
     public static class GetPeriodListResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("periodList")
         public java.util.List<GetPeriodListResponseBodyDataPeriodList> periodList;
 

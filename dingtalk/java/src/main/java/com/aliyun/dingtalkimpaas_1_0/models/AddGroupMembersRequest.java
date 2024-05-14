@@ -4,9 +4,15 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddGroupMembersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<AddGroupMembersRequestMembers> members;
 
@@ -46,6 +52,9 @@ public class AddGroupMembersRequest extends TeaModel {
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 

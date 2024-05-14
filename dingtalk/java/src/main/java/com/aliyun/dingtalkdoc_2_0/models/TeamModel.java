@@ -19,9 +19,15 @@ public class TeamModel extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -31,6 +37,9 @@ public class TeamModel extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public Integer type;
 
@@ -40,6 +49,9 @@ public class TeamModel extends TeaModel {
     @NameInMap("updater")
     public TeamModelUpdater updater;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 
@@ -254,6 +266,9 @@ public class TeamModel extends TeaModel {
     }
 
     public static class TeamModelVisitInfo extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("joinTime")
         public String joinTime;
 

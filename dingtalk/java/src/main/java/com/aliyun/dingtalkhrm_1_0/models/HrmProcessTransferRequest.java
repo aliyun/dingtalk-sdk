@@ -28,6 +28,9 @@ public class HrmProcessTransferRequest extends TeaModel {
     @NameInMap("rankIdAfterTransfer")
     public String rankIdAfterTransfer;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

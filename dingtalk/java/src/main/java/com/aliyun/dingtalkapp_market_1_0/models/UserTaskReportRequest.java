@@ -4,15 +4,27 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserTaskReportRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizNo")
     public String bizNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operateDate")
     public String operateDate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskTag")
     public String taskTag;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userid")
     public String userid;
 

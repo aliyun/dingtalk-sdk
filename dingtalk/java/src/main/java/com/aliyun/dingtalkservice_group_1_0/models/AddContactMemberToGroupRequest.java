@@ -13,9 +13,15 @@ public class AddContactMemberToGroupRequest extends TeaModel {
     @NameInMap("memberUserId")
     public String memberUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

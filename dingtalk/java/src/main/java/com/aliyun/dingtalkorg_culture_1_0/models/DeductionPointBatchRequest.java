@@ -4,18 +4,30 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeductionPointBatchRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deductionAmount")
     public Long deductionAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetUserList")
     public java.util.List<DeductionPointBatchRequestTargetUserList> targetUserList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -65,9 +77,15 @@ public class DeductionPointBatchRequest extends TeaModel {
     }
 
     public static class DeductionPointBatchRequestTargetUserList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("outId")
         public String outId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("targetUserId")
         public String targetUserId;
 

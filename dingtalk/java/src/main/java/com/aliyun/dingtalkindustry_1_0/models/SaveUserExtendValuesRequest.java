@@ -7,9 +7,15 @@ public class SaveUserExtendValuesRequest extends TeaModel {
     @NameInMap("userDisplayName")
     public String userDisplayName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userExtendKey")
     public String userExtendKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userExtendValue")
     public String userExtendValue;
 

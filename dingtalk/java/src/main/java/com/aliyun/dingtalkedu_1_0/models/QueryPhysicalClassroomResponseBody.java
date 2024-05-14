@@ -4,9 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPhysicalClassroomResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public QueryPhysicalClassroomResponseBodyResult result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -41,6 +47,9 @@ public class QueryPhysicalClassroomResponseBody extends TeaModel {
         @NameInMap("classroomFloor")
         public String classroomFloor;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("classroomId")
         public Long classroomId;
 

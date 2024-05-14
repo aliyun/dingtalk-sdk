@@ -4,33 +4,57 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpateUserCodeInstanceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("availableTimes")
     public java.util.List<UpateUserCodeInstanceRequestAvailableTimes> availableTimes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
     @NameInMap("codeValue")
     public String codeValue;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtExpired")
     public String gmtExpired;
 
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
@@ -120,9 +144,15 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
     }
 
     public static class UpateUserCodeInstanceRequestAvailableTimes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtStart")
         public String gmtStart;
 

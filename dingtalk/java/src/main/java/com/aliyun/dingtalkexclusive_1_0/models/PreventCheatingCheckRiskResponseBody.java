@@ -21,6 +21,9 @@ public class PreventCheatingCheckRiskResponseBody extends TeaModel {
     }
 
     public static class PreventCheatingCheckRiskResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasRisk")
         public Boolean hasRisk;
 

@@ -31,6 +31,9 @@ public class GetMsgConfigRequest extends TeaModel {
     @NameInMap("ruleCode")
     public String ruleCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("secretKey")
     public String secretKey;
 

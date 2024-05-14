@@ -4,12 +4,18 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTemplateResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateList")
     public java.util.List<ListTemplateResponseBodyTemplateList> templateList;
 
@@ -43,21 +49,36 @@ public class ListTemplateResponseBody extends TeaModel {
     }
 
     public static class ListTemplateResponseBodyTemplateList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("docType")
         public String docType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateType")
         public String templateType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

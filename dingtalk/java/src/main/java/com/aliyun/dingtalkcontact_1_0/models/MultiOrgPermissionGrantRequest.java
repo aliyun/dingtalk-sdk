@@ -7,6 +7,9 @@ public class MultiOrgPermissionGrantRequest extends TeaModel {
     @NameInMap("grantDeptIdList")
     public java.util.List<Long> grantDeptIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("joinCorpId")
     public String joinCorpId;
 

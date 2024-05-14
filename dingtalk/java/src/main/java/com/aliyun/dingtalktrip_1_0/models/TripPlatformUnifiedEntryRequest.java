@@ -7,6 +7,9 @@ public class TripPlatformUnifiedEntryRequest extends TeaModel {
     @NameInMap("messages")
     public String messages;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("method")
     public String method;
 

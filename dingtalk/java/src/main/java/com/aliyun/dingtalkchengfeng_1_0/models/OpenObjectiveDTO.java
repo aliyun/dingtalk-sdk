@@ -4,27 +4,51 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenObjectiveDTO extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("executor")
     public OpenUserDTO executor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyResults")
     public java.util.List<OpenKeyResultDTO> keyResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("period")
     public OpenPeriodDTO period;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("progress")
     public Integer progress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teams")
     public java.util.List<OpenTeamDTO> teams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

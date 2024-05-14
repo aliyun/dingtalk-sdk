@@ -4,6 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateResidentBlackBoardRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("context")
     public String context;
 
@@ -13,6 +16,9 @@ public class CreateResidentBlackBoardRequest extends TeaModel {
     @NameInMap("sendTime")
     public String sendTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

@@ -7,9 +7,15 @@ public class CreateCustomerRequest extends TeaModel {
     @NameInMap("contacts")
     public java.util.List<CreateCustomerRequestContacts> contacts;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 
@@ -25,6 +31,9 @@ public class CreateCustomerRequest extends TeaModel {
     @NameInMap("permission")
     public CreateCustomerRequestPermission permission;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("saveOption")
     public CreateCustomerRequestSaveOption saveOption;
 
@@ -98,6 +107,9 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestContacts extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 

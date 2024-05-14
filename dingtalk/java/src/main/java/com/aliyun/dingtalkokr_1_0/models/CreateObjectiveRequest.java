@@ -4,15 +4,27 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateObjectiveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("prevPosition")
     public String prevPosition;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

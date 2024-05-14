@@ -7,6 +7,9 @@ public class QueryScheduleConferenceInfoResponseBody extends TeaModel {
     @NameInMap("conferenceList")
     public java.util.List<QueryScheduleConferenceInfoResponseBodyConferenceList> conferenceList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

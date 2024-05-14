@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 在主动模式下完结会话框
+     *
+     * @param request FinishRequest
+     * @param headers FinishHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return FinishResponse
+     */
     public FinishResponse finishWithOptions(FinishRequest request, FinishHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new FinishResponse());
     }
 
+    /**
+     * @summary 在主动模式下完结会话框
+     *
+     * @param request FinishRequest
+     * @return FinishResponse
+     */
     public FinishResponse finish(FinishRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         FinishHeaders headers = new FinishHeaders();
         return this.finishWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 在主动模式下准备会话框
+     *
+     * @param request PrepareRequest
+     * @param headers PrepareHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PrepareResponse
+     */
     public PrepareResponse prepareWithOptions(PrepareRequest request, PrepareHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -105,12 +127,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PrepareResponse());
     }
 
+    /**
+     * @summary 在主动模式下准备会话框
+     *
+     * @param request PrepareRequest
+     * @return PrepareResponse
+     */
     public PrepareResponse prepare(PrepareRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PrepareHeaders headers = new PrepareHeaders();
         return this.prepareWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 在回复模式下更新会话框
+     *
+     * @param request ReplyRequest
+     * @param headers ReplyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReplyResponse
+     */
     public ReplyResponse replyWithOptions(ReplyRequest request, ReplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -153,12 +189,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ReplyResponse());
     }
 
+    /**
+     * @summary 在回复模式下更新会话框
+     *
+     * @param request ReplyRequest
+     * @return ReplyResponse
+     */
     public ReplyResponse reply(ReplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReplyHeaders headers = new ReplyHeaders();
         return this.replyWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 直接发送消息
+     *
+     * @param request SendRequest
+     * @param headers SendHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendResponse
+     */
     public SendResponse sendWithOptions(SendRequest request, SendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -205,12 +255,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendResponse());
     }
 
+    /**
+     * @summary 直接发送消息
+     *
+     * @param request SendRequest
+     * @return SendResponse
+     */
     public SendResponse send(SendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendHeaders headers = new SendHeaders();
         return this.sendWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 在主动模式下更新会话框
+     *
+     * @param request UpdateRequest
+     * @param headers UpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateResponse
+     */
     public UpdateResponse updateWithOptions(UpdateRequest request, UpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -253,6 +317,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateResponse());
     }
 
+    /**
+     * @summary 在主动模式下更新会话框
+     *
+     * @param request UpdateRequest
+     * @return UpdateResponse
+     */
     public UpdateResponse update(UpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateHeaders headers = new UpdateHeaders();

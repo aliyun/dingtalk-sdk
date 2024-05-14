@@ -4,9 +4,15 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollbackInnerAppVersionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appVersionId")
     public Long appVersionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

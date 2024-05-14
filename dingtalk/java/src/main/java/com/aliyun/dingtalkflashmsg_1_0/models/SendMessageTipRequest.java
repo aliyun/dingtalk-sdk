@@ -7,9 +7,15 @@ public class SendMessageTipRequest extends TeaModel {
     @NameInMap("defaultView")
     public SendMessageTipRequestDefaultView defaultView;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageId")
     public String messageId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -19,6 +25,9 @@ public class SendMessageTipRequest extends TeaModel {
     @NameInMap("publicField")
     public SendMessageTipRequestPublicField publicField;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 

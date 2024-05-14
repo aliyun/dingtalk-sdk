@@ -35,15 +35,24 @@ public class GetJobPostResponseBody extends TeaModel {
         @NameInMap("code")
         public String code;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("establishDate")
         public String establishDate;
 
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("stopDate")
         public String stopDate;
 

@@ -4,12 +4,18 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppFunctionNodesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
     @NameInMap("data")
     public java.util.List<QueryAppFunctionNodesResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("message")
     public String message;
 

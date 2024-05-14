@@ -4,6 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllFormInstancesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public QueryAllFormInstancesResponseBodyResult result;
 
@@ -24,18 +27,30 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -101,21 +116,39 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
         @NameInMap("attributes")
         public java.util.Map<String, ?> attributes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTimestamp")
         public Long createTimestamp;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formInstDataList")
         public java.util.List<QueryAllFormInstancesResponseBodyResultValuesFormInstDataList> formInstDataList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
@@ -128,6 +161,9 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
         @NameInMap("outInstanceId")
         public String outInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -235,15 +271,27 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("values")
         public java.util.List<QueryAllFormInstancesResponseBodyResultValues> values;
 

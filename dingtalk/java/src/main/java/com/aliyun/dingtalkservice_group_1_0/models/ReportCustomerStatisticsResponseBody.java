@@ -4,15 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("records")
     public java.util.List<ReportCustomerStatisticsResponseBodyRecords> records;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,36 +66,66 @@ public class ReportCustomerStatisticsResponseBody extends TeaModel {
     }
 
     public static class ReportCustomerStatisticsResponseBodyRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
         @NameInMap("bizId")
         public String bizId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("customerCnt")
         public Long customerCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupSetName")
         public String groupSetName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("loginCnt")
         public Long loginCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConvCnt")
         public Long openConvCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("senderCnt")
         public Long senderCnt;
 

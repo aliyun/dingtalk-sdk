@@ -7,6 +7,9 @@ public class KickMembersRequest extends TeaModel {
     @NameInMap("forbiddenRejoin")
     public Boolean forbiddenRejoin;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userList")
     public java.util.List<KickMembersRequestUserList> userList;
 
@@ -35,6 +38,9 @@ public class KickMembersRequest extends TeaModel {
         @NameInMap("participantId")
         public String participantId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

@@ -10,12 +10,21 @@ public class DigitalStoreUserInfoResponseBody extends TeaModel {
     @NameInMap("roleIdList")
     public java.util.List<Long> roleIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeList")
     public java.util.List<Long> scopeList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("storeList")
     public java.util.List<Long> storeList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

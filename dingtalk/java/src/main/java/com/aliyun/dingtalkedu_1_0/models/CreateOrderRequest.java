@@ -4,36 +4,60 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detailList")
     public java.util.List<CreateOrderRequestDetailList> detailList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("faceId")
     public String faceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ftoken")
     public String ftoken;
 
     @NameInMap("signature")
     public String signature;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sn")
     public String sn;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("terminalParams")
     public String terminalParams;
 
     @NameInMap("timestamp")
     public Long timestamp;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalAmount")
     public Long totalAmount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -142,15 +166,27 @@ public class CreateOrderRequest extends TeaModel {
     }
 
     public static class CreateOrderRequestDetailList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemAmount")
         public Long itemAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scene")
         public Long scene;
 

@@ -4,12 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushBadgeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentId")
     public String agentId;
 
     @NameInMap("badgeItems")
     public java.util.List<PushBadgeRequestBadgeItems> badgeItems;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pushType")
     public String pushType;
 

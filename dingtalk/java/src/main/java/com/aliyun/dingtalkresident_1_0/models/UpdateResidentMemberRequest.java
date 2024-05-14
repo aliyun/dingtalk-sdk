@@ -4,9 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidentMemberRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("residentUpdateInfo")
     public UpdateResidentMemberRequestResidentUpdateInfo residentUpdateInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -32,6 +38,9 @@ public class UpdateResidentMemberRequest extends TeaModel {
     }
 
     public static class UpdateResidentMemberRequestResidentUpdateInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
@@ -41,9 +50,15 @@ public class UpdateResidentMemberRequest extends TeaModel {
         @NameInMap("memberDeptExtension")
         public java.util.Map<String, String> memberDeptExtension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("oldDeptId")
         public Long oldDeptId;
 

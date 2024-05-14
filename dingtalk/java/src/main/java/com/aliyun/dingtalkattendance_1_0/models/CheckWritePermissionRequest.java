@@ -4,15 +4,27 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckWritePermissionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("category")
     public String category;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("entityIds")
     public java.util.List<Long> entityIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resourceKey")
     public String resourceKey;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateChatRoomRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("chatGroupName")
     public String chatGroupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceCodes")
     public java.util.List<String> deviceCodes;
 

@@ -10,27 +10,48 @@ public class GetInterconnectionUrlRequest extends TeaModel {
     @NameInMap("appUserAvatarType")
     public Integer appUserAvatarType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserMobileNumber")
     public String appUserMobileNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserName")
     public String appUserName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgPageType")
     public Integer msgPageType;
 
     @NameInMap("qrCode")
     public String qrCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("signature")
     public String signature;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceCode")
     public String sourceCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceType")
     public Integer sourceType;
 

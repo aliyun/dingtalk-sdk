@@ -4,9 +4,15 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetShanhuiByCalendarRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventId")
     public String eventId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

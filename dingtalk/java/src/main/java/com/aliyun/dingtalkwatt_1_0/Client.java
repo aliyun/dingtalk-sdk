@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+     *
+     * @param request CheckInCrowdsByMobileRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckInCrowdsByMobileResponse
+     */
     public CheckInCrowdsByMobileResponse checkInCrowdsByMobileWithOptions(CheckInCrowdsByMobileRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -49,12 +57,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CheckInCrowdsByMobileResponse());
     }
 
+    /**
+     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+     *
+     * @param request CheckInCrowdsByMobileRequest
+     * @return CheckInCrowdsByMobileResponse
+     */
     public CheckInCrowdsByMobileResponse checkInCrowdsByMobile(CheckInCrowdsByMobileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.checkInCrowdsByMobileWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 消耗用户积分
+     *
+     * @param tmpReq ConsumePointRequest
+     * @param headers ConsumePointHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConsumePointResponse
+     */
     public ConsumePointResponse consumePointWithOptions(ConsumePointRequest tmpReq, ConsumePointHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         ConsumePointShrinkRequest request = new ConsumePointShrinkRequest();
@@ -95,12 +117,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ConsumePointResponse());
     }
 
+    /**
+     * @summary 消耗用户积分
+     *
+     * @param request ConsumePointRequest
+     * @return ConsumePointResponse
+     */
     public ConsumePointResponse consumePoint(ConsumePointRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ConsumePointHeaders headers = new ConsumePointHeaders();
         return this.consumePointWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+     *
+     * @param request CreateDeliveryPlanRequest
+     * @param headers CreateDeliveryPlanHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateDeliveryPlanResponse
+     */
     public CreateDeliveryPlanResponse createDeliveryPlanWithOptions(CreateDeliveryPlanRequest request, CreateDeliveryPlanHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -151,12 +187,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateDeliveryPlanResponse());
     }
 
+    /**
+     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+     *
+     * @param request CreateDeliveryPlanRequest
+     * @return CreateDeliveryPlanResponse
+     */
     public CreateDeliveryPlanResponse createDeliveryPlan(CreateDeliveryPlanRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateDeliveryPlanHeaders headers = new CreateDeliveryPlanHeaders();
         return this.createDeliveryPlanWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询用户积分
+     *
+     * @param request GetPointInfoRequest
+     * @param headers GetPointInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPointInfoResponse
+     */
     public GetPointInfoResponse getPointInfoWithOptions(GetPointInfoRequest request, GetPointInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -191,12 +241,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPointInfoResponse());
     }
 
+    /**
+     * @summary 查询用户积分
+     *
+     * @param request GetPointInfoRequest
+     * @return GetPointInfoResponse
+     */
     public GetPointInfoResponse getPointInfo(GetPointInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPointInfoHeaders headers = new GetPointInfoHeaders();
         return this.getPointInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 撤销用户单笔积分消耗
+     *
+     * @param tmpReq RevertPointRequest
+     * @param headers RevertPointHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RevertPointResponse
+     */
     public RevertPointResponse revertPointWithOptions(RevertPointRequest tmpReq, RevertPointHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         RevertPointShrinkRequest request = new RevertPointShrinkRequest();
@@ -237,12 +301,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RevertPointResponse());
     }
 
+    /**
+     * @summary 撤销用户单笔积分消耗
+     *
+     * @param request RevertPointRequest
+     * @return RevertPointResponse
+     */
     public RevertPointResponse revertPoint(RevertPointRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RevertPointHeaders headers = new RevertPointHeaders();
         return this.revertPointWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送钉钉统一引导Banner
+     *
+     * @param request SendBannerRequest
+     * @param headers SendBannerHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendBannerResponse
+     */
     public SendBannerResponse sendBannerWithOptions(SendBannerRequest request, SendBannerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +367,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendBannerResponse());
     }
 
+    /**
+     * @summary 发送钉钉统一引导Banner
+     *
+     * @param request SendBannerRequest
+     * @return SendBannerResponse
+     */
     public SendBannerResponse sendBanner(SendBannerRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendBannerHeaders headers = new SendBannerHeaders();
         return this.sendBannerWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送钉钉首页弹窗
+     *
+     * @param request SendPopupRequest
+     * @param headers SendPopupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendPopupResponse
+     */
     public SendPopupResponse sendPopupWithOptions(SendPopupRequest request, SendPopupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -341,12 +433,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendPopupResponse());
     }
 
+    /**
+     * @summary 发送钉钉首页弹窗
+     *
+     * @param request SendPopupRequest
+     * @return SendPopupResponse
+     */
     public SendPopupResponse sendPopup(SendPopupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendPopupHeaders headers = new SendPopupHeaders();
         return this.sendPopupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 发送钉钉搜索底纹
+     *
+     * @param request SendSearchShadeRequest
+     * @param headers SendSearchShadeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendSearchShadeResponse
+     */
     public SendSearchShadeResponse sendSearchShadeWithOptions(SendSearchShadeRequest request, SendSearchShadeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -393,6 +499,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendSearchShadeResponse());
     }
 
+    /**
+     * @summary 发送钉钉搜索底纹
+     *
+     * @param request SendSearchShadeRequest
+     * @return SendSearchShadeResponse
+     */
     public SendSearchShadeResponse sendSearchShade(SendSearchShadeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendSearchShadeHeaders headers = new SendSearchShadeHeaders();

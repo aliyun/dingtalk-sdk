@@ -94,6 +94,9 @@ public class FindTargetRelatedFollowRecordsResponseBody extends TeaModel {
         @NameInMap("modifierUserId")
         public String modifierUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("recordInstId")
         public String recordInstId;
 

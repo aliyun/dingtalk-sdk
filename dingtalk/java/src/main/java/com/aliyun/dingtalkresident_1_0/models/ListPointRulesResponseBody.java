@@ -4,6 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPointRulesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pointRuleList")
     public java.util.List<ListPointRulesResponseBodyPointRuleList> pointRuleList;
 
@@ -21,27 +24,48 @@ public class ListPointRulesResponseBody extends TeaModel {
     }
 
     public static class ListPointRulesResponseBodyPointRuleList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayLimitTimes")
         public Integer dayLimitTimes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupId")
         public Integer groupId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orderId")
         public Integer orderId;
 
         @NameInMap("ruleCode")
         public String ruleCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ruleName")
         public String ruleName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("score")
         public Integer score;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 

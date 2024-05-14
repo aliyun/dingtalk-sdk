@@ -7,6 +7,9 @@ public class GetFileInfoResponseBody extends TeaModel {
     @NameInMap("downloadUrl")
     public String downloadUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileId")
     public String fileId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAppGoodsServiceConversationRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvUserId")
     public String isvUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public Long orderId;
 

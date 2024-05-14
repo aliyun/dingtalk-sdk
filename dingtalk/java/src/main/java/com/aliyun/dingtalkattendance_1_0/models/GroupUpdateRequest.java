@@ -94,6 +94,9 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("workdayClassList")
     public java.util.List<Long> workdayClassList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

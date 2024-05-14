@@ -7,9 +7,15 @@ public class SaveAcrossCloudStroageConfigsResponseBody extends TeaModel {
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endpoint")
     public String endpoint;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("state")
     public Integer state;
 

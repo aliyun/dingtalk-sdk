@@ -10,15 +10,24 @@ public class QueryAllProcessInstancesRequest extends TeaModel {
     @NameInMap("endTimeInMills")
     public Long endTimeInMills;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTimeInMills")
     public Long startTimeInMills;
 

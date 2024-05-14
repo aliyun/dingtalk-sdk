@@ -7,9 +7,15 @@ public class IndustryManufactureMesTeamMgmtResponseBody extends TeaModel {
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public IndustryManufactureMesTeamMgmtResponseBodyResult result;
 
@@ -43,6 +49,9 @@ public class IndustryManufactureMesTeamMgmtResponseBody extends TeaModel {
     }
 
     public static class IndustryManufactureMesTeamMgmtResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 

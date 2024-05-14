@@ -21,6 +21,9 @@ public class ProcessApproveCreateResponseBody extends TeaModel {
     }
 
     public static class ProcessApproveCreateResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dingtalkApproveId")
         public String dingtalkApproveId;
 

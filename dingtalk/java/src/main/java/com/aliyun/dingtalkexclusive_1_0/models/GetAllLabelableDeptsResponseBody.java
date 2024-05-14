@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllLabelableDeptsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<GetAllLabelableDeptsResponseBodyData> data;
 
@@ -21,12 +24,21 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelName")
         public String labelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -62,12 +74,21 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelName")
         public String labelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -103,12 +124,21 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelName")
         public String labelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -144,12 +174,21 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelName")
         public String labelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -185,12 +224,21 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("labelName")
         public String labelName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -226,33 +274,63 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberCount")
         public Long memberCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerLabelVOLevel1")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 partnerLabelVOLevel1;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerLabelVOLevel2")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 partnerLabelVOLevel2;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerLabelVOLevel3")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 partnerLabelVOLevel3;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerLabelVOLevel4")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 partnerLabelVOLevel4;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerLabelVOLevel5")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 partnerLabelVOLevel5;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("partnerNum")
         public String partnerNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("superDeptId")
         public String superDeptId;
 

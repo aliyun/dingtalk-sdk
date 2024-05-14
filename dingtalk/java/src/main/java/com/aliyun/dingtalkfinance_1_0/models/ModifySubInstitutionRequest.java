@@ -7,27 +7,48 @@ public class ModifySubInstitutionRequest extends TeaModel {
     @NameInMap("bindingAlipayLogonId")
     public String bindingAlipayLogonId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contactInfo")
     public ModifySubInstitutionRequestContactInfo contactInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("legalPersonCertInfo")
     public ModifySubInstitutionRequestLegalPersonCertInfo legalPersonCertInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payChannel")
     public String payChannel;
 
     @NameInMap("qualificationInfos")
     public java.util.List<ModifySubInstitutionRequestQualificationInfos> qualificationInfos;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("services")
     public java.util.List<String> services;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("settleInfo")
     public ModifySubInstitutionRequestSettleInfo settleInfo;
 
@@ -37,12 +58,21 @@ public class ModifySubInstitutionRequest extends TeaModel {
     @NameInMap("subInstAuthInfo")
     public ModifySubInstitutionRequestSubInstAuthInfo subInstAuthInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstBasicInfo")
     public ModifySubInstitutionRequestSubInstBasicInfo subInstBasicInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstCertifyInfo")
     public ModifySubInstitutionRequestSubInstCertifyInfo subInstCertifyInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subInstId")
     public String subInstId;
 
@@ -186,9 +216,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestContactInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("contactName")
         public String contactName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
@@ -222,12 +258,18 @@ public class ModifySubInstitutionRequest extends TeaModel {
         @NameInMap("certFrontImage")
         public String certFrontImage;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("certName")
         public String certName;
 
         @NameInMap("certType")
         public String certType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("idCardNo")
         public String idCardNo;
 
@@ -279,9 +321,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestQualificationInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("qualificationImage")
         public String qualificationImage;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("qualificationType")
         public String qualificationType;
 
@@ -309,6 +357,9 @@ public class ModifySubInstitutionRequest extends TeaModel {
     }
 
     public static class ModifySubInstitutionRequestSettleInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
@@ -336,6 +387,9 @@ public class ModifySubInstitutionRequest extends TeaModel {
         @NameInMap("bankShortNameCode")
         public String bankShortNameCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -512,12 +566,21 @@ public class ModifySubInstitutionRequest extends TeaModel {
         @NameInMap("aliasName")
         public String aliasName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mcc")
         public String mcc;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("subInstName")
         public String subInstName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -564,9 +627,15 @@ public class ModifySubInstitutionRequest extends TeaModel {
         @NameInMap("certImage")
         public String certImage;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("certNo")
         public String certNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("certType")
         public String certType;
 

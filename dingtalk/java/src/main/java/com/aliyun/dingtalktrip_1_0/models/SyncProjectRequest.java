@@ -4,6 +4,9 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncProjectRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
@@ -19,6 +22,9 @@ public class SyncProjectRequest extends TeaModel {
     @NameInMap("extension")
     public String extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtAction")
     public String gmtAction;
 
@@ -28,9 +34,15 @@ public class SyncProjectRequest extends TeaModel {
     @NameInMap("managerIds")
     public java.util.List<String> managerIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("projectName")
     public String projectName;
 
@@ -43,6 +55,9 @@ public class SyncProjectRequest extends TeaModel {
     @NameInMap("thirdPartId")
     public String thirdPartId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

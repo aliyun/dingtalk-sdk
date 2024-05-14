@@ -4,6 +4,9 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApproveCityCarApplyRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -13,12 +16,21 @@ public class ApproveCityCarApplyRequest extends TeaModel {
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Long status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

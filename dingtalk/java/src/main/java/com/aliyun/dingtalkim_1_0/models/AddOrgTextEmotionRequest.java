@@ -4,15 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgTextEmotionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("backgroundMediaId")
     public String backgroundMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("backgroundMediaIdForPanel")
     public String backgroundMediaIdForPanel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("emotionName")
     public String emotionName;
 

@@ -4,15 +4,24 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isDeleted")
     public Boolean isDeleted;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("owner")
     public String owner;
 
     @NameInMap("rootDentryUuid")
     public String rootDentryUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 

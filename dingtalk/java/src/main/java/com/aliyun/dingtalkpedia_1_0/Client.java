@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 企业百科增加当前企业词条信息
+     *
+     * @param request PediaWordsAddRequest
+     * @param headers PediaWordsAddHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsAddResponse
+     */
     public PediaWordsAddResponse pediaWordsAddWithOptions(PediaWordsAddRequest request, PediaWordsAddHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -85,12 +93,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsAddResponse());
     }
 
+    /**
+     * @summary 企业百科增加当前企业词条信息
+     *
+     * @param request PediaWordsAddRequest
+     * @return PediaWordsAddResponse
+     */
     public PediaWordsAddResponse pediaWordsAdd(PediaWordsAddRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
         return this.pediaWordsAddWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 企业百科针对待审核词条进行审核
+     *
+     * @param request PediaWordsApproveRequest
+     * @param headers PediaWordsApproveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsApproveResponse
+     */
     public PediaWordsApproveResponse pediaWordsApproveWithOptions(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -145,12 +167,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsApproveResponse());
     }
 
+    /**
+     * @summary 企业百科针对待审核词条进行审核
+     *
+     * @param request PediaWordsApproveRequest
+     * @return PediaWordsApproveResponse
+     */
     public PediaWordsApproveResponse pediaWordsApprove(PediaWordsApproveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
         return this.pediaWordsApproveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 企业百科针对uuid删除当前词条
+     *
+     * @param request PediaWordsDeleteRequest
+     * @param headers PediaWordsDeleteHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsDeleteResponse
+     */
     public PediaWordsDeleteResponse pediaWordsDeleteWithOptions(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -189,12 +225,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsDeleteResponse());
     }
 
+    /**
+     * @summary 企业百科针对uuid删除当前词条
+     *
+     * @param request PediaWordsDeleteRequest
+     * @return PediaWordsDeleteResponse
+     */
     public PediaWordsDeleteResponse pediaWordsDelete(PediaWordsDeleteRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
         return this.pediaWordsDeleteWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据词条主键ID查询当前词条详情
+     *
+     * @param request PediaWordsQueryRequest
+     * @param headers PediaWordsQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsQueryResponse
+     */
     public PediaWordsQueryResponse pediaWordsQueryWithOptions(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -233,12 +283,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsQueryResponse());
     }
 
+    /**
+     * @summary 根据词条主键ID查询当前词条详情
+     *
+     * @param request PediaWordsQueryRequest
+     * @return PediaWordsQueryResponse
+     */
     public PediaWordsQueryResponse pediaWordsQuery(PediaWordsQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
         return this.pediaWordsQueryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页获取企业词条信息
+     *
+     * @param request PediaWordsSearchRequest
+     * @param headers PediaWordsSearchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsSearchResponse
+     */
     public PediaWordsSearchResponse pediaWordsSearchWithOptions(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -289,12 +353,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsSearchResponse());
     }
 
+    /**
+     * @summary 分页获取企业词条信息
+     *
+     * @param request PediaWordsSearchRequest
+     * @return PediaWordsSearchResponse
+     */
     public PediaWordsSearchResponse pediaWordsSearch(PediaWordsSearchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
         return this.pediaWordsSearchWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 企业百科对当前已经生效词条进行编辑
+     *
+     * @param request PediaWordsUpdateRequest
+     * @param headers PediaWordsUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PediaWordsUpdateResponse
+     */
     public PediaWordsUpdateResponse pediaWordsUpdateWithOptions(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -369,6 +447,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsUpdateResponse());
     }
 
+    /**
+     * @summary 企业百科对当前已经生效词条进行编辑
+     *
+     * @param request PediaWordsUpdateRequest
+     * @return PediaWordsUpdateResponse
+     */
     public PediaWordsUpdateResponse pediaWordsUpdate(PediaWordsUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();

@@ -10,9 +10,15 @@ public class CreateSubscribedCalendarRequest extends TeaModel {
     @NameInMap("managers")
     public java.util.List<String> managers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subscribeScope")
     public CreateSubscribedCalendarRequestSubscribeScope subscribeScope;
 

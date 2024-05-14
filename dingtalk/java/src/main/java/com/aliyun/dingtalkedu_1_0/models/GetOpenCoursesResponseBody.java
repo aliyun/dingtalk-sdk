@@ -4,9 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenCoursesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseList")
     public java.util.List<GetOpenCoursesResponseBodyCourseList> courseList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -32,27 +38,51 @@ public class GetOpenCoursesResponseBody extends TeaModel {
     }
 
     public static class GetOpenCoursesResponseBodyCourseList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseId")
         public String courseId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedType")
         public Long feedType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jumpUrl")
         public String jumpUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("teacherId")
         public String teacherId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("teacherName")
         public String teacherName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

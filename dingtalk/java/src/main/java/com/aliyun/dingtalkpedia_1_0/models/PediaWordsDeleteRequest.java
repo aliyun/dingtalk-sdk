@@ -4,9 +4,15 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsDeleteRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public Long uuid;
 

@@ -7,6 +7,9 @@ public class SendCardRequest extends TeaModel {
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 
@@ -25,6 +28,9 @@ public class SendCardRequest extends TeaModel {
     @NameInMap("receivers")
     public java.util.List<String> receivers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

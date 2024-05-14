@@ -7,6 +7,9 @@ public class PrepareRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("contentType")
     public String contentType;
 

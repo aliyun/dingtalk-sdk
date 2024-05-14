@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EndCourseResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("universityCourseCommonResponse")
     public EndCourseResponseBodyUniversityCourseCommonResponse universityCourseCommonResponse;
 
@@ -21,9 +24,15 @@ public class EndCourseResponseBody extends TeaModel {
     }
 
     public static class EndCourseResponseBodyUniversityCourseCommonResponse extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseCode")
         public String courseCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

@@ -32,12 +32,21 @@ public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
     }
 
     public static class GetStaffInfoByWorkNoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("email")
         public String email;
 
@@ -47,6 +56,9 @@ public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
         @NameInMap("employeeStatus")
         public String employeeStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobLevelName")
         public String jobLevelName;
 
@@ -56,21 +68,39 @@ public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
         @NameInMap("jobPositionName")
         public String jobPositionName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobPostCode")
         public String jobPostCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobPostName")
         public String jobPostName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("workNumbers")
         public String workNumbers;
 

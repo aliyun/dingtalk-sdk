@@ -13,30 +13,51 @@ public class SolutionTaskSaveRequest extends TeaModel {
     @NameInMap("finishTime")
     public Long finishTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outerId")
     public String outerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("solutionInstanceId")
     public String solutionInstanceId;
 
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskType")
     public String taskType;
 
     @NameInMap("templateOuterId")
     public String templateOuterId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("solutionType")
     public String solutionType;
 

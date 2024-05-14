@@ -19,9 +19,15 @@ public class DeliverCardRequest extends TeaModel {
     @NameInMap("imSingleOpenDeliverModel")
     public DeliverCardRequestImSingleOpenDeliverModel imSingleOpenDeliverModel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

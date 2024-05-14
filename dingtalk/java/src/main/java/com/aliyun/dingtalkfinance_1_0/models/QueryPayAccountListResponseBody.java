@@ -4,6 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPayAccountListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payAccountVOList")
     public java.util.List<QueryPayAccountListResponseBodyPayAccountVOList> payAccountVOList;
 
@@ -21,21 +24,39 @@ public class QueryPayAccountListResponseBody extends TeaModel {
     }
 
     public static class QueryPayAccountListResponseBodyPayAccountVOList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountClass")
         public String accountClass;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountNo")
         public String accountNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountRemark")
         public String accountRemark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 

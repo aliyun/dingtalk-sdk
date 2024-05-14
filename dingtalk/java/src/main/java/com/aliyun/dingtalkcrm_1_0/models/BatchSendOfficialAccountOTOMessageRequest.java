@@ -10,6 +10,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public BatchSendOfficialAccountOTOMessageRequestDetail detail;
 
@@ -43,9 +46,15 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -88,6 +97,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
         @NameInMap("singleUrl")
         public String singleUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -147,15 +159,27 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyLink extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageUrl")
         public String messageUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("picUrl")
         public String picUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("text")
         public String text;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -199,9 +223,15 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("text")
         public String text;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -229,6 +259,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetailMessageBodyText extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -303,9 +336,15 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
         @NameInMap("bizRequestId")
         public String bizRequestId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageBody")
         public BatchSendOfficialAccountOTOMessageRequestDetailMessageBody messageBody;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
@@ -315,6 +354,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

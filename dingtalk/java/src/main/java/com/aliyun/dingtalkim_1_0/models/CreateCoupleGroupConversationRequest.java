@@ -4,21 +4,36 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCoupleGroupConversationRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUserId")
     public String appUserId;
 
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

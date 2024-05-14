@@ -7,12 +7,21 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllMemberByGroupResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -54,12 +63,21 @@ public class QueryAllMemberByGroupResponseBody extends TeaModel {
     }
 
     public static class QueryAllMemberByGroupResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jobNum")
         public String jobNum;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userName")
         public String userName;
 

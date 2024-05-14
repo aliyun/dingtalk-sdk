@@ -4,18 +4,33 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendInvitationRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public String deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgAlias")
     public String orgAlias;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("partnerLabelId")
     public Long partnerLabelId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("partnerNum")
     public String partnerNum;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("phone")
     public String phone;
 

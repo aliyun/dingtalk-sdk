@@ -4,18 +4,30 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ResaleOrderRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderCreateTime")
     public Float orderCreateTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quantity")
     public Float quantity;
 
     @NameInMap("serviceStartTime")
     public Float serviceStartTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("serviceStopTime")
     public Float serviceStopTime;
 

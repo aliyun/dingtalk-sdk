@@ -4,6 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<ListOrderResponseBodyList> list;
 
@@ -32,42 +35,78 @@ public class ListOrderResponseBody extends TeaModel {
     }
 
     public static class ListOrderResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("buyerId")
         public String buyerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("orderNo")
         public String orderNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payTime")
         public Long payTime;
 
         @NameInMap("refundNo")
         public String refundNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scene")
         public Long scene;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tradeNo")
         public String tradeNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

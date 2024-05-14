@@ -7,6 +7,9 @@ public class SendAgentOTOMessageResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public SendAgentOTOMessageResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class SendAgentOTOMessageResponseBody extends TeaModel {
     }
 
     public static class SendAgentOTOMessageResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openPushId")
         public String openPushId;
 

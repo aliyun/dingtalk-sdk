@@ -10,6 +10,9 @@ public class UpdateAppRoleInfoRequest extends TeaModel {
     @NameInMap("newRoleName")
     public String newRoleName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

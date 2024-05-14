@@ -4,15 +4,27 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpAccessTokenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authCorpId")
     public String authCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("suiteKey")
     public String suiteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("suiteSecret")
     public String suiteSecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("suiteTicket")
     public String suiteTicket;
 

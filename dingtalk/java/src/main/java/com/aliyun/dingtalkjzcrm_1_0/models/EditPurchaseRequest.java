@@ -7,12 +7,18 @@ public class EditPurchaseRequest extends TeaModel {
     @NameInMap("data")
     public EditPurchaseRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,15 +72,24 @@ public class EditPurchaseRequest extends TeaModel {
         @NameInMap("cg_moneyzhekou")
         public String cgMoneyzhekou;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cg_zxstate")
         public String cgZxstate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cgdate")
         public String cgdate;
 
         @NameInMap("cgname")
         public String cgname;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cgno")
         public String cgno;
 
@@ -87,6 +102,9 @@ public class EditPurchaseRequest extends TeaModel {
         @NameInMap("child_mx")
         public String childMx;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -99,6 +117,9 @@ public class EditPurchaseRequest extends TeaModel {
         @NameInMap("gys_lxrinfo")
         public String gysLxrinfo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gysid")
         public String gysid;
 
@@ -111,6 +132,9 @@ public class EditPurchaseRequest extends TeaModel {
         @NameInMap("order_khid")
         public String orderKhid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("summoney")
         public String summoney;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class StreamingUpdateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("guid")
     public String guid;
 
@@ -19,9 +25,15 @@ public class StreamingUpdateRequest extends TeaModel {
     @NameInMap("isFull")
     public Boolean isFull;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("key")
     public String key;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

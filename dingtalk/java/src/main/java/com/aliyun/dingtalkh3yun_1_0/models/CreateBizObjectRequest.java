@@ -4,15 +4,27 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBizObjectRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizObjectJson")
     public String bizObjectJson;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isDraft")
     public Boolean isDraft;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

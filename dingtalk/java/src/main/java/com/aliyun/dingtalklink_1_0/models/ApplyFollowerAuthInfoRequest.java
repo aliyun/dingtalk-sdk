@@ -10,9 +10,15 @@ public class ApplyFollowerAuthInfoRequest extends TeaModel {
     @NameInMap("fieldScope")
     public String fieldScope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sessionId")
     public String sessionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataViewResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public GetDataViewResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dataname")
     public java.util.Map<String, java.util.Map<String, ?>> dataname;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("time")
     public String time;
 
@@ -43,6 +52,9 @@ public class GetDataViewResponseBody extends TeaModel {
     }
 
     public static class GetDataViewResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 

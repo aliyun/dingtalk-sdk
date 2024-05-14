@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmRolePermissionResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("permissions")
     public java.util.List<GetCrmRolePermissionResponseBodyPermissions> permissions;
 
@@ -21,9 +24,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsFieldScopes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldActions")
         public java.util.List<String> fieldActions;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -51,9 +60,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptIdList")
         public java.util.List<Double> deptIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userIdList")
         public java.util.List<String> userIdList;
 
@@ -81,12 +96,21 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsManagingScopeList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ext")
         public GetCrmRolePermissionResponseBodyPermissionsManagingScopeListExt ext;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("manager")
         public Boolean manager;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -122,9 +146,15 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsOperateScopes extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasAuth")
         public Boolean hasAuth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -152,12 +182,21 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -204,27 +243,51 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     }
 
     public static class GetCrmRolePermissionResponseBodyPermissions extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("defaultRole")
         public Boolean defaultRole;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldScopes")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsFieldScopes> fieldScopes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("managingScopeList")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsManagingScopeList> managingScopeList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("operateScopes")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsOperateScopes> operateScopes;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("resourceId")
         public String resourceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleId")
         public Double roleId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleMemberList")
         public java.util.List<GetCrmRolePermissionResponseBodyPermissionsRoleMemberList> roleMemberList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

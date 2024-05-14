@@ -4,9 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOaOperatorLogListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<GetOaOperatorLogListResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemCount")
     public Long itemCount;
 
@@ -32,21 +38,39 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
     }
 
     public static class GetOaOperatorLogListResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category1Name")
         public String category1Name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category2Name")
         public String category2Name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("opName")
         public String opName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("opTime")
         public Long opTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("opUserId")
         public String opUserId;
 

@@ -7,6 +7,9 @@ public class UnbindCoolAppToSheetRequest extends TeaModel {
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

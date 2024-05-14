@@ -16,6 +16,9 @@ public class CollegeUpdateStudentInfoRequest extends TeaModel {
     @NameInMap("startYear")
     public String startYear;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 

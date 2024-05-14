@@ -4,9 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryUserResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<BatchQueryUserResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,6 +41,9 @@ public class BatchQueryUserResponseBody extends TeaModel {
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("avatarUrl")
         public java.io.InputStream avatarUrl;
 

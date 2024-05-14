@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetWorkspaceDocsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<BatchGetWorkspaceDocsResponseBodyResult> result;
 
@@ -125,6 +128,9 @@ public class BatchGetWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspaceDocsResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasPermission")
         public Boolean hasPermission;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInnerAppRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("desc")
     public String desc;
 
@@ -19,12 +22,18 @@ public class CreateInnerAppRequest extends TeaModel {
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("ompLink")
     public String ompLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

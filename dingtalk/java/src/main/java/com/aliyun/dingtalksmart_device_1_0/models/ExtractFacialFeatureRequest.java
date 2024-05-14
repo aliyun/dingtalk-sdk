@@ -4,9 +4,15 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExtractFacialFeatureRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userid")
     public String userid;
 

@@ -19,6 +19,9 @@ public class CreateTemplatesRequest extends TeaModel {
     @NameInMap("authUserIds")
     public java.util.List<String> authUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creator")
     public String creator;
 
@@ -31,6 +34,9 @@ public class CreateTemplatesRequest extends TeaModel {
     @NameInMap("defaultReceivers")
     public java.util.List<String> defaultReceivers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fields")
     public java.util.List<CreateTemplatesRequestFields> fields;
 
@@ -43,6 +49,9 @@ public class CreateTemplatesRequest extends TeaModel {
     @NameInMap("minWordCount")
     public Integer minWordCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -246,21 +255,36 @@ public class CreateTemplatesRequest extends TeaModel {
     }
 
     public static class CreateTemplatesRequestFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataType")
         public Integer dataType;
 
         @NameInMap("dataValue")
         public CreateTemplatesRequestFieldsDataValue dataValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("need")
         public Boolean need;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("order")
         public Integer order;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sort")
         public Integer sort;
 

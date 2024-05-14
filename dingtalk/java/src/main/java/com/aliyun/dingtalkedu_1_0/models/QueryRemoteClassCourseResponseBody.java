@@ -7,6 +7,9 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<QueryRemoteClassCourseResponseBodyResult> result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

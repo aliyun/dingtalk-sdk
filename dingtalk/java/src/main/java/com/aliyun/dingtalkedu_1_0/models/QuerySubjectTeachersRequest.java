@@ -7,9 +7,15 @@ public class QuerySubjectTeachersRequest extends TeaModel {
     @NameInMap("classIds")
     public java.util.List<Long> classIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subjectCode")
     public String subjectCode;
 

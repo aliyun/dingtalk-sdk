@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<QueryDeviceResponseBodyData> data;
 
@@ -95,6 +98,9 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceId")
         public String deviceId;
 

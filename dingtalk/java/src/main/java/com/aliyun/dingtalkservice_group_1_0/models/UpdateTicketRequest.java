@@ -7,15 +7,27 @@ public class UpdateTicketRequest extends TeaModel {
     @NameInMap("customFields")
     public String customFields;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ticketMemo")
     public UpdateTicketRequestTicketMemo ticketMemo;
 
@@ -98,6 +110,9 @@ public class UpdateTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<UpdateTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memo")
         public String memo;
 

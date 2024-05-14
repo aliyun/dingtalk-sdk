@@ -4,12 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetVillageOrgInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("regionId")
     public String regionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("regionLocation")
     public String regionLocation;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("regionType")
     public String regionType;
 

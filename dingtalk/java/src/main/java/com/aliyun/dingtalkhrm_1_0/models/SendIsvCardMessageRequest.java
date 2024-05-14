@@ -4,24 +4,45 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendIsvCardMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageType")
     public String messageType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sceneType")
     public String sceneType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scope")
     public String scope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("senderUserId")
     public String senderUserId;
 

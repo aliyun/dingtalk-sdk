@@ -13,6 +13,9 @@ public class AppendSpaceWithDelegateRequest extends TeaModel {
     @NameInMap("imRobotOpenSpaceModel")
     public AppendSpaceWithDelegateRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

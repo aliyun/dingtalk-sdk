@@ -7,12 +7,18 @@ public class EditGoodsRequest extends TeaModel {
     @NameInMap("data")
     public EditGoodsRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -81,6 +87,9 @@ public class EditGoodsRequest extends TeaModel {
         @NameInMap("cpimg")
         public String cpimg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cpname")
         public String cpname;
 
@@ -93,12 +102,18 @@ public class EditGoodsRequest extends TeaModel {
         @NameInMap("cptype")
         public String cptype;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cpunit")
         public String cpunit;
 
         @NameInMap("cpweight")
         public String cpweight;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -138,6 +153,9 @@ public class EditGoodsRequest extends TeaModel {
         @NameInMap("typeid")
         public String typeid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unitrate")
         public String unitrate;
 

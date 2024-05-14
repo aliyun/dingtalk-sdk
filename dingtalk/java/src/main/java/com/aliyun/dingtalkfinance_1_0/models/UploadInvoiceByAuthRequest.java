@@ -7,6 +7,9 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     @NameInMap("extension")
     public UploadInvoiceByAuthRequestExtension extension;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoices")
     public java.util.List<UploadInvoiceByAuthRequestInvoices> invoices;
 
@@ -32,6 +35,9 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     }
 
     public static class UploadInvoiceByAuthRequestExtension extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizCode")
         public String bizCode;
 
@@ -73,45 +79,78 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     }
 
     public static class UploadInvoiceByAuthRequestInvoices extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceAmount")
         public String invoiceAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceDate")
         public String invoiceDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
         @NameInMap("logoUrl")
         public String logoUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeName")
         public String payeeName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payeeTaxNo")
         public String payeeTaxNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("payerName")
         public String payerName;
 
         @NameInMap("payerTaxNo")
         public String payerTaxNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("pdfUrl")
         public String pdfUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
         @NameInMap("verifyCode")
         public String verifyCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("withoutTaxAmount")
         public String withoutTaxAmount;
 

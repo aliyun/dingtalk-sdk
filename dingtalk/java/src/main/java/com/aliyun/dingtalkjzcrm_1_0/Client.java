@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 编辑联系人数据
+     *
+     * @param request EditContactRequest
+     * @param headers EditContactHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditContactResponse
+     */
     public EditContactResponse editContactWithOptions(EditContactRequest request, EditContactHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditContactResponse());
     }
 
+    /**
+     * @summary 编辑联系人数据
+     *
+     * @param request EditContactRequest
+     * @return EditContactResponse
+     */
     public EditContactResponse editContact(EditContactRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditContactHeaders headers = new EditContactHeaders();
         return this.editContactWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑客户数据
+     *
+     * @param request EditCustomerRequest
+     * @param headers EditCustomerHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditCustomerResponse
+     */
     public EditCustomerResponse editCustomerWithOptions(EditCustomerRequest request, EditCustomerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -117,12 +139,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditCustomerResponse());
     }
 
+    /**
+     * @summary 编辑客户数据
+     *
+     * @param request EditCustomerRequest
+     * @return EditCustomerResponse
+     */
     public EditCustomerResponse editCustomer(EditCustomerRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditCustomerHeaders headers = new EditCustomerHeaders();
         return this.editCustomerWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑客户公共池数据
+     *
+     * @param request EditCustomerPoolRequest
+     * @param headers EditCustomerPoolHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditCustomerPoolResponse
+     */
     public EditCustomerPoolResponse editCustomerPoolWithOptions(EditCustomerPoolRequest request, EditCustomerPoolHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -169,12 +205,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditCustomerPoolResponse());
     }
 
+    /**
+     * @summary 编辑客户公共池数据
+     *
+     * @param request EditCustomerPoolRequest
+     * @return EditCustomerPoolResponse
+     */
     public EditCustomerPoolResponse editCustomerPool(EditCustomerPoolRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
         return this.editCustomerPoolWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑销售换货单数据
+     *
+     * @param request EditExchangeRequest
+     * @param headers EditExchangeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditExchangeResponse
+     */
     public EditExchangeResponse editExchangeWithOptions(EditExchangeRequest request, EditExchangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -221,12 +271,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditExchangeResponse());
     }
 
+    /**
+     * @summary 编辑销售换货单数据
+     *
+     * @param request EditExchangeRequest
+     * @return EditExchangeResponse
+     */
     public EditExchangeResponse editExchange(EditExchangeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditExchangeHeaders headers = new EditExchangeHeaders();
         return this.editExchangeWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑产品数据
+     *
+     * @param request EditGoodsRequest
+     * @param headers EditGoodsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditGoodsResponse
+     */
     public EditGoodsResponse editGoodsWithOptions(EditGoodsRequest request, EditGoodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -273,12 +337,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditGoodsResponse());
     }
 
+    /**
+     * @summary 编辑产品数据
+     *
+     * @param request EditGoodsRequest
+     * @return EditGoodsResponse
+     */
     public EditGoodsResponse editGoods(EditGoodsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditGoodsHeaders headers = new EditGoodsHeaders();
         return this.editGoodsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑入库单数据
+     *
+     * @param request EditIntostockRequest
+     * @param headers EditIntostockHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditIntostockResponse
+     */
     public EditIntostockResponse editIntostockWithOptions(EditIntostockRequest request, EditIntostockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -325,12 +403,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditIntostockResponse());
     }
 
+    /**
+     * @summary 编辑入库单数据
+     *
+     * @param request EditIntostockRequest
+     * @return EditIntostockResponse
+     */
     public EditIntostockResponse editIntostock(EditIntostockRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditIntostockHeaders headers = new EditIntostockHeaders();
         return this.editIntostockWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑发货单数据
+     *
+     * @param request EditInvoiceRequest
+     * @param headers EditInvoiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditInvoiceResponse
+     */
     public EditInvoiceResponse editInvoiceWithOptions(EditInvoiceRequest request, EditInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -377,12 +469,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditInvoiceResponse());
     }
 
+    /**
+     * @summary 编辑发货单数据
+     *
+     * @param request EditInvoiceRequest
+     * @return EditInvoiceResponse
+     */
     public EditInvoiceResponse editInvoice(EditInvoiceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditInvoiceHeaders headers = new EditInvoiceHeaders();
         return this.editInvoiceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑合同订单数据
+     *
+     * @param request EditOrderRequest
+     * @param headers EditOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditOrderResponse
+     */
     public EditOrderResponse editOrderWithOptions(EditOrderRequest request, EditOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -429,12 +535,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditOrderResponse());
     }
 
+    /**
+     * @summary 编辑合同订单数据
+     *
+     * @param request EditOrderRequest
+     * @return EditOrderResponse
+     */
     public EditOrderResponse editOrder(EditOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditOrderHeaders headers = new EditOrderHeaders();
         return this.editOrderWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑出库单信息
+     *
+     * @param request EditOutstockRequest
+     * @param headers EditOutstockHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditOutstockResponse
+     */
     public EditOutstockResponse editOutstockWithOptions(EditOutstockRequest request, EditOutstockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -481,12 +601,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditOutstockResponse());
     }
 
+    /**
+     * @summary 编辑出库单信息
+     *
+     * @param request EditOutstockRequest
+     * @return EditOutstockResponse
+     */
     public EditOutstockResponse editOutstock(EditOutstockRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditOutstockHeaders headers = new EditOutstockHeaders();
         return this.editOutstockWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑生产单数据
+     *
+     * @param request EditProductionRequest
+     * @param headers EditProductionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditProductionResponse
+     */
     public EditProductionResponse editProductionWithOptions(EditProductionRequest request, EditProductionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -533,12 +667,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditProductionResponse());
     }
 
+    /**
+     * @summary 编辑生产单数据
+     *
+     * @param request EditProductionRequest
+     * @return EditProductionResponse
+     */
     public EditProductionResponse editProduction(EditProductionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditProductionHeaders headers = new EditProductionHeaders();
         return this.editProductionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑采购单数据
+     *
+     * @param request EditPurchaseRequest
+     * @param headers EditPurchaseHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditPurchaseResponse
+     */
     public EditPurchaseResponse editPurchaseWithOptions(EditPurchaseRequest request, EditPurchaseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -585,12 +733,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditPurchaseResponse());
     }
 
+    /**
+     * @summary 编辑采购单数据
+     *
+     * @param request EditPurchaseRequest
+     * @return EditPurchaseResponse
+     */
     public EditPurchaseResponse editPurchase(EditPurchaseRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditPurchaseHeaders headers = new EditPurchaseHeaders();
         return this.editPurchaseWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑报价记录数据
+     *
+     * @param request EditQuotationRecordRequest
+     * @param headers EditQuotationRecordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditQuotationRecordResponse
+     */
     public EditQuotationRecordResponse editQuotationRecordWithOptions(EditQuotationRecordRequest request, EditQuotationRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -637,12 +799,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditQuotationRecordResponse());
     }
 
+    /**
+     * @summary 编辑报价记录数据
+     *
+     * @param request EditQuotationRecordRequest
+     * @return EditQuotationRecordResponse
+     */
     public EditQuotationRecordResponse editQuotationRecord(EditQuotationRecordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
         return this.editQuotationRecordWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 编辑销售机会数据
+     *
+     * @param request EditSalesRequest
+     * @param headers EditSalesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditSalesResponse
+     */
     public EditSalesResponse editSalesWithOptions(EditSalesRequest request, EditSalesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -689,12 +865,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EditSalesResponse());
     }
 
+    /**
+     * @summary 编辑销售机会数据
+     *
+     * @param request EditSalesRequest
+     * @return EditSalesResponse
+     */
     public EditSalesResponse editSales(EditSalesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EditSalesHeaders headers = new EditSalesHeaders();
         return this.editSalesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取数据列表
+     *
+     * @param request GetDataListRequest
+     * @param headers GetDataListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDataListResponse
+     */
     public GetDataListResponse getDataListWithOptions(GetDataListRequest request, GetDataListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -737,12 +927,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetDataListResponse());
     }
 
+    /**
+     * @summary 获取数据列表
+     *
+     * @param request GetDataListRequest
+     * @return GetDataListResponse
+     */
     public GetDataListResponse getDataList(GetDataListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDataListHeaders headers = new GetDataListHeaders();
         return this.getDataListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取数据详情
+     *
+     * @param request GetDataViewRequest
+     * @param headers GetDataViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDataViewResponse
+     */
     public GetDataViewResponse getDataViewWithOptions(GetDataViewRequest request, GetDataViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -781,6 +985,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetDataViewResponse());
     }
 
+    /**
+     * @summary 获取数据详情
+     *
+     * @param request GetDataViewRequest
+     * @return GetDataViewResponse
+     */
     public GetDataViewResponse getDataView(GetDataViewRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDataViewHeaders headers = new GetDataViewHeaders();

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTicketRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
@@ -13,21 +16,36 @@ public class CreateTicketRequest extends TeaModel {
     @NameInMap("notify")
     public CreateTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTemplateBizId")
     public String openTemplateBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scene")
     public String scene;
 
     @NameInMap("sceneContext")
     public CreateTicketRequestSceneContext sceneContext;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

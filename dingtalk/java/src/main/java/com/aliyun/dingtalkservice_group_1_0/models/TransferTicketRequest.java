@@ -7,15 +7,27 @@ public class TransferTicketRequest extends TeaModel {
     @NameInMap("notify")
     public TransferTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 

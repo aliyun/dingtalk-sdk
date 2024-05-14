@@ -10,6 +10,9 @@ public class DocBlocksQueryRequest extends TeaModel {
     @NameInMap("endIndex")
     public Integer endIndex;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

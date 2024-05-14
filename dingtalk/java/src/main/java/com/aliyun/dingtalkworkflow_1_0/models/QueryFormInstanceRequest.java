@@ -7,9 +7,15 @@ public class QueryFormInstanceRequest extends TeaModel {
     @NameInMap("appUuid")
     public String appUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCode")
     public String formCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 

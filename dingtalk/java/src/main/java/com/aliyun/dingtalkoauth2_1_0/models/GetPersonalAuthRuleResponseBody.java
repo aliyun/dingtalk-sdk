@@ -21,9 +21,15 @@ public class GetPersonalAuthRuleResponseBody extends TeaModel {
     }
 
     public static class GetPersonalAuthRuleResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("authItems")
         public java.util.List<String> authItems;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("resource")
         public String resource;
 

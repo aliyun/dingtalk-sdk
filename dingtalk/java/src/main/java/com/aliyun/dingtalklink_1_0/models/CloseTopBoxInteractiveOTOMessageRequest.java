@@ -4,6 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseTopBoxInteractiveOTOMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public CloseTopBoxInteractiveOTOMessageRequestDetail detail;
 
@@ -21,12 +24,21 @@ public class CloseTopBoxInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class CloseTopBoxInteractiveOTOMessageRequestDetail extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -7,6 +7,9 @@ public class UpdateResidentUserRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
@@ -19,15 +22,24 @@ public class UpdateResidentUserRequest extends TeaModel {
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("oldDepartmentId")
     public Long oldDepartmentId;
 
     @NameInMap("relateType")
     public String relateType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userName")
     public String userName;
 

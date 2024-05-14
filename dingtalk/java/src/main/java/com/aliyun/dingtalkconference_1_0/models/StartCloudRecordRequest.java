@@ -10,6 +10,9 @@ public class StartCloudRecordRequest extends TeaModel {
     @NameInMap("smallWindowPosition")
     public String smallWindowPosition;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

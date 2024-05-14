@@ -4,48 +4,81 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTradeOrderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("articleCode")
     public String articleCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("articleItemCode")
     public String articleItemCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("articleItemName")
     public String articleItemName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("articleName")
     public String articleName;
 
     @NameInMap("closeTime")
     public Long closeTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fee")
     public Long fee;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvCropId")
     public String isvCropId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public Long orderId;
 
     @NameInMap("outerOrderId")
     public String outerOrderId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("payFee")
     public Long payFee;
 
     @NameInMap("payTime")
     public Long payTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
     @NameInMap("refundTime")
     public Long refundTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 

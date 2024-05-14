@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupChatsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -54,24 +57,42 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     }
 
     public static class QueryCrmGroupChatsResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ownerUserName")
         public String ownerUserName;
 

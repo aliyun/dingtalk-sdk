@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteGroupMembersFromGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deleteGroupType")
     public String deleteGroupType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memberUnionId")
     public String memberUnionId;
 
@@ -16,6 +22,9 @@ public class DeleteGroupMembersFromGroupRequest extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

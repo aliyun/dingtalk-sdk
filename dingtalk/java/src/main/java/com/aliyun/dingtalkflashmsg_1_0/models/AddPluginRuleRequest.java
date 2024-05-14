@@ -4,18 +4,33 @@ package com.aliyun.dingtalkflashmsg_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddPluginRuleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("chatType")
     public String chatType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemType")
     public String itemType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rules")
     public java.util.List<AddPluginRuleRequestRules> rules;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -65,9 +80,15 @@ public class AddPluginRuleRequest extends TeaModel {
     }
 
     public static class AddPluginRuleRequestRules extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 

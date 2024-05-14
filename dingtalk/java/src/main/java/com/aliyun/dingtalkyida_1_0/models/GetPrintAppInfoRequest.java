@@ -7,6 +7,9 @@ public class GetPrintAppInfoRequest extends TeaModel {
     @NameInMap("nameLike")
     public String nameLike;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

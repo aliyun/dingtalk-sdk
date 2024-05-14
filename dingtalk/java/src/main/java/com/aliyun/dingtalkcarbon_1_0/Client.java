@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取用户的减碳明细
+     *
+     * @param request GetPersonalCarbonInfoRequest
+     * @param headers GetPersonalCarbonInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPersonalCarbonInfoResponse
+     */
     public GetPersonalCarbonInfoResponse getPersonalCarbonInfoWithOptions(GetPersonalCarbonInfoRequest request, GetPersonalCarbonInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -57,12 +65,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPersonalCarbonInfoResponse());
     }
 
+    /**
+     * @summary 获取用户的减碳明细
+     *
+     * @param request GetPersonalCarbonInfoRequest
+     * @return GetPersonalCarbonInfoResponse
+     */
     public GetPersonalCarbonInfoResponse getPersonalCarbonInfo(GetPersonalCarbonInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
         return this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 写入阿里巴巴每日组织明细碳能量数据
+     *
+     * @param request WriteAlibabaOrgCarbonRequest
+     * @param headers WriteAlibabaOrgCarbonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteAlibabaOrgCarbonResponse
+     */
     public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbonWithOptions(WriteAlibabaOrgCarbonRequest request, WriteAlibabaOrgCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -97,12 +119,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteAlibabaOrgCarbonResponse());
     }
 
+    /**
+     * @summary 写入阿里巴巴每日组织明细碳能量数据
+     *
+     * @param request WriteAlibabaOrgCarbonRequest
+     * @return WriteAlibabaOrgCarbonResponse
+     */
     public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbon(WriteAlibabaOrgCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteAlibabaOrgCarbonHeaders headers = new WriteAlibabaOrgCarbonHeaders();
         return this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 写入阿里巴巴每日用户碳能量数据
+     *
+     * @param request WriteAlibabaUserCarbonRequest
+     * @param headers WriteAlibabaUserCarbonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteAlibabaUserCarbonResponse
+     */
     public WriteAlibabaUserCarbonResponse writeAlibabaUserCarbonWithOptions(WriteAlibabaUserCarbonRequest request, WriteAlibabaUserCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -137,12 +173,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteAlibabaUserCarbonResponse());
     }
 
+    /**
+     * @summary 写入阿里巴巴每日用户碳能量数据
+     *
+     * @param request WriteAlibabaUserCarbonRequest
+     * @return WriteAlibabaUserCarbonResponse
+     */
     public WriteAlibabaUserCarbonResponse writeAlibabaUserCarbon(WriteAlibabaUserCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteAlibabaUserCarbonHeaders headers = new WriteAlibabaUserCarbonHeaders();
         return this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary ISV记录数据传输当前状态
+     *
+     * @param request WriteIsvStateRequest
+     * @param headers WriteIsvStateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteIsvStateResponse
+     */
     public WriteIsvStateResponse writeIsvStateWithOptions(WriteIsvStateRequest request, WriteIsvStateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -181,12 +231,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteIsvStateResponse());
     }
 
+    /**
+     * @summary ISV记录数据传输当前状态
+     *
+     * @param request WriteIsvStateRequest
+     * @return WriteIsvStateResponse
+     */
     public WriteIsvStateResponse writeIsvState(WriteIsvStateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
         return this.writeIsvStateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 写入isv每日组织明细碳能量数据
+     *
+     * @param request WriteOrgCarbonRequest
+     * @param headers WriteOrgCarbonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteOrgCarbonResponse
+     */
     public WriteOrgCarbonResponse writeOrgCarbonWithOptions(WriteOrgCarbonRequest request, WriteOrgCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -221,12 +285,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteOrgCarbonResponse());
     }
 
+    /**
+     * @summary 写入isv每日组织明细碳能量数据
+     *
+     * @param request WriteOrgCarbonRequest
+     * @return WriteOrgCarbonResponse
+     */
     public WriteOrgCarbonResponse writeOrgCarbon(WriteOrgCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteOrgCarbonHeaders headers = new WriteOrgCarbonHeaders();
         return this.writeOrgCarbonWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 写入isv每日用户明细碳能量数据
+     *
+     * @param request WriteUserCarbonRequest
+     * @param headers WriteUserCarbonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteUserCarbonResponse
+     */
     public WriteUserCarbonResponse writeUserCarbonWithOptions(WriteUserCarbonRequest request, WriteUserCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -261,12 +339,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteUserCarbonResponse());
     }
 
+    /**
+     * @summary 写入isv每日用户明细碳能量数据
+     *
+     * @param request WriteUserCarbonRequest
+     * @return WriteUserCarbonResponse
+     */
     public WriteUserCarbonResponse writeUserCarbon(WriteUserCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteUserCarbonHeaders headers = new WriteUserCarbonHeaders();
         return this.writeUserCarbonWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 写入isv能耗每日用户明细碳能量数据
+     *
+     * @param request WriteUserCarbonEnergyRequest
+     * @param headers WriteUserCarbonEnergyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WriteUserCarbonEnergyResponse
+     */
     public WriteUserCarbonEnergyResponse writeUserCarbonEnergyWithOptions(WriteUserCarbonEnergyRequest request, WriteUserCarbonEnergyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -301,6 +393,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new WriteUserCarbonEnergyResponse());
     }
 
+    /**
+     * @summary 写入isv能耗每日用户明细碳能量数据
+     *
+     * @param request WriteUserCarbonEnergyRequest
+     * @return WriteUserCarbonEnergyResponse
+     */
     public WriteUserCarbonEnergyResponse writeUserCarbonEnergy(WriteUserCarbonEnergyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         WriteUserCarbonEnergyHeaders headers = new WriteUserCarbonEnergyHeaders();

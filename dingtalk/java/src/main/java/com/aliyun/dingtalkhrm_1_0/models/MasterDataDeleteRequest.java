@@ -4,9 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataDeleteRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<MasterDataDeleteRequestBody> body;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenantId")
     public Long tenantId;
 
@@ -62,6 +68,9 @@ public class MasterDataDeleteRequest extends TeaModel {
     }
 
     public static class MasterDataDeleteRequestBodyScope extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
@@ -92,9 +101,15 @@ public class MasterDataDeleteRequest extends TeaModel {
     }
 
     public static class MasterDataDeleteRequestBody extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizTime")
         public Long bizTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("bizUk")
         public String bizUk;
 
@@ -104,6 +119,9 @@ public class MasterDataDeleteRequest extends TeaModel {
         @NameInMap("fieldList")
         public java.util.List<MasterDataDeleteRequestBodyFieldList> fieldList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scope")
         public MasterDataDeleteRequestBodyScope scope;
 

@@ -4,12 +4,21 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class SubscribeEventRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scope")
     public String scope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeId")
     public String scopeId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

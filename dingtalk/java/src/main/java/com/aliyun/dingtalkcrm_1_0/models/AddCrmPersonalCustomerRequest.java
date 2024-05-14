@@ -10,9 +10,15 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("creatorNick")
     public String creatorNick;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.Map<String, ?> data;
 

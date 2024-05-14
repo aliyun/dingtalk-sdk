@@ -32,54 +32,105 @@ public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
     }
 
     public static class IndustrializeManufactureQueryJobsResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("instNo")
         public String instNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("isBatchJob")
         public String isBatchJob;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("manufactureDate")
         public String manufactureDate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("manufactureDay")
         public String manufactureDay;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mesAppKey")
         public String mesAppKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processName")
         public String processName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("qualifiedQuantity")
         public String qualifiedQuantity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scrappedQuantity")
         public String scrappedQuantity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unitPrice")
         public String unitPrice;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userIdList")
         public String userIdList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userNameList")
         public String userNameList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

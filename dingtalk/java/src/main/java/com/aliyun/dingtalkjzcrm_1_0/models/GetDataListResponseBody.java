@@ -4,21 +4,39 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<GetDataListResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dataname")
     public java.util.Map<String, String> dataname;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("page")
     public Long page;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("time")
     public String time;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -76,6 +94,9 @@ public class GetDataListResponseBody extends TeaModel {
     }
 
     public static class GetDataListResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 

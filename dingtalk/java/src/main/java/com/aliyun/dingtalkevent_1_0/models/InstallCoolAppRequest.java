@@ -4,27 +4,45 @@ package com.aliyun.dingtalkevent_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallCoolAppRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("feature")
     public java.util.Map<String, ?> feature;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("installUid")
     public String installUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     @NameInMap("options")
     public java.util.Map<String, ?> options;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("suiteId")
     public String suiteId;
 

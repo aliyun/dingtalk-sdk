@@ -4,12 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("itemCount")
     public Integer itemCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("items")
     public java.util.List<SearchOrgInnerGroupInfoResponseBodyItems> items;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,45 +52,87 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
     }
 
     public static class SearchOrgInnerGroupInfoResponseBodyItems extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupAdminsCount")
         public Integer groupAdminsCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupCreateTime")
         public Long groupCreateTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupLastActiveTime")
         public Long groupLastActiveTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupLastActiveTimeShow")
         public String groupLastActiveTimeShow;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupMembersCount")
         public Integer groupMembersCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupOwner")
         public String groupOwner;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupOwnerUserId")
         public String groupOwnerUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("syncToDingpan")
         public Integer syncToDingpan;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateName")
         public String templateName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

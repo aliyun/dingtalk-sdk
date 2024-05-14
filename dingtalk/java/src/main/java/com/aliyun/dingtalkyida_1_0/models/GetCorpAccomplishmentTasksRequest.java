@@ -28,6 +28,9 @@ public class GetCorpAccomplishmentTasksRequest extends TeaModel {
     @NameInMap("processCodes")
     public String processCodes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("token")
     public String token;
 

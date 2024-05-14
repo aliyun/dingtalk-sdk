@@ -13,12 +13,18 @@ public class SaveAcrossCloudStroageConfigsRequest extends TeaModel {
     @NameInMap("bucketName")
     public String bucketName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cloudType")
     public Integer cloudType;
 
     @NameInMap("endpoint")
     public String endpoint;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

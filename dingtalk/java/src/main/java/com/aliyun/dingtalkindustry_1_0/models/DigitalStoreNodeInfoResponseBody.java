@@ -7,15 +7,27 @@ public class DigitalStoreNodeInfoResponseBody extends TeaModel {
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public Long id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentId")
     public Long parentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public Long type;
 

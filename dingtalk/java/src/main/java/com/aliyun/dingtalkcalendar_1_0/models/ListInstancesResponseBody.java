@@ -412,6 +412,9 @@ public class ListInstancesResponseBody extends TeaModel {
     }
 
     public static class ListInstancesResponseBodyEventsRecurrenceRange extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
@@ -557,6 +560,9 @@ public class ListInstancesResponseBody extends TeaModel {
         @NameInMap("attendees")
         public java.util.List<ListInstancesResponseBodyEventsAttendees> attendees;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
@@ -605,6 +611,9 @@ public class ListInstancesResponseBody extends TeaModel {
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("updateTime")
         public String updateTime;
 

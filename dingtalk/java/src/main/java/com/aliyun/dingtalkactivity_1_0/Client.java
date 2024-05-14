@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建活动
+     *
+     * @param request CreateActivityRequest
+     * @param headers CreateActivityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateActivityResponse
+     */
     public CreateActivityResponse createActivityWithOptions(CreateActivityRequest request, CreateActivityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateActivityResponse());
     }
 
+    /**
+     * @summary 创建活动
+     *
+     * @param request CreateActivityRequest
+     * @return CreateActivityResponse
+     */
     public CreateActivityResponse createActivity(CreateActivityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateActivityHeaders headers = new CreateActivityHeaders();
         return this.createActivityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询活动列表
+     *
+     * @param request ListActivityRequest
+     * @param headers ListActivityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListActivityResponse
+     */
     public ListActivityResponse listActivityWithOptions(ListActivityRequest request, ListActivityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -97,6 +119,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ListActivityResponse());
     }
 
+    /**
+     * @summary 查询活动列表
+     *
+     * @param request ListActivityRequest
+     * @return ListActivityResponse
+     */
     public ListActivityResponse listActivity(ListActivityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListActivityHeaders headers = new ListActivityHeaders();

@@ -4,18 +4,30 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EmployeeAttachmentUpdateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appAgentId")
     public Long appAgentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fieldCode")
     public String fieldCode;
 
     @NameInMap("fileSuffix")
     public String fileSuffix;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

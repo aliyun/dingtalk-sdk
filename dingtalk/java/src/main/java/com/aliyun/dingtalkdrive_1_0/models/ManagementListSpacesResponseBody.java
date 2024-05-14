@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementListSpacesResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaces")
     public java.util.List<ManagementListSpacesResponseBodySpaces> spaces;
 
@@ -21,9 +24,15 @@ public class ManagementListSpacesResponseBody extends TeaModel {
     }
 
     public static class ManagementListSpacesResponseBodySpaces extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
@@ -33,15 +42,24 @@ public class ManagementListSpacesResponseBody extends TeaModel {
         @NameInMap("quota")
         public Long quota;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
         @NameInMap("spaceName")
         public String spaceName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

@@ -37,6 +37,9 @@ public class ECertQueryResponseBody extends TeaModel {
     @NameInMap("mainDeptName")
     public String mainDeptName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddPermissionResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public BatchAddPermissionResponseBodyData data;
 
@@ -32,12 +35,18 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
         @NameInMap("nickname")
         public String nickname;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,12 +82,21 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyDataPermissionTreePolicyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberList")
         public java.util.List<BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList> memberList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Long type;
 
@@ -114,15 +132,27 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyDataPermissionTree extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("policyList")
         public java.util.List<BatchAddPermissionResponseBodyDataPermissionTreePolicyList> policyList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("privacy")
         public String privacy;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -166,9 +196,15 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasInvalidUser")
         public Boolean hasInvalidUser;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("permissionTree")
         public BatchAddPermissionResponseBodyDataPermissionTree permissionTree;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CategoryStatisticsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("categoryStatisticsRecords")
     public java.util.List<CategoryStatisticsResponseBodyCategoryStatisticsRecords> categoryStatisticsRecords;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("categoryTrend")
     public java.util.List<CategoryStatisticsResponseBodyCategoryTrend> categoryTrend;
 
@@ -32,12 +38,21 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lastCount")
         public Long lastCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -73,12 +88,21 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryTrend extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("count")
         public Long count;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dt")
         public String dt;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

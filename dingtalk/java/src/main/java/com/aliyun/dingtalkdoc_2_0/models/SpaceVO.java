@@ -13,9 +13,15 @@ public class SpaceVO extends TeaModel {
     @NameInMap("iconVO")
     public SpaceVOIconVO iconVO;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -109,9 +115,15 @@ public class SpaceVO extends TeaModel {
     }
 
     public static class SpaceVOIconVO extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -139,9 +151,15 @@ public class SpaceVO extends TeaModel {
     }
 
     public static class SpaceVOOwner extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

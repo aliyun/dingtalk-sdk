@@ -7,15 +7,27 @@ public class CreateWorkspaceDocResponseBody extends TeaModel {
     @NameInMap("dentryUuid")
     public String dentryUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("docKey")
     public String docKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nodeId")
     public String nodeId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("url")
     public String url;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("workspaceId")
     public String workspaceId;
 

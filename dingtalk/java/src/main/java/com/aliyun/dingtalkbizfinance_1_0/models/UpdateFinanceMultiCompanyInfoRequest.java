@@ -4,9 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateFinanceMultiCompanyInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("companyName")
     public String companyName;
 

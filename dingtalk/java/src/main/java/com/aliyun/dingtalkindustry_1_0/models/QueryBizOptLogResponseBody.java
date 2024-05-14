@@ -7,6 +7,9 @@ public class QueryBizOptLogResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryBizOptLogResponseBodyContent> content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

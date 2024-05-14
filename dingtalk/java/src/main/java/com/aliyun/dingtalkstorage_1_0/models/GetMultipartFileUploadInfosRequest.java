@@ -7,12 +7,21 @@ public class GetMultipartFileUploadInfosRequest extends TeaModel {
     @NameInMap("option")
     public GetMultipartFileUploadInfosRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("partNumbers")
     public java.util.List<Integer> partNumbers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uploadKey")
     public String uploadKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

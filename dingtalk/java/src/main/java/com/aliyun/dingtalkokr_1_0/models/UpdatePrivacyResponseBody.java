@@ -4,6 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePrivacyResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public UpdatePrivacyResponseBodyData data;
 
@@ -32,12 +35,18 @@ public class UpdatePrivacyResponseBody extends TeaModel {
     }
 
     public static class UpdatePrivacyResponseBodyDataPolicyListMemberList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
         @NameInMap("nickname")
         public String nickname;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,12 +82,21 @@ public class UpdatePrivacyResponseBody extends TeaModel {
     }
 
     public static class UpdatePrivacyResponseBodyDataPolicyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberList")
         public java.util.List<UpdatePrivacyResponseBodyDataPolicyListMemberList> memberList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public Long type;
 
@@ -114,15 +132,27 @@ public class UpdatePrivacyResponseBody extends TeaModel {
     }
 
     public static class UpdatePrivacyResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("policyList")
         public java.util.List<UpdatePrivacyResponseBodyDataPolicyList> policyList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("privacy")
         public String privacy;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 

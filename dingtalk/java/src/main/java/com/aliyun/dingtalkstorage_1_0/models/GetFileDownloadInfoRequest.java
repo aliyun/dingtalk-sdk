@@ -7,6 +7,9 @@ public class GetFileDownloadInfoRequest extends TeaModel {
     @NameInMap("option")
     public GetFileDownloadInfoRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

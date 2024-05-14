@@ -28,6 +28,9 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("verticalAlignments")
     public java.util.List<java.util.List<String>> verticalAlignments;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

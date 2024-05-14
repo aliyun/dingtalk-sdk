@@ -7,6 +7,9 @@ public class GetCandidateByPhoneNumberRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("phoneNumber")
     public String phoneNumber;
 

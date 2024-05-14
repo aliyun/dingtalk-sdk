@@ -7,12 +7,18 @@ public class EditCustomerPoolRequest extends TeaModel {
     @NameInMap("data")
     public EditCustomerPoolRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -54,6 +60,9 @@ public class EditCustomerPoolRequest extends TeaModel {
     }
 
     public static class EditCustomerPoolRequestData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -72,6 +81,9 @@ public class EditCustomerPoolRequest extends TeaModel {
         @NameInMap("kh_city")
         public String khCity;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("kh_class")
         public String khClass;
 
@@ -141,6 +153,9 @@ public class EditCustomerPoolRequest extends TeaModel {
         @NameInMap("kh_jibie")
         public String khJibie;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("kh_name")
         public String khName;
 

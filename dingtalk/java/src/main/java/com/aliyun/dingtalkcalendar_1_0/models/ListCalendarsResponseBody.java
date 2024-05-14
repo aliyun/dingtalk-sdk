@@ -24,21 +24,36 @@ public class ListCalendarsResponseBody extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("eTag")
         public String eTag;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("privilege")
         public String privilege;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("summary")
         public String summary;
 
         @NameInMap("timeZone")
         public String timeZone;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -106,6 +121,9 @@ public class ListCalendarsResponseBody extends TeaModel {
     }
 
     public static class ListCalendarsResponseBodyResponse extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("calendars")
         public java.util.List<ListCalendarsResponseBodyResponseCalendars> calendars;
 

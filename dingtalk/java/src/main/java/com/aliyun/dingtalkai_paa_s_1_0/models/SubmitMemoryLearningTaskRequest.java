@@ -4,15 +4,27 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class SubmitMemoryLearningTaskRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentCode")
     public String agentCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public SubmitMemoryLearningTaskRequestContent content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("learningMode")
     public String learningMode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("memoryKey")
     public String memoryKey;
 

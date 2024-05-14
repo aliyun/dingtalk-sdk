@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 群酷应用排序
+     *
+     * @param request InstallCoolAppOrderToGroupRequest
+     * @param headers InstallCoolAppOrderToGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InstallCoolAppOrderToGroupResponse
+     */
     public InstallCoolAppOrderToGroupResponse installCoolAppOrderToGroupWithOptions(InstallCoolAppOrderToGroupRequest request, InstallCoolAppOrderToGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -65,12 +73,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InstallCoolAppOrderToGroupResponse());
     }
 
+    /**
+     * @summary 群酷应用排序
+     *
+     * @param request InstallCoolAppOrderToGroupRequest
+     * @return InstallCoolAppOrderToGroupResponse
+     */
     public InstallCoolAppOrderToGroupResponse installCoolAppOrderToGroup(InstallCoolAppOrderToGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InstallCoolAppOrderToGroupHeaders headers = new InstallCoolAppOrderToGroupHeaders();
         return this.installCoolAppOrderToGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 安装酷应用到群
+     *
+     * @param request InstallCoolAppToGroupRequest
+     * @param headers InstallCoolAppToGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InstallCoolAppToGroupResponse
+     */
     public InstallCoolAppToGroupResponse installCoolAppToGroupWithOptions(InstallCoolAppToGroupRequest request, InstallCoolAppToGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -117,12 +139,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new InstallCoolAppToGroupResponse());
     }
 
+    /**
+     * @summary 安装酷应用到群
+     *
+     * @param request InstallCoolAppToGroupRequest
+     * @return InstallCoolAppToGroupResponse
+     */
     public InstallCoolAppToGroupResponse installCoolAppToGroup(InstallCoolAppToGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InstallCoolAppToGroupHeaders headers = new InstallCoolAppToGroupHeaders();
         return this.installCoolAppToGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询群插件栏
+     *
+     * @param request QueryCoolAppShortcutOrderRequest
+     * @param headers QueryCoolAppShortcutOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCoolAppShortcutOrderResponse
+     */
     public QueryCoolAppShortcutOrderResponse queryCoolAppShortcutOrderWithOptions(QueryCoolAppShortcutOrderRequest request, QueryCoolAppShortcutOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -165,12 +201,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCoolAppShortcutOrderResponse());
     }
 
+    /**
+     * @summary 查询群插件栏
+     *
+     * @param request QueryCoolAppShortcutOrderRequest
+     * @return QueryCoolAppShortcutOrderResponse
+     */
     public QueryCoolAppShortcutOrderResponse queryCoolAppShortcutOrder(QueryCoolAppShortcutOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCoolAppShortcutOrderHeaders headers = new QueryCoolAppShortcutOrderHeaders();
         return this.queryCoolAppShortcutOrderWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 从群内卸载酷应用
+     *
+     * @param request UninstallCoolAppFromGroupRequest
+     * @param headers UninstallCoolAppFromGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UninstallCoolAppFromGroupResponse
+     */
     public UninstallCoolAppFromGroupResponse uninstallCoolAppFromGroupWithOptions(UninstallCoolAppFromGroupRequest request, UninstallCoolAppFromGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -217,6 +267,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UninstallCoolAppFromGroupResponse());
     }
 
+    /**
+     * @summary 从群内卸载酷应用
+     *
+     * @param request UninstallCoolAppFromGroupRequest
+     * @return UninstallCoolAppFromGroupResponse
+     */
     public UninstallCoolAppFromGroupResponse uninstallCoolAppFromGroup(UninstallCoolAppFromGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UninstallCoolAppFromGroupHeaders headers = new UninstallCoolAppFromGroupHeaders();

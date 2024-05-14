@@ -21,9 +21,15 @@ public class GenerateDarkWaterMarkResponseBody extends TeaModel {
     }
 
     public static class GenerateDarkWaterMarkResponseBodyDarkWatermarkVOList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("darkWatermark")
         public String darkWatermark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -13,9 +13,15 @@ public class CreateGroupSetResponseBody extends TeaModel {
     @NameInMap("inviteLink")
     public String inviteLink;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("lastOpenConversationId")
     public String lastOpenConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("manager")
     public java.util.List<CreateGroupSetResponseBodyManager> manager;
 
@@ -40,6 +46,9 @@ public class CreateGroupSetResponseBody extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("owner")
     public CreateGroupSetResponseBodyOwner owner;
 

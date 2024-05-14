@@ -7,9 +7,15 @@ public class CreateRangeProtectionRequest extends TeaModel {
     @NameInMap("editableSetting")
     public CreateRangeProtectionRequestEditableSetting editableSetting;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("otherUserPermission")
     public String otherUserPermission;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

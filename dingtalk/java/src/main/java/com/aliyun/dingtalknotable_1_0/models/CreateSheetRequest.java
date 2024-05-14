@@ -10,6 +10,9 @@ public class CreateSheetRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -43,12 +46,18 @@ public class CreateSheetRequest extends TeaModel {
     }
 
     public static class CreateSheetRequestFields extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("property")
         public java.util.Map<String, ?> property;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 

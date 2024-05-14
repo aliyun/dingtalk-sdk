@@ -4,9 +4,15 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransferUserObjectiveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetUserId")
     public String targetUserId;
 

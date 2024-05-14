@@ -7,6 +7,9 @@ public class ManagerSetDefaultHandOverUserRequest extends TeaModel {
     @NameInMap("defaultHandoverUserId")
     public String defaultHandoverUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

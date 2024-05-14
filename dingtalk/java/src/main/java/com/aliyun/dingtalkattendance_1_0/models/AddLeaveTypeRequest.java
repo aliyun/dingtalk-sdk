@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLeaveTypeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
@@ -13,6 +16,9 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("freedomLeave")
     public Boolean freedomLeave;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hoursInPerDay")
     public Long hoursInPerDay;
 
@@ -22,6 +28,9 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("leaveHourCeil")
     public String leaveHourCeil;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leaveName")
     public String leaveName;
 
@@ -31,6 +40,9 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("leaveTimeCeilMinUnit")
     public String leaveTimeCeilMinUnit;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("leaveViewUnit")
     public String leaveViewUnit;
 
@@ -40,6 +52,9 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("minLeaveHour")
     public Double minLeaveHour;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("naturalDayLeave")
     public Boolean naturalDayLeave;
 
@@ -55,6 +70,9 @@ public class AddLeaveTypeRequest extends TeaModel {
     @NameInMap("whenCanLeave")
     public String whenCanLeave;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

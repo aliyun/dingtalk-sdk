@@ -10,6 +10,9 @@ public class QueryGroupMemberRequest extends TeaModel {
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

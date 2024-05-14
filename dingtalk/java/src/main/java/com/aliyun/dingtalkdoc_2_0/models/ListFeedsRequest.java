@@ -7,12 +7,18 @@ public class ListFeedsRequest extends TeaModel {
     @NameInMap("excludeFile")
     public Boolean excludeFile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -10,9 +10,15 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     @NameInMap("callbackType")
     public String callbackType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public CreateCardWithDelegateRequestCardData cardData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
@@ -31,6 +37,9 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     @NameInMap("openDynamicDataConfig")
     public CreateCardWithDelegateRequestOpenDynamicDataConfig openDynamicDataConfig;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

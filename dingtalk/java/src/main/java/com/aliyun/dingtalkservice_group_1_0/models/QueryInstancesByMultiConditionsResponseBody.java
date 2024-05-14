@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInstancesByMultiConditionsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
@@ -13,6 +16,9 @@ public class QueryInstancesByMultiConditionsResponseBody extends TeaModel {
     @NameInMap("records")
     public java.util.List<QueryInstancesByMultiConditionsResponseBodyRecords> records;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -60,21 +66,36 @@ public class QueryInstancesByMultiConditionsResponseBody extends TeaModel {
         @NameInMap("fields")
         public String fields;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         @NameInMap("modifiedUnionId")
         public String modifiedUnionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openDataInstanceId")
         public String openDataInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openTeamId")
         public String openTeamId;
 

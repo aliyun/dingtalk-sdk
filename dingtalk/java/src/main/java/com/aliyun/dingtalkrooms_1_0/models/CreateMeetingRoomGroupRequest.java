@@ -7,9 +7,15 @@ public class CreateMeetingRoomGroupRequest extends TeaModel {
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentGroupId")
     public Long parentGroupId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

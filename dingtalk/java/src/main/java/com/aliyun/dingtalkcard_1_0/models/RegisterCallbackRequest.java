@@ -7,9 +7,15 @@ public class RegisterCallbackRequest extends TeaModel {
     @NameInMap("apiSecret")
     public String apiSecret;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 

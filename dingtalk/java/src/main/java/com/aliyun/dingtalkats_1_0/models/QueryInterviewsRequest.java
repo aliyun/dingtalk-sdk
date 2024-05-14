@@ -7,12 +7,21 @@ public class QueryInterviewsRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("candidateId")
     public String candidateId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTimeBeginMillis")
     public Long startTimeBeginMillis;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTimeEndMillis")
     public Long startTimeEndMillis;
 

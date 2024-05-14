@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 获取差旅审批实例详情
+     *
+     * @param request GetTravelProcessDetailRequest
+     * @param headers GetTravelProcessDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTravelProcessDetailResponse
+     */
     public GetTravelProcessDetailResponse getTravelProcessDetailWithOptions(GetTravelProcessDetailRequest request, GetTravelProcessDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -57,12 +65,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetTravelProcessDetailResponse());
     }
 
+    /**
+     * @summary 获取差旅审批实例详情
+     *
+     * @param request GetTravelProcessDetailRequest
+     * @return GetTravelProcessDetailResponse
+     */
     public GetTravelProcessDetailResponse getTravelProcessDetail(GetTravelProcessDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetTravelProcessDetailHeaders headers = new GetTravelProcessDetailHeaders();
         return this.getTravelProcessDetailWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 表单升级预校验
+     *
+     * @param request PreCheckTemplateRequest
+     * @param headers PreCheckTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PreCheckTemplateResponse
+     */
     public PreCheckTemplateResponse preCheckTemplateWithOptions(PreCheckTemplateRequest request, PreCheckTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -97,12 +119,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new PreCheckTemplateResponse());
     }
 
+    /**
+     * @summary 表单升级预校验
+     *
+     * @param request PreCheckTemplateRequest
+     * @return PreCheckTemplateResponse
+     */
     public PreCheckTemplateResponse preCheckTemplate(PreCheckTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PreCheckTemplateHeaders headers = new PreCheckTemplateHeaders();
         return this.preCheckTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询审批套件详情
+     *
+     * @param request QueryTripProcessTemplatesRequest
+     * @param headers QueryTripProcessTemplatesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTripProcessTemplatesResponse
+     */
     public QueryTripProcessTemplatesResponse queryTripProcessTemplatesWithOptions(QueryTripProcessTemplatesRequest request, QueryTripProcessTemplatesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -137,12 +173,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryTripProcessTemplatesResponse());
     }
 
+    /**
+     * @summary 查询审批套件详情
+     *
+     * @param request QueryTripProcessTemplatesRequest
+     * @return QueryTripProcessTemplatesResponse
+     */
     public QueryTripProcessTemplatesResponse queryTripProcessTemplates(QueryTripProcessTemplatesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryTripProcessTemplatesHeaders headers = new QueryTripProcessTemplatesHeaders();
         return this.queryTripProcessTemplatesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 同步服务商企业签约变更事件
+     *
+     * @param request SyncBusinessSignInfoRequest
+     * @param headers SyncBusinessSignInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncBusinessSignInfoResponse
+     */
     public SyncBusinessSignInfoResponse syncBusinessSignInfoWithOptions(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -205,12 +255,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncBusinessSignInfoResponse());
     }
 
+    /**
+     * @summary 同步服务商企业签约变更事件
+     *
+     * @param request SyncBusinessSignInfoRequest
+     * @return SyncBusinessSignInfoResponse
+     */
     public SyncBusinessSignInfoResponse syncBusinessSignInfo(SyncBusinessSignInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
         return this.syncBusinessSignInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单成本中心同步
+     *
+     * @param request SyncCostCenterRequest
+     * @param headers SyncCostCenterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncCostCenterResponse
+     */
     public SyncCostCenterResponse syncCostCenterWithOptions(SyncCostCenterRequest request, SyncCostCenterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -285,12 +349,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncCostCenterResponse());
     }
 
+    /**
+     * @summary 出差表单成本中心同步
+     *
+     * @param request SyncCostCenterRequest
+     * @return SyncCostCenterResponse
+     */
     public SyncCostCenterResponse syncCostCenter(SyncCostCenterRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncCostCenterHeaders headers = new SyncCostCenterHeaders();
         return this.syncCostCenterWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单成本中心可用范围
+     *
+     * @param request SyncCostCenterEntityRequest
+     * @param headers SyncCostCenterEntityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncCostCenterEntityResponse
+     */
     public SyncCostCenterEntityResponse syncCostCenterEntityWithOptions(SyncCostCenterEntityRequest request, SyncCostCenterEntityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -341,12 +419,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncCostCenterEntityResponse());
     }
 
+    /**
+     * @summary 出差表单成本中心可用范围
+     *
+     * @param request SyncCostCenterEntityRequest
+     * @return SyncCostCenterEntityResponse
+     */
     public SyncCostCenterEntityResponse syncCostCenterEntity(SyncCostCenterEntityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncCostCenterEntityHeaders headers = new SyncCostCenterEntityHeaders();
         return this.syncCostCenterEntityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单发票抬头
+     *
+     * @param request SyncInvoiceRequest
+     * @param headers SyncInvoiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncInvoiceResponse
+     */
     public SyncInvoiceResponse syncInvoiceWithOptions(SyncInvoiceRequest request, SyncInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -445,12 +537,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncInvoiceResponse());
     }
 
+    /**
+     * @summary 出差表单发票抬头
+     *
+     * @param request SyncInvoiceRequest
+     * @return SyncInvoiceResponse
+     */
     public SyncInvoiceResponse syncInvoice(SyncInvoiceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncInvoiceHeaders headers = new SyncInvoiceHeaders();
         return this.syncInvoiceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单发票抬头可用范围
+     *
+     * @param request SyncInvoiceEntityRequest
+     * @param headers SyncInvoiceEntityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncInvoiceEntityResponse
+     */
     public SyncInvoiceEntityResponse syncInvoiceEntityWithOptions(SyncInvoiceEntityRequest request, SyncInvoiceEntityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -501,12 +607,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncInvoiceEntityResponse());
     }
 
+    /**
+     * @summary 出差表单发票抬头可用范围
+     *
+     * @param request SyncInvoiceEntityRequest
+     * @return SyncInvoiceEntityResponse
+     */
     public SyncInvoiceEntityResponse syncInvoiceEntity(SyncInvoiceEntityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncInvoiceEntityHeaders headers = new SyncInvoiceEntityHeaders();
         return this.syncInvoiceEntityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单项目
+     *
+     * @param request SyncProjectRequest
+     * @param headers SyncProjectHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncProjectResponse
+     */
     public SyncProjectResponse syncProjectWithOptions(SyncProjectRequest request, SyncProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -593,12 +713,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncProjectResponse());
     }
 
+    /**
+     * @summary 出差表单项目
+     *
+     * @param request SyncProjectRequest
+     * @return SyncProjectResponse
+     */
     public SyncProjectResponse syncProject(SyncProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncProjectHeaders headers = new SyncProjectHeaders();
         return this.syncProjectWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 出差表单项目可用范围
+     *
+     * @param request SyncProjectEntityRequest
+     * @param headers SyncProjectEntityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncProjectEntityResponse
+     */
     public SyncProjectEntityResponse syncProjectEntityWithOptions(SyncProjectEntityRequest request, SyncProjectEntityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -649,12 +783,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncProjectEntityResponse());
     }
 
+    /**
+     * @summary 出差表单项目可用范围
+     *
+     * @param request SyncProjectEntityRequest
+     * @return SyncProjectEntityResponse
+     */
     public SyncProjectEntityResponse syncProjectEntity(SyncProjectEntityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncProjectEntityHeaders headers = new SyncProjectEntityHeaders();
         return this.syncProjectEntityWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 调用本接口同步公司密钥信息。
+     *
+     * @param request SyncSecretKeyRequest
+     * @param headers SyncSecretKeyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncSecretKeyResponse
+     */
     public SyncSecretKeyResponse syncSecretKeyWithOptions(SyncSecretKeyRequest request, SyncSecretKeyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -709,12 +857,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncSecretKeyResponse());
     }
 
+    /**
+     * @summary 调用本接口同步公司密钥信息。
+     *
+     * @param request SyncSecretKeyRequest
+     * @return SyncSecretKeyResponse
+     */
     public SyncSecretKeyResponse syncSecretKey(SyncSecretKeyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
         return this.syncSecretKeyWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 同步出行订单变更事件
+     *
+     * @param request SyncTripOrderRequest
+     * @param headers SyncTripOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncTripOrderResponse
+     */
     public SyncTripOrderResponse syncTripOrderWithOptions(SyncTripOrderRequest request, SyncTripOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -849,12 +1011,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncTripOrderResponse());
     }
 
+    /**
+     * @summary 同步出行订单变更事件
+     *
+     * @param request SyncTripOrderRequest
+     * @return SyncTripOrderResponse
+     */
     public SyncTripOrderResponse syncTripOrder(SyncTripOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
         return this.syncTripOrderWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 预订管理产品线配置同步
+     *
+     * @param request SyncTripProductConfigRequest
+     * @param headers SyncTripProductConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncTripProductConfigResponse
+     */
     public SyncTripProductConfigResponse syncTripProductConfigWithOptions(SyncTripProductConfigRequest request, SyncTripProductConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -893,12 +1069,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncTripProductConfigResponse());
     }
 
+    /**
+     * @summary 预订管理产品线配置同步
+     *
+     * @param request SyncTripProductConfigRequest
+     * @return SyncTripProductConfigResponse
+     */
     public SyncTripProductConfigResponse syncTripProductConfig(SyncTripProductConfigRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTripProductConfigHeaders headers = new SyncTripProductConfigHeaders();
         return this.syncTripProductConfigWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能差旅平台数据互通统一入口
+     *
+     * @param request TripPlatformUnifiedEntryRequest
+     * @param headers TripPlatformUnifiedEntryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TripPlatformUnifiedEntryResponse
+     */
     public TripPlatformUnifiedEntryResponse tripPlatformUnifiedEntryWithOptions(TripPlatformUnifiedEntryRequest request, TripPlatformUnifiedEntryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -937,12 +1127,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new TripPlatformUnifiedEntryResponse());
     }
 
+    /**
+     * @summary 智能差旅平台数据互通统一入口
+     *
+     * @param request TripPlatformUnifiedEntryRequest
+     * @return TripPlatformUnifiedEntryResponse
+     */
     public TripPlatformUnifiedEntryResponse tripPlatformUnifiedEntry(TripPlatformUnifiedEntryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TripPlatformUnifiedEntryHeaders headers = new TripPlatformUnifiedEntryHeaders();
         return this.tripPlatformUnifiedEntryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 升级套件
+     *
+     * @param request UpgradeTemplateRequest
+     * @param headers UpgradeTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpgradeTemplateResponse
+     */
     public UpgradeTemplateResponse upgradeTemplateWithOptions(UpgradeTemplateRequest request, UpgradeTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -985,6 +1189,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpgradeTemplateResponse());
     }
 
+    /**
+     * @summary 升级套件
+     *
+     * @param request UpgradeTemplateRequest
+     * @return UpgradeTemplateResponse
+     */
     public UpgradeTemplateResponse upgradeTemplate(UpgradeTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpgradeTemplateHeaders headers = new UpgradeTemplateHeaders();

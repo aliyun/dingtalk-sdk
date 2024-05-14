@@ -7,18 +7,30 @@ public class PagesExportInstancesRequest extends TeaModel {
     @NameInMap("endTimeInMills")
     public Long endTimeInMills;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     @NameInMap("orderBy")
     public String orderBy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTimeInMills")
     public Long startTimeInMills;
 

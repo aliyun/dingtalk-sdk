@@ -7,12 +7,18 @@ public class DigitalStoreRightsInfoResponseBody extends TeaModel {
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
     @NameInMap("rightsCode")
     public String rightsCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rightsName")
     public String rightsName;
 

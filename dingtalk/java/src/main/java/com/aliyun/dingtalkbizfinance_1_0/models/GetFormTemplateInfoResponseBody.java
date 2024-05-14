@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormTemplateInfoResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiptFormTemplateInfoList")
     public java.util.List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList> receiptFormTemplateInfoList;
 

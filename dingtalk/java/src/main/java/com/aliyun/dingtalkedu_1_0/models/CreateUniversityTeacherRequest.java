@@ -4,15 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityTeacherRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("classId")
     public Long classId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("role")
     public String role;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherUserId")
     public String teacherUserId;
 

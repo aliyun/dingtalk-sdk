@@ -4,12 +4,21 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRecentUserAppListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("usedAppDetailList")
     public java.util.List<AddRecentUserAppListRequestUsedAppDetailList> usedAppDetailList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -43,6 +52,9 @@ public class AddRecentUserAppListRequest extends TeaModel {
     }
 
     public static class AddRecentUserAppListRequestUsedAppDetailList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("agentId")
         public String agentId;
 

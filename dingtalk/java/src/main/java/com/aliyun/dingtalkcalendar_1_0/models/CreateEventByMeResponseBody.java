@@ -7,6 +7,9 @@ public class CreateEventByMeResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<CreateEventByMeResponseBodyAttendees> attendees;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
@@ -40,6 +43,9 @@ public class CreateEventByMeResponseBody extends TeaModel {
     @NameInMap("richTextDescription")
     public CreateEventByMeResponseBodyRichTextDescription richTextDescription;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("start")
     public CreateEventByMeResponseBodyStart start;
 
@@ -49,6 +55,9 @@ public class CreateEventByMeResponseBody extends TeaModel {
     @NameInMap("uiConfigs")
     public java.util.List<CreateEventByMeResponseBodyUiConfigs> uiConfigs;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -487,6 +496,9 @@ public class CreateEventByMeResponseBody extends TeaModel {
     }
 
     public static class CreateEventByMeResponseBodyRecurrenceRange extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 

@@ -7,9 +7,15 @@ public class AddGroupMemberRequest extends TeaModel {
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

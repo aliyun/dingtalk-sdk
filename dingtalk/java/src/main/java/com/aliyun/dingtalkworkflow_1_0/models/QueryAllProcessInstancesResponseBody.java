@@ -24,12 +24,21 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -211,9 +220,15 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
         @NameInMap("result")
         public String result;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
@@ -284,45 +299,81 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResultList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("attachedProcessInstanceIds")
         public String attachedProcessInstanceIds;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("finishTime")
         public Long finishTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("formComponentValues")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListFormComponentValues> formComponentValues;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
         @NameInMap("operationRecords")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListOperationRecords> operationRecords;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("originatorUserid")
         public String originatorUserid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("result")
         public String result;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 
         @NameInMap("tasks")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultListTasks> tasks;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -446,15 +497,24 @@ public class QueryAllProcessInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllProcessInstancesResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<QueryAllProcessInstancesResponseBodyResultList> list;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

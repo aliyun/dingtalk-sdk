@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCustomSpaceResponseBody extends TeaModel {
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
+    /**
+     * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+     */
     @NameInMap("modifyTime")
     public String modifyTime;
 
@@ -16,15 +22,24 @@ public class AddCustomSpaceResponseBody extends TeaModel {
     @NameInMap("quota")
     public Long quota;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
     @NameInMap("spaceName")
     public String spaceName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("spaceType")
     public String spaceType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("usedQuota")
     public Long usedQuota;
 

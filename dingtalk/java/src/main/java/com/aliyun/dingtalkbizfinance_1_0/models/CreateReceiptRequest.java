@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateReceiptRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receipts")
     public java.util.List<CreateReceiptRequestReceipts> receipts;
 
@@ -21,18 +24,30 @@ public class CreateReceiptRequest extends TeaModel {
     }
 
     public static class CreateReceiptRequestReceipts extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("createUserId")
         public String createUserId;
 
@@ -51,6 +66,9 @@ public class CreateReceiptRequest extends TeaModel {
         @NameInMap("projectCode")
         public String projectCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("receiptType")
         public Long receiptType;
 

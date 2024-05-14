@@ -10,9 +10,15 @@ public class GetRealPeopleRecordsRequest extends TeaModel {
     @NameInMap("fromTime")
     public Long fromTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

@@ -120,15 +120,27 @@ public class GetConferenceDetailResponseBody extends TeaModel {
     }
 
     public static class GetConferenceDetailResponseBodyMemberList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("attendDuration")
         public Float attendDuration;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

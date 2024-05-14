@@ -21,6 +21,9 @@ public class SupplyAddDeptResponseBody extends TeaModel {
     }
 
     public static class SupplyAddDeptResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 

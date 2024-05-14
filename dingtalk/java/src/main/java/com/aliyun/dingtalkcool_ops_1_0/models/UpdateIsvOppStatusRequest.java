@@ -24,9 +24,15 @@ public class UpdateIsvOppStatusRequest extends TeaModel {
         @NameInMap("isvCorpId")
         public String isvCorpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("microAppId")
         public String microAppId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -36,21 +42,39 @@ public class UpdateIsvOppStatusRequest extends TeaModel {
         @NameInMap("operCorpId")
         public String operCorpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("operName")
         public String operName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("operTime")
         public String operTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("operUserId")
         public String operUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("oppSourceCorpId")
         public String oppSourceCorpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("opportunityStatus")
         public String opportunityStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -65,6 +65,9 @@ public class GetShanhuiByCalendarResponseBody extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("flashmeetingKey")
         public String flashmeetingKey;
 

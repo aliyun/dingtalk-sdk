@@ -32,9 +32,15 @@ public class GetShanhuiByShanhuiKeyResponseBody extends TeaModel {
     }
 
     public static class GetShanhuiByShanhuiKeyResponseBodyResultTopics extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("docKey")
         public String docKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

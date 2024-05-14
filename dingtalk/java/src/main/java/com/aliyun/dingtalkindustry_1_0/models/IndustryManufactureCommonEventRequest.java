@@ -4,15 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureCommonEventRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appKey")
     public String appKey;
 
     @NameInMap("bizData")
     public java.util.Map<String, ?> bizData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("eventType")
     public java.util.List<String> eventType;
 

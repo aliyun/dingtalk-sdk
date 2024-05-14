@@ -7,6 +7,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryEmpPointDetailsResponseBodyResult result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -123,6 +126,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("usage")
         public String usage;
 
@@ -166,9 +172,15 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetails extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("amount")
         public Long amount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
@@ -178,6 +190,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
         @NameInMap("pointOperateFeatureResponseDTO")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO pointOperateFeatureResponseDTO;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
 
@@ -232,6 +247,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
         @NameInMap("details")
         public java.util.List<QueryEmpPointDetailsResponseBodyResultDetails> details;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

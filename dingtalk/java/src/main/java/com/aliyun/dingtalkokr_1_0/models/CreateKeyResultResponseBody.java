@@ -4,9 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateKeyResultResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public CreateKeyResultResponseBodyData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,12 +38,21 @@ public class CreateKeyResultResponseBody extends TeaModel {
     }
 
     public static class CreateKeyResultResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("position")
         public Long position;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("weight")
         public Long weight;
 

@@ -7,6 +7,9 @@ public class CreateCustomerResponseBody extends TeaModel {
     @NameInMap("contacts")
     public java.util.List<CreateCustomerResponseBodyContacts> contacts;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("customerInstanceId")
     public String customerInstanceId;
 

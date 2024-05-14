@@ -4,12 +4,21 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateJobDeliverRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deliverUserId")
     public String deliverUserId;
 
@@ -19,15 +28,24 @@ public class UpdateJobDeliverRequest extends TeaModel {
     @NameInMap("errorMsg")
     public String errorMsg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opTime")
     public Long opTime;
 
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 

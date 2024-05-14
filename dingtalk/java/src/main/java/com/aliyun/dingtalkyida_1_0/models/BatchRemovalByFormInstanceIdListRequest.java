@@ -4,6 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRemovalByFormInstanceIdListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appType")
     public String appType;
 
@@ -13,15 +16,27 @@ public class BatchRemovalByFormInstanceIdListRequest extends TeaModel {
     @NameInMap("executeExpression")
     public Boolean executeExpression;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formInstanceIdList")
     public java.util.List<String> formInstanceIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

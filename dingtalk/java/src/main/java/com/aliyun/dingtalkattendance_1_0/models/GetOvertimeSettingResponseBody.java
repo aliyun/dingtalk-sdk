@@ -4,6 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOvertimeSettingResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public java.util.List<GetOvertimeSettingResponseBodyResult> result;
 
@@ -109,6 +112,9 @@ public class GetOvertimeSettingResponseBody extends TeaModel {
         @NameInMap("durationSettings")
         public java.util.Map<String, ResultDurationSettingsValue> durationSettings;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("id")
         public Long id;
 

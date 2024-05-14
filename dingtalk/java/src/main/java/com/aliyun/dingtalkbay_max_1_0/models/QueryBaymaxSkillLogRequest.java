@@ -7,6 +7,9 @@ public class QueryBaymaxSkillLogRequest extends TeaModel {
     @NameInMap("from")
     public Integer from;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("skillExecuteId")
     public String skillExecuteId;
 

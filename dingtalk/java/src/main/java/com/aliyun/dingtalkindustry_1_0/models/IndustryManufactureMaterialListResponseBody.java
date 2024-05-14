@@ -4,15 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMaterialListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<IndustryManufactureMaterialListResponseBodyList> list;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,39 +63,75 @@ public class IndustryManufactureMaterialListResponseBody extends TeaModel {
     }
 
     public static class IndustryManufactureMaterialListResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("ext")
         public String ext;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("materialName")
         public String materialName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("materialNo")
         public String materialNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("specification")
         public String specification;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("stockMaxWarn")
         public Float stockMaxWarn;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("stockMinWarn")
         public Float stockMinWarn;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 

@@ -21,18 +21,33 @@ public class UploadInvoiceByMobileResponseBody extends TeaModel {
     }
 
     public static class UploadInvoiceByMobileResponseBodyResultResults extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("errCode")
         public String errCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("reason")
         public String reason;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 
@@ -84,6 +99,9 @@ public class UploadInvoiceByMobileResponseBody extends TeaModel {
     }
 
     public static class UploadInvoiceByMobileResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("results")
         public java.util.List<UploadInvoiceByMobileResponseBodyResultResults> results;
 

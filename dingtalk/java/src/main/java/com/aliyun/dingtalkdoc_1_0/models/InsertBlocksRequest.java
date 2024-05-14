@@ -4,12 +4,18 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class InsertBlocksRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("blocks")
     public java.util.List<InsertBlocksRequestBlocks> blocks;
 
     @NameInMap("location")
     public InsertBlocksRequestLocation location;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -46,6 +52,9 @@ public class InsertBlocksRequest extends TeaModel {
         @NameInMap("bold")
         public Boolean bold;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataType")
         public String dataType;
 
@@ -95,6 +104,9 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphChildrenText extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -125,6 +137,9 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocksParagraphChildren extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("elementType")
         public String elementType;
 
@@ -204,6 +219,9 @@ public class InsertBlocksRequest extends TeaModel {
     }
 
     public static class InsertBlocksRequestBlocks extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("blockType")
         public String blockType;
 

@@ -4,21 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRemoteClassCourseRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("attendParticipants")
     public java.util.List<CreateRemoteClassCourseRequestAttendParticipants> attendParticipants;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authCode")
     public String authCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseName")
     public String courseName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teachingParticipant")
     public CreateRemoteClassCourseRequestTeachingParticipant teachingParticipant;
 
@@ -76,9 +94,15 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class CreateRemoteClassCourseRequestAttendParticipants extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 
@@ -106,9 +130,15 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class CreateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 

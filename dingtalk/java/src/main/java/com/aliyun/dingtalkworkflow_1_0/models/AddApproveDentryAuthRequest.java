@@ -4,9 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddApproveDentryAuthRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileInfos")
     public java.util.List<AddApproveDentryAuthRequestFileInfos> fileInfos;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -32,9 +38,15 @@ public class AddApproveDentryAuthRequest extends TeaModel {
     }
 
     public static class AddApproveDentryAuthRequestFileInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

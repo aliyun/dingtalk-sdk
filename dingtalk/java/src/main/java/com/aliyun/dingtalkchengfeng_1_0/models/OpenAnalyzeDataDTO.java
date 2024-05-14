@@ -4,39 +4,75 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenAnalyzeDataDTO extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptCount")
     public Integer deptCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("noAlignObjectiveCount")
     public Integer noAlignObjectiveCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("noKeyActionCount")
     public Integer noKeyActionCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveAlignRate")
     public Double objectiveAlignRate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveNoSetCount")
     public Integer objectiveNoSetCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveRiskCount")
     public Integer objectiveRiskCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveSetRate")
     public Double objectiveSetRate;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("onlyOneKeyResultCount")
     public Integer onlyOneKeyResultCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("onlyOneObjectiveCount")
     public Integer onlyOneObjectiveCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("progressUpdateRateLast15Days")
     public Double progressUpdateRateLast15Days;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("progressUpdateRateLast30Days")
     public Double progressUpdateRateLast30Days;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("progressUpdateRateLast7Days")
     public Double progressUpdateRateLast7Days;
 

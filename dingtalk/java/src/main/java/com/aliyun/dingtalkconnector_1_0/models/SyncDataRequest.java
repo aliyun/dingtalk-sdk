@@ -7,6 +7,9 @@ public class SyncDataRequest extends TeaModel {
     @NameInMap("appId")
     public String appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("triggerDataList")
     public java.util.List<SyncDataRequestTriggerDataList> triggerDataList;
 
@@ -32,27 +35,42 @@ public class SyncDataRequest extends TeaModel {
     }
 
     public static class SyncDataRequestTriggerDataList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("action")
         public String action;
 
         @NameInMap("customTriggerId")
         public String customTriggerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataGmtCreate")
         public Long dataGmtCreate;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dataGmtModified")
         public Long dataGmtModified;
 
         @NameInMap("integrationObject")
         public String integrationObject;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("jsonData")
         public String jsonData;
 
         @NameInMap("triggerCondition")
         public String triggerCondition;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("triggerId")
         public String triggerId;
 

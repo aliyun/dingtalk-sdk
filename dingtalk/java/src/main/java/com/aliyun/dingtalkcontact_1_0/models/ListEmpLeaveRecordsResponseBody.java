@@ -7,6 +7,9 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("records")
     public java.util.List<ListEmpLeaveRecordsResponseBodyRecords> records;
 
@@ -32,21 +35,39 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
     }
 
     public static class ListEmpLeaveRecordsResponseBodyRecords extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("leaveReason")
         public String leaveReason;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("leaveTime")
         public String leaveTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("stateCode")
         public String stateCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

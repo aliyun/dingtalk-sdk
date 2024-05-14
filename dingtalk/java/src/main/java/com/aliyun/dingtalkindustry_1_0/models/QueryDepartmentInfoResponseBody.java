@@ -36,9 +36,15 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("deptType")
         public Integer deptType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
@@ -161,6 +167,9 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentExtendInfos extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
@@ -173,9 +182,15 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
@@ -257,6 +272,9 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("department")
         public QueryDepartmentInfoResponseBodyContentDepartment department;
 

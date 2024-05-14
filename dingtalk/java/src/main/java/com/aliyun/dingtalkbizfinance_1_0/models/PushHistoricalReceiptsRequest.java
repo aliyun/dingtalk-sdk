@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushHistoricalReceiptsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
@@ -13,9 +16,15 @@ public class PushHistoricalReceiptsRequest extends TeaModel {
     @NameInMap("forcedIgnoreDup")
     public Boolean forcedIgnoreDup;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("formCodeList")
     public java.util.List<String> formCodeList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

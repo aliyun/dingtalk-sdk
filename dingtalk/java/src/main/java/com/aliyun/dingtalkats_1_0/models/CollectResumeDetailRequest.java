@@ -16,15 +16,24 @@ public class CollectResumeDetailRequest extends TeaModel {
     @NameInMap("channelTalentId")
     public String channelTalentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resumeData")
     public CollectResumeDetailRequestResumeData resumeData;
 
@@ -142,6 +151,9 @@ public class CollectResumeDetailRequest extends TeaModel {
         @NameInMap("married")
         public Integer married;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -726,6 +738,9 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("baseInfo")
         public CollectResumeDetailRequestResumeDataBaseInfo baseInfo;
 

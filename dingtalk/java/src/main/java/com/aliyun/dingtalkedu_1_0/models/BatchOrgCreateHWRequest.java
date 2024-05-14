@@ -4,15 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOrgCreateHWRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("attributes")
     public String attributes;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courseName")
     public String courseName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hwContent")
     public String hwContent;
 
@@ -28,6 +40,9 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     @NameInMap("hwPhoto")
     public String hwPhoto;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hwTitle")
     public String hwTitle;
 
@@ -37,9 +52,15 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     @NameInMap("hwVideo")
     public String hwVideo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("identifier")
     public String identifier;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openSelectItemList")
     public java.util.List<BatchOrgCreateHWRequestOpenSelectItemList> openSelectItemList;
 
@@ -49,15 +70,24 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     @NameInMap("scheduledTime")
     public String scheduledTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("status")
     public String status;
 
     @NameInMap("targetRole")
     public String targetRole;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherName")
     public String teacherName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teacherUserId")
     public String teacherUserId;
 

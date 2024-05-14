@@ -4,9 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMemberResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupMembers")
     public java.util.List<QueryGroupMemberResponseBodyGroupMembers> groupMembers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -41,9 +47,15 @@ public class QueryGroupMemberResponseBody extends TeaModel {
         @NameInMap("groupMemberId")
         public String groupMemberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupMemberName")
         public String groupMemberName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupMemberType")
         public Integer groupMemberType;
 

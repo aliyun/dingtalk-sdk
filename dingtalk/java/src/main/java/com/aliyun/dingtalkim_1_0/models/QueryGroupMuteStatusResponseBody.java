@@ -4,9 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMuteStatusResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupMuteMode")
     public Boolean groupMuteMode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userMuteResult")
     public QueryGroupMuteStatusResponseBodyUserMuteResult userMuteResult;
 
@@ -32,12 +38,21 @@ public class QueryGroupMuteStatusResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMuteStatusResponseBodyUserMuteResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("muteEndTime")
         public Long muteEndTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("muteStartTime")
         public Long muteStartTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userMuteMode")
         public Boolean userMuteMode;
 

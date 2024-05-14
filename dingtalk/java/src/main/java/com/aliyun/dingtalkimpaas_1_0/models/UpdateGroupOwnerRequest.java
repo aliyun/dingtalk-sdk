@@ -4,12 +4,18 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupOwnerRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
     @NameInMap("operatorUid")
     public String operatorUid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ownerUid")
     public String ownerUid;
 

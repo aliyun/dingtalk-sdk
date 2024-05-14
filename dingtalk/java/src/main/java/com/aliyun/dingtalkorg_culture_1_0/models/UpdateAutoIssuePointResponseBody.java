@@ -7,6 +7,9 @@ public class UpdateAutoIssuePointResponseBody extends TeaModel {
     @NameInMap("result")
     public UpdateAutoIssuePointResponseBodyResult result;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +35,9 @@ public class UpdateAutoIssuePointResponseBody extends TeaModel {
     }
 
     public static class UpdateAutoIssuePointResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("nextAutoIssuePointTime")
         public Long nextAutoIssuePointTime;
 

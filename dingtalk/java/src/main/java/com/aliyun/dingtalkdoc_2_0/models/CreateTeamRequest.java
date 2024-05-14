@@ -16,12 +16,21 @@ public class CreateTeamRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<CreateTeamRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("teamType")
     public Integer teamType;
 
@@ -87,12 +96,21 @@ public class CreateTeamRequest extends TeaModel {
     }
 
     public static class CreateTeamRequestMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

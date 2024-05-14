@@ -4,6 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListGroupStaffMembersResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<ListGroupStaffMembersResponseBodyMembers> members;
 
@@ -24,6 +27,9 @@ public class ListGroupStaffMembersResponseBody extends TeaModel {
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uid")
         public String uid;
 

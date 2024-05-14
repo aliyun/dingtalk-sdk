@@ -4,6 +4,9 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskFromShanhuiDocRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("docKey")
     public String docKey;
 
@@ -13,6 +16,9 @@ public class GetTaskFromShanhuiDocRequest extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

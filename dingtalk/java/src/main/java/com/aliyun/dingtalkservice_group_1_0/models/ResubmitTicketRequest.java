@@ -4,6 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ResubmitTicketRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
@@ -13,18 +16,33 @@ public class ResubmitTicketRequest extends TeaModel {
     @NameInMap("notify")
     public ResubmitTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTemplateBizId")
     public String openTemplateBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scene")
     public String scene;
 
@@ -34,6 +52,9 @@ public class ResubmitTicketRequest extends TeaModel {
     @NameInMap("ticketMemo")
     public ResubmitTicketRequestTicketMemo ticketMemo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 

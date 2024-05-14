@@ -13,15 +13,24 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("bankNo")
     public String bankNo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
     @NameInMap("deleteFlag")
     public Boolean deleteFlag;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("gmtAction")
     public String gmtAction;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("invoiceId")
     public String invoiceId;
 
@@ -43,6 +52,9 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("thirdPartId")
     public String thirdPartId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
@@ -52,6 +64,9 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("unitType")
     public Integer unitType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

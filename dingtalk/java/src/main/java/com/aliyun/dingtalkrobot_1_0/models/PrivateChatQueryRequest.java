@@ -13,6 +13,9 @@ public class PrivateChatQueryRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 

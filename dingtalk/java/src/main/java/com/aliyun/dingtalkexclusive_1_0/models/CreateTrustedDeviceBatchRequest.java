@@ -4,12 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceBatchRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("macAddressList")
     public java.util.List<String> macAddressList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("platform")
     public String platform;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

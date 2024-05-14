@@ -4,9 +4,15 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSsoAccessTokenRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpid")
     public String corpid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("ssoSecret")
     public String ssoSecret;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateActionRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("actionInfo")
     public java.util.List<CreateActionRequestActionInfo> actionInfo;
 
@@ -136,6 +139,9 @@ public class CreateActionRequest extends TeaModel {
         @NameInMap("apiPath")
         public String apiPath;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -148,12 +154,18 @@ public class CreateActionRequest extends TeaModel {
         @NameInMap("inputSchema")
         public String inputSchema;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorActionId")
         public String integratorActionId;
 
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

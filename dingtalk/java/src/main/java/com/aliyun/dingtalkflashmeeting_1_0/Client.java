@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 创建钉闪会并绑定日程
+     *
+     * @param request CreateFlashMeetingRequest
+     * @param headers CreateFlashMeetingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFlashMeetingResponse
+     */
     public CreateFlashMeetingResponse createFlashMeetingWithOptions(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -61,12 +69,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateFlashMeetingResponse());
     }
 
+    /**
+     * @summary 创建钉闪会并绑定日程
+     *
+     * @param request CreateFlashMeetingRequest
+     * @return CreateFlashMeetingResponse
+     */
     public CreateFlashMeetingResponse createFlashMeeting(CreateFlashMeetingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
         return this.createFlashMeetingWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据日程获取闪会的信息
+     *
+     * @param request GetShanhuiByCalendarRequest
+     * @param headers GetShanhuiByCalendarHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetShanhuiByCalendarResponse
+     */
     public GetShanhuiByCalendarResponse getShanhuiByCalendarWithOptions(GetShanhuiByCalendarRequest request, GetShanhuiByCalendarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -105,12 +127,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetShanhuiByCalendarResponse());
     }
 
+    /**
+     * @summary 根据日程获取闪会的信息
+     *
+     * @param request GetShanhuiByCalendarRequest
+     * @return GetShanhuiByCalendarResponse
+     */
     public GetShanhuiByCalendarResponse getShanhuiByCalendar(GetShanhuiByCalendarRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetShanhuiByCalendarHeaders headers = new GetShanhuiByCalendarHeaders();
         return this.getShanhuiByCalendarWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+     *
+     * @param headers GetShanhuiByShanhuiKeyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetShanhuiByShanhuiKeyResponse
+     */
     public GetShanhuiByShanhuiKeyResponse getShanhuiByShanhuiKeyWithOptions(String flashmeetingKey, GetShanhuiByShanhuiKeyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -138,12 +173,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetShanhuiByShanhuiKeyResponse());
     }
 
+    /**
+     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+     *
+     * @return GetShanhuiByShanhuiKeyResponse
+     */
     public GetShanhuiByShanhuiKeyResponse getShanhuiByShanhuiKey(String flashmeetingKey) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetShanhuiByShanhuiKeyHeaders headers = new GetShanhuiByShanhuiKeyHeaders();
         return this.getShanhuiByShanhuiKeyWithOptions(flashmeetingKey, headers, runtime);
     }
 
+    /**
+     * @summary 根据闪会文档id获取待办任务
+     *
+     * @param request GetTaskFromShanhuiDocRequest
+     * @param headers GetTaskFromShanhuiDocHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTaskFromShanhuiDocResponse
+     */
     public GetTaskFromShanhuiDocResponse getTaskFromShanhuiDocWithOptions(GetTaskFromShanhuiDocRequest request, GetTaskFromShanhuiDocHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -190,6 +238,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetTaskFromShanhuiDocResponse());
     }
 
+    /**
+     * @summary 根据闪会文档id获取待办任务
+     *
+     * @param request GetTaskFromShanhuiDocRequest
+     * @return GetTaskFromShanhuiDocResponse
+     */
     public GetTaskFromShanhuiDocResponse getTaskFromShanhuiDoc(GetTaskFromShanhuiDocRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetTaskFromShanhuiDocHeaders headers = new GetTaskFromShanhuiDocHeaders();

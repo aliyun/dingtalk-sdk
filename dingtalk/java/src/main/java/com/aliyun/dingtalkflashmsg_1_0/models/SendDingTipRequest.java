@@ -10,15 +10,24 @@ public class SendDingTipRequest extends TeaModel {
     @NameInMap("link")
     public SendDingTipRequestLink link;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("messageId")
     public String messageId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 
     @NameInMap("senderUserId")
     public String senderUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("textContent")
     public String textContent;
 
@@ -79,12 +88,18 @@ public class SendDingTipRequest extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("linkUrl")
         public String linkUrl;
 
         @NameInMap("picMediaId")
         public String picMediaId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("text")
         public String text;
 

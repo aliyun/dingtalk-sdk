@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAclsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("privilege")
     public String privilege;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scope")
     public CreateAclsRequestScope scope;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sendMsg")
     public Boolean sendMsg;
 
@@ -43,9 +52,15 @@ public class CreateAclsRequest extends TeaModel {
     }
 
     public static class CreateAclsRequestScope extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("scopeType")
         public String scopeType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

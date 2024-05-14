@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteUserCarbonRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userDetailsList")
     public java.util.List<WriteUserCarbonRequestUserDetailsList> userDetailsList;
 
@@ -21,30 +24,57 @@ public class WriteUserCarbonRequest extends TeaModel {
     }
 
     public static class WriteUserCarbonRequestUserDetailsList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionEndTime")
         public String actionEndTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionId")
         public String actionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionStartTime")
         public String actionStartTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("version")
         public Integer version;
 

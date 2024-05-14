@@ -4,9 +4,15 @@ package com.aliyun.dingtalkwiki_1_0.models;
 import com.aliyun.tea.*;
 
 public class WikiWordsParseResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("data")
     public java.util.List<WikiWordsParseResponseBodyData> data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("errMsg")
     public String errMsg;
 
@@ -43,12 +49,21 @@ public class WikiWordsParseResponseBody extends TeaModel {
     }
 
     public static class WikiWordsParseResponseBodyData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("endIndex")
         public Long endIndex;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("startIndex")
         public Long startIndex;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("wordName")
         public String wordName;
 

@@ -7,9 +7,15 @@ public class MasterDataQueryRequest extends TeaModel {
     @NameInMap("bizUK")
     public String bizUK;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Integer nextToken;
 
@@ -19,15 +25,27 @@ public class MasterDataQueryRequest extends TeaModel {
     @NameInMap("queryParams")
     public java.util.List<MasterDataQueryRequestQueryParams> queryParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("relationIds")
     public java.util.List<String> relationIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scopeCode")
     public String scopeCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tenantId")
     public Long tenantId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("viewEntityCode")
     public String viewEntityCode;
 

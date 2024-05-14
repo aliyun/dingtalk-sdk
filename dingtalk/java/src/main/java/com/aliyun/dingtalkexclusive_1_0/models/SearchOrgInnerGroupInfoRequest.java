@@ -28,18 +28,30 @@ public class SearchOrgInnerGroupInfoRequest extends TeaModel {
     @NameInMap("lastActiveTimeStart")
     public Long lastActiveTimeStart;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pageStart")
     public Integer pageStart;
 
     @NameInMap("syncToDingpan")
     public Integer syncToDingpan;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

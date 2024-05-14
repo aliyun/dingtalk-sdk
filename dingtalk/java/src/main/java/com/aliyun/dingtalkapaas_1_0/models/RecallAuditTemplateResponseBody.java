@@ -4,6 +4,9 @@ package com.aliyun.dingtalkapaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecallAuditTemplateResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("recallResult")
     public java.util.List<RecallAuditTemplateResponseBodyRecallResult> recallResult;
 
@@ -21,9 +24,15 @@ public class RecallAuditTemplateResponseBody extends TeaModel {
     }
 
     public static class RecallAuditTemplateResponseBodyRecallResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("templateKey")
         public String templateKey;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("value")
         public String value;
 

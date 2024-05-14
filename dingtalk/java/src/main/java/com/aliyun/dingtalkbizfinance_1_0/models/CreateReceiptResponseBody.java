@@ -4,6 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateReceiptResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("results")
     public java.util.List<CreateReceiptResponseBodyResults> results;
 
@@ -21,6 +24,9 @@ public class CreateReceiptResponseBody extends TeaModel {
     }
 
     public static class CreateReceiptResponseBodyResults extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("code")
         public String code;
 
@@ -30,6 +36,9 @@ public class CreateReceiptResponseBody extends TeaModel {
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

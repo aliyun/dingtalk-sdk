@@ -7,9 +7,15 @@ public class GetResidentInfoResponseBody extends TeaModel {
     @NameInMap("address")
     public String address;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("allUserGroupOpenConversationId")
     public String allUserGroupOpenConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("allUserGroupOwnerUserId")
     public String allUserGroupOwnerUserId;
 
@@ -37,9 +43,15 @@ public class GetResidentInfoResponseBody extends TeaModel {
     @NameInMap("projectManager")
     public GetResidentInfoResponseBodyProjectManager projectManager;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("propertyDeptGroupOpenConversationId")
     public String propertyDeptGroupOpenConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("propertyDeptGroupOwnerUserId")
     public String propertyDeptGroupOwnerUserId;
 

@@ -7,6 +7,9 @@ public class BatchDeleteDeviceRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

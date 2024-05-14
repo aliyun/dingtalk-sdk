@@ -4,18 +4,33 @@ package com.aliyun.dingtalkhrbrain_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncDataRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dataId")
     public String dataId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("etlTime")
     public String etlTime;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schemaId")
     public String schemaId;
 

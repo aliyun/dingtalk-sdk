@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 查询个人单企业待办数
+     *
+     * @param request CountWorkRecordRequest
+     * @param headers CountWorkRecordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CountWorkRecordResponse
+     */
     public CountWorkRecordResponse countWorkRecordWithOptions(CountWorkRecordRequest request, CountWorkRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -53,6 +61,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CountWorkRecordResponse());
     }
 
+    /**
+     * @summary 查询个人单企业待办数
+     *
+     * @param request CountWorkRecordRequest
+     * @return CountWorkRecordResponse
+     */
     public CountWorkRecordResponse countWorkRecord(CountWorkRecordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CountWorkRecordHeaders headers = new CountWorkRecordHeaders();

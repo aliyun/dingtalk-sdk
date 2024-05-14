@@ -4,12 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChangeGroupOwnerRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

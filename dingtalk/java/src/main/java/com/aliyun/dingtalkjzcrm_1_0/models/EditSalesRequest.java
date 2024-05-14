@@ -7,12 +7,18 @@ public class EditSalesRequest extends TeaModel {
     @NameInMap("data")
     public EditSalesRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -54,12 +60,21 @@ public class EditSalesRequest extends TeaModel {
     }
 
     public static class EditSalesRequestData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("xsh_customerid")
         public String xshCustomerid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("xsh_date")
         public String xshDate;
 
@@ -105,6 +120,9 @@ public class EditSalesRequest extends TeaModel {
         @NameInMap("xsh_state")
         public String xshState;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("xsh_title")
         public String xshTitle;
 

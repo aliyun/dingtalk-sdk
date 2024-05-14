@@ -32,6 +32,9 @@ public class BatchSendOfficialAccountOTOMessageResponseBody extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openPushId")
         public String openPushId;
 

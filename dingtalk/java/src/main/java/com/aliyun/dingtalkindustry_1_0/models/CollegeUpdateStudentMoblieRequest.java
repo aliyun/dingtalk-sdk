@@ -7,9 +7,15 @@ public class CollegeUpdateStudentMoblieRequest extends TeaModel {
     @NameInMap("isForce")
     public Boolean isForce;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("newMobile")
     public String newMobile;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 

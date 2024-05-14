@@ -4,6 +4,9 @@ package com.aliyun.dingtalkflashmsg_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBaseProfileListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<String> body;
 

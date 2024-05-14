@@ -10,6 +10,9 @@ public class CreateProcessRequest extends TeaModel {
     @NameInMap("files")
     public java.util.List<CreateProcessRequestFiles> files;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("initiatorUserId")
     public String initiatorUserId;
 
@@ -25,6 +28,9 @@ public class CreateProcessRequest extends TeaModel {
     @NameInMap("sourceInfo")
     public CreateProcessRequestSourceInfo sourceInfo;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -104,6 +110,9 @@ public class CreateProcessRequest extends TeaModel {
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
@@ -161,12 +170,21 @@ public class CreateProcessRequest extends TeaModel {
     }
 
     public static class CreateProcessRequestFiles extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fileType")
         public Integer fileType;
 
@@ -323,6 +341,9 @@ public class CreateProcessRequest extends TeaModel {
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
@@ -335,6 +356,9 @@ public class CreateProcessRequest extends TeaModel {
         @NameInMap("signPosList")
         public java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("signRequirements")
         public String signRequirements;
 

@@ -13,6 +13,9 @@ public class BatchQueryCustomerSendTaskRequest extends TeaModel {
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("needRichStatistics")
     public Boolean needRichStatistics;
 
@@ -22,6 +25,9 @@ public class BatchQueryCustomerSendTaskRequest extends TeaModel {
     @NameInMap("openBatchTaskIds")
     public java.util.List<String> openBatchTaskIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

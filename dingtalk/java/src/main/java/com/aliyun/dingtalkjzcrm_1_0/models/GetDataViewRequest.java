@@ -4,9 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataViewRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public String datatype;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 

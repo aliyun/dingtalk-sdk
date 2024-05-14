@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcredit_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryScoreRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("encryption")
     public String encryption;
 
@@ -13,6 +16,9 @@ public class QueryScoreRequest extends TeaModel {
     @NameInMap("idCardCode")
     public String idCardCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 

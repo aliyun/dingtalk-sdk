@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+     *
+     * @param request AddHrmPreentryRequest
+     * @param headers AddHrmPreentryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddHrmPreentryResponse
+     */
     public AddHrmPreentryResponse addHrmPreentryWithOptions(AddHrmPreentryRequest request, AddHrmPreentryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -74,12 +82,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AddHrmPreentryResponse());
     }
 
+    /**
+     * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+     *
+     * @param request AddHrmPreentryRequest
+     * @return AddHrmPreentryResponse
+     */
     public AddHrmPreentryResponse addHrmPreentry(AddHrmPreentryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
         return this.addHrmPreentryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事设备市场管理
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeviceMarketManagerResponse
+     */
     public DeviceMarketManagerResponse deviceMarketManagerWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -98,12 +119,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeviceMarketManagerResponse());
     }
 
+    /**
+     * @summary 智能人事设备市场管理
+     *
+     * @return DeviceMarketManagerResponse
+     */
     public DeviceMarketManagerResponse deviceMarketManager() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.deviceMarketManagerWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 智能人事设备定向管理接口
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeviceMarketOrderManagerResponse
+     */
     public DeviceMarketOrderManagerResponse deviceMarketOrderManagerWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -122,12 +155,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeviceMarketOrderManagerResponse());
     }
 
+    /**
+     * @summary 智能人事设备定向管理接口
+     *
+     * @return DeviceMarketOrderManagerResponse
+     */
     public DeviceMarketOrderManagerResponse deviceMarketOrderManager() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();
         return this.deviceMarketOrderManagerWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary e签宝专有查询证件接口
+     *
+     * @param request ECertQueryRequest
+     * @param headers ECertQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ECertQueryResponse
+     */
     public ECertQueryResponse eCertQueryWithOptions(ECertQueryRequest request, ECertQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -162,12 +208,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new ECertQueryResponse());
     }
 
+    /**
+     * @summary e签宝专有查询证件接口
+     *
+     * @param request ECertQueryRequest
+     * @return ECertQueryResponse
+     */
     public ECertQueryResponse eCertQuery(ECertQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ECertQueryHeaders headers = new ECertQueryHeaders();
         return this.eCertQueryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事员工档案附件更新
+     *
+     * @param request EmployeeAttachmentUpdateRequest
+     * @param headers EmployeeAttachmentUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EmployeeAttachmentUpdateResponse
+     */
     public EmployeeAttachmentUpdateResponse employeeAttachmentUpdateWithOptions(EmployeeAttachmentUpdateRequest request, EmployeeAttachmentUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -220,12 +280,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EmployeeAttachmentUpdateResponse());
     }
 
+    /**
+     * @summary 智能人事员工档案附件更新
+     *
+     * @param request EmployeeAttachmentUpdateRequest
+     * @return EmployeeAttachmentUpdateResponse
+     */
     public EmployeeAttachmentUpdateResponse employeeAttachmentUpdate(EmployeeAttachmentUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EmployeeAttachmentUpdateHeaders headers = new EmployeeAttachmentUpdateHeaders();
         return this.employeeAttachmentUpdateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 人事高级合同管理回退
+     *
+     * @param request EsignRollbackRequest
+     * @param headers EsignRollbackHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EsignRollbackResponse
+     */
     public EsignRollbackResponse esignRollbackWithOptions(EsignRollbackRequest request, EsignRollbackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -260,12 +334,146 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new EsignRollbackResponse());
     }
 
+    /**
+     * @summary 人事高级合同管理回退
+     *
+     * @param request EsignRollbackRequest
+     * @return EsignRollbackResponse
+     */
     public EsignRollbackResponse esignRollback(EsignRollbackRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignRollbackHeaders headers = new EsignRollbackHeaders();
         return this.esignRollbackWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取员工花名册指定字段的信息，支持明细分组字段
+     *
+     * @param request GetEmployeeRosterByFieldRequest
+     * @param headers GetEmployeeRosterByFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetEmployeeRosterByFieldResponse
+     */
+    public GetEmployeeRosterByFieldResponse getEmployeeRosterByFieldWithOptions(GetEmployeeRosterByFieldRequest request, GetEmployeeRosterByFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appAgentId)) {
+            body.put("appAgentId", request.appAgentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldFilterList)) {
+            body.put("fieldFilterList", request.fieldFilterList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.text2SelectConvert)) {
+            body.put("text2SelectConvert", request.text2SelectConvert);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIdList)) {
+            body.put("userIdList", request.userIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetEmployeeRosterByField"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/rosters/lists/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetEmployeeRosterByFieldResponse());
+    }
+
+    /**
+     * @summary 获取员工花名册指定字段的信息，支持明细分组字段
+     *
+     * @param request GetEmployeeRosterByFieldRequest
+     * @return GetEmployeeRosterByFieldResponse
+     */
+    public GetEmployeeRosterByFieldResponse getEmployeeRosterByField(GetEmployeeRosterByFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetEmployeeRosterByFieldHeaders headers = new GetEmployeeRosterByFieldHeaders();
+        return this.getEmployeeRosterByFieldWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 智能人事权益查询
+     *
+     * @param request HrmBenefitQueryRequest
+     * @param headers HrmBenefitQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmBenefitQueryResponse
+     */
+    public HrmBenefitQueryResponse hrmBenefitQueryWithOptions(HrmBenefitQueryRequest request, HrmBenefitQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCodes)) {
+            body.put("benefitCodes", request.benefitCodes);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrmBenefitQuery"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/benefits/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrmBenefitQueryResponse());
+    }
+
+    /**
+     * @summary 智能人事权益查询
+     *
+     * @param request HrmBenefitQueryRequest
+     * @return HrmBenefitQueryResponse
+     */
+    public HrmBenefitQueryResponse hrmBenefitQuery(HrmBenefitQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrmBenefitQueryHeaders headers = new HrmBenefitQueryHeaders();
+        return this.hrmBenefitQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 智能人事邮件发送
+     *
+     * @param request HrmMailSendRequest
+     * @param headers HrmMailSendHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmMailSendResponse
+     */
     public HrmMailSendResponse hrmMailSendWithOptions(HrmMailSendRequest request, HrmMailSendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -304,12 +512,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmMailSendResponse());
     }
 
+    /**
+     * @summary 智能人事邮件发送
+     *
+     * @param request HrmMailSendRequest
+     * @return HrmMailSendResponse
+     */
     public HrmMailSendResponse hrmMailSend(HrmMailSendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmMailSendHeaders headers = new HrmMailSendHeaders();
         return this.hrmMailSendWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 人事2.0支持Moka事件转发
+     *
+     * @param request HrmMokaEventRequest
+     * @param headers HrmMokaEventHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmMokaEventResponse
+     */
     public HrmMokaEventResponse hrmMokaEventWithOptions(HrmMokaEventRequest request, HrmMokaEventHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -348,12 +570,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmMokaEventResponse());
     }
 
+    /**
+     * @summary 人事2.0支持Moka事件转发
+     *
+     * @param request HrmMokaEventRequest
+     * @return HrmMokaEventResponse
+     */
     public HrmMokaEventResponse hrmMokaEvent(HrmMokaEventRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmMokaEventHeaders headers = new HrmMokaEventHeaders();
         return this.hrmMokaEventWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 人事2.0支持Moka接口转发
+     *
+     * @param request HrmMokaOapiRequest
+     * @param headers HrmMokaOapiHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmMokaOapiResponse
+     */
     public HrmMokaOapiResponse hrmMokaOapiWithOptions(HrmMokaOapiRequest request, HrmMokaOapiHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -392,12 +628,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmMokaOapiResponse());
     }
 
+    /**
+     * @summary 人事2.0支持Moka接口转发
+     *
+     * @param request HrmMokaOapiRequest
+     * @return HrmMokaOapiResponse
+     */
     public HrmMokaOapiResponse hrmMokaOapi(HrmMokaOapiRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmMokaOapiHeaders headers = new HrmMokaOapiHeaders();
         return this.hrmMokaOapiWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事转正接口
+     *
+     * @param request HrmProcessRegularRequest
+     * @param headers HrmProcessRegularHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmProcessRegularResponse
+     */
     public HrmProcessRegularResponse hrmProcessRegularWithOptions(HrmProcessRegularRequest request, HrmProcessRegularHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -444,12 +694,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmProcessRegularResponse());
     }
 
+    /**
+     * @summary 智能人事转正接口
+     *
+     * @param request HrmProcessRegularRequest
+     * @return HrmProcessRegularResponse
+     */
     public HrmProcessRegularResponse hrmProcessRegular(HrmProcessRegularRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmProcessRegularHeaders headers = new HrmProcessRegularHeaders();
         return this.hrmProcessRegularWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事调岗接口
+     *
+     * @param request HrmProcessTransferRequest
+     * @param headers HrmProcessTransferHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmProcessTransferResponse
+     */
     public HrmProcessTransferResponse hrmProcessTransferWithOptions(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -516,12 +780,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmProcessTransferResponse());
     }
 
+    /**
+     * @summary 智能人事调岗接口
+     *
+     * @param request HrmProcessTransferRequest
+     * @return HrmProcessTransferResponse
+     */
     public HrmProcessTransferResponse hrmProcessTransfer(HrmProcessTransferRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
         return this.hrmProcessTransferWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 修改员工最后一次离职信息
+     *
+     * @param request HrmProcessUpdateTerminationInfoRequest
+     * @param headers HrmProcessUpdateTerminationInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmProcessUpdateTerminationInfoResponse
+     */
     public HrmProcessUpdateTerminationInfoResponse hrmProcessUpdateTerminationInfoWithOptions(HrmProcessUpdateTerminationInfoRequest request, HrmProcessUpdateTerminationInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -564,12 +842,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmProcessUpdateTerminationInfoResponse());
     }
 
+    /**
+     * @summary 修改员工最后一次离职信息
+     *
+     * @param request HrmProcessUpdateTerminationInfoRequest
+     * @return HrmProcessUpdateTerminationInfoResponse
+     */
     public HrmProcessUpdateTerminationInfoResponse hrmProcessUpdateTerminationInfo(HrmProcessUpdateTerminationInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmProcessUpdateTerminationInfoHeaders headers = new HrmProcessUpdateTerminationInfoHeaders();
         return this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事pts能力调用
+     *
+     * @param request HrmPtsServiceRequest
+     * @param headers HrmPtsServiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrmPtsServiceResponse
+     */
     public HrmPtsServiceResponse hrmPtsServiceWithOptions(HrmPtsServiceRequest request, HrmPtsServiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -620,12 +912,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new HrmPtsServiceResponse());
     }
 
+    /**
+     * @summary 智能人事pts能力调用
+     *
+     * @param request HrmPtsServiceRequest
+     * @return HrmPtsServiceResponse
+     */
     public HrmPtsServiceResponse hrmPtsService(HrmPtsServiceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmPtsServiceHeaders headers = new HrmPtsServiceHeaders();
         return this.hrmPtsServiceWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事主数据删除服务
+     *
+     * @param request MasterDataDeleteRequest
+     * @param headers MasterDataDeleteHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MasterDataDeleteResponse
+     */
     public MasterDataDeleteResponse masterDataDeleteWithOptions(MasterDataDeleteRequest request, MasterDataDeleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -661,12 +967,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MasterDataDeleteResponse());
     }
 
+    /**
+     * @summary 智能人事主数据删除服务
+     *
+     * @param request MasterDataDeleteRequest
+     * @return MasterDataDeleteResponse
+     */
     public MasterDataDeleteResponse masterDataDelete(MasterDataDeleteRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MasterDataDeleteHeaders headers = new MasterDataDeleteHeaders();
         return this.masterDataDeleteWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事主数据查询服务
+     *
+     * @param request MasterDataQueryRequest
+     * @param headers MasterDataQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MasterDataQueryResponse
+     */
     public MasterDataQueryResponse masterDataQueryWithOptions(MasterDataQueryRequest request, MasterDataQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -733,12 +1053,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MasterDataQueryResponse());
     }
 
+    /**
+     * @summary 智能人事主数据查询服务
+     *
+     * @param request MasterDataQueryRequest
+     * @return MasterDataQueryResponse
+     */
     public MasterDataQueryResponse masterDataQuery(MasterDataQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
         return this.masterDataQueryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事主数据保存服务
+     *
+     * @param request MasterDataSaveRequest
+     * @param headers MasterDataSaveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MasterDataSaveResponse
+     */
     public MasterDataSaveResponse masterDataSaveWithOptions(MasterDataSaveRequest request, MasterDataSaveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -774,12 +1108,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MasterDataSaveResponse());
     }
 
+    /**
+     * @summary 智能人事主数据保存服务
+     *
+     * @param request MasterDataSaveRequest
+     * @return MasterDataSaveResponse
+     */
     public MasterDataSaveResponse masterDataSave(MasterDataSaveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MasterDataSaveHeaders headers = new MasterDataSaveHeaders();
         return this.masterDataSaveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 主数据中拥有某个领域数据的租户信息查询
+     *
+     * @param request MasterDataTenantQueyRequest
+     * @param headers MasterDataTenantQueyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MasterDataTenantQueyResponse
+     */
     public MasterDataTenantQueyResponse masterDataTenantQueyWithOptions(MasterDataTenantQueyRequest request, MasterDataTenantQueyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -818,12 +1166,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MasterDataTenantQueyResponse());
     }
 
+    /**
+     * @summary 主数据中拥有某个领域数据的租户信息查询
+     *
+     * @param request MasterDataTenantQueyRequest
+     * @return MasterDataTenantQueyResponse
+     */
     public MasterDataTenantQueyResponse masterDataTenantQuey(MasterDataTenantQueyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
         return this.masterDataTenantQueyWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事主数据查询服务
+     *
+     * @param request MasterDatasQueryRequest
+     * @param headers MasterDatasQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MasterDatasQueryResponse
+     */
     public MasterDatasQueryResponse masterDatasQueryWithOptions(MasterDatasQueryRequest request, MasterDatasQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -886,12 +1248,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new MasterDatasQueryResponse());
     }
 
+    /**
+     * @summary 智能人事主数据查询服务
+     *
+     * @param request MasterDatasQueryRequest
+     * @return MasterDatasQueryResponse
+     */
     public MasterDatasQueryResponse masterDatasQuery(MasterDatasQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         MasterDatasQueryHeaders headers = new MasterDatasQueryHeaders();
         return this.masterDatasQueryWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 自定义入职流程数据查询
+     *
+     * @param request QueryCustomEntryProcessesRequest
+     * @param headers QueryCustomEntryProcessesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCustomEntryProcessesResponse
+     */
     public QueryCustomEntryProcessesResponse queryCustomEntryProcessesWithOptions(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -934,12 +1310,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryCustomEntryProcessesResponse());
     }
 
+    /**
+     * @summary 自定义入职流程数据查询
+     *
+     * @param request QueryCustomEntryProcessesRequest
+     * @return QueryCustomEntryProcessesResponse
+     */
     public QueryCustomEntryProcessesResponse queryCustomEntryProcesses(QueryCustomEntryProcessesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
         return this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询企业已离职员工列表
+     *
+     * @param request QueryDismissionStaffIdListRequest
+     * @param headers QueryDismissionStaffIdListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDismissionStaffIdListResponse
+     */
     public QueryDismissionStaffIdListResponse queryDismissionStaffIdListWithOptions(QueryDismissionStaffIdListRequest request, QueryDismissionStaffIdListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -978,12 +1368,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryDismissionStaffIdListResponse());
     }
 
+    /**
+     * @summary 查询企业已离职员工列表
+     *
+     * @param request QueryDismissionStaffIdListRequest
+     * @return QueryDismissionStaffIdListResponse
+     */
     public QueryDismissionStaffIdListResponse queryDismissionStaffIdList(QueryDismissionStaffIdListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryDismissionStaffIdListHeaders headers = new QueryDismissionStaffIdListHeaders();
         return this.queryDismissionStaffIdListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 根据传入的staffId列表，批量查询员工的离职信息
+     *
+     * @param tmpReq QueryHrmEmployeeDismissionInfoRequest
+     * @param headers QueryHrmEmployeeDismissionInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryHrmEmployeeDismissionInfoResponse
+     */
     public QueryHrmEmployeeDismissionInfoResponse queryHrmEmployeeDismissionInfoWithOptions(QueryHrmEmployeeDismissionInfoRequest tmpReq, QueryHrmEmployeeDismissionInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         QueryHrmEmployeeDismissionInfoShrinkRequest request = new QueryHrmEmployeeDismissionInfoShrinkRequest();
@@ -1024,12 +1428,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryHrmEmployeeDismissionInfoResponse());
     }
 
+    /**
+     * @summary 根据传入的staffId列表，批量查询员工的离职信息
+     *
+     * @param request QueryHrmEmployeeDismissionInfoRequest
+     * @return QueryHrmEmployeeDismissionInfoResponse
+     */
     public QueryHrmEmployeeDismissionInfoResponse queryHrmEmployeeDismissionInfo(QueryHrmEmployeeDismissionInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryHrmEmployeeDismissionInfoHeaders headers = new QueryHrmEmployeeDismissionInfoHeaders();
         return this.queryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页查询企业的职级信息
+     *
+     * @param request QueryJobRanksRequest
+     * @param headers QueryJobRanksHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryJobRanksResponse
+     */
     public QueryJobRanksResponse queryJobRanksWithOptions(QueryJobRanksRequest request, QueryJobRanksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1080,12 +1498,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryJobRanksResponse());
     }
 
+    /**
+     * @summary 分页查询企业的职级信息
+     *
+     * @param request QueryJobRanksRequest
+     * @return QueryJobRanksResponse
+     */
     public QueryJobRanksResponse queryJobRanks(QueryJobRanksRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryJobRanksHeaders headers = new QueryJobRanksHeaders();
         return this.queryJobRanksWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页查询企业职务信息
+     *
+     * @param request QueryJobsRequest
+     * @param headers QueryJobsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryJobsResponse
+     */
     public QueryJobsResponse queryJobsWithOptions(QueryJobsRequest request, QueryJobsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1128,12 +1560,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryJobsResponse());
     }
 
+    /**
+     * @summary 分页查询企业职务信息
+     *
+     * @param request QueryJobsRequest
+     * @return QueryJobsResponse
+     */
     public QueryJobsResponse queryJobs(QueryJobsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryJobsHeaders headers = new QueryJobsHeaders();
         return this.queryJobsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 分页查询企业职位信息
+     *
+     * @param request QueryPositionsRequest
+     * @param headers QueryPositionsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPositionsResponse
+     */
     public QueryPositionsResponse queryPositionsWithOptions(QueryPositionsRequest request, QueryPositionsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1190,12 +1636,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryPositionsResponse());
     }
 
+    /**
+     * @summary 分页查询企业职位信息
+     *
+     * @param request QueryPositionsRequest
+     * @return QueryPositionsResponse
+     */
     public QueryPositionsResponse queryPositions(QueryPositionsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPositionsHeaders headers = new QueryPositionsHeaders();
         return this.queryPositionsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询花名册中有权限的字段列表
+     *
+     * @param request RosterMetaAvailableFieldListRequest
+     * @param headers RosterMetaAvailableFieldListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RosterMetaAvailableFieldListResponse
+     */
     public RosterMetaAvailableFieldListResponse rosterMetaAvailableFieldListWithOptions(RosterMetaAvailableFieldListRequest request, RosterMetaAvailableFieldListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1230,12 +1690,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RosterMetaAvailableFieldListResponse());
     }
 
+    /**
+     * @summary 查询花名册中有权限的字段列表
+     *
+     * @param request RosterMetaAvailableFieldListRequest
+     * @return RosterMetaAvailableFieldListResponse
+     */
     public RosterMetaAvailableFieldListResponse rosterMetaAvailableFieldList(RosterMetaAvailableFieldListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
         return this.rosterMetaAvailableFieldListWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 智能人事花名册字段选项修改
+     *
+     * @param request RosterMetaFieldOptionsUpdateRequest
+     * @param headers RosterMetaFieldOptionsUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RosterMetaFieldOptionsUpdateResponse
+     */
     public RosterMetaFieldOptionsUpdateResponse rosterMetaFieldOptionsUpdateWithOptions(RosterMetaFieldOptionsUpdateRequest request, RosterMetaFieldOptionsUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1288,12 +1762,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new RosterMetaFieldOptionsUpdateResponse());
     }
 
+    /**
+     * @summary 智能人事花名册字段选项修改
+     *
+     * @param request RosterMetaFieldOptionsUpdateRequest
+     * @return RosterMetaFieldOptionsUpdateResponse
+     */
     public RosterMetaFieldOptionsUpdateResponse rosterMetaFieldOptionsUpdate(RosterMetaFieldOptionsUpdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
         return this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary ISV发送卡片消息
+     *
+     * @param request SendIsvCardMessageRequest
+     * @param headers SendIsvCardMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendIsvCardMessageResponse
+     */
     public SendIsvCardMessageResponse sendIsvCardMessageWithOptions(SendIsvCardMessageRequest request, SendIsvCardMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1358,12 +1846,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SendIsvCardMessageResponse());
     }
 
+    /**
+     * @summary ISV发送卡片消息
+     *
+     * @param request SendIsvCardMessageRequest
+     * @return SendIsvCardMessageResponse
+     */
     public SendIsvCardMessageResponse sendIsvCardMessage(SendIsvCardMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SendIsvCardMessageHeaders headers = new SendIsvCardMessageHeaders();
         return this.sendIsvCardMessageWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 初始化解决方案任务
+     *
+     * @param request SolutionTaskInitRequest
+     * @param headers SolutionTaskInitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SolutionTaskInitResponse
+     */
     public SolutionTaskInitResponse solutionTaskInitWithOptions(SolutionTaskInitRequest request, SolutionTaskInitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1432,12 +1934,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SolutionTaskInitResponse());
     }
 
+    /**
+     * @summary 初始化解决方案任务
+     *
+     * @param request SolutionTaskInitRequest
+     * @return SolutionTaskInitResponse
+     */
     public SolutionTaskInitResponse solutionTaskInit(SolutionTaskInitRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SolutionTaskInitHeaders headers = new SolutionTaskInitHeaders();
         return this.solutionTaskInitWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 保存解决方案任务
+     *
+     * @param request SolutionTaskSaveRequest
+     * @param headers SolutionTaskSaveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SolutionTaskSaveResponse
+     */
     public SolutionTaskSaveResponse solutionTaskSaveWithOptions(SolutionTaskSaveRequest request, SolutionTaskSaveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1518,12 +2034,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SolutionTaskSaveResponse());
     }
 
+    /**
+     * @summary 保存解决方案任务
+     *
+     * @param request SolutionTaskSaveRequest
+     * @return SolutionTaskSaveResponse
+     */
     public SolutionTaskSaveResponse solutionTaskSave(SolutionTaskSaveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SolutionTaskSaveHeaders headers = new SolutionTaskSaveHeaders();
         return this.solutionTaskSaveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 同步解决方案任务模版
+     *
+     * @param request SyncTaskTemplateRequest
+     * @param headers SyncTaskTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SyncTaskTemplateResponse
+     */
     public SyncTaskTemplateResponse syncTaskTemplateWithOptions(SyncTaskTemplateRequest request, SyncTaskTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1592,12 +2122,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new SyncTaskTemplateResponse());
     }
 
+    /**
+     * @summary 同步解决方案任务模版
+     *
+     * @param request SyncTaskTemplateRequest
+     * @return SyncTaskTemplateResponse
+     */
     public SyncTaskTemplateResponse syncTaskTemplate(SyncTaskTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
         return this.syncTaskTemplateWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary ISV更新卡片消息
+     *
+     * @param request UpdateIsvCardMessageRequest
+     * @param headers UpdateIsvCardMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateIsvCardMessageResponse
+     */
     public UpdateIsvCardMessageResponse updateIsvCardMessageWithOptions(UpdateIsvCardMessageRequest request, UpdateIsvCardMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1654,6 +2198,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateIsvCardMessageResponse());
     }
 
+    /**
+     * @summary ISV更新卡片消息
+     *
+     * @param request UpdateIsvCardMessageRequest
+     * @return UpdateIsvCardMessageResponse
+     */
     public UpdateIsvCardMessageResponse updateIsvCardMessage(UpdateIsvCardMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateIsvCardMessageHeaders headers = new UpdateIsvCardMessageHeaders();

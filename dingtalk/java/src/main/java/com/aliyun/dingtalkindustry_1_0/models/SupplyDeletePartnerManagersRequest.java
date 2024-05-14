@@ -4,12 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyDeletePartnerManagersRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("interfaceId")
     public String interfaceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("interfaceType")
     public String interfaceType;
 

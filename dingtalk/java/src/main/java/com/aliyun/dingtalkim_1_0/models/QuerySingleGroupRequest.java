@@ -4,9 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySingleGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupMembers")
     public java.util.List<QuerySingleGroupRequestGroupMembers> groupMembers;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
@@ -32,9 +38,15 @@ public class QuerySingleGroupRequest extends TeaModel {
     }
 
     public static class QuerySingleGroupRequestGroupMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

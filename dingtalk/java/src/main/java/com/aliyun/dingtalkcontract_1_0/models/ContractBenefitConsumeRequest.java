@@ -4,21 +4,36 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class ContractBenefitConsumeRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("benefitPoint")
     public String benefitPoint;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizRequestId")
     public String bizRequestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("consumeQuota")
     public Long consumeQuota;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("extParams")
     public java.util.Map<String, String> extParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvCorpId")
     public String isvCorpId;
 

@@ -7,12 +7,18 @@ public class EditOutstockRequest extends TeaModel {
     @NameInMap("data")
     public EditOutstockRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -60,30 +66,48 @@ public class EditOutstockRequest extends TeaModel {
         @NameInMap("auditreson")
         public String auditreson;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("billno")
         public String billno;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
         @NameInMap("customerid")
         public String customerid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("empid")
         public String empid;
 
         @NameInMap("inorout")
         public String inorout;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("libiodate")
         public String libiodate;
 
         @NameInMap("libioname")
         public String libioname;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("libiostate")
         public String libiostate;
 
@@ -93,6 +117,9 @@ public class EditOutstockRequest extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("stocklibid")
         public String stocklibid;
 

@@ -25,15 +25,24 @@ public class PediaWordsUpdateRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public Long uuid;
 
     @NameInMap("wordAlias")
     public java.util.List<String> wordAlias;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("wordName")
     public String wordName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("wordParaphrase")
     public String wordParaphrase;
 

@@ -7,6 +7,9 @@ public class DeleteDentryRequest extends TeaModel {
     @NameInMap("toRecycleBin")
     public Boolean toRecycleBin;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

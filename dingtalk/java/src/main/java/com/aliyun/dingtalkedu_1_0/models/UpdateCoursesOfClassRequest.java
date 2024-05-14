@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCoursesOfClassRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("courses")
     public java.util.List<UpdateCoursesOfClassRequestCourses> courses;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sectionConfig")
     public UpdateCoursesOfClassRequestSectionConfig sectionConfig;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -43,12 +52,21 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCoursesDateModel extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -84,9 +102,15 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCoursesSectionModel extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -128,15 +152,24 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("courseCode")
         public String courseCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("courseName")
         public String courseName;
 
         @NameInMap("creatorName")
         public String creatorName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("dateModel")
         public UpdateCoursesOfClassRequestCoursesDateModel dateModel;
 
@@ -146,6 +179,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("location")
         public String location;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionModel")
         public UpdateCoursesOfClassRequestCoursesSectionModel sectionModel;
 
@@ -232,9 +268,15 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -262,9 +304,15 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -292,15 +340,24 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("end")
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
         @NameInMap("sectionType")
         public String sectionType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("start")
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart start;
 
@@ -344,6 +401,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfig extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sectionModels")
         public java.util.List<UpdateCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
 

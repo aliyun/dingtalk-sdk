@@ -34,9 +34,15 @@ public class CreateEventByMeRequest extends TeaModel {
     @NameInMap("richTextDescription")
     public CreateEventByMeRequestRichTextDescription richTextDescription;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("start")
     public CreateEventByMeRequestStart start;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("summary")
     public String summary;
 
@@ -336,6 +342,9 @@ public class CreateEventByMeRequest extends TeaModel {
     }
 
     public static class CreateEventByMeRequestRecurrenceRange extends TeaModel {
+        /**
+         * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 

@@ -7,6 +7,9 @@ public class QueryOfficialAccountUserBasicInfoResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public QueryOfficialAccountUserBasicInfoResponseBodyResult result;
 
@@ -32,6 +35,9 @@ public class QueryOfficialAccountUserBasicInfoResponseBody extends TeaModel {
     }
 
     public static class QueryOfficialAccountUserBasicInfoResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 

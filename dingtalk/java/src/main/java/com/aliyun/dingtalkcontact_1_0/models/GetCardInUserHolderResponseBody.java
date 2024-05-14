@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInUserHolderResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
@@ -13,6 +16,9 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
     @NameInMap("cardAcceptTimeLong")
     public Long cardAcceptTimeLong;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardId")
     public String cardId;
 
@@ -28,9 +34,15 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
     @NameInMap("introduce")
     public String introduce;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 

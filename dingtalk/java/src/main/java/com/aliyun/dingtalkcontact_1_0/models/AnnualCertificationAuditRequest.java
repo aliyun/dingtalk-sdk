@@ -13,6 +13,9 @@ public class AnnualCertificationAuditRequest extends TeaModel {
     @NameInMap("applicationLetter")
     public String applicationLetter;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("authStatus")
     public Integer authStatus;
 
@@ -37,6 +40,9 @@ public class AnnualCertificationAuditRequest extends TeaModel {
     @NameInMap("licenseUrl")
     public String licenseUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 

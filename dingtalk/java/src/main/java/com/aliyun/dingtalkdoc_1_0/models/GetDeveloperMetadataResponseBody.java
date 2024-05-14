@@ -43,9 +43,15 @@ public class GetDeveloperMetadataResponseBody extends TeaModel {
     }
 
     public static class GetDeveloperMetadataResponseBodyAssociatedColumn extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("column")
         public Integer column;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sheetId")
         public String sheetId;
 
@@ -73,9 +79,15 @@ public class GetDeveloperMetadataResponseBody extends TeaModel {
     }
 
     public static class GetDeveloperMetadataResponseBodyAssociatedRow extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("row")
         public Integer row;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sheetId")
         public String sheetId;
 

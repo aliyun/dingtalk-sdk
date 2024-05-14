@@ -4,15 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateUserExtendInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("comments")
     public String comments;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobCode")
     public String jobCode;
 
     @NameInMap("jobStatusCode")
     public java.util.List<String> jobStatusCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userProbCode")
     public String userProbCode;
 

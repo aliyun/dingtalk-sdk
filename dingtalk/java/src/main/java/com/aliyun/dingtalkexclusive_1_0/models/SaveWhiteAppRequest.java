@@ -8,6 +8,9 @@ public class SaveWhiteAppRequest extends TeaModel {
     @Deprecated
     public java.util.List<Long> agentIdList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentIdMap")
     public String agentIdMap;
 

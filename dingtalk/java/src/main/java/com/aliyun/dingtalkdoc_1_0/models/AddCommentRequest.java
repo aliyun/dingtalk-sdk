@@ -4,15 +4,24 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCommentRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("commentContent")
     public String commentContent;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("commentType")
     public String commentType;
 
     @NameInMap("option")
     public AddCommentRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,9 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyDeleteRoleRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isRoleGroup")
     public Boolean isRoleGroup;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("roleId")
     public String roleId;
 

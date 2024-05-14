@@ -7,12 +7,21 @@ public class SearchUserRequest extends TeaModel {
     @NameInMap("fullMatchField")
     public Integer fullMatchField;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("offset")
     public Integer offset;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("queryWord")
     public String queryWord;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("size")
     public Integer size;
 

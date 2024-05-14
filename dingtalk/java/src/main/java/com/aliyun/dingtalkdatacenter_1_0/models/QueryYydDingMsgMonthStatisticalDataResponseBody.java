@@ -32,18 +32,33 @@ public class QueryYydDingMsgMonthStatisticalDataResponseBody extends TeaModel {
     }
 
     public static class QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("kpiCaliber")
         public String kpiCaliber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("kpiId")
         public String kpiId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("kpiName")
         public String kpiName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("period")
         public String period;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("unit")
         public String unit;
 

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceConferenceRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("confTitle")
     public String confTitle;
 
@@ -13,6 +16,9 @@ public class DeviceConferenceRequest extends TeaModel {
     @NameInMap("conferencePassword")
     public String conferencePassword;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

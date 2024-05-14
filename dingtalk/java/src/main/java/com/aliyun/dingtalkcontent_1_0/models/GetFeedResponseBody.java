@@ -4,9 +4,15 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFeedResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("feedId")
     public String feedId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("feedItem")
     public java.util.List<GetFeedResponseBodyFeedItem> feedItem;
 
@@ -32,18 +38,33 @@ public class GetFeedResponseBody extends TeaModel {
     }
 
     public static class GetFeedResponseBodyFeedItem extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("durationMillis")
         public Long durationMillis;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedContentType")
         public Integer feedContentType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

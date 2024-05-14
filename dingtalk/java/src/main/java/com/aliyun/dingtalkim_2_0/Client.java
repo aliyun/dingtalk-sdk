@@ -20,6 +20,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 关闭互动卡片吊顶
+     *
+     * @param request CloseTopboxRequest
+     * @param headers CloseTopboxHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CloseTopboxResponse
+     */
     public CloseTopboxResponse closeTopboxWithOptions(CloseTopboxRequest request, CloseTopboxHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -82,12 +90,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CloseTopboxResponse());
     }
 
+    /**
+     * @summary 关闭互动卡片吊顶
+     *
+     * @param request CloseTopboxRequest
+     * @return CloseTopboxResponse
+     */
     public CloseTopboxResponse closeTopbox(CloseTopboxRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CloseTopboxHeaders headers = new CloseTopboxHeaders();
         return this.closeTopboxWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建两人群
+     *
+     * @param request CreateCoupleGroupRequest
+     * @param headers CreateCoupleGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCoupleGroupResponse
+     */
     public CreateCoupleGroupResponse createCoupleGroupWithOptions(CreateCoupleGroupRequest request, CreateCoupleGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -130,12 +152,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateCoupleGroupResponse());
     }
 
+    /**
+     * @summary 创建两人群
+     *
+     * @param request CreateCoupleGroupRequest
+     * @return CreateCoupleGroupResponse
+     */
     public CreateCoupleGroupResponse createCoupleGroup(CreateCoupleGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateCoupleGroupHeaders headers = new CreateCoupleGroupHeaders();
         return this.createCoupleGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建普通群
+     *
+     * @param request CreateGroupRequest
+     * @param headers CreateGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateGroupResponse
+     */
     public CreateGroupResponse createGroupWithOptions(CreateGroupRequest request, CreateGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -186,12 +222,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateGroupResponse());
     }
 
+    /**
+     * @summary 创建普通群
+     *
+     * @param request CreateGroupRequest
+     * @return CreateGroupResponse
+     */
     public CreateGroupResponse createGroup(CreateGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateGroupHeaders headers = new CreateGroupHeaders();
         return this.createGroupWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建并开启互动卡片吊顶
+     *
+     * @param request CreateTopboxRequest
+     * @param headers CreateTopboxHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateTopboxResponse
+     */
     public CreateTopboxResponse createTopboxWithOptions(CreateTopboxRequest request, CreateTopboxHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -294,12 +344,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateTopboxResponse());
     }
 
+    /**
+     * @summary 创建并开启互动卡片吊顶
+     *
+     * @param request CreateTopboxRequest
+     * @return CreateTopboxResponse
+     */
     public CreateTopboxResponse createTopbox(CreateTopboxRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTopboxHeaders headers = new CreateTopboxHeaders();
         return this.createTopboxWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 群设备市场管理
+     *
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GroupManagerDeviceMarketResponse
+     */
     public GroupManagerDeviceMarketResponse groupManagerDeviceMarketWithOptions(java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", headers)
@@ -318,6 +381,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GroupManagerDeviceMarketResponse());
     }
 
+    /**
+     * @summary 群设备市场管理
+     *
+     * @return GroupManagerDeviceMarketResponse
+     */
     public GroupManagerDeviceMarketResponse groupManagerDeviceMarket() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         java.util.Map<String, String> headers = new java.util.HashMap<>();

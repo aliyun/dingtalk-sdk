@@ -4,12 +4,21 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFilesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deletePolicy")
     public String deletePolicy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fileIds")
     public java.util.List<String> fileIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

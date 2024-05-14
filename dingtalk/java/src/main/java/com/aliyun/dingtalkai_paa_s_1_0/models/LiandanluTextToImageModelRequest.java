@@ -4,6 +4,9 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class LiandanluTextToImageModelRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("module")
     public String module;
 
@@ -13,9 +16,15 @@ public class LiandanluTextToImageModelRequest extends TeaModel {
     @NameInMap("parameters")
     public java.util.Map<String, String> parameters;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("prompt")
     public String prompt;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

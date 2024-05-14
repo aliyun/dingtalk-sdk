@@ -40,6 +40,9 @@ public class UpdateContactRestrictSettingRequest extends TeaModel {
     @NameInMap("subjectUserIds")
     public java.util.List<String> subjectUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public String type;
 

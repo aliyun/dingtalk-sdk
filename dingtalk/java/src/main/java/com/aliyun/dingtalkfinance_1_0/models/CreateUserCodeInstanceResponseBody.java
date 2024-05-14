@@ -7,6 +7,9 @@ public class CreateUserCodeInstanceResponseBody extends TeaModel {
     @NameInMap("codeDetailUrl")
     public String codeDetailUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 

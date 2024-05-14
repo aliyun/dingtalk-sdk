@@ -7,9 +7,15 @@ public class CancelTicketRequest extends TeaModel {
     @NameInMap("notify")
     public CancelTicketRequestNotify notify;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTicketId")
     public String openTicketId;
 

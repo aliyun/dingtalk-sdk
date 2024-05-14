@@ -4,9 +4,15 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfJobPositionResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 

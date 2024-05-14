@@ -4,12 +4,21 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetApaasAppResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("bizAppId")
     public String bizAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("publishStatus")
     public String publishStatus;
 

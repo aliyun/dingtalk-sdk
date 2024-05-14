@@ -16,12 +16,21 @@ public class CreateSpaceRequest extends TeaModel {
     @NameInMap("houseState")
     public Long houseState;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("parentDeptId")
     public String parentDeptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tagCode")
     public String tagCode;
 

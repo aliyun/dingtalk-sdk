@@ -10,6 +10,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
     @NameInMap("privateSeas")
     public Boolean privateSeas;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -43,9 +46,15 @@ public class BatchCreateClueDataRequest extends TeaModel {
     }
 
     public static class BatchCreateClueDataRequestDataListContactList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -123,6 +132,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
         @NameInMap("industryCode")
         public String industryCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -180,6 +192,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
     }
 
     public static class BatchCreateClueDataRequestDataListTagIdList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("tagId")
         public String tagId;
 
@@ -210,18 +225,30 @@ public class BatchCreateClueDataRequest extends TeaModel {
     }
 
     public static class BatchCreateClueDataRequestDataList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("contactList")
         public java.util.List<BatchCreateClueDataRequestDataListContactList> contactList;
 
         @NameInMap("enterprise")
         public BatchCreateClueDataRequestDataListEnterprise enterprise;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sourceId")
         public String sourceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sourceType")
         public String sourceType;
 

@@ -4,15 +4,24 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProfileRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appUid")
     public String appUid;
 
     @NameInMap("avatarMediaId")
     public String avatarMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobileNumber")
     public String mobileNumber;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nick")
     public String nick;
 

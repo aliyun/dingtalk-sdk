@@ -10,18 +10,27 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public SendInteractiveCardRequestCardData cardData;
 
     @NameInMap("cardOptions")
     public SendInteractiveCardRequestCardOptions cardOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
     @NameInMap("chatBotId")
     public String chatBotId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
@@ -31,6 +40,9 @@ public class SendInteractiveCardRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outTrackId")
     public String outTrackId;
 

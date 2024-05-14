@@ -7,6 +7,9 @@ public class UpdateIntegratedTaskRequest extends TeaModel {
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("tasks")
     public java.util.List<UpdateIntegratedTaskRequestTasks> tasks;
 
@@ -35,9 +38,15 @@ public class UpdateIntegratedTaskRequest extends TeaModel {
         @NameInMap("result")
         public String result;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 

@@ -7,6 +7,9 @@ public class CreateTriggerRequest extends TeaModel {
     @NameInMap("integratorFlag")
     public String integratorFlag;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("triggerInfo")
     public java.util.List<CreateTriggerRequestTriggerInfo> triggerInfo;
 
@@ -32,21 +35,33 @@ public class CreateTriggerRequest extends TeaModel {
     }
 
     public static class CreateTriggerRequestTriggerInfo extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("inputSchema")
         public String inputSchema;
 
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 

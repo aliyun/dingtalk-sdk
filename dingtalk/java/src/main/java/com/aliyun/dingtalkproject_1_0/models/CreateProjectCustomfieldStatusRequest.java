@@ -13,6 +13,9 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
     @NameInMap("customFieldName")
     public String customFieldName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("value")
     public java.util.List<CreateProjectCustomfieldStatusRequestValue> value;
 

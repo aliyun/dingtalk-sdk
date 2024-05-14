@@ -10,9 +10,15 @@ public class ListFormSchemasByCreatorRequest extends TeaModel {
     @NameInMap("creator")
     public String creator;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

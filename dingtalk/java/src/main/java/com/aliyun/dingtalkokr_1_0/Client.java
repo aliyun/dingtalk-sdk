@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 增加对齐目标
+     *
+     * @param request AlignObjectiveRequest
+     * @param headers AlignObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AlignObjectiveResponse
+     */
     public AlignObjectiveResponse alignObjectiveWithOptions(String objectiveId, AlignObjectiveRequest request, AlignObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -63,12 +71,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AlignObjectiveResponse());
     }
 
+    /**
+     * @summary 增加对齐目标
+     *
+     * @param request AlignObjectiveRequest
+     * @return AlignObjectiveResponse
+     */
     public AlignObjectiveResponse alignObjective(String objectiveId, AlignObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AlignObjectiveHeaders headers = new AlignObjectiveHeaders();
         return this.alignObjectiveWithOptions(objectiveId, request, headers, runtime);
     }
 
+    /**
+     * @summary  批量添加权限信息
+     *
+     * @param request BatchAddPermissionRequest
+     * @param headers BatchAddPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchAddPermissionResponse
+     */
     public BatchAddPermissionResponse batchAddPermissionWithOptions(BatchAddPermissionRequest request, BatchAddPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -117,12 +139,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchAddPermissionResponse());
     }
 
+    /**
+     * @summary  批量添加权限信息
+     *
+     * @param request BatchAddPermissionRequest
+     * @return BatchAddPermissionResponse
+     */
     public BatchAddPermissionResponse batchAddPermission(BatchAddPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchAddPermissionHeaders headers = new BatchAddPermissionHeaders();
         return this.batchAddPermissionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量查询目标
+     *
+     * @param request BatchQueryObjectiveRequest
+     * @param headers BatchQueryObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryObjectiveResponse
+     */
     public BatchQueryObjectiveResponse batchQueryObjectiveWithOptions(BatchQueryObjectiveRequest request, BatchQueryObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -179,12 +215,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryObjectiveResponse());
     }
 
+    /**
+     * @summary 批量查询目标
+     *
+     * @param request BatchQueryObjectiveRequest
+     * @return BatchQueryObjectiveResponse
+     */
     public BatchQueryObjectiveResponse batchQueryObjective(BatchQueryObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchQueryObjectiveHeaders headers = new BatchQueryObjectiveHeaders();
         return this.batchQueryObjectiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量查询用户信息
+     *
+     * @param request BatchQueryUserRequest
+     * @param headers BatchQueryUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryUserResponse
+     */
     public BatchQueryUserResponse batchQueryUserWithOptions(BatchQueryUserRequest request, BatchQueryUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -223,12 +273,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryUserResponse());
     }
 
+    /**
+     * @summary 批量查询用户信息
+     *
+     * @param request BatchQueryUserRequest
+     * @return BatchQueryUserResponse
+     */
     public BatchQueryUserResponse batchQueryUser(BatchQueryUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchQueryUserHeaders headers = new BatchQueryUserHeaders();
         return this.batchQueryUserWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建keyResult
+     *
+     * @param request CreateKeyResultRequest
+     * @param headers CreateKeyResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateKeyResultResponse
+     */
     public CreateKeyResultResponse createKeyResultWithOptions(CreateKeyResultRequest request, CreateKeyResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -285,12 +349,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateKeyResultResponse());
     }
 
+    /**
+     * @summary 创建keyResult
+     *
+     * @param request CreateKeyResultRequest
+     * @return CreateKeyResultResponse
+     */
     public CreateKeyResultResponse createKeyResult(CreateKeyResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateKeyResultHeaders headers = new CreateKeyResultHeaders();
         return this.createKeyResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 创建目标
+     *
+     * @param request CreateObjectiveRequest
+     * @param headers CreateObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateObjectiveResponse
+     */
     public CreateObjectiveResponse createObjectiveWithOptions(CreateObjectiveRequest request, CreateObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -339,12 +417,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new CreateObjectiveResponse());
     }
 
+    /**
+     * @summary 创建目标
+     *
+     * @param request CreateObjectiveRequest
+     * @return CreateObjectiveResponse
+     */
     public CreateObjectiveResponse createObjective(CreateObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateObjectiveHeaders headers = new CreateObjectiveHeaders();
         return this.createObjectiveWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除keyresult的方法
+     *
+     * @param request DeleteKeyResultRequest
+     * @param headers DeleteKeyResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteKeyResultResponse
+     */
     public DeleteKeyResultResponse deleteKeyResultWithOptions(DeleteKeyResultRequest request, DeleteKeyResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -383,12 +475,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteKeyResultResponse());
     }
 
+    /**
+     * @summary 删除keyresult的方法
+     *
+     * @param request DeleteKeyResultRequest
+     * @return DeleteKeyResultResponse
+     */
     public DeleteKeyResultResponse deleteKeyResult(DeleteKeyResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteKeyResultHeaders headers = new DeleteKeyResultHeaders();
         return this.deleteKeyResultWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 删除目标
+     *
+     * @param request DeleteObjectiveRequest
+     * @param headers DeleteObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteObjectiveResponse
+     */
     public DeleteObjectiveResponse deleteObjectiveWithOptions(String objectiveId, DeleteObjectiveRequest request, DeleteObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -423,12 +529,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeleteObjectiveResponse());
     }
 
+    /**
+     * @summary 删除目标
+     *
+     * @param request DeleteObjectiveRequest
+     * @return DeleteObjectiveResponse
+     */
     public DeleteObjectiveResponse deleteObjective(String objectiveId, DeleteObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteObjectiveHeaders headers = new DeleteObjectiveHeaders();
         return this.deleteObjectiveWithOptions(objectiveId, request, headers, runtime);
     }
 
+    /**
+     * @summary  删除权限信息
+     *
+     * @param request DeletePermissionRequest
+     * @param headers DeletePermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeletePermissionResponse
+     */
     public DeletePermissionResponse deletePermissionWithOptions(DeletePermissionRequest request, DeletePermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -483,12 +603,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new DeletePermissionResponse());
     }
 
+    /**
+     * @summary  删除权限信息
+     *
+     * @param request DeletePermissionRequest
+     * @return DeletePermissionResponse
+     */
     public DeletePermissionResponse deletePermission(DeletePermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeletePermissionHeaders headers = new DeletePermissionHeaders();
         return this.deletePermissionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 获取周期列表
+     *
+     * @param headers GetPeriodListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPeriodListResponse
+     */
     public GetPeriodListResponse getPeriodListWithOptions(GetPeriodListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
@@ -516,12 +649,25 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPeriodListResponse());
     }
 
+    /**
+     * @summary 获取周期列表
+     *
+     * @return GetPeriodListResponse
+     */
     public GetPeriodListResponse getPeriodList() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPeriodListHeaders headers = new GetPeriodListHeaders();
         return this.getPeriodListWithOptions(headers, runtime);
     }
 
+    /**
+     * @summary 获取权限信息
+     *
+     * @param request GetPermissionRequest
+     * @param headers GetPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPermissionResponse
+     */
     public GetPermissionResponse getPermissionWithOptions(GetPermissionRequest request, GetPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -572,12 +718,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetPermissionResponse());
     }
 
+    /**
+     * @summary 获取权限信息
+     *
+     * @param request GetPermissionRequest
+     * @return GetPermissionResponse
+     */
     public GetPermissionResponse getPermission(GetPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetPermissionHeaders headers = new GetPermissionHeaders();
         return this.getPermissionWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary  获取用户当前周期下的全部 OKR 内容
+     *
+     * @param request GetUserOkrRequest
+     * @param headers GetUserOkrHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserOkrResponse
+     */
     public GetUserOkrResponse getUserOkrWithOptions(GetUserOkrRequest request, GetUserOkrHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -624,12 +784,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new GetUserOkrResponse());
     }
 
+    /**
+     * @summary  获取用户当前周期下的全部 OKR 内容
+     *
+     * @param request GetUserOkrRequest
+     * @return GetUserOkrResponse
+     */
     public GetUserOkrResponse getUserOkr(GetUserOkrRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserOkrHeaders headers = new GetUserOkrHeaders();
         return this.getUserOkrWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 批量查询OKR
+     *
+     * @param request OkrObjectivesBatchRequest
+     * @param headers OkrObjectivesBatchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OkrObjectivesBatchResponse
+     */
     public OkrObjectivesBatchResponse okrObjectivesBatchWithOptions(OkrObjectivesBatchRequest request, OkrObjectivesBatchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -668,12 +842,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new OkrObjectivesBatchResponse());
     }
 
+    /**
+     * @summary 批量查询OKR
+     *
+     * @param request OkrObjectivesBatchRequest
+     * @return OkrObjectivesBatchResponse
+     */
     public OkrObjectivesBatchResponse okrObjectivesBatch(OkrObjectivesBatchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         OkrObjectivesBatchHeaders headers = new OkrObjectivesBatchHeaders();
         return this.okrObjectivesBatchWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 查询单个用户的OKR
+     *
+     * @param request OkrObjectivesByUserRequest
+     * @param headers OkrObjectivesByUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OkrObjectivesByUserResponse
+     */
     public OkrObjectivesByUserResponse okrObjectivesByUserWithOptions(String dingUserId, OkrObjectivesByUserRequest request, OkrObjectivesByUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -716,12 +904,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new OkrObjectivesByUserResponse());
     }
 
+    /**
+     * @summary 查询单个用户的OKR
+     *
+     * @param request OkrObjectivesByUserRequest
+     * @return OkrObjectivesByUserResponse
+     */
     public OkrObjectivesByUserResponse okrObjectivesByUser(String dingUserId, OkrObjectivesByUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         OkrObjectivesByUserHeaders headers = new OkrObjectivesByUserHeaders();
         return this.okrObjectivesByUserWithOptions(dingUserId, request, headers, runtime);
     }
 
+    /**
+     * @summary 获取 OKR 周期
+     *
+     * @param request OkrPeriodsRequest
+     * @param headers OkrPeriodsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OkrPeriodsResponse
+     */
     public OkrPeriodsResponse okrPeriodsWithOptions(OkrPeriodsRequest request, OkrPeriodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -768,12 +970,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new OkrPeriodsResponse());
     }
 
+    /**
+     * @summary 获取 OKR 周期
+     *
+     * @param request OkrPeriodsRequest
+     * @return OkrPeriodsResponse
+     */
     public OkrPeriodsResponse okrPeriods(OkrPeriodsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         OkrPeriodsHeaders headers = new OkrPeriodsHeaders();
         return this.okrPeriodsWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary  取消对齐Objective
+     *
+     * @param request UnAlignObjectiveRequest
+     * @param headers UnAlignObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UnAlignObjectiveResponse
+     */
     public UnAlignObjectiveResponse unAlignObjectiveWithOptions(String objectiveId, UnAlignObjectiveRequest request, UnAlignObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -818,12 +1034,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UnAlignObjectiveResponse());
     }
 
+    /**
+     * @summary  取消对齐Objective
+     *
+     * @param request UnAlignObjectiveRequest
+     * @return UnAlignObjectiveResponse
+     */
     public UnAlignObjectiveResponse unAlignObjective(String objectiveId, UnAlignObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UnAlignObjectiveHeaders headers = new UnAlignObjectiveHeaders();
         return this.unAlignObjectiveWithOptions(objectiveId, request, headers, runtime);
     }
 
+    /**
+     * @summary 更改KR内容
+     *
+     * @param request UpdateKROfContentRequest
+     * @param headers UpdateKROfContentHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateKROfContentResponse
+     */
     public UpdateKROfContentResponse updateKROfContentWithOptions(UpdateKROfContentRequest request, UpdateKROfContentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -872,12 +1102,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateKROfContentResponse());
     }
 
+    /**
+     * @summary 更改KR内容
+     *
+     * @param request UpdateKROfContentRequest
+     * @return UpdateKROfContentResponse
+     */
     public UpdateKROfContentResponse updateKROfContent(UpdateKROfContentRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateKROfContentHeaders headers = new UpdateKROfContentHeaders();
         return this.updateKROfContentWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更改KR分数
+     *
+     * @param request UpdateKROfScoreRequest
+     * @param headers UpdateKROfScoreHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateKROfScoreResponse
+     */
     public UpdateKROfScoreResponse updateKROfScoreWithOptions(UpdateKROfScoreRequest request, UpdateKROfScoreHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -922,12 +1166,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateKROfScoreResponse());
     }
 
+    /**
+     * @summary 更改KR分数
+     *
+     * @param request UpdateKROfScoreRequest
+     * @return UpdateKROfScoreResponse
+     */
     public UpdateKROfScoreResponse updateKROfScore(UpdateKROfScoreRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateKROfScoreHeaders headers = new UpdateKROfScoreHeaders();
         return this.updateKROfScoreWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更改 KR 权重
+     *
+     * @param request UpdateKROfWeightRequest
+     * @param headers UpdateKROfWeightHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateKROfWeightResponse
+     */
     public UpdateKROfWeightResponse updateKROfWeightWithOptions(UpdateKROfWeightRequest request, UpdateKROfWeightHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -972,12 +1230,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateKROfWeightResponse());
     }
 
+    /**
+     * @summary 更改 KR 权重
+     *
+     * @param request UpdateKROfWeightRequest
+     * @return UpdateKROfWeightResponse
+     */
     public UpdateKROfWeightResponse updateKROfWeight(UpdateKROfWeightRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateKROfWeightHeaders headers = new UpdateKROfWeightHeaders();
         return this.updateKROfWeightWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 更新目标
+     *
+     * @param request UpdateObjectiveRequest
+     * @param headers UpdateObjectiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateObjectiveResponse
+     */
     public UpdateObjectiveResponse updateObjectiveWithOptions(String objectiveId, UpdateObjectiveRequest request, UpdateObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1018,12 +1290,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdateObjectiveResponse());
     }
 
+    /**
+     * @summary 更新目标
+     *
+     * @param request UpdateObjectiveRequest
+     * @return UpdateObjectiveResponse
+     */
     public UpdateObjectiveResponse updateObjective(String objectiveId, UpdateObjectiveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateObjectiveHeaders headers = new UpdateObjectiveHeaders();
         return this.updateObjectiveWithOptions(objectiveId, request, headers, runtime);
     }
 
+    /**
+     * @summary 更新资源隐私策略
+     *
+     * @param request UpdatePrivacyRequest
+     * @param headers UpdatePrivacyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePrivacyResponse
+     */
     public UpdatePrivacyResponse updatePrivacyWithOptions(UpdatePrivacyRequest request, UpdatePrivacyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
@@ -1072,6 +1358,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePrivacyResponse());
     }
 
+    /**
+     * @summary 更新资源隐私策略
+     *
+     * @param request UpdatePrivacyRequest
+     * @return UpdatePrivacyResponse
+     */
     public UpdatePrivacyResponse updatePrivacy(UpdatePrivacyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdatePrivacyHeaders headers = new UpdatePrivacyHeaders();

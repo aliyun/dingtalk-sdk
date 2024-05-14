@@ -4,15 +4,24 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DistributePartnerAppRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("subCorpId")
     public String subCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("type")
     public Long type;
 

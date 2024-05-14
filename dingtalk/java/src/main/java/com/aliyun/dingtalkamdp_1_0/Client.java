@@ -19,6 +19,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
+    /**
+     * @summary 人员数据推送
+     *
+     * @param request AmdpEmployeeDataPushRequest
+     * @param headers AmdpEmployeeDataPushHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AmdpEmployeeDataPushResponse
+     */
     public AmdpEmployeeDataPushResponse amdpEmployeeDataPushWithOptions(AmdpEmployeeDataPushRequest request, AmdpEmployeeDataPushHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -53,12 +61,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AmdpEmployeeDataPushResponse());
     }
 
+    /**
+     * @summary 人员数据推送
+     *
+     * @param request AmdpEmployeeDataPushRequest
+     * @return AmdpEmployeeDataPushResponse
+     */
     public AmdpEmployeeDataPushResponse amdpEmployeeDataPush(AmdpEmployeeDataPushRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AmdpEmployeeDataPushHeaders headers = new AmdpEmployeeDataPushHeaders();
         return this.amdpEmployeeDataPushWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 任职数据推送
+     *
+     * @param request AmdpJobPositionDataPushRequest
+     * @param headers AmdpJobPositionDataPushHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AmdpJobPositionDataPushResponse
+     */
     public AmdpJobPositionDataPushResponse amdpJobPositionDataPushWithOptions(AmdpJobPositionDataPushRequest request, AmdpJobPositionDataPushHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -93,12 +115,26 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AmdpJobPositionDataPushResponse());
     }
 
+    /**
+     * @summary 任职数据推送
+     *
+     * @param request AmdpJobPositionDataPushRequest
+     * @return AmdpJobPositionDataPushResponse
+     */
     public AmdpJobPositionDataPushResponse amdpJobPositionDataPush(AmdpJobPositionDataPushRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AmdpJobPositionDataPushHeaders headers = new AmdpJobPositionDataPushHeaders();
         return this.amdpJobPositionDataPushWithOptions(request, headers, runtime);
     }
 
+    /**
+     * @summary 组织部门数据推送
+     *
+     * @param request AmdpOrganizationDataPushRequest
+     * @param headers AmdpOrganizationDataPushHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AmdpOrganizationDataPushResponse
+     */
     public AmdpOrganizationDataPushResponse amdpOrganizationDataPushWithOptions(AmdpOrganizationDataPushRequest request, AmdpOrganizationDataPushHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
@@ -133,6 +169,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return TeaModel.toModel(this.execute(params, req, runtime), new AmdpOrganizationDataPushResponse());
     }
 
+    /**
+     * @summary 组织部门数据推送
+     *
+     * @param request AmdpOrganizationDataPushRequest
+     * @return AmdpOrganizationDataPushResponse
+     */
     public AmdpOrganizationDataPushResponse amdpOrganizationDataPush(AmdpOrganizationDataPushRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AmdpOrganizationDataPushHeaders headers = new AmdpOrganizationDataPushHeaders();

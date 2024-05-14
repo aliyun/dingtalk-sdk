@@ -4,6 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendAgentOTOMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("detail")
     public SendAgentOTOMessageRequestDetail detail;
 
@@ -371,18 +374,33 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetail extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("messageBody")
         public SendAgentOTOMessageRequestDetailMessageBody messageBody;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("msgType")
         public String msgType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sessionId")
         public String sessionId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 

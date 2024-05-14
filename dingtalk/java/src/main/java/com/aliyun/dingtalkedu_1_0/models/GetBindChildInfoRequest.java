@@ -4,12 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBindChildInfoRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("schoolCorpId")
     public String schoolCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("studentUserId")
     public String studentUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

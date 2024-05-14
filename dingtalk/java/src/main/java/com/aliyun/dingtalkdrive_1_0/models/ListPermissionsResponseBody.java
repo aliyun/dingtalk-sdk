@@ -4,9 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPermissionsResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("members")
     public java.util.List<ListPermissionsResponseBodyMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outMembers")
     public java.util.List<ListPermissionsResponseBodyOutMembers> outMembers;
 
@@ -41,6 +47,9 @@ public class ListPermissionsResponseBody extends TeaModel {
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -84,12 +93,21 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extend")
         public Boolean extend;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("member")
         public ListPermissionsResponseBodyMembersMember member;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("role")
         public String role;
 
@@ -134,6 +152,9 @@ public class ListPermissionsResponseBody extends TeaModel {
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -177,12 +198,21 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyOutMembers extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("extend")
         public Boolean extend;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("member")
         public ListPermissionsResponseBodyOutMembersMember member;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("role")
         public String role;
 

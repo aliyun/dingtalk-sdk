@@ -10,6 +10,9 @@ public class CreateCooperateOrgRequest extends TeaModel {
     @NameInMap("logoMediaId")
     public String logoMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 

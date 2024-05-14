@@ -7,6 +7,9 @@ public class GetConditionFormComponentRequest extends TeaModel {
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 

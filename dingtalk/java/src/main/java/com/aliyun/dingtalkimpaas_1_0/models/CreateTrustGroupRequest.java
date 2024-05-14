@@ -4,6 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channel")
     public String channel;
 
@@ -13,6 +16,9 @@ public class CreateTrustGroupRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<CreateTrustGroupRequestMembers> members;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -22,6 +28,9 @@ public class CreateTrustGroupRequest extends TeaModel {
     @NameInMap("systemMsg")
     public String systemMsg;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

@@ -10,6 +10,9 @@ public class QueryAnhmdStatisticalDataRequest extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("statDate")
     public String statDate;
 

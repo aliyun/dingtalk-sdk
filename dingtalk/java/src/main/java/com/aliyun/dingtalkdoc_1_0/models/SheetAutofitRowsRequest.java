@@ -4,15 +4,27 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SheetAutofitRowsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("fontWidth")
     public Long fontWidth;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("row")
     public Long row;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rowCount")
     public Long rowCount;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

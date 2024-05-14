@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAndActivateDeviceResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("result")
     public RegisterAndActivateDeviceResponseBodyResult result;
 
@@ -35,27 +38,51 @@ public class RegisterAndActivateDeviceResponseBody extends TeaModel {
         @NameInMap("deviceCategory")
         public Integer deviceCategory;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceDetailUrl")
         public String deviceDetailUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("deviceUuid")
         public String deviceUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("introduction")
         public String introduction;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("roleUuid")
         public String roleUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("typeUuid")
         public String typeUuid;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

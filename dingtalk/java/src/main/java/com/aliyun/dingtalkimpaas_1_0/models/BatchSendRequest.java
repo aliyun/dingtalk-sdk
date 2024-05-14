@@ -7,12 +7,18 @@ public class BatchSendRequest extends TeaModel {
     @NameInMap("appUids")
     public java.util.List<String> appUids;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public String content;
 
     @NameInMap("conversationIds")
     public java.util.List<String> conversationIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -7,6 +7,9 @@ public class AddResidentUsersRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("departmentId")
     public Long departmentId;
 
@@ -22,6 +25,9 @@ public class AddResidentUsersRequest extends TeaModel {
     @NameInMap("relateType")
     public String relateType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userName")
     public String userName;
 

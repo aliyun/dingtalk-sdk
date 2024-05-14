@@ -7,9 +7,15 @@ public class CopyProcessRequest extends TeaModel {
     @NameInMap("copyOptions")
     public CopyProcessRequestCopyOptions copyOptions;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceCorpId")
     public String sourceCorpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceProcessVOList")
     public java.util.List<CopyProcessRequestSourceProcessVOList> sourceProcessVOList;
 
@@ -68,6 +74,9 @@ public class CopyProcessRequest extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

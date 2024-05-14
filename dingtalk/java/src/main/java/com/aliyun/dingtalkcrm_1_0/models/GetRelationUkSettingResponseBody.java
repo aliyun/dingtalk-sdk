@@ -24,6 +24,9 @@ public class GetRelationUkSettingResponseBody extends TeaModel {
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 

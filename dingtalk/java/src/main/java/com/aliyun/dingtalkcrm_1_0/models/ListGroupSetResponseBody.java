@@ -10,6 +10,9 @@ public class ListGroupSetResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("resultList")
     public java.util.List<ListGroupSetResponseBodyResultList> resultList;
 
@@ -123,9 +126,15 @@ public class ListGroupSetResponseBody extends TeaModel {
         @NameInMap("groupChatCount")
         public Integer groupChatCount;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("lastOpenConversationId")
         public String lastOpenConversationId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("manager")
         public java.util.List<ListGroupSetResponseBodyResultListManager> manager;
 
@@ -150,6 +159,9 @@ public class ListGroupSetResponseBody extends TeaModel {
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("owner")
         public ListGroupSetResponseBodyResultListOwner owner;
 

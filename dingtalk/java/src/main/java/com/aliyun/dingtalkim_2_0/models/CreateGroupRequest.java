@@ -7,15 +7,24 @@ public class CreateGroupRequest extends TeaModel {
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("users")
     public java.util.List<CreateGroupRequestUsers> users;
 
@@ -68,6 +77,9 @@ public class CreateGroupRequest extends TeaModel {
         @NameInMap("appUserId")
         public String appUserId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("groupOwner")
         public Boolean groupOwner;
 

@@ -4,21 +4,39 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetRightPanelRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rightPanelClosePermitted")
     public Boolean rightPanelClosePermitted;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("rightPanelOpenStatus")
     public Integer rightPanelOpenStatus;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("webWndParams")
     public SetRightPanelRequestWebWndParams webWndParams;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("width")
     public Integer width;
 
@@ -76,6 +94,9 @@ public class SetRightPanelRequest extends TeaModel {
     }
 
     public static class SetRightPanelRequestWebWndParams extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("targetURL")
         public String targetURL;
 

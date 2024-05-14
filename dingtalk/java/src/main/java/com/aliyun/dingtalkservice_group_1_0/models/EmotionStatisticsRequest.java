@@ -4,12 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class EmotionStatisticsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxDt")
     public String maxDt;
 
     @NameInMap("maxEmotion")
     public Double maxEmotion;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("minDt")
     public String minDt;
 
@@ -22,6 +28,9 @@ public class EmotionStatisticsRequest extends TeaModel {
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

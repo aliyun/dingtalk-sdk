@@ -4,6 +4,9 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCollectingTraceTaskResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("list")
     public java.util.List<QueryCollectingTraceTaskResponseBodyList> list;
 
@@ -21,24 +24,45 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
     }
 
     public static class QueryCollectingTraceTaskResponseBodyList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("appTraceId")
         public String appTraceId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("geoCollectPeriod")
         public Long geoCollectPeriod;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("geoReportPeriod")
         public Long geoReportPeriod;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("geoReportStatus")
         public Long geoReportStatus;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("reportEndTime")
         public Long reportEndTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("reportStartTime")
         public Long reportStartTime;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

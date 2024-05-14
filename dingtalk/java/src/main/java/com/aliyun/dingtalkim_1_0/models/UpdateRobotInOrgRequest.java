@@ -25,6 +25,9 @@ public class UpdateRobotInOrgRequest extends TeaModel {
     @NameInMap("previewMediaId")
     public String previewMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

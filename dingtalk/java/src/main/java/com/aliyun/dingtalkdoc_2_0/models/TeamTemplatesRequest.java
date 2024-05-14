@@ -7,6 +7,9 @@ public class TeamTemplatesRequest extends TeaModel {
     @NameInMap("option")
     public TeamTemplatesRequestOption option;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 

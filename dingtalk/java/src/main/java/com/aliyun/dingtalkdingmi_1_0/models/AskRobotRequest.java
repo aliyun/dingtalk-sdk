@@ -7,9 +7,15 @@ public class AskRobotRequest extends TeaModel {
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("question")
     public String question;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotAppKey")
     public String robotAppKey;
 

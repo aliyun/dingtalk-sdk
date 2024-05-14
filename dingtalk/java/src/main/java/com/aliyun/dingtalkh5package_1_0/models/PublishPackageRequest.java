@@ -10,6 +10,9 @@ public class PublishPackageRequest extends TeaModel {
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("version")
     public String version;
 

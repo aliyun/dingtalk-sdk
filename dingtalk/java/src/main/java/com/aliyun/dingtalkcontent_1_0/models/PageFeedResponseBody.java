@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageFeedResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("feedList")
     public java.util.List<PageFeedResponseBodyFeedList> feedList;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("hasNext")
     public Boolean hasNext;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("nextCursor")
     public Integer nextCursor;
 
@@ -43,21 +52,39 @@ public class PageFeedResponseBody extends TeaModel {
     }
 
     public static class PageFeedResponseBodyFeedList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedCategory")
         public String feedCategory;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedId")
         public String feedId;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("feedType")
         public Integer feedType;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("url")
         public String url;
 

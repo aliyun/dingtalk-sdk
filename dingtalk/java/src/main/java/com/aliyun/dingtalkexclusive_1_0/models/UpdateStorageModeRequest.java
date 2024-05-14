@@ -7,6 +7,9 @@ public class UpdateStorageModeRequest extends TeaModel {
     @NameInMap("fileStorageMode")
     public String fileStorageMode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

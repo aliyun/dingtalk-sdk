@@ -32,6 +32,9 @@ public class ServiceWindowMessageBatchPushResponseBody extends TeaModel {
     }
 
     public static class ServiceWindowMessageBatchPushResponseBodyResult extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("openPushId")
         public String openPushId;
 

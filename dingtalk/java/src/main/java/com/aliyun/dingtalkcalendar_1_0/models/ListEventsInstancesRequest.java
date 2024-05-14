@@ -10,6 +10,9 @@ public class ListEventsInstancesRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("seriesMasterId")
     public String seriesMasterId;
 

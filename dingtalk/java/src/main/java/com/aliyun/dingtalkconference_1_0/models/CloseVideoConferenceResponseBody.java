@@ -7,6 +7,9 @@ public class CloseVideoConferenceResponseBody extends TeaModel {
     @NameInMap("cause")
     public String cause;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("code")
     public Long code;
 

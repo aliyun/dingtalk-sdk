@@ -13,21 +13,36 @@ public class SyncTaskTemplateRequest extends TeaModel {
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("outerId")
     public String outerId;
 
     @NameInMap("taskScopeVO")
     public SyncTaskTemplateRequestTaskScopeVO taskScopeVO;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("taskType")
     public String taskType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("solutionType")
     public String solutionType;
 

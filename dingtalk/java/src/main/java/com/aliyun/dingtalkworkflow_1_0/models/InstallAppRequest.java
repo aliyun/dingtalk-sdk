@@ -7,9 +7,15 @@ public class InstallAppRequest extends TeaModel {
     @NameInMap("bizGroup")
     public String bizGroup;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("installOption")
     public InstallAppRequestInstallOption installOption;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceDirName")
     public String sourceDirName;
 

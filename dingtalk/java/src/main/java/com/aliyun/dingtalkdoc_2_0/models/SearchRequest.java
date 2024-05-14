@@ -7,9 +7,15 @@ public class SearchRequest extends TeaModel {
     @NameInMap("dentryRequest")
     public SearchRequestDentryRequest dentryRequest;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -84,6 +90,9 @@ public class SearchRequest extends TeaModel {
     }
 
     public static class SearchRequestDentryRequest extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
@@ -180,6 +189,9 @@ public class SearchRequest extends TeaModel {
     }
 
     public static class SearchRequestSpaceRequest extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 

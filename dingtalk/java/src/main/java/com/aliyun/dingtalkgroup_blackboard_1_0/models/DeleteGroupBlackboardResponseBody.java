@@ -7,6 +7,9 @@ public class DeleteGroupBlackboardResponseBody extends TeaModel {
     @NameInMap("isDeleted")
     public Boolean isDeleted;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

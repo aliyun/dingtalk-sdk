@@ -4,6 +4,9 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchInsertSearchItemRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("searchItemModels")
     public java.util.List<BatchInsertSearchItemRequestSearchItemModels> searchItemModels;
 
@@ -27,6 +30,9 @@ public class BatchInsertSearchItemRequest extends TeaModel {
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("itemId")
         public String itemId;
 
@@ -39,6 +45,9 @@ public class BatchInsertSearchItemRequest extends TeaModel {
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("title")
         public String title;
 

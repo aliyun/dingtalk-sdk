@@ -4,18 +4,33 @@ package com.aliyun.dingtalkalgo_1_0.models;
 import com.aliyun.tea.*;
 
 public class OkrOpenRecommendRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("candidateOkrItems")
     public java.util.List<OkrOpenRecommendRequestCandidateOkrItems> candidateOkrItems;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("deptIds")
     public java.util.List<String> deptIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("isvAppId")
     public String isvAppId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -172,9 +187,15 @@ public class OkrOpenRecommendRequest extends TeaModel {
         @NameInMap("okrInfos")
         public java.util.List<OkrOpenRecommendRequestCandidateOkrItemsOkrInfos> okrInfos;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("relation")
         public String relation;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("userId")
         public String userId;
 

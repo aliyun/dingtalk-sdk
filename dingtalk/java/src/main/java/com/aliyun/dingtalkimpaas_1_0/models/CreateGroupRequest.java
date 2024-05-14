@@ -4,21 +4,36 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("channel")
     public String channel;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUid")
     public String creatorUid;
 
     @NameInMap("iconMediaId")
     public String iconMediaId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("properties")
     public java.util.Map<String, String> properties;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

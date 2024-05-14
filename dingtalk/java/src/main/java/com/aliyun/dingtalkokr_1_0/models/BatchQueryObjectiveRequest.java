@@ -4,9 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryObjectiveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveIds")
     public java.util.List<String> objectiveIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodId")
     public String periodId;
 
@@ -16,9 +22,15 @@ public class BatchQueryObjectiveRequest extends TeaModel {
     @NameInMap("withKr")
     public Boolean withKr;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("withProgress")
     public Boolean withProgress;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 

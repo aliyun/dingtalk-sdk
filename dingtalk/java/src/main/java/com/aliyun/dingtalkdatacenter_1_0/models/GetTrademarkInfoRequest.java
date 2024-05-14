@@ -10,6 +10,9 @@ public class GetTrademarkInfoRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("searchKey")
     public String searchKey;
 

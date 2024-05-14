@@ -4,12 +4,21 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class FindTargetRelatedFollowRecordsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("followTargetDataId")
     public String followTargetDataId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("followTargetType")
     public String followTargetType;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 

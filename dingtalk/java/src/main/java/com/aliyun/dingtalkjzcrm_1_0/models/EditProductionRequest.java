@@ -7,12 +7,18 @@ public class EditProductionRequest extends TeaModel {
     @NameInMap("data")
     public EditProductionRequestData data;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("datatype")
     public Long datatype;
 
     @NameInMap("msgid")
     public Long msgid;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -54,6 +60,9 @@ public class EditProductionRequest extends TeaModel {
     }
 
     public static class EditProductionRequestData extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("data_userid")
         public String dataUserid;
 
@@ -72,9 +81,15 @@ public class EditProductionRequest extends TeaModel {
         @NameInMap("sch_makeemp")
         public String schMakeemp;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sch_number")
         public String schNumber;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sch_planendtime")
         public String schPlanendtime;
 
@@ -84,12 +99,18 @@ public class EditProductionRequest extends TeaModel {
         @NameInMap("sch_remark")
         public String schRemark;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sch_starttime")
         public String schStarttime;
 
         @NameInMap("sch_statesstr")
         public String schStatesstr;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("sch_title")
         public String schTitle;
 

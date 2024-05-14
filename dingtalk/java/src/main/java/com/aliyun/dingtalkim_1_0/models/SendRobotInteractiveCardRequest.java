@@ -7,12 +7,21 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
@@ -22,6 +31,9 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     @NameInMap("pullStrategy")
     public Boolean pullStrategy;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
