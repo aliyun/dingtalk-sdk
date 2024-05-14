@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CardGetCardFinishProgressRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example industry_center
      *
      * @var string
@@ -23,6 +25,8 @@ class CardGetCardFinishProgressRequest extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 80264668258
      *
      * @var int
@@ -30,6 +34,8 @@ class CardGetCardFinishProgressRequest extends Model
     public $cardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YUFANAI
      *
      * @var string
@@ -44,6 +50,8 @@ class CardGetCardFinishProgressRequest extends Model
     public $studentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager7741
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CollegeRemoveManagerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 11111
      *
      * @var int
@@ -16,6 +18,8 @@ class CollegeRemoveManagerRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class CollegeRemoveManagerRequest extends Model
     public $isForce;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUuidByDentryIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string
@@ -16,6 +18,8 @@ class GetUuidByDentryIdRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1L
      *
      * @var string

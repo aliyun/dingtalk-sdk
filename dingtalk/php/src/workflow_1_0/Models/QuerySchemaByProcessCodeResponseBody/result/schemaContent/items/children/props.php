@@ -14,6 +14,8 @@ class props extends Model
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;

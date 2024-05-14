@@ -19,6 +19,8 @@ class SearchUserTaskRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleTypes;

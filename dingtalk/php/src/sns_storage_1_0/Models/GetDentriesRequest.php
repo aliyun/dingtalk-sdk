@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetDentriesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $dentryIds;
@@ -20,6 +22,8 @@ class GetDentriesRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

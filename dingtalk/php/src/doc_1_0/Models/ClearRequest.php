@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ClearRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

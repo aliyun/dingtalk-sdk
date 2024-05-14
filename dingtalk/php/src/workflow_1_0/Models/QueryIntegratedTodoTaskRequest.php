@@ -16,6 +16,8 @@ class QueryIntegratedTodoTaskRequest extends Model
     public $createBefore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class QueryIntegratedTodoTaskRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -30,6 +34,8 @@ class QueryIntegratedTodoTaskRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager001
      *
      * @var string

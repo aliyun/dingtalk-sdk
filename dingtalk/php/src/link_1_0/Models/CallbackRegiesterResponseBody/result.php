@@ -14,6 +14,8 @@ class result extends Model
     public $apiSecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $callbackUrl;

@@ -15,11 +15,15 @@ class GetCardInfoResponseBody extends Model
     public $adminRole;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $avatarUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardId;
@@ -40,11 +44,15 @@ class GetCardInfoResponseBody extends Model
     public $introduce;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orgName;

@@ -208,6 +208,8 @@ class GroupUpdateRequest extends Model
     public $workdayClassList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123dfd
      *
      * @var string

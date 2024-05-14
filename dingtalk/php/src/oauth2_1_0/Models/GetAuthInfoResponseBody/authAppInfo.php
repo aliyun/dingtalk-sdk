@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class authAppInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var agentList[]
      */
     public $agentList;

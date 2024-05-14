@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteRemoteClassCourseRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example bab02f63c1e030fbbxxxx
      *
      * @var string

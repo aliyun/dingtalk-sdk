@@ -16,6 +16,8 @@ class GetFlowIdByRelationEntityIdRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example interview
      *
      * @var string
@@ -23,6 +25,8 @@ class GetFlowIdByRelationEntityIdRequest extends Model
     public $relationEntity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

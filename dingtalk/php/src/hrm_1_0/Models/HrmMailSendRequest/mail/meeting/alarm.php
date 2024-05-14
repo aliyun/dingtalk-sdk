@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class alarm extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 还有10分钟开始
      *
      * @var string
@@ -16,6 +18,8 @@ class alarm extends Model
     public $alarmDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +27,8 @@ class alarm extends Model
     public $alarmMinutes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $alarmSummary;

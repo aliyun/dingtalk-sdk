@@ -16,6 +16,8 @@ class GetFollowerAuthInfoRequest extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Rp3Rqcts7BE08y49Jr6iu6xW4iQ
      *
      * @var string

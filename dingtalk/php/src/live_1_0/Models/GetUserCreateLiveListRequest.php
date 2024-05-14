@@ -29,6 +29,8 @@ class GetUserCreateLiveListRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -43,6 +45,8 @@ class GetUserCreateLiveListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5yAiiJDWiiCJpd3Thhx7P5fgiEiE
      *
      * @var string

@@ -223,11 +223,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddOrgTextEmotionRequest $request
-     * @param AddOrgTextEmotionHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 添加企业文字表情
+     *  *
+     * @param AddOrgTextEmotionRequest $request AddOrgTextEmotionRequest
+     * @param AddOrgTextEmotionHeaders $headers AddOrgTextEmotionHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddOrgTextEmotionResponse
+     * @return AddOrgTextEmotionResponse AddOrgTextEmotionResponse
      */
     public function addOrgTextEmotionWithOptions($request, $headers, $runtime)
     {
@@ -272,9 +274,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddOrgTextEmotionRequest $request
+     * @summary 添加企业文字表情
+     *  *
+     * @param AddOrgTextEmotionRequest $request AddOrgTextEmotionRequest
      *
-     * @return AddOrgTextEmotionResponse
+     * @return AddOrgTextEmotionResponse AddOrgTextEmotionResponse
      */
     public function addOrgTextEmotion($request)
     {
@@ -285,11 +289,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRobotToConversationRequest $request
-     * @param AddRobotToConversationHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 添加机器人到会话
+     *  *
+     * @param AddRobotToConversationRequest $request AddRobotToConversationRequest
+     * @param AddRobotToConversationHeaders $headers AddRobotToConversationHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddRobotToConversationResponse
+     * @return AddRobotToConversationResponse AddRobotToConversationResponse
      */
     public function addRobotToConversationWithOptions($request, $headers, $runtime)
     {
@@ -334,9 +340,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRobotToConversationRequest $request
+     * @summary 添加机器人到会话
+     *  *
+     * @param AddRobotToConversationRequest $request AddRobotToConversationRequest
      *
-     * @return AddRobotToConversationResponse
+     * @return AddRobotToConversationResponse AddRobotToConversationResponse
      */
     public function addRobotToConversation($request)
     {
@@ -347,10 +355,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AutoOpenDingTalkConnectHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 自动开通钉钉客联微应用
+     *  *
+     * @param AutoOpenDingTalkConnectHeaders $headers AutoOpenDingTalkConnectHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return AutoOpenDingTalkConnectResponse
+     * @return AutoOpenDingTalkConnectResponse AutoOpenDingTalkConnectResponse
      */
     public function autoOpenDingTalkConnectWithOptions($headers, $runtime)
     {
@@ -380,7 +390,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AutoOpenDingTalkConnectResponse
+     * @summary 自动开通钉钉客联微应用
+     *  *
+     * @return AutoOpenDingTalkConnectResponse AutoOpenDingTalkConnectResponse
      */
     public function autoOpenDingTalkConnect()
     {
@@ -391,11 +403,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryFamilySchoolMessageRequest $request
-     * @param BatchQueryFamilySchoolMessageHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 批量查询家校群消息详情
+     *  *
+     * @param BatchQueryFamilySchoolMessageRequest $request BatchQueryFamilySchoolMessageRequest
+     * @param BatchQueryFamilySchoolMessageHeaders $headers BatchQueryFamilySchoolMessageHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryFamilySchoolMessageResponse
+     * @return BatchQueryFamilySchoolMessageResponse BatchQueryFamilySchoolMessageResponse
      */
     public function batchQueryFamilySchoolMessageWithOptions($request, $headers, $runtime)
     {
@@ -437,9 +451,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryFamilySchoolMessageRequest $request
+     * @summary 批量查询家校群消息详情
+     *  *
+     * @param BatchQueryFamilySchoolMessageRequest $request BatchQueryFamilySchoolMessageRequest
      *
-     * @return BatchQueryFamilySchoolMessageResponse
+     * @return BatchQueryFamilySchoolMessageResponse BatchQueryFamilySchoolMessageResponse
      */
     public function batchQueryFamilySchoolMessage($request)
     {
@@ -450,11 +466,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryGroupMemberRequest $request
-     * @param BatchQueryGroupMemberHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 查询群成员
+     *  *
+     * @param BatchQueryGroupMemberRequest $request BatchQueryGroupMemberRequest
+     * @param BatchQueryGroupMemberHeaders $headers BatchQueryGroupMemberHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryGroupMemberResponse
+     * @return BatchQueryGroupMemberResponse BatchQueryGroupMemberResponse
      */
     public function batchQueryGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -499,9 +517,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryGroupMemberRequest $request
+     * @summary 查询群成员
+     *  *
+     * @param BatchQueryGroupMemberRequest $request BatchQueryGroupMemberRequest
      *
-     * @return BatchQueryGroupMemberResponse
+     * @return BatchQueryGroupMemberResponse BatchQueryGroupMemberResponse
      */
     public function batchQueryGroupMember($request)
     {
@@ -512,11 +532,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CardTemplateBuildActionRequest $request
-     * @param CardTemplateBuildActionHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 钉钉互动卡片模板构建动作
+     *  *
+     * @param CardTemplateBuildActionRequest $request CardTemplateBuildActionRequest
+     * @param CardTemplateBuildActionHeaders $headers CardTemplateBuildActionHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CardTemplateBuildActionResponse
+     * @return CardTemplateBuildActionResponse CardTemplateBuildActionResponse
      */
     public function cardTemplateBuildActionWithOptions($request, $headers, $runtime)
     {
@@ -555,9 +577,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CardTemplateBuildActionRequest $request
+     * @summary 钉钉互动卡片模板构建动作
+     *  *
+     * @param CardTemplateBuildActionRequest $request CardTemplateBuildActionRequest
      *
-     * @return CardTemplateBuildActionResponse
+     * @return CardTemplateBuildActionResponse CardTemplateBuildActionResponse
      */
     public function cardTemplateBuildAction($request)
     {
@@ -568,11 +592,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChangeGroupOwnerRequest $request
-     * @param ChangeGroupOwnerHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 更换群主
+     *  *
+     * @param ChangeGroupOwnerRequest $request ChangeGroupOwnerRequest
+     * @param ChangeGroupOwnerHeaders $headers ChangeGroupOwnerHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ChangeGroupOwnerResponse
+     * @return ChangeGroupOwnerResponse ChangeGroupOwnerResponse
      */
     public function changeGroupOwnerWithOptions($request, $headers, $runtime)
     {
@@ -614,9 +640,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChangeGroupOwnerRequest $request
+     * @summary 更换群主
+     *  *
+     * @param ChangeGroupOwnerRequest $request ChangeGroupOwnerRequest
      *
-     * @return ChangeGroupOwnerResponse
+     * @return ChangeGroupOwnerResponse ChangeGroupOwnerResponse
      */
     public function changeGroupOwner($request)
     {
@@ -627,11 +655,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会话开放的ChatId转OpenConversationId
+     *  *
      * @param string                            $chatId
-     * @param ChatIdToOpenConversationIdHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param ChatIdToOpenConversationIdHeaders $headers ChatIdToOpenConversationIdHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return ChatIdToOpenConversationIdResponse
+     * @return ChatIdToOpenConversationIdResponse ChatIdToOpenConversationIdResponse
      */
     public function chatIdToOpenConversationIdWithOptions($chatId, $headers, $runtime)
     {
@@ -661,9 +691,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会话开放的ChatId转OpenConversationId
+     *  *
      * @param string $chatId
      *
-     * @return ChatIdToOpenConversationIdResponse
+     * @return ChatIdToOpenConversationIdResponse ChatIdToOpenConversationIdResponse
      */
     public function chatIdToOpenConversationId($chatId)
     {
@@ -674,11 +706,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChatSubAdminUpdateRequest $request
-     * @param ChatSubAdminUpdateHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 设置群管理员
+     *  *
+     * @param ChatSubAdminUpdateRequest $request ChatSubAdminUpdateRequest
+     * @param ChatSubAdminUpdateHeaders $headers ChatSubAdminUpdateHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ChatSubAdminUpdateResponse
+     * @return ChatSubAdminUpdateResponse ChatSubAdminUpdateResponse
      */
     public function chatSubAdminUpdateWithOptions($request, $headers, $runtime)
     {
@@ -720,9 +754,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChatSubAdminUpdateRequest $request
+     * @summary 设置群管理员
+     *  *
+     * @param ChatSubAdminUpdateRequest $request ChatSubAdminUpdateRequest
      *
-     * @return ChatSubAdminUpdateResponse
+     * @return ChatSubAdminUpdateResponse ChatSubAdminUpdateResponse
      */
     public function chatSubAdminUpdate($request)
     {
@@ -733,11 +769,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserIsGroupMemberRequest $request
-     * @param CheckUserIsGroupMemberHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 查询用户是否为企业内部群成员
+     *  *
+     * @param CheckUserIsGroupMemberRequest $request CheckUserIsGroupMemberRequest
+     * @param CheckUserIsGroupMemberHeaders $headers CheckUserIsGroupMemberHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckUserIsGroupMemberResponse
+     * @return CheckUserIsGroupMemberResponse CheckUserIsGroupMemberResponse
      */
     public function checkUserIsGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -776,9 +814,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserIsGroupMemberRequest $request
+     * @summary 查询用户是否为企业内部群成员
+     *  *
+     * @param CheckUserIsGroupMemberRequest $request CheckUserIsGroupMemberRequest
      *
-     * @return CheckUserIsGroupMemberResponse
+     * @return CheckUserIsGroupMemberResponse CheckUserIsGroupMemberResponse
      */
     public function checkUserIsGroupMember($request)
     {
@@ -789,11 +829,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCoupleGroupConversationRequest $request
-     * @param CreateCoupleGroupConversationHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 创建钉外两人群
+     *  *
+     * @param CreateCoupleGroupConversationRequest $request CreateCoupleGroupConversationRequest
+     * @param CreateCoupleGroupConversationHeaders $headers CreateCoupleGroupConversationHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCoupleGroupConversationResponse
+     * @return CreateCoupleGroupConversationResponse CreateCoupleGroupConversationResponse
      */
     public function createCoupleGroupConversationWithOptions($request, $headers, $runtime)
     {
@@ -844,9 +886,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCoupleGroupConversationRequest $request
+     * @summary 创建钉外两人群
+     *  *
+     * @param CreateCoupleGroupConversationRequest $request CreateCoupleGroupConversationRequest
      *
-     * @return CreateCoupleGroupConversationResponse
+     * @return CreateCoupleGroupConversationResponse CreateCoupleGroupConversationResponse
      */
     public function createCoupleGroupConversation($request)
     {
@@ -857,11 +901,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupConversationRequest $request
-     * @param CreateGroupConversationHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 创建互通群（支持普通互通群、跨钉两人群）
+     *  *
+     * @param CreateGroupConversationRequest $request CreateGroupConversationRequest
+     * @param CreateGroupConversationHeaders $headers CreateGroupConversationHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateGroupConversationResponse
+     * @return CreateGroupConversationResponse CreateGroupConversationResponse
      */
     public function createGroupConversationWithOptions($request, $headers, $runtime)
     {
@@ -918,9 +964,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupConversationRequest $request
+     * @summary 创建互通群（支持普通互通群、跨钉两人群）
+     *  *
+     * @param CreateGroupConversationRequest $request CreateGroupConversationRequest
      *
-     * @return CreateGroupConversationResponse
+     * @return CreateGroupConversationResponse CreateGroupConversationResponse
      */
     public function createGroupConversation($request)
     {
@@ -931,11 +979,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInterconnectionRequest $request
-     * @param CreateInterconnectionHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 创建钉外账号
+     *  *
+     * @param CreateInterconnectionRequest $request CreateInterconnectionRequest
+     * @param CreateInterconnectionHeaders $headers CreateInterconnectionHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateInterconnectionResponse
+     * @return CreateInterconnectionResponse CreateInterconnectionResponse
      */
     public function createInterconnectionWithOptions($request, $headers, $runtime)
     {
@@ -971,9 +1021,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInterconnectionRequest $request
+     * @summary 创建钉外账号
+     *  *
+     * @param CreateInterconnectionRequest $request CreateInterconnectionRequest
      *
-     * @return CreateInterconnectionResponse
+     * @return CreateInterconnectionResponse CreateInterconnectionResponse
      */
     public function createInterconnection($request)
     {
@@ -984,11 +1036,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSceneGroupConversationRequest $request
-     * @param CreateSceneGroupConversationHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 创建场景群会话
+     *  *
+     * @param CreateSceneGroupConversationRequest $request CreateSceneGroupConversationRequest
+     * @param CreateSceneGroupConversationHeaders $headers CreateSceneGroupConversationHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateSceneGroupConversationResponse
+     * @return CreateSceneGroupConversationResponse CreateSceneGroupConversationResponse
      */
     public function createSceneGroupConversationWithOptions($request, $headers, $runtime)
     {
@@ -1045,9 +1099,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSceneGroupConversationRequest $request
+     * @summary 创建场景群会话
+     *  *
+     * @param CreateSceneGroupConversationRequest $request CreateSceneGroupConversationRequest
      *
-     * @return CreateSceneGroupConversationResponse
+     * @return CreateSceneGroupConversationResponse CreateSceneGroupConversationResponse
      */
     public function createSceneGroupConversation($request)
     {
@@ -1058,11 +1114,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateStoreGroupConversationRequest $request
-     * @param CreateStoreGroupConversationHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 创建店铺群
+     *  *
+     * @param CreateStoreGroupConversationRequest $request CreateStoreGroupConversationRequest
+     * @param CreateStoreGroupConversationHeaders $headers CreateStoreGroupConversationHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateStoreGroupConversationResponse
+     * @return CreateStoreGroupConversationResponse CreateStoreGroupConversationResponse
      */
     public function createStoreGroupConversationWithOptions($request, $headers, $runtime)
     {
@@ -1116,9 +1174,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateStoreGroupConversationRequest $request
+     * @summary 创建店铺群
+     *  *
+     * @param CreateStoreGroupConversationRequest $request CreateStoreGroupConversationRequest
      *
-     * @return CreateStoreGroupConversationResponse
+     * @return CreateStoreGroupConversationResponse CreateStoreGroupConversationResponse
      */
     public function createStoreGroupConversation($request)
     {
@@ -1129,11 +1189,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteOrgTextEmotionRequest $request
-     * @param DeleteOrgTextEmotionHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 删除企业文字表情
+     *  *
+     * @param DeleteOrgTextEmotionRequest $request DeleteOrgTextEmotionRequest
+     * @param DeleteOrgTextEmotionHeaders $headers DeleteOrgTextEmotionHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteOrgTextEmotionResponse
+     * @return DeleteOrgTextEmotionResponse DeleteOrgTextEmotionResponse
      */
     public function deleteOrgTextEmotionWithOptions($request, $headers, $runtime)
     {
@@ -1172,9 +1234,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteOrgTextEmotionRequest $request
+     * @summary 删除企业文字表情
+     *  *
+     * @param DeleteOrgTextEmotionRequest $request DeleteOrgTextEmotionRequest
      *
-     * @return DeleteOrgTextEmotionResponse
+     * @return DeleteOrgTextEmotionResponse DeleteOrgTextEmotionResponse
      */
     public function deleteOrgTextEmotion($request)
     {
@@ -1185,11 +1249,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DismissGroupConversationRequest $request
-     * @param DismissGroupConversationHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 解散互通群
+     *  *
+     * @param DismissGroupConversationRequest $request DismissGroupConversationRequest
+     * @param DismissGroupConversationHeaders $headers DismissGroupConversationHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return DismissGroupConversationResponse
+     * @return DismissGroupConversationResponse DismissGroupConversationResponse
      */
     public function dismissGroupConversationWithOptions($request, $headers, $runtime)
     {
@@ -1225,9 +1291,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DismissGroupConversationRequest $request
+     * @summary 解散互通群
+     *  *
+     * @param DismissGroupConversationRequest $request DismissGroupConversationRequest
      *
-     * @return DismissGroupConversationResponse
+     * @return DismissGroupConversationResponse DismissGroupConversationResponse
      */
     public function dismissGroupConversation($request)
     {
@@ -1238,11 +1306,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationUrlRequest $request
-     * @param GetConversationUrlHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 创建ToB会话地址
+     *  *
+     * @param GetConversationUrlRequest $request GetConversationUrlRequest
+     * @param GetConversationUrlHeaders $headers GetConversationUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetConversationUrlResponse
+     * @return GetConversationUrlResponse GetConversationUrlResponse
      */
     public function getConversationUrlWithOptions($request, $headers, $runtime)
     {
@@ -1290,9 +1360,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationUrlRequest $request
+     * @summary 创建ToB会话地址
+     *  *
+     * @param GetConversationUrlRequest $request GetConversationUrlRequest
      *
-     * @return GetConversationUrlResponse
+     * @return GetConversationUrlResponse GetConversationUrlResponse
      */
     public function getConversationUrl($request)
     {
@@ -1303,11 +1375,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFamilySchoolConversationMsgRequest $request
-     * @param GetFamilySchoolConversationMsgHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 查询用户家校群消息(图片&视频Z&富文本)
+     *  *
+     * @param GetFamilySchoolConversationMsgRequest $request GetFamilySchoolConversationMsgRequest
+     * @param GetFamilySchoolConversationMsgHeaders $headers GetFamilySchoolConversationMsgHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFamilySchoolConversationMsgResponse
+     * @return GetFamilySchoolConversationMsgResponse GetFamilySchoolConversationMsgResponse
      */
     public function getFamilySchoolConversationMsgWithOptions($request, $headers, $runtime)
     {
@@ -1355,9 +1429,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFamilySchoolConversationMsgRequest $request
+     * @summary 查询用户家校群消息(图片&视频Z&富文本)
+     *  *
+     * @param GetFamilySchoolConversationMsgRequest $request GetFamilySchoolConversationMsgRequest
      *
-     * @return GetFamilySchoolConversationMsgResponse
+     * @return GetFamilySchoolConversationMsgResponse GetFamilySchoolConversationMsgResponse
      */
     public function getFamilySchoolConversationMsg($request)
     {
@@ -1368,11 +1444,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFamilySchoolConversationsRequest $request
-     * @param GetFamilySchoolConversationsHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 查询用户家校群
+     *  *
+     * @param GetFamilySchoolConversationsRequest $request GetFamilySchoolConversationsRequest
+     * @param GetFamilySchoolConversationsHeaders $headers GetFamilySchoolConversationsHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFamilySchoolConversationsResponse
+     * @return GetFamilySchoolConversationsResponse GetFamilySchoolConversationsResponse
      */
     public function getFamilySchoolConversationsWithOptions($request, $headers, $runtime)
     {
@@ -1414,9 +1492,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFamilySchoolConversationsRequest $request
+     * @summary 查询用户家校群
+     *  *
+     * @param GetFamilySchoolConversationsRequest $request GetFamilySchoolConversationsRequest
      *
-     * @return GetFamilySchoolConversationsResponse
+     * @return GetFamilySchoolConversationsResponse GetFamilySchoolConversationsResponse
      */
     public function getFamilySchoolConversations($request)
     {
@@ -1427,11 +1507,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInnerGroupMembersRequest $request
-     * @param GetInnerGroupMembersHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询企业内部群成员
+     *  *
+     * @param GetInnerGroupMembersRequest $request GetInnerGroupMembersRequest
+     * @param GetInnerGroupMembersHeaders $headers GetInnerGroupMembersHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInnerGroupMembersResponse
+     * @return GetInnerGroupMembersResponse GetInnerGroupMembersResponse
      */
     public function getInnerGroupMembersWithOptions($request, $headers, $runtime)
     {
@@ -1476,9 +1558,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInnerGroupMembersRequest $request
+     * @summary 查询企业内部群成员
+     *  *
+     * @param GetInnerGroupMembersRequest $request GetInnerGroupMembersRequest
      *
-     * @return GetInnerGroupMembersResponse
+     * @return GetInnerGroupMembersResponse GetInnerGroupMembersResponse
      */
     public function getInnerGroupMembers($request)
     {
@@ -1489,11 +1573,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInterconnectionUrlRequest $request
-     * @param GetInterconnectionUrlHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 创建客联互通会话地址
+     *  *
+     * @param GetInterconnectionUrlRequest $request GetInterconnectionUrlRequest
+     * @param GetInterconnectionUrlHeaders $headers GetInterconnectionUrlHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInterconnectionUrlResponse
+     * @return GetInterconnectionUrlResponse GetInterconnectionUrlResponse
      */
     public function getInterconnectionUrlWithOptions($request, $headers, $runtime)
     {
@@ -1559,9 +1645,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInterconnectionUrlRequest $request
+     * @summary 创建客联互通会话地址
+     *  *
+     * @param GetInterconnectionUrlRequest $request GetInterconnectionUrlRequest
      *
-     * @return GetInterconnectionUrlResponse
+     * @return GetInterconnectionUrlResponse GetInterconnectionUrlResponse
      */
     public function getInterconnectionUrl($request)
     {
@@ -1572,11 +1660,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNewestInnerGroupsRequest $request
-     * @param GetNewestInnerGroupsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询最近活跃的企业内部群列表
+     *  *
+     * @param GetNewestInnerGroupsRequest $request GetNewestInnerGroupsRequest
+     * @param GetNewestInnerGroupsHeaders $headers GetNewestInnerGroupsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetNewestInnerGroupsResponse
+     * @return GetNewestInnerGroupsResponse GetNewestInnerGroupsResponse
      */
     public function getNewestInnerGroupsWithOptions($request, $headers, $runtime)
     {
@@ -1612,9 +1702,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNewestInnerGroupsRequest $request
+     * @summary 查询最近活跃的企业内部群列表
+     *  *
+     * @param GetNewestInnerGroupsRequest $request GetNewestInnerGroupsRequest
      *
-     * @return GetNewestInnerGroupsResponse
+     * @return GetNewestInnerGroupsResponse GetNewestInnerGroupsResponse
      */
     public function getNewestInnerGroups($request)
     {
@@ -1625,11 +1717,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSceneGroupInfoRequest $request
-     * @param GetSceneGroupInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 查询群简要信息
+     *  *
+     * @param GetSceneGroupInfoRequest $request GetSceneGroupInfoRequest
+     * @param GetSceneGroupInfoHeaders $headers GetSceneGroupInfoHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSceneGroupInfoResponse
+     * @return GetSceneGroupInfoResponse GetSceneGroupInfoResponse
      */
     public function getSceneGroupInfoWithOptions($request, $headers, $runtime)
     {
@@ -1668,9 +1762,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSceneGroupInfoRequest $request
+     * @summary 查询群简要信息
+     *  *
+     * @param GetSceneGroupInfoRequest $request GetSceneGroupInfoRequest
      *
-     * @return GetSceneGroupInfoResponse
+     * @return GetSceneGroupInfoResponse GetSceneGroupInfoResponse
      */
     public function getSceneGroupInfo($request)
     {
@@ -1681,11 +1777,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSceneGroupMembersRequest $request
-     * @param GetSceneGroupMembersHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询群成员
+     *  *
+     * @param GetSceneGroupMembersRequest $request GetSceneGroupMembersRequest
+     * @param GetSceneGroupMembersHeaders $headers GetSceneGroupMembersHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSceneGroupMembersResponse
+     * @return GetSceneGroupMembersResponse GetSceneGroupMembersResponse
      */
     public function getSceneGroupMembersWithOptions($request, $headers, $runtime)
     {
@@ -1730,9 +1828,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSceneGroupMembersRequest $request
+     * @summary 查询群成员
+     *  *
+     * @param GetSceneGroupMembersRequest $request GetSceneGroupMembersRequest
      *
-     * @return GetSceneGroupMembersResponse
+     * @return GetSceneGroupMembersResponse GetSceneGroupMembersResponse
      */
     public function getSceneGroupMembers($request)
     {
@@ -1743,11 +1843,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupBanWordsRequest $request
-     * @param GroupBanWordsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 群禁言
+     *  *
+     * @param GroupBanWordsRequest $request GroupBanWordsRequest
+     * @param GroupBanWordsHeaders $headers GroupBanWordsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupBanWordsResponse
+     * @return GroupBanWordsResponse GroupBanWordsResponse
      */
     public function groupBanWordsWithOptions($request, $headers, $runtime)
     {
@@ -1789,9 +1891,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupBanWordsRequest $request
+     * @summary 群禁言
+     *  *
+     * @param GroupBanWordsRequest $request GroupBanWordsRequest
      *
-     * @return GroupBanWordsResponse
+     * @return GroupBanWordsResponse GroupBanWordsResponse
      */
     public function groupBanWords($request)
     {
@@ -1802,11 +1906,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityInquiryRequest $request
-     * @param GroupCapacityInquiryHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 群容量扩容询价
+     *  *
+     * @param GroupCapacityInquiryRequest $request GroupCapacityInquiryRequest
+     * @param GroupCapacityInquiryHeaders $headers GroupCapacityInquiryHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupCapacityInquiryResponse
+     * @return GroupCapacityInquiryResponse GroupCapacityInquiryResponse
      */
     public function groupCapacityInquiryWithOptions($request, $headers, $runtime)
     {
@@ -1854,9 +1960,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityInquiryRequest $request
+     * @summary 群容量扩容询价
+     *  *
+     * @param GroupCapacityInquiryRequest $request GroupCapacityInquiryRequest
      *
-     * @return GroupCapacityInquiryResponse
+     * @return GroupCapacityInquiryResponse GroupCapacityInquiryResponse
      */
     public function groupCapacityInquiry($request)
     {
@@ -1867,11 +1975,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityOrderConfirmRequest $request
-     * @param GroupCapacityOrderConfirmHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 群容量扩容确认下单
+     *  *
+     * @param GroupCapacityOrderConfirmRequest $request GroupCapacityOrderConfirmRequest
+     * @param GroupCapacityOrderConfirmHeaders $headers GroupCapacityOrderConfirmHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupCapacityOrderConfirmResponse
+     * @return GroupCapacityOrderConfirmResponse GroupCapacityOrderConfirmResponse
      */
     public function groupCapacityOrderConfirmWithOptions($request, $headers, $runtime)
     {
@@ -1910,9 +2020,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityOrderConfirmRequest $request
+     * @summary 群容量扩容确认下单
+     *  *
+     * @param GroupCapacityOrderConfirmRequest $request GroupCapacityOrderConfirmRequest
      *
-     * @return GroupCapacityOrderConfirmResponse
+     * @return GroupCapacityOrderConfirmResponse GroupCapacityOrderConfirmResponse
      */
     public function groupCapacityOrderConfirm($request)
     {
@@ -1923,11 +2035,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityOrderPlaceRequest $request
-     * @param GroupCapacityOrderPlaceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 群容量请求扩容下单
+     *  *
+     * @param GroupCapacityOrderPlaceRequest $request GroupCapacityOrderPlaceRequest
+     * @param GroupCapacityOrderPlaceHeaders $headers GroupCapacityOrderPlaceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupCapacityOrderPlaceResponse
+     * @return GroupCapacityOrderPlaceResponse GroupCapacityOrderPlaceResponse
      */
     public function groupCapacityOrderPlaceWithOptions($request, $headers, $runtime)
     {
@@ -1993,9 +2107,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupCapacityOrderPlaceRequest $request
+     * @summary 群容量请求扩容下单
+     *  *
+     * @param GroupCapacityOrderPlaceRequest $request GroupCapacityOrderPlaceRequest
      *
-     * @return GroupCapacityOrderPlaceResponse
+     * @return GroupCapacityOrderPlaceResponse GroupCapacityOrderPlaceResponse
      */
     public function groupCapacityOrderPlace($request)
     {
@@ -2006,11 +2122,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupManageQueryRequest $request
-     * @param GroupManageQueryHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 根据群链接、群号等检索条件，查询群信息
+     *  *
+     * @param GroupManageQueryRequest $request GroupManageQueryRequest
+     * @param GroupManageQueryHeaders $headers GroupManageQueryHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupManageQueryResponse
+     * @return GroupManageQueryResponse GroupManageQueryResponse
      */
     public function groupManageQueryWithOptions($request, $headers, $runtime)
     {
@@ -2073,9 +2191,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupManageQueryRequest $request
+     * @summary 根据群链接、群号等检索条件，查询群信息
+     *  *
+     * @param GroupManageQueryRequest $request GroupManageQueryRequest
      *
-     * @return GroupManageQueryResponse
+     * @return GroupManageQueryResponse GroupManageQueryResponse
      */
     public function groupManageQuery($request)
     {
@@ -2086,11 +2206,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupManageReduceRequest $request
-     * @param GroupManageReduceHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 群管理缩容
+     *  *
+     * @param GroupManageReduceRequest $request GroupManageReduceRequest
+     * @param GroupManageReduceHeaders $headers GroupManageReduceHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupManageReduceResponse
+     * @return GroupManageReduceResponse GroupManageReduceResponse
      */
     public function groupManageReduceWithOptions($request, $headers, $runtime)
     {
@@ -2132,9 +2254,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupManageReduceRequest $request
+     * @summary 群管理缩容
+     *  *
+     * @param GroupManageReduceRequest $request GroupManageReduceRequest
      *
-     * @return GroupManageReduceResponse
+     * @return GroupManageReduceResponse GroupManageReduceResponse
      */
     public function groupManageReduce($request)
     {
@@ -2145,11 +2269,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallRobotToOrgRequest $request
-     * @param InstallRobotToOrgHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 安装机器人到组织
+     *  *
+     * @param InstallRobotToOrgRequest $request InstallRobotToOrgRequest
+     * @param InstallRobotToOrgHeaders $headers InstallRobotToOrgHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return InstallRobotToOrgResponse
+     * @return InstallRobotToOrgResponse InstallRobotToOrgResponse
      */
     public function installRobotToOrgWithOptions($request, $headers, $runtime)
     {
@@ -2206,9 +2332,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallRobotToOrgRequest $request
+     * @summary 安装机器人到组织
+     *  *
+     * @param InstallRobotToOrgRequest $request InstallRobotToOrgRequest
      *
-     * @return InstallRobotToOrgResponse
+     * @return InstallRobotToOrgResponse InstallRobotToOrgResponse
      */
     public function installRobotToOrg($request)
     {
@@ -2219,11 +2347,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InteractiveCardCreateInstanceRequest $request
-     * @param InteractiveCardCreateInstanceHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 创建可交互式实例
+     *  *
+     * @param InteractiveCardCreateInstanceRequest $request InteractiveCardCreateInstanceRequest
+     * @param InteractiveCardCreateInstanceHeaders $headers InteractiveCardCreateInstanceHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return InteractiveCardCreateInstanceResponse
+     * @return InteractiveCardCreateInstanceResponse InteractiveCardCreateInstanceResponse
      */
     public function interactiveCardCreateInstanceWithOptions($request, $headers, $runtime)
     {
@@ -2292,9 +2422,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InteractiveCardCreateInstanceRequest $request
+     * @summary 创建可交互式实例
+     *  *
+     * @param InteractiveCardCreateInstanceRequest $request InteractiveCardCreateInstanceRequest
      *
-     * @return InteractiveCardCreateInstanceResponse
+     * @return InteractiveCardCreateInstanceResponse InteractiveCardCreateInstanceResponse
      */
     public function interactiveCardCreateInstance($request)
     {
@@ -2305,10 +2437,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListOrgTextEmotionHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+     *  *
+     * @param ListOrgTextEmotionHeaders $headers ListOrgTextEmotionHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListOrgTextEmotionResponse
+     * @return ListOrgTextEmotionResponse ListOrgTextEmotionResponse
      */
     public function listOrgTextEmotionWithOptions($headers, $runtime)
     {
@@ -2338,7 +2472,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListOrgTextEmotionResponse
+     * @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
+     *  *
+     * @return ListOrgTextEmotionResponse ListOrgTextEmotionResponse
      */
     public function listOrgTextEmotion()
     {
@@ -2349,11 +2485,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupInfoByMemberAuthRequest $request
-     * @param QueryGroupInfoByMemberAuthHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 成员授权场景下查询群信息
+     *  *
+     * @param QueryGroupInfoByMemberAuthRequest $request QueryGroupInfoByMemberAuthRequest
+     * @param QueryGroupInfoByMemberAuthHeaders $headers QueryGroupInfoByMemberAuthHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupInfoByMemberAuthResponse
+     * @return QueryGroupInfoByMemberAuthResponse QueryGroupInfoByMemberAuthResponse
      */
     public function queryGroupInfoByMemberAuthWithOptions($request, $headers, $runtime)
     {
@@ -2392,9 +2530,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupInfoByMemberAuthRequest $request
+     * @summary 成员授权场景下查询群信息
+     *  *
+     * @param QueryGroupInfoByMemberAuthRequest $request QueryGroupInfoByMemberAuthRequest
      *
-     * @return QueryGroupInfoByMemberAuthResponse
+     * @return QueryGroupInfoByMemberAuthResponse QueryGroupInfoByMemberAuthResponse
      */
     public function queryGroupInfoByMemberAuth($request)
     {
@@ -2405,11 +2545,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMemberRequest $request
-     * @param QueryGroupMemberHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询群成员列表
+     *  *
+     * @param QueryGroupMemberRequest $request QueryGroupMemberRequest
+     * @param QueryGroupMemberHeaders $headers QueryGroupMemberHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupMemberResponse
+     * @return QueryGroupMemberResponse QueryGroupMemberResponse
      */
     public function queryGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -2445,9 +2587,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMemberRequest $request
+     * @summary 查询群成员列表
+     *  *
+     * @param QueryGroupMemberRequest $request QueryGroupMemberRequest
      *
-     * @return QueryGroupMemberResponse
+     * @return QueryGroupMemberResponse QueryGroupMemberResponse
      */
     public function queryGroupMember($request)
     {
@@ -2458,11 +2602,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMemberByMemberAuthRequest $request
-     * @param QueryGroupMemberByMemberAuthHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 成员授权场景下查询群成员
+     *  *
+     * @param QueryGroupMemberByMemberAuthRequest $request QueryGroupMemberByMemberAuthRequest
+     * @param QueryGroupMemberByMemberAuthHeaders $headers QueryGroupMemberByMemberAuthHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupMemberByMemberAuthResponse
+     * @return QueryGroupMemberByMemberAuthResponse QueryGroupMemberByMemberAuthResponse
      */
     public function queryGroupMemberByMemberAuthWithOptions($request, $headers, $runtime)
     {
@@ -2501,9 +2647,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMemberByMemberAuthRequest $request
+     * @summary 成员授权场景下查询群成员
+     *  *
+     * @param QueryGroupMemberByMemberAuthRequest $request QueryGroupMemberByMemberAuthRequest
      *
-     * @return QueryGroupMemberByMemberAuthResponse
+     * @return QueryGroupMemberByMemberAuthResponse QueryGroupMemberByMemberAuthResponse
      */
     public function queryGroupMemberByMemberAuth($request)
     {
@@ -2514,11 +2662,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMuteStatusRequest $request
-     * @param QueryGroupMuteStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询群禁言状态
+     *  *
+     * @param QueryGroupMuteStatusRequest $request QueryGroupMuteStatusRequest
+     * @param QueryGroupMuteStatusHeaders $headers QueryGroupMuteStatusHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupMuteStatusResponse
+     * @return QueryGroupMuteStatusResponse QueryGroupMuteStatusResponse
      */
     public function queryGroupMuteStatusWithOptions($request, $headers, $runtime)
     {
@@ -2557,9 +2707,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMuteStatusRequest $request
+     * @summary 查询群禁言状态
+     *  *
+     * @param QueryGroupMuteStatusRequest $request QueryGroupMuteStatusRequest
      *
-     * @return QueryGroupMuteStatusResponse
+     * @return QueryGroupMuteStatusResponse QueryGroupMuteStatusResponse
      */
     public function queryGroupMuteStatus($request)
     {
@@ -2570,11 +2722,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMembersOfGroupRoleRequest $request
-     * @param QueryMembersOfGroupRoleHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 查询群内具有指定群角色的所有群成员
+     *  *
+     * @param QueryMembersOfGroupRoleRequest $request QueryMembersOfGroupRoleRequest
+     * @param QueryMembersOfGroupRoleHeaders $headers QueryMembersOfGroupRoleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMembersOfGroupRoleResponse
+     * @return QueryMembersOfGroupRoleResponse QueryMembersOfGroupRoleResponse
      */
     public function queryMembersOfGroupRoleWithOptions($request, $headers, $runtime)
     {
@@ -2616,9 +2770,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMembersOfGroupRoleRequest $request
+     * @summary 查询群内具有指定群角色的所有群成员
+     *  *
+     * @param QueryMembersOfGroupRoleRequest $request QueryMembersOfGroupRoleRequest
      *
-     * @return QueryMembersOfGroupRoleResponse
+     * @return QueryMembersOfGroupRoleResponse QueryMembersOfGroupRoleResponse
      */
     public function queryMembersOfGroupRole($request)
     {
@@ -2629,11 +2785,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySceneGroupTemplateRobotRequest $request
-     * @param QuerySceneGroupTemplateRobotHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 查询群内群模板机器人
+     *  *
+     * @param QuerySceneGroupTemplateRobotRequest $request QuerySceneGroupTemplateRobotRequest
+     * @param QuerySceneGroupTemplateRobotHeaders $headers QuerySceneGroupTemplateRobotHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QuerySceneGroupTemplateRobotResponse
+     * @return QuerySceneGroupTemplateRobotResponse QuerySceneGroupTemplateRobotResponse
      */
     public function querySceneGroupTemplateRobotWithOptions($request, $headers, $runtime)
     {
@@ -2672,9 +2830,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySceneGroupTemplateRobotRequest $request
+     * @summary 查询群内群模板机器人
+     *  *
+     * @param QuerySceneGroupTemplateRobotRequest $request QuerySceneGroupTemplateRobotRequest
      *
-     * @return QuerySceneGroupTemplateRobotResponse
+     * @return QuerySceneGroupTemplateRobotResponse QuerySceneGroupTemplateRobotResponse
      */
     public function querySceneGroupTemplateRobot($request)
     {
@@ -2685,11 +2845,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySingleGroupRequest $request
-     * @param QuerySingleGroupHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 批量查询群信息
+     *  *
+     * @param QuerySingleGroupRequest $request QuerySingleGroupRequest
+     * @param QuerySingleGroupHeaders $headers QuerySingleGroupHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QuerySingleGroupResponse
+     * @return QuerySingleGroupResponse QuerySingleGroupResponse
      */
     public function querySingleGroupWithOptions($request, $headers, $runtime)
     {
@@ -2728,9 +2890,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySingleGroupRequest $request
+     * @summary 批量查询群信息
+     *  *
+     * @param QuerySingleGroupRequest $request QuerySingleGroupRequest
      *
-     * @return QuerySingleGroupResponse
+     * @return QuerySingleGroupResponse QuerySingleGroupResponse
      */
     public function querySingleGroup($request)
     {
@@ -2741,11 +2905,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUnReadMessageRequest $request
-     * @param QueryUnReadMessageHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 批量查询未读消息数
+     *  *
+     * @param QueryUnReadMessageRequest $request QueryUnReadMessageRequest
+     * @param QueryUnReadMessageHeaders $headers QueryUnReadMessageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUnReadMessageResponse
+     * @return QueryUnReadMessageResponse QueryUnReadMessageResponse
      */
     public function queryUnReadMessageWithOptions($request, $headers, $runtime)
     {
@@ -2784,9 +2950,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUnReadMessageRequest $request
+     * @summary 批量查询未读消息数
+     *  *
+     * @param QueryUnReadMessageRequest $request QueryUnReadMessageRequest
      *
-     * @return QueryUnReadMessageResponse
+     * @return QueryUnReadMessageResponse QueryUnReadMessageResponse
      */
     public function queryUnReadMessage($request)
     {
@@ -2797,11 +2965,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveRobotFromConversationRequest $request
-     * @param RemoveRobotFromConversationHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 移除会话机器人
+     *  *
+     * @param RemoveRobotFromConversationRequest $request RemoveRobotFromConversationRequest
+     * @param RemoveRobotFromConversationHeaders $headers RemoveRobotFromConversationHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveRobotFromConversationResponse
+     * @return RemoveRobotFromConversationResponse RemoveRobotFromConversationResponse
      */
     public function removeRobotFromConversationWithOptions($request, $headers, $runtime)
     {
@@ -2840,9 +3010,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveRobotFromConversationRequest $request
+     * @summary 移除会话机器人
+     *  *
+     * @param RemoveRobotFromConversationRequest $request RemoveRobotFromConversationRequest
      *
-     * @return RemoveRobotFromConversationResponse
+     * @return RemoveRobotFromConversationResponse RemoveRobotFromConversationResponse
      */
     public function removeRobotFromConversation($request)
     {
@@ -2853,11 +3025,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchInnerGroupsRequest $request
-     * @param SearchInnerGroupsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 根据关键词搜索企业内部群
+     *  *
+     * @param SearchInnerGroupsRequest $request SearchInnerGroupsRequest
+     * @param SearchInnerGroupsHeaders $headers SearchInnerGroupsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchInnerGroupsResponse
+     * @return SearchInnerGroupsResponse SearchInnerGroupsResponse
      */
     public function searchInnerGroupsWithOptions($request, $headers, $runtime)
     {
@@ -2899,9 +3073,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchInnerGroupsRequest $request
+     * @summary 根据关键词搜索企业内部群
+     *  *
+     * @param SearchInnerGroupsRequest $request SearchInnerGroupsRequest
      *
-     * @return SearchInnerGroupsResponse
+     * @return SearchInnerGroupsResponse SearchInnerGroupsResponse
      */
     public function searchInnerGroups($request)
     {
@@ -2912,11 +3088,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendInteractiveCardRequest $request
-     * @param SendInteractiveCardHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 发送可交互式动态卡片
+     *  *
+     * @param SendInteractiveCardRequest $request SendInteractiveCardRequest
+     * @param SendInteractiveCardHeaders $headers SendInteractiveCardHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendInteractiveCardResponse
+     * @return SendInteractiveCardResponse SendInteractiveCardResponse
      */
     public function sendInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -2994,9 +3172,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendInteractiveCardRequest $request
+     * @summary 发送可交互式动态卡片
+     *  *
+     * @param SendInteractiveCardRequest $request SendInteractiveCardRequest
      *
-     * @return SendInteractiveCardResponse
+     * @return SendInteractiveCardResponse SendInteractiveCardResponse
      */
     public function sendInteractiveCard($request)
     {
@@ -3007,11 +3187,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendOTOInteractiveCardRequest $request
-     * @param SendOTOInteractiveCardHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 人与人单聊发送可交互式动态卡片
+     *  *
+     * @param SendOTOInteractiveCardRequest $request SendOTOInteractiveCardRequest
+     * @param SendOTOInteractiveCardHeaders $headers SendOTOInteractiveCardHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendOTOInteractiveCardResponse
+     * @return SendOTOInteractiveCardResponse SendOTOInteractiveCardResponse
      */
     public function sendOTOInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -3080,9 +3262,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendOTOInteractiveCardRequest $request
+     * @summary 人与人单聊发送可交互式动态卡片
+     *  *
+     * @param SendOTOInteractiveCardRequest $request SendOTOInteractiveCardRequest
      *
-     * @return SendOTOInteractiveCardResponse
+     * @return SendOTOInteractiveCardResponse SendOTOInteractiveCardResponse
      */
     public function sendOTOInteractiveCard($request)
     {
@@ -3093,11 +3277,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotInteractiveCardRequest $request
-     * @param SendRobotInteractiveCardHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 机器人发送互动卡片（普通版）
+     *  *
+     * @param SendRobotInteractiveCardRequest $request SendRobotInteractiveCardRequest
+     * @param SendRobotInteractiveCardHeaders $headers SendRobotInteractiveCardHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendRobotInteractiveCardResponse
+     * @return SendRobotInteractiveCardResponse SendRobotInteractiveCardResponse
      */
     public function sendRobotInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -3163,9 +3349,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotInteractiveCardRequest $request
+     * @summary 机器人发送互动卡片（普通版）
+     *  *
+     * @param SendRobotInteractiveCardRequest $request SendRobotInteractiveCardRequest
      *
-     * @return SendRobotInteractiveCardResponse
+     * @return SendRobotInteractiveCardResponse SendRobotInteractiveCardResponse
      */
     public function sendRobotInteractiveCard($request)
     {
@@ -3176,11 +3364,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotMessageRequest $request
-     * @param SendRobotMessageHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 机器人发送消息
+     *  *
+     * @param SendRobotMessageRequest $request SendRobotMessageRequest
+     * @param SendRobotMessageHeaders $headers SendRobotMessageHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendRobotMessageResponse
+     * @return SendRobotMessageResponse SendRobotMessageResponse
      */
     public function sendRobotMessageWithOptions($request, $headers, $runtime)
     {
@@ -3234,9 +3424,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotMessageRequest $request
+     * @summary 机器人发送消息
+     *  *
+     * @param SendRobotMessageRequest $request SendRobotMessageRequest
      *
-     * @return SendRobotMessageResponse
+     * @return SendRobotMessageResponse SendRobotMessageResponse
      */
     public function sendRobotMessage($request)
     {
@@ -3247,11 +3439,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendTemplateInteractiveCardRequest $request
-     * @param SendTemplateInteractiveCardHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 发送模板响应式可交互式卡片
+     *  *
+     * @param SendTemplateInteractiveCardRequest $request SendTemplateInteractiveCardRequest
+     * @param SendTemplateInteractiveCardHeaders $headers SendTemplateInteractiveCardHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendTemplateInteractiveCardResponse
+     * @return SendTemplateInteractiveCardResponse SendTemplateInteractiveCardResponse
      */
     public function sendTemplateInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -3308,9 +3502,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendTemplateInteractiveCardRequest $request
+     * @summary 发送模板响应式可交互式卡片
+     *  *
+     * @param SendTemplateInteractiveCardRequest $request SendTemplateInteractiveCardRequest
      *
-     * @return SendTemplateInteractiveCardResponse
+     * @return SendTemplateInteractiveCardResponse SendTemplateInteractiveCardResponse
      */
     public function sendTemplateInteractiveCard($request)
     {
@@ -3321,11 +3517,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetRightPanelRequest $request
-     * @param SetRightPanelHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 设置侧边栏
+     *  *
+     * @param SetRightPanelRequest $request SetRightPanelRequest
+     * @param SetRightPanelHeaders $headers SetRightPanelHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetRightPanelResponse
+     * @return SetRightPanelResponse SetRightPanelResponse
      */
     public function setRightPanelWithOptions($request, $headers, $runtime)
     {
@@ -3376,9 +3574,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetRightPanelRequest $request
+     * @summary 设置侧边栏
+     *  *
+     * @param SetRightPanelRequest $request SetRightPanelRequest
      *
-     * @return SetRightPanelResponse
+     * @return SetRightPanelResponse SetRightPanelResponse
      */
     public function setRightPanel($request)
     {
@@ -3389,11 +3589,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TopboxCloseRequest $request
-     * @param TopboxCloseHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 钉钉吊顶卡片关闭
+     *  *
+     * @param TopboxCloseRequest $request TopboxCloseRequest
+     * @param TopboxCloseHeaders $headers TopboxCloseHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return TopboxCloseResponse
+     * @return TopboxCloseResponse TopboxCloseResponse
      */
     public function topboxCloseWithOptions($request, $headers, $runtime)
     {
@@ -3444,9 +3646,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TopboxCloseRequest $request
+     * @summary 钉钉吊顶卡片关闭
+     *  *
+     * @param TopboxCloseRequest $request TopboxCloseRequest
      *
-     * @return TopboxCloseResponse
+     * @return TopboxCloseResponse TopboxCloseResponse
      */
     public function topboxClose($request)
     {
@@ -3457,11 +3661,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TopboxOpenRequest $request
-     * @param TopboxOpenHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 钉钉吊顶卡片开启
+     *  *
+     * @param TopboxOpenRequest $request TopboxOpenRequest
+     * @param TopboxOpenHeaders $headers TopboxOpenHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return TopboxOpenResponse
+     * @return TopboxOpenResponse TopboxOpenResponse
      */
     public function topboxOpenWithOptions($request, $headers, $runtime)
     {
@@ -3518,9 +3724,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TopboxOpenRequest $request
+     * @summary 钉钉吊顶卡片开启
+     *  *
+     * @param TopboxOpenRequest $request TopboxOpenRequest
      *
-     * @return TopboxOpenResponse
+     * @return TopboxOpenResponse TopboxOpenResponse
      */
     public function topboxOpen($request)
     {
@@ -3531,11 +3739,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupAvatarRequest $request
-     * @param UpdateGroupAvatarHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 修改群头像
+     *  *
+     * @param UpdateGroupAvatarRequest $request UpdateGroupAvatarRequest
+     * @param UpdateGroupAvatarHeaders $headers UpdateGroupAvatarHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateGroupAvatarResponse
+     * @return UpdateGroupAvatarResponse UpdateGroupAvatarResponse
      */
     public function updateGroupAvatarWithOptions($request, $headers, $runtime)
     {
@@ -3574,9 +3784,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupAvatarRequest $request
+     * @summary 修改群头像
+     *  *
+     * @param UpdateGroupAvatarRequest $request UpdateGroupAvatarRequest
      *
-     * @return UpdateGroupAvatarResponse
+     * @return UpdateGroupAvatarResponse UpdateGroupAvatarResponse
      */
     public function updateGroupAvatar($request)
     {
@@ -3587,11 +3799,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupNameRequest $request
-     * @param UpdateGroupNameHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 修改群名称
+     *  *
+     * @param UpdateGroupNameRequest $request UpdateGroupNameRequest
+     * @param UpdateGroupNameHeaders $headers UpdateGroupNameHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateGroupNameResponse
+     * @return UpdateGroupNameResponse UpdateGroupNameResponse
      */
     public function updateGroupNameWithOptions($request, $headers, $runtime)
     {
@@ -3630,9 +3844,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupNameRequest $request
+     * @summary 修改群名称
+     *  *
+     * @param UpdateGroupNameRequest $request UpdateGroupNameRequest
      *
-     * @return UpdateGroupNameResponse
+     * @return UpdateGroupNameResponse UpdateGroupNameResponse
      */
     public function updateGroupName($request)
     {
@@ -3643,11 +3859,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupPermissionRequest $request
-     * @param UpdateGroupPermissionHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 设置场景群权限项
+     *  *
+     * @param UpdateGroupPermissionRequest $request UpdateGroupPermissionRequest
+     * @param UpdateGroupPermissionHeaders $headers UpdateGroupPermissionHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateGroupPermissionResponse
+     * @return UpdateGroupPermissionResponse UpdateGroupPermissionResponse
      */
     public function updateGroupPermissionWithOptions($request, $headers, $runtime)
     {
@@ -3689,9 +3907,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupPermissionRequest $request
+     * @summary 设置场景群权限项
+     *  *
+     * @param UpdateGroupPermissionRequest $request UpdateGroupPermissionRequest
      *
-     * @return UpdateGroupPermissionResponse
+     * @return UpdateGroupPermissionResponse UpdateGroupPermissionResponse
      */
     public function updateGroupPermission($request)
     {
@@ -3702,11 +3922,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupSubAdminRequest $request
-     * @param UpdateGroupSubAdminHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 更新群管理员
+     *  *
+     * @param UpdateGroupSubAdminRequest $request UpdateGroupSubAdminRequest
+     * @param UpdateGroupSubAdminHeaders $headers UpdateGroupSubAdminHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateGroupSubAdminResponse
+     * @return UpdateGroupSubAdminResponse UpdateGroupSubAdminResponse
      */
     public function updateGroupSubAdminWithOptions($request, $headers, $runtime)
     {
@@ -3748,9 +3970,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupSubAdminRequest $request
+     * @summary 更新群管理员
+     *  *
+     * @param UpdateGroupSubAdminRequest $request UpdateGroupSubAdminRequest
      *
-     * @return UpdateGroupSubAdminResponse
+     * @return UpdateGroupSubAdminResponse UpdateGroupSubAdminResponse
      */
     public function updateGroupSubAdmin($request)
     {
@@ -3761,11 +3985,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInteractiveCardRequest $request
-     * @param UpdateInteractiveCardHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 更新可交互式动态卡片
+     *  *
+     * @param UpdateInteractiveCardRequest $request UpdateInteractiveCardRequest
+     * @param UpdateInteractiveCardHeaders $headers UpdateInteractiveCardHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInteractiveCardResponse
+     * @return UpdateInteractiveCardResponse UpdateInteractiveCardResponse
      */
     public function updateInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -3813,9 +4039,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInteractiveCardRequest $request
+     * @summary 更新可交互式动态卡片
+     *  *
+     * @param UpdateInteractiveCardRequest $request UpdateInteractiveCardRequest
      *
-     * @return UpdateInteractiveCardResponse
+     * @return UpdateInteractiveCardResponse UpdateInteractiveCardResponse
      */
     public function updateInteractiveCard($request)
     {
@@ -3826,11 +4054,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMemberBanWordsRequest $request
-     * @param UpdateMemberBanWordsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 设置群成员禁言状态
+     *  *
+     * @param UpdateMemberBanWordsRequest $request UpdateMemberBanWordsRequest
+     * @param UpdateMemberBanWordsHeaders $headers UpdateMemberBanWordsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateMemberBanWordsResponse
+     * @return UpdateMemberBanWordsResponse UpdateMemberBanWordsResponse
      */
     public function updateMemberBanWordsWithOptions($request, $headers, $runtime)
     {
@@ -3875,9 +4105,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMemberBanWordsRequest $request
+     * @summary 设置群成员禁言状态
+     *  *
+     * @param UpdateMemberBanWordsRequest $request UpdateMemberBanWordsRequest
      *
-     * @return UpdateMemberBanWordsResponse
+     * @return UpdateMemberBanWordsResponse UpdateMemberBanWordsResponse
      */
     public function updateMemberBanWords($request)
     {
@@ -3888,11 +4120,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMemberGroupNickRequest $request
-     * @param UpdateMemberGroupNickHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 更新群成员的群昵称
+     *  *
+     * @param UpdateMemberGroupNickRequest $request UpdateMemberGroupNickRequest
+     * @param UpdateMemberGroupNickHeaders $headers UpdateMemberGroupNickHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateMemberGroupNickResponse
+     * @return UpdateMemberGroupNickResponse UpdateMemberGroupNickResponse
      */
     public function updateMemberGroupNickWithOptions($request, $headers, $runtime)
     {
@@ -3934,9 +4168,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMemberGroupNickRequest $request
+     * @summary 更新群成员的群昵称
+     *  *
+     * @param UpdateMemberGroupNickRequest $request UpdateMemberGroupNickRequest
      *
-     * @return UpdateMemberGroupNickResponse
+     * @return UpdateMemberGroupNickResponse UpdateMemberGroupNickResponse
      */
     public function updateMemberGroupNick($request)
     {
@@ -3947,11 +4183,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRobotInOrgRequest $request
-     * @param UpdateRobotInOrgHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 修改组织里的机器人
+     *  *
+     * @param UpdateRobotInOrgRequest $request UpdateRobotInOrgRequest
+     * @param UpdateRobotInOrgHeaders $headers UpdateRobotInOrgHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateRobotInOrgResponse
+     * @return UpdateRobotInOrgResponse UpdateRobotInOrgResponse
      */
     public function updateRobotInOrgWithOptions($request, $headers, $runtime)
     {
@@ -4008,9 +4246,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRobotInOrgRequest $request
+     * @summary 修改组织里的机器人
+     *  *
+     * @param UpdateRobotInOrgRequest $request UpdateRobotInOrgRequest
      *
-     * @return UpdateRobotInOrgResponse
+     * @return UpdateRobotInOrgResponse UpdateRobotInOrgResponse
      */
     public function updateRobotInOrg($request)
     {
@@ -4021,11 +4261,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRobotInteractiveCardRequest $request
-     * @param UpdateRobotInteractiveCardHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 机器人更新可交互式卡片(个人、企业)
+     *  *
+     * @param UpdateRobotInteractiveCardRequest $request UpdateRobotInteractiveCardRequest
+     * @param UpdateRobotInteractiveCardHeaders $headers UpdateRobotInteractiveCardHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateRobotInteractiveCardResponse
+     * @return UpdateRobotInteractiveCardResponse UpdateRobotInteractiveCardResponse
      */
     public function updateRobotInteractiveCardWithOptions($request, $headers, $runtime)
     {
@@ -4073,9 +4315,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRobotInteractiveCardRequest $request
+     * @summary 机器人更新可交互式卡片(个人、企业)
+     *  *
+     * @param UpdateRobotInteractiveCardRequest $request UpdateRobotInteractiveCardRequest
      *
-     * @return UpdateRobotInteractiveCardResponse
+     * @return UpdateRobotInteractiveCardResponse UpdateRobotInteractiveCardResponse
      */
     public function updateRobotInteractiveCard($request)
     {
@@ -4086,11 +4330,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
-     * @param UpdateTheGroupRolesOfGroupMemberHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 设置群成员的群角色
+     *  *
+     * @param UpdateTheGroupRolesOfGroupMemberRequest $request UpdateTheGroupRolesOfGroupMemberRequest
+     * @param UpdateTheGroupRolesOfGroupMemberHeaders $headers UpdateTheGroupRolesOfGroupMemberHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTheGroupRolesOfGroupMemberResponse
+     * @return UpdateTheGroupRolesOfGroupMemberResponse UpdateTheGroupRolesOfGroupMemberResponse
      */
     public function updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -4132,9 +4378,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateTheGroupRolesOfGroupMemberRequest $request
+     * @summary 设置群成员的群角色
+     *  *
+     * @param UpdateTheGroupRolesOfGroupMemberRequest $request UpdateTheGroupRolesOfGroupMemberRequest
      *
-     * @return UpdateTheGroupRolesOfGroupMemberResponse
+     * @return UpdateTheGroupRolesOfGroupMemberResponse UpdateTheGroupRolesOfGroupMemberResponse
      */
     public function updateTheGroupRolesOfGroupMember($request)
     {
@@ -4145,11 +4393,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddGroupMemberRequest $request
-     * @param AddGroupMemberHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 添加群成员
+     *  *
+     * @param AddGroupMemberRequest $request AddGroupMemberRequest
+     * @param AddGroupMemberHeaders $headers AddGroupMemberHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddGroupMemberResponse
+     * @return AddGroupMemberResponse AddGroupMemberResponse
      */
     public function addGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -4194,9 +4444,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddGroupMemberRequest $request
+     * @summary 添加群成员
+     *  *
+     * @param AddGroupMemberRequest $request AddGroupMemberRequest
      *
-     * @return AddGroupMemberResponse
+     * @return AddGroupMemberResponse AddGroupMemberResponse
      */
     public function addGroupMember($request)
     {
@@ -4207,11 +4459,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveGroupMemberRequest $request
-     * @param RemoveGroupMemberHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 移除群成员
+     *  *
+     * @param RemoveGroupMemberRequest $request RemoveGroupMemberRequest
+     * @param RemoveGroupMemberHeaders $headers RemoveGroupMemberHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveGroupMemberResponse
+     * @return RemoveGroupMemberResponse RemoveGroupMemberResponse
      */
     public function removeGroupMemberWithOptions($request, $headers, $runtime)
     {
@@ -4256,9 +4510,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveGroupMemberRequest $request
+     * @summary 移除群成员
+     *  *
+     * @param RemoveGroupMemberRequest $request RemoveGroupMemberRequest
      *
-     * @return RemoveGroupMemberResponse
+     * @return RemoveGroupMemberResponse RemoveGroupMemberResponse
      */
     public function removeGroupMember($request)
     {
@@ -4269,11 +4525,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendDingMessageRequest $request
-     * @param SendDingMessageHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 发送ToC消息
+     *  *
+     * @param SendDingMessageRequest $request SendDingMessageRequest
+     * @param SendDingMessageHeaders $headers SendDingMessageHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendDingMessageResponse
+     * @return SendDingMessageResponse SendDingMessageResponse
      */
     public function sendDingMessageWithOptions($request, $headers, $runtime)
     {
@@ -4324,9 +4582,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendDingMessageRequest $request
+     * @summary 发送ToC消息
+     *  *
+     * @param SendDingMessageRequest $request SendDingMessageRequest
      *
-     * @return SendDingMessageResponse
+     * @return SendDingMessageResponse SendDingMessageResponse
      */
     public function sendDingMessage($request)
     {
@@ -4337,11 +4597,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMessageRequest $request
-     * @param SendMessageHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 发送ToB消息
+     *  *
+     * @param SendMessageRequest $request SendMessageRequest
+     * @param SendMessageHeaders $headers SendMessageHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendMessageResponse
+     * @return SendMessageResponse SendMessageResponse
      */
     public function sendMessageWithOptions($request, $headers, $runtime)
     {
@@ -4392,9 +4654,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMessageRequest $request
+     * @summary 发送ToB消息
+     *  *
+     * @param SendMessageRequest $request SendMessageRequest
      *
-     * @return SendMessageResponse
+     * @return SendMessageResponse SendMessageResponse
      */
     public function sendMessage($request)
     {

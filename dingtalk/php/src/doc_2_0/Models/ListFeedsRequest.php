@@ -14,6 +14,8 @@ class ListFeedsRequest extends Model
     public $excludeFile;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -24,6 +26,8 @@ class ListFeedsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd
      *
      * @var string

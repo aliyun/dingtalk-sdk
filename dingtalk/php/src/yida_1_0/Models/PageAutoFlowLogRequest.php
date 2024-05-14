@@ -16,6 +16,8 @@ class PageAutoFlowLogRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5d17e3add038d44535c2f4657eb6378e
      *
      * @var string
@@ -37,6 +39,8 @@ class PageAutoFlowLogRequest extends Model
     public $formUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +48,8 @@ class PageAutoFlowLogRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -68,6 +74,8 @@ class PageAutoFlowLogRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example B073AF673BEB044D59F8F612D65E1EA2
      *
      * @var string
@@ -75,6 +83,8 @@ class PageAutoFlowLogRequest extends Model
     public $token;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

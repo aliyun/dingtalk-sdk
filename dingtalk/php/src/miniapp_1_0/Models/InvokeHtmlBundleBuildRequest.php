@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class InvokeHtmlBundleBuildRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bundleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $version;

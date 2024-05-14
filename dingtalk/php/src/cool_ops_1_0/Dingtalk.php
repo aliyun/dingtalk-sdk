@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryOpportunityTagRequest $request
-     * @param BatchQueryOpportunityTagHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary ISV批量查询商机标签
+     *  *
+     * @param BatchQueryOpportunityTagRequest $request BatchQueryOpportunityTagRequest
+     * @param BatchQueryOpportunityTagHeaders $headers BatchQueryOpportunityTagHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryOpportunityTagResponse
+     * @return BatchQueryOpportunityTagResponse BatchQueryOpportunityTagResponse
      */
     public function batchQueryOpportunityTagWithOptions($request, $headers, $runtime)
     {
@@ -74,9 +76,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryOpportunityTagRequest $request
+     * @summary ISV批量查询商机标签
+     *  *
+     * @param BatchQueryOpportunityTagRequest $request BatchQueryOpportunityTagRequest
      *
-     * @return BatchQueryOpportunityTagResponse
+     * @return BatchQueryOpportunityTagResponse BatchQueryOpportunityTagResponse
      */
     public function batchQueryOpportunityTag($request)
     {
@@ -87,11 +91,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateIsvOppStatusRequest $request
-     * @param UpdateIsvOppStatusHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary ISV商机状态同步
+     *  *
+     * @param UpdateIsvOppStatusRequest $request UpdateIsvOppStatusRequest
+     * @param UpdateIsvOppStatusHeaders $headers UpdateIsvOppStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateIsvOppStatusResponse
+     * @return UpdateIsvOppStatusResponse UpdateIsvOppStatusResponse
      */
     public function updateIsvOppStatusWithOptions($request, $headers, $runtime)
     {
@@ -127,9 +133,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateIsvOppStatusRequest $request
+     * @summary ISV商机状态同步
+     *  *
+     * @param UpdateIsvOppStatusRequest $request UpdateIsvOppStatusRequest
      *
-     * @return UpdateIsvOppStatusResponse
+     * @return UpdateIsvOppStatusResponse UpdateIsvOppStatusResponse
      */
     public function updateIsvOppStatus($request)
     {

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeactivateDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example model1
      *
      * @var string
@@ -16,6 +18,8 @@ class DeactivateDeviceRequest extends Model
     public $model;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fdafds-432432
      *
      * @var string
@@ -23,6 +27,8 @@ class DeactivateDeviceRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO_CALL
      *
      * @var string

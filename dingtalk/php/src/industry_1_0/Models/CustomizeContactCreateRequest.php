@@ -14,6 +14,8 @@ class CustomizeContactCreateRequest extends Model
     public $managerIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example A项目通讯录
      *
      * @var string

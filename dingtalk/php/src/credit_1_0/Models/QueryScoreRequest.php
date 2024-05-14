@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryScoreRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example MD5
      *
      * @var string
@@ -30,6 +32,8 @@ class QueryScoreRequest extends Model
     public $idCardCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example e10adc3949ba59abbe56e057f20f883e
      *
      * @var string

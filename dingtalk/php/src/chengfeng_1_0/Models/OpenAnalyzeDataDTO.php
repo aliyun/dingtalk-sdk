@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenAnalyzeDataDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class OpenAnalyzeDataDTO extends Model
     public $deptCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 22
      *
      * @var int
@@ -23,6 +27,8 @@ class OpenAnalyzeDataDTO extends Model
     public $noAlignObjectiveCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33
      *
      * @var int
@@ -30,6 +36,8 @@ class OpenAnalyzeDataDTO extends Model
     public $noKeyActionCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33.2
      *
      * @var float
@@ -37,6 +45,8 @@ class OpenAnalyzeDataDTO extends Model
     public $objectiveAlignRate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +54,8 @@ class OpenAnalyzeDataDTO extends Model
     public $objectiveNoSetCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11
      *
      * @var int
@@ -51,6 +63,8 @@ class OpenAnalyzeDataDTO extends Model
     public $objectiveRiskCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33.3
      *
      * @var float
@@ -58,6 +72,8 @@ class OpenAnalyzeDataDTO extends Model
     public $objectiveSetRate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 44
      *
      * @var int
@@ -65,6 +81,8 @@ class OpenAnalyzeDataDTO extends Model
     public $onlyOneKeyResultCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33
      *
      * @var int
@@ -72,6 +90,8 @@ class OpenAnalyzeDataDTO extends Model
     public $onlyOneObjectiveCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 22.3
      *
      * @var float
@@ -79,6 +99,8 @@ class OpenAnalyzeDataDTO extends Model
     public $progressUpdateRateLast15Days;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33.11
      *
      * @var float
@@ -86,6 +108,8 @@ class OpenAnalyzeDataDTO extends Model
     public $progressUpdateRateLast30Days;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33.4
      *
      * @var float

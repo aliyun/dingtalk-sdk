@@ -40,6 +40,8 @@ class findOptions extends Model
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $unionCells;

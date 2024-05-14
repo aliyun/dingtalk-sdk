@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeviceDingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -23,6 +25,8 @@ class DeviceDingRequest extends Model
     public $paramsJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserIdList;

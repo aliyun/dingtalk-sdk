@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PushOfficialAccountMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234abcd
      *
      * @var string

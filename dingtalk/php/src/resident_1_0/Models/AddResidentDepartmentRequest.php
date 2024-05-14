@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddResidentDepartmentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 第一网格组
      *
      * @var string
@@ -23,6 +25,8 @@ class AddResidentDepartmentRequest extends Model
     public $isResidenceGroup;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int

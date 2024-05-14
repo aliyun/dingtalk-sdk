@@ -9,36 +9,50 @@ use AlibabaCloud\Tea\Model;
 class GetSsoUserInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $avatar;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $email;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isAdmin;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userName;

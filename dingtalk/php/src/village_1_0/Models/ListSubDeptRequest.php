@@ -16,6 +16,8 @@ class ListSubDeptRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;

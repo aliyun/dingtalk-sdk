@@ -16,6 +16,8 @@ class FinishBeginnerTaskRequest extends Model
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager5875
      *
      * @var string

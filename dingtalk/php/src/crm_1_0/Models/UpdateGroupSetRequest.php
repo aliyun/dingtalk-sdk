@@ -34,6 +34,8 @@ class UpdateGroupSetRequest extends Model
     public $noticeToped;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openGroupSetId;

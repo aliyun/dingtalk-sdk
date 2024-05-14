@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class CreateTicketRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
@@ -30,6 +32,8 @@ class CreateTicketRequest extends Model
     public $notify;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -37,6 +41,8 @@ class CreateTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example bLkvfXKiSngQiE
      *
      * @var string
@@ -44,11 +50,15 @@ class CreateTicketRequest extends Model
     public $openTemplateBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processorUnionIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SG
      *
      * @var string
@@ -61,6 +71,8 @@ class CreateTicketRequest extends Model
     public $sceneContext;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 工单标题
      *
      * @var string

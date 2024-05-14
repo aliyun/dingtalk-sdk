@@ -14,6 +14,8 @@ class body extends Model
     public $comment;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $effectiveDate;
@@ -24,11 +26,15 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $punName;
@@ -39,6 +45,8 @@ class body extends Model
     public $punOrg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

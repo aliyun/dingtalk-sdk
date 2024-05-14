@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListJoinOrgInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 15800000000
      *
      * @var string

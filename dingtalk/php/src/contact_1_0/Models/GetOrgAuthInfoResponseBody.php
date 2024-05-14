@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetOrgAuthInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class GetOrgAuthInfoResponseBody extends Model
     public $legalPerson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试有限公司
      *
      * @var string
@@ -37,6 +41,8 @@ class GetOrgAuthInfoResponseBody extends Model
     public $licenseUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试
      *
      * @var string

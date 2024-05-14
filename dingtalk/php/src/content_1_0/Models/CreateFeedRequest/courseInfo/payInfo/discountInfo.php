@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class discountInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1624507431777
      *
      * @var int
@@ -16,6 +18,8 @@ class discountInfo extends Model
     public $endTimeMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -23,6 +27,8 @@ class discountInfo extends Model
     public $price;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1624507431777
      *
      * @var int

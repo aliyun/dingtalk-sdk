@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class attendees extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abc@aaa.com
      *
      * @var string
@@ -16,6 +18,8 @@ class attendees extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 参会人1
      *
      * @var string

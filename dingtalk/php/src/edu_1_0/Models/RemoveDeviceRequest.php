@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -16,6 +18,8 @@ class RemoveDeviceRequest extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SN123
      *
      * @var string

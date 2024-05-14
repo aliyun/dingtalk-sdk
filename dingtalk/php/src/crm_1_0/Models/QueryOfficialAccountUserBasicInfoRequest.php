@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryOfficialAccountUserBasicInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bindingToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class studyInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -16,6 +18,8 @@ class studyInfos extends Model
     public $durationMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16621*******284773
      *
      * @var string

@@ -19,6 +19,8 @@ class GetProjectResponseBody extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1631526550994
      *
      * @var int
@@ -26,6 +28,8 @@ class GetProjectResponseBody extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaa
      *
      * @var string
@@ -33,6 +37,8 @@ class GetProjectResponseBody extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 和外部合作
      *
      * @var string
@@ -45,6 +51,8 @@ class GetProjectResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROJ-XXX
      *
      * @var string
@@ -52,6 +60,8 @@ class GetProjectResponseBody extends Model
     public $projectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 外包项目
      *
      * @var string
@@ -59,6 +69,8 @@ class GetProjectResponseBody extends Model
     public $projectName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example valid
      *
      * @var string

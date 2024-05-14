@@ -20,6 +20,8 @@ class participants extends Model
     public $accountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $accountType;
@@ -40,6 +42,8 @@ class participants extends Model
     public $signPosList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $signRequirements;

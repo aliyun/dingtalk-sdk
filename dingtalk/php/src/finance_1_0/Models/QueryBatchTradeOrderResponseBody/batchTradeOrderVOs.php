@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class batchTradeOrderVOs extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2021090102102122200002121
      *
      * @var string
@@ -16,6 +18,8 @@ class batchTradeOrderVOs extends Model
     public $alipayTransId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var string
@@ -23,6 +27,8 @@ class batchTradeOrderVOs extends Model
     public $failAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class batchTradeOrderVOs extends Model
     public $failCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 收款人不存在
      *
      * @var string
@@ -37,6 +45,8 @@ class batchTradeOrderVOs extends Model
     public $failReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-01 12:00:00
      *
      * @var string
@@ -44,6 +54,8 @@ class batchTradeOrderVOs extends Model
     public $gmtFinish;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-01 11:00:00
      *
      * @var string
@@ -51,6 +63,8 @@ class batchTradeOrderVOs extends Model
     public $gmtSubmit;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210901001
      *
      * @var string
@@ -58,6 +72,8 @@ class batchTradeOrderVOs extends Model
     public $outBatchNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 213654465
      *
      * @var string
@@ -65,6 +81,8 @@ class batchTradeOrderVOs extends Model
     public $payerStaffId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -72,6 +90,8 @@ class batchTradeOrderVOs extends Model
     public $paymentAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CNY
      *
      * @var string
@@ -79,6 +99,8 @@ class batchTradeOrderVOs extends Model
     public $paymentCurrency;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string
@@ -86,6 +108,8 @@ class batchTradeOrderVOs extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -93,6 +117,8 @@ class batchTradeOrderVOs extends Model
     public $successAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -100,6 +126,8 @@ class batchTradeOrderVOs extends Model
     public $successCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string

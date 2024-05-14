@@ -23,6 +23,8 @@ class QuerySendMsgTaskStatisticsDetailRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example J22222
      *
      * @var string
@@ -30,6 +32,8 @@ class QuerySendMsgTaskStatisticsDetailRequest extends Model
     public $openBatchTaskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid1111
      *
      * @var string
@@ -37,6 +41,8 @@ class QuerySendMsgTaskStatisticsDetailRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string

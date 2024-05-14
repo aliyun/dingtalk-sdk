@@ -16,6 +16,8 @@ class GetCorpTasksRequest extends Model
     public $appTypes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -72,6 +74,8 @@ class GetCorpTasksRequest extends Model
     public $processCodes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -79,6 +83,8 @@ class GetCorpTasksRequest extends Model
     public $token;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

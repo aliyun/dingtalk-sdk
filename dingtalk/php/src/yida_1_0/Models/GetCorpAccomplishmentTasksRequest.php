@@ -65,6 +65,8 @@ class GetCorpAccomplishmentTasksRequest extends Model
     public $processCodes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

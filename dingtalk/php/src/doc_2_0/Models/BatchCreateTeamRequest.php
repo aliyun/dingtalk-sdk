@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class BatchCreateTeamRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var param
      */
     public $param;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

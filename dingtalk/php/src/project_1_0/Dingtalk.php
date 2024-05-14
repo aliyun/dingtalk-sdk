@@ -199,13 +199,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 增加项目成员
+     *  *
      * @param string                  $userId
      * @param string                  $projectId
-     * @param AddProjectMemberRequest $request
-     * @param AddProjectMemberHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param AddProjectMemberRequest $request   AddProjectMemberRequest
+     * @param AddProjectMemberHeaders $headers   AddProjectMemberHeaders
+     * @param RuntimeOptions          $runtime   runtime options for this request RuntimeOptions
      *
-     * @return AddProjectMemberResponse
+     * @return AddProjectMemberResponse AddProjectMemberResponse
      */
     public function addProjectMemberWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -241,11 +243,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 增加项目成员
+     *  *
      * @param string                  $userId
      * @param string                  $projectId
-     * @param AddProjectMemberRequest $request
+     * @param AddProjectMemberRequest $request   AddProjectMemberRequest
      *
-     * @return AddProjectMemberResponse
+     * @return AddProjectMemberResponse AddProjectMemberResponse
      */
     public function addProjectMember($userId, $projectId, $request)
     {
@@ -256,12 +260,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 项目放入回收站
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param ArchiveProjectHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param ArchiveProjectHeaders $headers   ArchiveProjectHeaders
+     * @param RuntimeOptions        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return ArchiveProjectResponse
+     * @return ArchiveProjectResponse ArchiveProjectResponse
      */
     public function archiveProjectWithOptions($userId, $projectId, $headers, $runtime)
     {
@@ -291,10 +297,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 项目放入回收站
+     *  *
      * @param string $userId
      * @param string $projectId
      *
-     * @return ArchiveProjectResponse
+     * @return ArchiveProjectResponse ArchiveProjectResponse
      */
     public function archiveProject($userId, $projectId)
     {
@@ -305,12 +313,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 任务迁移至回收站
+     *  *
      * @param string             $userId
      * @param string             $taskId
-     * @param ArchiveTaskHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param ArchiveTaskHeaders $headers ArchiveTaskHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return ArchiveTaskResponse
+     * @return ArchiveTaskResponse ArchiveTaskResponse
      */
     public function archiveTaskWithOptions($userId, $taskId, $headers, $runtime)
     {
@@ -340,10 +350,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 任务迁移至回收站
+     *  *
      * @param string $userId
      * @param string $taskId
      *
-     * @return ArchiveTaskResponse
+     * @return ArchiveTaskResponse ArchiveTaskResponse
      */
     public function archiveTask($userId, $taskId)
     {
@@ -354,12 +366,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建自由任务
+     *  *
      * @param string                        $userId
-     * @param CreateOrganizationTaskRequest $request
-     * @param CreateOrganizationTaskHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param CreateOrganizationTaskRequest $request CreateOrganizationTaskRequest
+     * @param CreateOrganizationTaskHeaders $headers CreateOrganizationTaskHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateOrganizationTaskResponse
+     * @return CreateOrganizationTaskResponse CreateOrganizationTaskResponse
      */
     public function createOrganizationTaskWithOptions($userId, $request, $headers, $runtime)
     {
@@ -422,10 +436,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建自由任务
+     *  *
      * @param string                        $userId
-     * @param CreateOrganizationTaskRequest $request
+     * @param CreateOrganizationTaskRequest $request CreateOrganizationTaskRequest
      *
-     * @return CreateOrganizationTaskResponse
+     * @return CreateOrganizationTaskResponse CreateOrganizationTaskResponse
      */
     public function createOrganizationTask($userId, $request)
     {
@@ -436,12 +452,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 录入计划工时
+     *  *
      * @param string                $userId
-     * @param CreatePlanTimeRequest $request
-     * @param CreatePlanTimeHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreatePlanTimeRequest $request CreatePlanTimeRequest
+     * @param CreatePlanTimeHeaders $headers CreatePlanTimeHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreatePlanTimeResponse
+     * @return CreatePlanTimeResponse CreatePlanTimeResponse
      */
     public function createPlanTimeWithOptions($userId, $request, $headers, $runtime)
     {
@@ -506,10 +524,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 录入计划工时
+     *  *
      * @param string                $userId
-     * @param CreatePlanTimeRequest $request
+     * @param CreatePlanTimeRequest $request CreatePlanTimeRequest
      *
-     * @return CreatePlanTimeResponse
+     * @return CreatePlanTimeResponse CreatePlanTimeResponse
      */
     public function createPlanTime($userId, $request)
     {
@@ -520,12 +540,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目
+     *  *
      * @param string               $userId
-     * @param CreateProjectRequest $request
-     * @param CreateProjectHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param CreateProjectRequest $request CreateProjectRequest
+     * @param CreateProjectHeaders $headers CreateProjectHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateProjectResponse
+     * @return CreateProjectResponse CreateProjectResponse
      */
     public function createProjectWithOptions($userId, $request, $headers, $runtime)
     {
@@ -561,10 +583,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目
+     *  *
      * @param string               $userId
-     * @param CreateProjectRequest $request
+     * @param CreateProjectRequest $request CreateProjectRequest
      *
-     * @return CreateProjectResponse
+     * @return CreateProjectResponse CreateProjectResponse
      */
     public function createProject($userId, $request)
     {
@@ -575,12 +599,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据项目模板创建项目
+     *  *
      * @param string                         $userId
-     * @param CreateProjectByTemplateRequest $request
-     * @param CreateProjectByTemplateHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param CreateProjectByTemplateRequest $request CreateProjectByTemplateRequest
+     * @param CreateProjectByTemplateHeaders $headers CreateProjectByTemplateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateProjectByTemplateResponse
+     * @return CreateProjectByTemplateResponse CreateProjectByTemplateResponse
      */
     public function createProjectByTemplateWithOptions($userId, $request, $headers, $runtime)
     {
@@ -619,10 +645,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据项目模板创建项目
+     *  *
      * @param string                         $userId
-     * @param CreateProjectByTemplateRequest $request
+     * @param CreateProjectByTemplateRequest $request CreateProjectByTemplateRequest
      *
-     * @return CreateProjectByTemplateResponse
+     * @return CreateProjectByTemplateResponse CreateProjectByTemplateResponse
      */
     public function createProjectByTemplate($userId, $request)
     {
@@ -633,13 +661,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建或更新项目概览中自定义字段值
+     *  *
      * @param string                                $userId
      * @param string                                $projectId
-     * @param CreateProjectCustomfieldStatusRequest $request
-     * @param CreateProjectCustomfieldStatusHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param CreateProjectCustomfieldStatusRequest $request   CreateProjectCustomfieldStatusRequest
+     * @param CreateProjectCustomfieldStatusHeaders $headers   CreateProjectCustomfieldStatusHeaders
+     * @param RuntimeOptions                        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return CreateProjectCustomfieldStatusResponse
+     * @return CreateProjectCustomfieldStatusResponse CreateProjectCustomfieldStatusResponse
      */
     public function createProjectCustomfieldStatusWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -684,11 +714,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建或更新项目概览中自定义字段值
+     *  *
      * @param string                                $userId
      * @param string                                $projectId
-     * @param CreateProjectCustomfieldStatusRequest $request
+     * @param CreateProjectCustomfieldStatusRequest $request   CreateProjectCustomfieldStatusRequest
      *
-     * @return CreateProjectCustomfieldStatusResponse
+     * @return CreateProjectCustomfieldStatusResponse CreateProjectCustomfieldStatusResponse
      */
     public function createProjectCustomfieldStatus($userId, $projectId, $request)
     {
@@ -699,12 +731,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目任务
+     *  *
      * @param string            $userId
-     * @param CreateTaskRequest $request
-     * @param CreateTaskHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param CreateTaskRequest $request CreateTaskRequest
+     * @param CreateTaskHeaders $headers CreateTaskHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTaskResponse
+     * @return CreateTaskResponse CreateTaskResponse
      */
     public function createTaskWithOptions($userId, $request, $headers, $runtime)
     {
@@ -773,10 +807,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目任务
+     *  *
      * @param string            $userId
-     * @param CreateTaskRequest $request
+     * @param CreateTaskRequest $request CreateTaskRequest
      *
-     * @return CreateTaskResponse
+     * @return CreateTaskResponse CreateTaskResponse
      */
     public function createTask($userId, $request)
     {
@@ -787,13 +823,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建任务关联对象
+     *  *
      * @param string                      $userId
      * @param string                      $taskId
-     * @param CreateTaskObjectLinkRequest $request
-     * @param CreateTaskObjectLinkHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param CreateTaskObjectLinkRequest $request CreateTaskObjectLinkRequest
+     * @param CreateTaskObjectLinkHeaders $headers CreateTaskObjectLinkHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTaskObjectLinkResponse
+     * @return CreateTaskObjectLinkResponse CreateTaskObjectLinkResponse
      */
     public function createTaskObjectLinkWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -829,11 +867,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建任务关联对象
+     *  *
      * @param string                      $userId
      * @param string                      $taskId
-     * @param CreateTaskObjectLinkRequest $request
+     * @param CreateTaskObjectLinkRequest $request CreateTaskObjectLinkRequest
      *
-     * @return CreateTaskObjectLinkResponse
+     * @return CreateTaskObjectLinkResponse CreateTaskObjectLinkResponse
      */
     public function createTaskObjectLink($userId, $taskId, $request)
     {
@@ -844,12 +884,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 录入实际工时接口
+     *  *
      * @param string                $userId
-     * @param CreateWorkTimeRequest $request
-     * @param CreateWorkTimeHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateWorkTimeRequest $request CreateWorkTimeRequest
+     * @param CreateWorkTimeHeaders $headers CreateWorkTimeHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateWorkTimeResponse
+     * @return CreateWorkTimeResponse CreateWorkTimeResponse
      */
     public function createWorkTimeWithOptions($userId, $request, $headers, $runtime)
     {
@@ -917,10 +959,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 录入实际工时接口
+     *  *
      * @param string                $userId
-     * @param CreateWorkTimeRequest $request
+     * @param CreateWorkTimeRequest $request CreateWorkTimeRequest
      *
-     * @return CreateWorkTimeResponse
+     * @return CreateWorkTimeResponse CreateWorkTimeResponse
      */
     public function createWorkTime($userId, $request)
     {
@@ -931,12 +975,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建实际工时审批对象。
+     *  *
      * @param string                       $userId
-     * @param CreateWorkTimeApproveRequest $request
-     * @param CreateWorkTimeApproveHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param CreateWorkTimeApproveRequest $request CreateWorkTimeApproveRequest
+     * @param CreateWorkTimeApproveHeaders $headers CreateWorkTimeApproveHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateWorkTimeApproveResponse
+     * @return CreateWorkTimeApproveResponse CreateWorkTimeApproveResponse
      */
     public function createWorkTimeApproveWithOptions($userId, $request, $headers, $runtime)
     {
@@ -972,10 +1018,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建实际工时审批对象。
+     *  *
      * @param string                       $userId
-     * @param CreateWorkTimeApproveRequest $request
+     * @param CreateWorkTimeApproveRequest $request CreateWorkTimeApproveRequest
      *
-     * @return CreateWorkTimeApproveResponse
+     * @return CreateWorkTimeApproveResponse CreateWorkTimeApproveResponse
      */
     public function createWorkTimeApprove($userId, $request)
     {
@@ -986,13 +1034,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除项目成员
+     *  *
      * @param string                     $userId
      * @param string                     $projectId
-     * @param DeleteProjectMemberRequest $request
-     * @param DeleteProjectMemberHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param DeleteProjectMemberRequest $request   DeleteProjectMemberRequest
+     * @param DeleteProjectMemberHeaders $headers   DeleteProjectMemberHeaders
+     * @param RuntimeOptions             $runtime   runtime options for this request RuntimeOptions
      *
-     * @return DeleteProjectMemberResponse
+     * @return DeleteProjectMemberResponse DeleteProjectMemberResponse
      */
     public function deleteProjectMemberWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -1028,11 +1078,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除项目成员
+     *  *
      * @param string                     $userId
      * @param string                     $projectId
-     * @param DeleteProjectMemberRequest $request
+     * @param DeleteProjectMemberRequest $request   DeleteProjectMemberRequest
      *
-     * @return DeleteProjectMemberResponse
+     * @return DeleteProjectMemberResponse DeleteProjectMemberResponse
      */
     public function deleteProjectMember($userId, $projectId, $request)
     {
@@ -1043,12 +1095,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除任务
+     *  *
      * @param string            $userId
      * @param string            $taskId
-     * @param DeleteTaskHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param DeleteTaskHeaders $headers DeleteTaskHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteTaskResponse
+     * @return DeleteTaskResponse DeleteTaskResponse
      */
     public function deleteTaskWithOptions($userId, $taskId, $headers, $runtime)
     {
@@ -1078,10 +1132,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除任务
+     *  *
      * @param string $userId
      * @param string $taskId
      *
-     * @return DeleteTaskResponse
+     * @return DeleteTaskResponse DeleteTaskResponse
      */
     public function deleteTask($userId, $taskId)
     {
@@ -1092,11 +1148,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDeptsByOrgIdRequest $request
-     * @param GetDeptsByOrgIdHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 根据企业Id获取部门
+     *  *
+     * @param GetDeptsByOrgIdRequest $request GetDeptsByOrgIdRequest
+     * @param GetDeptsByOrgIdHeaders $headers GetDeptsByOrgIdHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDeptsByOrgIdResponse
+     * @return GetDeptsByOrgIdResponse GetDeptsByOrgIdResponse
      */
     public function getDeptsByOrgIdWithOptions($request, $headers, $runtime)
     {
@@ -1141,9 +1199,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDeptsByOrgIdRequest $request
+     * @summary 根据企业Id获取部门
+     *  *
+     * @param GetDeptsByOrgIdRequest $request GetDeptsByOrgIdRequest
      *
-     * @return GetDeptsByOrgIdResponse
+     * @return GetDeptsByOrgIdResponse GetDeptsByOrgIdResponse
      */
     public function getDeptsByOrgId($request)
     {
@@ -1154,11 +1214,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEmpsByOrgIdRequest $request
-     * @param GetEmpsByOrgIdHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 根据企业Id获取企业内的员工信息
+     *  *
+     * @param GetEmpsByOrgIdRequest $request GetEmpsByOrgIdRequest
+     * @param GetEmpsByOrgIdHeaders $headers GetEmpsByOrgIdHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetEmpsByOrgIdResponse
+     * @return GetEmpsByOrgIdResponse GetEmpsByOrgIdResponse
      */
     public function getEmpsByOrgIdWithOptions($request, $headers, $runtime)
     {
@@ -1206,9 +1268,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEmpsByOrgIdRequest $request
+     * @summary 根据企业Id获取企业内的员工信息
+     *  *
+     * @param GetEmpsByOrgIdRequest $request GetEmpsByOrgIdRequest
      *
-     * @return GetEmpsByOrgIdResponse
+     * @return GetEmpsByOrgIdResponse GetEmpsByOrgIdResponse
      */
     public function getEmpsByOrgId($request)
     {
@@ -1219,12 +1283,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 批量获取任务详情
+     *  *
      * @param string                         $userId
-     * @param GetOrganizatioTaskByIdsRequest $request
-     * @param GetOrganizatioTaskByIdsHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param GetOrganizatioTaskByIdsRequest $request GetOrganizatioTaskByIdsRequest
+     * @param GetOrganizatioTaskByIdsHeaders $headers GetOrganizatioTaskByIdsHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOrganizatioTaskByIdsResponse
+     * @return GetOrganizatioTaskByIdsResponse GetOrganizatioTaskByIdsResponse
      */
     public function getOrganizatioTaskByIdsWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1260,10 +1326,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 批量获取任务详情
+     *  *
      * @param string                         $userId
-     * @param GetOrganizatioTaskByIdsRequest $request
+     * @param GetOrganizatioTaskByIdsRequest $request GetOrganizatioTaskByIdsRequest
      *
-     * @return GetOrganizatioTaskByIdsResponse
+     * @return GetOrganizatioTaskByIdsResponse GetOrganizatioTaskByIdsResponse
      */
     public function getOrganizatioTaskByIds($userId, $request)
     {
@@ -1274,11 +1342,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业优先级列表
+     *  *
      * @param string                             $userId
-     * @param GetOrganizationPriorityListHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param GetOrganizationPriorityListHeaders $headers GetOrganizationPriorityListHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOrganizationPriorityListResponse
+     * @return GetOrganizationPriorityListResponse GetOrganizationPriorityListResponse
      */
     public function getOrganizationPriorityListWithOptions($userId, $headers, $runtime)
     {
@@ -1308,9 +1378,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业优先级列表
+     *  *
      * @param string $userId
      *
-     * @return GetOrganizationPriorityListResponse
+     * @return GetOrganizationPriorityListResponse GetOrganizationPriorityListResponse
      */
     public function getOrganizationPriorityList($userId)
     {
@@ -1321,12 +1393,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取自由任务详情
+     *  *
      * @param string                     $taskId
      * @param string                     $userId
-     * @param GetOrganizationTaskHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetOrganizationTaskHeaders $headers GetOrganizationTaskHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOrganizationTaskResponse
+     * @return GetOrganizationTaskResponse GetOrganizationTaskResponse
      */
     public function getOrganizationTaskWithOptions($taskId, $userId, $headers, $runtime)
     {
@@ -1356,10 +1430,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取自由任务详情
+     *  *
      * @param string $taskId
      * @param string $userId
      *
-     * @return GetOrganizationTaskResponse
+     * @return GetOrganizationTaskResponse GetOrganizationTaskResponse
      */
     public function getOrganizationTask($taskId, $userId)
     {
@@ -1370,12 +1446,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询可见的项目分组
+     *  *
      * @param string                 $userId
-     * @param GetProjectGroupRequest $request
-     * @param GetProjectGroupHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetProjectGroupRequest $request GetProjectGroupRequest
+     * @param GetProjectGroupHeaders $headers GetProjectGroupHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetProjectGroupResponse
+     * @return GetProjectGroupResponse GetProjectGroupResponse
      */
     public function getProjectGroupWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1414,10 +1492,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询可见的项目分组
+     *  *
      * @param string                 $userId
-     * @param GetProjectGroupRequest $request
+     * @param GetProjectGroupRequest $request GetProjectGroupRequest
      *
-     * @return GetProjectGroupResponse
+     * @return GetProjectGroupResponse GetProjectGroupResponse
      */
     public function getProjectGroup($userId, $request)
     {
@@ -1428,13 +1508,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取项目成员
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param GetProjectMemebersRequest $request
-     * @param GetProjectMemebersHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetProjectMemebersRequest $request   GetProjectMemebersRequest
+     * @param GetProjectMemebersHeaders $headers   GetProjectMemebersHeaders
+     * @param RuntimeOptions            $runtime   runtime options for this request RuntimeOptions
      *
-     * @return GetProjectMemebersResponse
+     * @return GetProjectMemebersResponse GetProjectMemebersResponse
      */
     public function getProjectMemebersWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -1479,11 +1561,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取项目成员
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param GetProjectMemebersRequest $request
+     * @param GetProjectMemebersRequest $request   GetProjectMemebersRequest
      *
-     * @return GetProjectMemebersResponse
+     * @return GetProjectMemebersResponse GetProjectMemebersResponse
      */
     public function getProjectMemebers($userId, $projectId, $request)
     {
@@ -1494,12 +1578,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目状态
+     *  *
      * @param string                      $userId
      * @param string                      $projectId
-     * @param GetProjectStatusListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetProjectStatusListHeaders $headers   GetProjectStatusListHeaders
+     * @param RuntimeOptions              $runtime   runtime options for this request RuntimeOptions
      *
-     * @return GetProjectStatusListResponse
+     * @return GetProjectStatusListResponse GetProjectStatusListResponse
      */
     public function getProjectStatusListWithOptions($userId, $projectId, $headers, $runtime)
     {
@@ -1529,10 +1615,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目状态
+     *  *
      * @param string $userId
      * @param string $projectId
      *
-     * @return GetProjectStatusListResponse
+     * @return GetProjectStatusListResponse GetProjectStatusListResponse
      */
     public function getProjectStatusList($userId, $projectId)
     {
@@ -1543,12 +1631,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取任务详情
+     *  *
      * @param string              $userId
-     * @param GetTaskByIdsRequest $request
-     * @param GetTaskByIdsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetTaskByIdsRequest $request GetTaskByIdsRequest
+     * @param GetTaskByIdsHeaders $headers GetTaskByIdsHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTaskByIdsResponse
+     * @return GetTaskByIdsResponse GetTaskByIdsResponse
      */
     public function getTaskByIdsWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1587,10 +1677,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取任务详情
+     *  *
      * @param string              $userId
-     * @param GetTaskByIdsRequest $request
+     * @param GetTaskByIdsRequest $request GetTaskByIdsRequest
      *
-     * @return GetTaskByIdsResponse
+     * @return GetTaskByIdsResponse GetTaskByIdsResponse
      */
     public function getTaskByIds($userId, $request)
     {
@@ -1601,11 +1693,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbOrgIdByDingOrgIdRequest $request
-     * @param GetTbOrgIdByDingOrgIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取Teambition企业Id
+     *  *
+     * @param GetTbOrgIdByDingOrgIdRequest $request GetTbOrgIdByDingOrgIdRequest
+     * @param GetTbOrgIdByDingOrgIdHeaders $headers GetTbOrgIdByDingOrgIdHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTbOrgIdByDingOrgIdResponse
+     * @return GetTbOrgIdByDingOrgIdResponse GetTbOrgIdByDingOrgIdResponse
      */
     public function getTbOrgIdByDingOrgIdWithOptions($request, $headers, $runtime)
     {
@@ -1641,9 +1735,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbOrgIdByDingOrgIdRequest $request
+     * @summary 获取Teambition企业Id
+     *  *
+     * @param GetTbOrgIdByDingOrgIdRequest $request GetTbOrgIdByDingOrgIdRequest
      *
-     * @return GetTbOrgIdByDingOrgIdResponse
+     * @return GetTbOrgIdByDingOrgIdResponse GetTbOrgIdByDingOrgIdResponse
      */
     public function getTbOrgIdByDingOrgId($request)
     {
@@ -1654,11 +1750,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbProjectGrayRequest $request
-     * @param GetTbProjectGrayHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取项目灰度标
+     *  *
+     * @param GetTbProjectGrayRequest $request GetTbProjectGrayRequest
+     * @param GetTbProjectGrayHeaders $headers GetTbProjectGrayHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTbProjectGrayResponse
+     * @return GetTbProjectGrayResponse GetTbProjectGrayResponse
      */
     public function getTbProjectGrayWithOptions($request, $headers, $runtime)
     {
@@ -1709,9 +1807,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbProjectGrayRequest $request
+     * @summary 获取项目灰度标
+     *  *
+     * @param GetTbProjectGrayRequest $request GetTbProjectGrayRequest
      *
-     * @return GetTbProjectGrayResponse
+     * @return GetTbProjectGrayResponse GetTbProjectGrayResponse
      */
     public function getTbProjectGray($request)
     {
@@ -1722,10 +1822,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbProjectSourceHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取项目来源
+     *  *
+     * @param GetTbProjectSourceHeaders $headers GetTbProjectSourceHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTbProjectSourceResponse
+     * @return GetTbProjectSourceResponse GetTbProjectSourceResponse
      */
     public function getTbProjectSourceWithOptions($headers, $runtime)
     {
@@ -1770,7 +1872,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetTbProjectSourceResponse
+     * @summary 获取项目来源
+     *  *
+     * @return GetTbProjectSourceResponse GetTbProjectSourceResponse
      */
     public function getTbProjectSource()
     {
@@ -1781,11 +1885,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbUserIdByStaffIdRequest $request
-     * @param GetTbUserIdByStaffIdHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 根据钉钉UserId获取Teambition用户Id
+     *  *
+     * @param GetTbUserIdByStaffIdRequest $request GetTbUserIdByStaffIdRequest
+     * @param GetTbUserIdByStaffIdHeaders $headers GetTbUserIdByStaffIdHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTbUserIdByStaffIdResponse
+     * @return GetTbUserIdByStaffIdResponse GetTbUserIdByStaffIdResponse
      */
     public function getTbUserIdByStaffIdWithOptions($request, $headers, $runtime)
     {
@@ -1824,9 +1930,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTbUserIdByStaffIdRequest $request
+     * @summary 根据钉钉UserId获取Teambition用户Id
+     *  *
+     * @param GetTbUserIdByStaffIdRequest $request GetTbUserIdByStaffIdRequest
      *
-     * @return GetTbUserIdByStaffIdResponse
+     * @return GetTbUserIdByStaffIdResponse GetTbUserIdByStaffIdResponse
      */
     public function getTbUserIdByStaffId($request)
     {
@@ -1837,12 +1945,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户加入的项目
+     *  *
      * @param string                      $userId
-     * @param GetUserJoinedProjectRequest $request
-     * @param GetUserJoinedProjectHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetUserJoinedProjectRequest $request GetUserJoinedProjectRequest
+     * @param GetUserJoinedProjectHeaders $headers GetUserJoinedProjectHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserJoinedProjectResponse
+     * @return GetUserJoinedProjectResponse GetUserJoinedProjectResponse
      */
     public function getUserJoinedProjectWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1881,10 +1991,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户加入的项目
+     *  *
      * @param string                      $userId
-     * @param GetUserJoinedProjectRequest $request
+     * @param GetUserJoinedProjectRequest $request GetUserJoinedProjectRequest
      *
-     * @return GetUserJoinedProjectResponse
+     * @return GetUserJoinedProjectResponse GetUserJoinedProjectResponse
      */
     public function getUserJoinedProject($userId, $request)
     {
@@ -1895,12 +2007,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目
+     *  *
      * @param string              $userId
-     * @param QueryProjectRequest $request
-     * @param QueryProjectHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param QueryProjectRequest $request QueryProjectRequest
+     * @param QueryProjectHeaders $headers QueryProjectHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryProjectResponse
+     * @return QueryProjectResponse QueryProjectResponse
      */
     public function queryProjectWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1948,10 +2062,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目
+     *  *
      * @param string              $userId
-     * @param QueryProjectRequest $request
+     * @param QueryProjectRequest $request QueryProjectRequest
      *
-     * @return QueryProjectResponse
+     * @return QueryProjectResponse QueryProjectResponse
      */
     public function queryProject($userId, $request)
     {
@@ -1962,13 +2078,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目中的任务
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param QueryTaskOfProjectRequest $request
-     * @param QueryTaskOfProjectHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryTaskOfProjectRequest $request   QueryTaskOfProjectRequest
+     * @param QueryTaskOfProjectHeaders $headers   QueryTaskOfProjectHeaders
+     * @param RuntimeOptions            $runtime   runtime options for this request RuntimeOptions
      *
-     * @return QueryTaskOfProjectResponse
+     * @return QueryTaskOfProjectResponse QueryTaskOfProjectResponse
      */
     public function queryTaskOfProjectWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2010,11 +2128,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目中的任务
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param QueryTaskOfProjectRequest $request
+     * @param QueryTaskOfProjectRequest $request   QueryTaskOfProjectRequest
      *
-     * @return QueryTaskOfProjectResponse
+     * @return QueryTaskOfProjectResponse QueryTaskOfProjectResponse
      */
     public function queryTaskOfProject($userId, $projectId, $request)
     {
@@ -2025,13 +2145,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取任务列表
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SeachTaskStageRequest $request
-     * @param SeachTaskStageHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SeachTaskStageRequest $request   SeachTaskStageRequest
+     * @param SeachTaskStageHeaders $headers   SeachTaskStageHeaders
+     * @param RuntimeOptions        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SeachTaskStageResponse
+     * @return SeachTaskStageResponse SeachTaskStageResponse
      */
     public function seachTaskStageWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2079,11 +2201,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取任务列表
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SeachTaskStageRequest $request
+     * @param SeachTaskStageRequest $request   SeachTaskStageRequest
      *
-     * @return SeachTaskStageResponse
+     * @return SeachTaskStageResponse SeachTaskStageResponse
      */
     public function seachTaskStage($userId, $projectId, $request)
     {
@@ -2094,12 +2218,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过TQL搜索自由任务和项目任务ID。
+     *  *
      * @param string                     $userId
-     * @param SearchAllTasksByTqlRequest $request
-     * @param SearchAllTasksByTqlHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param SearchAllTasksByTqlRequest $request SearchAllTasksByTqlRequest
+     * @param SearchAllTasksByTqlHeaders $headers SearchAllTasksByTqlHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchAllTasksByTqlResponse
+     * @return SearchAllTasksByTqlResponse SearchAllTasksByTqlResponse
      */
     public function searchAllTasksByTqlWithOptions($userId, $request, $headers, $runtime)
     {
@@ -2141,10 +2267,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过TQL搜索自由任务和项目任务ID。
+     *  *
      * @param string                     $userId
-     * @param SearchAllTasksByTqlRequest $request
+     * @param SearchAllTasksByTqlRequest $request SearchAllTasksByTqlRequest
      *
-     * @return SearchAllTasksByTqlResponse
+     * @return SearchAllTasksByTqlResponse SearchAllTasksByTqlResponse
      */
     public function searchAllTasksByTql($userId, $request)
     {
@@ -2155,12 +2283,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业自定义字段
+     *  *
      * @param string                              $userId
-     * @param SearchOranizationCustomfieldRequest $request
-     * @param SearchOranizationCustomfieldHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param SearchOranizationCustomfieldRequest $request SearchOranizationCustomfieldRequest
+     * @param SearchOranizationCustomfieldHeaders $headers SearchOranizationCustomfieldHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchOranizationCustomfieldResponse
+     * @return SearchOranizationCustomfieldResponse SearchOranizationCustomfieldResponse
      */
     public function searchOranizationCustomfieldWithOptions($userId, $request, $headers, $runtime)
     {
@@ -2211,10 +2341,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业自定义字段
+     *  *
      * @param string                              $userId
-     * @param SearchOranizationCustomfieldRequest $request
+     * @param SearchOranizationCustomfieldRequest $request SearchOranizationCustomfieldRequest
      *
-     * @return SearchOranizationCustomfieldResponse
+     * @return SearchOranizationCustomfieldResponse SearchOranizationCustomfieldResponse
      */
     public function searchOranizationCustomfield($userId, $request)
     {
@@ -2225,13 +2357,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目自定义字段
+     *  *
      * @param string                          $userId
      * @param string                          $projectId
-     * @param SearchProjectCustomfieldRequest $request
-     * @param SearchProjectCustomfieldHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param SearchProjectCustomfieldRequest $request   SearchProjectCustomfieldRequest
+     * @param SearchProjectCustomfieldHeaders $headers   SearchProjectCustomfieldHeaders
+     * @param RuntimeOptions                  $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SearchProjectCustomfieldResponse
+     * @return SearchProjectCustomfieldResponse SearchProjectCustomfieldResponse
      */
     public function searchProjectCustomfieldWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2282,11 +2416,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询项目自定义字段
+     *  *
      * @param string                          $userId
      * @param string                          $projectId
-     * @param SearchProjectCustomfieldRequest $request
+     * @param SearchProjectCustomfieldRequest $request   SearchProjectCustomfieldRequest
      *
-     * @return SearchProjectCustomfieldResponse
+     * @return SearchProjectCustomfieldResponse SearchProjectCustomfieldResponse
      */
     public function searchProjectCustomfield($userId, $projectId, $request)
     {
@@ -2297,12 +2433,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 按项目模板名字搜索企业自定义模板
+     *  *
      * @param string                       $userId
-     * @param SearchProjectTemplateRequest $request
-     * @param SearchProjectTemplateHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param SearchProjectTemplateRequest $request SearchProjectTemplateRequest
+     * @param SearchProjectTemplateHeaders $headers SearchProjectTemplateHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchProjectTemplateResponse
+     * @return SearchProjectTemplateResponse SearchProjectTemplateResponse
      */
     public function searchProjectTemplateWithOptions($userId, $request, $headers, $runtime)
     {
@@ -2338,10 +2476,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 按项目模板名字搜索企业自定义模板
+     *  *
      * @param string                       $userId
-     * @param SearchProjectTemplateRequest $request
+     * @param SearchProjectTemplateRequest $request SearchProjectTemplateRequest
      *
-     * @return SearchProjectTemplateResponse
+     * @return SearchProjectTemplateResponse SearchProjectTemplateResponse
      */
     public function searchProjectTemplate($userId, $request)
     {
@@ -2352,13 +2492,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询任务工作流
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SearchTaskFlowRequest $request
-     * @param SearchTaskFlowHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SearchTaskFlowRequest $request   SearchTaskFlowRequest
+     * @param SearchTaskFlowHeaders $headers   SearchTaskFlowHeaders
+     * @param RuntimeOptions        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SearchTaskFlowResponse
+     * @return SearchTaskFlowResponse SearchTaskFlowResponse
      */
     public function searchTaskFlowWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2403,11 +2545,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询任务工作流
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SearchTaskFlowRequest $request
+     * @param SearchTaskFlowRequest $request   SearchTaskFlowRequest
      *
-     * @return SearchTaskFlowResponse
+     * @return SearchTaskFlowResponse SearchTaskFlowResponse
      */
     public function searchTaskFlow($userId, $projectId, $request)
     {
@@ -2418,13 +2562,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询任务分组
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SearchTaskListRequest $request
-     * @param SearchTaskListHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SearchTaskListRequest $request   SearchTaskListRequest
+     * @param SearchTaskListHeaders $headers   SearchTaskListHeaders
+     * @param RuntimeOptions        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SearchTaskListResponse
+     * @return SearchTaskListResponse SearchTaskListResponse
      */
     public function searchTaskListWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2469,11 +2615,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询任务分组
+     *  *
      * @param string                $userId
      * @param string                $projectId
-     * @param SearchTaskListRequest $request
+     * @param SearchTaskListRequest $request   SearchTaskListRequest
      *
-     * @return SearchTaskListResponse
+     * @return SearchTaskListResponse SearchTaskListResponse
      */
     public function searchTaskList($userId, $projectId, $request)
     {
@@ -2484,13 +2632,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 搜索任务工作流状态
+     *  *
      * @param string                      $userId
      * @param string                      $projectId
-     * @param SearchTaskflowStatusRequest $request
-     * @param SearchTaskflowStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param SearchTaskflowStatusRequest $request   SearchTaskflowStatusRequest
+     * @param SearchTaskflowStatusHeaders $headers   SearchTaskflowStatusHeaders
+     * @param RuntimeOptions              $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SearchTaskflowStatusResponse
+     * @return SearchTaskflowStatusResponse SearchTaskflowStatusResponse
      */
     public function searchTaskflowStatusWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -2538,11 +2688,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 搜索任务工作流状态
+     *  *
      * @param string                      $userId
      * @param string                      $projectId
-     * @param SearchTaskflowStatusRequest $request
+     * @param SearchTaskflowStatusRequest $request   SearchTaskflowStatusRequest
      *
-     * @return SearchTaskflowStatusResponse
+     * @return SearchTaskflowStatusResponse SearchTaskflowStatusResponse
      */
     public function searchTaskflowStatus($userId, $projectId, $request)
     {
@@ -2553,12 +2705,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户任务列表
+     *  *
      * @param string                $userId
-     * @param SearchUserTaskRequest $request
-     * @param SearchUserTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SearchUserTaskRequest $request SearchUserTaskRequest
+     * @param SearchUserTaskHeaders $headers SearchUserTaskHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchUserTaskResponse
+     * @return SearchUserTaskResponse SearchUserTaskResponse
      */
     public function searchUserTaskWithOptions($userId, $request, $headers, $runtime)
     {
@@ -2603,10 +2757,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户任务列表
+     *  *
      * @param string                $userId
-     * @param SearchUserTaskRequest $request
+     * @param SearchUserTaskRequest $request SearchUserTaskRequest
      *
-     * @return SearchUserTaskResponse
+     * @return SearchUserTaskResponse SearchUserTaskResponse
      */
     public function searchUserTask($userId, $request)
     {
@@ -2617,12 +2773,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 归档项目
+     *  *
      * @param string                $projectId
      * @param string                $userId
-     * @param SuspendProjectHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SuspendProjectHeaders $headers   SuspendProjectHeaders
+     * @param RuntimeOptions        $runtime   runtime options for this request RuntimeOptions
      *
-     * @return SuspendProjectResponse
+     * @return SuspendProjectResponse SuspendProjectResponse
      */
     public function suspendProjectWithOptions($projectId, $userId, $headers, $runtime)
     {
@@ -2652,10 +2810,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 归档项目
+     *  *
      * @param string $projectId
      * @param string $userId
      *
-     * @return SuspendProjectResponse
+     * @return SuspendProjectResponse SuspendProjectResponse
      */
     public function suspendProject($projectId, $userId)
     {
@@ -2666,12 +2826,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 恢复项目归档
+     *  *
      * @param string                  $projectId
      * @param string                  $userId
-     * @param UnSuspendProjectHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UnSuspendProjectHeaders $headers   UnSuspendProjectHeaders
+     * @param RuntimeOptions          $runtime   runtime options for this request RuntimeOptions
      *
-     * @return UnSuspendProjectResponse
+     * @return UnSuspendProjectResponse UnSuspendProjectResponse
      */
     public function unSuspendProjectWithOptions($projectId, $userId, $headers, $runtime)
     {
@@ -2701,10 +2863,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 恢复项目归档
+     *  *
      * @param string $projectId
      * @param string $userId
      *
-     * @return UnSuspendProjectResponse
+     * @return UnSuspendProjectResponse UnSuspendProjectResponse
      */
     public function unSuspendProject($projectId, $userId)
     {
@@ -2715,13 +2879,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务自定义字段的值
+     *  *
      * @param string                        $userId
      * @param string                        $taskId
-     * @param UpdateCustomfieldValueRequest $request
-     * @param UpdateCustomfieldValueHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param UpdateCustomfieldValueRequest $request UpdateCustomfieldValueRequest
+     * @param UpdateCustomfieldValueHeaders $headers UpdateCustomfieldValueHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateCustomfieldValueResponse
+     * @return UpdateCustomfieldValueResponse UpdateCustomfieldValueResponse
      */
     public function updateCustomfieldValueWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -2763,11 +2929,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务自定义字段的值
+     *  *
      * @param string                        $userId
      * @param string                        $taskId
-     * @param UpdateCustomfieldValueRequest $request
+     * @param UpdateCustomfieldValueRequest $request UpdateCustomfieldValueRequest
      *
-     * @return UpdateCustomfieldValueResponse
+     * @return UpdateCustomfieldValueResponse UpdateCustomfieldValueResponse
      */
     public function updateCustomfieldValue($userId, $taskId, $request)
     {
@@ -2778,13 +2946,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务标题
+     *  *
      * @param string                               $taskId
      * @param string                               $userId
-     * @param UpdateOrganizationTaskContentRequest $request
-     * @param UpdateOrganizationTaskContentHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param UpdateOrganizationTaskContentRequest $request UpdateOrganizationTaskContentRequest
+     * @param UpdateOrganizationTaskContentHeaders $headers UpdateOrganizationTaskContentHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskContentResponse
+     * @return UpdateOrganizationTaskContentResponse UpdateOrganizationTaskContentResponse
      */
     public function updateOrganizationTaskContentWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -2826,11 +2996,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务标题
+     *  *
      * @param string                               $taskId
      * @param string                               $userId
-     * @param UpdateOrganizationTaskContentRequest $request
+     * @param UpdateOrganizationTaskContentRequest $request UpdateOrganizationTaskContentRequest
      *
-     * @return UpdateOrganizationTaskContentResponse
+     * @return UpdateOrganizationTaskContentResponse UpdateOrganizationTaskContentResponse
      */
     public function updateOrganizationTaskContent($taskId, $userId, $request)
     {
@@ -2841,13 +3013,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务截止时间
+     *  *
      * @param string                               $taskId
      * @param string                               $userId
-     * @param UpdateOrganizationTaskDueDateRequest $request
-     * @param UpdateOrganizationTaskDueDateHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param UpdateOrganizationTaskDueDateRequest $request UpdateOrganizationTaskDueDateRequest
+     * @param UpdateOrganizationTaskDueDateHeaders $headers UpdateOrganizationTaskDueDateHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskDueDateResponse
+     * @return UpdateOrganizationTaskDueDateResponse UpdateOrganizationTaskDueDateResponse
      */
     public function updateOrganizationTaskDueDateWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -2889,11 +3063,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务截止时间
+     *  *
      * @param string                               $taskId
      * @param string                               $userId
-     * @param UpdateOrganizationTaskDueDateRequest $request
+     * @param UpdateOrganizationTaskDueDateRequest $request UpdateOrganizationTaskDueDateRequest
      *
-     * @return UpdateOrganizationTaskDueDateResponse
+     * @return UpdateOrganizationTaskDueDateResponse UpdateOrganizationTaskDueDateResponse
      */
     public function updateOrganizationTaskDueDate($taskId, $userId, $request)
     {
@@ -2904,13 +3080,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务执行者
+     *  *
      * @param string                                $taskId
      * @param string                                $userId
-     * @param UpdateOrganizationTaskExecutorRequest $request
-     * @param UpdateOrganizationTaskExecutorHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param UpdateOrganizationTaskExecutorRequest $request UpdateOrganizationTaskExecutorRequest
+     * @param UpdateOrganizationTaskExecutorHeaders $headers UpdateOrganizationTaskExecutorHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskExecutorResponse
+     * @return UpdateOrganizationTaskExecutorResponse UpdateOrganizationTaskExecutorResponse
      */
     public function updateOrganizationTaskExecutorWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -2952,11 +3130,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务执行者
+     *  *
      * @param string                                $taskId
      * @param string                                $userId
-     * @param UpdateOrganizationTaskExecutorRequest $request
+     * @param UpdateOrganizationTaskExecutorRequest $request UpdateOrganizationTaskExecutorRequest
      *
-     * @return UpdateOrganizationTaskExecutorResponse
+     * @return UpdateOrganizationTaskExecutorResponse UpdateOrganizationTaskExecutorResponse
      */
     public function updateOrganizationTaskExecutor($taskId, $userId, $request)
     {
@@ -2967,13 +3147,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务参与者
+     *  *
      * @param string                                      $taskId
      * @param string                                      $userId
-     * @param UpdateOrganizationTaskInvolveMembersRequest $request
-     * @param UpdateOrganizationTaskInvolveMembersHeaders $headers
-     * @param RuntimeOptions                              $runtime
+     * @param UpdateOrganizationTaskInvolveMembersRequest $request UpdateOrganizationTaskInvolveMembersRequest
+     * @param UpdateOrganizationTaskInvolveMembersHeaders $headers UpdateOrganizationTaskInvolveMembersHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskInvolveMembersResponse
+     * @return UpdateOrganizationTaskInvolveMembersResponse UpdateOrganizationTaskInvolveMembersResponse
      */
     public function updateOrganizationTaskInvolveMembersWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -3021,11 +3203,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务参与者
+     *  *
      * @param string                                      $taskId
      * @param string                                      $userId
-     * @param UpdateOrganizationTaskInvolveMembersRequest $request
+     * @param UpdateOrganizationTaskInvolveMembersRequest $request UpdateOrganizationTaskInvolveMembersRequest
      *
-     * @return UpdateOrganizationTaskInvolveMembersResponse
+     * @return UpdateOrganizationTaskInvolveMembersResponse UpdateOrganizationTaskInvolveMembersResponse
      */
     public function updateOrganizationTaskInvolveMembers($taskId, $userId, $request)
     {
@@ -3036,13 +3220,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务备注
+     *  *
      * @param string                            $taskId
      * @param string                            $userId
-     * @param UpdateOrganizationTaskNoteRequest $request
-     * @param UpdateOrganizationTaskNoteHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param UpdateOrganizationTaskNoteRequest $request UpdateOrganizationTaskNoteRequest
+     * @param UpdateOrganizationTaskNoteHeaders $headers UpdateOrganizationTaskNoteHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskNoteResponse
+     * @return UpdateOrganizationTaskNoteResponse UpdateOrganizationTaskNoteResponse
      */
     public function updateOrganizationTaskNoteWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -3084,11 +3270,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务备注
+     *  *
      * @param string                            $taskId
      * @param string                            $userId
-     * @param UpdateOrganizationTaskNoteRequest $request
+     * @param UpdateOrganizationTaskNoteRequest $request UpdateOrganizationTaskNoteRequest
      *
-     * @return UpdateOrganizationTaskNoteResponse
+     * @return UpdateOrganizationTaskNoteResponse UpdateOrganizationTaskNoteResponse
      */
     public function updateOrganizationTaskNote($taskId, $userId, $request)
     {
@@ -3099,13 +3287,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务优先级
+     *  *
      * @param string                                $taskId
      * @param string                                $userId
-     * @param UpdateOrganizationTaskPriorityRequest $request
-     * @param UpdateOrganizationTaskPriorityHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param UpdateOrganizationTaskPriorityRequest $request UpdateOrganizationTaskPriorityRequest
+     * @param UpdateOrganizationTaskPriorityHeaders $headers UpdateOrganizationTaskPriorityHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskPriorityResponse
+     * @return UpdateOrganizationTaskPriorityResponse UpdateOrganizationTaskPriorityResponse
      */
     public function updateOrganizationTaskPriorityWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -3147,11 +3337,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自由任务优先级
+     *  *
      * @param string                                $taskId
      * @param string                                $userId
-     * @param UpdateOrganizationTaskPriorityRequest $request
+     * @param UpdateOrganizationTaskPriorityRequest $request UpdateOrganizationTaskPriorityRequest
      *
-     * @return UpdateOrganizationTaskPriorityResponse
+     * @return UpdateOrganizationTaskPriorityResponse UpdateOrganizationTaskPriorityResponse
      */
     public function updateOrganizationTaskPriority($taskId, $userId, $request)
     {
@@ -3162,13 +3354,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务状态
+     *  *
      * @param string                              $taskId
      * @param string                              $userId
-     * @param UpdateOrganizationTaskStatusRequest $request
-     * @param UpdateOrganizationTaskStatusHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param UpdateOrganizationTaskStatusRequest $request UpdateOrganizationTaskStatusRequest
+     * @param UpdateOrganizationTaskStatusHeaders $headers UpdateOrganizationTaskStatusHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateOrganizationTaskStatusResponse
+     * @return UpdateOrganizationTaskStatusResponse UpdateOrganizationTaskStatusResponse
      */
     public function updateOrganizationTaskStatusWithOptions($taskId, $userId, $request, $headers, $runtime)
     {
@@ -3210,11 +3404,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更改自由任务状态
+     *  *
      * @param string                              $taskId
      * @param string                              $userId
-     * @param UpdateOrganizationTaskStatusRequest $request
+     * @param UpdateOrganizationTaskStatusRequest $request UpdateOrganizationTaskStatusRequest
      *
-     * @return UpdateOrganizationTaskStatusResponse
+     * @return UpdateOrganizationTaskStatusResponse UpdateOrganizationTaskStatusResponse
      */
     public function updateOrganizationTaskStatus($taskId, $userId, $request)
     {
@@ -3225,13 +3421,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新项目的分组
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param UpdateProjectGroupRequest $request
-     * @param UpdateProjectGroupHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param UpdateProjectGroupRequest $request   UpdateProjectGroupRequest
+     * @param UpdateProjectGroupHeaders $headers   UpdateProjectGroupHeaders
+     * @param RuntimeOptions            $runtime   runtime options for this request RuntimeOptions
      *
-     * @return UpdateProjectGroupResponse
+     * @return UpdateProjectGroupResponse UpdateProjectGroupResponse
      */
     public function updateProjectGroupWithOptions($userId, $projectId, $request, $headers, $runtime)
     {
@@ -3270,11 +3468,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新项目的分组
+     *  *
      * @param string                    $userId
      * @param string                    $projectId
-     * @param UpdateProjectGroupRequest $request
+     * @param UpdateProjectGroupRequest $request   UpdateProjectGroupRequest
      *
-     * @return UpdateProjectGroupResponse
+     * @return UpdateProjectGroupResponse UpdateProjectGroupResponse
      */
     public function updateProjectGroup($userId, $projectId, $request)
     {
@@ -3285,13 +3485,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务标题
+     *  *
      * @param string                   $userId
      * @param string                   $taskId
-     * @param UpdateTaskContentRequest $request
-     * @param UpdateTaskContentHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param UpdateTaskContentRequest $request UpdateTaskContentRequest
+     * @param UpdateTaskContentHeaders $headers UpdateTaskContentHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskContentResponse
+     * @return UpdateTaskContentResponse UpdateTaskContentResponse
      */
     public function updateTaskContentWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3327,11 +3529,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务标题
+     *  *
      * @param string                   $userId
      * @param string                   $taskId
-     * @param UpdateTaskContentRequest $request
+     * @param UpdateTaskContentRequest $request UpdateTaskContentRequest
      *
-     * @return UpdateTaskContentResponse
+     * @return UpdateTaskContentResponse UpdateTaskContentResponse
      */
     public function updateTaskContent($userId, $taskId, $request)
     {
@@ -3342,13 +3546,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务截止时间
+     *  *
      * @param string                   $userId
      * @param string                   $taskId
-     * @param UpdateTaskDueDateRequest $request
-     * @param UpdateTaskDueDateHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param UpdateTaskDueDateRequest $request UpdateTaskDueDateRequest
+     * @param UpdateTaskDueDateHeaders $headers UpdateTaskDueDateHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskDueDateResponse
+     * @return UpdateTaskDueDateResponse UpdateTaskDueDateResponse
      */
     public function updateTaskDueDateWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3384,11 +3590,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务截止时间
+     *  *
      * @param string                   $userId
      * @param string                   $taskId
-     * @param UpdateTaskDueDateRequest $request
+     * @param UpdateTaskDueDateRequest $request UpdateTaskDueDateRequest
      *
-     * @return UpdateTaskDueDateResponse
+     * @return UpdateTaskDueDateResponse UpdateTaskDueDateResponse
      */
     public function updateTaskDueDate($userId, $taskId, $request)
     {
@@ -3399,13 +3607,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务执行者
+     *  *
      * @param string                    $userId
      * @param string                    $taskId
-     * @param UpdateTaskExecutorRequest $request
-     * @param UpdateTaskExecutorHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param UpdateTaskExecutorRequest $request UpdateTaskExecutorRequest
+     * @param UpdateTaskExecutorHeaders $headers UpdateTaskExecutorHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskExecutorResponse
+     * @return UpdateTaskExecutorResponse UpdateTaskExecutorResponse
      */
     public function updateTaskExecutorWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3441,11 +3651,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务执行者
+     *  *
      * @param string                    $userId
      * @param string                    $taskId
-     * @param UpdateTaskExecutorRequest $request
+     * @param UpdateTaskExecutorRequest $request UpdateTaskExecutorRequest
      *
-     * @return UpdateTaskExecutorResponse
+     * @return UpdateTaskExecutorResponse UpdateTaskExecutorResponse
      */
     public function updateTaskExecutor($userId, $taskId, $request)
     {
@@ -3456,13 +3668,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务参与者
+     *  *
      * @param string                          $userId
      * @param string                          $taskId
-     * @param UpdateTaskInvolvemembersRequest $request
-     * @param UpdateTaskInvolvemembersHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param UpdateTaskInvolvemembersRequest $request UpdateTaskInvolvemembersRequest
+     * @param UpdateTaskInvolvemembersHeaders $headers UpdateTaskInvolvemembersHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskInvolvemembersResponse
+     * @return UpdateTaskInvolvemembersResponse UpdateTaskInvolvemembersResponse
      */
     public function updateTaskInvolvemembersWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3504,11 +3718,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务参与者
+     *  *
      * @param string                          $userId
      * @param string                          $taskId
-     * @param UpdateTaskInvolvemembersRequest $request
+     * @param UpdateTaskInvolvemembersRequest $request UpdateTaskInvolvemembersRequest
      *
-     * @return UpdateTaskInvolvemembersResponse
+     * @return UpdateTaskInvolvemembersResponse UpdateTaskInvolvemembersResponse
      */
     public function updateTaskInvolvemembers($userId, $taskId, $request)
     {
@@ -3519,13 +3735,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务备注
+     *  *
      * @param string                $userId
      * @param string                $taskId
-     * @param UpdateTaskNoteRequest $request
-     * @param UpdateTaskNoteHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param UpdateTaskNoteRequest $request UpdateTaskNoteRequest
+     * @param UpdateTaskNoteHeaders $headers UpdateTaskNoteHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskNoteResponse
+     * @return UpdateTaskNoteResponse UpdateTaskNoteResponse
      */
     public function updateTaskNoteWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3561,11 +3779,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务备注
+     *  *
      * @param string                $userId
      * @param string                $taskId
-     * @param UpdateTaskNoteRequest $request
+     * @param UpdateTaskNoteRequest $request UpdateTaskNoteRequest
      *
-     * @return UpdateTaskNoteResponse
+     * @return UpdateTaskNoteResponse UpdateTaskNoteResponse
      */
     public function updateTaskNote($userId, $taskId, $request)
     {
@@ -3576,13 +3796,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务优先级
+     *  *
      * @param string                    $userId
      * @param string                    $taskId
-     * @param UpdateTaskPriorityRequest $request
-     * @param UpdateTaskPriorityHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param UpdateTaskPriorityRequest $request UpdateTaskPriorityRequest
+     * @param UpdateTaskPriorityHeaders $headers UpdateTaskPriorityHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskPriorityResponse
+     * @return UpdateTaskPriorityResponse UpdateTaskPriorityResponse
      */
     public function updateTaskPriorityWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3618,11 +3840,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务优先级
+     *  *
      * @param string                    $userId
      * @param string                    $taskId
-     * @param UpdateTaskPriorityRequest $request
+     * @param UpdateTaskPriorityRequest $request UpdateTaskPriorityRequest
      *
-     * @return UpdateTaskPriorityResponse
+     * @return UpdateTaskPriorityResponse UpdateTaskPriorityResponse
      */
     public function updateTaskPriority($userId, $taskId, $request)
     {
@@ -3633,13 +3857,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务列表
+     *  *
      * @param string                 $userId
      * @param string                 $taskId
-     * @param UpdateTaskStageRequest $request
-     * @param UpdateTaskStageHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param UpdateTaskStageRequest $request UpdateTaskStageRequest
+     * @param UpdateTaskStageHeaders $headers UpdateTaskStageHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskStageResponse
+     * @return UpdateTaskStageResponse UpdateTaskStageResponse
      */
     public function updateTaskStageWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3675,11 +3901,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务列表
+     *  *
      * @param string                 $userId
      * @param string                 $taskId
-     * @param UpdateTaskStageRequest $request
+     * @param UpdateTaskStageRequest $request UpdateTaskStageRequest
      *
-     * @return UpdateTaskStageResponse
+     * @return UpdateTaskStageResponse UpdateTaskStageResponse
      */
     public function updateTaskStage($userId, $taskId, $request)
     {
@@ -3690,13 +3918,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务开始时间
+     *  *
      * @param string                     $userId
      * @param string                     $taskId
-     * @param UpdateTaskStartdateRequest $request
-     * @param UpdateTaskStartdateHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param UpdateTaskStartdateRequest $request UpdateTaskStartdateRequest
+     * @param UpdateTaskStartdateHeaders $headers UpdateTaskStartdateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskStartdateResponse
+     * @return UpdateTaskStartdateResponse UpdateTaskStartdateResponse
      */
     public function updateTaskStartdateWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3732,11 +3962,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务开始时间
+     *  *
      * @param string                     $userId
      * @param string                     $taskId
-     * @param UpdateTaskStartdateRequest $request
+     * @param UpdateTaskStartdateRequest $request UpdateTaskStartdateRequest
      *
-     * @return UpdateTaskStartdateResponse
+     * @return UpdateTaskStartdateResponse UpdateTaskStartdateResponse
      */
     public function updateTaskStartdate($userId, $taskId, $request)
     {
@@ -3747,13 +3979,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务工作流状态
+     *  *
      * @param string                          $userId
      * @param string                          $taskId
-     * @param UpdateTaskTaskflowstatusRequest $request
-     * @param UpdateTaskTaskflowstatusHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param UpdateTaskTaskflowstatusRequest $request UpdateTaskTaskflowstatusRequest
+     * @param UpdateTaskTaskflowstatusHeaders $headers UpdateTaskTaskflowstatusHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTaskTaskflowstatusResponse
+     * @return UpdateTaskTaskflowstatusResponse UpdateTaskTaskflowstatusResponse
      */
     public function updateTaskTaskflowstatusWithOptions($userId, $taskId, $request, $headers, $runtime)
     {
@@ -3792,11 +4026,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新任务工作流状态
+     *  *
      * @param string                          $userId
      * @param string                          $taskId
-     * @param UpdateTaskTaskflowstatusRequest $request
+     * @param UpdateTaskTaskflowstatusRequest $request UpdateTaskTaskflowstatusRequest
      *
-     * @return UpdateTaskTaskflowstatusResponse
+     * @return UpdateTaskTaskflowstatusResponse UpdateTaskTaskflowstatusResponse
      */
     public function updateTaskTaskflowstatus($userId, $taskId, $request)
     {
@@ -3807,13 +4043,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新工时审批对象
+     *  *
      * @param string                       $userId
      * @param string                       $approveOpenId
-     * @param UpdateWorkTimeApproveRequest $request
-     * @param UpdateWorkTimeApproveHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param UpdateWorkTimeApproveRequest $request       UpdateWorkTimeApproveRequest
+     * @param UpdateWorkTimeApproveHeaders $headers       UpdateWorkTimeApproveHeaders
+     * @param RuntimeOptions               $runtime       runtime options for this request RuntimeOptions
      *
-     * @return UpdateWorkTimeApproveResponse
+     * @return UpdateWorkTimeApproveResponse UpdateWorkTimeApproveResponse
      */
     public function updateWorkTimeApproveWithOptions($userId, $approveOpenId, $request, $headers, $runtime)
     {
@@ -3864,11 +4102,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新工时审批对象
+     *  *
      * @param string                       $userId
      * @param string                       $approveOpenId
-     * @param UpdateWorkTimeApproveRequest $request
+     * @param UpdateWorkTimeApproveRequest $request       UpdateWorkTimeApproveRequest
      *
-     * @return UpdateWorkTimeApproveResponse
+     * @return UpdateWorkTimeApproveResponse UpdateWorkTimeApproveResponse
      */
     public function updateWorkTimeApprove($userId, $approveOpenId, $request)
     {

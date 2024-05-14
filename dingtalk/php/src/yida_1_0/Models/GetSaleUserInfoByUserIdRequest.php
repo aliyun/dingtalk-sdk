@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetSaleUserInfoByUserIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $namespace;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

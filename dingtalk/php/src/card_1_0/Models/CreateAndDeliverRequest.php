@@ -34,11 +34,15 @@ class CreateAndDeliverRequest extends Model
     public $callbackType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardData
      */
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardTemplateId;
@@ -94,6 +98,8 @@ class CreateAndDeliverRequest extends Model
     public $openDynamicDataConfig;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;im_robot.staff****89;co_feed.manager****67;one_box.cidp4Gh*******VCQ==;
      *
      * @var string
@@ -101,6 +107,8 @@ class CreateAndDeliverRequest extends Model
     public $openSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $outTrackId;

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class AddGroupMemberResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $appUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

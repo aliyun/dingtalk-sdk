@@ -29,6 +29,8 @@ class meeting extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1701692590881
      *
      * @var int
@@ -43,6 +45,8 @@ class meeting extends Model
     public $location;
 
     /**
+     * @description This parameter is required.
+     *
      * @example REQUEST
      *
      * @var string
@@ -62,6 +66,8 @@ class meeting extends Model
     public $sequence;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1701692590881
      *
      * @var int
@@ -69,6 +75,8 @@ class meeting extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试会议
      *
      * @var string
@@ -76,6 +84,8 @@ class meeting extends Model
     public $summary;
 
     /**
+     * @description This parameter is required.
+     *
      * @example uuidssssss
      *
      * @var string

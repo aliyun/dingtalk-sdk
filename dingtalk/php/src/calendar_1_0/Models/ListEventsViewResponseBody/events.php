@@ -31,6 +31,8 @@ class events extends Model
     public $categories;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -116,6 +118,8 @@ class events extends Model
     public $summary;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $updateTime;

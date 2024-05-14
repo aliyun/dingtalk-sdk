@@ -29,6 +29,8 @@ class GetUserAllLiveListRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -36,6 +38,8 @@ class GetUserAllLiveListRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30
      *
      * @var int
@@ -43,6 +47,8 @@ class GetUserAllLiveListRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string

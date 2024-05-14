@@ -14,21 +14,29 @@ class calendars extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $eTag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $privilege;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $summary;
@@ -39,6 +47,8 @@ class calendars extends Model
     public $timeZone;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

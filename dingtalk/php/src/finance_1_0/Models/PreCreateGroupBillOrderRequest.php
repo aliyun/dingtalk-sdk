@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class PreCreateGroupBillOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var billItemList[]
      */
     public $billItemList;
@@ -20,6 +22,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $extParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -27,6 +31,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $headCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -34,6 +40,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $isAverageAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dhqhadsnkj2qweqsw2
      *
      * @var string
@@ -48,6 +56,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $openCid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20230918291921929193911
      *
      * @var string
@@ -62,6 +72,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $payeeCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ECEjwiiwenwnw2q2sdd
      *
      * @var string
@@ -76,6 +88,8 @@ class PreCreateGroupBillOrderRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10.24
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class buttonList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $actionUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

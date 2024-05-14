@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class CreateTicketRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $foreignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $foreignName;
@@ -37,16 +41,22 @@ class CreateTicketRequest extends Model
     public $properties;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sourceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

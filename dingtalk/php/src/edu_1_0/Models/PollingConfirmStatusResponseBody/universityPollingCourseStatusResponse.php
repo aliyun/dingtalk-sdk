@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class universityPollingCourseStatusResponse extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,6 +19,8 @@ class universityPollingCourseStatusResponse extends Model
     public $confirmStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example testCourseCode
      *
      * @var string
@@ -24,6 +28,8 @@ class universityPollingCourseStatusResponse extends Model
     public $courseCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var livePlayInfoList[]
      */
     public $livePlayInfoList;

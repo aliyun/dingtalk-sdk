@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class DeletePermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $policyType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

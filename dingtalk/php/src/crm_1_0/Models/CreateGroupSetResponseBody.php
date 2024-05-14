@@ -26,11 +26,15 @@ class CreateGroupSetResponseBody extends Model
     public $inviteLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $lastOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var manager[]
      */
     public $manager;
@@ -71,6 +75,8 @@ class CreateGroupSetResponseBody extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var owner
      */
     public $owner;

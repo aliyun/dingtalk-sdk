@@ -23,6 +23,8 @@ class PublishPackageRequest extends Model
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string

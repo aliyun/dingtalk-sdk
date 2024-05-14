@@ -32,6 +32,8 @@ class GetEventResponseBody extends Model
     public $categories;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -112,6 +114,8 @@ class GetEventResponseBody extends Model
     public $start;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 已取消、删除的日程是cancelled
      *
      * @var string
@@ -124,6 +128,8 @@ class GetEventResponseBody extends Model
     public $summary;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $updateTime;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CardQueryCardFeedsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -16,6 +18,8 @@ class CardQueryCardFeedsRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example industry_center
      *
      * @var string
@@ -30,6 +34,8 @@ class CardQueryCardFeedsRequest extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 80264668258
      *
      * @var int
@@ -37,6 +43,8 @@ class CardQueryCardFeedsRequest extends Model
     public $cardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5
      *
      * @var int
@@ -49,6 +57,8 @@ class CardQueryCardFeedsRequest extends Model
     public $cursor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -61,6 +71,8 @@ class CardQueryCardFeedsRequest extends Model
     public $needFinishProcess;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YUFANAI
      *
      * @var string
@@ -75,6 +87,8 @@ class CardQueryCardFeedsRequest extends Model
     public $studentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CARD_TASK_CODE_0
      *
      * @var string
@@ -82,6 +96,8 @@ class CardQueryCardFeedsRequest extends Model
     public $subBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager7741
      *
      * @var string

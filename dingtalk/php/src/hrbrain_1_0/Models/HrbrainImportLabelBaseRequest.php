@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class HrbrainImportLabelBaseRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var body[]
      */
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;

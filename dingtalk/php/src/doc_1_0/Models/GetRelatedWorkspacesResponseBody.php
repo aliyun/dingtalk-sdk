@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetRelatedWorkspacesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var workspaces[]
      */
     public $workspaces;

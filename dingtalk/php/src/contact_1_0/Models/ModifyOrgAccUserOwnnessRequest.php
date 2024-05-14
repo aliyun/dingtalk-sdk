@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ModifyOrgAccUserOwnnessRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1698335999000
      *
      * @var int
@@ -16,6 +18,8 @@ class ModifyOrgAccUserOwnnessRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class ModifyOrgAccUserOwnnessRequest extends Model
     public $ownenssType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var int
@@ -30,6 +36,8 @@ class ModifyOrgAccUserOwnnessRequest extends Model
     public $ownnessId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1698335999000
      *
      * @var int
@@ -37,6 +45,8 @@ class ModifyOrgAccUserOwnnessRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 会议中
      *
      * @var string
@@ -44,6 +54,8 @@ class ModifyOrgAccUserOwnnessRequest extends Model
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

@@ -88,11 +88,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddApplicationRegFormTemplateRequest $request
-     * @param AddApplicationRegFormTemplateHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 添加应聘登记表模板
+     *  *
+     * @param AddApplicationRegFormTemplateRequest $request AddApplicationRegFormTemplateRequest
+     * @param AddApplicationRegFormTemplateHeaders $headers AddApplicationRegFormTemplateHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddApplicationRegFormTemplateResponse
+     * @return AddApplicationRegFormTemplateResponse AddApplicationRegFormTemplateResponse
      */
     public function addApplicationRegFormTemplateWithOptions($request, $headers, $runtime)
     {
@@ -142,9 +144,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddApplicationRegFormTemplateRequest $request
+     * @summary 添加应聘登记表模板
+     *  *
+     * @param AddApplicationRegFormTemplateRequest $request AddApplicationRegFormTemplateRequest
      *
-     * @return AddApplicationRegFormTemplateResponse
+     * @return AddApplicationRegFormTemplateResponse AddApplicationRegFormTemplateResponse
      */
     public function addApplicationRegFormTemplate($request)
     {
@@ -155,11 +159,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddFileRequest $request
-     * @param AddFileHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 添加钉盘文件
+     *  *
+     * @param AddFileRequest $request AddFileRequest
+     * @param AddFileHeaders $headers AddFileHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddFileResponse
+     * @return AddFileResponse AddFileResponse
      */
     public function addFileWithOptions($request, $headers, $runtime)
     {
@@ -206,9 +212,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddFileRequest $request
+     * @summary 添加钉盘文件
+     *  *
+     * @param AddFileRequest $request AddFileRequest
      *
-     * @return AddFileResponse
+     * @return AddFileResponse AddFileResponse
      */
     public function addFile($request)
     {
@@ -219,11 +227,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddUserAccountRequest $request
-     * @param AddUserAccountHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 添加渠道个人账号
+     *  *
+     * @param AddUserAccountRequest $request AddUserAccountRequest
+     * @param AddUserAccountHeaders $headers AddUserAccountHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddUserAccountResponse
+     * @return AddUserAccountResponse AddUserAccountResponse
      */
     public function addUserAccountWithOptions($request, $headers, $runtime)
     {
@@ -276,9 +286,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddUserAccountRequest $request
+     * @summary 添加渠道个人账号
+     *  *
+     * @param AddUserAccountRequest $request AddUserAccountRequest
      *
-     * @return AddUserAccountResponse
+     * @return AddUserAccountResponse AddUserAccountResponse
      */
     public function addUserAccount($request)
     {
@@ -289,11 +301,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectRecruitJobDetailRequest $request
-     * @param CollectRecruitJobDetailHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 渠道招聘职位需求导入
+     *  *
+     * @param CollectRecruitJobDetailRequest $request CollectRecruitJobDetailRequest
+     * @param CollectRecruitJobDetailHeaders $headers CollectRecruitJobDetailHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CollectRecruitJobDetailResponse
+     * @return CollectRecruitJobDetailResponse CollectRecruitJobDetailResponse
      */
     public function collectRecruitJobDetailWithOptions($request, $headers, $runtime)
     {
@@ -352,9 +366,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectRecruitJobDetailRequest $request
+     * @summary 渠道招聘职位需求导入
+     *  *
+     * @param CollectRecruitJobDetailRequest $request CollectRecruitJobDetailRequest
      *
-     * @return CollectRecruitJobDetailResponse
+     * @return CollectRecruitJobDetailResponse CollectRecruitJobDetailResponse
      */
     public function collectRecruitJobDetail($request)
     {
@@ -365,11 +381,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectResumeDetailRequest $request
-     * @param CollectResumeDetailHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 结构化简历信息回流
+     *  *
+     * @param CollectResumeDetailRequest $request CollectResumeDetailRequest
+     * @param CollectResumeDetailHeaders $headers CollectResumeDetailHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return CollectResumeDetailResponse
+     * @return CollectResumeDetailResponse CollectResumeDetailResponse
      */
     public function collectResumeDetailWithOptions($request, $headers, $runtime)
     {
@@ -431,9 +449,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectResumeDetailRequest $request
+     * @summary 结构化简历信息回流
+     *  *
+     * @param CollectResumeDetailRequest $request CollectResumeDetailRequest
      *
-     * @return CollectResumeDetailResponse
+     * @return CollectResumeDetailResponse CollectResumeDetailResponse
      */
     public function collectResumeDetail($request)
     {
@@ -444,11 +464,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectResumeMailRequest $request
-     * @param CollectResumeMailHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 邮箱简历回流
+     *  *
+     * @param CollectResumeMailRequest $request CollectResumeMailRequest
+     * @param CollectResumeMailHeaders $headers CollectResumeMailHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CollectResumeMailResponse
+     * @return CollectResumeMailResponse CollectResumeMailResponse
      */
     public function collectResumeMailWithOptions($request, $headers, $runtime)
     {
@@ -522,9 +544,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CollectResumeMailRequest $request
+     * @summary 邮箱简历回流
+     *  *
+     * @param CollectResumeMailRequest $request CollectResumeMailRequest
      *
-     * @return CollectResumeMailResponse
+     * @return CollectResumeMailResponse CollectResumeMailResponse
      */
     public function collectResumeMail($request)
     {
@@ -535,12 +559,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 确认权益
+     *  *
      * @param string               $rightsCode
-     * @param ConfirmRightsRequest $request
-     * @param ConfirmRightsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ConfirmRightsRequest $request    ConfirmRightsRequest
+     * @param ConfirmRightsHeaders $headers    ConfirmRightsHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ConfirmRightsResponse
+     * @return ConfirmRightsResponse ConfirmRightsResponse
      */
     public function confirmRightsWithOptions($rightsCode, $request, $headers, $runtime)
     {
@@ -576,10 +602,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 确认权益
+     *  *
      * @param string               $rightsCode
-     * @param ConfirmRightsRequest $request
+     * @param ConfirmRightsRequest $request    ConfirmRightsRequest
      *
-     * @return ConfirmRightsResponse
+     * @return ConfirmRightsResponse ConfirmRightsResponse
      */
     public function confirmRights($rightsCode, $request)
     {
@@ -590,12 +618,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 完成指定的新手任务
+     *  *
      * @param string                    $taskCode
-     * @param FinishBeginnerTaskRequest $request
-     * @param FinishBeginnerTaskHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param FinishBeginnerTaskRequest $request  FinishBeginnerTaskRequest
+     * @param FinishBeginnerTaskHeaders $headers  FinishBeginnerTaskHeaders
+     * @param RuntimeOptions            $runtime  runtime options for this request RuntimeOptions
      *
-     * @return FinishBeginnerTaskResponse
+     * @return FinishBeginnerTaskResponse FinishBeginnerTaskResponse
      */
     public function finishBeginnerTaskWithOptions($taskCode, $request, $headers, $runtime)
     {
@@ -634,10 +664,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 完成指定的新手任务
+     *  *
      * @param string                    $taskCode
-     * @param FinishBeginnerTaskRequest $request
+     * @param FinishBeginnerTaskRequest $request  FinishBeginnerTaskRequest
      *
-     * @return FinishBeginnerTaskResponse
+     * @return FinishBeginnerTaskResponse FinishBeginnerTaskResponse
      */
     public function finishBeginnerTask($taskCode, $request)
     {
@@ -648,12 +680,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取招聘流程关联的应聘登记表信息
+     *  *
      * @param string                               $flowId
-     * @param GetApplicationRegFormByFlowIdRequest $request
-     * @param GetApplicationRegFormByFlowIdHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param GetApplicationRegFormByFlowIdRequest $request GetApplicationRegFormByFlowIdRequest
+     * @param GetApplicationRegFormByFlowIdHeaders $headers GetApplicationRegFormByFlowIdHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetApplicationRegFormByFlowIdResponse
+     * @return GetApplicationRegFormByFlowIdResponse GetApplicationRegFormByFlowIdResponse
      */
     public function getApplicationRegFormByFlowIdWithOptions($flowId, $request, $headers, $runtime)
     {
@@ -689,10 +723,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取招聘流程关联的应聘登记表信息
+     *  *
      * @param string                               $flowId
-     * @param GetApplicationRegFormByFlowIdRequest $request
+     * @param GetApplicationRegFormByFlowIdRequest $request GetApplicationRegFormByFlowIdRequest
      *
-     * @return GetApplicationRegFormByFlowIdResponse
+     * @return GetApplicationRegFormByFlowIdResponse GetApplicationRegFormByFlowIdResponse
      */
     public function getApplicationRegFormByFlowId($flowId, $request)
     {
@@ -703,11 +739,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCandidateByPhoneNumberRequest $request
-     * @param GetCandidateByPhoneNumberHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 根据手机号获取候选人信息
+     *  *
+     * @param GetCandidateByPhoneNumberRequest $request GetCandidateByPhoneNumberRequest
+     * @param GetCandidateByPhoneNumberHeaders $headers GetCandidateByPhoneNumberHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCandidateByPhoneNumberResponse
+     * @return GetCandidateByPhoneNumberResponse GetCandidateByPhoneNumberResponse
      */
     public function getCandidateByPhoneNumberWithOptions($request, $headers, $runtime)
     {
@@ -746,9 +784,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCandidateByPhoneNumberRequest $request
+     * @summary 根据手机号获取候选人信息
+     *  *
+     * @param GetCandidateByPhoneNumberRequest $request GetCandidateByPhoneNumberRequest
      *
-     * @return GetCandidateByPhoneNumberResponse
+     * @return GetCandidateByPhoneNumberResponse GetCandidateByPhoneNumberResponse
      */
     public function getCandidateByPhoneNumber($request)
     {
@@ -759,11 +799,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFileUploadInfoRequest $request
-     * @param GetFileUploadInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取钉盘上传文件信息
+     *  *
+     * @param GetFileUploadInfoRequest $request GetFileUploadInfoRequest
+     * @param GetFileUploadInfoHeaders $headers GetFileUploadInfoHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFileUploadInfoResponse
+     * @return GetFileUploadInfoResponse GetFileUploadInfoResponse
      */
     public function getFileUploadInfoWithOptions($request, $headers, $runtime)
     {
@@ -811,9 +853,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFileUploadInfoRequest $request
+     * @summary 获取钉盘上传文件信息
+     *  *
+     * @param GetFileUploadInfoRequest $request GetFileUploadInfoRequest
      *
-     * @return GetFileUploadInfoResponse
+     * @return GetFileUploadInfoResponse GetFileUploadInfoResponse
      */
     public function getFileUploadInfo($request)
     {
@@ -824,11 +868,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowIdByRelationEntityIdRequest $request
-     * @param GetFlowIdByRelationEntityIdHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 根据招聘流程关联的实体标识获取招聘流程标识
+     *  *
+     * @param GetFlowIdByRelationEntityIdRequest $request GetFlowIdByRelationEntityIdRequest
+     * @param GetFlowIdByRelationEntityIdHeaders $headers GetFlowIdByRelationEntityIdHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFlowIdByRelationEntityIdResponse
+     * @return GetFlowIdByRelationEntityIdResponse GetFlowIdByRelationEntityIdResponse
      */
     public function getFlowIdByRelationEntityIdWithOptions($request, $headers, $runtime)
     {
@@ -870,9 +916,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowIdByRelationEntityIdRequest $request
+     * @summary 根据招聘流程关联的实体标识获取招聘流程标识
+     *  *
+     * @param GetFlowIdByRelationEntityIdRequest $request GetFlowIdByRelationEntityIdRequest
      *
-     * @return GetFlowIdByRelationEntityIdResponse
+     * @return GetFlowIdByRelationEntityIdResponse GetFlowIdByRelationEntityIdResponse
      */
     public function getFlowIdByRelationEntityId($request)
     {
@@ -883,12 +931,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取职位信息
+     *  *
      * @param string            $jobId
-     * @param GetJobAuthRequest $request
-     * @param GetJobAuthHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GetJobAuthRequest $request GetJobAuthRequest
+     * @param GetJobAuthHeaders $headers GetJobAuthHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetJobAuthResponse
+     * @return GetJobAuthResponse GetJobAuthResponse
      */
     public function getJobAuthWithOptions($jobId, $request, $headers, $runtime)
     {
@@ -924,10 +974,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取职位信息
+     *  *
      * @param string            $jobId
-     * @param GetJobAuthRequest $request
+     * @param GetJobAuthRequest $request GetJobAuthRequest
      *
-     * @return GetJobAuthResponse
+     * @return GetJobAuthResponse GetJobAuthResponse
      */
     public function getJobAuth($jobId, $request)
     {
@@ -938,11 +990,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCandidatesRequest $request
-     * @param QueryCandidatesHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询候选人详情列表
+     *  *
+     * @param QueryCandidatesRequest $request QueryCandidatesRequest
+     * @param QueryCandidatesHeaders $headers QueryCandidatesHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCandidatesResponse
+     * @return QueryCandidatesResponse QueryCandidatesResponse
      */
     public function queryCandidatesWithOptions($request, $headers, $runtime)
     {
@@ -989,9 +1043,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCandidatesRequest $request
+     * @summary 查询候选人详情列表
+     *  *
+     * @param QueryCandidatesRequest $request QueryCandidatesRequest
      *
-     * @return QueryCandidatesResponse
+     * @return QueryCandidatesResponse QueryCandidatesResponse
      */
     public function queryCandidates($request)
     {
@@ -1002,11 +1058,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryInterviewsRequest $request
-     * @param QueryInterviewsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询面试列表
+     *  *
+     * @param QueryInterviewsRequest $request QueryInterviewsRequest
+     * @param QueryInterviewsHeaders $headers QueryInterviewsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryInterviewsResponse
+     * @return QueryInterviewsResponse QueryInterviewsResponse
      */
     public function queryInterviewsWithOptions($request, $headers, $runtime)
     {
@@ -1059,9 +1117,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryInterviewsRequest $request
+     * @summary 查询面试列表
+     *  *
+     * @param QueryInterviewsRequest $request QueryInterviewsRequest
      *
-     * @return QueryInterviewsResponse
+     * @return QueryInterviewsResponse QueryInterviewsResponse
      */
     public function queryInterviews($request)
     {
@@ -1072,11 +1132,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReportMessageStatusRequest $request
-     * @param ReportMessageStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 反馈渠道消息状态
+     *  *
+     * @param ReportMessageStatusRequest $request ReportMessageStatusRequest
+     * @param ReportMessageStatusHeaders $headers ReportMessageStatusHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReportMessageStatusResponse
+     * @return ReportMessageStatusResponse ReportMessageStatusResponse
      */
     public function reportMessageStatusWithOptions($request, $headers, $runtime)
     {
@@ -1132,9 +1194,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReportMessageStatusRequest $request
+     * @summary 反馈渠道消息状态
+     *  *
+     * @param ReportMessageStatusRequest $request ReportMessageStatusRequest
      *
-     * @return ReportMessageStatusResponse
+     * @return ReportMessageStatusResponse ReportMessageStatusResponse
      */
     public function reportMessageStatus($request)
     {
@@ -1145,11 +1209,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncChannelMessageRequest $request
-     * @param SyncChannelMessageHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 同步渠道IM消息
+     *  *
+     * @param SyncChannelMessageRequest $request SyncChannelMessageRequest
+     * @param SyncChannelMessageHeaders $headers SyncChannelMessageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncChannelMessageResponse
+     * @return SyncChannelMessageResponse SyncChannelMessageResponse
      */
     public function syncChannelMessageWithOptions($request, $headers, $runtime)
     {
@@ -1205,9 +1271,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncChannelMessageRequest $request
+     * @summary 同步渠道IM消息
+     *  *
+     * @param SyncChannelMessageRequest $request SyncChannelMessageRequest
      *
-     * @return SyncChannelMessageResponse
+     * @return SyncChannelMessageResponse SyncChannelMessageResponse
      */
     public function syncChannelMessage($request)
     {
@@ -1218,12 +1286,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新应聘登记表内容
+     *  *
      * @param string                          $flowId
-     * @param UpdateApplicationRegFormRequest $request
-     * @param UpdateApplicationRegFormHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param UpdateApplicationRegFormRequest $request UpdateApplicationRegFormRequest
+     * @param UpdateApplicationRegFormHeaders $headers UpdateApplicationRegFormHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateApplicationRegFormResponse
+     * @return UpdateApplicationRegFormResponse UpdateApplicationRegFormResponse
      */
     public function updateApplicationRegFormWithOptions($flowId, $request, $headers, $runtime)
     {
@@ -1267,10 +1337,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新应聘登记表内容
+     *  *
      * @param string                          $flowId
-     * @param UpdateApplicationRegFormRequest $request
+     * @param UpdateApplicationRegFormRequest $request UpdateApplicationRegFormRequest
      *
-     * @return UpdateApplicationRegFormResponse
+     * @return UpdateApplicationRegFormResponse UpdateApplicationRegFormResponse
      */
     public function updateApplicationRegForm($flowId, $request)
     {
@@ -1281,12 +1353,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新面试签到信息
+     *  *
      * @param string                           $interviewId
-     * @param UpdateInterviewSignInInfoRequest $request
-     * @param UpdateInterviewSignInInfoHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateInterviewSignInInfoRequest $request     UpdateInterviewSignInInfoRequest
+     * @param UpdateInterviewSignInInfoHeaders $headers     UpdateInterviewSignInInfoHeaders
+     * @param RuntimeOptions                   $runtime     runtime options for this request RuntimeOptions
      *
-     * @return UpdateInterviewSignInInfoResponse
+     * @return UpdateInterviewSignInInfoResponse UpdateInterviewSignInInfoResponse
      */
     public function updateInterviewSignInInfoWithOptions($interviewId, $request, $headers, $runtime)
     {
@@ -1327,10 +1401,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新面试签到信息
+     *  *
      * @param string                           $interviewId
-     * @param UpdateInterviewSignInInfoRequest $request
+     * @param UpdateInterviewSignInInfoRequest $request     UpdateInterviewSignInInfoRequest
      *
-     * @return UpdateInterviewSignInInfoResponse
+     * @return UpdateInterviewSignInInfoResponse UpdateInterviewSignInInfoResponse
      */
     public function updateInterviewSignInInfo($interviewId, $request)
     {
@@ -1341,11 +1417,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateJobDeliverRequest $request
-     * @param UpdateJobDeliverHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 渠道侧职位发布状态变更回调
+     *  *
+     * @param UpdateJobDeliverRequest $request UpdateJobDeliverRequest
+     * @param UpdateJobDeliverHeaders $headers UpdateJobDeliverHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateJobDeliverResponse
+     * @return UpdateJobDeliverResponse UpdateJobDeliverResponse
      */
     public function updateJobDeliverWithOptions($request, $headers, $runtime)
     {
@@ -1407,9 +1485,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateJobDeliverRequest $request
+     * @summary 渠道侧职位发布状态变更回调
+     *  *
+     * @param UpdateJobDeliverRequest $request UpdateJobDeliverRequest
      *
-     * @return UpdateJobDeliverResponse
+     * @return UpdateJobDeliverResponse UpdateJobDeliverResponse
      */
     public function updateJobDeliver($request)
     {

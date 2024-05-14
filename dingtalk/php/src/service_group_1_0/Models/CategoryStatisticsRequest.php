@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CategoryStatisticsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -16,6 +18,8 @@ class CategoryStatisticsRequest extends Model
     public $maxDt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -23,6 +27,8 @@ class CategoryStatisticsRequest extends Model
     public $minDt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example KxisoOk
      *
      * @var string

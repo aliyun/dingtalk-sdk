@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceLogRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xdfsf20001
      *
      * @var string
@@ -16,6 +18,8 @@ class ReportDeviceLogRequest extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn123
      *
      * @var string
@@ -23,6 +27,8 @@ class ReportDeviceLogRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example file：普通文件
      *
      * @var string

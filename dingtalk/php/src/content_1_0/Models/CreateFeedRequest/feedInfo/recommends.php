@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class recommends extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example c497****-8a89-****-bc9b-*****48610d3
      *
      * @var string
@@ -16,6 +18,8 @@ class recommends extends Model
     public $objectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

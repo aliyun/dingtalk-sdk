@@ -19,21 +19,29 @@ class nodeBO extends Model
     public $lastEditTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nodeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $originName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;

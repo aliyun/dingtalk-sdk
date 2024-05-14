@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class RegisterOpenInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var openInfos[]
      */
     public $openInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DINGTALK
      *
      * @var string
@@ -22,6 +26,8 @@ class RegisterOpenInfoRequest extends Model
     public $provider;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

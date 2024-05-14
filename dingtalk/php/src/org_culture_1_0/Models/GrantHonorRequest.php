@@ -14,6 +14,8 @@ class GrantHonorRequest extends Model
     public $expirationTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 表现优秀，特此奖励！
      *
      * @var string
@@ -21,6 +23,8 @@ class GrantHonorRequest extends Model
     public $grantReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 组织文化团队
      *
      * @var string
@@ -47,11 +51,15 @@ class GrantHonorRequest extends Model
     public $openConversationIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxUserId
      *
      * @var string

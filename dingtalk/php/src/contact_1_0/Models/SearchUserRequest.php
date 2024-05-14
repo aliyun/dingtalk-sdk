@@ -16,6 +16,8 @@ class SearchUserRequest extends Model
     public $fullMatchField;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -23,6 +25,8 @@ class SearchUserRequest extends Model
     public $offset;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -30,6 +34,8 @@ class SearchUserRequest extends Model
     public $queryWord;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

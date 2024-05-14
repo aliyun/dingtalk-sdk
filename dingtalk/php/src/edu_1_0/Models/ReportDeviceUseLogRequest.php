@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceUseLogRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class ReportDeviceUseLogRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123123
      *
      * @var string
@@ -23,6 +27,8 @@ class ReportDeviceUseLogRequest extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn123
      *
      * @var string
@@ -30,6 +36,8 @@ class ReportDeviceUseLogRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 312323321111
      *
      * @var string

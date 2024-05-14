@@ -37,6 +37,8 @@ class SendServiceGroupMessageRequest extends Model
     public $btns;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 你有新的任务待审批
      *
      * @var string
@@ -58,6 +60,8 @@ class SendServiceGroupMessageRequest extends Model
     public $isAtAll;
 
     /**
+     * @description This parameter is required.
+     *
      * @example MARKDOWN
      *
      * @var string
@@ -80,6 +84,8 @@ class SendServiceGroupMessageRequest extends Model
     public $receiverUnionIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxx==
      *
      * @var string
@@ -87,6 +93,8 @@ class SendServiceGroupMessageRequest extends Model
     public $targetOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 服务提醒
      *
      * @var string

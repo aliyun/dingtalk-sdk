@@ -14,6 +14,8 @@ class BatchSendRequest extends Model
     public $appUids;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
@@ -24,6 +26,8 @@ class BatchSendRequest extends Model
     public $conversationIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 234#dingxxx@dingding
      *
      * @var string

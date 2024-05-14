@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetBotListInGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidjknasndcbaXXXXX
      *
      * @var string

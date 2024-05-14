@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PublishInnerAppVersionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -21,6 +23,8 @@ class PublishInnerAppVersionRequest extends Model
     public $miniAppOnPc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

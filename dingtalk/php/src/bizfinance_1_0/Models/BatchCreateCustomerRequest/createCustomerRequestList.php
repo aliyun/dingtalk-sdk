@@ -30,6 +30,8 @@ class createCustomerRequestList extends Model
     public $drawerTelephone;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptGroupCreateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example alt-contact:Mzc0ODAwMQ==
      *
      * @var string
@@ -16,6 +18,8 @@ class CustomizeContactDeptGroupCreateRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65725421
      *
      * @var int

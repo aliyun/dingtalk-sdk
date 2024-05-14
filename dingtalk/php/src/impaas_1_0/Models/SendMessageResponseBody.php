@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class SendMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $messageId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $msgId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class range extends Model
 {
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-01-01T10:15:30+08:00
      *
      * @var string

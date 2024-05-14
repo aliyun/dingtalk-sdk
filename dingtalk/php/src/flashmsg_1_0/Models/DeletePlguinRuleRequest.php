@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class DeletePlguinRuleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $bizIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0847493113802787
      *
      * @var string

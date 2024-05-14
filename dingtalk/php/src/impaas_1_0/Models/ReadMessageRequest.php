@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ReadMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $messageId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUid;

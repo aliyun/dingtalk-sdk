@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTbUserIdByStaffIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0175xxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class GetTbUserIdByStaffIdRequest extends Model
     public $optUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0175xxxx
      *
      * @var string

@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class GetCheckinRecordByUserRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

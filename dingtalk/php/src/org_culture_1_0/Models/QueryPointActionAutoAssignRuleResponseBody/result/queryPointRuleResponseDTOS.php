@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class queryPointRuleResponseDTOS extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class queryPointRuleResponseDTOS extends Model
     public $awardScore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DAILY_VISIT
      *
      * @var string
@@ -23,6 +27,8 @@ class queryPointRuleResponseDTOS extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class queryPointRuleResponseDTOS extends Model
     public $dayLimitTimes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 每日访问
      *
      * @var string
@@ -37,6 +45,8 @@ class queryPointRuleResponseDTOS extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

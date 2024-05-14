@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfScoreRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class UpdateKROfScoreRequest extends Model
     public $score;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 46GM2
      *
      * @var string
@@ -23,6 +27,8 @@ class UpdateKROfScoreRequest extends Model
     public $krId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

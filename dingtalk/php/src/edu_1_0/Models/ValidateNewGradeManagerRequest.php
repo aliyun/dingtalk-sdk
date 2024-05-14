@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ValidateNewGradeManagerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example VYn5fYjORJMi
      *
      * @var string

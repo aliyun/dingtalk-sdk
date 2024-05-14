@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateMemberBanWordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 300000
      *
      * @var int
@@ -16,6 +18,8 @@ class UpdateMemberBanWordsRequest extends Model
     public $muteDuration;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class UpdateMemberBanWordsRequest extends Model
     public $muteStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid5d5uM3XEw3gxbNc/n7EQ4g==
      *
      * @var string
@@ -30,6 +36,8 @@ class UpdateMemberBanWordsRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

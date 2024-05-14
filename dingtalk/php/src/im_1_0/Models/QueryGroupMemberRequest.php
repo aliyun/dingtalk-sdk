@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

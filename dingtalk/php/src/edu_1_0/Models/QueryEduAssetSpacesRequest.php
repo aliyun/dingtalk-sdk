@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryEduAssetSpacesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example soke
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryEduAssetSpacesRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20110
      *
      * @var int

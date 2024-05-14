@@ -16,6 +16,8 @@ class content extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $establishDate;
@@ -28,11 +30,15 @@ class content extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $stopDate;

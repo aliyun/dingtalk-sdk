@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PushHistoricalReceiptsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizId;
@@ -24,11 +26,15 @@ class PushHistoricalReceiptsRequest extends Model
     public $forcedIgnoreDup;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $formCodeList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;

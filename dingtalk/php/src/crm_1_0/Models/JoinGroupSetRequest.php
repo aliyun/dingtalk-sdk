@@ -15,11 +15,15 @@ class JoinGroupSetRequest extends Model
     public $bizDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string
@@ -27,6 +31,8 @@ class JoinGroupSetRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string

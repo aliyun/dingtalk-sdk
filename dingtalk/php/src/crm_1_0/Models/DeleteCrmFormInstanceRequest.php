@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmFormInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager123
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteCrmFormInstanceRequest extends Model
     public $currentOperatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-123
      *
      * @var string

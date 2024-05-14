@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class subscriptions extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example /v1.0/im/bot/messages/get
      *
      * @var string
@@ -16,6 +18,8 @@ class subscriptions extends Model
     public $topic;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EVENT
      *
      * @var string

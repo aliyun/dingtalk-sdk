@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SearchTeachersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var users[]
      */
     public $users;

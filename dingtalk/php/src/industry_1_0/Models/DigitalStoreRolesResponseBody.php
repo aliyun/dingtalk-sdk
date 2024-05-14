@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreRolesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var content[]
      */
     public $content;

@@ -120,6 +120,8 @@ class UpdateDeviceCustomTemplateRequest extends Model
     public $showFunctionCard;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 89
      *
      * @var int
@@ -127,6 +129,8 @@ class UpdateDeviceCustomTemplateRequest extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试模板
      *
      * @var string

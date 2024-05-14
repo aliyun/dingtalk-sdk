@@ -16,6 +16,8 @@ class ListEmpLeaveRecordsRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -30,6 +32,8 @@ class ListEmpLeaveRecordsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2020-07-10T00:00:00
      *
      * @var string

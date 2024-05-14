@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateAcquireRefundOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -24,6 +26,8 @@ class CreateAcquireRefundOrderRequest extends Model
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021113000001
      *
      * @var string
@@ -36,6 +40,8 @@ class CreateAcquireRefundOrderRequest extends Model
     public $otherPayChannelDetailInfoList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example r2021113000001
      *
      * @var string
@@ -43,6 +49,8 @@ class CreateAcquireRefundOrderRequest extends Model
     public $outRefundNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10.01
      *
      * @var string
@@ -57,6 +65,8 @@ class CreateAcquireRefundOrderRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -64,6 +74,8 @@ class CreateAcquireRefundOrderRequest extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 餐费
      *
      * @var string

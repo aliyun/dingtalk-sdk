@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetAllAuthCubesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
@@ -16,6 +18,8 @@ class GetAllAuthCubesRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5d17e3add038d44535c2f4657eb6378e
      *
      * @var string
@@ -28,6 +32,8 @@ class GetAllAuthCubesRequest extends Model
     public $keywords;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -35,6 +41,8 @@ class GetAllAuthCubesRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -42,6 +50,8 @@ class GetAllAuthCubesRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
@@ -49,6 +59,8 @@ class GetAllAuthCubesRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UserTaskReportRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example biz1231231231abcd
      *
      * @var string
@@ -16,6 +18,8 @@ class UserTaskReportRequest extends Model
     public $bizNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2020-12-12 12:00:00
      *
      * @var string
@@ -23,6 +27,8 @@ class UserTaskReportRequest extends Model
     public $operateDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example task-create
      *
      * @var string
@@ -30,6 +36,8 @@ class UserTaskReportRequest extends Model
     public $taskTag;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2312
      *
      * @var string

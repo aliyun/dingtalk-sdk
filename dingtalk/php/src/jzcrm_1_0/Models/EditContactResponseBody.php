@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class EditContactResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $msgid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $time;

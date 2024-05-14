@@ -14,6 +14,8 @@ class CollegeUpdateStudentMoblieRequest extends Model
     public $isForce;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 187xxxxxxxx
      *
      * @var string
@@ -21,6 +23,8 @@ class CollegeUpdateStudentMoblieRequest extends Model
     public $newMobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 222222
      *
      * @var int

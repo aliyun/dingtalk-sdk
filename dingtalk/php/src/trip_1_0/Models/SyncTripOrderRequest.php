@@ -23,6 +23,8 @@ class SyncTripOrderRequest extends Model
     public $channelType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CNY
      *
      * @var string
@@ -30,6 +32,8 @@ class SyncTripOrderRequest extends Model
     public $currency;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string
@@ -49,11 +53,15 @@ class SyncTripOrderRequest extends Model
     public $endorseFlag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var event
      */
     public $event;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-05-15 10:10:10
      *
      * @var string
@@ -92,6 +100,8 @@ class SyncTripOrderRequest extends Model
     public $orderDetails;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string
@@ -99,6 +109,8 @@ class SyncTripOrderRequest extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https:dingtalk.com/tripOrder/20220510170058192311
      *
      * @var string
@@ -166,6 +178,8 @@ class SyncTripOrderRequest extends Model
     public $totalAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FLIGHT
      *
      * @var string

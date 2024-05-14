@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserTaskStatusRequest $request
-     * @param CheckUserTaskStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 检查用户任务状态
+     *  *
+     * @param CheckUserTaskStatusRequest $request CheckUserTaskStatusRequest
+     * @param CheckUserTaskStatusHeaders $headers CheckUserTaskStatusHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckUserTaskStatusResponse
+     * @return CheckUserTaskStatusResponse CheckUserTaskStatusResponse
      */
     public function checkUserTaskStatusWithOptions($request, $headers, $runtime)
     {
@@ -74,9 +76,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserTaskStatusRequest $request
+     * @summary 检查用户任务状态
+     *  *
+     * @param CheckUserTaskStatusRequest $request CheckUserTaskStatusRequest
      *
-     * @return CheckUserTaskStatusResponse
+     * @return CheckUserTaskStatusResponse CheckUserTaskStatusResponse
      */
     public function checkUserTaskStatus($request)
     {
@@ -87,11 +91,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserTasksStatusRequest $request
-     * @param CheckUserTasksStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 检查用户任务状态
+     *  *
+     * @param CheckUserTasksStatusRequest $request CheckUserTasksStatusRequest
+     * @param CheckUserTasksStatusHeaders $headers CheckUserTasksStatusHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckUserTasksStatusResponse
+     * @return CheckUserTasksStatusResponse CheckUserTasksStatusResponse
      */
     public function checkUserTasksStatusWithOptions($request, $headers, $runtime)
     {
@@ -127,9 +133,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserTasksStatusRequest $request
+     * @summary 检查用户任务状态
+     *  *
+     * @param CheckUserTasksStatusRequest $request CheckUserTasksStatusRequest
      *
-     * @return CheckUserTasksStatusResponse
+     * @return CheckUserTasksStatusResponse CheckUserTasksStatusResponse
      */
     public function checkUserTasksStatus($request)
     {

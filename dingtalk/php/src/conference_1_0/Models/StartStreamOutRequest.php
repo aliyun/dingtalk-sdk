@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class StartStreamOutRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example grip
      *
      * @var string
@@ -16,6 +18,8 @@ class StartStreamOutRequest extends Model
     public $mode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,11 +27,15 @@ class StartStreamOutRequest extends Model
     public $needHostJoin;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $smallWindowPosition;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 推流名称
      *
      * @var string
@@ -35,11 +43,15 @@ class StartStreamOutRequest extends Model
     public $streamName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $streamUrlList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string

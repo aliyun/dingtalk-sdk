@@ -31,11 +31,15 @@ class GetTodoTypeConfigResponseBody extends Model
     public $contentFieldList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createdTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorId;
@@ -51,16 +55,22 @@ class GetTodoTypeConfigResponseBody extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $modifiedTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $modifierId;

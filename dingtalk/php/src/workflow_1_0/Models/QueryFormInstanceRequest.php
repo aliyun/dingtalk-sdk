@@ -16,6 +16,8 @@ class QueryFormInstanceRequest extends Model
     public $appUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-abcdef-example
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryFormInstanceRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 951a8-8828-430c-b3e-example
      *
      * @var string

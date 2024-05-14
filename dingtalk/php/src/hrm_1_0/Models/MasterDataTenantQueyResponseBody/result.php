@@ -23,6 +23,8 @@ class result extends Model
     public $integrateDataAuth;
 
     /**
+     * @description This parameter is required.
+     *
      * @example "智能绩效"
      *
      * @var string
@@ -37,6 +39,8 @@ class result extends Model
     public $readAuth;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4
      *
      * @var int
@@ -44,6 +48,8 @@ class result extends Model
     public $tenantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

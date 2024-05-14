@@ -41,6 +41,8 @@ class formComponentValues extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PhoneField
      *
      * @var string
@@ -48,6 +50,8 @@ class formComponentValues extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123xxxxxxxx
      *
      * @var string

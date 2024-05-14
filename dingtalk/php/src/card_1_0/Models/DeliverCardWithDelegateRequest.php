@@ -40,6 +40,8 @@ class DeliverCardWithDelegateRequest extends Model
     public $imSingleOpenDeliverModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
      *
      * @var string
@@ -47,6 +49,8 @@ class DeliverCardWithDelegateRequest extends Model
     public $openSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example out_track_id_123456
      *
      * @var string

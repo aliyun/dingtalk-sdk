@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -24,11 +26,15 @@ class ListRecycleFilesRequest extends Model
     public $orderType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $recycleType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

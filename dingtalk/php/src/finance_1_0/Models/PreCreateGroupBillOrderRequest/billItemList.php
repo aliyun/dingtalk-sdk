@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class billItemList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5.12
      *
      * @var string
@@ -16,6 +18,8 @@ class billItemList extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cshadbikahdksnajhada
      *
      * @var string

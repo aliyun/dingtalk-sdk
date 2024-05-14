@@ -29,6 +29,8 @@ class QueryFormInstanceResponseBody extends Model
     public $createTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 00003
      *
      * @var string
@@ -36,6 +38,8 @@ class QueryFormInstanceResponseBody extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-abcdef-example
      *
      * @var string
@@ -43,11 +47,15 @@ class QueryFormInstanceResponseBody extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var formInstDataList[]
      */
     public $formInstDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 951a8-8828-430c-b3e-example
      *
      * @var string

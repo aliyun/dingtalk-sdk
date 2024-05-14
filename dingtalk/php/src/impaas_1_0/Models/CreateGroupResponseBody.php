@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $chatId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $conversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTime;

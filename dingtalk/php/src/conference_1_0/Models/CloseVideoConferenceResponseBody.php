@@ -14,6 +14,8 @@ class CloseVideoConferenceResponseBody extends Model
     public $cause;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $code;

@@ -14,6 +14,8 @@ class MoveFilesRequest extends Model
     public $addConflictPolicy;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $fileIds;
@@ -24,11 +26,15 @@ class MoveFilesRequest extends Model
     public $targetParentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

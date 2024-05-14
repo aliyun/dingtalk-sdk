@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class fieldScopes extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $fieldActions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example "DDSelectField-KI5S975E"
      *
      * @var string

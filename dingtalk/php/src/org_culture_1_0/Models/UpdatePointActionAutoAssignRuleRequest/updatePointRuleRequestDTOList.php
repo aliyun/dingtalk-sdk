@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class updatePointRuleRequestDTOList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -16,6 +18,8 @@ class updatePointRuleRequestDTOList extends Model
     public $awardScore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example POST_IS_COMMENT
      *
      * @var string
@@ -23,6 +27,8 @@ class updatePointRuleRequestDTOList extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -30,6 +36,8 @@ class updatePointRuleRequestDTOList extends Model
     public $dayLimitTimes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

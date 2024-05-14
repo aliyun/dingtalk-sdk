@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class details extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -17,6 +19,8 @@ class details extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1655450960000
      *
      * @var int
@@ -36,6 +40,8 @@ class details extends Model
     public $pointOperateFeatureResponseDTO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example credit
      *
      * @var string

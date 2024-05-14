@@ -23,6 +23,8 @@ class DocBlocksQueryRequest extends Model
     public $endIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

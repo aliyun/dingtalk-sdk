@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class SheetFindAllRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var findOptions
      */
     public $findOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DingTalk
      *
      * @var string
@@ -22,6 +26,8 @@ class SheetFindAllRequest extends Model
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

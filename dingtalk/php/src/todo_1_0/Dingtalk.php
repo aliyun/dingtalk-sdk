@@ -69,12 +69,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户待办计数
+     *  *
      * @param string                $unionId
-     * @param CountTodoTasksRequest $request
-     * @param CountTodoTasksHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CountTodoTasksRequest $request CountTodoTasksRequest
+     * @param CountTodoTasksHeaders $headers CountTodoTasksHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CountTodoTasksResponse
+     * @return CountTodoTasksResponse CountTodoTasksResponse
      */
     public function countTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -122,10 +124,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户待办计数
+     *  *
      * @param string                $unionId
-     * @param CountTodoTasksRequest $request
+     * @param CountTodoTasksRequest $request CountTodoTasksRequest
      *
-     * @return CountTodoTasksResponse
+     * @return CountTodoTasksResponse CountTodoTasksResponse
      */
     public function countTodoTasks($unionId, $request)
     {
@@ -136,11 +140,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePersonalTodoTaskRequest $request
-     * @param CreatePersonalTodoTaskHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 以用户个人身份创建个人待办
+     *  *
+     * @param CreatePersonalTodoTaskRequest $request CreatePersonalTodoTaskRequest
+     * @param CreatePersonalTodoTaskHeaders $headers CreatePersonalTodoTaskHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreatePersonalTodoTaskResponse
+     * @return CreatePersonalTodoTaskResponse CreatePersonalTodoTaskResponse
      */
     public function createPersonalTodoTaskWithOptions($request, $headers, $runtime)
     {
@@ -191,9 +197,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePersonalTodoTaskRequest $request
+     * @summary 以用户个人身份创建个人待办
+     *  *
+     * @param CreatePersonalTodoTaskRequest $request CreatePersonalTodoTaskRequest
      *
-     * @return CreatePersonalTodoTaskResponse
+     * @return CreatePersonalTodoTaskResponse CreatePersonalTodoTaskResponse
      */
     public function createPersonalTodoTask($request)
     {
@@ -204,12 +212,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建待办
+     *  *
      * @param string                $unionId
-     * @param CreateTodoTaskRequest $request
-     * @param CreateTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateTodoTaskRequest $request CreateTodoTaskRequest
+     * @param CreateTodoTaskHeaders $headers CreateTodoTaskHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTodoTaskResponse
+     * @return CreateTodoTaskResponse CreateTodoTaskResponse
      */
     public function createTodoTaskWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -289,10 +299,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建待办
+     *  *
      * @param string                $unionId
-     * @param CreateTodoTaskRequest $request
+     * @param CreateTodoTaskRequest $request CreateTodoTaskRequest
      *
-     * @return CreateTodoTaskResponse
+     * @return CreateTodoTaskResponse CreateTodoTaskResponse
      */
     public function createTodoTask($unionId, $request)
     {
@@ -303,12 +315,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建待办卡片类型配置
+     *  *
      * @param string                      $unionId
-     * @param CreateTodoTypeConfigRequest $request
-     * @param CreateTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param CreateTodoTypeConfigRequest $request CreateTodoTypeConfigRequest
+     * @param CreateTodoTypeConfigHeaders $headers CreateTodoTypeConfigHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTodoTypeConfigResponse
+     * @return CreateTodoTypeConfigResponse CreateTodoTypeConfigResponse
      */
     public function createTodoTypeConfigWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -364,10 +378,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建待办卡片类型配置
+     *  *
      * @param string                      $unionId
-     * @param CreateTodoTypeConfigRequest $request
+     * @param CreateTodoTypeConfigRequest $request CreateTodoTypeConfigRequest
      *
-     * @return CreateTodoTypeConfigResponse
+     * @return CreateTodoTypeConfigResponse CreateTodoTypeConfigResponse
      */
     public function createTodoTypeConfig($unionId, $request)
     {
@@ -378,13 +394,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除待办
+     *  *
      * @param string                $unionId
      * @param string                $taskId
-     * @param DeleteTodoTaskRequest $request
-     * @param DeleteTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DeleteTodoTaskRequest $request DeleteTodoTaskRequest
+     * @param DeleteTodoTaskHeaders $headers DeleteTodoTaskHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteTodoTaskResponse
+     * @return DeleteTodoTaskResponse DeleteTodoTaskResponse
      */
     public function deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
@@ -420,11 +438,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除待办
+     *  *
      * @param string                $unionId
      * @param string                $taskId
-     * @param DeleteTodoTaskRequest $request
+     * @param DeleteTodoTaskRequest $request DeleteTodoTaskRequest
      *
-     * @return DeleteTodoTaskResponse
+     * @return DeleteTodoTaskResponse DeleteTodoTaskResponse
      */
     public function deleteTodoTask($unionId, $taskId, $request)
     {
@@ -435,12 +455,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询待办
+     *  *
      * @param string             $unionId
      * @param string             $taskId
-     * @param GetTodoTaskHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetTodoTaskHeaders $headers GetTodoTaskHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTodoTaskResponse
+     * @return GetTodoTaskResponse GetTodoTaskResponse
      */
     public function getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
     {
@@ -470,10 +492,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询待办
+     *  *
      * @param string $unionId
      * @param string $taskId
      *
-     * @return GetTodoTaskResponse
+     * @return GetTodoTaskResponse GetTodoTaskResponse
      */
     public function getTodoTask($unionId, $taskId)
     {
@@ -484,12 +508,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据sourceId查询待办详情
+     *  *
      * @param string                       $unionId
      * @param string                       $sourceId
-     * @param GetTodoTaskBySourceIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetTodoTaskBySourceIdHeaders $headers  GetTodoTaskBySourceIdHeaders
+     * @param RuntimeOptions               $runtime  runtime options for this request RuntimeOptions
      *
-     * @return GetTodoTaskBySourceIdResponse
+     * @return GetTodoTaskBySourceIdResponse GetTodoTaskBySourceIdResponse
      */
     public function getTodoTaskBySourceIdWithOptions($unionId, $sourceId, $headers, $runtime)
     {
@@ -519,10 +545,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据sourceId查询待办详情
+     *  *
      * @param string $unionId
      * @param string $sourceId
      *
-     * @return GetTodoTaskBySourceIdResponse
+     * @return GetTodoTaskBySourceIdResponse GetTodoTaskBySourceIdResponse
      */
     public function getTodoTaskBySourceId($unionId, $sourceId)
     {
@@ -533,12 +561,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 专属钉根据待办ID查询待办详情
+     *  *
      * @param string                   $taskId
      * @param string                   $unionId
-     * @param GetTodoTaskDetailHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetTodoTaskDetailHeaders $headers GetTodoTaskDetailHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTodoTaskDetailResponse
+     * @return GetTodoTaskDetailResponse GetTodoTaskDetailResponse
      */
     public function getTodoTaskDetailWithOptions($taskId, $unionId, $headers, $runtime)
     {
@@ -568,10 +598,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 专属钉根据待办ID查询待办详情
+     *  *
      * @param string $taskId
      * @param string $unionId
      *
-     * @return GetTodoTaskDetailResponse
+     * @return GetTodoTaskDetailResponse GetTodoTaskDetailResponse
      */
     public function getTodoTaskDetail($taskId, $unionId)
     {
@@ -582,12 +614,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据id获取待办卡片类型配置
+     *  *
      * @param string                   $unionId
      * @param string                   $cardTypeId
-     * @param GetTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetTodoTypeConfigHeaders $headers    GetTodoTypeConfigHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetTodoTypeConfigResponse
+     * @return GetTodoTypeConfigResponse GetTodoTypeConfigResponse
      */
     public function getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime)
     {
@@ -617,10 +651,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据id获取待办卡片类型配置
+     *  *
      * @param string $unionId
      * @param string $cardTypeId
      *
-     * @return GetTodoTypeConfigResponse
+     * @return GetTodoTypeConfigResponse GetTodoTypeConfigResponse
      */
     public function getTodoTypeConfig($unionId, $cardTypeId)
     {
@@ -631,12 +667,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+     *  *
      * @param string                    $unionId
-     * @param QueryOrgTodoByUserRequest $request
-     * @param QueryOrgTodoByUserHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryOrgTodoByUserRequest $request QueryOrgTodoByUserRequest
+     * @param QueryOrgTodoByUserHeaders $headers QueryOrgTodoByUserHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOrgTodoByUserResponse
+     * @return QueryOrgTodoByUserResponse QueryOrgTodoByUserResponse
      */
     public function queryOrgTodoByUserWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -696,10 +734,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+     *  *
      * @param string                    $unionId
-     * @param QueryOrgTodoByUserRequest $request
+     * @param QueryOrgTodoByUserRequest $request QueryOrgTodoByUserRequest
      *
-     * @return QueryOrgTodoByUserResponse
+     * @return QueryOrgTodoByUserResponse QueryOrgTodoByUserResponse
      */
     public function queryOrgTodoByUser($unionId, $request)
     {
@@ -710,12 +750,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业下用户待办列表
+     *  *
      * @param string                   $unionId
-     * @param QueryOrgTodoTasksRequest $request
-     * @param QueryOrgTodoTasksHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param QueryOrgTodoTasksRequest $request QueryOrgTodoTasksRequest
+     * @param QueryOrgTodoTasksHeaders $headers QueryOrgTodoTasksHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOrgTodoTasksResponse
+     * @return QueryOrgTodoTasksResponse QueryOrgTodoTasksResponse
      */
     public function queryOrgTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -754,10 +796,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业下用户待办列表
+     *  *
      * @param string                   $unionId
-     * @param QueryOrgTodoTasksRequest $request
+     * @param QueryOrgTodoTasksRequest $request QueryOrgTodoTasksRequest
      *
-     * @return QueryOrgTodoTasksResponse
+     * @return QueryOrgTodoTasksResponse QueryOrgTodoTasksResponse
      */
     public function queryOrgTodoTasks($unionId, $request)
     {
@@ -768,12 +812,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户待办列表
+     *  *
      * @param string                $unionId
-     * @param QueryTodoTasksRequest $request
-     * @param QueryTodoTasksHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param QueryTodoTasksRequest $request QueryTodoTasksRequest
+     * @param QueryTodoTasksHeaders $headers QueryTodoTasksHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTodoTasksResponse
+     * @return QueryTodoTasksResponse QueryTodoTasksResponse
      */
     public function queryTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -833,10 +879,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户待办列表
+     *  *
      * @param string                $unionId
-     * @param QueryTodoTasksRequest $request
+     * @param QueryTodoTasksRequest $request QueryTodoTasksRequest
      *
-     * @return QueryTodoTasksResponse
+     * @return QueryTodoTasksResponse QueryTodoTasksResponse
      */
     public function queryTodoTasks($unionId, $request)
     {
@@ -847,13 +895,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办
+     *  *
      * @param string                $unionId
      * @param string                $taskId
-     * @param UpdateTodoTaskRequest $request
-     * @param UpdateTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param UpdateTodoTaskRequest $request UpdateTodoTaskRequest
+     * @param UpdateTodoTaskHeaders $headers UpdateTodoTaskHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTodoTaskResponse
+     * @return UpdateTodoTaskResponse UpdateTodoTaskResponse
      */
     public function updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
@@ -909,11 +959,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办
+     *  *
      * @param string                $unionId
      * @param string                $taskId
-     * @param UpdateTodoTaskRequest $request
+     * @param UpdateTodoTaskRequest $request UpdateTodoTaskRequest
      *
-     * @return UpdateTodoTaskResponse
+     * @return UpdateTodoTaskResponse UpdateTodoTaskResponse
      */
     public function updateTodoTask($unionId, $taskId, $request)
     {
@@ -924,13 +976,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办执行者状态
+     *  *
      * @param string                              $unionId
      * @param string                              $taskId
-     * @param UpdateTodoTaskExecutorStatusRequest $request
-     * @param UpdateTodoTaskExecutorStatusHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param UpdateTodoTaskExecutorStatusRequest $request UpdateTodoTaskExecutorStatusRequest
+     * @param UpdateTodoTaskExecutorStatusHeaders $headers UpdateTodoTaskExecutorStatusHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTodoTaskExecutorStatusResponse
+     * @return UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatusResponse
      */
     public function updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
@@ -971,11 +1025,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办执行者状态
+     *  *
      * @param string                              $unionId
      * @param string                              $taskId
-     * @param UpdateTodoTaskExecutorStatusRequest $request
+     * @param UpdateTodoTaskExecutorStatusRequest $request UpdateTodoTaskExecutorStatusRequest
      *
-     * @return UpdateTodoTaskExecutorStatusResponse
+     * @return UpdateTodoTaskExecutorStatusResponse UpdateTodoTaskExecutorStatusResponse
      */
     public function updateTodoTaskExecutorStatus($unionId, $taskId, $request)
     {
@@ -986,13 +1042,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办卡片类型配置
+     *  *
      * @param string                      $unionId
      * @param string                      $cardTypeId
-     * @param UpdateTodoTypeConfigRequest $request
-     * @param UpdateTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UpdateTodoTypeConfigRequest $request    UpdateTodoTypeConfigRequest
+     * @param UpdateTodoTypeConfigHeaders $headers    UpdateTodoTypeConfigHeaders
+     * @param RuntimeOptions              $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UpdateTodoTypeConfigResponse
+     * @return UpdateTodoTypeConfigResponse UpdateTodoTypeConfigResponse
      */
     public function updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime)
     {
@@ -1048,11 +1106,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新待办卡片类型配置
+     *  *
      * @param string                      $unionId
      * @param string                      $cardTypeId
-     * @param UpdateTodoTypeConfigRequest $request
+     * @param UpdateTodoTypeConfigRequest $request    UpdateTodoTypeConfigRequest
      *
-     * @return UpdateTodoTypeConfigResponse
+     * @return UpdateTodoTypeConfigResponse UpdateTodoTypeConfigResponse
      */
     public function updateTodoTypeConfig($unionId, $cardTypeId, $request)
     {

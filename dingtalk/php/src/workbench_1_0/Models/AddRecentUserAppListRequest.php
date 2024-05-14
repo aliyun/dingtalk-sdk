@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddRecentUserAppListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding48143d56cd15327624f2f5cc6abecb85
      *
      * @var string
@@ -17,11 +19,15 @@ class AddRecentUserAppListRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var usedAppDetailList[]
      */
     public $usedAppDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 642325391030949
      *
      * @var string

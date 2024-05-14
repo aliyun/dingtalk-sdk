@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class BatchBindingGroupBizIdsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bindingGroupBizIds[]
      */
     public $bindingGroupBizIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string

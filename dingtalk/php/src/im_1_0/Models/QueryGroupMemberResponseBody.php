@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var groupMembers[]
      */
     public $groupMembers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

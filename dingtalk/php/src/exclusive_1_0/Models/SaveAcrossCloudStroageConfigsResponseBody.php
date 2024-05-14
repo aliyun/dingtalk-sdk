@@ -16,6 +16,8 @@ class SaveAcrossCloudStroageConfigsResponseBody extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://oss-cn-test.aliyuncs.com
      *
      * @var string
@@ -23,6 +25,8 @@ class SaveAcrossCloudStroageConfigsResponseBody extends Model
     public $endpoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

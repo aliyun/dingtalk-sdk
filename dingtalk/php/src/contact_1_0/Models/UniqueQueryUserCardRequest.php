@@ -16,6 +16,8 @@ class UniqueQueryUserCardRequest extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dfsdfsfsfdsfs
      *
      * @var string

@@ -10,21 +10,29 @@ use AlibabaCloud\Tea\Model;
 class UpdateRelationMetaFieldRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var fieldDTOList[]
      */
     public $fieldDTOList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tenant;

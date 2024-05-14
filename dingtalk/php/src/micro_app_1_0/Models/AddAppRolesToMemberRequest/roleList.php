@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class roleList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $roleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $scopeVersion;

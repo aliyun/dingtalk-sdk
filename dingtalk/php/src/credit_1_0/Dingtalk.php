@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryScoreRequest $request
-     * @param QueryScoreHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 查询用户金融评分数据
+     *  *
+     * @param QueryScoreRequest $request QueryScoreRequest
+     * @param QueryScoreHeaders $headers QueryScoreHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryScoreResponse
+     * @return QueryScoreResponse QueryScoreResponse
      */
     public function queryScoreWithOptions($request, $headers, $runtime)
     {
@@ -86,9 +88,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryScoreRequest $request
+     * @summary 查询用户金融评分数据
+     *  *
+     * @param QueryScoreRequest $request QueryScoreRequest
      *
-     * @return QueryScoreResponse
+     * @return QueryScoreResponse QueryScoreResponse
      */
     public function queryScore($request)
     {

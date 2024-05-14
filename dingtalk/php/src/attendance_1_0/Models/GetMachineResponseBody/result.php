@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $atmManagerList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1406333705
      *
      * @var int
@@ -22,6 +26,8 @@ class result extends Model
     public $devId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2078053438
      *
      * @var string
@@ -29,6 +35,8 @@ class result extends Model
     public $deviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 泱云❄️的体00056
      *
      * @var string
@@ -36,6 +44,8 @@ class result extends Model
     public $deviceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0601IFW201001N000056
      *
      * @var string
@@ -43,11 +53,15 @@ class result extends Model
     public $deviceSn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var machineBluetoothVO
      */
     public $machineBluetoothVO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -55,6 +69,8 @@ class result extends Model
     public $maxFace;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4
      *
      * @var string
@@ -62,6 +78,8 @@ class result extends Model
     public $netStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example M1F
      *
      * @var string
@@ -69,6 +87,8 @@ class result extends Model
     public $productName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.0.1-R-20200326.1543
      *
      * @var string
@@ -76,6 +96,8 @@ class result extends Model
     public $productVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int

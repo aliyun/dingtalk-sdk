@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListTodoWorkRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class ListTodoWorkRecordsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -23,6 +27,8 @@ class ListTodoWorkRecordsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class ListTodoWorkRecordsRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager001
      *
      * @var string

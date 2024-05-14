@@ -46,11 +46,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTicketRequest $request
-     * @param CreateTicketHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 创建工单
+     *  *
+     * @param CreateTicketRequest $request CreateTicketRequest
+     * @param CreateTicketHeaders $headers CreateTicketHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTicketResponse
+     * @return CreateTicketResponse CreateTicketResponse
      */
     public function createTicketWithOptions($request, $headers, $runtime)
     {
@@ -107,9 +109,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTicketRequest $request
+     * @summary 创建工单
+     *  *
+     * @param CreateTicketRequest $request CreateTicketRequest
      *
-     * @return CreateTicketResponse
+     * @return CreateTicketResponse CreateTicketResponse
      */
     public function createTicket($request)
     {
@@ -120,12 +124,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 执行工单活动
+     *  *
      * @param string                 $ticketId
-     * @param ExecuteActivityRequest $request
-     * @param ExecuteActivityHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ExecuteActivityRequest $request  ExecuteActivityRequest
+     * @param ExecuteActivityHeaders $headers  ExecuteActivityHeaders
+     * @param RuntimeOptions         $runtime  runtime options for this request RuntimeOptions
      *
-     * @return ExecuteActivityResponse
+     * @return ExecuteActivityResponse ExecuteActivityResponse
      */
     public function executeActivityWithOptions($ticketId, $request, $headers, $runtime)
     {
@@ -179,10 +185,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 执行工单活动
+     *  *
      * @param string                 $ticketId
-     * @param ExecuteActivityRequest $request
+     * @param ExecuteActivityRequest $request  ExecuteActivityRequest
      *
-     * @return ExecuteActivityResponse
+     * @return ExecuteActivityResponse ExecuteActivityResponse
      */
     public function executeActivity($ticketId, $request)
     {
@@ -193,11 +201,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserSourceListRequest $request
-     * @param GetUserSourceListHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取source列表
+     *  *
+     * @param GetUserSourceListRequest $request GetUserSourceListRequest
+     * @param GetUserSourceListHeaders $headers GetUserSourceListHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserSourceListResponse
+     * @return GetUserSourceListResponse GetUserSourceListResponse
      */
     public function getUserSourceListWithOptions($request, $headers, $runtime)
     {
@@ -248,9 +258,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserSourceListRequest $request
+     * @summary 获取source列表
+     *  *
+     * @param GetUserSourceListRequest $request GetUserSourceListRequest
      *
-     * @return GetUserSourceListResponse
+     * @return GetUserSourceListResponse GetUserSourceListResponse
      */
     public function getUserSourceList($request)
     {
@@ -261,12 +273,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询动作记录
+     *  *
      * @param string                $ticketId
-     * @param PageListActionRequest $request
-     * @param PageListActionHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param PageListActionRequest $request  PageListActionRequest
+     * @param PageListActionHeaders $headers  PageListActionHeaders
+     * @param RuntimeOptions        $runtime  runtime options for this request RuntimeOptions
      *
-     * @return PageListActionResponse
+     * @return PageListActionResponse PageListActionResponse
      */
     public function pageListActionWithOptions($ticketId, $request, $headers, $runtime)
     {
@@ -311,10 +325,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询动作记录
+     *  *
      * @param string                $ticketId
-     * @param PageListActionRequest $request
+     * @param PageListActionRequest $request  PageListActionRequest
      *
-     * @return PageListActionResponse
+     * @return PageListActionResponse PageListActionResponse
      */
     public function pageListAction($ticketId, $request)
     {
@@ -325,11 +341,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListRobotRequest $request
-     * @param PageListRobotHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 分页查询机器人信息
+     *  *
+     * @param PageListRobotRequest $request PageListRobotRequest
+     * @param PageListRobotHeaders $headers PageListRobotHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return PageListRobotResponse
+     * @return PageListRobotResponse PageListRobotResponse
      */
     public function pageListRobotWithOptions($request, $headers, $runtime)
     {
@@ -377,9 +395,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListRobotRequest $request
+     * @summary 分页查询机器人信息
+     *  *
+     * @param PageListRobotRequest $request PageListRobotRequest
      *
-     * @return PageListRobotResponse
+     * @return PageListRobotResponse PageListRobotResponse
      */
     public function pageListRobot($request)
     {
@@ -390,11 +410,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListTicketRequest $request
-     * @param PageListTicketHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 分页查询工单
+     *  *
+     * @param PageListTicketRequest $request PageListTicketRequest
+     * @param PageListTicketHeaders $headers PageListTicketHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return PageListTicketResponse
+     * @return PageListTicketResponse PageListTicketResponse
      */
     public function pageListTicketWithOptions($request, $headers, $runtime)
     {
@@ -460,9 +482,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListTicketRequest $request
+     * @summary 分页查询工单
+     *  *
+     * @param PageListTicketRequest $request PageListTicketRequest
      *
-     * @return PageListTicketResponse
+     * @return PageListTicketResponse PageListTicketResponse
      */
     public function pageListTicket($request)
     {

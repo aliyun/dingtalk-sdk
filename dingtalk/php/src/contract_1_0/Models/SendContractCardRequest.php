@@ -12,6 +12,8 @@ use AlibabaCloud\Tea\Model;
 class SendContractCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example signing
      *
      * @var string
@@ -24,6 +26,8 @@ class SendContractCardRequest extends Model
     public $contractInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5f62ac8a3c24952ebc961a6cb783455b
      *
      * @var string
@@ -48,16 +52,22 @@ class SendContractCardRequest extends Model
     public $receiveGroups;
 
     /**
+     * @description This parameter is required.
+     *
      * @var receivers[]
      */
     public $receivers;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sender
      */
     public $sender;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateOfficialAccountRobotInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string

@@ -64,11 +64,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCityCarApplyRequest $request
-     * @param AddCityCarApplyHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 同步第三方市内用车申请单
+     *  *
+     * @param AddCityCarApplyRequest $request AddCityCarApplyRequest
+     * @param AddCityCarApplyHeaders $headers AddCityCarApplyHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddCityCarApplyResponse
+     * @return AddCityCarApplyResponse AddCityCarApplyResponse
      */
     public function addCityCarApplyWithOptions($request, $headers, $runtime)
     {
@@ -149,9 +151,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCityCarApplyRequest $request
+     * @summary 同步第三方市内用车申请单
+     *  *
+     * @param AddCityCarApplyRequest $request AddCityCarApplyRequest
      *
-     * @return AddCityCarApplyResponse
+     * @return AddCityCarApplyResponse AddCityCarApplyResponse
      */
     public function addCityCarApply($request)
     {
@@ -162,11 +166,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ApproveCityCarApplyRequest $request
-     * @param ApproveCityCarApplyHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 三方市内用车申请单审批
+     *  *
+     * @param ApproveCityCarApplyRequest $request ApproveCityCarApplyRequest
+     * @param ApproveCityCarApplyHeaders $headers ApproveCityCarApplyHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ApproveCityCarApplyResponse
+     * @return ApproveCityCarApplyResponse ApproveCityCarApplyResponse
      */
     public function approveCityCarApplyWithOptions($request, $headers, $runtime)
     {
@@ -217,9 +223,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ApproveCityCarApplyRequest $request
+     * @summary 三方市内用车申请单审批
+     *  *
+     * @param ApproveCityCarApplyRequest $request ApproveCityCarApplyRequest
      *
-     * @return ApproveCityCarApplyResponse
+     * @return ApproveCityCarApplyResponse ApproveCityCarApplyResponse
      */
     public function approveCityCarApply($request)
     {
@@ -230,11 +238,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementBtripTrainRequest $request
-     * @param BillSettementBtripTrainHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 商旅火车票结算记账查询接口
+     *  *
+     * @param BillSettementBtripTrainRequest $request BillSettementBtripTrainRequest
+     * @param BillSettementBtripTrainHeaders $headers BillSettementBtripTrainHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return BillSettementBtripTrainResponse
+     * @return BillSettementBtripTrainResponse BillSettementBtripTrainResponse
      */
     public function billSettementBtripTrainWithOptions($request, $headers, $runtime)
     {
@@ -285,9 +295,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementBtripTrainRequest $request
+     * @summary 商旅火车票结算记账查询接口
+     *  *
+     * @param BillSettementBtripTrainRequest $request BillSettementBtripTrainRequest
      *
-     * @return BillSettementBtripTrainResponse
+     * @return BillSettementBtripTrainResponse BillSettementBtripTrainResponse
      */
     public function billSettementBtripTrain($request)
     {
@@ -298,11 +310,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementCarRequest $request
-     * @param BillSettementCarHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 用车结算记账查询接口
+     *  *
+     * @param BillSettementCarRequest $request BillSettementCarRequest
+     * @param BillSettementCarHeaders $headers BillSettementCarHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return BillSettementCarResponse
+     * @return BillSettementCarResponse BillSettementCarResponse
      */
     public function billSettementCarWithOptions($request, $headers, $runtime)
     {
@@ -353,9 +367,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementCarRequest $request
+     * @summary 用车结算记账查询接口
+     *  *
+     * @param BillSettementCarRequest $request BillSettementCarRequest
      *
-     * @return BillSettementCarResponse
+     * @return BillSettementCarResponse BillSettementCarResponse
      */
     public function billSettementCar($request)
     {
@@ -366,11 +382,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementFlightRequest $request
-     * @param BillSettementFlightHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 机票结算记账查询接口
+     *  *
+     * @param BillSettementFlightRequest $request BillSettementFlightRequest
+     * @param BillSettementFlightHeaders $headers BillSettementFlightHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BillSettementFlightResponse
+     * @return BillSettementFlightResponse BillSettementFlightResponse
      */
     public function billSettementFlightWithOptions($request, $headers, $runtime)
     {
@@ -421,9 +439,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementFlightRequest $request
+     * @summary 机票结算记账查询接口
+     *  *
+     * @param BillSettementFlightRequest $request BillSettementFlightRequest
      *
-     * @return BillSettementFlightResponse
+     * @return BillSettementFlightResponse BillSettementFlightResponse
      */
     public function billSettementFlight($request)
     {
@@ -434,11 +454,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementHotelRequest $request
-     * @param BillSettementHotelHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 酒店结算记账查询接口
+     *  *
+     * @param BillSettementHotelRequest $request BillSettementHotelRequest
+     * @param BillSettementHotelHeaders $headers BillSettementHotelHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return BillSettementHotelResponse
+     * @return BillSettementHotelResponse BillSettementHotelResponse
      */
     public function billSettementHotelWithOptions($request, $headers, $runtime)
     {
@@ -489,9 +511,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BillSettementHotelRequest $request
+     * @summary 酒店结算记账查询接口
+     *  *
+     * @param BillSettementHotelRequest $request BillSettementHotelRequest
      *
-     * @return BillSettementHotelResponse
+     * @return BillSettementHotelResponse BillSettementHotelResponse
      */
     public function billSettementHotel($request)
     {
@@ -502,11 +526,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlightExceedApplyRequest $request
-     * @param GetFlightExceedApplyHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 商旅机票第三方超标审批单搜索接口
+     *  *
+     * @param GetFlightExceedApplyRequest $request GetFlightExceedApplyRequest
+     * @param GetFlightExceedApplyHeaders $headers GetFlightExceedApplyHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFlightExceedApplyResponse
+     * @return GetFlightExceedApplyResponse GetFlightExceedApplyResponse
      */
     public function getFlightExceedApplyWithOptions($request, $headers, $runtime)
     {
@@ -545,9 +571,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlightExceedApplyRequest $request
+     * @summary 商旅机票第三方超标审批单搜索接口
+     *  *
+     * @param GetFlightExceedApplyRequest $request GetFlightExceedApplyRequest
      *
-     * @return GetFlightExceedApplyResponse
+     * @return GetFlightExceedApplyResponse GetFlightExceedApplyResponse
      */
     public function getFlightExceedApply($request)
     {
@@ -558,11 +586,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHotelExceedApplyRequest $request
-     * @param GetHotelExceedApplyHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 搜索酒店超标审批单
+     *  *
+     * @param GetHotelExceedApplyRequest $request GetHotelExceedApplyRequest
+     * @param GetHotelExceedApplyHeaders $headers GetHotelExceedApplyHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetHotelExceedApplyResponse
+     * @return GetHotelExceedApplyResponse GetHotelExceedApplyResponse
      */
     public function getHotelExceedApplyWithOptions($request, $headers, $runtime)
     {
@@ -601,9 +631,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHotelExceedApplyRequest $request
+     * @summary 搜索酒店超标审批单
+     *  *
+     * @param GetHotelExceedApplyRequest $request GetHotelExceedApplyRequest
      *
-     * @return GetHotelExceedApplyResponse
+     * @return GetHotelExceedApplyResponse GetHotelExceedApplyResponse
      */
     public function getHotelExceedApply($request)
     {
@@ -614,11 +646,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTrainExceedApplyRequest $request
-     * @param GetTrainExceedApplyHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 商旅火车票第三方超标审批单搜索接口
+     *  *
+     * @param GetTrainExceedApplyRequest $request GetTrainExceedApplyRequest
+     * @param GetTrainExceedApplyHeaders $headers GetTrainExceedApplyHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTrainExceedApplyResponse
+     * @return GetTrainExceedApplyResponse GetTrainExceedApplyResponse
      */
     public function getTrainExceedApplyWithOptions($request, $headers, $runtime)
     {
@@ -657,9 +691,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTrainExceedApplyRequest $request
+     * @summary 商旅火车票第三方超标审批单搜索接口
+     *  *
+     * @param GetTrainExceedApplyRequest $request GetTrainExceedApplyRequest
      *
-     * @return GetTrainExceedApplyResponse
+     * @return GetTrainExceedApplyResponse GetTrainExceedApplyResponse
      */
     public function getTrainExceedApply($request)
     {
@@ -670,11 +706,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCityCarApplyRequest $request
-     * @param QueryCityCarApplyHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 三方市内用车申请单查询
+     *  *
+     * @param QueryCityCarApplyRequest $request QueryCityCarApplyRequest
+     * @param QueryCityCarApplyHeaders $headers QueryCityCarApplyHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCityCarApplyResponse
+     * @return QueryCityCarApplyResponse QueryCityCarApplyResponse
      */
     public function queryCityCarApplyWithOptions($request, $headers, $runtime)
     {
@@ -728,9 +766,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCityCarApplyRequest $request
+     * @summary 三方市内用车申请单查询
+     *  *
+     * @param QueryCityCarApplyRequest $request QueryCityCarApplyRequest
      *
-     * @return QueryCityCarApplyResponse
+     * @return QueryCityCarApplyResponse QueryCityCarApplyResponse
      */
     public function queryCityCarApply($request)
     {
@@ -741,11 +781,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUnionOrderRequest $request
-     * @param QueryUnionOrderHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 申请单关联单号查询相关订单信息
+     *  *
+     * @param QueryUnionOrderRequest $request QueryUnionOrderRequest
+     * @param QueryUnionOrderHeaders $headers QueryUnionOrderHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUnionOrderResponse
+     * @return QueryUnionOrderResponse QueryUnionOrderResponse
      */
     public function queryUnionOrderWithOptions($request, $headers, $runtime)
     {
@@ -787,9 +829,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUnionOrderRequest $request
+     * @summary 申请单关联单号查询相关订单信息
+     *  *
+     * @param QueryUnionOrderRequest $request QueryUnionOrderRequest
      *
-     * @return QueryUnionOrderResponse
+     * @return QueryUnionOrderResponse QueryUnionOrderResponse
      */
     public function queryUnionOrder($request)
     {
@@ -800,11 +844,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncExceedApplyRequest $request
-     * @param SyncExceedApplyHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 同步超标审批结果
+     *  *
+     * @param SyncExceedApplyRequest $request SyncExceedApplyRequest
+     * @param SyncExceedApplyHeaders $headers SyncExceedApplyHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncExceedApplyResponse
+     * @return SyncExceedApplyResponse SyncExceedApplyResponse
      */
     public function syncExceedApplyWithOptions($request, $headers, $runtime)
     {
@@ -855,9 +901,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncExceedApplyRequest $request
+     * @summary 同步超标审批结果
+     *  *
+     * @param SyncExceedApplyRequest $request SyncExceedApplyRequest
      *
-     * @return SyncExceedApplyResponse
+     * @return SyncExceedApplyResponse SyncExceedApplyResponse
      */
     public function syncExceedApply($request)
     {

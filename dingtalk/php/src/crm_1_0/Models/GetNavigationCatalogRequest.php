@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetNavigationCatalogRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 6360a371-4ffa-464b-a935-39817c3ccbe8
      *
      * @var string
@@ -16,6 +18,8 @@ class GetNavigationCatalogRequest extends Model
     public $bizTraceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sale
      *
      * @var string
@@ -23,6 +27,8 @@ class GetNavigationCatalogRequest extends Model
     public $module;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16044739461008808747
      *
      * @var string

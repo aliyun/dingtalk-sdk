@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryLiveWatchUserListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1a353547-040d-4095-bb93-404bc5d47920
      *
      * @var string
@@ -21,11 +23,15 @@ class QueryLiveWatchUserListRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string

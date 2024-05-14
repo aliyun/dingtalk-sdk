@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BindSystemResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example d12345
      *
      * @var string
@@ -16,6 +18,8 @@ class BindSystemResponseBody extends Model
     public $clientId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding12345
      *
      * @var string

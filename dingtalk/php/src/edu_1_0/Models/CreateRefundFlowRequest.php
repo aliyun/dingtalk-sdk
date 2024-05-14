@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateRefundFlowRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123123
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateRefundFlowRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example S123
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateRefundFlowRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateRefundFlowRequest extends Model
     public $operatorName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -44,6 +52,8 @@ class CreateRefundFlowRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -58,6 +68,8 @@ class CreateRefundFlowRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

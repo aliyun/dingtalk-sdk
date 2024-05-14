@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class topicStatisticsRecords extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -16,6 +18,8 @@ class topicStatisticsRecords extends Model
     public $dt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -23,6 +27,8 @@ class topicStatisticsRecords extends Model
     public $msgCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -30,6 +36,8 @@ class topicStatisticsRecords extends Model
     public $participantsNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

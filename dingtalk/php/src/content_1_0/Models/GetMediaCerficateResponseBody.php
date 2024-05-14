@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetMediaCerficateResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 378a1a01**********6fa2886313948e
      *
      * @var string
@@ -16,6 +18,8 @@ class GetMediaCerficateResponseBody extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example STS.NTR**********q8LrHkgS7w97
      *
      * @var string
@@ -23,6 +27,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossAccessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DFCXzE5r8x9d4kp**********r1N8eUeh5aU7tM9vVcu
      *
      * @var string
@@ -30,6 +36,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossAccessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example outin-5e342d**********8bfb00163e024c6a
      *
      * @var string
@@ -37,6 +45,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossBucketName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://oss-cn-*******.aliyuncs.com
      *
      * @var string
@@ -44,6 +54,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossEndpoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3000
      *
      * @var string
@@ -51,6 +63,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossExpiration;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sv/1c****53-17a*****202/1c****53-17a*****02.mp4
      *
      * @var string
@@ -58,6 +72,8 @@ class GetMediaCerficateResponseBody extends Model
     public $ossFileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CAIS0AR1q6Ft5B2yfSjIr5**********+au5c1eJqHIdZ+h/2LKS***********oAO8fvvU0m2tY7PsZlrUqFMQZHBaUPJoutc0OoFL4JpfZv8u84YADi5C***********28Wf7waf+AUBXGCTm***********lQCZuW//toJV7b9MRcxClZD5dfrl/LRdjr8lo1xGzUPG2KUzSn3b3BkhlsRYe72Rk8vaHxdaAzRDcgVbmqJcSvJ+jC4C8Ys9gG519XtypvopxbbGT8CNZ5z9A9qp9kM49/izc7P6QH35b4RiNL8/Z7tQNXwhiffobHa9YrfHgmNhlvvDSj43t1ytVOeZcX0akQ5u7ku7ZHP+oLt8jaYvjP3PE3rLpMYLu4T48ZXUSODtDYcZDUHhrEk4RUjXdI6Of8UrWSQC7Wsr217otg7Fyyk3s8MaHAkWLX7SB2DwEB4c4aEokVW4RxnezW6UBaRBpbld7Bq6cV5lOdBRZoK+KzQrJTX9Ez2pLmuD6e/LOs7oDVJ37WZtKyuh4Y49d4U8rVEjPQqiykT0pFgpfTK1RzbPmNLKm9baB25/zW+PdDe0dsVgoIFKOpiGWG3RLNn+ztJ9xbkeE+sKUkaGXr8lsTAIl6t4CVFiIIIZnoVY+u/LstBnLqrPoDHnt5XR/uPugptgRuRo8I6372bTJ42WG5Ub9O/dpxJ3lP0R0WgmydnBDx/Sfu2kKvRhpkRvvZEpPtwzIij/gLZZEiazRmyhefo5XmPXFTQmn8l5pAMmy/60xXudvbE2R0EQDY9YCGoABVx6uDvU/Q1kkRe4S00MofmJkOWVwk8jVgBbmlA6LUJQm70f9nksTLYjJ2HVOFHQO8MrnE2ur/xx5jYWpCHI0Aa4sGCjZShV0NNuT8yqNmGOKUReffWW47gxKv5Hhc6j8cAKUMZivrqCCuQaEqhNnKjDH7NS3PsXXyvhNF1KS6uQ=
      *
      * @var string

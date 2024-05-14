@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SyncProjectEntityRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -27,6 +29,8 @@ class SyncProjectEntityRequest extends Model
     public $entityList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -34,6 +38,8 @@ class SyncProjectEntityRequest extends Model
     public $projectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

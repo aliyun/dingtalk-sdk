@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ManageSingleChatRobotStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingykcdkjnwpcll27gm
      *
      * @var string
@@ -16,6 +18,8 @@ class ManageSingleChatRobotStatusRequest extends Model
     public $robotCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example enable
      *
      * @var string

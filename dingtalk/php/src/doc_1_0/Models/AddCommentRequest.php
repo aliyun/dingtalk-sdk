@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class AddCommentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $commentContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $commentType;
@@ -25,6 +29,8 @@ class AddCommentRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

@@ -23,6 +23,8 @@ class ListEventsInstancesRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cnNTbW1YbxxxxdEgvdlQrQT09
      *
      * @var string

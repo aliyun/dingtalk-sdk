@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateKeyResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 我的内容
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateKeyResultRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 58Y4
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateKeyResultRequest extends Model
     public $objectiveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1006
      *
      * @var string
@@ -44,6 +50,8 @@ class CreateKeyResultRequest extends Model
     public $weight;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 06186238011033616
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendLinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example file_id
      *
      * @var string
@@ -16,6 +18,8 @@ class SendLinkRequest extends Model
     public $dentryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example open_conversation_id
      *
      * @var string
@@ -23,6 +27,8 @@ class SendLinkRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example space_id
      *
      * @var string
@@ -30,6 +36,8 @@ class SendLinkRequest extends Model
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

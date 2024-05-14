@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class ExecuteActivityRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $activityCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $foreignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $foreignName;
@@ -44,6 +50,8 @@ class ExecuteActivityRequest extends Model
     public $properties;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dcd6cb6b-b537-493c-8953-3507700e9c4b
      *
      * @var string

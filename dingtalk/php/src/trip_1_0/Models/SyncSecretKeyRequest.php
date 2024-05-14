@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SyncSecretKeyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ADD
      *
      * @var string
@@ -23,6 +25,8 @@ class SyncSecretKeyRequest extends Model
     public $secretString;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding001
      *
      * @var string

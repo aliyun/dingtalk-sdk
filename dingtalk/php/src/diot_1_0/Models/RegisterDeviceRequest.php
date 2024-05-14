@@ -17,6 +17,8 @@ class RegisterDeviceRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 摄像头1
      *
      * @var string
@@ -24,6 +26,8 @@ class RegisterDeviceRequest extends Model
     public $deviceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -31,6 +35,8 @@ class RegisterDeviceRequest extends Model
     public $deviceStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Camera
      *
      * @var string
@@ -38,6 +44,8 @@ class RegisterDeviceRequest extends Model
     public $deviceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 摄像头
      *
      * @var string
@@ -45,6 +53,8 @@ class RegisterDeviceRequest extends Model
     public $deviceTypeName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 002
      *
      * @var string
@@ -78,6 +88,8 @@ class RegisterDeviceRequest extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CAMERA
      *
      * @var string

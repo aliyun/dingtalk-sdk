@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -16,6 +18,8 @@ class content extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 112121341231
      *
      * @var string

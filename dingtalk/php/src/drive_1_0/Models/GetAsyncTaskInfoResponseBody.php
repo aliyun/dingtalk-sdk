@@ -9,31 +9,45 @@ use AlibabaCloud\Tea\Model;
 class GetAsyncTaskInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $beginTime;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $failed;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $success;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskId;

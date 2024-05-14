@@ -14,6 +14,8 @@ class GetFileInfoResponseBody extends Model
     public $downloadUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileId;

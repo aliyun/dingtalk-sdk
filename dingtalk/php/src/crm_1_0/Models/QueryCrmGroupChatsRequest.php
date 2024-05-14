@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupChatsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -26,6 +28,8 @@ class QueryCrmGroupChatsRequest extends Model
     public $queryDsl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;

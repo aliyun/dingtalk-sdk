@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetNegativeWordCloudRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example KxisoOk
      *
      * @var string

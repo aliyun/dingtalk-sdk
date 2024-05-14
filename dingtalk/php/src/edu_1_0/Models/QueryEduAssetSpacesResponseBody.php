@@ -15,6 +15,8 @@ class QueryEduAssetSpacesResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;

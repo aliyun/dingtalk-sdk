@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListUncheckUsersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,6 +19,8 @@ class ListUncheckUsersResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

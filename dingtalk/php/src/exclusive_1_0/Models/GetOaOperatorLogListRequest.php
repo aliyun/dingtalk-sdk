@@ -14,6 +14,8 @@ class GetOaOperatorLogListRequest extends Model
     public $categoryList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
@@ -24,6 +26,8 @@ class GetOaOperatorLogListRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -31,6 +35,8 @@ class GetOaOperatorLogListRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 50
      *
      * @var int
@@ -38,6 +44,8 @@ class GetOaOperatorLogListRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;

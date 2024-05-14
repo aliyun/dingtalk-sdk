@@ -14,6 +14,8 @@ class QuerySubjectTeachersRequest extends Model
     public $classIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 行政老师A
      *
      * @var string
@@ -21,6 +23,8 @@ class QuerySubjectTeachersRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cn_yuwen
      *
      * @var string

@@ -17,6 +17,8 @@ class data extends Model
     public $avatarMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static.dingtalk.com/media/lADPEj_RiGhUdKjNC9TNC9A_3024_3028.jpg_620x10000q90.jpg
      *
      * @var Stream

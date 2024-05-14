@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryPhysicalClassroomRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $classroomId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

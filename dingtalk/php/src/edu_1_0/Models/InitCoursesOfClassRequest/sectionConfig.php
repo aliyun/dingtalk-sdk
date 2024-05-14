@@ -12,16 +12,22 @@ use AlibabaCloud\Tea\Model;
 class sectionConfig extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var end
      */
     public $end;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
+     * @description This parameter is required.
+     *
      * @var start
      */
     public $start;

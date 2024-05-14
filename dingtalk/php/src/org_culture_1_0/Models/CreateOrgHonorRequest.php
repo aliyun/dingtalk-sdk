@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateOrgHonorRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example $xxxxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateOrgHonorRequest extends Model
     public $avatarFrameMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example #FFFBB4
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateOrgHonorRequest extends Model
     public $defaultBgColor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 客户服务用心，奖励荣誉
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateOrgHonorRequest extends Model
     public $medalDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @xxxxxxx
      *
      * @var string
@@ -37,6 +45,8 @@ class CreateOrgHonorRequest extends Model
     public $medalMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 客户第一
      *
      * @var string
@@ -44,6 +54,8 @@ class CreateOrgHonorRequest extends Model
     public $medalName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12312312
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetRunningTaskListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xaff,afdfaf,fdsfasdf
      *
      * @var string
@@ -21,16 +25,22 @@ class GetRunningTaskListRequest extends Model
     public $processInstanceIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateWorkspaceMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

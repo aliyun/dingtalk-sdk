@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class MasterDataTenantQueyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $entityCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $scopeCode;

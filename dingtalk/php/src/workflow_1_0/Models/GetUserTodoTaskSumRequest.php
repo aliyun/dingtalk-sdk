@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUserTodoTaskSumRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager123
      *
      * @var string

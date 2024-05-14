@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesQueryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 62001E1C5B9XXXX369D316DED25FXXXX
      *
      * @var string

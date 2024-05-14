@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class children extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example TextField
      *
      * @var string
@@ -17,6 +19,8 @@ class children extends Model
     public $componentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var props
      */
     public $props;

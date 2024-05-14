@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ProcessApproveCreateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 25c4c49f-cf3a-4ba1-b321-7defd93b7f89
      *
      * @var string
@@ -17,6 +19,8 @@ class ProcessApproveCreateRequest extends Model
     public $approveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user02
      *
      * @var string
@@ -24,11 +28,15 @@ class ProcessApproveCreateRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var punchParam
      */
     public $punchParam;
 
     /**
+     * @description This parameter is required.
+     *
      * @example shiftGroup
      *
      * @var string
@@ -36,6 +44,8 @@ class ProcessApproveCreateRequest extends Model
     public $subType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 请假
      *
      * @var string
@@ -43,6 +53,8 @@ class ProcessApproveCreateRequest extends Model
     public $tagName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

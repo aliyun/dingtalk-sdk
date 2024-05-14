@@ -24,6 +24,8 @@ class OpenPeriodDTO extends Model
     public $nameEn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $periodId;

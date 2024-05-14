@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HrmPtsServiceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dev  or online
      *
      * @var string
@@ -23,6 +25,8 @@ class HrmPtsServiceRequest extends Model
     public $method;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abd123213
      *
      * @var string
@@ -35,6 +39,8 @@ class HrmPtsServiceRequest extends Model
     public $params;
 
     /**
+     * @description This parameter is required.
+     *
      * @example /user/role/get
      *
      * @var string

@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class groups extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example rolexxx
      *
      * @var string
@@ -35,6 +37,8 @@ class groups extends Model
     public $resourceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;

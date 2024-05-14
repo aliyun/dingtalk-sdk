@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateFinanceMultiCompanyInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example COM_DEFAULT
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateFinanceMultiCompanyInfoRequest extends Model
     public $companyCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉
      *
      * @var string

@@ -15,6 +15,8 @@ class CopyDentryRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example target_folder_id
      *
      * @var string
@@ -22,6 +24,8 @@ class CopyDentryRequest extends Model
     public $targetFolderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example target_space_id
      *
      * @var string
@@ -29,6 +33,8 @@ class CopyDentryRequest extends Model
     public $targetSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

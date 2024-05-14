@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class deviceList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager1,1000,10001
      *
      * @var string
@@ -16,6 +18,8 @@ class deviceList extends Model
     public $collaborators;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class deviceList extends Model
     public $departmentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 生产组1号设备负责生产第一批产品
      *
      * @var string
@@ -30,6 +36,8 @@ class deviceList extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example key_xxxxxxx
      *
      * @var string
@@ -37,6 +45,8 @@ class deviceList extends Model
     public $deviceKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 生产1组1号机
      *
      * @var string
@@ -44,6 +54,8 @@ class deviceList extends Model
     public $deviceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1,1000,10001
      *
      * @var string

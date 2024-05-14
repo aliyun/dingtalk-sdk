@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example BizName1
      *
      * @var string
@@ -35,6 +37,8 @@ class result extends Model
     public $outTenantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example id_123
      *
      * @var string

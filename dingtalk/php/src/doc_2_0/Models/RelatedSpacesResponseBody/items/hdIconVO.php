@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class hdIconVO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example https://img.xxx.yyy
      *
      * @var string
@@ -16,6 +18,8 @@ class hdIconVO extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example url
      *
      * @var string

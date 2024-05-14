@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCheckInSchemaTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example water_mark_checkin
      *
      * @var string
@@ -16,6 +18,8 @@ class GetCheckInSchemaTemplateRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var string
@@ -30,6 +34,8 @@ class GetCheckInSchemaTemplateRequest extends Model
     public $sceneCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manage123
      *
      * @var string

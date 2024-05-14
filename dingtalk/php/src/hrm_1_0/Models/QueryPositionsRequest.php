@@ -33,11 +33,15 @@ class QueryPositionsRequest extends Model
     public $positionName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;

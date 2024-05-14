@@ -82,12 +82,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取部门详情
+     *  *
      * @param string         $departmentId
-     * @param GetDeptRequest $request
-     * @param GetDeptHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetDeptRequest $request      GetDeptRequest
+     * @param GetDeptHeaders $headers      GetDeptHeaders
+     * @param RuntimeOptions $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetDeptResponse
+     * @return GetDeptResponse GetDeptResponse
      */
     public function getDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -126,10 +128,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取部门详情
+     *  *
      * @param string         $departmentId
-     * @param GetDeptRequest $request
+     * @param GetDeptRequest $request      GetDeptRequest
      *
-     * @return GetDeptResponse
+     * @return GetDeptResponse GetDeptResponse
      */
     public function getDept($departmentId, $request)
     {
@@ -140,12 +144,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门信息
+     *  *
      * @param string                 $departmentId
-     * @param GetResidentDeptRequest $request
-     * @param GetResidentDeptHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetResidentDeptRequest $request      GetResidentDeptRequest
+     * @param GetResidentDeptHeaders $headers      GetResidentDeptHeaders
+     * @param RuntimeOptions         $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetResidentDeptResponse
+     * @return GetResidentDeptResponse GetResidentDeptResponse
      */
     public function getResidentDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -181,10 +187,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门信息
+     *  *
      * @param string                 $departmentId
-     * @param GetResidentDeptRequest $request
+     * @param GetResidentDeptRequest $request      GetResidentDeptRequest
      *
-     * @return GetResidentDeptResponse
+     * @return GetResidentDeptResponse GetResidentDeptResponse
      */
     public function getResidentDept($departmentId, $request)
     {
@@ -195,13 +203,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门下某个人的详细信息
+     *  *
      * @param string                     $departmentId
      * @param string                     $userId
-     * @param GetResidentUserInfoRequest $request
-     * @param GetResidentUserInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetResidentUserInfoRequest $request      GetResidentUserInfoRequest
+     * @param GetResidentUserInfoHeaders $headers      GetResidentUserInfoHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetResidentUserInfoResponse
+     * @return GetResidentUserInfoResponse GetResidentUserInfoResponse
      */
     public function getResidentUserInfoWithOptions($departmentId, $userId, $request, $headers, $runtime)
     {
@@ -237,11 +247,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门下某个人的详细信息
+     *  *
      * @param string                     $departmentId
      * @param string                     $userId
-     * @param GetResidentUserInfoRequest $request
+     * @param GetResidentUserInfoRequest $request      GetResidentUserInfoRequest
      *
-     * @return GetResidentUserInfoResponse
+     * @return GetResidentUserInfoResponse GetResidentUserInfoResponse
      */
     public function getResidentUserInfo($departmentId, $userId, $request)
     {
@@ -252,12 +264,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户详情
+     *  *
      * @param string         $userId
-     * @param GetUserRequest $request
-     * @param GetUserHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetUserRequest $request GetUserRequest
+     * @param GetUserHeaders $headers GetUserHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserResponse
+     * @return GetUserResponse GetUserResponse
      */
     public function getUserWithOptions($userId, $request, $headers, $runtime)
     {
@@ -296,10 +310,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询用户详情
+     *  *
      * @param string         $userId
-     * @param GetUserRequest $request
+     * @param GetUserRequest $request GetUserRequest
      *
-     * @return GetUserResponse
+     * @return GetUserResponse GetUserResponse
      */
     public function getUser($userId, $request)
     {
@@ -310,11 +326,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserByUnionIdRequest $request
-     * @param GetUserByUnionIdHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 根据unionId查询用户详情
+     *  *
+     * @param GetUserByUnionIdRequest $request GetUserByUnionIdRequest
+     * @param GetUserByUnionIdHeaders $headers GetUserByUnionIdHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserByUnionIdResponse
+     * @return GetUserByUnionIdResponse GetUserByUnionIdResponse
      */
     public function getUserByUnionIdWithOptions($request, $headers, $runtime)
     {
@@ -356,9 +374,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserByUnionIdRequest $request
+     * @summary 根据unionId查询用户详情
+     *  *
+     * @param GetUserByUnionIdRequest $request GetUserByUnionIdRequest
      *
-     * @return GetUserByUnionIdResponse
+     * @return GetUserByUnionIdResponse GetUserByUnionIdResponse
      */
     public function getUserByUnionId($request)
     {
@@ -369,11 +389,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取对外开放的企业信息
+     *  *
      * @param string                   $subCorpId
-     * @param GetVillageOrgInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetVillageOrgInfoHeaders $headers   GetVillageOrgInfoHeaders
+     * @param RuntimeOptions           $runtime   runtime options for this request RuntimeOptions
      *
-     * @return GetVillageOrgInfoResponse
+     * @return GetVillageOrgInfoResponse GetVillageOrgInfoResponse
      */
     public function getVillageOrgInfoWithOptions($subCorpId, $headers, $runtime)
     {
@@ -403,9 +425,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取对外开放的企业信息
+     *  *
      * @param string $subCorpId
      *
-     * @return GetVillageOrgInfoResponse
+     * @return GetVillageOrgInfoResponse GetVillageOrgInfoResponse
      */
     public function getVillageOrgInfo($subCorpId)
     {
@@ -416,12 +440,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下简略用户列表
+     *  *
      * @param string                     $departmentId
-     * @param ListDeptSimpleUsersRequest $request
-     * @param ListDeptSimpleUsersHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListDeptSimpleUsersRequest $request      ListDeptSimpleUsersRequest
+     * @param ListDeptSimpleUsersHeaders $headers      ListDeptSimpleUsersHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListDeptSimpleUsersResponse
+     * @return ListDeptSimpleUsersResponse ListDeptSimpleUsersResponse
      */
     public function listDeptSimpleUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -472,10 +498,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下简略用户列表
+     *  *
      * @param string                     $departmentId
-     * @param ListDeptSimpleUsersRequest $request
+     * @param ListDeptSimpleUsersRequest $request      ListDeptSimpleUsersRequest
      *
-     * @return ListDeptSimpleUsersResponse
+     * @return ListDeptSimpleUsersResponse ListDeptSimpleUsersResponse
      */
     public function listDeptSimpleUsers($departmentId, $request)
     {
@@ -486,12 +514,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下userid列表
+     *  *
      * @param string                 $departmentId
-     * @param ListDeptUserIdsRequest $request
-     * @param ListDeptUserIdsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ListDeptUserIdsRequest $request      ListDeptUserIdsRequest
+     * @param ListDeptUserIdsHeaders $headers      ListDeptUserIdsHeaders
+     * @param RuntimeOptions         $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListDeptUserIdsResponse
+     * @return ListDeptUserIdsResponse ListDeptUserIdsResponse
      */
     public function listDeptUserIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -527,10 +557,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下userid列表
+     *  *
      * @param string                 $departmentId
-     * @param ListDeptUserIdsRequest $request
+     * @param ListDeptUserIdsRequest $request      ListDeptUserIdsRequest
      *
-     * @return ListDeptUserIdsResponse
+     * @return ListDeptUserIdsResponse ListDeptUserIdsResponse
      */
     public function listDeptUserIds($departmentId, $request)
     {
@@ -541,12 +573,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下user完整信息
+     *  *
      * @param string               $departmentId
-     * @param ListDeptUsersRequest $request
-     * @param ListDeptUsersHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ListDeptUsersRequest $request      ListDeptUsersRequest
+     * @param ListDeptUsersHeaders $headers      ListDeptUsersHeaders
+     * @param RuntimeOptions       $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListDeptUsersResponse
+     * @return ListDeptUsersResponse ListDeptUsersResponse
      */
     public function listDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -597,10 +631,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下user完整信息
+     *  *
      * @param string               $departmentId
-     * @param ListDeptUsersRequest $request
+     * @param ListDeptUsersRequest $request      ListDeptUsersRequest
      *
-     * @return ListDeptUsersResponse
+     * @return ListDeptUsersResponse ListDeptUsersResponse
      */
     public function listDeptUsers($departmentId, $request)
     {
@@ -611,11 +647,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListParentByDeptRequest $request
-     * @param ListParentByDeptHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询部门所有父部门列表
+     *  *
+     * @param ListParentByDeptRequest $request ListParentByDeptRequest
+     * @param ListParentByDeptHeaders $headers ListParentByDeptHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListParentByDeptResponse
+     * @return ListParentByDeptResponse ListParentByDeptResponse
      */
     public function listParentByDeptWithOptions($request, $headers, $runtime)
     {
@@ -654,9 +692,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListParentByDeptRequest $request
+     * @summary 查询部门所有父部门列表
+     *  *
+     * @param ListParentByDeptRequest $request ListParentByDeptRequest
      *
-     * @return ListParentByDeptResponse
+     * @return ListParentByDeptResponse ListParentByDeptResponse
      */
     public function listParentByDept($request)
     {
@@ -667,11 +707,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListParentByUserRequest $request
-     * @param ListParentByUserHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询用户所有父部门列表
+     *  *
+     * @param ListParentByUserRequest $request ListParentByUserRequest
+     * @param ListParentByUserHeaders $headers ListParentByUserHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListParentByUserResponse
+     * @return ListParentByUserResponse ListParentByUserResponse
      */
     public function listParentByUserWithOptions($request, $headers, $runtime)
     {
@@ -710,9 +752,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListParentByUserRequest $request
+     * @summary 查询用户所有父部门列表
+     *  *
+     * @param ListParentByUserRequest $request ListParentByUserRequest
      *
-     * @return ListParentByUserResponse
+     * @return ListParentByUserResponse ListParentByUserResponse
      */
     public function listParentByUser($request)
     {
@@ -723,12 +767,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门下人员信息
+     *  *
      * @param string                       $departmentId
-     * @param ListResidentDeptUsersRequest $request
-     * @param ListResidentDeptUsersHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param ListResidentDeptUsersRequest $request      ListResidentDeptUsersRequest
+     * @param ListResidentDeptUsersHeaders $headers      ListResidentDeptUsersHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListResidentDeptUsersResponse
+     * @return ListResidentDeptUsersResponse ListResidentDeptUsersResponse
      */
     public function listResidentDeptUsersWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -773,10 +819,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取部门下人员信息
+     *  *
      * @param string                       $departmentId
-     * @param ListResidentDeptUsersRequest $request
+     * @param ListResidentDeptUsersRequest $request      ListResidentDeptUsersRequest
      *
-     * @return ListResidentDeptUsersResponse
+     * @return ListResidentDeptUsersResponse ListResidentDeptUsersResponse
      */
     public function listResidentDeptUsers($departmentId, $request)
     {
@@ -787,12 +835,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取子部门列表
+     *  *
      * @param string                      $departmentId
-     * @param ListResidentSubDeptsRequest $request
-     * @param ListResidentSubDeptsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param ListResidentSubDeptsRequest $request      ListResidentSubDeptsRequest
+     * @param ListResidentSubDeptsHeaders $headers      ListResidentSubDeptsHeaders
+     * @param RuntimeOptions              $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListResidentSubDeptsResponse
+     * @return ListResidentSubDeptsResponse ListResidentSubDeptsResponse
      */
     public function listResidentSubDeptsWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -834,10 +884,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 居民通讯录获取子部门列表
+     *  *
      * @param string                      $departmentId
-     * @param ListResidentSubDeptsRequest $request
+     * @param ListResidentSubDeptsRequest $request      ListResidentSubDeptsRequest
      *
-     * @return ListResidentSubDeptsResponse
+     * @return ListResidentSubDeptsResponse ListResidentSubDeptsResponse
      */
     public function listResidentSubDepts($departmentId, $request)
     {
@@ -848,11 +900,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListResidentUserInfosRequest $tmpReq
-     * @param ListResidentUserInfosHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 居民通讯录批量获取用户详细信息
+     *  *
+     * @param ListResidentUserInfosRequest $tmpReq  ListResidentUserInfosRequest
+     * @param ListResidentUserInfosHeaders $headers ListResidentUserInfosHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListResidentUserInfosResponse
+     * @return ListResidentUserInfosResponse ListResidentUserInfosResponse
      */
     public function listResidentUserInfosWithOptions($tmpReq, $headers, $runtime)
     {
@@ -896,9 +950,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListResidentUserInfosRequest $request
+     * @summary 居民通讯录批量获取用户详细信息
+     *  *
+     * @param ListResidentUserInfosRequest $request ListResidentUserInfosRequest
      *
-     * @return ListResidentUserInfosResponse
+     * @return ListResidentUserInfosResponse ListResidentUserInfosResponse
      */
     public function listResidentUserInfos($request)
     {
@@ -909,11 +965,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSimpleUsersByRoleRequest $request
-     * @param ListSimpleUsersByRoleHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 根据角色获取用户列表
+     *  *
+     * @param ListSimpleUsersByRoleRequest $request ListSimpleUsersByRoleRequest
+     * @param ListSimpleUsersByRoleHeaders $headers ListSimpleUsersByRoleHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListSimpleUsersByRoleResponse
+     * @return ListSimpleUsersByRoleResponse ListSimpleUsersByRoleResponse
      */
     public function listSimpleUsersByRoleWithOptions($request, $headers, $runtime)
     {
@@ -958,9 +1016,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSimpleUsersByRoleRequest $request
+     * @summary 根据角色获取用户列表
+     *  *
+     * @param ListSimpleUsersByRoleRequest $request ListSimpleUsersByRoleRequest
      *
-     * @return ListSimpleUsersByRoleResponse
+     * @return ListSimpleUsersByRoleResponse ListSimpleUsersByRoleResponse
      */
     public function listSimpleUsersByRole($request)
     {
@@ -971,11 +1031,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSubCorpsRequest $request
-     * @param ListSubCorpsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取下级指定区域层级组织
+     *  *
+     * @param ListSubCorpsRequest $request ListSubCorpsRequest
+     * @param ListSubCorpsHeaders $headers ListSubCorpsHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListSubCorpsResponse
+     * @return ListSubCorpsResponse ListSubCorpsResponse
      */
     public function listSubCorpsWithOptions($request, $headers, $runtime)
     {
@@ -1017,9 +1079,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSubCorpsRequest $request
+     * @summary 获取下级指定区域层级组织
+     *  *
+     * @param ListSubCorpsRequest $request ListSubCorpsRequest
      *
-     * @return ListSubCorpsResponse
+     * @return ListSubCorpsResponse ListSubCorpsResponse
      */
     public function listSubCorps($request)
     {
@@ -1030,12 +1094,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询子部门列表
+     *  *
      * @param string             $departmentId
-     * @param ListSubDeptRequest $request
-     * @param ListSubDeptHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param ListSubDeptRequest $request      ListSubDeptRequest
+     * @param ListSubDeptHeaders $headers      ListSubDeptHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListSubDeptResponse
+     * @return ListSubDeptResponse ListSubDeptResponse
      */
     public function listSubDeptWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -1074,10 +1140,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询子部门列表
+     *  *
      * @param string             $departmentId
-     * @param ListSubDeptRequest $request
+     * @param ListSubDeptRequest $request      ListSubDeptRequest
      *
-     * @return ListSubDeptResponse
+     * @return ListSubDeptResponse ListSubDeptResponse
      */
     public function listSubDept($departmentId, $request)
     {
@@ -1088,12 +1156,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
+     *  *
      * @param string                $departmentId
-     * @param ListSubDeptIdsRequest $request
-     * @param ListSubDeptIdsHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param ListSubDeptIdsRequest $request      ListSubDeptIdsRequest
+     * @param ListSubDeptIdsHeaders $headers      ListSubDeptIdsHeaders
+     * @param RuntimeOptions        $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ListSubDeptIdsResponse
+     * @return ListSubDeptIdsResponse ListSubDeptIdsResponse
      */
     public function listSubDeptIdsWithOptions($departmentId, $request, $headers, $runtime)
     {
@@ -1129,10 +1199,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
+     *  *
      * @param string                $departmentId
-     * @param ListSubDeptIdsRequest $request
+     * @param ListSubDeptIdsRequest $request      ListSubDeptIdsRequest
      *
-     * @return ListSubDeptIdsResponse
+     * @return ListSubDeptIdsResponse ListSubDeptIdsResponse
      */
     public function listSubDeptIds($departmentId, $request)
     {

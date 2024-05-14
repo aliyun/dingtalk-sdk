@@ -32,6 +32,8 @@ class krList extends Model
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5w9f
      *
      * @var Stream

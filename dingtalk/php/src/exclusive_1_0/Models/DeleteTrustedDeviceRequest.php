@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteTrustedDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -16,6 +18,8 @@ class DeleteTrustedDeviceRequest extends Model
     public $kickOff;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 88:92:5a:1f:e8:24
      *
      * @var string
@@ -23,6 +27,8 @@ class DeleteTrustedDeviceRequest extends Model
     public $macAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0119194439361061403
      *
      * @var string

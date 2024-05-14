@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListRelatedSpaceTeamsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abcd
      *
      * @var string

@@ -16,6 +16,8 @@ class AddFileRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三的简历
      *
      * @var string
@@ -23,6 +25,8 @@ class AddFileRequest extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

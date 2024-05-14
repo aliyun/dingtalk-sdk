@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DocAppendTextRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example text
      *
      * @var string
@@ -16,6 +18,8 @@ class DocAppendTextRequest extends Model
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

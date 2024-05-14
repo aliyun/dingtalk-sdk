@@ -17,6 +17,8 @@ class UpdateApplicationRegFormRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"key":"value"}
      *
      * @var string
@@ -24,6 +26,8 @@ class UpdateApplicationRegFormRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var dingPanFile
      */
     public $dingPanFile;

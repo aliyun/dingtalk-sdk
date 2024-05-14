@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateRelationDatasRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager021a
      *
      * @var string
@@ -17,11 +19,15 @@ class BatchUpdateRelationDatasRequest extends Model
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var relationList[]
      */
     public $relationList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example crm_customer
      *
      * @var string

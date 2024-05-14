@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RecallHonorRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example suyfsdjfu
      *
      * @var string

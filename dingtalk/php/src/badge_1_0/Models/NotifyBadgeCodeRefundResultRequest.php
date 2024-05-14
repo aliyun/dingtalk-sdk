@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class NotifyBadgeCodeRefundResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string
@@ -17,6 +19,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-11 11:11:11
      *
      * @var string
@@ -24,11 +28,15 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $gmtRefund;
 
     /**
+     * @description This parameter is required.
+     *
      * @var payChannelDetailList[]
      */
     public $payChannelDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example payCode
      *
      * @var string
@@ -36,6 +44,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $payCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -43,6 +53,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $refundAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example refundOrderNo
      *
      * @var string
@@ -50,6 +62,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $refundOrderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.00
      *
      * @var string
@@ -57,6 +71,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $refundPromotionAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 晚餐退款
      *
      * @var string
@@ -64,6 +80,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example tradeNo
      *
      * @var string
@@ -71,6 +89,8 @@ class NotifyBadgeCodeRefundResultRequest extends Model
     public $tradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example userId
      *
      * @var string

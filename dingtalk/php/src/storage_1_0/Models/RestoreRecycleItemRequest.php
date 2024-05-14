@@ -15,6 +15,8 @@ class RestoreRecycleItemRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

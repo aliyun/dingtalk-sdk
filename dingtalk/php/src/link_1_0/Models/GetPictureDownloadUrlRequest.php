@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetPictureDownloadUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
      *
      * @var string
@@ -16,6 +18,8 @@ class GetPictureDownloadUrlRequest extends Model
     public $downloadCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sid001234
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryMemoryLearningTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $agentCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $learningCode;

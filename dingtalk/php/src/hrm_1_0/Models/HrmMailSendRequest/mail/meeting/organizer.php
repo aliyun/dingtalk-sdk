@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class organizer extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abc@aaa.com
      *
      * @var string
@@ -16,6 +18,8 @@ class organizer extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 系统
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class NlpWordDistinguishResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $requestId;

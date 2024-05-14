@@ -16,6 +16,8 @@ class OrgGroupSendRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sampleText
      *
      * @var string
@@ -23,6 +25,8 @@ class OrgGroupSendRequest extends Model
     public $msgKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"content":"今天吃肘子"}
      *
      * @var string

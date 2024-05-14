@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOTORequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sampleMarkdown
      *
      * @var string
@@ -16,6 +18,8 @@ class BatchSendOTORequest extends Model
     public $msgKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"text": "hello dafu","title": "hello title"}
      *
      * @var string
@@ -23,6 +27,8 @@ class BatchSendOTORequest extends Model
     public $msgParam;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxx
      *
      * @var string
@@ -30,6 +36,8 @@ class BatchSendOTORequest extends Model
     public $robotCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

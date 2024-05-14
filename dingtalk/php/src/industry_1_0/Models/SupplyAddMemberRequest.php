@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -16,6 +18,8 @@ class SupplyAddMemberRequest extends Model
     public $isPartnerManager;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 187xxxx0001
      *
      * @var string
@@ -23,6 +27,8 @@ class SupplyAddMemberRequest extends Model
     public $memberMobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 李白
      *
      * @var string
@@ -44,6 +50,8 @@ class SupplyAddMemberRequest extends Model
     public $memberWorkNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var int

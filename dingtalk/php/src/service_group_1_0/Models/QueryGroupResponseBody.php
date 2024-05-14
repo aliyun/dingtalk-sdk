@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 234
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryGroupResponseBody extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉专属服务群
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryGroupResponseBody extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://qr.dingtalk.com/xxxxxxx
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryGroupResponseBody extends Model
     public $groupUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxx==
      *
      * @var string
@@ -37,6 +45,8 @@ class QueryGroupResponseBody extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xjfjdsiw
      *
      * @var string
@@ -44,6 +54,8 @@ class QueryGroupResponseBody extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xkjhfker
      *
      * @var string
@@ -51,6 +63,8 @@ class QueryGroupResponseBody extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example jikwrjcowa
      *
      * @var string
@@ -58,6 +72,8 @@ class QueryGroupResponseBody extends Model
     public $robotCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 服务小钉
      *
      * @var string

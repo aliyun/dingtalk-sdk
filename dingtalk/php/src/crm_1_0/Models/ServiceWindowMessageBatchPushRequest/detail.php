@@ -15,11 +15,15 @@ class detail extends Model
     public $bizRequestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var messageBody
      */
     public $messageBody;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $msgType;
@@ -30,11 +34,15 @@ class detail extends Model
     public $sendToAll;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uuid;

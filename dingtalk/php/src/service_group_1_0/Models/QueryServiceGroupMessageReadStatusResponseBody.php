@@ -15,6 +15,8 @@ class QueryServiceGroupMessageReadStatusResponseBody extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;

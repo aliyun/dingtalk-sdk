@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class CreateAclsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $privilege;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $sendMsg;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetYongYouOpenApiTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 50411123322
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CohostsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -17,6 +19,8 @@ class CohostsRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userList[]
      */
     public $userList;

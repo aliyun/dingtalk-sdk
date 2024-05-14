@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTbProjectGrayRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example project_teambition
      *
      * @var string

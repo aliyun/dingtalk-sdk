@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class MasterDataDeleteResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $allSuccess;

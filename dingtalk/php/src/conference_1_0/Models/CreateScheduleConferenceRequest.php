@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateScheduleConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateScheduleConferenceRequest extends Model
     public $creatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1687928400000
      *
      * @var int
@@ -23,6 +27,8 @@ class CreateScheduleConferenceRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1687924800000
      *
      * @var int
@@ -30,6 +36,8 @@ class CreateScheduleConferenceRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 预约会议标题
      *
      * @var string

@@ -37,6 +37,8 @@ class UpdateLiveFeedRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1206186351746728
      *
      * @var string

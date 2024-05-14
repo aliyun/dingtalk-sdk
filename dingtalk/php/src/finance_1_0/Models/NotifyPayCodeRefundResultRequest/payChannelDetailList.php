@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class payChannelDetailList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -17,11 +19,15 @@ class payChannelDetailList extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fundToolDetailList[]
      */
     public $fundToolDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -29,6 +35,8 @@ class payChannelDetailList extends Model
     public $payChannelName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210531123456
      *
      * @var string
@@ -36,6 +44,8 @@ class payChannelDetailList extends Model
     public $payChannelOrderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021053112345678
      *
      * @var string
@@ -43,6 +53,8 @@ class payChannelDetailList extends Model
     public $payChannelRefundOrderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -50,6 +62,8 @@ class payChannelDetailList extends Model
     public $payChannelType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.00
      *
      * @var string

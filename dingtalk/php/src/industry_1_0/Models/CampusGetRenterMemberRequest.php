@@ -16,6 +16,8 @@ class CampusGetRenterMemberRequest extends Model
     public $renterId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1iasndkjas8
      *
      * @var string

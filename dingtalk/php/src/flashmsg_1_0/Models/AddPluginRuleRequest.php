@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddPluginRuleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example group_chat
      *
      * @var string
@@ -17,6 +19,8 @@ class AddPluginRuleRequest extends Model
     public $chatType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -10050
      *
      * @var string
@@ -24,6 +28,8 @@ class AddPluginRuleRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example group
      *
      * @var string
@@ -31,11 +37,15 @@ class AddPluginRuleRequest extends Model
     public $itemType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var rules[]
      */
     public $rules;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0847493113802787
      *
      * @var string

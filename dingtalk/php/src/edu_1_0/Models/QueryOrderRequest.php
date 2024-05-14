@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123400
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryOrderRequest extends Model
     public $alipayAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryOrderRequest extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CM00001
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryOrderRequest extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8
      *
      * @var string

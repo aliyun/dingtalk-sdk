@@ -15,6 +15,8 @@ class GetNodeByUrlRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example node_url
      *
      * @var string
@@ -22,6 +24,8 @@ class GetNodeByUrlRequest extends Model
     public $url;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUploadUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
@@ -16,6 +18,8 @@ class GetUploadUrlRequest extends Model
     public $bizObjectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Image
      *
      * @var string
@@ -23,6 +27,8 @@ class GetUploadUrlRequest extends Model
     public $fieldName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -30,6 +36,8 @@ class GetUploadUrlRequest extends Model
     public $isOverwrite;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string

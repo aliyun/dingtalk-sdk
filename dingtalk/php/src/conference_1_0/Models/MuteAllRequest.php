@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class MuteAllRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example mute
      *
      * @var string

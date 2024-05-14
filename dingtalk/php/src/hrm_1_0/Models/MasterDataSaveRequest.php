@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class MasterDataSaveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var body[]
      */
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var int

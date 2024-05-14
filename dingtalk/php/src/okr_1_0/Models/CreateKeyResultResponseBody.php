@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class CreateKeyResultResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateAutoIssuePointRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -16,6 +18,8 @@ class UpdateAutoIssuePointRequest extends Model
     public $pointAutoNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class UpdateAutoIssuePointRequest extends Model
     public $pointAutoState;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15
      *
      * @var int
@@ -30,6 +36,8 @@ class UpdateAutoIssuePointRequest extends Model
     public $pointAutoTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11185568-1380470824
      *
      * @var string

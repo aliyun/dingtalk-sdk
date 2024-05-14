@@ -14,6 +14,8 @@ class QueryAllSubjectsFromClassScheduleRequest extends Model
     public $classIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 34524523543
      *
      * @var string

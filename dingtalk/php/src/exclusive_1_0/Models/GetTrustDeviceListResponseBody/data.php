@@ -47,6 +47,8 @@ class data extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65224157501039784
      *
      * @var string

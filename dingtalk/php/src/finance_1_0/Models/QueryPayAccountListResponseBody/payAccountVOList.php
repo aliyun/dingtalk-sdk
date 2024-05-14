@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class payAccountVOList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example B
      *
      * @var string
@@ -16,6 +18,8 @@ class payAccountVOList extends Model
     public $accountClass;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210912001
      *
      * @var string
@@ -23,6 +27,8 @@ class payAccountVOList extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example test
      *
      * @var string
@@ -30,6 +36,8 @@ class payAccountVOList extends Model
     public $accountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 139****1
      *
      * @var string
@@ -37,6 +45,8 @@ class payAccountVOList extends Model
     public $accountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 备注
      *
      * @var string
@@ -44,6 +54,8 @@ class payAccountVOList extends Model
     public $accountRemark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string

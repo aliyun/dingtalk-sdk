@@ -14,21 +14,29 @@ class CreateWorkspaceDocResponseBody extends Model
     public $dentryUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $docKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nodeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workspaceId;

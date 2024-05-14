@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateFollowRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var instanceList[]
      */
     public $instanceList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager021a
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class DeductionPointBatchRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -17,6 +19,8 @@ class DeductionPointBatchRequest extends Model
     public $deductionAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 表现不佳，以此惩罚。
      *
      * @var string
@@ -31,11 +35,15 @@ class DeductionPointBatchRequest extends Model
     public $sendOrgCultureInform;
 
     /**
+     * @description This parameter is required.
+     *
      * @var targetUserList[]
      */
     public $targetUserList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 01274411491620908910
      *
      * @var string

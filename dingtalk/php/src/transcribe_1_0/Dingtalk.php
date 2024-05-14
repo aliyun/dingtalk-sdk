@@ -36,11 +36,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取闪记任务的概要信息
+     *  *
      * @param string                    $taskUuid
-     * @param GetTranscribeBriefHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetTranscribeBriefHeaders $headers  GetTranscribeBriefHeaders
+     * @param RuntimeOptions            $runtime  runtime options for this request RuntimeOptions
      *
-     * @return GetTranscribeBriefResponse
+     * @return GetTranscribeBriefResponse GetTranscribeBriefResponse
      */
     public function getTranscribeBriefWithOptions($taskUuid, $headers, $runtime)
     {
@@ -70,9 +72,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取闪记任务的概要信息
+     *  *
      * @param string $taskUuid
      *
-     * @return GetTranscribeBriefResponse
+     * @return GetTranscribeBriefResponse GetTranscribeBriefResponse
      */
     public function getTranscribeBrief($taskUuid)
     {
@@ -83,12 +87,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 移除指定用户对闪记任务的权限
+     *  *
      * @param string                  $taskUuid
-     * @param RemovePermissionRequest $request
-     * @param RemovePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param RemovePermissionRequest $request  RemovePermissionRequest
+     * @param RemovePermissionHeaders $headers  RemovePermissionHeaders
+     * @param RuntimeOptions          $runtime  runtime options for this request RuntimeOptions
      *
-     * @return RemovePermissionResponse
+     * @return RemovePermissionResponse RemovePermissionResponse
      */
     public function removePermissionWithOptions($taskUuid, $request, $headers, $runtime)
     {
@@ -133,10 +139,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 移除指定用户对闪记任务的权限
+     *  *
      * @param string                  $taskUuid
-     * @param RemovePermissionRequest $request
+     * @param RemovePermissionRequest $request  RemovePermissionRequest
      *
-     * @return RemovePermissionResponse
+     * @return RemovePermissionResponse RemovePermissionResponse
      */
     public function removePermission($taskUuid, $request)
     {
@@ -147,12 +155,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 针对指定的闪记，修改或者授予指定用户权限
+     *  *
      * @param string                          $taskUuid
-     * @param UpdatePermissionForUsersRequest $request
-     * @param UpdatePermissionForUsersHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param UpdatePermissionForUsersRequest $request  UpdatePermissionForUsersRequest
+     * @param UpdatePermissionForUsersHeaders $headers  UpdatePermissionForUsersHeaders
+     * @param RuntimeOptions                  $runtime  runtime options for this request RuntimeOptions
      *
-     * @return UpdatePermissionForUsersResponse
+     * @return UpdatePermissionForUsersResponse UpdatePermissionForUsersResponse
      */
     public function updatePermissionForUsersWithOptions($taskUuid, $request, $headers, $runtime)
     {
@@ -199,10 +209,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 针对指定的闪记，修改或者授予指定用户权限
+     *  *
      * @param string                          $taskUuid
-     * @param UpdatePermissionForUsersRequest $request
+     * @param UpdatePermissionForUsersRequest $request  UpdatePermissionForUsersRequest
      *
-     * @return UpdatePermissionForUsersResponse
+     * @return UpdatePermissionForUsersResponse UpdatePermissionForUsersResponse
      */
     public function updatePermissionForUsers($taskUuid, $request)
     {

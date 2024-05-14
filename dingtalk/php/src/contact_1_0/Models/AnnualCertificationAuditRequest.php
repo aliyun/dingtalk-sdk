@@ -24,6 +24,8 @@ class AnnualCertificationAuditRequest extends Model
     public $applicationLetter;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $authStatus;
@@ -64,6 +66,8 @@ class AnnualCertificationAuditRequest extends Model
     public $licenseUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderId;

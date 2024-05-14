@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example channel_abcd
      *
      * @var string
@@ -29,6 +31,8 @@ class CreateTrustGroupRequest extends Model
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试群名称XXX
      *
      * @var string
@@ -48,6 +52,8 @@ class CreateTrustGroupRequest extends Model
     public $systemMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1657099913071
      *
      * @var string

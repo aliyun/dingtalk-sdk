@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class ChannelOrdersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $itemCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $itemName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $orderCreateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderId;
@@ -34,6 +42,8 @@ class ChannelOrdersRequest extends Model
     public $payFee;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $quantity;

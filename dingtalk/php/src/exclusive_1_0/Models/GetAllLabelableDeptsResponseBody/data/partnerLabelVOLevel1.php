@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class partnerLabelVOLevel1 extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var int
@@ -16,6 +18,8 @@ class partnerLabelVOLevel1 extends Model
     public $labelId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 一级供应商
      *
      * @var string
@@ -23,6 +27,8 @@ class partnerLabelVOLevel1 extends Model
     public $labelName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

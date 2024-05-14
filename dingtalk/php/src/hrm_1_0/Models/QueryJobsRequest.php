@@ -16,6 +16,8 @@ class QueryJobsRequest extends Model
     public $jobName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20，最大为100
      *
      * @var int
@@ -23,6 +25,8 @@ class QueryJobsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

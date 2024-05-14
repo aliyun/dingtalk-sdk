@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSignOutListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -19,6 +21,8 @@ class GetSignOutListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sign_out
      *
      * @var string

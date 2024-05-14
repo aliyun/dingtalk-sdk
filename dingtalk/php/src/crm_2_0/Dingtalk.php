@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRelationUkSettingRequest $request
-     * @param GetRelationUkSettingHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取关系数据查重规则
+     *  *
+     * @param GetRelationUkSettingRequest $request GetRelationUkSettingRequest
+     * @param GetRelationUkSettingHeaders $headers GetRelationUkSettingHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRelationUkSettingResponse
+     * @return GetRelationUkSettingResponse GetRelationUkSettingResponse
      */
     public function getRelationUkSettingWithOptions($request, $headers, $runtime)
     {
@@ -71,9 +73,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRelationUkSettingRequest $request
+     * @summary 获取关系数据查重规则
+     *  *
+     * @param GetRelationUkSettingRequest $request GetRelationUkSettingRequest
      *
-     * @return GetRelationUkSettingResponse
+     * @return GetRelationUkSettingResponse GetRelationUkSettingResponse
      */
     public function getRelationUkSetting($request)
     {

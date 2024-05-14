@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class relationMetaDTOList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 企业客户表
      *
      * @var string
@@ -22,21 +26,29 @@ class relationMetaDTOList extends Model
     public $desc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var items[]
      */
     public $items;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 企业客户
      *
      * @var string
@@ -44,16 +56,22 @@ class relationMetaDTOList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationMetaCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationMetaStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example crm_customer
      *
      * @var string

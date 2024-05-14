@@ -16,6 +16,8 @@ class GetSpaceWithDownloadAuthRequest extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string
@@ -28,6 +30,8 @@ class GetSpaceWithDownloadAuthRequest extends Model
     public $fileIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a17444d1-075b-4a4d-xxxx
      *
      * @var string
@@ -35,6 +39,8 @@ class GetSpaceWithDownloadAuthRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string

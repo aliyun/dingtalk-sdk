@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SetColumnsVisibilityRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example column
      *
      * @var int
@@ -16,6 +18,8 @@ class SetColumnsVisibilityRequest extends Model
     public $column;
 
     /**
+     * @description This parameter is required.
+     *
      * @example column_count
      *
      * @var int
@@ -23,6 +27,8 @@ class SetColumnsVisibilityRequest extends Model
     public $columnCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example visible
      *
      * @var string
@@ -30,6 +36,8 @@ class SetColumnsVisibilityRequest extends Model
     public $visibility;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

@@ -29,11 +29,15 @@ class triggerInfo extends Model
     public $inputSchema;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorTriggerId;

@@ -70,11 +70,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseHPackageRequest $request
-     * @param CloseHPackageHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 关闭企业自建应用H5离线包
+     *  *
+     * @param CloseHPackageRequest $request CloseHPackageRequest
+     * @param CloseHPackageHeaders $headers CloseHPackageHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CloseHPackageResponse
+     * @return CloseHPackageResponse CloseHPackageResponse
      */
     public function closeHPackageWithOptions($request, $headers, $runtime)
     {
@@ -110,9 +112,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseHPackageRequest $request
+     * @summary 关闭企业自建应用H5离线包
+     *  *
+     * @param CloseHPackageRequest $request CloseHPackageRequest
      *
-     * @return CloseHPackageResponse
+     * @return CloseHPackageResponse CloseHPackageResponse
      */
     public function closeHPackage($request)
     {
@@ -123,11 +127,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadTokenRequest $request
-     * @param GetUploadTokenHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取离线包上传凭证
+     *  *
+     * @param GetUploadTokenRequest $request GetUploadTokenRequest
+     * @param GetUploadTokenHeaders $headers GetUploadTokenHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUploadTokenResponse
+     * @return GetUploadTokenResponse GetUploadTokenResponse
      */
     public function getUploadTokenWithOptions($request, $headers, $runtime)
     {
@@ -163,9 +169,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadTokenRequest $request
+     * @summary 获取离线包上传凭证
+     *  *
+     * @param GetUploadTokenRequest $request GetUploadTokenRequest
      *
-     * @return GetUploadTokenResponse
+     * @return GetUploadTokenResponse GetUploadTokenResponse
      */
     public function getUploadToken($request)
     {
@@ -176,11 +184,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPackageListGetRequest $request
-     * @param HPackageListGetHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取H5离线包版本列表
+     *  *
+     * @param HPackageListGetRequest $request HPackageListGetRequest
+     * @param HPackageListGetHeaders $headers HPackageListGetHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return HPackageListGetResponse
+     * @return HPackageListGetResponse HPackageListGetResponse
      */
     public function hPackageListGetWithOptions($request, $headers, $runtime)
     {
@@ -222,9 +232,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPackageListGetRequest $request
+     * @summary 获取H5离线包版本列表
+     *  *
+     * @param HPackageListGetRequest $request HPackageListGetRequest
      *
-     * @return HPackageListGetResponse
+     * @return HPackageListGetResponse HPackageListGetResponse
      */
     public function hPackageListGet($request)
     {
@@ -235,11 +247,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPublishPackageRequest $request
-     * @param HPublishPackageHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 发布离线包
+     *  *
+     * @param HPublishPackageRequest $request HPublishPackageRequest
+     * @param HPublishPackageHeaders $headers HPublishPackageHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return HPublishPackageResponse
+     * @return HPublishPackageResponse HPublishPackageResponse
      */
     public function hPublishPackageWithOptions($request, $headers, $runtime)
     {
@@ -278,9 +292,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPublishPackageRequest $request
+     * @summary 发布离线包
+     *  *
+     * @param HPublishPackageRequest $request HPublishPackageRequest
      *
-     * @return HPublishPackageResponse
+     * @return HPublishPackageResponse HPublishPackageResponse
      */
     public function hPublishPackage($request)
     {
@@ -291,11 +307,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageRequest $request
-     * @param HUploadPackageHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 上传H5离线包
+     *  *
+     * @param HUploadPackageRequest $request HUploadPackageRequest
+     * @param HUploadPackageHeaders $headers HUploadPackageHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return HUploadPackageResponse
+     * @return HUploadPackageResponse HUploadPackageResponse
      */
     public function hUploadPackageWithOptions($request, $headers, $runtime)
     {
@@ -334,9 +352,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageRequest $request
+     * @summary 上传H5离线包
+     *  *
+     * @param HUploadPackageRequest $request HUploadPackageRequest
      *
-     * @return HUploadPackageResponse
+     * @return HUploadPackageResponse HUploadPackageResponse
      */
     public function hUploadPackage($request)
     {
@@ -347,11 +367,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageStatusRequest $request
-     * @param HUploadPackageStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 上传H5离线包进度
+     *  *
+     * @param HUploadPackageStatusRequest $request HUploadPackageStatusRequest
+     * @param HUploadPackageStatusHeaders $headers HUploadPackageStatusHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return HUploadPackageStatusResponse
+     * @return HUploadPackageStatusResponse HUploadPackageStatusResponse
      */
     public function hUploadPackageStatusWithOptions($request, $headers, $runtime)
     {
@@ -390,9 +412,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageStatusRequest $request
+     * @summary 上传H5离线包进度
+     *  *
+     * @param HUploadPackageStatusRequest $request HUploadPackageStatusRequest
      *
-     * @return HUploadPackageStatusResponse
+     * @return HUploadPackageStatusResponse HUploadPackageStatusResponse
      */
     public function hUploadPackageStatus($request)
     {
@@ -403,11 +427,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OpenMicroAppPackageRequest $request
-     * @param OpenMicroAppPackageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 开启企业自建应用H5离线包
+     *  *
+     * @param OpenMicroAppPackageRequest $request OpenMicroAppPackageRequest
+     * @param OpenMicroAppPackageHeaders $headers OpenMicroAppPackageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return OpenMicroAppPackageResponse
+     * @return OpenMicroAppPackageResponse OpenMicroAppPackageResponse
      */
     public function openMicroAppPackageWithOptions($request, $headers, $runtime)
     {
@@ -443,9 +469,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OpenMicroAppPackageRequest $request
+     * @summary 开启企业自建应用H5离线包
+     *  *
+     * @param OpenMicroAppPackageRequest $request OpenMicroAppPackageRequest
      *
-     * @return OpenMicroAppPackageResponse
+     * @return OpenMicroAppPackageResponse OpenMicroAppPackageResponse
      */
     public function openMicroAppPackage($request)
     {
@@ -456,11 +484,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayDeployRequest $request
-     * @param ReleaseGrayDeployHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 发布离线包到灰度
+     *  *
+     * @param ReleaseGrayDeployRequest $request ReleaseGrayDeployRequest
+     * @param ReleaseGrayDeployHeaders $headers ReleaseGrayDeployHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayDeployResponse
+     * @return ReleaseGrayDeployResponse ReleaseGrayDeployResponse
      */
     public function releaseGrayDeployWithOptions($request, $headers, $runtime)
     {
@@ -499,9 +529,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayDeployRequest $request
+     * @summary 发布离线包到灰度
+     *  *
+     * @param ReleaseGrayDeployRequest $request ReleaseGrayDeployRequest
      *
-     * @return ReleaseGrayDeployResponse
+     * @return ReleaseGrayDeployResponse ReleaseGrayDeployResponse
      */
     public function releaseGrayDeploy($request)
     {
@@ -512,11 +544,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayExitRequest $request
-     * @param ReleaseGrayExitHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 退出灰度
+     *  *
+     * @param ReleaseGrayExitRequest $request ReleaseGrayExitRequest
+     * @param ReleaseGrayExitHeaders $headers ReleaseGrayExitHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayExitResponse
+     * @return ReleaseGrayExitResponse ReleaseGrayExitResponse
      */
     public function releaseGrayExitWithOptions($request, $headers, $runtime)
     {
@@ -555,9 +589,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayExitRequest $request
+     * @summary 退出灰度
+     *  *
+     * @param ReleaseGrayExitRequest $request ReleaseGrayExitRequest
      *
-     * @return ReleaseGrayExitResponse
+     * @return ReleaseGrayExitResponse ReleaseGrayExitResponse
      */
     public function releaseGrayExit($request)
     {
@@ -568,11 +604,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgGetRequest $request
-     * @param ReleaseGrayOrgGetHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取企业灰度白名单
+     *  *
+     * @param ReleaseGrayOrgGetRequest $request ReleaseGrayOrgGetRequest
+     * @param ReleaseGrayOrgGetHeaders $headers ReleaseGrayOrgGetHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayOrgGetResponse
+     * @return ReleaseGrayOrgGetResponse ReleaseGrayOrgGetResponse
      */
     public function releaseGrayOrgGetWithOptions($request, $headers, $runtime)
     {
@@ -611,9 +649,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgGetRequest $request
+     * @summary 获取企业灰度白名单
+     *  *
+     * @param ReleaseGrayOrgGetRequest $request ReleaseGrayOrgGetRequest
      *
-     * @return ReleaseGrayOrgGetResponse
+     * @return ReleaseGrayOrgGetResponse ReleaseGrayOrgGetResponse
      */
     public function releaseGrayOrgGet($request)
     {
@@ -624,11 +664,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgSetRequest $request
-     * @param ReleaseGrayOrgSetHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 设置企业灰度白名单
+     *  *
+     * @param ReleaseGrayOrgSetRequest $request ReleaseGrayOrgSetRequest
+     * @param ReleaseGrayOrgSetHeaders $headers ReleaseGrayOrgSetHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayOrgSetResponse
+     * @return ReleaseGrayOrgSetResponse ReleaseGrayOrgSetResponse
      */
     public function releaseGrayOrgSetWithOptions($request, $headers, $runtime)
     {
@@ -670,9 +712,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgSetRequest $request
+     * @summary 设置企业灰度白名单
+     *  *
+     * @param ReleaseGrayOrgSetRequest $request ReleaseGrayOrgSetRequest
      *
-     * @return ReleaseGrayOrgSetResponse
+     * @return ReleaseGrayOrgSetResponse ReleaseGrayOrgSetResponse
      */
     public function releaseGrayOrgSet($request)
     {
@@ -683,11 +727,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentGetRequest $request
-     * @param ReleaseGrayPercentGetHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取灰度离线包百分比值
+     *  *
+     * @param ReleaseGrayPercentGetRequest $request ReleaseGrayPercentGetRequest
+     * @param ReleaseGrayPercentGetHeaders $headers ReleaseGrayPercentGetHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayPercentGetResponse
+     * @return ReleaseGrayPercentGetResponse ReleaseGrayPercentGetResponse
      */
     public function releaseGrayPercentGetWithOptions($request, $headers, $runtime)
     {
@@ -726,9 +772,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentGetRequest $request
+     * @summary 获取灰度离线包百分比值
+     *  *
+     * @param ReleaseGrayPercentGetRequest $request ReleaseGrayPercentGetRequest
      *
-     * @return ReleaseGrayPercentGetResponse
+     * @return ReleaseGrayPercentGetResponse ReleaseGrayPercentGetResponse
      */
     public function releaseGrayPercentGet($request)
     {
@@ -739,11 +787,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentSetRequest $request
-     * @param ReleaseGrayPercentSetHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 设置灰度离线包百分比值
+     *  *
+     * @param ReleaseGrayPercentSetRequest $request ReleaseGrayPercentSetRequest
+     * @param ReleaseGrayPercentSetHeaders $headers ReleaseGrayPercentSetHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayPercentSetResponse
+     * @return ReleaseGrayPercentSetResponse ReleaseGrayPercentSetResponse
      */
     public function releaseGrayPercentSetWithOptions($request, $headers, $runtime)
     {
@@ -785,9 +835,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentSetRequest $request
+     * @summary 设置灰度离线包百分比值
+     *  *
+     * @param ReleaseGrayPercentSetRequest $request ReleaseGrayPercentSetRequest
      *
-     * @return ReleaseGrayPercentSetResponse
+     * @return ReleaseGrayPercentSetResponse ReleaseGrayPercentSetResponse
      */
     public function releaseGrayPercentSet($request)
     {
@@ -798,11 +850,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayUserIdGetRequest $request
-     * @param ReleaseGrayUserIdGetHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取用户灰度名单
+     *  *
+     * @param ReleaseGrayUserIdGetRequest $request ReleaseGrayUserIdGetRequest
+     * @param ReleaseGrayUserIdGetHeaders $headers ReleaseGrayUserIdGetHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReleaseGrayUserIdGetResponse
+     * @return ReleaseGrayUserIdGetResponse ReleaseGrayUserIdGetResponse
      */
     public function releaseGrayUserIdGetWithOptions($request, $headers, $runtime)
     {
@@ -841,9 +895,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayUserIdGetRequest $request
+     * @summary 获取用户灰度名单
+     *  *
+     * @param ReleaseGrayUserIdGetRequest $request ReleaseGrayUserIdGetRequest
      *
-     * @return ReleaseGrayUserIdGetResponse
+     * @return ReleaseGrayUserIdGetResponse ReleaseGrayUserIdGetResponse
      */
     public function releaseGrayUserIdGet($request)
     {

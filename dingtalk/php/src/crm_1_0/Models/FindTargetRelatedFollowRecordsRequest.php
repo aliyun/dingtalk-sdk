@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class FindTargetRelatedFollowRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example customerId
      *
      * @var string
@@ -16,6 +18,8 @@ class FindTargetRelatedFollowRecordsRequest extends Model
     public $followTargetDataId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example customer
      *
      * @var string
@@ -23,6 +27,8 @@ class FindTargetRelatedFollowRecordsRequest extends Model
     public $followTargetType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

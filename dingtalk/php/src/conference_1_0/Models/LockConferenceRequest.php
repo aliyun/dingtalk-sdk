@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LockConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example lock
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetHotelExceedApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -16,6 +18,8 @@ class GetHotelExceedApplyRequest extends Model
     public $applyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string

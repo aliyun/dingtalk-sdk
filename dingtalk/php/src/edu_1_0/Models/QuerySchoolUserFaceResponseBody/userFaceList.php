@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class userFaceList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 200001
      *
      * @var string
@@ -16,6 +18,8 @@ class userFaceList extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小明
      *
      * @var string
@@ -23,6 +27,8 @@ class userFaceList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1有效；0无效
      *
      * @var int
@@ -30,6 +36,8 @@ class userFaceList extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30001
      *
      * @var string

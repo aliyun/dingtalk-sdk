@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSendAndReceiveReportListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1507564800000
      *
      * @var int
@@ -16,6 +18,8 @@ class GetSendAndReceiveReportListRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +27,8 @@ class GetSendAndReceiveReportListRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class GetSendAndReceiveReportListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string
@@ -37,6 +45,8 @@ class GetSendAndReceiveReportListRequest extends Model
     public $operationUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1507564800000
      *
      * @var int

@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupBlackboardRequest $request
-     * @param CreateGroupBlackboardHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 创建群公告
+     *  *
+     * @param CreateGroupBlackboardRequest $request CreateGroupBlackboardRequest
+     * @param CreateGroupBlackboardHeaders $headers CreateGroupBlackboardHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateGroupBlackboardResponse
+     * @return CreateGroupBlackboardResponse CreateGroupBlackboardResponse
      */
     public function createGroupBlackboardWithOptions($request, $headers, $runtime)
     {
@@ -89,9 +91,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupBlackboardRequest $request
+     * @summary 创建群公告
+     *  *
+     * @param CreateGroupBlackboardRequest $request CreateGroupBlackboardRequest
      *
-     * @return CreateGroupBlackboardResponse
+     * @return CreateGroupBlackboardResponse CreateGroupBlackboardResponse
      */
     public function createGroupBlackboard($request)
     {
@@ -102,11 +106,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteGroupBlackboardRequest $request
-     * @param DeleteGroupBlackboardHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 删除群公告
+     *  *
+     * @param DeleteGroupBlackboardRequest $request DeleteGroupBlackboardRequest
+     * @param DeleteGroupBlackboardHeaders $headers DeleteGroupBlackboardHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteGroupBlackboardResponse
+     * @return DeleteGroupBlackboardResponse DeleteGroupBlackboardResponse
      */
     public function deleteGroupBlackboardWithOptions($request, $headers, $runtime)
     {
@@ -148,9 +154,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteGroupBlackboardRequest $request
+     * @summary 删除群公告
+     *  *
+     * @param DeleteGroupBlackboardRequest $request DeleteGroupBlackboardRequest
      *
-     * @return DeleteGroupBlackboardResponse
+     * @return DeleteGroupBlackboardResponse DeleteGroupBlackboardResponse
      */
     public function deleteGroupBlackboard($request)
     {

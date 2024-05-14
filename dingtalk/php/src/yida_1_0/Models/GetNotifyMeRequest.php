@@ -16,6 +16,8 @@ class GetNotifyMeRequest extends Model
     public $appTypes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -86,6 +88,8 @@ class GetNotifyMeRequest extends Model
     public $processCodes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

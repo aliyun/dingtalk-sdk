@@ -46,11 +46,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsAddRequest $request
-     * @param PediaWordsAddHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 企业百科增加当前企业词条信息
+     *  *
+     * @param PediaWordsAddRequest $request PediaWordsAddRequest
+     * @param PediaWordsAddHeaders $headers PediaWordsAddHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsAddResponse
+     * @return PediaWordsAddResponse PediaWordsAddResponse
      */
     public function pediaWordsAddWithOptions($request, $headers, $runtime)
     {
@@ -110,9 +112,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsAddRequest $request
+     * @summary 企业百科增加当前企业词条信息
+     *  *
+     * @param PediaWordsAddRequest $request PediaWordsAddRequest
      *
-     * @return PediaWordsAddResponse
+     * @return PediaWordsAddResponse PediaWordsAddResponse
      */
     public function pediaWordsAdd($request)
     {
@@ -123,11 +127,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsApproveRequest $request
-     * @param PediaWordsApproveHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 企业百科针对待审核词条进行审核
+     *  *
+     * @param PediaWordsApproveRequest $request PediaWordsApproveRequest
+     * @param PediaWordsApproveHeaders $headers PediaWordsApproveHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsApproveResponse
+     * @return PediaWordsApproveResponse PediaWordsApproveResponse
      */
     public function pediaWordsApproveWithOptions($request, $headers, $runtime)
     {
@@ -178,9 +184,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsApproveRequest $request
+     * @summary 企业百科针对待审核词条进行审核
+     *  *
+     * @param PediaWordsApproveRequest $request PediaWordsApproveRequest
      *
-     * @return PediaWordsApproveResponse
+     * @return PediaWordsApproveResponse PediaWordsApproveResponse
      */
     public function pediaWordsApprove($request)
     {
@@ -191,11 +199,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsDeleteRequest $request
-     * @param PediaWordsDeleteHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 企业百科针对uuid删除当前词条
+     *  *
+     * @param PediaWordsDeleteRequest $request PediaWordsDeleteRequest
+     * @param PediaWordsDeleteHeaders $headers PediaWordsDeleteHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsDeleteResponse
+     * @return PediaWordsDeleteResponse PediaWordsDeleteResponse
      */
     public function pediaWordsDeleteWithOptions($request, $headers, $runtime)
     {
@@ -234,9 +244,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsDeleteRequest $request
+     * @summary 企业百科针对uuid删除当前词条
+     *  *
+     * @param PediaWordsDeleteRequest $request PediaWordsDeleteRequest
      *
-     * @return PediaWordsDeleteResponse
+     * @return PediaWordsDeleteResponse PediaWordsDeleteResponse
      */
     public function pediaWordsDelete($request)
     {
@@ -247,11 +259,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsQueryRequest $request
-     * @param PediaWordsQueryHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 根据词条主键ID查询当前词条详情
+     *  *
+     * @param PediaWordsQueryRequest $request PediaWordsQueryRequest
+     * @param PediaWordsQueryHeaders $headers PediaWordsQueryHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsQueryResponse
+     * @return PediaWordsQueryResponse PediaWordsQueryResponse
      */
     public function pediaWordsQueryWithOptions($request, $headers, $runtime)
     {
@@ -290,9 +304,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsQueryRequest $request
+     * @summary 根据词条主键ID查询当前词条详情
+     *  *
+     * @param PediaWordsQueryRequest $request PediaWordsQueryRequest
      *
-     * @return PediaWordsQueryResponse
+     * @return PediaWordsQueryResponse PediaWordsQueryResponse
      */
     public function pediaWordsQuery($request)
     {
@@ -303,11 +319,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsSearchRequest $request
-     * @param PediaWordsSearchHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 分页获取企业词条信息
+     *  *
+     * @param PediaWordsSearchRequest $request PediaWordsSearchRequest
+     * @param PediaWordsSearchHeaders $headers PediaWordsSearchHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsSearchResponse
+     * @return PediaWordsSearchResponse PediaWordsSearchResponse
      */
     public function pediaWordsSearchWithOptions($request, $headers, $runtime)
     {
@@ -355,9 +373,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsSearchRequest $request
+     * @summary 分页获取企业词条信息
+     *  *
+     * @param PediaWordsSearchRequest $request PediaWordsSearchRequest
      *
-     * @return PediaWordsSearchResponse
+     * @return PediaWordsSearchResponse PediaWordsSearchResponse
      */
     public function pediaWordsSearch($request)
     {
@@ -368,11 +388,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsUpdateRequest $request
-     * @param PediaWordsUpdateHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 企业百科对当前已经生效词条进行编辑
+     *  *
+     * @param PediaWordsUpdateRequest $request PediaWordsUpdateRequest
+     * @param PediaWordsUpdateHeaders $headers PediaWordsUpdateHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PediaWordsUpdateResponse
+     * @return PediaWordsUpdateResponse PediaWordsUpdateResponse
      */
     public function pediaWordsUpdateWithOptions($request, $headers, $runtime)
     {
@@ -438,9 +460,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PediaWordsUpdateRequest $request
+     * @summary 企业百科对当前已经生效词条进行编辑
+     *  *
+     * @param PediaWordsUpdateRequest $request PediaWordsUpdateRequest
      *
-     * @return PediaWordsUpdateResponse
+     * @return PediaWordsUpdateResponse PediaWordsUpdateResponse
      */
     public function pediaWordsUpdate($request)
     {

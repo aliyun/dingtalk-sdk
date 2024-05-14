@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureCommonEventRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appKey;
@@ -24,6 +28,8 @@ class IndustryManufactureCommonEventRequest extends Model
     public $bizData;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $eventType;

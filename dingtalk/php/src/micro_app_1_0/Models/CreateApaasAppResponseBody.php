@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateApaasAppResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class CreateApaasAppResponseBody extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAppId;

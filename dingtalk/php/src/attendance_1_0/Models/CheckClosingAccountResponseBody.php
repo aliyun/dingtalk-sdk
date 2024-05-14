@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CheckClosingAccountResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mesage;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $pass;

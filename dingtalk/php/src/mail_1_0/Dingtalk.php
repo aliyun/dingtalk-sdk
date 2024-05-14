@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateUserRequest $request
-     * @param CreateUserHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 创建企业邮箱用户
+     *  *
+     * @param CreateUserRequest $request CreateUserRequest
+     * @param CreateUserHeaders $headers CreateUserHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateUserResponse
+     * @return CreateUserResponse CreateUserResponse
      */
     public function createUserWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateUserRequest $request
+     * @summary 创建企业邮箱用户
+     *  *
+     * @param CreateUserRequest $request CreateUserRequest
      *
-     * @return CreateUserResponse
+     * @return CreateUserResponse CreateUserResponse
      */
     public function createUser($request)
     {

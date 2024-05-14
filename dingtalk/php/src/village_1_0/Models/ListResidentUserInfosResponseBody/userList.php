@@ -10,26 +10,36 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $feature;
 
     /**
+     * @description This parameter is required.
+     *
      * @var roles[]
      */
     public $roles;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userName;

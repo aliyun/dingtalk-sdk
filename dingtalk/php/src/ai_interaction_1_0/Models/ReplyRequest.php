@@ -14,11 +14,15 @@ class ReplyRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $conversationToken;

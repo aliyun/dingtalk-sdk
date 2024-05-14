@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateMiniAppPluginRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $bizType;
@@ -24,16 +28,22 @@ class CreateMiniAppPluginRequest extends Model
     public $bundleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $desc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

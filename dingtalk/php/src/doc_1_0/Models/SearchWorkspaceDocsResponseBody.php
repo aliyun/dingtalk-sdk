@@ -15,6 +15,8 @@ class SearchWorkspaceDocsResponseBody extends Model
     public $docs;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;

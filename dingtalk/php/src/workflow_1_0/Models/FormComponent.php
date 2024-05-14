@@ -14,6 +14,8 @@ class FormComponent extends Model
     public $children;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField
      *
      * @var string
@@ -21,6 +23,8 @@ class FormComponent extends Model
     public $componentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var FormComponentProps
      */
     public $props;

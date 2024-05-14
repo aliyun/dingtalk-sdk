@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class feedList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 200000257
      *
      * @var string
@@ -16,6 +18,8 @@ class feedList extends Model
     public $feedCategory;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3d******-1cd2-****-ba1d-8******3c6dc
      *
      * @var string
@@ -23,6 +27,8 @@ class feedList extends Model
     public $feedId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4
      *
      * @var int
@@ -30,6 +36,8 @@ class feedList extends Model
     public $feedType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 名称
      *
      * @var string
@@ -37,6 +45,8 @@ class feedList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static.dingtalk.com/media/**************NAlg_600_337.jpg
      *
      * @var string
@@ -44,6 +54,8 @@ class feedList extends Model
     public $thumbUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://h5.dingtalk.com/live/video_lesson.htm?spm=a1zdd.*******.0.0.3e9617129vSDL8&feedId=5e*****-17ec-45f1-8cc0-e******4a3&mcnId=183206*******06173&feedProperty=1&itemId=5ef7*****-17ec-45f1-8cc0-e64*****954a3&dd_nav_bgcolor=FF2****F#/video
      *
      * @var string

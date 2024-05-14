@@ -14,6 +14,8 @@ class bindStudents extends Model
     public $classId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
@@ -24,6 +26,8 @@ class bindStudents extends Model
     public $period;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $staffId;

@@ -19,21 +19,29 @@ class GetInterconnectionUrlRequest extends Model
     public $appUserAvatarType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUserMobileNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUserName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $msgPageType;
@@ -44,16 +52,22 @@ class GetInterconnectionUrlRequest extends Model
     public $qrCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sourceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $sourceType;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateDentryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example file
      *
      * @var string
@@ -23,6 +25,8 @@ class CreateDentryRequest extends Model
     public $documentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingtalk
      *
      * @var string
@@ -30,6 +34,8 @@ class CreateDentryRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string

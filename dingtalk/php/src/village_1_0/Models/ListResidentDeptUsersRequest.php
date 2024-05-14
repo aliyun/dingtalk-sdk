@@ -21,11 +21,15 @@ class ListResidentDeptUsersRequest extends Model
     public $role;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $size;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;

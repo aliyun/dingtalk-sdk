@@ -16,6 +16,8 @@ class CreateFeedRequest extends Model
     public $courseInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16621*******284773
      *
      * @var string
@@ -23,6 +25,8 @@ class CreateFeedRequest extends Model
     public $createUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var feedInfo
      */
     public $feedInfo;

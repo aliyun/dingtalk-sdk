@@ -23,6 +23,8 @@ class StartCloudRecordRequest extends Model
     public $smallWindowPosition;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string

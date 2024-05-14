@@ -30,6 +30,8 @@ class details extends Model
     public $iconFont;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @lADPDg7mWPzw0i_NArzNArw
      *
      * @var string
@@ -37,6 +39,8 @@ class details extends Model
     public $iconMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example test123456
      *
      * @var string
@@ -51,6 +55,8 @@ class details extends Model
     public $slideIconMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试
      *
      * @var string

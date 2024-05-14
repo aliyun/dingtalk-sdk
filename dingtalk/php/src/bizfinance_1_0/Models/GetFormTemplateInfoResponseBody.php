@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetFormTemplateInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var receiptFormTemplateInfoList[]
      */
     public $receiptFormTemplateInfoList;

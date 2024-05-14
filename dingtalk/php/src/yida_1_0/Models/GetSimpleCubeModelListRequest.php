@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSimpleCubeModelListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_Q7D2TFJZWNMDS145Z7DP
      *
      * @var string
@@ -16,6 +18,8 @@ class GetSimpleCubeModelListRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5d17e3add038d44535c2f4657eb6378f
      *
      * @var string
@@ -23,6 +27,8 @@ class GetSimpleCubeModelListRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM_MT866EA17HGCUHIV7GROU72YO499257KRS0KLB
      *
      * @var string
@@ -30,6 +36,8 @@ class GetSimpleCubeModelListRequest extends Model
     public $cubeCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5d17e3add038d44535c2f4657eb6378f
      *
      * @var string
@@ -37,6 +45,8 @@ class GetSimpleCubeModelListRequest extends Model
     public $cubeTenantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example U66663B1LLGCVCVPAF76H6955VYG2408RS0KL0
      *
      * @var string
@@ -44,6 +54,8 @@ class GetSimpleCubeModelListRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1160440651754805
      *
      * @var string

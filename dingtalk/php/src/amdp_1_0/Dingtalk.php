@@ -37,11 +37,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpEmployeeDataPushRequest $request
-     * @param AmdpEmployeeDataPushHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 人员数据推送
+     *  *
+     * @param AmdpEmployeeDataPushRequest $request AmdpEmployeeDataPushRequest
+     * @param AmdpEmployeeDataPushHeaders $headers AmdpEmployeeDataPushHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return AmdpEmployeeDataPushResponse
+     * @return AmdpEmployeeDataPushResponse AmdpEmployeeDataPushResponse
      */
     public function amdpEmployeeDataPushWithOptions($request, $headers, $runtime)
     {
@@ -77,9 +79,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpEmployeeDataPushRequest $request
+     * @summary 人员数据推送
+     *  *
+     * @param AmdpEmployeeDataPushRequest $request AmdpEmployeeDataPushRequest
      *
-     * @return AmdpEmployeeDataPushResponse
+     * @return AmdpEmployeeDataPushResponse AmdpEmployeeDataPushResponse
      */
     public function amdpEmployeeDataPush($request)
     {
@@ -90,11 +94,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpJobPositionDataPushRequest $request
-     * @param AmdpJobPositionDataPushHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 任职数据推送
+     *  *
+     * @param AmdpJobPositionDataPushRequest $request AmdpJobPositionDataPushRequest
+     * @param AmdpJobPositionDataPushHeaders $headers AmdpJobPositionDataPushHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return AmdpJobPositionDataPushResponse
+     * @return AmdpJobPositionDataPushResponse AmdpJobPositionDataPushResponse
      */
     public function amdpJobPositionDataPushWithOptions($request, $headers, $runtime)
     {
@@ -130,9 +136,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpJobPositionDataPushRequest $request
+     * @summary 任职数据推送
+     *  *
+     * @param AmdpJobPositionDataPushRequest $request AmdpJobPositionDataPushRequest
      *
-     * @return AmdpJobPositionDataPushResponse
+     * @return AmdpJobPositionDataPushResponse AmdpJobPositionDataPushResponse
      */
     public function amdpJobPositionDataPush($request)
     {
@@ -143,11 +151,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpOrganizationDataPushRequest $request
-     * @param AmdpOrganizationDataPushHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 组织部门数据推送
+     *  *
+     * @param AmdpOrganizationDataPushRequest $request AmdpOrganizationDataPushRequest
+     * @param AmdpOrganizationDataPushHeaders $headers AmdpOrganizationDataPushHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return AmdpOrganizationDataPushResponse
+     * @return AmdpOrganizationDataPushResponse AmdpOrganizationDataPushResponse
      */
     public function amdpOrganizationDataPushWithOptions($request, $headers, $runtime)
     {
@@ -183,9 +193,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AmdpOrganizationDataPushRequest $request
+     * @summary 组织部门数据推送
+     *  *
+     * @param AmdpOrganizationDataPushRequest $request AmdpOrganizationDataPushRequest
      *
-     * @return AmdpOrganizationDataPushResponse
+     * @return AmdpOrganizationDataPushResponse AmdpOrganizationDataPushResponse
      */
     public function amdpOrganizationDataPush($request)
     {

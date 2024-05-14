@@ -15,6 +15,8 @@ class CreateTriggerRequest extends Model
     public $integratorFlag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var triggerInfo[]
      */
     public $triggerInfo;

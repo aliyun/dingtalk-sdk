@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SearchResidentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $residentCropId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $searchWord;

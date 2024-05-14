@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteFormDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteFormDataRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33f6d221-17f8-42b7-836a-682b95a046c2
      *
      * @var string
@@ -30,6 +34,8 @@ class DeleteFormDataRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example helxxx
      *
      * @var string
@@ -37,6 +43,8 @@ class DeleteFormDataRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

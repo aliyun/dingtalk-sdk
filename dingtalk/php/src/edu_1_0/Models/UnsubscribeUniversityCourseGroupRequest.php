@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UnsubscribeUniversityCourseGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example GSS10023
      *
      * @var string
@@ -16,11 +18,15 @@ class UnsubscribeUniversityCourseGroupRequest extends Model
     public $courseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $studentUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

@@ -24,6 +24,8 @@ class member extends Model
     public $memberName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $memberType;

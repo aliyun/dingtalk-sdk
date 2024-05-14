@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class params extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var filters[]
      */
     public $filters;

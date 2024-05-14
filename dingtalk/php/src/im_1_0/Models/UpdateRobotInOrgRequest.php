@@ -58,6 +58,8 @@ class UpdateRobotInOrgRequest extends Model
     public $previewMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

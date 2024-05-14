@@ -39,11 +39,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateFlashMeetingRequest $request
-     * @param CreateFlashMeetingHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 创建钉闪会并绑定日程
+     *  *
+     * @param CreateFlashMeetingRequest $request CreateFlashMeetingRequest
+     * @param CreateFlashMeetingHeaders $headers CreateFlashMeetingHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateFlashMeetingResponse
+     * @return CreateFlashMeetingResponse CreateFlashMeetingResponse
      */
     public function createFlashMeetingWithOptions($request, $headers, $runtime)
     {
@@ -85,9 +87,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateFlashMeetingRequest $request
+     * @summary 创建钉闪会并绑定日程
+     *  *
+     * @param CreateFlashMeetingRequest $request CreateFlashMeetingRequest
      *
-     * @return CreateFlashMeetingResponse
+     * @return CreateFlashMeetingResponse CreateFlashMeetingResponse
      */
     public function createFlashMeeting($request)
     {
@@ -98,11 +102,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetShanhuiByCalendarRequest $request
-     * @param GetShanhuiByCalendarHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 根据日程获取闪会的信息
+     *  *
+     * @param GetShanhuiByCalendarRequest $request GetShanhuiByCalendarRequest
+     * @param GetShanhuiByCalendarHeaders $headers GetShanhuiByCalendarHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetShanhuiByCalendarResponse
+     * @return GetShanhuiByCalendarResponse GetShanhuiByCalendarResponse
      */
     public function getShanhuiByCalendarWithOptions($request, $headers, $runtime)
     {
@@ -141,9 +147,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetShanhuiByCalendarRequest $request
+     * @summary 根据日程获取闪会的信息
+     *  *
+     * @param GetShanhuiByCalendarRequest $request GetShanhuiByCalendarRequest
      *
-     * @return GetShanhuiByCalendarResponse
+     * @return GetShanhuiByCalendarResponse GetShanhuiByCalendarResponse
      */
     public function getShanhuiByCalendar($request)
     {
@@ -154,11 +162,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+     *  *
      * @param string                        $flashmeetingKey
-     * @param GetShanhuiByShanhuiKeyHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param GetShanhuiByShanhuiKeyHeaders $headers         GetShanhuiByShanhuiKeyHeaders
+     * @param RuntimeOptions                $runtime         runtime options for this request RuntimeOptions
      *
-     * @return GetShanhuiByShanhuiKeyResponse
+     * @return GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKeyResponse
      */
     public function getShanhuiByShanhuiKeyWithOptions($flashmeetingKey, $headers, $runtime)
     {
@@ -188,9 +198,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+     *  *
      * @param string $flashmeetingKey
      *
-     * @return GetShanhuiByShanhuiKeyResponse
+     * @return GetShanhuiByShanhuiKeyResponse GetShanhuiByShanhuiKeyResponse
      */
     public function getShanhuiByShanhuiKey($flashmeetingKey)
     {
@@ -201,11 +213,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTaskFromShanhuiDocRequest $request
-     * @param GetTaskFromShanhuiDocHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 根据闪会文档id获取待办任务
+     *  *
+     * @param GetTaskFromShanhuiDocRequest $request GetTaskFromShanhuiDocRequest
+     * @param GetTaskFromShanhuiDocHeaders $headers GetTaskFromShanhuiDocHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTaskFromShanhuiDocResponse
+     * @return GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDocResponse
      */
     public function getTaskFromShanhuiDocWithOptions($request, $headers, $runtime)
     {
@@ -250,9 +264,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTaskFromShanhuiDocRequest $request
+     * @summary 根据闪会文档id获取待办任务
+     *  *
+     * @param GetTaskFromShanhuiDocRequest $request GetTaskFromShanhuiDocRequest
      *
-     * @return GetTaskFromShanhuiDocResponse
+     * @return GetTaskFromShanhuiDocResponse GetTaskFromShanhuiDocResponse
      */
     public function getTaskFromShanhuiDoc($request)
     {

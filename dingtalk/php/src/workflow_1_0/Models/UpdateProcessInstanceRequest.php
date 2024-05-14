@@ -15,6 +15,8 @@ class UpdateProcessInstanceRequest extends Model
     public $notifiers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string
@@ -29,6 +31,8 @@ class UpdateProcessInstanceRequest extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example COMPLETED
      *
      * @var string

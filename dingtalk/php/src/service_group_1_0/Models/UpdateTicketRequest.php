@@ -17,6 +17,8 @@ class UpdateTicketRequest extends Model
     public $customFields;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -24,6 +26,8 @@ class UpdateTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iPFWCyMGWPiiIiE
      *
      * @var string
@@ -31,6 +35,8 @@ class UpdateTicketRequest extends Model
     public $openTicketId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example p8VdSjm884SvQ6l05nCe5wiEiE
      *
      * @var string
@@ -38,6 +44,8 @@ class UpdateTicketRequest extends Model
     public $processorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var ticketMemo
      */
     public $ticketMemo;

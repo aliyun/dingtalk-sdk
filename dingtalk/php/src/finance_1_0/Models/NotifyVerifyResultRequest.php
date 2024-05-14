@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class NotifyVerifyResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class NotifyVerifyResultRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 261234567890
      *
      * @var string
@@ -28,6 +32,8 @@ class NotifyVerifyResultRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INTERNAL_STAFF
      *
      * @var string
@@ -35,6 +41,8 @@ class NotifyVerifyResultRequest extends Model
     public $userCorpRelationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxx
      *
      * @var string
@@ -63,6 +71,8 @@ class NotifyVerifyResultRequest extends Model
     public $verifyNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 是否通过
      *
      * @var bool
@@ -70,6 +80,8 @@ class NotifyVerifyResultRequest extends Model
     public $verifyResult;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-01-01 12:12:12
      *
      * @var string

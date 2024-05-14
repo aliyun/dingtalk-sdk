@@ -23,6 +23,8 @@ class content extends Model
     public $establishDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -37,6 +39,8 @@ class content extends Model
     public $jobRequirements;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 技术开发
      *
      * @var string

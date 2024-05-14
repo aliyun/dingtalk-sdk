@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomControlPanelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomControlPanelRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomControlPanelResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomGroupResponse;
@@ -17,6 +20,10 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupResponse;
@@ -33,6 +40,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDeviceIpByCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDevicePropertiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDevicePropertiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryDevicePropertiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomControlPanelListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomControlPanelListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomControlPanelListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceResponse;
@@ -86,11 +96,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeviceCustomTemplateRequest $request
-     * @param CreateDeviceCustomTemplateHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 创建自定义屏幕模版
+     *  *
+     * @param CreateDeviceCustomTemplateRequest $request CreateDeviceCustomTemplateRequest
+     * @param CreateDeviceCustomTemplateHeaders $headers CreateDeviceCustomTemplateHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateDeviceCustomTemplateResponse
+     * @return CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateResponse
      */
     public function createDeviceCustomTemplateWithOptions($request, $headers, $runtime)
     {
@@ -177,9 +189,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeviceCustomTemplateRequest $request
+     * @summary 创建自定义屏幕模版
+     *  *
+     * @param CreateDeviceCustomTemplateRequest $request CreateDeviceCustomTemplateRequest
      *
-     * @return CreateDeviceCustomTemplateResponse
+     * @return CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateResponse
      */
     public function createDeviceCustomTemplate($request)
     {
@@ -190,11 +204,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomRequest $request
-     * @param CreateMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 创建智能会议室
+     *  *
+     * @param CreateMeetingRoomRequest $request CreateMeetingRoomRequest
+     * @param CreateMeetingRoomHeaders $headers CreateMeetingRoomHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateMeetingRoomResponse
+     * @return CreateMeetingRoomResponse CreateMeetingRoomResponse
      */
     public function createMeetingRoomWithOptions($request, $headers, $runtime)
     {
@@ -260,9 +276,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomRequest $request
+     * @summary 创建智能会议室
+     *  *
+     * @param CreateMeetingRoomRequest $request CreateMeetingRoomRequest
      *
-     * @return CreateMeetingRoomResponse
+     * @return CreateMeetingRoomResponse CreateMeetingRoomResponse
      */
     public function createMeetingRoom($request)
     {
@@ -273,11 +291,82 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomGroupRequest $request
-     * @param CreateMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 创建智能会议室IOT配置
+     *  *
+     * @param CreateMeetingRoomControlPanelRequest $request CreateMeetingRoomControlPanelRequest
+     * @param CreateMeetingRoomControlPanelHeaders $headers CreateMeetingRoomControlPanelHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateMeetingRoomGroupResponse
+     * @return CreateMeetingRoomControlPanelResponse CreateMeetingRoomControlPanelResponse
+     */
+    public function createMeetingRoomControlPanelWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extra)) {
+            $body['extra'] = $request->extra;
+        }
+        if (!Utils::isUnset($request->roomConfig)) {
+            $body['roomConfig'] = $request->roomConfig;
+        }
+        if (!Utils::isUnset($request->roomId)) {
+            $body['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateMeetingRoomControlPanel',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/panels',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateMeetingRoomControlPanelResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建智能会议室IOT配置
+     *  *
+     * @param CreateMeetingRoomControlPanelRequest $request CreateMeetingRoomControlPanelRequest
+     *
+     * @return CreateMeetingRoomControlPanelResponse CreateMeetingRoomControlPanelResponse
+     */
+    public function createMeetingRoomControlPanel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateMeetingRoomControlPanelHeaders([]);
+
+        return $this->createMeetingRoomControlPanelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建会议室分组
+     *  *
+     * @param CreateMeetingRoomGroupRequest $request CreateMeetingRoomGroupRequest
+     * @param CreateMeetingRoomGroupHeaders $headers CreateMeetingRoomGroupHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateMeetingRoomGroupResponse CreateMeetingRoomGroupResponse
      */
     public function createMeetingRoomGroupWithOptions($request, $headers, $runtime)
     {
@@ -319,9 +408,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomGroupRequest $request
+     * @summary 创建会议室分组
+     *  *
+     * @param CreateMeetingRoomGroupRequest $request CreateMeetingRoomGroupRequest
      *
-     * @return CreateMeetingRoomGroupResponse
+     * @return CreateMeetingRoomGroupResponse CreateMeetingRoomGroupResponse
      */
     public function createMeetingRoomGroup($request)
     {
@@ -332,11 +423,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteDeviceCustomTemplateRequest $request
-     * @param DeleteDeviceCustomTemplateHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 删除自定义屏幕模板
+     *  *
+     * @param DeleteDeviceCustomTemplateRequest $request DeleteDeviceCustomTemplateRequest
+     * @param DeleteDeviceCustomTemplateHeaders $headers DeleteDeviceCustomTemplateHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteDeviceCustomTemplateResponse
+     * @return DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplateResponse
      */
     public function deleteDeviceCustomTemplateWithOptions($request, $headers, $runtime)
     {
@@ -372,9 +465,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteDeviceCustomTemplateRequest $request
+     * @summary 删除自定义屏幕模板
+     *  *
+     * @param DeleteDeviceCustomTemplateRequest $request DeleteDeviceCustomTemplateRequest
      *
-     * @return DeleteDeviceCustomTemplateResponse
+     * @return DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplateResponse
      */
     public function deleteDeviceCustomTemplate($request)
     {
@@ -385,12 +480,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除会议室
+     *  *
      * @param string                   $roomId
-     * @param DeleteMeetingRoomRequest $request
-     * @param DeleteMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param DeleteMeetingRoomRequest $request DeleteMeetingRoomRequest
+     * @param DeleteMeetingRoomHeaders $headers DeleteMeetingRoomHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteMeetingRoomResponse
+     * @return DeleteMeetingRoomResponse DeleteMeetingRoomResponse
      */
     public function deleteMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
     {
@@ -426,10 +523,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除会议室
+     *  *
      * @param string                   $roomId
-     * @param DeleteMeetingRoomRequest $request
+     * @param DeleteMeetingRoomRequest $request DeleteMeetingRoomRequest
      *
-     * @return DeleteMeetingRoomResponse
+     * @return DeleteMeetingRoomResponse DeleteMeetingRoomResponse
      */
     public function deleteMeetingRoom($roomId, $request)
     {
@@ -440,12 +539,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                        $groupId
-     * @param DeleteMeetingRoomGroupRequest $request
-     * @param DeleteMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 删除会议室配置
+     *  *
+     * @param DeleteMeetingRoomControlPanelRequest $tmpReq  DeleteMeetingRoomControlPanelRequest
+     * @param DeleteMeetingRoomControlPanelHeaders $headers DeleteMeetingRoomControlPanelHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteMeetingRoomGroupResponse
+     * @return DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelResponse
+     */
+    public function deleteMeetingRoomControlPanelWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new DeleteMeetingRoomControlPanelShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteMeetingRoomControlPanel',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/panels/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteMeetingRoomControlPanelResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除会议室配置
+     *  *
+     * @param DeleteMeetingRoomControlPanelRequest $request DeleteMeetingRoomControlPanelRequest
+     *
+     * @return DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelResponse
+     */
+    public function deleteMeetingRoomControlPanel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteMeetingRoomControlPanelHeaders([]);
+
+        return $this->deleteMeetingRoomControlPanelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除会议室分组
+     *  *
+     * @param string                        $groupId
+     * @param DeleteMeetingRoomGroupRequest $request DeleteMeetingRoomGroupRequest
+     * @param DeleteMeetingRoomGroupHeaders $headers DeleteMeetingRoomGroupHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroupResponse
      */
     public function deleteMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
     {
@@ -481,10 +644,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除会议室分组
+     *  *
      * @param string                        $groupId
-     * @param DeleteMeetingRoomGroupRequest $request
+     * @param DeleteMeetingRoomGroupRequest $request DeleteMeetingRoomGroupRequest
      *
-     * @return DeleteMeetingRoomGroupResponse
+     * @return DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroupResponse
      */
     public function deleteMeetingRoomGroup($groupId, $request)
     {
@@ -495,11 +660,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询自定义屏幕模板
+     *  *
      * @param string                           $templateId
-     * @param QueryDeviceCustomTemplateHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param QueryDeviceCustomTemplateHeaders $headers    QueryDeviceCustomTemplateHeaders
+     * @param RuntimeOptions                   $runtime    runtime options for this request RuntimeOptions
      *
-     * @return QueryDeviceCustomTemplateResponse
+     * @return QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplateResponse
      */
     public function queryDeviceCustomTemplateWithOptions($templateId, $headers, $runtime)
     {
@@ -529,9 +696,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询自定义屏幕模板
+     *  *
      * @param string $templateId
      *
-     * @return QueryDeviceCustomTemplateResponse
+     * @return QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplateResponse
      */
     public function queryDeviceCustomTemplate($templateId)
     {
@@ -542,10 +711,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDeviceCustomTemplateListHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 查询自定义屏幕模板列表
+     *  *
+     * @param QueryDeviceCustomTemplateListHeaders $headers QueryDeviceCustomTemplateListHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDeviceCustomTemplateListResponse
+     * @return QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateListResponse
      */
     public function queryDeviceCustomTemplateListWithOptions($headers, $runtime)
     {
@@ -575,7 +746,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryDeviceCustomTemplateListResponse
+     * @summary 查询自定义屏幕模板列表
+     *  *
+     * @return QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateListResponse
      */
     public function queryDeviceCustomTemplateList()
     {
@@ -586,12 +759,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备投屏码查询设备ip
+     *  *
      * @param string                     $shareCode
-     * @param QueryDeviceIpByCodeRequest $request
-     * @param QueryDeviceIpByCodeHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryDeviceIpByCodeRequest $request   QueryDeviceIpByCodeRequest
+     * @param QueryDeviceIpByCodeHeaders $headers   QueryDeviceIpByCodeHeaders
+     * @param RuntimeOptions             $runtime   runtime options for this request RuntimeOptions
      *
-     * @return QueryDeviceIpByCodeResponse
+     * @return QueryDeviceIpByCodeResponse QueryDeviceIpByCodeResponse
      */
     public function queryDeviceIpByCodeWithOptions($shareCode, $request, $headers, $runtime)
     {
@@ -627,10 +802,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备投屏码查询设备ip
+     *  *
      * @param string                     $shareCode
-     * @param QueryDeviceIpByCodeRequest $request
+     * @param QueryDeviceIpByCodeRequest $request   QueryDeviceIpByCodeRequest
      *
-     * @return QueryDeviceIpByCodeResponse
+     * @return QueryDeviceIpByCodeResponse QueryDeviceIpByCodeResponse
      */
     public function queryDeviceIpByCode($shareCode, $request)
     {
@@ -641,11 +818,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDevicePropertiesRequest $request
-     * @param QueryDevicePropertiesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 查询设备属性
+     *  *
+     * @param QueryDevicePropertiesRequest $request QueryDevicePropertiesRequest
+     * @param QueryDevicePropertiesHeaders $headers QueryDevicePropertiesHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDevicePropertiesResponse
+     * @return QueryDevicePropertiesResponse QueryDevicePropertiesResponse
      */
     public function queryDevicePropertiesWithOptions($request, $headers, $runtime)
     {
@@ -692,9 +871,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDevicePropertiesRequest $request
+     * @summary 查询设备属性
+     *  *
+     * @param QueryDevicePropertiesRequest $request QueryDevicePropertiesRequest
      *
-     * @return QueryDevicePropertiesResponse
+     * @return QueryDevicePropertiesResponse QueryDevicePropertiesResponse
      */
     public function queryDeviceProperties($request)
     {
@@ -705,12 +886,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室详情
+     *  *
      * @param string                  $roomId
-     * @param QueryMeetingRoomRequest $request
-     * @param QueryMeetingRoomHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param QueryMeetingRoomRequest $request QueryMeetingRoomRequest
+     * @param QueryMeetingRoomHeaders $headers QueryMeetingRoomHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMeetingRoomResponse
+     * @return QueryMeetingRoomResponse QueryMeetingRoomResponse
      */
     public function queryMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
     {
@@ -746,10 +929,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室详情
+     *  *
      * @param string                  $roomId
-     * @param QueryMeetingRoomRequest $request
+     * @param QueryMeetingRoomRequest $request QueryMeetingRoomRequest
      *
-     * @return QueryMeetingRoomResponse
+     * @return QueryMeetingRoomResponse QueryMeetingRoomResponse
      */
     public function queryMeetingRoom($roomId, $request)
     {
@@ -760,11 +945,79 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomDeviceRequest $request
-     * @param QueryMeetingRoomDeviceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取会议室IOT配置列表
+     *  *
+     * @param QueryMeetingRoomControlPanelListRequest $request QueryMeetingRoomControlPanelListRequest
+     * @param QueryMeetingRoomControlPanelListHeaders $headers QueryMeetingRoomControlPanelListHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMeetingRoomDeviceResponse
+     * @return QueryMeetingRoomControlPanelListResponse QueryMeetingRoomControlPanelListResponse
+     */
+    public function queryMeetingRoomControlPanelListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->roomId)) {
+            $query['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoomControlPanelList',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/panels/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMeetingRoomControlPanelListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取会议室IOT配置列表
+     *  *
+     * @param QueryMeetingRoomControlPanelListRequest $request QueryMeetingRoomControlPanelListRequest
+     *
+     * @return QueryMeetingRoomControlPanelListResponse QueryMeetingRoomControlPanelListResponse
+     */
+    public function queryMeetingRoomControlPanelList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMeetingRoomControlPanelListHeaders([]);
+
+        return $this->queryMeetingRoomControlPanelListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询设备信息
+     *  *
+     * @param QueryMeetingRoomDeviceRequest $request QueryMeetingRoomDeviceRequest
+     * @param QueryMeetingRoomDeviceHeaders $headers QueryMeetingRoomDeviceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMeetingRoomDeviceResponse QueryMeetingRoomDeviceResponse
      */
     public function queryMeetingRoomDeviceWithOptions($request, $headers, $runtime)
     {
@@ -806,9 +1059,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomDeviceRequest $request
+     * @summary 查询设备信息
+     *  *
+     * @param QueryMeetingRoomDeviceRequest $request QueryMeetingRoomDeviceRequest
      *
-     * @return QueryMeetingRoomDeviceResponse
+     * @return QueryMeetingRoomDeviceResponse QueryMeetingRoomDeviceResponse
      */
     public function queryMeetingRoomDevice($request)
     {
@@ -819,12 +1074,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室分组信息
+     *  *
      * @param string                       $groupId
-     * @param QueryMeetingRoomGroupRequest $request
-     * @param QueryMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param QueryMeetingRoomGroupRequest $request QueryMeetingRoomGroupRequest
+     * @param QueryMeetingRoomGroupHeaders $headers QueryMeetingRoomGroupHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMeetingRoomGroupResponse
+     * @return QueryMeetingRoomGroupResponse QueryMeetingRoomGroupResponse
      */
     public function queryMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
     {
@@ -860,10 +1117,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室分组信息
+     *  *
      * @param string                       $groupId
-     * @param QueryMeetingRoomGroupRequest $request
+     * @param QueryMeetingRoomGroupRequest $request QueryMeetingRoomGroupRequest
      *
-     * @return QueryMeetingRoomGroupResponse
+     * @return QueryMeetingRoomGroupResponse QueryMeetingRoomGroupResponse
      */
     public function queryMeetingRoomGroup($groupId, $request)
     {
@@ -874,11 +1133,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomGroupListRequest $request
-     * @param QueryMeetingRoomGroupListHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询会议室分组列表
+     *  *
+     * @param QueryMeetingRoomGroupListRequest $request QueryMeetingRoomGroupListRequest
+     * @param QueryMeetingRoomGroupListHeaders $headers QueryMeetingRoomGroupListHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMeetingRoomGroupListResponse
+     * @return QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupListResponse
      */
     public function queryMeetingRoomGroupListWithOptions($request, $headers, $runtime)
     {
@@ -914,9 +1175,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomGroupListRequest $request
+     * @summary 查询会议室分组列表
+     *  *
+     * @param QueryMeetingRoomGroupListRequest $request QueryMeetingRoomGroupListRequest
      *
-     * @return QueryMeetingRoomGroupListResponse
+     * @return QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupListResponse
      */
     public function queryMeetingRoomGroupList($request)
     {
@@ -927,11 +1190,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomListRequest $request
-     * @param QueryMeetingRoomListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询会议室列表
+     *  *
+     * @param QueryMeetingRoomListRequest $request QueryMeetingRoomListRequest
+     * @param QueryMeetingRoomListHeaders $headers QueryMeetingRoomListHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMeetingRoomListResponse
+     * @return QueryMeetingRoomListResponse QueryMeetingRoomListResponse
      */
     public function queryMeetingRoomListWithOptions($request, $headers, $runtime)
     {
@@ -973,9 +1238,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomListRequest $request
+     * @summary 查询会议室列表
+     *  *
+     * @param QueryMeetingRoomListRequest $request QueryMeetingRoomListRequest
      *
-     * @return QueryMeetingRoomListResponse
+     * @return QueryMeetingRoomListResponse QueryMeetingRoomListResponse
      */
     public function queryMeetingRoomList($request)
     {
@@ -986,11 +1253,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveSuperUserMeetingRoomRequest $request
-     * @param RemoveSuperUserMeetingRoomHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 取消会议室高级用户模式。
+     *  *
+     * @param RemoveSuperUserMeetingRoomRequest $request RemoveSuperUserMeetingRoomRequest
+     * @param RemoveSuperUserMeetingRoomHeaders $headers RemoveSuperUserMeetingRoomHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveSuperUserMeetingRoomResponse
+     * @return RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoomResponse
      */
     public function removeSuperUserMeetingRoomWithOptions($request, $headers, $runtime)
     {
@@ -1029,9 +1298,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveSuperUserMeetingRoomRequest $request
+     * @summary 取消会议室高级用户模式。
+     *  *
+     * @param RemoveSuperUserMeetingRoomRequest $request RemoveSuperUserMeetingRoomRequest
      *
-     * @return RemoveSuperUserMeetingRoomResponse
+     * @return RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoomResponse
      */
     public function removeSuperUserMeetingRoom($request)
     {
@@ -1042,11 +1313,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetSuperUserMeetingRoomRequest $request
-     * @param SetSuperUserMeetingRoomHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+     *  *
+     * @param SetSuperUserMeetingRoomRequest $request SetSuperUserMeetingRoomRequest
+     * @param SetSuperUserMeetingRoomHeaders $headers SetSuperUserMeetingRoomHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetSuperUserMeetingRoomResponse
+     * @return SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoomResponse
      */
     public function setSuperUserMeetingRoomWithOptions($request, $headers, $runtime)
     {
@@ -1091,9 +1364,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetSuperUserMeetingRoomRequest $request
+     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+     *  *
+     * @param SetSuperUserMeetingRoomRequest $request SetSuperUserMeetingRoomRequest
      *
-     * @return SetSuperUserMeetingRoomResponse
+     * @return SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoomResponse
      */
     public function setSuperUserMeetingRoom($request)
     {
@@ -1104,11 +1379,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateDeviceCustomTemplateRequest $request
-     * @param UpdateDeviceCustomTemplateHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 更新自定义屏幕模板
+     *  *
+     * @param UpdateDeviceCustomTemplateRequest $request UpdateDeviceCustomTemplateRequest
+     * @param UpdateDeviceCustomTemplateHeaders $headers UpdateDeviceCustomTemplateHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateDeviceCustomTemplateResponse
+     * @return UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplateResponse
      */
     public function updateDeviceCustomTemplateWithOptions($request, $headers, $runtime)
     {
@@ -1198,9 +1475,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateDeviceCustomTemplateRequest $request
+     * @summary 更新自定义屏幕模板
+     *  *
+     * @param UpdateDeviceCustomTemplateRequest $request UpdateDeviceCustomTemplateRequest
      *
-     * @return UpdateDeviceCustomTemplateResponse
+     * @return UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplateResponse
      */
     public function updateDeviceCustomTemplate($request)
     {
@@ -1211,11 +1490,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMeetingRoomRequest $request
-     * @param UpdateMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 更新会议室信息
+     *  *
+     * @param UpdateMeetingRoomRequest $request UpdateMeetingRoomRequest
+     * @param UpdateMeetingRoomHeaders $headers UpdateMeetingRoomHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateMeetingRoomResponse
+     * @return UpdateMeetingRoomResponse UpdateMeetingRoomResponse
      */
     public function updateMeetingRoomWithOptions($request, $headers, $runtime)
     {
@@ -1284,9 +1565,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMeetingRoomRequest $request
+     * @summary 更新会议室信息
+     *  *
+     * @param UpdateMeetingRoomRequest $request UpdateMeetingRoomRequest
      *
-     * @return UpdateMeetingRoomResponse
+     * @return UpdateMeetingRoomResponse UpdateMeetingRoomResponse
      */
     public function updateMeetingRoom($request)
     {
@@ -1297,11 +1580,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMeetingRoomGroupRequest $request
-     * @param UpdateMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 更新会议室分组
+     *  *
+     * @param UpdateMeetingRoomGroupRequest $request UpdateMeetingRoomGroupRequest
+     * @param UpdateMeetingRoomGroupHeaders $headers UpdateMeetingRoomGroupHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateMeetingRoomGroupResponse
+     * @return UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroupResponse
      */
     public function updateMeetingRoomGroupWithOptions($request, $headers, $runtime)
     {
@@ -1343,9 +1628,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMeetingRoomGroupRequest $request
+     * @summary 更新会议室分组
+     *  *
+     * @param UpdateMeetingRoomGroupRequest $request UpdateMeetingRoomGroupRequest
      *
-     * @return UpdateMeetingRoomGroupResponse
+     * @return UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroupResponse
      */
     public function updateMeetingRoomGroup($request)
     {

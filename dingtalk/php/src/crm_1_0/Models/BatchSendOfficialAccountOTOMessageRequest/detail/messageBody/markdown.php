@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class markdown extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

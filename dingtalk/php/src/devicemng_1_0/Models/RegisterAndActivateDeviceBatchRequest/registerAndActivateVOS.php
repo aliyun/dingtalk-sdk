@@ -19,6 +19,8 @@ class registerAndActivateVOS extends Model
     public $deviceCategory;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceCode;
@@ -29,6 +31,8 @@ class registerAndActivateVOS extends Model
     public $deviceDetailUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceName;

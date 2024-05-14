@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class options extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var extension
      */
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

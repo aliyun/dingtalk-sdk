@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class navData extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -45,6 +47,8 @@ class navData extends Model
     public $integrationProtocol;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 库存账单
      *
      * @var string
@@ -59,6 +63,8 @@ class navData extends Model
     public $mobileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example lowcode_customize_form
      *
      * @var string
@@ -71,6 +77,8 @@ class navData extends Model
     public $navExtInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example lowcode_customize_form:PROC-0279E824-ED47-4E75-86F2-11B665F3704D
      *
      * @var string
@@ -78,6 +86,8 @@ class navData extends Model
     public $navId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 库存流水
      *
      * @var string
@@ -85,6 +95,8 @@ class navData extends Model
     public $navName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PUBLISHED
      *
      * @var string

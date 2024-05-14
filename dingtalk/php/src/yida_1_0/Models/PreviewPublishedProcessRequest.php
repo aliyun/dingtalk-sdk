@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PreviewPublishedProcessRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class PreviewPublishedProcessRequest extends Model
     public $departmentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
      *
      * @var string
@@ -30,6 +34,8 @@ class PreviewPublishedProcessRequest extends Model
     public $formDataJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
      *
      * @var string
@@ -51,6 +57,8 @@ class PreviewPublishedProcessRequest extends Model
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -58,6 +66,8 @@ class PreviewPublishedProcessRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1731234567
      *
      * @var string

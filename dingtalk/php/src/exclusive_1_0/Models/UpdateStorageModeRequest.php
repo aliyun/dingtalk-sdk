@@ -16,6 +16,8 @@ class UpdateStorageModeRequest extends Model
     public $fileStorageMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string

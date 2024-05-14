@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class owner extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingtalk
      *
      * @var string
@@ -16,6 +18,8 @@ class owner extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd
      *
      * @var string

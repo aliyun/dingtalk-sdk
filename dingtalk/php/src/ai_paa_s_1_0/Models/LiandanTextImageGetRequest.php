@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LiandanTextImageGetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example IMAGE
      *
      * @var string
@@ -16,6 +18,8 @@ class LiandanTextImageGetRequest extends Model
     public $module;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -23,6 +27,8 @@ class LiandanTextImageGetRequest extends Model
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

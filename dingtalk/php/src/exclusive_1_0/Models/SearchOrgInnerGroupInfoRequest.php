@@ -65,6 +65,8 @@ class SearchOrgInnerGroupInfoRequest extends Model
     public $lastActiveTimeStart;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 当前查询人的userId
      *
      * @var string
@@ -72,6 +74,8 @@ class SearchOrgInnerGroupInfoRequest extends Model
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 分页大小，最大不能超过100
      *
      * @var int
@@ -79,6 +83,8 @@ class SearchOrgInnerGroupInfoRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 分页号，从1开始
      *
      * @var int
@@ -93,6 +99,8 @@ class SearchOrgInnerGroupInfoRequest extends Model
     public $syncToDingpan;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 每次查询唯一标识，保证每次分页查询时该值不变
      *
      * @var string

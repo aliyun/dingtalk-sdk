@@ -9,41 +9,57 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $managerIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $order;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $parentDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $refId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;

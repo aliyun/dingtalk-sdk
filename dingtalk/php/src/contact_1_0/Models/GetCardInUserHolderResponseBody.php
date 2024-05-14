@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCardInUserHolderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $avatarUrl;
@@ -24,6 +26,8 @@ class GetCardInUserHolderResponseBody extends Model
     public $cardAcceptTimeLong;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardId;
@@ -51,11 +55,15 @@ class GetCardInUserHolderResponseBody extends Model
     public $introduce;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orgName;

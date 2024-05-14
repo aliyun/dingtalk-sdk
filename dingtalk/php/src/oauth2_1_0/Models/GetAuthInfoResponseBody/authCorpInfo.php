@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class authCorpInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -16,6 +18,8 @@ class authCorpInfo extends Model
     public $authChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -23,6 +27,8 @@ class authCorpInfo extends Model
     public $authChannelType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class authCorpInfo extends Model
     public $authLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static-legacy.dingtalk.com/xxx
      *
      * @var string
@@ -37,6 +45,8 @@ class authCorpInfo extends Model
     public $corpLogoUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小程序体验HTTP
      *
      * @var string
@@ -44,6 +54,8 @@ class authCorpInfo extends Model
     public $corpName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 201
      *
      * @var string
@@ -51,6 +63,8 @@ class authCorpInfo extends Model
     public $industry;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string
@@ -58,6 +72,8 @@ class authCorpInfo extends Model
     public $inviteCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://wx.dingtalk.com/invite-page/xxx
      *
      * @var string
@@ -65,6 +81,8 @@ class authCorpInfo extends Model
     public $inviteUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string

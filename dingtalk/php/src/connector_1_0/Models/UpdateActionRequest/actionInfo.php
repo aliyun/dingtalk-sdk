@@ -42,11 +42,15 @@ class actionInfo extends Model
     public $inputSchema;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorActionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorConnectorId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCoolAppAccessStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example b195bb70dde337aabf3bcc020bf6250c
      *
      * @var string
@@ -16,6 +18,8 @@ class GetCoolAppAccessStatusRequest extends Model
     public $authCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example COOLAPP-1-1019F4BBC7D6212C5861000T
      *
      * @var string
@@ -23,6 +27,8 @@ class GetCoolAppAccessStatusRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid5uZRmigtVWpjcKPLrp5Pag==
      *
      * @var string

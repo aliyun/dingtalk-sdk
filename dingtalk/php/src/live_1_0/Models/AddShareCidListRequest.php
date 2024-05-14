@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddShareCidListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -16,11 +18,15 @@ class AddShareCidListRequest extends Model
     public $groupIdType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $groupIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 214675
      *
      * @var string

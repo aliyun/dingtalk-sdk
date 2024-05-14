@@ -32,6 +32,8 @@ class resultList extends Model
     public $groupChatCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123agsg
      *
      * @var string
@@ -39,6 +41,8 @@ class resultList extends Model
     public $lastOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var manager[]
      */
     public $manager;
@@ -93,6 +97,8 @@ class resultList extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var owner
      */
     public $owner;

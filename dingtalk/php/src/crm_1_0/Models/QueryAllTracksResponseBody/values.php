@@ -37,6 +37,8 @@ class values extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example asjkdh189127836
      *
      * @var string

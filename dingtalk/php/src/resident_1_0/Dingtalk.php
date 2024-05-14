@@ -123,11 +123,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddPointRequest $request
-     * @param AddPointHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 增加积分
+     *  *
+     * @param AddPointRequest $request AddPointRequest
+     * @param AddPointHeaders $headers AddPointHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddPointResponse
+     * @return AddPointResponse AddPointResponse
      */
     public function addPointWithOptions($request, $headers, $runtime)
     {
@@ -181,9 +183,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddPointRequest $request
+     * @summary 增加积分
+     *  *
+     * @param AddPointRequest $request AddPointRequest
      *
-     * @return AddPointResponse
+     * @return AddPointResponse AddPointResponse
      */
     public function addPoint($request)
     {
@@ -194,11 +198,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentDepartmentRequest $request
-     * @param AddResidentDepartmentHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 增加组户
+     *  *
+     * @param AddResidentDepartmentRequest $request AddResidentDepartmentRequest
+     * @param AddResidentDepartmentHeaders $headers AddResidentDepartmentHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddResidentDepartmentResponse
+     * @return AddResidentDepartmentResponse AddResidentDepartmentResponse
      */
     public function addResidentDepartmentWithOptions($request, $headers, $runtime)
     {
@@ -240,9 +246,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentDepartmentRequest $request
+     * @summary 增加组户
+     *  *
+     * @param AddResidentDepartmentRequest $request AddResidentDepartmentRequest
      *
-     * @return AddResidentDepartmentResponse
+     * @return AddResidentDepartmentResponse AddResidentDepartmentResponse
      */
     public function addResidentDepartment($request)
     {
@@ -253,11 +261,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentMemberRequest $request
-     * @param AddResidentMemberHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 添加小区成员
+     *  *
+     * @param AddResidentMemberRequest $request AddResidentMemberRequest
+     * @param AddResidentMemberHeaders $headers AddResidentMemberHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddResidentMemberResponse
+     * @return AddResidentMemberResponse AddResidentMemberResponse
      */
     public function addResidentMemberWithOptions($request, $headers, $runtime)
     {
@@ -293,9 +303,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentMemberRequest $request
+     * @summary 添加小区成员
+     *  *
+     * @param AddResidentMemberRequest $request AddResidentMemberRequest
      *
-     * @return AddResidentMemberResponse
+     * @return AddResidentMemberResponse AddResidentMemberResponse
      */
     public function addResidentMember($request)
     {
@@ -306,11 +318,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentUsersRequest $request
-     * @param AddResidentUsersHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 新增居民
+     *  *
+     * @param AddResidentUsersRequest $request AddResidentUsersRequest
+     * @param AddResidentUsersHeaders $headers AddResidentUsersHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddResidentUsersResponse
+     * @return AddResidentUsersResponse AddResidentUsersResponse
      */
     public function addResidentUsersWithOptions($request, $headers, $runtime)
     {
@@ -364,9 +378,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddResidentUsersRequest $request
+     * @summary 新增居民
+     *  *
+     * @param AddResidentUsersRequest $request AddResidentUsersRequest
      *
-     * @return AddResidentUsersResponse
+     * @return AddResidentUsersResponse AddResidentUsersResponse
      */
     public function addResidentUsers($request)
     {
@@ -377,11 +393,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateResidentBlackBoardRequest $request
-     * @param CreateResidentBlackBoardHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 创建小区公告
+     *  *
+     * @param CreateResidentBlackBoardRequest $request CreateResidentBlackBoardRequest
+     * @param CreateResidentBlackBoardHeaders $headers CreateResidentBlackBoardHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateResidentBlackBoardResponse
+     * @return CreateResidentBlackBoardResponse CreateResidentBlackBoardResponse
      */
     public function createResidentBlackBoardWithOptions($request, $headers, $runtime)
     {
@@ -426,9 +444,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateResidentBlackBoardRequest $request
+     * @summary 创建小区公告
+     *  *
+     * @param CreateResidentBlackBoardRequest $request CreateResidentBlackBoardRequest
      *
-     * @return CreateResidentBlackBoardResponse
+     * @return CreateResidentBlackBoardResponse CreateResidentBlackBoardResponse
      */
     public function createResidentBlackBoard($request)
     {
@@ -439,11 +459,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSpaceRequest $request
-     * @param CreateSpaceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+     *  *
+     * @param CreateSpaceRequest $request CreateSpaceRequest
+     * @param CreateSpaceHeaders $headers CreateSpaceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateSpaceResponse
+     * @return CreateSpaceResponse CreateSpaceResponse
      */
     public function createSpaceWithOptions($request, $headers, $runtime)
     {
@@ -500,9 +522,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSpaceRequest $request
+     * @summary 创建小区空间，含分区，楼栋，单元，房屋等
+     *  *
+     * @param CreateSpaceRequest $request CreateSpaceRequest
      *
-     * @return CreateSpaceResponse
+     * @return CreateSpaceResponse CreateSpaceResponse
      */
     public function createSpace($request)
     {
@@ -513,11 +537,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteResidentBlackBoardRequest $request
-     * @param DeleteResidentBlackBoardHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 删除小区公告
+     *  *
+     * @param DeleteResidentBlackBoardRequest $request DeleteResidentBlackBoardRequest
+     * @param DeleteResidentBlackBoardHeaders $headers DeleteResidentBlackBoardHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteResidentBlackBoardResponse
+     * @return DeleteResidentBlackBoardResponse DeleteResidentBlackBoardResponse
      */
     public function deleteResidentBlackBoardWithOptions($request, $headers, $runtime)
     {
@@ -553,9 +579,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteResidentBlackBoardRequest $request
+     * @summary 删除小区公告
+     *  *
+     * @param DeleteResidentBlackBoardRequest $request DeleteResidentBlackBoardRequest
      *
-     * @return DeleteResidentBlackBoardResponse
+     * @return DeleteResidentBlackBoardResponse DeleteResidentBlackBoardResponse
      */
     public function deleteResidentBlackBoard($request)
     {
@@ -566,11 +594,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteResidentDepartmentRequest $request
-     * @param DeleteResidentDepartmentHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 删除组户信息
+     *  *
+     * @param DeleteResidentDepartmentRequest $request DeleteResidentDepartmentRequest
+     * @param DeleteResidentDepartmentHeaders $headers DeleteResidentDepartmentHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteResidentDepartmentResponse
+     * @return DeleteResidentDepartmentResponse DeleteResidentDepartmentResponse
      */
     public function deleteResidentDepartmentWithOptions($request, $headers, $runtime)
     {
@@ -606,9 +636,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteResidentDepartmentRequest $request
+     * @summary 删除组户信息
+     *  *
+     * @param DeleteResidentDepartmentRequest $request DeleteResidentDepartmentRequest
      *
-     * @return DeleteResidentDepartmentResponse
+     * @return DeleteResidentDepartmentResponse DeleteResidentDepartmentResponse
      */
     public function deleteResidentDepartment($request)
     {
@@ -619,11 +651,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteSpaceRequest $request
-     * @param DeleteSpaceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 删除小区空间，含分区，楼栋，单元，房屋
+     *  *
+     * @param DeleteSpaceRequest $request DeleteSpaceRequest
+     * @param DeleteSpaceHeaders $headers DeleteSpaceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteSpaceResponse
+     * @return DeleteSpaceResponse DeleteSpaceResponse
      */
     public function deleteSpaceWithOptions($request, $headers, $runtime)
     {
@@ -659,9 +693,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteSpaceRequest $request
+     * @summary 删除小区空间，含分区，楼栋，单元，房屋
+     *  *
+     * @param DeleteSpaceRequest $request DeleteSpaceRequest
      *
-     * @return DeleteSpaceResponse
+     * @return DeleteSpaceResponse DeleteSpaceResponse
      */
     public function deleteSpace($request)
     {
@@ -672,11 +708,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationIdRequest $request
-     * @param GetConversationIdHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取指定群的openConversationId
+     *  *
+     * @param GetConversationIdRequest $request GetConversationIdRequest
+     * @param GetConversationIdHeaders $headers GetConversationIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetConversationIdResponse
+     * @return GetConversationIdResponse GetConversationIdResponse
      */
     public function getConversationIdWithOptions($request, $headers, $runtime)
     {
@@ -712,9 +750,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationIdRequest $request
+     * @summary 获取指定群的openConversationId
+     *  *
+     * @param GetConversationIdRequest $request GetConversationIdRequest
      *
-     * @return GetConversationIdResponse
+     * @return GetConversationIdResponse GetConversationIdResponse
      */
     public function getConversationId($request)
     {
@@ -725,10 +765,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIndustryTypeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取组织的行业类型
+     *  *
+     * @param GetIndustryTypeHeaders $headers GetIndustryTypeHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetIndustryTypeResponse
+     * @return GetIndustryTypeResponse GetIndustryTypeResponse
      */
     public function getIndustryTypeWithOptions($headers, $runtime)
     {
@@ -758,7 +800,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetIndustryTypeResponse
+     * @summary 获取组织的行业类型
+     *  *
+     * @return GetIndustryTypeResponse GetIndustryTypeResponse
      */
     public function getIndustryType()
     {
@@ -769,11 +813,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPropertyInfoRequest $request
-     * @param GetPropertyInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取物业公司信息
+     *  *
+     * @param GetPropertyInfoRequest $request GetPropertyInfoRequest
+     * @param GetPropertyInfoHeaders $headers GetPropertyInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPropertyInfoResponse
+     * @return GetPropertyInfoResponse GetPropertyInfoResponse
      */
     public function getPropertyInfoWithOptions($request, $headers, $runtime)
     {
@@ -809,9 +855,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPropertyInfoRequest $request
+     * @summary 获取物业公司信息
+     *  *
+     * @param GetPropertyInfoRequest $request GetPropertyInfoRequest
      *
-     * @return GetPropertyInfoResponse
+     * @return GetPropertyInfoResponse GetPropertyInfoResponse
      */
     public function getPropertyInfo($request)
     {
@@ -822,11 +870,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetResidentInfoRequest $request
-     * @param GetResidentInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取小区信息
+     *  *
+     * @param GetResidentInfoRequest $request GetResidentInfoRequest
+     * @param GetResidentInfoHeaders $headers GetResidentInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetResidentInfoResponse
+     * @return GetResidentInfoResponse GetResidentInfoResponse
      */
     public function getResidentInfoWithOptions($request, $headers, $runtime)
     {
@@ -862,9 +912,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetResidentInfoRequest $request
+     * @summary 获取小区信息
+     *  *
+     * @param GetResidentInfoRequest $request GetResidentInfoRequest
      *
-     * @return GetResidentInfoResponse
+     * @return GetResidentInfoResponse GetResidentInfoResponse
      */
     public function getResidentInfo($request)
     {
@@ -875,11 +927,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetResidentMembersInfoRequest $request
-     * @param GetResidentMembersInfoHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取小区人员信息，包括居民和物业人员
+     *  *
+     * @param GetResidentMembersInfoRequest $request GetResidentMembersInfoRequest
+     * @param GetResidentMembersInfoHeaders $headers GetResidentMembersInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetResidentMembersInfoResponse
+     * @return GetResidentMembersInfoResponse GetResidentMembersInfoResponse
      */
     public function getResidentMembersInfoWithOptions($request, $headers, $runtime)
     {
@@ -918,9 +972,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetResidentMembersInfoRequest $request
+     * @summary 获取小区人员信息，包括居民和物业人员
+     *  *
+     * @param GetResidentMembersInfoRequest $request GetResidentMembersInfoRequest
      *
-     * @return GetResidentMembersInfoResponse
+     * @return GetResidentMembersInfoResponse GetResidentMembersInfoResponse
      */
     public function getResidentMembersInfo($request)
     {
@@ -931,11 +987,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceIdByTypeRequest $request
-     * @param GetSpaceIdByTypeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 根据类型获取部门id
+     *  *
+     * @param GetSpaceIdByTypeRequest $request GetSpaceIdByTypeRequest
+     * @param GetSpaceIdByTypeHeaders $headers GetSpaceIdByTypeHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSpaceIdByTypeResponse
+     * @return GetSpaceIdByTypeResponse GetSpaceIdByTypeResponse
      */
     public function getSpaceIdByTypeWithOptions($request, $headers, $runtime)
     {
@@ -971,9 +1029,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceIdByTypeRequest $request
+     * @summary 根据类型获取部门id
+     *  *
+     * @param GetSpaceIdByTypeRequest $request GetSpaceIdByTypeRequest
      *
-     * @return GetSpaceIdByTypeResponse
+     * @return GetSpaceIdByTypeResponse GetSpaceIdByTypeResponse
      */
     public function getSpaceIdByType($request)
     {
@@ -984,11 +1044,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpacesInfoRequest $request
-     * @param GetSpacesInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取空间信息
+     *  *
+     * @param GetSpacesInfoRequest $request GetSpacesInfoRequest
+     * @param GetSpacesInfoHeaders $headers GetSpacesInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSpacesInfoResponse
+     * @return GetSpacesInfoResponse GetSpacesInfoResponse
      */
     public function getSpacesInfoWithOptions($request, $headers, $runtime)
     {
@@ -1027,9 +1089,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpacesInfoRequest $request
+     * @summary 获取空间信息
+     *  *
+     * @param GetSpacesInfoRequest $request GetSpacesInfoRequest
      *
-     * @return GetSpacesInfoResponse
+     * @return GetSpacesInfoResponse GetSpacesInfoResponse
      */
     public function getSpacesInfo($request)
     {
@@ -1040,11 +1104,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListIndustryRoleUsersRequest $request
-     * @param ListIndustryRoleUsersHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取行业角色下的用户列表
+     *  *
+     * @param ListIndustryRoleUsersRequest $request ListIndustryRoleUsersRequest
+     * @param ListIndustryRoleUsersHeaders $headers ListIndustryRoleUsersHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListIndustryRoleUsersResponse
+     * @return ListIndustryRoleUsersResponse ListIndustryRoleUsersResponse
      */
     public function listIndustryRoleUsersWithOptions($request, $headers, $runtime)
     {
@@ -1080,9 +1146,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListIndustryRoleUsersRequest $request
+     * @summary 获取行业角色下的用户列表
+     *  *
+     * @param ListIndustryRoleUsersRequest $request ListIndustryRoleUsersRequest
      *
-     * @return ListIndustryRoleUsersResponse
+     * @return ListIndustryRoleUsersResponse ListIndustryRoleUsersResponse
      */
     public function listIndustryRoleUsers($request)
     {
@@ -1093,11 +1161,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListPointRulesRequest $request
-     * @param ListPointRulesHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 查询组织维度配置的的积分规则
+     *  *
+     * @param ListPointRulesRequest $request ListPointRulesRequest
+     * @param ListPointRulesHeaders $headers ListPointRulesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListPointRulesResponse
+     * @return ListPointRulesResponse ListPointRulesResponse
      */
     public function listPointRulesWithOptions($request, $headers, $runtime)
     {
@@ -1133,9 +1203,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListPointRulesRequest $request
+     * @summary 查询组织维度配置的的积分规则
+     *  *
+     * @param ListPointRulesRequest $request ListPointRulesRequest
      *
-     * @return ListPointRulesResponse
+     * @return ListPointRulesResponse ListPointRulesResponse
      */
     public function listPointRules($request)
     {
@@ -1146,11 +1218,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSubSpaceRequest $request
-     * @param ListSubSpaceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取子空间信息
+     *  *
+     * @param ListSubSpaceRequest $request ListSubSpaceRequest
+     * @param ListSubSpaceHeaders $headers ListSubSpaceHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListSubSpaceResponse
+     * @return ListSubSpaceResponse ListSubSpaceResponse
      */
     public function listSubSpaceWithOptions($request, $headers, $runtime)
     {
@@ -1189,9 +1263,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSubSpaceRequest $request
+     * @summary 获取子空间信息
+     *  *
+     * @param ListSubSpaceRequest $request ListSubSpaceRequest
      *
-     * @return ListSubSpaceResponse
+     * @return ListSubSpaceResponse ListSubSpaceResponse
      */
     public function listSubSpace($request)
     {
@@ -1202,11 +1278,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListUncheckUsersRequest $request
-     * @param ListUncheckUsersHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取未确认加入组织的用户
+     *  *
+     * @param ListUncheckUsersRequest $request ListUncheckUsersRequest
+     * @param ListUncheckUsersHeaders $headers ListUncheckUsersHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListUncheckUsersResponse
+     * @return ListUncheckUsersResponse ListUncheckUsersResponse
      */
     public function listUncheckUsersWithOptions($request, $headers, $runtime)
     {
@@ -1251,9 +1329,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListUncheckUsersRequest $request
+     * @summary 获取未确认加入组织的用户
+     *  *
+     * @param ListUncheckUsersRequest $request ListUncheckUsersRequest
      *
-     * @return ListUncheckUsersResponse
+     * @return ListUncheckUsersResponse ListUncheckUsersResponse
      */
     public function listUncheckUsers($request)
     {
@@ -1264,11 +1344,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListUserIndustryRolesRequest $request
-     * @param ListUserIndustryRolesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取用户行业化角色
+     *  *
+     * @param ListUserIndustryRolesRequest $request ListUserIndustryRolesRequest
+     * @param ListUserIndustryRolesHeaders $headers ListUserIndustryRolesHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListUserIndustryRolesResponse
+     * @return ListUserIndustryRolesResponse ListUserIndustryRolesResponse
      */
     public function listUserIndustryRolesWithOptions($request, $headers, $runtime)
     {
@@ -1304,9 +1386,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListUserIndustryRolesRequest $request
+     * @summary 获取用户行业化角色
+     *  *
+     * @param ListUserIndustryRolesRequest $request ListUserIndustryRolesRequest
      *
-     * @return ListUserIndustryRolesResponse
+     * @return ListUserIndustryRolesResponse ListUserIndustryRolesResponse
      */
     public function listUserIndustryRoles($request)
     {
@@ -1317,11 +1401,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PagePointHistoryRequest $request
-     * @param PagePointHistoryHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询数字区县居民积分流水
+     *  *
+     * @param PagePointHistoryRequest $request PagePointHistoryRequest
+     * @param PagePointHistoryHeaders $headers PagePointHistoryHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PagePointHistoryResponse
+     * @return PagePointHistoryResponse PagePointHistoryResponse
      */
     public function pagePointHistoryWithOptions($request, $headers, $runtime)
     {
@@ -1372,9 +1458,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PagePointHistoryRequest $request
+     * @summary 查询数字区县居民积分流水
+     *  *
+     * @param PagePointHistoryRequest $request PagePointHistoryRequest
      *
-     * @return PagePointHistoryResponse
+     * @return PagePointHistoryResponse PagePointHistoryResponse
      */
     public function pagePointHistory($request)
     {
@@ -1385,11 +1473,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveResidentMemberRequest $request
-     * @param RemoveResidentMemberHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 从空间中删除人员
+     *  *
+     * @param RemoveResidentMemberRequest $request RemoveResidentMemberRequest
+     * @param RemoveResidentMemberHeaders $headers RemoveResidentMemberHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveResidentMemberResponse
+     * @return RemoveResidentMemberResponse RemoveResidentMemberResponse
      */
     public function removeResidentMemberWithOptions($request, $headers, $runtime)
     {
@@ -1431,9 +1521,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveResidentMemberRequest $request
+     * @summary 从空间中删除人员
+     *  *
+     * @param RemoveResidentMemberRequest $request RemoveResidentMemberRequest
      *
-     * @return RemoveResidentMemberResponse
+     * @return RemoveResidentMemberResponse RemoveResidentMemberResponse
      */
     public function removeResidentMember($request)
     {
@@ -1444,11 +1536,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveResidentUserRequest $request
-     * @param RemoveResidentUserHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 从户内移除居民
+     *  *
+     * @param RemoveResidentUserRequest $request RemoveResidentUserRequest
+     * @param RemoveResidentUserHeaders $headers RemoveResidentUserHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveResidentUserResponse
+     * @return RemoveResidentUserResponse RemoveResidentUserResponse
      */
     public function removeResidentUserWithOptions($request, $headers, $runtime)
     {
@@ -1487,9 +1581,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveResidentUserRequest $request
+     * @summary 从户内移除居民
+     *  *
+     * @param RemoveResidentUserRequest $request RemoveResidentUserRequest
      *
-     * @return RemoveResidentUserResponse
+     * @return RemoveResidentUserResponse RemoveResidentUserResponse
      */
     public function removeResidentUser($request)
     {
@@ -1500,11 +1596,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchResidentRequest $request
-     * @param SearchResidentHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 搜索指定人员
+     *  *
+     * @param SearchResidentRequest $request SearchResidentRequest
+     * @param SearchResidentHeaders $headers SearchResidentHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchResidentResponse
+     * @return SearchResidentResponse SearchResidentResponse
      */
     public function searchResidentWithOptions($request, $headers, $runtime)
     {
@@ -1543,9 +1641,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchResidentRequest $request
+     * @summary 搜索指定人员
+     *  *
+     * @param SearchResidentRequest $request SearchResidentRequest
      *
-     * @return SearchResidentResponse
+     * @return SearchResidentResponse SearchResidentResponse
      */
     public function searchResident($request)
     {
@@ -1556,11 +1656,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResideceGroupRequest $request
-     * @param UpdateResideceGroupHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 更新组信息
+     *  *
+     * @param UpdateResideceGroupRequest $request UpdateResideceGroupRequest
+     * @param UpdateResideceGroupHeaders $headers UpdateResideceGroupHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResideceGroupResponse
+     * @return UpdateResideceGroupResponse UpdateResideceGroupResponse
      */
     public function updateResideceGroupWithOptions($request, $headers, $runtime)
     {
@@ -1602,9 +1704,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResideceGroupRequest $request
+     * @summary 更新组信息
+     *  *
+     * @param UpdateResideceGroupRequest $request UpdateResideceGroupRequest
      *
-     * @return UpdateResideceGroupResponse
+     * @return UpdateResideceGroupResponse UpdateResideceGroupResponse
      */
     public function updateResideceGroup($request)
     {
@@ -1615,11 +1719,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidenceRequest $request
-     * @param UpdateResidenceHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 更新户信息
+     *  *
+     * @param UpdateResidenceRequest $request UpdateResidenceRequest
+     * @param UpdateResidenceHeaders $headers UpdateResidenceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResidenceResponse
+     * @return UpdateResidenceResponse UpdateResidenceResponse
      */
     public function updateResidenceWithOptions($request, $headers, $runtime)
     {
@@ -1673,9 +1779,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidenceRequest $request
+     * @summary 更新户信息
+     *  *
+     * @param UpdateResidenceRequest $request UpdateResidenceRequest
      *
-     * @return UpdateResidenceResponse
+     * @return UpdateResidenceResponse UpdateResidenceResponse
      */
     public function updateResidence($request)
     {
@@ -1686,11 +1794,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentBlackBoardRequest $request
-     * @param UpdateResidentBlackBoardHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 更新小区公告
+     *  *
+     * @param UpdateResidentBlackBoardRequest $request UpdateResidentBlackBoardRequest
+     * @param UpdateResidentBlackBoardHeaders $headers UpdateResidentBlackBoardHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResidentBlackBoardResponse
+     * @return UpdateResidentBlackBoardResponse UpdateResidentBlackBoardResponse
      */
     public function updateResidentBlackBoardWithOptions($request, $headers, $runtime)
     {
@@ -1735,9 +1845,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentBlackBoardRequest $request
+     * @summary 更新小区公告
+     *  *
+     * @param UpdateResidentBlackBoardRequest $request UpdateResidentBlackBoardRequest
      *
-     * @return UpdateResidentBlackBoardResponse
+     * @return UpdateResidentBlackBoardResponse UpdateResidentBlackBoardResponse
      */
     public function updateResidentBlackBoard($request)
     {
@@ -1748,11 +1860,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentInfoRequest $request
-     * @param UpdateResidentInfoHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 更新小区信息
+     *  *
+     * @param UpdateResidentInfoRequest $request UpdateResidentInfoRequest
+     * @param UpdateResidentInfoHeaders $headers UpdateResidentInfoHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResidentInfoResponse
+     * @return UpdateResidentInfoResponse UpdateResidentInfoResponse
      */
     public function updateResidentInfoWithOptions($request, $headers, $runtime)
     {
@@ -1815,9 +1929,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentInfoRequest $request
+     * @summary 更新小区信息
+     *  *
+     * @param UpdateResidentInfoRequest $request UpdateResidentInfoRequest
      *
-     * @return UpdateResidentInfoResponse
+     * @return UpdateResidentInfoResponse UpdateResidentInfoResponse
      */
     public function updateResidentInfo($request)
     {
@@ -1828,11 +1944,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentMemberRequest $request
-     * @param UpdateResidentMemberHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 更新小区成员
+     *  *
+     * @param UpdateResidentMemberRequest $request UpdateResidentMemberRequest
+     * @param UpdateResidentMemberHeaders $headers UpdateResidentMemberHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResidentMemberResponse
+     * @return UpdateResidentMemberResponse UpdateResidentMemberResponse
      */
     public function updateResidentMemberWithOptions($request, $headers, $runtime)
     {
@@ -1871,9 +1989,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentMemberRequest $request
+     * @summary 更新小区成员
+     *  *
+     * @param UpdateResidentMemberRequest $request UpdateResidentMemberRequest
      *
-     * @return UpdateResidentMemberResponse
+     * @return UpdateResidentMemberResponse UpdateResidentMemberResponse
      */
     public function updateResidentMember($request)
     {
@@ -1884,11 +2004,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentUserRequest $request
-     * @param UpdateResidentUserHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 更新居民信息
+     *  *
+     * @param UpdateResidentUserRequest $request UpdateResidentUserRequest
+     * @param UpdateResidentUserHeaders $headers UpdateResidentUserHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResidentUserResponse
+     * @return UpdateResidentUserResponse UpdateResidentUserResponse
      */
     public function updateResidentUserWithOptions($request, $headers, $runtime)
     {
@@ -1948,9 +2070,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateResidentUserRequest $request
+     * @summary 更新居民信息
+     *  *
+     * @param UpdateResidentUserRequest $request UpdateResidentUserRequest
      *
-     * @return UpdateResidentUserResponse
+     * @return UpdateResidentUserResponse UpdateResidentUserResponse
      */
     public function updateResidentUser($request)
     {
@@ -1961,11 +2085,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateSpaceRequest $request
-     * @param UpdateSpaceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+     *  *
+     * @param UpdateSpaceRequest $request UpdateSpaceRequest
+     * @param UpdateSpaceHeaders $headers UpdateSpaceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateSpaceResponse
+     * @return UpdateSpaceResponse UpdateSpaceResponse
      */
     public function updateSpaceWithOptions($request, $headers, $runtime)
     {
@@ -2001,9 +2127,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateSpaceRequest $request
+     * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
+     *  *
+     * @param UpdateSpaceRequest $request UpdateSpaceRequest
      *
-     * @return UpdateSpaceResponse
+     * @return UpdateSpaceResponse UpdateSpaceResponse
      */
     public function updateSpace($request)
     {

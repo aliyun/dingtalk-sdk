@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupSetResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var records[]
      */
     public $records;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchCreateTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var templateList[]
      */
     public $templateList;

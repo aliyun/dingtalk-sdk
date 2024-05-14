@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BatchInsertBizObjectRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $bizObjectJsonArray;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -21,6 +25,8 @@ class BatchInsertBizObjectRequest extends Model
     public $isDraft;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1eeb5ad3-b6da-4d4d-b6a5-8d342567d189
      *
      * @var string
@@ -28,6 +34,8 @@ class BatchInsertBizObjectRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string

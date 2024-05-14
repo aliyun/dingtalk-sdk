@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryMarketOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2092310001312
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryMarketOrderResponseBody extends Model
     public $bizOrderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding23219001
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryMarketOrderResponseBody extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10003298001
      *
      * @var int
@@ -35,6 +41,8 @@ class QueryMarketOrderResponseBody extends Model
     public $endTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FW_GOODS_12319001
      *
      * @var string
@@ -42,6 +50,8 @@ class QueryMarketOrderResponseBody extends Model
     public $goodsCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试商品001
      *
      * @var string
@@ -49,11 +59,15 @@ class QueryMarketOrderResponseBody extends Model
     public $goodsName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $inAppOrder;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FW_GOODS_31001
      *
      * @var string
@@ -61,6 +75,8 @@ class QueryMarketOrderResponseBody extends Model
     public $itemCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试规格001
      *
      * @var string
@@ -89,6 +105,8 @@ class QueryMarketOrderResponseBody extends Model
     public $startTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -96,6 +114,8 @@ class QueryMarketOrderResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgTodoByUserResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;

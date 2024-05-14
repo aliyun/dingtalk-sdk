@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFormListInAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -33,6 +35,8 @@ class GetFormListInAppRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
      *
      * @var string
@@ -40,6 +44,8 @@ class GetFormListInAppRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5014533041684350
      *
      * @var string

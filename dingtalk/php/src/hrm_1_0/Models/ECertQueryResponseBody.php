@@ -86,6 +86,8 @@ class ECertQueryResponseBody extends Model
     public $mainDeptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 李四
      *
      * @var string

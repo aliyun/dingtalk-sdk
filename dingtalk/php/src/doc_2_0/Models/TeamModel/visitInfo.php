@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class visitInfo extends Model
 {
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $joinTime;

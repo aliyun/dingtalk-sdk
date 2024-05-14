@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateUserRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example user@yourcompany.org
      *
      * @var string
@@ -16,16 +18,22 @@ class CreateUserRequest extends Model
     public $email;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $employeeType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example password
      *
      * @var string

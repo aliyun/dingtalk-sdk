@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example XXXX
      *
      * @var string
@@ -16,6 +18,8 @@ class CustomizeContactDeptListRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65722123
      *
      * @var int

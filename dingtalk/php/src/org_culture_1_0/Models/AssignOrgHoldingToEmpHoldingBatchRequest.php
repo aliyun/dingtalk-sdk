@@ -17,6 +17,8 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -24,6 +26,8 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
     public $sendOrgCultureInform;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -31,6 +35,8 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
     public $singleAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OPEN_ORG_POINT_PERSONAL_ASSIGN
      *
      * @var string
@@ -38,6 +44,8 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
     public $sourceUsage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OPEN_EMP_POINT_PERSONAL_RECEIVE
      *
      * @var string
@@ -45,6 +53,8 @@ class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
     public $targetUsage;
 
     /**
+     * @description This parameter is required.
+     *
      * @var targetUserList[]
      */
     public $targetUserList;

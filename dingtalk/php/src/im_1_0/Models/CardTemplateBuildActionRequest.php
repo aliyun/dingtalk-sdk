@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CardTemplateBuildActionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example merge
      *
      * @var string

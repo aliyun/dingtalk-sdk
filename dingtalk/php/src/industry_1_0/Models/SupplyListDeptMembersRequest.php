@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyListDeptMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class SupplyListDeptMembersRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -23,6 +27,8 @@ class SupplyListDeptMembersRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var int

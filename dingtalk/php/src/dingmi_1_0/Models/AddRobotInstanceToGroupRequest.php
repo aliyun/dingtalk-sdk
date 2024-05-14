@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddRobotInstanceToGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abcd123
      *
      * @var string
@@ -16,6 +18,8 @@ class AddRobotInstanceToGroupRequest extends Model
     public $chatbotId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxx
      *
      * @var string

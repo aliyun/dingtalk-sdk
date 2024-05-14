@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PreCheckTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding60f2b247ac1cb24024f2f5cc6abecb85
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteProcessesInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -16,6 +18,8 @@ class DeleteProcessesInstanceRequest extends Model
     public $isAutoUpdateBizObject;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
      *
      * @var string

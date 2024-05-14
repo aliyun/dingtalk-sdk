@@ -35,6 +35,8 @@ class SupplyChainUpdateDeptInfoRequest extends Model
     public $superId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 576488112
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteKeyResultResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var bool
@@ -16,6 +18,8 @@ class DeleteKeyResultResponseBody extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

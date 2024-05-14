@@ -11,16 +11,22 @@ use AlibabaCloud\Tea\Model;
 class UpdateRemoteClassCourseRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var attendParticipants[]
      */
     public $attendParticipants;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $authCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example qdPP123456
      *
      * @var string
@@ -28,6 +34,8 @@ class UpdateRemoteClassCourseRequest extends Model
     public $courseCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 春天来了
      *
      * @var string
@@ -35,6 +43,8 @@ class UpdateRemoteClassCourseRequest extends Model
     public $courseName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1634184000000
      *
      * @var int
@@ -42,6 +52,8 @@ class UpdateRemoteClassCourseRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1634176800000
      *
      * @var int
@@ -49,6 +61,8 @@ class UpdateRemoteClassCourseRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var teachingParticipant
      */
     public $teachingParticipant;

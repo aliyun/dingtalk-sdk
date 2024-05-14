@@ -16,6 +16,8 @@ class RegisterDeviceRequest extends Model
     public $collaborators;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +32,8 @@ class RegisterDeviceRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example key_xxxxxxx
      *
      * @var string
@@ -37,6 +41,8 @@ class RegisterDeviceRequest extends Model
     public $deviceKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 生产1组1号机
      *
      * @var string
@@ -51,6 +57,8 @@ class RegisterDeviceRequest extends Model
     public $managers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager10
      *
      * @var string

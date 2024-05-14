@@ -15,11 +15,15 @@ class IndustryManufactureMesTeamMgmtResponseBody extends Model
     public $dingOpenErrcode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $errorMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var result
      */
     public $result;

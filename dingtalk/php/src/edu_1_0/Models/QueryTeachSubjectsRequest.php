@@ -14,6 +14,8 @@ class QueryTeachSubjectsRequest extends Model
     public $classIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 24275037451244334
      *
      * @var string

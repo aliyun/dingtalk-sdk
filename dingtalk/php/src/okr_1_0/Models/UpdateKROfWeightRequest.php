@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfWeightRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -16,6 +18,8 @@ class UpdateKROfWeightRequest extends Model
     public $weight;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 46GM2
      *
      * @var string
@@ -23,6 +27,8 @@ class UpdateKROfWeightRequest extends Model
     public $krId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

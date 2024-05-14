@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 更新的内容
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateObjectiveRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 06186238011033616
      *
      * @var string

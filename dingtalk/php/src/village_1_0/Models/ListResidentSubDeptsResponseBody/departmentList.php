@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class departmentList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $departmentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $departmentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $superDepartmentId;

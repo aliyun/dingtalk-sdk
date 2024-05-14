@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteOrgTextEmotionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example -1
      *
      * @var int
@@ -16,6 +18,8 @@ class DeleteOrgTextEmotionRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $emotionIds;

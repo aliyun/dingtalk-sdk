@@ -73,11 +73,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTravelProcessDetailRequest $request
-     * @param GetTravelProcessDetailHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取差旅审批实例详情
+     *  *
+     * @param GetTravelProcessDetailRequest $request GetTravelProcessDetailRequest
+     * @param GetTravelProcessDetailHeaders $headers GetTravelProcessDetailHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTravelProcessDetailResponse
+     * @return GetTravelProcessDetailResponse GetTravelProcessDetailResponse
      */
     public function getTravelProcessDetailWithOptions($request, $headers, $runtime)
     {
@@ -116,9 +118,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTravelProcessDetailRequest $request
+     * @summary 获取差旅审批实例详情
+     *  *
+     * @param GetTravelProcessDetailRequest $request GetTravelProcessDetailRequest
      *
-     * @return GetTravelProcessDetailResponse
+     * @return GetTravelProcessDetailResponse GetTravelProcessDetailResponse
      */
     public function getTravelProcessDetail($request)
     {
@@ -129,11 +133,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PreCheckTemplateRequest $request
-     * @param PreCheckTemplateHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 表单升级预校验
+     *  *
+     * @param PreCheckTemplateRequest $request PreCheckTemplateRequest
+     * @param PreCheckTemplateHeaders $headers PreCheckTemplateHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PreCheckTemplateResponse
+     * @return PreCheckTemplateResponse PreCheckTemplateResponse
      */
     public function preCheckTemplateWithOptions($request, $headers, $runtime)
     {
@@ -169,9 +175,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PreCheckTemplateRequest $request
+     * @summary 表单升级预校验
+     *  *
+     * @param PreCheckTemplateRequest $request PreCheckTemplateRequest
      *
-     * @return PreCheckTemplateResponse
+     * @return PreCheckTemplateResponse PreCheckTemplateResponse
      */
     public function preCheckTemplate($request)
     {
@@ -182,11 +190,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTripProcessTemplatesRequest $request
-     * @param QueryTripProcessTemplatesHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询审批套件详情
+     *  *
+     * @param QueryTripProcessTemplatesRequest $request QueryTripProcessTemplatesRequest
+     * @param QueryTripProcessTemplatesHeaders $headers QueryTripProcessTemplatesHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTripProcessTemplatesResponse
+     * @return QueryTripProcessTemplatesResponse QueryTripProcessTemplatesResponse
      */
     public function queryTripProcessTemplatesWithOptions($request, $headers, $runtime)
     {
@@ -222,9 +232,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTripProcessTemplatesRequest $request
+     * @summary 查询审批套件详情
+     *  *
+     * @param QueryTripProcessTemplatesRequest $request QueryTripProcessTemplatesRequest
      *
-     * @return QueryTripProcessTemplatesResponse
+     * @return QueryTripProcessTemplatesResponse QueryTripProcessTemplatesResponse
      */
     public function queryTripProcessTemplates($request)
     {
@@ -235,11 +247,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncBusinessSignInfoRequest $request
-     * @param SyncBusinessSignInfoHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 同步服务商企业签约变更事件
+     *  *
+     * @param SyncBusinessSignInfoRequest $request SyncBusinessSignInfoRequest
+     * @param SyncBusinessSignInfoHeaders $headers SyncBusinessSignInfoHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncBusinessSignInfoResponse
+     * @return SyncBusinessSignInfoResponse SyncBusinessSignInfoResponse
      */
     public function syncBusinessSignInfoWithOptions($request, $headers, $runtime)
     {
@@ -296,9 +310,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncBusinessSignInfoRequest $request
+     * @summary 同步服务商企业签约变更事件
+     *  *
+     * @param SyncBusinessSignInfoRequest $request SyncBusinessSignInfoRequest
      *
-     * @return SyncBusinessSignInfoResponse
+     * @return SyncBusinessSignInfoResponse SyncBusinessSignInfoResponse
      */
     public function syncBusinessSignInfo($request)
     {
@@ -309,11 +325,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncCostCenterRequest $request
-     * @param SyncCostCenterHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 出差表单成本中心同步
+     *  *
+     * @param SyncCostCenterRequest $request SyncCostCenterRequest
+     * @param SyncCostCenterHeaders $headers SyncCostCenterHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncCostCenterResponse
+     * @return SyncCostCenterResponse SyncCostCenterResponse
      */
     public function syncCostCenterWithOptions($request, $headers, $runtime)
     {
@@ -379,9 +397,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncCostCenterRequest $request
+     * @summary 出差表单成本中心同步
+     *  *
+     * @param SyncCostCenterRequest $request SyncCostCenterRequest
      *
-     * @return SyncCostCenterResponse
+     * @return SyncCostCenterResponse SyncCostCenterResponse
      */
     public function syncCostCenter($request)
     {
@@ -392,11 +412,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncCostCenterEntityRequest $request
-     * @param SyncCostCenterEntityHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 出差表单成本中心可用范围
+     *  *
+     * @param SyncCostCenterEntityRequest $request SyncCostCenterEntityRequest
+     * @param SyncCostCenterEntityHeaders $headers SyncCostCenterEntityHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncCostCenterEntityResponse
+     * @return SyncCostCenterEntityResponse SyncCostCenterEntityResponse
      */
     public function syncCostCenterEntityWithOptions($request, $headers, $runtime)
     {
@@ -444,9 +466,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncCostCenterEntityRequest $request
+     * @summary 出差表单成本中心可用范围
+     *  *
+     * @param SyncCostCenterEntityRequest $request SyncCostCenterEntityRequest
      *
-     * @return SyncCostCenterEntityResponse
+     * @return SyncCostCenterEntityResponse SyncCostCenterEntityResponse
      */
     public function syncCostCenterEntity($request)
     {
@@ -457,11 +481,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncInvoiceRequest $request
-     * @param SyncInvoiceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 出差表单发票抬头
+     *  *
+     * @param SyncInvoiceRequest $request SyncInvoiceRequest
+     * @param SyncInvoiceHeaders $headers SyncInvoiceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncInvoiceResponse
+     * @return SyncInvoiceResponse SyncInvoiceResponse
      */
     public function syncInvoiceWithOptions($request, $headers, $runtime)
     {
@@ -545,9 +571,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncInvoiceRequest $request
+     * @summary 出差表单发票抬头
+     *  *
+     * @param SyncInvoiceRequest $request SyncInvoiceRequest
      *
-     * @return SyncInvoiceResponse
+     * @return SyncInvoiceResponse SyncInvoiceResponse
      */
     public function syncInvoice($request)
     {
@@ -558,11 +586,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncInvoiceEntityRequest $request
-     * @param SyncInvoiceEntityHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 出差表单发票抬头可用范围
+     *  *
+     * @param SyncInvoiceEntityRequest $request SyncInvoiceEntityRequest
+     * @param SyncInvoiceEntityHeaders $headers SyncInvoiceEntityHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncInvoiceEntityResponse
+     * @return SyncInvoiceEntityResponse SyncInvoiceEntityResponse
      */
     public function syncInvoiceEntityWithOptions($request, $headers, $runtime)
     {
@@ -610,9 +640,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncInvoiceEntityRequest $request
+     * @summary 出差表单发票抬头可用范围
+     *  *
+     * @param SyncInvoiceEntityRequest $request SyncInvoiceEntityRequest
      *
-     * @return SyncInvoiceEntityResponse
+     * @return SyncInvoiceEntityResponse SyncInvoiceEntityResponse
      */
     public function syncInvoiceEntity($request)
     {
@@ -623,11 +655,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncProjectRequest $request
-     * @param SyncProjectHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 出差表单项目
+     *  *
+     * @param SyncProjectRequest $request SyncProjectRequest
+     * @param SyncProjectHeaders $headers SyncProjectHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncProjectResponse
+     * @return SyncProjectResponse SyncProjectResponse
      */
     public function syncProjectWithOptions($request, $headers, $runtime)
     {
@@ -702,9 +736,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncProjectRequest $request
+     * @summary 出差表单项目
+     *  *
+     * @param SyncProjectRequest $request SyncProjectRequest
      *
-     * @return SyncProjectResponse
+     * @return SyncProjectResponse SyncProjectResponse
      */
     public function syncProject($request)
     {
@@ -715,11 +751,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncProjectEntityRequest $request
-     * @param SyncProjectEntityHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 出差表单项目可用范围
+     *  *
+     * @param SyncProjectEntityRequest $request SyncProjectEntityRequest
+     * @param SyncProjectEntityHeaders $headers SyncProjectEntityHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncProjectEntityResponse
+     * @return SyncProjectEntityResponse SyncProjectEntityResponse
      */
     public function syncProjectEntityWithOptions($request, $headers, $runtime)
     {
@@ -767,9 +805,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncProjectEntityRequest $request
+     * @summary 出差表单项目可用范围
+     *  *
+     * @param SyncProjectEntityRequest $request SyncProjectEntityRequest
      *
-     * @return SyncProjectEntityResponse
+     * @return SyncProjectEntityResponse SyncProjectEntityResponse
      */
     public function syncProjectEntity($request)
     {
@@ -780,11 +820,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncSecretKeyRequest $request
-     * @param SyncSecretKeyHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 调用本接口同步公司密钥信息。
+     *  *
+     * @param SyncSecretKeyRequest $request SyncSecretKeyRequest
+     * @param SyncSecretKeyHeaders $headers SyncSecretKeyHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncSecretKeyResponse
+     * @return SyncSecretKeyResponse SyncSecretKeyResponse
      */
     public function syncSecretKeyWithOptions($request, $headers, $runtime)
     {
@@ -835,9 +877,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncSecretKeyRequest $request
+     * @summary 调用本接口同步公司密钥信息。
+     *  *
+     * @param SyncSecretKeyRequest $request SyncSecretKeyRequest
      *
-     * @return SyncSecretKeyResponse
+     * @return SyncSecretKeyResponse SyncSecretKeyResponse
      */
     public function syncSecretKey($request)
     {
@@ -848,11 +892,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncTripOrderRequest $request
-     * @param SyncTripOrderHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 同步出行订单变更事件
+     *  *
+     * @param SyncTripOrderRequest $request SyncTripOrderRequest
+     * @param SyncTripOrderHeaders $headers SyncTripOrderHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncTripOrderResponse
+     * @return SyncTripOrderResponse SyncTripOrderResponse
      */
     public function syncTripOrderWithOptions($request, $headers, $runtime)
     {
@@ -963,9 +1009,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncTripOrderRequest $request
+     * @summary 同步出行订单变更事件
+     *  *
+     * @param SyncTripOrderRequest $request SyncTripOrderRequest
      *
-     * @return SyncTripOrderResponse
+     * @return SyncTripOrderResponse SyncTripOrderResponse
      */
     public function syncTripOrder($request)
     {
@@ -976,11 +1024,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncTripProductConfigRequest $request
-     * @param SyncTripProductConfigHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 预订管理产品线配置同步
+     *  *
+     * @param SyncTripProductConfigRequest $request SyncTripProductConfigRequest
+     * @param SyncTripProductConfigHeaders $headers SyncTripProductConfigHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncTripProductConfigResponse
+     * @return SyncTripProductConfigResponse SyncTripProductConfigResponse
      */
     public function syncTripProductConfigWithOptions($request, $headers, $runtime)
     {
@@ -1019,9 +1069,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncTripProductConfigRequest $request
+     * @summary 预订管理产品线配置同步
+     *  *
+     * @param SyncTripProductConfigRequest $request SyncTripProductConfigRequest
      *
-     * @return SyncTripProductConfigResponse
+     * @return SyncTripProductConfigResponse SyncTripProductConfigResponse
      */
     public function syncTripProductConfig($request)
     {
@@ -1032,11 +1084,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TripPlatformUnifiedEntryRequest $request
-     * @param TripPlatformUnifiedEntryHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 智能差旅平台数据互通统一入口
+     *  *
+     * @param TripPlatformUnifiedEntryRequest $request TripPlatformUnifiedEntryRequest
+     * @param TripPlatformUnifiedEntryHeaders $headers TripPlatformUnifiedEntryHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return TripPlatformUnifiedEntryResponse
+     * @return TripPlatformUnifiedEntryResponse TripPlatformUnifiedEntryResponse
      */
     public function tripPlatformUnifiedEntryWithOptions($request, $headers, $runtime)
     {
@@ -1075,9 +1129,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TripPlatformUnifiedEntryRequest $request
+     * @summary 智能差旅平台数据互通统一入口
+     *  *
+     * @param TripPlatformUnifiedEntryRequest $request TripPlatformUnifiedEntryRequest
      *
-     * @return TripPlatformUnifiedEntryResponse
+     * @return TripPlatformUnifiedEntryResponse TripPlatformUnifiedEntryResponse
      */
     public function tripPlatformUnifiedEntry($request)
     {
@@ -1088,11 +1144,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpgradeTemplateRequest $request
-     * @param UpgradeTemplateHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 升级套件
+     *  *
+     * @param UpgradeTemplateRequest $request UpgradeTemplateRequest
+     * @param UpgradeTemplateHeaders $headers UpgradeTemplateHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpgradeTemplateResponse
+     * @return UpgradeTemplateResponse UpgradeTemplateResponse
      */
     public function upgradeTemplateWithOptions($request, $headers, $runtime)
     {
@@ -1134,9 +1192,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpgradeTemplateRequest $request
+     * @summary 升级套件
+     *  *
+     * @param UpgradeTemplateRequest $request UpgradeTemplateRequest
      *
-     * @return UpgradeTemplateResponse
+     * @return UpgradeTemplateResponse UpgradeTemplateResponse
      */
     public function upgradeTemplate($request)
     {

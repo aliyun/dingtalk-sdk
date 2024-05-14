@@ -17,6 +17,8 @@ class SendTemplateInteractiveCardRequest extends Model
     public $callbackUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 根据具体的cardTemplateId参考文档格式
      *
      * @var string
@@ -24,6 +26,8 @@ class SendTemplateInteractiveCardRequest extends Model
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TuWenCard01
      *
      * @var string
@@ -38,6 +42,8 @@ class SendTemplateInteractiveCardRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cardXXXX01
      *
      * @var string
@@ -45,6 +51,8 @@ class SendTemplateInteractiveCardRequest extends Model
     public $outTrackId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxx
      *
      * @var string

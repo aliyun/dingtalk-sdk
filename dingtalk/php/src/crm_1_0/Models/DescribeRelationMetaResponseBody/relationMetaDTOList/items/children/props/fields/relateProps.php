@@ -11,141 +11,197 @@ use AlibabaCloud\Tea\Model;
 class relateProps extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $align;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $choice;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $disabled;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $duration;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $durationLabel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $format;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formula;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $invisible;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $labelEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $limit;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $link;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $notUpper;
 
     /**
+     * @description This parameter is required.
+     *
      * @var options[]
      */
     public $options;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $payEnable;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $placeholder;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $ratio;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $required;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $requiredEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $spread;
 
     /**
+     * @description This parameter is required.
+     *
      * @var statField[]
      */
     public $statField;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $verticalPrint;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $watermark;

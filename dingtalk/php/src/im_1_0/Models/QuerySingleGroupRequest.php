@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QuerySingleGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8777
      *
      * @var groupMembers[]
@@ -17,6 +19,8 @@ class QuerySingleGroupRequest extends Model
     public $groupMembers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

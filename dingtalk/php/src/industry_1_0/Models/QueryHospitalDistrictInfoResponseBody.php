@@ -15,6 +15,8 @@ class QueryHospitalDistrictInfoResponseBody extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -22,6 +24,8 @@ class QueryHospitalDistrictInfoResponseBody extends Model
     public $currentPage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -29,6 +33,8 @@ class QueryHospitalDistrictInfoResponseBody extends Model
     public $totalCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

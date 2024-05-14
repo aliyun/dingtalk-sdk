@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AlignObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1006
      *
      * @var string
@@ -16,6 +18,8 @@ class AlignObjectiveRequest extends Model
     public $periodId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 59YD
      *
      * @var string
@@ -23,6 +27,8 @@ class AlignObjectiveRequest extends Model
     public $targetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

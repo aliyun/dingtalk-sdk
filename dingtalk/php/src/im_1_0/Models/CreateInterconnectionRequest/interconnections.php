@@ -30,6 +30,8 @@ class interconnections extends Model
     public $appUserDynamics;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string
@@ -37,6 +39,8 @@ class interconnections extends Model
     public $appUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 188****8655
      *
      * @var string
@@ -44,6 +48,8 @@ class interconnections extends Model
     public $appUserMobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Foo
      *
      * @var string
@@ -51,6 +57,8 @@ class interconnections extends Model
     public $appUserName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

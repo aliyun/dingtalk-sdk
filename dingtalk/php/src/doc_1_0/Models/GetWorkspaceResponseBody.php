@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isDeleted;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $owner;
@@ -24,6 +28,8 @@ class GetWorkspaceResponseBody extends Model
     public $rootDentryUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;

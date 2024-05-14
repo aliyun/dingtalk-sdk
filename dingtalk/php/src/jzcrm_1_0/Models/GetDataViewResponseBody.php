@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class GetDataViewResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[][]
      */
     public $dataname;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $time;

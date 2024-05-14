@@ -14,26 +14,36 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $level1;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $level2;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $level3;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

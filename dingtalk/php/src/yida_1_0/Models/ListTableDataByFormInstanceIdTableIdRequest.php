@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ListTableDataByFormInstanceIdTableIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
@@ -35,6 +39,8 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -42,6 +48,8 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example tableField_ksyaujq1
      *
      * @var string
@@ -49,6 +57,8 @@ class ListTableDataByFormInstanceIdTableIdRequest extends Model
     public $tableFieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

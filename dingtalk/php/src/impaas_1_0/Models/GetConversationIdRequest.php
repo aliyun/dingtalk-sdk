@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetConversationIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SupplyDeleteRoleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isRoleGroup;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleId;

@@ -16,6 +16,8 @@ class TripPlatformUnifiedEntryRequest extends Model
     public $messages;
 
     /**
+     * @description This parameter is required.
+     *
      * @example partner_syncProject
      *
      * @var string

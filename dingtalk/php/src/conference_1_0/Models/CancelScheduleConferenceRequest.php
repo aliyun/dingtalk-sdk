@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CancelScheduleConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class CancelScheduleConferenceRequest extends Model
     public $creatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2a489xxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
      *
      * @var string

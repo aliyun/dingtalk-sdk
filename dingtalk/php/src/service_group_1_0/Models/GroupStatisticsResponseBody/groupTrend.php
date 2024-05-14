@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class groupTrend extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class groupTrend extends Model
     public $count;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string

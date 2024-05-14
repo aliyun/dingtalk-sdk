@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateVideoConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example XXX的视频会议
      *
      * @var string
@@ -28,6 +30,8 @@ class CreateVideoConferenceRequest extends Model
     public $inviteUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string

@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class SendMsgByTaskSupportInviteJoinOrgRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var messageContent
      */
     public $messageContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $mobilePhones;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -27,6 +33,8 @@ class SendMsgByTaskSupportInviteJoinOrgRequest extends Model
     public $needUrlTrack;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 88888
      *
      * @var string
@@ -34,6 +42,8 @@ class SendMsgByTaskSupportInviteJoinOrgRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 发送渠道      * 工作通知：WORK_NOTICE      * 机器人：SINGLE_ROBOT
      *
      * @var string
@@ -41,6 +51,8 @@ class SendMsgByTaskSupportInviteJoinOrgRequest extends Model
     public $sendChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 群发任务
      *
      * @var string

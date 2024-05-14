@@ -15,16 +15,22 @@ class QueryAllMemberByDeptResponseBody extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $currentPage;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 32
      *
      * @var int

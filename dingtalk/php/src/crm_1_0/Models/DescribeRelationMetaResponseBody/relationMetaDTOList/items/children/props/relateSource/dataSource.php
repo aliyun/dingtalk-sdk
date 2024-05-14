@@ -11,16 +11,22 @@ use AlibabaCloud\Tea\Model;
 class dataSource extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var params
      */
     public $params;
 
     /**
+     * @description This parameter is required.
+     *
      * @var target
      */
     public $target;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

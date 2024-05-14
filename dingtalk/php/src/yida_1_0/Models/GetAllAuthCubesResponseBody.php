@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetAllAuthCubesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class InitDeviceResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string

@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class courserGroupItemModels extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1、单周；2、双周；3、全周
      *
      * @var int
@@ -18,6 +20,8 @@ class courserGroupItemModels extends Model
     public $classPeriodType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10001
      *
      * @var int
@@ -25,6 +29,8 @@ class courserGroupItemModels extends Model
     public $classroomId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1:音视频直播；2:线下课程；4:音视频及线下
      *
      * @var int
@@ -32,16 +38,22 @@ class courserGroupItemModels extends Model
     public $courseType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var courserGroupItemEndDate
      */
     public $courserGroupItemEndDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var courserGroupItemStartDate
      */
     public $courserGroupItemStartDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 7
      *
      * @var int
@@ -49,6 +61,8 @@ class courserGroupItemModels extends Model
     public $dayOfWeek;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $sectionIndex;

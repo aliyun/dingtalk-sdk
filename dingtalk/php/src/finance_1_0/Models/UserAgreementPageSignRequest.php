@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UserAgreementPageSignRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example TRADE
      *
      * @var string
@@ -16,6 +18,8 @@ class UserAgreementPageSignRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WITHHOLDING
      *
      * @var string
@@ -23,6 +27,8 @@ class UserAgreementPageSignRequest extends Model
     public $bizScene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -30,6 +36,8 @@ class UserAgreementPageSignRequest extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 支付宝
      *
      * @var string
@@ -51,6 +59,8 @@ class UserAgreementPageSignRequest extends Model
     public $returnUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 详见支付宝接口文档https://opendocs.alipay.com/open/20190319114403226822/signscene
      *
      * @var string
@@ -58,6 +68,8 @@ class UserAgreementPageSignRequest extends Model
     public $signScene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -65,6 +77,8 @@ class UserAgreementPageSignRequest extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 滴滴出行
      *
      * @var string
@@ -72,6 +86,8 @@ class UserAgreementPageSignRequest extends Model
     public $subMerchantName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 免密付车费，单次最高500元
      *
      * @var string
@@ -79,6 +95,8 @@ class UserAgreementPageSignRequest extends Model
     public $subMerchantServiceDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 滴滴出行免密支付
      *
      * @var string
@@ -86,6 +104,8 @@ class UserAgreementPageSignRequest extends Model
     public $subMerchantServiceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2120493284
      *
      * @var string

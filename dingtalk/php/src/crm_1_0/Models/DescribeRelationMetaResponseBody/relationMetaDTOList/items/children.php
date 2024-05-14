@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class children extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $componentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var props
      */
     public $props;

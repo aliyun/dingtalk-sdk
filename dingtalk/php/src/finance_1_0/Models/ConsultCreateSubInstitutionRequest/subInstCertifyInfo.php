@@ -16,6 +16,8 @@ class subInstCertifyInfo extends Model
     public $certImage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 331081198611111111
      *
      * @var string
@@ -23,6 +25,8 @@ class subInstCertifyInfo extends Model
     public $certNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 201
      *
      * @var string

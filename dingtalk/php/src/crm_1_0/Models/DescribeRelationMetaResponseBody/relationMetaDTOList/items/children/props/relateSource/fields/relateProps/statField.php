@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class statField extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $upper;

@@ -196,11 +196,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendRolePermissionRequest $tmpReq
-     * @param AppendRolePermissionHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 追加角色权限点
+     *  *
+     * @param AppendRolePermissionRequest $tmpReq  AppendRolePermissionRequest
+     * @param AppendRolePermissionHeaders $headers AppendRolePermissionHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return AppendRolePermissionResponse
+     * @return AppendRolePermissionResponse AppendRolePermissionResponse
      */
     public function appendRolePermissionWithOptions($tmpReq, $headers, $runtime)
     {
@@ -244,9 +246,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendRolePermissionRequest $request
+     * @summary 追加角色权限点
+     *  *
+     * @param AppendRolePermissionRequest $request AppendRolePermissionRequest
      *
-     * @return AppendRolePermissionResponse
+     * @return AppendRolePermissionResponse AppendRolePermissionResponse
      */
     public function appendRolePermission($request)
     {
@@ -257,11 +261,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddInvoiceRequest $request
-     * @param BatchAddInvoiceHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 发票数据批量写入
+     *  *
+     * @param BatchAddInvoiceRequest $request BatchAddInvoiceRequest
+     * @param BatchAddInvoiceHeaders $headers BatchAddInvoiceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchAddInvoiceResponse
+     * @return BatchAddInvoiceResponse BatchAddInvoiceResponse
      */
     public function batchAddInvoiceWithOptions($request, $headers, $runtime)
     {
@@ -306,9 +312,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddInvoiceRequest $request
+     * @summary 发票数据批量写入
+     *  *
+     * @param BatchAddInvoiceRequest $request BatchAddInvoiceRequest
      *
-     * @return BatchAddInvoiceResponse
+     * @return BatchAddInvoiceResponse BatchAddInvoiceResponse
      */
     public function batchAddInvoice($request)
     {
@@ -319,11 +327,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateCustomerRequest $request
-     * @param BatchCreateCustomerHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量增加用户信息
+     *  *
+     * @param BatchCreateCustomerRequest $request BatchCreateCustomerRequest
+     * @param BatchCreateCustomerHeaders $headers BatchCreateCustomerHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchCreateCustomerResponse
+     * @return BatchCreateCustomerResponse BatchCreateCustomerResponse
      */
     public function batchCreateCustomerWithOptions($request, $headers, $runtime)
     {
@@ -362,9 +372,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateCustomerRequest $request
+     * @summary 批量增加用户信息
+     *  *
+     * @param BatchCreateCustomerRequest $request BatchCreateCustomerRequest
      *
-     * @return BatchCreateCustomerResponse
+     * @return BatchCreateCustomerResponse BatchCreateCustomerResponse
      */
     public function batchCreateCustomer($request)
     {
@@ -375,11 +387,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BindCompanyAccountantBookRequest $request
-     * @param BindCompanyAccountantBookHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 绑定钉钉智能财务企业主体的账套信息
+     *  *
+     * @param BindCompanyAccountantBookRequest $request BindCompanyAccountantBookRequest
+     * @param BindCompanyAccountantBookHeaders $headers BindCompanyAccountantBookHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return BindCompanyAccountantBookResponse
+     * @return BindCompanyAccountantBookResponse BindCompanyAccountantBookResponse
      */
     public function bindCompanyAccountantBookWithOptions($request, $headers, $runtime)
     {
@@ -418,9 +432,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BindCompanyAccountantBookRequest $request
+     * @summary 绑定钉钉智能财务企业主体的账套信息
+     *  *
+     * @param BindCompanyAccountantBookRequest $request BindCompanyAccountantBookRequest
      *
-     * @return BindCompanyAccountantBookResponse
+     * @return BindCompanyAccountantBookResponse BindCompanyAccountantBookResponse
      */
     public function bindCompanyAccountantBook($request)
     {
@@ -431,11 +447,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckVoucherStatusRequest $request
-     * @param CheckVoucherStatusHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 查验发票是否生成凭证
+     *  *
+     * @param CheckVoucherStatusRequest $request CheckVoucherStatusRequest
+     * @param CheckVoucherStatusHeaders $headers CheckVoucherStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckVoucherStatusResponse
+     * @return CheckVoucherStatusResponse CheckVoucherStatusResponse
      */
     public function checkVoucherStatusWithOptions($request, $headers, $runtime)
     {
@@ -498,9 +516,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckVoucherStatusRequest $request
+     * @summary 查验发票是否生成凭证
+     *  *
+     * @param CheckVoucherStatusRequest $request CheckVoucherStatusRequest
      *
-     * @return CheckVoucherStatusResponse
+     * @return CheckVoucherStatusResponse CheckVoucherStatusResponse
      */
     public function checkVoucherStatus($request)
     {
@@ -511,11 +531,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomerRequest $request
-     * @param CreateCustomerHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建智能财务的客户信息
+     *  *
+     * @param CreateCustomerRequest $request CreateCustomerRequest
+     * @param CreateCustomerHeaders $headers CreateCustomerHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCustomerResponse
+     * @return CreateCustomerResponse CreateCustomerResponse
      */
     public function createCustomerWithOptions($request, $headers, $runtime)
     {
@@ -581,9 +603,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomerRequest $request
+     * @summary 创建智能财务的客户信息
+     *  *
+     * @param CreateCustomerRequest $request CreateCustomerRequest
      *
-     * @return CreateCustomerResponse
+     * @return CreateCustomerResponse CreateCustomerResponse
      */
     public function createCustomer($request)
     {
@@ -594,11 +618,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateReceiptRequest $request
-     * @param CreateReceiptHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 创建智能财务单据
+     *  *
+     * @param CreateReceiptRequest $request CreateReceiptRequest
+     * @param CreateReceiptHeaders $headers CreateReceiptHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateReceiptResponse
+     * @return CreateReceiptResponse CreateReceiptResponse
      */
     public function createReceiptWithOptions($request, $headers, $runtime)
     {
@@ -634,9 +660,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateReceiptRequest $request
+     * @summary 创建智能财务单据
+     *  *
+     * @param CreateReceiptRequest $request CreateReceiptRequest
      *
-     * @return CreateReceiptResponse
+     * @return CreateReceiptResponse CreateReceiptResponse
      */
     public function createReceipt($request)
     {
@@ -647,11 +675,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteReceiptRequest $request
-     * @param DeleteReceiptHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 删除智能财务单据
+     *  *
+     * @param DeleteReceiptRequest $request DeleteReceiptRequest
+     * @param DeleteReceiptHeaders $headers DeleteReceiptHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteReceiptResponse
+     * @return DeleteReceiptResponse DeleteReceiptResponse
      */
     public function deleteReceiptWithOptions($request, $headers, $runtime)
     {
@@ -687,9 +717,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteReceiptRequest $request
+     * @summary 删除智能财务单据
+     *  *
+     * @param DeleteReceiptRequest $request DeleteReceiptRequest
      *
-     * @return DeleteReceiptResponse
+     * @return DeleteReceiptResponse DeleteReceiptResponse
      */
     public function deleteReceipt($request)
     {
@@ -700,10 +732,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBookkeepingUserListHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取可以查看账本的用户列表
+     *  *
+     * @param GetBookkeepingUserListHeaders $headers GetBookkeepingUserListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBookkeepingUserListResponse
+     * @return GetBookkeepingUserListResponse GetBookkeepingUserListResponse
      */
     public function getBookkeepingUserListWithOptions($headers, $runtime)
     {
@@ -733,7 +767,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetBookkeepingUserListResponse
+     * @summary 获取可以查看账本的用户列表
+     *  *
+     * @return GetBookkeepingUserListResponse GetBookkeepingUserListResponse
      */
     public function getBookkeepingUserList()
     {
@@ -744,11 +780,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCategoryRequest $request
-     * @param GetCategoryHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取费用类别
+     *  *
+     * @param GetCategoryRequest $request GetCategoryRequest
+     * @param GetCategoryHeaders $headers GetCategoryHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCategoryResponse
+     * @return GetCategoryResponse GetCategoryResponse
      */
     public function getCategoryWithOptions($request, $headers, $runtime)
     {
@@ -784,9 +822,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCategoryRequest $request
+     * @summary 获取费用类别
+     *  *
+     * @param GetCategoryRequest $request GetCategoryRequest
      *
-     * @return GetCategoryResponse
+     * @return GetCategoryResponse GetCategoryResponse
      */
     public function getCategory($request)
     {
@@ -797,11 +837,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCustomerRequest $request
-     * @param GetCustomerHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取智能财务应用内维护的客户信息
+     *  *
+     * @param GetCustomerRequest $request GetCustomerRequest
+     * @param GetCustomerHeaders $headers GetCustomerHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCustomerResponse
+     * @return GetCustomerResponse GetCustomerResponse
      */
     public function getCustomerWithOptions($request, $headers, $runtime)
     {
@@ -837,9 +879,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCustomerRequest $request
+     * @summary 获取智能财务应用内维护的客户信息
+     *  *
+     * @param GetCustomerRequest $request GetCustomerRequest
      *
-     * @return GetCustomerResponse
+     * @return GetCustomerResponse GetCustomerResponse
      */
     public function getCustomer($request)
     {
@@ -850,11 +894,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFinanceAccountRequest $request
-     * @param GetFinanceAccountHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取企业账户
+     *  *
+     * @param GetFinanceAccountRequest $request GetFinanceAccountRequest
+     * @param GetFinanceAccountHeaders $headers GetFinanceAccountHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFinanceAccountResponse
+     * @return GetFinanceAccountResponse GetFinanceAccountResponse
      */
     public function getFinanceAccountWithOptions($request, $headers, $runtime)
     {
@@ -890,9 +936,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFinanceAccountRequest $request
+     * @summary 获取企业账户
+     *  *
+     * @param GetFinanceAccountRequest $request GetFinanceAccountRequest
      *
-     * @return GetFinanceAccountResponse
+     * @return GetFinanceAccountResponse GetFinanceAccountResponse
      */
     public function getFinanceAccount($request)
     {
@@ -903,10 +951,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFormTemplateInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取智能财务套件模版信息
+     *  *
+     * @param GetFormTemplateInfoHeaders $headers GetFormTemplateInfoHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFormTemplateInfoResponse
+     * @return GetFormTemplateInfoResponse GetFormTemplateInfoResponse
      */
     public function getFormTemplateInfoWithOptions($headers, $runtime)
     {
@@ -936,7 +986,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetFormTemplateInfoResponse
+     * @summary 获取智能财务套件模版信息
+     *  *
+     * @return GetFormTemplateInfoResponse GetFormTemplateInfoResponse
      */
     public function getFormTemplateInfo()
     {
@@ -947,11 +999,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInvoiceByPageRequest $tmpReq
-     * @param GetInvoiceByPageHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 发票分页查询接口
+     *  *
+     * @param GetInvoiceByPageRequest $tmpReq  GetInvoiceByPageRequest
+     * @param GetInvoiceByPageHeaders $headers GetInvoiceByPageHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInvoiceByPageResponse
+     * @return GetInvoiceByPageResponse GetInvoiceByPageResponse
      */
     public function getInvoiceByPageWithOptions($tmpReq, $headers, $runtime)
     {
@@ -992,9 +1046,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInvoiceByPageRequest $request
+     * @summary 发票分页查询接口
+     *  *
+     * @param GetInvoiceByPageRequest $request GetInvoiceByPageRequest
      *
-     * @return GetInvoiceByPageResponse
+     * @return GetInvoiceByPageResponse GetInvoiceByPageResponse
      */
     public function getInvoiceByPage($request)
     {
@@ -1005,10 +1061,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIsNewVersionHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 用来给isv提供是否使用智能账本的判断接口
+     *  *
+     * @param GetIsNewVersionHeaders $headers GetIsNewVersionHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetIsNewVersionResponse
+     * @return GetIsNewVersionResponse GetIsNewVersionResponse
      */
     public function getIsNewVersionWithOptions($headers, $runtime)
     {
@@ -1038,7 +1096,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetIsNewVersionResponse
+     * @summary 用来给isv提供是否使用智能账本的判断接口
+     *  *
+     * @return GetIsNewVersionResponse GetIsNewVersionResponse
      */
     public function getIsNewVersion()
     {
@@ -1049,11 +1109,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据comanyCode查询钉钉智能财务多主体信息
+     *  *
      * @param string                           $companyCode
-     * @param GetMultiCompanyInfoByCodeHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param GetMultiCompanyInfoByCodeHeaders $headers     GetMultiCompanyInfoByCodeHeaders
+     * @param RuntimeOptions                   $runtime     runtime options for this request RuntimeOptions
      *
-     * @return GetMultiCompanyInfoByCodeResponse
+     * @return GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCodeResponse
      */
     public function getMultiCompanyInfoByCodeWithOptions($companyCode, $headers, $runtime)
     {
@@ -1083,9 +1145,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据comanyCode查询钉钉智能财务多主体信息
+     *  *
      * @param string $companyCode
      *
-     * @return GetMultiCompanyInfoByCodeResponse
+     * @return GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCodeResponse
      */
     public function getMultiCompanyInfoByCode($companyCode)
     {
@@ -1096,11 +1160,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProductRequest $request
-     * @param GetProductHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取商品信息
+     *  *
+     * @param GetProductRequest $request GetProductRequest
+     * @param GetProductHeaders $headers GetProductHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetProductResponse
+     * @return GetProductResponse GetProductResponse
      */
     public function getProductWithOptions($request, $headers, $runtime)
     {
@@ -1136,9 +1202,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProductRequest $request
+     * @summary 获取商品信息
+     *  *
+     * @param GetProductRequest $request GetProductRequest
      *
-     * @return GetProductResponse
+     * @return GetProductResponse GetProductResponse
      */
     public function getProduct($request)
     {
@@ -1149,11 +1217,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProjectRequest $request
-     * @param GetProjectHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取单条项目
+     *  *
+     * @param GetProjectRequest $request GetProjectRequest
+     * @param GetProjectHeaders $headers GetProjectHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetProjectResponse
+     * @return GetProjectResponse GetProjectResponse
      */
     public function getProjectWithOptions($request, $headers, $runtime)
     {
@@ -1189,9 +1259,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProjectRequest $request
+     * @summary 获取单条项目
+     *  *
+     * @param GetProjectRequest $request GetProjectRequest
      *
-     * @return GetProjectResponse
+     * @return GetProjectResponse GetProjectResponse
      */
     public function getProject($request)
     {
@@ -1202,11 +1274,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetReceiptRequest $request
-     * @param GetReceiptHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取智能财务单据详情
+     *  *
+     * @param GetReceiptRequest $request GetReceiptRequest
+     * @param GetReceiptHeaders $headers GetReceiptHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetReceiptResponse
+     * @return GetReceiptResponse GetReceiptResponse
      */
     public function getReceiptWithOptions($request, $headers, $runtime)
     {
@@ -1245,9 +1319,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetReceiptRequest $request
+     * @summary 获取智能财务单据详情
+     *  *
+     * @param GetReceiptRequest $request GetReceiptRequest
      *
-     * @return GetReceiptResponse
+     * @return GetReceiptResponse GetReceiptResponse
      */
     public function getReceipt($request)
     {
@@ -1258,11 +1334,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSupplierRequest $request
-     * @param GetSupplierHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取智能财务应用内维护的供应商信息
+     *  *
+     * @param GetSupplierRequest $request GetSupplierRequest
+     * @param GetSupplierHeaders $headers GetSupplierHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSupplierResponse
+     * @return GetSupplierResponse GetSupplierResponse
      */
     public function getSupplierWithOptions($request, $headers, $runtime)
     {
@@ -1298,9 +1376,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSupplierRequest $request
+     * @summary 获取智能财务应用内维护的供应商信息
+     *  *
+     * @param GetSupplierRequest $request GetSupplierRequest
      *
-     * @return GetSupplierResponse
+     * @return GetSupplierResponse GetSupplierResponse
      */
     public function getSupplier($request)
     {
@@ -1311,11 +1391,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetYongYouOpenApiTokenRequest $request
-     * @param GetYongYouOpenApiTokenHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取用友开放平台接口鉴权信息
+     *  *
+     * @param GetYongYouOpenApiTokenRequest $request GetYongYouOpenApiTokenRequest
+     * @param GetYongYouOpenApiTokenHeaders $headers GetYongYouOpenApiTokenHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetYongYouOpenApiTokenResponse
+     * @return GetYongYouOpenApiTokenResponse GetYongYouOpenApiTokenResponse
      */
     public function getYongYouOpenApiTokenWithOptions($request, $headers, $runtime)
     {
@@ -1351,9 +1433,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetYongYouOpenApiTokenRequest $request
+     * @summary 获取用友开放平台接口鉴权信息
+     *  *
+     * @param GetYongYouOpenApiTokenRequest $request GetYongYouOpenApiTokenRequest
      *
-     * @return GetYongYouOpenApiTokenResponse
+     * @return GetYongYouOpenApiTokenResponse GetYongYouOpenApiTokenResponse
      */
     public function getYongYouOpenApiToken($request)
     {
@@ -1364,10 +1448,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetYongYouOrgRelationHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 查询钉钉组织绑定的畅捷通组织
+     *  *
+     * @param GetYongYouOrgRelationHeaders $headers GetYongYouOrgRelationHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetYongYouOrgRelationResponse
+     * @return GetYongYouOrgRelationResponse GetYongYouOrgRelationResponse
      */
     public function getYongYouOrgRelationWithOptions($headers, $runtime)
     {
@@ -1397,7 +1483,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetYongYouOrgRelationResponse
+     * @summary 查询钉钉组织绑定的畅捷通组织
+     *  *
+     * @return GetYongYouOrgRelationResponse GetYongYouOrgRelationResponse
      */
     public function getYongYouOrgRelation()
     {
@@ -1408,11 +1496,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProfessionBenefitConsumeRequest $request
-     * @param ProfessionBenefitConsumeHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 权益核销
+     *  *
+     * @param ProfessionBenefitConsumeRequest $request ProfessionBenefitConsumeRequest
+     * @param ProfessionBenefitConsumeHeaders $headers ProfessionBenefitConsumeHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return ProfessionBenefitConsumeResponse
+     * @return ProfessionBenefitConsumeResponse ProfessionBenefitConsumeResponse
      */
     public function professionBenefitConsumeWithOptions($request, $headers, $runtime)
     {
@@ -1454,9 +1544,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProfessionBenefitConsumeRequest $request
+     * @summary 权益核销
+     *  *
+     * @param ProfessionBenefitConsumeRequest $request ProfessionBenefitConsumeRequest
      *
-     * @return ProfessionBenefitConsumeResponse
+     * @return ProfessionBenefitConsumeResponse ProfessionBenefitConsumeResponse
      */
     public function professionBenefitConsume($request)
     {
@@ -1467,11 +1559,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushHistoricalReceiptsRequest $request
-     * @param PushHistoricalReceiptsHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 触发单据同步给有成
+     *  *
+     * @param PushHistoricalReceiptsRequest $request PushHistoricalReceiptsRequest
+     * @param PushHistoricalReceiptsHeaders $headers PushHistoricalReceiptsHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return PushHistoricalReceiptsResponse
+     * @return PushHistoricalReceiptsResponse PushHistoricalReceiptsResponse
      */
     public function pushHistoricalReceiptsWithOptions($request, $headers, $runtime)
     {
@@ -1519,9 +1613,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushHistoricalReceiptsRequest $request
+     * @summary 触发单据同步给有成
+     *  *
+     * @param PushHistoricalReceiptsRequest $request PushHistoricalReceiptsRequest
      *
-     * @return PushHistoricalReceiptsResponse
+     * @return PushHistoricalReceiptsResponse PushHistoricalReceiptsResponse
      */
     public function pushHistoricalReceipts($request)
     {
@@ -1532,11 +1628,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCategoryByPageRequest $request
-     * @param QueryCategoryByPageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量获取费用类别
+     *  *
+     * @param QueryCategoryByPageRequest $request QueryCategoryByPageRequest
+     * @param QueryCategoryByPageHeaders $headers QueryCategoryByPageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCategoryByPageResponse
+     * @return QueryCategoryByPageResponse QueryCategoryByPageResponse
      */
     public function queryCategoryByPageWithOptions($request, $headers, $runtime)
     {
@@ -1578,9 +1676,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCategoryByPageRequest $request
+     * @summary 批量获取费用类别
+     *  *
+     * @param QueryCategoryByPageRequest $request QueryCategoryByPageRequest
      *
-     * @return QueryCategoryByPageResponse
+     * @return QueryCategoryByPageResponse QueryCategoryByPageResponse
      */
     public function queryCategoryByPage($request)
     {
@@ -1591,11 +1691,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCompanyInvoiceRelationCountRequest $request
-     * @param QueryCompanyInvoiceRelationCountHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 查询某个主体的开票申请单的提单数量
+     *  *
+     * @param QueryCompanyInvoiceRelationCountRequest $request QueryCompanyInvoiceRelationCountRequest
+     * @param QueryCompanyInvoiceRelationCountHeaders $headers QueryCompanyInvoiceRelationCountHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCompanyInvoiceRelationCountResponse
+     * @return QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCountResponse
      */
     public function queryCompanyInvoiceRelationCountWithOptions($request, $headers, $runtime)
     {
@@ -1631,9 +1733,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCompanyInvoiceRelationCountRequest $request
+     * @summary 查询某个主体的开票申请单的提单数量
+     *  *
+     * @param QueryCompanyInvoiceRelationCountRequest $request QueryCompanyInvoiceRelationCountRequest
      *
-     * @return QueryCompanyInvoiceRelationCountResponse
+     * @return QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCountResponse
      */
     public function queryCompanyInvoiceRelationCount($request)
     {
@@ -1644,11 +1748,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCustomerByPageRequest $request
-     * @param QueryCustomerByPageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 分页批量获取智能财务应用内维护的客户信息
+     *  *
+     * @param QueryCustomerByPageRequest $request QueryCustomerByPageRequest
+     * @param QueryCustomerByPageHeaders $headers QueryCustomerByPageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCustomerByPageResponse
+     * @return QueryCustomerByPageResponse QueryCustomerByPageResponse
      */
     public function queryCustomerByPageWithOptions($request, $headers, $runtime)
     {
@@ -1687,9 +1793,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCustomerByPageRequest $request
+     * @summary 分页批量获取智能财务应用内维护的客户信息
+     *  *
+     * @param QueryCustomerByPageRequest $request QueryCustomerByPageRequest
      *
-     * @return QueryCustomerByPageResponse
+     * @return QueryCustomerByPageResponse QueryCustomerByPageResponse
      */
     public function queryCustomerByPage($request)
     {
@@ -1700,11 +1808,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCustomerInfoRequest $request
-     * @param QueryCustomerInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 提供给合作伙伴，查询智能财务的客户配置信息
+     *  *
+     * @param QueryCustomerInfoRequest $request QueryCustomerInfoRequest
+     * @param QueryCustomerInfoHeaders $headers QueryCustomerInfoHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCustomerInfoResponse
+     * @return QueryCustomerInfoResponse QueryCustomerInfoResponse
      */
     public function queryCustomerInfoWithOptions($request, $headers, $runtime)
     {
@@ -1746,9 +1856,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCustomerInfoRequest $request
+     * @summary 提供给合作伙伴，查询智能财务的客户配置信息
+     *  *
+     * @param QueryCustomerInfoRequest $request QueryCustomerInfoRequest
      *
-     * @return QueryCustomerInfoResponse
+     * @return QueryCustomerInfoResponse QueryCustomerInfoResponse
      */
     public function queryCustomerInfo($request)
     {
@@ -1759,11 +1871,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEnterpriseAccountByPageRequest $request
-     * @param QueryEnterpriseAccountByPageHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 批量获取企业账户
+     *  *
+     * @param QueryEnterpriseAccountByPageRequest $request QueryEnterpriseAccountByPageRequest
+     * @param QueryEnterpriseAccountByPageHeaders $headers QueryEnterpriseAccountByPageHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryEnterpriseAccountByPageResponse
+     * @return QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPageResponse
      */
     public function queryEnterpriseAccountByPageWithOptions($request, $headers, $runtime)
     {
@@ -1802,9 +1916,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEnterpriseAccountByPageRequest $request
+     * @summary 批量获取企业账户
+     *  *
+     * @param QueryEnterpriseAccountByPageRequest $request QueryEnterpriseAccountByPageRequest
      *
-     * @return QueryEnterpriseAccountByPageResponse
+     * @return QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPageResponse
      */
     public function queryEnterpriseAccountByPage($request)
     {
@@ -1815,10 +1931,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryFinanceCompanyInfoHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 查询智能财务配置的企业信息
+     *  *
+     * @param QueryFinanceCompanyInfoHeaders $headers QueryFinanceCompanyInfoHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryFinanceCompanyInfoResponse
+     * @return QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfoResponse
      */
     public function queryFinanceCompanyInfoWithOptions($headers, $runtime)
     {
@@ -1848,7 +1966,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryFinanceCompanyInfoResponse
+     * @summary 查询智能财务配置的企业信息
+     *  *
+     * @return QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfoResponse
      */
     public function queryFinanceCompanyInfo()
     {
@@ -1859,10 +1979,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryInvoiceRelationCountHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询开票申请单的提单数量
+     *  *
+     * @param QueryInvoiceRelationCountHeaders $headers QueryInvoiceRelationCountHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryInvoiceRelationCountResponse
+     * @return QueryInvoiceRelationCountResponse QueryInvoiceRelationCountResponse
      */
     public function queryInvoiceRelationCountWithOptions($headers, $runtime)
     {
@@ -1892,7 +2014,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryInvoiceRelationCountResponse
+     * @summary 查询开票申请单的提单数量
+     *  *
+     * @return QueryInvoiceRelationCountResponse QueryInvoiceRelationCountResponse
      */
     public function queryInvoiceRelationCount()
     {
@@ -1903,10 +2027,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMultiCompanyInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 查询钉钉智能财务多主体信息
+     *  *
+     * @param QueryMultiCompanyInfoHeaders $headers QueryMultiCompanyInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMultiCompanyInfoResponse
+     * @return QueryMultiCompanyInfoResponse QueryMultiCompanyInfoResponse
      */
     public function queryMultiCompanyInfoWithOptions($headers, $runtime)
     {
@@ -1936,7 +2062,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryMultiCompanyInfoResponse
+     * @summary 查询钉钉智能财务多主体信息
+     *  *
+     * @return QueryMultiCompanyInfoResponse QueryMultiCompanyInfoResponse
      */
     public function queryMultiCompanyInfo()
     {
@@ -1947,11 +2075,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPermissionByUserIdRequest $request
-     * @param QueryPermissionByUserIdHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
+     *  *
+     * @param QueryPermissionByUserIdRequest $request QueryPermissionByUserIdRequest
+     * @param QueryPermissionByUserIdHeaders $headers QueryPermissionByUserIdHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPermissionByUserIdResponse
+     * @return QueryPermissionByUserIdResponse QueryPermissionByUserIdResponse
      */
     public function queryPermissionByUserIdWithOptions($request, $headers, $runtime)
     {
@@ -1990,9 +2120,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPermissionByUserIdRequest $request
+     * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
+     *  *
+     * @param QueryPermissionByUserIdRequest $request QueryPermissionByUserIdRequest
      *
-     * @return QueryPermissionByUserIdResponse
+     * @return QueryPermissionByUserIdResponse QueryPermissionByUserIdResponse
      */
     public function queryPermissionByUserId($request)
     {
@@ -2003,11 +2135,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPermissionRoleMemberRequest $request
-     * @param QueryPermissionRoleMemberHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询智能财务角色下的成员信息
+     *  *
+     * @param QueryPermissionRoleMemberRequest $request QueryPermissionRoleMemberRequest
+     * @param QueryPermissionRoleMemberHeaders $headers QueryPermissionRoleMemberHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPermissionRoleMemberResponse
+     * @return QueryPermissionRoleMemberResponse QueryPermissionRoleMemberResponse
      */
     public function queryPermissionRoleMemberWithOptions($request, $headers, $runtime)
     {
@@ -2046,9 +2180,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPermissionRoleMemberRequest $request
+     * @summary 查询智能财务角色下的成员信息
+     *  *
+     * @param QueryPermissionRoleMemberRequest $request QueryPermissionRoleMemberRequest
      *
-     * @return QueryPermissionRoleMemberResponse
+     * @return QueryPermissionRoleMemberResponse QueryPermissionRoleMemberResponse
      */
     public function queryPermissionRoleMember($request)
     {
@@ -2059,11 +2195,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProductByPageRequest $request
-     * @param QueryProductByPageHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 批量获取商品信息
+     *  *
+     * @param QueryProductByPageRequest $request QueryProductByPageRequest
+     * @param QueryProductByPageHeaders $headers QueryProductByPageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryProductByPageResponse
+     * @return QueryProductByPageResponse QueryProductByPageResponse
      */
     public function queryProductByPageWithOptions($request, $headers, $runtime)
     {
@@ -2102,9 +2240,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProductByPageRequest $request
+     * @summary 批量获取商品信息
+     *  *
+     * @param QueryProductByPageRequest $request QueryProductByPageRequest
      *
-     * @return QueryProductByPageResponse
+     * @return QueryProductByPageResponse QueryProductByPageResponse
      */
     public function queryProductByPage($request)
     {
@@ -2115,11 +2255,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProjectByPageRequest $request
-     * @param QueryProjectByPageHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 批量获取项目信息
+     *  *
+     * @param QueryProjectByPageRequest $request QueryProjectByPageRequest
+     * @param QueryProjectByPageHeaders $headers QueryProjectByPageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryProjectByPageResponse
+     * @return QueryProjectByPageResponse QueryProjectByPageResponse
      */
     public function queryProjectByPageWithOptions($request, $headers, $runtime)
     {
@@ -2158,9 +2300,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProjectByPageRequest $request
+     * @summary 批量获取项目信息
+     *  *
+     * @param QueryProjectByPageRequest $request QueryProjectByPageRequest
      *
-     * @return QueryProjectByPageResponse
+     * @return QueryProjectByPageResponse QueryProjectByPageResponse
      */
     public function queryProjectByPage($request)
     {
@@ -2171,11 +2315,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptDetailForInvoiceRequest $request
-     * @param QueryReceiptDetailForInvoiceHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 查询开票申请单详情
+     *  *
+     * @param QueryReceiptDetailForInvoiceRequest $request QueryReceiptDetailForInvoiceRequest
+     * @param QueryReceiptDetailForInvoiceHeaders $headers QueryReceiptDetailForInvoiceHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReceiptDetailForInvoiceResponse
+     * @return QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoiceResponse
      */
     public function queryReceiptDetailForInvoiceWithOptions($request, $headers, $runtime)
     {
@@ -2211,9 +2357,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptDetailForInvoiceRequest $request
+     * @summary 查询开票申请单详情
+     *  *
+     * @param QueryReceiptDetailForInvoiceRequest $request QueryReceiptDetailForInvoiceRequest
      *
-     * @return QueryReceiptDetailForInvoiceResponse
+     * @return QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoiceResponse
      */
     public function queryReceiptDetailForInvoice($request)
     {
@@ -2224,11 +2372,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptForInvoiceRequest $request
-     * @param QueryReceiptForInvoiceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 批量查询智能财务单据主数据信息
+     *  *
+     * @param QueryReceiptForInvoiceRequest $request QueryReceiptForInvoiceRequest
+     * @param QueryReceiptForInvoiceHeaders $headers QueryReceiptForInvoiceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReceiptForInvoiceResponse
+     * @return QueryReceiptForInvoiceResponse QueryReceiptForInvoiceResponse
      */
     public function queryReceiptForInvoiceWithOptions($request, $headers, $runtime)
     {
@@ -2294,9 +2444,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptForInvoiceRequest $request
+     * @summary 批量查询智能财务单据主数据信息
+     *  *
+     * @param QueryReceiptForInvoiceRequest $request QueryReceiptForInvoiceRequest
      *
-     * @return QueryReceiptForInvoiceResponse
+     * @return QueryReceiptForInvoiceResponse QueryReceiptForInvoiceResponse
      */
     public function queryReceiptForInvoice($request)
     {
@@ -2307,11 +2459,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptsBaseInfoRequest $request
-     * @param QueryReceiptsBaseInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 批量查询智能财务的单据主数据基本信息
+     *  *
+     * @param QueryReceiptsBaseInfoRequest $request QueryReceiptsBaseInfoRequest
+     * @param QueryReceiptsBaseInfoHeaders $headers QueryReceiptsBaseInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReceiptsBaseInfoResponse
+     * @return QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfoResponse
      */
     public function queryReceiptsBaseInfoWithOptions($request, $headers, $runtime)
     {
@@ -2371,9 +2525,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptsBaseInfoRequest $request
+     * @summary 批量查询智能财务的单据主数据基本信息
+     *  *
+     * @param QueryReceiptsBaseInfoRequest $request QueryReceiptsBaseInfoRequest
      *
-     * @return QueryReceiptsBaseInfoResponse
+     * @return QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfoResponse
      */
     public function queryReceiptsBaseInfo($request)
     {
@@ -2384,11 +2540,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptsByPageRequest $request
-     * @param QueryReceiptsByPageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 分页获取智能财务单据详情列表
+     *  *
+     * @param QueryReceiptsByPageRequest $request QueryReceiptsByPageRequest
+     * @param QueryReceiptsByPageHeaders $headers QueryReceiptsByPageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReceiptsByPageResponse
+     * @return QueryReceiptsByPageResponse QueryReceiptsByPageResponse
      */
     public function queryReceiptsByPageWithOptions($request, $headers, $runtime)
     {
@@ -2439,9 +2597,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReceiptsByPageRequest $request
+     * @summary 分页获取智能财务单据详情列表
+     *  *
+     * @param QueryReceiptsByPageRequest $request QueryReceiptsByPageRequest
      *
-     * @return QueryReceiptsByPageResponse
+     * @return QueryReceiptsByPageResponse QueryReceiptsByPageResponse
      */
     public function queryReceiptsByPage($request)
     {
@@ -2452,11 +2612,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRoleMemberByPageRequest $request
-     * @param QueryRoleMemberByPageHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 分页查询智能财务角色下的成员信息
+     *  *
+     * @param QueryRoleMemberByPageRequest $request QueryRoleMemberByPageRequest
+     * @param QueryRoleMemberByPageHeaders $headers QueryRoleMemberByPageHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRoleMemberByPageResponse
+     * @return QueryRoleMemberByPageResponse QueryRoleMemberByPageResponse
      */
     public function queryRoleMemberByPageWithOptions($request, $headers, $runtime)
     {
@@ -2501,9 +2663,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRoleMemberByPageRequest $request
+     * @summary 分页查询智能财务角色下的成员信息
+     *  *
+     * @param QueryRoleMemberByPageRequest $request QueryRoleMemberByPageRequest
      *
-     * @return QueryRoleMemberByPageResponse
+     * @return QueryRoleMemberByPageResponse QueryRoleMemberByPageResponse
      */
     public function queryRoleMemberByPage($request)
     {
@@ -2514,11 +2678,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySupplierByPageRequest $request
-     * @param QuerySupplierByPageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 分页批量获取智能财务应用内维护的供应商信息
+     *  *
+     * @param QuerySupplierByPageRequest $request QuerySupplierByPageRequest
+     * @param QuerySupplierByPageHeaders $headers QuerySupplierByPageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QuerySupplierByPageResponse
+     * @return QuerySupplierByPageResponse QuerySupplierByPageResponse
      */
     public function querySupplierByPageWithOptions($request, $headers, $runtime)
     {
@@ -2557,9 +2723,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySupplierByPageRequest $request
+     * @summary 分页批量获取智能财务应用内维护的供应商信息
+     *  *
+     * @param QuerySupplierByPageRequest $request QuerySupplierByPageRequest
      *
-     * @return QuerySupplierByPageResponse
+     * @return QuerySupplierByPageResponse QuerySupplierByPageResponse
      */
     public function querySupplierByPage($request)
     {
@@ -2570,11 +2738,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserRoleListRequest $request
-     * @param QueryUserRoleListHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 查询用户角色
+     *  *
+     * @param QueryUserRoleListRequest $request QueryUserRoleListRequest
+     * @param QueryUserRoleListHeaders $headers QueryUserRoleListHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUserRoleListResponse
+     * @return QueryUserRoleListResponse QueryUserRoleListResponse
      */
     public function queryUserRoleListWithOptions($request, $headers, $runtime)
     {
@@ -2610,9 +2780,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserRoleListRequest $request
+     * @summary 查询用户角色
+     *  *
+     * @param QueryUserRoleListRequest $request QueryUserRoleListRequest
      *
-     * @return QueryUserRoleListResponse
+     * @return QueryUserRoleListResponse QueryUserRoleListResponse
      */
     public function queryUserRoleList($request)
     {
@@ -2623,11 +2795,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request
-     * @param UnbindApplyReceiptAndInvoiceRelatedHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 解绑开票申请单关联的发票
+     *  *
+     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request UnbindApplyReceiptAndInvoiceRelatedRequest
+     * @param UnbindApplyReceiptAndInvoiceRelatedHeaders $headers UnbindApplyReceiptAndInvoiceRelatedHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+     * @return UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelatedResponse
      */
     public function unbindApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime)
     {
@@ -2669,9 +2843,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request
+     * @summary 解绑开票申请单关联的发票
+     *  *
+     * @param UnbindApplyReceiptAndInvoiceRelatedRequest $request UnbindApplyReceiptAndInvoiceRelatedRequest
      *
-     * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+     * @return UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelatedResponse
      */
     public function unbindApplyReceiptAndInvoiceRelated($request)
     {
@@ -2682,11 +2858,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request
-     * @param UpdateApplyReceiptAndInvoiceRelatedHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 开票申请单关联发票
+     *  *
+     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request UpdateApplyReceiptAndInvoiceRelatedRequest
+     * @param UpdateApplyReceiptAndInvoiceRelatedHeaders $headers UpdateApplyReceiptAndInvoiceRelatedHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+     * @return UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelatedResponse
      */
     public function updateApplyReceiptAndInvoiceRelatedWithOptions($request, $headers, $runtime)
     {
@@ -2728,9 +2906,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request
+     * @summary 开票申请单关联发票
+     *  *
+     * @param UpdateApplyReceiptAndInvoiceRelatedRequest $request UpdateApplyReceiptAndInvoiceRelatedRequest
      *
-     * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+     * @return UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelatedResponse
      */
     public function updateApplyReceiptAndInvoiceRelated($request)
     {
@@ -2741,11 +2921,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateDigitalInvoiceOrgInfoRequest $request
-     * @param UpdateDigitalInvoiceOrgInfoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 更新全电发票企业信息
+     *  *
+     * @param UpdateDigitalInvoiceOrgInfoRequest $request UpdateDigitalInvoiceOrgInfoRequest
+     * @param UpdateDigitalInvoiceOrgInfoHeaders $headers UpdateDigitalInvoiceOrgInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateDigitalInvoiceOrgInfoResponse
+     * @return UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfoResponse
      */
     public function updateDigitalInvoiceOrgInfoWithOptions($request, $headers, $runtime)
     {
@@ -2790,9 +2972,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateDigitalInvoiceOrgInfoRequest $request
+     * @summary 更新全电发票企业信息
+     *  *
+     * @param UpdateDigitalInvoiceOrgInfoRequest $request UpdateDigitalInvoiceOrgInfoRequest
      *
-     * @return UpdateDigitalInvoiceOrgInfoResponse
+     * @return UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfoResponse
      */
     public function updateDigitalInvoiceOrgInfo($request)
     {
@@ -2803,11 +2987,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateFinanceCompanyInfoRequest $request
-     * @param UpdateFinanceCompanyInfoHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 更新智能财务配置的企业信息
+     *  *
+     * @param UpdateFinanceCompanyInfoRequest $request UpdateFinanceCompanyInfoRequest
+     * @param UpdateFinanceCompanyInfoHeaders $headers UpdateFinanceCompanyInfoHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateFinanceCompanyInfoResponse
+     * @return UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfoResponse
      */
     public function updateFinanceCompanyInfoWithOptions($request, $headers, $runtime)
     {
@@ -2855,9 +3041,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateFinanceCompanyInfoRequest $request
+     * @summary 更新智能财务配置的企业信息
+     *  *
+     * @param UpdateFinanceCompanyInfoRequest $request UpdateFinanceCompanyInfoRequest
      *
-     * @return UpdateFinanceCompanyInfoResponse
+     * @return UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfoResponse
      */
     public function updateFinanceCompanyInfo($request)
     {
@@ -2868,11 +3056,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateFinanceMultiCompanyInfoRequest $request
-     * @param UpdateFinanceMultiCompanyInfoHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 更新钉钉智能财务多主体信息
+     *  *
+     * @param UpdateFinanceMultiCompanyInfoRequest $request UpdateFinanceMultiCompanyInfoRequest
+     * @param UpdateFinanceMultiCompanyInfoHeaders $headers UpdateFinanceMultiCompanyInfoHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateFinanceMultiCompanyInfoResponse
+     * @return UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfoResponse
      */
     public function updateFinanceMultiCompanyInfoWithOptions($request, $headers, $runtime)
     {
@@ -2923,9 +3113,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateFinanceMultiCompanyInfoRequest $request
+     * @summary 更新钉钉智能财务多主体信息
+     *  *
+     * @param UpdateFinanceMultiCompanyInfoRequest $request UpdateFinanceMultiCompanyInfoRequest
      *
-     * @return UpdateFinanceMultiCompanyInfoResponse
+     * @return UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfoResponse
      */
     public function updateFinanceMultiCompanyInfo($request)
     {
@@ -2936,11 +3128,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAbandonStatusRequest $request
-     * @param UpdateInvoiceAbandonStatusHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 发票红冲/废弃状态变更接口
+     *  *
+     * @param UpdateInvoiceAbandonStatusRequest $request UpdateInvoiceAbandonStatusRequest
+     * @param UpdateInvoiceAbandonStatusHeaders $headers UpdateInvoiceAbandonStatusHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceAbandonStatusResponse
+     * @return UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatusResponse
      */
     public function updateInvoiceAbandonStatusWithOptions($request, $headers, $runtime)
     {
@@ -3006,9 +3200,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAbandonStatusRequest $request
+     * @summary 发票红冲/废弃状态变更接口
+     *  *
+     * @param UpdateInvoiceAbandonStatusRequest $request UpdateInvoiceAbandonStatusRequest
      *
-     * @return UpdateInvoiceAbandonStatusResponse
+     * @return UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatusResponse
      */
     public function updateInvoiceAbandonStatus($request)
     {
@@ -3019,11 +3215,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountPeriodRequest $request
-     * @param UpdateInvoiceAccountPeriodHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 更新发票账期状态
+     *  *
+     * @param UpdateInvoiceAccountPeriodRequest $request UpdateInvoiceAccountPeriodRequest
+     * @param UpdateInvoiceAccountPeriodHeaders $headers UpdateInvoiceAccountPeriodHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceAccountPeriodResponse
+     * @return UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriodResponse
      */
     public function updateInvoiceAccountPeriodWithOptions($request, $headers, $runtime)
     {
@@ -3071,9 +3269,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountPeriodRequest $request
+     * @summary 更新发票账期状态
+     *  *
+     * @param UpdateInvoiceAccountPeriodRequest $request UpdateInvoiceAccountPeriodRequest
      *
-     * @return UpdateInvoiceAccountPeriodResponse
+     * @return UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriodResponse
      */
     public function updateInvoiceAccountPeriod($request)
     {
@@ -3084,11 +3284,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountingPeriodDateRequest $request
-     * @param UpdateInvoiceAccountingPeriodDateHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 更新全电企业入账时间
+     *  *
+     * @param UpdateInvoiceAccountingPeriodDateRequest $request UpdateInvoiceAccountingPeriodDateRequest
+     * @param UpdateInvoiceAccountingPeriodDateHeaders $headers UpdateInvoiceAccountingPeriodDateHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceAccountingPeriodDateResponse
+     * @return UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDateResponse
      */
     public function updateInvoiceAccountingPeriodDateWithOptions($request, $headers, $runtime)
     {
@@ -3130,9 +3332,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountingPeriodDateRequest $request
+     * @summary 更新全电企业入账时间
+     *  *
+     * @param UpdateInvoiceAccountingPeriodDateRequest $request UpdateInvoiceAccountingPeriodDateRequest
      *
-     * @return UpdateInvoiceAccountingPeriodDateResponse
+     * @return UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDateResponse
      */
     public function updateInvoiceAccountingPeriodDate($request)
     {
@@ -3143,11 +3347,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountingStatusRequest $request
-     * @param UpdateInvoiceAccountingStatusHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 更新全电企业入账状态
+     *  *
+     * @param UpdateInvoiceAccountingStatusRequest $request UpdateInvoiceAccountingStatusRequest
+     * @param UpdateInvoiceAccountingStatusHeaders $headers UpdateInvoiceAccountingStatusHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceAccountingStatusResponse
+     * @return UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatusResponse
      */
     public function updateInvoiceAccountingStatusWithOptions($request, $headers, $runtime)
     {
@@ -3189,9 +3395,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAccountingStatusRequest $request
+     * @summary 更新全电企业入账状态
+     *  *
+     * @param UpdateInvoiceAccountingStatusRequest $request UpdateInvoiceAccountingStatusRequest
      *
-     * @return UpdateInvoiceAccountingStatusResponse
+     * @return UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatusResponse
      */
     public function updateInvoiceAccountingStatus($request)
     {
@@ -3202,11 +3410,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAndReceiptRelatedRequest $request
-     * @param UpdateInvoiceAndReceiptRelatedHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 更新发票关联审批单
+     *  *
+     * @param UpdateInvoiceAndReceiptRelatedRequest $request UpdateInvoiceAndReceiptRelatedRequest
+     * @param UpdateInvoiceAndReceiptRelatedHeaders $headers UpdateInvoiceAndReceiptRelatedHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceAndReceiptRelatedResponse
+     * @return UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelatedResponse
      */
     public function updateInvoiceAndReceiptRelatedWithOptions($request, $headers, $runtime)
     {
@@ -3254,9 +3464,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceAndReceiptRelatedRequest $request
+     * @summary 更新发票关联审批单
+     *  *
+     * @param UpdateInvoiceAndReceiptRelatedRequest $request UpdateInvoiceAndReceiptRelatedRequest
      *
-     * @return UpdateInvoiceAndReceiptRelatedResponse
+     * @return UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelatedResponse
      */
     public function updateInvoiceAndReceiptRelated($request)
     {
@@ -3267,11 +3479,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceIgnoreStatusRequest $request
-     * @param UpdateInvoiceIgnoreStatusHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 更新发票忽略状态
+     *  *
+     * @param UpdateInvoiceIgnoreStatusRequest $request UpdateInvoiceIgnoreStatusRequest
+     * @param UpdateInvoiceIgnoreStatusHeaders $headers UpdateInvoiceIgnoreStatusHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceIgnoreStatusResponse
+     * @return UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatusResponse
      */
     public function updateInvoiceIgnoreStatusWithOptions($request, $headers, $runtime)
     {
@@ -3313,9 +3527,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceIgnoreStatusRequest $request
+     * @summary 更新发票忽略状态
+     *  *
+     * @param UpdateInvoiceIgnoreStatusRequest $request UpdateInvoiceIgnoreStatusRequest
      *
-     * @return UpdateInvoiceIgnoreStatusResponse
+     * @return UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatusResponse
      */
     public function updateInvoiceIgnoreStatus($request)
     {
@@ -3326,11 +3542,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceVerifyStatusRequest $request
-     * @param UpdateInvoiceVerifyStatusHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 发票认证状态变更接口
+     *  *
+     * @param UpdateInvoiceVerifyStatusRequest $request UpdateInvoiceVerifyStatusRequest
+     * @param UpdateInvoiceVerifyStatusHeaders $headers UpdateInvoiceVerifyStatusHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceVerifyStatusResponse
+     * @return UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusResponse
      */
     public function updateInvoiceVerifyStatusWithOptions($request, $headers, $runtime)
     {
@@ -3381,9 +3599,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceVerifyStatusRequest $request
+     * @summary 发票认证状态变更接口
+     *  *
+     * @param UpdateInvoiceVerifyStatusRequest $request UpdateInvoiceVerifyStatusRequest
      *
-     * @return UpdateInvoiceVerifyStatusResponse
+     * @return UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusResponse
      */
     public function updateInvoiceVerifyStatus($request)
     {
@@ -3394,11 +3614,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceVoucherStatusRequest $request
-     * @param UpdateInvoiceVoucherStatusHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 更新发票生成凭证状态
+     *  *
+     * @param UpdateInvoiceVoucherStatusRequest $request UpdateInvoiceVoucherStatusRequest
+     * @param UpdateInvoiceVoucherStatusHeaders $headers UpdateInvoiceVoucherStatusHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInvoiceVoucherStatusResponse
+     * @return UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatusResponse
      */
     public function updateInvoiceVoucherStatusWithOptions($request, $headers, $runtime)
     {
@@ -3449,9 +3671,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInvoiceVoucherStatusRequest $request
+     * @summary 更新发票生成凭证状态
+     *  *
+     * @param UpdateInvoiceVoucherStatusRequest $request UpdateInvoiceVoucherStatusRequest
      *
-     * @return UpdateInvoiceVoucherStatusResponse
+     * @return UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatusResponse
      */
     public function updateInvoiceVoucherStatus($request)
     {
@@ -3462,11 +3686,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateReceiptRequest $request
-     * @param UpdateReceiptHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 更新智能财务单据
+     *  *
+     * @param UpdateReceiptRequest $request UpdateReceiptRequest
+     * @param UpdateReceiptHeaders $headers UpdateReceiptHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateReceiptResponse
+     * @return UpdateReceiptResponse UpdateReceiptResponse
      */
     public function updateReceiptWithOptions($request, $headers, $runtime)
     {
@@ -3502,9 +3728,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateReceiptRequest $request
+     * @summary 更新智能财务单据
+     *  *
+     * @param UpdateReceiptRequest $request UpdateReceiptRequest
      *
-     * @return UpdateReceiptResponse
+     * @return UpdateReceiptResponse UpdateReceiptResponse
      */
     public function updateReceipt($request)
     {
@@ -3515,11 +3743,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateReceiptVoucherStatusRequest $request
-     * @param UpdateReceiptVoucherStatusHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 更新智能财务审批单的凭证状态
+     *  *
+     * @param UpdateReceiptVoucherStatusRequest $request UpdateReceiptVoucherStatusRequest
+     * @param UpdateReceiptVoucherStatusHeaders $headers UpdateReceiptVoucherStatusHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateReceiptVoucherStatusResponse
+     * @return UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatusResponse
      */
     public function updateReceiptVoucherStatusWithOptions($request, $headers, $runtime)
     {
@@ -3573,9 +3803,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateReceiptVoucherStatusRequest $request
+     * @summary 更新智能财务审批单的凭证状态
+     *  *
+     * @param UpdateReceiptVoucherStatusRequest $request UpdateReceiptVoucherStatusRequest
      *
-     * @return UpdateReceiptVoucherStatusResponse
+     * @return UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatusResponse
      */
     public function updateReceiptVoucherStatus($request)
     {

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class PagePointHistoryResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,6 +19,8 @@ class PagePointHistoryResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3276
      *
      * @var int
@@ -24,6 +28,8 @@ class PagePointHistoryResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var pointRecordList[]
@@ -31,6 +37,8 @@ class PagePointHistoryResponseBody extends Model
     public $pointRecordList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -1
      *
      * @var int

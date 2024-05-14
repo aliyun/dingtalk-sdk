@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class coordinates extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $latitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $longitude;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateDepartmentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example zhangsan/password
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateDepartmentRequest extends Model
     public $authInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Acount
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateDepartmentRequest extends Model
     public $authType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"workdate":"workday"}
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateDepartmentRequest extends Model
     public $bizExt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 生产1组
      *
      * @var string
@@ -37,6 +45,8 @@ class CreateDepartmentRequest extends Model
     public $departmentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Primary
      *
      * @var string
@@ -44,6 +54,8 @@ class CreateDepartmentRequest extends Model
     public $departmentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 生产1组负责中控机的组装
      *
      * @var string
@@ -51,6 +63,8 @@ class CreateDepartmentRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://xxx.xxx.com/manage
      *
      * @var string
@@ -58,6 +72,8 @@ class CreateDepartmentRequest extends Model
     public $systemUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager10
      *
      * @var string

@@ -30,6 +30,8 @@ class SolutionTaskSaveRequest extends Model
     public $finishTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fdagshfjhajl
      *
      * @var string
@@ -37,6 +39,8 @@ class SolutionTaskSaveRequest extends Model
     public $outerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example qweqweqwe
      *
      * @var string
@@ -49,6 +53,8 @@ class SolutionTaskSaveRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example running
      *
      * @var string
@@ -56,6 +62,8 @@ class SolutionTaskSaveRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PERFORMANCE_TASK、TRAIN_TASK
      *
      * @var string
@@ -70,6 +78,8 @@ class SolutionTaskSaveRequest extends Model
     public $templateOuterId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 新人学习任务
      *
      * @var string
@@ -77,6 +87,8 @@ class SolutionTaskSaveRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -84,6 +96,8 @@ class SolutionTaskSaveRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example onboarding
      *
      * @var string

@@ -19,6 +19,8 @@ class ModifyWorkbenchBadgeRequest extends Model
     public $isAdded;
 
     /**
+     * @description This parameter is required.
+     *
      * @example full
      *
      * @var string
@@ -26,6 +28,8 @@ class ModifyWorkbenchBadgeRequest extends Model
     public $modifyMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5000000004278081/test
      *
      * @var string
@@ -33,6 +37,8 @@ class ModifyWorkbenchBadgeRequest extends Model
     public $redDotRelationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example workbench_component
      *
      * @var string
@@ -40,6 +46,8 @@ class ModifyWorkbenchBadgeRequest extends Model
     public $redDotType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0123465
      *
      * @var string

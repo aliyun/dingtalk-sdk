@@ -30,6 +30,8 @@ class CampusCreateCampusRequest extends Model
     public $belongProjectGroupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 绿城未来park
      *
      * @var string
@@ -65,6 +67,8 @@ class CampusCreateCampusRequest extends Model
     public $countyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUnionId;

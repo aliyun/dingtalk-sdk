@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateTriggerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorFlag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var triggerInfo[]
      */
     public $triggerInfo;

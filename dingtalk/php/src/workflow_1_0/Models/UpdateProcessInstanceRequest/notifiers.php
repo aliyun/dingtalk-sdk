@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class notifiers extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager001
      *
      * @var string

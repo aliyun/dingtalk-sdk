@@ -11,21 +11,29 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var closingAccountModel
      */
     public $closingAccountModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $switchOn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var unsealClosingAccountModel
      */
     public $unsealClosingAccountModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

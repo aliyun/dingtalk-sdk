@@ -16,6 +16,8 @@ class BatchDeleteDeviceRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $deviceIds;

@@ -16,6 +16,8 @@ class QueryAllFormInstancesRequest extends Model
     public $appUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-daccea-example
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryAllFormInstancesRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

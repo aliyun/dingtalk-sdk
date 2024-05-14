@@ -30,6 +30,8 @@ class mail extends Model
     public $ccAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 请及时填写请填写入职登记表
      *
      * @var string
@@ -42,6 +44,8 @@ class mail extends Model
     public $meeting;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abd@aaa.com,bcd@aaa.com,
      *
      * @var string
@@ -49,6 +53,8 @@ class mail extends Model
     public $receiverAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 智能人事入职
      *
      * @var string
@@ -56,6 +62,8 @@ class mail extends Model
     public $senderAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 请填写入职登记表
      *
      * @var string

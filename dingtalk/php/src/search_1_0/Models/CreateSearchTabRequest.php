@@ -19,6 +19,8 @@ class CreateSearchTabRequest extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 书籍
      *
      * @var string
@@ -26,6 +28,8 @@ class CreateSearchTabRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -38,6 +42,8 @@ class CreateSearchTabRequest extends Model
     public $source;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

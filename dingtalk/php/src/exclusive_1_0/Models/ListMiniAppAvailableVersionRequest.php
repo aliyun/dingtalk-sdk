@@ -16,11 +16,15 @@ class ListMiniAppAvailableVersionRequest extends Model
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -28,6 +32,8 @@ class ListMiniAppAvailableVersionRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $versionTypeSet;

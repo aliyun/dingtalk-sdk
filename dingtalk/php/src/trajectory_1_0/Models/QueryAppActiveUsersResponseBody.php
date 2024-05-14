@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAppActiveUsersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,16 +19,22 @@ class QueryAppActiveUsersResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23153
      *
      * @var int

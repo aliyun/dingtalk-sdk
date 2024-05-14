@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class sections extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var times[]
      */
     public $times;

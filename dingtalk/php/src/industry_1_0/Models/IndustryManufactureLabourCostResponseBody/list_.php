@@ -9,91 +9,127 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $labourCostName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $labourCostNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $qualifiedPrice;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unQualifiedInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $unQualifiedPrice1;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $unQualifiedPrice2;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unQualifiedReason1;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unQualifiedReason2;

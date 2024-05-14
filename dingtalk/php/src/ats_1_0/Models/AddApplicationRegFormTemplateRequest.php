@@ -16,6 +16,8 @@ class AddApplicationRegFormTemplateRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"key":"value"}
      *
      * @var string
@@ -23,6 +25,8 @@ class AddApplicationRegFormTemplateRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 应聘登记表
      *
      * @var string
@@ -37,6 +41,8 @@ class AddApplicationRegFormTemplateRequest extends Model
     public $outerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

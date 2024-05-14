@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class TranslateFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example {"#iAEHAqRmaWxlA6h5dW5kaXNrMAT":"导出.xlsx"}
      *
      * @var string[]
@@ -23,6 +25,8 @@ class TranslateFileRequest extends Model
     public $outputFileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fXRUNiSlgfK3e1hzFUSciiJwiEiE
      *
      * @var string

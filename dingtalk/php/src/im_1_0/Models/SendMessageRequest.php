@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example {"msg_type":"text","text":"hello world"}
      *
      * @var string
@@ -16,6 +18,8 @@ class SendMessageRequest extends Model
     public $message;
 
     /**
+     * @description This parameter is required.
+     *
      * @example text
      *
      * @var string
@@ -35,6 +39,8 @@ class SendMessageRequest extends Model
     public $receiverId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string

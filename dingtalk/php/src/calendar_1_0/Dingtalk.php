@@ -127,14 +127,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增日程参与人
+     *  *
      * @param string             $userId
      * @param string             $calendarId
      * @param string             $eventId
-     * @param AddAttendeeRequest $request
-     * @param AddAttendeeHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param AddAttendeeRequest $request    AddAttendeeRequest
+     * @param AddAttendeeHeaders $headers    AddAttendeeHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return AddAttendeeResponse
+     * @return AddAttendeeResponse AddAttendeeResponse
      */
     public function addAttendeeWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -179,12 +181,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增日程参与人
+     *  *
      * @param string             $userId
      * @param string             $calendarId
      * @param string             $eventId
-     * @param AddAttendeeRequest $request
+     * @param AddAttendeeRequest $request    AddAttendeeRequest
      *
-     * @return AddAttendeeResponse
+     * @return AddAttendeeResponse AddAttendeeResponse
      */
     public function addAttendee($userId, $calendarId, $eventId, $request)
     {
@@ -195,14 +199,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加会议室
+     *  *
      * @param string                 $userId
      * @param string                 $calendarId
      * @param string                 $eventId
-     * @param AddMeetingRoomsRequest $request
-     * @param AddMeetingRoomsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param AddMeetingRoomsRequest $request    AddMeetingRoomsRequest
+     * @param AddMeetingRoomsHeaders $headers    AddMeetingRoomsHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
      *
-     * @return AddMeetingRoomsResponse
+     * @return AddMeetingRoomsResponse AddMeetingRoomsResponse
      */
     public function addMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -241,12 +247,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加会议室
+     *  *
      * @param string                 $userId
      * @param string                 $calendarId
      * @param string                 $eventId
-     * @param AddMeetingRoomsRequest $request
+     * @param AddMeetingRoomsRequest $request    AddMeetingRoomsRequest
      *
-     * @return AddMeetingRoomsResponse
+     * @return AddMeetingRoomsResponse AddMeetingRoomsResponse
      */
     public function addMeetingRooms($userId, $calendarId, $eventId, $request)
     {
@@ -257,13 +265,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签到
+     *  *
      * @param string         $userId
      * @param string         $calendarId
      * @param string         $eventId
-     * @param CheckInHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param CheckInHeaders $headers    CheckInHeaders
+     * @param RuntimeOptions $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CheckInResponse
+     * @return CheckInResponse CheckInResponse
      */
     public function checkInWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
     {
@@ -293,11 +303,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签到
+     *  *
      * @param string $userId
      * @param string $calendarId
      * @param string $eventId
      *
-     * @return CheckInResponse
+     * @return CheckInResponse CheckInResponse
      */
     public function checkIn($userId, $calendarId, $eventId)
     {
@@ -308,12 +320,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 转换老版本的eventId
+     *  *
      * @param string                      $userId
-     * @param ConvertLegacyEventIdRequest $request
-     * @param ConvertLegacyEventIdHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param ConvertLegacyEventIdRequest $request ConvertLegacyEventIdRequest
+     * @param ConvertLegacyEventIdHeaders $headers ConvertLegacyEventIdHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ConvertLegacyEventIdResponse
+     * @return ConvertLegacyEventIdResponse ConvertLegacyEventIdResponse
      */
     public function convertLegacyEventIdWithOptions($userId, $request, $headers, $runtime)
     {
@@ -349,10 +363,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 转换老版本的eventId
+     *  *
      * @param string                      $userId
-     * @param ConvertLegacyEventIdRequest $request
+     * @param ConvertLegacyEventIdRequest $request ConvertLegacyEventIdRequest
      *
-     * @return ConvertLegacyEventIdResponse
+     * @return ConvertLegacyEventIdResponse ConvertLegacyEventIdResponse
      */
     public function convertLegacyEventId($userId, $request)
     {
@@ -363,13 +379,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建访问控制
+     *  *
      * @param string            $userId
      * @param string            $calendarId
-     * @param CreateAclsRequest $request
-     * @param CreateAclsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param CreateAclsRequest $request    CreateAclsRequest
+     * @param CreateAclsHeaders $headers    CreateAclsHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateAclsResponse
+     * @return CreateAclsResponse CreateAclsResponse
      */
     public function createAclsWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
@@ -411,11 +429,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建访问控制
+     *  *
      * @param string            $userId
      * @param string            $calendarId
-     * @param CreateAclsRequest $request
+     * @param CreateAclsRequest $request    CreateAclsRequest
      *
-     * @return CreateAclsResponse
+     * @return CreateAclsResponse CreateAclsResponse
      */
     public function createAcls($userId, $calendarId, $request)
     {
@@ -426,13 +446,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建日程
+     *  *
      * @param string             $userId
      * @param string             $calendarId
-     * @param CreateEventRequest $request
-     * @param CreateEventHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateEventRequest $request    CreateEventRequest
+     * @param CreateEventHeaders $headers    CreateEventHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateEventResponse
+     * @return CreateEventResponse CreateEventResponse
      */
     public function createEventWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
@@ -507,11 +529,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建日程
+     *  *
      * @param string             $userId
      * @param string             $calendarId
-     * @param CreateEventRequest $request
+     * @param CreateEventRequest $request    CreateEventRequest
      *
-     * @return CreateEventResponse
+     * @return CreateEventResponse CreateEventResponse
      */
     public function createEvent($userId, $calendarId, $request)
     {
@@ -522,12 +546,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建日程(me接口)
+     *  *
      * @param string                 $calendarId
-     * @param CreateEventByMeRequest $request
-     * @param CreateEventByMeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CreateEventByMeRequest $request    CreateEventByMeRequest
+     * @param CreateEventByMeHeaders $headers    CreateEventByMeHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateEventByMeResponse
+     * @return CreateEventByMeResponse CreateEventByMeResponse
      */
     public function createEventByMeWithOptions($calendarId, $request, $headers, $runtime)
     {
@@ -602,10 +628,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建日程(me接口)
+     *  *
      * @param string                 $calendarId
-     * @param CreateEventByMeRequest $request
+     * @param CreateEventByMeRequest $request    CreateEventByMeRequest
      *
-     * @return CreateEventByMeResponse
+     * @return CreateEventByMeResponse CreateEventByMeResponse
      */
     public function createEventByMe($calendarId, $request)
     {
@@ -616,12 +644,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 快速创建订阅日历
+     *  *
      * @param string                          $userId
-     * @param CreateSubscribedCalendarRequest $request
-     * @param CreateSubscribedCalendarHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param CreateSubscribedCalendarRequest $request CreateSubscribedCalendarRequest
+     * @param CreateSubscribedCalendarHeaders $headers CreateSubscribedCalendarHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateSubscribedCalendarResponse
+     * @return CreateSubscribedCalendarResponse CreateSubscribedCalendarResponse
      */
     public function createSubscribedCalendarWithOptions($userId, $request, $headers, $runtime)
     {
@@ -666,10 +696,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 快速创建订阅日历
+     *  *
      * @param string                          $userId
-     * @param CreateSubscribedCalendarRequest $request
+     * @param CreateSubscribedCalendarRequest $request CreateSubscribedCalendarRequest
      *
-     * @return CreateSubscribedCalendarResponse
+     * @return CreateSubscribedCalendarResponse CreateSubscribedCalendarResponse
      */
     public function createSubscribedCalendar($userId, $request)
     {
@@ -680,13 +712,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除访问控制
+     *  *
      * @param string           $userId
      * @param string           $calendarId
      * @param string           $aclId
-     * @param DeleteAclHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param DeleteAclHeaders $headers    DeleteAclHeaders
+     * @param RuntimeOptions   $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteAclResponse
+     * @return DeleteAclResponse DeleteAclResponse
      */
     public function deleteAclWithOptions($userId, $calendarId, $aclId, $headers, $runtime)
     {
@@ -716,11 +750,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除访问控制
+     *  *
      * @param string $userId
      * @param string $calendarId
      * @param string $aclId
      *
-     * @return DeleteAclResponse
+     * @return DeleteAclResponse DeleteAclResponse
      */
     public function deleteAcl($userId, $calendarId, $aclId)
     {
@@ -731,14 +767,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定日程
+     *  *
      * @param string             $userId
      * @param string             $calendarId
      * @param string             $eventId
-     * @param DeleteEventRequest $request
-     * @param DeleteEventHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param DeleteEventRequest $request    DeleteEventRequest
+     * @param DeleteEventHeaders $headers    DeleteEventHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteEventResponse
+     * @return DeleteEventResponse DeleteEventResponse
      */
     public function deleteEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -777,12 +815,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定日程
+     *  *
      * @param string             $userId
      * @param string             $calendarId
      * @param string             $eventId
-     * @param DeleteEventRequest $request
+     * @param DeleteEventRequest $request    DeleteEventRequest
      *
-     * @return DeleteEventResponse
+     * @return DeleteEventResponse DeleteEventResponse
      */
     public function deleteEvent($userId, $calendarId, $eventId, $request)
     {
@@ -793,12 +833,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定订阅日历
+     *  *
      * @param string                          $userId
      * @param string                          $calendarId
-     * @param DeleteSubscribedCalendarHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param DeleteSubscribedCalendarHeaders $headers    DeleteSubscribedCalendarHeaders
+     * @param RuntimeOptions                  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteSubscribedCalendarResponse
+     * @return DeleteSubscribedCalendarResponse DeleteSubscribedCalendarResponse
      */
     public function deleteSubscribedCalendarWithOptions($userId, $calendarId, $headers, $runtime)
     {
@@ -828,10 +870,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定订阅日历
+     *  *
      * @param string $userId
      * @param string $calendarId
      *
-     * @return DeleteSubscribedCalendarResponse
+     * @return DeleteSubscribedCalendarResponse DeleteSubscribedCalendarResponse
      */
     public function deleteSubscribedCalendar($userId, $calendarId)
     {
@@ -842,12 +886,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 生成caldav账户
+     *  *
      * @param string                       $userId
-     * @param GenerateCaldavAccountRequest $request
-     * @param GenerateCaldavAccountHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GenerateCaldavAccountRequest $request GenerateCaldavAccountRequest
+     * @param GenerateCaldavAccountHeaders $headers GenerateCaldavAccountHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GenerateCaldavAccountResponse
+     * @return GenerateCaldavAccountResponse GenerateCaldavAccountResponse
      */
     public function generateCaldavAccountWithOptions($userId, $request, $headers, $runtime)
     {
@@ -886,10 +932,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 生成caldav账户
+     *  *
      * @param string                       $userId
-     * @param GenerateCaldavAccountRequest $request
+     * @param GenerateCaldavAccountRequest $request GenerateCaldavAccountRequest
      *
-     * @return GenerateCaldavAccountResponse
+     * @return GenerateCaldavAccountResponse GenerateCaldavAccountResponse
      */
     public function generateCaldavAccount($userId, $request)
     {
@@ -900,14 +948,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程列表
+     *  *
      * @param string          $userId
      * @param string          $calendarId
      * @param string          $eventId
-     * @param GetEventRequest $request
-     * @param GetEventHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetEventRequest $request    GetEventRequest
+     * @param GetEventHeaders $headers    GetEventHeaders
+     * @param RuntimeOptions  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetEventResponse
+     * @return GetEventResponse GetEventResponse
      */
     public function getEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -943,12 +993,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程列表
+     *  *
      * @param string          $userId
      * @param string          $calendarId
      * @param string          $eventId
-     * @param GetEventRequest $request
+     * @param GetEventRequest $request    GetEventRequest
      *
-     * @return GetEventResponse
+     * @return GetEventResponse GetEventResponse
      */
     public function getEvent($userId, $calendarId, $eventId, $request)
     {
@@ -959,12 +1011,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室忙闲
+     *  *
      * @param string                         $userId
-     * @param GetMeetingRoomsScheduleRequest $request
-     * @param GetMeetingRoomsScheduleHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param GetMeetingRoomsScheduleRequest $request GetMeetingRoomsScheduleRequest
+     * @param GetMeetingRoomsScheduleHeaders $headers GetMeetingRoomsScheduleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMeetingRoomsScheduleResponse
+     * @return GetMeetingRoomsScheduleResponse GetMeetingRoomsScheduleResponse
      */
     public function getMeetingRoomsScheduleWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1006,10 +1060,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议室忙闲
+     *  *
      * @param string                         $userId
-     * @param GetMeetingRoomsScheduleRequest $request
+     * @param GetMeetingRoomsScheduleRequest $request GetMeetingRoomsScheduleRequest
      *
-     * @return GetMeetingRoomsScheduleResponse
+     * @return GetMeetingRoomsScheduleResponse GetMeetingRoomsScheduleResponse
      */
     public function getMeetingRoomsSchedule($userId, $request)
     {
@@ -1020,12 +1076,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询闲忙
+     *  *
      * @param string             $userId
-     * @param GetScheduleRequest $request
-     * @param GetScheduleHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetScheduleRequest $request GetScheduleRequest
+     * @param GetScheduleHeaders $headers GetScheduleHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetScheduleResponse
+     * @return GetScheduleResponse GetScheduleResponse
      */
     public function getScheduleWithOptions($userId, $request, $headers, $runtime)
     {
@@ -1067,10 +1125,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询闲忙
+     *  *
      * @param string             $userId
-     * @param GetScheduleRequest $request
+     * @param GetScheduleRequest $request GetScheduleRequest
      *
-     * @return GetScheduleResponse
+     * @return GetScheduleResponse GetScheduleResponse
      */
     public function getSchedule($userId, $request)
     {
@@ -1081,13 +1141,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签到链接
+     *  *
      * @param string               $calendarId
      * @param string               $userId
      * @param string               $eventId
-     * @param GetSignInLinkHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetSignInLinkHeaders $headers    GetSignInLinkHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSignInLinkResponse
+     * @return GetSignInLinkResponse GetSignInLinkResponse
      */
     public function getSignInLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime)
     {
@@ -1117,11 +1179,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签到链接
+     *  *
      * @param string $calendarId
      * @param string $userId
      * @param string $eventId
      *
-     * @return GetSignInLinkResponse
+     * @return GetSignInLinkResponse GetSignInLinkResponse
      */
     public function getSignInLink($calendarId, $userId, $eventId)
     {
@@ -1132,14 +1196,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签到信息详情
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param GetSignInListRequest $request
-     * @param GetSignInListHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetSignInListRequest $request    GetSignInListRequest
+     * @param GetSignInListHeaders $headers    GetSignInListHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSignInListResponse
+     * @return GetSignInListResponse GetSignInListResponse
      */
     public function getSignInListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1181,12 +1247,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签到信息详情
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param GetSignInListRequest $request
+     * @param GetSignInListRequest $request    GetSignInListRequest
      *
-     * @return GetSignInListResponse
+     * @return GetSignInListResponse GetSignInListResponse
      */
     public function getSignInList($userId, $calendarId, $eventId, $request)
     {
@@ -1197,13 +1265,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签退链接
+     *  *
      * @param string                $calendarId
      * @param string                $userId
      * @param string                $eventId
-     * @param GetSignOutLinkHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetSignOutLinkHeaders $headers    GetSignOutLinkHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSignOutLinkResponse
+     * @return GetSignOutLinkResponse GetSignOutLinkResponse
      */
     public function getSignOutLinkWithOptions($calendarId, $userId, $eventId, $headers, $runtime)
     {
@@ -1233,11 +1303,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签退链接
+     *  *
      * @param string $calendarId
      * @param string $userId
      * @param string $eventId
      *
-     * @return GetSignOutLinkResponse
+     * @return GetSignOutLinkResponse GetSignOutLinkResponse
      */
     public function getSignOutLink($calendarId, $userId, $eventId)
     {
@@ -1248,14 +1320,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签退信息详情
+     *  *
      * @param string                $userId
      * @param string                $calendarId
      * @param string                $eventId
-     * @param GetSignOutListRequest $request
-     * @param GetSignOutListHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetSignOutListRequest $request    GetSignOutListRequest
+     * @param GetSignOutListHeaders $headers    GetSignOutListHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSignOutListResponse
+     * @return GetSignOutListResponse GetSignOutListResponse
      */
     public function getSignOutListWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1297,12 +1371,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取签退信息详情
+     *  *
      * @param string                $userId
      * @param string                $calendarId
      * @param string                $eventId
-     * @param GetSignOutListRequest $request
+     * @param GetSignOutListRequest $request    GetSignOutListRequest
      *
-     * @return GetSignOutListResponse
+     * @return GetSignOutListResponse GetSignOutListResponse
      */
     public function getSignOutList($userId, $calendarId, $eventId, $request)
     {
@@ -1313,12 +1389,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取指定订阅日历详情
+     *  *
      * @param string                       $userId
      * @param string                       $calendarId
-     * @param GetSubscribedCalendarHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetSubscribedCalendarHeaders $headers    GetSubscribedCalendarHeaders
+     * @param RuntimeOptions               $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSubscribedCalendarResponse
+     * @return GetSubscribedCalendarResponse GetSubscribedCalendarResponse
      */
     public function getSubscribedCalendarWithOptions($userId, $calendarId, $headers, $runtime)
     {
@@ -1348,10 +1426,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取指定订阅日历详情
+     *  *
      * @param string $userId
      * @param string $calendarId
      *
-     * @return GetSubscribedCalendarResponse
+     * @return GetSubscribedCalendarResponse GetSubscribedCalendarResponse
      */
     public function getSubscribedCalendar($userId, $calendarId)
     {
@@ -1362,12 +1442,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取访问控制列表
+     *  *
      * @param string          $userId
      * @param string          $calendarId
-     * @param ListAclsHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param ListAclsHeaders $headers    ListAclsHeaders
+     * @param RuntimeOptions  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListAclsResponse
+     * @return ListAclsResponse ListAclsResponse
      */
     public function listAclsWithOptions($userId, $calendarId, $headers, $runtime)
     {
@@ -1397,10 +1479,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取访问控制列表
+     *  *
      * @param string $userId
      * @param string $calendarId
      *
-     * @return ListAclsResponse
+     * @return ListAclsResponse ListAclsResponse
      */
     public function listAcls($userId, $calendarId)
     {
@@ -1411,14 +1495,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页获取参与人列表
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListAttendeesRequest $request
-     * @param ListAttendeesHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ListAttendeesRequest $request    ListAttendeesRequest
+     * @param ListAttendeesHeaders $headers    ListAttendeesHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListAttendeesResponse
+     * @return ListAttendeesResponse ListAttendeesResponse
      */
     public function listAttendeesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1457,12 +1543,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页获取参与人列表
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListAttendeesRequest $request
+     * @param ListAttendeesRequest $request    ListAttendeesRequest
      *
-     * @return ListAttendeesResponse
+     * @return ListAttendeesResponse ListAttendeesResponse
      */
     public function listAttendees($userId, $calendarId, $eventId, $request)
     {
@@ -1473,11 +1561,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日历本查询
+     *  *
      * @param string               $userId
-     * @param ListCalendarsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ListCalendarsHeaders $headers ListCalendarsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListCalendarsResponse
+     * @return ListCalendarsResponse ListCalendarsResponse
      */
     public function listCalendarsWithOptions($userId, $headers, $runtime)
     {
@@ -1507,9 +1597,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日历本查询
+     *  *
      * @param string $userId
      *
-     * @return ListCalendarsResponse
+     * @return ListCalendarsResponse ListCalendarsResponse
      */
     public function listCalendars($userId)
     {
@@ -1520,13 +1612,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程列表
+     *  *
      * @param string            $userId
      * @param string            $calendarId
-     * @param ListEventsRequest $request
-     * @param ListEventsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param ListEventsRequest $request    ListEventsRequest
+     * @param ListEventsHeaders $headers    ListEventsHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListEventsResponse
+     * @return ListEventsResponse ListEventsResponse
      */
     public function listEventsWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
@@ -1583,11 +1677,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程列表
+     *  *
      * @param string            $userId
      * @param string            $calendarId
-     * @param ListEventsRequest $request
+     * @param ListEventsRequest $request    ListEventsRequest
      *
-     * @return ListEventsResponse
+     * @return ListEventsResponse ListEventsResponse
      */
     public function listEvents($userId, $calendarId, $request)
     {
@@ -1598,13 +1694,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询同一个循环日程序列下已生成的实例
+     *  *
      * @param string                     $userId
      * @param string                     $calendarId
-     * @param ListEventsInstancesRequest $request
-     * @param ListEventsInstancesHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListEventsInstancesRequest $request    ListEventsInstancesRequest
+     * @param ListEventsInstancesHeaders $headers    ListEventsInstancesHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListEventsInstancesResponse
+     * @return ListEventsInstancesResponse ListEventsInstancesResponse
      */
     public function listEventsInstancesWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
@@ -1649,11 +1747,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询同一个循环日程序列下已生成的实例
+     *  *
      * @param string                     $userId
      * @param string                     $calendarId
-     * @param ListEventsInstancesRequest $request
+     * @param ListEventsInstancesRequest $request    ListEventsInstancesRequest
      *
-     * @return ListEventsInstancesResponse
+     * @return ListEventsInstancesResponse ListEventsInstancesResponse
      */
     public function listEventsInstances($userId, $calendarId, $request)
     {
@@ -1664,13 +1764,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程
+     *  *
      * @param string                $userId
      * @param string                $calendarId
-     * @param ListEventsViewRequest $request
-     * @param ListEventsViewHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param ListEventsViewRequest $request    ListEventsViewRequest
+     * @param ListEventsViewHeaders $headers    ListEventsViewHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListEventsViewResponse
+     * @return ListEventsViewResponse ListEventsViewResponse
      */
     public function listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime)
     {
@@ -1718,11 +1820,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程
+     *  *
      * @param string                $userId
      * @param string                $calendarId
-     * @param ListEventsViewRequest $request
+     * @param ListEventsViewRequest $request    ListEventsViewRequest
      *
-     * @return ListEventsViewResponse
+     * @return ListEventsViewResponse ListEventsViewResponse
      */
     public function listEventsView($userId, $calendarId, $request)
     {
@@ -1733,14 +1837,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询循环日程实例列表
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListInstancesRequest $request
-     * @param ListInstancesHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ListInstancesRequest $request    ListInstancesRequest
+     * @param ListInstancesHeaders $headers    ListInstancesHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListInstancesResponse
+     * @return ListInstancesResponse ListInstancesResponse
      */
     public function listInstancesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1788,12 +1894,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询循环日程实例列表
+     *  *
      * @param string               $userId
      * @param string               $calendarId
      * @param string               $eventId
-     * @param ListInstancesRequest $request
+     * @param ListInstancesRequest $request    ListInstancesRequest
      *
-     * @return ListInstancesResponse
+     * @return ListInstancesResponse ListInstancesResponse
      */
     public function listInstances($userId, $calendarId, $eventId, $request)
     {
@@ -1804,14 +1912,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改日程
+     *  *
      * @param string            $userId
      * @param string            $calendarId
      * @param string            $eventId
-     * @param PatchEventRequest $request
-     * @param PatchEventHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param PatchEventRequest $request    PatchEventRequest
+     * @param PatchEventHeaders $headers    PatchEventHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
      *
-     * @return PatchEventResponse
+     * @return PatchEventResponse PatchEventResponse
      */
     public function patchEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1889,12 +1999,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改日程
+     *  *
      * @param string            $userId
      * @param string            $calendarId
      * @param string            $eventId
-     * @param PatchEventRequest $request
+     * @param PatchEventRequest $request    PatchEventRequest
      *
-     * @return PatchEventResponse
+     * @return PatchEventResponse PatchEventResponse
      */
     public function patchEvent($userId, $calendarId, $eventId, $request)
     {
@@ -1905,14 +2017,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除日程参与人
+     *  *
      * @param string                $userId
      * @param string                $calendarId
      * @param string                $eventId
-     * @param RemoveAttendeeRequest $request
-     * @param RemoveAttendeeHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param RemoveAttendeeRequest $request    RemoveAttendeeRequest
+     * @param RemoveAttendeeHeaders $headers    RemoveAttendeeHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
      *
-     * @return RemoveAttendeeResponse
+     * @return RemoveAttendeeResponse RemoveAttendeeResponse
      */
     public function removeAttendeeWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -1951,12 +2065,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除日程参与人
+     *  *
      * @param string                $userId
      * @param string                $calendarId
      * @param string                $eventId
-     * @param RemoveAttendeeRequest $request
+     * @param RemoveAttendeeRequest $request    RemoveAttendeeRequest
      *
-     * @return RemoveAttendeeResponse
+     * @return RemoveAttendeeResponse RemoveAttendeeResponse
      */
     public function removeAttendee($userId, $calendarId, $eventId, $request)
     {
@@ -1967,14 +2083,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除会议室
+     *  *
      * @param string                    $userId
      * @param string                    $calendarId
      * @param string                    $eventId
-     * @param RemoveMeetingRoomsRequest $request
-     * @param RemoveMeetingRoomsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param RemoveMeetingRoomsRequest $request    RemoveMeetingRoomsRequest
+     * @param RemoveMeetingRoomsHeaders $headers    RemoveMeetingRoomsHeaders
+     * @param RuntimeOptions            $runtime    runtime options for this request RuntimeOptions
      *
-     * @return RemoveMeetingRoomsResponse
+     * @return RemoveMeetingRoomsResponse RemoveMeetingRoomsResponse
      */
     public function removeMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -2013,12 +2131,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除会议室
+     *  *
      * @param string                    $userId
      * @param string                    $calendarId
      * @param string                    $eventId
-     * @param RemoveMeetingRoomsRequest $request
+     * @param RemoveMeetingRoomsRequest $request    RemoveMeetingRoomsRequest
      *
-     * @return RemoveMeetingRoomsResponse
+     * @return RemoveMeetingRoomsResponse RemoveMeetingRoomsResponse
      */
     public function removeMeetingRooms($userId, $calendarId, $eventId, $request)
     {
@@ -2029,14 +2149,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 回复日程邀请
+     *  *
      * @param string              $userId
      * @param string              $calendarId
      * @param string              $eventId
-     * @param RespondEventRequest $request
-     * @param RespondEventHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param RespondEventRequest $request    RespondEventRequest
+     * @param RespondEventHeaders $headers    RespondEventHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
      *
-     * @return RespondEventResponse
+     * @return RespondEventResponse RespondEventResponse
      */
     public function respondEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
     {
@@ -2075,12 +2197,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 回复日程邀请
+     *  *
      * @param string              $userId
      * @param string              $calendarId
      * @param string              $eventId
-     * @param RespondEventRequest $request
+     * @param RespondEventRequest $request    RespondEventRequest
      *
-     * @return RespondEventResponse
+     * @return RespondEventResponse RespondEventResponse
      */
     public function respondEvent($userId, $calendarId, $eventId, $request)
     {
@@ -2091,13 +2215,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签到
+     *  *
      * @param string         $userId
      * @param string         $calendarId
      * @param string         $eventId
-     * @param SignInHeaders  $headers
-     * @param RuntimeOptions $runtime
+     * @param SignInHeaders  $headers    SignInHeaders
+     * @param RuntimeOptions $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SignInResponse
+     * @return SignInResponse SignInResponse
      */
     public function signInWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
     {
@@ -2127,11 +2253,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签到
+     *  *
      * @param string $userId
      * @param string $calendarId
      * @param string $eventId
      *
-     * @return SignInResponse
+     * @return SignInResponse SignInResponse
      */
     public function signIn($userId, $calendarId, $eventId)
     {
@@ -2142,13 +2270,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签退
+     *  *
      * @param string         $userId
      * @param string         $calendarId
      * @param string         $eventId
-     * @param SignOutHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param SignOutHeaders $headers    SignOutHeaders
+     * @param RuntimeOptions $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SignOutResponse
+     * @return SignOutResponse SignOutResponse
      */
     public function signOutWithOptions($userId, $calendarId, $eventId, $headers, $runtime)
     {
@@ -2178,11 +2308,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 签退
+     *  *
      * @param string $userId
      * @param string $calendarId
      * @param string $eventId
      *
-     * @return SignOutResponse
+     * @return SignOutResponse SignOutResponse
      */
     public function signOut($userId, $calendarId, $eventId)
     {
@@ -2193,12 +2325,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 订阅公共日历
+     *  *
      * @param string                   $userId
      * @param string                   $calendarId
-     * @param SubscribeCalendarHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param SubscribeCalendarHeaders $headers    SubscribeCalendarHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SubscribeCalendarResponse
+     * @return SubscribeCalendarResponse SubscribeCalendarResponse
      */
     public function subscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime)
     {
@@ -2228,10 +2362,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 订阅公共日历
+     *  *
      * @param string $userId
      * @param string $calendarId
      *
-     * @return SubscribeCalendarResponse
+     * @return SubscribeCalendarResponse SubscribeCalendarResponse
      */
     public function subscribeCalendar($userId, $calendarId)
     {
@@ -2242,14 +2378,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日程转让
+     *  *
      * @param string               $calendarId
      * @param string               $userId
      * @param string               $eventId
-     * @param TransferEventRequest $request
-     * @param TransferEventHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param TransferEventRequest $request    TransferEventRequest
+     * @param TransferEventHeaders $headers    TransferEventHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return TransferEventResponse
+     * @return TransferEventResponse TransferEventResponse
      */
     public function transferEventWithOptions($calendarId, $userId, $eventId, $request, $headers, $runtime)
     {
@@ -2294,12 +2432,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日程转让
+     *  *
      * @param string               $calendarId
      * @param string               $userId
      * @param string               $eventId
-     * @param TransferEventRequest $request
+     * @param TransferEventRequest $request    TransferEventRequest
      *
-     * @return TransferEventResponse
+     * @return TransferEventResponse TransferEventResponse
      */
     public function transferEvent($calendarId, $userId, $eventId, $request)
     {
@@ -2310,12 +2450,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 取消订阅公共日历
+     *  *
      * @param string                     $userId
      * @param string                     $calendarId
-     * @param UnsubscribeCalendarHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param UnsubscribeCalendarHeaders $headers    UnsubscribeCalendarHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UnsubscribeCalendarResponse
+     * @return UnsubscribeCalendarResponse UnsubscribeCalendarResponse
      */
     public function unsubscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime)
     {
@@ -2345,10 +2487,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 取消订阅公共日历
+     *  *
      * @param string $userId
      * @param string $calendarId
      *
-     * @return UnsubscribeCalendarResponse
+     * @return UnsubscribeCalendarResponse UnsubscribeCalendarResponse
      */
     public function unsubscribeCalendar($userId, $calendarId)
     {
@@ -2359,13 +2503,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新指定订阅日历
+     *  *
      * @param string                           $calendarId
      * @param string                           $userId
-     * @param UpdateSubscribedCalendarsRequest $request
-     * @param UpdateSubscribedCalendarsHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateSubscribedCalendarsRequest $request    UpdateSubscribedCalendarsRequest
+     * @param UpdateSubscribedCalendarsHeaders $headers    UpdateSubscribedCalendarsHeaders
+     * @param RuntimeOptions                   $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UpdateSubscribedCalendarsResponse
+     * @return UpdateSubscribedCalendarsResponse UpdateSubscribedCalendarsResponse
      */
     public function updateSubscribedCalendarsWithOptions($calendarId, $userId, $request, $headers, $runtime)
     {
@@ -2410,11 +2556,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新指定订阅日历
+     *  *
      * @param string                           $calendarId
      * @param string                           $userId
-     * @param UpdateSubscribedCalendarsRequest $request
+     * @param UpdateSubscribedCalendarsRequest $request    UpdateSubscribedCalendarsRequest
      *
-     * @return UpdateSubscribedCalendarsResponse
+     * @return UpdateSubscribedCalendarsResponse UpdateSubscribedCalendarsResponse
      */
     public function updateSubscribedCalendars($calendarId, $userId, $request)
     {

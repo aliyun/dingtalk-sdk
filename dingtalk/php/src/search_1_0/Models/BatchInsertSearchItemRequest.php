@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchInsertSearchItemRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var searchItemModels[]
      */
     public $searchItemModels;

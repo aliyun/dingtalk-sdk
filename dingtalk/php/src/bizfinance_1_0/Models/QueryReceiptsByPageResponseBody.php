@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptsByPageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var string
@@ -17,6 +19,8 @@ class QueryReceiptsByPageResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;

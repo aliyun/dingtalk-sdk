@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class job extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class job extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 分类
      *
      * @var string
@@ -23,6 +27,8 @@ class job extends Model
     public $category;
 
     /**
+     * @description This parameter is required.
+     *
      * @example code1
      *
      * @var string
@@ -30,6 +36,8 @@ class job extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 展示名称
      *
      * @var string

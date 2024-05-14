@@ -15,6 +15,8 @@ class UpdateMenuDataRequest extends Model
     public $attr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 89ez9DwVWQVgkhwndJNt1ZY
      *
      * @var string
@@ -22,6 +24,8 @@ class UpdateMenuDataRequest extends Model
     public $bizTraceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sale
      *
      * @var string
@@ -29,11 +33,15 @@ class UpdateMenuDataRequest extends Model
     public $module;
 
     /**
+     * @description This parameter is required.
+     *
      * @var navData
      */
     public $navData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -41,6 +49,8 @@ class UpdateMenuDataRequest extends Model
     public $operateType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16044739461008808646
      *
      * @var string

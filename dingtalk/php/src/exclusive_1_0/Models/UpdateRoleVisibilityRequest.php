@@ -16,6 +16,8 @@ class UpdateRoleVisibilityRequest extends Model
     public $deptIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1312312
      *
      * @var int

@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveOpenExternalLogRequest $request
-     * @param SaveOpenExternalLogHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 生态日志数据互通
+     *  *
+     * @param SaveOpenExternalLogRequest $request SaveOpenExternalLogRequest
+     * @param SaveOpenExternalLogHeaders $headers SaveOpenExternalLogHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SaveOpenExternalLogResponse
+     * @return SaveOpenExternalLogResponse SaveOpenExternalLogResponse
      */
     public function saveOpenExternalLogWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveOpenExternalLogRequest $request
+     * @summary 生态日志数据互通
+     *  *
+     * @param SaveOpenExternalLogRequest $request SaveOpenExternalLogRequest
      *
-     * @return SaveOpenExternalLogResponse
+     * @return SaveOpenExternalLogResponse SaveOpenExternalLogResponse
      */
     public function saveOpenExternalLog($request)
     {

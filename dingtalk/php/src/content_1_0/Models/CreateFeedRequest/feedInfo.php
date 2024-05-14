@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class feedInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -18,6 +20,8 @@ class feedInfo extends Model
     public $actionType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -25,6 +29,8 @@ class feedInfo extends Model
     public $belongsTo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200000257
      *
      * @var int
@@ -46,6 +52,8 @@ class feedInfo extends Model
     public $feedTag;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4
      *
      * @var int
@@ -60,6 +68,8 @@ class feedInfo extends Model
     public $industryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 描述
      *
      * @var string
@@ -74,6 +84,8 @@ class feedInfo extends Model
     public $introductionPicUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 50730********40554
      *
      * @var string
@@ -81,6 +93,8 @@ class feedInfo extends Model
     public $mcnId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mediaContents[]
      */
     public $mediaContents;
@@ -91,6 +105,8 @@ class feedInfo extends Model
     public $recommends;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static.dingtalk.com/media/**************NAlg_600_337.jpg
      *
      * @var string
@@ -98,6 +114,8 @@ class feedInfo extends Model
     public $thumbUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 课程标题
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryScheduleConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
      *
      * @var string

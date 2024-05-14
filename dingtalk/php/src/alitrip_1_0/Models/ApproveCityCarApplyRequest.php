@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ApproveCityCarApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpx
      *
      * @var string
@@ -30,6 +32,8 @@ class ApproveCityCarApplyRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +41,8 @@ class ApproveCityCarApplyRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example apply1
      *
      * @var string
@@ -44,6 +50,8 @@ class ApproveCityCarApplyRequest extends Model
     public $thirdPartApplyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user1
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class creator extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example DingTalk
      *
      * @var string
@@ -16,6 +18,8 @@ class creator extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string

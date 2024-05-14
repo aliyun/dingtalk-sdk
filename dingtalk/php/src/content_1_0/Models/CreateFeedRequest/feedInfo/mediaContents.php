@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class mediaContents extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 378a1a0154b34**********86313948e
      *
      * @var string
@@ -16,6 +18,8 @@ class mediaContents extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 媒体标题
      *
      * @var string
@@ -23,6 +27,8 @@ class mediaContents extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int

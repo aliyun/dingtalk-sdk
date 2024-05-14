@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class appVersionList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string
@@ -16,6 +18,8 @@ class appVersionList extends Model
     public $appVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class appVersionList extends Model
     public $appVersionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class appVersionList extends Model
     public $appVersionType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2023-01-01 00:00:00
      *
      * @var string
@@ -42,6 +50,8 @@ class appVersionList extends Model
     public $entranceLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;
@@ -52,6 +62,8 @@ class appVersionList extends Model
     public $miniAppOnPc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2023-01-01 00:00:00
      *
      * @var string

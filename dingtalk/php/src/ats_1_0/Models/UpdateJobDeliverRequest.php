@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateJobDeliverRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ddats
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateJobDeliverRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example channelOuterId
      *
      * @var string
@@ -23,6 +27,8 @@ class UpdateJobDeliverRequest extends Model
     public $channelOuterId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 27016066248xxxxx
      *
      * @var string
@@ -44,6 +50,8 @@ class UpdateJobDeliverRequest extends Model
     public $errorMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1666780239981
      *
      * @var int
@@ -58,6 +66,8 @@ class UpdateJobDeliverRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -65,6 +75,8 @@ class UpdateJobDeliverRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example jobId23ed0d46548f4e88a7b808d3f3057xxx
      *
      * @var string

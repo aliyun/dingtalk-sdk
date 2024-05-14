@@ -16,6 +16,8 @@ class GrantCspaceAuthorizationRequest extends Model
     public $durationSeconds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 163xxxx658
      *
      * @var string
@@ -23,6 +25,8 @@ class GrantCspaceAuthorizationRequest extends Model
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -30,6 +34,8 @@ class GrantCspaceAuthorizationRequest extends Model
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 26652461xxxx5992
      *
      * @var string

@@ -26,11 +26,15 @@ class ModifySubInstitutionRequest extends Model
     public $bindingAlipayLogonId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var contactInfo
      */
     public $contactInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -38,11 +42,15 @@ class ModifySubInstitutionRequest extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var legalPersonCertInfo
      */
     public $legalPersonCertInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021000001
      *
      * @var string
@@ -50,6 +58,8 @@ class ModifySubInstitutionRequest extends Model
     public $outTradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -62,11 +72,15 @@ class ModifySubInstitutionRequest extends Model
     public $qualificationInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $services;
 
     /**
+     * @description This parameter is required.
+     *
      * @var settleInfo
      */
     public $settleInfo;
@@ -82,16 +96,22 @@ class ModifySubInstitutionRequest extends Model
     public $subInstAuthInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var subInstBasicInfo
      */
     public $subInstBasicInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var subInstCertifyInfo
      */
     public $subInstCertifyInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string

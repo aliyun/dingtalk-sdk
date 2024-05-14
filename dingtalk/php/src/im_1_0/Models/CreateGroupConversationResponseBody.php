@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $appUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidpZ****Vcp4g==
      *
      * @var string
@@ -21,6 +25,8 @@ class CreateGroupConversationResponseBody extends Model
     public $conversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string
@@ -28,6 +34,8 @@ class CreateGroupConversationResponseBody extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

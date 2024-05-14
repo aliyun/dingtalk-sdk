@@ -15,6 +15,8 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example comments
      *
      * @var string
@@ -22,21 +24,29 @@ class content extends Model
     public $comments;
 
     /**
+     * @description This parameter is required.
+     *
      * @var dept[]
      */
     public $dept;
 
     /**
+     * @description This parameter is required.
+     *
      * @var group[]
      */
     public $group;
 
     /**
+     * @description This parameter is required.
+     *
      * @var job
      */
     public $job;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0001
      *
      * @var string
@@ -44,16 +54,22 @@ class content extends Model
     public $jobNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var jobStatus
      */
     public $jobStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var jobStatusList[]
      */
     public $jobStatusList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example u0398812938821
      *
      * @var string
@@ -61,6 +77,8 @@ class content extends Model
     public $uid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 用户名称
      *
      * @var string
@@ -68,6 +86,8 @@ class content extends Model
     public $userName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userProb
      */
     public $userProb;

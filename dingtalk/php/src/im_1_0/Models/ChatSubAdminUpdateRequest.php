@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatSubAdminUpdateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidVwhmrlxsR3sL3+JdH1LjUA==
      *
      * @var string
@@ -16,6 +18,8 @@ class ChatSubAdminUpdateRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -23,6 +27,8 @@ class ChatSubAdminUpdateRequest extends Model
     public $role;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

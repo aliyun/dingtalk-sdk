@@ -16,6 +16,8 @@ class userList extends Model
     public $participantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx
      *
      * @var string

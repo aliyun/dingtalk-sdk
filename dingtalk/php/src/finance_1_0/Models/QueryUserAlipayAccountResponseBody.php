@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAlipayAccountResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2088894773487
      *
      * @var string

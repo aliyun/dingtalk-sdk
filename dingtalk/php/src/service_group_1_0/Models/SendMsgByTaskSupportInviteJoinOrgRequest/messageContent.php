@@ -15,6 +15,8 @@ class messageContent extends Model
     public $btns;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 内容
      *
      * @var string
@@ -22,6 +24,8 @@ class messageContent extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ACTIONCARD：卡片消息
      *
      * @var string
@@ -29,6 +33,8 @@ class messageContent extends Model
     public $messageType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 标题内容
      *
      * @var string

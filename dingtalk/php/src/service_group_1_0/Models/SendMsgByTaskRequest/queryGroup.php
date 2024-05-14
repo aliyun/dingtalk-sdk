@@ -39,6 +39,8 @@ class queryGroup extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $queryType;

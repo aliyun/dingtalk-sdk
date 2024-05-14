@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchCreateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example industry_center
      *
      * @var string
@@ -17,11 +19,15 @@ class BatchCreateRequest extends Model
     public $cardBizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var data
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example AFC35F13-8A88-728F-27C5-3616AD7DFF2E
      *
      * @var string
@@ -29,6 +35,8 @@ class BatchCreateRequest extends Model
     public $identifier;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4
      *
      * @var int
@@ -36,6 +44,8 @@ class BatchCreateRequest extends Model
     public $jsVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @example QUPEIYIN
      *
      * @var string

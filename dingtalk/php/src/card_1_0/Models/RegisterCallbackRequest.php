@@ -16,6 +16,8 @@ class RegisterCallbackRequest extends Model
     public $apiSecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example routeKey-12
      *
      * @var string
@@ -23,6 +25,8 @@ class RegisterCallbackRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.myurl/callback
      *
      * @var string

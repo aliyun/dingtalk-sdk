@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class CreateApaasAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appIcon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAppId;
@@ -34,6 +42,8 @@ class CreateApaasAppRequest extends Model
     public $homepageEditLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $homepageLink;
@@ -49,16 +59,22 @@ class CreateApaasAppRequest extends Model
     public $ompLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pcHomepageEditLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pcHomepageLink;

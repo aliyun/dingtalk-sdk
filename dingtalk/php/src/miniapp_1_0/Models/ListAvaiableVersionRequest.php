@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class ListAvaiableVersionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bundleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $versionTypeSet;

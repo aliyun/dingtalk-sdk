@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class relateSource extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizType;
@@ -21,6 +23,8 @@ class relateSource extends Model
     public $dataSource;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fields[]
      */
     public $fields;

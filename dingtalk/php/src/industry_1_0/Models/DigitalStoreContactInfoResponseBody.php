@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreContactInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example codexxxxx
      *
      * @var string
@@ -30,6 +32,8 @@ class DigitalStoreContactInfoResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5647993312
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abcef-efgh-123
      *
      * @var string
@@ -30,6 +32,8 @@ class results extends Model
     public $errorMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

@@ -16,6 +16,8 @@ class UpdateInstanceRequest extends Model
     public $externalBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DING_CUSTOMER
      *
      * @var string
@@ -23,6 +25,8 @@ class UpdateInstanceRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"node_888":"hhhh"}
      *
      * @var string
@@ -30,6 +34,8 @@ class UpdateInstanceRequest extends Model
     public $formDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888555
      *
      * @var string
@@ -37,6 +43,8 @@ class UpdateInstanceRequest extends Model
     public $openDataInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888***
      *
      * @var string

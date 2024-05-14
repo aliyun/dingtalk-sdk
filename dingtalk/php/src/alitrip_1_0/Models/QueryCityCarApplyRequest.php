@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCityCarApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpx
      *
      * @var string

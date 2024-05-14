@@ -16,6 +16,8 @@ class GetOutsideAuditGroupMessageByPageRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1680493837426
      *
      * @var int
@@ -23,6 +25,8 @@ class GetOutsideAuditGroupMessageByPageRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;

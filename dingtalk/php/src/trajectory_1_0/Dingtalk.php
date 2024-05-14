@@ -37,11 +37,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAppActiveUsersRequest $request
-     * @param QueryAppActiveUsersHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 查询APP当前开启轨迹采集的用户
+     *  *
+     * @param QueryAppActiveUsersRequest $request QueryAppActiveUsersRequest
+     * @param QueryAppActiveUsersHeaders $headers QueryAppActiveUsersHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryAppActiveUsersResponse
+     * @return QueryAppActiveUsersResponse QueryAppActiveUsersResponse
      */
     public function queryAppActiveUsersWithOptions($request, $headers, $runtime)
     {
@@ -83,9 +85,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAppActiveUsersRequest $request
+     * @summary 查询APP当前开启轨迹采集的用户
+     *  *
+     * @param QueryAppActiveUsersRequest $request QueryAppActiveUsersRequest
      *
-     * @return QueryAppActiveUsersResponse
+     * @return QueryAppActiveUsersResponse QueryAppActiveUsersResponse
      */
     public function queryAppActiveUsers($request)
     {
@@ -96,11 +100,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCollectingTraceTaskRequest $request
-     * @param QueryCollectingTraceTaskHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 查询应用采集中的轨迹任务
+     *  *
+     * @param QueryCollectingTraceTaskRequest $request QueryCollectingTraceTaskRequest
+     * @param QueryCollectingTraceTaskHeaders $headers QueryCollectingTraceTaskHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCollectingTraceTaskResponse
+     * @return QueryCollectingTraceTaskResponse QueryCollectingTraceTaskResponse
      */
     public function queryCollectingTraceTaskWithOptions($request, $headers, $runtime)
     {
@@ -136,9 +142,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCollectingTraceTaskRequest $request
+     * @summary 查询应用采集中的轨迹任务
+     *  *
+     * @param QueryCollectingTraceTaskRequest $request QueryCollectingTraceTaskRequest
      *
-     * @return QueryCollectingTraceTaskResponse
+     * @return QueryCollectingTraceTaskResponse QueryCollectingTraceTaskResponse
      */
     public function queryCollectingTraceTask($request)
     {
@@ -149,11 +157,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPageTraceDataRequest $request
-     * @param QueryPageTraceDataHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 查询轨迹数据
+     *  *
+     * @param QueryPageTraceDataRequest $request QueryPageTraceDataRequest
+     * @param QueryPageTraceDataHeaders $headers QueryPageTraceDataHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPageTraceDataResponse
+     * @return QueryPageTraceDataResponse QueryPageTraceDataResponse
      */
     public function queryPageTraceDataWithOptions($request, $headers, $runtime)
     {
@@ -204,9 +214,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPageTraceDataRequest $request
+     * @summary 查询轨迹数据
+     *  *
+     * @param QueryPageTraceDataRequest $request QueryPageTraceDataRequest
      *
-     * @return QueryPageTraceDataResponse
+     * @return QueryPageTraceDataResponse QueryPageTraceDataResponse
      */
     public function queryPageTraceData($request)
     {

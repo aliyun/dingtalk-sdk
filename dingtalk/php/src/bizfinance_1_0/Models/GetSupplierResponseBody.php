@@ -14,6 +14,8 @@ class GetSupplierResponseBody extends Model
     public $accountantBookIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUP_XXX
      *
      * @var string
@@ -21,6 +23,8 @@ class GetSupplierResponseBody extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1634786828686
      *
      * @var int
@@ -28,6 +32,8 @@ class GetSupplierResponseBody extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 原材料供应商
      *
      * @var string
@@ -35,6 +41,8 @@ class GetSupplierResponseBody extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XX公司
      *
      * @var string
@@ -42,6 +50,8 @@ class GetSupplierResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example valid
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetAppsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example All
      *
      * @var string

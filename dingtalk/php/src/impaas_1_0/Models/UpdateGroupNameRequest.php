@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupNameRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $conversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

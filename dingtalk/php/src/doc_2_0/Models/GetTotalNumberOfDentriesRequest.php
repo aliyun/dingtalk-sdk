@@ -14,6 +14,8 @@ class GetTotalNumberOfDentriesRequest extends Model
     public $includeFolder;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd
      *
      * @var string

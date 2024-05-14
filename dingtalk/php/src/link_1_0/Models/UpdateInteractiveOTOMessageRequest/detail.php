@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example service-card-202208240001
      *
      * @var string

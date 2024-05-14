@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfContentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 更新内容
      *
      * @var string
@@ -21,6 +23,8 @@ class UpdateKROfContentRequest extends Model
     public $updateQuoteList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 46GM2
      *
      * @var string
@@ -28,6 +32,8 @@ class UpdateKROfContentRequest extends Model
     public $krId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

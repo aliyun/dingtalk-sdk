@@ -14,6 +14,8 @@ class BatchQueryGroupMemberRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200
      *
      * @var int
@@ -26,6 +28,8 @@ class BatchQueryGroupMemberRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string

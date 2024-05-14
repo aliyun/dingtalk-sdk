@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsDeleteRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2123132
      *
      * @var string
@@ -16,6 +18,8 @@ class PediaWordsDeleteRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 212112
      *
      * @var int

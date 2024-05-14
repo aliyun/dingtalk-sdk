@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class WikiWordsParseResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data[]
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $errMsg;

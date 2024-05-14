@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListEmpAttributeVisibilityResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -22,6 +24,8 @@ class ListEmpAttributeVisibilityResponseBody extends Model
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextCursor;

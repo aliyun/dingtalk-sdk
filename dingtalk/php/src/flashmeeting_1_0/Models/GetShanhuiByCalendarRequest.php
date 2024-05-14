@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetShanhuiByCalendarRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example VGZCWXpvTmxpQmorbUhiSXUveTB98Iok
      *
      * @var string
@@ -16,6 +18,8 @@ class GetShanhuiByCalendarRequest extends Model
     public $eventId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EUiSN7beu1Q2wR
      *
      * @var string

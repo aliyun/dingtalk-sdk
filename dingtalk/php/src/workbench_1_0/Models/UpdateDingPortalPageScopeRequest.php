@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateDingPortalPageScopeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool

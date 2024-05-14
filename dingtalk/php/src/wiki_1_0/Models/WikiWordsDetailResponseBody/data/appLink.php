@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class appLink extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $iconLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pcLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $phoneLink;

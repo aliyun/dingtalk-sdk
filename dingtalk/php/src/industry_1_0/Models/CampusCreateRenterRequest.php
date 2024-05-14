@@ -30,6 +30,8 @@ class CampusCreateRenterRequest extends Model
     public $extend;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉
      *
      * @var string

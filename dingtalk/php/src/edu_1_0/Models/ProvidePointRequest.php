@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ProvidePointRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example action01
      *
      * @var string
@@ -16,6 +18,8 @@ class ProvidePointRequest extends Model
     public $actionCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example biz01
      *
      * @var string
@@ -23,6 +27,8 @@ class ProvidePointRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example personal
      *
      * @var string

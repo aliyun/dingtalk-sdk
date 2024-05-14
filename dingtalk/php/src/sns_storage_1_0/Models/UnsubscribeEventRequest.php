@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UnsubscribeEventRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SPACE
      *
      * @var string
@@ -16,6 +18,8 @@ class UnsubscribeEventRequest extends Model
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @example scope_id
      *
      * @var string
@@ -23,6 +27,8 @@ class UnsubscribeEventRequest extends Model
     public $scopeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

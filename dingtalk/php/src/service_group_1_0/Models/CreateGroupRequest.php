@@ -16,6 +16,8 @@ class CreateGroupRequest extends Model
     public $groupBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试服务群
      *
      * @var string
@@ -33,6 +35,8 @@ class CreateGroupRequest extends Model
     public $memberStaffIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string
@@ -40,6 +44,8 @@ class CreateGroupRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string
@@ -47,6 +53,8 @@ class CreateGroupRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager123
      *
      * @var string

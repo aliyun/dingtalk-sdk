@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class PageFeedResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var feedList[]
      */
     public $feedList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -22,6 +26,8 @@ class PageFeedResponseBody extends Model
     public $hasNext;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int

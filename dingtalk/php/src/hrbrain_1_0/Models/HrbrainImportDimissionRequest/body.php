@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dimissionDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dimissionReaasonDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dimissionReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $empType;
@@ -54,6 +66,8 @@ class body extends Model
     public $jobLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -64,6 +78,8 @@ class body extends Model
     public $postName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $superName;
@@ -74,6 +90,8 @@ class body extends Model
     public $workLocAddr;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

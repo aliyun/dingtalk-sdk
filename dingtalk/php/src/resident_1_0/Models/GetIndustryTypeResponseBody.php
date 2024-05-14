@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetIndustryTypeResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example RESIDENCE
      *
      * @var string

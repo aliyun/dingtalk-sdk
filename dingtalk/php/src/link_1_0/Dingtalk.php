@@ -74,11 +74,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ApplyFollowerAuthInfoRequest $request
-     * @param ApplyFollowerAuthInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 发送用户授权信息申请
+     *  *
+     * @param ApplyFollowerAuthInfoRequest $request ApplyFollowerAuthInfoRequest
+     * @param ApplyFollowerAuthInfoHeaders $headers ApplyFollowerAuthInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ApplyFollowerAuthInfoResponse
+     * @return ApplyFollowerAuthInfoResponse ApplyFollowerAuthInfoResponse
      */
     public function applyFollowerAuthInfoWithOptions($request, $headers, $runtime)
     {
@@ -123,9 +125,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ApplyFollowerAuthInfoRequest $request
+     * @summary 发送用户授权信息申请
+     *  *
+     * @param ApplyFollowerAuthInfoRequest $request ApplyFollowerAuthInfoRequest
      *
-     * @return ApplyFollowerAuthInfoResponse
+     * @return ApplyFollowerAuthInfoResponse ApplyFollowerAuthInfoResponse
      */
     public function applyFollowerAuthInfo($request)
     {
@@ -136,11 +140,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CallbackRegiesterRequest $request
-     * @param CallbackRegiesterHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 注册服务窗消息回调服务
+     *  *
+     * @param CallbackRegiesterRequest $request CallbackRegiesterRequest
+     * @param CallbackRegiesterHeaders $headers CallbackRegiesterHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CallbackRegiesterResponse
+     * @return CallbackRegiesterResponse CallbackRegiesterResponse
      */
     public function callbackRegiesterWithOptions($request, $headers, $runtime)
     {
@@ -185,9 +191,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CallbackRegiesterRequest $request
+     * @summary 注册服务窗消息回调服务
+     *  *
+     * @param CallbackRegiesterRequest $request CallbackRegiesterRequest
      *
-     * @return CallbackRegiesterResponse
+     * @return CallbackRegiesterResponse CallbackRegiesterResponse
      */
     public function callbackRegiester($request)
     {
@@ -198,11 +206,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseTopBoxInteractiveOTOMessageRequest $request
-     * @param CloseTopBoxInteractiveOTOMessageHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 服务窗吊顶卡片关闭接口
+     *  *
+     * @param CloseTopBoxInteractiveOTOMessageRequest $request CloseTopBoxInteractiveOTOMessageRequest
+     * @param CloseTopBoxInteractiveOTOMessageHeaders $headers CloseTopBoxInteractiveOTOMessageHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return CloseTopBoxInteractiveOTOMessageResponse
+     * @return CloseTopBoxInteractiveOTOMessageResponse CloseTopBoxInteractiveOTOMessageResponse
      */
     public function closeTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime)
     {
@@ -238,9 +248,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseTopBoxInteractiveOTOMessageRequest $request
+     * @summary 服务窗吊顶卡片关闭接口
+     *  *
+     * @param CloseTopBoxInteractiveOTOMessageRequest $request CloseTopBoxInteractiveOTOMessageRequest
      *
-     * @return CloseTopBoxInteractiveOTOMessageResponse
+     * @return CloseTopBoxInteractiveOTOMessageResponse CloseTopBoxInteractiveOTOMessageResponse
      */
     public function closeTopBoxInteractiveOTOMessage($request)
     {
@@ -251,11 +263,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFollowerAuthInfoRequest $request
-     * @param GetFollowerAuthInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取用户授权信息
+     *  *
+     * @param GetFollowerAuthInfoRequest $request GetFollowerAuthInfoRequest
+     * @param GetFollowerAuthInfoHeaders $headers GetFollowerAuthInfoHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFollowerAuthInfoResponse
+     * @return GetFollowerAuthInfoResponse GetFollowerAuthInfoResponse
      */
     public function getFollowerAuthInfoWithOptions($request, $headers, $runtime)
     {
@@ -294,9 +308,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFollowerAuthInfoRequest $request
+     * @summary 获取用户授权信息
+     *  *
+     * @param GetFollowerAuthInfoRequest $request GetFollowerAuthInfoRequest
      *
-     * @return GetFollowerAuthInfoResponse
+     * @return GetFollowerAuthInfoResponse GetFollowerAuthInfoResponse
      */
     public function getFollowerAuthInfo($request)
     {
@@ -307,11 +323,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFollowerInfoRequest $request
-     * @param GetFollowerInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取服务窗关注人信息
+     *  *
+     * @param GetFollowerInfoRequest $request GetFollowerInfoRequest
+     * @param GetFollowerInfoHeaders $headers GetFollowerInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFollowerInfoResponse
+     * @return GetFollowerInfoResponse GetFollowerInfoResponse
      */
     public function getFollowerInfoWithOptions($request, $headers, $runtime)
     {
@@ -353,9 +371,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFollowerInfoRequest $request
+     * @summary 获取服务窗关注人信息
+     *  *
+     * @param GetFollowerInfoRequest $request GetFollowerInfoRequest
      *
-     * @return GetFollowerInfoResponse
+     * @return GetFollowerInfoResponse GetFollowerInfoResponse
      */
     public function getFollowerInfo($request)
     {
@@ -366,11 +386,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPictureDownloadUrlRequest $request
-     * @param GetPictureDownloadUrlHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 服务窗图片消息下载地址获取接口
+     *  *
+     * @param GetPictureDownloadUrlRequest $request GetPictureDownloadUrlRequest
+     * @param GetPictureDownloadUrlHeaders $headers GetPictureDownloadUrlHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPictureDownloadUrlResponse
+     * @return GetPictureDownloadUrlResponse GetPictureDownloadUrlResponse
      */
     public function getPictureDownloadUrlWithOptions($request, $headers, $runtime)
     {
@@ -409,9 +431,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPictureDownloadUrlRequest $request
+     * @summary 服务窗图片消息下载地址获取接口
+     *  *
+     * @param GetPictureDownloadUrlRequest $request GetPictureDownloadUrlRequest
      *
-     * @return GetPictureDownloadUrlResponse
+     * @return GetPictureDownloadUrlResponse GetPictureDownloadUrlResponse
      */
     public function getPictureDownloadUrl($request)
     {
@@ -422,11 +446,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserFollowStatusRequest $request
-     * @param GetUserFollowStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取用户关注状态
+     *  *
+     * @param GetUserFollowStatusRequest $request GetUserFollowStatusRequest
+     * @param GetUserFollowStatusHeaders $headers GetUserFollowStatusHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserFollowStatusResponse
+     * @return GetUserFollowStatusResponse GetUserFollowStatusResponse
      */
     public function getUserFollowStatusWithOptions($request, $headers, $runtime)
     {
@@ -468,9 +494,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserFollowStatusRequest $request
+     * @summary 获取用户关注状态
+     *  *
+     * @param GetUserFollowStatusRequest $request GetUserFollowStatusRequest
      *
-     * @return GetUserFollowStatusResponse
+     * @return GetUserFollowStatusResponse GetUserFollowStatusResponse
      */
     public function getUserFollowStatus($request)
     {
@@ -481,10 +509,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAccountHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取企业下服务窗帐号列表
+     *  *
+     * @param ListAccountHeaders $headers ListAccountHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAccountResponse
+     * @return ListAccountResponse ListAccountResponse
      */
     public function listAccountWithOptions($headers, $runtime)
     {
@@ -514,7 +544,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListAccountResponse
+     * @summary 获取企业下服务窗帐号列表
+     *  *
+     * @return ListAccountResponse ListAccountResponse
      */
     public function listAccount()
     {
@@ -525,10 +557,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAccountInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 第三方企业应用查询服务窗帐号列表
+     *  *
+     * @param ListAccountInfoHeaders $headers ListAccountInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAccountInfoResponse
+     * @return ListAccountInfoResponse ListAccountInfoResponse
      */
     public function listAccountInfoWithOptions($headers, $runtime)
     {
@@ -558,7 +592,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListAccountInfoResponse
+     * @summary 第三方企业应用查询服务窗帐号列表
+     *  *
+     * @return ListAccountInfoResponse ListAccountInfoResponse
      */
     public function listAccountInfo()
     {
@@ -569,11 +605,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFollowerRequest $request
-     * @param ListFollowerHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 批量获取服务窗关注人列表
+     *  *
+     * @param ListFollowerRequest $request ListFollowerRequest
+     * @param ListFollowerHeaders $headers ListFollowerHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListFollowerResponse
+     * @return ListFollowerResponse ListFollowerResponse
      */
     public function listFollowerWithOptions($request, $headers, $runtime)
     {
@@ -615,9 +653,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFollowerRequest $request
+     * @summary 批量获取服务窗关注人列表
+     *  *
+     * @param ListFollowerRequest $request ListFollowerRequest
      *
-     * @return ListFollowerResponse
+     * @return ListFollowerResponse ListFollowerResponse
      */
     public function listFollower($request)
     {
@@ -628,11 +668,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserFollowStatusRequest $request
-     * @param QueryUserFollowStatusHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 第三方企业应用查询用户是否关注服务窗
+     *  *
+     * @param QueryUserFollowStatusRequest $request QueryUserFollowStatusRequest
+     * @param QueryUserFollowStatusHeaders $headers QueryUserFollowStatusHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUserFollowStatusResponse
+     * @return QueryUserFollowStatusResponse QueryUserFollowStatusResponse
      */
     public function queryUserFollowStatusWithOptions($request, $headers, $runtime)
     {
@@ -671,9 +713,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserFollowStatusRequest $request
+     * @summary 第三方企业应用查询用户是否关注服务窗
+     *  *
+     * @param QueryUserFollowStatusRequest $request QueryUserFollowStatusRequest
      *
-     * @return QueryUserFollowStatusResponse
+     * @return QueryUserFollowStatusResponse QueryUserFollowStatusResponse
      */
     public function queryUserFollowStatus($request)
     {
@@ -684,11 +728,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendAgentOTOMessageRequest $request
-     * @param SendAgentOTOMessageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 发送服务窗客服消息
+     *  *
+     * @param SendAgentOTOMessageRequest $request SendAgentOTOMessageRequest
+     * @param SendAgentOTOMessageHeaders $headers SendAgentOTOMessageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendAgentOTOMessageResponse
+     * @return SendAgentOTOMessageResponse SendAgentOTOMessageResponse
      */
     public function sendAgentOTOMessageWithOptions($request, $headers, $runtime)
     {
@@ -724,9 +770,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendAgentOTOMessageRequest $request
+     * @summary 发送服务窗客服消息
+     *  *
+     * @param SendAgentOTOMessageRequest $request SendAgentOTOMessageRequest
      *
-     * @return SendAgentOTOMessageResponse
+     * @return SendAgentOTOMessageResponse SendAgentOTOMessageResponse
      */
     public function sendAgentOTOMessage($request)
     {
@@ -737,11 +785,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendInteractiveOTOMessageRequest $request
-     * @param SendInteractiveOTOMessageHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 服务窗互动卡片单发接口
+     *  *
+     * @param SendInteractiveOTOMessageRequest $request SendInteractiveOTOMessageRequest
+     * @param SendInteractiveOTOMessageHeaders $headers SendInteractiveOTOMessageHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendInteractiveOTOMessageResponse
+     * @return SendInteractiveOTOMessageResponse SendInteractiveOTOMessageResponse
      */
     public function sendInteractiveOTOMessageWithOptions($request, $headers, $runtime)
     {
@@ -777,9 +827,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendInteractiveOTOMessageRequest $request
+     * @summary 服务窗互动卡片单发接口
+     *  *
+     * @param SendInteractiveOTOMessageRequest $request SendInteractiveOTOMessageRequest
      *
-     * @return SendInteractiveOTOMessageResponse
+     * @return SendInteractiveOTOMessageResponse SendInteractiveOTOMessageResponse
      */
     public function sendInteractiveOTOMessage($request)
     {
@@ -790,11 +842,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendTopBoxInteractiveOTOMessageRequest $request
-     * @param SendTopBoxInteractiveOTOMessageHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 服务窗吊顶卡片发送接口
+     *  *
+     * @param SendTopBoxInteractiveOTOMessageRequest $request SendTopBoxInteractiveOTOMessageRequest
+     * @param SendTopBoxInteractiveOTOMessageHeaders $headers SendTopBoxInteractiveOTOMessageHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendTopBoxInteractiveOTOMessageResponse
+     * @return SendTopBoxInteractiveOTOMessageResponse SendTopBoxInteractiveOTOMessageResponse
      */
     public function sendTopBoxInteractiveOTOMessageWithOptions($request, $headers, $runtime)
     {
@@ -830,9 +884,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendTopBoxInteractiveOTOMessageRequest $request
+     * @summary 服务窗吊顶卡片发送接口
+     *  *
+     * @param SendTopBoxInteractiveOTOMessageRequest $request SendTopBoxInteractiveOTOMessageRequest
      *
-     * @return SendTopBoxInteractiveOTOMessageResponse
+     * @return SendTopBoxInteractiveOTOMessageResponse SendTopBoxInteractiveOTOMessageResponse
      */
     public function sendTopBoxInteractiveOTOMessage($request)
     {
@@ -843,11 +899,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInteractiveOTOMessageRequest $request
-     * @param UpdateInteractiveOTOMessageHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 服务窗互动卡片修改接口
+     *  *
+     * @param UpdateInteractiveOTOMessageRequest $request UpdateInteractiveOTOMessageRequest
+     * @param UpdateInteractiveOTOMessageHeaders $headers UpdateInteractiveOTOMessageHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInteractiveOTOMessageResponse
+     * @return UpdateInteractiveOTOMessageResponse UpdateInteractiveOTOMessageResponse
      */
     public function updateInteractiveOTOMessageWithOptions($request, $headers, $runtime)
     {
@@ -883,9 +941,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInteractiveOTOMessageRequest $request
+     * @summary 服务窗互动卡片修改接口
+     *  *
+     * @param UpdateInteractiveOTOMessageRequest $request UpdateInteractiveOTOMessageRequest
      *
-     * @return UpdateInteractiveOTOMessageResponse
+     * @return UpdateInteractiveOTOMessageResponse UpdateInteractiveOTOMessageResponse
      */
     public function updateInteractiveOTOMessage($request)
     {
@@ -896,11 +956,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateShortcutsRequest $request
-     * @param UpdateShortcutsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 服务窗会话窗口快捷栏配置接口
+     *  *
+     * @param UpdateShortcutsRequest $request UpdateShortcutsRequest
+     * @param UpdateShortcutsHeaders $headers UpdateShortcutsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateShortcutsResponse
+     * @return UpdateShortcutsResponse UpdateShortcutsResponse
      */
     public function updateShortcutsWithOptions($request, $headers, $runtime)
     {
@@ -942,9 +1004,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateShortcutsRequest $request
+     * @summary 服务窗会话窗口快捷栏配置接口
+     *  *
+     * @param UpdateShortcutsRequest $request UpdateShortcutsRequest
      *
-     * @return UpdateShortcutsResponse
+     * @return UpdateShortcutsResponse UpdateShortcutsResponse
      */
     public function updateShortcuts($request)
     {

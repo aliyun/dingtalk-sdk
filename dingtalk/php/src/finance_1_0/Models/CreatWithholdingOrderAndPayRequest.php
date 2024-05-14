@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreatWithholdingOrderAndPayRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10.01
      *
      * @var string
@@ -17,6 +19,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -29,6 +33,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $otherPayChannelDetailInfoList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021113000001
      *
      * @var string
@@ -36,6 +42,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $outTradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -43,6 +51,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $payChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2120493284
      *
      * @var string
@@ -57,6 +67,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -71,6 +83,8 @@ class CreatWithholdingOrderAndPayRequest extends Model
     public $timeOutExpress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 餐费
      *
      * @var string

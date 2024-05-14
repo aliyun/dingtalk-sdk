@@ -15,11 +15,15 @@ class InteractiveCardCreateInstanceRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardData
      */
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardTemplateId;
@@ -30,6 +34,8 @@ class InteractiveCardCreateInstanceRequest extends Model
     public $chatBotId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $conversationType;
@@ -40,6 +46,8 @@ class InteractiveCardCreateInstanceRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $outTrackId;

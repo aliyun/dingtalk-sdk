@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetStoragePolicyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example TICKET_IMAGE
      *
      * @var string
@@ -16,6 +18,8 @@ class GetStoragePolicyRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example wahah.txt
      *
      * @var string
@@ -23,6 +27,8 @@ class GetStoragePolicyRequest extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -30,6 +36,8 @@ class GetStoragePolicyRequest extends Model
     public $fileSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

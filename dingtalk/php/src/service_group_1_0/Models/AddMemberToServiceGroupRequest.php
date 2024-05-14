@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddMemberToServiceGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxxx==
      *
      * @var string
@@ -16,6 +18,8 @@ class AddMemberToServiceGroupRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string
@@ -23,6 +27,8 @@ class AddMemberToServiceGroupRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveSuperUserMeetingRoomRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
      *
      * @var string
@@ -16,6 +18,8 @@ class RemoveSuperUserMeetingRoomRequest extends Model
     public $roomId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string

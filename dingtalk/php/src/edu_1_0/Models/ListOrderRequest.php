@@ -23,6 +23,8 @@ class ListOrderRequest extends Model
     public $createTimeStart;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SM123124124
      *
      * @var string
@@ -37,6 +39,8 @@ class ListOrderRequest extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +48,8 @@ class ListOrderRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAgreementRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example TRADE
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryUserAgreementRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WITHHOLDING
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryUserAgreementRequest extends Model
     public $bizScene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryUserAgreementRequest extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -37,6 +45,8 @@ class QueryUserAgreementRequest extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2120493284
      *
      * @var string

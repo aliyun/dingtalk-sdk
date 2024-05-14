@@ -15,6 +15,8 @@ class ListSpacesResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var spaces[]
      */
     public $spaces;

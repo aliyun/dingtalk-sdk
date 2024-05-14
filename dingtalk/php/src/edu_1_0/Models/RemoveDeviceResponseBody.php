@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveDeviceResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var string

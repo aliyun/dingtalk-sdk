@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveGroupMemberResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 移除成功
      *
      * @var string

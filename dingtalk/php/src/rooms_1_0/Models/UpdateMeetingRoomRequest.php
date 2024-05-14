@@ -42,6 +42,8 @@ class UpdateMeetingRoomRequest extends Model
     public $roomCapacity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
      *
      * @var string
@@ -80,6 +82,8 @@ class UpdateMeetingRoomRequest extends Model
     public $roomStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string

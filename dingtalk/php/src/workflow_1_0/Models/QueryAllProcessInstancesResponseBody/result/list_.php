@@ -12,6 +12,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cdef-dae2fd2-example
      *
      * @var string
@@ -19,6 +21,8 @@ class list_ extends Model
     public $attachedProcessInstanceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202110111558000355024
      *
      * @var string
@@ -26,6 +30,8 @@ class list_ extends Model
     public $businessId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1635165470201
      *
      * @var int
@@ -33,6 +39,8 @@ class list_ extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1633795200000
      *
      * @var int
@@ -40,11 +48,15 @@ class list_ extends Model
     public $finishTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dcdse-dae2fd2-example
      *
      * @var string
@@ -57,6 +69,8 @@ class list_ extends Model
     public $operationRecords;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 默认-1，企业根部门
      *
      * @var string
@@ -64,6 +78,8 @@ class list_ extends Model
     public $originatorDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example staff1234
      *
      * @var string
@@ -71,6 +87,8 @@ class list_ extends Model
     public $originatorUserid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcdse-dse-example
      *
      * @var string
@@ -78,6 +96,8 @@ class list_ extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example AGREE同意，REFUSE拒绝
      *
      * @var string
@@ -85,6 +105,8 @@ class list_ extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消
      *
      * @var string
@@ -97,6 +119,8 @@ class list_ extends Model
     public $tasks;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 员工A提交的小肖审批单
      *
      * @var string

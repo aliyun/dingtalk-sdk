@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchOTOQueryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example asdfasdfasdf
      *
      * @var string
@@ -16,6 +18,8 @@ class BatchOTOQueryRequest extends Model
     public $processQueryKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingcxx5317
      *
      * @var string

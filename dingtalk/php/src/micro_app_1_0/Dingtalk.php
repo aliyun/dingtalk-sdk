@@ -123,12 +123,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 给指定成员添加角色
+     *  *
      * @param string                     $agentId
-     * @param AddAppRolesToMemberRequest $request
-     * @param AddAppRolesToMemberHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param AddAppRolesToMemberRequest $request AddAppRolesToMemberRequest
+     * @param AddAppRolesToMemberHeaders $headers AddAppRolesToMemberHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddAppRolesToMemberResponse
+     * @return AddAppRolesToMemberResponse AddAppRolesToMemberResponse
      */
     public function addAppRolesToMemberWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -173,10 +175,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 给指定成员添加角色
+     *  *
      * @param string                     $agentId
-     * @param AddAppRolesToMemberRequest $request
+     * @param AddAppRolesToMemberRequest $request AddAppRolesToMemberRequest
      *
-     * @return AddAppRolesToMemberResponse
+     * @return AddAppRolesToMemberResponse AddAppRolesToMemberResponse
      */
     public function addAppRolesToMember($agentId, $request)
     {
@@ -187,12 +191,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加应用到工作台分组
+     *  *
      * @param string                        $agentId
-     * @param AddAppToWorkBenchGroupRequest $request
-     * @param AddAppToWorkBenchGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param AddAppToWorkBenchGroupRequest $request AddAppToWorkBenchGroupRequest
+     * @param AddAppToWorkBenchGroupHeaders $headers AddAppToWorkBenchGroupHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddAppToWorkBenchGroupResponse
+     * @return AddAppToWorkBenchGroupResponse AddAppToWorkBenchGroupResponse
      */
     public function addAppToWorkBenchGroupWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -234,10 +240,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加应用到工作台分组
+     *  *
      * @param string                        $agentId
-     * @param AddAppToWorkBenchGroupRequest $request
+     * @param AddAppToWorkBenchGroupRequest $request AddAppToWorkBenchGroupRequest
      *
-     * @return AddAppToWorkBenchGroupResponse
+     * @return AddAppToWorkBenchGroupResponse AddAppToWorkBenchGroupResponse
      */
     public function addAppToWorkBenchGroup($agentId, $request)
     {
@@ -248,13 +256,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 给指定角色添加人员
+     *  *
      * @param string                    $agentId
      * @param string                    $roleId
-     * @param AddMemberToAppRoleRequest $request
-     * @param AddMemberToAppRoleHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param AddMemberToAppRoleRequest $request AddMemberToAppRoleRequest
+     * @param AddMemberToAppRoleHeaders $headers AddMemberToAppRoleHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddMemberToAppRoleResponse
+     * @return AddMemberToAppRoleResponse AddMemberToAppRoleResponse
      */
     public function addMemberToAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
@@ -299,11 +309,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 给指定角色添加人员
+     *  *
      * @param string                    $agentId
      * @param string                    $roleId
-     * @param AddMemberToAppRoleRequest $request
+     * @param AddMemberToAppRoleRequest $request AddMemberToAppRoleRequest
      *
-     * @return AddMemberToAppRoleResponse
+     * @return AddMemberToAppRoleResponse AddMemberToAppRoleResponse
      */
     public function addMemberToAppRole($agentId, $roleId, $request)
     {
@@ -314,10 +326,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary AnheiP
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AnheiPResponse
+     * @return AnheiPResponse AnheiPResponse
      */
     public function anheiPWithOptions($headers, $runtime)
     {
@@ -340,7 +354,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AnheiPResponse
+     * @summary AnheiP
+     *  *
+     * @return AnheiPResponse AnheiPResponse
      */
     public function anheiP()
     {
@@ -351,10 +367,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary AnheiTest888
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AnheiTest888Response
+     * @return AnheiTest888Response AnheiTest888Response
      */
     public function anheiTest888WithOptions($headers, $runtime)
     {
@@ -377,7 +395,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AnheiTest888Response
+     * @summary AnheiTest888
+     *  *
+     * @return AnheiTest888Response AnheiTest888Response
      */
     public function anheiTest888()
     {
@@ -388,10 +408,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary AnheiTestB
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AnheiTestBResponse
+     * @return AnheiTestBResponse AnheiTestBResponse
      */
     public function anheiTestBWithOptions($headers, $runtime)
     {
@@ -414,7 +436,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AnheiTestBResponse
+     * @summary AnheiTestB
+     *  *
+     * @return AnheiTestBResponse AnheiTestBResponse
      */
     public function anheiTestB()
     {
@@ -425,10 +449,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary 暗黑测试
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AnheiTestNineResponse
+     * @return AnheiTestNineResponse AnheiTestNineResponse
      */
     public function anheiTestNineWithOptions($headers, $runtime)
     {
@@ -451,7 +477,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AnheiTestNineResponse
+     * @summary 暗黑测试
+     *  *
+     * @return AnheiTestNineResponse AnheiTestNineResponse
      */
     public function anheiTestNine()
     {
@@ -462,11 +490,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppStatusManagerTestRequest $request
-     * @param string[]                    $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 应用状态管理测试
+     *  *
+     * @param AppStatusManagerTestRequest $request AppStatusManagerTestRequest
+     * @param string[]                    $headers map
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return AppStatusManagerTestResponse
+     * @return AppStatusManagerTestResponse AppStatusManagerTestResponse
      */
     public function appStatusManagerTestWithOptions($request, $headers, $runtime)
     {
@@ -495,9 +525,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppStatusManagerTestRequest $request
+     * @summary 应用状态管理测试
+     *  *
+     * @param AppStatusManagerTestRequest $request AppStatusManagerTestRequest
      *
-     * @return AppStatusManagerTestResponse
+     * @return AppStatusManagerTestResponse AppStatusManagerTestResponse
      */
     public function appStatusManagerTest($request)
     {
@@ -508,10 +540,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary 能力开放中心录入测试数据
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AyunTestResponse
+     * @return AyunTestResponse AyunTestResponse
      */
     public function ayunTestWithOptions($headers, $runtime)
     {
@@ -534,7 +568,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AyunTestResponse
+     * @summary 能力开放中心录入测试数据
+     *  *
+     * @return AyunTestResponse AyunTestResponse
      */
     public function ayunTest()
     {
@@ -545,10 +581,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary openAPI录入上线后的测试
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AyunTestOnlineResponse
+     * @return AyunTestOnlineResponse AyunTestOnlineResponse
      */
     public function ayunTestOnlineWithOptions($headers, $runtime)
     {
@@ -571,7 +609,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return AyunTestOnlineResponse
+     * @summary openAPI录入上线后的测试
+     *  *
+     * @return AyunTestOnlineResponse AyunTestOnlineResponse
      */
     public function ayunTestOnline()
     {
@@ -582,11 +622,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApaasAppRequest $request
-     * @param CreateApaasAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建Apaas应用
+     *  *
+     * @param CreateApaasAppRequest $request CreateApaasAppRequest
+     * @param CreateApaasAppHeaders $headers CreateApaasAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateApaasAppResponse
+     * @return CreateApaasAppResponse CreateApaasAppResponse
      */
     public function createApaasAppWithOptions($request, $headers, $runtime)
     {
@@ -655,9 +697,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApaasAppRequest $request
+     * @summary 创建Apaas应用
+     *  *
+     * @param CreateApaasAppRequest $request CreateApaasAppRequest
      *
-     * @return CreateApaasAppResponse
+     * @return CreateApaasAppResponse CreateApaasAppResponse
      */
     public function createApaasApp($request)
     {
@@ -668,11 +712,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInnerAppRequest $request
-     * @param CreateInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建企业内部应用
+     *  *
+     * @param CreateInnerAppRequest $request CreateInnerAppRequest
+     * @param CreateInnerAppHeaders $headers CreateInnerAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateInnerAppResponse
+     * @return CreateInnerAppResponse CreateInnerAppResponse
      */
     public function createInnerAppWithOptions($request, $headers, $runtime)
     {
@@ -735,9 +781,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInnerAppRequest $request
+     * @summary 创建企业内部应用
+     *  *
+     * @param CreateInnerAppRequest $request CreateInnerAppRequest
      *
-     * @return CreateInnerAppResponse
+     * @return CreateInnerAppResponse CreateInnerAppResponse
      */
     public function createInnerApp($request)
     {
@@ -748,13 +796,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除应用角色
+     *  *
      * @param string               $agentId
      * @param string               $roleId
-     * @param DeleteAppRoleRequest $request
-     * @param DeleteAppRoleHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param DeleteAppRoleRequest $request DeleteAppRoleRequest
+     * @param DeleteAppRoleHeaders $headers DeleteAppRoleHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteAppRoleResponse
+     * @return DeleteAppRoleResponse DeleteAppRoleResponse
      */
     public function deleteAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
@@ -790,11 +840,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除应用角色
+     *  *
      * @param string               $agentId
      * @param string               $roleId
-     * @param DeleteAppRoleRequest $request
+     * @param DeleteAppRoleRequest $request DeleteAppRoleRequest
      *
-     * @return DeleteAppRoleResponse
+     * @return DeleteAppRoleResponse DeleteAppRoleResponse
      */
     public function deleteAppRole($agentId, $roleId, $request)
     {
@@ -805,12 +857,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除企业内部应用
+     *  *
      * @param string                $agentId
-     * @param DeleteInnerAppRequest $request
-     * @param DeleteInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DeleteInnerAppRequest $request DeleteInnerAppRequest
+     * @param DeleteInnerAppHeaders $headers DeleteInnerAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteInnerAppResponse
+     * @return DeleteInnerAppResponse DeleteInnerAppResponse
      */
     public function deleteInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -846,10 +900,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除企业内部应用
+     *  *
      * @param string                $agentId
-     * @param DeleteInnerAppRequest $request
+     * @param DeleteInnerAppRequest $request DeleteInnerAppRequest
      *
-     * @return DeleteInnerAppResponse
+     * @return DeleteInnerAppResponse DeleteInnerAppResponse
      */
     public function deleteInnerApp($agentId, $request)
     {
@@ -860,11 +916,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询Apaas应用
+     *  *
      * @param string             $bizAppId
-     * @param GetApaasAppHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetApaasAppHeaders $headers  GetApaasAppHeaders
+     * @param RuntimeOptions     $runtime  runtime options for this request RuntimeOptions
      *
-     * @return GetApaasAppResponse
+     * @return GetApaasAppResponse GetApaasAppResponse
      */
     public function getApaasAppWithOptions($bizAppId, $headers, $runtime)
     {
@@ -894,9 +952,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询Apaas应用
+     *  *
      * @param string $bizAppId
      *
-     * @return GetApaasAppResponse
+     * @return GetApaasAppResponse GetApaasAppResponse
      */
     public function getApaasApp($bizAppId)
     {
@@ -907,11 +967,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAppResourceUseInfoRequest $request
-     * @param GetAppResourceUseInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取应用资源用量信息
+     *  *
+     * @param GetAppResourceUseInfoRequest $request GetAppResourceUseInfoRequest
+     * @param GetAppResourceUseInfoHeaders $headers GetAppResourceUseInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAppResourceUseInfoResponse
+     * @return GetAppResourceUseInfoResponse GetAppResourceUseInfoResponse
      */
     public function getAppResourceUseInfoWithOptions($request, $headers, $runtime)
     {
@@ -956,9 +1018,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAppResourceUseInfoRequest $request
+     * @summary 获取应用资源用量信息
+     *  *
+     * @param GetAppResourceUseInfoRequest $request GetAppResourceUseInfoRequest
      *
-     * @return GetAppResourceUseInfoResponse
+     * @return GetAppResourceUseInfoResponse GetAppResourceUseInfoResponse
      */
     public function getAppResourceUseInfo($request)
     {
@@ -969,12 +1033,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询指定角色的角色范围
+     *  *
      * @param string                         $agentId
      * @param string                         $roleId
-     * @param GetAppRoleScopeByRoleIdHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param GetAppRoleScopeByRoleIdHeaders $headers GetAppRoleScopeByRoleIdHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAppRoleScopeByRoleIdResponse
+     * @return GetAppRoleScopeByRoleIdResponse GetAppRoleScopeByRoleIdResponse
      */
     public function getAppRoleScopeByRoleIdWithOptions($agentId, $roleId, $headers, $runtime)
     {
@@ -1004,10 +1070,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询指定角色的角色范围
+     *  *
      * @param string $agentId
      * @param string $roleId
      *
-     * @return GetAppRoleScopeByRoleIdResponse
+     * @return GetAppRoleScopeByRoleIdResponse GetAppRoleScopeByRoleIdResponse
      */
     public function getAppRoleScopeByRoleId($agentId, $roleId)
     {
@@ -1018,12 +1086,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部H5应用
+     *  *
      * @param string             $agentId
-     * @param GetInnerAppRequest $request
-     * @param GetInnerAppHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetInnerAppRequest $request GetInnerAppRequest
+     * @param GetInnerAppHeaders $headers GetInnerAppHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInnerAppResponse
+     * @return GetInnerAppResponse GetInnerAppResponse
      */
     public function getInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1062,10 +1132,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部H5应用
+     *  *
      * @param string             $agentId
-     * @param GetInnerAppRequest $request
+     * @param GetInnerAppRequest $request GetInnerAppRequest
      *
-     * @return GetInnerAppResponse
+     * @return GetInnerAppResponse GetInnerAppResponse
      */
     public function getInnerApp($agentId, $request)
     {
@@ -1076,11 +1148,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取应用可见范围
+     *  *
      * @param string                  $agentId
-     * @param GetMicroAppScopeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param GetMicroAppScopeHeaders $headers GetMicroAppScopeHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMicroAppScopeResponse
+     * @return GetMicroAppScopeResponse GetMicroAppScopeResponse
      */
     public function getMicroAppScopeWithOptions($agentId, $headers, $runtime)
     {
@@ -1110,9 +1184,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取应用可见范围
+     *  *
      * @param string $agentId
      *
-     * @return GetMicroAppScopeResponse
+     * @return GetMicroAppScopeResponse GetMicroAppScopeResponse
      */
     public function getMicroAppScope($agentId)
     {
@@ -1123,12 +1199,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户对应用的管理权限
+     *  *
      * @param string                       $agentId
      * @param string                       $userId
-     * @param GetMicroAppUserAccessHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetMicroAppUserAccessHeaders $headers GetMicroAppUserAccessHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMicroAppUserAccessResponse
+     * @return GetMicroAppUserAccessResponse GetMicroAppUserAccessResponse
      */
     public function getMicroAppUserAccessWithOptions($agentId, $userId, $headers, $runtime)
     {
@@ -1158,10 +1236,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户对应用的管理权限
+     *  *
      * @param string $agentId
      * @param string $userId
      *
-     * @return GetMicroAppUserAccessResponse
+     * @return GetMicroAppUserAccessResponse GetMicroAppUserAccessResponse
      */
     public function getMicroAppUserAccess($agentId, $userId)
     {
@@ -1172,11 +1252,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 用户是否拥有开发者权限
+     *  *
      * @param string                     $userId
-     * @param GetUserAppDevAccessHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetUserAppDevAccessHeaders $headers GetUserAppDevAccessHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserAppDevAccessResponse
+     * @return GetUserAppDevAccessResponse GetUserAppDevAccessResponse
      */
     public function getUserAppDevAccessWithOptions($userId, $headers, $runtime)
     {
@@ -1206,9 +1288,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 用户是否拥有开发者权限
+     *  *
      * @param string $userId
      *
-     * @return GetUserAppDevAccessResponse
+     * @return GetUserAppDevAccessResponse GetUserAppDevAccessResponse
      */
     public function getUserAppDevAccess($userId)
     {
@@ -1219,10 +1303,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAllAppHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取企业所有应用列表
+     *  *
+     * @param ListAllAppHeaders $headers ListAllAppHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAllAppResponse
+     * @return ListAllAppResponse ListAllAppResponse
      */
     public function listAllAppWithOptions($headers, $runtime)
     {
@@ -1252,7 +1338,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListAllAppResponse
+     * @summary 获取企业所有应用列表
+     *  *
+     * @return ListAllAppResponse ListAllAppResponse
      */
     public function listAllApp()
     {
@@ -1263,10 +1351,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAllInnerAppsHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取企业所有内部应用列表
+     *  *
+     * @param ListAllInnerAppsHeaders $headers ListAllInnerAppsHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAllInnerAppsResponse
+     * @return ListAllInnerAppsResponse ListAllInnerAppsResponse
      */
     public function listAllInnerAppsWithOptions($headers, $runtime)
     {
@@ -1296,7 +1386,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListAllInnerAppsResponse
+     * @summary 获取企业所有内部应用列表
+     *  *
+     * @return ListAllInnerAppsResponse ListAllInnerAppsResponse
      */
     public function listAllInnerApps()
     {
@@ -1307,12 +1399,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业应用的角色完整信息
+     *  *
      * @param string                   $agentId
-     * @param ListAppRoleScopesRequest $request
-     * @param ListAppRoleScopesHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ListAppRoleScopesRequest $request ListAppRoleScopesRequest
+     * @param ListAppRoleScopesHeaders $headers ListAppRoleScopesHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAppRoleScopesResponse
+     * @return ListAppRoleScopesResponse ListAppRoleScopesResponse
      */
     public function listAppRoleScopesWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1351,10 +1445,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业应用的角色完整信息
+     *  *
      * @param string                   $agentId
-     * @param ListAppRoleScopesRequest $request
+     * @param ListAppRoleScopesRequest $request ListAppRoleScopesRequest
      *
-     * @return ListAppRoleScopesResponse
+     * @return ListAppRoleScopesResponse ListAppRoleScopesResponse
      */
     public function listAppRoleScopes($agentId, $request)
     {
@@ -1365,11 +1461,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListInnerAppRequest $request
-     * @param ListInnerAppHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 列出企业内部H5应用
+     *  *
+     * @param ListInnerAppRequest $request ListInnerAppRequest
+     * @param ListInnerAppHeaders $headers ListInnerAppHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListInnerAppResponse
+     * @return ListInnerAppResponse ListInnerAppResponse
      */
     public function listInnerAppWithOptions($request, $headers, $runtime)
     {
@@ -1405,9 +1503,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListInnerAppRequest $request
+     * @summary 列出企业内部H5应用
+     *  *
+     * @param ListInnerAppRequest $request ListInnerAppRequest
      *
-     * @return ListInnerAppResponse
+     * @return ListInnerAppResponse ListInnerAppResponse
      */
     public function listInnerApp($request)
     {
@@ -1418,11 +1518,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部小程序的版本列表
+     *  *
      * @param string                     $agentId
-     * @param ListInnerAppVersionHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListInnerAppVersionHeaders $headers ListInnerAppVersionHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListInnerAppVersionResponse
+     * @return ListInnerAppVersionResponse ListInnerAppVersionResponse
      */
     public function listInnerAppVersionWithOptions($agentId, $headers, $runtime)
     {
@@ -1452,9 +1554,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部小程序的版本列表
+     *  *
      * @param string $agentId
      *
-     * @return ListInnerAppVersionResponse
+     * @return ListInnerAppVersionResponse ListInnerAppVersionResponse
      */
     public function listInnerAppVersion($agentId)
     {
@@ -1465,12 +1569,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户在应用中的角色信息列表
+     *  *
      * @param string                    $agentId
      * @param string                    $userId
-     * @param ListRoleInfoByUserHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param ListRoleInfoByUserHeaders $headers ListRoleInfoByUserHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListRoleInfoByUserResponse
+     * @return ListRoleInfoByUserResponse ListRoleInfoByUserResponse
      */
     public function listRoleInfoByUserWithOptions($agentId, $userId, $headers, $runtime)
     {
@@ -1500,10 +1606,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取用户在应用中的角色信息列表
+     *  *
      * @param string $agentId
      * @param string $userId
      *
-     * @return ListRoleInfoByUserResponse
+     * @return ListRoleInfoByUserResponse ListRoleInfoByUserResponse
      */
     public function listRoleInfoByUser($agentId, $userId)
     {
@@ -1514,11 +1622,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 列出用户可见的企业应用
+     *  *
      * @param string                    $userId
-     * @param ListUserVilebleAppHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param ListUserVilebleAppHeaders $headers ListUserVilebleAppHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListUserVilebleAppResponse
+     * @return ListUserVilebleAppResponse ListUserVilebleAppResponse
      */
     public function listUserVilebleAppWithOptions($userId, $headers, $runtime)
     {
@@ -1548,9 +1658,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 列出用户可见的企业应用
+     *  *
      * @param string $userId
      *
-     * @return ListUserVilebleAppResponse
+     * @return ListUserVilebleAppResponse ListUserVilebleAppResponse
      */
     public function listUserVilebleApp($userId)
     {
@@ -1561,12 +1673,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部小程序历史版本列表
+     *  *
      * @param string                            $agentId
-     * @param PageInnerAppHistoryVersionRequest $request
-     * @param PageInnerAppHistoryVersionHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param PageInnerAppHistoryVersionRequest $request PageInnerAppHistoryVersionRequest
+     * @param PageInnerAppHistoryVersionHeaders $headers PageInnerAppHistoryVersionHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return PageInnerAppHistoryVersionResponse
+     * @return PageInnerAppHistoryVersionResponse PageInnerAppHistoryVersionResponse
      */
     public function pageInnerAppHistoryVersionWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1605,10 +1719,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取企业内部小程序历史版本列表
+     *  *
      * @param string                            $agentId
-     * @param PageInnerAppHistoryVersionRequest $request
+     * @param PageInnerAppHistoryVersionRequest $request PageInnerAppHistoryVersionRequest
      *
-     * @return PageInnerAppHistoryVersionResponse
+     * @return PageInnerAppHistoryVersionResponse PageInnerAppHistoryVersionResponse
      */
     public function pageInnerAppHistoryVersion($agentId, $request)
     {
@@ -1619,12 +1735,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发布企业内部小程序版本
+     *  *
      * @param string                        $agentId
-     * @param PublishInnerAppVersionRequest $request
-     * @param PublishInnerAppVersionHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param PublishInnerAppVersionRequest $request PublishInnerAppVersionRequest
+     * @param PublishInnerAppVersionHeaders $headers PublishInnerAppVersionHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return PublishInnerAppVersionResponse
+     * @return PublishInnerAppVersionResponse PublishInnerAppVersionResponse
      */
     public function publishInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1669,10 +1787,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发布企业内部小程序版本
+     *  *
      * @param string                        $agentId
-     * @param PublishInnerAppVersionRequest $request
+     * @param PublishInnerAppVersionRequest $request PublishInnerAppVersionRequest
      *
-     * @return PublishInnerAppVersionResponse
+     * @return PublishInnerAppVersionResponse PublishInnerAppVersionResponse
      */
     public function publishInnerAppVersion($agentId, $request)
     {
@@ -1683,13 +1803,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 重设角色范围
+     *  *
      * @param string                            $agentId
      * @param string                            $roleId
-     * @param RebuildRoleScopeForAppRoleRequest $request
-     * @param RebuildRoleScopeForAppRoleHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param RebuildRoleScopeForAppRoleRequest $request RebuildRoleScopeForAppRoleRequest
+     * @param RebuildRoleScopeForAppRoleHeaders $headers RebuildRoleScopeForAppRoleHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return RebuildRoleScopeForAppRoleResponse
+     * @return RebuildRoleScopeForAppRoleResponse RebuildRoleScopeForAppRoleResponse
      */
     public function rebuildRoleScopeForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
@@ -1737,11 +1859,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 重设角色范围
+     *  *
      * @param string                            $agentId
      * @param string                            $roleId
-     * @param RebuildRoleScopeForAppRoleRequest $request
+     * @param RebuildRoleScopeForAppRoleRequest $request RebuildRoleScopeForAppRoleRequest
      *
-     * @return RebuildRoleScopeForAppRoleResponse
+     * @return RebuildRoleScopeForAppRoleResponse RebuildRoleScopeForAppRoleResponse
      */
     public function rebuildRoleScopeForAppRole($agentId, $roleId, $request)
     {
@@ -1752,12 +1876,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 注册自定义应用角色
+     *  *
      * @param string                       $agentId
-     * @param RegisterCustomAppRoleRequest $request
-     * @param RegisterCustomAppRoleHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param RegisterCustomAppRoleRequest $request RegisterCustomAppRoleRequest
+     * @param RegisterCustomAppRoleHeaders $headers RegisterCustomAppRoleHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterCustomAppRoleResponse
+     * @return RegisterCustomAppRoleResponse RegisterCustomAppRoleResponse
      */
     public function registerCustomAppRoleWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1799,10 +1925,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 注册自定义应用角色
+     *  *
      * @param string                       $agentId
-     * @param RegisterCustomAppRoleRequest $request
+     * @param RegisterCustomAppRoleRequest $request RegisterCustomAppRoleRequest
      *
-     * @return RegisterCustomAppRoleResponse
+     * @return RegisterCustomAppRoleResponse RegisterCustomAppRoleResponse
      */
     public function registerCustomAppRole($agentId, $request)
     {
@@ -1813,11 +1941,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveApaasAppRequest $request
-     * @param RemoveApaasAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 删除apaas应用
+     *  *
+     * @param RemoveApaasAppRequest $request RemoveApaasAppRequest
+     * @param RemoveApaasAppHeaders $headers RemoveApaasAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveApaasAppResponse
+     * @return RemoveApaasAppResponse RemoveApaasAppResponse
      */
     public function removeApaasAppWithOptions($request, $headers, $runtime)
     {
@@ -1856,9 +1986,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveApaasAppRequest $request
+     * @summary 删除apaas应用
+     *  *
+     * @param RemoveApaasAppRequest $request RemoveApaasAppRequest
      *
-     * @return RemoveApaasAppResponse
+     * @return RemoveApaasAppResponse RemoveApaasAppResponse
      */
     public function removeApaasApp($request)
     {
@@ -1869,13 +2001,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定角色下的成员
+     *  *
      * @param string                        $agentId
      * @param string                        $roleId
-     * @param RemoveMemberForAppRoleRequest $request
-     * @param RemoveMemberForAppRoleHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param RemoveMemberForAppRoleRequest $request RemoveMemberForAppRoleRequest
+     * @param RemoveMemberForAppRoleHeaders $headers RemoveMemberForAppRoleHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveMemberForAppRoleResponse
+     * @return RemoveMemberForAppRoleResponse RemoveMemberForAppRoleResponse
      */
     public function removeMemberForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
@@ -1920,11 +2054,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定角色下的成员
+     *  *
      * @param string                        $agentId
      * @param string                        $roleId
-     * @param RemoveMemberForAppRoleRequest $request
+     * @param RemoveMemberForAppRoleRequest $request RemoveMemberForAppRoleRequest
      *
-     * @return RemoveMemberForAppRoleResponse
+     * @return RemoveMemberForAppRoleResponse RemoveMemberForAppRoleResponse
      */
     public function removeMemberForAppRole($agentId, $roleId, $request)
     {
@@ -1935,12 +2071,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 回滚企业内部小程序版本
+     *  *
      * @param string                         $agentId
-     * @param RollbackInnerAppVersionRequest $request
-     * @param RollbackInnerAppVersionHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param RollbackInnerAppVersionRequest $request RollbackInnerAppVersionRequest
+     * @param RollbackInnerAppVersionHeaders $headers RollbackInnerAppVersionHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return RollbackInnerAppVersionResponse
+     * @return RollbackInnerAppVersionResponse RollbackInnerAppVersionResponse
      */
     public function rollbackInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -1979,10 +2117,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 回滚企业内部小程序版本
+     *  *
      * @param string                         $agentId
-     * @param RollbackInnerAppVersionRequest $request
+     * @param RollbackInnerAppVersionRequest $request RollbackInnerAppVersionRequest
      *
-     * @return RollbackInnerAppVersionResponse
+     * @return RollbackInnerAppVersionResponse RollbackInnerAppVersionResponse
      */
     public function rollbackInnerAppVersion($agentId, $request)
     {
@@ -1993,12 +2133,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置应用可见范围
+     *  *
      * @param string                  $agentId
-     * @param SetMicroAppScopeRequest $request
-     * @param SetMicroAppScopeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param SetMicroAppScopeRequest $request SetMicroAppScopeRequest
+     * @param SetMicroAppScopeHeaders $headers SetMicroAppScopeHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetMicroAppScopeResponse
+     * @return SetMicroAppScopeResponse SetMicroAppScopeResponse
      */
     public function setMicroAppScopeWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -2052,10 +2194,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置应用可见范围
+     *  *
      * @param string                  $agentId
-     * @param SetMicroAppScopeRequest $request
+     * @param SetMicroAppScopeRequest $request SetMicroAppScopeRequest
      *
-     * @return SetMicroAppScopeResponse
+     * @return SetMicroAppScopeResponse SetMicroAppScopeResponse
      */
     public function setMicroAppScope($agentId, $request)
     {
@@ -2066,11 +2210,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateApaasAppRequest $request
-     * @param UpdateApaasAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 更新apaas应用
+     *  *
+     * @param UpdateApaasAppRequest $request UpdateApaasAppRequest
+     * @param UpdateApaasAppHeaders $headers UpdateApaasAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateApaasAppResponse
+     * @return UpdateApaasAppResponse UpdateApaasAppResponse
      */
     public function updateApaasAppWithOptions($request, $headers, $runtime)
     {
@@ -2118,9 +2264,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateApaasAppRequest $request
+     * @summary 更新apaas应用
+     *  *
+     * @param UpdateApaasAppRequest $request UpdateApaasAppRequest
      *
-     * @return UpdateApaasAppResponse
+     * @return UpdateApaasAppResponse UpdateApaasAppResponse
      */
     public function updateApaasApp($request)
     {
@@ -2131,13 +2279,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新应用角色信息
+     *  *
      * @param string                   $agentId
      * @param string                   $roleId
-     * @param UpdateAppRoleInfoRequest $request
-     * @param UpdateAppRoleInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param UpdateAppRoleInfoRequest $request UpdateAppRoleInfoRequest
+     * @param UpdateAppRoleInfoHeaders $headers UpdateAppRoleInfoHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateAppRoleInfoResponse
+     * @return UpdateAppRoleInfoResponse UpdateAppRoleInfoResponse
      */
     public function updateAppRoleInfoWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
@@ -2179,11 +2329,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新应用角色信息
+     *  *
      * @param string                   $agentId
      * @param string                   $roleId
-     * @param UpdateAppRoleInfoRequest $request
+     * @param UpdateAppRoleInfoRequest $request UpdateAppRoleInfoRequest
      *
-     * @return UpdateAppRoleInfoResponse
+     * @return UpdateAppRoleInfoResponse UpdateAppRoleInfoResponse
      */
     public function updateAppRoleInfo($agentId, $roleId, $request)
     {
@@ -2194,12 +2346,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新企业内部应用
+     *  *
      * @param string                $agentId
-     * @param UpdateInnerAppRequest $request
-     * @param UpdateInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param UpdateInnerAppRequest $request UpdateInnerAppRequest
+     * @param UpdateInnerAppHeaders $headers UpdateInnerAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInnerAppResponse
+     * @return UpdateInnerAppResponse UpdateInnerAppResponse
      */
     public function updateInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
@@ -2256,10 +2410,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新企业内部应用
+     *  *
      * @param string                $agentId
-     * @param UpdateInnerAppRequest $request
+     * @param UpdateInnerAppRequest $request UpdateInnerAppRequest
      *
-     * @return UpdateInnerAppResponse
+     * @return UpdateInnerAppResponse UpdateInnerAppResponse
      */
     public function updateInnerApp($agentId, $request)
     {

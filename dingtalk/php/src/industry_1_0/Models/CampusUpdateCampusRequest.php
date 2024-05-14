@@ -30,6 +30,8 @@ class CampusUpdateCampusRequest extends Model
     public $belongProjectGroupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int

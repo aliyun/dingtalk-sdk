@@ -16,6 +16,8 @@ class QueryReceiptsByPageRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EM-1017F28E03350B1738B3000X
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryReceiptsByPageRequest extends Model
     public $modelId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +34,8 @@ class QueryReceiptsByPageRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +43,8 @@ class QueryReceiptsByPageRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1637658261363
      *
      * @var int
@@ -44,6 +52,8 @@ class QueryReceiptsByPageRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example gmt_create
      *
      * @var string

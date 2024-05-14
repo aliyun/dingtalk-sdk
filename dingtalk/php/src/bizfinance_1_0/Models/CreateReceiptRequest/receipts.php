@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class receipts extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 4.44
      *
      * @var string
@@ -16,6 +18,8 @@ class receipts extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INC_XXX
      *
      * @var string
@@ -23,6 +27,8 @@ class receipts extends Model
     public $categoryCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd_efgh
      *
      * @var string
@@ -37,6 +43,8 @@ class receipts extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example emp_xxx
      *
      * @var string
@@ -79,6 +87,8 @@ class receipts extends Model
     public $projectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

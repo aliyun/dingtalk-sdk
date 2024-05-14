@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryFormByBizTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SWAPP-abcdef-example
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryFormByBizTypeRequest extends Model
     public $appUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $bizTypes;

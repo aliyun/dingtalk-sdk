@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example performance
      *
      * @var string

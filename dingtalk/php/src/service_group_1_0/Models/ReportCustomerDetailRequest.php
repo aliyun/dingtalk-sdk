@@ -23,6 +23,8 @@ class ReportCustomerDetailRequest extends Model
     public $hasOpenConv;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220102
      *
      * @var string
@@ -30,6 +32,8 @@ class ReportCustomerDetailRequest extends Model
     public $maxDt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -37,6 +41,8 @@ class ReportCustomerDetailRequest extends Model
     public $minDt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXX
      *
      * @var string
@@ -44,6 +50,8 @@ class ReportCustomerDetailRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iSoqrhLQDtK
      *
      * @var string
@@ -51,6 +59,8 @@ class ReportCustomerDetailRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -58,6 +68,8 @@ class ReportCustomerDetailRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int

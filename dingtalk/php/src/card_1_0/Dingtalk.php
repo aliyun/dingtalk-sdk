@@ -67,11 +67,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendSpaceRequest $request
-     * @param AppendSpaceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 新增或更新卡片的场域信息
+     *  *
+     * @param AppendSpaceRequest $request AppendSpaceRequest
+     * @param AppendSpaceHeaders $headers AppendSpaceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return AppendSpaceResponse
+     * @return AppendSpaceResponse AppendSpaceResponse
      */
     public function appendSpaceWithOptions($request, $headers, $runtime)
     {
@@ -119,9 +121,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendSpaceRequest $request
+     * @summary 新增或更新卡片的场域信息
+     *  *
+     * @param AppendSpaceRequest $request AppendSpaceRequest
      *
-     * @return AppendSpaceResponse
+     * @return AppendSpaceResponse AppendSpaceResponse
      */
     public function appendSpace($request)
     {
@@ -132,11 +136,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendSpaceWithDelegateRequest $request
-     * @param AppendSpaceWithDelegateHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 新增或更新卡片的场域信息
+     *  *
+     * @param AppendSpaceWithDelegateRequest $request AppendSpaceWithDelegateRequest
+     * @param AppendSpaceWithDelegateHeaders $headers AppendSpaceWithDelegateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return AppendSpaceWithDelegateResponse
+     * @return AppendSpaceWithDelegateResponse AppendSpaceWithDelegateResponse
      */
     public function appendSpaceWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -184,9 +190,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AppendSpaceWithDelegateRequest $request
+     * @summary 新增或更新卡片的场域信息
+     *  *
+     * @param AppendSpaceWithDelegateRequest $request AppendSpaceWithDelegateRequest
      *
-     * @return AppendSpaceWithDelegateResponse
+     * @return AppendSpaceWithDelegateResponse AppendSpaceWithDelegateResponse
      */
     public function appendSpaceWithDelegate($request)
     {
@@ -197,11 +205,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAndDeliverRequest $request
-     * @param CreateAndDeliverHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 创建并投放卡片
+     *  *
+     * @param CreateAndDeliverRequest $request CreateAndDeliverRequest
+     * @param CreateAndDeliverHeaders $headers CreateAndDeliverHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateAndDeliverResponse
+     * @return CreateAndDeliverResponse CreateAndDeliverResponse
      */
     public function createAndDeliverWithOptions($request, $headers, $runtime)
     {
@@ -297,9 +307,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAndDeliverRequest $request
+     * @summary 创建并投放卡片
+     *  *
+     * @param CreateAndDeliverRequest $request CreateAndDeliverRequest
      *
-     * @return CreateAndDeliverResponse
+     * @return CreateAndDeliverResponse CreateAndDeliverResponse
      */
     public function createAndDeliver($request)
     {
@@ -310,11 +322,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAndDeliverWithDelegateRequest $request
-     * @param CreateAndDeliverWithDelegateHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 创建并投放卡片
+     *  *
+     * @param CreateAndDeliverWithDelegateRequest $request CreateAndDeliverWithDelegateRequest
+     * @param CreateAndDeliverWithDelegateHeaders $headers CreateAndDeliverWithDelegateHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateAndDeliverWithDelegateResponse
+     * @return CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegateResponse
      */
     public function createAndDeliverWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -410,9 +424,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAndDeliverWithDelegateRequest $request
+     * @summary 创建并投放卡片
+     *  *
+     * @param CreateAndDeliverWithDelegateRequest $request CreateAndDeliverWithDelegateRequest
      *
-     * @return CreateAndDeliverWithDelegateResponse
+     * @return CreateAndDeliverWithDelegateResponse CreateAndDeliverWithDelegateResponse
      */
     public function createAndDeliverWithDelegate($request)
     {
@@ -423,11 +439,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCardRequest $request
-     * @param CreateCardHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 创建卡片
+     *  *
+     * @param CreateCardRequest $request CreateCardRequest
+     * @param CreateCardHeaders $headers CreateCardHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCardResponse
+     * @return CreateCardResponse CreateCardResponse
      */
     public function createCardWithOptions($request, $headers, $runtime)
     {
@@ -502,9 +520,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCardRequest $request
+     * @summary 创建卡片
+     *  *
+     * @param CreateCardRequest $request CreateCardRequest
      *
-     * @return CreateCardResponse
+     * @return CreateCardResponse CreateCardResponse
      */
     public function createCard($request)
     {
@@ -515,11 +535,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCardWithDelegateRequest $request
-     * @param CreateCardWithDelegateHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 创建卡片
+     *  *
+     * @param CreateCardWithDelegateRequest $request CreateCardWithDelegateRequest
+     * @param CreateCardWithDelegateHeaders $headers CreateCardWithDelegateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCardWithDelegateResponse
+     * @return CreateCardWithDelegateResponse CreateCardWithDelegateResponse
      */
     public function createCardWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -594,9 +616,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCardWithDelegateRequest $request
+     * @summary 创建卡片
+     *  *
+     * @param CreateCardWithDelegateRequest $request CreateCardWithDelegateRequest
      *
-     * @return CreateCardWithDelegateResponse
+     * @return CreateCardWithDelegateResponse CreateCardWithDelegateResponse
      */
     public function createCardWithDelegate($request)
     {
@@ -607,11 +631,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeliverCardRequest $request
-     * @param DeliverCardHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 投放卡片
+     *  *
+     * @param DeliverCardRequest $request DeliverCardRequest
+     * @param DeliverCardHeaders $headers DeliverCardHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeliverCardResponse
+     * @return DeliverCardResponse DeliverCardResponse
      */
     public function deliverCardWithOptions($request, $headers, $runtime)
     {
@@ -671,9 +697,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeliverCardRequest $request
+     * @summary 投放卡片
+     *  *
+     * @param DeliverCardRequest $request DeliverCardRequest
      *
-     * @return DeliverCardResponse
+     * @return DeliverCardResponse DeliverCardResponse
      */
     public function deliverCard($request)
     {
@@ -684,11 +712,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeliverCardWithDelegateRequest $request
-     * @param DeliverCardWithDelegateHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 投放卡片
+     *  *
+     * @param DeliverCardWithDelegateRequest $request DeliverCardWithDelegateRequest
+     * @param DeliverCardWithDelegateHeaders $headers DeliverCardWithDelegateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeliverCardWithDelegateResponse
+     * @return DeliverCardWithDelegateResponse DeliverCardWithDelegateResponse
      */
     public function deliverCardWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -748,9 +778,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeliverCardWithDelegateRequest $request
+     * @summary 投放卡片
+     *  *
+     * @param DeliverCardWithDelegateRequest $request DeliverCardWithDelegateRequest
      *
-     * @return DeliverCardWithDelegateResponse
+     * @return DeliverCardWithDelegateResponse DeliverCardWithDelegateResponse
      */
     public function deliverCardWithDelegate($request)
     {
@@ -761,11 +793,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterCallbackRequest $request
-     * @param RegisterCallbackHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 注册卡片回调地址
+     *  *
+     * @param RegisterCallbackRequest $request RegisterCallbackRequest
+     * @param RegisterCallbackHeaders $headers RegisterCallbackHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterCallbackResponse
+     * @return RegisterCallbackResponse RegisterCallbackResponse
      */
     public function registerCallbackWithOptions($request, $headers, $runtime)
     {
@@ -810,9 +844,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterCallbackRequest $request
+     * @summary 注册卡片回调地址
+     *  *
+     * @param RegisterCallbackRequest $request RegisterCallbackRequest
      *
-     * @return RegisterCallbackResponse
+     * @return RegisterCallbackResponse RegisterCallbackResponse
      */
     public function registerCallback($request)
     {
@@ -823,11 +859,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterCallbackWithDelegateRequest $request
-     * @param RegisterCallbackWithDelegateHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 注册卡片回调地址
+     *  *
+     * @param RegisterCallbackWithDelegateRequest $request RegisterCallbackWithDelegateRequest
+     * @param RegisterCallbackWithDelegateHeaders $headers RegisterCallbackWithDelegateHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterCallbackWithDelegateResponse
+     * @return RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegateResponse
      */
     public function registerCallbackWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -872,9 +910,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterCallbackWithDelegateRequest $request
+     * @summary 注册卡片回调地址
+     *  *
+     * @param RegisterCallbackWithDelegateRequest $request RegisterCallbackWithDelegateRequest
      *
-     * @return RegisterCallbackWithDelegateResponse
+     * @return RegisterCallbackWithDelegateResponse RegisterCallbackWithDelegateResponse
      */
     public function registerCallbackWithDelegate($request)
     {
@@ -885,11 +925,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param StreamingUpdateRequest $request
-     * @param StreamingUpdateHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary AI互动卡片流式更新
+     *  *
+     * @param StreamingUpdateRequest $request StreamingUpdateRequest
+     * @param StreamingUpdateHeaders $headers StreamingUpdateHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return StreamingUpdateResponse
+     * @return StreamingUpdateResponse StreamingUpdateResponse
      */
     public function streamingUpdateWithOptions($request, $headers, $runtime)
     {
@@ -943,9 +985,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param StreamingUpdateRequest $request
+     * @summary AI互动卡片流式更新
+     *  *
+     * @param StreamingUpdateRequest $request StreamingUpdateRequest
      *
-     * @return StreamingUpdateResponse
+     * @return StreamingUpdateResponse StreamingUpdateResponse
      */
     public function streamingUpdate($request)
     {
@@ -956,11 +1000,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardRequest $request
-     * @param UpdateCardHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardRequest $request UpdateCardRequest
+     * @param UpdateCardHeaders $headers UpdateCardHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateCardResponse
+     * @return UpdateCardResponse UpdateCardResponse
      */
     public function updateCardWithOptions($request, $headers, $runtime)
     {
@@ -1008,9 +1054,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardRequest $request
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardRequest $request UpdateCardRequest
      *
-     * @return UpdateCardResponse
+     * @return UpdateCardResponse UpdateCardResponse
      */
     public function updateCard($request)
     {
@@ -1021,11 +1069,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardWithDelegateRequest $request
-     * @param UpdateCardWithDelegateHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardWithDelegateRequest $request UpdateCardWithDelegateRequest
+     * @param UpdateCardWithDelegateHeaders $headers UpdateCardWithDelegateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateCardWithDelegateResponse
+     * @return UpdateCardWithDelegateResponse UpdateCardWithDelegateResponse
      */
     public function updateCardWithDelegateWithOptions($request, $headers, $runtime)
     {
@@ -1073,9 +1123,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardWithDelegateRequest $request
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardWithDelegateRequest $request UpdateCardWithDelegateRequest
      *
-     * @return UpdateCardWithDelegateResponse
+     * @return UpdateCardWithDelegateResponse UpdateCardWithDelegateResponse
      */
     public function updateCardWithDelegate($request)
     {

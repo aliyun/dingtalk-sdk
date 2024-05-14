@@ -19,6 +19,8 @@ class ReportCustomerStatisticsRequest extends Model
     public $groupTags;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220102
      *
      * @var string
@@ -26,6 +28,8 @@ class ReportCustomerStatisticsRequest extends Model
     public $maxDt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -45,6 +49,8 @@ class ReportCustomerStatisticsRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iSoqrhLQDtK
      *
      * @var string
@@ -52,6 +58,8 @@ class ReportCustomerStatisticsRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -59,6 +67,8 @@ class ReportCustomerStatisticsRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateSeniorSettingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $open;
@@ -34,6 +36,8 @@ class UpdateSeniorSettingRequest extends Model
     public $protectScenes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $seniorStaffId;

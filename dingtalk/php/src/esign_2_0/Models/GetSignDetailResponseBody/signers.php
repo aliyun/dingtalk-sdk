@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class signers extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $signStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $signerName;

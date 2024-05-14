@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ListSubCorpsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isOnlyDirect;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;

@@ -23,6 +23,8 @@ class shiftSetting extends Model
     public $corpId;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-09-06 15:49:27
      *
      * @var string
@@ -30,6 +32,8 @@ class shiftSetting extends Model
     public $gmtCreate;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-09-06 15:49:27
      *
      * @var string

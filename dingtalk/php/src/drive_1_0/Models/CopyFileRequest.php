@@ -19,11 +19,15 @@ class CopyFileRequest extends Model
     public $targetParentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddCityCarApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 杭州出差
      *
      * @var string
@@ -16,6 +18,8 @@ class AddCityCarApplyRequest extends Model
     public $cause;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 杭州
      *
      * @var string
@@ -23,6 +27,8 @@ class AddCityCarApplyRequest extends Model
     public $city;
 
     /**
+     * @description This parameter is required.
+     *
      * @example corpx
      *
      * @var string
@@ -30,6 +36,8 @@ class AddCityCarApplyRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-03-18 20:26:56
      *
      * @var string
@@ -58,6 +66,8 @@ class AddCityCarApplyRequest extends Model
     public $projectName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -65,6 +75,8 @@ class AddCityCarApplyRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example apply1
      *
      * @var string
@@ -72,6 +84,8 @@ class AddCityCarApplyRequest extends Model
     public $thirdPartApplyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example costcenter1
      *
      * @var string
@@ -79,6 +93,8 @@ class AddCityCarApplyRequest extends Model
     public $thirdPartCostCenterId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example invoice1
      *
      * @var string
@@ -86,6 +102,8 @@ class AddCityCarApplyRequest extends Model
     public $thirdPartInvoiceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -93,6 +111,8 @@ class AddCityCarApplyRequest extends Model
     public $timesTotal;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -100,6 +120,8 @@ class AddCityCarApplyRequest extends Model
     public $timesType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -107,6 +129,8 @@ class AddCityCarApplyRequest extends Model
     public $timesUsed;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 杭州出差
      *
      * @var string
@@ -114,6 +138,8 @@ class AddCityCarApplyRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user1
      *
      * @var string

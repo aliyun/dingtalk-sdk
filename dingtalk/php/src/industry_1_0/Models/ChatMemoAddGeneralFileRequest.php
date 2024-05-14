@@ -17,6 +17,8 @@ class ChatMemoAddGeneralFileRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111111
      *
      * @var int
@@ -24,6 +26,8 @@ class ChatMemoAddGeneralFileRequest extends Model
     public $datasetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://xxxxxxx.com/xxxxxx
      *
      * @var string
@@ -38,6 +42,8 @@ class ChatMemoAddGeneralFileRequest extends Model
     public $fileDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaa.doc
      *
      * @var string

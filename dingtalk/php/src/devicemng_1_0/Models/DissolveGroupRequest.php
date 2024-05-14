@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DissolveGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxxxx
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCorpCardStyleListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[][]
      */
     public $result;

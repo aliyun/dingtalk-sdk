@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCollectingTraceTaskResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;

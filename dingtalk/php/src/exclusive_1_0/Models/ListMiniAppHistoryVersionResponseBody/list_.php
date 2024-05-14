@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0-打包中 ，1-成功，2-失败
      *
      * @var int
@@ -16,6 +18,8 @@ class list_ extends Model
     public $buildStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://xxx.con/download/id
      *
      * @var string
@@ -23,6 +27,8 @@ class list_ extends Model
     public $h5Bundle;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5000
      *
      * @var string
@@ -30,6 +36,8 @@ class list_ extends Model
     public $packageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://xxx.con/download/id
      *
      * @var string
@@ -37,6 +45,8 @@ class list_ extends Model
     public $packageUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.5
      *
      * @var string

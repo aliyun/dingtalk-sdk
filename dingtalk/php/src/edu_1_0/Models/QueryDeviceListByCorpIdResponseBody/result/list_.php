@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceName;

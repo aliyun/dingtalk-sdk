@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListTemplateResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;
@@ -20,6 +22,8 @@ class ListTemplateResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var templateList[]
      */
     public $templateList;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddCustomerTrackResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

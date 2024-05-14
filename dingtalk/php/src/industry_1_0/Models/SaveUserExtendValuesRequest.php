@@ -14,11 +14,15 @@ class SaveUserExtendValuesRequest extends Model
     public $userDisplayName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userExtendKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userExtendValue;

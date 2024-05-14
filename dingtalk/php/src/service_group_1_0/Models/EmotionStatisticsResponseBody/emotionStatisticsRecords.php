@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class emotionStatisticsRecords extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class emotionStatisticsRecords extends Model
     public $count;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -23,6 +27,8 @@ class emotionStatisticsRecords extends Model
     public $dt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.3
      *
      * @var float

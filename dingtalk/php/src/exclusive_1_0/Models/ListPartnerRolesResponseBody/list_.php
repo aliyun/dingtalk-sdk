@@ -20,6 +20,8 @@ class list_ extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -27,6 +29,8 @@ class list_ extends Model
     public $isNecessary;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 供应商
      *
      * @var string
@@ -34,21 +38,29 @@ class list_ extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var visibleDepts[]
      */
     public $visibleDepts;
 
     /**
+     * @description This parameter is required.
+     *
      * @var visibleUsers[]
      */
     public $visibleUsers;
 
     /**
+     * @description This parameter is required.
+     *
      * @var warningDepts[]
      */
     public $warningDepts;
 
     /**
+     * @description This parameter is required.
+     *
      * @var warningUsers[]
      */
     public $warningUsers;

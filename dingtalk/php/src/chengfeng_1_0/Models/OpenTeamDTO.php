@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenTeamDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class OpenTeamDTO extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 销售部
      *
      * @var string
@@ -23,6 +27,8 @@ class OpenTeamDTO extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30211
      *
      * @var string

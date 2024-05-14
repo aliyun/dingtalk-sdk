@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class templateList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $coverUrl;
@@ -19,21 +21,29 @@ class templateList extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $docType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

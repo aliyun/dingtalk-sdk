@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetAuthUrlResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mobileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pcUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskId;

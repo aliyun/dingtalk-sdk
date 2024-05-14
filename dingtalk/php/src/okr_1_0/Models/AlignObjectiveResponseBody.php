@@ -15,6 +15,8 @@ class AlignObjectiveResponseBody extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

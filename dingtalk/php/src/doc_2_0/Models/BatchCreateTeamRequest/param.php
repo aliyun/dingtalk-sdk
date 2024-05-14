@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class param extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var createTeamParamList[]
      */
     public $createTeamParamList;

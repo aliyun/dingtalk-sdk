@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateApplicationRegFormResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager5875
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example formXXX
      *
      * @var string
@@ -23,6 +27,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $formId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626775016427
      *
      * @var int
@@ -30,6 +36,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $gmtCreateMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626775016427
      *
      * @var int
@@ -37,6 +45,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $gmtModifiedMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -44,6 +54,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example templateXXX
      *
      * @var string
@@ -51,6 +63,8 @@ class UpdateApplicationRegFormResponseBody extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

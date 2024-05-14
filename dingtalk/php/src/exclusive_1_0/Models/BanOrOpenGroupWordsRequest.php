@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BanOrOpenGroupWordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $banWordsType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConverationId;

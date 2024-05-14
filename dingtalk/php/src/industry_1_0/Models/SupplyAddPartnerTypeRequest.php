@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddPartnerTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 标签名称
      *
      * @var string
@@ -16,6 +18,8 @@ class SupplyAddPartnerTypeRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 862
      *
      * @var int

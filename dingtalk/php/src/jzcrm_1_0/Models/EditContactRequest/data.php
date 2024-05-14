@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -41,6 +43,8 @@ class data extends Model
     public $lxrCttype;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $lxrCustomerid;
@@ -86,6 +90,8 @@ class data extends Model
     public $lxrLike;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $lxrName;

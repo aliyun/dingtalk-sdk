@@ -24,6 +24,8 @@ class actionList extends Model
     public $buttonStyleType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $nameI18n;

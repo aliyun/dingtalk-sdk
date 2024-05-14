@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetDeviceGroupInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

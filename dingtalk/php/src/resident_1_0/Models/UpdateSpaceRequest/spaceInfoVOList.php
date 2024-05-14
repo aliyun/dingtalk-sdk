@@ -30,6 +30,8 @@ class spaceInfoVOList extends Model
     public $buildingType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10005
      *
      * @var int
@@ -70,6 +72,8 @@ class spaceInfoVOList extends Model
     public $parentDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 空间类型标签code，House/Unit/Building/Partition
      *
      * @var string

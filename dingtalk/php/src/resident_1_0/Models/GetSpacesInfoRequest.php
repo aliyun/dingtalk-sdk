@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetSpacesInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $referIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $residentCorpId;

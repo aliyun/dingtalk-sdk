@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveCustomWaterMarkTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example water_mark_checkin
      *
      * @var string
@@ -16,6 +18,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://xx.xx.png
      *
      * @var string
@@ -23,6 +27,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example industry_dx_xx
      *
      * @var string
@@ -30,6 +36,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $layoutDesignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example water_mark_checkin_open
      *
      * @var string
@@ -37,6 +45,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $sceneCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
      *
      * @var string
@@ -44,6 +54,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $schemaContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 标题
      *
      * @var string
@@ -51,6 +63,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var string
@@ -58,6 +72,8 @@ class SaveCustomWaterMarkTemplateRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manage123
      *
      * @var string

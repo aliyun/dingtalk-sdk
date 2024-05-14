@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizPrimaryKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subErrCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subErrMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $triggerId;

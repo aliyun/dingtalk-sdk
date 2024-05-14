@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class settleInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 622202120200000000
      *
      * @var string
@@ -72,6 +74,8 @@ class settleInfo extends Model
     public $bankShortNameCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string

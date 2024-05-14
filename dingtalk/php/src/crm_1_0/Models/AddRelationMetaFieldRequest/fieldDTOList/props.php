@@ -15,6 +15,8 @@ class props extends Model
     public $align;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAlias;
@@ -55,6 +57,8 @@ class props extends Model
     public $invisible;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
@@ -100,6 +104,8 @@ class props extends Model
     public $placeholder;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $required;

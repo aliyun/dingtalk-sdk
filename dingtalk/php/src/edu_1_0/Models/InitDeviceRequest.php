@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class InitDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sdf34DFf2344
      *
      * @var string
@@ -16,6 +18,8 @@ class InitDeviceRequest extends Model
     public $encryptPubKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sdf34DFfffdf2344
      *
      * @var string
@@ -23,6 +27,8 @@ class InitDeviceRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SN123456
      *
      * @var string
@@ -30,6 +36,8 @@ class InitDeviceRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1231245511
      *
      * @var int

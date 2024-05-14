@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class metaList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $kpiCaliber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $kpiId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $kpiName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $period;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;

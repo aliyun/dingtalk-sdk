@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFamilySchoolConversationsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -16,11 +18,15 @@ class GetFamilySchoolConversationsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

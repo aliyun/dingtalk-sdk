@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $clientId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $clientSecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $grantType;

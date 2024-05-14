@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CheckRestrictionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class CheckRestrictionRequest extends Model
     public $actualAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -23,6 +27,8 @@ class CheckRestrictionRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class CheckRestrictionRequest extends Model
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -37,6 +45,8 @@ class CheckRestrictionRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddAccountMappingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example BizName1
      *
      * @var string
@@ -23,6 +25,8 @@ class AddAccountMappingRequest extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example o_123
      *
      * @var string
@@ -30,6 +34,8 @@ class AddAccountMappingRequest extends Model
     public $outId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example t_123,如果不区分，填写固定值
      *
      * @var string
@@ -37,6 +43,8 @@ class AddAccountMappingRequest extends Model
     public $outTenantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example id_123
      *
      * @var string

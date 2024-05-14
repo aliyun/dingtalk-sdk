@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class recallResult extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example template_key_1
      *
      * @var string
@@ -16,6 +18,8 @@ class recallResult extends Model
     public $templateKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example recall_success
      *
      * @var string

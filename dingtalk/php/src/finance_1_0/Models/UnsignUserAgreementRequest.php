@@ -30,6 +30,8 @@ class UnsignUserAgreementRequest extends Model
     public $bizScene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -37,6 +39,8 @@ class UnsignUserAgreementRequest extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -44,6 +48,8 @@ class UnsignUserAgreementRequest extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2120493284
      *
      * @var string

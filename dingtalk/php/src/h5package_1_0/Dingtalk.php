@@ -40,11 +40,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePackageRequest $request
-     * @param CreatePackageHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 上传H5离线包
+     *  *
+     * @param CreatePackageRequest $request CreatePackageRequest
+     * @param CreatePackageHeaders $headers CreatePackageHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreatePackageResponse
+     * @return CreatePackageResponse CreatePackageResponse
      */
     public function createPackageWithOptions($request, $headers, $runtime)
     {
@@ -89,9 +91,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePackageRequest $request
+     * @summary 上传H5离线包
+     *  *
+     * @param CreatePackageRequest $request CreatePackageRequest
      *
-     * @return CreatePackageResponse
+     * @return CreatePackageResponse CreatePackageResponse
      */
     public function createPackage($request)
     {
@@ -102,11 +106,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
-     * @param GetAccessTokenHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取包上传一次性AccessToken
+     *  *
+     * @param GetAccessTokenRequest $request GetAccessTokenRequest
+     * @param GetAccessTokenHeaders $headers GetAccessTokenHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAccessTokenResponse
+     * @return GetAccessTokenResponse GetAccessTokenResponse
      */
     public function getAccessTokenWithOptions($request, $headers, $runtime)
     {
@@ -145,9 +151,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
+     * @summary 获取包上传一次性AccessToken
+     *  *
+     * @param GetAccessTokenRequest $request GetAccessTokenRequest
      *
-     * @return GetAccessTokenResponse
+     * @return GetAccessTokenResponse GetAccessTokenResponse
      */
     public function getAccessToken($request)
     {
@@ -158,11 +166,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCreateStatusRequest $request
-     * @param GetCreateStatusHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取H5离线包版本创建状态
+     *  *
+     * @param GetCreateStatusRequest $request GetCreateStatusRequest
+     * @param GetCreateStatusHeaders $headers GetCreateStatusHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCreateStatusResponse
+     * @return GetCreateStatusResponse GetCreateStatusResponse
      */
     public function getCreateStatusWithOptions($request, $headers, $runtime)
     {
@@ -198,9 +208,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCreateStatusRequest $request
+     * @summary 获取H5离线包版本创建状态
+     *  *
+     * @param GetCreateStatusRequest $request GetCreateStatusRequest
      *
-     * @return GetCreateStatusResponse
+     * @return GetCreateStatusResponse GetCreateStatusResponse
      */
     public function getCreateStatus($request)
     {
@@ -211,11 +223,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PublishPackageRequest $request
-     * @param PublishPackageHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 发布离线包
+     *  *
+     * @param PublishPackageRequest $request PublishPackageRequest
+     * @param PublishPackageHeaders $headers PublishPackageHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return PublishPackageResponse
+     * @return PublishPackageResponse PublishPackageResponse
      */
     public function publishPackageWithOptions($request, $headers, $runtime)
     {
@@ -257,9 +271,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PublishPackageRequest $request
+     * @summary 发布离线包
+     *  *
+     * @param PublishPackageRequest $request PublishPackageRequest
      *
-     * @return PublishPackageResponse
+     * @return PublishPackageResponse PublishPackageResponse
      */
     public function publishPackage($request)
     {

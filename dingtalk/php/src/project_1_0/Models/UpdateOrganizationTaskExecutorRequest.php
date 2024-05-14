@@ -19,6 +19,8 @@ class UpdateOrganizationTaskExecutorRequest extends Model
     public $disableNotification;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $executorId;

@@ -48,13 +48,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加硬件视频会议参会人
+     *  *
      * @param string                                 $deviceId
      * @param string                                 $conferenceId
-     * @param AddDeviceVideoConferenceMembersRequest $request
-     * @param AddDeviceVideoConferenceMembersHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param AddDeviceVideoConferenceMembersRequest $request      AddDeviceVideoConferenceMembersRequest
+     * @param AddDeviceVideoConferenceMembersHeaders $headers      AddDeviceVideoConferenceMembersHeaders
+     * @param RuntimeOptions                         $runtime      runtime options for this request RuntimeOptions
      *
-     * @return AddDeviceVideoConferenceMembersResponse
+     * @return AddDeviceVideoConferenceMembersResponse AddDeviceVideoConferenceMembersResponse
      */
     public function addDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
@@ -90,11 +92,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加硬件视频会议参会人
+     *  *
      * @param string                                 $deviceId
      * @param string                                 $conferenceId
-     * @param AddDeviceVideoConferenceMembersRequest $request
+     * @param AddDeviceVideoConferenceMembersRequest $request      AddDeviceVideoConferenceMembersRequest
      *
-     * @return AddDeviceVideoConferenceMembersResponse
+     * @return AddDeviceVideoConferenceMembersResponse AddDeviceVideoConferenceMembersResponse
      */
     public function addDeviceVideoConferenceMembers($deviceId, $conferenceId, $request)
     {
@@ -105,12 +109,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建硬件视频会议
+     *  *
      * @param string                             $deviceId
-     * @param CreateDeviceVideoConferenceRequest $request
-     * @param CreateDeviceVideoConferenceHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param CreateDeviceVideoConferenceRequest $request  CreateDeviceVideoConferenceRequest
+     * @param CreateDeviceVideoConferenceHeaders $headers  CreateDeviceVideoConferenceHeaders
+     * @param RuntimeOptions                     $runtime  runtime options for this request RuntimeOptions
      *
-     * @return CreateDeviceVideoConferenceResponse
+     * @return CreateDeviceVideoConferenceResponse CreateDeviceVideoConferenceResponse
      */
     public function createDeviceVideoConferenceWithOptions($deviceId, $request, $headers, $runtime)
     {
@@ -146,10 +152,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建硬件视频会议
+     *  *
      * @param string                             $deviceId
-     * @param CreateDeviceVideoConferenceRequest $request
+     * @param CreateDeviceVideoConferenceRequest $request  CreateDeviceVideoConferenceRequest
      *
-     * @return CreateDeviceVideoConferenceResponse
+     * @return CreateDeviceVideoConferenceResponse CreateDeviceVideoConferenceResponse
      */
     public function createDeviceVideoConference($deviceId, $request)
     {
@@ -160,11 +168,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExtractFacialFeatureRequest $request
-     * @param ExtractFacialFeatureHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 基于企业员工照片为终端提取人脸识别特征
+     *  *
+     * @param ExtractFacialFeatureRequest $request ExtractFacialFeatureRequest
+     * @param ExtractFacialFeatureHeaders $headers ExtractFacialFeatureHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ExtractFacialFeatureResponse
+     * @return ExtractFacialFeatureResponse ExtractFacialFeatureResponse
      */
     public function extractFacialFeatureWithOptions($request, $headers, $runtime)
     {
@@ -203,9 +213,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExtractFacialFeatureRequest $request
+     * @summary 基于企业员工照片为终端提取人脸识别特征
+     *  *
+     * @param ExtractFacialFeatureRequest $request ExtractFacialFeatureRequest
      *
-     * @return ExtractFacialFeatureResponse
+     * @return ExtractFacialFeatureResponse ExtractFacialFeatureResponse
      */
     public function extractFacialFeature($request)
     {
@@ -216,13 +228,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 踢出硬件视频会议参会人
+     *  *
      * @param string                                  $deviceId
      * @param string                                  $conferenceId
-     * @param KickDeviceVideoConferenceMembersRequest $request
-     * @param KickDeviceVideoConferenceMembersHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param KickDeviceVideoConferenceMembersRequest $request      KickDeviceVideoConferenceMembersRequest
+     * @param KickDeviceVideoConferenceMembersHeaders $headers      KickDeviceVideoConferenceMembersHeaders
+     * @param RuntimeOptions                          $runtime      runtime options for this request RuntimeOptions
      *
-     * @return KickDeviceVideoConferenceMembersResponse
+     * @return KickDeviceVideoConferenceMembersResponse KickDeviceVideoConferenceMembersResponse
      */
     public function kickDeviceVideoConferenceMembersWithOptions($deviceId, $conferenceId, $request, $headers, $runtime)
     {
@@ -258,11 +272,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 踢出硬件视频会议参会人
+     *  *
      * @param string                                  $deviceId
      * @param string                                  $conferenceId
-     * @param KickDeviceVideoConferenceMembersRequest $request
+     * @param KickDeviceVideoConferenceMembersRequest $request      KickDeviceVideoConferenceMembersRequest
      *
-     * @return KickDeviceVideoConferenceMembersResponse
+     * @return KickDeviceVideoConferenceMembersResponse KickDeviceVideoConferenceMembersResponse
      */
     public function kickDeviceVideoConferenceMembers($deviceId, $conferenceId, $request)
     {
@@ -273,11 +289,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MachineManagerUpdateRequest $request
-     * @param MachineManagerUpdateHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 变更智能考勤机设备管理员
+     *  *
+     * @param MachineManagerUpdateRequest $request MachineManagerUpdateRequest
+     * @param MachineManagerUpdateHeaders $headers MachineManagerUpdateHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return MachineManagerUpdateResponse
+     * @return MachineManagerUpdateResponse MachineManagerUpdateResponse
      */
     public function machineManagerUpdateWithOptions($request, $headers, $runtime)
     {
@@ -322,9 +340,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MachineManagerUpdateRequest $request
+     * @summary 变更智能考勤机设备管理员
+     *  *
+     * @param MachineManagerUpdateRequest $request MachineManagerUpdateRequest
      *
-     * @return MachineManagerUpdateResponse
+     * @return MachineManagerUpdateResponse MachineManagerUpdateResponse
      */
     public function machineManagerUpdate($request)
     {
@@ -335,11 +355,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MachineUsersUpdateRequest $request
-     * @param MachineUsersUpdateHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 变更智能考勤机员工
+     *  *
+     * @param MachineUsersUpdateRequest $request MachineUsersUpdateRequest
+     * @param MachineUsersUpdateHeaders $headers MachineUsersUpdateHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return MachineUsersUpdateResponse
+     * @return MachineUsersUpdateResponse MachineUsersUpdateResponse
      */
     public function machineUsersUpdateWithOptions($request, $headers, $runtime)
     {
@@ -390,9 +412,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MachineUsersUpdateRequest $request
+     * @summary 变更智能考勤机员工
+     *  *
+     * @param MachineUsersUpdateRequest $request MachineUsersUpdateRequest
      *
-     * @return MachineUsersUpdateResponse
+     * @return MachineUsersUpdateResponse MachineUsersUpdateResponse
      */
     public function machineUsersUpdate($request)
     {
@@ -403,12 +427,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询硬件视频会议预约信息
+     *  *
      * @param string                                $deviceId
      * @param string                                $bookId
-     * @param QueryDeviceVideoConferenceBookHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param QueryDeviceVideoConferenceBookHeaders $headers  QueryDeviceVideoConferenceBookHeaders
+     * @param RuntimeOptions                        $runtime  runtime options for this request RuntimeOptions
      *
-     * @return QueryDeviceVideoConferenceBookResponse
+     * @return QueryDeviceVideoConferenceBookResponse QueryDeviceVideoConferenceBookResponse
      */
     public function queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime)
     {
@@ -438,10 +464,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询硬件视频会议预约信息
+     *  *
      * @param string $deviceId
      * @param string $bookId
      *
-     * @return QueryDeviceVideoConferenceBookResponse
+     * @return QueryDeviceVideoConferenceBookResponse QueryDeviceVideoConferenceBookResponse
      */
     public function queryDeviceVideoConferenceBook($deviceId, $bookId)
     {

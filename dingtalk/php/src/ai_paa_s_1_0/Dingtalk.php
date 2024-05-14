@@ -54,11 +54,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExecuteAgentRequest $request
-     * @param ExecuteAgentHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 执行AI技能
+     *  *
+     * @param ExecuteAgentRequest $request ExecuteAgentRequest
+     * @param ExecuteAgentHeaders $headers ExecuteAgentHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ExecuteAgentResponse
+     * @return ExecuteAgentResponse ExecuteAgentResponse
      */
     public function executeAgentWithOptions($request, $headers, $runtime)
     {
@@ -106,9 +108,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExecuteAgentRequest $request
+     * @summary 执行AI技能
+     *  *
+     * @param ExecuteAgentRequest $request ExecuteAgentRequest
      *
-     * @return ExecuteAgentResponse
+     * @return ExecuteAgentResponse ExecuteAgentResponse
      */
     public function executeAgent($request)
     {
@@ -119,11 +123,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanTextImageGetRequest $request
-     * @param LiandanTextImageGetHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 炼丹炉文生图任务结果获取
+     *  *
+     * @param LiandanTextImageGetRequest $request LiandanTextImageGetRequest
+     * @param LiandanTextImageGetHeaders $headers LiandanTextImageGetHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return LiandanTextImageGetResponse
+     * @return LiandanTextImageGetResponse LiandanTextImageGetResponse
      */
     public function liandanTextImageGetWithOptions($request, $headers, $runtime)
     {
@@ -165,9 +171,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanTextImageGetRequest $request
+     * @summary 炼丹炉文生图任务结果获取
+     *  *
+     * @param LiandanTextImageGetRequest $request LiandanTextImageGetRequest
      *
-     * @return LiandanTextImageGetResponse
+     * @return LiandanTextImageGetResponse LiandanTextImageGetResponse
      */
     public function liandanTextImageGet($request)
     {
@@ -178,11 +186,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanluExclusiveModelRequest $request
-     * @param LiandanluExclusiveModelHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 炼丹炉专属模型接口
+     *  *
+     * @param LiandanluExclusiveModelRequest $request LiandanluExclusiveModelRequest
+     * @param LiandanluExclusiveModelHeaders $headers LiandanluExclusiveModelHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return LiandanluExclusiveModelResponse
+     * @return LiandanluExclusiveModelResponse LiandanluExclusiveModelResponse
      */
     public function liandanluExclusiveModelWithOptions($request, $headers, $runtime)
     {
@@ -227,9 +237,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanluExclusiveModelRequest $request
+     * @summary 炼丹炉专属模型接口
+     *  *
+     * @param LiandanluExclusiveModelRequest $request LiandanluExclusiveModelRequest
      *
-     * @return LiandanluExclusiveModelResponse
+     * @return LiandanluExclusiveModelResponse LiandanluExclusiveModelResponse
      */
     public function liandanluExclusiveModel($request)
     {
@@ -240,11 +252,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanluTextToImageModelRequest $request
-     * @param LiandanluTextToImageModelHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 炼丹炉通过提示词生成图片
+     *  *
+     * @param LiandanluTextToImageModelRequest $request LiandanluTextToImageModelRequest
+     * @param LiandanluTextToImageModelHeaders $headers LiandanluTextToImageModelHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return LiandanluTextToImageModelResponse
+     * @return LiandanluTextToImageModelResponse LiandanluTextToImageModelResponse
      */
     public function liandanluTextToImageModelWithOptions($request, $headers, $runtime)
     {
@@ -292,9 +306,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LiandanluTextToImageModelRequest $request
+     * @summary 炼丹炉通过提示词生成图片
+     *  *
+     * @param LiandanluTextToImageModelRequest $request LiandanluTextToImageModelRequest
      *
-     * @return LiandanluTextToImageModelResponse
+     * @return LiandanluTextToImageModelResponse LiandanluTextToImageModelResponse
      */
     public function liandanluTextToImageModel($request)
     {
@@ -305,11 +321,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBaymaxSkillLogRequest $request
-     * @param QueryBaymaxSkillLogHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary Baymax技能执行日志
+     *  *
+     * @param QueryBaymaxSkillLogRequest $request QueryBaymaxSkillLogRequest
+     * @param QueryBaymaxSkillLogHeaders $headers QueryBaymaxSkillLogHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBaymaxSkillLogResponse
+     * @return QueryBaymaxSkillLogResponse QueryBaymaxSkillLogResponse
      */
     public function queryBaymaxSkillLogWithOptions($request, $headers, $runtime)
     {
@@ -354,9 +372,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBaymaxSkillLogRequest $request
+     * @summary Baymax技能执行日志
+     *  *
+     * @param QueryBaymaxSkillLogRequest $request QueryBaymaxSkillLogRequest
      *
-     * @return QueryBaymaxSkillLogResponse
+     * @return QueryBaymaxSkillLogResponse QueryBaymaxSkillLogResponse
      */
     public function queryBaymaxSkillLog($request)
     {
@@ -367,12 +387,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会话消息并以大模型友好的协议返回
+     *  *
      * @param string                               $cid
-     * @param QueryConversationMessageForAIRequest $tmpReq
-     * @param QueryConversationMessageForAIHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param QueryConversationMessageForAIRequest $tmpReq  QueryConversationMessageForAIRequest
+     * @param QueryConversationMessageForAIHeaders $headers QueryConversationMessageForAIHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryConversationMessageForAIResponse
+     * @return QueryConversationMessageForAIResponse QueryConversationMessageForAIResponse
      */
     public function queryConversationMessageForAIWithOptions($cid, $tmpReq, $headers, $runtime)
     {
@@ -422,10 +444,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会话消息并以大模型友好的协议返回
+     *  *
      * @param string                               $cid
-     * @param QueryConversationMessageForAIRequest $request
+     * @param QueryConversationMessageForAIRequest $request QueryConversationMessageForAIRequest
      *
-     * @return QueryConversationMessageForAIResponse
+     * @return QueryConversationMessageForAIResponse QueryConversationMessageForAIResponse
      */
     public function queryConversationMessageForAI($cid, $request)
     {
@@ -436,11 +460,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMemoryLearningTaskRequest $request
-     * @param QueryMemoryLearningTaskHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 查询记忆学习进度
+     *  *
+     * @param QueryMemoryLearningTaskRequest $request QueryMemoryLearningTaskRequest
+     * @param QueryMemoryLearningTaskHeaders $headers QueryMemoryLearningTaskHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMemoryLearningTaskResponse
+     * @return QueryMemoryLearningTaskResponse QueryMemoryLearningTaskResponse
      */
     public function queryMemoryLearningTaskWithOptions($request, $headers, $runtime)
     {
@@ -479,9 +505,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMemoryLearningTaskRequest $request
+     * @summary 查询记忆学习进度
+     *  *
+     * @param QueryMemoryLearningTaskRequest $request QueryMemoryLearningTaskRequest
      *
-     * @return QueryMemoryLearningTaskResponse
+     * @return QueryMemoryLearningTaskResponse QueryMemoryLearningTaskResponse
      */
     public function queryMemoryLearningTask($request)
     {
@@ -492,11 +520,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubmitMemoryLearningTaskRequest $tmpReq
-     * @param SubmitMemoryLearningTaskHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 提交记忆学习任务
+     *  *
+     * @param SubmitMemoryLearningTaskRequest $tmpReq  SubmitMemoryLearningTaskRequest
+     * @param SubmitMemoryLearningTaskHeaders $headers SubmitMemoryLearningTaskHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SubmitMemoryLearningTaskResponse
+     * @return SubmitMemoryLearningTaskResponse SubmitMemoryLearningTaskResponse
      */
     public function submitMemoryLearningTaskWithOptions($tmpReq, $headers, $runtime)
     {
@@ -546,9 +576,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubmitMemoryLearningTaskRequest $request
+     * @summary 提交记忆学习任务
+     *  *
+     * @param SubmitMemoryLearningTaskRequest $request SubmitMemoryLearningTaskRequest
      *
-     * @return SubmitMemoryLearningTaskResponse
+     * @return SubmitMemoryLearningTaskResponse SubmitMemoryLearningTaskResponse
      */
     public function submitMemoryLearningTask($request)
     {

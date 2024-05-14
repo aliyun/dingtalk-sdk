@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class eventTypes extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fireDetect
      *
      * @var string
@@ -16,6 +18,8 @@ class eventTypes extends Model
     public $eventType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 火焰告警
      *
      * @var string

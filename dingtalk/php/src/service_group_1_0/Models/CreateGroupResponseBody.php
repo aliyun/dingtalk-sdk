@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example http://qr.dingtalk.com/xxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateGroupResponseBody extends Model
     public $groupUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxxx==
      *
      * @var string

@@ -23,6 +23,8 @@ class GetInnerAppResponseBody extends Model
     public $appKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaaxxxxx
      *
      * @var string

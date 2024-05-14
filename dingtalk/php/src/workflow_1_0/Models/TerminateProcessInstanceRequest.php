@@ -21,6 +21,8 @@ class TerminateProcessInstanceRequest extends Model
     public $operatingUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a171de6c-8bxxxx
      *
      * @var string

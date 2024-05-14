@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeviceHeartbeatRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sn123
      *
      * @var string

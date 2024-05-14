@@ -14,6 +14,8 @@ class QueryPageTraceDataRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -28,6 +30,8 @@ class QueryPageTraceDataRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $staffId;

@@ -35,6 +35,8 @@ class CreateTemplatesRequest extends Model
     public $authUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 182942
      *
      * @var string
@@ -57,6 +59,8 @@ class CreateTemplatesRequest extends Model
     public $defaultReceivers;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fields[]
      */
     public $fields;
@@ -83,6 +87,8 @@ class CreateTemplatesRequest extends Model
     public $minWordCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 工作日报
      *
      * @var string

@@ -23,6 +23,8 @@ class UpdateOrganizationTaskPriorityRequest extends Model
     public $disableNotification;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -10
      *
      * @var int

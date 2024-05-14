@@ -9,71 +9,99 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $groupAdminsCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $groupCreateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $groupLastActiveTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupLastActiveTimeShow;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $groupMembersCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupOwner;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupOwnerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $syncToDingpan;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $usedQuota;

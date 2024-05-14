@@ -15,6 +15,8 @@ class OkrOpenRecommendResponseBody extends Model
     public $okrRecommendItems;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $requestId;

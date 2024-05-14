@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ExecuteTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -44,6 +46,8 @@ class ExecuteTaskRequest extends Model
     public $noExecuteExpressions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example AGREE
      *
      * @var string
@@ -51,6 +55,8 @@ class ExecuteTaskRequest extends Model
     public $outResult;
 
     /**
+     * @description This parameter is required.
+     *
      * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
@@ -58,6 +64,8 @@ class ExecuteTaskRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 确认同意
      *
      * @var string
@@ -65,6 +73,8 @@ class ExecuteTaskRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxyy
      *
      * @var string
@@ -72,6 +82,8 @@ class ExecuteTaskRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12002575
      *
      * @var int
@@ -79,6 +91,8 @@ class ExecuteTaskRequest extends Model
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

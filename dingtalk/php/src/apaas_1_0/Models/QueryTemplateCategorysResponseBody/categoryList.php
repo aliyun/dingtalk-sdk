@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class categoryList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example template_category
      *
      * @var string
@@ -16,6 +18,8 @@ class categoryList extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 模板分类
      *
      * @var string

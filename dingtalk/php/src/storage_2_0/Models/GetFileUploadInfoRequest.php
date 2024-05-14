@@ -15,6 +15,8 @@ class GetFileUploadInfoRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example HEADER_SIGNATURE
      *
      * @var string
@@ -22,6 +24,8 @@ class GetFileUploadInfoRequest extends Model
     public $protocol;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

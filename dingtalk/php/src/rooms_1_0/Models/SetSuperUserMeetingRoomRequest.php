@@ -14,11 +14,15 @@ class SetSuperUserMeetingRoomRequest extends Model
     public $deptIdWhiteList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roomId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OcMXXXXXM2eRogiEiE
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateBatchTradeOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2021070712440326300185114
      *
      * @var string
@@ -17,6 +19,8 @@ class CreateBatchTradeOrderRequest extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13****9
      *
      * @var string
@@ -31,11 +35,15 @@ class CreateBatchTradeOrderRequest extends Model
     public $batchRemark;
 
     /**
+     * @description This parameter is required.
+     *
      * @var batchTradeDetails[]
      */
     public $batchTradeDetails;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210901001
      *
      * @var string
@@ -43,6 +51,8 @@ class CreateBatchTradeOrderRequest extends Model
     public $outBatchNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8476212471
      *
      * @var string
@@ -50,6 +60,8 @@ class CreateBatchTradeOrderRequest extends Model
     public $staffId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -57,6 +69,8 @@ class CreateBatchTradeOrderRequest extends Model
     public $totalAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -64,6 +78,8 @@ class CreateBatchTradeOrderRequest extends Model
     public $totalCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 工资
      *
      * @var string

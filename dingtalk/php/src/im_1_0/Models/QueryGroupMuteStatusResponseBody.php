@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMuteStatusResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,6 +19,8 @@ class QueryGroupMuteStatusResponseBody extends Model
     public $groupMuteMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userMuteResult
      */
     public $userMuteResult;

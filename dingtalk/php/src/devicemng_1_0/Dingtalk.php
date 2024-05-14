@@ -102,11 +102,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRegisterDeviceRequest $request
-     * @param BatchRegisterDeviceHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量注册设备
+     *  *
+     * @param BatchRegisterDeviceRequest $request BatchRegisterDeviceRequest
+     * @param BatchRegisterDeviceHeaders $headers BatchRegisterDeviceHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchRegisterDeviceResponse
+     * @return BatchRegisterDeviceResponse BatchRegisterDeviceResponse
      */
     public function batchRegisterDeviceWithOptions($request, $headers, $runtime)
     {
@@ -145,9 +147,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRegisterDeviceRequest $request
+     * @summary 批量注册设备
+     *  *
+     * @param BatchRegisterDeviceRequest $request BatchRegisterDeviceRequest
      *
-     * @return BatchRegisterDeviceResponse
+     * @return BatchRegisterDeviceResponse BatchRegisterDeviceResponse
      */
     public function batchRegisterDevice($request)
     {
@@ -158,11 +162,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ConnectorEventPushRequest $request
-     * @param ConnectorEventPushHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 想设备上钉连接器推送设备事件
+     *  *
+     * @param ConnectorEventPushRequest $request ConnectorEventPushRequest
+     * @param ConnectorEventPushHeaders $headers ConnectorEventPushHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ConnectorEventPushResponse
+     * @return ConnectorEventPushResponse ConnectorEventPushResponse
      */
     public function connectorEventPushWithOptions($request, $headers, $runtime)
     {
@@ -204,9 +210,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ConnectorEventPushRequest $request
+     * @summary 想设备上钉连接器推送设备事件
+     *  *
+     * @param ConnectorEventPushRequest $request ConnectorEventPushRequest
      *
-     * @return ConnectorEventPushResponse
+     * @return ConnectorEventPushResponse ConnectorEventPushResponse
      */
     public function connectorEventPush($request)
     {
@@ -217,11 +225,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateChatRoomRequest $request
-     * @param CreateChatRoomHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建设备群
+     *  *
+     * @param CreateChatRoomRequest $request CreateChatRoomRequest
+     * @param CreateChatRoomHeaders $headers CreateChatRoomHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateChatRoomResponse
+     * @return CreateChatRoomResponse CreateChatRoomResponse
      */
     public function createChatRoomWithOptions($request, $headers, $runtime)
     {
@@ -269,9 +279,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateChatRoomRequest $request
+     * @summary 创建设备群
+     *  *
+     * @param CreateChatRoomRequest $request CreateChatRoomRequest
      *
-     * @return CreateChatRoomResponse
+     * @return CreateChatRoomResponse CreateChatRoomResponse
      */
     public function createChatRoom($request)
     {
@@ -282,11 +294,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDepartmentRequest $request
-     * @param CreateDepartmentHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 创建部门
+     *  *
+     * @param CreateDepartmentRequest $request CreateDepartmentRequest
+     * @param CreateDepartmentHeaders $headers CreateDepartmentHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateDepartmentResponse
+     * @return CreateDepartmentResponse CreateDepartmentResponse
      */
     public function createDepartmentWithOptions($request, $headers, $runtime)
     {
@@ -343,9 +357,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDepartmentRequest $request
+     * @summary 创建部门
+     *  *
+     * @param CreateDepartmentRequest $request CreateDepartmentRequest
      *
-     * @return CreateDepartmentResponse
+     * @return CreateDepartmentResponse CreateDepartmentResponse
      */
     public function createDepartment($request)
     {
@@ -356,11 +372,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeviceChatRoomRequest $request
-     * @param CreateDeviceChatRoomHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 创建设备场景群
+     *  *
+     * @param CreateDeviceChatRoomRequest $request CreateDeviceChatRoomRequest
+     * @param CreateDeviceChatRoomHeaders $headers CreateDeviceChatRoomHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateDeviceChatRoomResponse
+     * @return CreateDeviceChatRoomResponse CreateDeviceChatRoomResponse
      */
     public function createDeviceChatRoomWithOptions($request, $headers, $runtime)
     {
@@ -411,9 +429,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeviceChatRoomRequest $request
+     * @summary 创建设备场景群
+     *  *
+     * @param CreateDeviceChatRoomRequest $request CreateDeviceChatRoomRequest
      *
-     * @return CreateDeviceChatRoomResponse
+     * @return CreateDeviceChatRoomResponse CreateDeviceChatRoomResponse
      */
     public function createDeviceChatRoom($request)
     {
@@ -424,11 +444,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeviceDingRequest $request
-     * @param DeviceDingHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 设备账号向目标用户发送ding消息
+     *  *
+     * @param DeviceDingRequest $request DeviceDingRequest
+     * @param DeviceDingHeaders $headers DeviceDingHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeviceDingResponse
+     * @return DeviceDingResponse DeviceDingResponse
      */
     public function deviceDingWithOptions($request, $headers, $runtime)
     {
@@ -470,9 +492,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeviceDingRequest $request
+     * @summary 设备账号向目标用户发送ding消息
+     *  *
+     * @param DeviceDingRequest $request DeviceDingRequest
      *
-     * @return DeviceDingResponse
+     * @return DeviceDingResponse DeviceDingResponse
      */
     public function deviceDing($request)
     {
@@ -483,11 +507,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DissolveGroupRequest $request
-     * @param DissolveGroupHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 解散设备群
+     *  *
+     * @param DissolveGroupRequest $request DissolveGroupRequest
+     * @param DissolveGroupHeaders $headers DissolveGroupHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DissolveGroupResponse
+     * @return DissolveGroupResponse DissolveGroupResponse
      */
     public function dissolveGroupWithOptions($request, $headers, $runtime)
     {
@@ -523,9 +549,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DissolveGroupRequest $request
+     * @summary 解散设备群
+     *  *
+     * @param DissolveGroupRequest $request DissolveGroupRequest
      *
-     * @return DissolveGroupResponse
+     * @return DissolveGroupResponse DissolveGroupResponse
      */
     public function dissolveGroup($request)
     {
@@ -536,11 +564,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditDeviceAdminRequest $request
-     * @param EditDeviceAdminHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 编辑设备管理员
+     *  *
+     * @param EditDeviceAdminRequest $request EditDeviceAdminRequest
+     * @param EditDeviceAdminHeaders $headers EditDeviceAdminHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditDeviceAdminResponse
+     * @return EditDeviceAdminResponse EditDeviceAdminResponse
      */
     public function editDeviceAdminWithOptions($request, $headers, $runtime)
     {
@@ -585,9 +615,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditDeviceAdminRequest $request
+     * @summary 编辑设备管理员
+     *  *
+     * @param EditDeviceAdminRequest $request EditDeviceAdminRequest
      *
-     * @return EditDeviceAdminResponse
+     * @return EditDeviceAdminResponse EditDeviceAdminResponse
      */
     public function editDeviceAdmin($request)
     {
@@ -598,11 +630,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDeviceGroupInfoRequest $request
-     * @param GetDeviceGroupInfoHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取设备群信息
+     *  *
+     * @param GetDeviceGroupInfoRequest $request GetDeviceGroupInfoRequest
+     * @param GetDeviceGroupInfoHeaders $headers GetDeviceGroupInfoHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDeviceGroupInfoResponse
+     * @return GetDeviceGroupInfoResponse GetDeviceGroupInfoResponse
      */
     public function getDeviceGroupInfoWithOptions($request, $headers, $runtime)
     {
@@ -638,9 +672,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDeviceGroupInfoRequest $request
+     * @summary 获取设备群信息
+     *  *
+     * @param GetDeviceGroupInfoRequest $request GetDeviceGroupInfoRequest
      *
-     * @return GetDeviceGroupInfoResponse
+     * @return GetDeviceGroupInfoResponse GetDeviceGroupInfoResponse
      */
     public function getDeviceGroupInfo($request)
     {
@@ -651,10 +687,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWholeDeviceGroupHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取设备全员群标识
+     *  *
+     * @param GetWholeDeviceGroupHeaders $headers GetWholeDeviceGroupHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetWholeDeviceGroupResponse
+     * @return GetWholeDeviceGroupResponse GetWholeDeviceGroupResponse
      */
     public function getWholeDeviceGroupWithOptions($headers, $runtime)
     {
@@ -684,7 +722,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetWholeDeviceGroupResponse
+     * @summary 获取设备全员群标识
+     *  *
+     * @return GetWholeDeviceGroupResponse GetWholeDeviceGroupResponse
      */
     public function getWholeDeviceGroup()
     {
@@ -695,11 +735,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListActivateDevicesRequest $request
-     * @param ListActivateDevicesHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 查询激活的设备信息
+     *  *
+     * @param ListActivateDevicesRequest $request ListActivateDevicesRequest
+     * @param ListActivateDevicesHeaders $headers ListActivateDevicesHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListActivateDevicesResponse
+     * @return ListActivateDevicesResponse ListActivateDevicesResponse
      */
     public function listActivateDevicesWithOptions($request, $headers, $runtime)
     {
@@ -750,9 +792,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListActivateDevicesRequest $request
+     * @summary 查询激活的设备信息
+     *  *
+     * @param ListActivateDevicesRequest $request ListActivateDevicesRequest
      *
-     * @return ListActivateDevicesResponse
+     * @return ListActivateDevicesResponse ListActivateDevicesResponse
      */
     public function listActivateDevices($request)
     {
@@ -763,11 +807,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListInspectInfoRequest $request
-     * @param ListInspectInfoHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取巡检、保养记录
+     *  *
+     * @param ListInspectInfoRequest $request ListInspectInfoRequest
+     * @param ListInspectInfoHeaders $headers ListInspectInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListInspectInfoResponse
+     * @return ListInspectInfoResponse ListInspectInfoResponse
      */
     public function listInspectInfoWithOptions($request, $headers, $runtime)
     {
@@ -812,9 +858,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListInspectInfoRequest $request
+     * @summary 获取巡检、保养记录
+     *  *
+     * @param ListInspectInfoRequest $request ListInspectInfoRequest
      *
-     * @return ListInspectInfoResponse
+     * @return ListInspectInfoResponse ListInspectInfoResponse
      */
     public function listInspectInfo($request)
     {
@@ -825,11 +873,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListMaintainInfoRequest $request
-     * @param ListMaintainInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取报修信息
+     *  *
+     * @param ListMaintainInfoRequest $request ListMaintainInfoRequest
+     * @param ListMaintainInfoHeaders $headers ListMaintainInfoHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListMaintainInfoResponse
+     * @return ListMaintainInfoResponse ListMaintainInfoResponse
      */
     public function listMaintainInfoWithOptions($request, $headers, $runtime)
     {
@@ -871,9 +921,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListMaintainInfoRequest $request
+     * @summary 获取报修信息
+     *  *
+     * @param ListMaintainInfoRequest $request ListMaintainInfoRequest
      *
-     * @return ListMaintainInfoResponse
+     * @return ListMaintainInfoResponse ListMaintainInfoResponse
      */
     public function listMaintainInfo($request)
     {
@@ -884,11 +936,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullDeviceToGroupRequest $request
-     * @param PullDeviceToGroupHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 拉设备进群
+     *  *
+     * @param PullDeviceToGroupRequest $request PullDeviceToGroupRequest
+     * @param PullDeviceToGroupHeaders $headers PullDeviceToGroupHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return PullDeviceToGroupResponse
+     * @return PullDeviceToGroupResponse PullDeviceToGroupResponse
      */
     public function pullDeviceToGroupWithOptions($request, $headers, $runtime)
     {
@@ -933,9 +987,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullDeviceToGroupRequest $request
+     * @summary 拉设备进群
+     *  *
+     * @param PullDeviceToGroupRequest $request PullDeviceToGroupRequest
      *
-     * @return PullDeviceToGroupResponse
+     * @return PullDeviceToGroupResponse PullDeviceToGroupResponse
      */
     public function pullDeviceToGroup($request)
     {
@@ -946,11 +1002,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullUserToGroupRequest $request
-     * @param PullUserToGroupHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 拉设用户进群
+     *  *
+     * @param PullUserToGroupRequest $request PullUserToGroupRequest
+     * @param PullUserToGroupHeaders $headers PullUserToGroupHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return PullUserToGroupResponse
+     * @return PullUserToGroupResponse PullUserToGroupResponse
      */
     public function pullUserToGroupWithOptions($request, $headers, $runtime)
     {
@@ -989,9 +1047,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullUserToGroupRequest $request
+     * @summary 拉设用户进群
+     *  *
+     * @param PullUserToGroupRequest $request PullUserToGroupRequest
      *
-     * @return PullUserToGroupResponse
+     * @return PullUserToGroupResponse PullUserToGroupResponse
      */
     public function pullUserToGroup($request)
     {
@@ -1002,11 +1062,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterAndActivateDeviceRequest $request
-     * @param RegisterAndActivateDeviceHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 注册与激活设备
+     *  *
+     * @param RegisterAndActivateDeviceRequest $request RegisterAndActivateDeviceRequest
+     * @param RegisterAndActivateDeviceHeaders $headers RegisterAndActivateDeviceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterAndActivateDeviceResponse
+     * @return RegisterAndActivateDeviceResponse RegisterAndActivateDeviceResponse
      */
     public function registerAndActivateDeviceWithOptions($request, $headers, $runtime)
     {
@@ -1066,9 +1128,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterAndActivateDeviceRequest $request
+     * @summary 注册与激活设备
+     *  *
+     * @param RegisterAndActivateDeviceRequest $request RegisterAndActivateDeviceRequest
      *
-     * @return RegisterAndActivateDeviceResponse
+     * @return RegisterAndActivateDeviceResponse RegisterAndActivateDeviceResponse
      */
     public function registerAndActivateDevice($request)
     {
@@ -1079,11 +1143,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterAndActivateDeviceBatchRequest $request
-     * @param RegisterAndActivateDeviceBatchHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 批量注册与激活设备
+     *  *
+     * @param RegisterAndActivateDeviceBatchRequest $request RegisterAndActivateDeviceBatchRequest
+     * @param RegisterAndActivateDeviceBatchHeaders $headers RegisterAndActivateDeviceBatchHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterAndActivateDeviceBatchResponse
+     * @return RegisterAndActivateDeviceBatchResponse RegisterAndActivateDeviceBatchResponse
      */
     public function registerAndActivateDeviceBatchWithOptions($request, $headers, $runtime)
     {
@@ -1119,9 +1185,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterAndActivateDeviceBatchRequest $request
+     * @summary 批量注册与激活设备
+     *  *
+     * @param RegisterAndActivateDeviceBatchRequest $request RegisterAndActivateDeviceBatchRequest
      *
-     * @return RegisterAndActivateDeviceBatchResponse
+     * @return RegisterAndActivateDeviceBatchResponse RegisterAndActivateDeviceBatchResponse
      */
     public function registerAndActivateDeviceBatch($request)
     {
@@ -1132,11 +1200,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterDeviceRequest $request
-     * @param RegisterDeviceHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 注册设备并为其创建机器人
+     *  *
+     * @param RegisterDeviceRequest $request RegisterDeviceRequest
+     * @param RegisterDeviceHeaders $headers RegisterDeviceHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return RegisterDeviceResponse
+     * @return RegisterDeviceResponse RegisterDeviceResponse
      */
     public function registerDeviceWithOptions($request, $headers, $runtime)
     {
@@ -1190,9 +1260,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RegisterDeviceRequest $request
+     * @summary 注册设备并为其创建机器人
+     *  *
+     * @param RegisterDeviceRequest $request RegisterDeviceRequest
      *
-     * @return RegisterDeviceResponse
+     * @return RegisterDeviceResponse RegisterDeviceResponse
      */
     public function registerDevice($request)
     {
@@ -1203,11 +1275,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveDeviceFromGroupRequest $request
-     * @param RemoveDeviceFromGroupHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 移设备出群
+     *  *
+     * @param RemoveDeviceFromGroupRequest $request RemoveDeviceFromGroupRequest
+     * @param RemoveDeviceFromGroupHeaders $headers RemoveDeviceFromGroupHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveDeviceFromGroupResponse
+     * @return RemoveDeviceFromGroupResponse RemoveDeviceFromGroupResponse
      */
     public function removeDeviceFromGroupWithOptions($request, $headers, $runtime)
     {
@@ -1252,9 +1326,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveDeviceFromGroupRequest $request
+     * @summary 移设备出群
+     *  *
+     * @param RemoveDeviceFromGroupRequest $request RemoveDeviceFromGroupRequest
      *
-     * @return RemoveDeviceFromGroupResponse
+     * @return RemoveDeviceFromGroupResponse RemoveDeviceFromGroupResponse
      */
     public function removeDeviceFromGroup($request)
     {
@@ -1265,11 +1341,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveUserFromGroupRequest $request
-     * @param RemoveUserFromGroupHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 移用户出设备群
+     *  *
+     * @param RemoveUserFromGroupRequest $request RemoveUserFromGroupRequest
+     * @param RemoveUserFromGroupHeaders $headers RemoveUserFromGroupHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return RemoveUserFromGroupResponse
+     * @return RemoveUserFromGroupResponse RemoveUserFromGroupResponse
      */
     public function removeUserFromGroupWithOptions($request, $headers, $runtime)
     {
@@ -1308,9 +1386,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveUserFromGroupRequest $request
+     * @summary 移用户出设备群
+     *  *
+     * @param RemoveUserFromGroupRequest $request RemoveUserFromGroupRequest
      *
-     * @return RemoveUserFromGroupResponse
+     * @return RemoveUserFromGroupResponse RemoveUserFromGroupResponse
      */
     public function removeUserFromGroup($request)
     {
@@ -1321,11 +1401,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendCardRequest $request
-     * @param SendCardHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 发送卡片
+     *  *
+     * @param SendCardRequest $request SendCardRequest
+     * @param SendCardHeaders $headers SendCardHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendCardResponse
+     * @return SendCardResponse SendCardResponse
      */
     public function sendCardWithOptions($request, $headers, $runtime)
     {
@@ -1388,9 +1470,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendCardRequest $request
+     * @summary 发送卡片
+     *  *
+     * @param SendCardRequest $request SendCardRequest
      *
-     * @return SendCardResponse
+     * @return SendCardResponse SendCardResponse
      */
     public function sendCard($request)
     {
@@ -1401,11 +1485,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMsgRequest $request
-     * @param SendMsgHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 发送普通消息
+     *  *
+     * @param SendMsgRequest $request SendMsgRequest
+     * @param SendMsgHeaders $headers SendMsgHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendMsgResponse
+     * @return SendMsgResponse SendMsgResponse
      */
     public function sendMsgWithOptions($request, $headers, $runtime)
     {
@@ -1453,9 +1539,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMsgRequest $request
+     * @summary 发送普通消息
+     *  *
+     * @param SendMsgRequest $request SendMsgRequest
      *
-     * @return SendMsgResponse
+     * @return SendMsgResponse SendMsgResponse
      */
     public function sendMsg($request)
     {
@@ -1466,11 +1554,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UninstallDeviceRobotRequest $request
-     * @param UninstallDeviceRobotHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 卸载设备
+     *  *
+     * @param UninstallDeviceRobotRequest $request UninstallDeviceRobotRequest
+     * @param UninstallDeviceRobotHeaders $headers UninstallDeviceRobotHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UninstallDeviceRobotResponse
+     * @return UninstallDeviceRobotResponse UninstallDeviceRobotResponse
      */
     public function uninstallDeviceRobotWithOptions($request, $headers, $runtime)
     {
@@ -1509,9 +1599,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UninstallDeviceRobotRequest $request
+     * @summary 卸载设备
+     *  *
+     * @param UninstallDeviceRobotRequest $request UninstallDeviceRobotRequest
      *
-     * @return UninstallDeviceRobotResponse
+     * @return UninstallDeviceRobotResponse UninstallDeviceRobotResponse
      */
     public function uninstallDeviceRobot($request)
     {
@@ -1522,11 +1614,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardRequest $request
-     * @param UpdateCardHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardRequest $request UpdateCardRequest
+     * @param UpdateCardHeaders $headers UpdateCardHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateCardResponse
+     * @return UpdateCardResponse UpdateCardResponse
      */
     public function updateCardWithOptions($request, $headers, $runtime)
     {
@@ -1568,9 +1662,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCardRequest $request
+     * @summary 更新卡片
+     *  *
+     * @param UpdateCardRequest $request UpdateCardRequest
      *
-     * @return UpdateCardResponse
+     * @return UpdateCardResponse UpdateCardResponse
      */
     public function updateCard($request)
     {
@@ -1581,11 +1677,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UploadEventRequest $request
-     * @param UploadEventHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 设备事件上报
+     *  *
+     * @param UploadEventRequest $request UploadEventRequest
+     * @param UploadEventHeaders $headers UploadEventHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return UploadEventResponse
+     * @return UploadEventResponse UploadEventResponse
      */
     public function uploadEventWithOptions($request, $headers, $runtime)
     {
@@ -1639,9 +1737,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UploadEventRequest $request
+     * @summary 设备事件上报
+     *  *
+     * @param UploadEventRequest $request UploadEventRequest
      *
-     * @return UploadEventResponse
+     * @return UploadEventResponse UploadEventResponse
      */
     public function uploadEvent($request)
     {

@@ -131,11 +131,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelScheduleConferenceRequest $request
-     * @param CancelScheduleConferenceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 取消预约会议
+     *  *
+     * @param CancelScheduleConferenceRequest $request CancelScheduleConferenceRequest
+     * @param CancelScheduleConferenceHeaders $headers CancelScheduleConferenceHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return CancelScheduleConferenceResponse
+     * @return CancelScheduleConferenceResponse CancelScheduleConferenceResponse
      */
     public function cancelScheduleConferenceWithOptions($request, $headers, $runtime)
     {
@@ -174,9 +176,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelScheduleConferenceRequest $request
+     * @summary 取消预约会议
+     *  *
+     * @param CancelScheduleConferenceRequest $request CancelScheduleConferenceRequest
      *
-     * @return CancelScheduleConferenceResponse
+     * @return CancelScheduleConferenceResponse CancelScheduleConferenceResponse
      */
     public function cancelScheduleConference($request)
     {
@@ -187,12 +191,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关闭视频会议
+     *  *
      * @param string                      $conferenceId
-     * @param CloseVideoConferenceRequest $request
-     * @param CloseVideoConferenceHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param CloseVideoConferenceRequest $request      CloseVideoConferenceRequest
+     * @param CloseVideoConferenceHeaders $headers      CloseVideoConferenceHeaders
+     * @param RuntimeOptions              $runtime      runtime options for this request RuntimeOptions
      *
-     * @return CloseVideoConferenceResponse
+     * @return CloseVideoConferenceResponse CloseVideoConferenceResponse
      */
     public function closeVideoConferenceWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -228,10 +234,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关闭视频会议
+     *  *
      * @param string                      $conferenceId
-     * @param CloseVideoConferenceRequest $request
+     * @param CloseVideoConferenceRequest $request      CloseVideoConferenceRequest
      *
-     * @return CloseVideoConferenceResponse
+     * @return CloseVideoConferenceResponse CloseVideoConferenceResponse
      */
     public function closeVideoConference($conferenceId, $request)
     {
@@ -242,12 +250,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置联席主持人
+     *  *
      * @param string         $conferenceId
-     * @param CohostsRequest $request
-     * @param CohostsHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param CohostsRequest $request      CohostsRequest
+     * @param CohostsHeaders $headers      CohostsHeaders
+     * @param RuntimeOptions $runtime      runtime options for this request RuntimeOptions
      *
-     * @return CohostsResponse
+     * @return CohostsResponse CohostsResponse
      */
     public function cohostsWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -286,10 +296,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置联席主持人
+     *  *
      * @param string         $conferenceId
-     * @param CohostsRequest $request
+     * @param CohostsRequest $request      CohostsRequest
      *
-     * @return CohostsResponse
+     * @return CohostsResponse CohostsResponse
      */
     public function cohosts($conferenceId, $request)
     {
@@ -300,11 +312,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomShortLinkRequest $request
-     * @param CreateCustomShortLinkHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 创建专属短链
+     *  *
+     * @param CreateCustomShortLinkRequest $request CreateCustomShortLinkRequest
+     * @param CreateCustomShortLinkHeaders $headers CreateCustomShortLinkHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCustomShortLinkResponse
+     * @return CreateCustomShortLinkResponse CreateCustomShortLinkResponse
      */
     public function createCustomShortLinkWithOptions($request, $headers, $runtime)
     {
@@ -352,9 +366,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomShortLinkRequest $request
+     * @summary 创建专属短链
+     *  *
+     * @param CreateCustomShortLinkRequest $request CreateCustomShortLinkRequest
      *
-     * @return CreateCustomShortLinkResponse
+     * @return CreateCustomShortLinkResponse CreateCustomShortLinkResponse
      */
     public function createCustomShortLink($request)
     {
@@ -365,11 +381,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateScheduleConferenceRequest $request
-     * @param CreateScheduleConferenceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 创建预约会议
+     *  *
+     * @param CreateScheduleConferenceRequest $request CreateScheduleConferenceRequest
+     * @param CreateScheduleConferenceHeaders $headers CreateScheduleConferenceHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateScheduleConferenceResponse
+     * @return CreateScheduleConferenceResponse CreateScheduleConferenceResponse
      */
     public function createScheduleConferenceWithOptions($request, $headers, $runtime)
     {
@@ -414,9 +432,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateScheduleConferenceRequest $request
+     * @summary 创建预约会议
+     *  *
+     * @param CreateScheduleConferenceRequest $request CreateScheduleConferenceRequest
      *
-     * @return CreateScheduleConferenceResponse
+     * @return CreateScheduleConferenceResponse CreateScheduleConferenceResponse
      */
     public function createScheduleConference($request)
     {
@@ -427,11 +447,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateVideoConferenceRequest $request
-     * @param CreateVideoConferenceHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 创建视频会议
+     *  *
+     * @param CreateVideoConferenceRequest $request CreateVideoConferenceRequest
+     * @param CreateVideoConferenceHeaders $headers CreateVideoConferenceHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateVideoConferenceResponse
+     * @return CreateVideoConferenceResponse CreateVideoConferenceResponse
      */
     public function createVideoConferenceWithOptions($request, $headers, $runtime)
     {
@@ -476,9 +498,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateVideoConferenceRequest $request
+     * @summary 创建视频会议
+     *  *
+     * @param CreateVideoConferenceRequest $request CreateVideoConferenceRequest
      *
-     * @return CreateVideoConferenceResponse
+     * @return CreateVideoConferenceResponse CreateVideoConferenceResponse
      */
     public function createVideoConference($request)
     {
@@ -489,12 +513,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置全员看他
+     *  *
      * @param string         $conferenceId
-     * @param FocusRequest   $request
-     * @param FocusHeaders   $headers
-     * @param RuntimeOptions $runtime
+     * @param FocusRequest   $request      FocusRequest
+     * @param FocusHeaders   $headers      FocusHeaders
+     * @param RuntimeOptions $runtime      runtime options for this request RuntimeOptions
      *
-     * @return FocusResponse
+     * @return FocusResponse FocusResponse
      */
     public function focusWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -533,10 +559,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置全员看他
+     *  *
      * @param string       $conferenceId
-     * @param FocusRequest $request
+     * @param FocusRequest $request      FocusRequest
      *
-     * @return FocusResponse
+     * @return FocusResponse FocusResponse
      */
     public function focus($conferenceId, $request)
     {
@@ -547,12 +575,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId获取指定音视频会议信息
+     *  *
      * @param string                           $conferenceId
-     * @param GetConfDataByConferenceIdRequest $request
-     * @param GetConfDataByConferenceIdHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param GetConfDataByConferenceIdRequest $request      GetConfDataByConferenceIdRequest
+     * @param GetConfDataByConferenceIdHeaders $headers      GetConfDataByConferenceIdHeaders
+     * @param RuntimeOptions                   $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetConfDataByConferenceIdResponse
+     * @return GetConfDataByConferenceIdResponse GetConfDataByConferenceIdResponse
      */
     public function getConfDataByConferenceIdWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -588,10 +618,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId获取指定音视频会议信息
+     *  *
      * @param string                           $conferenceId
-     * @param GetConfDataByConferenceIdRequest $request
+     * @param GetConfDataByConferenceIdRequest $request      GetConfDataByConferenceIdRequest
      *
-     * @return GetConfDataByConferenceIdResponse
+     * @return GetConfDataByConferenceIdResponse GetConfDataByConferenceIdResponse
      */
     public function getConfDataByConferenceId($conferenceId, $request)
     {
@@ -602,12 +634,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId获取指定音视频会议成员信息
+     *  *
      * @param string                   $conferenceId
-     * @param GetConfDetailDataRequest $request
-     * @param GetConfDetailDataHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetConfDetailDataRequest $request      GetConfDetailDataRequest
+     * @param GetConfDetailDataHeaders $headers      GetConfDetailDataHeaders
+     * @param RuntimeOptions           $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetConfDetailDataResponse
+     * @return GetConfDetailDataResponse GetConfDetailDataResponse
      */
     public function getConfDetailDataWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -649,10 +683,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId获取指定音视频会议成员信息
+     *  *
      * @param string                   $conferenceId
-     * @param GetConfDetailDataRequest $request
+     * @param GetConfDetailDataRequest $request      GetConfDetailDataRequest
      *
-     * @return GetConfDetailDataResponse
+     * @return GetConfDetailDataResponse GetConfDetailDataResponse
      */
     public function getConfDetailData($conferenceId, $request)
     {
@@ -663,11 +699,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHistoryConfDataListRequest $request
-     * @param GetHistoryConfDataListHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取音视频会议列表数据
+     *  *
+     * @param GetHistoryConfDataListRequest $request GetHistoryConfDataListRequest
+     * @param GetHistoryConfDataListHeaders $headers GetHistoryConfDataListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetHistoryConfDataListResponse
+     * @return GetHistoryConfDataListResponse GetHistoryConfDataListResponse
      */
     public function getHistoryConfDataListWithOptions($request, $headers, $runtime)
     {
@@ -727,9 +765,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHistoryConfDataListRequest $request
+     * @summary 获取音视频会议列表数据
+     *  *
+     * @param GetHistoryConfDataListRequest $request GetHistoryConfDataListRequest
      *
-     * @return GetHistoryConfDataListResponse
+     * @return GetHistoryConfDataListResponse GetHistoryConfDataListResponse
      */
     public function getHistoryConfDataList($request)
     {
@@ -740,12 +780,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId和unionId获取最新会议质量数据
+     *  *
      * @param string                   $conferenceId
-     * @param GetUserLastMetricRequest $request
-     * @param GetUserLastMetricHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetUserLastMetricRequest $request      GetUserLastMetricRequest
+     * @param GetUserLastMetricHeaders $headers      GetUserLastMetricHeaders
+     * @param RuntimeOptions           $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetUserLastMetricResponse
+     * @return GetUserLastMetricResponse GetUserLastMetricResponse
      */
     public function getUserLastMetricWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -781,10 +823,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId和unionId获取最新会议质量数据
+     *  *
      * @param string                   $conferenceId
-     * @param GetUserLastMetricRequest $request
+     * @param GetUserLastMetricRequest $request      GetUserLastMetricRequest
      *
-     * @return GetUserLastMetricResponse
+     * @return GetUserLastMetricResponse GetUserLastMetricResponse
      */
     public function getUserLastMetric($conferenceId, $request)
     {
@@ -795,12 +839,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+     *  *
      * @param string                   $conferenceId
-     * @param GetUserMetricDataRequest $request
-     * @param GetUserMetricDataHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetUserMetricDataRequest $request      GetUserMetricDataRequest
+     * @param GetUserMetricDataHeaders $headers      GetUserMetricDataHeaders
+     * @param RuntimeOptions           $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetUserMetricDataResponse
+     * @return GetUserMetricDataResponse GetUserMetricDataResponse
      */
     public function getUserMetricDataWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -842,10 +888,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+     *  *
      * @param string                   $conferenceId
-     * @param GetUserMetricDataRequest $request
+     * @param GetUserMetricDataRequest $request      GetUserMetricDataRequest
      *
-     * @return GetUserMetricDataResponse
+     * @return GetUserMetricDataResponse GetUserMetricDataResponse
      */
     public function getUserMetricData($conferenceId, $request)
     {
@@ -856,12 +904,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 邀请其他人员
+     *  *
      * @param string             $conferenceId
-     * @param InviteUsersRequest $request
-     * @param InviteUsersHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param InviteUsersRequest $request      InviteUsersRequest
+     * @param InviteUsersHeaders $headers      InviteUsersHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
      *
-     * @return InviteUsersResponse
+     * @return InviteUsersResponse InviteUsersResponse
      */
     public function inviteUsersWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -903,10 +953,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 邀请其他人员
+     *  *
      * @param string             $conferenceId
-     * @param InviteUsersRequest $request
+     * @param InviteUsersRequest $request      InviteUsersRequest
      *
-     * @return InviteUsersResponse
+     * @return InviteUsersResponse InviteUsersResponse
      */
     public function inviteUsers($conferenceId, $request)
     {
@@ -917,12 +969,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议踢出成员
+     *  *
      * @param string             $conferenceId
-     * @param KickMembersRequest $request
-     * @param KickMembersHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param KickMembersRequest $request      KickMembersRequest
+     * @param KickMembersHeaders $headers      KickMembersHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
      *
-     * @return KickMembersResponse
+     * @return KickMembersResponse KickMembersResponse
      */
     public function kickMembersWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -961,10 +1015,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议踢出成员
+     *  *
      * @param string             $conferenceId
-     * @param KickMembersRequest $request
+     * @param KickMembersRequest $request      KickMembersRequest
      *
-     * @return KickMembersResponse
+     * @return KickMembersResponse KickMembersResponse
      */
     public function kickMembers($conferenceId, $request)
     {
@@ -975,12 +1031,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 锁定会议
+     *  *
      * @param string                $conferenceId
-     * @param LockConferenceRequest $request
-     * @param LockConferenceHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param LockConferenceRequest $request      LockConferenceRequest
+     * @param LockConferenceHeaders $headers      LockConferenceHeaders
+     * @param RuntimeOptions        $runtime      runtime options for this request RuntimeOptions
      *
-     * @return LockConferenceResponse
+     * @return LockConferenceResponse LockConferenceResponse
      */
     public function lockConferenceWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1016,10 +1074,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 锁定会议
+     *  *
      * @param string                $conferenceId
-     * @param LockConferenceRequest $request
+     * @param LockConferenceRequest $request      LockConferenceRequest
      *
-     * @return LockConferenceResponse
+     * @return LockConferenceResponse LockConferenceResponse
      */
     public function lockConference($conferenceId, $request)
     {
@@ -1030,12 +1090,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议全员静音或解除静音
+     *  *
      * @param string         $conferenceId
-     * @param MuteAllRequest $request
-     * @param MuteAllHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param MuteAllRequest $request      MuteAllRequest
+     * @param MuteAllHeaders $headers      MuteAllHeaders
+     * @param RuntimeOptions $runtime      runtime options for this request RuntimeOptions
      *
-     * @return MuteAllResponse
+     * @return MuteAllResponse MuteAllResponse
      */
     public function muteAllWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1074,10 +1136,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议全员静音或解除静音
+     *  *
      * @param string         $conferenceId
-     * @param MuteAllRequest $request
+     * @param MuteAllRequest $request      MuteAllRequest
      *
-     * @return MuteAllResponse
+     * @return MuteAllResponse MuteAllResponse
      */
     public function muteAll($conferenceId, $request)
     {
@@ -1088,12 +1152,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定人员静音或取消静音
+     *  *
      * @param string             $conferenceId
-     * @param MuteMembersRequest $request
-     * @param MuteMembersHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param MuteMembersRequest $request      MuteMembersRequest
+     * @param MuteMembersHeaders $headers      MuteMembersHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
      *
-     * @return MuteMembersResponse
+     * @return MuteMembersResponse MuteMembersResponse
      */
     public function muteMembersWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1132,10 +1198,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定人员静音或取消静音
+     *  *
      * @param string             $conferenceId
-     * @param MuteMembersRequest $request
+     * @param MuteMembersRequest $request      MuteMembersRequest
      *
-     * @return MuteMembersResponse
+     * @return MuteMembersResponse MuteMembersResponse
      */
     public function muteMembers($conferenceId, $request)
     {
@@ -1146,12 +1214,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制文本信息
+     *  *
      * @param string                      $conferenceId
-     * @param QueryCloudRecordTextRequest $request
-     * @param QueryCloudRecordTextHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryCloudRecordTextRequest $request      QueryCloudRecordTextRequest
+     * @param QueryCloudRecordTextHeaders $headers      QueryCloudRecordTextHeaders
+     * @param RuntimeOptions              $runtime      runtime options for this request RuntimeOptions
      *
-     * @return QueryCloudRecordTextResponse
+     * @return QueryCloudRecordTextResponse QueryCloudRecordTextResponse
      */
     public function queryCloudRecordTextWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1199,10 +1269,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制文本信息
+     *  *
      * @param string                      $conferenceId
-     * @param QueryCloudRecordTextRequest $request
+     * @param QueryCloudRecordTextRequest $request      QueryCloudRecordTextRequest
      *
-     * @return QueryCloudRecordTextResponse
+     * @return QueryCloudRecordTextResponse QueryCloudRecordTextResponse
      */
     public function queryCloudRecordText($conferenceId, $request)
     {
@@ -1213,12 +1285,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制视频
+     *  *
      * @param string                       $conferenceId
-     * @param QueryCloudRecordVideoRequest $request
-     * @param QueryCloudRecordVideoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param QueryCloudRecordVideoRequest $request      QueryCloudRecordVideoRequest
+     * @param QueryCloudRecordVideoHeaders $headers      QueryCloudRecordVideoHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
      *
-     * @return QueryCloudRecordVideoResponse
+     * @return QueryCloudRecordVideoResponse QueryCloudRecordVideoResponse
      */
     public function queryCloudRecordVideoWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1254,10 +1328,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制视频
+     *  *
      * @param string                       $conferenceId
-     * @param QueryCloudRecordVideoRequest $request
+     * @param QueryCloudRecordVideoRequest $request      QueryCloudRecordVideoRequest
      *
-     * @return QueryCloudRecordVideoResponse
+     * @return QueryCloudRecordVideoResponse QueryCloudRecordVideoResponse
      */
     public function queryCloudRecordVideo($conferenceId, $request)
     {
@@ -1268,12 +1344,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制视频播放信息
+     *  *
      * @param string                               $conferenceId
-     * @param QueryCloudRecordVideoPlayInfoRequest $request
-     * @param QueryCloudRecordVideoPlayInfoHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param QueryCloudRecordVideoPlayInfoRequest $request      QueryCloudRecordVideoPlayInfoRequest
+     * @param QueryCloudRecordVideoPlayInfoHeaders $headers      QueryCloudRecordVideoPlayInfoHeaders
+     * @param RuntimeOptions                       $runtime      runtime options for this request RuntimeOptions
      *
-     * @return QueryCloudRecordVideoPlayInfoResponse
+     * @return QueryCloudRecordVideoPlayInfoResponse QueryCloudRecordVideoPlayInfoResponse
      */
     public function queryCloudRecordVideoPlayInfoWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1315,10 +1393,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询云录制视频播放信息
+     *  *
      * @param string                               $conferenceId
-     * @param QueryCloudRecordVideoPlayInfoRequest $request
+     * @param QueryCloudRecordVideoPlayInfoRequest $request      QueryCloudRecordVideoPlayInfoRequest
      *
-     * @return QueryCloudRecordVideoPlayInfoResponse
+     * @return QueryCloudRecordVideoPlayInfoResponse QueryCloudRecordVideoPlayInfoResponse
      */
     public function queryCloudRecordVideoPlayInfo($conferenceId, $request)
     {
@@ -1329,11 +1409,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询视频会议信息
+     *  *
      * @param string                     $conferenceId
-     * @param QueryConferenceInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryConferenceInfoHeaders $headers      QueryConferenceInfoHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
      *
-     * @return QueryConferenceInfoResponse
+     * @return QueryConferenceInfoResponse QueryConferenceInfoResponse
      */
     public function queryConferenceInfoWithOptions($conferenceId, $headers, $runtime)
     {
@@ -1363,9 +1445,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询视频会议信息
+     *  *
      * @param string $conferenceId
      *
-     * @return QueryConferenceInfoResponse
+     * @return QueryConferenceInfoResponse QueryConferenceInfoResponse
      */
     public function queryConferenceInfo($conferenceId)
     {
@@ -1376,11 +1460,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryConferenceInfoBatchRequest $request
-     * @param QueryConferenceInfoBatchHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 批量查询视频会议信息
+     *  *
+     * @param QueryConferenceInfoBatchRequest $request QueryConferenceInfoBatchRequest
+     * @param QueryConferenceInfoBatchHeaders $headers QueryConferenceInfoBatchHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryConferenceInfoBatchResponse
+     * @return QueryConferenceInfoBatchResponse QueryConferenceInfoBatchResponse
      */
     public function queryConferenceInfoBatchWithOptions($request, $headers, $runtime)
     {
@@ -1416,9 +1502,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryConferenceInfoBatchRequest $request
+     * @summary 批量查询视频会议信息
+     *  *
+     * @param QueryConferenceInfoBatchRequest $request QueryConferenceInfoBatchRequest
      *
-     * @return QueryConferenceInfoBatchResponse
+     * @return QueryConferenceInfoBatchResponse QueryConferenceInfoBatchResponse
      */
     public function queryConferenceInfoBatch($request)
     {
@@ -1429,12 +1517,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询视频会议成员
+     *  *
      * @param string                        $conferenceId
-     * @param QueryConferenceMembersRequest $request
-     * @param QueryConferenceMembersHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param QueryConferenceMembersRequest $request      QueryConferenceMembersRequest
+     * @param QueryConferenceMembersHeaders $headers      QueryConferenceMembersHeaders
+     * @param RuntimeOptions                $runtime      runtime options for this request RuntimeOptions
      *
-     * @return QueryConferenceMembersResponse
+     * @return QueryConferenceMembersResponse QueryConferenceMembersResponse
      */
     public function queryConferenceMembersWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1473,10 +1563,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询视频会议成员
+     *  *
      * @param string                        $conferenceId
-     * @param QueryConferenceMembersRequest $request
+     * @param QueryConferenceMembersRequest $request      QueryConferenceMembersRequest
      *
-     * @return QueryConferenceMembersResponse
+     * @return QueryConferenceMembersResponse QueryConferenceMembersResponse
      */
     public function queryConferenceMembers($conferenceId, $request)
     {
@@ -1487,11 +1579,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryScheduleConfSettingsRequest $request
-     * @param QueryScheduleConfSettingsHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询预约会议设置
+     *  *
+     * @param QueryScheduleConfSettingsRequest $request QueryScheduleConfSettingsRequest
+     * @param QueryScheduleConfSettingsHeaders $headers QueryScheduleConfSettingsHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryScheduleConfSettingsResponse
+     * @return QueryScheduleConfSettingsResponse QueryScheduleConfSettingsResponse
      */
     public function queryScheduleConfSettingsWithOptions($request, $headers, $runtime)
     {
@@ -1527,9 +1621,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryScheduleConfSettingsRequest $request
+     * @summary 查询预约会议设置
+     *  *
+     * @param QueryScheduleConfSettingsRequest $request QueryScheduleConfSettingsRequest
      *
-     * @return QueryScheduleConfSettingsResponse
+     * @return QueryScheduleConfSettingsResponse QueryScheduleConfSettingsResponse
      */
     public function queryScheduleConfSettings($request)
     {
@@ -1540,12 +1636,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询预约会议信息
+     *  *
      * @param string                         $scheduleConferenceId
-     * @param QueryScheduleConferenceRequest $request
-     * @param QueryScheduleConferenceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param QueryScheduleConferenceRequest $request              QueryScheduleConferenceRequest
+     * @param QueryScheduleConferenceHeaders $headers              QueryScheduleConferenceHeaders
+     * @param RuntimeOptions                 $runtime              runtime options for this request RuntimeOptions
      *
-     * @return QueryScheduleConferenceResponse
+     * @return QueryScheduleConferenceResponse QueryScheduleConferenceResponse
      */
     public function queryScheduleConferenceWithOptions($scheduleConferenceId, $request, $headers, $runtime)
     {
@@ -1581,10 +1679,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询预约会议信息
+     *  *
      * @param string                         $scheduleConferenceId
-     * @param QueryScheduleConferenceRequest $request
+     * @param QueryScheduleConferenceRequest $request              QueryScheduleConferenceRequest
      *
-     * @return QueryScheduleConferenceResponse
+     * @return QueryScheduleConferenceResponse QueryScheduleConferenceResponse
      */
     public function queryScheduleConference($scheduleConferenceId, $request)
     {
@@ -1595,12 +1695,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+     *  *
      * @param string                             $scheduleConferenceId
-     * @param QueryScheduleConferenceInfoRequest $request
-     * @param QueryScheduleConferenceInfoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param QueryScheduleConferenceInfoRequest $request              QueryScheduleConferenceInfoRequest
+     * @param QueryScheduleConferenceInfoHeaders $headers              QueryScheduleConferenceInfoHeaders
+     * @param RuntimeOptions                     $runtime              runtime options for this request RuntimeOptions
      *
-     * @return QueryScheduleConferenceInfoResponse
+     * @return QueryScheduleConferenceInfoResponse QueryScheduleConferenceInfoResponse
      */
     public function queryScheduleConferenceInfoWithOptions($scheduleConferenceId, $request, $headers, $runtime)
     {
@@ -1639,10 +1741,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+     *  *
      * @param string                             $scheduleConferenceId
-     * @param QueryScheduleConferenceInfoRequest $request
+     * @param QueryScheduleConferenceInfoRequest $request              QueryScheduleConferenceInfoRequest
      *
-     * @return QueryScheduleConferenceInfoResponse
+     * @return QueryScheduleConferenceInfoResponse QueryScheduleConferenceInfoResponse
      */
     public function queryScheduleConferenceInfo($scheduleConferenceId, $request)
     {
@@ -1653,11 +1757,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserOnGoingConferenceRequest $request
-     * @param QueryUserOnGoingConferenceHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 查询用户进行中会议
+     *  *
+     * @param QueryUserOnGoingConferenceRequest $request QueryUserOnGoingConferenceRequest
+     * @param QueryUserOnGoingConferenceHeaders $headers QueryUserOnGoingConferenceHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUserOnGoingConferenceResponse
+     * @return QueryUserOnGoingConferenceResponse QueryUserOnGoingConferenceResponse
      */
     public function queryUserOnGoingConferenceWithOptions($request, $headers, $runtime)
     {
@@ -1693,9 +1799,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserOnGoingConferenceRequest $request
+     * @summary 查询用户进行中会议
+     *  *
+     * @param QueryUserOnGoingConferenceRequest $request QueryUserOnGoingConferenceRequest
      *
-     * @return QueryUserOnGoingConferenceResponse
+     * @return QueryUserOnGoingConferenceResponse QueryUserOnGoingConferenceResponse
      */
     public function queryUserOnGoingConference($request)
     {
@@ -1706,12 +1814,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开启云录制
+     *  *
      * @param string                  $conferenceId
-     * @param StartCloudRecordRequest $request
-     * @param StartCloudRecordHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param StartCloudRecordRequest $request      StartCloudRecordRequest
+     * @param StartCloudRecordHeaders $headers      StartCloudRecordHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
      *
-     * @return StartCloudRecordResponse
+     * @return StartCloudRecordResponse StartCloudRecordResponse
      */
     public function startCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1753,10 +1863,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开启云录制
+     *  *
      * @param string                  $conferenceId
-     * @param StartCloudRecordRequest $request
+     * @param StartCloudRecordRequest $request      StartCloudRecordRequest
      *
-     * @return StartCloudRecordResponse
+     * @return StartCloudRecordResponse StartCloudRecordResponse
      */
     public function startCloudRecord($conferenceId, $request)
     {
@@ -1767,12 +1879,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议开始直播推流
+     *  *
      * @param string                $conferenceId
-     * @param StartStreamOutRequest $request
-     * @param StartStreamOutHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param StartStreamOutRequest $request      StartStreamOutRequest
+     * @param StartStreamOutHeaders $headers      StartStreamOutHeaders
+     * @param RuntimeOptions        $runtime      runtime options for this request RuntimeOptions
      *
-     * @return StartStreamOutResponse
+     * @return StartStreamOutResponse StartStreamOutResponse
      */
     public function startStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1823,10 +1937,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议开始直播推流
+     *  *
      * @param string                $conferenceId
-     * @param StartStreamOutRequest $request
+     * @param StartStreamOutRequest $request      StartStreamOutRequest
      *
-     * @return StartStreamOutResponse
+     * @return StartStreamOutResponse StartStreamOutResponse
      */
     public function startStreamOut($conferenceId, $request)
     {
@@ -1837,12 +1953,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关闭云录制
+     *  *
      * @param string                 $conferenceId
-     * @param StopCloudRecordRequest $request
-     * @param StopCloudRecordHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param StopCloudRecordRequest $request      StopCloudRecordRequest
+     * @param StopCloudRecordHeaders $headers      StopCloudRecordHeaders
+     * @param RuntimeOptions         $runtime      runtime options for this request RuntimeOptions
      *
-     * @return StopCloudRecordResponse
+     * @return StopCloudRecordResponse StopCloudRecordResponse
      */
     public function stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1878,10 +1996,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关闭云录制
+     *  *
      * @param string                 $conferenceId
-     * @param StopCloudRecordRequest $request
+     * @param StopCloudRecordRequest $request      StopCloudRecordRequest
      *
-     * @return StopCloudRecordResponse
+     * @return StopCloudRecordResponse StopCloudRecordResponse
      */
     public function stopCloudRecord($conferenceId, $request)
     {
@@ -1892,12 +2012,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议停止直播推流
+     *  *
      * @param string               $conferenceId
-     * @param StopStreamOutRequest $request
-     * @param StopStreamOutHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param StopStreamOutRequest $request      StopStreamOutRequest
+     * @param StopStreamOutHeaders $headers      StopStreamOutHeaders
+     * @param RuntimeOptions       $runtime      runtime options for this request RuntimeOptions
      *
-     * @return StopStreamOutResponse
+     * @return StopStreamOutResponse StopStreamOutResponse
      */
     public function stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -1939,10 +2061,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 会议停止直播推流
+     *  *
      * @param string               $conferenceId
-     * @param StopStreamOutRequest $request
+     * @param StopStreamOutRequest $request      StopStreamOutRequest
      *
-     * @return StopStreamOutResponse
+     * @return StopStreamOutResponse StopStreamOutResponse
      */
     public function stopStreamOut($conferenceId, $request)
     {
@@ -1953,11 +2077,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateScheduleConfSettingsRequest $request
-     * @param UpdateScheduleConfSettingsHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 更新预约会议设置
+     *  *
+     * @param UpdateScheduleConfSettingsRequest $request UpdateScheduleConfSettingsRequest
+     * @param UpdateScheduleConfSettingsHeaders $headers UpdateScheduleConfSettingsHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateScheduleConfSettingsResponse
+     * @return UpdateScheduleConfSettingsResponse UpdateScheduleConfSettingsResponse
      */
     public function updateScheduleConfSettingsWithOptions($request, $headers, $runtime)
     {
@@ -1999,9 +2125,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateScheduleConfSettingsRequest $request
+     * @summary 更新预约会议设置
+     *  *
+     * @param UpdateScheduleConfSettingsRequest $request UpdateScheduleConfSettingsRequest
      *
-     * @return UpdateScheduleConfSettingsResponse
+     * @return UpdateScheduleConfSettingsResponse UpdateScheduleConfSettingsResponse
      */
     public function updateScheduleConfSettings($request)
     {
@@ -2012,11 +2140,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateScheduleConferenceRequest $request
-     * @param UpdateScheduleConferenceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 更新预约会议
+     *  *
+     * @param UpdateScheduleConferenceRequest $request UpdateScheduleConferenceRequest
+     * @param UpdateScheduleConferenceHeaders $headers UpdateScheduleConferenceHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateScheduleConferenceResponse
+     * @return UpdateScheduleConferenceResponse UpdateScheduleConferenceResponse
      */
     public function updateScheduleConferenceWithOptions($request, $headers, $runtime)
     {
@@ -2064,9 +2194,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateScheduleConferenceRequest $request
+     * @summary 更新预约会议
+     *  *
+     * @param UpdateScheduleConferenceRequest $request UpdateScheduleConferenceRequest
      *
-     * @return UpdateScheduleConferenceResponse
+     * @return UpdateScheduleConferenceResponse UpdateScheduleConferenceResponse
      */
     public function updateScheduleConference($request)
     {
@@ -2077,11 +2209,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新会议额外信息
+     *  *
      * @param string                              $conferenceId
-     * @param UpdateVideoConferenceExtInfoHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param UpdateVideoConferenceExtInfoHeaders $headers      UpdateVideoConferenceExtInfoHeaders
+     * @param RuntimeOptions                      $runtime      runtime options for this request RuntimeOptions
      *
-     * @return UpdateVideoConferenceExtInfoResponse
+     * @return UpdateVideoConferenceExtInfoResponse UpdateVideoConferenceExtInfoResponse
      */
     public function updateVideoConferenceExtInfoWithOptions($conferenceId, $headers, $runtime)
     {
@@ -2111,9 +2245,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新会议额外信息
+     *  *
      * @param string $conferenceId
      *
-     * @return UpdateVideoConferenceExtInfoResponse
+     * @return UpdateVideoConferenceExtInfoResponse UpdateVideoConferenceExtInfoResponse
      */
     public function updateVideoConferenceExtInfo($conferenceId)
     {
@@ -2124,12 +2260,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置会议中的会议属性
+     *  *
      * @param string                              $conferenceId
-     * @param UpdateVideoConferenceSettingRequest $request
-     * @param UpdateVideoConferenceSettingHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param UpdateVideoConferenceSettingRequest $request      UpdateVideoConferenceSettingRequest
+     * @param UpdateVideoConferenceSettingHeaders $headers      UpdateVideoConferenceSettingHeaders
+     * @param RuntimeOptions                      $runtime      runtime options for this request RuntimeOptions
      *
-     * @return UpdateVideoConferenceSettingResponse
+     * @return UpdateVideoConferenceSettingResponse UpdateVideoConferenceSettingResponse
      */
     public function updateVideoConferenceSettingWithOptions($conferenceId, $request, $headers, $runtime)
     {
@@ -2180,10 +2318,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置会议中的会议属性
+     *  *
      * @param string                              $conferenceId
-     * @param UpdateVideoConferenceSettingRequest $request
+     * @param UpdateVideoConferenceSettingRequest $request      UpdateVideoConferenceSettingRequest
      *
-     * @return UpdateVideoConferenceSettingResponse
+     * @return UpdateVideoConferenceSettingResponse UpdateVideoConferenceSettingResponse
      */
     public function updateVideoConferenceSetting($conferenceId, $request)
     {

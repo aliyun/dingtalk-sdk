@@ -16,6 +16,8 @@ class PushDingMessageRequest extends Model
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 消息内容
      *
      * @var string
@@ -23,6 +25,8 @@ class PushDingMessageRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CARD
      *
      * @var string
@@ -65,6 +69,8 @@ class PushDingMessageRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

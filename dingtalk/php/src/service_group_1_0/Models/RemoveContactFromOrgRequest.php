@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveContactFromOrgRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 88888
      *
      * @var string
@@ -16,6 +18,8 @@ class RemoveContactFromOrgRequest extends Model
     public $contactUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string

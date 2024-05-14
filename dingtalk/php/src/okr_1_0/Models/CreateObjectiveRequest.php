@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 我是内容
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateObjectiveRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1006
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateObjectiveRequest extends Model
     public $periodId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1334543
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateObjectiveRequest extends Model
     public $prevPosition;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 06186238011033616
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenKeyResultDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class OpenKeyResultDTO extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33
      *
      * @var int
@@ -23,6 +27,8 @@ class OpenKeyResultDTO extends Model
     public $progress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class OpenKeyResultDTO extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 完成数据迁移
      *
      * @var string
@@ -37,11 +45,15 @@ class OpenKeyResultDTO extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var TitleMention[]
      */
     public $titleMentions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

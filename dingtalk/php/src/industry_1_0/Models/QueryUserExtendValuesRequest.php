@@ -14,6 +14,8 @@ class QueryUserExtendValuesRequest extends Model
     public $userExtendKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

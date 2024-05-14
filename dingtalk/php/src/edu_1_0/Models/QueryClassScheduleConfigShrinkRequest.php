@@ -14,6 +14,8 @@ class QueryClassScheduleConfigShrinkRequest extends Model
     public $classIdsShrink;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2534522534
      *
      * @var string

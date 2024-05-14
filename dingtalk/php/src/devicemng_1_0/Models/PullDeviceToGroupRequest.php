@@ -19,6 +19,8 @@ class PullDeviceToGroupRequest extends Model
     public $deviceUuids;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cide+m5TmAcxA3OU6Un59xxxx==
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SheetAutofitRowsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $fontWidth;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -21,6 +25,8 @@ class SheetAutofitRowsRequest extends Model
     public $row;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -28,6 +34,8 @@ class SheetAutofitRowsRequest extends Model
     public $rowCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

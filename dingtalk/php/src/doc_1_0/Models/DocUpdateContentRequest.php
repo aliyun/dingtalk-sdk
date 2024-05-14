@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DocUpdateContentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example content
      *
      * @var string
@@ -23,6 +25,8 @@ class DocUpdateContentRequest extends Model
     public $dataType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

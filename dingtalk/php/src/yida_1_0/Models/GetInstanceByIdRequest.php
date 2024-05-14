@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetInstanceByIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class GetInstanceByIdRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxyy
      *
      * @var string
@@ -30,6 +34,8 @@ class GetInstanceByIdRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

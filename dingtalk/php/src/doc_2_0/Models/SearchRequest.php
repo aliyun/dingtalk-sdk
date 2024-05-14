@@ -16,6 +16,8 @@ class SearchRequest extends Model
     public $dentryRequest;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试搜索关键词
      *
      * @var string
@@ -23,6 +25,8 @@ class SearchRequest extends Model
     public $keyword;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

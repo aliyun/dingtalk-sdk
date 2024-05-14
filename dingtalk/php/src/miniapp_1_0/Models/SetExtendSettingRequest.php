@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SetExtendSettingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $buildH5Bundle;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;

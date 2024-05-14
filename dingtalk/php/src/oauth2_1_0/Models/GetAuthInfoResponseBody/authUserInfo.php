@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class authUserInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager975
      *
      * @var string

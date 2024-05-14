@@ -16,6 +16,8 @@ class AddPointRequest extends Model
     public $actionTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -30,6 +32,8 @@ class AddPointRequest extends Model
     public $ruleCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 发动态
      *
      * @var string
@@ -37,6 +41,8 @@ class AddPointRequest extends Model
     public $ruleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -44,6 +50,8 @@ class AddPointRequest extends Model
     public $score;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -51,6 +59,8 @@ class AddPointRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 7645
      *
      * @var string

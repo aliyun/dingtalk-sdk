@@ -14,6 +14,8 @@ class link extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingtalk://dingtalkclient/page/link?pc_slide=true
      *
      * @var string
@@ -28,6 +30,8 @@ class link extends Model
     public $picMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 今天 10:00后超期
      *
      * @var string

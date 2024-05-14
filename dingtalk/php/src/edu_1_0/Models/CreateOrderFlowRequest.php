@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateOrderFlowRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -31,6 +33,8 @@ class CreateOrderFlowRequest extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detailList[]
      */
     public $detailList;
@@ -50,6 +54,8 @@ class CreateOrderFlowRequest extends Model
     public $guardianUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2088821434894708
      *
      * @var string
@@ -57,6 +63,8 @@ class CreateOrderFlowRequest extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022012717252021400100822002
      *
      * @var string
@@ -85,6 +93,8 @@ class CreateOrderFlowRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -92,6 +102,8 @@ class CreateOrderFlowRequest extends Model
     public $totalAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1643334234626
      *
      * @var string

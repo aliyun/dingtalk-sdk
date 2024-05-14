@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var string
@@ -21,6 +25,8 @@ class GetSceneGroupMembersRequest extends Model
     public $cursor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string
@@ -28,6 +34,8 @@ class GetSceneGroupMembersRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200
      *
      * @var int

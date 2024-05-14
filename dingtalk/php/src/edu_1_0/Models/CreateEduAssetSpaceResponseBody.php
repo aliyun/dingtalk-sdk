@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CreateEduAssetSpaceResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTimeMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $modifyTimeMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example acl：acl授权 ; custom：自定义授权
      *
      * @var string
@@ -26,21 +32,29 @@ class CreateEduAssetSpaceResponseBody extends Model
     public $permissionMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quota;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example custom：自定义类型
      *
      * @var string
@@ -48,6 +62,8 @@ class CreateEduAssetSpaceResponseBody extends Model
     public $spaceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $usedQuota;

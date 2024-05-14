@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingdb6elngd253073ad370d8dc3ec89bb366ab
      *
      * @var string
@@ -16,81 +18,113 @@ class content extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $isBatchJob;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $manufactureDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $manufactureDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mesAppKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $qualifiedQuantity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $scrappedQuantity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unitPrice;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userNameList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uuid;

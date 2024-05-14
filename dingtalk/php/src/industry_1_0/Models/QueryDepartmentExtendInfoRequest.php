@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryDepartmentExtendInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1000
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryDepartmentExtendInfoRequest extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

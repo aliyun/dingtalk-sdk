@@ -14,11 +14,15 @@ class PagesExportInstancesRequest extends Model
     public $endTimeInMills;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;
@@ -29,11 +33,15 @@ class PagesExportInstancesRequest extends Model
     public $orderBy;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTimeInMills;

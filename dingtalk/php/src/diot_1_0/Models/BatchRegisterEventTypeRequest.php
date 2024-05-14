@@ -17,6 +17,8 @@ class BatchRegisterEventTypeRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var eventTypes[]
      */
     public $eventTypes;

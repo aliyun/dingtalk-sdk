@@ -17,6 +17,8 @@ class LoadBizObjectsRequest extends Model
     public $matcherJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -24,6 +26,8 @@ class LoadBizObjectsRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -36,6 +40,8 @@ class LoadBizObjectsRequest extends Model
     public $returnFields;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string

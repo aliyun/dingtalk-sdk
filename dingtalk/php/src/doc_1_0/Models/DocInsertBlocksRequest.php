@@ -16,6 +16,8 @@ class DocInsertBlocksRequest extends Model
     public $blockId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example element
      *
      * @var mixed[]
@@ -37,6 +39,8 @@ class DocInsertBlocksRequest extends Model
     public $where;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

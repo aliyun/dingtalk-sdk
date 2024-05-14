@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UrgeTicketRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example bLkvfXKiSngQiE
      *
      * @var string
@@ -17,6 +19,8 @@ class UrgeTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iPbrfXjdNjRoiE
      *
      * @var string
@@ -24,6 +28,8 @@ class UrgeTicketRequest extends Model
     public $openTicketId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
@@ -31,6 +37,8 @@ class UrgeTicketRequest extends Model
     public $operatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var ticketMemo
      */
     public $ticketMemo;

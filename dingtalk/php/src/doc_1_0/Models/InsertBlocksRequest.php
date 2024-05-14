@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class InsertBlocksRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var blocks[]
      */
     public $blocks;
@@ -21,6 +23,8 @@ class InsertBlocksRequest extends Model
     public $location;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

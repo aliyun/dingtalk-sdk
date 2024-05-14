@@ -16,6 +16,8 @@ class GetFormComponentDefinitionListRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -23,6 +25,8 @@ class GetFormComponentDefinitionListRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

@@ -23,6 +23,8 @@ class ListTeamsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

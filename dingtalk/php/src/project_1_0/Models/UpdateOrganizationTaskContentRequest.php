@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskContentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 后天交周报
      *
      * @var string

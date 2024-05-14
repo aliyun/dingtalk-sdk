@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class DeleteDeviceOrgRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $authCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceCode;

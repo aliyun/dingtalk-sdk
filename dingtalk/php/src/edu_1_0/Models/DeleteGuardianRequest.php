@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteGuardianRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager123
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteGuardianRequest extends Model
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1345
      *
      * @var string

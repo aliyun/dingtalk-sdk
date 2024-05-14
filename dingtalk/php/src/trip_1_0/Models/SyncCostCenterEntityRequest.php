@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SyncCostCenterEntityRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -17,6 +19,8 @@ class SyncCostCenterEntityRequest extends Model
     public $channelCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -34,6 +38,8 @@ class SyncCostCenterEntityRequest extends Model
     public $entityList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

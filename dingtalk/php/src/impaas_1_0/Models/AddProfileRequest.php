@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddProfileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUid;
@@ -19,11 +21,15 @@ class AddProfileRequest extends Model
     public $avatarMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mobileNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example usertest
      *
      * @var string

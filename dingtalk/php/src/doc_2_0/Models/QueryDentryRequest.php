@@ -16,6 +16,8 @@ class QueryDentryRequest extends Model
     public $includeSpace;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd
      *
      * @var string

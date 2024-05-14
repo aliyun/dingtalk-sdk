@@ -15,6 +15,8 @@ class detail extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @mediaId
      *
      * @var string
@@ -22,11 +24,15 @@ class detail extends Model
     public $bannerMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2OGnTRTcoH6OQ0209168
      *
      * @var string
@@ -34,6 +40,8 @@ class detail extends Model
     public $foreignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example IT
      *
      * @var string
@@ -41,6 +49,8 @@ class detail extends Model
     public $industry;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CTO
      *
      * @var string
@@ -48,6 +58,8 @@ class detail extends Model
     public $roleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hdx
      *
      * @var string
@@ -55,11 +67,15 @@ class detail extends Model
     public $source;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉峰会
      *
      * @var string
@@ -67,11 +83,15 @@ class detail extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.dingtalk.com/
      *
      * @var string

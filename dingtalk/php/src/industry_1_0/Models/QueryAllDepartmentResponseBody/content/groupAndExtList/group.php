@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class group extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 13000
      *
      * @var int
@@ -17,6 +19,8 @@ class group extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -24,6 +28,8 @@ class group extends Model
     public $deptStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -31,6 +37,8 @@ class group extends Model
     public $gmtCreateStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -38,6 +46,8 @@ class group extends Model
     public $gmtModifiedStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13001
      *
      * @var int
@@ -45,11 +55,15 @@ class group extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var leader
      */
     public $leader;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三组
      *
      * @var string
@@ -57,6 +71,8 @@ class group extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13000
      *
      * @var string
@@ -64,6 +80,8 @@ class group extends Model
     public $parentDeptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 备注
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QuerySchoolUserFaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 从0开始
      *
      * @var int
@@ -16,6 +18,8 @@ class QuerySchoolUserFaceRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 大于0小于200
      *
      * @var int
@@ -23,6 +27,8 @@ class QuerySchoolUserFaceRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn123
      *
      * @var string
@@ -30,6 +36,8 @@ class QuerySchoolUserFaceRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1全量模式，2增量模式
      *
      * @var int

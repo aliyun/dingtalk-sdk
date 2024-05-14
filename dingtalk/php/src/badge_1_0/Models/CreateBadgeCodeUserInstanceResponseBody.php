@@ -14,6 +14,8 @@ class CreateBadgeCodeUserInstanceResponseBody extends Model
     public $codeDetailUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example codexxxxxx
      *
      * @var string

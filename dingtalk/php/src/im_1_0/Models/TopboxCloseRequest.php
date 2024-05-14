@@ -26,6 +26,8 @@ class TopboxCloseRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -21,6 +25,8 @@ class content extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -28,6 +34,8 @@ class content extends Model
     public $isDeleted;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -35,11 +43,15 @@ class content extends Model
     public $readOnly;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sys_admin
      *
      * @var string
@@ -47,6 +59,8 @@ class content extends Model
     public $roleCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 系统管理员
      *
      * @var string
@@ -54,6 +68,8 @@ class content extends Model
     public $roleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

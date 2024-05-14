@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class NotifyPayCodePayResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234.56
      *
      * @var string
@@ -17,6 +19,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00, 没有传0.00
      *
      * @var string
@@ -24,6 +28,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $chargeAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string
@@ -38,6 +44,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-01-01 11:11:11
      *
      * @var string
@@ -45,6 +53,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $gmtTradeCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-01-01 11:11:11
      *
      * @var string
@@ -52,6 +62,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $gmtTradeFinish;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XX公司食堂
      *
      * @var string
@@ -59,11 +71,15 @@ class NotifyPayCodePayResultRequest extends Model
     public $merchantName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var payChannelDetailList[]
      */
     public $payChannelDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 261234567890
      *
      * @var string
@@ -71,6 +87,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $payCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1.23，没有传0.00
      *
      * @var string
@@ -78,6 +96,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $promotionAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 备注
      *
      * @var string
@@ -85,6 +105,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 晚餐100.0元
      *
      * @var string
@@ -106,6 +128,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $tradeErrorMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202101012345678
      *
      * @var string
@@ -113,6 +137,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $tradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS/FAIL
      *
      * @var string
@@ -120,6 +146,8 @@ class NotifyPayCodePayResultRequest extends Model
     public $tradeStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example userId1234
      *
      * @var string

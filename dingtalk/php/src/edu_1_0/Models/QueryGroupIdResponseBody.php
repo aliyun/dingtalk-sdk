@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingding123
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryGroupIdResponseBody extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example NTK300001
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryGroupIdResponseBody extends Model
     public $groupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200001
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryGroupIdResponseBody extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 某某商户
      *
      * @var string
@@ -37,6 +45,8 @@ class QueryGroupIdResponseBody extends Model
     public $merchantName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 阿里云教育
      *
      * @var string
@@ -44,6 +54,8 @@ class QueryGroupIdResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100001
      *
      * @var string

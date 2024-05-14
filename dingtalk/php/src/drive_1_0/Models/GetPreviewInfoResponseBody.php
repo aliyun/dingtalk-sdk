@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetPreviewInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var info
      */
     public $info;

@@ -21,6 +21,8 @@ class DigitalStoreUserInfoResponseBody extends Model
     public $roleIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5647993312
      *
      * @var int[]
@@ -28,11 +30,15 @@ class DigitalStoreUserInfoResponseBody extends Model
     public $scopeList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $storeList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 331222222
      *
      * @var string

@@ -16,6 +16,8 @@ class PediaWordsApproveRequest extends Model
     public $approveReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -23,16 +25,22 @@ class PediaWordsApproveRequest extends Model
     public $approveStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $imHighLight;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $simHighLight;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 232432
      *
      * @var string
@@ -40,6 +48,8 @@ class PediaWordsApproveRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1213132
      *
      * @var int

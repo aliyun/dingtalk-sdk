@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetManageProcessByStaffIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager7078
      *
      * @var string

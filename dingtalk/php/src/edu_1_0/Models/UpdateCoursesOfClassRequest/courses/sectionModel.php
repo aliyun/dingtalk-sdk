@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class sectionModel extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class sectionModel extends Model
     public $sectionIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 第一节/午休
      *
      * @var string

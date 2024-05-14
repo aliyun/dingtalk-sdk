@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class InitVPaasDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fsdfdsa-41231
      *
      * @var string
@@ -21,6 +23,8 @@ class InitVPaasDeviceRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO_CALL
      *
      * @var string

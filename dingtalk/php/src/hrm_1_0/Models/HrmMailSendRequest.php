@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class HrmMailSendRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var mail
      */
     public $mail;
 
     /**
+     * @description This parameter is required.
+     *
      * @var operator
      */
     public $operator;

@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class AddApproveDentryAuthRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var fileInfos[]
      */
     public $fileInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string

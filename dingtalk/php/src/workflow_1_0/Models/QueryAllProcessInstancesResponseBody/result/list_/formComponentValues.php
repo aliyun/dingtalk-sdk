@@ -16,6 +16,8 @@ class formComponentValues extends Model
     public $extValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField-a32bcdef
      *
      * @var string
@@ -23,6 +25,8 @@ class formComponentValues extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 姓名
      *
      * @var string
@@ -30,6 +34,8 @@ class formComponentValues extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string

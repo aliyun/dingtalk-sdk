@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetWordCloudRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example KxisoOk
      *
      * @var string

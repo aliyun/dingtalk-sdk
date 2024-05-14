@@ -22,6 +22,8 @@ class values extends Model
     public $attributes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1635151039000
      *
      * @var int
@@ -29,6 +31,8 @@ class values extends Model
     public $createTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30314512
      *
      * @var string
@@ -36,6 +40,8 @@ class values extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-abcd-example
      *
      * @var string
@@ -43,11 +49,15 @@ class values extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var formInstDataList[]
      */
     public $formInstDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd-eaf-acde12f
      *
      * @var string
@@ -55,6 +65,8 @@ class values extends Model
     public $formInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 032142312
      *
      * @var string
@@ -83,6 +95,8 @@ class values extends Model
     public $outInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx提交的数据
      *
      * @var string

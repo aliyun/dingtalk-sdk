@@ -10,31 +10,43 @@ use GuzzleHttp\Psr7\Stream;
 class periodList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var Stream
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isCurrent;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isYearly;
 
     /**
+     * @description This parameter is required.
+     *
      * @var Stream
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $startTime;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CommitFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dentry_name
      *
      * @var string
@@ -22,6 +24,8 @@ class CommitFileRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example upload_key
      *
      * @var string
@@ -29,6 +33,8 @@ class CommitFileRequest extends Model
     public $uploadKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

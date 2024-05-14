@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class credentialList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 医生资格证书
      *
      * @var string
@@ -16,6 +18,8 @@ class credentialList extends Model
     public $credentialName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class credentialList extends Model
     public $credentialType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-08-01
      *
      * @var string

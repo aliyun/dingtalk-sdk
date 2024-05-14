@@ -23,6 +23,8 @@ class sourceProcessVOList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example proc-abc
      *
      * @var string

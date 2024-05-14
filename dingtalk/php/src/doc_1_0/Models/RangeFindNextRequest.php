@@ -15,6 +15,8 @@ class RangeFindNextRequest extends Model
     public $findOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DingTalk
      *
      * @var string
@@ -22,6 +24,8 @@ class RangeFindNextRequest extends Model
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class iconVO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

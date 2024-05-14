@@ -10,26 +10,36 @@ use AlibabaCloud\Tea\Model;
 class GetResidentUserInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $feature;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var roles[]
      */
     public $roles;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userid;

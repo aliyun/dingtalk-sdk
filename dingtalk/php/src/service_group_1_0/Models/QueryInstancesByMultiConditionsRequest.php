@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryInstancesByMultiConditionsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example DING_CUSTOMER
      *
      * @var string
@@ -31,6 +33,8 @@ class QueryInstancesByMultiConditionsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888**
      *
      * @var string

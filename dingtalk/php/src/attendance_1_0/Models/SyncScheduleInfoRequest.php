@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class SyncScheduleInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scheduleInfos[]
      */
     public $scheduleInfos;

@@ -86,6 +86,8 @@ class baseInfo extends Model
     public $married;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 孙先生
      *
      * @var string

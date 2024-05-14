@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class intentionStatisticsRecords extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class intentionStatisticsRecords extends Model
     public $count;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 产品异常类
      *
      * @var string
@@ -23,6 +27,8 @@ class intentionStatisticsRecords extends Model
     public $intention;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 9
      *
      * @var int

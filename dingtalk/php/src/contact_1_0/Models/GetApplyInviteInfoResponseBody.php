@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetApplyInviteInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $auditType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $empApplyJoinDept;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $inviteSwitch;
@@ -29,16 +35,22 @@ class GetApplyInviteInfoResponseBody extends Model
     public $inviteUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $linkInvite;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $orgApplyCodeInvite;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $searchNameInvite;

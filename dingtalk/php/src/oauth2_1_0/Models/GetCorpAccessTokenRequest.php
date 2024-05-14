@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class GetCorpAccessTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $authCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $suiteKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $suiteSecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $suiteTicket;

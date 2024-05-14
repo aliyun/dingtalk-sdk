@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var recycleItems[]
      */
     public $recycleItems;

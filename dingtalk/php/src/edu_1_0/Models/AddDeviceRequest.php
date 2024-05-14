@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123123123
      *
      * @var string
@@ -16,6 +18,8 @@ class AddDeviceRequest extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example M-123123
      *
      * @var string
@@ -23,6 +27,8 @@ class AddDeviceRequest extends Model
     public $model;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 支付设备
      *
      * @var string
@@ -30,6 +36,8 @@ class AddDeviceRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +45,8 @@ class AddDeviceRequest extends Model
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn1234324234
      *
      * @var string
@@ -44,6 +54,8 @@ class AddDeviceRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -51,6 +63,8 @@ class AddDeviceRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

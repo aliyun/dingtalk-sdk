@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateRobotInteractiveCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cardXXXX01
      *
      * @var string

@@ -16,6 +16,8 @@ class CampusCreateCampusGroupRequest extends Model
     public $extend;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试项目组
      *
      * @var string

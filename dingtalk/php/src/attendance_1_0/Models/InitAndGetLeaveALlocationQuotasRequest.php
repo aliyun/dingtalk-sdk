@@ -16,6 +16,8 @@ class InitAndGetLeaveALlocationQuotasRequest extends Model
     public $leaveCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1
      *
      * @var string
@@ -23,6 +25,8 @@ class InitAndGetLeaveALlocationQuotasRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager211
      *
      * @var string

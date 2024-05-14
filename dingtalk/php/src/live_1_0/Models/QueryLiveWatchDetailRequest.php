@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryLiveWatchDetailRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1a353547-040d-4095-bb93-404bc5d47920
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryLiveWatchDetailRequest extends Model
     public $liveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string

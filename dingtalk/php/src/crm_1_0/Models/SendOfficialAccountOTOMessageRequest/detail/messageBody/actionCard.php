@@ -35,6 +35,8 @@ class actionCard extends Model
     public $singleUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

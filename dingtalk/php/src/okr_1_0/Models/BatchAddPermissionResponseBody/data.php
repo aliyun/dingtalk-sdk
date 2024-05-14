@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasInvalidUser;
 
     /**
+     * @description This parameter is required.
+     *
      * @var permissionTree
      */
     public $permissionTree;

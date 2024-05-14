@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteLiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 4d383876-1ff9-4b73-a057-a8f47b346ecb
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteLiveRequest extends Model
     public $liveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string

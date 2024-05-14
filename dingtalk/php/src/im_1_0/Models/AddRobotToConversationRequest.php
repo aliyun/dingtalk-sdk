@@ -23,6 +23,8 @@ class AddRobotToConversationRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid123cd
      *
      * @var string
@@ -30,6 +32,8 @@ class AddRobotToConversationRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

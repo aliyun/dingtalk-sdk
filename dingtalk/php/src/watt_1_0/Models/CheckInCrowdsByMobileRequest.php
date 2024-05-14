@@ -16,6 +16,8 @@ class CheckInCrowdsByMobileRequest extends Model
     public $crowdIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example N5u3hS6KJeoUdopXW4GzFg==
      *
      * @var string

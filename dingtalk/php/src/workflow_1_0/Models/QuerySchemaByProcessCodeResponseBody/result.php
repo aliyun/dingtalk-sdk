@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -17,6 +19,8 @@ class result extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -31,6 +35,8 @@ class result extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 26652461xxxx5992
      *
      * @var string
@@ -52,6 +58,8 @@ class result extends Model
     public $engineType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-17428B8C-6C60-470E-xxxx-64F1037AE067
      *
      * @var string
@@ -59,6 +67,8 @@ class result extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-28215C3E-00E3-4118-xxxx-4091F828AF2F
      *
      * @var string
@@ -66,6 +76,8 @@ class result extends Model
     public $formUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-12-01T10:49Z
      *
      * @var string
@@ -73,6 +85,8 @@ class result extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-12-01T10:49Z
      *
      * @var string
@@ -108,6 +122,8 @@ class result extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 25xxxx01
      *
      * @var string
@@ -122,6 +138,8 @@ class result extends Model
     public $procType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var schemaContent
      */
     public $schemaContent;

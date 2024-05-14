@@ -21,6 +21,8 @@ class ApplyFollowerAuthInfoRequest extends Model
     public $fieldScope;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sid22b31b4bf59ef2c783f7
      *
      * @var string
@@ -28,6 +30,8 @@ class ApplyFollowerAuthInfoRequest extends Model
     public $sessionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example idzb26bxl64vqx2keyi
      *
      * @var string

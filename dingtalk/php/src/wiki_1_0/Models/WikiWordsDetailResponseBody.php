@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class WikiWordsDetailResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data[]
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $errMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

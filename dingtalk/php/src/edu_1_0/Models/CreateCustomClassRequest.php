@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomClassRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var customClass
      */
     public $customClass;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -22,6 +26,8 @@ class CreateCustomClassRequest extends Model
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int

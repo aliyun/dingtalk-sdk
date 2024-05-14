@@ -63,6 +63,8 @@ class HrmProcessTransferRequest extends Model
     public $rankIdAfterTransfer;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2332
      *
      * @var string

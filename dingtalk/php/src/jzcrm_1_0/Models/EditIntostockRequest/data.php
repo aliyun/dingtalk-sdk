@@ -19,11 +19,15 @@ class data extends Model
     public $auditreson;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $billno;
 
     /**
+     * @description This parameter is required.
+     *
      * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
@@ -36,6 +40,8 @@ class data extends Model
     public $customerid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -43,6 +49,8 @@ class data extends Model
     public $dataUserid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $empid;
@@ -53,6 +61,8 @@ class data extends Model
     public $inorout;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $libiodate;
@@ -63,6 +73,8 @@ class data extends Model
     public $libioname;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $libiostate;
@@ -78,6 +90,8 @@ class data extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $stocklibid;

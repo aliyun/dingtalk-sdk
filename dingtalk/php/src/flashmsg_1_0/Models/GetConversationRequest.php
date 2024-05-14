@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetConversationRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidjyErBTyw0FnIQQigHAbcGCg==
      *
      * @var string

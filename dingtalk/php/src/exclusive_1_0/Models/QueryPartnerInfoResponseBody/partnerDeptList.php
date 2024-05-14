@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class partnerDeptList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $memberCount;
@@ -25,11 +27,15 @@ class partnerDeptList extends Model
     public $partnerNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

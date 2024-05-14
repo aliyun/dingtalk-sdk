@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class GetOfficialAccountContactsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123567
      *
      * @var string

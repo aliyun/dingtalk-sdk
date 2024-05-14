@@ -79,11 +79,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
-     * @param AssignOrgHoldingToEmpHoldingBatchHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 批量发放积分或额度
+     *  *
+     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request AssignOrgHoldingToEmpHoldingBatchRequest
+     * @param AssignOrgHoldingToEmpHoldingBatchHeaders $headers AssignOrgHoldingToEmpHoldingBatchHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse AssignOrgHoldingToEmpHoldingBatchResponse
      */
     public function assignOrgHoldingToEmpHoldingBatchWithOptions($request, $headers, $runtime)
     {
@@ -134,9 +136,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
+     * @summary 批量发放积分或额度
+     *  *
+     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request AssignOrgHoldingToEmpHoldingBatchRequest
      *
-     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse AssignOrgHoldingToEmpHoldingBatchResponse
      */
     public function assignOrgHoldingToEmpHoldingBatch($request)
     {
@@ -147,12 +151,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 扣减员工积分
+     *  *
      * @param string                   $userId
-     * @param ConsumeUserPointsRequest $request
-     * @param ConsumeUserPointsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ConsumeUserPointsRequest $request ConsumeUserPointsRequest
+     * @param ConsumeUserPointsHeaders $headers ConsumeUserPointsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ConsumeUserPointsResponse
+     * @return ConsumeUserPointsResponse ConsumeUserPointsResponse
      */
     public function consumeUserPointsWithOptions($userId, $request, $headers, $runtime)
     {
@@ -197,10 +203,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 扣减员工积分
+     *  *
      * @param string                   $userId
-     * @param ConsumeUserPointsRequest $request
+     * @param ConsumeUserPointsRequest $request ConsumeUserPointsRequest
      *
-     * @return ConsumeUserPointsResponse
+     * @return ConsumeUserPointsResponse ConsumeUserPointsResponse
      */
     public function consumeUserPoints($userId, $request)
     {
@@ -211,11 +219,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOrgHonorRequest $request
-     * @param CreateOrgHonorHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建荣誉勋章模板
+     *  *
+     * @param CreateOrgHonorRequest $request CreateOrgHonorRequest
+     * @param CreateOrgHonorHeaders $headers CreateOrgHonorHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateOrgHonorResponse
+     * @return CreateOrgHonorResponse CreateOrgHonorResponse
      */
     public function createOrgHonorWithOptions($request, $headers, $runtime)
     {
@@ -266,9 +276,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOrgHonorRequest $request
+     * @summary 创建荣誉勋章模板
+     *  *
+     * @param CreateOrgHonorRequest $request CreateOrgHonorRequest
      *
-     * @return CreateOrgHonorResponse
+     * @return CreateOrgHonorResponse CreateOrgHonorResponse
      */
     public function createOrgHonor($request)
     {
@@ -279,11 +291,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeductionPointBatchRequest $request
-     * @param DeductionPointBatchHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量扣减积分
+     *  *
+     * @param DeductionPointBatchRequest $request DeductionPointBatchRequest
+     * @param DeductionPointBatchHeaders $headers DeductionPointBatchHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeductionPointBatchResponse
+     * @return DeductionPointBatchResponse DeductionPointBatchResponse
      */
     public function deductionPointBatchWithOptions($request, $headers, $runtime)
     {
@@ -331,9 +345,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeductionPointBatchRequest $request
+     * @summary 批量扣减积分
+     *  *
+     * @param DeductionPointBatchRequest $request DeductionPointBatchRequest
      *
-     * @return DeductionPointBatchResponse
+     * @return DeductionPointBatchResponse DeductionPointBatchResponse
      */
     public function deductionPointBatch($request)
     {
@@ -344,11 +360,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExportPointOpenRequest $request
-     * @param ExportPointOpenHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 积分榜单导出
+     *  *
+     * @param ExportPointOpenRequest $request ExportPointOpenRequest
+     * @param ExportPointOpenHeaders $headers ExportPointOpenHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return ExportPointOpenResponse
+     * @return ExportPointOpenResponse ExportPointOpenResponse
      */
     public function exportPointOpenWithOptions($request, $headers, $runtime)
     {
@@ -390,9 +408,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExportPointOpenRequest $request
+     * @summary 积分榜单导出
+     *  *
+     * @param ExportPointOpenRequest $request ExportPointOpenRequest
      *
-     * @return ExportPointOpenResponse
+     * @return ExportPointOpenResponse ExportPointOpenResponse
      */
     public function exportPointOpen($request)
     {
@@ -403,12 +423,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 授予荣誉 异步执行
+     *  *
      * @param string            $honorId
-     * @param GrantHonorRequest $request
-     * @param GrantHonorHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GrantHonorRequest $request GrantHonorRequest
+     * @param GrantHonorHeaders $headers GrantHonorHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GrantHonorResponse
+     * @return GrantHonorResponse GrantHonorResponse
      */
     public function grantHonorWithOptions($honorId, $request, $headers, $runtime)
     {
@@ -465,10 +487,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 授予荣誉 异步执行
+     *  *
      * @param string            $honorId
-     * @param GrantHonorRequest $request
+     * @param GrantHonorRequest $request GrantHonorRequest
      *
-     * @return GrantHonorResponse
+     * @return GrantHonorResponse GrantHonorResponse
      */
     public function grantHonor($honorId, $request)
     {
@@ -479,11 +503,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCorpPointsRequest $request
-     * @param QueryCorpPointsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询当前企业下可兑换的积分
+     *  *
+     * @param QueryCorpPointsRequest $request QueryCorpPointsRequest
+     * @param QueryCorpPointsHeaders $headers QueryCorpPointsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCorpPointsResponse
+     * @return QueryCorpPointsResponse QueryCorpPointsResponse
      */
     public function queryCorpPointsWithOptions($request, $headers, $runtime)
     {
@@ -519,9 +545,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCorpPointsRequest $request
+     * @summary 查询当前企业下可兑换的积分
+     *  *
+     * @param QueryCorpPointsRequest $request QueryCorpPointsRequest
      *
-     * @return QueryCorpPointsResponse
+     * @return QueryCorpPointsResponse QueryCorpPointsResponse
      */
     public function queryCorpPoints($request)
     {
@@ -532,11 +560,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEmpPointDetailsRequest $request
-     * @param QueryEmpPointDetailsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询个人积分使用明细
+     *  *
+     * @param QueryEmpPointDetailsRequest $request QueryEmpPointDetailsRequest
+     * @param QueryEmpPointDetailsHeaders $headers QueryEmpPointDetailsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryEmpPointDetailsResponse
+     * @return QueryEmpPointDetailsResponse QueryEmpPointDetailsResponse
      */
     public function queryEmpPointDetailsWithOptions($request, $headers, $runtime)
     {
@@ -578,9 +608,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEmpPointDetailsRequest $request
+     * @summary 查询个人积分使用明细
+     *  *
+     * @param QueryEmpPointDetailsRequest $request QueryEmpPointDetailsRequest
      *
-     * @return QueryEmpPointDetailsResponse
+     * @return QueryEmpPointDetailsResponse QueryEmpPointDetailsResponse
      */
     public function queryEmpPointDetails($request)
     {
@@ -591,11 +623,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgHonorsRequest $request
-     * @param QueryOrgHonorsHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取组织荣誉
+     *  *
+     * @param QueryOrgHonorsRequest $request QueryOrgHonorsRequest
+     * @param QueryOrgHonorsHeaders $headers QueryOrgHonorsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOrgHonorsResponse
+     * @return QueryOrgHonorsResponse QueryOrgHonorsResponse
      */
     public function queryOrgHonorsWithOptions($request, $headers, $runtime)
     {
@@ -634,9 +668,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgHonorsRequest $request
+     * @summary 获取组织荣誉
+     *  *
+     * @param QueryOrgHonorsRequest $request QueryOrgHonorsRequest
      *
-     * @return QueryOrgHonorsResponse
+     * @return QueryOrgHonorsResponse QueryOrgHonorsResponse
      */
     public function queryOrgHonors($request)
     {
@@ -647,11 +683,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgPointDetailsRequest $request
-     * @param QueryOrgPointDetailsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询组织发放扣除积分明细
+     *  *
+     * @param QueryOrgPointDetailsRequest $request QueryOrgPointDetailsRequest
+     * @param QueryOrgPointDetailsHeaders $headers QueryOrgPointDetailsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOrgPointDetailsResponse
+     * @return QueryOrgPointDetailsResponse QueryOrgPointDetailsResponse
      */
     public function queryOrgPointDetailsWithOptions($request, $headers, $runtime)
     {
@@ -696,9 +734,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgPointDetailsRequest $request
+     * @summary 查询组织发放扣除积分明细
+     *  *
+     * @param QueryOrgPointDetailsRequest $request QueryOrgPointDetailsRequest
      *
-     * @return QueryOrgPointDetailsResponse
+     * @return QueryOrgPointDetailsResponse QueryOrgPointDetailsResponse
      */
     public function queryOrgPointDetails($request)
     {
@@ -709,10 +749,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPointActionAutoAssignRuleHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 查询积分自动发放行为规则
+     *  *
+     * @param QueryPointActionAutoAssignRuleHeaders $headers QueryPointActionAutoAssignRuleHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPointActionAutoAssignRuleResponse
+     * @return QueryPointActionAutoAssignRuleResponse QueryPointActionAutoAssignRuleResponse
      */
     public function queryPointActionAutoAssignRuleWithOptions($headers, $runtime)
     {
@@ -742,7 +784,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryPointActionAutoAssignRuleResponse
+     * @summary 查询积分自动发放行为规则
+     *  *
+     * @return QueryPointActionAutoAssignRuleResponse QueryPointActionAutoAssignRuleResponse
      */
     public function queryPointActionAutoAssignRule()
     {
@@ -753,10 +797,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPointAutoIssueSettingHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 每月自动发放额度查询
+     *  *
+     * @param QueryPointAutoIssueSettingHeaders $headers QueryPointAutoIssueSettingHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPointAutoIssueSettingResponse
+     * @return QueryPointAutoIssueSettingResponse QueryPointAutoIssueSettingResponse
      */
     public function queryPointAutoIssueSettingWithOptions($headers, $runtime)
     {
@@ -786,7 +832,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryPointAutoIssueSettingResponse
+     * @summary 每月自动发放额度查询
+     *  *
+     * @return QueryPointAutoIssueSettingResponse QueryPointAutoIssueSettingResponse
      */
     public function queryPointAutoIssueSetting()
     {
@@ -797,12 +845,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询员工已获得的组织荣誉列表
+     *  *
      * @param string                 $userId
-     * @param QueryUserHonorsRequest $request
-     * @param QueryUserHonorsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param QueryUserHonorsRequest $request QueryUserHonorsRequest
+     * @param QueryUserHonorsHeaders $headers QueryUserHonorsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUserHonorsResponse
+     * @return QueryUserHonorsResponse QueryUserHonorsResponse
      */
     public function queryUserHonorsWithOptions($userId, $request, $headers, $runtime)
     {
@@ -841,10 +891,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询员工已获得的组织荣誉列表
+     *  *
      * @param string                 $userId
-     * @param QueryUserHonorsRequest $request
+     * @param QueryUserHonorsRequest $request QueryUserHonorsRequest
      *
-     * @return QueryUserHonorsResponse
+     * @return QueryUserHonorsResponse QueryUserHonorsResponse
      */
     public function queryUserHonors($userId, $request)
     {
@@ -855,11 +907,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询员工已获得的积分
+     *  *
      * @param string                 $userId
-     * @param QueryUserPointsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param QueryUserPointsHeaders $headers QueryUserPointsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryUserPointsResponse
+     * @return QueryUserPointsResponse QueryUserPointsResponse
      */
     public function queryUserPointsWithOptions($userId, $headers, $runtime)
     {
@@ -889,9 +943,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询员工已获得的积分
+     *  *
      * @param string $userId
      *
-     * @return QueryUserPointsResponse
+     * @return QueryUserPointsResponse QueryUserPointsResponse
      */
     public function queryUserPoints($userId)
     {
@@ -902,12 +958,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销员工获得的荣誉勋章
+     *  *
      * @param string             $honorId
-     * @param RecallHonorRequest $request
-     * @param RecallHonorHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param RecallHonorRequest $request RecallHonorRequest
+     * @param RecallHonorHeaders $headers RecallHonorHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return RecallHonorResponse
+     * @return RecallHonorResponse RecallHonorResponse
      */
     public function recallHonorWithOptions($honorId, $request, $headers, $runtime)
     {
@@ -943,10 +1001,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销员工获得的荣誉勋章
+     *  *
      * @param string             $honorId
-     * @param RecallHonorRequest $request
+     * @param RecallHonorRequest $request RecallHonorRequest
      *
-     * @return RecallHonorResponse
+     * @return RecallHonorResponse RecallHonorResponse
      */
     public function recallHonor($honorId, $request)
     {
@@ -957,11 +1017,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateAutoIssuePointRequest $request
-     * @param UpdateAutoIssuePointHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 每月自动发放额度修改
+     *  *
+     * @param UpdateAutoIssuePointRequest $request UpdateAutoIssuePointRequest
+     * @param UpdateAutoIssuePointHeaders $headers UpdateAutoIssuePointHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateAutoIssuePointResponse
+     * @return UpdateAutoIssuePointResponse UpdateAutoIssuePointResponse
      */
     public function updateAutoIssuePointWithOptions($request, $headers, $runtime)
     {
@@ -1006,9 +1068,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateAutoIssuePointRequest $request
+     * @summary 每月自动发放额度修改
+     *  *
+     * @param UpdateAutoIssuePointRequest $request UpdateAutoIssuePointRequest
      *
-     * @return UpdateAutoIssuePointResponse
+     * @return UpdateAutoIssuePointResponse UpdateAutoIssuePointResponse
      */
     public function updateAutoIssuePoint($request)
     {
@@ -1019,11 +1083,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePointActionAutoAssignRuleRequest $request
-     * @param UpdatePointActionAutoAssignRuleHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 修改积分系统行为规则
+     *  *
+     * @param UpdatePointActionAutoAssignRuleRequest $request UpdatePointActionAutoAssignRuleRequest
+     * @param UpdatePointActionAutoAssignRuleHeaders $headers UpdatePointActionAutoAssignRuleHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdatePointActionAutoAssignRuleResponse
+     * @return UpdatePointActionAutoAssignRuleResponse UpdatePointActionAutoAssignRuleResponse
      */
     public function updatePointActionAutoAssignRuleWithOptions($request, $headers, $runtime)
     {
@@ -1062,9 +1128,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePointActionAutoAssignRuleRequest $request
+     * @summary 修改积分系统行为规则
+     *  *
+     * @param UpdatePointActionAutoAssignRuleRequest $request UpdatePointActionAutoAssignRuleRequest
      *
-     * @return UpdatePointActionAutoAssignRuleResponse
+     * @return UpdatePointActionAutoAssignRuleResponse UpdatePointActionAutoAssignRuleResponse
      */
     public function updatePointActionAutoAssignRule($request)
     {
@@ -1075,12 +1143,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 佩戴/卸下荣誉勋章
+     *  *
      * @param string              $honorId
-     * @param WearOrgHonorRequest $request
-     * @param WearOrgHonorHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param WearOrgHonorRequest $request WearOrgHonorRequest
+     * @param WearOrgHonorHeaders $headers WearOrgHonorHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return WearOrgHonorResponse
+     * @return WearOrgHonorResponse WearOrgHonorResponse
      */
     public function wearOrgHonorWithOptions($honorId, $request, $headers, $runtime)
     {
@@ -1119,10 +1189,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 佩戴/卸下荣誉勋章
+     *  *
      * @param string              $honorId
-     * @param WearOrgHonorRequest $request
+     * @param WearOrgHonorRequest $request WearOrgHonorRequest
      *
-     * @return WearOrgHonorResponse
+     * @return WearOrgHonorResponse WearOrgHonorResponse
      */
     public function wearOrgHonor($honorId, $request)
     {

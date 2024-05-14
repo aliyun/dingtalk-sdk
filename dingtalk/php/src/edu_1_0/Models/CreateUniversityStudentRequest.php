@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityStudentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $classId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gender;
@@ -24,21 +28,29 @@ class CreateUniversityStudentRequest extends Model
     public $identityNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $studentNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetTbOrgIdByDingOrgIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var result
      */
     public $result;

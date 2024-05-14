@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListNavigationByFormTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -16,6 +18,8 @@ class ListNavigationByFormTypeRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -30,6 +34,8 @@ class ListNavigationByFormTypeRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -37,6 +43,8 @@ class ListNavigationByFormTypeRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

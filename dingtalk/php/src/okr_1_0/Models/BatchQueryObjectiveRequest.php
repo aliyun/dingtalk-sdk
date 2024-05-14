@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $objectiveIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10056
      *
      * @var string
@@ -35,6 +39,8 @@ class BatchQueryObjectiveRequest extends Model
     public $withKr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -42,6 +48,8 @@ class BatchQueryObjectiveRequest extends Model
     public $withProgress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

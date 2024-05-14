@@ -15,11 +15,15 @@ class CreateRangeProtectionRequest extends Model
     public $editableSetting;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $otherUserPermission;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

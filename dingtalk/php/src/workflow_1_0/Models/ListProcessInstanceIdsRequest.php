@@ -16,6 +16,8 @@ class ListProcessInstanceIdsRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +25,8 @@ class ListProcessInstanceIdsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +34,8 @@ class ListProcessInstanceIdsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-FF6Y2xxxx
      *
      * @var string
@@ -37,6 +43,8 @@ class ListProcessInstanceIdsRequest extends Model
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1496678400000
      *
      * @var int

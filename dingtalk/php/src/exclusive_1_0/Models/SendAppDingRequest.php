@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendAppDingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 开会
      *
      * @var string
@@ -16,6 +18,8 @@ class SendAppDingRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userids;

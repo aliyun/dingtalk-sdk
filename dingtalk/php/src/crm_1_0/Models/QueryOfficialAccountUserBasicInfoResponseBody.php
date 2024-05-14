@@ -15,6 +15,8 @@ class QueryOfficialAccountUserBasicInfoResponseBody extends Model
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var result
      */
     public $result;

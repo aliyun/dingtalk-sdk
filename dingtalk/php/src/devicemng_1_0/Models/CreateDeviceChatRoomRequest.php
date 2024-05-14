@@ -26,6 +26,8 @@ class CreateDeviceChatRoomRequest extends Model
     public $deviceUuids;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxxx
      *
      * @var string
@@ -40,6 +42,8 @@ class CreateDeviceChatRoomRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

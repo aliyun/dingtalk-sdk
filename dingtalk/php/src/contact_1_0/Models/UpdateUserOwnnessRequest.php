@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateUserOwnnessRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1-删除，0-正常
      *
      * @var int
@@ -16,11 +18,15 @@ class UpdateUserOwnnessRequest extends Model
     public $deletedFlag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var int
@@ -28,6 +34,8 @@ class UpdateUserOwnnessRequest extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1-请假，3-出差
      *
      * @var int
@@ -35,6 +43,8 @@ class UpdateUserOwnnessRequest extends Model
     public $ownenssType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;

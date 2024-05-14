@@ -18,6 +18,8 @@ class CreateTopboxRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardData
      */
     public $cardData;
@@ -28,6 +30,8 @@ class CreateTopboxRequest extends Model
     public $cardSettings;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 56xxx-xxx
      *
      * @var string
@@ -35,6 +39,8 @@ class CreateTopboxRequest extends Model
     public $cardTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -70,6 +76,8 @@ class CreateTopboxRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123xxx
      *
      * @var string

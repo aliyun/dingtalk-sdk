@@ -10,6 +10,8 @@ use GuzzleHttp\Psr7\Stream;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example R45Y
      *
      * @var Stream
@@ -17,6 +19,8 @@ class data extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 420983
      *
      * @var int
@@ -24,6 +28,8 @@ class data extends Model
     public $position;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

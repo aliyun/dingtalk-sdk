@@ -24,6 +24,8 @@ class ListGroupSetRequest extends Model
     public $queryDsl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;

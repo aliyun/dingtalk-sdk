@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class ResaleOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $orderCreateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $quantity;
@@ -29,6 +35,8 @@ class ResaleOrderRequest extends Model
     public $serviceStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $serviceStopTime;

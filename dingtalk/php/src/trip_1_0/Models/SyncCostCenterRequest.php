@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SyncCostCenterRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -16,6 +18,8 @@ class SyncCostCenterRequest extends Model
     public $channelCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $costCenterId;
@@ -31,6 +35,8 @@ class SyncCostCenterRequest extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-02-21 11:11:11
      *
      * @var string
@@ -64,6 +70,8 @@ class SyncCostCenterRequest extends Model
     public $thirdPartId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 默认成本中心
      *
      * @var string
@@ -71,6 +79,8 @@ class SyncCostCenterRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

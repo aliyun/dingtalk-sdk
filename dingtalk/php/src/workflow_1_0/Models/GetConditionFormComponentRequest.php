@@ -16,6 +16,8 @@ class GetConditionFormComponentRequest extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-xxx
      *
      * @var string

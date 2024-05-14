@@ -34,12 +34,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日清月结-计件报工接口
+     *  *
      * @param string                                 $userId
-     * @param IndustrializeManufactureJobBookRequest $request
-     * @param string[]                               $headers
-     * @param RuntimeOptions                         $runtime
+     * @param IndustrializeManufactureJobBookRequest $request IndustrializeManufactureJobBookRequest
+     * @param string[]                               $headers map
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return IndustrializeManufactureJobBookResponse
+     * @return IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookResponse
      */
     public function industrializeManufactureJobBookWithOptions($userId, $request, $headers, $runtime)
     {
@@ -125,10 +127,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 日清月结-计件报工接口
+     *  *
      * @param string                                 $userId
-     * @param IndustrializeManufactureJobBookRequest $request
+     * @param IndustrializeManufactureJobBookRequest $request IndustrializeManufactureJobBookRequest
      *
-     * @return IndustrializeManufactureJobBookResponse
+     * @return IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookResponse
      */
     public function industrializeManufactureJobBook($userId, $request)
     {
@@ -139,11 +143,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param IndustrializeManufactureQueryJobsRequest $request
-     * @param IndustrializeManufactureQueryJobsHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 日清月结-计件报工查询接口
+     *  *
+     * @param IndustrializeManufactureQueryJobsRequest $request IndustrializeManufactureQueryJobsRequest
+     * @param IndustrializeManufactureQueryJobsHeaders $headers IndustrializeManufactureQueryJobsHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return IndustrializeManufactureQueryJobsResponse
+     * @return IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobsResponse
      */
     public function industrializeManufactureQueryJobsWithOptions($request, $headers, $runtime)
     {
@@ -221,9 +227,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param IndustrializeManufactureQueryJobsRequest $request
+     * @summary 日清月结-计件报工查询接口
+     *  *
+     * @param IndustrializeManufactureQueryJobsRequest $request IndustrializeManufactureQueryJobsRequest
      *
-     * @return IndustrializeManufactureQueryJobsResponse
+     * @return IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobsResponse
      */
     public function industrializeManufactureQueryJobs($request)
     {

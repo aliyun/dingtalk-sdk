@@ -15,6 +15,8 @@ class EditSalesRequest extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 158
      *
      * @var int
@@ -29,6 +31,8 @@ class EditSalesRequest extends Model
     public $msgid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1621822122
      *
      * @var int

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateAppOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -17,6 +19,8 @@ class CreateAppOrderRequest extends Model
     public $actualAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -24,6 +28,8 @@ class CreateAppOrderRequest extends Model
     public $alipayAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -31,6 +37,8 @@ class CreateAppOrderRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detailList[]
      */
     public $detailList;
@@ -43,6 +51,8 @@ class CreateAppOrderRequest extends Model
     public $labelAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var string
@@ -50,6 +60,8 @@ class CreateAppOrderRequest extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example M00001
      *
      * @var string
@@ -57,6 +69,8 @@ class CreateAppOrderRequest extends Model
     public $merchantOrderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var string
@@ -64,6 +78,8 @@ class CreateAppOrderRequest extends Model
     public $outerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8
      *
      * @var string
@@ -71,6 +87,8 @@ class CreateAppOrderRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 数字图书
      *
      * @var string
@@ -78,6 +96,8 @@ class CreateAppOrderRequest extends Model
     public $subject;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100000
      *
      * @var int

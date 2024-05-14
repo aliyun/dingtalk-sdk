@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class StopCloudFeedRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 214675
      *
      * @var string

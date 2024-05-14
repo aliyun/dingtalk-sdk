@@ -14,6 +14,8 @@ class PushVerifyEventRequest extends Model
     public $callerDeviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $factorCodeList;
@@ -24,6 +26,8 @@ class PushVerifyEventRequest extends Model
     public $state;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

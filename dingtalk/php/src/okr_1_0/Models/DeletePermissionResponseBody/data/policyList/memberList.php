@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class memberList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
@@ -19,6 +21,8 @@ class memberList extends Model
     public $nickname;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class sectionModels extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var sectionEndTime
      */
     public $sectionEndTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class sectionModels extends Model
     public $sectionIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 第一节
      *
      * @var string
@@ -30,11 +36,15 @@ class sectionModels extends Model
     public $sectionName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionStartTime
      */
     public $sectionStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example COURSE：上课节次 REST：休息节次
      *
      * @var string

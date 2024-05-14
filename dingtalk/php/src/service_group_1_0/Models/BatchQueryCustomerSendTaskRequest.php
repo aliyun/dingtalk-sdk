@@ -30,6 +30,8 @@ class BatchQueryCustomerSendTaskRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -49,6 +51,8 @@ class BatchQueryCustomerSendTaskRequest extends Model
     public $openBatchTaskIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

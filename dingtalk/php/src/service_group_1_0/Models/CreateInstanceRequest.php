@@ -23,6 +23,8 @@ class CreateInstanceRequest extends Model
     public $externalBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DING_CUSTOMER
      *
      * @var string
@@ -30,6 +32,8 @@ class CreateInstanceRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"node_1111":"hahha"}
      *
      * @var string
@@ -37,6 +41,8 @@ class CreateInstanceRequest extends Model
     public $formDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 88444***
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetDeveloperMetadataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

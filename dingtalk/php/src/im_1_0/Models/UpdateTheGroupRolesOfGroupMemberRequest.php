@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateTheGroupRolesOfGroupMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string
@@ -21,6 +23,8 @@ class UpdateTheGroupRolesOfGroupMemberRequest extends Model
     public $openRoleIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

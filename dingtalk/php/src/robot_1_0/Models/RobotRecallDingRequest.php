@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class RobotRecallDingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openDingId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $robotCode;

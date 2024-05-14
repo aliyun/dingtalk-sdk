@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class permissionTree extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var policyList[]
      */
     public $policyList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example public
      *
      * @var string
@@ -27,6 +33,8 @@ class permissionTree extends Model
     public $privacy;
 
     /**
+     * @description This parameter is required.
+     *
      * @example period
      *
      * @var string

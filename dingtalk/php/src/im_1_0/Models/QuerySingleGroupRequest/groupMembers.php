@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class groupMembers extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string
@@ -16,6 +18,8 @@ class groupMembers extends Model
     public $appUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8778
      *
      * @var string

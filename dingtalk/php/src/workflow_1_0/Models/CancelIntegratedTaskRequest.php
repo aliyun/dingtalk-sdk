@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CancelIntegratedTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example act_xxxx
      *
      * @var string
@@ -21,6 +23,8 @@ class CancelIntegratedTaskRequest extends Model
     public $activityIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example tPr_FB_mT_xxxxxxxxx2hQ05201655306463
      *
      * @var string

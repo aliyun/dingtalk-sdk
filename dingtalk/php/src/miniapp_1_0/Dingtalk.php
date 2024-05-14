@@ -63,11 +63,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppRequest $request
-     * @param CreateMiniAppHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 创建小程序
+     *  *
+     * @param CreateMiniAppRequest $request CreateMiniAppRequest
+     * @param CreateMiniAppHeaders $headers CreateMiniAppHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateMiniAppResponse
+     * @return CreateMiniAppResponse CreateMiniAppResponse
      */
     public function createMiniAppWithOptions($request, $headers, $runtime)
     {
@@ -118,9 +120,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppRequest $request
+     * @summary 创建小程序
+     *  *
+     * @param CreateMiniAppRequest $request CreateMiniAppRequest
      *
-     * @return CreateMiniAppResponse
+     * @return CreateMiniAppResponse CreateMiniAppResponse
      */
     public function createMiniApp($request)
     {
@@ -131,11 +135,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppPluginRequest $request
-     * @param CreateMiniAppPluginHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 创建小程序组件
+     *  *
+     * @param CreateMiniAppPluginRequest $request CreateMiniAppPluginRequest
+     * @param CreateMiniAppPluginHeaders $headers CreateMiniAppPluginHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateMiniAppPluginResponse
+     * @return CreateMiniAppPluginResponse CreateMiniAppPluginResponse
      */
     public function createMiniAppPluginWithOptions($request, $headers, $runtime)
     {
@@ -186,9 +192,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppPluginRequest $request
+     * @summary 创建小程序组件
+     *  *
+     * @param CreateMiniAppPluginRequest $request CreateMiniAppPluginRequest
      *
-     * @return CreateMiniAppPluginResponse
+     * @return CreateMiniAppPluginResponse CreateMiniAppPluginResponse
      */
     public function createMiniAppPlugin($request)
     {
@@ -199,11 +207,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateVersionAcrossBundleRequest $request
-     * @param CreateVersionAcrossBundleHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 小程序多端发布版本
+     *  *
+     * @param CreateVersionAcrossBundleRequest $request CreateVersionAcrossBundleRequest
+     * @param CreateVersionAcrossBundleHeaders $headers CreateVersionAcrossBundleHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateVersionAcrossBundleResponse
+     * @return CreateVersionAcrossBundleResponse CreateVersionAcrossBundleResponse
      */
     public function createVersionAcrossBundleWithOptions($request, $headers, $runtime)
     {
@@ -251,9 +261,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateVersionAcrossBundleRequest $request
+     * @summary 小程序多端发布版本
+     *  *
+     * @param CreateVersionAcrossBundleRequest $request CreateVersionAcrossBundleRequest
      *
-     * @return CreateVersionAcrossBundleResponse
+     * @return CreateVersionAcrossBundleResponse CreateVersionAcrossBundleResponse
      */
     public function createVersionAcrossBundle($request)
     {
@@ -264,11 +276,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMaxVersionRequest $request
-     * @param GetMaxVersionHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取小程序最大的构建版本
+     *  *
+     * @param GetMaxVersionRequest $request GetMaxVersionRequest
+     * @param GetMaxVersionHeaders $headers GetMaxVersionHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMaxVersionResponse
+     * @return GetMaxVersionResponse GetMaxVersionResponse
      */
     public function getMaxVersionWithOptions($request, $headers, $runtime)
     {
@@ -310,9 +324,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMaxVersionRequest $request
+     * @summary 获取小程序最大的构建版本
+     *  *
+     * @param GetMaxVersionRequest $request GetMaxVersionRequest
      *
-     * @return GetMaxVersionResponse
+     * @return GetMaxVersionResponse GetMaxVersionResponse
      */
     public function getMaxVersion($request)
     {
@@ -323,11 +339,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMiniAppMetaDataRequest $request
-     * @param GetMiniAppMetaDataHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 同步小程序元数据
+     *  *
+     * @param GetMiniAppMetaDataRequest $request GetMiniAppMetaDataRequest
+     * @param GetMiniAppMetaDataHeaders $headers GetMiniAppMetaDataHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMiniAppMetaDataResponse
+     * @return GetMiniAppMetaDataResponse GetMiniAppMetaDataResponse
      */
     public function getMiniAppMetaDataWithOptions($request, $headers, $runtime)
     {
@@ -372,9 +390,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMiniAppMetaDataRequest $request
+     * @summary 同步小程序元数据
+     *  *
+     * @param GetMiniAppMetaDataRequest $request GetMiniAppMetaDataRequest
      *
-     * @return GetMiniAppMetaDataResponse
+     * @return GetMiniAppMetaDataResponse GetMiniAppMetaDataResponse
      */
     public function getMiniAppMetaData($request)
     {
@@ -385,11 +405,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询小程序配置
+     *  *
      * @param string                       $miniAppId
-     * @param GetSettingByMiniAppIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetSettingByMiniAppIdHeaders $headers   GetSettingByMiniAppIdHeaders
+     * @param RuntimeOptions               $runtime   runtime options for this request RuntimeOptions
      *
-     * @return GetSettingByMiniAppIdResponse
+     * @return GetSettingByMiniAppIdResponse GetSettingByMiniAppIdResponse
      */
     public function getSettingByMiniAppIdWithOptions($miniAppId, $headers, $runtime)
     {
@@ -419,9 +441,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询小程序配置
+     *  *
      * @param string $miniAppId
      *
-     * @return GetSettingByMiniAppIdResponse
+     * @return GetSettingByMiniAppIdResponse GetSettingByMiniAppIdResponse
      */
     public function getSettingByMiniAppId($miniAppId)
     {
@@ -432,11 +456,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InvokeHtmlBundleBuildRequest $request
-     * @param InvokeHtmlBundleBuildHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 构建H5Bundle
+     *  *
+     * @param InvokeHtmlBundleBuildRequest $request InvokeHtmlBundleBuildRequest
+     * @param InvokeHtmlBundleBuildHeaders $headers InvokeHtmlBundleBuildHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return InvokeHtmlBundleBuildResponse
+     * @return InvokeHtmlBundleBuildResponse InvokeHtmlBundleBuildResponse
      */
     public function invokeHtmlBundleBuildWithOptions($request, $headers, $runtime)
     {
@@ -478,9 +504,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InvokeHtmlBundleBuildRequest $request
+     * @summary 构建H5Bundle
+     *  *
+     * @param InvokeHtmlBundleBuildRequest $request InvokeHtmlBundleBuildRequest
      *
-     * @return InvokeHtmlBundleBuildResponse
+     * @return InvokeHtmlBundleBuildResponse InvokeHtmlBundleBuildResponse
      */
     public function invokeHtmlBundleBuild($request)
     {
@@ -491,11 +519,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAvaiableVersionRequest $request
-     * @param ListAvaiableVersionHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取小程序版本列表
+     *  *
+     * @param ListAvaiableVersionRequest $request ListAvaiableVersionRequest
+     * @param ListAvaiableVersionHeaders $headers ListAvaiableVersionHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAvaiableVersionResponse
+     * @return ListAvaiableVersionResponse ListAvaiableVersionResponse
      */
     public function listAvaiableVersionWithOptions($request, $headers, $runtime)
     {
@@ -543,9 +573,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAvaiableVersionRequest $request
+     * @summary 获取小程序版本列表
+     *  *
+     * @param ListAvaiableVersionRequest $request ListAvaiableVersionRequest
      *
-     * @return ListAvaiableVersionResponse
+     * @return ListAvaiableVersionResponse ListAvaiableVersionResponse
      */
     public function listAvaiableVersion($request)
     {
@@ -556,11 +588,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryHtmlBundleBuildRequest $request
-     * @param QueryHtmlBundleBuildHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询H5构建结果
+     *  *
+     * @param QueryHtmlBundleBuildRequest $request QueryHtmlBundleBuildRequest
+     * @param QueryHtmlBundleBuildHeaders $headers QueryHtmlBundleBuildHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryHtmlBundleBuildResponse
+     * @return QueryHtmlBundleBuildResponse QueryHtmlBundleBuildResponse
      */
     public function queryHtmlBundleBuildWithOptions($request, $headers, $runtime)
     {
@@ -602,9 +636,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryHtmlBundleBuildRequest $request
+     * @summary 查询H5构建结果
+     *  *
+     * @param QueryHtmlBundleBuildRequest $request QueryHtmlBundleBuildRequest
      *
-     * @return QueryHtmlBundleBuildResponse
+     * @return QueryHtmlBundleBuildResponse QueryHtmlBundleBuildResponse
      */
     public function queryHtmlBundleBuild($request)
     {
@@ -615,11 +651,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RollBackVersionRequest $request
-     * @param string[]               $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 回滚版本
+     *  *
+     * @param RollBackVersionRequest $request RollBackVersionRequest
+     * @param string[]               $headers map
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return RollBackVersionResponse
+     * @return RollBackVersionResponse RollBackVersionResponse
      */
     public function rollBackVersionWithOptions($request, $headers, $runtime)
     {
@@ -657,9 +695,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RollBackVersionRequest $request
+     * @summary 回滚版本
+     *  *
+     * @param RollBackVersionRequest $request RollBackVersionRequest
      *
-     * @return RollBackVersionResponse
+     * @return RollBackVersionResponse RollBackVersionResponse
      */
     public function rollBackVersion($request)
     {
@@ -670,11 +710,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetExtendSettingRequest $request
-     * @param SetExtendSettingHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 修改小程序配置
+     *  *
+     * @param SetExtendSettingRequest $request SetExtendSettingRequest
+     * @param SetExtendSettingHeaders $headers SetExtendSettingHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetExtendSettingResponse
+     * @return SetExtendSettingResponse SetExtendSettingResponse
      */
     public function setExtendSettingWithOptions($request, $headers, $runtime)
     {
@@ -713,9 +755,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetExtendSettingRequest $request
+     * @summary 修改小程序配置
+     *  *
+     * @param SetExtendSettingRequest $request SetExtendSettingRequest
      *
-     * @return SetExtendSettingResponse
+     * @return SetExtendSettingResponse SetExtendSettingResponse
      */
     public function setExtendSetting($request)
     {
@@ -726,11 +770,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateVersionStatusRequest $request
-     * @param UpdateVersionStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 发布版本
+     *  *
+     * @param UpdateVersionStatusRequest $request UpdateVersionStatusRequest
+     * @param UpdateVersionStatusHeaders $headers UpdateVersionStatusHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateVersionStatusResponse
+     * @return UpdateVersionStatusResponse UpdateVersionStatusResponse
      */
     public function updateVersionStatusWithOptions($request, $headers, $runtime)
     {
@@ -775,9 +821,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateVersionStatusRequest $request
+     * @summary 发布版本
+     *  *
+     * @param UpdateVersionStatusRequest $request UpdateVersionStatusRequest
      *
-     * @return UpdateVersionStatusResponse
+     * @return UpdateVersionStatusResponse UpdateVersionStatusResponse
      */
     public function updateVersionStatus($request)
     {

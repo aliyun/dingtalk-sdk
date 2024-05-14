@@ -30,6 +30,8 @@ class AddContactMemberToGroupRequest extends Model
     public $memberUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid***
      *
      * @var string
@@ -37,6 +39,8 @@ class AddContactMemberToGroupRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888
      *
      * @var string

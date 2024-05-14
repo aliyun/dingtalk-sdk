@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SyncProjectRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -36,6 +38,8 @@ class SyncProjectRequest extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-02-21 11:11:11
      *
      * @var string
@@ -53,6 +57,8 @@ class SyncProjectRequest extends Model
     public $managerIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -60,6 +66,8 @@ class SyncProjectRequest extends Model
     public $projectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 默认项目
      *
      * @var string
@@ -84,6 +92,8 @@ class SyncProjectRequest extends Model
     public $thirdPartId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

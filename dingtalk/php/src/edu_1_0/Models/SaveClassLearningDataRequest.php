@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveClassLearningDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,11 +18,15 @@ class SaveClassLearningDataRequest extends Model
     public $assignNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $assignStudentUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -28,6 +34,8 @@ class SaveClassLearningDataRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example HOMEWORK
      *
      * @var string
@@ -35,6 +43,8 @@ class SaveClassLearningDataRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxxxxxxx
      *
      * @var string
@@ -42,6 +52,8 @@ class SaveClassLearningDataRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -56,6 +68,8 @@ class SaveClassLearningDataRequest extends Model
     public $fileSuffix;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1672502400000
      *
      * @var int
@@ -63,6 +77,8 @@ class SaveClassLearningDataRequest extends Model
     public $generatedTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -84,6 +100,8 @@ class SaveClassLearningDataRequest extends Model
     public $standardAnswerPictureNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example shuxue
      *
      * @var string
@@ -91,6 +109,8 @@ class SaveClassLearningDataRequest extends Model
     public $subjectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0123456
      *
      * @var string

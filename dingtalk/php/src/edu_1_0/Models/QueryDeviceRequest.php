@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fadf-8008
      *
      * @var string

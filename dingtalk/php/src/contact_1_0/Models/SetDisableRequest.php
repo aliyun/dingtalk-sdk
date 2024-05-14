@@ -16,6 +16,8 @@ class SetDisableRequest extends Model
     public $reason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example userIdXXX
      *
      * @var string

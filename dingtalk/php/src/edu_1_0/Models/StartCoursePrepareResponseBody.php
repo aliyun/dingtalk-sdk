@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class StartCoursePrepareResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var universityCourseCommonResponse
      */
     public $universityCourseCommonResponse;

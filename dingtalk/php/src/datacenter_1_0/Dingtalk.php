@@ -309,11 +309,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAbnormalOperationRequest $request
-     * @param GetAbnormalOperationHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 工商-经营异常
+     *  *
+     * @param GetAbnormalOperationRequest $request GetAbnormalOperationRequest
+     * @param GetAbnormalOperationHeaders $headers GetAbnormalOperationHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAbnormalOperationResponse
+     * @return GetAbnormalOperationResponse GetAbnormalOperationResponse
      */
     public function getAbnormalOperationWithOptions($request, $headers, $runtime)
     {
@@ -355,9 +357,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAbnormalOperationRequest $request
+     * @summary 工商-经营异常
+     *  *
+     * @param GetAbnormalOperationRequest $request GetAbnormalOperationRequest
      *
-     * @return GetAbnormalOperationResponse
+     * @return GetAbnormalOperationResponse GetAbnormalOperationResponse
      */
     public function getAbnormalOperation($request)
     {
@@ -368,11 +372,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdministrativeLicensingRequest $request
-     * @param GetAdministrativeLicensingHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 获取工商-行政许可
+     *  *
+     * @param GetAdministrativeLicensingRequest $request GetAdministrativeLicensingRequest
+     * @param GetAdministrativeLicensingHeaders $headers GetAdministrativeLicensingHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAdministrativeLicensingResponse
+     * @return GetAdministrativeLicensingResponse GetAdministrativeLicensingResponse
      */
     public function getAdministrativeLicensingWithOptions($request, $headers, $runtime)
     {
@@ -414,9 +420,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdministrativeLicensingRequest $request
+     * @summary 获取工商-行政许可
+     *  *
+     * @param GetAdministrativeLicensingRequest $request GetAdministrativeLicensingRequest
      *
-     * @return GetAdministrativeLicensingResponse
+     * @return GetAdministrativeLicensingResponse GetAdministrativeLicensingResponse
      */
     public function getAdministrativeLicensing($request)
     {
@@ -427,11 +435,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdministrativePenaltiesRequest $request
-     * @param GetAdministrativePenaltiesHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 负面-行政处罚
+     *  *
+     * @param GetAdministrativePenaltiesRequest $request GetAdministrativePenaltiesRequest
+     * @param GetAdministrativePenaltiesHeaders $headers GetAdministrativePenaltiesHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAdministrativePenaltiesResponse
+     * @return GetAdministrativePenaltiesResponse GetAdministrativePenaltiesResponse
      */
     public function getAdministrativePenaltiesWithOptions($request, $headers, $runtime)
     {
@@ -473,9 +483,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdministrativePenaltiesRequest $request
+     * @summary 负面-行政处罚
+     *  *
+     * @param GetAdministrativePenaltiesRequest $request GetAdministrativePenaltiesRequest
      *
-     * @return GetAdministrativePenaltiesResponse
+     * @return GetAdministrativePenaltiesResponse GetAdministrativePenaltiesResponse
      */
     public function getAdministrativePenalties($request)
     {
@@ -486,11 +498,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBasicInfoRequest $request
-     * @param GetBasicInfoHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 工商-基础信息
+     *  *
+     * @param GetBasicInfoRequest $request GetBasicInfoRequest
+     * @param GetBasicInfoHeaders $headers GetBasicInfoHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBasicInfoResponse
+     * @return GetBasicInfoResponse GetBasicInfoResponse
      */
     public function getBasicInfoWithOptions($request, $headers, $runtime)
     {
@@ -532,9 +546,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBasicInfoRequest $request
+     * @summary 工商-基础信息
+     *  *
+     * @param GetBasicInfoRequest $request GetBasicInfoRequest
      *
-     * @return GetBasicInfoResponse
+     * @return GetBasicInfoResponse GetBasicInfoResponse
      */
     public function getBasicInfo($request)
     {
@@ -545,11 +561,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBiddingInfoRequest $request
-     * @param GetBiddingInfoHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取经营-招投标信息
+     *  *
+     * @param GetBiddingInfoRequest $request GetBiddingInfoRequest
+     * @param GetBiddingInfoHeaders $headers GetBiddingInfoHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBiddingInfoResponse
+     * @return GetBiddingInfoResponse GetBiddingInfoResponse
      */
     public function getBiddingInfoWithOptions($request, $headers, $runtime)
     {
@@ -591,9 +609,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBiddingInfoRequest $request
+     * @summary 获取经营-招投标信息
+     *  *
+     * @param GetBiddingInfoRequest $request GetBiddingInfoRequest
      *
-     * @return GetBiddingInfoResponse
+     * @return GetBiddingInfoResponse GetBiddingInfoResponse
      */
     public function getBiddingInfo($request)
     {
@@ -604,11 +624,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBranchInfoRequest $request
-     * @param GetBranchInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取工商-分支机构
+     *  *
+     * @param GetBranchInfoRequest $request GetBranchInfoRequest
+     * @param GetBranchInfoHeaders $headers GetBranchInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBranchInfoResponse
+     * @return GetBranchInfoResponse GetBranchInfoResponse
      */
     public function getBranchInfoWithOptions($request, $headers, $runtime)
     {
@@ -650,9 +672,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBranchInfoRequest $request
+     * @summary 获取工商-分支机构
+     *  *
+     * @param GetBranchInfoRequest $request GetBranchInfoRequest
      *
-     * @return GetBranchInfoResponse
+     * @return GetBranchInfoResponse GetBranchInfoResponse
      */
     public function getBranchInfo($request)
     {
@@ -663,11 +687,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetChangeRecordRequest $request
-     * @param GetChangeRecordHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取工商-变更记录
+     *  *
+     * @param GetChangeRecordRequest $request GetChangeRecordRequest
+     * @param GetChangeRecordHeaders $headers GetChangeRecordHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetChangeRecordResponse
+     * @return GetChangeRecordResponse GetChangeRecordResponse
      */
     public function getChangeRecordWithOptions($request, $headers, $runtime)
     {
@@ -709,9 +735,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetChangeRecordRequest $request
+     * @summary 获取工商-变更记录
+     *  *
+     * @param GetChangeRecordRequest $request GetChangeRecordRequest
      *
-     * @return GetChangeRecordResponse
+     * @return GetChangeRecordResponse GetChangeRecordResponse
      */
     public function getChangeRecord($request)
     {
@@ -722,11 +750,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDomainInfoRequest $request
-     * @param GetDomainInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取知识产权-域名信息
+     *  *
+     * @param GetDomainInfoRequest $request GetDomainInfoRequest
+     * @param GetDomainInfoHeaders $headers GetDomainInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDomainInfoResponse
+     * @return GetDomainInfoResponse GetDomainInfoResponse
      */
     public function getDomainInfoWithOptions($request, $headers, $runtime)
     {
@@ -768,9 +798,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDomainInfoRequest $request
+     * @summary 获取知识产权-域名信息
+     *  *
+     * @param GetDomainInfoRequest $request GetDomainInfoRequest
      *
-     * @return GetDomainInfoResponse
+     * @return GetDomainInfoResponse GetDomainInfoResponse
      */
     public function getDomainInfo($request)
     {
@@ -781,11 +813,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDoubleRandomRequest $request
-     * @param GetDoubleRandomHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取工商-双随机抽查结果
+     *  *
+     * @param GetDoubleRandomRequest $request GetDoubleRandomRequest
+     * @param GetDoubleRandomHeaders $headers GetDoubleRandomHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDoubleRandomResponse
+     * @return GetDoubleRandomResponse GetDoubleRandomResponse
      */
     public function getDoubleRandomWithOptions($request, $headers, $runtime)
     {
@@ -827,9 +861,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDoubleRandomRequest $request
+     * @summary 获取工商-双随机抽查结果
+     *  *
+     * @param GetDoubleRandomRequest $request GetDoubleRandomRequest
      *
-     * @return GetDoubleRandomResponse
+     * @return GetDoubleRandomResponse GetDoubleRandomResponse
      */
     public function getDoubleRandom($request)
     {
@@ -840,11 +876,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEnvironmentalPenaltiesRequest $request
-     * @param GetEnvironmentalPenaltiesHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 负面-环保处罚
+     *  *
+     * @param GetEnvironmentalPenaltiesRequest $request GetEnvironmentalPenaltiesRequest
+     * @param GetEnvironmentalPenaltiesHeaders $headers GetEnvironmentalPenaltiesHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetEnvironmentalPenaltiesResponse
+     * @return GetEnvironmentalPenaltiesResponse GetEnvironmentalPenaltiesResponse
      */
     public function getEnvironmentalPenaltiesWithOptions($request, $headers, $runtime)
     {
@@ -886,9 +924,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEnvironmentalPenaltiesRequest $request
+     * @summary 负面-环保处罚
+     *  *
+     * @param GetEnvironmentalPenaltiesRequest $request GetEnvironmentalPenaltiesRequest
      *
-     * @return GetEnvironmentalPenaltiesResponse
+     * @return GetEnvironmentalPenaltiesResponse GetEnvironmentalPenaltiesResponse
      */
     public function getEnvironmentalPenalties($request)
     {
@@ -899,11 +939,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHolderInfoRequest $request
-     * @param GetHolderInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 工商-股东信息
+     *  *
+     * @param GetHolderInfoRequest $request GetHolderInfoRequest
+     * @param GetHolderInfoHeaders $headers GetHolderInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetHolderInfoResponse
+     * @return GetHolderInfoResponse GetHolderInfoResponse
      */
     public function getHolderInfoWithOptions($request, $headers, $runtime)
     {
@@ -945,9 +987,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetHolderInfoRequest $request
+     * @summary 工商-股东信息
+     *  *
+     * @param GetHolderInfoRequest $request GetHolderInfoRequest
      *
-     * @return GetHolderInfoResponse
+     * @return GetHolderInfoResponse GetHolderInfoResponse
      */
     public function getHolderInfo($request)
     {
@@ -958,11 +1002,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIntellectualPropertyRequest $request
-     * @param GetIntellectualPropertyHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 获取工商-知识产权出质
+     *  *
+     * @param GetIntellectualPropertyRequest $request GetIntellectualPropertyRequest
+     * @param GetIntellectualPropertyHeaders $headers GetIntellectualPropertyHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetIntellectualPropertyResponse
+     * @return GetIntellectualPropertyResponse GetIntellectualPropertyResponse
      */
     public function getIntellectualPropertyWithOptions($request, $headers, $runtime)
     {
@@ -1004,9 +1050,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIntellectualPropertyRequest $request
+     * @summary 获取工商-知识产权出质
+     *  *
+     * @param GetIntellectualPropertyRequest $request GetIntellectualPropertyRequest
      *
-     * @return GetIntellectualPropertyResponse
+     * @return GetIntellectualPropertyResponse GetIntellectualPropertyResponse
      */
     public function getIntellectualProperty($request)
     {
@@ -1017,11 +1065,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInvestmentAbroadRequest $request
-     * @param GetInvestmentAbroadHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取工商-对外投资
+     *  *
+     * @param GetInvestmentAbroadRequest $request GetInvestmentAbroadRequest
+     * @param GetInvestmentAbroadHeaders $headers GetInvestmentAbroadHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInvestmentAbroadResponse
+     * @return GetInvestmentAbroadResponse GetInvestmentAbroadResponse
      */
     public function getInvestmentAbroadWithOptions($request, $headers, $runtime)
     {
@@ -1063,9 +1113,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInvestmentAbroadRequest $request
+     * @summary 获取工商-对外投资
+     *  *
+     * @param GetInvestmentAbroadRequest $request GetInvestmentAbroadRequest
      *
-     * @return GetInvestmentAbroadResponse
+     * @return GetInvestmentAbroadResponse GetInvestmentAbroadResponse
      */
     public function getInvestmentAbroad($request)
     {
@@ -1076,11 +1128,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobInfoRequest $request
-     * @param GetJobInfoHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取经营-招聘信息
+     *  *
+     * @param GetJobInfoRequest $request GetJobInfoRequest
+     * @param GetJobInfoHeaders $headers GetJobInfoHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetJobInfoResponse
+     * @return GetJobInfoResponse GetJobInfoResponse
      */
     public function getJobInfoWithOptions($request, $headers, $runtime)
     {
@@ -1122,9 +1176,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobInfoRequest $request
+     * @summary 获取经营-招聘信息
+     *  *
+     * @param GetJobInfoRequest $request GetJobInfoRequest
      *
-     * @return GetJobInfoResponse
+     * @return GetJobInfoResponse GetJobInfoResponse
      */
     public function getJobInfo($request)
     {
@@ -1135,11 +1191,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPatentInfoRequest $request
-     * @param GetPatentInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取知识产权-专利信息
+     *  *
+     * @param GetPatentInfoRequest $request GetPatentInfoRequest
+     * @param GetPatentInfoHeaders $headers GetPatentInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPatentInfoResponse
+     * @return GetPatentInfoResponse GetPatentInfoResponse
      */
     public function getPatentInfoWithOptions($request, $headers, $runtime)
     {
@@ -1181,9 +1239,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPatentInfoRequest $request
+     * @summary 获取知识产权-专利信息
+     *  *
+     * @param GetPatentInfoRequest $request GetPatentInfoRequest
      *
-     * @return GetPatentInfoResponse
+     * @return GetPatentInfoResponse GetPatentInfoResponse
      */
     public function getPatentInfo($request)
     {
@@ -1194,11 +1254,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPrincipalEmployeeRequest $request
-     * @param GetPrincipalEmployeeHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取工商-主要人员
+     *  *
+     * @param GetPrincipalEmployeeRequest $request GetPrincipalEmployeeRequest
+     * @param GetPrincipalEmployeeHeaders $headers GetPrincipalEmployeeHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPrincipalEmployeeResponse
+     * @return GetPrincipalEmployeeResponse GetPrincipalEmployeeResponse
      */
     public function getPrincipalEmployeeWithOptions($request, $headers, $runtime)
     {
@@ -1240,9 +1302,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPrincipalEmployeeRequest $request
+     * @summary 获取工商-主要人员
+     *  *
+     * @param GetPrincipalEmployeeRequest $request GetPrincipalEmployeeRequest
      *
-     * @return GetPrincipalEmployeeResponse
+     * @return GetPrincipalEmployeeResponse GetPrincipalEmployeeResponse
      */
     public function getPrincipalEmployee($request)
     {
@@ -1253,11 +1317,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetQeneralTaxpayerInfoRequest $request
-     * @param GetQeneralTaxpayerInfoHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 经营-一般纳税人
+     *  *
+     * @param GetQeneralTaxpayerInfoRequest $request GetQeneralTaxpayerInfoRequest
+     * @param GetQeneralTaxpayerInfoHeaders $headers GetQeneralTaxpayerInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetQeneralTaxpayerInfoResponse
+     * @return GetQeneralTaxpayerInfoResponse GetQeneralTaxpayerInfoResponse
      */
     public function getQeneralTaxpayerInfoWithOptions($request, $headers, $runtime)
     {
@@ -1299,9 +1365,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetQeneralTaxpayerInfoRequest $request
+     * @summary 经营-一般纳税人
+     *  *
+     * @param GetQeneralTaxpayerInfoRequest $request GetQeneralTaxpayerInfoRequest
      *
-     * @return GetQeneralTaxpayerInfoResponse
+     * @return GetQeneralTaxpayerInfoResponse GetQeneralTaxpayerInfoResponse
      */
     public function getQeneralTaxpayerInfo($request)
     {
@@ -1312,11 +1380,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetQualificationCertRequest $request
-     * @param GetQualificationCertHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取知识产权-资质证书
+     *  *
+     * @param GetQualificationCertRequest $request GetQualificationCertRequest
+     * @param GetQualificationCertHeaders $headers GetQualificationCertHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetQualificationCertResponse
+     * @return GetQualificationCertResponse GetQualificationCertResponse
      */
     public function getQualificationCertWithOptions($request, $headers, $runtime)
     {
@@ -1358,9 +1428,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetQualificationCertRequest $request
+     * @summary 获取知识产权-资质证书
+     *  *
+     * @param GetQualificationCertRequest $request GetQualificationCertRequest
      *
-     * @return GetQualificationCertResponse
+     * @return GetQualificationCertResponse GetQualificationCertResponse
      */
     public function getQualificationCert($request)
     {
@@ -1371,11 +1443,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSeriousViolationRequest $request
-     * @param GetSeriousViolationHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 负面-严重违法
+     *  *
+     * @param GetSeriousViolationRequest $request GetSeriousViolationRequest
+     * @param GetSeriousViolationHeaders $headers GetSeriousViolationHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSeriousViolationResponse
+     * @return GetSeriousViolationResponse GetSeriousViolationResponse
      */
     public function getSeriousViolationWithOptions($request, $headers, $runtime)
     {
@@ -1417,9 +1491,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSeriousViolationRequest $request
+     * @summary 负面-严重违法
+     *  *
+     * @param GetSeriousViolationRequest $request GetSeriousViolationRequest
      *
-     * @return GetSeriousViolationResponse
+     * @return GetSeriousViolationResponse GetSeriousViolationResponse
      */
     public function getSeriousViolation($request)
     {
@@ -1430,11 +1506,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSoftwareCopyrightRequest $request
-     * @param GetSoftwareCopyrightHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取知识产权-软件著作权
+     *  *
+     * @param GetSoftwareCopyrightRequest $request GetSoftwareCopyrightRequest
+     * @param GetSoftwareCopyrightHeaders $headers GetSoftwareCopyrightHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSoftwareCopyrightResponse
+     * @return GetSoftwareCopyrightResponse GetSoftwareCopyrightResponse
      */
     public function getSoftwareCopyrightWithOptions($request, $headers, $runtime)
     {
@@ -1476,9 +1554,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSoftwareCopyrightRequest $request
+     * @summary 获取知识产权-软件著作权
+     *  *
+     * @param GetSoftwareCopyrightRequest $request GetSoftwareCopyrightRequest
      *
-     * @return GetSoftwareCopyrightResponse
+     * @return GetSoftwareCopyrightResponse GetSoftwareCopyrightResponse
      */
     public function getSoftwareCopyright($request)
     {
@@ -1489,11 +1569,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTrademarkInfoRequest $request
-     * @param GetTrademarkInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取知识产权-商标信息
+     *  *
+     * @param GetTrademarkInfoRequest $request GetTrademarkInfoRequest
+     * @param GetTrademarkInfoHeaders $headers GetTrademarkInfoHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTrademarkInfoResponse
+     * @return GetTrademarkInfoResponse GetTrademarkInfoResponse
      */
     public function getTrademarkInfoWithOptions($request, $headers, $runtime)
     {
@@ -1535,9 +1617,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetTrademarkInfoRequest $request
+     * @summary 获取知识产权-商标信息
+     *  *
+     * @param GetTrademarkInfoRequest $request GetTrademarkInfoRequest
      *
-     * @return GetTrademarkInfoResponse
+     * @return GetTrademarkInfoResponse GetTrademarkInfoResponse
      */
     public function getTrademarkInfo($request)
     {
@@ -1548,11 +1632,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWorkCopyrightRequest $request
-     * @param GetWorkCopyrightHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取知识产权-作品著作权
+     *  *
+     * @param GetWorkCopyrightRequest $request GetWorkCopyrightRequest
+     * @param GetWorkCopyrightHeaders $headers GetWorkCopyrightHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetWorkCopyrightResponse
+     * @return GetWorkCopyrightResponse GetWorkCopyrightResponse
      */
     public function getWorkCopyrightWithOptions($request, $headers, $runtime)
     {
@@ -1594,9 +1680,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWorkCopyrightRequest $request
+     * @summary 获取知识产权-作品著作权
+     *  *
+     * @param GetWorkCopyrightRequest $request GetWorkCopyrightRequest
      *
-     * @return GetWorkCopyrightResponse
+     * @return GetWorkCopyrightResponse GetWorkCopyrightResponse
      */
     public function getWorkCopyright($request)
     {
@@ -1607,10 +1695,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PostCorpAuthInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 企业授权信息
+     *  *
+     * @param PostCorpAuthInfoHeaders $headers PostCorpAuthInfoHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PostCorpAuthInfoResponse
+     * @return PostCorpAuthInfoResponse PostCorpAuthInfoResponse
      */
     public function postCorpAuthInfoWithOptions($headers, $runtime)
     {
@@ -1640,7 +1730,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return PostCorpAuthInfoResponse
+     * @summary 企业授权信息
+     *  *
+     * @return PostCorpAuthInfoResponse PostCorpAuthInfoResponse
      */
     public function postCorpAuthInfo()
     {
@@ -1651,11 +1743,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryActiveUserStatisticalDataRequest $request
-     * @param QueryActiveUserStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业用户激活状态统计数据
+     *  *
+     * @param QueryActiveUserStatisticalDataRequest $request QueryActiveUserStatisticalDataRequest
+     * @param QueryActiveUserStatisticalDataHeaders $headers QueryActiveUserStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryActiveUserStatisticalDataResponse
+     * @return QueryActiveUserStatisticalDataResponse QueryActiveUserStatisticalDataResponse
      */
     public function queryActiveUserStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1691,9 +1785,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryActiveUserStatisticalDataRequest $request
+     * @summary 获取企业用户激活状态统计数据
+     *  *
+     * @param QueryActiveUserStatisticalDataRequest $request QueryActiveUserStatisticalDataRequest
      *
-     * @return QueryActiveUserStatisticalDataResponse
+     * @return QueryActiveUserStatisticalDataResponse QueryActiveUserStatisticalDataResponse
      */
     public function queryActiveUserStatisticalData($request)
     {
@@ -1704,11 +1800,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAnhmdStatisticalDataRequest $request
-     * @param QueryAnhmdStatisticalDataHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 获取安恒密盾统计数据
+     *  *
+     * @param QueryAnhmdStatisticalDataRequest $request QueryAnhmdStatisticalDataRequest
+     * @param QueryAnhmdStatisticalDataHeaders $headers QueryAnhmdStatisticalDataHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryAnhmdStatisticalDataResponse
+     * @return QueryAnhmdStatisticalDataResponse QueryAnhmdStatisticalDataResponse
      */
     public function queryAnhmdStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1750,9 +1848,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAnhmdStatisticalDataRequest $request
+     * @summary 获取安恒密盾统计数据
+     *  *
+     * @param QueryAnhmdStatisticalDataRequest $request QueryAnhmdStatisticalDataRequest
      *
-     * @return QueryAnhmdStatisticalDataResponse
+     * @return QueryAnhmdStatisticalDataResponse QueryAnhmdStatisticalDataResponse
      */
     public function queryAnhmdStatisticalData($request)
     {
@@ -1763,11 +1863,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryApprovalStatisticalDataRequest $request
-     * @param QueryApprovalStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 获取企业审批统计数据
+     *  *
+     * @param QueryApprovalStatisticalDataRequest $request QueryApprovalStatisticalDataRequest
+     * @param QueryApprovalStatisticalDataHeaders $headers QueryApprovalStatisticalDataHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryApprovalStatisticalDataResponse
+     * @return QueryApprovalStatisticalDataResponse QueryApprovalStatisticalDataResponse
      */
     public function queryApprovalStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1803,9 +1905,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryApprovalStatisticalDataRequest $request
+     * @summary 获取企业审批统计数据
+     *  *
+     * @param QueryApprovalStatisticalDataRequest $request QueryApprovalStatisticalDataRequest
      *
-     * @return QueryApprovalStatisticalDataResponse
+     * @return QueryApprovalStatisticalDataResponse QueryApprovalStatisticalDataResponse
      */
     public function queryApprovalStatisticalData($request)
     {
@@ -1816,11 +1920,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAttendanceStatisticalDataRequest $request
-     * @param QueryAttendanceStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业考勤统计数据
+     *  *
+     * @param QueryAttendanceStatisticalDataRequest $request QueryAttendanceStatisticalDataRequest
+     * @param QueryAttendanceStatisticalDataHeaders $headers QueryAttendanceStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryAttendanceStatisticalDataResponse
+     * @return QueryAttendanceStatisticalDataResponse QueryAttendanceStatisticalDataResponse
      */
     public function queryAttendanceStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1856,9 +1962,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAttendanceStatisticalDataRequest $request
+     * @summary 获取企业考勤统计数据
+     *  *
+     * @param QueryAttendanceStatisticalDataRequest $request QueryAttendanceStatisticalDataRequest
      *
-     * @return QueryAttendanceStatisticalDataResponse
+     * @return QueryAttendanceStatisticalDataResponse QueryAttendanceStatisticalDataResponse
      */
     public function queryAttendanceStatisticalData($request)
     {
@@ -1869,11 +1977,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardStatisticalDataRequest $request
-     * @param QueryBlackboardStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业公告统计数据
+     *  *
+     * @param QueryBlackboardStatisticalDataRequest $request QueryBlackboardStatisticalDataRequest
+     * @param QueryBlackboardStatisticalDataHeaders $headers QueryBlackboardStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBlackboardStatisticalDataResponse
+     * @return QueryBlackboardStatisticalDataResponse QueryBlackboardStatisticalDataResponse
      */
     public function queryBlackboardStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1909,9 +2019,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardStatisticalDataRequest $request
+     * @summary 获取企业公告统计数据
+     *  *
+     * @param QueryBlackboardStatisticalDataRequest $request QueryBlackboardStatisticalDataRequest
      *
-     * @return QueryBlackboardStatisticalDataResponse
+     * @return QueryBlackboardStatisticalDataResponse QueryBlackboardStatisticalDataResponse
      */
     public function queryBlackboardStatisticalData($request)
     {
@@ -1922,11 +2034,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCalendarStatisticalDataRequest $request
-     * @param QueryCalendarStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 获取企业日程统计数据
+     *  *
+     * @param QueryCalendarStatisticalDataRequest $request QueryCalendarStatisticalDataRequest
+     * @param QueryCalendarStatisticalDataHeaders $headers QueryCalendarStatisticalDataHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCalendarStatisticalDataResponse
+     * @return QueryCalendarStatisticalDataResponse QueryCalendarStatisticalDataResponse
      */
     public function queryCalendarStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -1962,9 +2076,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCalendarStatisticalDataRequest $request
+     * @summary 获取企业日程统计数据
+     *  *
+     * @param QueryCalendarStatisticalDataRequest $request QueryCalendarStatisticalDataRequest
      *
-     * @return QueryCalendarStatisticalDataResponse
+     * @return QueryCalendarStatisticalDataResponse QueryCalendarStatisticalDataResponse
      */
     public function queryCalendarStatisticalData($request)
     {
@@ -1975,11 +2091,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCheckinStatisticalDataRequest $request
-     * @param QueryCheckinStatisticalDataHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 获取企业签到统计数据
+     *  *
+     * @param QueryCheckinStatisticalDataRequest $request QueryCheckinStatisticalDataRequest
+     * @param QueryCheckinStatisticalDataHeaders $headers QueryCheckinStatisticalDataHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCheckinStatisticalDataResponse
+     * @return QueryCheckinStatisticalDataResponse QueryCheckinStatisticalDataResponse
      */
     public function queryCheckinStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2015,9 +2133,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCheckinStatisticalDataRequest $request
+     * @summary 获取企业签到统计数据
+     *  *
+     * @param QueryCheckinStatisticalDataRequest $request QueryCheckinStatisticalDataRequest
      *
-     * @return QueryCheckinStatisticalDataResponse
+     * @return QueryCheckinStatisticalDataResponse QueryCheckinStatisticalDataResponse
      */
     public function queryCheckinStatisticalData($request)
     {
@@ -2028,11 +2148,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCircleStatisticalDataRequest $request
-     * @param QueryCircleStatisticalDataHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 获取企业全员圈统计数据
+     *  *
+     * @param QueryCircleStatisticalDataRequest $request QueryCircleStatisticalDataRequest
+     * @param QueryCircleStatisticalDataHeaders $headers QueryCircleStatisticalDataHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCircleStatisticalDataResponse
+     * @return QueryCircleStatisticalDataResponse QueryCircleStatisticalDataResponse
      */
     public function queryCircleStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2068,9 +2190,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCircleStatisticalDataRequest $request
+     * @summary 获取企业全员圈统计数据
+     *  *
+     * @param QueryCircleStatisticalDataRequest $request QueryCircleStatisticalDataRequest
      *
-     * @return QueryCircleStatisticalDataResponse
+     * @return QueryCircleStatisticalDataResponse QueryCircleStatisticalDataResponse
      */
     public function queryCircleStatisticalData($request)
     {
@@ -2081,11 +2205,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCompanyBasicInfoRequest $request
-     * @param QueryCompanyBasicInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+     *  *
+     * @param QueryCompanyBasicInfoRequest $request QueryCompanyBasicInfoRequest
+     * @param QueryCompanyBasicInfoHeaders $headers QueryCompanyBasicInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCompanyBasicInfoResponse
+     * @return QueryCompanyBasicInfoResponse QueryCompanyBasicInfoResponse
      */
     public function queryCompanyBasicInfoWithOptions($request, $headers, $runtime)
     {
@@ -2127,9 +2253,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCompanyBasicInfoRequest $request
+     * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+     *  *
+     * @param QueryCompanyBasicInfoRequest $request QueryCompanyBasicInfoRequest
      *
-     * @return QueryCompanyBasicInfoResponse
+     * @return QueryCompanyBasicInfoResponse QueryCompanyBasicInfoResponse
      */
     public function queryCompanyBasicInfo($request)
     {
@@ -2140,11 +2268,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDigitalDistrictOrgInfoRequest $request
-     * @param QueryDigitalDistrictOrgInfoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 获取数字区县组织信息
+     *  *
+     * @param QueryDigitalDistrictOrgInfoRequest $request QueryDigitalDistrictOrgInfoRequest
+     * @param QueryDigitalDistrictOrgInfoHeaders $headers QueryDigitalDistrictOrgInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDigitalDistrictOrgInfoResponse
+     * @return QueryDigitalDistrictOrgInfoResponse QueryDigitalDistrictOrgInfoResponse
      */
     public function queryDigitalDistrictOrgInfoWithOptions($request, $headers, $runtime)
     {
@@ -2183,9 +2313,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDigitalDistrictOrgInfoRequest $request
+     * @summary 获取数字区县组织信息
+     *  *
+     * @param QueryDigitalDistrictOrgInfoRequest $request QueryDigitalDistrictOrgInfoRequest
      *
-     * @return QueryDigitalDistrictOrgInfoResponse
+     * @return QueryDigitalDistrictOrgInfoResponse QueryDigitalDistrictOrgInfoResponse
      */
     public function queryDigitalDistrictOrgInfo($request)
     {
@@ -2196,11 +2328,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDingReciveStatisticalDataRequest $request
-     * @param QueryDingReciveStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业DING接收及评论统计数据
+     *  *
+     * @param QueryDingReciveStatisticalDataRequest $request QueryDingReciveStatisticalDataRequest
+     * @param QueryDingReciveStatisticalDataHeaders $headers QueryDingReciveStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDingReciveStatisticalDataResponse
+     * @return QueryDingReciveStatisticalDataResponse QueryDingReciveStatisticalDataResponse
      */
     public function queryDingReciveStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2236,9 +2370,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDingReciveStatisticalDataRequest $request
+     * @summary 获取企业DING接收及评论统计数据
+     *  *
+     * @param QueryDingReciveStatisticalDataRequest $request QueryDingReciveStatisticalDataRequest
      *
-     * @return QueryDingReciveStatisticalDataResponse
+     * @return QueryDingReciveStatisticalDataResponse QueryDingReciveStatisticalDataResponse
      */
     public function queryDingReciveStatisticalData($request)
     {
@@ -2249,11 +2385,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDingSendStatisticalDataRequest $request
-     * @param QueryDingSendStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 获取企业DING发送统计数据
+     *  *
+     * @param QueryDingSendStatisticalDataRequest $request QueryDingSendStatisticalDataRequest
+     * @param QueryDingSendStatisticalDataHeaders $headers QueryDingSendStatisticalDataHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDingSendStatisticalDataResponse
+     * @return QueryDingSendStatisticalDataResponse QueryDingSendStatisticalDataResponse
      */
     public function queryDingSendStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2289,9 +2427,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDingSendStatisticalDataRequest $request
+     * @summary 获取企业DING发送统计数据
+     *  *
+     * @param QueryDingSendStatisticalDataRequest $request QueryDingSendStatisticalDataRequest
      *
-     * @return QueryDingSendStatisticalDataResponse
+     * @return QueryDingSendStatisticalDataResponse QueryDingSendStatisticalDataResponse
      */
     public function queryDingSendStatisticalData($request)
     {
@@ -2302,11 +2442,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDocumentStatisticalDataRequest $request
-     * @param QueryDocumentStatisticalDataHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary 获取企业文档统计数据
+     *  *
+     * @param QueryDocumentStatisticalDataRequest $request QueryDocumentStatisticalDataRequest
+     * @param QueryDocumentStatisticalDataHeaders $headers QueryDocumentStatisticalDataHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDocumentStatisticalDataResponse
+     * @return QueryDocumentStatisticalDataResponse QueryDocumentStatisticalDataResponse
      */
     public function queryDocumentStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2342,9 +2484,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDocumentStatisticalDataRequest $request
+     * @summary 获取企业文档统计数据
+     *  *
+     * @param QueryDocumentStatisticalDataRequest $request QueryDocumentStatisticalDataRequest
      *
-     * @return QueryDocumentStatisticalDataResponse
+     * @return QueryDocumentStatisticalDataResponse QueryDocumentStatisticalDataResponse
      */
     public function queryDocumentStatisticalData($request)
     {
@@ -2355,11 +2499,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDriveStatisticalDataRequest $request
-     * @param QueryDriveStatisticalDataHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 获取企业钉盘统计数据
+     *  *
+     * @param QueryDriveStatisticalDataRequest $request QueryDriveStatisticalDataRequest
+     * @param QueryDriveStatisticalDataHeaders $headers QueryDriveStatisticalDataHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryDriveStatisticalDataResponse
+     * @return QueryDriveStatisticalDataResponse QueryDriveStatisticalDataResponse
      */
     public function queryDriveStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2395,9 +2541,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDriveStatisticalDataRequest $request
+     * @summary 获取企业钉盘统计数据
+     *  *
+     * @param QueryDriveStatisticalDataRequest $request QueryDriveStatisticalDataRequest
      *
-     * @return QueryDriveStatisticalDataResponse
+     * @return QueryDriveStatisticalDataResponse QueryDriveStatisticalDataResponse
      */
     public function queryDriveStatisticalData($request)
     {
@@ -2408,11 +2556,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEmployeeTypeStatisticalDataRequest $request
-     * @param QueryEmployeeTypeStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 获取企业员工类型统计数据
+     *  *
+     * @param QueryEmployeeTypeStatisticalDataRequest $request QueryEmployeeTypeStatisticalDataRequest
+     * @param QueryEmployeeTypeStatisticalDataHeaders $headers QueryEmployeeTypeStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryEmployeeTypeStatisticalDataResponse
+     * @return QueryEmployeeTypeStatisticalDataResponse QueryEmployeeTypeStatisticalDataResponse
      */
     public function queryEmployeeTypeStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2448,9 +2598,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEmployeeTypeStatisticalDataRequest $request
+     * @summary 获取企业员工类型统计数据
+     *  *
+     * @param QueryEmployeeTypeStatisticalDataRequest $request QueryEmployeeTypeStatisticalDataRequest
      *
-     * @return QueryEmployeeTypeStatisticalDataResponse
+     * @return QueryEmployeeTypeStatisticalDataResponse QueryEmployeeTypeStatisticalDataResponse
      */
     public function queryEmployeeTypeStatisticalData($request)
     {
@@ -2461,11 +2613,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGeneralDataServiceRequest $request
-     * @param QueryGeneralDataServiceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 数据资产平台数据服务接口
+     *  *
+     * @param QueryGeneralDataServiceRequest $request QueryGeneralDataServiceRequest
+     * @param QueryGeneralDataServiceHeaders $headers QueryGeneralDataServiceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGeneralDataServiceResponse
+     * @return QueryGeneralDataServiceResponse QueryGeneralDataServiceResponse
      */
     public function queryGeneralDataServiceWithOptions($request, $headers, $runtime)
     {
@@ -2519,9 +2673,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGeneralDataServiceRequest $request
+     * @summary 数据资产平台数据服务接口
+     *  *
+     * @param QueryGeneralDataServiceRequest $request QueryGeneralDataServiceRequest
      *
-     * @return QueryGeneralDataServiceResponse
+     * @return QueryGeneralDataServiceResponse QueryGeneralDataServiceResponse
      */
     public function queryGeneralDataService($request)
     {
@@ -2532,11 +2688,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupLiveStatisticalDataRequest $request
-     * @param QueryGroupLiveStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 获取企业群直播统计数据
+     *  *
+     * @param QueryGroupLiveStatisticalDataRequest $request QueryGroupLiveStatisticalDataRequest
+     * @param QueryGroupLiveStatisticalDataHeaders $headers QueryGroupLiveStatisticalDataHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupLiveStatisticalDataResponse
+     * @return QueryGroupLiveStatisticalDataResponse QueryGroupLiveStatisticalDataResponse
      */
     public function queryGroupLiveStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2572,9 +2730,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupLiveStatisticalDataRequest $request
+     * @summary 获取企业群直播统计数据
+     *  *
+     * @param QueryGroupLiveStatisticalDataRequest $request QueryGroupLiveStatisticalDataRequest
      *
-     * @return QueryGroupLiveStatisticalDataResponse
+     * @return QueryGroupLiveStatisticalDataResponse QueryGroupLiveStatisticalDataResponse
      */
     public function queryGroupLiveStatisticalData($request)
     {
@@ -2585,11 +2745,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMessageStatisticalDataRequest $request
-     * @param QueryGroupMessageStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 获取企业群聊统计数据
+     *  *
+     * @param QueryGroupMessageStatisticalDataRequest $request QueryGroupMessageStatisticalDataRequest
+     * @param QueryGroupMessageStatisticalDataHeaders $headers QueryGroupMessageStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGroupMessageStatisticalDataResponse
+     * @return QueryGroupMessageStatisticalDataResponse QueryGroupMessageStatisticalDataResponse
      */
     public function queryGroupMessageStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2625,9 +2787,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupMessageStatisticalDataRequest $request
+     * @summary 获取企业群聊统计数据
+     *  *
+     * @param QueryGroupMessageStatisticalDataRequest $request QueryGroupMessageStatisticalDataRequest
      *
-     * @return QueryGroupMessageStatisticalDataResponse
+     * @return QueryGroupMessageStatisticalDataResponse QueryGroupMessageStatisticalDataResponse
      */
     public function queryGroupMessageStatisticalData($request)
     {
@@ -2638,11 +2802,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryHealthStatisticalDataRequest $request
-     * @param QueryHealthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 获取企业钉钉运动统计数据
+     *  *
+     * @param QueryHealthStatisticalDataRequest $request QueryHealthStatisticalDataRequest
+     * @param QueryHealthStatisticalDataHeaders $headers QueryHealthStatisticalDataHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryHealthStatisticalDataResponse
+     * @return QueryHealthStatisticalDataResponse QueryHealthStatisticalDataResponse
      */
     public function queryHealthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2678,9 +2844,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryHealthStatisticalDataRequest $request
+     * @summary 获取企业钉钉运动统计数据
+     *  *
+     * @param QueryHealthStatisticalDataRequest $request QueryHealthStatisticalDataRequest
      *
-     * @return QueryHealthStatisticalDataResponse
+     * @return QueryHealthStatisticalDataResponse QueryHealthStatisticalDataResponse
      */
     public function queryHealthStatisticalData($request)
     {
@@ -2691,11 +2859,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMailStatisticalDataRequest $request
-     * @param QueryMailStatisticalDataHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取企业邮箱统计数据
+     *  *
+     * @param QueryMailStatisticalDataRequest $request QueryMailStatisticalDataRequest
+     * @param QueryMailStatisticalDataHeaders $headers QueryMailStatisticalDataHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMailStatisticalDataResponse
+     * @return QueryMailStatisticalDataResponse QueryMailStatisticalDataResponse
      */
     public function queryMailStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -2731,9 +2901,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMailStatisticalDataRequest $request
+     * @summary 获取企业邮箱统计数据
+     *  *
+     * @param QueryMailStatisticalDataRequest $request QueryMailStatisticalDataRequest
      *
-     * @return QueryMailStatisticalDataResponse
+     * @return QueryMailStatisticalDataResponse QueryMailStatisticalDataResponse
      */
     public function queryMailStatisticalData($request)
     {
@@ -2744,11 +2916,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDataRequest $request
-     * @param QueryOfficialDataHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取官方数据集数据
+     *  *
+     * @param QueryOfficialDataRequest $request QueryOfficialDataRequest
+     * @param QueryOfficialDataHeaders $headers QueryOfficialDataHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOfficialDataResponse
+     * @return QueryOfficialDataResponse QueryOfficialDataResponse
      */
     public function queryOfficialDataWithOptions($request, $headers, $runtime)
     {
@@ -2787,9 +2961,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDataRequest $request
+     * @summary 获取官方数据集数据
+     *  *
+     * @param QueryOfficialDataRequest $request QueryOfficialDataRequest
      *
-     * @return QueryOfficialDataResponse
+     * @return QueryOfficialDataResponse QueryOfficialDataResponse
      */
     public function queryOfficialData($request)
     {
@@ -2800,11 +2976,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDatasetFieldsRequest $request
-     * @param QueryOfficialDatasetFieldsHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary ISV获取官方数据集字段信息
+     *  *
+     * @param QueryOfficialDatasetFieldsRequest $request QueryOfficialDatasetFieldsRequest
+     * @param QueryOfficialDatasetFieldsHeaders $headers QueryOfficialDatasetFieldsHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOfficialDatasetFieldsResponse
+     * @return QueryOfficialDatasetFieldsResponse QueryOfficialDatasetFieldsResponse
      */
     public function queryOfficialDatasetFieldsWithOptions($request, $headers, $runtime)
     {
@@ -2843,9 +3021,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDatasetFieldsRequest $request
+     * @summary ISV获取官方数据集字段信息
+     *  *
+     * @param QueryOfficialDatasetFieldsRequest $request QueryOfficialDatasetFieldsRequest
      *
-     * @return QueryOfficialDatasetFieldsResponse
+     * @return QueryOfficialDatasetFieldsResponse QueryOfficialDatasetFieldsResponse
      */
     public function queryOfficialDatasetFields($request)
     {
@@ -2856,11 +3036,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDatasetListRequest $request
-     * @param QueryOfficialDatasetListHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary ISV获取官方数据集列表
+     *  *
+     * @param QueryOfficialDatasetListRequest $request QueryOfficialDatasetListRequest
+     * @param QueryOfficialDatasetListHeaders $headers QueryOfficialDatasetListHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOfficialDatasetListResponse
+     * @return QueryOfficialDatasetListResponse QueryOfficialDatasetListResponse
      */
     public function queryOfficialDatasetListWithOptions($request, $headers, $runtime)
     {
@@ -2902,9 +3084,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialDatasetListRequest $request
+     * @summary ISV获取官方数据集列表
+     *  *
+     * @param QueryOfficialDatasetListRequest $request QueryOfficialDatasetListRequest
      *
-     * @return QueryOfficialDatasetListResponse
+     * @return QueryOfficialDatasetListResponse QueryOfficialDatasetListResponse
      */
     public function queryOfficialDatasetList($request)
     {
@@ -2915,11 +3099,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialFormDataRequest $request
-     * @param QueryOfficialFormDataHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取官方数据集数据
+     *  *
+     * @param QueryOfficialFormDataRequest $request QueryOfficialFormDataRequest
+     * @param QueryOfficialFormDataHeaders $headers QueryOfficialFormDataHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOfficialFormDataResponse
+     * @return QueryOfficialFormDataResponse QueryOfficialFormDataResponse
      */
     public function queryOfficialFormDataWithOptions($request, $headers, $runtime)
     {
@@ -2958,9 +3144,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialFormDataRequest $request
+     * @summary 获取官方数据集数据
+     *  *
+     * @param QueryOfficialFormDataRequest $request QueryOfficialFormDataRequest
      *
-     * @return QueryOfficialFormDataResponse
+     * @return QueryOfficialFormDataResponse QueryOfficialFormDataResponse
      */
     public function queryOfficialFormData($request)
     {
@@ -2971,11 +3159,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOnlineUserStatisticalDataRequest $request
-     * @param QueryOnlineUserStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业用户在线统计数据
+     *  *
+     * @param QueryOnlineUserStatisticalDataRequest $request QueryOnlineUserStatisticalDataRequest
+     * @param QueryOnlineUserStatisticalDataHeaders $headers QueryOnlineUserStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryOnlineUserStatisticalDataResponse
+     * @return QueryOnlineUserStatisticalDataResponse QueryOnlineUserStatisticalDataResponse
      */
     public function queryOnlineUserStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3011,9 +3201,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOnlineUserStatisticalDataRequest $request
+     * @summary 获取企业用户在线统计数据
+     *  *
+     * @param QueryOnlineUserStatisticalDataRequest $request QueryOnlineUserStatisticalDataRequest
      *
-     * @return QueryOnlineUserStatisticalDataResponse
+     * @return QueryOnlineUserStatisticalDataResponse QueryOnlineUserStatisticalDataResponse
      */
     public function queryOnlineUserStatisticalData($request)
     {
@@ -3024,11 +3216,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRedEnvelopeReciveStatisticalDataRequest $request
-     * @param QueryRedEnvelopeReciveStatisticalDataHeaders $headers
-     * @param RuntimeOptions                               $runtime
+     * @summary 获取企业接收红包统计数据
+     *  *
+     * @param QueryRedEnvelopeReciveStatisticalDataRequest $request QueryRedEnvelopeReciveStatisticalDataRequest
+     * @param QueryRedEnvelopeReciveStatisticalDataHeaders $headers QueryRedEnvelopeReciveStatisticalDataHeaders
+     * @param RuntimeOptions                               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRedEnvelopeReciveStatisticalDataResponse
+     * @return QueryRedEnvelopeReciveStatisticalDataResponse QueryRedEnvelopeReciveStatisticalDataResponse
      */
     public function queryRedEnvelopeReciveStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3064,9 +3258,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRedEnvelopeReciveStatisticalDataRequest $request
+     * @summary 获取企业接收红包统计数据
+     *  *
+     * @param QueryRedEnvelopeReciveStatisticalDataRequest $request QueryRedEnvelopeReciveStatisticalDataRequest
      *
-     * @return QueryRedEnvelopeReciveStatisticalDataResponse
+     * @return QueryRedEnvelopeReciveStatisticalDataResponse QueryRedEnvelopeReciveStatisticalDataResponse
      */
     public function queryRedEnvelopeReciveStatisticalData($request)
     {
@@ -3077,11 +3273,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRedEnvelopeSendStatisticalDataRequest $request
-     * @param QueryRedEnvelopeSendStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 获取企业发送红包统计数据
+     *  *
+     * @param QueryRedEnvelopeSendStatisticalDataRequest $request QueryRedEnvelopeSendStatisticalDataRequest
+     * @param QueryRedEnvelopeSendStatisticalDataHeaders $headers QueryRedEnvelopeSendStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRedEnvelopeSendStatisticalDataResponse
+     * @return QueryRedEnvelopeSendStatisticalDataResponse QueryRedEnvelopeSendStatisticalDataResponse
      */
     public function queryRedEnvelopeSendStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3117,9 +3315,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRedEnvelopeSendStatisticalDataRequest $request
+     * @summary 获取企业发送红包统计数据
+     *  *
+     * @param QueryRedEnvelopeSendStatisticalDataRequest $request QueryRedEnvelopeSendStatisticalDataRequest
      *
-     * @return QueryRedEnvelopeSendStatisticalDataResponse
+     * @return QueryRedEnvelopeSendStatisticalDataResponse QueryRedEnvelopeSendStatisticalDataResponse
      */
     public function queryRedEnvelopeSendStatisticalData($request)
     {
@@ -3130,11 +3330,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReportStatisticalDataRequest $request
-     * @param QueryReportStatisticalDataHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 获取企业日志统计数据
+     *  *
+     * @param QueryReportStatisticalDataRequest $request QueryReportStatisticalDataRequest
+     * @param QueryReportStatisticalDataHeaders $headers QueryReportStatisticalDataHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReportStatisticalDataResponse
+     * @return QueryReportStatisticalDataResponse QueryReportStatisticalDataResponse
      */
     public function queryReportStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3170,9 +3372,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReportStatisticalDataRequest $request
+     * @summary 获取企业日志统计数据
+     *  *
+     * @param QueryReportStatisticalDataRequest $request QueryReportStatisticalDataRequest
      *
-     * @return QueryReportStatisticalDataResponse
+     * @return QueryReportStatisticalDataResponse QueryReportStatisticalDataResponse
      */
     public function queryReportStatisticalData($request)
     {
@@ -3183,11 +3387,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySingleMessageStatisticalDataRequest $request
-     * @param QuerySingleMessageStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 获取企业单聊统计数据
+     *  *
+     * @param QuerySingleMessageStatisticalDataRequest $request QuerySingleMessageStatisticalDataRequest
+     * @param QuerySingleMessageStatisticalDataHeaders $headers QuerySingleMessageStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QuerySingleMessageStatisticalDataResponse
+     * @return QuerySingleMessageStatisticalDataResponse QuerySingleMessageStatisticalDataResponse
      */
     public function querySingleMessageStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3223,9 +3429,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySingleMessageStatisticalDataRequest $request
+     * @summary 获取企业单聊统计数据
+     *  *
+     * @param QuerySingleMessageStatisticalDataRequest $request QuerySingleMessageStatisticalDataRequest
      *
-     * @return QuerySingleMessageStatisticalDataResponse
+     * @return QuerySingleMessageStatisticalDataResponse QuerySingleMessageStatisticalDataResponse
      */
     public function querySingleMessageStatisticalData($request)
     {
@@ -3236,11 +3444,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTelMeetingStatisticalDataRequest $request
-     * @param QueryTelMeetingStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 获取企业电话会议统计数据
+     *  *
+     * @param QueryTelMeetingStatisticalDataRequest $request QueryTelMeetingStatisticalDataRequest
+     * @param QueryTelMeetingStatisticalDataHeaders $headers QueryTelMeetingStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTelMeetingStatisticalDataResponse
+     * @return QueryTelMeetingStatisticalDataResponse QueryTelMeetingStatisticalDataResponse
      */
     public function queryTelMeetingStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3276,9 +3486,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTelMeetingStatisticalDataRequest $request
+     * @summary 获取企业电话会议统计数据
+     *  *
+     * @param QueryTelMeetingStatisticalDataRequest $request QueryTelMeetingStatisticalDataRequest
      *
-     * @return QueryTelMeetingStatisticalDataResponse
+     * @return QueryTelMeetingStatisticalDataResponse QueryTelMeetingStatisticalDataResponse
      */
     public function queryTelMeetingStatisticalData($request)
     {
@@ -3289,11 +3501,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTodoStatisticalDataRequest $request
-     * @param QueryTodoStatisticalDataHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取企业待办统计数据
+     *  *
+     * @param QueryTodoStatisticalDataRequest $request QueryTodoStatisticalDataRequest
+     * @param QueryTodoStatisticalDataHeaders $headers QueryTodoStatisticalDataHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTodoStatisticalDataResponse
+     * @return QueryTodoStatisticalDataResponse QueryTodoStatisticalDataResponse
      */
     public function queryTodoStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3329,9 +3543,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTodoStatisticalDataRequest $request
+     * @summary 获取企业待办统计数据
+     *  *
+     * @param QueryTodoStatisticalDataRequest $request QueryTodoStatisticalDataRequest
      *
-     * @return QueryTodoStatisticalDataResponse
+     * @return QueryTodoStatisticalDataResponse QueryTodoStatisticalDataResponse
      */
     public function queryTodoStatisticalData($request)
     {
@@ -3342,11 +3558,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryVedioMeetingStatisticalDataRequest $request
-     * @param QueryVedioMeetingStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 获取企业视频会议统计数据
+     *  *
+     * @param QueryVedioMeetingStatisticalDataRequest $request QueryVedioMeetingStatisticalDataRequest
+     * @param QueryVedioMeetingStatisticalDataHeaders $headers QueryVedioMeetingStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryVedioMeetingStatisticalDataResponse
+     * @return QueryVedioMeetingStatisticalDataResponse QueryVedioMeetingStatisticalDataResponse
      */
     public function queryVedioMeetingStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3382,9 +3600,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryVedioMeetingStatisticalDataRequest $request
+     * @summary 获取企业视频会议统计数据
+     *  *
+     * @param QueryVedioMeetingStatisticalDataRequest $request QueryVedioMeetingStatisticalDataRequest
      *
-     * @return QueryVedioMeetingStatisticalDataResponse
+     * @return QueryVedioMeetingStatisticalDataResponse QueryVedioMeetingStatisticalDataResponse
      */
     public function queryVedioMeetingStatisticalData($request)
     {
@@ -3395,11 +3615,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveDayStatisticalDataRequest $request
-     * @param QueryYydActiveDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 亚运钉参谋活跃分析（按日统计）指标接口
+     *  *
+     * @param QueryYydActiveDayStatisticalDataRequest $request QueryYydActiveDayStatisticalDataRequest
+     * @param QueryYydActiveDayStatisticalDataHeaders $headers QueryYydActiveDayStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydActiveDayStatisticalDataResponse
+     * @return QueryYydActiveDayStatisticalDataResponse QueryYydActiveDayStatisticalDataResponse
      */
     public function queryYydActiveDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3435,9 +3657,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveDayStatisticalDataRequest $request
+     * @summary 亚运钉参谋活跃分析（按日统计）指标接口
+     *  *
+     * @param QueryYydActiveDayStatisticalDataRequest $request QueryYydActiveDayStatisticalDataRequest
      *
-     * @return QueryYydActiveDayStatisticalDataResponse
+     * @return QueryYydActiveDayStatisticalDataResponse QueryYydActiveDayStatisticalDataResponse
      */
     public function queryYydActiveDayStatisticalData($request)
     {
@@ -3448,11 +3672,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveMonthStatisticalDataRequest $request
-     * @param QueryYydActiveMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉参谋活跃分析（按月统计）指标接口
+     *  *
+     * @param QueryYydActiveMonthStatisticalDataRequest $request QueryYydActiveMonthStatisticalDataRequest
+     * @param QueryYydActiveMonthStatisticalDataHeaders $headers QueryYydActiveMonthStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydActiveMonthStatisticalDataResponse
+     * @return QueryYydActiveMonthStatisticalDataResponse QueryYydActiveMonthStatisticalDataResponse
      */
     public function queryYydActiveMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3488,9 +3714,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveMonthStatisticalDataRequest $request
+     * @summary 亚运钉参谋活跃分析（按月统计）指标接口
+     *  *
+     * @param QueryYydActiveMonthStatisticalDataRequest $request QueryYydActiveMonthStatisticalDataRequest
      *
-     * @return QueryYydActiveMonthStatisticalDataResponse
+     * @return QueryYydActiveMonthStatisticalDataResponse QueryYydActiveMonthStatisticalDataResponse
      */
     public function queryYydActiveMonthStatisticalData($request)
     {
@@ -3501,11 +3729,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveWeekStatisticalDataRequest $request
-     * @param QueryYydActiveWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 亚运钉参谋活跃分析（按周统计）指标接口
+     *  *
+     * @param QueryYydActiveWeekStatisticalDataRequest $request QueryYydActiveWeekStatisticalDataRequest
+     * @param QueryYydActiveWeekStatisticalDataHeaders $headers QueryYydActiveWeekStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydActiveWeekStatisticalDataResponse
+     * @return QueryYydActiveWeekStatisticalDataResponse QueryYydActiveWeekStatisticalDataResponse
      */
     public function queryYydActiveWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3541,9 +3771,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydActiveWeekStatisticalDataRequest $request
+     * @summary 亚运钉参谋活跃分析（按周统计）指标接口
+     *  *
+     * @param QueryYydActiveWeekStatisticalDataRequest $request QueryYydActiveWeekStatisticalDataRequest
      *
-     * @return QueryYydActiveWeekStatisticalDataResponse
+     * @return QueryYydActiveWeekStatisticalDataResponse QueryYydActiveWeekStatisticalDataResponse
      */
     public function queryYydActiveWeekStatisticalData($request)
     {
@@ -3554,11 +3786,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppDayStatisticalDataRequest $request
-     * @param QueryYydAppDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
+     *  *
+     * @param QueryYydAppDayStatisticalDataRequest $request QueryYydAppDayStatisticalDataRequest
+     * @param QueryYydAppDayStatisticalDataHeaders $headers QueryYydAppDayStatisticalDataHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydAppDayStatisticalDataResponse
+     * @return QueryYydAppDayStatisticalDataResponse QueryYydAppDayStatisticalDataResponse
      */
     public function queryYydAppDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3594,9 +3828,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
+     *  *
+     * @param QueryYydAppDayStatisticalDataRequest $request QueryYydAppDayStatisticalDataRequest
      *
-     * @return QueryYydAppDayStatisticalDataResponse
+     * @return QueryYydAppDayStatisticalDataResponse QueryYydAppDayStatisticalDataResponse
      */
     public function queryYydAppDayStatisticalData($request)
     {
@@ -3607,11 +3843,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppMonthStatisticalDataRequest $request
-     * @param QueryYydAppMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
+     *  *
+     * @param QueryYydAppMonthStatisticalDataRequest $request QueryYydAppMonthStatisticalDataRequest
+     * @param QueryYydAppMonthStatisticalDataHeaders $headers QueryYydAppMonthStatisticalDataHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydAppMonthStatisticalDataResponse
+     * @return QueryYydAppMonthStatisticalDataResponse QueryYydAppMonthStatisticalDataResponse
      */
     public function queryYydAppMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3647,9 +3885,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
+     *  *
+     * @param QueryYydAppMonthStatisticalDataRequest $request QueryYydAppMonthStatisticalDataRequest
      *
-     * @return QueryYydAppMonthStatisticalDataResponse
+     * @return QueryYydAppMonthStatisticalDataResponse QueryYydAppMonthStatisticalDataResponse
      */
     public function queryYydAppMonthStatisticalData($request)
     {
@@ -3660,11 +3900,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppStdStatisticalDataRequest $request
-     * @param QueryYydAppStdStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 亚运钉数字参谋应用概况（累计）指标接口
+     *  *
+     * @param QueryYydAppStdStatisticalDataRequest $request QueryYydAppStdStatisticalDataRequest
+     * @param QueryYydAppStdStatisticalDataHeaders $headers QueryYydAppStdStatisticalDataHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydAppStdStatisticalDataResponse
+     * @return QueryYydAppStdStatisticalDataResponse QueryYydAppStdStatisticalDataResponse
      */
     public function queryYydAppStdStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3700,9 +3942,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppStdStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋应用概况（累计）指标接口
+     *  *
+     * @param QueryYydAppStdStatisticalDataRequest $request QueryYydAppStdStatisticalDataRequest
      *
-     * @return QueryYydAppStdStatisticalDataResponse
+     * @return QueryYydAppStdStatisticalDataResponse QueryYydAppStdStatisticalDataResponse
      */
     public function queryYydAppStdStatisticalData($request)
     {
@@ -3713,11 +3957,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppWeekStatisticalDataRequest $request
-     * @param QueryYydAppWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
+     *  *
+     * @param QueryYydAppWeekStatisticalDataRequest $request QueryYydAppWeekStatisticalDataRequest
+     * @param QueryYydAppWeekStatisticalDataHeaders $headers QueryYydAppWeekStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydAppWeekStatisticalDataResponse
+     * @return QueryYydAppWeekStatisticalDataResponse QueryYydAppWeekStatisticalDataResponse
      */
     public function queryYydAppWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3753,9 +3999,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydAppWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
+     *  *
+     * @param QueryYydAppWeekStatisticalDataRequest $request QueryYydAppWeekStatisticalDataRequest
      *
-     * @return QueryYydAppWeekStatisticalDataResponse
+     * @return QueryYydAppWeekStatisticalDataResponse QueryYydAppWeekStatisticalDataResponse
      */
     public function queryYydAppWeekStatisticalData($request)
     {
@@ -3766,11 +4014,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarDayStatisticalDataRequest $request
-     * @param QueryYydCalendarDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
+     *  *
+     * @param QueryYydCalendarDayStatisticalDataRequest $request QueryYydCalendarDayStatisticalDataRequest
+     * @param QueryYydCalendarDayStatisticalDataHeaders $headers QueryYydCalendarDayStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydCalendarDayStatisticalDataResponse
+     * @return QueryYydCalendarDayStatisticalDataResponse QueryYydCalendarDayStatisticalDataResponse
      */
     public function queryYydCalendarDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3806,9 +4056,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
+     *  *
+     * @param QueryYydCalendarDayStatisticalDataRequest $request QueryYydCalendarDayStatisticalDataRequest
      *
-     * @return QueryYydCalendarDayStatisticalDataResponse
+     * @return QueryYydCalendarDayStatisticalDataResponse QueryYydCalendarDayStatisticalDataResponse
      */
     public function queryYydCalendarDayStatisticalData($request)
     {
@@ -3819,11 +4071,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarMonthStatisticalDataRequest $request
-     * @param QueryYydCalendarMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
+     * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
+     *  *
+     * @param QueryYydCalendarMonthStatisticalDataRequest $request QueryYydCalendarMonthStatisticalDataRequest
+     * @param QueryYydCalendarMonthStatisticalDataHeaders $headers QueryYydCalendarMonthStatisticalDataHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydCalendarMonthStatisticalDataResponse
+     * @return QueryYydCalendarMonthStatisticalDataResponse QueryYydCalendarMonthStatisticalDataResponse
      */
     public function queryYydCalendarMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3859,9 +4113,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
+     *  *
+     * @param QueryYydCalendarMonthStatisticalDataRequest $request QueryYydCalendarMonthStatisticalDataRequest
      *
-     * @return QueryYydCalendarMonthStatisticalDataResponse
+     * @return QueryYydCalendarMonthStatisticalDataResponse QueryYydCalendarMonthStatisticalDataResponse
      */
     public function queryYydCalendarMonthStatisticalData($request)
     {
@@ -3872,11 +4128,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarWeekStatisticalDataRequest $request
-     * @param QueryYydCalendarWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
+     *  *
+     * @param QueryYydCalendarWeekStatisticalDataRequest $request QueryYydCalendarWeekStatisticalDataRequest
+     * @param QueryYydCalendarWeekStatisticalDataHeaders $headers QueryYydCalendarWeekStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydCalendarWeekStatisticalDataResponse
+     * @return QueryYydCalendarWeekStatisticalDataResponse QueryYydCalendarWeekStatisticalDataResponse
      */
     public function queryYydCalendarWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3912,9 +4170,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydCalendarWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
+     *  *
+     * @param QueryYydCalendarWeekStatisticalDataRequest $request QueryYydCalendarWeekStatisticalDataRequest
      *
-     * @return QueryYydCalendarWeekStatisticalDataResponse
+     * @return QueryYydCalendarWeekStatisticalDataResponse QueryYydCalendarWeekStatisticalDataResponse
      */
     public function queryYydCalendarWeekStatisticalData($request)
     {
@@ -3925,11 +4185,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgDayStatisticalDataRequest $request
-     * @param QueryYydDingMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
+     *  *
+     * @param QueryYydDingMsgDayStatisticalDataRequest $request QueryYydDingMsgDayStatisticalDataRequest
+     * @param QueryYydDingMsgDayStatisticalDataHeaders $headers QueryYydDingMsgDayStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydDingMsgDayStatisticalDataResponse
+     * @return QueryYydDingMsgDayStatisticalDataResponse QueryYydDingMsgDayStatisticalDataResponse
      */
     public function queryYydDingMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -3965,9 +4227,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
+     *  *
+     * @param QueryYydDingMsgDayStatisticalDataRequest $request QueryYydDingMsgDayStatisticalDataRequest
      *
-     * @return QueryYydDingMsgDayStatisticalDataResponse
+     * @return QueryYydDingMsgDayStatisticalDataResponse QueryYydDingMsgDayStatisticalDataResponse
      */
     public function queryYydDingMsgDayStatisticalData($request)
     {
@@ -3978,11 +4242,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
-     * @param QueryYydDingMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
+     *  *
+     * @param QueryYydDingMsgMonthStatisticalDataRequest $request QueryYydDingMsgMonthStatisticalDataRequest
+     * @param QueryYydDingMsgMonthStatisticalDataHeaders $headers QueryYydDingMsgMonthStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydDingMsgMonthStatisticalDataResponse
+     * @return QueryYydDingMsgMonthStatisticalDataResponse QueryYydDingMsgMonthStatisticalDataResponse
      */
     public function queryYydDingMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4018,9 +4284,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
+     *  *
+     * @param QueryYydDingMsgMonthStatisticalDataRequest $request QueryYydDingMsgMonthStatisticalDataRequest
      *
-     * @return QueryYydDingMsgMonthStatisticalDataResponse
+     * @return QueryYydDingMsgMonthStatisticalDataResponse QueryYydDingMsgMonthStatisticalDataResponse
      */
     public function queryYydDingMsgMonthStatisticalData($request)
     {
@@ -4031,11 +4299,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
-     * @param QueryYydDingMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
+     *  *
+     * @param QueryYydDingMsgWeekStatisticalDataRequest $request QueryYydDingMsgWeekStatisticalDataRequest
+     * @param QueryYydDingMsgWeekStatisticalDataHeaders $headers QueryYydDingMsgWeekStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydDingMsgWeekStatisticalDataResponse
+     * @return QueryYydDingMsgWeekStatisticalDataResponse QueryYydDingMsgWeekStatisticalDataResponse
      */
     public function queryYydDingMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4071,9 +4341,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydDingMsgWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
+     *  *
+     * @param QueryYydDingMsgWeekStatisticalDataRequest $request QueryYydDingMsgWeekStatisticalDataRequest
      *
-     * @return QueryYydDingMsgWeekStatisticalDataResponse
+     * @return QueryYydDingMsgWeekStatisticalDataResponse QueryYydDingMsgWeekStatisticalDataResponse
      */
     public function queryYydDingMsgWeekStatisticalData($request)
     {
@@ -4084,11 +4356,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
-     * @param QueryYydGroupMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgDayStatisticalDataRequest $request QueryYydGroupMsgDayStatisticalDataRequest
+     * @param QueryYydGroupMsgDayStatisticalDataHeaders $headers QueryYydGroupMsgDayStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     * @return QueryYydGroupMsgDayStatisticalDataResponse QueryYydGroupMsgDayStatisticalDataResponse
      */
     public function queryYydGroupMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4124,9 +4398,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgDayStatisticalDataRequest $request QueryYydGroupMsgDayStatisticalDataRequest
      *
-     * @return QueryYydGroupMsgDayStatisticalDataResponse
+     * @return QueryYydGroupMsgDayStatisticalDataResponse QueryYydGroupMsgDayStatisticalDataResponse
      */
     public function queryYydGroupMsgDayStatisticalData($request)
     {
@@ -4137,11 +4413,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
-     * @param QueryYydGroupMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
+     * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request QueryYydGroupMsgMonthStatisticalDataRequest
+     * @param QueryYydGroupMsgMonthStatisticalDataHeaders $headers QueryYydGroupMsgMonthStatisticalDataHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydGroupMsgMonthStatisticalDataResponse
+     * @return QueryYydGroupMsgMonthStatisticalDataResponse QueryYydGroupMsgMonthStatisticalDataResponse
      */
     public function queryYydGroupMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4177,9 +4455,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgMonthStatisticalDataRequest $request QueryYydGroupMsgMonthStatisticalDataRequest
      *
-     * @return QueryYydGroupMsgMonthStatisticalDataResponse
+     * @return QueryYydGroupMsgMonthStatisticalDataResponse QueryYydGroupMsgMonthStatisticalDataResponse
      */
     public function queryYydGroupMsgMonthStatisticalData($request)
     {
@@ -4190,11 +4470,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
-     * @param QueryYydGroupMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request QueryYydGroupMsgWeekStatisticalDataRequest
+     * @param QueryYydGroupMsgWeekStatisticalDataHeaders $headers QueryYydGroupMsgWeekStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydGroupMsgWeekStatisticalDataResponse
+     * @return QueryYydGroupMsgWeekStatisticalDataResponse QueryYydGroupMsgWeekStatisticalDataResponse
      */
     public function queryYydGroupMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4230,9 +4512,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
+     *  *
+     * @param QueryYydGroupMsgWeekStatisticalDataRequest $request QueryYydGroupMsgWeekStatisticalDataRequest
      *
-     * @return QueryYydGroupMsgWeekStatisticalDataResponse
+     * @return QueryYydGroupMsgWeekStatisticalDataResponse QueryYydGroupMsgWeekStatisticalDataResponse
      */
     public function queryYydGroupMsgWeekStatisticalData($request)
     {
@@ -4243,11 +4527,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogDayStatisticalDataRequest $request
-     * @param QueryYydLogDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
+     *  *
+     * @param QueryYydLogDayStatisticalDataRequest $request QueryYydLogDayStatisticalDataRequest
+     * @param QueryYydLogDayStatisticalDataHeaders $headers QueryYydLogDayStatisticalDataHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydLogDayStatisticalDataResponse
+     * @return QueryYydLogDayStatisticalDataResponse QueryYydLogDayStatisticalDataResponse
      */
     public function queryYydLogDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4283,9 +4569,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
+     *  *
+     * @param QueryYydLogDayStatisticalDataRequest $request QueryYydLogDayStatisticalDataRequest
      *
-     * @return QueryYydLogDayStatisticalDataResponse
+     * @return QueryYydLogDayStatisticalDataResponse QueryYydLogDayStatisticalDataResponse
      */
     public function queryYydLogDayStatisticalData($request)
     {
@@ -4296,11 +4584,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogMonthStatisticalDataRequest $request
-     * @param QueryYydLogMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
+     *  *
+     * @param QueryYydLogMonthStatisticalDataRequest $request QueryYydLogMonthStatisticalDataRequest
+     * @param QueryYydLogMonthStatisticalDataHeaders $headers QueryYydLogMonthStatisticalDataHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydLogMonthStatisticalDataResponse
+     * @return QueryYydLogMonthStatisticalDataResponse QueryYydLogMonthStatisticalDataResponse
      */
     public function queryYydLogMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4336,9 +4626,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
+     *  *
+     * @param QueryYydLogMonthStatisticalDataRequest $request QueryYydLogMonthStatisticalDataRequest
      *
-     * @return QueryYydLogMonthStatisticalDataResponse
+     * @return QueryYydLogMonthStatisticalDataResponse QueryYydLogMonthStatisticalDataResponse
      */
     public function queryYydLogMonthStatisticalData($request)
     {
@@ -4349,11 +4641,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogWeekStatisticalDataRequest $request
-     * @param QueryYydLogWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
+     *  *
+     * @param QueryYydLogWeekStatisticalDataRequest $request QueryYydLogWeekStatisticalDataRequest
+     * @param QueryYydLogWeekStatisticalDataHeaders $headers QueryYydLogWeekStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydLogWeekStatisticalDataResponse
+     * @return QueryYydLogWeekStatisticalDataResponse QueryYydLogWeekStatisticalDataResponse
      */
     public function queryYydLogWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4389,9 +4683,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydLogWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
+     *  *
+     * @param QueryYydLogWeekStatisticalDataRequest $request QueryYydLogWeekStatisticalDataRequest
      *
-     * @return QueryYydLogWeekStatisticalDataResponse
+     * @return QueryYydLogWeekStatisticalDataResponse QueryYydLogWeekStatisticalDataResponse
      */
     public function queryYydLogWeekStatisticalData($request)
     {
@@ -4402,11 +4698,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingDayStatisticalDataRequest $request
-     * @param QueryYydMeetingDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
+     *  *
+     * @param QueryYydMeetingDayStatisticalDataRequest $request QueryYydMeetingDayStatisticalDataRequest
+     * @param QueryYydMeetingDayStatisticalDataHeaders $headers QueryYydMeetingDayStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydMeetingDayStatisticalDataResponse
+     * @return QueryYydMeetingDayStatisticalDataResponse QueryYydMeetingDayStatisticalDataResponse
      */
     public function queryYydMeetingDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4442,9 +4740,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
+     *  *
+     * @param QueryYydMeetingDayStatisticalDataRequest $request QueryYydMeetingDayStatisticalDataRequest
      *
-     * @return QueryYydMeetingDayStatisticalDataResponse
+     * @return QueryYydMeetingDayStatisticalDataResponse QueryYydMeetingDayStatisticalDataResponse
      */
     public function queryYydMeetingDayStatisticalData($request)
     {
@@ -4455,11 +4755,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingMonthStatisticalDataRequest $request
-     * @param QueryYydMeetingMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
+     *  *
+     * @param QueryYydMeetingMonthStatisticalDataRequest $request QueryYydMeetingMonthStatisticalDataRequest
+     * @param QueryYydMeetingMonthStatisticalDataHeaders $headers QueryYydMeetingMonthStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydMeetingMonthStatisticalDataResponse
+     * @return QueryYydMeetingMonthStatisticalDataResponse QueryYydMeetingMonthStatisticalDataResponse
      */
     public function queryYydMeetingMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4495,9 +4797,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
+     *  *
+     * @param QueryYydMeetingMonthStatisticalDataRequest $request QueryYydMeetingMonthStatisticalDataRequest
      *
-     * @return QueryYydMeetingMonthStatisticalDataResponse
+     * @return QueryYydMeetingMonthStatisticalDataResponse QueryYydMeetingMonthStatisticalDataResponse
      */
     public function queryYydMeetingMonthStatisticalData($request)
     {
@@ -4508,11 +4812,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingWeekStatisticalDataRequest $request
-     * @param QueryYydMeetingWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
+     *  *
+     * @param QueryYydMeetingWeekStatisticalDataRequest $request QueryYydMeetingWeekStatisticalDataRequest
+     * @param QueryYydMeetingWeekStatisticalDataHeaders $headers QueryYydMeetingWeekStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydMeetingWeekStatisticalDataResponse
+     * @return QueryYydMeetingWeekStatisticalDataResponse QueryYydMeetingWeekStatisticalDataResponse
      */
     public function queryYydMeetingWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4548,9 +4854,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydMeetingWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
+     *  *
+     * @param QueryYydMeetingWeekStatisticalDataRequest $request QueryYydMeetingWeekStatisticalDataRequest
      *
-     * @return QueryYydMeetingWeekStatisticalDataResponse
+     * @return QueryYydMeetingWeekStatisticalDataResponse QueryYydMeetingWeekStatisticalDataResponse
      */
     public function queryYydMeetingWeekStatisticalData($request)
     {
@@ -4561,11 +4869,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeDayStatisticalDataRequest $request
-     * @param QueryYydNoticeDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
+     *  *
+     * @param QueryYydNoticeDayStatisticalDataRequest $request QueryYydNoticeDayStatisticalDataRequest
+     * @param QueryYydNoticeDayStatisticalDataHeaders $headers QueryYydNoticeDayStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydNoticeDayStatisticalDataResponse
+     * @return QueryYydNoticeDayStatisticalDataResponse QueryYydNoticeDayStatisticalDataResponse
      */
     public function queryYydNoticeDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4601,9 +4911,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
+     *  *
+     * @param QueryYydNoticeDayStatisticalDataRequest $request QueryYydNoticeDayStatisticalDataRequest
      *
-     * @return QueryYydNoticeDayStatisticalDataResponse
+     * @return QueryYydNoticeDayStatisticalDataResponse QueryYydNoticeDayStatisticalDataResponse
      */
     public function queryYydNoticeDayStatisticalData($request)
     {
@@ -4614,11 +4926,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeMonthStatisticalDataRequest $request
-     * @param QueryYydNoticeMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
+     *  *
+     * @param QueryYydNoticeMonthStatisticalDataRequest $request QueryYydNoticeMonthStatisticalDataRequest
+     * @param QueryYydNoticeMonthStatisticalDataHeaders $headers QueryYydNoticeMonthStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydNoticeMonthStatisticalDataResponse
+     * @return QueryYydNoticeMonthStatisticalDataResponse QueryYydNoticeMonthStatisticalDataResponse
      */
     public function queryYydNoticeMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4654,9 +4968,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
+     *  *
+     * @param QueryYydNoticeMonthStatisticalDataRequest $request QueryYydNoticeMonthStatisticalDataRequest
      *
-     * @return QueryYydNoticeMonthStatisticalDataResponse
+     * @return QueryYydNoticeMonthStatisticalDataResponse QueryYydNoticeMonthStatisticalDataResponse
      */
     public function queryYydNoticeMonthStatisticalData($request)
     {
@@ -4667,11 +4983,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeWeekStatisticalDataRequest $request
-     * @param QueryYydNoticeWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
+     *  *
+     * @param QueryYydNoticeWeekStatisticalDataRequest $request QueryYydNoticeWeekStatisticalDataRequest
+     * @param QueryYydNoticeWeekStatisticalDataHeaders $headers QueryYydNoticeWeekStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydNoticeWeekStatisticalDataResponse
+     * @return QueryYydNoticeWeekStatisticalDataResponse QueryYydNoticeWeekStatisticalDataResponse
      */
     public function queryYydNoticeWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4707,9 +5025,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydNoticeWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
+     *  *
+     * @param QueryYydNoticeWeekStatisticalDataRequest $request QueryYydNoticeWeekStatisticalDataRequest
      *
-     * @return QueryYydNoticeWeekStatisticalDataResponse
+     * @return QueryYydNoticeWeekStatisticalDataResponse QueryYydNoticeWeekStatisticalDataResponse
      */
     public function queryYydNoticeWeekStatisticalData($request)
     {
@@ -4720,11 +5040,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
-     * @param QueryYydSingleMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgDayStatisticalDataRequest $request QueryYydSingleMsgDayStatisticalDataRequest
+     * @param QueryYydSingleMsgDayStatisticalDataHeaders $headers QueryYydSingleMsgDayStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydSingleMsgDayStatisticalDataResponse
+     * @return QueryYydSingleMsgDayStatisticalDataResponse QueryYydSingleMsgDayStatisticalDataResponse
      */
     public function queryYydSingleMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4760,9 +5082,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgDayStatisticalDataRequest $request QueryYydSingleMsgDayStatisticalDataRequest
      *
-     * @return QueryYydSingleMsgDayStatisticalDataResponse
+     * @return QueryYydSingleMsgDayStatisticalDataResponse QueryYydSingleMsgDayStatisticalDataResponse
      */
     public function queryYydSingleMsgDayStatisticalData($request)
     {
@@ -4773,11 +5097,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
-     * @param QueryYydSingleMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                               $runtime
+     * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request QueryYydSingleMsgMonthStatisticalDataRequest
+     * @param QueryYydSingleMsgMonthStatisticalDataHeaders $headers QueryYydSingleMsgMonthStatisticalDataHeaders
+     * @param RuntimeOptions                               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     * @return QueryYydSingleMsgMonthStatisticalDataResponse QueryYydSingleMsgMonthStatisticalDataResponse
      */
     public function queryYydSingleMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4813,9 +5139,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgMonthStatisticalDataRequest $request QueryYydSingleMsgMonthStatisticalDataRequest
      *
-     * @return QueryYydSingleMsgMonthStatisticalDataResponse
+     * @return QueryYydSingleMsgMonthStatisticalDataResponse QueryYydSingleMsgMonthStatisticalDataResponse
      */
     public function queryYydSingleMsgMonthStatisticalData($request)
     {
@@ -4826,11 +5154,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
-     * @param QueryYydSingleMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
+     * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request QueryYydSingleMsgWeekStatisticalDataRequest
+     * @param QueryYydSingleMsgWeekStatisticalDataHeaders $headers QueryYydSingleMsgWeekStatisticalDataHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydSingleMsgWeekStatisticalDataResponse
+     * @return QueryYydSingleMsgWeekStatisticalDataResponse QueryYydSingleMsgWeekStatisticalDataResponse
      */
     public function queryYydSingleMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4866,9 +5196,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
+     *  *
+     * @param QueryYydSingleMsgWeekStatisticalDataRequest $request QueryYydSingleMsgWeekStatisticalDataRequest
      *
-     * @return QueryYydSingleMsgWeekStatisticalDataResponse
+     * @return QueryYydSingleMsgWeekStatisticalDataResponse QueryYydSingleMsgWeekStatisticalDataResponse
      */
     public function queryYydSingleMsgWeekStatisticalData($request)
     {
@@ -4879,11 +5211,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
-     * @param QueryYydToatlMsgDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgDayStatisticalDataRequest $request QueryYydToatlMsgDayStatisticalDataRequest
+     * @param QueryYydToatlMsgDayStatisticalDataHeaders $headers QueryYydToatlMsgDayStatisticalDataHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydToatlMsgDayStatisticalDataResponse
+     * @return QueryYydToatlMsgDayStatisticalDataResponse QueryYydToatlMsgDayStatisticalDataResponse
      */
     public function queryYydToatlMsgDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4919,9 +5253,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgDayStatisticalDataRequest $request QueryYydToatlMsgDayStatisticalDataRequest
      *
-     * @return QueryYydToatlMsgDayStatisticalDataResponse
+     * @return QueryYydToatlMsgDayStatisticalDataResponse QueryYydToatlMsgDayStatisticalDataResponse
      */
     public function queryYydToatlMsgDayStatisticalData($request)
     {
@@ -4932,11 +5268,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
-     * @param QueryYydToatlMsgMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                              $runtime
+     * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request QueryYydToatlMsgMonthStatisticalDataRequest
+     * @param QueryYydToatlMsgMonthStatisticalDataHeaders $headers QueryYydToatlMsgMonthStatisticalDataHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydToatlMsgMonthStatisticalDataResponse
+     * @return QueryYydToatlMsgMonthStatisticalDataResponse QueryYydToatlMsgMonthStatisticalDataResponse
      */
     public function queryYydToatlMsgMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -4972,9 +5310,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgMonthStatisticalDataRequest $request QueryYydToatlMsgMonthStatisticalDataRequest
      *
-     * @return QueryYydToatlMsgMonthStatisticalDataResponse
+     * @return QueryYydToatlMsgMonthStatisticalDataResponse QueryYydToatlMsgMonthStatisticalDataResponse
      */
     public function queryYydToatlMsgMonthStatisticalData($request)
     {
@@ -4985,11 +5325,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
-     * @param QueryYydToatlMsgWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request QueryYydToatlMsgWeekStatisticalDataRequest
+     * @param QueryYydToatlMsgWeekStatisticalDataHeaders $headers QueryYydToatlMsgWeekStatisticalDataHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydToatlMsgWeekStatisticalDataResponse
+     * @return QueryYydToatlMsgWeekStatisticalDataResponse QueryYydToatlMsgWeekStatisticalDataResponse
      */
     public function queryYydToatlMsgWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5025,9 +5367,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
+     *  *
+     * @param QueryYydToatlMsgWeekStatisticalDataRequest $request QueryYydToatlMsgWeekStatisticalDataRequest
      *
-     * @return QueryYydToatlMsgWeekStatisticalDataResponse
+     * @return QueryYydToatlMsgWeekStatisticalDataResponse QueryYydToatlMsgWeekStatisticalDataResponse
      */
     public function queryYydToatlMsgWeekStatisticalData($request)
     {
@@ -5038,11 +5382,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoDayStatisticalDataRequest $request
-     * @param QueryYydTodoDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
+     *  *
+     * @param QueryYydTodoDayStatisticalDataRequest $request QueryYydTodoDayStatisticalDataRequest
+     * @param QueryYydTodoDayStatisticalDataHeaders $headers QueryYydTodoDayStatisticalDataHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTodoDayStatisticalDataResponse
+     * @return QueryYydTodoDayStatisticalDataResponse QueryYydTodoDayStatisticalDataResponse
      */
     public function queryYydTodoDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5078,9 +5424,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoDayStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
+     *  *
+     * @param QueryYydTodoDayStatisticalDataRequest $request QueryYydTodoDayStatisticalDataRequest
      *
-     * @return QueryYydTodoDayStatisticalDataResponse
+     * @return QueryYydTodoDayStatisticalDataResponse QueryYydTodoDayStatisticalDataResponse
      */
     public function queryYydTodoDayStatisticalData($request)
     {
@@ -5091,11 +5439,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoMonthStatisticalDataRequest $request
-     * @param QueryYydTodoMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
+     *  *
+     * @param QueryYydTodoMonthStatisticalDataRequest $request QueryYydTodoMonthStatisticalDataRequest
+     * @param QueryYydTodoMonthStatisticalDataHeaders $headers QueryYydTodoMonthStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTodoMonthStatisticalDataResponse
+     * @return QueryYydTodoMonthStatisticalDataResponse QueryYydTodoMonthStatisticalDataResponse
      */
     public function queryYydTodoMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5131,9 +5481,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoMonthStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
+     *  *
+     * @param QueryYydTodoMonthStatisticalDataRequest $request QueryYydTodoMonthStatisticalDataRequest
      *
-     * @return QueryYydTodoMonthStatisticalDataResponse
+     * @return QueryYydTodoMonthStatisticalDataResponse QueryYydTodoMonthStatisticalDataResponse
      */
     public function queryYydTodoMonthStatisticalData($request)
     {
@@ -5144,11 +5496,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoWeekStatisticalDataRequest $request
-     * @param QueryYydTodoWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
+     *  *
+     * @param QueryYydTodoWeekStatisticalDataRequest $request QueryYydTodoWeekStatisticalDataRequest
+     * @param QueryYydTodoWeekStatisticalDataHeaders $headers QueryYydTodoWeekStatisticalDataHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTodoWeekStatisticalDataResponse
+     * @return QueryYydTodoWeekStatisticalDataResponse QueryYydTodoWeekStatisticalDataResponse
      */
     public function queryYydTodoWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5184,9 +5538,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTodoWeekStatisticalDataRequest $request
+     * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
+     *  *
+     * @param QueryYydTodoWeekStatisticalDataRequest $request QueryYydTodoWeekStatisticalDataRequest
      *
-     * @return QueryYydTodoWeekStatisticalDataResponse
+     * @return QueryYydTodoWeekStatisticalDataResponse QueryYydTodoWeekStatisticalDataResponse
      */
     public function queryYydTodoWeekStatisticalData($request)
     {
@@ -5197,11 +5553,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalDayStatisticalDataRequest $request
-     * @param QueryYydTotalDayStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 亚运钉参谋全局概览（按日统计）指标接口
+     *  *
+     * @param QueryYydTotalDayStatisticalDataRequest $request QueryYydTotalDayStatisticalDataRequest
+     * @param QueryYydTotalDayStatisticalDataHeaders $headers QueryYydTotalDayStatisticalDataHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTotalDayStatisticalDataResponse
+     * @return QueryYydTotalDayStatisticalDataResponse QueryYydTotalDayStatisticalDataResponse
      */
     public function queryYydTotalDayStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5237,9 +5595,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalDayStatisticalDataRequest $request
+     * @summary 亚运钉参谋全局概览（按日统计）指标接口
+     *  *
+     * @param QueryYydTotalDayStatisticalDataRequest $request QueryYydTotalDayStatisticalDataRequest
      *
-     * @return QueryYydTotalDayStatisticalDataResponse
+     * @return QueryYydTotalDayStatisticalDataResponse QueryYydTotalDayStatisticalDataResponse
      */
     public function queryYydTotalDayStatisticalData($request)
     {
@@ -5250,11 +5610,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalMonthStatisticalDataRequest $request
-     * @param QueryYydTotalMonthStatisticalDataHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 亚运钉参谋全局概览（按月统计）指标接口
+     *  *
+     * @param QueryYydTotalMonthStatisticalDataRequest $request QueryYydTotalMonthStatisticalDataRequest
+     * @param QueryYydTotalMonthStatisticalDataHeaders $headers QueryYydTotalMonthStatisticalDataHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTotalMonthStatisticalDataResponse
+     * @return QueryYydTotalMonthStatisticalDataResponse QueryYydTotalMonthStatisticalDataResponse
      */
     public function queryYydTotalMonthStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5290,9 +5652,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalMonthStatisticalDataRequest $request
+     * @summary 亚运钉参谋全局概览（按月统计）指标接口
+     *  *
+     * @param QueryYydTotalMonthStatisticalDataRequest $request QueryYydTotalMonthStatisticalDataRequest
      *
-     * @return QueryYydTotalMonthStatisticalDataResponse
+     * @return QueryYydTotalMonthStatisticalDataResponse QueryYydTotalMonthStatisticalDataResponse
      */
     public function queryYydTotalMonthStatisticalData($request)
     {
@@ -5303,11 +5667,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalStdStatisticalDataRequest $request
-     * @param QueryYydTotalStdStatisticalDataHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 亚运钉参谋全局概览（累计）指标接口
+     *  *
+     * @param QueryYydTotalStdStatisticalDataRequest $request QueryYydTotalStdStatisticalDataRequest
+     * @param QueryYydTotalStdStatisticalDataHeaders $headers QueryYydTotalStdStatisticalDataHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTotalStdStatisticalDataResponse
+     * @return QueryYydTotalStdStatisticalDataResponse QueryYydTotalStdStatisticalDataResponse
      */
     public function queryYydTotalStdStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5343,9 +5709,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalStdStatisticalDataRequest $request
+     * @summary 亚运钉参谋全局概览（累计）指标接口
+     *  *
+     * @param QueryYydTotalStdStatisticalDataRequest $request QueryYydTotalStdStatisticalDataRequest
      *
-     * @return QueryYydTotalStdStatisticalDataResponse
+     * @return QueryYydTotalStdStatisticalDataResponse QueryYydTotalStdStatisticalDataResponse
      */
     public function queryYydTotalStdStatisticalData($request)
     {
@@ -5356,11 +5724,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalWeekStatisticalDataRequest $request
-     * @param QueryYydTotalWeekStatisticalDataHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @summary 亚运钉参谋全局概览（按周统计）指标接口
+     *  *
+     * @param QueryYydTotalWeekStatisticalDataRequest $request QueryYydTotalWeekStatisticalDataRequest
+     * @param QueryYydTotalWeekStatisticalDataHeaders $headers QueryYydTotalWeekStatisticalDataHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryYydTotalWeekStatisticalDataResponse
+     * @return QueryYydTotalWeekStatisticalDataResponse QueryYydTotalWeekStatisticalDataResponse
      */
     public function queryYydTotalWeekStatisticalDataWithOptions($request, $headers, $runtime)
     {
@@ -5396,9 +5766,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryYydTotalWeekStatisticalDataRequest $request
+     * @summary 亚运钉参谋全局概览（按周统计）指标接口
+     *  *
+     * @param QueryYydTotalWeekStatisticalDataRequest $request QueryYydTotalWeekStatisticalDataRequest
      *
-     * @return QueryYydTotalWeekStatisticalDataResponse
+     * @return QueryYydTotalWeekStatisticalDataResponse QueryYydTotalWeekStatisticalDataResponse
      */
     public function queryYydTotalWeekStatisticalData($request)
     {
@@ -5409,11 +5781,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchCompanyRequest $request
-     * @param SearchCompanyHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 通过关键词搜索企业
+     *  *
+     * @param SearchCompanyRequest $request SearchCompanyRequest
+     * @param SearchCompanyHeaders $headers SearchCompanyHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchCompanyResponse
+     * @return SearchCompanyResponse SearchCompanyResponse
      */
     public function searchCompanyWithOptions($request, $headers, $runtime)
     {
@@ -5455,9 +5829,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchCompanyRequest $request
+     * @summary 通过关键词搜索企业
+     *  *
+     * @param SearchCompanyRequest $request SearchCompanyRequest
      *
-     * @return SearchCompanyResponse
+     * @return SearchCompanyResponse SearchCompanyResponse
      */
     public function searchCompany($request)
     {

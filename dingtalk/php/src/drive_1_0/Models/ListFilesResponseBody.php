@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class ListFilesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var files[]
      */
     public $files;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;

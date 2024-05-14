@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetPrintDictionaryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_XABJJSJ
      *
      * @var string
@@ -16,6 +18,8 @@ class GetPrintDictionaryRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-XABJJSJ
      *
      * @var string
@@ -23,6 +27,8 @@ class GetPrintDictionaryRequest extends Model
     public $formUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abfefw
      *
      * @var string

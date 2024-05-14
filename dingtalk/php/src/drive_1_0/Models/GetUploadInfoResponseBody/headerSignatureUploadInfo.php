@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class headerSignatureUploadInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $expirationSeconds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $headers;
@@ -24,11 +28,15 @@ class headerSignatureUploadInfo extends Model
     public $internalResourceUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $resourceUrl;

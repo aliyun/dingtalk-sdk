@@ -14,16 +14,22 @@ class UpdateIsvCardMessageRequest extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $messageType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16690147049882572
      *
      * @var string
@@ -31,6 +37,8 @@ class UpdateIsvCardMessageRequest extends Model
     public $sceneType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 同意转正
      *
      * @var string
@@ -38,6 +46,8 @@ class UpdateIsvCardMessageRequest extends Model
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $valueMap;

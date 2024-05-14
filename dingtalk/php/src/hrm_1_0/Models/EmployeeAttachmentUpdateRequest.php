@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class EmployeeAttachmentUpdateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appAgentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldCode;
@@ -26,6 +30,8 @@ class EmployeeAttachmentUpdateRequest extends Model
     public $fileSuffix;
 
     /**
+     * @description This parameter is required.
+     *
      * @example "$iAEKAqNwbmcDBgTNAk"
      *
      * @var string
@@ -33,6 +39,8 @@ class EmployeeAttachmentUpdateRequest extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example admin123
      *
      * @var string

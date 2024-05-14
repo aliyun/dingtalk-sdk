@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 华佗
      *
      * @var string
@@ -27,6 +31,8 @@ class resultList extends Model
     public $detail;
 
     /**
+     * @description This parameter is required.
+     *
      * @example markdown
      *
      * @var string
@@ -34,6 +40,8 @@ class resultList extends Model
     public $format;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-03-24T09:30Z
      *
      * @var string
@@ -51,6 +59,8 @@ class resultList extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 201
      *
      * @var int
@@ -58,6 +68,8 @@ class resultList extends Model
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

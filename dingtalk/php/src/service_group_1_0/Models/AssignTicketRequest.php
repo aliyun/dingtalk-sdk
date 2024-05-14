@@ -16,6 +16,8 @@ class AssignTicketRequest extends Model
     public $notify;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -23,6 +25,8 @@ class AssignTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hNiPO2OVktNMiE
      *
      * @var string
@@ -30,11 +34,15 @@ class AssignTicketRequest extends Model
     public $openTicketId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processorUnionIds;

@@ -23,6 +23,8 @@ class QueryServiceGroupMessageReadStatusRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxxx==
      *
      * @var string
@@ -30,6 +32,8 @@ class QueryServiceGroupMessageReadStatusRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example msgxxxxxx==
      *
      * @var string
@@ -37,6 +41,8 @@ class QueryServiceGroupMessageReadStatusRequest extends Model
     public $openMsgTaskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EifWwis
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sheet_name
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateSheetRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

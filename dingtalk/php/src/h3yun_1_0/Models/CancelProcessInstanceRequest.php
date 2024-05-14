@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CancelProcessInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 76fa1ccd-cc8a-48ca-b4e5-634fdc7af78c
      *
      * @var string

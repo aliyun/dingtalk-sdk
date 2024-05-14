@@ -16,6 +16,8 @@ class models extends Model
     public $absentMin;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var int
@@ -28,6 +30,8 @@ class models extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Normal
      *
      * @var string

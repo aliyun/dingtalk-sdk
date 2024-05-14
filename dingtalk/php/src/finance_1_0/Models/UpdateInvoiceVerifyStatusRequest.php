@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVerifyStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example lpKgSTzGSy
      *
      * @var string
@@ -23,6 +25,8 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $checkingResult;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +34,8 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $checkingStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200
      *
      * @var string
@@ -37,6 +43,8 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding673cxxxxxxxxxxxx85
      *
      * @var string
@@ -58,6 +66,8 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $invoiceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 61235725
      *
      * @var string
@@ -72,6 +82,8 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $invoiceStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1299999
      *
      * @var string
@@ -79,11 +91,15 @@ class UpdateInvoiceVerifyStatusRequest extends Model
     public $invoiceVerifyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $msg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example BPq7qiSIH8PJHlB9kPuii1NQiEiE
      *
      * @var string

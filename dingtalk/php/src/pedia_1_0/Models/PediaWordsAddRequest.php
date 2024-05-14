@@ -38,6 +38,8 @@ class PediaWordsAddRequest extends Model
     public $relatedLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23231231123
      *
      * @var string
@@ -50,6 +52,8 @@ class PediaWordsAddRequest extends Model
     public $wordAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 词条名称
      *
      * @var string
@@ -57,6 +61,8 @@ class PediaWordsAddRequest extends Model
     public $wordName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 释义
      *
      * @var string

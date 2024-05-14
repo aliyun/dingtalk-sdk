@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class ListManagementGroupsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var groups[]
      */
     public $groups;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

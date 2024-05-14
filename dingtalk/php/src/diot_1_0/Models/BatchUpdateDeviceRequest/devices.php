@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class devices extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 002
      *
      * @var string

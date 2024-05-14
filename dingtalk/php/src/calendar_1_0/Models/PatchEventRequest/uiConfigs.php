@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class uiConfigs extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uiName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uiStatus;

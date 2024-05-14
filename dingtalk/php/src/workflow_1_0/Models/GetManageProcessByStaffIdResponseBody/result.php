@@ -23,6 +23,8 @@ class result extends Model
     public $flowTitle;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-07-14 14:24:59
      *
      * @var string

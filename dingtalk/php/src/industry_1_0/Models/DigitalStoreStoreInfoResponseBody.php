@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreStoreInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 余杭塘路xxxx号
      *
      * @var string
@@ -16,6 +18,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 9:00-22:00
      *
      * @var string
@@ -30,6 +34,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $dingDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -37,6 +43,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $latitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 余杭塘路xxxx号
      *
      * @var string
@@ -44,6 +52,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $locationAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -51,6 +61,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $longitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 华夏之心店
      *
      * @var string
@@ -58,6 +70,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 873366531
      *
      * @var int
@@ -65,6 +79,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CLOSED
      *
      * @var string
@@ -72,6 +88,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10平方米
      *
      * @var string
@@ -79,6 +97,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $storeAcreage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1千兆
      *
      * @var string
@@ -86,6 +106,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $storeBandwidth;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxxxxxxx
      *
      * @var string
@@ -93,6 +115,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $storeCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6756433
      *
      * @var int
@@ -100,6 +124,8 @@ class DigitalStoreStoreInfoResponseBody extends Model
     public $storeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0571-123456
      *
      * @var string

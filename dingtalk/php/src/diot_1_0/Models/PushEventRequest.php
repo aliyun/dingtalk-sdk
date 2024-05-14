@@ -23,6 +23,8 @@ class PushEventRequest extends Model
     public $deviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sj123456
      *
      * @var string
@@ -30,6 +32,8 @@ class PushEventRequest extends Model
     public $eventId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 火焰告警
      *
      * @var string
@@ -37,6 +41,8 @@ class PushEventRequest extends Model
     public $eventName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fireDetect
      *
      * @var string
@@ -63,6 +69,8 @@ class PushEventRequest extends Model
     public $msg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1638250958570
      *
      * @var int

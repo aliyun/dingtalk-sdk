@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListObjectiveByIdsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $objectiveIds;

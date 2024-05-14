@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class SupplyUpdateRoleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isRoleGroup;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleName;

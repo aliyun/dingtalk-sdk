@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userList[]
      */
     public $userList;

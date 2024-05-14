@@ -49,6 +49,8 @@ class connectorInfo extends Model
     public $iconMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorConnectorId;

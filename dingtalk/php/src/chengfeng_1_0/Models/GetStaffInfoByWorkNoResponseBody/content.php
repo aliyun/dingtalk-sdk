@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -16,6 +18,8 @@ class content extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开发部
      *
      * @var string
@@ -23,6 +27,8 @@ class content extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 17********@qq.com
      *
      * @var string
@@ -44,6 +50,8 @@ class content extends Model
     public $employeeStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -65,6 +73,8 @@ class content extends Model
     public $jobPositionName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -72,6 +82,8 @@ class content extends Model
     public $jobPostCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 技术开发
      *
      * @var string
@@ -79,6 +91,8 @@ class content extends Model
     public $jobPostName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 151********
      *
      * @var string
@@ -86,6 +100,8 @@ class content extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -93,6 +109,8 @@ class content extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 花名
      *
      * @var string
@@ -100,6 +118,8 @@ class content extends Model
     public $nickName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

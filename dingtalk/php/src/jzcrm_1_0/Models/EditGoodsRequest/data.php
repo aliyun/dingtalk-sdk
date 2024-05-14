@@ -54,6 +54,8 @@ class data extends Model
     public $cpimg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cpname;
@@ -74,6 +76,8 @@ class data extends Model
     public $cptype;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cpunit;
@@ -84,6 +88,8 @@ class data extends Model
     public $cpweight;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -151,6 +157,8 @@ class data extends Model
     public $typeid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unitrate;

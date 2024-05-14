@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetColumnvalsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $columnIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1709222400000
      *
      * @var int
@@ -21,6 +25,8 @@ class GetColumnvalsRequest extends Model
     public $fromDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1711728000000
      *
      * @var int
@@ -28,6 +34,8 @@ class GetColumnvalsRequest extends Model
     public $toDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

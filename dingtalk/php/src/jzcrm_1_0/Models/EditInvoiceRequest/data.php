@@ -16,6 +16,8 @@ class data extends Model
     public $childMx;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -28,11 +30,15 @@ class data extends Model
     public $fhAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fhCustomerid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fhDate;
@@ -73,6 +79,8 @@ class data extends Model
     public $fhLxrid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fhMode;
@@ -83,6 +91,8 @@ class data extends Model
     public $fhMsn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fhNumber;

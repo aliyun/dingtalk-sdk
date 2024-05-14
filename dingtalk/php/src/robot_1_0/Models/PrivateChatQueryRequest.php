@@ -30,6 +30,8 @@ class PrivateChatQueryRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
      *
      * @var string

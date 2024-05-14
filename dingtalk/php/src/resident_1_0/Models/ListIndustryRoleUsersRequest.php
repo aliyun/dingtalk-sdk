@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListIndustryRoleUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SecurityManager
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteWaterMarkTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
@@ -23,6 +25,8 @@ class DeleteWaterMarkTemplateRequest extends Model
     public $formContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var string
@@ -30,11 +34,15 @@ class DeleteWaterMarkTemplateRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $systemTemplate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manage123
      *
      * @var string

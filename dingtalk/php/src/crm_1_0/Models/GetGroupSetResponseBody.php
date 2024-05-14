@@ -38,6 +38,8 @@ class GetGroupSetResponseBody extends Model
     public $lastOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var manager[]
      */
     public $manager;
@@ -78,6 +80,8 @@ class GetGroupSetResponseBody extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var owner
      */
     public $owner;

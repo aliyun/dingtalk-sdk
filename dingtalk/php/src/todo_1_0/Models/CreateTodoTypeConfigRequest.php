@@ -16,6 +16,8 @@ class CreateTodoTypeConfigRequest extends Model
     public $actionList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $cardType;
@@ -31,11 +33,15 @@ class CreateTodoTypeConfigRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pcDetailUrlOpenMode;

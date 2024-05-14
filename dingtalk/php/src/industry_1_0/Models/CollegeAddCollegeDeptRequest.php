@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CollegeAddCollegeDeptRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 三年二班
      *
      * @var string
@@ -16,6 +18,8 @@ class CollegeAddCollegeDeptRequest extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example class
      *
      * @var string
@@ -23,6 +27,8 @@ class CollegeAddCollegeDeptRequest extends Model
     public $deptType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -30,6 +36,8 @@ class CollegeAddCollegeDeptRequest extends Model
     public $sortFactor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 22222
      *
      * @var int

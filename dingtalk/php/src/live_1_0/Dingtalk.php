@@ -93,12 +93,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加云导播联播群列表
+     *  *
      * @param string                 $feedId
-     * @param AddShareCidListRequest $request
-     * @param AddShareCidListHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param AddShareCidListRequest $request AddShareCidListRequest
+     * @param AddShareCidListHeaders $headers AddShareCidListHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddShareCidListResponse
+     * @return AddShareCidListResponse AddShareCidListResponse
      */
     public function addShareCidListWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -140,10 +142,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加云导播联播群列表
+     *  *
      * @param string                 $feedId
-     * @param AddShareCidListRequest $request
+     * @param AddShareCidListRequest $request AddShareCidListRequest
      *
-     * @return AddShareCidListResponse
+     * @return AddShareCidListResponse AddShareCidListResponse
      */
     public function addShareCidList($feedId, $request)
     {
@@ -154,11 +158,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCloudFeedRequest $request
-     * @param CreateCloudFeedHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建云导播课程
+     *  *
+     * @param CreateCloudFeedRequest $request CreateCloudFeedRequest
+     * @param CreateCloudFeedHeaders $headers CreateCloudFeedHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCloudFeedResponse
+     * @return CreateCloudFeedResponse CreateCloudFeedResponse
      */
     public function createCloudFeedWithOptions($request, $headers, $runtime)
     {
@@ -209,9 +215,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCloudFeedRequest $request
+     * @summary 创建云导播课程
+     *  *
+     * @param CreateCloudFeedRequest $request CreateCloudFeedRequest
      *
-     * @return CreateCloudFeedResponse
+     * @return CreateCloudFeedResponse CreateCloudFeedResponse
      */
     public function createCloudFeed($request)
     {
@@ -222,11 +230,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateLiveRequest $request
-     * @param CreateLiveHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 创建直播
+     *  *
+     * @param CreateLiveRequest $request CreateLiveRequest
+     * @param CreateLiveHeaders $headers CreateLiveHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateLiveResponse
+     * @return CreateLiveResponse CreateLiveResponse
      */
     public function createLiveWithOptions($request, $headers, $runtime)
     {
@@ -280,9 +290,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateLiveRequest $request
+     * @summary 创建直播
+     *  *
+     * @param CreateLiveRequest $request CreateLiveRequest
      *
-     * @return CreateLiveResponse
+     * @return CreateLiveResponse CreateLiveResponse
      */
     public function createLive($request)
     {
@@ -293,11 +305,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteLiveRequest $request
-     * @param DeleteLiveHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 删除直播
+     *  *
+     * @param DeleteLiveRequest $request DeleteLiveRequest
+     * @param DeleteLiveHeaders $headers DeleteLiveHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteLiveResponse
+     * @return DeleteLiveResponse DeleteLiveResponse
      */
     public function deleteLiveWithOptions($request, $headers, $runtime)
     {
@@ -336,9 +350,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteLiveRequest $request
+     * @summary 删除直播
+     *  *
+     * @param DeleteLiveRequest $request DeleteLiveRequest
      *
-     * @return DeleteLiveResponse
+     * @return DeleteLiveResponse DeleteLiveResponse
      */
     public function deleteLive($request)
     {
@@ -349,12 +365,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除直播培训课程
+     *  *
      * @param string                $feedId
-     * @param DeleteLiveFeedRequest $request
-     * @param DeleteLiveFeedHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DeleteLiveFeedRequest $request DeleteLiveFeedRequest
+     * @param DeleteLiveFeedHeaders $headers DeleteLiveFeedHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteLiveFeedResponse
+     * @return DeleteLiveFeedResponse DeleteLiveFeedResponse
      */
     public function deleteLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -390,10 +408,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除直播培训课程
+     *  *
      * @param string                $feedId
-     * @param DeleteLiveFeedRequest $request
+     * @param DeleteLiveFeedRequest $request DeleteLiveFeedRequest
      *
-     * @return DeleteLiveFeedResponse
+     * @return DeleteLiveFeedResponse DeleteLiveFeedResponse
      */
     public function deleteLiveFeed($feedId, $request)
     {
@@ -404,12 +424,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 剪辑直播课程的回放
+     *  *
      * @param string                $feedId
-     * @param EditFeedReplayRequest $request
-     * @param EditFeedReplayHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param EditFeedReplayRequest $request EditFeedReplayRequest
+     * @param EditFeedReplayHeaders $headers EditFeedReplayHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditFeedReplayResponse
+     * @return EditFeedReplayResponse EditFeedReplayResponse
      */
     public function editFeedReplayWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -451,10 +473,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 剪辑直播课程的回放
+     *  *
      * @param string                $feedId
-     * @param EditFeedReplayRequest $request
+     * @param EditFeedReplayRequest $request EditFeedReplayRequest
      *
-     * @return EditFeedReplayResponse
+     * @return EditFeedReplayResponse EditFeedReplayResponse
      */
     public function editFeedReplay($feedId, $request)
     {
@@ -465,11 +489,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLiveReplayUrlRequest $request
-     * @param GetLiveReplayUrlHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取直播的可下载回放地址
+     *  *
+     * @param GetLiveReplayUrlRequest $request GetLiveReplayUrlRequest
+     * @param GetLiveReplayUrlHeaders $headers GetLiveReplayUrlHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetLiveReplayUrlResponse
+     * @return GetLiveReplayUrlResponse GetLiveReplayUrlResponse
      */
     public function getLiveReplayUrlWithOptions($request, $headers, $runtime)
     {
@@ -508,9 +534,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLiveReplayUrlRequest $request
+     * @summary 获取直播的可下载回放地址
+     *  *
+     * @param GetLiveReplayUrlRequest $request GetLiveReplayUrlRequest
      *
-     * @return GetLiveReplayUrlResponse
+     * @return GetLiveReplayUrlResponse GetLiveReplayUrlResponse
      */
     public function getLiveReplayUrl($request)
     {
@@ -521,11 +549,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserAllLiveListRequest $request
-     * @param GetUserAllLiveListHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 根据状态拉我相关的直播
+     *  *
+     * @param GetUserAllLiveListRequest $request GetUserAllLiveListRequest
+     * @param GetUserAllLiveListHeaders $headers GetUserAllLiveListHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserAllLiveListResponse
+     * @return GetUserAllLiveListResponse GetUserAllLiveListResponse
      */
     public function getUserAllLiveListWithOptions($request, $headers, $runtime)
     {
@@ -581,9 +611,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserAllLiveListRequest $request
+     * @summary 根据状态拉我相关的直播
+     *  *
+     * @param GetUserAllLiveListRequest $request GetUserAllLiveListRequest
      *
-     * @return GetUserAllLiveListResponse
+     * @return GetUserAllLiveListResponse GetUserAllLiveListResponse
      */
     public function getUserAllLiveList($request)
     {
@@ -594,11 +626,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserCreateLiveListRequest $request
-     * @param GetUserCreateLiveListHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 根据状态获取用户创建的直播
+     *  *
+     * @param GetUserCreateLiveListRequest $request GetUserCreateLiveListRequest
+     * @param GetUserCreateLiveListHeaders $headers GetUserCreateLiveListHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserCreateLiveListResponse
+     * @return GetUserCreateLiveListResponse GetUserCreateLiveListResponse
      */
     public function getUserCreateLiveListWithOptions($request, $headers, $runtime)
     {
@@ -654,9 +688,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserCreateLiveListRequest $request
+     * @summary 根据状态获取用户创建的直播
+     *  *
+     * @param GetUserCreateLiveListRequest $request GetUserCreateLiveListRequest
      *
-     * @return GetUserCreateLiveListResponse
+     * @return GetUserCreateLiveListResponse GetUserCreateLiveListResponse
      */
     public function getUserCreateLiveList($request)
     {
@@ -667,11 +703,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserWatchLiveListRequest $request
-     * @param GetUserWatchLiveListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取用户观看直播记录
+     *  *
+     * @param GetUserWatchLiveListRequest $request GetUserWatchLiveListRequest
+     * @param GetUserWatchLiveListHeaders $headers GetUserWatchLiveListHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserWatchLiveListResponse
+     * @return GetUserWatchLiveListResponse GetUserWatchLiveListResponse
      */
     public function getUserWatchLiveListWithOptions($request, $headers, $runtime)
     {
@@ -716,9 +754,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserWatchLiveListRequest $request
+     * @summary 获取用户观看直播记录
+     *  *
+     * @param GetUserWatchLiveListRequest $request GetUserWatchLiveListRequest
      *
-     * @return GetUserWatchLiveListResponse
+     * @return GetUserWatchLiveListResponse GetUserWatchLiveListResponse
      */
     public function getUserWatchLiveList($request)
     {
@@ -729,12 +769,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改直播课程可见白名单
+     *  *
      * @param string                     $feedId
-     * @param ModifyFeedWhiteListRequest $tmpReq
-     * @param ModifyFeedWhiteListHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ModifyFeedWhiteListRequest $tmpReq  ModifyFeedWhiteListRequest
+     * @param ModifyFeedWhiteListHeaders $headers ModifyFeedWhiteListHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ModifyFeedWhiteListResponse
+     * @return ModifyFeedWhiteListResponse ModifyFeedWhiteListResponse
      */
     public function modifyFeedWhiteListWithOptions($feedId, $tmpReq, $headers, $runtime)
     {
@@ -781,10 +823,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改直播课程可见白名单
+     *  *
      * @param string                     $feedId
-     * @param ModifyFeedWhiteListRequest $request
+     * @param ModifyFeedWhiteListRequest $request ModifyFeedWhiteListRequest
      *
-     * @return ModifyFeedWhiteListResponse
+     * @return ModifyFeedWhiteListResponse ModifyFeedWhiteListResponse
      */
     public function modifyFeedWhiteList($feedId, $request)
     {
@@ -795,12 +839,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询直播课程的观看白名单
+     *  *
      * @param string                    $feedId
-     * @param QueryFeedWhiteListRequest $request
-     * @param QueryFeedWhiteListHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryFeedWhiteListRequest $request QueryFeedWhiteListRequest
+     * @param QueryFeedWhiteListHeaders $headers QueryFeedWhiteListHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryFeedWhiteListResponse
+     * @return QueryFeedWhiteListResponse QueryFeedWhiteListResponse
      */
     public function queryFeedWhiteListWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -836,10 +882,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询直播课程的观看白名单
+     *  *
      * @param string                    $feedId
-     * @param QueryFeedWhiteListRequest $request
+     * @param QueryFeedWhiteListRequest $request QueryFeedWhiteListRequest
      *
-     * @return QueryFeedWhiteListResponse
+     * @return QueryFeedWhiteListResponse QueryFeedWhiteListResponse
      */
     public function queryFeedWhiteList($feedId, $request)
     {
@@ -850,11 +898,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveInfoRequest $request
-     * @param QueryLiveInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 查询直播详情
+     *  *
+     * @param QueryLiveInfoRequest $request QueryLiveInfoRequest
+     * @param QueryLiveInfoHeaders $headers QueryLiveInfoHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryLiveInfoResponse
+     * @return QueryLiveInfoResponse QueryLiveInfoResponse
      */
     public function queryLiveInfoWithOptions($request, $headers, $runtime)
     {
@@ -893,9 +943,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveInfoRequest $request
+     * @summary 查询直播详情
+     *  *
+     * @param QueryLiveInfoRequest $request QueryLiveInfoRequest
      *
-     * @return QueryLiveInfoResponse
+     * @return QueryLiveInfoResponse QueryLiveInfoResponse
      */
     public function queryLiveInfo($request)
     {
@@ -906,11 +958,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveWatchDetailRequest $request
-     * @param QueryLiveWatchDetailHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取直播的观看数据
+     *  *
+     * @param QueryLiveWatchDetailRequest $request QueryLiveWatchDetailRequest
+     * @param QueryLiveWatchDetailHeaders $headers QueryLiveWatchDetailHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryLiveWatchDetailResponse
+     * @return QueryLiveWatchDetailResponse QueryLiveWatchDetailResponse
      */
     public function queryLiveWatchDetailWithOptions($request, $headers, $runtime)
     {
@@ -949,9 +1003,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveWatchDetailRequest $request
+     * @summary 获取直播的观看数据
+     *  *
+     * @param QueryLiveWatchDetailRequest $request QueryLiveWatchDetailRequest
      *
-     * @return QueryLiveWatchDetailResponse
+     * @return QueryLiveWatchDetailResponse QueryLiveWatchDetailResponse
      */
     public function queryLiveWatchDetail($request)
     {
@@ -962,11 +1018,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveWatchUserListRequest $request
-     * @param QueryLiveWatchUserListHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取直播观看用户列表
+     *  *
+     * @param QueryLiveWatchUserListRequest $request QueryLiveWatchUserListRequest
+     * @param QueryLiveWatchUserListHeaders $headers QueryLiveWatchUserListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryLiveWatchUserListResponse
+     * @return QueryLiveWatchUserListResponse QueryLiveWatchUserListResponse
      */
     public function queryLiveWatchUserListWithOptions($request, $headers, $runtime)
     {
@@ -1011,9 +1069,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveWatchUserListRequest $request
+     * @summary 获取直播观看用户列表
+     *  *
+     * @param QueryLiveWatchUserListRequest $request QueryLiveWatchUserListRequest
      *
-     * @return QueryLiveWatchUserListResponse
+     * @return QueryLiveWatchUserListResponse QueryLiveWatchUserListResponse
      */
     public function queryLiveWatchUserList($request)
     {
@@ -1024,11 +1084,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySubscribeStatusRequest $tmpReq
-     * @param QuerySubscribeStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 批量查询直播是否订阅
+     *  *
+     * @param QuerySubscribeStatusRequest $tmpReq  QuerySubscribeStatusRequest
+     * @param QuerySubscribeStatusHeaders $headers QuerySubscribeStatusHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QuerySubscribeStatusResponse
+     * @return QuerySubscribeStatusResponse QuerySubscribeStatusResponse
      */
     public function querySubscribeStatusWithOptions($tmpReq, $headers, $runtime)
     {
@@ -1072,9 +1134,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySubscribeStatusRequest $request
+     * @summary 批量查询直播是否订阅
+     *  *
+     * @param QuerySubscribeStatusRequest $request QuerySubscribeStatusRequest
      *
-     * @return QuerySubscribeStatusResponse
+     * @return QuerySubscribeStatusResponse QuerySubscribeStatusResponse
      */
     public function querySubscribeStatus($request)
     {
@@ -1085,12 +1149,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开始一场云导播
+     *  *
      * @param string                $feedId
-     * @param StartCloudFeedRequest $request
-     * @param StartCloudFeedHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param StartCloudFeedRequest $request StartCloudFeedRequest
+     * @param StartCloudFeedHeaders $headers StartCloudFeedHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return StartCloudFeedResponse
+     * @return StartCloudFeedResponse StartCloudFeedResponse
      */
     public function startCloudFeedWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -1126,10 +1192,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开始一场云导播
+     *  *
      * @param string                $feedId
-     * @param StartCloudFeedRequest $request
+     * @param StartCloudFeedRequest $request StartCloudFeedRequest
      *
-     * @return StartCloudFeedResponse
+     * @return StartCloudFeedResponse StartCloudFeedResponse
      */
     public function startCloudFeed($feedId, $request)
     {
@@ -1140,12 +1208,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 结束一场云导播
+     *  *
      * @param string               $feedId
-     * @param StopCloudFeedRequest $request
-     * @param StopCloudFeedHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param StopCloudFeedRequest $request StopCloudFeedRequest
+     * @param StopCloudFeedHeaders $headers StopCloudFeedHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return StopCloudFeedResponse
+     * @return StopCloudFeedResponse StopCloudFeedResponse
      */
     public function stopCloudFeedWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -1181,10 +1251,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 结束一场云导播
+     *  *
      * @param string               $feedId
-     * @param StopCloudFeedRequest $request
+     * @param StopCloudFeedRequest $request StopCloudFeedRequest
      *
-     * @return StopCloudFeedResponse
+     * @return StopCloudFeedResponse StopCloudFeedResponse
      */
     public function stopCloudFeed($feedId, $request)
     {
@@ -1195,11 +1267,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeLiveRequest $request
-     * @param SubscribeLiveHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 预约直播
+     *  *
+     * @param SubscribeLiveRequest $request SubscribeLiveRequest
+     * @param SubscribeLiveHeaders $headers SubscribeLiveHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SubscribeLiveResponse
+     * @return SubscribeLiveResponse SubscribeLiveResponse
      */
     public function subscribeLiveWithOptions($request, $headers, $runtime)
     {
@@ -1241,9 +1315,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeLiveRequest $request
+     * @summary 预约直播
+     *  *
+     * @param SubscribeLiveRequest $request SubscribeLiveRequest
      *
-     * @return SubscribeLiveResponse
+     * @return SubscribeLiveResponse SubscribeLiveResponse
      */
     public function subscribeLive($request)
     {
@@ -1254,11 +1330,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateLiveRequest $request
-     * @param UpdateLiveHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 修改直播
+     *  *
+     * @param UpdateLiveRequest $request UpdateLiveRequest
+     * @param UpdateLiveHeaders $headers UpdateLiveHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateLiveResponse
+     * @return UpdateLiveResponse UpdateLiveResponse
      */
     public function updateLiveWithOptions($request, $headers, $runtime)
     {
@@ -1312,9 +1390,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateLiveRequest $request
+     * @summary 修改直播
+     *  *
+     * @param UpdateLiveRequest $request UpdateLiveRequest
      *
-     * @return UpdateLiveResponse
+     * @return UpdateLiveResponse UpdateLiveResponse
      */
     public function updateLive($request)
     {
@@ -1325,12 +1405,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改培训课程信息
+     *  *
      * @param string                $feedId
-     * @param UpdateLiveFeedRequest $request
-     * @param UpdateLiveFeedHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param UpdateLiveFeedRequest $request UpdateLiveFeedRequest
+     * @param UpdateLiveFeedHeaders $headers UpdateLiveFeedHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateLiveFeedResponse
+     * @return UpdateLiveFeedResponse UpdateLiveFeedResponse
      */
     public function updateLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -1378,10 +1460,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改培训课程信息
+     *  *
      * @param string                $feedId
-     * @param UpdateLiveFeedRequest $request
+     * @param UpdateLiveFeedRequest $request UpdateLiveFeedRequest
      *
-     * @return UpdateLiveFeedResponse
+     * @return UpdateLiveFeedResponse UpdateLiveFeedResponse
      */
     public function updateLiveFeed($feedId, $request)
     {

@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class payInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var csUserInfo
      */
     public $csUserInfo;
@@ -21,6 +23,8 @@ class payInfo extends Model
     public $discountInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int

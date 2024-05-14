@@ -16,6 +16,8 @@ class GetCandidateByPhoneNumberRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13688888888
      *
      * @var string

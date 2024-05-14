@@ -14,6 +14,8 @@ class GetCategoryResponseBody extends Model
     public $accountantBookIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INCOME_XXX
      *
      * @var string
@@ -21,6 +23,8 @@ class GetCategoryResponseBody extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -28,6 +32,8 @@ class GetCategoryResponseBody extends Model
     public $isDir;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 汽车
      *
      * @var string
@@ -42,6 +48,8 @@ class GetCategoryResponseBody extends Model
     public $parentCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example valid
      *
      * @var string
@@ -49,6 +57,8 @@ class GetCategoryResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example income
      *
      * @var string

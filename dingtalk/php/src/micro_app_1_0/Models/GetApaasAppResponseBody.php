@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetApaasAppResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,11 +18,15 @@ class GetApaasAppResponseBody extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $publishStatus;

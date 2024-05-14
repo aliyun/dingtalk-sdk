@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -19,11 +21,15 @@ class ListTemplateRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateType;

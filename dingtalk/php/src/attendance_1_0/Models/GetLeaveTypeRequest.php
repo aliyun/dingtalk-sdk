@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetLeaveTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

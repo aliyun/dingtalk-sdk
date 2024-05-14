@@ -30,6 +30,8 @@ class SaveAcrossCloudStroageConfigsRequest extends Model
     public $bucketName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +46,8 @@ class SaveAcrossCloudStroageConfigsRequest extends Model
     public $endpoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string

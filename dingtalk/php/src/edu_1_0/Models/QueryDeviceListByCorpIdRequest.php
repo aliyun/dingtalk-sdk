@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceListByCorpIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;

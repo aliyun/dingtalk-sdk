@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenUserDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class OpenUserDTO extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 王五
      *
      * @var string
@@ -23,6 +27,8 @@ class OpenUserDTO extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 015310183065939140
      *
      * @var string

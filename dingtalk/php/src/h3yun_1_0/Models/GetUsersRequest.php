@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string

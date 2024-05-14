@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CollectResumeMailRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ddats
      *
      * @var string
@@ -17,6 +19,8 @@ class CollectResumeMailRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example liepin
      *
      * @var string
@@ -31,6 +35,8 @@ class CollectResumeMailRequest extends Model
     public $deliverJobId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx@163.com
      *
      * @var string
@@ -43,6 +49,8 @@ class CollectResumeMailRequest extends Model
     public $historyMailImport;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxxxx
      *
      * @var string
@@ -50,6 +58,8 @@ class CollectResumeMailRequest extends Model
     public $mailId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxx应聘贵公司xxx职位
      *
      * @var string
@@ -64,6 +74,8 @@ class CollectResumeMailRequest extends Model
     public $optUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx@163.com
      *
      * @var string
@@ -71,11 +83,15 @@ class CollectResumeMailRequest extends Model
     public $receiveMailAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $receiveMailType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $receivedTime;
@@ -88,6 +104,8 @@ class CollectResumeMailRequest extends Model
     public $resumeChannelUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var resumeFile
      */
     public $resumeFile;

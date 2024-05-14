@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateMeetingRoomGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 172
      *
      * @var int
@@ -23,6 +25,8 @@ class UpdateMeetingRoomGroupRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string

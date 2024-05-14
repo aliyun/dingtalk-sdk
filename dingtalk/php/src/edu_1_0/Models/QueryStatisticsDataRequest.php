@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryStatisticsDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $sectionIndexList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $teacherUserIds;
@@ -24,6 +28,8 @@ class QueryStatisticsDataRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

@@ -23,6 +23,8 @@ class ListFormInstancesRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15
      *
      * @var int
@@ -30,6 +32,8 @@ class ListFormInstancesRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

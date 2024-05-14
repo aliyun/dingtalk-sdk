@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CollegeQueryStudentInfoByDeptRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 11111
      *
      * @var int
@@ -16,6 +18,8 @@ class CollegeQueryStudentInfoByDeptRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 22222
      *
      * @var int

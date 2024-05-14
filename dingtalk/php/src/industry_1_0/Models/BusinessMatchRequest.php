@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class BusinessMatchRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $businessInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

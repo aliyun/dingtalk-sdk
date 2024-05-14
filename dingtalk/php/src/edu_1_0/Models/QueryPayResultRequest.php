@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryPayResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12312333
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryPayResultRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202201240001
      *
      * @var string
@@ -30,6 +34,8 @@ class QueryPayResultRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn1234
      *
      * @var string
@@ -44,6 +50,8 @@ class QueryPayResultRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20200231
      *
      * @var string

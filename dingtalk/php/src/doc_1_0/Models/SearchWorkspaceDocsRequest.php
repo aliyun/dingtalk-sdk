@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SearchWorkspaceDocsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $keyword;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -24,6 +28,8 @@ class SearchWorkspaceDocsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

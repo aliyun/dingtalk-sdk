@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OrgGroupRecallResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR
      *
      * @var string[]
@@ -16,6 +18,8 @@ class OrgGroupRecallResponseBody extends Model
     public $failedResult;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $successResult;

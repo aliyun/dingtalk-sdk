@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LoadBizObjectResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string
@@ -23,6 +25,8 @@ class LoadBizObjectResponseBody extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OK
      *
      * @var string

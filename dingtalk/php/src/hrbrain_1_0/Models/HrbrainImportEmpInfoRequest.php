@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class HrbrainImportEmpInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var body[]
      */
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;

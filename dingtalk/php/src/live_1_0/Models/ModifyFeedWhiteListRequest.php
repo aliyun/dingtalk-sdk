@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ModifyFeedWhiteListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -21,6 +23,8 @@ class ModifyFeedWhiteListRequest extends Model
     public $modifyUserList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1206186351746728
      *
      * @var string

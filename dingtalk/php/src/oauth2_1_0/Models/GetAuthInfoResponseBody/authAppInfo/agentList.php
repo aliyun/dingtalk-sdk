@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class agentList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $adminList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 835880322
      *
      * @var int
@@ -21,6 +25,8 @@ class agentList extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小程序DEMO
      *
      * @var string
@@ -28,6 +34,8 @@ class agentList extends Model
     public $agentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var int

@@ -50,6 +50,8 @@ class result extends Model
     public $ccUserIds;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-08-31T11:52Z
      *
      * @var string

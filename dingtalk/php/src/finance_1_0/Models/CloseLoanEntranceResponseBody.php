@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CloseLoanEntranceResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1a23qdfa
      *
      * @var string

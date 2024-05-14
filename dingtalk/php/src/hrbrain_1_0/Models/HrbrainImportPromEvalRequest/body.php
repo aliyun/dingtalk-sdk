@@ -14,6 +14,8 @@ class body extends Model
     public $comment;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $effectiveDate;
@@ -24,16 +26,22 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $newJobLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $period;
@@ -49,11 +57,15 @@ class body extends Model
     public $periodStartDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $preJobLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

@@ -19,6 +19,8 @@ class GetExecuteUrlRequest extends Model
     public $signContainer;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskId;

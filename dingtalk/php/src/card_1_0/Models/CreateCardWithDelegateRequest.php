@@ -30,11 +30,15 @@ class CreateCardWithDelegateRequest extends Model
     public $callbackType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardData
      */
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example b0aa776f-79ac-4e13-f838-749aae913bc7
      *
      * @var string
@@ -67,6 +71,8 @@ class CreateCardWithDelegateRequest extends Model
     public $openDynamicDataConfig;
 
     /**
+     * @description This parameter is required.
+     *
      * @example mycard-07921
      *
      * @var string

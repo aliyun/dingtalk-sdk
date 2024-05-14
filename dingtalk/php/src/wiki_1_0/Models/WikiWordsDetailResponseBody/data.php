@@ -12,101 +12,141 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var appLink[]
      */
     public $appLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $approveName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $contacts;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtModify;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $highLightWordAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $imHighLight;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orgName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $simHighLight;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $simpleWordParaphrase;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $tagsList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $updaterName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $uuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $wordFullName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $wordName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $wordParaphrase;

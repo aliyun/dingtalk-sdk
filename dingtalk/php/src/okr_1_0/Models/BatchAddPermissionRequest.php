@@ -10,21 +10,29 @@ use AlibabaCloud\Tea\Model;
 class BatchAddPermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 当前用户 userId。
      *
      * @var string

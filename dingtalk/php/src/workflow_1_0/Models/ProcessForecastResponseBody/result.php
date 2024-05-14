@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -18,6 +20,8 @@ class result extends Model
     public $isForecastSuccess;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -25,6 +29,8 @@ class result extends Model
     public $isStaticWorkflow;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-2B60E506-D6CB-43F3-B661-359B27F90947
      *
      * @var string
@@ -32,6 +38,8 @@ class result extends Model
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 63657309999
      *
      * @var int
@@ -39,6 +47,8 @@ class result extends Model
     public $processId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2665246100805992
      *
      * @var string
@@ -51,6 +61,8 @@ class result extends Model
     public $workflowActivityRules;
 
     /**
+     * @description This parameter is required.
+     *
      * @var workflowForecastNodes[]
      */
     public $workflowForecastNodes;

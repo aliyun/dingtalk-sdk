@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ExecuteProcessInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 133743186427339452
      *
      * @var string
@@ -22,6 +24,8 @@ class ExecuteProcessInstanceRequest extends Model
     public $file;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a171de6c-8bxxxx
      *
      * @var string
@@ -36,6 +40,8 @@ class ExecuteProcessInstanceRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example agree
      *
      * @var string
@@ -43,6 +49,8 @@ class ExecuteProcessInstanceRequest extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 67583405630
      *
      * @var int

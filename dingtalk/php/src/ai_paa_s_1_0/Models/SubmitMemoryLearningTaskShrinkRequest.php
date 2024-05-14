@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class SubmitMemoryLearningTaskShrinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $agentCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contentShrink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $learningMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $memoryKey;

@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class RollBackVersionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bundleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $rollbackVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetVersion;

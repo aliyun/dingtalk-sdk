@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class invoices extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100.00
      *
      * @var string
@@ -16,6 +18,8 @@ class invoices extends Model
     public $invoiceAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 033002000712
      *
      * @var string
@@ -23,6 +27,8 @@ class invoices extends Model
     public $invoiceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-02-21
      *
      * @var string
@@ -30,6 +36,8 @@ class invoices extends Model
     public $invoiceDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20532643
      *
      * @var string
@@ -37,6 +45,8 @@ class invoices extends Model
     public $invoiceNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $invoiceType;
@@ -47,6 +57,8 @@ class invoices extends Model
     public $logoUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小钉科技有限公司
      *
      * @var string
@@ -54,6 +66,8 @@ class invoices extends Model
     public $payeeName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 91330100MA28XNB274
      *
      * @var string
@@ -61,6 +75,8 @@ class invoices extends Model
     public $payeeTaxNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小钉科技有限公司
      *
      * @var string
@@ -75,6 +91,8 @@ class invoices extends Model
     public $payerTaxNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $pdfUrl;

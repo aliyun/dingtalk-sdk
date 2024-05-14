@@ -24,6 +24,8 @@ class IndustryManufactureMaterialListRequest extends Model
     public $appName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;

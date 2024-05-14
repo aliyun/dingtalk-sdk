@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateInnerAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example descxxx
      *
      * @var string
@@ -40,6 +42,8 @@ class CreateInnerAppRequest extends Model
     public $ipWhiteList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example namexx
      *
      * @var string
@@ -54,6 +58,8 @@ class CreateInnerAppRequest extends Model
     public $ompLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

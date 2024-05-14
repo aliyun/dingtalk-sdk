@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SyncInvoiceEntityRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -27,11 +29,15 @@ class SyncInvoiceEntityRequest extends Model
     public $entityList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $invoiceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

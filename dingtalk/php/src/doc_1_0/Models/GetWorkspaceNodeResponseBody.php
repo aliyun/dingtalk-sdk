@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceNodeResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasPermission;

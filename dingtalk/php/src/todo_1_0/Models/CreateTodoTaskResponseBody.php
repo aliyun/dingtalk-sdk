@@ -22,11 +22,15 @@ class CreateTodoTaskResponseBody extends Model
     public $contentFieldList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createdTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorId;
@@ -62,6 +66,8 @@ class CreateTodoTaskResponseBody extends Model
     public $finishTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
@@ -117,6 +123,8 @@ class CreateTodoTaskResponseBody extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subject;

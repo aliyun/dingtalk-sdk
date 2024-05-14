@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class groupPlugins extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

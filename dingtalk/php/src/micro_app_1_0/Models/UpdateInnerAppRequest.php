@@ -49,6 +49,8 @@ class UpdateInnerAppRequest extends Model
     public $ompLink;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 22
      *
      * @var int
@@ -21,6 +23,8 @@ class result extends Model
     public $message;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

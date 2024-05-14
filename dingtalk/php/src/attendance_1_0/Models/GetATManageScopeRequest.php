@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetATManageScopeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 50
      *
      * @var int
@@ -16,6 +18,8 @@ class GetATManageScopeRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var string
@@ -23,6 +27,8 @@ class GetATManageScopeRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

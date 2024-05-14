@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateChatRoomRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $chatGroupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $deviceCodes;

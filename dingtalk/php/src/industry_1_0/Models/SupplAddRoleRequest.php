@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SupplAddRoleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $parentRoleGroupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleName;

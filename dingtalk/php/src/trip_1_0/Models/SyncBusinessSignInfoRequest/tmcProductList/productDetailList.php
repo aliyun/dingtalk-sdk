@@ -31,6 +31,8 @@ class productDetailList extends Model
     public $payType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $product;

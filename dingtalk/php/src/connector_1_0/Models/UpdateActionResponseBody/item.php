@@ -9,36 +9,50 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dingActionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dingConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorActionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subErrCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subErrMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $success;

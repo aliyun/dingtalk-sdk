@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class InstallCoolAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
@@ -29,11 +35,15 @@ class InstallCoolAppRequest extends Model
     public $feature;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $installUid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;
@@ -44,6 +54,8 @@ class InstallCoolAppRequest extends Model
     public $options;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $suiteId;

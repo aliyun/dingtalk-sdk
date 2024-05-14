@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class WriteAlibabaUserCarbonResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

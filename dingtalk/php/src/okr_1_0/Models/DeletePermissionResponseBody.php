@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class DeletePermissionResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data
      */
     public $data;

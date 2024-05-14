@@ -25,6 +25,8 @@ class courses extends Model
     public $creatorName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var dateModel
      */
     public $dateModel;
@@ -37,6 +39,8 @@ class courses extends Model
     public $location;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionModel
      */
     public $sectionModel;

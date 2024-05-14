@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSsoAccessTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class GetSsoAccessTokenRequest extends Model
     public $corpid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

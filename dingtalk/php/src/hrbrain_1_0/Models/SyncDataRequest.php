@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class SyncDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $etlTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $projectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $schemaId;

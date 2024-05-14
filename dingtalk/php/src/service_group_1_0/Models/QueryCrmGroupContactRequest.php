@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupContactRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +25,8 @@ class QueryCrmGroupContactRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid888
      *
      * @var string
@@ -30,6 +34,8 @@ class QueryCrmGroupContactRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888
      *
      * @var string
@@ -37,6 +43,8 @@ class QueryCrmGroupContactRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $searchFields;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddDeptRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 闪电供应商
      *
      * @var string
@@ -23,6 +25,8 @@ class SupplyAddDeptRequest extends Model
     public $partnerNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var int
@@ -30,6 +34,8 @@ class SupplyAddDeptRequest extends Model
     public $superDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUPPLY_CHAIN_DEPT_TYPE
      *
      * @var string

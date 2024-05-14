@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class operator extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example biz222ddd
      *
      * @var string
@@ -16,6 +18,8 @@ class operator extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hrm
      *
      * @var string
@@ -23,6 +27,8 @@ class operator extends Model
     public $mailAccountType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example tokenabcd
      *
      * @var string

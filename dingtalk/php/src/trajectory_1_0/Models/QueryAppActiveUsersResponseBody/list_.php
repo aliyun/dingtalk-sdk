@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example kxm9dhfs01jd98cuv
      *
      * @var string
@@ -16,6 +18,8 @@ class list_ extends Model
     public $appTraceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123.123
      *
      * @var float
@@ -23,6 +27,8 @@ class list_ extends Model
     public $latitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123.123
      *
      * @var float
@@ -30,6 +36,8 @@ class list_ extends Model
     public $longitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1619341954123
      *
      * @var int
@@ -37,6 +45,8 @@ class list_ extends Model
     public $reportTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1619341754123
      *
      * @var int
@@ -44,6 +54,8 @@ class list_ extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example I0912384771
      *
      * @var string

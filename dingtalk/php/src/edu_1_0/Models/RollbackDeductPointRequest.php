@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RollbackDeductPointRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example biz01
      *
      * @var string
@@ -16,6 +18,8 @@ class RollbackDeductPointRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example personal
      *
      * @var string

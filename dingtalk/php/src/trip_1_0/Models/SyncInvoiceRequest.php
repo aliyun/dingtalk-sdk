@@ -26,6 +26,8 @@ class SyncInvoiceRequest extends Model
     public $bankNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string
@@ -38,6 +40,8 @@ class SyncInvoiceRequest extends Model
     public $deleteFlag;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-02-21 11:11:11
      *
      * @var string
@@ -45,6 +49,8 @@ class SyncInvoiceRequest extends Model
     public $gmtAction;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -86,6 +92,8 @@ class SyncInvoiceRequest extends Model
     public $thirdPartId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 默认发票抬头
      *
      * @var string
@@ -103,6 +111,8 @@ class SyncInvoiceRequest extends Model
     public $unitType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20881001829000
      *
      * @var string

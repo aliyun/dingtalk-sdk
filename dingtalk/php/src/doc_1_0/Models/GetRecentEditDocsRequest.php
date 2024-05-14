@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetRecentEditDocsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -19,6 +21,8 @@ class GetRecentEditDocsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

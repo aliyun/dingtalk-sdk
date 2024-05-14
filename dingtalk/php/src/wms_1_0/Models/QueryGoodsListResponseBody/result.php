@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -22,6 +24,8 @@ class result extends Model
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -29,6 +33,8 @@ class result extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var string

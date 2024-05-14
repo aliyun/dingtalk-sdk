@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class bindingGroupBizIds extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example hghhghghhg
      *
      * @var string
@@ -16,6 +18,8 @@ class bindingGroupBizIds extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid123
      *
      * @var string

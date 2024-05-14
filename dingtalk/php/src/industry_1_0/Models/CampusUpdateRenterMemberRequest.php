@@ -23,6 +23,8 @@ class CampusUpdateRenterMemberRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 41239123
      *
      * @var int
@@ -37,6 +39,8 @@ class CampusUpdateRenterMemberRequest extends Model
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fksif91273
      *
      * @var string

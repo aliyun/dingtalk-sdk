@@ -23,6 +23,8 @@ class UpdateOrganizationTaskDueDateRequest extends Model
     public $disableNotification;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-06-13T03:30:42.830Z
      *
      * @var string

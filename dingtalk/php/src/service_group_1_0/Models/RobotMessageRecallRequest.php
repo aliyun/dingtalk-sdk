@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RobotMessageRecallRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXX
      *
      * @var string
@@ -16,6 +18,8 @@ class RobotMessageRecallRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example msgU87r5gnMP43JTDAZg/ETyQ==
      *
      * @var string
@@ -23,6 +27,8 @@ class RobotMessageRecallRequest extends Model
     public $openMsgId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iSoqrhLQDtK
      *
      * @var string

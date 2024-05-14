@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class taskInfoList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example a171de6c-8bxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class taskInfoList extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $taskId;

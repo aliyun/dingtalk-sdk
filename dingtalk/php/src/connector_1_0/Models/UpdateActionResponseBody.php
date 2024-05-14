@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateActionResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var item[]
      */
     public $item;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetNegativeWordCloudResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var words[]
      */
     public $words;

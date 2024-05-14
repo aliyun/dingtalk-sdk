@@ -40,11 +40,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceRequest $request
-     * @param GetSpaceHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 获取IM会话存储空间信息
+     *  *
+     * @param GetSpaceRequest $request GetSpaceRequest
+     * @param GetSpaceHeaders $headers GetSpaceHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSpaceResponse
+     * @return GetSpaceResponse GetSpaceResponse
      */
     public function getSpaceWithOptions($request, $headers, $runtime)
     {
@@ -85,9 +87,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceRequest $request
+     * @summary 获取IM会话存储空间信息
+     *  *
+     * @param GetSpaceRequest $request GetSpaceRequest
      *
-     * @return GetSpaceResponse
+     * @return GetSpaceResponse GetSpaceResponse
      */
     public function getSpace($request)
     {
@@ -98,11 +102,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRequest    $request
-     * @param SendHeaders    $headers
-     * @param RuntimeOptions $runtime
+     * @summary 发送文件到指定会话
+     *  *
+     * @param SendRequest    $request SendRequest
+     * @param SendHeaders    $headers SendHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendResponse
+     * @return SendResponse SendResponse
      */
     public function sendWithOptions($request, $headers, $runtime)
     {
@@ -149,9 +155,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRequest $request
+     * @summary 发送文件到指定会话
+     *  *
+     * @param SendRequest $request SendRequest
      *
-     * @return SendResponse
+     * @return SendResponse SendResponse
      */
     public function send($request)
     {
@@ -162,11 +170,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendByAppRequest $request
-     * @param SendByAppHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 以应用身份发送文件给自己
+     *  *
+     * @param SendByAppRequest $request SendByAppRequest
+     * @param SendByAppHeaders $headers SendByAppHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendByAppResponse
+     * @return SendByAppResponse SendByAppResponse
      */
     public function sendByAppWithOptions($request, $headers, $runtime)
     {
@@ -210,9 +220,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendByAppRequest $request
+     * @summary 以应用身份发送文件给自己
+     *  *
+     * @param SendByAppRequest $request SendByAppRequest
      *
-     * @return SendByAppResponse
+     * @return SendByAppResponse SendByAppResponse
      */
     public function sendByApp($request)
     {
@@ -223,11 +235,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendLinkRequest $request
-     * @param SendLinkHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 发送文件链接到指定会话
+     *  *
+     * @param SendLinkRequest $request SendLinkRequest
+     * @param SendLinkHeaders $headers SendLinkHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendLinkResponse
+     * @return SendLinkResponse SendLinkResponse
      */
     public function sendLinkWithOptions($request, $headers, $runtime)
     {
@@ -274,9 +288,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendLinkRequest $request
+     * @summary 发送文件链接到指定会话
+     *  *
+     * @param SendLinkRequest $request SendLinkRequest
      *
-     * @return SendLinkResponse
+     * @return SendLinkResponse SendLinkResponse
      */
     public function sendLink($request)
     {

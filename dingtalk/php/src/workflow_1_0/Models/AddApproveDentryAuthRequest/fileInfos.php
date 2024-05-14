@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class fileInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example B1oQixxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class fileInfos extends Model
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var int

@@ -15,6 +15,8 @@ class QueryBizOptLogResponseBody extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;

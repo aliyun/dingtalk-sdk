@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendServiceGroupMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example msgxxxxxx==
      *
      * @var string

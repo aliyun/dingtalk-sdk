@@ -16,6 +16,8 @@ class FileStorageCheckConnectionResponseBody extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

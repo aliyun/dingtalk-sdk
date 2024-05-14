@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class TransferUserObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $objectiveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetUserId;

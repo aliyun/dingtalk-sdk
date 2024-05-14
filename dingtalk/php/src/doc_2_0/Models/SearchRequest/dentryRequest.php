@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class dentryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;

@@ -17,6 +17,8 @@ class result extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8K4ny9P9No06sjhk
      *
      * @var string

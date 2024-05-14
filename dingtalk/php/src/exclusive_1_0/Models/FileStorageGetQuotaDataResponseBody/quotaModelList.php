@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class quotaModelList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-04
      *
      * @var string
@@ -16,6 +18,8 @@ class quotaModelList extends Model
     public $statisticTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14000
      *
      * @var int

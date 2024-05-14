@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DocAppendParagraphRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example element_type
      *
      * @var string
@@ -16,6 +18,8 @@ class DocAppendParagraphRequest extends Model
     public $elementType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example properties
      *
      * @var mixed[]
@@ -23,6 +27,8 @@ class DocAppendParagraphRequest extends Model
     public $properties;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

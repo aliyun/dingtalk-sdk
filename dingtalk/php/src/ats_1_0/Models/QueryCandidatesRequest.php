@@ -23,6 +23,8 @@ class QueryCandidatesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example entry
      *
      * @var string
@@ -30,6 +32,8 @@ class QueryCandidatesRequest extends Model
     public $statId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 013224566462XXXXXXXXXX
      *
      * @var string

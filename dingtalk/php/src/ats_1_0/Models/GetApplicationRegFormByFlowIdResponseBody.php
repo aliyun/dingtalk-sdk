@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetApplicationRegFormByFlowIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -16,6 +18,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $candidateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager5875
      *
      * @var string
@@ -23,6 +27,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example flowXXX
      *
      * @var string
@@ -30,6 +36,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $flowId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example formXXX
      *
      * @var string
@@ -37,6 +45,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $formId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626775016427
      *
      * @var int
@@ -44,6 +54,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $gmtCreateMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626775016427
      *
      * @var int
@@ -51,6 +63,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $gmtModifiedMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example jobXXX
      *
      * @var string
@@ -58,6 +72,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $jobId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -65,6 +81,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example templateXXX
      *
      * @var string
@@ -72,6 +90,8 @@ class GetApplicationRegFormByFlowIdResponseBody extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

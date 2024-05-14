@@ -23,6 +23,8 @@ class GetSoftwareCopyrightRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $searchKey;

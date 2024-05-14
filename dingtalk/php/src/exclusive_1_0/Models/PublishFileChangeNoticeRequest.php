@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PublishFileChangeNoticeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -23,6 +25,8 @@ class PublishFileChangeNoticeRequest extends Model
     public $operateType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -30,6 +34,8 @@ class PublishFileChangeNoticeRequest extends Model
     public $operatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

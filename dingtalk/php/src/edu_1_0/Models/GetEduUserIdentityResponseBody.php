@@ -15,6 +15,8 @@ class GetEduUserIdentityResponseBody extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

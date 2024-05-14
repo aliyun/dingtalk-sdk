@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GetResidentDeptResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contactType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $departmentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $departmentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $feature;

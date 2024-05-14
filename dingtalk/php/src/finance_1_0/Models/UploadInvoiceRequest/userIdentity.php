@@ -30,6 +30,8 @@ class userIdentity extends Model
     public $targetCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example STAFF_ID
      *
      * @var string

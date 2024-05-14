@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ExecuteBatchTaskResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class ExecuteBatchTaskResponseBody extends Model
     public $failNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -23,6 +27,8 @@ class ExecuteBatchTaskResponseBody extends Model
     public $successNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int

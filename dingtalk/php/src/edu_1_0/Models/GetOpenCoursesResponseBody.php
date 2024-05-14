@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class GetOpenCoursesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var courseList[]
      */
     public $courseList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 68
      *
      * @var int

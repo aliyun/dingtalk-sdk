@@ -14,6 +14,8 @@ class PrepareRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contentType;

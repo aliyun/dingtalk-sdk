@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class filters extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $filterType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $valueType;

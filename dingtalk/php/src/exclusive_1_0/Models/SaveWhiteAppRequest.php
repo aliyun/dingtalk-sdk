@@ -16,6 +16,8 @@ class SaveWhiteAppRequest extends Model
     public $agentIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"openShareControl":[123],"openClipboardPaste":[123]}
      *
      * @var string

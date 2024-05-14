@@ -16,6 +16,8 @@ class DeleteDentryRequest extends Model
     public $toRecycleBin;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

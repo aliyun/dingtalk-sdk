@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HandOverWorkspaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example source_owner_id
      *
      * @var string
@@ -16,6 +18,8 @@ class HandOverWorkspaceRequest extends Model
     public $sourceOwnerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example source_owner_id
      *
      * @var string
@@ -23,6 +27,8 @@ class HandOverWorkspaceRequest extends Model
     public $targetOwnerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example workspace_id
      *
      * @var string
@@ -30,6 +36,8 @@ class HandOverWorkspaceRequest extends Model
     public $workspaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

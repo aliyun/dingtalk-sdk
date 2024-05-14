@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadUrlResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uploadUrl;

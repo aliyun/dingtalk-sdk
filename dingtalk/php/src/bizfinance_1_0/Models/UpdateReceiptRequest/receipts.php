@@ -23,6 +23,8 @@ class receipts extends Model
     public $categoryCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd_efgh
      *
      * @var string
@@ -65,6 +67,8 @@ class receipts extends Model
     public $projectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -93,6 +97,8 @@ class receipts extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1636445218000
      *
      * @var int
@@ -100,6 +106,8 @@ class receipts extends Model
     public $updateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example emp_xxx
      *
      * @var string

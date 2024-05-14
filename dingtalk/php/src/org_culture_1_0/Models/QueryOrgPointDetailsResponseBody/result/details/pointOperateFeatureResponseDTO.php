@@ -28,6 +28,8 @@ class pointOperateFeatureResponseDTO extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 三方系统管理员发放额度
      *
      * @var string

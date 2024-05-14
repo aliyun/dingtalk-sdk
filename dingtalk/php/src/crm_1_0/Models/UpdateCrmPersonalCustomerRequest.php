@@ -15,6 +15,8 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $data;
@@ -25,6 +27,8 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public $extendData;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instanceId;
@@ -35,6 +39,8 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public $modifierNick;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $modifierUserId;

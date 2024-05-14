@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallPrivateChatRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidfCSpXXXXXXXXXXXchatbotId
      *
      * @var string
@@ -16,11 +18,15 @@ class BatchRecallPrivateChatRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processQueryKeys;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingXXXXXXXXXX
      *
      * @var string

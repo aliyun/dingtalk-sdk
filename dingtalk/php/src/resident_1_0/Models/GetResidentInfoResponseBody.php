@@ -15,11 +15,15 @@ class GetResidentInfoResponseBody extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $allUserGroupOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $allUserGroupOwnerUserId;
@@ -65,11 +69,15 @@ class GetResidentInfoResponseBody extends Model
     public $projectManager;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $propertyDeptGroupOpenConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $propertyDeptGroupOwnerUserId;

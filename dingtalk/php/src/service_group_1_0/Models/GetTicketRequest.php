@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetTicketRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTicketId;

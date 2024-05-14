@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgSecretKeyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example DDISV
      *
      * @var string

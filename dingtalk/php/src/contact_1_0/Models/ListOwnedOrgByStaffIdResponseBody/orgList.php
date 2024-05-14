@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class orgList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpIdxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class orgList extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example corpNamexxx
      *
      * @var string

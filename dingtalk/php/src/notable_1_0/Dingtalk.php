@@ -70,13 +70,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param CreateFieldRequest $request
-     * @param CreateFieldHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateFieldRequest $request       CreateFieldRequest
+     * @param CreateFieldHeaders $headers       CreateFieldHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
      *
-     * @return CreateFieldResponse
+     * @return CreateFieldResponse CreateFieldResponse
      */
     public function createFieldWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -123,11 +125,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param CreateFieldRequest $request
+     * @param CreateFieldRequest $request       CreateFieldRequest
      *
-     * @return CreateFieldResponse
+     * @return CreateFieldResponse CreateFieldResponse
      */
     public function createField($baseId, $sheetIdOrName, $request)
     {
@@ -138,12 +142,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建数据表
+     *  *
      * @param string             $baseId
-     * @param CreateSheetRequest $request
-     * @param CreateSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateSheetRequest $request CreateSheetRequest
+     * @param CreateSheetHeaders $headers CreateSheetHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateSheetResponse
+     * @return CreateSheetResponse CreateSheetResponse
      */
     public function createSheetWithOptions($baseId, $request, $headers, $runtime)
     {
@@ -187,10 +193,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建数据表
+     *  *
      * @param string             $baseId
-     * @param CreateSheetRequest $request
+     * @param CreateSheetRequest $request CreateSheetRequest
      *
-     * @return CreateSheetResponse
+     * @return CreateSheetResponse CreateSheetResponse
      */
     public function createSheet($baseId, $request)
     {
@@ -201,14 +209,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
      * @param string             $fieldIdOrName
-     * @param DeleteFieldRequest $request
-     * @param DeleteFieldHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param DeleteFieldRequest $request       DeleteFieldRequest
+     * @param DeleteFieldHeaders $headers       DeleteFieldHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
      *
-     * @return DeleteFieldResponse
+     * @return DeleteFieldResponse DeleteFieldResponse
      */
     public function deleteFieldWithOptions($baseId, $sheetIdOrName, $fieldIdOrName, $request, $headers, $runtime)
     {
@@ -244,12 +254,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
      * @param string             $fieldIdOrName
-     * @param DeleteFieldRequest $request
+     * @param DeleteFieldRequest $request       DeleteFieldRequest
      *
-     * @return DeleteFieldResponse
+     * @return DeleteFieldResponse DeleteFieldResponse
      */
     public function deleteField($baseId, $sheetIdOrName, $fieldIdOrName, $request)
     {
@@ -260,13 +272,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表多行记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param DeleteRecordsRequest $request
-     * @param DeleteRecordsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param DeleteRecordsRequest $request       DeleteRecordsRequest
+     * @param DeleteRecordsHeaders $headers       DeleteRecordsHeaders
+     * @param RuntimeOptions       $runtime       runtime options for this request RuntimeOptions
      *
-     * @return DeleteRecordsResponse
+     * @return DeleteRecordsResponse DeleteRecordsResponse
      */
     public function deleteRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -307,11 +321,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表多行记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param DeleteRecordsRequest $request
+     * @param DeleteRecordsRequest $request       DeleteRecordsRequest
      *
-     * @return DeleteRecordsResponse
+     * @return DeleteRecordsResponse DeleteRecordsResponse
      */
     public function deleteRecords($baseId, $sheetIdOrName, $request)
     {
@@ -322,13 +338,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param DeleteSheetRequest $request
-     * @param DeleteSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param DeleteSheetRequest $request       DeleteSheetRequest
+     * @param DeleteSheetHeaders $headers       DeleteSheetHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
      *
-     * @return DeleteSheetResponse
+     * @return DeleteSheetResponse DeleteSheetResponse
      */
     public function deleteSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -364,11 +382,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param DeleteSheetRequest $request
+     * @param DeleteSheetRequest $request       DeleteSheetRequest
      *
-     * @return DeleteSheetResponse
+     * @return DeleteSheetResponse DeleteSheetResponse
      */
     public function deleteSheet($baseId, $sheetIdOrName, $request)
     {
@@ -379,13 +399,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有字段
+     *  *
      * @param string              $baseId
      * @param string              $sheetIdOrName
-     * @param GetAllFieldsRequest $request
-     * @param GetAllFieldsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetAllFieldsRequest $request       GetAllFieldsRequest
+     * @param GetAllFieldsHeaders $headers       GetAllFieldsHeaders
+     * @param RuntimeOptions      $runtime       runtime options for this request RuntimeOptions
      *
-     * @return GetAllFieldsResponse
+     * @return GetAllFieldsResponse GetAllFieldsResponse
      */
     public function getAllFieldsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -421,11 +443,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有字段
+     *  *
      * @param string              $baseId
      * @param string              $sheetIdOrName
-     * @param GetAllFieldsRequest $request
+     * @param GetAllFieldsRequest $request       GetAllFieldsRequest
      *
-     * @return GetAllFieldsResponse
+     * @return GetAllFieldsResponse GetAllFieldsResponse
      */
     public function getAllFields($baseId, $sheetIdOrName, $request)
     {
@@ -436,12 +460,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有数据表
+     *  *
      * @param string              $baseId
-     * @param GetAllSheetsRequest $request
-     * @param GetAllSheetsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetAllSheetsRequest $request GetAllSheetsRequest
+     * @param GetAllSheetsHeaders $headers GetAllSheetsHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAllSheetsResponse
+     * @return GetAllSheetsResponse GetAllSheetsResponse
      */
     public function getAllSheetsWithOptions($baseId, $request, $headers, $runtime)
     {
@@ -477,10 +503,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有数据表
+     *  *
      * @param string              $baseId
-     * @param GetAllSheetsRequest $request
+     * @param GetAllSheetsRequest $request GetAllSheetsRequest
      *
-     * @return GetAllSheetsResponse
+     * @return GetAllSheetsResponse GetAllSheetsResponse
      */
     public function getAllSheets($baseId, $request)
     {
@@ -491,14 +519,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取记录
+     *  *
      * @param string           $baseId
      * @param string           $sheetIdOrName
      * @param string           $recordId
-     * @param GetRecordRequest $request
-     * @param GetRecordHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param GetRecordRequest $request       GetRecordRequest
+     * @param GetRecordHeaders $headers       GetRecordHeaders
+     * @param RuntimeOptions   $runtime       runtime options for this request RuntimeOptions
      *
-     * @return GetRecordResponse
+     * @return GetRecordResponse GetRecordResponse
      */
     public function getRecordWithOptions($baseId, $sheetIdOrName, $recordId, $request, $headers, $runtime)
     {
@@ -534,12 +564,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取记录
+     *  *
      * @param string           $baseId
      * @param string           $sheetIdOrName
      * @param string           $recordId
-     * @param GetRecordRequest $request
+     * @param GetRecordRequest $request       GetRecordRequest
      *
-     * @return GetRecordResponse
+     * @return GetRecordResponse GetRecordResponse
      */
     public function getRecord($baseId, $sheetIdOrName, $recordId, $request)
     {
@@ -550,13 +582,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取多行记录
+     *  *
      * @param string            $baseId
      * @param string            $sheetIdOrName
-     * @param GetRecordsRequest $request
-     * @param GetRecordsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GetRecordsRequest $request       GetRecordsRequest
+     * @param GetRecordsHeaders $headers       GetRecordsHeaders
+     * @param RuntimeOptions    $runtime       runtime options for this request RuntimeOptions
      *
-     * @return GetRecordsResponse
+     * @return GetRecordsResponse GetRecordsResponse
      */
     public function getRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -598,11 +632,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取多行记录
+     *  *
      * @param string            $baseId
      * @param string            $sheetIdOrName
-     * @param GetRecordsRequest $request
+     * @param GetRecordsRequest $request       GetRecordsRequest
      *
-     * @return GetRecordsResponse
+     * @return GetRecordsResponse GetRecordsResponse
      */
     public function getRecords($baseId, $sheetIdOrName, $request)
     {
@@ -613,13 +649,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取数据表
+     *  *
      * @param string          $baseId
      * @param string          $sheetIdOrName
-     * @param GetSheetRequest $request
-     * @param GetSheetHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetSheetRequest $request       GetSheetRequest
+     * @param GetSheetHeaders $headers       GetSheetHeaders
+     * @param RuntimeOptions  $runtime       runtime options for this request RuntimeOptions
      *
-     * @return GetSheetResponse
+     * @return GetSheetResponse GetSheetResponse
      */
     public function getSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -655,11 +693,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取数据表
+     *  *
      * @param string          $baseId
      * @param string          $sheetIdOrName
-     * @param GetSheetRequest $request
+     * @param GetSheetRequest $request       GetSheetRequest
      *
-     * @return GetSheetResponse
+     * @return GetSheetResponse GetSheetResponse
      */
     public function getSheet($baseId, $sheetIdOrName, $request)
     {
@@ -670,13 +710,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param InsertRecordsRequest $request
-     * @param InsertRecordsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param InsertRecordsRequest $request       InsertRecordsRequest
+     * @param InsertRecordsHeaders $headers       InsertRecordsHeaders
+     * @param RuntimeOptions       $runtime       runtime options for this request RuntimeOptions
      *
-     * @return InsertRecordsResponse
+     * @return InsertRecordsResponse InsertRecordsResponse
      */
     public function insertRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -717,11 +759,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param InsertRecordsRequest $request
+     * @param InsertRecordsRequest $request       InsertRecordsRequest
      *
-     * @return InsertRecordsResponse
+     * @return InsertRecordsResponse InsertRecordsResponse
      */
     public function insertRecords($baseId, $sheetIdOrName, $request)
     {
@@ -732,14 +776,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
      * @param string             $fieldIdOrName
-     * @param UpdateFieldRequest $request
-     * @param UpdateFieldHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UpdateFieldRequest $request       UpdateFieldRequest
+     * @param UpdateFieldHeaders $headers       UpdateFieldHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
      *
-     * @return UpdateFieldResponse
+     * @return UpdateFieldResponse UpdateFieldResponse
      */
     public function updateFieldWithOptions($baseId, $sheetIdOrName, $fieldIdOrName, $request, $headers, $runtime)
     {
@@ -783,12 +829,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表字段
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
      * @param string             $fieldIdOrName
-     * @param UpdateFieldRequest $request
+     * @param UpdateFieldRequest $request       UpdateFieldRequest
      *
-     * @return UpdateFieldResponse
+     * @return UpdateFieldResponse UpdateFieldResponse
      */
     public function updateField($baseId, $sheetIdOrName, $fieldIdOrName, $request)
     {
@@ -799,13 +847,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表多行记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param UpdateRecordsRequest $request
-     * @param UpdateRecordsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param UpdateRecordsRequest $request       UpdateRecordsRequest
+     * @param UpdateRecordsHeaders $headers       UpdateRecordsHeaders
+     * @param RuntimeOptions       $runtime       runtime options for this request RuntimeOptions
      *
-     * @return UpdateRecordsResponse
+     * @return UpdateRecordsResponse UpdateRecordsResponse
      */
     public function updateRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -846,11 +896,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表多行记录
+     *  *
      * @param string               $baseId
      * @param string               $sheetIdOrName
-     * @param UpdateRecordsRequest $request
+     * @param UpdateRecordsRequest $request       UpdateRecordsRequest
      *
-     * @return UpdateRecordsResponse
+     * @return UpdateRecordsResponse UpdateRecordsResponse
      */
     public function updateRecords($baseId, $sheetIdOrName, $request)
     {
@@ -861,13 +913,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param UpdateSheetRequest $request
-     * @param UpdateSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UpdateSheetRequest $request       UpdateSheetRequest
+     * @param UpdateSheetHeaders $headers       UpdateSheetHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
      *
-     * @return UpdateSheetResponse
+     * @return UpdateSheetResponse UpdateSheetResponse
      */
     public function updateSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
     {
@@ -908,11 +962,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新数据表
+     *  *
      * @param string             $baseId
      * @param string             $sheetIdOrName
-     * @param UpdateSheetRequest $request
+     * @param UpdateSheetRequest $request       UpdateSheetRequest
      *
-     * @return UpdateSheetResponse
+     * @return UpdateSheetResponse UpdateSheetResponse
      */
     public function updateSheet($baseId, $sheetIdOrName, $request)
     {

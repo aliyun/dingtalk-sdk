@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class formInstDataList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $componentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $extendValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var messageBody
      */
     public $messageBody;
 
     /**
+     * @description This parameter is required.
+     *
      * @example text
      *
      * @var string
@@ -32,6 +36,8 @@ class detail extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uuid;

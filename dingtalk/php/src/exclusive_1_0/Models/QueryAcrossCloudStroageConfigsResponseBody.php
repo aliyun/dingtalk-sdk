@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAcrossCloudStroageConfigsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sampleKeyId1234
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryAcrossCloudStroageConfigsResponseBody extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sampleSecretId1234
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryAcrossCloudStroageConfigsResponseBody extends Model
     public $accessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxbucket
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryAcrossCloudStroageConfigsResponseBody extends Model
     public $bucketName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +45,8 @@ class QueryAcrossCloudStroageConfigsResponseBody extends Model
     public $cloudType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://oss-cn-test.aliyuncs.com
      *
      * @var string

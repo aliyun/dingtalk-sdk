@@ -20,6 +20,8 @@ class DentryModel extends Model
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1663918630284
      *
      * @var int
@@ -32,6 +34,8 @@ class DentryModel extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YRBd*****KGDA
      *
      * @var string
@@ -39,6 +43,8 @@ class DentryModel extends Model
     public $dentryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example file
      *
      * @var string
@@ -46,6 +52,8 @@ class DentryModel extends Model
     public $dentryType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6or0dp8Z****XWa91xzy3
      *
      * @var string
@@ -67,6 +75,8 @@ class DentryModel extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -79,6 +89,8 @@ class DentryModel extends Model
     public $linkSourceInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉文档
      *
      * @var string
@@ -98,6 +110,8 @@ class DentryModel extends Model
     public $space;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YGv0****0xXAr
      *
      * @var string
@@ -110,6 +124,8 @@ class DentryModel extends Model
     public $statisticalInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1663918630284
      *
      * @var int

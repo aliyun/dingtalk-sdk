@@ -39,6 +39,8 @@ class CollectResumeDetailRequest extends Model
     public $channelTalentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example jobId8fc0d56a605d495ea0214af7axxxxxxx
      *
      * @var string
@@ -46,6 +48,8 @@ class CollectResumeDetailRequest extends Model
     public $deliverJobId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2701606624233xxxxx
      *
      * @var string
@@ -60,6 +64,8 @@ class CollectResumeDetailRequest extends Model
     public $resumeChannelUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var resumeData
      */
     public $resumeData;

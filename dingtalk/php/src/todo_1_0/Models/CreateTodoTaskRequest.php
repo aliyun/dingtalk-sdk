@@ -78,6 +78,8 @@ class CreateTodoTaskRequest extends Model
     public $sourceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subject;

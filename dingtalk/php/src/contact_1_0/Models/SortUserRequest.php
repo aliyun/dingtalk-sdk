@@ -16,6 +16,8 @@ class SortUserRequest extends Model
     public $sortType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

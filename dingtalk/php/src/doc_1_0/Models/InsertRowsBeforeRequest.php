@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class InsertRowsBeforeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example row
      *
      * @var int
@@ -16,6 +18,8 @@ class InsertRowsBeforeRequest extends Model
     public $row;
 
     /**
+     * @description This parameter is required.
+     *
      * @example row_count
      *
      * @var int
@@ -23,6 +27,8 @@ class InsertRowsBeforeRequest extends Model
     public $rowCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

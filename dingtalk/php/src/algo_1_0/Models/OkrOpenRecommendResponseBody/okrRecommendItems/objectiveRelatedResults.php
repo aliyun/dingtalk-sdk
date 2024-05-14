@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class objectiveRelatedResults extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $objectiveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -21,6 +25,8 @@ class objectiveRelatedResults extends Model
     public $semanticLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $words;

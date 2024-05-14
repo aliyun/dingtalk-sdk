@@ -16,6 +16,8 @@ use AlibabaCloud\Tea\Model;
 class resumeData extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var baseInfo
      */
     public $baseInfo;

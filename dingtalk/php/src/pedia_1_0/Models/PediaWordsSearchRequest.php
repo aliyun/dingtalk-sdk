@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsSearchRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class PediaWordsSearchRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class PediaWordsSearchRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -30,6 +36,8 @@ class PediaWordsSearchRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 121213213
      *
      * @var string

@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class stsUploadInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $accessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $accessToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $accessTokenExpirationMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bucket;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $endPoint;
@@ -44,6 +56,8 @@ class stsUploadInfo extends Model
     public $internalEndPoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mediaId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UploadRegisterImageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example byte[]转Base64
      *
      * @var string
@@ -16,6 +18,8 @@ class UploadRegisterImageRequest extends Model
     public $imageContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example test
      *
      * @var string
@@ -23,6 +27,8 @@ class UploadRegisterImageRequest extends Model
     public $imageName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example JPG
      *
      * @var string
@@ -30,6 +36,8 @@ class UploadRegisterImageRequest extends Model
     public $imageType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12020001
      *
      * @var string
@@ -37,6 +45,8 @@ class UploadRegisterImageRequest extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string

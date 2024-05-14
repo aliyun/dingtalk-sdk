@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example INCOME_XXX
      *
      * @var string
@@ -16,6 +18,8 @@ class list_ extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -23,6 +27,8 @@ class list_ extends Model
     public $isDir;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 汽车
      *
      * @var string
@@ -37,6 +43,8 @@ class list_ extends Model
     public $parentCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example valid
      *
      * @var string
@@ -44,6 +52,8 @@ class list_ extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example income
      *
      * @var string

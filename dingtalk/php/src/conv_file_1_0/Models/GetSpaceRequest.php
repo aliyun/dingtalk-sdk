@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example open_conversation_id
      *
      * @var string
@@ -16,6 +18,8 @@ class GetSpaceRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

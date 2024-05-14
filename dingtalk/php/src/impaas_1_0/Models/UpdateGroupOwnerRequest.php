@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupOwnerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $conversationId;
@@ -19,6 +21,8 @@ class UpdateGroupOwnerRequest extends Model
     public $operatorUid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $ownerUid;

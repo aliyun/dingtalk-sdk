@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CleanProcessDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string
@@ -16,6 +18,8 @@ class CleanProcessDataRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-EF6YJL35
      *
      * @var string

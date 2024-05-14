@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddAppToWorkBenchGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example namexx
      *
      * @var string

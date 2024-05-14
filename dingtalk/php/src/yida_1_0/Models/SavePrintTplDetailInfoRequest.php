@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SavePrintTplDetailInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -26,6 +28,8 @@ class SavePrintTplDetailInfoRequest extends Model
     public $fileNameConfig;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string
@@ -59,6 +63,8 @@ class SavePrintTplDetailInfoRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

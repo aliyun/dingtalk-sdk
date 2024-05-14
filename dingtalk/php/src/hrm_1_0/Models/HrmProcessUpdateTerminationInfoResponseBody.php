@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HrmProcessUpdateTerminationInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $result;

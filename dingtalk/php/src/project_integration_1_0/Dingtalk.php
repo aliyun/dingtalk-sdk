@@ -37,12 +37,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在项目事件会话中加人
+     *  *
      * @param string                         $userId
      * @param string                         $groupId
-     * @param AddAttendeeToEventGroupHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param AddAttendeeToEventGroupHeaders $headers AddAttendeeToEventGroupHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddAttendeeToEventGroupResponse
+     * @return AddAttendeeToEventGroupResponse AddAttendeeToEventGroupResponse
      */
     public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
     {
@@ -72,10 +74,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在项目事件会话中加人
+     *  *
      * @param string $userId
      * @param string $groupId
      *
-     * @return AddAttendeeToEventGroupResponse
+     * @return AddAttendeeToEventGroupResponse AddAttendeeToEventGroupResponse
      */
     public function addAttendeeToEventGroup($userId, $groupId)
     {
@@ -86,11 +90,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目事件会话
+     *  *
      * @param string                  $userId
-     * @param CreateEventGroupHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CreateEventGroupHeaders $headers CreateEventGroupHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateEventGroupResponse
+     * @return CreateEventGroupResponse CreateEventGroupResponse
      */
     public function createEventGroupWithOptions($userId, $headers, $runtime)
     {
@@ -120,9 +126,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目事件会话
+     *  *
      * @param string $userId
      *
-     * @return CreateEventGroupResponse
+     * @return CreateEventGroupResponse CreateEventGroupResponse
      */
     public function createEventGroup($userId)
     {
@@ -133,11 +141,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在群会话发送项目卡片消息
+     *  *
      * @param string                     $userId
-     * @param SendInteractiveCardHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param SendInteractiveCardHeaders $headers SendInteractiveCardHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendInteractiveCardResponse
+     * @return SendInteractiveCardResponse SendInteractiveCardResponse
      */
     public function sendInteractiveCardWithOptions($userId, $headers, $runtime)
     {
@@ -167,9 +177,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在群会话发送项目卡片消息
+     *  *
      * @param string $userId
      *
-     * @return SendInteractiveCardResponse
+     * @return SendInteractiveCardResponse SendInteractiveCardResponse
      */
     public function sendInteractiveCard($userId)
     {
@@ -180,11 +192,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 单聊会话发送项目卡片消息
+     *  *
      * @param string                           $userId
-     * @param SendSingleInteractiveCardHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param SendSingleInteractiveCardHeaders $headers SendSingleInteractiveCardHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendSingleInteractiveCardResponse
+     * @return SendSingleInteractiveCardResponse SendSingleInteractiveCardResponse
      */
     public function sendSingleInteractiveCardWithOptions($userId, $headers, $runtime)
     {
@@ -214,9 +228,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 单聊会话发送项目卡片消息
+     *  *
      * @param string $userId
      *
-     * @return SendSingleInteractiveCardResponse
+     * @return SendSingleInteractiveCardResponse SendSingleInteractiveCardResponse
      */
     public function sendSingleInteractiveCard($userId)
     {
@@ -227,11 +243,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新项目卡片消息
+     *  *
      * @param string                       $userId
-     * @param UpdateInteractiveCardHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param UpdateInteractiveCardHeaders $headers UpdateInteractiveCardHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInteractiveCardResponse
+     * @return UpdateInteractiveCardResponse UpdateInteractiveCardResponse
      */
     public function updateInteractiveCardWithOptions($userId, $headers, $runtime)
     {
@@ -261,9 +279,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新项目卡片消息
+     *  *
      * @param string $userId
      *
-     * @return UpdateInteractiveCardResponse
+     * @return UpdateInteractiveCardResponse UpdateInteractiveCardResponse
      */
     public function updateInteractiveCard($userId)
     {

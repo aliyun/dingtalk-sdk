@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class accountSource extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ORG
      *
      * @var string

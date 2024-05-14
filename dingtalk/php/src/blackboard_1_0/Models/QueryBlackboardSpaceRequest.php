@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryBlackboardSpaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example manager01
      *
      * @var string

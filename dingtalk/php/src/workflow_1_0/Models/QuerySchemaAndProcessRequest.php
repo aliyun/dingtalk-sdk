@@ -14,6 +14,8 @@ class QuerySchemaAndProcessRequest extends Model
     public $appUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-17428B8C-6C60-xxxx-924C-64F1037AE067
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteKeyResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 4d2d
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteKeyResultRequest extends Model
     public $krId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 06186238011033616
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CancelOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -16,6 +18,8 @@ class CancelOrderResponseBody extends Model
     public $needRetry;
 
     /**
+     * @description This parameter is required.
+     *
      * @example refund
      *
      * @var string

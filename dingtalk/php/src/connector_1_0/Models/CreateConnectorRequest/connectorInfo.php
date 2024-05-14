@@ -29,6 +29,8 @@ class connectorInfo extends Model
     public $authValueEnv;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $description;
@@ -44,11 +46,15 @@ class connectorInfo extends Model
     public $iconMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

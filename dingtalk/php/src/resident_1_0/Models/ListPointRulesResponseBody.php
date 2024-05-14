@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListPointRulesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var pointRuleList[]

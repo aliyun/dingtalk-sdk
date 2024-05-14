@@ -14,36 +14,51 @@ class recycleItems extends Model
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deleteStaffId;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $deleteTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $filePath;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $fileSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $recycleItemId;

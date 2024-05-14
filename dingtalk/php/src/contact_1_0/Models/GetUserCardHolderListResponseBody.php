@@ -15,11 +15,15 @@ class GetUserCardHolderListResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;

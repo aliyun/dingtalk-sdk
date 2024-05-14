@@ -14,6 +14,8 @@ class QueryClassScheduleConfigRequest extends Model
     public $classIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2534522534
      *
      * @var string

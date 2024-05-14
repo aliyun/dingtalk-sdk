@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class InstallRobotToOrgRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 这是小丁
      *
      * @var string
@@ -16,6 +18,8 @@ class InstallRobotToOrgRequest extends Model
     public $brief;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 我是小丁
      *
      * @var string
@@ -23,6 +27,8 @@ class InstallRobotToOrgRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @lALPDe7s26Bre
      *
      * @var string
@@ -30,6 +36,8 @@ class InstallRobotToOrgRequest extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小丁
      *
      * @var string
@@ -37,6 +45,8 @@ class InstallRobotToOrgRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -44,6 +54,8 @@ class InstallRobotToOrgRequest extends Model
     public $outgoingToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://*.com
      *
      * @var string
@@ -51,6 +63,8 @@ class InstallRobotToOrgRequest extends Model
     public $outgoingUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @lALPDe7s26Bre
      *
      * @var string
@@ -58,6 +72,8 @@ class InstallRobotToOrgRequest extends Model
     public $previewMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

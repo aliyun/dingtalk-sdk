@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetOpenUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.aliwork.com/fileHandle?appType=APP_VN7I6HVKUTXES7XX4OI8&fileName=2a4103a6-44d5-4114-990d-4147a2d53811.xlsx&instId=&type=download
      *
      * @var string
@@ -23,6 +25,8 @@ class GetOpenUrlRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -37,6 +41,8 @@ class GetOpenUrlRequest extends Model
     public $timeout;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

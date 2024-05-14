@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CourseSchedulingComplimentNoticeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 行政老师A
      *
      * @var string

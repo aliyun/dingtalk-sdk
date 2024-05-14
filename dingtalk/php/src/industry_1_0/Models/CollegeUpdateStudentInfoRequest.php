@@ -37,6 +37,8 @@ class CollegeUpdateStudentInfoRequest extends Model
     public $startYear;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111111
      *
      * @var int

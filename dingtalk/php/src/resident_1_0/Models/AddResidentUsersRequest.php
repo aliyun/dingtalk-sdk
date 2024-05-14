@@ -17,6 +17,8 @@ class AddResidentUsersRequest extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int
@@ -50,6 +52,8 @@ class AddResidentUsersRequest extends Model
     public $relateType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 王建国
      *
      * @var string

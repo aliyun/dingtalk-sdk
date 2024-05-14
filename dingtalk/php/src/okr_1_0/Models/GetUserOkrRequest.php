@@ -23,6 +23,8 @@ class GetUserOkrRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1005
      *
      * @var string
@@ -30,6 +32,8 @@ class GetUserOkrRequest extends Model
     public $periodId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 011539670175223
      *
      * @var string

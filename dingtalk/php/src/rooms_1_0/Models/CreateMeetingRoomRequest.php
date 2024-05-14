@@ -23,6 +23,8 @@ class CreateMeetingRoomRequest extends Model
     public $groupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxIsvRoomId
      *
      * @var string
@@ -52,6 +54,8 @@ class CreateMeetingRoomRequest extends Model
     public $roomLocation;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试会议室
      *
      * @var string
@@ -66,6 +70,8 @@ class CreateMeetingRoomRequest extends Model
     public $roomPicture;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.全员可用 1.仅管理员可用
      *
      * @var int
@@ -73,6 +79,8 @@ class CreateMeetingRoomRequest extends Model
     public $roomStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string

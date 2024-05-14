@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveCorpPayCodeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example H_FISH_CANTEEN
      *
      * @var string
@@ -16,6 +18,8 @@ class SaveCorpPayCodeRequest extends Model
     public $codeIdentity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxx
      *
      * @var string
@@ -28,6 +32,8 @@ class SaveCorpPayCodeRequest extends Model
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OPEN
      *
      * @var string

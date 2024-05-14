@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class devices extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 002
      *
      * @var string
@@ -17,6 +19,8 @@ class devices extends Model
     public $deviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 摄像头002
      *
      * @var string
@@ -24,6 +28,8 @@ class devices extends Model
     public $deviceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -31,6 +37,8 @@ class devices extends Model
     public $deviceStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Camera
      *
      * @var string
@@ -38,6 +46,8 @@ class devices extends Model
     public $deviceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 摄像头
      *
      * @var string
@@ -69,6 +79,8 @@ class devices extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example CAMERA
      *
      * @var string

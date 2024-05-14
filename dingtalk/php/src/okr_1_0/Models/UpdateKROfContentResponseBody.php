@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfContentResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

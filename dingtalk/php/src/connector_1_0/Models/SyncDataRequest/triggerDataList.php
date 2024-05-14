@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class triggerDataList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $action;
@@ -19,11 +21,15 @@ class triggerDataList extends Model
     public $customTriggerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $dataGmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $dataGmtModified;
@@ -34,6 +40,8 @@ class triggerDataList extends Model
     public $integrationObject;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $jsonData;
@@ -44,6 +52,8 @@ class triggerDataList extends Model
     public $triggerCondition;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $triggerId;

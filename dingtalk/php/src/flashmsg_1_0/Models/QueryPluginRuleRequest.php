@@ -37,6 +37,8 @@ class QueryPluginRuleRequest extends Model
     public $itemType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +46,8 @@ class QueryPluginRuleRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

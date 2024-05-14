@@ -57,6 +57,8 @@ class resultList extends Model
     public $modifierUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example _aFFogIuRrWlL3hLdvbb5w09951712629910
      *
      * @var string

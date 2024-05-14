@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingXXXXXXXXXX
      *
      * @var string
@@ -16,6 +18,8 @@ class BatchRecallGroupRequest extends Model
     public $chatbotId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidfCSpXXXXXXXXXXXchatbotId
      *
      * @var string
@@ -23,6 +27,8 @@ class BatchRecallGroupRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processQueryKeys;

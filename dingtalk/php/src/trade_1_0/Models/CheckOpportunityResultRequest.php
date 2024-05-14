@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CheckOpportunityResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $belongToPhoneNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contactPhoneNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
@@ -29,6 +35,8 @@ class CheckOpportunityResultRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $marketCode;

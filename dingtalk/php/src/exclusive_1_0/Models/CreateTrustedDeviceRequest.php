@@ -23,6 +23,8 @@ class CreateTrustedDeviceRequest extends Model
     public $macAddress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Mac
      *
      * @var string
@@ -37,6 +39,8 @@ class CreateTrustedDeviceRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65224157501039784
      *
      * @var string

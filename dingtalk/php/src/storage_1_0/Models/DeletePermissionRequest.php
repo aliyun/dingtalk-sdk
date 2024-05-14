@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class DeletePermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @example MANAGER
      *
      * @var string
@@ -22,6 +26,8 @@ class DeletePermissionRequest extends Model
     public $roleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

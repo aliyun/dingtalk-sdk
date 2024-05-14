@@ -68,11 +68,15 @@ class CreateEventByMeRequest extends Model
     public $richTextDescription;
 
     /**
+     * @description This parameter is required.
+     *
      * @var start
      */
     public $start;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $summary;

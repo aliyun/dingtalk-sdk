@@ -9,36 +9,50 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $actualAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $buyerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $payTime;
@@ -49,26 +63,36 @@ class list_ extends Model
     public $refundNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

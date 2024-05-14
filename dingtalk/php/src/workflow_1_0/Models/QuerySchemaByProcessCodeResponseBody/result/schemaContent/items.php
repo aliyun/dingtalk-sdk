@@ -16,6 +16,8 @@ class items extends Model
     public $children;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField
      *
      * @var string
@@ -23,6 +25,8 @@ class items extends Model
     public $componentName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var props
      */
     public $props;

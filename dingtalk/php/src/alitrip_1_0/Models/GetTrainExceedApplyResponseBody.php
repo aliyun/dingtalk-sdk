@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetTrainExceedApplyResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var int
@@ -17,11 +19,15 @@ class GetTrainExceedApplyResponseBody extends Model
     public $applyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var applyIntentionInfoDO
      */
     public $applyIntentionInfoDO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 出差
      *
      * @var string
@@ -29,6 +35,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $btripCause;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding12345
      *
      * @var string
@@ -36,6 +44,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 出差
      *
      * @var string
@@ -43,6 +53,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $exceedReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 32
      *
      * @var int
@@ -50,6 +62,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $exceedType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 二等座
      *
      * @var string
@@ -57,6 +71,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $originStandard;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -64,6 +80,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-08 15:23:56
      *
      * @var string
@@ -71,6 +89,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $submitTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0001A1100000007EX08O
      *
      * @var string
@@ -78,6 +98,8 @@ class GetTrainExceedApplyResponseBody extends Model
     public $thirdpartApplyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example weifeng
      *
      * @var string

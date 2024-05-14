@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateDentryAppPropertiesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var appProperties[]
      */
     public $appProperties;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

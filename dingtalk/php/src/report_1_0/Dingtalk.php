@@ -43,11 +43,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTemplatesRequest $request
-     * @param CreateTemplatesHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建模板
+     *  *
+     * @param CreateTemplatesRequest $request CreateTemplatesRequest
+     * @param CreateTemplatesHeaders $headers CreateTemplatesHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTemplatesResponse
+     * @return CreateTemplatesResponse CreateTemplatesResponse
      */
     public function createTemplatesWithOptions($request, $headers, $runtime)
     {
@@ -125,9 +127,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTemplatesRequest $request
+     * @summary 创建模板
+     *  *
+     * @param CreateTemplatesRequest $request CreateTemplatesRequest
      *
-     * @return CreateTemplatesResponse
+     * @return CreateTemplatesResponse CreateTemplatesResponse
      */
     public function createTemplates($request)
     {
@@ -138,11 +142,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSendAndReceiveReportListRequest $request
-     * @param GetSendAndReceiveReportListHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 查询员工提交和收到的日志列表
+     *  *
+     * @param GetSendAndReceiveReportListRequest $request GetSendAndReceiveReportListRequest
+     * @param GetSendAndReceiveReportListHeaders $headers GetSendAndReceiveReportListHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSendAndReceiveReportListResponse
+     * @return GetSendAndReceiveReportListResponse GetSendAndReceiveReportListResponse
      */
     public function getSendAndReceiveReportListWithOptions($request, $headers, $runtime)
     {
@@ -190,9 +196,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSendAndReceiveReportListRequest $request
+     * @summary 查询员工提交和收到的日志列表
+     *  *
+     * @param GetSendAndReceiveReportListRequest $request GetSendAndReceiveReportListRequest
      *
-     * @return GetSendAndReceiveReportListResponse
+     * @return GetSendAndReceiveReportListResponse GetSendAndReceiveReportListResponse
      */
     public function getSendAndReceiveReportList($request)
     {
@@ -203,11 +211,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSubmitStatisticsRequest $request
-     * @param GetSubmitStatisticsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取指定周期的提交统计结果
+     *  *
+     * @param GetSubmitStatisticsRequest $request GetSubmitStatisticsRequest
+     * @param GetSubmitStatisticsHeaders $headers GetSubmitStatisticsHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSubmitStatisticsResponse
+     * @return GetSubmitStatisticsResponse GetSubmitStatisticsResponse
      */
     public function getSubmitStatisticsWithOptions($request, $headers, $runtime)
     {
@@ -255,9 +265,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSubmitStatisticsRequest $request
+     * @summary 获取指定周期的提交统计结果
+     *  *
+     * @param GetSubmitStatisticsRequest $request GetSubmitStatisticsRequest
      *
-     * @return GetSubmitStatisticsResponse
+     * @return GetSubmitStatisticsResponse GetSubmitStatisticsResponse
      */
     public function getSubmitStatistics($request)
     {
@@ -268,11 +280,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRemindResultsRequest $request
-     * @param QueryRemindResultsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取创建的统计规则信息
+     *  *
+     * @param QueryRemindResultsRequest $request QueryRemindResultsRequest
+     * @param QueryRemindResultsHeaders $headers QueryRemindResultsHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRemindResultsResponse
+     * @return QueryRemindResultsResponse QueryRemindResultsResponse
      */
     public function queryRemindResultsWithOptions($request, $headers, $runtime)
     {
@@ -317,9 +331,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRemindResultsRequest $request
+     * @summary 获取创建的统计规则信息
+     *  *
+     * @param QueryRemindResultsRequest $request QueryRemindResultsRequest
      *
-     * @return QueryRemindResultsResponse
+     * @return QueryRemindResultsResponse QueryRemindResultsResponse
      */
     public function queryRemindResults($request)
     {
@@ -330,11 +346,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReportDetailRequest $request
-     * @param QueryReportDetailHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取日志详情
+     *  *
+     * @param QueryReportDetailRequest $request QueryReportDetailRequest
+     * @param QueryReportDetailHeaders $headers QueryReportDetailHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryReportDetailResponse
+     * @return QueryReportDetailResponse QueryReportDetailResponse
      */
     public function queryReportDetailWithOptions($request, $headers, $runtime)
     {
@@ -370,9 +388,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryReportDetailRequest $request
+     * @summary 获取日志详情
+     *  *
+     * @param QueryReportDetailRequest $request QueryReportDetailRequest
      *
-     * @return QueryReportDetailResponse
+     * @return QueryReportDetailResponse QueryReportDetailResponse
      */
     public function queryReportDetail($request)
     {

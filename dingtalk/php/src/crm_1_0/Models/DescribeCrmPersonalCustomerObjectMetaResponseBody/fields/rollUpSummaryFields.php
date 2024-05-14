@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class rollUpSummaryFields extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $aggregator;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

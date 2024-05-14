@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class fundToolDetailInfoList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5.00
      *
      * @var string
@@ -21,6 +23,8 @@ class fundToolDetailInfoList extends Model
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 余额
      *
      * @var string
@@ -28,6 +32,8 @@ class fundToolDetailInfoList extends Model
     public $fundToolName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-15 10:10:10
      *
      * @var string
@@ -35,6 +41,8 @@ class fundToolDetailInfoList extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-15 10:10:11
      *
      * @var string
@@ -42,6 +50,8 @@ class fundToolDetailInfoList extends Model
     public $gmtFinish;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool

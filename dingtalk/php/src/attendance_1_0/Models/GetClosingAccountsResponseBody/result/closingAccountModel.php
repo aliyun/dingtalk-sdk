@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class closingAccountModel extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $closingDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $closingHourMinutes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endMonth;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startMonth;

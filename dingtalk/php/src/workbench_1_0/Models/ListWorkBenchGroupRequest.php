@@ -16,6 +16,8 @@ class ListWorkBenchGroupRequest extends Model
     public $ecologicalCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 首页 = WORK_HOME 全部页 = WORK_ALL_APP
      *
      * @var string
@@ -23,6 +25,8 @@ class ListWorkBenchGroupRequest extends Model
     public $groupType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

@@ -14,6 +14,8 @@ class requests extends Model
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @example get
      *
      * @var string
@@ -21,6 +23,8 @@ class requests extends Model
     public $method;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sheets
      *
      * @var string

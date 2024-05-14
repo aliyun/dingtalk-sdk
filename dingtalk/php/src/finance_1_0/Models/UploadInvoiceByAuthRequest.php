@@ -16,6 +16,8 @@ class UploadInvoiceByAuthRequest extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @var invoices[]
      */
     public $invoices;

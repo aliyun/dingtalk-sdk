@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class AddGroupMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $conversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;

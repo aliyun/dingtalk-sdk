@@ -31,6 +31,8 @@ class CreateProjectCustomfieldStatusRequest extends Model
     public $customFieldName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var value[]
      */
     public $value;

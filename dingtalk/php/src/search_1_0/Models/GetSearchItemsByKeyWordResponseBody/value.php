@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class value extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 四大名著
      *
      * @var string
@@ -16,6 +18,8 @@ class value extends Model
     public $footer;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-17T19:43Z
      *
      * @var string
@@ -23,6 +27,8 @@ class value extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-17T19:43Z
      *
      * @var string
@@ -30,11 +36,15 @@ class value extends Model
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var string
@@ -42,6 +52,8 @@ class value extends Model
     public $itemId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example www.baidu.com
      *
      * @var string
@@ -49,6 +61,8 @@ class value extends Model
     public $mobileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example www.baidu.com
      *
      * @var string
@@ -56,6 +70,8 @@ class value extends Model
     public $pcUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 中国古代章回体长篇小说
      *
      * @var string
@@ -63,6 +79,8 @@ class value extends Model
     public $summary;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3333
      *
      * @var int
@@ -70,6 +88,8 @@ class value extends Model
     public $tabId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 红楼梦
      *
      * @var string
@@ -77,6 +97,8 @@ class value extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example www.baidu.com
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ExecuteBatchTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
@@ -16,6 +18,8 @@ class ExecuteBatchTaskRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 备选值：agree/disagree
      *
      * @var string
@@ -30,6 +34,8 @@ class ExecuteBatchTaskRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
@@ -37,6 +43,8 @@ class ExecuteBatchTaskRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example [{"taskId":"2267855699","formInstId":"4d226eb1-1f4e-4348-a9cc-616477c3daa6"},{"taskId":"2267855700","formInstId":"905a922e-da05-4ef9-ba1c-db9ad60bbe60"}]
      *
      * @var string
@@ -44,6 +52,8 @@ class ExecuteBatchTaskRequest extends Model
     public $taskInformationList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

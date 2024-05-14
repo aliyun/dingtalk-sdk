@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class recentList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var nodeBO
      */
     public $nodeBO;
 
     /**
+     * @description This parameter is required.
+     *
      * @var workspaceBO
      */
     public $workspaceBO;

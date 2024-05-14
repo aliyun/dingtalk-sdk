@@ -9,16 +9,24 @@ use AlibabaCloud\Tea\Model;
 class GetMeetingRoomsScheduleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $roomIds;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $startTime;

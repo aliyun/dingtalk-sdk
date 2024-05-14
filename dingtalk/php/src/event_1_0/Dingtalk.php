@@ -41,11 +41,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCallBackFaileResultRequest $request
-     * @param GetCallBackFaileResultHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 调用本获取推送失败的变更事件。
+     *  *
+     * @param GetCallBackFaileResultRequest $request GetCallBackFaileResultRequest
+     * @param GetCallBackFaileResultHeaders $headers GetCallBackFaileResultHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCallBackFaileResultResponse
+     * @return GetCallBackFaileResultResponse GetCallBackFaileResultResponse
      */
     public function getCallBackFaileResultWithOptions($request, $headers, $runtime)
     {
@@ -84,9 +86,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCallBackFaileResultRequest $request
+     * @summary 调用本获取推送失败的变更事件。
+     *  *
+     * @param GetCallBackFaileResultRequest $request GetCallBackFaileResultRequest
      *
-     * @return GetCallBackFaileResultResponse
+     * @return GetCallBackFaileResultResponse GetCallBackFaileResultResponse
      */
     public function getCallBackFaileResult($request)
     {
@@ -97,11 +101,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallAppRequest $request
-     * @param InstallAppHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 安装一方应用
+     *  *
+     * @param InstallAppRequest $request InstallAppRequest
+     * @param InstallAppHeaders $headers InstallAppHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return InstallAppResponse
+     * @return InstallAppResponse InstallAppResponse
      */
     public function installAppWithOptions($request, $headers, $runtime)
     {
@@ -146,9 +152,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallAppRequest $request
+     * @summary 安装一方应用
+     *  *
+     * @param InstallAppRequest $request InstallAppRequest
      *
-     * @return InstallAppResponse
+     * @return InstallAppResponse InstallAppResponse
      */
     public function installApp($request)
     {
@@ -159,11 +167,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppRequest $tmpReq
-     * @param InstallCoolAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 安装酷应用
+     *  *
+     * @param InstallCoolAppRequest $tmpReq  InstallCoolAppRequest
+     * @param InstallCoolAppHeaders $headers InstallCoolAppHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return InstallCoolAppResponse
+     * @return InstallCoolAppResponse InstallCoolAppResponse
      */
     public function installCoolAppWithOptions($tmpReq, $headers, $runtime)
     {
@@ -228,9 +238,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppRequest $request
+     * @summary 安装酷应用
+     *  *
+     * @param InstallCoolAppRequest $request InstallCoolAppRequest
      *
-     * @return InstallCoolAppResponse
+     * @return InstallCoolAppResponse InstallCoolAppResponse
      */
     public function installCoolApp($request)
     {
@@ -241,11 +253,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RePushSuiteTicketRequest $request
-     * @param string[]                 $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 重新获取suiteTicket
+     *  *
+     * @param RePushSuiteTicketRequest $request RePushSuiteTicketRequest
+     * @param string[]                 $headers map
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return RePushSuiteTicketResponse
+     * @return RePushSuiteTicketResponse RePushSuiteTicketResponse
      */
     public function rePushSuiteTicketWithOptions($request, $headers, $runtime)
     {
@@ -277,9 +291,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RePushSuiteTicketRequest $request
+     * @summary 重新获取suiteTicket
+     *  *
+     * @param RePushSuiteTicketRequest $request RePushSuiteTicketRequest
      *
-     * @return RePushSuiteTicketResponse
+     * @return RePushSuiteTicketResponse RePushSuiteTicketResponse
      */
     public function rePushSuiteTicket($request)
     {

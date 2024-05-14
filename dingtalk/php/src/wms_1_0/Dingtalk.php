@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGoodsListRequest $request
-     * @param QueryGoodsListHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取物料列表
+     *  *
+     * @param QueryGoodsListRequest $request QueryGoodsListRequest
+     * @param QueryGoodsListHeaders $headers QueryGoodsListHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryGoodsListResponse
+     * @return QueryGoodsListResponse QueryGoodsListResponse
      */
     public function queryGoodsListWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGoodsListRequest $request
+     * @summary 获取物料列表
+     *  *
+     * @param QueryGoodsListRequest $request QueryGoodsListRequest
      *
-     * @return QueryGoodsListResponse
+     * @return QueryGoodsListResponse QueryGoodsListResponse
      */
     public function queryGoodsList($request)
     {

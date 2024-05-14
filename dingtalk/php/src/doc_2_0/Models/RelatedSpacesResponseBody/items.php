@@ -38,6 +38,8 @@ class items extends Model
     public $iconVO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string
@@ -45,6 +47,8 @@ class items extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hello
      *
      * @var string

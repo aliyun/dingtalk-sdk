@@ -30,6 +30,8 @@ class CampusUpdateRenterRequest extends Model
     public $extend;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉
      *
      * @var string
@@ -37,6 +39,8 @@ class CampusUpdateRenterRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12352335
      *
      * @var int

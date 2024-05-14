@@ -16,6 +16,8 @@ class ManagerSetDefaultHandOverUserRequest extends Model
     public $defaultHandoverUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

@@ -55,11 +55,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRecentUserAppListRequest $request
-     * @param AddRecentUserAppListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 批量添加最近使用记录
+     *  *
+     * @param AddRecentUserAppListRequest $request AddRecentUserAppListRequest
+     * @param AddRecentUserAppListHeaders $headers AddRecentUserAppListHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddRecentUserAppListResponse
+     * @return AddRecentUserAppListResponse AddRecentUserAppListResponse
      */
     public function addRecentUserAppListWithOptions($request, $headers, $runtime)
     {
@@ -101,9 +103,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRecentUserAppListRequest $request
+     * @summary 批量添加最近使用记录
+     *  *
+     * @param AddRecentUserAppListRequest $request AddRecentUserAppListRequest
      *
-     * @return AddRecentUserAppListResponse
+     * @return AddRecentUserAppListResponse AddRecentUserAppListResponse
      */
     public function addRecentUserAppList($request)
     {
@@ -114,11 +118,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询自定义工作台
+     *  *
      * @param string                     $appUuid
-     * @param GetDingPortalDetailHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetDingPortalDetailHeaders $headers GetDingPortalDetailHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDingPortalDetailResponse
+     * @return GetDingPortalDetailResponse GetDingPortalDetailResponse
      */
     public function getDingPortalDetailWithOptions($appUuid, $headers, $runtime)
     {
@@ -148,9 +154,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询自定义工作台
+     *  *
      * @param string $appUuid
      *
-     * @return GetDingPortalDetailResponse
+     * @return GetDingPortalDetailResponse GetDingPortalDetailResponse
      */
     public function getDingPortalDetail($appUuid)
     {
@@ -161,11 +169,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPluginPermissionPointRequest $request
-     * @param GetPluginPermissionPointHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取工作台插件的权限点
+     *  *
+     * @param GetPluginPermissionPointRequest $request GetPluginPermissionPointRequest
+     * @param GetPluginPermissionPointHeaders $headers GetPluginPermissionPointHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPluginPermissionPointResponse
+     * @return GetPluginPermissionPointResponse GetPluginPermissionPointResponse
      */
     public function getPluginPermissionPointWithOptions($request, $headers, $runtime)
     {
@@ -201,9 +211,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPluginPermissionPointRequest $request
+     * @summary 获取工作台插件的权限点
+     *  *
+     * @param GetPluginPermissionPointRequest $request GetPluginPermissionPointRequest
      *
-     * @return GetPluginPermissionPointResponse
+     * @return GetPluginPermissionPointResponse GetPluginPermissionPointResponse
      */
     public function getPluginPermissionPoint($request)
     {
@@ -214,11 +226,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPluginRuleCheckInfoRequest $request
-     * @param GetPluginRuleCheckInfoHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取插件的校验规则
+     *  *
+     * @param GetPluginRuleCheckInfoRequest $request GetPluginRuleCheckInfoRequest
+     * @param GetPluginRuleCheckInfoHeaders $headers GetPluginRuleCheckInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPluginRuleCheckInfoResponse
+     * @return GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfoResponse
      */
     public function getPluginRuleCheckInfoWithOptions($request, $headers, $runtime)
     {
@@ -254,9 +268,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPluginRuleCheckInfoRequest $request
+     * @summary 获取插件的校验规则
+     *  *
+     * @param GetPluginRuleCheckInfoRequest $request GetPluginRuleCheckInfoRequest
      *
-     * @return GetPluginRuleCheckInfoResponse
+     * @return GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfoResponse
      */
     public function getPluginRuleCheckInfo($request)
     {
@@ -267,11 +283,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListWorkBenchGroupRequest $request
-     * @param ListWorkBenchGroupHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取工作台分组列表
+     *  *
+     * @param ListWorkBenchGroupRequest $request ListWorkBenchGroupRequest
+     * @param ListWorkBenchGroupHeaders $headers ListWorkBenchGroupHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListWorkBenchGroupResponse
+     * @return ListWorkBenchGroupResponse ListWorkBenchGroupResponse
      */
     public function listWorkBenchGroupWithOptions($request, $headers, $runtime)
     {
@@ -313,9 +331,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListWorkBenchGroupRequest $request
+     * @summary 获取工作台分组列表
+     *  *
+     * @param ListWorkBenchGroupRequest $request ListWorkBenchGroupRequest
      *
-     * @return ListWorkBenchGroupResponse
+     * @return ListWorkBenchGroupResponse ListWorkBenchGroupResponse
      */
     public function listWorkBenchGroup($request)
     {
@@ -326,11 +346,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ModifyWorkbenchBadgeRequest $request
-     * @param ModifyWorkbenchBadgeHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 工作台支持数字红点
+     *  *
+     * @param ModifyWorkbenchBadgeRequest $request ModifyWorkbenchBadgeRequest
+     * @param ModifyWorkbenchBadgeHeaders $headers ModifyWorkbenchBadgeHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ModifyWorkbenchBadgeResponse
+     * @return ModifyWorkbenchBadgeResponse ModifyWorkbenchBadgeResponse
      */
     public function modifyWorkbenchBadgeWithOptions($request, $headers, $runtime)
     {
@@ -381,9 +403,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ModifyWorkbenchBadgeRequest $request
+     * @summary 工作台支持数字红点
+     *  *
+     * @param ModifyWorkbenchBadgeRequest $request ModifyWorkbenchBadgeRequest
      *
-     * @return ModifyWorkbenchBadgeResponse
+     * @return ModifyWorkbenchBadgeResponse ModifyWorkbenchBadgeResponse
      */
     public function modifyWorkbenchBadge($request)
     {
@@ -394,11 +418,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 工作台组件授权范围查询
+     *  *
      * @param string                      $componentId
-     * @param QueryComponentScopesHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryComponentScopesHeaders $headers     QueryComponentScopesHeaders
+     * @param RuntimeOptions              $runtime     runtime options for this request RuntimeOptions
      *
-     * @return QueryComponentScopesResponse
+     * @return QueryComponentScopesResponse QueryComponentScopesResponse
      */
     public function queryComponentScopesWithOptions($componentId, $headers, $runtime)
     {
@@ -428,9 +454,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 工作台组件授权范围查询
+     *  *
      * @param string $componentId
      *
-     * @return QueryComponentScopesResponse
+     * @return QueryComponentScopesResponse QueryComponentScopesResponse
      */
     public function queryComponentScopes($componentId)
     {
@@ -441,11 +469,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询快捷方式可见范围
+     *  *
      * @param string                     $shortcutKey
-     * @param QueryShortcutScopesHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryShortcutScopesHeaders $headers     QueryShortcutScopesHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
      *
-     * @return QueryShortcutScopesResponse
+     * @return QueryShortcutScopesResponse QueryShortcutScopesResponse
      */
     public function queryShortcutScopesWithOptions($shortcutKey, $headers, $runtime)
     {
@@ -475,9 +505,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询快捷方式可见范围
+     *  *
      * @param string $shortcutKey
      *
-     * @return QueryShortcutScopesResponse
+     * @return QueryShortcutScopesResponse QueryShortcutScopesResponse
      */
     public function queryShortcutScopes($shortcutKey)
     {
@@ -488,11 +520,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UndoDeletionRequest $request
-     * @param UndoDeletionHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 工作台数字红点支持撤销已被删除的资源
+     *  *
+     * @param UndoDeletionRequest $request UndoDeletionRequest
+     * @param UndoDeletionHeaders $headers UndoDeletionHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return UndoDeletionResponse
+     * @return UndoDeletionResponse UndoDeletionResponse
      */
     public function undoDeletionWithOptions($request, $headers, $runtime)
     {
@@ -537,9 +571,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UndoDeletionRequest $request
+     * @summary 工作台数字红点支持撤销已被删除的资源
+     *  *
+     * @param UndoDeletionRequest $request UndoDeletionRequest
      *
-     * @return UndoDeletionResponse
+     * @return UndoDeletionResponse UndoDeletionResponse
      */
     public function undoDeletion($request)
     {
@@ -550,13 +586,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自定义工作台页面可见性
+     *  *
      * @param string                           $pageUuid
      * @param string                           $appUuid
-     * @param UpdateDingPortalPageScopeRequest $request
-     * @param UpdateDingPortalPageScopeHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateDingPortalPageScopeRequest $request  UpdateDingPortalPageScopeRequest
+     * @param UpdateDingPortalPageScopeHeaders $headers  UpdateDingPortalPageScopeHeaders
+     * @param RuntimeOptions                   $runtime  runtime options for this request RuntimeOptions
      *
-     * @return UpdateDingPortalPageScopeResponse
+     * @return UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeResponse
      */
     public function updateDingPortalPageScopeWithOptions($pageUuid, $appUuid, $request, $headers, $runtime)
     {
@@ -601,11 +639,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新自定义工作台页面可见性
+     *  *
      * @param string                           $pageUuid
      * @param string                           $appUuid
-     * @param UpdateDingPortalPageScopeRequest $request
+     * @param UpdateDingPortalPageScopeRequest $request  UpdateDingPortalPageScopeRequest
      *
-     * @return UpdateDingPortalPageScopeResponse
+     * @return UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeResponse
      */
     public function updateDingPortalPageScope($pageUuid, $appUuid, $request)
     {

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddSchoolConfigRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 操作人id
      *
      * @var string
@@ -16,6 +18,8 @@ class AddSchoolConfigRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 操作人名称
      *
      * @var string
@@ -23,6 +27,8 @@ class AddSchoolConfigRequest extends Model
     public $operatorName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测温上限
      *
      * @var int

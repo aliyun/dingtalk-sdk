@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example biz-xxxxxx
      *
      * @var string
@@ -17,6 +19,8 @@ class UpdateCardRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"var1":"xxx","var2":"xxx"}
      *
      * @var string

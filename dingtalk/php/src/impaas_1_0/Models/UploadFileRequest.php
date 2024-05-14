@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UploadFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 111.png
      *
      * @var string
@@ -16,6 +18,8 @@ class UploadFileRequest extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example image
      *
      * @var string
@@ -23,6 +27,8 @@ class UploadFileRequest extends Model
     public $fileType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://oss.***\/111.png
      *
      * @var string
@@ -30,6 +36,8 @@ class UploadFileRequest extends Model
     public $fileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111@dingdingkelian
      *
      * @var string

@@ -15,11 +15,15 @@ class GetMultipartFileUploadInfosRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $partNumbers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example upload_key
      *
      * @var string
@@ -27,6 +31,8 @@ class GetMultipartFileUploadInfosRequest extends Model
     public $uploadKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

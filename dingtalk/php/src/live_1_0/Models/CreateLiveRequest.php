@@ -23,6 +23,8 @@ class CreateLiveRequest extends Model
     public $introduction;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1659653648000
      *
      * @var int
@@ -30,6 +32,8 @@ class CreateLiveRequest extends Model
     public $preEndTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1659613648000
      *
      * @var int
@@ -44,6 +48,8 @@ class CreateLiveRequest extends Model
     public $publicType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试直播
      *
      * @var string
@@ -51,6 +57,8 @@ class CreateLiveRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string

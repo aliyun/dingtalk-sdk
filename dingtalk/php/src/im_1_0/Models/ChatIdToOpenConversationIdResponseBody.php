@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatIdToOpenConversationIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidl1B8RVUFmkO50OC9uEbySQ==
      *
      * @var string

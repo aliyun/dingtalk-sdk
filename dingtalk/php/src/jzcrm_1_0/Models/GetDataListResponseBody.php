@@ -10,31 +10,43 @@ use AlibabaCloud\Tea\Model;
 class GetDataListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var data[]
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $dataname;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $page;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $time;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

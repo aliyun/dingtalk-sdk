@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class universitySecretKeyInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ghiufhk123
      *
      * @var string

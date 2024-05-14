@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class leads extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example XX公司
      *
      * @var string
@@ -16,6 +18,8 @@ class leads extends Model
     public $leadsName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fasd123125
      *
      * @var string

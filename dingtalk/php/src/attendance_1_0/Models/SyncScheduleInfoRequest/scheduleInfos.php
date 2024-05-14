@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class scheduleInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $planId;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListRecentsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var param
      */
     public $param;

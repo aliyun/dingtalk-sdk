@@ -46,6 +46,8 @@ class TeamModel extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example AbcDef
      *
      * @var string
@@ -53,6 +55,8 @@ class TeamModel extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试团队名称
      *
      * @var string
@@ -72,6 +76,8 @@ class TeamModel extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -91,6 +97,8 @@ class TeamModel extends Model
     public $updater;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://abc.com
      *
      * @var string

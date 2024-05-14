@@ -23,6 +23,8 @@ class dept extends Model
     public $gmtModifiedStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var int
@@ -30,6 +32,8 @@ class dept extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 科室名称2
      *
      * @var string

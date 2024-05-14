@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFeedRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 50730********40554
      *
      * @var string

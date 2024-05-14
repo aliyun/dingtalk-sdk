@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $category1Name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $category2Name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $opTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

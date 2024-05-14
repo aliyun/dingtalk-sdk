@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class CreateRelationMetaRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var relationMetaDTO
      */
     public $relationMetaDTO;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tenant;

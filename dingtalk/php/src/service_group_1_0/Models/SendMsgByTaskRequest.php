@@ -12,26 +12,36 @@ use AlibabaCloud\Tea\Model;
 class SendMsgByTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var messageContent
      */
     public $messageContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var queryGroup
      */
     public $queryGroup;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sendConfig
      */
     public $sendConfig;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskName;

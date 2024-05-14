@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListRelatedTeamsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +25,8 @@ class ListRelatedTeamsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string

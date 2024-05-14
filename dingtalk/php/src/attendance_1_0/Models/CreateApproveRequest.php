@@ -43,6 +43,8 @@ class CreateApproveRequest extends Model
     public $tagName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fdfi3435
      *
      * @var string

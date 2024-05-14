@@ -73,11 +73,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditContactRequest $request
-     * @param EditContactHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 编辑联系人数据
+     *  *
+     * @param EditContactRequest $request EditContactRequest
+     * @param EditContactHeaders $headers EditContactHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditContactResponse
+     * @return EditContactResponse EditContactResponse
      */
     public function editContactWithOptions($request, $headers, $runtime)
     {
@@ -122,9 +124,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditContactRequest $request
+     * @summary 编辑联系人数据
+     *  *
+     * @param EditContactRequest $request EditContactRequest
      *
-     * @return EditContactResponse
+     * @return EditContactResponse EditContactResponse
      */
     public function editContact($request)
     {
@@ -135,11 +139,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerRequest $request
-     * @param EditCustomerHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 编辑客户数据
+     *  *
+     * @param EditCustomerRequest $request EditCustomerRequest
+     * @param EditCustomerHeaders $headers EditCustomerHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditCustomerResponse
+     * @return EditCustomerResponse EditCustomerResponse
      */
     public function editCustomerWithOptions($request, $headers, $runtime)
     {
@@ -184,9 +190,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerRequest $request
+     * @summary 编辑客户数据
+     *  *
+     * @param EditCustomerRequest $request EditCustomerRequest
      *
-     * @return EditCustomerResponse
+     * @return EditCustomerResponse EditCustomerResponse
      */
     public function editCustomer($request)
     {
@@ -197,11 +205,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerPoolRequest $request
-     * @param EditCustomerPoolHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 编辑客户公共池数据
+     *  *
+     * @param EditCustomerPoolRequest $request EditCustomerPoolRequest
+     * @param EditCustomerPoolHeaders $headers EditCustomerPoolHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditCustomerPoolResponse
+     * @return EditCustomerPoolResponse EditCustomerPoolResponse
      */
     public function editCustomerPoolWithOptions($request, $headers, $runtime)
     {
@@ -246,9 +256,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerPoolRequest $request
+     * @summary 编辑客户公共池数据
+     *  *
+     * @param EditCustomerPoolRequest $request EditCustomerPoolRequest
      *
-     * @return EditCustomerPoolResponse
+     * @return EditCustomerPoolResponse EditCustomerPoolResponse
      */
     public function editCustomerPool($request)
     {
@@ -259,11 +271,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditExchangeRequest $request
-     * @param EditExchangeHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 编辑销售换货单数据
+     *  *
+     * @param EditExchangeRequest $request EditExchangeRequest
+     * @param EditExchangeHeaders $headers EditExchangeHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditExchangeResponse
+     * @return EditExchangeResponse EditExchangeResponse
      */
     public function editExchangeWithOptions($request, $headers, $runtime)
     {
@@ -308,9 +322,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditExchangeRequest $request
+     * @summary 编辑销售换货单数据
+     *  *
+     * @param EditExchangeRequest $request EditExchangeRequest
      *
-     * @return EditExchangeResponse
+     * @return EditExchangeResponse EditExchangeResponse
      */
     public function editExchange($request)
     {
@@ -321,11 +337,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditGoodsRequest $request
-     * @param EditGoodsHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 编辑产品数据
+     *  *
+     * @param EditGoodsRequest $request EditGoodsRequest
+     * @param EditGoodsHeaders $headers EditGoodsHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditGoodsResponse
+     * @return EditGoodsResponse EditGoodsResponse
      */
     public function editGoodsWithOptions($request, $headers, $runtime)
     {
@@ -370,9 +388,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditGoodsRequest $request
+     * @summary 编辑产品数据
+     *  *
+     * @param EditGoodsRequest $request EditGoodsRequest
      *
-     * @return EditGoodsResponse
+     * @return EditGoodsResponse EditGoodsResponse
      */
     public function editGoods($request)
     {
@@ -383,11 +403,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditIntostockRequest $request
-     * @param EditIntostockHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 编辑入库单数据
+     *  *
+     * @param EditIntostockRequest $request EditIntostockRequest
+     * @param EditIntostockHeaders $headers EditIntostockHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditIntostockResponse
+     * @return EditIntostockResponse EditIntostockResponse
      */
     public function editIntostockWithOptions($request, $headers, $runtime)
     {
@@ -432,9 +454,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditIntostockRequest $request
+     * @summary 编辑入库单数据
+     *  *
+     * @param EditIntostockRequest $request EditIntostockRequest
      *
-     * @return EditIntostockResponse
+     * @return EditIntostockResponse EditIntostockResponse
      */
     public function editIntostock($request)
     {
@@ -445,11 +469,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditInvoiceRequest $request
-     * @param EditInvoiceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 编辑发货单数据
+     *  *
+     * @param EditInvoiceRequest $request EditInvoiceRequest
+     * @param EditInvoiceHeaders $headers EditInvoiceHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditInvoiceResponse
+     * @return EditInvoiceResponse EditInvoiceResponse
      */
     public function editInvoiceWithOptions($request, $headers, $runtime)
     {
@@ -494,9 +520,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditInvoiceRequest $request
+     * @summary 编辑发货单数据
+     *  *
+     * @param EditInvoiceRequest $request EditInvoiceRequest
      *
-     * @return EditInvoiceResponse
+     * @return EditInvoiceResponse EditInvoiceResponse
      */
     public function editInvoice($request)
     {
@@ -507,11 +535,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOrderRequest $request
-     * @param EditOrderHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 编辑合同订单数据
+     *  *
+     * @param EditOrderRequest $request EditOrderRequest
+     * @param EditOrderHeaders $headers EditOrderHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditOrderResponse
+     * @return EditOrderResponse EditOrderResponse
      */
     public function editOrderWithOptions($request, $headers, $runtime)
     {
@@ -556,9 +586,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOrderRequest $request
+     * @summary 编辑合同订单数据
+     *  *
+     * @param EditOrderRequest $request EditOrderRequest
      *
-     * @return EditOrderResponse
+     * @return EditOrderResponse EditOrderResponse
      */
     public function editOrder($request)
     {
@@ -569,11 +601,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOutstockRequest $request
-     * @param EditOutstockHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 编辑出库单信息
+     *  *
+     * @param EditOutstockRequest $request EditOutstockRequest
+     * @param EditOutstockHeaders $headers EditOutstockHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditOutstockResponse
+     * @return EditOutstockResponse EditOutstockResponse
      */
     public function editOutstockWithOptions($request, $headers, $runtime)
     {
@@ -618,9 +652,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOutstockRequest $request
+     * @summary 编辑出库单信息
+     *  *
+     * @param EditOutstockRequest $request EditOutstockRequest
      *
-     * @return EditOutstockResponse
+     * @return EditOutstockResponse EditOutstockResponse
      */
     public function editOutstock($request)
     {
@@ -631,11 +667,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditProductionRequest $request
-     * @param EditProductionHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 编辑生产单数据
+     *  *
+     * @param EditProductionRequest $request EditProductionRequest
+     * @param EditProductionHeaders $headers EditProductionHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditProductionResponse
+     * @return EditProductionResponse EditProductionResponse
      */
     public function editProductionWithOptions($request, $headers, $runtime)
     {
@@ -680,9 +718,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditProductionRequest $request
+     * @summary 编辑生产单数据
+     *  *
+     * @param EditProductionRequest $request EditProductionRequest
      *
-     * @return EditProductionResponse
+     * @return EditProductionResponse EditProductionResponse
      */
     public function editProduction($request)
     {
@@ -693,11 +733,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditPurchaseRequest $request
-     * @param EditPurchaseHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 编辑采购单数据
+     *  *
+     * @param EditPurchaseRequest $request EditPurchaseRequest
+     * @param EditPurchaseHeaders $headers EditPurchaseHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditPurchaseResponse
+     * @return EditPurchaseResponse EditPurchaseResponse
      */
     public function editPurchaseWithOptions($request, $headers, $runtime)
     {
@@ -742,9 +784,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditPurchaseRequest $request
+     * @summary 编辑采购单数据
+     *  *
+     * @param EditPurchaseRequest $request EditPurchaseRequest
      *
-     * @return EditPurchaseResponse
+     * @return EditPurchaseResponse EditPurchaseResponse
      */
     public function editPurchase($request)
     {
@@ -755,11 +799,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditQuotationRecordRequest $request
-     * @param EditQuotationRecordHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 编辑报价记录数据
+     *  *
+     * @param EditQuotationRecordRequest $request EditQuotationRecordRequest
+     * @param EditQuotationRecordHeaders $headers EditQuotationRecordHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditQuotationRecordResponse
+     * @return EditQuotationRecordResponse EditQuotationRecordResponse
      */
     public function editQuotationRecordWithOptions($request, $headers, $runtime)
     {
@@ -804,9 +850,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditQuotationRecordRequest $request
+     * @summary 编辑报价记录数据
+     *  *
+     * @param EditQuotationRecordRequest $request EditQuotationRecordRequest
      *
-     * @return EditQuotationRecordResponse
+     * @return EditQuotationRecordResponse EditQuotationRecordResponse
      */
     public function editQuotationRecord($request)
     {
@@ -817,11 +865,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditSalesRequest $request
-     * @param EditSalesHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 编辑销售机会数据
+     *  *
+     * @param EditSalesRequest $request EditSalesRequest
+     * @param EditSalesHeaders $headers EditSalesHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return EditSalesResponse
+     * @return EditSalesResponse EditSalesResponse
      */
     public function editSalesWithOptions($request, $headers, $runtime)
     {
@@ -866,9 +916,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditSalesRequest $request
+     * @summary 编辑销售机会数据
+     *  *
+     * @param EditSalesRequest $request EditSalesRequest
      *
-     * @return EditSalesResponse
+     * @return EditSalesResponse EditSalesResponse
      */
     public function editSales($request)
     {
@@ -879,11 +931,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDataListRequest $request
-     * @param GetDataListHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取数据列表
+     *  *
+     * @param GetDataListRequest $request GetDataListRequest
+     * @param GetDataListHeaders $headers GetDataListHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDataListResponse
+     * @return GetDataListResponse GetDataListResponse
      */
     public function getDataListWithOptions($request, $headers, $runtime)
     {
@@ -925,9 +979,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDataListRequest $request
+     * @summary 获取数据列表
+     *  *
+     * @param GetDataListRequest $request GetDataListRequest
      *
-     * @return GetDataListResponse
+     * @return GetDataListResponse GetDataListResponse
      */
     public function getDataList($request)
     {
@@ -938,11 +994,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDataViewRequest $request
-     * @param GetDataViewHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取数据详情
+     *  *
+     * @param GetDataViewRequest $request GetDataViewRequest
+     * @param GetDataViewHeaders $headers GetDataViewHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDataViewResponse
+     * @return GetDataViewResponse GetDataViewResponse
      */
     public function getDataViewWithOptions($request, $headers, $runtime)
     {
@@ -981,9 +1039,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDataViewRequest $request
+     * @summary 获取数据详情
+     *  *
+     * @param GetDataViewRequest $request GetDataViewRequest
      *
-     * @return GetDataViewResponse
+     * @return GetDataViewResponse GetDataViewResponse
      */
     public function getDataView($request)
     {

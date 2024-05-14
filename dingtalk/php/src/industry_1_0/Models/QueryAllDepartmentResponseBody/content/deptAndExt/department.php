@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class department extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example asd123
      *
      * @var string
@@ -16,6 +18,8 @@ class department extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 骨科
      *
      * @var string
@@ -23,6 +27,8 @@ class department extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class department extends Model
     public $deptOrder;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -37,6 +45,8 @@ class department extends Model
     public $deptStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +54,8 @@ class department extends Model
     public $deptType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -51,6 +63,8 @@ class department extends Model
     public $gmtCreateStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -58,6 +72,8 @@ class department extends Model
     public $gmtModifiedStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 130000
      *
      * @var int
@@ -65,6 +81,8 @@ class department extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 骨科
      *
      * @var string
@@ -72,6 +90,8 @@ class department extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example asd123
      *
      * @var string
@@ -79,6 +99,8 @@ class department extends Model
     public $parentDeptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 备注
      *
      * @var string
@@ -86,6 +108,8 @@ class department extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $wardIdList;

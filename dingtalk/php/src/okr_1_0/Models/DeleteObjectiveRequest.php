@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteObjectiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 06186238011033616
      *
      * @var string

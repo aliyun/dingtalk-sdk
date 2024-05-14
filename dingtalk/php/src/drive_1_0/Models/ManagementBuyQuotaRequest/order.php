@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class order extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $capacity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $capacityType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $day;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $money;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $orderId;

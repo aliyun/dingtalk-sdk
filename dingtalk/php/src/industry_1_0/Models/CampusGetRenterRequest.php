@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CampusGetRenterRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var int

@@ -22,11 +22,15 @@ class AddCrmPersonalCustomerRequest extends Model
     public $creatorNick;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $data;

@@ -23,6 +23,8 @@ class UpdateOrganizationTaskStatusRequest extends Model
     public $disableNotification;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

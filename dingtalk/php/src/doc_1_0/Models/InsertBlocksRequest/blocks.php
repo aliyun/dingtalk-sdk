@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class blocks extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $blockType;

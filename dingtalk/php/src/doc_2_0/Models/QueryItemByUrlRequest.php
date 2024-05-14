@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryItemByUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryItemByUrlRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://alidocs.dingtalk.com/i/nodes/m0Xw6OYE4D7VLeaBP***
      *
      * @var string

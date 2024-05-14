@@ -14,6 +14,8 @@ class GetSearchTabResponseBody extends Model
     public $darkIcon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-17T19:43Z
      *
      * @var string
@@ -21,6 +23,8 @@ class GetSearchTabResponseBody extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-17T19:43Z
      *
      * @var string
@@ -33,6 +37,8 @@ class GetSearchTabResponseBody extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 专辑
      *
      * @var string
@@ -40,6 +46,8 @@ class GetSearchTabResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -52,6 +60,8 @@ class GetSearchTabResponseBody extends Model
     public $source;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -59,6 +69,8 @@ class GetSearchTabResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3333
      *
      * @var int

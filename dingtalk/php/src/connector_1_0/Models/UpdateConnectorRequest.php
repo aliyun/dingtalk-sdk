@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateConnectorRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var connectorInfo[]
      */
     public $connectorInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorFlag;

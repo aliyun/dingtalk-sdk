@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCreateStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1663748308644pjpF
      *
      * @var string

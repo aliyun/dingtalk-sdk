@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class times extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -23,6 +25,8 @@ class times extends Model
     public $beginMin;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1714298274613
      *
      * @var int
@@ -30,6 +34,8 @@ class times extends Model
     public $checkTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OnDuty
      *
      * @var string

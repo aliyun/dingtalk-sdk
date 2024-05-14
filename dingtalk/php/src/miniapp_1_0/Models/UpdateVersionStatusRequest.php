@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateVersionStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bundleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $miniAppId;
@@ -24,6 +28,8 @@ class UpdateVersionStatusRequest extends Model
     public $version;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $versionType;

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class files extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;

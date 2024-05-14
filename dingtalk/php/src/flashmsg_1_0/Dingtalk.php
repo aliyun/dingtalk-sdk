@@ -52,11 +52,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddPluginRuleRequest $request
-     * @param AddPluginRuleHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 添加插件规则
+     *  *
+     * @param AddPluginRuleRequest $request AddPluginRuleRequest
+     * @param AddPluginRuleHeaders $headers AddPluginRuleHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddPluginRuleResponse
+     * @return AddPluginRuleResponse AddPluginRuleResponse
      */
     public function addPluginRuleWithOptions($request, $headers, $runtime)
     {
@@ -104,9 +106,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddPluginRuleRequest $request
+     * @summary 添加插件规则
+     *  *
+     * @param AddPluginRuleRequest $request AddPluginRuleRequest
      *
-     * @return AddPluginRuleResponse
+     * @return AddPluginRuleResponse AddPluginRuleResponse
      */
     public function addPluginRule($request)
     {
@@ -117,11 +121,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeletePlguinRuleRequest $request
-     * @param DeletePlguinRuleHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 删除插件规则
+     *  *
+     * @param DeletePlguinRuleRequest $request DeletePlguinRuleRequest
+     * @param DeletePlguinRuleHeaders $headers DeletePlguinRuleHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeletePlguinRuleResponse
+     * @return DeletePlguinRuleResponse DeletePlguinRuleResponse
      */
     public function deletePlguinRuleWithOptions($request, $headers, $runtime)
     {
@@ -160,9 +166,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeletePlguinRuleRequest $request
+     * @summary 删除插件规则
+     *  *
+     * @param DeletePlguinRuleRequest $request DeletePlguinRuleRequest
      *
-     * @return DeletePlguinRuleResponse
+     * @return DeletePlguinRuleResponse DeletePlguinRuleResponse
      */
     public function deletePlguinRule($request)
     {
@@ -173,11 +181,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBaseProfileListRequest $request
-     * @param GetBaseProfileListHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 闪读用户基础信息查询
+     *  *
+     * @param GetBaseProfileListRequest $request GetBaseProfileListRequest
+     * @param GetBaseProfileListHeaders $headers GetBaseProfileListHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBaseProfileListResponse
+     * @return GetBaseProfileListResponse GetBaseProfileListResponse
      */
     public function getBaseProfileListWithOptions($request, $headers, $runtime)
     {
@@ -209,9 +219,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBaseProfileListRequest $request
+     * @summary 闪读用户基础信息查询
+     *  *
+     * @param GetBaseProfileListRequest $request GetBaseProfileListRequest
      *
-     * @return GetBaseProfileListResponse
+     * @return GetBaseProfileListResponse GetBaseProfileListResponse
      */
     public function getBaseProfileList($request)
     {
@@ -222,11 +234,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationRequest $request
-     * @param GetConversationHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获得闪读会话信息
+     *  *
+     * @param GetConversationRequest $request GetConversationRequest
+     * @param GetConversationHeaders $headers GetConversationHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetConversationResponse
+     * @return GetConversationResponse GetConversationResponse
      */
     public function getConversationWithOptions($request, $headers, $runtime)
     {
@@ -265,9 +279,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConversationRequest $request
+     * @summary 获得闪读会话信息
+     *  *
+     * @param GetConversationRequest $request GetConversationRequest
      *
-     * @return GetConversationResponse
+     * @return GetConversationResponse GetConversationResponse
      */
     public function getConversation($request)
     {
@@ -278,11 +294,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMemberListRequest $request
-     * @param GetMemberListHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获得成员ID列表
+     *  *
+     * @param GetMemberListRequest $request GetMemberListRequest
+     * @param GetMemberListHeaders $headers GetMemberListHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMemberListResponse
+     * @return GetMemberListResponse GetMemberListResponse
      */
     public function getMemberListWithOptions($request, $headers, $runtime)
     {
@@ -327,9 +345,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMemberListRequest $request
+     * @summary 获得成员ID列表
+     *  *
+     * @param GetMemberListRequest $request GetMemberListRequest
      *
-     * @return GetMemberListResponse
+     * @return GetMemberListResponse GetMemberListResponse
      */
     public function getMemberList($request)
     {
@@ -340,11 +360,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPluginRuleRequest $request
-     * @param QueryPluginRuleHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询插件规则
+     *  *
+     * @param QueryPluginRuleRequest $request QueryPluginRuleRequest
+     * @param QueryPluginRuleHeaders $headers QueryPluginRuleHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryPluginRuleResponse
+     * @return QueryPluginRuleResponse QueryPluginRuleResponse
      */
     public function queryPluginRuleWithOptions($request, $headers, $runtime)
     {
@@ -395,9 +417,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPluginRuleRequest $request
+     * @summary 查询插件规则
+     *  *
+     * @param QueryPluginRuleRequest $request QueryPluginRuleRequest
      *
-     * @return QueryPluginRuleResponse
+     * @return QueryPluginRuleResponse QueryPluginRuleResponse
      */
     public function queryPluginRule($request)
     {
@@ -408,11 +432,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendDingTipRequest $request
-     * @param SendDingTipHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 发送Ding提示消息
+     *  *
+     * @param SendDingTipRequest $request SendDingTipRequest
+     * @param SendDingTipHeaders $headers SendDingTipHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendDingTipResponse
+     * @return SendDingTipResponse SendDingTipResponse
      */
     public function sendDingTipWithOptions($request, $headers, $runtime)
     {
@@ -463,9 +489,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendDingTipRequest $request
+     * @summary 发送Ding提示消息
+     *  *
+     * @param SendDingTipRequest $request SendDingTipRequest
      *
-     * @return SendDingTipResponse
+     * @return SendDingTipResponse SendDingTipResponse
      */
     public function sendDingTip($request)
     {
@@ -476,11 +504,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMessageTipRequest $request
-     * @param SendMessageTipHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 发送闪读消息提示
+     *  *
+     * @param SendMessageTipRequest $request SendMessageTipRequest
+     * @param SendMessageTipHeaders $headers SendMessageTipHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendMessageTipResponse
+     * @return SendMessageTipResponse SendMessageTipResponse
      */
     public function sendMessageTipWithOptions($request, $headers, $runtime)
     {
@@ -534,9 +564,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMessageTipRequest $request
+     * @summary 发送闪读消息提示
+     *  *
+     * @param SendMessageTipRequest $request SendMessageTipRequest
      *
-     * @return SendMessageTipResponse
+     * @return SendMessageTipResponse SendMessageTipResponse
      */
     public function sendMessageTip($request)
     {

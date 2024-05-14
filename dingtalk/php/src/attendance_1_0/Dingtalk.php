@@ -152,11 +152,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddLeaveTypeRequest $request
-     * @param AddLeaveTypeHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 添加假期规则
+     *  *
+     * @param AddLeaveTypeRequest $request AddLeaveTypeRequest
+     * @param AddLeaveTypeHeaders $headers AddLeaveTypeHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddLeaveTypeResponse
+     * @return AddLeaveTypeResponse AddLeaveTypeResponse
      */
     public function addLeaveTypeWithOptions($request, $headers, $runtime)
     {
@@ -245,9 +247,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddLeaveTypeRequest $request
+     * @summary 添加假期规则
+     *  *
+     * @param AddLeaveTypeRequest $request AddLeaveTypeRequest
      *
-     * @return AddLeaveTypeResponse
+     * @return AddLeaveTypeResponse AddLeaveTypeResponse
      */
     public function addLeaveType($request)
     {
@@ -258,11 +262,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesAddRequest $request
-     * @param AttendanceBleDevicesAddHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 批量给考勤组添加蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesAddRequest $request AttendanceBleDevicesAddRequest
+     * @param AttendanceBleDevicesAddHeaders $headers AttendanceBleDevicesAddHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return AttendanceBleDevicesAddResponse
+     * @return AttendanceBleDevicesAddResponse AttendanceBleDevicesAddResponse
      */
     public function attendanceBleDevicesAddWithOptions($request, $headers, $runtime)
     {
@@ -304,9 +310,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesAddRequest $request
+     * @summary 批量给考勤组添加蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesAddRequest $request AttendanceBleDevicesAddRequest
      *
-     * @return AttendanceBleDevicesAddResponse
+     * @return AttendanceBleDevicesAddResponse AttendanceBleDevicesAddResponse
      */
     public function attendanceBleDevicesAdd($request)
     {
@@ -317,11 +325,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesQueryRequest $request
-     * @param AttendanceBleDevicesQueryHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 批量查询蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesQueryRequest $request AttendanceBleDevicesQueryRequest
+     * @param AttendanceBleDevicesQueryHeaders $headers AttendanceBleDevicesQueryHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return AttendanceBleDevicesQueryResponse
+     * @return AttendanceBleDevicesQueryResponse AttendanceBleDevicesQueryResponse
      */
     public function attendanceBleDevicesQueryWithOptions($request, $headers, $runtime)
     {
@@ -360,9 +370,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesQueryRequest $request
+     * @summary 批量查询蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesQueryRequest $request AttendanceBleDevicesQueryRequest
      *
-     * @return AttendanceBleDevicesQueryResponse
+     * @return AttendanceBleDevicesQueryResponse AttendanceBleDevicesQueryResponse
      */
     public function attendanceBleDevicesQuery($request)
     {
@@ -373,11 +385,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesRemoveRequest $request
-     * @param AttendanceBleDevicesRemoveHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 批量删除考勤组的蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesRemoveRequest $request AttendanceBleDevicesRemoveRequest
+     * @param AttendanceBleDevicesRemoveHeaders $headers AttendanceBleDevicesRemoveHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return AttendanceBleDevicesRemoveResponse
+     * @return AttendanceBleDevicesRemoveResponse AttendanceBleDevicesRemoveResponse
      */
     public function attendanceBleDevicesRemoveWithOptions($request, $headers, $runtime)
     {
@@ -419,9 +433,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AttendanceBleDevicesRemoveRequest $request
+     * @summary 批量删除考勤组的蓝牙设备
+     *  *
+     * @param AttendanceBleDevicesRemoveRequest $request AttendanceBleDevicesRemoveRequest
      *
-     * @return AttendanceBleDevicesRemoveResponse
+     * @return AttendanceBleDevicesRemoveResponse AttendanceBleDevicesRemoveResponse
      */
     public function attendanceBleDevicesRemove($request)
     {
@@ -432,11 +448,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchBossCheckRequest $request
-     * @param BatchBossCheckHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 批量修改考勤结果
+     *  *
+     * @param BatchBossCheckRequest $request BatchBossCheckRequest
+     * @param BatchBossCheckHeaders $headers BatchBossCheckHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchBossCheckResponse
+     * @return BatchBossCheckResponse BatchBossCheckResponse
      */
     public function batchBossCheckWithOptions($request, $headers, $runtime)
     {
@@ -477,9 +495,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchBossCheckRequest $request
+     * @summary 批量修改考勤结果
+     *  *
+     * @param BatchBossCheckRequest $request BatchBossCheckRequest
      *
-     * @return BatchBossCheckResponse
+     * @return BatchBossCheckResponse BatchBossCheckResponse
      */
     public function batchBossCheck($request)
     {
@@ -490,11 +510,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CalculateDurationRequest $request
-     * @param CalculateDurationHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 预计算时长
+     *  *
+     * @param CalculateDurationRequest $request CalculateDurationRequest
+     * @param CalculateDurationHeaders $headers CalculateDurationHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CalculateDurationResponse
+     * @return CalculateDurationResponse CalculateDurationResponse
      */
     public function calculateDurationWithOptions($request, $headers, $runtime)
     {
@@ -550,9 +572,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CalculateDurationRequest $request
+     * @summary 预计算时长
+     *  *
+     * @param CalculateDurationRequest $request CalculateDurationRequest
      *
-     * @return CalculateDurationResponse
+     * @return CalculateDurationResponse CalculateDurationResponse
      */
     public function calculateDuration($request)
     {
@@ -563,11 +587,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckClosingAccountRequest $request
-     * @param CheckClosingAccountHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 针对某些员工某段时间内封账状态的查询
+     *  *
+     * @param CheckClosingAccountRequest $request CheckClosingAccountRequest
+     * @param CheckClosingAccountHeaders $headers CheckClosingAccountHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckClosingAccountResponse
+     * @return CheckClosingAccountResponse CheckClosingAccountResponse
      */
     public function checkClosingAccountWithOptions($request, $headers, $runtime)
     {
@@ -609,9 +635,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckClosingAccountRequest $request
+     * @summary 针对某些员工某段时间内封账状态的查询
+     *  *
+     * @param CheckClosingAccountRequest $request CheckClosingAccountRequest
      *
-     * @return CheckClosingAccountResponse
+     * @return CheckClosingAccountResponse CheckClosingAccountResponse
      */
     public function checkClosingAccount($request)
     {
@@ -622,11 +650,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckWritePermissionRequest $request
-     * @param CheckWritePermissionHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 考勤资源的写权限查询
+     *  *
+     * @param CheckWritePermissionRequest $request CheckWritePermissionRequest
+     * @param CheckWritePermissionHeaders $headers CheckWritePermissionHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckWritePermissionResponse
+     * @return CheckWritePermissionResponse CheckWritePermissionResponse
      */
     public function checkWritePermissionWithOptions($request, $headers, $runtime)
     {
@@ -671,9 +701,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckWritePermissionRequest $request
+     * @summary 考勤资源的写权限查询
+     *  *
+     * @param CheckWritePermissionRequest $request CheckWritePermissionRequest
      *
-     * @return CheckWritePermissionResponse
+     * @return CheckWritePermissionResponse CheckWritePermissionResponse
      */
     public function checkWritePermission($request)
     {
@@ -684,11 +716,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApproveRequest $request
-     * @param CreateApproveHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 创建考勤打卡审批单
+     *  *
+     * @param CreateApproveRequest $request CreateApproveRequest
+     * @param CreateApproveHeaders $headers CreateApproveHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateApproveResponse
+     * @return CreateApproveResponse CreateApproveResponse
      */
     public function createApproveWithOptions($request, $headers, $runtime)
     {
@@ -739,9 +773,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApproveRequest $request
+     * @summary 创建考勤打卡审批单
+     *  *
+     * @param CreateApproveRequest $request CreateApproveRequest
      *
-     * @return CreateApproveResponse
+     * @return CreateApproveResponse CreateApproveResponse
      */
     public function createApprove($request)
     {
@@ -752,12 +788,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销请假
+     *  *
      * @param string                    $unionId
-     * @param DeleteLeaveRequestRequest $request
-     * @param DeleteLeaveRequestHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param DeleteLeaveRequestRequest $request DeleteLeaveRequestRequest
+     * @param DeleteLeaveRequestHeaders $headers DeleteLeaveRequestHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteLeaveRequestResponse
+     * @return DeleteLeaveRequestResponse DeleteLeaveRequestResponse
      */
     public function deleteLeaveRequestWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -793,10 +831,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销请假
+     *  *
      * @param string                    $unionId
-     * @param DeleteLeaveRequestRequest $request
+     * @param DeleteLeaveRequestRequest $request DeleteLeaveRequestRequest
      *
-     * @return DeleteLeaveRequestResponse
+     * @return DeleteLeaveRequestResponse DeleteLeaveRequestResponse
      */
     public function deleteLeaveRequest($unionId, $request)
     {
@@ -807,11 +847,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteWaterMarkTemplateRequest $request
-     * @param DeleteWaterMarkTemplateHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 删除水印模板
+     *  *
+     * @param DeleteWaterMarkTemplateRequest $request DeleteWaterMarkTemplateRequest
+     * @param DeleteWaterMarkTemplateHeaders $headers DeleteWaterMarkTemplateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteWaterMarkTemplateResponse
+     * @return DeleteWaterMarkTemplateResponse DeleteWaterMarkTemplateResponse
      */
     public function deleteWaterMarkTemplateWithOptions($request, $headers, $runtime)
     {
@@ -859,9 +901,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteWaterMarkTemplateRequest $request
+     * @summary 删除水印模板
+     *  *
+     * @param DeleteWaterMarkTemplateRequest $request DeleteWaterMarkTemplateRequest
      *
-     * @return DeleteWaterMarkTemplateResponse
+     * @return DeleteWaterMarkTemplateResponse DeleteWaterMarkTemplateResponse
      */
     public function deleteWaterMarkTemplate($request)
     {
@@ -872,11 +916,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DingTalkSecurityCheckRequest $request
-     * @param DingTalkSecurityCheckHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 钉钉安全检查
+     *  *
+     * @param DingTalkSecurityCheckRequest $request DingTalkSecurityCheckRequest
+     * @param DingTalkSecurityCheckHeaders $headers DingTalkSecurityCheckHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return DingTalkSecurityCheckResponse
+     * @return DingTalkSecurityCheckResponse DingTalkSecurityCheckResponse
      */
     public function dingTalkSecurityCheckWithOptions($request, $headers, $runtime)
     {
@@ -924,9 +970,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DingTalkSecurityCheckRequest $request
+     * @summary 钉钉安全检查
+     *  *
+     * @param DingTalkSecurityCheckRequest $request DingTalkSecurityCheckRequest
      *
-     * @return DingTalkSecurityCheckResponse
+     * @return DingTalkSecurityCheckResponse DingTalkSecurityCheckResponse
      */
     public function dingTalkSecurityCheck($request)
     {
@@ -937,11 +985,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetATManageScopeRequest $request
-     * @param GetATManageScopeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询管理员管理范围下的userid
+     *  *
+     * @param GetATManageScopeRequest $request GetATManageScopeRequest
+     * @param GetATManageScopeHeaders $headers GetATManageScopeHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetATManageScopeResponse
+     * @return GetATManageScopeResponse GetATManageScopeResponse
      */
     public function getATManageScopeWithOptions($request, $headers, $runtime)
     {
@@ -983,9 +1033,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetATManageScopeRequest $request
+     * @summary 查询管理员管理范围下的userid
+     *  *
+     * @param GetATManageScopeRequest $request GetATManageScopeRequest
      *
-     * @return GetATManageScopeResponse
+     * @return GetATManageScopeResponse GetATManageScopeResponse
      */
     public function getATManageScope($request)
     {
@@ -996,11 +1048,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdjustmentsRequest $request
-     * @param GetAdjustmentsHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取补卡规则列表
+     *  *
+     * @param GetAdjustmentsRequest $request GetAdjustmentsRequest
+     * @param GetAdjustmentsHeaders $headers GetAdjustmentsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAdjustmentsResponse
+     * @return GetAdjustmentsResponse GetAdjustmentsResponse
      */
     public function getAdjustmentsWithOptions($request, $headers, $runtime)
     {
@@ -1039,9 +1093,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAdjustmentsRequest $request
+     * @summary 获取补卡规则列表
+     *  *
+     * @param GetAdjustmentsRequest $request GetAdjustmentsRequest
      *
-     * @return GetAdjustmentsResponse
+     * @return GetAdjustmentsResponse GetAdjustmentsResponse
      */
     public function getAdjustments($request)
     {
@@ -1052,11 +1108,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckInSchemaTemplateRequest $request
-     * @param GetCheckInSchemaTemplateHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取水印打卡模板
+     *  *
+     * @param GetCheckInSchemaTemplateRequest $request GetCheckInSchemaTemplateRequest
+     * @param GetCheckInSchemaTemplateHeaders $headers GetCheckInSchemaTemplateHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCheckInSchemaTemplateResponse
+     * @return GetCheckInSchemaTemplateResponse GetCheckInSchemaTemplateResponse
      */
     public function getCheckInSchemaTemplateWithOptions($request, $headers, $runtime)
     {
@@ -1101,9 +1159,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckInSchemaTemplateRequest $request
+     * @summary 获取水印打卡模板
+     *  *
+     * @param GetCheckInSchemaTemplateRequest $request GetCheckInSchemaTemplateRequest
      *
-     * @return GetCheckInSchemaTemplateResponse
+     * @return GetCheckInSchemaTemplateResponse GetCheckInSchemaTemplateResponse
      */
     public function getCheckInSchemaTemplate($request)
     {
@@ -1114,11 +1174,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckinRecordByUserRequest $request
-     * @param GetCheckinRecordByUserHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 调用本接口，获取用户签到记录。
+     *  *
+     * @param GetCheckinRecordByUserRequest $request GetCheckinRecordByUserRequest
+     * @param GetCheckinRecordByUserHeaders $headers GetCheckinRecordByUserHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCheckinRecordByUserResponse
+     * @return GetCheckinRecordByUserResponse GetCheckinRecordByUserResponse
      */
     public function getCheckinRecordByUserWithOptions($request, $headers, $runtime)
     {
@@ -1169,9 +1231,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckinRecordByUserRequest $request
+     * @summary 调用本接口，获取用户签到记录。
+     *  *
+     * @param GetCheckinRecordByUserRequest $request GetCheckinRecordByUserRequest
      *
-     * @return GetCheckinRecordByUserResponse
+     * @return GetCheckinRecordByUserResponse GetCheckinRecordByUserResponse
      */
     public function getCheckinRecordByUser($request)
     {
@@ -1182,11 +1246,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 班次查询（包含已删除班次）
+     *  *
      * @param string                     $classId
-     * @param GetClassWithDeletedHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetClassWithDeletedHeaders $headers GetClassWithDeletedHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetClassWithDeletedResponse
+     * @return GetClassWithDeletedResponse GetClassWithDeletedResponse
      */
     public function getClassWithDeletedWithOptions($classId, $headers, $runtime)
     {
@@ -1216,9 +1282,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 班次查询（包含已删除班次）
+     *  *
      * @param string $classId
      *
-     * @return GetClassWithDeletedResponse
+     * @return GetClassWithDeletedResponse GetClassWithDeletedResponse
      */
     public function getClassWithDeleted($classId)
     {
@@ -1229,11 +1297,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetClosingAccountsRequest $request
-     * @param GetClosingAccountsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 查询指定用户的封账规则
+     *  *
+     * @param GetClosingAccountsRequest $request GetClosingAccountsRequest
+     * @param GetClosingAccountsHeaders $headers GetClosingAccountsHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetClosingAccountsResponse
+     * @return GetClosingAccountsResponse GetClosingAccountsResponse
      */
     public function getClosingAccountsWithOptions($request, $headers, $runtime)
     {
@@ -1269,9 +1339,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetClosingAccountsRequest $request
+     * @summary 查询指定用户的封账规则
+     *  *
+     * @param GetClosingAccountsRequest $request GetClosingAccountsRequest
      *
-     * @return GetClosingAccountsResponse
+     * @return GetClosingAccountsResponse GetClosingAccountsResponse
      */
     public function getClosingAccounts($request)
     {
@@ -1282,11 +1354,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetColumnvalsRequest $request
-     * @param GetColumnvalsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取多个用户的智能考勤报表的列值
+     *  *
+     * @param GetColumnvalsRequest $request GetColumnvalsRequest
+     * @param GetColumnvalsHeaders $headers GetColumnvalsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetColumnvalsResponse
+     * @return GetColumnvalsResponse GetColumnvalsResponse
      */
     public function getColumnvalsWithOptions($request, $headers, $runtime)
     {
@@ -1331,9 +1405,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetColumnvalsRequest $request
+     * @summary 获取多个用户的智能考勤报表的列值
+     *  *
+     * @param GetColumnvalsRequest $request GetColumnvalsRequest
      *
-     * @return GetColumnvalsResponse
+     * @return GetColumnvalsResponse GetColumnvalsResponse
      */
     public function getColumnvals($request)
     {
@@ -1344,11 +1420,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLeaveRecordsRequest $request
-     * @param GetLeaveRecordsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 批量查询员工假期余额变更记录
+     *  *
+     * @param GetLeaveRecordsRequest $request GetLeaveRecordsRequest
+     * @param GetLeaveRecordsHeaders $headers GetLeaveRecordsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetLeaveRecordsResponse
+     * @return GetLeaveRecordsResponse GetLeaveRecordsResponse
      */
     public function getLeaveRecordsWithOptions($request, $headers, $runtime)
     {
@@ -1396,9 +1474,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLeaveRecordsRequest $request
+     * @summary 批量查询员工假期余额变更记录
+     *  *
+     * @param GetLeaveRecordsRequest $request GetLeaveRecordsRequest
      *
-     * @return GetLeaveRecordsResponse
+     * @return GetLeaveRecordsResponse GetLeaveRecordsResponse
      */
     public function getLeaveRecords($request)
     {
@@ -1409,11 +1489,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLeaveTypeRequest $request
-     * @param GetLeaveTypeHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 查询假期规则列表
+     *  *
+     * @param GetLeaveTypeRequest $request GetLeaveTypeRequest
+     * @param GetLeaveTypeHeaders $headers GetLeaveTypeHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetLeaveTypeResponse
+     * @return GetLeaveTypeResponse GetLeaveTypeResponse
      */
     public function getLeaveTypeWithOptions($request, $headers, $runtime)
     {
@@ -1452,9 +1534,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetLeaveTypeRequest $request
+     * @summary 查询假期规则列表
+     *  *
+     * @param GetLeaveTypeRequest $request GetLeaveTypeRequest
      *
-     * @return GetLeaveTypeResponse
+     * @return GetLeaveTypeResponse GetLeaveTypeResponse
      */
     public function getLeaveType($request)
     {
@@ -1465,11 +1549,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备id获取考勤机信息
+     *  *
      * @param string            $devId
-     * @param GetMachineHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GetMachineHeaders $headers GetMachineHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMachineResponse
+     * @return GetMachineResponse GetMachineResponse
      */
     public function getMachineWithOptions($devId, $headers, $runtime)
     {
@@ -1499,9 +1585,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备id获取考勤机信息
+     *  *
      * @param string $devId
      *
-     * @return GetMachineResponse
+     * @return GetMachineResponse GetMachineResponse
      */
     public function getMachine($devId)
     {
@@ -1512,12 +1600,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备id获取员工信息
+     *  *
      * @param string                $devId
-     * @param GetMachineUserRequest $request
-     * @param GetMachineUserHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetMachineUserRequest $request GetMachineUserRequest
+     * @param GetMachineUserHeaders $headers GetMachineUserHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMachineUserResponse
+     * @return GetMachineUserResponse GetMachineUserResponse
      */
     public function getMachineUserWithOptions($devId, $request, $headers, $runtime)
     {
@@ -1556,10 +1646,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据设备id获取员工信息
+     *  *
      * @param string                $devId
-     * @param GetMachineUserRequest $request
+     * @param GetMachineUserRequest $request GetMachineUserRequest
      *
-     * @return GetMachineUserResponse
+     * @return GetMachineUserResponse GetMachineUserResponse
      */
     public function getMachineUser($devId, $request)
     {
@@ -1570,11 +1662,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOvertimeSettingRequest $request
-     * @param GetOvertimeSettingHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 批量获取加班规则设置
+     *  *
+     * @param GetOvertimeSettingRequest $request GetOvertimeSettingRequest
+     * @param GetOvertimeSettingHeaders $headers GetOvertimeSettingHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOvertimeSettingResponse
+     * @return GetOvertimeSettingResponse GetOvertimeSettingResponse
      */
     public function getOvertimeSettingWithOptions($request, $headers, $runtime)
     {
@@ -1610,9 +1704,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOvertimeSettingRequest $request
+     * @summary 批量获取加班规则设置
+     *  *
+     * @param GetOvertimeSettingRequest $request GetOvertimeSettingRequest
      *
-     * @return GetOvertimeSettingResponse
+     * @return GetOvertimeSettingResponse GetOvertimeSettingResponse
      */
     public function getOvertimeSetting($request)
     {
@@ -1623,11 +1719,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetShiftRequest $request
-     * @param GetShiftHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 班次详情
+     *  *
+     * @param GetShiftRequest $request GetShiftRequest
+     * @param GetShiftHeaders $headers GetShiftHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetShiftResponse
+     * @return GetShiftResponse GetShiftResponse
      */
     public function getShiftWithOptions($request, $headers, $runtime)
     {
@@ -1666,9 +1764,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetShiftRequest $request
+     * @summary 班次详情
+     *  *
+     * @param GetShiftRequest $request GetShiftRequest
      *
-     * @return GetShiftResponse
+     * @return GetShiftResponse GetShiftResponse
      */
     public function getShift($request)
     {
@@ -1679,11 +1779,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSimpleGroupsRequest $request
-     * @param GetSimpleGroupsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取考勤组列表详情
+     *  *
+     * @param GetSimpleGroupsRequest $request GetSimpleGroupsRequest
+     * @param GetSimpleGroupsHeaders $headers GetSimpleGroupsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSimpleGroupsResponse
+     * @return GetSimpleGroupsResponse GetSimpleGroupsResponse
      */
     public function getSimpleGroupsWithOptions($request, $headers, $runtime)
     {
@@ -1722,9 +1824,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSimpleGroupsRequest $request
+     * @summary 获取考勤组列表详情
+     *  *
+     * @param GetSimpleGroupsRequest $request GetSimpleGroupsRequest
      *
-     * @return GetSimpleGroupsResponse
+     * @return GetSimpleGroupsResponse GetSimpleGroupsResponse
      */
     public function getSimpleGroups($request)
     {
@@ -1735,11 +1839,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSimpleOvertimeSettingRequest $request
-     * @param GetSimpleOvertimeSettingHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 加班规则列表
+     *  *
+     * @param GetSimpleOvertimeSettingRequest $request GetSimpleOvertimeSettingRequest
+     * @param GetSimpleOvertimeSettingHeaders $headers GetSimpleOvertimeSettingHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSimpleOvertimeSettingResponse
+     * @return GetSimpleOvertimeSettingResponse GetSimpleOvertimeSettingResponse
      */
     public function getSimpleOvertimeSettingWithOptions($request, $headers, $runtime)
     {
@@ -1778,9 +1884,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSimpleOvertimeSettingRequest $request
+     * @summary 加班规则列表
+     *  *
+     * @param GetSimpleOvertimeSettingRequest $request GetSimpleOvertimeSettingRequest
      *
-     * @return GetSimpleOvertimeSettingResponse
+     * @return GetSimpleOvertimeSettingResponse GetSimpleOvertimeSettingResponse
      */
     public function getSimpleOvertimeSetting($request)
     {
@@ -1791,11 +1899,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserHolidaysRequest $request
-     * @param GetUserHolidaysHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询员工某段时间的假期
+     *  *
+     * @param GetUserHolidaysRequest $request GetUserHolidaysRequest
+     * @param GetUserHolidaysHeaders $headers GetUserHolidaysHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserHolidaysResponse
+     * @return GetUserHolidaysResponse GetUserHolidaysResponse
      */
     public function getUserHolidaysWithOptions($request, $headers, $runtime)
     {
@@ -1837,9 +1947,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserHolidaysRequest $request
+     * @summary 查询员工某段时间的假期
+     *  *
+     * @param GetUserHolidaysRequest $request GetUserHolidaysRequest
      *
-     * @return GetUserHolidaysResponse
+     * @return GetUserHolidaysResponse GetUserHolidaysResponse
      */
     public function getUserHolidays($request)
     {
@@ -1850,11 +1962,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupAddRequest $request
-     * @param GroupAddHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 创建考勤组
+     *  *
+     * @param GroupAddRequest $request GroupAddRequest
+     * @param GroupAddHeaders $headers GroupAddHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupAddResponse
+     * @return GroupAddResponse GroupAddResponse
      */
     public function groupAddWithOptions($request, $headers, $runtime)
     {
@@ -2021,9 +2135,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupAddRequest $request
+     * @summary 创建考勤组
+     *  *
+     * @param GroupAddRequest $request GroupAddRequest
      *
-     * @return GroupAddResponse
+     * @return GroupAddResponse GroupAddResponse
      */
     public function groupAdd($request)
     {
@@ -2034,11 +2150,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupUpdateRequest $request
-     * @param GroupUpdateHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 修改考勤组
+     *  *
+     * @param GroupUpdateRequest $request GroupUpdateRequest
+     * @param GroupUpdateHeaders $headers GroupUpdateHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupUpdateResponse
+     * @return GroupUpdateResponse GroupUpdateResponse
      */
     public function groupUpdateWithOptions($request, $headers, $runtime)
     {
@@ -2166,9 +2284,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GroupUpdateRequest $request
+     * @summary 修改考勤组
+     *  *
+     * @param GroupUpdateRequest $request GroupUpdateRequest
      *
-     * @return GroupUpdateResponse
+     * @return GroupUpdateResponse GroupUpdateResponse
      */
     public function groupUpdate($request)
     {
@@ -2179,11 +2299,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InitAndGetLeaveALlocationQuotasRequest $request
-     * @param InitAndGetLeaveALlocationQuotasHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @summary 生态系统假期初始化查询余额接口
+     *  *
+     * @param InitAndGetLeaveALlocationQuotasRequest $request InitAndGetLeaveALlocationQuotasRequest
+     * @param InitAndGetLeaveALlocationQuotasHeaders $headers InitAndGetLeaveALlocationQuotasHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
      *
-     * @return InitAndGetLeaveALlocationQuotasResponse
+     * @return InitAndGetLeaveALlocationQuotasResponse InitAndGetLeaveALlocationQuotasResponse
      */
     public function initAndGetLeaveALlocationQuotasWithOptions($request, $headers, $runtime)
     {
@@ -2225,9 +2347,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InitAndGetLeaveALlocationQuotasRequest $request
+     * @summary 生态系统假期初始化查询余额接口
+     *  *
+     * @param InitAndGetLeaveALlocationQuotasRequest $request InitAndGetLeaveALlocationQuotasRequest
      *
-     * @return InitAndGetLeaveALlocationQuotasResponse
+     * @return InitAndGetLeaveALlocationQuotasResponse InitAndGetLeaveALlocationQuotasResponse
      */
     public function initAndGetLeaveALlocationQuotas($request)
     {
@@ -2238,11 +2362,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListApproveByUsersRequest $request
-     * @param ListApproveByUsersHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取用户某段时间内同步到考勤的审批单信息
+     *  *
+     * @param ListApproveByUsersRequest $request ListApproveByUsersRequest
+     * @param ListApproveByUsersHeaders $headers ListApproveByUsersHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListApproveByUsersResponse
+     * @return ListApproveByUsersResponse ListApproveByUsersResponse
      */
     public function listApproveByUsersWithOptions($request, $headers, $runtime)
     {
@@ -2287,9 +2413,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListApproveByUsersRequest $request
+     * @summary 获取用户某段时间内同步到考勤的审批单信息
+     *  *
+     * @param ListApproveByUsersRequest $request ListApproveByUsersRequest
      *
-     * @return ListApproveByUsersResponse
+     * @return ListApproveByUsersResponse ListApproveByUsersResponse
      */
     public function listApproveByUsers($request)
     {
@@ -2300,11 +2428,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ModifyWaterMarkTemplateRequest $request
-     * @param ModifyWaterMarkTemplateHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 修改水印模板
+     *  *
+     * @param ModifyWaterMarkTemplateRequest $request ModifyWaterMarkTemplateRequest
+     * @param ModifyWaterMarkTemplateHeaders $headers ModifyWaterMarkTemplateHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return ModifyWaterMarkTemplateResponse
+     * @return ModifyWaterMarkTemplateResponse ModifyWaterMarkTemplateResponse
      */
     public function modifyWaterMarkTemplateWithOptions($request, $headers, $runtime)
     {
@@ -2363,9 +2493,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ModifyWaterMarkTemplateRequest $request
+     * @summary 修改水印模板
+     *  *
+     * @param ModifyWaterMarkTemplateRequest $request ModifyWaterMarkTemplateRequest
      *
-     * @return ModifyWaterMarkTemplateResponse
+     * @return ModifyWaterMarkTemplateResponse ModifyWaterMarkTemplateResponse
      */
     public function modifyWaterMarkTemplate($request)
     {
@@ -2376,11 +2508,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessApproveCreateRequest $request
-     * @param ProcessApproveCreateHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 创建考勤打卡审批单
+     *  *
+     * @param ProcessApproveCreateRequest $request ProcessApproveCreateRequest
+     * @param ProcessApproveCreateHeaders $headers ProcessApproveCreateHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ProcessApproveCreateResponse
+     * @return ProcessApproveCreateResponse ProcessApproveCreateResponse
      */
     public function processApproveCreateWithOptions($request, $headers, $runtime)
     {
@@ -2431,9 +2565,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessApproveCreateRequest $request
+     * @summary 创建考勤打卡审批单
+     *  *
+     * @param ProcessApproveCreateRequest $request ProcessApproveCreateRequest
      *
-     * @return ProcessApproveCreateResponse
+     * @return ProcessApproveCreateResponse ProcessApproveCreateResponse
      */
     public function processApproveCreate($request)
     {
@@ -2444,11 +2580,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessApproveFinishRequest $request
-     * @param ProcessApproveFinishHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 通知审批通过
+     *  *
+     * @param ProcessApproveFinishRequest $request ProcessApproveFinishRequest
+     * @param ProcessApproveFinishHeaders $headers ProcessApproveFinishHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return ProcessApproveFinishResponse
+     * @return ProcessApproveFinishResponse ProcessApproveFinishResponse
      */
     public function processApproveFinishWithOptions($request, $headers, $runtime)
     {
@@ -2507,9 +2645,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessApproveFinishRequest $request
+     * @summary 通知审批通过
+     *  *
+     * @param ProcessApproveFinishRequest $request ProcessApproveFinishRequest
      *
-     * @return ProcessApproveFinishResponse
+     * @return ProcessApproveFinishResponse ProcessApproveFinishResponse
      */
     public function processApproveFinish($request)
     {
@@ -2520,12 +2660,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 扣减员工假期余额
+     *  *
      * @param string                            $unionId
-     * @param ReduceQuotaWithLeaveRecordRequest $request
-     * @param ReduceQuotaWithLeaveRecordHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param ReduceQuotaWithLeaveRecordRequest $request ReduceQuotaWithLeaveRecordRequest
+     * @param ReduceQuotaWithLeaveRecordHeaders $headers ReduceQuotaWithLeaveRecordHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReduceQuotaWithLeaveRecordResponse
+     * @return ReduceQuotaWithLeaveRecordResponse ReduceQuotaWithLeaveRecordResponse
      */
     public function reduceQuotaWithLeaveRecordWithOptions($unionId, $request, $headers, $runtime)
     {
@@ -2576,10 +2718,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 扣减员工假期余额
+     *  *
      * @param string                            $unionId
-     * @param ReduceQuotaWithLeaveRecordRequest $request
+     * @param ReduceQuotaWithLeaveRecordRequest $request ReduceQuotaWithLeaveRecordRequest
      *
-     * @return ReduceQuotaWithLeaveRecordResponse
+     * @return ReduceQuotaWithLeaveRecordResponse ReduceQuotaWithLeaveRecordResponse
      */
     public function reduceQuotaWithLeaveRecord($unionId, $request)
     {
@@ -2590,11 +2734,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RetainLeaveTypesRequest $request
-     * @param RetainLeaveTypesHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 修改假期规则来源
+     *  *
+     * @param RetainLeaveTypesRequest $request RetainLeaveTypesRequest
+     * @param RetainLeaveTypesHeaders $headers RetainLeaveTypesHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return RetainLeaveTypesResponse
+     * @return RetainLeaveTypesResponse RetainLeaveTypesResponse
      */
     public function retainLeaveTypesWithOptions($request, $headers, $runtime)
     {
@@ -2636,9 +2782,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RetainLeaveTypesRequest $request
+     * @summary 修改假期规则来源
+     *  *
+     * @param RetainLeaveTypesRequest $request RetainLeaveTypesRequest
      *
-     * @return RetainLeaveTypesResponse
+     * @return RetainLeaveTypesResponse RetainLeaveTypesResponse
      */
     public function retainLeaveTypes($request)
     {
@@ -2649,11 +2797,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReverseTrialAdvancedLeaveRequest $request
-     * @param ReverseTrialAdvancedLeaveHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 提供给高级假期的试用订单回退
+     *  *
+     * @param ReverseTrialAdvancedLeaveRequest $request ReverseTrialAdvancedLeaveRequest
+     * @param ReverseTrialAdvancedLeaveHeaders $headers ReverseTrialAdvancedLeaveHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReverseTrialAdvancedLeaveResponse
+     * @return ReverseTrialAdvancedLeaveResponse ReverseTrialAdvancedLeaveResponse
      */
     public function reverseTrialAdvancedLeaveWithOptions($request, $headers, $runtime)
     {
@@ -2692,9 +2842,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReverseTrialAdvancedLeaveRequest $request
+     * @summary 提供给高级假期的试用订单回退
+     *  *
+     * @param ReverseTrialAdvancedLeaveRequest $request ReverseTrialAdvancedLeaveRequest
      *
-     * @return ReverseTrialAdvancedLeaveResponse
+     * @return ReverseTrialAdvancedLeaveResponse ReverseTrialAdvancedLeaveResponse
      */
     public function reverseTrialAdvancedLeave($request)
     {
@@ -2705,11 +2857,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveCustomWaterMarkTemplateRequest $request
-     * @param SaveCustomWaterMarkTemplateHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 新增水印签到模板
+     *  *
+     * @param SaveCustomWaterMarkTemplateRequest $request SaveCustomWaterMarkTemplateRequest
+     * @param SaveCustomWaterMarkTemplateHeaders $headers SaveCustomWaterMarkTemplateHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return SaveCustomWaterMarkTemplateResponse
+     * @return SaveCustomWaterMarkTemplateResponse SaveCustomWaterMarkTemplateResponse
      */
     public function saveCustomWaterMarkTemplateWithOptions($request, $headers, $runtime)
     {
@@ -2768,9 +2922,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveCustomWaterMarkTemplateRequest $request
+     * @summary 新增水印签到模板
+     *  *
+     * @param SaveCustomWaterMarkTemplateRequest $request SaveCustomWaterMarkTemplateRequest
      *
-     * @return SaveCustomWaterMarkTemplateResponse
+     * @return SaveCustomWaterMarkTemplateResponse SaveCustomWaterMarkTemplateResponse
      */
     public function saveCustomWaterMarkTemplate($request)
     {
@@ -2781,11 +2937,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ShiftAddRequest $request
-     * @param ShiftAddHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 创建班次
+     *  *
+     * @param ShiftAddRequest $request ShiftAddRequest
+     * @param ShiftAddHeaders $headers ShiftAddHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return ShiftAddResponse
+     * @return ShiftAddResponse ShiftAddResponse
      */
     public function shiftAddWithOptions($request, $headers, $runtime)
     {
@@ -2841,9 +2999,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ShiftAddRequest $request
+     * @summary 创建班次
+     *  *
+     * @param ShiftAddRequest $request ShiftAddRequest
      *
-     * @return ShiftAddResponse
+     * @return ShiftAddResponse ShiftAddResponse
      */
     public function shiftAdd($request)
     {
@@ -2854,11 +3014,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncScheduleInfoRequest $request
-     * @param SyncScheduleInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
+     *  *
+     * @param SyncScheduleInfoRequest $request SyncScheduleInfoRequest
+     * @param SyncScheduleInfoHeaders $headers SyncScheduleInfoHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncScheduleInfoResponse
+     * @return SyncScheduleInfoResponse SyncScheduleInfoResponse
      */
     public function syncScheduleInfoWithOptions($request, $headers, $runtime)
     {
@@ -2897,9 +3059,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncScheduleInfoRequest $request
+     * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
+     *  *
+     * @param SyncScheduleInfoRequest $request SyncScheduleInfoRequest
      *
-     * @return SyncScheduleInfoResponse
+     * @return SyncScheduleInfoResponse SyncScheduleInfoResponse
      */
     public function syncScheduleInfo($request)
     {
@@ -2910,11 +3074,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateLeaveTypeRequest $request
-     * @param UpdateLeaveTypeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 更新假期规则
+     *  *
+     * @param UpdateLeaveTypeRequest $request UpdateLeaveTypeRequest
+     * @param UpdateLeaveTypeHeaders $headers UpdateLeaveTypeHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateLeaveTypeResponse
+     * @return UpdateLeaveTypeResponse UpdateLeaveTypeResponse
      */
     public function updateLeaveTypeWithOptions($request, $headers, $runtime)
     {
@@ -2982,9 +3148,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateLeaveTypeRequest $request
+     * @summary 更新假期规则
+     *  *
+     * @param UpdateLeaveTypeRequest $request UpdateLeaveTypeRequest
      *
-     * @return UpdateLeaveTypeResponse
+     * @return UpdateLeaveTypeResponse UpdateLeaveTypeResponse
      */
     public function updateLeaveType($request)
     {

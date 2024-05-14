@@ -16,6 +16,8 @@ class GetContactsRequest extends Model
     public $currentOperatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;

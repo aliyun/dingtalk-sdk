@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryRobotPluginRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingykcdkjnwpcll27gm
      *
      * @var string

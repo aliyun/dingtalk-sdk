@@ -16,6 +16,8 @@ class UpdateInterviewSignInInfoRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626796800000
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class pointRecordList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1634630147
      *
      * @var int
@@ -23,6 +25,8 @@ class pointRecordList extends Model
     public $ruleCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 发动态
      *
      * @var string
@@ -30,6 +34,8 @@ class pointRecordList extends Model
     public $ruleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -37,6 +43,8 @@ class pointRecordList extends Model
     public $score;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -44,6 +52,8 @@ class pointRecordList extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 7653
      *
      * @var string

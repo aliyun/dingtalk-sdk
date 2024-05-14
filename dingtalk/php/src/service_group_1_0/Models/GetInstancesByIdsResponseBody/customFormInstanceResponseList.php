@@ -19,16 +19,22 @@ class customFormInstanceResponseList extends Model
     public $fields;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
@@ -44,6 +50,8 @@ class customFormInstanceResponseList extends Model
     public $openDataInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

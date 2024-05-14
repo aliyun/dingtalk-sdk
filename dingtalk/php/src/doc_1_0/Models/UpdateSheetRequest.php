@@ -23,6 +23,8 @@ class UpdateSheetRequest extends Model
     public $visibility;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

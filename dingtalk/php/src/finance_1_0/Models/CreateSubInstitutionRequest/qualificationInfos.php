@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class qualificationInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ossUrl
      *
      * @var string
@@ -16,6 +18,8 @@ class qualificationInfos extends Model
     public $qualificationImage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 301
      *
      * @var string

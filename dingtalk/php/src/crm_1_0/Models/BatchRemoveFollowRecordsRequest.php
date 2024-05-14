@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BatchRemoveFollowRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $instanceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager021a
      *
      * @var string

@@ -29,6 +29,8 @@ class CreateSpaceRequest extends Model
     public $houseState;
 
     /**
+     * @description This parameter is required.
+     *
      * @example A栋
      *
      * @var string
@@ -36,6 +38,8 @@ class CreateSpaceRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -7
      *
      * @var string
@@ -43,6 +47,8 @@ class CreateSpaceRequest extends Model
     public $parentDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example House
      *
      * @var string

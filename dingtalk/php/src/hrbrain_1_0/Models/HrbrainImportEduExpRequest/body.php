@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $eduName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $endDate;
@@ -29,21 +33,29 @@ class body extends Model
     public $major;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $schoolName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class link extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $messageUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $picUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $text;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

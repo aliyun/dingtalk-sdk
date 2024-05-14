@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateApaasAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appIcon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appName;
@@ -24,11 +28,15 @@ class UpdateApaasAppRequest extends Model
     public $appStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

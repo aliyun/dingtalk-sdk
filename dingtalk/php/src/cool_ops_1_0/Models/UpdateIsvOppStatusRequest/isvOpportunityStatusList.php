@@ -14,11 +14,15 @@ class isvOpportunityStatusList extends Model
     public $isvCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $microAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -34,31 +38,43 @@ class isvOpportunityStatusList extends Model
     public $operCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $oppSourceCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opportunityStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

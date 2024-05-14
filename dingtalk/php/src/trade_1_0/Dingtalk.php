@@ -37,11 +37,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckOpportunityResultRequest $request
-     * @param CheckOpportunityResultHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary isv检查商机创建是否符合预期
+     *  *
+     * @param CheckOpportunityResultRequest $request CheckOpportunityResultRequest
+     * @param CheckOpportunityResultHeaders $headers CheckOpportunityResultHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckOpportunityResultResponse
+     * @return CheckOpportunityResultResponse CheckOpportunityResultResponse
      */
     public function checkOpportunityResultWithOptions($request, $headers, $runtime)
     {
@@ -89,9 +91,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckOpportunityResultRequest $request
+     * @summary isv检查商机创建是否符合预期
+     *  *
+     * @param CheckOpportunityResultRequest $request CheckOpportunityResultRequest
      *
-     * @return CheckOpportunityResultResponse
+     * @return CheckOpportunityResultResponse CheckOpportunityResultResponse
      */
     public function checkOpportunityResult($request)
     {
@@ -102,11 +106,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOpportunityRequest $request
-     * @param CreateOpportunityHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary isv创建商机
+     *  *
+     * @param CreateOpportunityRequest $request CreateOpportunityRequest
+     * @param CreateOpportunityHeaders $headers CreateOpportunityHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateOpportunityResponse
+     * @return CreateOpportunityResponse CreateOpportunityResponse
      */
     public function createOpportunityWithOptions($request, $headers, $runtime)
     {
@@ -154,9 +160,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOpportunityRequest $request
+     * @summary isv创建商机
+     *  *
+     * @param CreateOpportunityRequest $request CreateOpportunityRequest
      *
-     * @return CreateOpportunityResponse
+     * @return CreateOpportunityResponse CreateOpportunityResponse
      */
     public function createOpportunity($request)
     {
@@ -167,11 +175,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTradeOrderRequest $request
-     * @param QueryTradeOrderHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询订单信息
+     *  *
+     * @param QueryTradeOrderRequest $request QueryTradeOrderRequest
+     * @param QueryTradeOrderHeaders $headers QueryTradeOrderHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTradeOrderResponse
+     * @return QueryTradeOrderResponse QueryTradeOrderResponse
      */
     public function queryTradeOrderWithOptions($request, $headers, $runtime)
     {
@@ -210,9 +220,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTradeOrderRequest $request
+     * @summary 查询订单信息
+     *  *
+     * @param QueryTradeOrderRequest $request QueryTradeOrderRequest
      *
-     * @return QueryTradeOrderResponse
+     * @return QueryTradeOrderResponse QueryTradeOrderResponse
      */
     public function queryTradeOrder($request)
     {

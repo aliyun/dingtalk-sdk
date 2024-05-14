@@ -15,6 +15,8 @@ class EditProductionRequest extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 156
      *
      * @var int
@@ -29,6 +31,8 @@ class EditProductionRequest extends Model
     public $msgid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1621822122
      *
      * @var int

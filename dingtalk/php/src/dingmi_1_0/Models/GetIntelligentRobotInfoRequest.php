@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetIntelligentRobotInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abcd1234
      *
      * @var string

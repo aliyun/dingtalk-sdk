@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryHospitalRoleUserInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryHospitalRoleUserInfoRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

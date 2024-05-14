@@ -16,11 +16,15 @@ class RegisterCustomAppRoleRequest extends Model
     public $canManageRole;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleName;

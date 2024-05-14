@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeviceHeartbeatResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0心跳正常，1增量更新，2上传日志，3全量更新
      *
      * @var int

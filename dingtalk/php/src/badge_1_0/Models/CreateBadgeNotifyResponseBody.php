@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateBadgeNotifyResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var bool

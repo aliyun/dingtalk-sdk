@@ -77,6 +77,8 @@ class UpdateContactRestrictSettingRequest extends Model
     public $subjectUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

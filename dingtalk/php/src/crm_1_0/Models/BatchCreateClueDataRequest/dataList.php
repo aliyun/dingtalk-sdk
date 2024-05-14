@@ -12,6 +12,8 @@ use AlibabaCloud\Tea\Model;
 class dataList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var contactList[]
      */
     public $contactList;
@@ -22,6 +24,8 @@ class dataList extends Model
     public $enterprise;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉中国
      *
      * @var string
@@ -29,11 +33,15 @@ class dataList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sourceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example demo
      *
      * @var string

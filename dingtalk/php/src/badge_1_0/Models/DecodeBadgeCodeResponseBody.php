@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DecodeBadgeCodeResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2512345678
      *
      * @var string
@@ -30,6 +32,8 @@ class DecodeBadgeCodeResponseBody extends Model
     public $codeIdentity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PURE_IDENTIFY_CODE
      *
      * @var string
@@ -37,6 +41,8 @@ class DecodeBadgeCodeResponseBody extends Model
     public $codeType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string
@@ -58,6 +64,8 @@ class DecodeBadgeCodeResponseBody extends Model
     public $outBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INTERNAL_STAFF
      *
      * @var string

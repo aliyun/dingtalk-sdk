@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string

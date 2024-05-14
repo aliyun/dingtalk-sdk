@@ -16,6 +16,8 @@ class setting extends Model
     public $bizType;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-07-27T18:53Z
      *
      * @var string
@@ -23,6 +25,8 @@ class setting extends Model
     public $createTime;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-07-27T18:53Z
      *
      * @var string

@@ -20,6 +20,8 @@ class BatchCreateClueDataRequest extends Model
     public $privateSeas;
 
     /**
+     * @description This parameter is required.
+     *
      * @example d124
      *
      * @var string

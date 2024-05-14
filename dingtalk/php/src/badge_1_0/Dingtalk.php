@@ -52,11 +52,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeCodeUserInstanceRequest $request
-     * @param CreateBadgeCodeUserInstanceHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 创建钉工牌码用户实例
+     *  *
+     * @param CreateBadgeCodeUserInstanceRequest $request CreateBadgeCodeUserInstanceRequest
+     * @param CreateBadgeCodeUserInstanceHeaders $headers CreateBadgeCodeUserInstanceHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateBadgeCodeUserInstanceResponse
+     * @return CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstanceResponse
      */
     public function createBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
     {
@@ -122,9 +124,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeCodeUserInstanceRequest $request
+     * @summary 创建钉工牌码用户实例
+     *  *
+     * @param CreateBadgeCodeUserInstanceRequest $request CreateBadgeCodeUserInstanceRequest
      *
-     * @return CreateBadgeCodeUserInstanceResponse
+     * @return CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstanceResponse
      */
     public function createBadgeCodeUserInstance($request)
     {
@@ -135,11 +139,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeNotifyRequest $request
-     * @param CreateBadgeNotifyHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 创建钉工牌通知消息
+     *  *
+     * @param CreateBadgeNotifyRequest $request CreateBadgeNotifyRequest
+     * @param CreateBadgeNotifyHeaders $headers CreateBadgeNotifyHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateBadgeNotifyResponse
+     * @return CreateBadgeNotifyResponse CreateBadgeNotifyResponse
      */
     public function createBadgeNotifyWithOptions($request, $headers, $runtime)
     {
@@ -184,9 +190,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeNotifyRequest $request
+     * @summary 创建钉工牌通知消息
+     *  *
+     * @param CreateBadgeNotifyRequest $request CreateBadgeNotifyRequest
      *
-     * @return CreateBadgeNotifyResponse
+     * @return CreateBadgeNotifyResponse CreateBadgeNotifyResponse
      */
     public function createBadgeNotify($request)
     {
@@ -197,11 +205,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DecodeBadgeCodeRequest $request
-     * @param DecodeBadgeCodeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 钉工牌解码
+     *  *
+     * @param DecodeBadgeCodeRequest $request DecodeBadgeCodeRequest
+     * @param DecodeBadgeCodeHeaders $headers DecodeBadgeCodeHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return DecodeBadgeCodeResponse
+     * @return DecodeBadgeCodeResponse DecodeBadgeCodeResponse
      */
     public function decodeBadgeCodeWithOptions($request, $headers, $runtime)
     {
@@ -240,9 +250,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DecodeBadgeCodeRequest $request
+     * @summary 钉工牌解码
+     *  *
+     * @param DecodeBadgeCodeRequest $request DecodeBadgeCodeRequest
      *
-     * @return DecodeBadgeCodeResponse
+     * @return DecodeBadgeCodeResponse DecodeBadgeCodeResponse
      */
     public function decodeBadgeCode($request)
     {
@@ -253,11 +265,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodePayResultRequest $request
-     * @param NotifyBadgeCodePayResultHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 通知钉工牌码付款结果
+     *  *
+     * @param NotifyBadgeCodePayResultRequest $request NotifyBadgeCodePayResultRequest
+     * @param NotifyBadgeCodePayResultHeaders $headers NotifyBadgeCodePayResultHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return NotifyBadgeCodePayResultResponse
+     * @return NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResultResponse
      */
     public function notifyBadgeCodePayResultWithOptions($request, $headers, $runtime)
     {
@@ -341,9 +355,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodePayResultRequest $request
+     * @summary 通知钉工牌码付款结果
+     *  *
+     * @param NotifyBadgeCodePayResultRequest $request NotifyBadgeCodePayResultRequest
      *
-     * @return NotifyBadgeCodePayResultResponse
+     * @return NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResultResponse
      */
     public function notifyBadgeCodePayResult($request)
     {
@@ -354,11 +370,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeRefundResultRequest $request
-     * @param NotifyBadgeCodeRefundResultHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 通知钉工牌码退款结果
+     *  *
+     * @param NotifyBadgeCodeRefundResultRequest $request NotifyBadgeCodeRefundResultRequest
+     * @param NotifyBadgeCodeRefundResultHeaders $headers NotifyBadgeCodeRefundResultHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return NotifyBadgeCodeRefundResultResponse
+     * @return NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResultResponse
      */
     public function notifyBadgeCodeRefundResultWithOptions($request, $headers, $runtime)
     {
@@ -421,9 +439,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeRefundResultRequest $request
+     * @summary 通知钉工牌码退款结果
+     *  *
+     * @param NotifyBadgeCodeRefundResultRequest $request NotifyBadgeCodeRefundResultRequest
      *
-     * @return NotifyBadgeCodeRefundResultResponse
+     * @return NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResultResponse
      */
     public function notifyBadgeCodeRefundResult($request)
     {
@@ -434,11 +454,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeVerifyResultRequest $request
-     * @param NotifyBadgeCodeVerifyResultHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 通知钉工牌码验证结果
+     *  *
+     * @param NotifyBadgeCodeVerifyResultRequest $request NotifyBadgeCodeVerifyResultRequest
+     * @param NotifyBadgeCodeVerifyResultHeaders $headers NotifyBadgeCodeVerifyResultHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return NotifyBadgeCodeVerifyResultResponse
+     * @return NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResultResponse
      */
     public function notifyBadgeCodeVerifyResultWithOptions($request, $headers, $runtime)
     {
@@ -501,9 +523,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeVerifyResultRequest $request
+     * @summary 通知钉工牌码验证结果
+     *  *
+     * @param NotifyBadgeCodeVerifyResultRequest $request NotifyBadgeCodeVerifyResultRequest
      *
-     * @return NotifyBadgeCodeVerifyResultResponse
+     * @return NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResultResponse
      */
     public function notifyBadgeCodeVerifyResult($request)
     {
@@ -514,11 +538,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveBadgeCodeCorpInstanceRequest $request
-     * @param SaveBadgeCodeCorpInstanceHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 保存钉工牌企业实例
+     *  *
+     * @param SaveBadgeCodeCorpInstanceRequest $request SaveBadgeCodeCorpInstanceRequest
+     * @param SaveBadgeCodeCorpInstanceHeaders $headers SaveBadgeCodeCorpInstanceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return SaveBadgeCodeCorpInstanceResponse
+     * @return SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstanceResponse
      */
     public function saveBadgeCodeCorpInstanceWithOptions($request, $headers, $runtime)
     {
@@ -563,9 +589,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveBadgeCodeCorpInstanceRequest $request
+     * @summary 保存钉工牌企业实例
+     *  *
+     * @param SaveBadgeCodeCorpInstanceRequest $request SaveBadgeCodeCorpInstanceRequest
      *
-     * @return SaveBadgeCodeCorpInstanceResponse
+     * @return SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstanceResponse
      */
     public function saveBadgeCodeCorpInstance($request)
     {
@@ -576,11 +604,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateBadgeCodeUserInstanceRequest $request
-     * @param UpdateBadgeCodeUserInstanceHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 更新钉工牌码用户实例
+     *  *
+     * @param UpdateBadgeCodeUserInstanceRequest $request UpdateBadgeCodeUserInstanceRequest
+     * @param UpdateBadgeCodeUserInstanceHeaders $headers UpdateBadgeCodeUserInstanceHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateBadgeCodeUserInstanceResponse
+     * @return UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstanceResponse
      */
     public function updateBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
     {
@@ -643,9 +673,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateBadgeCodeUserInstanceRequest $request
+     * @summary 更新钉工牌码用户实例
+     *  *
+     * @param UpdateBadgeCodeUserInstanceRequest $request UpdateBadgeCodeUserInstanceRequest
      *
-     * @return UpdateBadgeCodeUserInstanceResponse
+     * @return UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstanceResponse
      */
     public function updateBadgeCodeUserInstance($request)
     {

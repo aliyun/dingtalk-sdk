@@ -14,6 +14,8 @@ class AskRobotRequest extends Model
     public $dingUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小蜜机器人能做什么
      *
      * @var string
@@ -21,6 +23,8 @@ class AskRobotRequest extends Model
     public $question;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcd1234
      *
      * @var string

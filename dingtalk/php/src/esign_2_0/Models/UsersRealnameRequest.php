@@ -14,6 +14,8 @@ class UsersRealnameRequest extends Model
     public $redirectUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

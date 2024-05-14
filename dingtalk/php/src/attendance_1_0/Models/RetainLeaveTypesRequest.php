@@ -21,6 +21,8 @@ class RetainLeaveTypesRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CollegeListStudentInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example UNCHECKED
      *
      * @var string
@@ -21,6 +25,8 @@ class CollegeListStudentInfoRequest extends Model
     public $dingStudentStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -28,6 +34,8 @@ class CollegeListStudentInfoRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

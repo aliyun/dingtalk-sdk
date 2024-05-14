@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupSubAdminRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string
@@ -16,11 +18,15 @@ class UpdateGroupSubAdminRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $role;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

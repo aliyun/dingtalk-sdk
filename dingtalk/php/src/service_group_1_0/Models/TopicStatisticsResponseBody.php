@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class TopicStatisticsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var topicStatisticsRecords[]
      */
     public $topicStatisticsRecords;

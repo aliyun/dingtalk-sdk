@@ -16,6 +16,8 @@ class GetPrintAppInfoRequest extends Model
     public $nameLike;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

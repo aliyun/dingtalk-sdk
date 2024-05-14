@@ -17,6 +17,8 @@ class CreateIntegratedTaskRequest extends Model
     public $activityId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example tPr_FB_mT_xxxxxxxxx2hQ05201655306463
      *
      * @var string
@@ -24,6 +26,8 @@ class CreateIntegratedTaskRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var tasks[]
      */
     public $tasks;

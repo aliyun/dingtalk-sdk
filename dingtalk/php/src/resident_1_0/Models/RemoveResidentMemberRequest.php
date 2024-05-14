@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveResidentMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -16,6 +18,8 @@ class RemoveResidentMemberRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

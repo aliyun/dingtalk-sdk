@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12312
      *
      * @var int
@@ -18,6 +20,8 @@ class body extends Model
     public $bizTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example uk123
      *
      * @var string
@@ -32,16 +36,22 @@ class body extends Model
     public $entityCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fieldList[]
      */
     public $fieldList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string

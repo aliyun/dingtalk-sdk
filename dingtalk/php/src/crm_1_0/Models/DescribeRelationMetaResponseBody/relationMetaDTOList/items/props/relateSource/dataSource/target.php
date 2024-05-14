@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class target extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formCode;

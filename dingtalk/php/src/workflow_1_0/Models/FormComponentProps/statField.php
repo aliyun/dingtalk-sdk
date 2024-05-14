@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class statField extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example NumberField-abcd
      *
      * @var string
@@ -16,6 +18,8 @@ class statField extends Model
     public $componentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 金额
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ActivateDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fafdfa-rewerwr-rewew-rwe
      *
      * @var string
@@ -16,6 +18,8 @@ class ActivateDeviceRequest extends Model
     public $licenseKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example model1
      *
      * @var string
@@ -23,6 +27,8 @@ class ActivateDeviceRequest extends Model
     public $model;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 三年级一班班牌
      *
      * @var string
@@ -30,6 +36,8 @@ class ActivateDeviceRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ujoo-233
      *
      * @var string
@@ -37,6 +45,8 @@ class ActivateDeviceRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO_CALL
      *
      * @var string

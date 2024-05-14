@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class ListPermissionsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var outMembers[]
      */
     public $outMembers;

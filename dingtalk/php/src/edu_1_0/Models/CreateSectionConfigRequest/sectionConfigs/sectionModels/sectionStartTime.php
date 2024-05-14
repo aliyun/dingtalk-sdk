@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class sectionStartTime extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 11
      *
      * @var int
@@ -16,6 +18,8 @@ class sectionStartTime extends Model
     public $hour;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

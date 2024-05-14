@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryRelationDatasByTargetIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string

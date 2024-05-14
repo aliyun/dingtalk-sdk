@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class CreateFlashMeetingResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $flashMeetingKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;

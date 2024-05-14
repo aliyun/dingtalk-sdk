@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetMediaCerficateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example D:\****.mp4
      *
      * @var string
@@ -16,6 +18,8 @@ class GetMediaCerficateRequest extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 87712****6723412
      *
      * @var string
@@ -37,6 +41,8 @@ class GetMediaCerficateRequest extends Model
     public $mediaIntroduction;
 
     /**
+     * @description This parameter is required.
+     *
      * @example UploadTest
      *
      * @var string
@@ -51,6 +57,8 @@ class GetMediaCerficateRequest extends Model
     public $thumbUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example edb2*****1090b66
      *
      * @var string

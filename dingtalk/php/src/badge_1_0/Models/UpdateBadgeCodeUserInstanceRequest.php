@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateBadgeCodeUserInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var availableTimes[]
      */
     public $availableTimes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ccodexxxxx
      *
      * @var string
@@ -22,6 +26,8 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
     public $codeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TEST
      *
      * @var string
@@ -34,6 +40,8 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
     public $codeValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example corpIdxxxx
      *
      * @var string
@@ -41,11 +49,15 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtExpired;
@@ -58,6 +70,8 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INTERNAL_STAFF
      *
      * @var string
@@ -65,6 +79,8 @@ class UpdateBadgeCodeUserInstanceRequest extends Model
     public $userCorpRelationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 86-xxxxxx
      *
      * @var string

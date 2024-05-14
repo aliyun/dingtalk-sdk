@@ -15,6 +15,8 @@ class BatchCreateCustomerRequest extends Model
     public $createCustomerRequestList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 55001121
      *
      * @var string

@@ -207,12 +207,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加评论
+     *  *
      * @param string            $docId
-     * @param AddCommentRequest $request
-     * @param AddCommentHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param AddCommentRequest $request AddCommentRequest
+     * @param AddCommentHeaders $headers AddCommentHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddCommentResponse
+     * @return AddCommentResponse AddCommentResponse
      */
     public function addCommentWithOptions($docId, $request, $headers, $runtime)
     {
@@ -259,10 +261,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加评论
+     *  *
      * @param string            $docId
-     * @param AddCommentRequest $request
+     * @param AddCommentRequest $request AddCommentRequest
      *
-     * @return AddCommentResponse
+     * @return AddCommentResponse AddCommentResponse
      */
     public function addComment($docId, $request)
     {
@@ -273,13 +277,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加知识库文档成员
+     *  *
      * @param string                        $workspaceId
      * @param string                        $nodeId
-     * @param AddWorkspaceDocMembersRequest $request
-     * @param AddWorkspaceDocMembersHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param AddWorkspaceDocMembersRequest $request     AddWorkspaceDocMembersRequest
+     * @param AddWorkspaceDocMembersHeaders $headers     AddWorkspaceDocMembersHeaders
+     * @param RuntimeOptions                $runtime     runtime options for this request RuntimeOptions
      *
-     * @return AddWorkspaceDocMembersResponse
+     * @return AddWorkspaceDocMembersResponse AddWorkspaceDocMembersResponse
      */
     public function addWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
@@ -318,11 +324,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加知识库文档成员
+     *  *
      * @param string                        $workspaceId
      * @param string                        $nodeId
-     * @param AddWorkspaceDocMembersRequest $request
+     * @param AddWorkspaceDocMembersRequest $request     AddWorkspaceDocMembersRequest
      *
-     * @return AddWorkspaceDocMembersResponse
+     * @return AddWorkspaceDocMembersResponse AddWorkspaceDocMembersResponse
      */
     public function addWorkspaceDocMembers($workspaceId, $nodeId, $request)
     {
@@ -333,12 +341,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加知识库成员
+     *  *
      * @param string                     $workspaceId
-     * @param AddWorkspaceMembersRequest $request
-     * @param AddWorkspaceMembersHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param AddWorkspaceMembersRequest $request     AddWorkspaceMembersRequest
+     * @param AddWorkspaceMembersHeaders $headers     AddWorkspaceMembersHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
      *
-     * @return AddWorkspaceMembersResponse
+     * @return AddWorkspaceMembersResponse AddWorkspaceMembersResponse
      */
     public function addWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
@@ -377,10 +387,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加知识库成员
+     *  *
      * @param string                     $workspaceId
-     * @param AddWorkspaceMembersRequest $request
+     * @param AddWorkspaceMembersRequest $request     AddWorkspaceMembersRequest
      *
-     * @return AddWorkspaceMembersResponse
+     * @return AddWorkspaceMembersResponse AddWorkspaceMembersResponse
      */
     public function addWorkspaceMembers($workspaceId, $request)
     {
@@ -391,13 +403,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 追加行
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
-     * @param AppendRowsRequest $request
-     * @param AppendRowsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param AppendRowsRequest $request    AppendRowsRequest
+     * @param AppendRowsHeaders $headers    AppendRowsHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
      *
-     * @return AppendRowsResponse
+     * @return AppendRowsResponse AppendRowsResponse
      */
     public function appendRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -438,11 +452,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 追加行
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
-     * @param AppendRowsRequest $request
+     * @param AppendRowsRequest $request    AppendRowsRequest
      *
-     * @return AppendRowsResponse
+     * @return AppendRowsResponse AppendRowsResponse
      */
     public function appendRows($workbookId, $sheetId, $request)
     {
@@ -453,12 +469,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 批量执行表格操作
+     *  *
      * @param string         $workbookId
-     * @param BatchRequest   $request
-     * @param BatchHeaders   $headers
-     * @param RuntimeOptions $runtime
+     * @param BatchRequest   $request    BatchRequest
+     * @param BatchHeaders   $headers    BatchHeaders
+     * @param RuntimeOptions $runtime    runtime options for this request RuntimeOptions
      *
-     * @return BatchResponse
+     * @return BatchResponse BatchResponse
      */
     public function batchWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -499,10 +517,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 批量执行表格操作
+     *  *
      * @param string       $workbookId
-     * @param BatchRequest $request
+     * @param BatchRequest $request    BatchRequest
      *
-     * @return BatchResponse
+     * @return BatchResponse BatchResponse
      */
     public function batch($workbookId, $request)
     {
@@ -513,11 +533,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchGetWorkspaceDocsRequest $request
-     * @param BatchGetWorkspaceDocsHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 批量查询知识库文档
+     *  *
+     * @param BatchGetWorkspaceDocsRequest $request BatchGetWorkspaceDocsRequest
+     * @param BatchGetWorkspaceDocsHeaders $headers BatchGetWorkspaceDocsHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchGetWorkspaceDocsResponse
+     * @return BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocsResponse
      */
     public function batchGetWorkspaceDocsWithOptions($request, $headers, $runtime)
     {
@@ -556,9 +578,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchGetWorkspaceDocsRequest $request
+     * @summary 批量查询知识库文档
+     *  *
+     * @param BatchGetWorkspaceDocsRequest $request BatchGetWorkspaceDocsRequest
      *
-     * @return BatchGetWorkspaceDocsResponse
+     * @return BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocsResponse
      */
     public function batchGetWorkspaceDocs($request)
     {
@@ -569,11 +593,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchGetWorkspacesRequest $request
-     * @param BatchGetWorkspacesHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 知识库批量查询
+     *  *
+     * @param BatchGetWorkspacesRequest $request BatchGetWorkspacesRequest
+     * @param BatchGetWorkspacesHeaders $headers BatchGetWorkspacesHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchGetWorkspacesResponse
+     * @return BatchGetWorkspacesResponse BatchGetWorkspacesResponse
      */
     public function batchGetWorkspacesWithOptions($request, $headers, $runtime)
     {
@@ -615,9 +641,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchGetWorkspacesRequest $request
+     * @summary 知识库批量查询
+     *  *
+     * @param BatchGetWorkspacesRequest $request BatchGetWorkspacesRequest
      *
-     * @return BatchGetWorkspacesResponse
+     * @return BatchGetWorkspacesResponse BatchGetWorkspacesResponse
      */
     public function batchGetWorkspaces($request)
     {
@@ -628,12 +656,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关联文档酷应用到表格
+     *  *
      * @param string                    $workbookId
-     * @param BindCoolAppToSheetRequest $request
-     * @param BindCoolAppToSheetHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param BindCoolAppToSheetRequest $request    BindCoolAppToSheetRequest
+     * @param BindCoolAppToSheetHeaders $headers    BindCoolAppToSheetHeaders
+     * @param RuntimeOptions            $runtime    runtime options for this request RuntimeOptions
      *
-     * @return BindCoolAppToSheetResponse
+     * @return BindCoolAppToSheetResponse BindCoolAppToSheetResponse
      */
     public function bindCoolAppToSheetWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -674,10 +704,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 关联文档酷应用到表格
+     *  *
      * @param string                    $workbookId
-     * @param BindCoolAppToSheetRequest $request
+     * @param BindCoolAppToSheetRequest $request    BindCoolAppToSheetRequest
      *
-     * @return BindCoolAppToSheetResponse
+     * @return BindCoolAppToSheetResponse BindCoolAppToSheetResponse
      */
     public function bindCoolAppToSheet($workbookId, $request)
     {
@@ -688,14 +720,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 清除单元格区域内所有内容
+     *  *
      * @param string         $workbookId
      * @param string         $sheetId
      * @param string         $rangeAddress
-     * @param ClearRequest   $request
-     * @param ClearHeaders   $headers
-     * @param RuntimeOptions $runtime
+     * @param ClearRequest   $request      ClearRequest
+     * @param ClearHeaders   $headers      ClearHeaders
+     * @param RuntimeOptions $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ClearResponse
+     * @return ClearResponse ClearResponse
      */
     public function clearWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -731,12 +765,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 清除单元格区域内所有内容
+     *  *
      * @param string       $workbookId
      * @param string       $sheetId
      * @param string       $rangeAddress
-     * @param ClearRequest $request
+     * @param ClearRequest $request      ClearRequest
      *
-     * @return ClearResponse
+     * @return ClearResponse ClearResponse
      */
     public function clear($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -747,14 +783,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 清除单元格区域内数据
+     *  *
      * @param string           $workbookId
      * @param string           $sheetId
      * @param string           $rangeAddress
-     * @param ClearDataRequest $request
-     * @param ClearDataHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param ClearDataRequest $request      ClearDataRequest
+     * @param ClearDataHeaders $headers      ClearDataHeaders
+     * @param RuntimeOptions   $runtime      runtime options for this request RuntimeOptions
      *
-     * @return ClearDataResponse
+     * @return ClearDataResponse ClearDataResponse
      */
     public function clearDataWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -790,12 +828,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 清除单元格区域内数据
+     *  *
      * @param string           $workbookId
      * @param string           $sheetId
      * @param string           $rangeAddress
-     * @param ClearDataRequest $request
+     * @param ClearDataRequest $request      ClearDataRequest
      *
-     * @return ClearDataResponse
+     * @return ClearDataResponse ClearDataResponse
      */
     public function clearData($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -806,13 +846,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建条件格式
+     *  *
      * @param string                                 $workbookId
      * @param string                                 $sheetId
-     * @param CreateConditionalFormattingRuleRequest $request
-     * @param CreateConditionalFormattingRuleHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param CreateConditionalFormattingRuleRequest $request    CreateConditionalFormattingRuleRequest
+     * @param CreateConditionalFormattingRuleHeaders $headers    CreateConditionalFormattingRuleHeaders
+     * @param RuntimeOptions                         $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateConditionalFormattingRuleResponse
+     * @return CreateConditionalFormattingRuleResponse CreateConditionalFormattingRuleResponse
      */
     public function createConditionalFormattingRuleWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -859,11 +901,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建条件格式
+     *  *
      * @param string                                 $workbookId
      * @param string                                 $sheetId
-     * @param CreateConditionalFormattingRuleRequest $request
+     * @param CreateConditionalFormattingRuleRequest $request    CreateConditionalFormattingRuleRequest
      *
-     * @return CreateConditionalFormattingRuleResponse
+     * @return CreateConditionalFormattingRuleResponse CreateConditionalFormattingRuleResponse
      */
     public function createConditionalFormattingRule($workbookId, $sheetId, $request)
     {
@@ -874,12 +918,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建开发者元数据
+     *  *
      * @param string                         $workbookId
-     * @param CreateDeveloperMetadataRequest $request
-     * @param CreateDeveloperMetadataHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param CreateDeveloperMetadataRequest $request    CreateDeveloperMetadataRequest
+     * @param CreateDeveloperMetadataHeaders $headers    CreateDeveloperMetadataHeaders
+     * @param RuntimeOptions                 $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateDeveloperMetadataResponse
+     * @return CreateDeveloperMetadataResponse CreateDeveloperMetadataResponse
      */
     public function createDeveloperMetadataWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -926,10 +972,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建开发者元数据
+     *  *
      * @param string                         $workbookId
-     * @param CreateDeveloperMetadataRequest $request
+     * @param CreateDeveloperMetadataRequest $request    CreateDeveloperMetadataRequest
      *
-     * @return CreateDeveloperMetadataResponse
+     * @return CreateDeveloperMetadataResponse CreateDeveloperMetadataResponse
      */
     public function createDeveloperMetadata($workbookId, $request)
     {
@@ -940,14 +988,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建单元格锁定
+     *  *
      * @param string                       $workbookId
      * @param string                       $sheetId
      * @param string                       $rangeAddress
-     * @param CreateRangeProtectionRequest $request
-     * @param CreateRangeProtectionHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param CreateRangeProtectionRequest $request      CreateRangeProtectionRequest
+     * @param CreateRangeProtectionHeaders $headers      CreateRangeProtectionHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
      *
-     * @return CreateRangeProtectionResponse
+     * @return CreateRangeProtectionResponse CreateRangeProtectionResponse
      */
     public function createRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -991,12 +1041,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建单元格锁定
+     *  *
      * @param string                       $workbookId
      * @param string                       $sheetId
      * @param string                       $rangeAddress
-     * @param CreateRangeProtectionRequest $request
+     * @param CreateRangeProtectionRequest $request      CreateRangeProtectionRequest
      *
-     * @return CreateRangeProtectionResponse
+     * @return CreateRangeProtectionResponse CreateRangeProtectionResponse
      */
     public function createRangeProtection($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -1007,12 +1059,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建工作表
+     *  *
      * @param string             $workbookId
-     * @param CreateSheetRequest $request
-     * @param CreateSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateSheetRequest $request    CreateSheetRequest
+     * @param CreateSheetHeaders $headers    CreateSheetHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return CreateSheetResponse
+     * @return CreateSheetResponse CreateSheetResponse
      */
     public function createSheetWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -1053,10 +1107,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建工作表
+     *  *
      * @param string             $workbookId
-     * @param CreateSheetRequest $request
+     * @param CreateSheetRequest $request    CreateSheetRequest
      *
-     * @return CreateSheetResponse
+     * @return CreateSheetResponse CreateSheetResponse
      */
     public function createSheet($workbookId, $request)
     {
@@ -1067,11 +1123,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateWorkspaceRequest $request
-     * @param CreateWorkspaceHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 新建知识库
+     *  *
+     * @param CreateWorkspaceRequest $request CreateWorkspaceRequest
+     * @param CreateWorkspaceHeaders $headers CreateWorkspaceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateWorkspaceResponse
+     * @return CreateWorkspaceResponse CreateWorkspaceResponse
      */
     public function createWorkspaceWithOptions($request, $headers, $runtime)
     {
@@ -1113,9 +1171,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateWorkspaceRequest $request
+     * @summary 新建知识库
+     *  *
+     * @param CreateWorkspaceRequest $request CreateWorkspaceRequest
      *
-     * @return CreateWorkspaceResponse
+     * @return CreateWorkspaceResponse CreateWorkspaceResponse
      */
     public function createWorkspace($request)
     {
@@ -1126,12 +1186,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建知识库文档
+     *  *
      * @param string                    $workspaceId
-     * @param CreateWorkspaceDocRequest $request
-     * @param CreateWorkspaceDocHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param CreateWorkspaceDocRequest $request     CreateWorkspaceDocRequest
+     * @param CreateWorkspaceDocHeaders $headers     CreateWorkspaceDocHeaders
+     * @param RuntimeOptions            $runtime     runtime options for this request RuntimeOptions
      *
-     * @return CreateWorkspaceDocResponse
+     * @return CreateWorkspaceDocResponse CreateWorkspaceDocResponse
      */
     public function createWorkspaceDocWithOptions($workspaceId, $request, $headers, $runtime)
     {
@@ -1182,10 +1244,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建知识库文档
+     *  *
      * @param string                    $workspaceId
-     * @param CreateWorkspaceDocRequest $request
+     * @param CreateWorkspaceDocRequest $request     CreateWorkspaceDocRequest
      *
-     * @return CreateWorkspaceDocResponse
+     * @return CreateWorkspaceDocResponse CreateWorkspaceDocResponse
      */
     public function createWorkspaceDoc($workspaceId, $request)
     {
@@ -1196,13 +1260,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除列
+     *  *
      * @param string               $workbookId
      * @param string               $sheetId
-     * @param DeleteColumnsRequest $request
-     * @param DeleteColumnsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param DeleteColumnsRequest $request    DeleteColumnsRequest
+     * @param DeleteColumnsHeaders $headers    DeleteColumnsHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteColumnsResponse
+     * @return DeleteColumnsResponse DeleteColumnsResponse
      */
     public function deleteColumnsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -1246,11 +1312,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除列
+     *  *
      * @param string               $workbookId
      * @param string               $sheetId
-     * @param DeleteColumnsRequest $request
+     * @param DeleteColumnsRequest $request    DeleteColumnsRequest
      *
-     * @return DeleteColumnsResponse
+     * @return DeleteColumnsResponse DeleteColumnsResponse
      */
     public function deleteColumns($workbookId, $sheetId, $request)
     {
@@ -1261,14 +1329,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除下拉列表
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
      * @param string                     $rangeAddress
-     * @param DeleteDropdownListsRequest $request
-     * @param DeleteDropdownListsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param DeleteDropdownListsRequest $request      DeleteDropdownListsRequest
+     * @param DeleteDropdownListsHeaders $headers      DeleteDropdownListsHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
      *
-     * @return DeleteDropdownListsResponse
+     * @return DeleteDropdownListsResponse DeleteDropdownListsResponse
      */
     public function deleteDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -1304,12 +1374,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除下拉列表
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
      * @param string                     $rangeAddress
-     * @param DeleteDropdownListsRequest $request
+     * @param DeleteDropdownListsRequest $request      DeleteDropdownListsRequest
      *
-     * @return DeleteDropdownListsResponse
+     * @return DeleteDropdownListsResponse DeleteDropdownListsResponse
      */
     public function deleteDropdownLists($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -1320,15 +1392,17 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除单元格锁定
+     *  *
      * @param string                       $workbookId
      * @param string                       $sheetId
      * @param string                       $rangeAddress
      * @param string                       $protectionId
-     * @param DeleteRangeProtectionRequest $request
-     * @param DeleteRangeProtectionHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param DeleteRangeProtectionRequest $request      DeleteRangeProtectionRequest
+     * @param DeleteRangeProtectionHeaders $headers      DeleteRangeProtectionHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
      *
-     * @return DeleteRangeProtectionResponse
+     * @return DeleteRangeProtectionResponse DeleteRangeProtectionResponse
      */
     public function deleteRangeProtectionWithOptions($workbookId, $sheetId, $rangeAddress, $protectionId, $request, $headers, $runtime)
     {
@@ -1364,13 +1438,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除单元格锁定
+     *  *
      * @param string                       $workbookId
      * @param string                       $sheetId
      * @param string                       $rangeAddress
      * @param string                       $protectionId
-     * @param DeleteRangeProtectionRequest $request
+     * @param DeleteRangeProtectionRequest $request      DeleteRangeProtectionRequest
      *
-     * @return DeleteRangeProtectionResponse
+     * @return DeleteRangeProtectionResponse DeleteRangeProtectionResponse
      */
     public function deleteRangeProtection($workbookId, $sheetId, $rangeAddress, $protectionId, $request)
     {
@@ -1381,13 +1457,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除行
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
-     * @param DeleteRowsRequest $request
-     * @param DeleteRowsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param DeleteRowsRequest $request    DeleteRowsRequest
+     * @param DeleteRowsHeaders $headers    DeleteRowsHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteRowsResponse
+     * @return DeleteRowsResponse DeleteRowsResponse
      */
     public function deleteRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -1431,11 +1509,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除行
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
-     * @param DeleteRowsRequest $request
+     * @param DeleteRowsRequest $request    DeleteRowsRequest
      *
-     * @return DeleteRowsResponse
+     * @return DeleteRowsResponse DeleteRowsResponse
      */
     public function deleteRows($workbookId, $sheetId, $request)
     {
@@ -1446,13 +1526,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除工作表
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
-     * @param DeleteSheetRequest $request
-     * @param DeleteSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param DeleteSheetRequest $request    DeleteSheetRequest
+     * @param DeleteSheetHeaders $headers    DeleteSheetHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeleteSheetResponse
+     * @return DeleteSheetResponse DeleteSheetResponse
      */
     public function deleteSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -1488,11 +1570,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除工作表
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
-     * @param DeleteSheetRequest $request
+     * @param DeleteSheetRequest $request    DeleteSheetRequest
      *
-     * @return DeleteSheetResponse
+     * @return DeleteSheetResponse DeleteSheetResponse
      */
     public function deleteSheet($workbookId, $sheetId, $request)
     {
@@ -1503,13 +1587,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库文档
+     *  *
      * @param string                    $workspaceId
      * @param string                    $nodeId
-     * @param DeleteWorkspaceDocRequest $request
-     * @param DeleteWorkspaceDocHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param DeleteWorkspaceDocRequest $request     DeleteWorkspaceDocRequest
+     * @param DeleteWorkspaceDocHeaders $headers     DeleteWorkspaceDocHeaders
+     * @param RuntimeOptions            $runtime     runtime options for this request RuntimeOptions
      *
-     * @return DeleteWorkspaceDocResponse
+     * @return DeleteWorkspaceDocResponse DeleteWorkspaceDocResponse
      */
     public function deleteWorkspaceDocWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
@@ -1545,11 +1631,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库文档
+     *  *
      * @param string                    $workspaceId
      * @param string                    $nodeId
-     * @param DeleteWorkspaceDocRequest $request
+     * @param DeleteWorkspaceDocRequest $request     DeleteWorkspaceDocRequest
      *
-     * @return DeleteWorkspaceDocResponse
+     * @return DeleteWorkspaceDocResponse DeleteWorkspaceDocResponse
      */
     public function deleteWorkspaceDoc($workspaceId, $nodeId, $request)
     {
@@ -1560,13 +1648,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库文档成员
+     *  *
      * @param string                           $workspaceId
      * @param string                           $nodeId
-     * @param DeleteWorkspaceDocMembersRequest $request
-     * @param DeleteWorkspaceDocMembersHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param DeleteWorkspaceDocMembersRequest $request     DeleteWorkspaceDocMembersRequest
+     * @param DeleteWorkspaceDocMembersHeaders $headers     DeleteWorkspaceDocMembersHeaders
+     * @param RuntimeOptions                   $runtime     runtime options for this request RuntimeOptions
      *
-     * @return DeleteWorkspaceDocMembersResponse
+     * @return DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembersResponse
      */
     public function deleteWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
@@ -1605,11 +1695,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库文档成员
+     *  *
      * @param string                           $workspaceId
      * @param string                           $nodeId
-     * @param DeleteWorkspaceDocMembersRequest $request
+     * @param DeleteWorkspaceDocMembersRequest $request     DeleteWorkspaceDocMembersRequest
      *
-     * @return DeleteWorkspaceDocMembersResponse
+     * @return DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembersResponse
      */
     public function deleteWorkspaceDocMembers($workspaceId, $nodeId, $request)
     {
@@ -1620,12 +1712,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库成员
+     *  *
      * @param string                        $workspaceId
-     * @param DeleteWorkspaceMembersRequest $request
-     * @param DeleteWorkspaceMembersHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param DeleteWorkspaceMembersRequest $request     DeleteWorkspaceMembersRequest
+     * @param DeleteWorkspaceMembersHeaders $headers     DeleteWorkspaceMembersHeaders
+     * @param RuntimeOptions                $runtime     runtime options for this request RuntimeOptions
      *
-     * @return DeleteWorkspaceMembersResponse
+     * @return DeleteWorkspaceMembersResponse DeleteWorkspaceMembersResponse
      */
     public function deleteWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
@@ -1664,10 +1758,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识库成员
+     *  *
      * @param string                        $workspaceId
-     * @param DeleteWorkspaceMembersRequest $request
+     * @param DeleteWorkspaceMembersRequest $request     DeleteWorkspaceMembersRequest
      *
-     * @return DeleteWorkspaceMembersResponse
+     * @return DeleteWorkspaceMembersResponse DeleteWorkspaceMembersResponse
      */
     public function deleteWorkspaceMembers($workspaceId, $request)
     {
@@ -1678,13 +1774,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 追加指定段落元素
+     *  *
      * @param string                    $docKey
      * @param string                    $blockId
-     * @param DocAppendParagraphRequest $request
-     * @param DocAppendParagraphHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param DocAppendParagraphRequest $request DocAppendParagraphRequest
+     * @param DocAppendParagraphHeaders $headers DocAppendParagraphHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocAppendParagraphResponse
+     * @return DocAppendParagraphResponse DocAppendParagraphResponse
      */
     public function docAppendParagraphWithOptions($docKey, $blockId, $request, $headers, $runtime)
     {
@@ -1728,11 +1826,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 追加指定段落元素
+     *  *
      * @param string                    $docKey
      * @param string                    $blockId
-     * @param DocAppendParagraphRequest $request
+     * @param DocAppendParagraphRequest $request DocAppendParagraphRequest
      *
-     * @return DocAppendParagraphResponse
+     * @return DocAppendParagraphResponse DocAppendParagraphResponse
      */
     public function docAppendParagraph($docKey, $blockId, $request)
     {
@@ -1743,13 +1843,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在段落后追加文本
+     *  *
      * @param string               $docKey
      * @param string               $blockId
-     * @param DocAppendTextRequest $request
-     * @param DocAppendTextHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param DocAppendTextRequest $request DocAppendTextRequest
+     * @param DocAppendTextHeaders $headers DocAppendTextHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocAppendTextResponse
+     * @return DocAppendTextResponse DocAppendTextResponse
      */
     public function docAppendTextWithOptions($docKey, $blockId, $request, $headers, $runtime)
     {
@@ -1790,11 +1892,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 在段落后追加文本
+     *  *
      * @param string               $docKey
      * @param string               $blockId
-     * @param DocAppendTextRequest $request
+     * @param DocAppendTextRequest $request DocAppendTextRequest
      *
-     * @return DocAppendTextResponse
+     * @return DocAppendTextResponse DocAppendTextResponse
      */
     public function docAppendText($docKey, $blockId, $request)
     {
@@ -1805,12 +1909,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询指定Block元素
+     *  *
      * @param string                $docKey
-     * @param DocBlocksQueryRequest $request
-     * @param DocBlocksQueryHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DocBlocksQueryRequest $request DocBlocksQueryRequest
+     * @param DocBlocksQueryHeaders $headers DocBlocksQueryHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocBlocksQueryResponse
+     * @return DocBlocksQueryResponse DocBlocksQueryResponse
      */
     public function docBlocksQueryWithOptions($docKey, $request, $headers, $runtime)
     {
@@ -1855,10 +1961,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询指定Block元素
+     *  *
      * @param string                $docKey
-     * @param DocBlocksQueryRequest $request
+     * @param DocBlocksQueryRequest $request DocBlocksQueryRequest
      *
-     * @return DocBlocksQueryResponse
+     * @return DocBlocksQueryResponse DocBlocksQueryResponse
      */
     public function docBlocksQuery($docKey, $request)
     {
@@ -1869,13 +1977,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定位置的 Block
+     *  *
      * @param string                $docKey
      * @param string                $blockId
-     * @param DocDeleteBlockRequest $request
-     * @param DocDeleteBlockHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DocDeleteBlockRequest $request DocDeleteBlockRequest
+     * @param DocDeleteBlockHeaders $headers DocDeleteBlockHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocDeleteBlockResponse
+     * @return DocDeleteBlockResponse DocDeleteBlockResponse
      */
     public function docDeleteBlockWithOptions($docKey, $blockId, $request, $headers, $runtime)
     {
@@ -1911,11 +2021,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除指定位置的 Block
+     *  *
      * @param string                $docKey
      * @param string                $blockId
-     * @param DocDeleteBlockRequest $request
+     * @param DocDeleteBlockRequest $request DocDeleteBlockRequest
      *
-     * @return DocDeleteBlockResponse
+     * @return DocDeleteBlockResponse DocDeleteBlockResponse
      */
     public function docDeleteBlock($docKey, $blockId, $request)
     {
@@ -1926,12 +2038,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 插入指定Block元素
+     *  *
      * @param string                 $docKey
-     * @param DocInsertBlocksRequest $request
-     * @param DocInsertBlocksHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param DocInsertBlocksRequest $request DocInsertBlocksRequest
+     * @param DocInsertBlocksHeaders $headers DocInsertBlocksHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocInsertBlocksResponse
+     * @return DocInsertBlocksResponse DocInsertBlocksResponse
      */
     public function docInsertBlocksWithOptions($docKey, $request, $headers, $runtime)
     {
@@ -1981,10 +2095,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 插入指定Block元素
+     *  *
      * @param string                 $docKey
-     * @param DocInsertBlocksRequest $request
+     * @param DocInsertBlocksRequest $request DocInsertBlocksRequest
      *
-     * @return DocInsertBlocksResponse
+     * @return DocInsertBlocksResponse DocInsertBlocksResponse
      */
     public function docInsertBlocks($docKey, $request)
     {
@@ -1995,12 +2111,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 覆写全文
+     *  *
      * @param string                  $docKey
-     * @param DocUpdateContentRequest $request
-     * @param DocUpdateContentHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param DocUpdateContentRequest $request DocUpdateContentRequest
+     * @param DocUpdateContentHeaders $headers DocUpdateContentHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return DocUpdateContentResponse
+     * @return DocUpdateContentResponse DocUpdateContentResponse
      */
     public function docUpdateContentWithOptions($docKey, $request, $headers, $runtime)
     {
@@ -2044,10 +2162,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 覆写全文
+     *  *
      * @param string                  $docKey
-     * @param DocUpdateContentRequest $request
+     * @param DocUpdateContentRequest $request DocUpdateContentRequest
      *
-     * @return DocUpdateContentResponse
+     * @return DocUpdateContentResponse DocUpdateContentResponse
      */
     public function docUpdateContent($docKey, $request)
     {
@@ -2058,12 +2178,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有工作表
+     *  *
      * @param string              $workbookId
-     * @param GetAllSheetsRequest $request
-     * @param GetAllSheetsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetAllSheetsRequest $request    GetAllSheetsRequest
+     * @param GetAllSheetsHeaders $headers    GetAllSheetsHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetAllSheetsResponse
+     * @return GetAllSheetsResponse GetAllSheetsResponse
      */
     public function getAllSheetsWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -2099,10 +2221,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取所有工作表
+     *  *
      * @param string              $workbookId
-     * @param GetAllSheetsRequest $request
+     * @param GetAllSheetsRequest $request    GetAllSheetsRequest
      *
-     * @return GetAllSheetsResponse
+     * @return GetAllSheetsResponse GetAllSheetsResponse
      */
     public function getAllSheets($workbookId, $request)
     {
@@ -2113,13 +2237,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取开发者元数据
+     *  *
      * @param string                      $workbookId
      * @param string                      $developerMetadataId
-     * @param GetDeveloperMetadataRequest $request
-     * @param GetDeveloperMetadataHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetDeveloperMetadataRequest $request             GetDeveloperMetadataRequest
+     * @param GetDeveloperMetadataHeaders $headers             GetDeveloperMetadataHeaders
+     * @param RuntimeOptions              $runtime             runtime options for this request RuntimeOptions
      *
-     * @return GetDeveloperMetadataResponse
+     * @return GetDeveloperMetadataResponse GetDeveloperMetadataResponse
      */
     public function getDeveloperMetadataWithOptions($workbookId, $developerMetadataId, $request, $headers, $runtime)
     {
@@ -2155,11 +2281,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取开发者元数据
+     *  *
      * @param string                      $workbookId
      * @param string                      $developerMetadataId
-     * @param GetDeveloperMetadataRequest $request
+     * @param GetDeveloperMetadataRequest $request             GetDeveloperMetadataRequest
      *
-     * @return GetDeveloperMetadataResponse
+     * @return GetDeveloperMetadataResponse GetDeveloperMetadataResponse
      */
     public function getDeveloperMetadata($workbookId, $developerMetadataId, $request)
     {
@@ -2170,14 +2298,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取单元格区域
+     *  *
      * @param string          $workbookId
      * @param string          $sheetId
      * @param string          $rangeAddress
-     * @param GetRangeRequest $request
-     * @param GetRangeHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetRangeRequest $request      GetRangeRequest
+     * @param GetRangeHeaders $headers      GetRangeHeaders
+     * @param RuntimeOptions  $runtime      runtime options for this request RuntimeOptions
      *
-     * @return GetRangeResponse
+     * @return GetRangeResponse GetRangeResponse
      */
     public function getRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -2216,12 +2346,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取单元格区域
+     *  *
      * @param string          $workbookId
      * @param string          $sheetId
      * @param string          $rangeAddress
-     * @param GetRangeRequest $request
+     * @param GetRangeRequest $request      GetRangeRequest
      *
-     * @return GetRangeResponse
+     * @return GetRangeResponse GetRangeResponse
      */
     public function getRange($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -2232,11 +2364,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRecentEditDocsRequest $request
-     * @param GetRecentEditDocsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取最近编辑文档
+     *  *
+     * @param GetRecentEditDocsRequest $request GetRecentEditDocsRequest
+     * @param GetRecentEditDocsHeaders $headers GetRecentEditDocsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRecentEditDocsResponse
+     * @return GetRecentEditDocsResponse GetRecentEditDocsResponse
      */
     public function getRecentEditDocsWithOptions($request, $headers, $runtime)
     {
@@ -2278,9 +2412,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRecentEditDocsRequest $request
+     * @summary 获取最近编辑文档
+     *  *
+     * @param GetRecentEditDocsRequest $request GetRecentEditDocsRequest
      *
-     * @return GetRecentEditDocsResponse
+     * @return GetRecentEditDocsResponse GetRecentEditDocsResponse
      */
     public function getRecentEditDocs($request)
     {
@@ -2291,11 +2427,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRecentOpenDocsRequest $request
-     * @param GetRecentOpenDocsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取最近打开文档
+     *  *
+     * @param GetRecentOpenDocsRequest $request GetRecentOpenDocsRequest
+     * @param GetRecentOpenDocsHeaders $headers GetRecentOpenDocsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRecentOpenDocsResponse
+     * @return GetRecentOpenDocsResponse GetRecentOpenDocsResponse
      */
     public function getRecentOpenDocsWithOptions($request, $headers, $runtime)
     {
@@ -2337,9 +2475,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRecentOpenDocsRequest $request
+     * @summary 获取最近打开文档
+     *  *
+     * @param GetRecentOpenDocsRequest $request GetRecentOpenDocsRequest
      *
-     * @return GetRecentOpenDocsResponse
+     * @return GetRecentOpenDocsResponse GetRecentOpenDocsResponse
      */
     public function getRecentOpenDocs($request)
     {
@@ -2350,11 +2490,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRelatedWorkspacesRequest $request
-     * @param GetRelatedWorkspacesHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询用户有权限的知识库
+     *  *
+     * @param GetRelatedWorkspacesRequest $request GetRelatedWorkspacesRequest
+     * @param GetRelatedWorkspacesHeaders $headers GetRelatedWorkspacesHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRelatedWorkspacesResponse
+     * @return GetRelatedWorkspacesResponse GetRelatedWorkspacesResponse
      */
     public function getRelatedWorkspacesWithOptions($request, $headers, $runtime)
     {
@@ -2393,9 +2535,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRelatedWorkspacesRequest $request
+     * @summary 查询用户有权限的知识库
+     *  *
+     * @param GetRelatedWorkspacesRequest $request GetRelatedWorkspacesRequest
      *
-     * @return GetRelatedWorkspacesResponse
+     * @return GetRelatedWorkspacesResponse GetRelatedWorkspacesResponse
      */
     public function getRelatedWorkspaces($request)
     {
@@ -2406,13 +2550,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取工作表
+     *  *
      * @param string          $workbookId
      * @param string          $sheetId
-     * @param GetSheetRequest $request
-     * @param GetSheetHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetSheetRequest $request    GetSheetRequest
+     * @param GetSheetHeaders $headers    GetSheetHeaders
+     * @param RuntimeOptions  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetSheetResponse
+     * @return GetSheetResponse GetSheetResponse
      */
     public function getSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -2448,11 +2594,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取工作表
+     *  *
      * @param string          $workbookId
      * @param string          $sheetId
-     * @param GetSheetRequest $request
+     * @param GetSheetRequest $request    GetSheetRequest
      *
-     * @return GetSheetResponse
+     * @return GetSheetResponse GetSheetResponse
      */
     public function getSheet($workbookId, $sheetId, $request)
     {
@@ -2463,12 +2611,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文档模版
+     *  *
      * @param string                 $templateId
-     * @param GetTemplateByIdRequest $request
-     * @param GetTemplateByIdHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetTemplateByIdRequest $request    GetTemplateByIdRequest
+     * @param GetTemplateByIdHeaders $headers    GetTemplateByIdHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetTemplateByIdResponse
+     * @return GetTemplateByIdResponse GetTemplateByIdResponse
      */
     public function getTemplateByIdWithOptions($templateId, $request, $headers, $runtime)
     {
@@ -2507,10 +2657,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文档模版
+     *  *
      * @param string                 $templateId
-     * @param GetTemplateByIdRequest $request
+     * @param GetTemplateByIdRequest $request    GetTemplateByIdRequest
      *
-     * @return GetTemplateByIdResponse
+     * @return GetTemplateByIdResponse GetTemplateByIdResponse
      */
     public function getTemplateById($templateId, $request)
     {
@@ -2521,11 +2673,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询知识库信息
+     *  *
      * @param string              $workspaceId
-     * @param GetWorkspaceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetWorkspaceHeaders $headers     GetWorkspaceHeaders
+     * @param RuntimeOptions      $runtime     runtime options for this request RuntimeOptions
      *
-     * @return GetWorkspaceResponse
+     * @return GetWorkspaceResponse GetWorkspaceResponse
      */
     public function getWorkspaceWithOptions($workspaceId, $headers, $runtime)
     {
@@ -2555,9 +2709,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询知识库信息
+     *  *
      * @param string $workspaceId
      *
-     * @return GetWorkspaceResponse
+     * @return GetWorkspaceResponse GetWorkspaceResponse
      */
     public function getWorkspace($workspaceId)
     {
@@ -2568,13 +2724,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询知识库文档
+     *  *
      * @param string                  $workspaceId
      * @param string                  $nodeId
-     * @param GetWorkspaceNodeRequest $request
-     * @param GetWorkspaceNodeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param GetWorkspaceNodeRequest $request     GetWorkspaceNodeRequest
+     * @param GetWorkspaceNodeHeaders $headers     GetWorkspaceNodeHeaders
+     * @param RuntimeOptions          $runtime     runtime options for this request RuntimeOptions
      *
-     * @return GetWorkspaceNodeResponse
+     * @return GetWorkspaceNodeResponse GetWorkspaceNodeResponse
      */
     public function getWorkspaceNodeWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
@@ -2610,11 +2768,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询知识库文档
+     *  *
      * @param string                  $workspaceId
      * @param string                  $nodeId
-     * @param GetWorkspaceNodeRequest $request
+     * @param GetWorkspaceNodeRequest $request     GetWorkspaceNodeRequest
      *
-     * @return GetWorkspaceNodeResponse
+     * @return GetWorkspaceNodeResponse GetWorkspaceNodeResponse
      */
     public function getWorkspaceNode($workspaceId, $nodeId, $request)
     {
@@ -2625,12 +2785,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 文档初始化
+     *  *
      * @param string              $docId
-     * @param InitDocumentRequest $request
-     * @param InitDocumentHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param InitDocumentRequest $request InitDocumentRequest
+     * @param InitDocumentHeaders $headers InitDocumentHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return InitDocumentResponse
+     * @return InitDocumentResponse InitDocumentResponse
      */
     public function initDocumentWithOptions($docId, $request, $headers, $runtime)
     {
@@ -2677,10 +2839,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 文档初始化
+     *  *
      * @param string              $docId
-     * @param InitDocumentRequest $request
+     * @param InitDocumentRequest $request InitDocumentRequest
      *
-     * @return InitDocumentResponse
+     * @return InitDocumentResponse InitDocumentResponse
      */
     public function initDocument($docId, $request)
     {
@@ -2691,12 +2855,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 向文档内插入块级元素
+     *  *
      * @param string              $documentId
-     * @param InsertBlocksRequest $request
-     * @param InsertBlocksHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param InsertBlocksRequest $request    InsertBlocksRequest
+     * @param InsertBlocksHeaders $headers    InsertBlocksHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
      *
-     * @return InsertBlocksResponse
+     * @return InsertBlocksResponse InsertBlocksResponse
      */
     public function insertBlocksWithOptions($documentId, $request, $headers, $runtime)
     {
@@ -2738,10 +2904,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 向文档内插入块级元素
+     *  *
      * @param string              $documentId
-     * @param InsertBlocksRequest $request
+     * @param InsertBlocksRequest $request    InsertBlocksRequest
      *
-     * @return InsertBlocksResponse
+     * @return InsertBlocksResponse InsertBlocksResponse
      */
     public function insertBlocks($documentId, $request)
     {
@@ -2752,13 +2920,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定列左侧插入若干列
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
-     * @param InsertColumnsBeforeRequest $request
-     * @param InsertColumnsBeforeHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param InsertColumnsBeforeRequest $request    InsertColumnsBeforeRequest
+     * @param InsertColumnsBeforeHeaders $headers    InsertColumnsBeforeHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
      *
-     * @return InsertColumnsBeforeResponse
+     * @return InsertColumnsBeforeResponse InsertColumnsBeforeResponse
      */
     public function insertColumnsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -2802,11 +2972,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定列左侧插入若干列
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
-     * @param InsertColumnsBeforeRequest $request
+     * @param InsertColumnsBeforeRequest $request    InsertColumnsBeforeRequest
      *
-     * @return InsertColumnsBeforeResponse
+     * @return InsertColumnsBeforeResponse InsertColumnsBeforeResponse
      */
     public function insertColumnsBefore($workbookId, $sheetId, $request)
     {
@@ -2817,14 +2989,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 插入下拉列表
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
      * @param string                     $rangeAddress
-     * @param InsertDropdownListsRequest $request
-     * @param InsertDropdownListsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param InsertDropdownListsRequest $request      InsertDropdownListsRequest
+     * @param InsertDropdownListsHeaders $headers      InsertDropdownListsHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
      *
-     * @return InsertDropdownListsResponse
+     * @return InsertDropdownListsResponse InsertDropdownListsResponse
      */
     public function insertDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -2865,12 +3039,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 插入下拉列表
+     *  *
      * @param string                     $workbookId
      * @param string                     $sheetId
      * @param string                     $rangeAddress
-     * @param InsertDropdownListsRequest $request
+     * @param InsertDropdownListsRequest $request      InsertDropdownListsRequest
      *
-     * @return InsertDropdownListsResponse
+     * @return InsertDropdownListsResponse InsertDropdownListsResponse
      */
     public function insertDropdownLists($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -2881,13 +3057,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定行上方插入若干行
+     *  *
      * @param string                  $workbookId
      * @param string                  $sheetId
-     * @param InsertRowsBeforeRequest $request
-     * @param InsertRowsBeforeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param InsertRowsBeforeRequest $request    InsertRowsBeforeRequest
+     * @param InsertRowsBeforeHeaders $headers    InsertRowsBeforeHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
      *
-     * @return InsertRowsBeforeResponse
+     * @return InsertRowsBeforeResponse InsertRowsBeforeResponse
      */
     public function insertRowsBeforeWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -2931,11 +3109,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 指定行上方插入若干行
+     *  *
      * @param string                  $workbookId
      * @param string                  $sheetId
-     * @param InsertRowsBeforeRequest $request
+     * @param InsertRowsBeforeRequest $request    InsertRowsBeforeRequest
      *
-     * @return InsertRowsBeforeResponse
+     * @return InsertRowsBeforeResponse InsertRowsBeforeResponse
      */
     public function insertRowsBefore($workbookId, $sheetId, $request)
     {
@@ -2946,11 +3126,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListTemplateRequest $request
-     * @param ListTemplateHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 查询文档模版
+     *  *
+     * @param ListTemplateRequest $request ListTemplateRequest
+     * @param ListTemplateHeaders $headers ListTemplateHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListTemplateResponse
+     * @return ListTemplateResponse ListTemplateResponse
      */
     public function listTemplateWithOptions($request, $headers, $runtime)
     {
@@ -2998,9 +3180,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListTemplateRequest $request
+     * @summary 查询文档模版
+     *  *
+     * @param ListTemplateRequest $request ListTemplateRequest
      *
-     * @return ListTemplateResponse
+     * @return ListTemplateResponse ListTemplateResponse
      */
     public function listTemplate($request)
     {
@@ -3011,14 +3195,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 合并单元格
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
      * @param string            $rangeAddress
-     * @param MergeRangeRequest $request
-     * @param MergeRangeHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param MergeRangeRequest $request      MergeRangeRequest
+     * @param MergeRangeHeaders $headers      MergeRangeHeaders
+     * @param RuntimeOptions    $runtime      runtime options for this request RuntimeOptions
      *
-     * @return MergeRangeResponse
+     * @return MergeRangeResponse MergeRangeResponse
      */
     public function mergeRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -3054,12 +3240,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 合并单元格
+     *  *
      * @param string            $workbookId
      * @param string            $sheetId
      * @param string            $rangeAddress
-     * @param MergeRangeRequest $request
+     * @param MergeRangeRequest $request      MergeRangeRequest
      *
-     * @return MergeRangeResponse
+     * @return MergeRangeResponse MergeRangeResponse
      */
     public function mergeRange($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -3070,14 +3258,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查找下一个符合条件的单元格
+     *  *
      * @param string               $workbookId
      * @param string               $sheetId
      * @param string               $rangeAddress
-     * @param RangeFindNextRequest $request
-     * @param RangeFindNextHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param RangeFindNextRequest $request      RangeFindNextRequest
+     * @param RangeFindNextHeaders $headers      RangeFindNextHeaders
+     * @param RuntimeOptions       $runtime      runtime options for this request RuntimeOptions
      *
-     * @return RangeFindNextResponse
+     * @return RangeFindNextResponse RangeFindNextResponse
      */
     public function rangeFindNextWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -3121,12 +3311,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查找下一个符合条件的单元格
+     *  *
      * @param string               $workbookId
      * @param string               $sheetId
      * @param string               $rangeAddress
-     * @param RangeFindNextRequest $request
+     * @param RangeFindNextRequest $request      RangeFindNextRequest
      *
-     * @return RangeFindNextResponse
+     * @return RangeFindNextResponse RangeFindNextResponse
      */
     public function rangeFindNext($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -3137,11 +3329,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchWorkspaceDocsRequest $request
-     * @param SearchWorkspaceDocsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 搜索用户有权限的知识库文档
+     *  *
+     * @param SearchWorkspaceDocsRequest $request SearchWorkspaceDocsRequest
+     * @param SearchWorkspaceDocsHeaders $headers SearchWorkspaceDocsHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchWorkspaceDocsResponse
+     * @return SearchWorkspaceDocsResponse SearchWorkspaceDocsResponse
      */
     public function searchWorkspaceDocsWithOptions($request, $headers, $runtime)
     {
@@ -3189,9 +3383,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchWorkspaceDocsRequest $request
+     * @summary 搜索用户有权限的知识库文档
+     *  *
+     * @param SearchWorkspaceDocsRequest $request SearchWorkspaceDocsRequest
      *
-     * @return SearchWorkspaceDocsResponse
+     * @return SearchWorkspaceDocsResponse SearchWorkspaceDocsResponse
      */
     public function searchWorkspaceDocs($request)
     {
@@ -3202,13 +3398,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置列宽
+     *  *
      * @param string                $workbookId
      * @param string                $sheetId
-     * @param SetColumnWidthRequest $request
-     * @param SetColumnWidthHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SetColumnWidthRequest $request    SetColumnWidthRequest
+     * @param SetColumnWidthHeaders $headers    SetColumnWidthHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SetColumnWidthResponse
+     * @return SetColumnWidthResponse SetColumnWidthResponse
      */
     public function setColumnWidthWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3252,11 +3450,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置列宽
+     *  *
      * @param string                $workbookId
      * @param string                $sheetId
-     * @param SetColumnWidthRequest $request
+     * @param SetColumnWidthRequest $request    SetColumnWidthRequest
      *
-     * @return SetColumnWidthResponse
+     * @return SetColumnWidthResponse SetColumnWidthResponse
      */
     public function setColumnWidth($workbookId, $sheetId, $request)
     {
@@ -3267,13 +3467,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置列隐藏或显示
+     *  *
      * @param string                      $workbookId
      * @param string                      $sheetId
-     * @param SetColumnsVisibilityRequest $request
-     * @param SetColumnsVisibilityHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param SetColumnsVisibilityRequest $request    SetColumnsVisibilityRequest
+     * @param SetColumnsVisibilityHeaders $headers    SetColumnsVisibilityHeaders
+     * @param RuntimeOptions              $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SetColumnsVisibilityResponse
+     * @return SetColumnsVisibilityResponse SetColumnsVisibilityResponse
      */
     public function setColumnsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3320,11 +3522,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置列隐藏或显示
+     *  *
      * @param string                      $workbookId
      * @param string                      $sheetId
-     * @param SetColumnsVisibilityRequest $request
+     * @param SetColumnsVisibilityRequest $request    SetColumnsVisibilityRequest
      *
-     * @return SetColumnsVisibilityResponse
+     * @return SetColumnsVisibilityResponse SetColumnsVisibilityResponse
      */
     public function setColumnsVisibility($workbookId, $sheetId, $request)
     {
@@ -3335,13 +3539,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置行高
+     *  *
      * @param string              $workbookId
      * @param string              $sheetId
-     * @param SetRowHeightRequest $request
-     * @param SetRowHeightHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param SetRowHeightRequest $request    SetRowHeightRequest
+     * @param SetRowHeightHeaders $headers    SetRowHeightHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SetRowHeightResponse
+     * @return SetRowHeightResponse SetRowHeightResponse
      */
     public function setRowHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3385,11 +3591,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置行高
+     *  *
      * @param string              $workbookId
      * @param string              $sheetId
-     * @param SetRowHeightRequest $request
+     * @param SetRowHeightRequest $request    SetRowHeightRequest
      *
-     * @return SetRowHeightResponse
+     * @return SetRowHeightResponse SetRowHeightResponse
      */
     public function setRowHeight($workbookId, $sheetId, $request)
     {
@@ -3400,13 +3608,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置行隐藏或显示
+     *  *
      * @param string                   $workbookId
      * @param string                   $sheetId
-     * @param SetRowsVisibilityRequest $request
-     * @param SetRowsVisibilityHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param SetRowsVisibilityRequest $request    SetRowsVisibilityRequest
+     * @param SetRowsVisibilityHeaders $headers    SetRowsVisibilityHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SetRowsVisibilityResponse
+     * @return SetRowsVisibilityResponse SetRowsVisibilityResponse
      */
     public function setRowsVisibilityWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3453,11 +3663,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置行隐藏或显示
+     *  *
      * @param string                   $workbookId
      * @param string                   $sheetId
-     * @param SetRowsVisibilityRequest $request
+     * @param SetRowsVisibilityRequest $request    SetRowsVisibilityRequest
      *
-     * @return SetRowsVisibilityResponse
+     * @return SetRowsVisibilityResponse SetRowsVisibilityResponse
      */
     public function setRowsVisibility($workbookId, $sheetId, $request)
     {
@@ -3468,13 +3680,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary SheetAutofitRows
+     *  *
      * @param string                  $workbookId
      * @param string                  $sheetId
-     * @param SheetAutofitRowsRequest $request
-     * @param SheetAutofitRowsHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param SheetAutofitRowsRequest $request    SheetAutofitRowsRequest
+     * @param SheetAutofitRowsHeaders $headers    SheetAutofitRowsHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SheetAutofitRowsResponse
+     * @return SheetAutofitRowsResponse SheetAutofitRowsResponse
      */
     public function sheetAutofitRowsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3521,11 +3735,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary SheetAutofitRows
+     *  *
      * @param string                  $workbookId
      * @param string                  $sheetId
-     * @param SheetAutofitRowsRequest $request
+     * @param SheetAutofitRowsRequest $request    SheetAutofitRowsRequest
      *
-     * @return SheetAutofitRowsResponse
+     * @return SheetAutofitRowsResponse SheetAutofitRowsResponse
      */
     public function sheetAutofitRows($workbookId, $sheetId, $request)
     {
@@ -3536,13 +3752,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 工作表上查找所有符合条件的单元格
+     *  *
      * @param string              $workbookId
      * @param string              $sheetId
-     * @param SheetFindAllRequest $request
-     * @param SheetFindAllHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param SheetFindAllRequest $request    SheetFindAllRequest
+     * @param SheetFindAllHeaders $headers    SheetFindAllHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SheetFindAllResponse
+     * @return SheetFindAllResponse SheetFindAllResponse
      */
     public function sheetFindAllWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3589,11 +3807,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 工作表上查找所有符合条件的单元格
+     *  *
      * @param string              $workbookId
      * @param string              $sheetId
-     * @param SheetFindAllRequest $request
+     * @param SheetFindAllRequest $request    SheetFindAllRequest
      *
-     * @return SheetFindAllResponse
+     * @return SheetFindAllResponse SheetFindAllResponse
      */
     public function sheetFindAll($workbookId, $sheetId, $request)
     {
@@ -3604,12 +3824,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 取消文档酷应用和表格的关联
+     *  *
      * @param string                      $workbookId
-     * @param UnbindCoolAppToSheetRequest $request
-     * @param UnbindCoolAppToSheetHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UnbindCoolAppToSheetRequest $request    UnbindCoolAppToSheetRequest
+     * @param UnbindCoolAppToSheetHeaders $headers    UnbindCoolAppToSheetHeaders
+     * @param RuntimeOptions              $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UnbindCoolAppToSheetResponse
+     * @return UnbindCoolAppToSheetResponse UnbindCoolAppToSheetResponse
      */
     public function unbindCoolAppToSheetWithOptions($workbookId, $request, $headers, $runtime)
     {
@@ -3648,10 +3870,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 取消文档酷应用和表格的关联
+     *  *
      * @param string                      $workbookId
-     * @param UnbindCoolAppToSheetRequest $request
+     * @param UnbindCoolAppToSheetRequest $request    UnbindCoolAppToSheetRequest
      *
-     * @return UnbindCoolAppToSheetResponse
+     * @return UnbindCoolAppToSheetResponse UnbindCoolAppToSheetResponse
      */
     public function unbindCoolAppToSheet($workbookId, $request)
     {
@@ -3662,14 +3886,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新单元格区域
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
      * @param string             $rangeAddress
-     * @param UpdateRangeRequest $request
-     * @param UpdateRangeHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UpdateRangeRequest $request      UpdateRangeRequest
+     * @param UpdateRangeHeaders $headers      UpdateRangeHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
      *
-     * @return UpdateRangeResponse
+     * @return UpdateRangeResponse UpdateRangeResponse
      */
     public function updateRangeWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
     {
@@ -3731,12 +3957,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新单元格区域
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
      * @param string             $rangeAddress
-     * @param UpdateRangeRequest $request
+     * @param UpdateRangeRequest $request      UpdateRangeRequest
      *
-     * @return UpdateRangeResponse
+     * @return UpdateRangeResponse UpdateRangeResponse
      */
     public function updateRange($workbookId, $sheetId, $rangeAddress, $request)
     {
@@ -3747,13 +3975,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新工作表
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
-     * @param UpdateSheetRequest $request
-     * @param UpdateSheetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UpdateSheetRequest $request    UpdateSheetRequest
+     * @param UpdateSheetHeaders $headers    UpdateSheetHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UpdateSheetResponse
+     * @return UpdateSheetResponse UpdateSheetResponse
      */
     public function updateSheetWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
     {
@@ -3797,11 +4027,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新工作表
+     *  *
      * @param string             $workbookId
      * @param string             $sheetId
-     * @param UpdateSheetRequest $request
+     * @param UpdateSheetRequest $request    UpdateSheetRequest
      *
-     * @return UpdateSheetResponse
+     * @return UpdateSheetResponse UpdateSheetResponse
      */
     public function updateSheet($workbookId, $sheetId, $request)
     {
@@ -3812,13 +4044,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改知识库文档成员
+     *  *
      * @param string                           $workspaceId
      * @param string                           $nodeId
-     * @param UpdateWorkspaceDocMembersRequest $request
-     * @param UpdateWorkspaceDocMembersHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateWorkspaceDocMembersRequest $request     UpdateWorkspaceDocMembersRequest
+     * @param UpdateWorkspaceDocMembersHeaders $headers     UpdateWorkspaceDocMembersHeaders
+     * @param RuntimeOptions                   $runtime     runtime options for this request RuntimeOptions
      *
-     * @return UpdateWorkspaceDocMembersResponse
+     * @return UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembersResponse
      */
     public function updateWorkspaceDocMembersWithOptions($workspaceId, $nodeId, $request, $headers, $runtime)
     {
@@ -3857,11 +4091,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改知识库文档成员
+     *  *
      * @param string                           $workspaceId
      * @param string                           $nodeId
-     * @param UpdateWorkspaceDocMembersRequest $request
+     * @param UpdateWorkspaceDocMembersRequest $request     UpdateWorkspaceDocMembersRequest
      *
-     * @return UpdateWorkspaceDocMembersResponse
+     * @return UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembersResponse
      */
     public function updateWorkspaceDocMembers($workspaceId, $nodeId, $request)
     {
@@ -3872,12 +4108,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新知识库成员
+     *  *
      * @param string                        $workspaceId
-     * @param UpdateWorkspaceMembersRequest $request
-     * @param UpdateWorkspaceMembersHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param UpdateWorkspaceMembersRequest $request     UpdateWorkspaceMembersRequest
+     * @param UpdateWorkspaceMembersHeaders $headers     UpdateWorkspaceMembersHeaders
+     * @param RuntimeOptions                $runtime     runtime options for this request RuntimeOptions
      *
-     * @return UpdateWorkspaceMembersResponse
+     * @return UpdateWorkspaceMembersResponse UpdateWorkspaceMembersResponse
      */
     public function updateWorkspaceMembersWithOptions($workspaceId, $request, $headers, $runtime)
     {
@@ -3916,10 +4154,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新知识库成员
+     *  *
      * @param string                        $workspaceId
-     * @param UpdateWorkspaceMembersRequest $request
+     * @param UpdateWorkspaceMembersRequest $request     UpdateWorkspaceMembersRequest
      *
-     * @return UpdateWorkspaceMembersResponse
+     * @return UpdateWorkspaceMembersResponse UpdateWorkspaceMembersResponse
      */
     public function updateWorkspaceMembers($workspaceId, $request)
     {

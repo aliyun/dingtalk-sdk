@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 应用类型
      *
      * @var int
@@ -30,6 +32,8 @@ class result extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
@@ -49,6 +53,8 @@ class result extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-abcdef-example
      *
      * @var string
@@ -56,6 +62,8 @@ class result extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-example
      *
      * @var string
@@ -77,6 +85,8 @@ class result extends Model
     public $modifedTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 休假申请
      *
      * @var string
@@ -91,6 +101,8 @@ class result extends Model
     public $ownerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PUBLISHED(启用), INVALID(停用), SAVED(草稿)
      *
      * @var string

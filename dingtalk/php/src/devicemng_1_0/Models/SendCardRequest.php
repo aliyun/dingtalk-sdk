@@ -16,6 +16,8 @@ class SendCardRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"var1":"xxx","var2":"xxx"}
      *
      * @var string
@@ -54,6 +56,8 @@ class SendCardRequest extends Model
     public $receivers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcxxxxxxxx
      *
      * @var string

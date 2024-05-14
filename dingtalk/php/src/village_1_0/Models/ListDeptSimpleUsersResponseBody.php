@@ -10,21 +10,29 @@ use AlibabaCloud\Tea\Model;
 class ListDeptSimpleUsersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextCursor;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userList[]
      */
     public $userList;

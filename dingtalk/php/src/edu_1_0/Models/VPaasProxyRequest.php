@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class VPaasProxyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example init
      *
      * @var string
@@ -16,6 +18,8 @@ class VPaasProxyRequest extends Model
     public $actionCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"a":"testA","b":"testB"}
      *
      * @var string
@@ -23,6 +27,8 @@ class VPaasProxyRequest extends Model
     public $params;
 
     /**
+     * @description This parameter is required.
+     *
      * @example MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCVGpgpjjbBS1Pg1tYx23KDJiXokVdKFLdJznKxQe+fZcIOtcQDIYrfrBfHmiC/gASeF5NUTSrwjkr/i/2gqhIIxRinNJQm8L4GJ6fRGjN8tND7AfhfkGYIfOJCLFSiaYSa4TCM7WsmztkpR7DSvb4P+K/ppqYFfUB46a9nCcvecQIDAQAB
      *
      * @var string

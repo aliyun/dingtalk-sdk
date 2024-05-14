@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class resumeFile extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example http:www.xxx.com
      *
      * @var string
@@ -16,6 +18,8 @@ class resumeFile extends Model
     public $downloadUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx的简历.pdf
      *
      * @var string
@@ -23,6 +27,8 @@ class resumeFile extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example pdf
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListAuditLogRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1577945731837
      *
      * @var int
@@ -30,6 +32,8 @@ class ListAuditLogRequest extends Model
     public $nextGmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 500
      *
      * @var int
@@ -37,6 +41,8 @@ class ListAuditLogRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1577340931837
      *
      * @var int

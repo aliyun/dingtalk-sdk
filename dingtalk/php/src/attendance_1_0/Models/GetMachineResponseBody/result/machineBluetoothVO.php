@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class machineBluetoothVO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 绿城-未来park
      *
      * @var string
@@ -16,6 +18,8 @@ class machineBluetoothVO extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class machineBluetoothVO extends Model
     public $bluetoothCheckWithFace;
 
     /**
+     * @description This parameter is required.
+     *
      * @example default
      *
      * @var string
@@ -30,6 +36,8 @@ class machineBluetoothVO extends Model
     public $bluetoothDistanceMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 默认 (最远5-10米)
      *
      * @var string
@@ -37,6 +45,8 @@ class machineBluetoothVO extends Model
     public $bluetoothDistanceModeDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -44,6 +54,8 @@ class machineBluetoothVO extends Model
     public $bluetoothValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30.285871310763888
      *
      * @var float
@@ -51,6 +63,8 @@ class machineBluetoothVO extends Model
     public $latitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -58,6 +72,8 @@ class machineBluetoothVO extends Model
     public $limitUserDeviceCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 120.01757758246528
      *
      * @var float
@@ -65,6 +81,8 @@ class machineBluetoothVO extends Model
     public $longitude;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -72,6 +90,8 @@ class machineBluetoothVO extends Model
     public $monitorLocationAbnormal;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

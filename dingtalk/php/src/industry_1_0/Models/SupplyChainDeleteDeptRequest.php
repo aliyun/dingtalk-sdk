@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyChainDeleteDeptRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var int

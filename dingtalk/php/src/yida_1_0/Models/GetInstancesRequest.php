@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -37,6 +39,8 @@ class GetInstancesRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
@@ -93,6 +97,8 @@ class GetInstancesRequest extends Model
     public $searchFieldJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -107,6 +113,8 @@ class GetInstancesRequest extends Model
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

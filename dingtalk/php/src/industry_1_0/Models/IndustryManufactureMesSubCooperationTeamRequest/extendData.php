@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class extendData extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example school
      *
      * @var string
@@ -23,6 +25,8 @@ class extendData extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 北大
      *
      * @var string
@@ -30,6 +34,8 @@ class extendData extends Model
     public $value;
 
     /**
+     * @description This parameter is required.
+     *
      * @example string
      *
      * @var string

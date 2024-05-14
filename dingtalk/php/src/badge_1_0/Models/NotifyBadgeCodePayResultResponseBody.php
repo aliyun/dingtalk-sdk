@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class NotifyBadgeCodePayResultResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string

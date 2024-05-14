@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityStudentResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

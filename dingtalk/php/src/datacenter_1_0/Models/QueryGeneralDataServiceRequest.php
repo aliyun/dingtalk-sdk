@@ -16,6 +16,8 @@ class QueryGeneralDataServiceRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220803
      *
      * @var string
@@ -37,6 +39,8 @@ class QueryGeneralDataServiceRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example API-7fa754fd-f53e-46ee-9b77-898aa6eb590c
      *
      * @var string
@@ -44,6 +48,8 @@ class QueryGeneralDataServiceRequest extends Model
     public $serviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220801
      *
      * @var string
@@ -51,6 +57,8 @@ class QueryGeneralDataServiceRequest extends Model
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0234412313
      *
      * @var string

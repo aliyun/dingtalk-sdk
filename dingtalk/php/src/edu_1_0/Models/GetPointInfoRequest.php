@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetPointInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example personal
      *
      * @var string

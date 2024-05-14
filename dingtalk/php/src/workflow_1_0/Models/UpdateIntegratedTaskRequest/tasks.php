@@ -16,6 +16,8 @@ class tasks extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example COMPLETED
      *
      * @var string
@@ -23,6 +25,8 @@ class tasks extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $taskId;

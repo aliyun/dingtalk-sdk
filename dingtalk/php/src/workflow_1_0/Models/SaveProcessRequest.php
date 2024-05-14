@@ -18,11 +18,15 @@ class SaveProcessRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @var FormComponent[]
      */
     public $formComponents;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 出差报销审批
      *
      * @var string

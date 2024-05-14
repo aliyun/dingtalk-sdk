@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUnionOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example tenant1231
      *
      * @var string

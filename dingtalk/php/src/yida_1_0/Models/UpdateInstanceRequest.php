@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class UpdateInstanceRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -30,6 +34,8 @@ class UpdateInstanceRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hello1234
      *
      * @var string
@@ -37,6 +43,8 @@ class UpdateInstanceRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -44,6 +52,8 @@ class UpdateInstanceRequest extends Model
     public $updateFormDataJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

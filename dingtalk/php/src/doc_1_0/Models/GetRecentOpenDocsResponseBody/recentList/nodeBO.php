@@ -24,16 +24,22 @@ class nodeBO extends Model
     public $isDeleted;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $lastOpenTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nodeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nodeName;
@@ -44,6 +50,8 @@ class nodeBO extends Model
     public $updateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;

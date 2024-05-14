@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GrantProcessInstanceForDownloadFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string
@@ -16,6 +18,8 @@ class GrantProcessInstanceForDownloadFileRequest extends Model
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a17444d1-075b-4a4d-xxxx
      *
      * @var string

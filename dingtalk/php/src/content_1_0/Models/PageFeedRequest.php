@@ -14,6 +14,8 @@ class PageFeedRequest extends Model
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -21,6 +23,8 @@ class PageFeedRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 50730********40554
      *
      * @var string
@@ -28,6 +32,8 @@ class PageFeedRequest extends Model
     public $mcnId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

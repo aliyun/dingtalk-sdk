@@ -16,6 +16,8 @@ class dataArray extends Model
     public $extendValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField_71U51A
      *
      * @var string
@@ -23,6 +25,8 @@ class dataArray extends Model
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XX有限公司
      *
      * @var string

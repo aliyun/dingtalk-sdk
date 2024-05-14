@@ -30,6 +30,8 @@ class groupMembers extends Model
     public $groupMemberId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Foo
      *
      * @var string
@@ -37,6 +39,8 @@ class groupMembers extends Model
     public $groupMemberName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

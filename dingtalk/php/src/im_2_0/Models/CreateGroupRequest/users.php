@@ -16,6 +16,8 @@ class users extends Model
     public $appUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $groupOwner;

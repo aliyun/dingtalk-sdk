@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class targetUserList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 4353453454241
      *
      * @var string
@@ -16,6 +18,8 @@ class targetUserList extends Model
     public $outId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 551341216920908910
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryActiveUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxxxx==
      *
      * @var string

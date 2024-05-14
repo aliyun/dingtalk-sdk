@@ -16,6 +16,8 @@ class CreateGroupBlackboardResponseBody extends Model
     public $dataId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

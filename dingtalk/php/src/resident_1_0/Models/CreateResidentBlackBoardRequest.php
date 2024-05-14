@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateResidentBlackBoardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $context;
@@ -24,6 +26,8 @@ class CreateResidentBlackBoardRequest extends Model
     public $sendTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

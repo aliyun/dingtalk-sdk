@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var member
      */
     public $member;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $policyType;

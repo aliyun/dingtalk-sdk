@@ -36,6 +36,8 @@ class StartProcessInstanceRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
@@ -48,6 +50,8 @@ class StartProcessInstanceRequest extends Model
     public $microappAgentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager432
      *
      * @var string
@@ -55,6 +59,8 @@ class StartProcessInstanceRequest extends Model
     public $originatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
      *
      * @var string

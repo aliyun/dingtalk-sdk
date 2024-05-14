@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerTaskUserDetailResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;

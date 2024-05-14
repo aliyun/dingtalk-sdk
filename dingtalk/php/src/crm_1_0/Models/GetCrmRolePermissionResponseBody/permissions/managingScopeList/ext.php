@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ext extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float[]
      */
     public $deptIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

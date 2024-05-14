@@ -20,6 +20,8 @@ class CreatePersonalTodoTaskRequest extends Model
     public $dueTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $executorIds;
@@ -35,6 +37,8 @@ class CreatePersonalTodoTaskRequest extends Model
     public $participantIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subject;

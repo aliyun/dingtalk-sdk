@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesProductionPlanRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -31,6 +33,8 @@ class IndustryManufactureMesProductionPlanRequest extends Model
     public $actualStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example opsoft
      *
      * @var string
@@ -38,6 +42,8 @@ class IndustryManufactureMesProductionPlanRequest extends Model
     public $appKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example productionplan
      *
      * @var string
@@ -174,6 +180,8 @@ class IndustryManufactureMesProductionPlanRequest extends Model
     public $unit;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string

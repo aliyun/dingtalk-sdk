@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchActionsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example G-CONN-1015BC8093540B01B8D0000Q
      *
      * @var string
@@ -16,6 +18,8 @@ class SearchActionsRequest extends Model
     public $connectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding32fff839a3e0105d
      *
      * @var string

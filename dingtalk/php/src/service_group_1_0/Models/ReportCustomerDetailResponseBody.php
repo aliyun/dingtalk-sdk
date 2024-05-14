@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ReportCustomerDetailResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -17,6 +19,8 @@ class ReportCustomerDetailResponseBody extends Model
     public $currentPage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -24,11 +28,15 @@ class ReportCustomerDetailResponseBody extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var records[]
      */
     public $records;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

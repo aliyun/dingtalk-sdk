@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupSetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUserId;
@@ -24,6 +26,8 @@ class CreateGroupSetRequest extends Model
     public $memberQuota;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -39,11 +43,15 @@ class CreateGroupSetRequest extends Model
     public $noticeToped;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $ownerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;

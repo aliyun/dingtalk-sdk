@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesAddRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $deviceIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 62001E1C5B9362D369D316DED25F3656
      *
      * @var string

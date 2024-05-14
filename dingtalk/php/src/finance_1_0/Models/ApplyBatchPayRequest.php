@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2021070712440326300185114
      *
      * @var string
@@ -16,6 +18,8 @@ class ApplyBatchPayRequest extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210909153300000002734753314700
      *
      * @var string
@@ -30,6 +34,8 @@ class ApplyBatchPayRequest extends Model
     public $passBackParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PC
      *
      * @var string
@@ -44,6 +50,8 @@ class ApplyBatchPayRequest extends Model
     public $returnUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8754214873
      *
      * @var string
@@ -51,6 +59,8 @@ class ApplyBatchPayRequest extends Model
     public $staffId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10.00
      *
      * @var string

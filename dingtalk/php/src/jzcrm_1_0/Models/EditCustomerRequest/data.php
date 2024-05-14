@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -41,6 +43,8 @@ class data extends Model
     public $khCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $khClass;
@@ -151,6 +155,8 @@ class data extends Model
     public $khJibie;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $khName;

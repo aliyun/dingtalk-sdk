@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class TerminateInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class TerminateInstanceRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
@@ -30,6 +34,8 @@ class TerminateInstanceRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -37,6 +43,8 @@ class TerminateInstanceRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

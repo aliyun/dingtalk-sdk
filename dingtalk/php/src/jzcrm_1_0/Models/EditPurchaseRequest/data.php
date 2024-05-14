@@ -29,11 +29,15 @@ class data extends Model
     public $cgMoneyzhekou;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cgZxstate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cgdate;
@@ -44,6 +48,8 @@ class data extends Model
     public $cgname;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cgno;
@@ -66,6 +72,8 @@ class data extends Model
     public $childMx;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -88,6 +96,8 @@ class data extends Model
     public $gysLxrinfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gysid;
@@ -108,6 +118,8 @@ class data extends Model
     public $orderKhid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $summoney;

@@ -14,11 +14,15 @@ class workspaceBO extends Model
     public $url;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workspaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workspaceName;

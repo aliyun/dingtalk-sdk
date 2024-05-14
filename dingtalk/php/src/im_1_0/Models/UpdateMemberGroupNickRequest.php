@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateMemberGroupNickRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupNick;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string
@@ -21,6 +25,8 @@ class UpdateMemberGroupNickRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

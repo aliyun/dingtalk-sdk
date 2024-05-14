@@ -38,6 +38,8 @@ class PatchEventRequest extends Model
     public $extra;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;

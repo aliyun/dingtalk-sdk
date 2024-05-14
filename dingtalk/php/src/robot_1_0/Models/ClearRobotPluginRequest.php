@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ClearRobotPluginRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingkxnemxbqkifzl
      *
      * @var string

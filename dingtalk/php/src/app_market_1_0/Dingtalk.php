@@ -45,11 +45,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAppGoodsServiceConversationRequest $request
-     * @param CreateAppGoodsServiceConversationHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @summary 创建应用商品服务群
+     *  *
+     * @param CreateAppGoodsServiceConversationRequest $request CreateAppGoodsServiceConversationRequest
+     * @param CreateAppGoodsServiceConversationHeaders $headers CreateAppGoodsServiceConversationHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateAppGoodsServiceConversationResponse
+     * @return CreateAppGoodsServiceConversationResponse CreateAppGoodsServiceConversationResponse
      */
     public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
     {
@@ -88,9 +90,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAppGoodsServiceConversationRequest $request
+     * @summary 创建应用商品服务群
+     *  *
+     * @param CreateAppGoodsServiceConversationRequest $request CreateAppGoodsServiceConversationRequest
      *
-     * @return CreateAppGoodsServiceConversationResponse
+     * @return CreateAppGoodsServiceConversationResponse CreateAppGoodsServiceConversationResponse
      */
     public function createAppGoodsServiceConversation($request)
     {
@@ -101,11 +105,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCoolAppAccessStatusRequest $request
-     * @param GetCoolAppAccessStatusHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取酷应用访问状态
+     *  *
+     * @param GetCoolAppAccessStatusRequest $request GetCoolAppAccessStatusRequest
+     * @param GetCoolAppAccessStatusHeaders $headers GetCoolAppAccessStatusHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCoolAppAccessStatusResponse
+     * @return GetCoolAppAccessStatusResponse GetCoolAppAccessStatusResponse
      */
     public function getCoolAppAccessStatusWithOptions($request, $headers, $runtime)
     {
@@ -147,9 +153,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCoolAppAccessStatusRequest $request
+     * @summary 获取酷应用访问状态
+     *  *
+     * @param GetCoolAppAccessStatusRequest $request GetCoolAppAccessStatusRequest
      *
-     * @return GetCoolAppAccessStatusResponse
+     * @return GetCoolAppAccessStatusResponse GetCoolAppAccessStatusResponse
      */
     public function getCoolAppAccessStatus($request)
     {
@@ -160,11 +168,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInAppSkuUrlRequest $request
-     * @param GetInAppSkuUrlHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取内购商品SKU页面地址
+     *  *
+     * @param GetInAppSkuUrlRequest $request GetInAppSkuUrlRequest
+     * @param GetInAppSkuUrlHeaders $headers GetInAppSkuUrlHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetInAppSkuUrlResponse
+     * @return GetInAppSkuUrlResponse GetInAppSkuUrlResponse
      */
     public function getInAppSkuUrlWithOptions($request, $headers, $runtime)
     {
@@ -209,9 +219,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetInAppSkuUrlRequest $request
+     * @summary 获取内购商品SKU页面地址
+     *  *
+     * @param GetInAppSkuUrlRequest $request GetInAppSkuUrlRequest
      *
-     * @return GetInAppSkuUrlResponse
+     * @return GetInAppSkuUrlResponse GetInAppSkuUrlResponse
      */
     public function getInAppSkuUrl($request)
     {
@@ -222,11 +234,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalExperienceInfoRequest $request
-     * @param GetPersonalExperienceInfoHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 获取个人体验相关信息
+     *  *
+     * @param GetPersonalExperienceInfoRequest $request GetPersonalExperienceInfoRequest
+     * @param GetPersonalExperienceInfoHeaders $headers GetPersonalExperienceInfoHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPersonalExperienceInfoResponse
+     * @return GetPersonalExperienceInfoResponse GetPersonalExperienceInfoResponse
      */
     public function getPersonalExperienceInfoWithOptions($request, $headers, $runtime)
     {
@@ -262,9 +276,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalExperienceInfoRequest $request
+     * @summary 获取个人体验相关信息
+     *  *
+     * @param GetPersonalExperienceInfoRequest $request GetPersonalExperienceInfoRequest
      *
-     * @return GetPersonalExperienceInfoResponse
+     * @return GetPersonalExperienceInfoResponse GetPersonalExperienceInfoResponse
      */
     public function getPersonalExperienceInfo($request)
     {
@@ -275,11 +291,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 应用市场订单查询
+     *  *
      * @param string                  $orderId
-     * @param QueryMarketOrderHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param QueryMarketOrderHeaders $headers QueryMarketOrderHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryMarketOrderResponse
+     * @return QueryMarketOrderResponse QueryMarketOrderResponse
      */
     public function queryMarketOrderWithOptions($orderId, $headers, $runtime)
     {
@@ -309,9 +327,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 应用市场订单查询
+     *  *
      * @param string $orderId
      *
-     * @return QueryMarketOrderResponse
+     * @return QueryMarketOrderResponse QueryMarketOrderResponse
      */
     public function queryMarketOrder($orderId)
     {
@@ -322,11 +342,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UserTaskReportRequest $request
-     * @param UserTaskReportHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary app内用户操作任务同步
+     *  *
+     * @param UserTaskReportRequest $request UserTaskReportRequest
+     * @param UserTaskReportHeaders $headers UserTaskReportHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return UserTaskReportResponse
+     * @return UserTaskReportResponse UserTaskReportResponse
      */
     public function userTaskReportWithOptions($request, $headers, $runtime)
     {
@@ -371,9 +393,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UserTaskReportRequest $request
+     * @summary app内用户操作任务同步
+     *  *
+     * @param UserTaskReportRequest $request UserTaskReportRequest
      *
-     * @return UserTaskReportResponse
+     * @return UserTaskReportResponse UserTaskReportResponse
      */
     public function userTaskReport($request)
     {

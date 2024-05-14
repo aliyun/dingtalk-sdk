@@ -23,6 +23,8 @@ class GetGroupActiveInfoRequest extends Model
     public $groupType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +32,8 @@ class GetGroupActiveInfoRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +41,8 @@ class GetGroupActiveInfoRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20200305
      *
      * @var string

@@ -16,6 +16,8 @@ class result extends Model
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField_U2K5A122
      *
      * @var string

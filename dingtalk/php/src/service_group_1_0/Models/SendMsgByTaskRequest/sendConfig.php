@@ -20,6 +20,8 @@ class sendConfig extends Model
     public $sendTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sendType;

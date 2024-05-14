@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChangeGroupOwnerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string
@@ -16,6 +18,8 @@ class ChangeGroupOwnerRequest extends Model
     public $groupOwnerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -23,6 +27,8 @@ class ChangeGroupOwnerRequest extends Model
     public $groupOwnerType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

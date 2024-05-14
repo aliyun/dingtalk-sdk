@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMuteStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidCtneF+XyQjcyF2ROdgSeIg==
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryGroupMuteStatusRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 004741900
      *
      * @var string

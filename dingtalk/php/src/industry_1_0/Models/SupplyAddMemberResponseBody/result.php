@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example NORMAL
      *
      * @var string
@@ -16,6 +18,8 @@ class result extends Model
     public $dingMemberStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345abc
      *
      * @var string

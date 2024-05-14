@@ -16,6 +16,8 @@ class tasks extends Model
     public $activityId;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-08-31T11:52Z
      *
      * @var string
@@ -23,6 +25,8 @@ class tasks extends Model
     public $createTime;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-08-31T11:52Z
      *
      * @var string

@@ -15,11 +15,15 @@ class QueryMedicalEventsResponseBody extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

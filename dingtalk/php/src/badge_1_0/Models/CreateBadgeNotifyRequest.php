@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class CreateBadgeNotifyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $msgId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $msgType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

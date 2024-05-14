@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class FileStorageGetStorageStateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding77b8cac4e026cc123xxxxxxxxeb6378f
      *
      * @var string

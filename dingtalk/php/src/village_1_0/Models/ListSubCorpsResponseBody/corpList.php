@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class corpList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $industry;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 149 区县，148 乡镇街道，145 村， 150 社区， 151 小区
      *
      * @var int
@@ -43,6 +51,8 @@ class corpList extends Model
     public $regionLocation;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $regionType;

@@ -16,6 +16,8 @@ class RecallOfficialAccountOTOMessageRequest extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SWXXX
      *
      * @var string

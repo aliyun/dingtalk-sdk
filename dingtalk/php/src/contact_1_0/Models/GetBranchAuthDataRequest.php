@@ -14,6 +14,8 @@ class GetBranchAuthDataRequest extends Model
     public $body;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dinglkj123hj25jk54j2
      *
      * @var string
@@ -21,6 +23,8 @@ class GetBranchAuthDataRequest extends Model
     public $branchCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eduStuCnt
      *
      * @var string

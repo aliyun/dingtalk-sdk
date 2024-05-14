@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetNewestInnerGroupsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 015*****
      *
      * @var string

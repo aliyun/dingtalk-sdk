@@ -56,6 +56,8 @@ class SearchFormDataIdListRequest extends Model
     public $searchFieldJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -63,6 +65,8 @@ class SearchFormDataIdListRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string

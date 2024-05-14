@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateItemRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $effectType;
@@ -24,16 +28,22 @@ class CreateItemRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $optUser;
@@ -44,11 +54,15 @@ class CreateItemRequest extends Model
     public $periodType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $price;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $scene;
@@ -59,6 +73,8 @@ class CreateItemRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -66,6 +82,8 @@ class CreateItemRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;

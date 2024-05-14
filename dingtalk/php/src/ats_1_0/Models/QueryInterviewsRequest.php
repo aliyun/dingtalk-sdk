@@ -16,6 +16,8 @@ class QueryInterviewsRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryInterviewsRequest extends Model
     public $candidateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626796800000
      *
      * @var int
@@ -30,6 +34,8 @@ class QueryInterviewsRequest extends Model
     public $startTimeBeginMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626883199000
      *
      * @var int

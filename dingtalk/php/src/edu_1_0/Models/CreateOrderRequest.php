@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -24,11 +26,15 @@ class CreateOrderRequest extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detailList[]
      */
     public $detailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123123
      *
      * @var string
@@ -36,6 +42,8 @@ class CreateOrderRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FACE_010100b0555Xczd4ePVLaB5V3cCzrONYpHWOENzRxDDqcnVjYXLso0U_1642665071746
      *
      * @var string
@@ -50,6 +58,8 @@ class CreateOrderRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example QA62021121908E
      *
      * @var string
@@ -57,6 +67,8 @@ class CreateOrderRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {\"terminalType\":\"IOT\"}
      *
      * @var string
@@ -71,6 +83,8 @@ class CreateOrderRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -78,6 +92,8 @@ class CreateOrderRequest extends Model
     public $totalAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1643334234626
      *
      * @var string

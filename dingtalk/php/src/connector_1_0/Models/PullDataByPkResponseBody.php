@@ -9,36 +9,50 @@ use AlibabaCloud\Tea\Model;
 class PullDataByPkResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataCreateAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataCreateAppType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $dataGmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $dataGmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataModifiedAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataModifiedAppType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $jsonData;

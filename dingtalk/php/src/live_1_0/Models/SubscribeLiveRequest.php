@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SubscribeLiveRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 3dd295eb-17a1-4dfg-ae1b-aa165c5007eb
      *
      * @var string
@@ -16,11 +18,15 @@ class SubscribeLiveRequest extends Model
     public $liveId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $subscribe;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string

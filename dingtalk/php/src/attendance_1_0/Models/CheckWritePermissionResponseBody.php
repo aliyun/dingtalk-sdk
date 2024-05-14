@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CheckWritePermissionResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool[]
      */
     public $entityPermissionMap;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DingTalkSecurityCheckRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 6.3.30
      *
      * @var string
@@ -16,6 +18,8 @@ class DingTalkSecurityCheckRequest extends Model
     public $clientVer;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iOS
      *
      * @var string
@@ -23,6 +27,8 @@ class DingTalkSecurityCheckRequest extends Model
     public $platform;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15
      *
      * @var string
@@ -30,6 +36,8 @@ class DingTalkSecurityCheckRequest extends Model
     public $platformVer;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"lbsWuaToken": "lbsWua","ddSec":"ddSec"}
      *
      * @var string
@@ -37,6 +45,8 @@ class DingTalkSecurityCheckRequest extends Model
     public $sec;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

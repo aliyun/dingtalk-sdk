@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class delFailedDept extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 122222
      *
      * @var int

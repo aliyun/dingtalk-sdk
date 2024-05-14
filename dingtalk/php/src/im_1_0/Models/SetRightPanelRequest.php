@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SetRightPanelRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ciddjxhgdDXSAAXXXXX
      *
      * @var string
@@ -17,11 +19,15 @@ class SetRightPanelRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $rightPanelClosePermitted;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -29,6 +35,8 @@ class SetRightPanelRequest extends Model
     public $rightPanelOpenStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 侧边栏标题
      *
      * @var string
@@ -36,11 +44,15 @@ class SetRightPanelRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var webWndParams
      */
     public $webWndParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 500
      *
      * @var int

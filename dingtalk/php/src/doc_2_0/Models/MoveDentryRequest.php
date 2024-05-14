@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class MoveDentryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetSpaceId;

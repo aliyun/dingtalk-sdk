@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CloseVideoConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string

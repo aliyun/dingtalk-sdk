@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountRobotInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 机器人类型参数，服务窗机器人：1，客户群内机器人：2
      *
      * @var string

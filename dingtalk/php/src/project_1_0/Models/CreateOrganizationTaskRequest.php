@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateOrganizationTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 明天12点前完成周报撰写
      *
      * @var string
@@ -63,6 +65,8 @@ class CreateOrganizationTaskRequest extends Model
     public $note;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -10
      *
      * @var int
@@ -70,6 +74,8 @@ class CreateOrganizationTaskRequest extends Model
     public $priority;
 
     /**
+     * @description This parameter is required.
+     *
      * @example members
      *
      * @var string

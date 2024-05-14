@@ -12,11 +12,15 @@ use AlibabaCloud\Tea\Model;
 class CustomerSendMsgTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var messageContent
      */
     public $messageContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string
@@ -34,6 +38,8 @@ class CustomerSendMsgTaskRequest extends Model
     public $sendConfig;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 任务名称
      *
      * @var string

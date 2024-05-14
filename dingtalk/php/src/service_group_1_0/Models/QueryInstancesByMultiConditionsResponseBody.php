@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryInstancesByMultiConditionsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -25,6 +27,8 @@ class QueryInstancesByMultiConditionsResponseBody extends Model
     public $records;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

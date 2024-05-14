@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class attachments extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 测试.pdf
      *
      * @var string
@@ -16,6 +18,8 @@ class attachments extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @asdc12312
      *
      * @var string
@@ -23,6 +27,8 @@ class attachments extends Model
     public $path;
 
     /**
+     * @description This parameter is required.
+     *
      * @example media
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1758
      *
      * @var string
@@ -16,6 +18,8 @@ class content extends Model
     public $assessGroupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三组
      *
      * @var string
@@ -23,6 +27,8 @@ class content extends Model
     public $assessGroupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1312312321
      *
      * @var string
@@ -30,6 +36,8 @@ class content extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var string
@@ -37,6 +45,8 @@ class content extends Model
     public $deptType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-06-08 21:57:10
      *
      * @var string
@@ -44,6 +54,8 @@ class content extends Model
     public $gmtCreateStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-06-08 21:57:10
      *
      * @var string
@@ -51,6 +63,8 @@ class content extends Model
     public $gmtModifiedStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123345
      *
      * @var int
@@ -58,6 +72,8 @@ class content extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0001
      *
      * @var string
@@ -65,6 +81,8 @@ class content extends Model
     public $jobNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -72,6 +90,8 @@ class content extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example u0398812938821
      *
      * @var string
@@ -79,6 +99,8 @@ class content extends Model
     public $uid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaa12312312
      *
      * @var string
@@ -86,6 +108,8 @@ class content extends Model
     public $userCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 用户名称
      *
      * @var string

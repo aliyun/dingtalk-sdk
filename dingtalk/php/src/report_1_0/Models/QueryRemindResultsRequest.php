@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryRemindResultsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryRemindResultsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -23,6 +27,8 @@ class QueryRemindResultsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryRemindResultsRequest extends Model
     public $operationUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 18xxxx
      *
      * @var string

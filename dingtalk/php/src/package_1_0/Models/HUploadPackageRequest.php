@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HUploadPackageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5000000002793153
      *
      * @var string
@@ -16,6 +18,8 @@ class HUploadPackageRequest extends Model
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

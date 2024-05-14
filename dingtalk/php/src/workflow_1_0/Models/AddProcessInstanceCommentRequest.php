@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddProcessInstanceCommentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string
@@ -22,6 +24,8 @@ class AddProcessInstanceCommentRequest extends Model
     public $file;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a171de6c-8bxxxx
      *
      * @var string
@@ -29,6 +33,8 @@ class AddProcessInstanceCommentRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 同意。
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CfOrgResp extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 01
      *
      * @var string
@@ -16,6 +18,8 @@ class CfOrgResp extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 一级部门
      *
      * @var string
@@ -23,6 +27,8 @@ class CfOrgResp extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +36,8 @@ class CfOrgResp extends Model
     public $level;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1/01
      *
      * @var string
@@ -37,6 +45,8 @@ class CfOrgResp extends Model
     public $organizationCodePath;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 公司/一级部门
      *
      * @var string
@@ -44,6 +54,8 @@ class CfOrgResp extends Model
     public $organizationPath;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

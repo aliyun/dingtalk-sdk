@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SetEnableRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example userIdXXX
      *
      * @var string

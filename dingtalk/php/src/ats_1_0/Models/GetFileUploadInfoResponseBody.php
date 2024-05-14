@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -16,6 +18,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -23,6 +27,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $accessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -30,6 +36,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $accessToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1626923829000
      *
      * @var int
@@ -37,6 +45,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $accessTokenExpirationMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example lippi-space-zjk
      *
      * @var string
@@ -44,6 +54,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $bucket;
 
     /**
+     * @description This parameter is required.
+     *
      * @example oss-cn-zhangjiakou.aliyuncs.com
      *
      * @var string
@@ -51,6 +63,8 @@ class GetFileUploadInfoResponseBody extends Model
     public $endPoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

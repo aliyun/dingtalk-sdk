@@ -19,6 +19,8 @@ class TransferEventRequest extends Model
     public $needNotifyViaO2O;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $newOrganizerId;

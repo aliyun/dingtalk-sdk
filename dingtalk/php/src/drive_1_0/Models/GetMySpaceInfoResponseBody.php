@@ -9,11 +9,17 @@ use AlibabaCloud\Tea\Model;
 class GetMySpaceInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $modifyTime;
@@ -24,26 +30,36 @@ class GetMySpaceInfoResponseBody extends Model
     public $permissionMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quota;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $usedQuota;

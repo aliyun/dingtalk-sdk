@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class EsignSyncEventRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example openEsign
      *
      * @var string

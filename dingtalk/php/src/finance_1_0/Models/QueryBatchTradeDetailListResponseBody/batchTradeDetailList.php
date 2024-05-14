@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class batchTradeDetailList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -16,6 +18,8 @@ class batchTradeDetailList extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210909153300000002734746770740
      *
      * @var string
@@ -23,6 +27,8 @@ class batchTradeDetailList extends Model
     public $detailNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-29 14:46:48
      *
      * @var string
@@ -30,6 +36,8 @@ class batchTradeDetailList extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-09-29 16:05:00
      *
      * @var string
@@ -37,6 +45,8 @@ class batchTradeDetailList extends Model
     public $gmtFinish;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试
      *
      * @var string
@@ -44,6 +54,8 @@ class batchTradeDetailList extends Model
     public $memo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 收款人
      *
      * @var string
@@ -51,6 +63,8 @@ class batchTradeDetailList extends Model
     public $payeeAccountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13900000000
      *
      * @var string
@@ -58,6 +72,8 @@ class batchTradeDetailList extends Model
     public $payeeAccountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -65,6 +81,8 @@ class batchTradeDetailList extends Model
     public $payeeAccountType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -72,6 +90,8 @@ class batchTradeDetailList extends Model
     public $serialNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSubmitStatisticsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1507564800000
      *
      * @var int
@@ -16,6 +18,8 @@ class GetSubmitStatisticsRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string
@@ -23,6 +27,8 @@ class GetSubmitStatisticsRequest extends Model
     public $operationUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var int
@@ -30,6 +36,8 @@ class GetSubmitStatisticsRequest extends Model
     public $remindId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1507564800000
      *
      * @var int
@@ -37,6 +45,8 @@ class GetSubmitStatisticsRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 18xxxxx
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20210909153300000002734753314700
      *
      * @var string
@@ -16,6 +18,8 @@ class ApplyBatchPayResponseBody extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example payData
      *
      * @var string

@@ -25,6 +25,8 @@ class GetDefaultChildResponseBody extends Model
     public $grade;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -40,6 +42,8 @@ class GetDefaultChildResponseBody extends Model
     public $period;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

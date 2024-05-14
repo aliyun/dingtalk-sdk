@@ -19,16 +19,22 @@ class records extends Model
     public $fields;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
@@ -39,11 +45,15 @@ class records extends Model
     public $modifiedUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openDataInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

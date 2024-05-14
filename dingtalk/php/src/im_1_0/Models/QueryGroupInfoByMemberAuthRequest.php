@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupInfoByMemberAuthRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example COOLAPP-XXX
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryGroupInfoByMemberAuthRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXX
      *
      * @var string

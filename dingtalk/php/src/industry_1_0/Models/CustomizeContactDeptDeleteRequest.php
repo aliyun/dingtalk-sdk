@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptDeleteRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example XXX
      *
      * @var string
@@ -16,6 +18,8 @@ class CustomizeContactDeptDeleteRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65722123
      *
      * @var int

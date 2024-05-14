@@ -23,6 +23,8 @@ class QueryAllProcessInstancesRequest extends Model
     public $endTimeInMills;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +39,8 @@ class QueryAllProcessInstancesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-C53-example
      *
      * @var string
@@ -44,6 +48,8 @@ class QueryAllProcessInstancesRequest extends Model
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1631289600000
      *
      * @var int

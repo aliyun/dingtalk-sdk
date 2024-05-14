@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetProductRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example PROD-xxx
      *
      * @var string

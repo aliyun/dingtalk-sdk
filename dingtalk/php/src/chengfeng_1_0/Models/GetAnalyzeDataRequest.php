@@ -14,6 +14,8 @@ class GetAnalyzeDataRequest extends Model
     public $periodIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 32222
      *
      * @var string

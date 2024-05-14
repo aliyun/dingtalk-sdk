@@ -37,6 +37,8 @@ class ListDentriesRequest extends Model
     public $orderBy;
 
     /**
+     * @description This parameter is required.
+     *
      * @example parent_id
      *
      * @var string
@@ -44,6 +46,8 @@ class ListDentriesRequest extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

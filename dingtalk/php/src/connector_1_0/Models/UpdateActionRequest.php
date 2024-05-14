@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateActionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var actionInfo[]
      */
     public $actionInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorFlag;

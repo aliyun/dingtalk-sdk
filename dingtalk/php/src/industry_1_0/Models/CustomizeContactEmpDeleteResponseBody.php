@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactEmpDeleteResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $content;

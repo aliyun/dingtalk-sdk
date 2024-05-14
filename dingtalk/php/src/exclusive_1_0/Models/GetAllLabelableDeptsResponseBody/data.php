@@ -14,6 +14,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -21,6 +23,8 @@ class data extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 管理部
      *
      * @var string
@@ -28,6 +32,8 @@ class data extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -35,31 +41,43 @@ class data extends Model
     public $memberCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var partnerLabelVOLevel1
      */
     public $partnerLabelVOLevel1;
 
     /**
+     * @description This parameter is required.
+     *
      * @var partnerLabelVOLevel2
      */
     public $partnerLabelVOLevel2;
 
     /**
+     * @description This parameter is required.
+     *
      * @var partnerLabelVOLevel3
      */
     public $partnerLabelVOLevel3;
 
     /**
+     * @description This parameter is required.
+     *
      * @var partnerLabelVOLevel4
      */
     public $partnerLabelVOLevel4;
 
     /**
+     * @description This parameter is required.
+     *
      * @var partnerLabelVOLevel5
      */
     public $partnerLabelVOLevel5;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -67,6 +85,8 @@ class data extends Model
     public $partnerNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string

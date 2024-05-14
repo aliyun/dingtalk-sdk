@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUserWatchLiveListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -16,6 +18,8 @@ class GetUserWatchLiveListRequest extends Model
     public $filterType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 30
      *
      * @var int
@@ -30,6 +34,8 @@ class GetUserWatchLiveListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string

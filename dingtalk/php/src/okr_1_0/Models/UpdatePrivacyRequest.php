@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdatePrivacyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example public
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdatePrivacyRequest extends Model
     public $privacy;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3RF5
      *
      * @var string
@@ -23,6 +27,8 @@ class UpdatePrivacyRequest extends Model
     public $targetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var string
@@ -30,6 +36,8 @@ class UpdatePrivacyRequest extends Model
     public $targetType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0115396701752283
      *
      * @var string

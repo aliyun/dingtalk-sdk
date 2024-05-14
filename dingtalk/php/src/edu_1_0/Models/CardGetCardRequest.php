@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CardGetCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 80264668258
      *
      * @var int
@@ -16,6 +18,8 @@ class CardGetCardRequest extends Model
     public $cardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YUFANAI
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1640239655539
      *
      * @var int
@@ -16,6 +18,8 @@ class resultList extends Model
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -23,6 +27,8 @@ class resultList extends Model
     public $memberCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 营销1群
      *
      * @var string
@@ -30,6 +36,8 @@ class resultList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example afsad21
      *
      * @var string
@@ -44,6 +52,8 @@ class resultList extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example afds12
      *
      * @var string
@@ -51,6 +61,8 @@ class resultList extends Model
     public $ownerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XX
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -16,11 +18,15 @@ class data extends Model
     public $dataUserid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $xshCustomerid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $xshDate;
@@ -96,6 +102,8 @@ class data extends Model
     public $xshState;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $xshTitle;

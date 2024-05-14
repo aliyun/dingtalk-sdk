@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BoundTemplateToTeamRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example btkoYsadwyQiE
      *
      * @var string
@@ -16,6 +18,8 @@ class BoundTemplateToTeamRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example [{"robotCode":"123ITJovyMHtmi216233798228941001","robotName":"服务小钉"}]
      *
      * @var string
@@ -28,16 +32,22 @@ class BoundTemplateToTeamRequest extends Model
     public $templateDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0普通群模板，1内部群模板
      *
      * @var string

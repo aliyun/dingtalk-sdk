@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ReleaseGrayOrgSetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5000000000000000
      *
      * @var string
@@ -16,11 +18,15 @@ class ReleaseGrayOrgSetRequest extends Model
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $value;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string

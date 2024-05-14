@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string
@@ -23,6 +25,8 @@ class list_ extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 网商银行
      *
      * @var string
@@ -37,6 +41,8 @@ class list_ extends Model
     public $accountRemark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -61,6 +67,8 @@ class list_ extends Model
     public $bankName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1631526550994
      *
      * @var int
@@ -68,6 +76,8 @@ class list_ extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaa
      *
      * @var string

@@ -42,11 +42,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseTopboxRequest $request
-     * @param CloseTopboxHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 关闭互动卡片吊顶
+     *  *
+     * @param CloseTopboxRequest $request CloseTopboxRequest
+     * @param CloseTopboxHeaders $headers CloseTopboxHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CloseTopboxResponse
+     * @return CloseTopboxResponse CloseTopboxResponse
      */
     public function closeTopboxWithOptions($request, $headers, $runtime)
     {
@@ -103,9 +105,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseTopboxRequest $request
+     * @summary 关闭互动卡片吊顶
+     *  *
+     * @param CloseTopboxRequest $request CloseTopboxRequest
      *
-     * @return CloseTopboxResponse
+     * @return CloseTopboxResponse CloseTopboxResponse
      */
     public function closeTopbox($request)
     {
@@ -116,11 +120,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCoupleGroupRequest $request
-     * @param CreateCoupleGroupHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 创建两人群
+     *  *
+     * @param CreateCoupleGroupRequest $request CreateCoupleGroupRequest
+     * @param CreateCoupleGroupHeaders $headers CreateCoupleGroupHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateCoupleGroupResponse
+     * @return CreateCoupleGroupResponse CreateCoupleGroupResponse
      */
     public function createCoupleGroupWithOptions($request, $headers, $runtime)
     {
@@ -162,9 +168,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCoupleGroupRequest $request
+     * @summary 创建两人群
+     *  *
+     * @param CreateCoupleGroupRequest $request CreateCoupleGroupRequest
      *
-     * @return CreateCoupleGroupResponse
+     * @return CreateCoupleGroupResponse CreateCoupleGroupResponse
      */
     public function createCoupleGroup($request)
     {
@@ -175,11 +183,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupRequest $request
-     * @param CreateGroupHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 创建普通群
+     *  *
+     * @param CreateGroupRequest $request CreateGroupRequest
+     * @param CreateGroupHeaders $headers CreateGroupHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateGroupResponse
+     * @return CreateGroupResponse CreateGroupResponse
      */
     public function createGroupWithOptions($request, $headers, $runtime)
     {
@@ -227,9 +237,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupRequest $request
+     * @summary 创建普通群
+     *  *
+     * @param CreateGroupRequest $request CreateGroupRequest
      *
-     * @return CreateGroupResponse
+     * @return CreateGroupResponse CreateGroupResponse
      */
     public function createGroup($request)
     {
@@ -240,11 +252,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTopboxRequest $request
-     * @param CreateTopboxHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 创建并开启互动卡片吊顶
+     *  *
+     * @param CreateTopboxRequest $request CreateTopboxRequest
+     * @param CreateTopboxHeaders $headers CreateTopboxHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTopboxResponse
+     * @return CreateTopboxResponse CreateTopboxResponse
      */
     public function createTopboxWithOptions($request, $headers, $runtime)
     {
@@ -331,9 +345,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTopboxRequest $request
+     * @summary 创建并开启互动卡片吊顶
+     *  *
+     * @param CreateTopboxRequest $request CreateTopboxRequest
      *
-     * @return CreateTopboxResponse
+     * @return CreateTopboxResponse CreateTopboxResponse
      */
     public function createTopbox($request)
     {
@@ -344,10 +360,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string[]       $headers
-     * @param RuntimeOptions $runtime
+     * @summary 群设备市场管理
+     *  *
+     * @param string[]       $headers map
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GroupManagerDeviceMarketResponse
+     * @return GroupManagerDeviceMarketResponse GroupManagerDeviceMarketResponse
      */
     public function groupManagerDeviceMarketWithOptions($headers, $runtime)
     {
@@ -370,7 +388,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GroupManagerDeviceMarketResponse
+     * @summary 群设备市场管理
+     *  *
+     * @return GroupManagerDeviceMarketResponse GroupManagerDeviceMarketResponse
      */
     public function groupManagerDeviceMarket()
     {

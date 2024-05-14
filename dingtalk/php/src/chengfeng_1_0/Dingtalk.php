@@ -80,10 +80,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAllJobLevelHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取组织下的全部职级
+     *  *
+     * @param GetAllJobLevelHeaders $headers GetAllJobLevelHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAllJobLevelResponse
+     * @return GetAllJobLevelResponse GetAllJobLevelResponse
      */
     public function getAllJobLevelWithOptions($headers, $runtime)
     {
@@ -113,7 +115,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetAllJobLevelResponse
+     * @summary 获取组织下的全部职级
+     *  *
+     * @return GetAllJobLevelResponse GetAllJobLevelResponse
      */
     public function getAllJobLevel()
     {
@@ -124,10 +128,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAllJobPositionHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取公司全部职位
+     *  *
+     * @param GetAllJobPositionHeaders $headers GetAllJobPositionHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAllJobPositionResponse
+     * @return GetAllJobPositionResponse GetAllJobPositionResponse
      */
     public function getAllJobPositionWithOptions($headers, $runtime)
     {
@@ -157,7 +163,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetAllJobPositionResponse
+     * @summary 获取公司全部职位
+     *  *
+     * @return GetAllJobPositionResponse GetAllJobPositionResponse
      */
     public function getAllJobPosition()
     {
@@ -168,10 +176,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAllJobPostHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取组织下的所有职务
+     *  *
+     * @param GetAllJobPostHeaders $headers GetAllJobPostHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAllJobPostResponse
+     * @return GetAllJobPostResponse GetAllJobPostResponse
      */
     public function getAllJobPostWithOptions($headers, $runtime)
     {
@@ -201,7 +211,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetAllJobPostResponse
+     * @summary 获取组织下的所有职务
+     *  *
+     * @return GetAllJobPostResponse GetAllJobPostResponse
      */
     public function getAllJobPost()
     {
@@ -212,11 +224,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAnalyzeDataRequest $request
-     * @param GetAnalyzeDataHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取分析运营数据
+     *  *
+     * @param GetAnalyzeDataRequest $request GetAnalyzeDataRequest
+     * @param GetAnalyzeDataHeaders $headers GetAnalyzeDataHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAnalyzeDataResponse
+     * @return GetAnalyzeDataResponse GetAnalyzeDataResponse
      */
     public function getAnalyzeDataWithOptions($request, $headers, $runtime)
     {
@@ -257,9 +271,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAnalyzeDataRequest $request
+     * @summary 获取分析运营数据
+     *  *
+     * @param GetAnalyzeDataRequest $request GetAnalyzeDataRequest
      *
-     * @return GetAnalyzeDataResponse
+     * @return GetAnalyzeDataResponse GetAnalyzeDataResponse
      */
     public function getAnalyzeData($request)
     {
@@ -270,11 +286,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetChildOrgListRequest $request
-     * @param GetChildOrgListHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 根据部门编码查询下组织列表
+     *  *
+     * @param GetChildOrgListRequest $request GetChildOrgListRequest
+     * @param GetChildOrgListHeaders $headers GetChildOrgListHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetChildOrgListResponse
+     * @return GetChildOrgListResponse GetChildOrgListResponse
      */
     public function getChildOrgListWithOptions($request, $headers, $runtime)
     {
@@ -310,9 +328,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetChildOrgListRequest $request
+     * @summary 根据部门编码查询下组织列表
+     *  *
+     * @param GetChildOrgListRequest $request GetChildOrgListRequest
      *
-     * @return GetChildOrgListResponse
+     * @return GetChildOrgListResponse GetChildOrgListResponse
      */
     public function getChildOrgList($request)
     {
@@ -323,11 +343,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEmployeeInfoByWorkNoRequest $request
-     * @param GetEmployeeInfoByWorkNoHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 根据工号查询员工基础信息
+     *  *
+     * @param GetEmployeeInfoByWorkNoRequest $request GetEmployeeInfoByWorkNoRequest
+     * @param GetEmployeeInfoByWorkNoHeaders $headers GetEmployeeInfoByWorkNoHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetEmployeeInfoByWorkNoResponse
+     * @return GetEmployeeInfoByWorkNoResponse GetEmployeeInfoByWorkNoResponse
      */
     public function getEmployeeInfoByWorkNoWithOptions($request, $headers, $runtime)
     {
@@ -363,9 +385,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEmployeeInfoByWorkNoRequest $request
+     * @summary 根据工号查询员工基础信息
+     *  *
+     * @param GetEmployeeInfoByWorkNoRequest $request GetEmployeeInfoByWorkNoRequest
      *
-     * @return GetEmployeeInfoByWorkNoResponse
+     * @return GetEmployeeInfoByWorkNoResponse GetEmployeeInfoByWorkNoResponse
      */
     public function getEmployeeInfoByWorkNo($request)
     {
@@ -376,11 +400,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据人员工号查询人员任职记录
+     *  *
      * @param string                             $workNumbers
-     * @param GetEmploymentRecordByWorkNoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param GetEmploymentRecordByWorkNoHeaders $headers     GetEmploymentRecordByWorkNoHeaders
+     * @param RuntimeOptions                     $runtime     runtime options for this request RuntimeOptions
      *
-     * @return GetEmploymentRecordByWorkNoResponse
+     * @return GetEmploymentRecordByWorkNoResponse GetEmploymentRecordByWorkNoResponse
      */
     public function getEmploymentRecordByWorkNoWithOptions($workNumbers, $headers, $runtime)
     {
@@ -410,9 +436,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据人员工号查询人员任职记录
+     *  *
      * @param string $workNumbers
      *
-     * @return GetEmploymentRecordByWorkNoResponse
+     * @return GetEmploymentRecordByWorkNoResponse GetEmploymentRecordByWorkNoResponse
      */
     public function getEmploymentRecordByWorkNo($workNumbers)
     {
@@ -423,11 +451,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPositionRequest $request
-     * @param GetJobPositionHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取职位详情
+     *  *
+     * @param GetJobPositionRequest $request GetJobPositionRequest
+     * @param GetJobPositionHeaders $headers GetJobPositionHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetJobPositionResponse
+     * @return GetJobPositionResponse GetJobPositionResponse
      */
     public function getJobPositionWithOptions($request, $headers, $runtime)
     {
@@ -463,9 +493,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPositionRequest $request
+     * @summary 获取职位详情
+     *  *
+     * @param GetJobPositionRequest $request GetJobPositionRequest
      *
-     * @return GetJobPositionResponse
+     * @return GetJobPositionResponse GetJobPositionResponse
      */
     public function getJobPosition($request)
     {
@@ -476,11 +508,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPostRequest $request
-     * @param GetJobPostHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 根据编码获取职位详情
+     *  *
+     * @param GetJobPostRequest $request GetJobPostRequest
+     * @param GetJobPostHeaders $headers GetJobPostHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetJobPostResponse
+     * @return GetJobPostResponse GetJobPostResponse
      */
     public function getJobPostWithOptions($request, $headers, $runtime)
     {
@@ -516,9 +550,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPostRequest $request
+     * @summary 根据编码获取职位详情
+     *  *
+     * @param GetJobPostRequest $request GetJobPostRequest
      *
-     * @return GetJobPostResponse
+     * @return GetJobPostResponse GetJobPostResponse
      */
     public function getJobPost($request)
     {
@@ -529,11 +565,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOrgInfoRequest $request
-     * @param GetOrgInfoHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取组织详情
+     *  *
+     * @param GetOrgInfoRequest $request GetOrgInfoRequest
+     * @param GetOrgInfoHeaders $headers GetOrgInfoHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOrgInfoResponse
+     * @return GetOrgInfoResponse GetOrgInfoResponse
      */
     public function getOrgInfoWithOptions($request, $headers, $runtime)
     {
@@ -569,9 +607,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOrgInfoRequest $request
+     * @summary 获取组织详情
+     *  *
+     * @param GetOrgInfoRequest $request GetOrgInfoRequest
      *
-     * @return GetOrgInfoResponse
+     * @return GetOrgInfoResponse GetOrgInfoResponse
      */
     public function getOrgInfo($request)
     {
@@ -582,11 +622,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffInfoByWorkNoRequest $request
-     * @param GetStaffInfoByWorkNoHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 根据员工工号获取员工的基本信息
+     *  *
+     * @param GetStaffInfoByWorkNoRequest $request GetStaffInfoByWorkNoRequest
+     * @param GetStaffInfoByWorkNoHeaders $headers GetStaffInfoByWorkNoHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetStaffInfoByWorkNoResponse
+     * @return GetStaffInfoByWorkNoResponse GetStaffInfoByWorkNoResponse
      */
     public function getStaffInfoByWorkNoWithOptions($request, $headers, $runtime)
     {
@@ -622,9 +664,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffInfoByWorkNoRequest $request
+     * @summary 根据员工工号获取员工的基本信息
+     *  *
+     * @param GetStaffInfoByWorkNoRequest $request GetStaffInfoByWorkNoRequest
      *
-     * @return GetStaffInfoByWorkNoResponse
+     * @return GetStaffInfoByWorkNoResponse GetStaffInfoByWorkNoResponse
      */
     public function getStaffInfoByWorkNo($request)
     {
@@ -635,11 +679,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffPageQueryRequest $request
-     * @param GetStaffPageQueryHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 分页查询员工信息
+     *  *
+     * @param GetStaffPageQueryRequest $request GetStaffPageQueryRequest
+     * @param GetStaffPageQueryHeaders $headers GetStaffPageQueryHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetStaffPageQueryResponse
+     * @return GetStaffPageQueryResponse GetStaffPageQueryResponse
      */
     public function getStaffPageQueryWithOptions($request, $headers, $runtime)
     {
@@ -687,9 +733,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffPageQueryRequest $request
+     * @summary 分页查询员工信息
+     *  *
+     * @param GetStaffPageQueryRequest $request GetStaffPageQueryRequest
      *
-     * @return GetStaffPageQueryResponse
+     * @return GetStaffPageQueryResponse GetStaffPageQueryResponse
      */
     public function getStaffPageQuery($request)
     {
@@ -700,11 +748,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserRequest $request
-     * @param GetUserHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 获取用户信息
+     *  *
+     * @param GetUserRequest $request GetUserRequest
+     * @param GetUserHeaders $headers GetUserHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserResponse
+     * @return GetUserResponse GetUserResponse
      */
     public function getUserWithOptions($request, $headers, $runtime)
     {
@@ -743,9 +793,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserRequest $request
+     * @summary 获取用户信息
+     *  *
+     * @param GetUserRequest $request GetUserRequest
      *
-     * @return GetUserResponse
+     * @return GetUserResponse GetUserResponse
      */
     public function getUser($request)
     {
@@ -756,10 +808,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAnalyzePeriodsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 运营数据分析下的周期列表
+     *  *
+     * @param ListAnalyzePeriodsHeaders $headers ListAnalyzePeriodsHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAnalyzePeriodsResponse
+     * @return ListAnalyzePeriodsResponse ListAnalyzePeriodsResponse
      */
     public function listAnalyzePeriodsWithOptions($headers, $runtime)
     {
@@ -789,7 +843,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListAnalyzePeriodsResponse
+     * @summary 运营数据分析下的周期列表
+     *  *
+     * @return ListAnalyzePeriodsResponse ListAnalyzePeriodsResponse
      */
     public function listAnalyzePeriods()
     {
@@ -800,11 +856,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByIdsRequest $request
-     * @param ListObjectiveByIdsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 根据目标id批量获取目标列表
+     *  *
+     * @param ListObjectiveByIdsRequest $request ListObjectiveByIdsRequest
+     * @param ListObjectiveByIdsHeaders $headers ListObjectiveByIdsHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListObjectiveByIdsResponse
+     * @return ListObjectiveByIdsResponse ListObjectiveByIdsResponse
      */
     public function listObjectiveByIdsWithOptions($request, $headers, $runtime)
     {
@@ -840,9 +898,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByIdsRequest $request
+     * @summary 根据目标id批量获取目标列表
+     *  *
+     * @param ListObjectiveByIdsRequest $request ListObjectiveByIdsRequest
      *
-     * @return ListObjectiveByIdsResponse
+     * @return ListObjectiveByIdsResponse ListObjectiveByIdsResponse
      */
     public function listObjectiveByIds($request)
     {
@@ -853,11 +913,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByUserRequest $request
-     * @param ListObjectiveByUserHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取用户的 OKR 列表
+     *  *
+     * @param ListObjectiveByUserRequest $request ListObjectiveByUserRequest
+     * @param ListObjectiveByUserHeaders $headers ListObjectiveByUserHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListObjectiveByUserResponse
+     * @return ListObjectiveByUserResponse ListObjectiveByUserResponse
      */
     public function listObjectiveByUserWithOptions($request, $headers, $runtime)
     {
@@ -899,9 +961,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByUserRequest $request
+     * @summary 获取用户的 OKR 列表
+     *  *
+     * @param ListObjectiveByUserRequest $request ListObjectiveByUserRequest
      *
-     * @return ListObjectiveByUserResponse
+     * @return ListObjectiveByUserResponse ListObjectiveByUserResponse
      */
     public function listObjectiveByUser($request)
     {
@@ -912,11 +976,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListProgressByIdsRequest $request
-     * @param ListProgressByIdsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 根据进展id获取进展列表
+     *  *
+     * @param ListProgressByIdsRequest $request ListProgressByIdsRequest
+     * @param ListProgressByIdsHeaders $headers ListProgressByIdsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListProgressByIdsResponse
+     * @return ListProgressByIdsResponse ListProgressByIdsResponse
      */
     public function listProgressByIdsWithOptions($request, $headers, $runtime)
     {
@@ -952,9 +1018,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListProgressByIdsRequest $request
+     * @summary 根据进展id获取进展列表
+     *  *
+     * @param ListProgressByIdsRequest $request ListProgressByIdsRequest
      *
-     * @return ListProgressByIdsResponse
+     * @return ListProgressByIdsResponse ListProgressByIdsResponse
      */
     public function listProgressByIds($request)
     {
@@ -965,11 +1033,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListObjectiveProgressRequest $request
-     * @param PageListObjectiveProgressHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 分页获取目标进展记录
+     *  *
+     * @param PageListObjectiveProgressRequest $request PageListObjectiveProgressRequest
+     * @param PageListObjectiveProgressHeaders $headers PageListObjectiveProgressHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return PageListObjectiveProgressResponse
+     * @return PageListObjectiveProgressResponse PageListObjectiveProgressResponse
      */
     public function pageListObjectiveProgressWithOptions($request, $headers, $runtime)
     {
@@ -1011,9 +1081,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListObjectiveProgressRequest $request
+     * @summary 分页获取目标进展记录
+     *  *
+     * @param PageListObjectiveProgressRequest $request PageListObjectiveProgressRequest
      *
-     * @return PageListObjectiveProgressResponse
+     * @return PageListObjectiveProgressResponse PageListObjectiveProgressResponse
      */
     public function pageListObjectiveProgress($request)
     {
@@ -1024,11 +1096,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TransferUserObjectiveRequest $request
-     * @param TransferUserObjectiveHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 转交目标OKR
+     *  *
+     * @param TransferUserObjectiveRequest $request TransferUserObjectiveRequest
+     * @param TransferUserObjectiveHeaders $headers TransferUserObjectiveHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return TransferUserObjectiveResponse
+     * @return TransferUserObjectiveResponse TransferUserObjectiveResponse
      */
     public function transferUserObjectiveWithOptions($request, $headers, $runtime)
     {
@@ -1067,9 +1141,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TransferUserObjectiveRequest $request
+     * @summary 转交目标OKR
+     *  *
+     * @param TransferUserObjectiveRequest $request TransferUserObjectiveRequest
      *
-     * @return TransferUserObjectiveResponse
+     * @return TransferUserObjectiveResponse TransferUserObjectiveResponse
      */
     public function transferUserObjective($request)
     {

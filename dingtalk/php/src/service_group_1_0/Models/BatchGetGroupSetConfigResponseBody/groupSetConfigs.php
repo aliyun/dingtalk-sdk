@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class groupSetConfigs extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ROBOT_SWITCH
      *
      * @var string
@@ -16,6 +18,8 @@ class groupSetConfigs extends Model
     public $configKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

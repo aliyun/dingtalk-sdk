@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateStoreGroupConversationResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cid****8Q==
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateStoreGroupConversationResponseBody extends Model
     public $conversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

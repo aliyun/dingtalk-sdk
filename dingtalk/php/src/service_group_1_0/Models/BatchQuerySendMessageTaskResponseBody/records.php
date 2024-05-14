@@ -44,6 +44,8 @@ class records extends Model
     public $sendMessageStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sendTaskTimeStr;

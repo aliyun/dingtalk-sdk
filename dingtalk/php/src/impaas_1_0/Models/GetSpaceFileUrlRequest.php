@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceFileUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -16,6 +18,8 @@ class GetSpaceFileUrlRequest extends Model
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123#123@dingding
      *
      * @var string
@@ -23,6 +27,8 @@ class GetSpaceFileUrlRequest extends Model
     public $senderUid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

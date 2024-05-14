@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SheetAutofitRowsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example stxxxx
      *
      * @var string

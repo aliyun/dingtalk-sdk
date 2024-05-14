@@ -23,6 +23,8 @@ class QueryGroupMemberRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetCorpId;

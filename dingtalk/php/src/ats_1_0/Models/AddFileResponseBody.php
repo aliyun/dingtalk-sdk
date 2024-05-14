@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddFileResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 111111
      *
      * @var string
@@ -16,6 +18,8 @@ class AddFileResponseBody extends Model
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三的简历
      *
      * @var string
@@ -23,6 +27,8 @@ class AddFileResponseBody extends Model
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var int

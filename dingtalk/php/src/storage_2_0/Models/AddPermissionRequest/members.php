@@ -16,6 +16,8 @@ class members extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example member_id
      *
      * @var string
@@ -23,6 +25,8 @@ class members extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example USER
      *
      * @var string

@@ -14,6 +14,8 @@ class rests extends Model
     public $across;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $checkTime;

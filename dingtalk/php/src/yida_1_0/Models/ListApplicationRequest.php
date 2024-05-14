@@ -23,6 +23,8 @@ class ListApplicationRequest extends Model
     public $appNameSearchKeyword;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding5d17e3add038d44535c2f4657eb6378e
      *
      * @var string
@@ -44,6 +46,8 @@ class ListApplicationRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example B073AF673BEB044D59F8F612D65E1EA2
      *
      * @var string
@@ -51,6 +55,8 @@ class ListApplicationRequest extends Model
     public $token;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

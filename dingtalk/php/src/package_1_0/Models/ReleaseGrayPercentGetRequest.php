@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ReleaseGrayPercentGetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5000000000000000
      *
      * @var string
@@ -16,6 +18,8 @@ class ReleaseGrayPercentGetRequest extends Model
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string

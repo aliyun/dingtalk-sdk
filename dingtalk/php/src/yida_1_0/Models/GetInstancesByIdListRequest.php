@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class GetInstancesByIdListRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530,d230233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
@@ -30,6 +34,8 @@ class GetInstancesByIdListRequest extends Model
     public $processInstanceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxyy
      *
      * @var string
@@ -37,6 +43,8 @@ class GetInstancesByIdListRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

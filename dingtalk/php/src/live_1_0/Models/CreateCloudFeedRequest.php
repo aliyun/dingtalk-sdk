@@ -23,6 +23,8 @@ class CreateCloudFeedRequest extends Model
     public $intro;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1615260061000
      *
      * @var int
@@ -30,6 +32,8 @@ class CreateCloudFeedRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 课程一
      *
      * @var string
@@ -37,6 +41,8 @@ class CreateCloudFeedRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 214675
      *
      * @var string
@@ -44,6 +50,8 @@ class CreateCloudFeedRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example http/https:/xxx.mp4
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RangeFindNextResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example A2
      *
      * @var string

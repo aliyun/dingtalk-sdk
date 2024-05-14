@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CancelOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -16,6 +18,8 @@ class CancelOrderRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -30,6 +34,8 @@ class CancelOrderRequest extends Model
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -44,6 +50,8 @@ class CancelOrderRequest extends Model
     public $timestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

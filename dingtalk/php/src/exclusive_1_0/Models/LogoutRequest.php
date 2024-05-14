@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LogoutRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class LogoutRequest extends Model
     public $deviceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a523641
      *
      * @var string

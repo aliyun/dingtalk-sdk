@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class roles extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $roleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tagCode;

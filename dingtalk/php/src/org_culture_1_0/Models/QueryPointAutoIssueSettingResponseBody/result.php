@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -16,6 +18,8 @@ class result extends Model
     public $pointAutoNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class result extends Model
     public $pointAutoState;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15
      *
      * @var int

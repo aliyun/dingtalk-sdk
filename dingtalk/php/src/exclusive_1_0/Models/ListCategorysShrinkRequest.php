@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListCategorysShrinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bodyShrink;

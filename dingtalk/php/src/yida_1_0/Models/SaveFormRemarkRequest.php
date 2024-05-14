@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveFormRemarkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -23,6 +25,8 @@ class SaveFormRemarkRequest extends Model
     public $atUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string
@@ -30,6 +34,8 @@ class SaveFormRemarkRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 33f6d221-17f8-42b7-836a-682b95a046c2
      *
      * @var string
@@ -51,6 +57,8 @@ class SaveFormRemarkRequest extends Model
     public $replyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxxx
      *
      * @var string
@@ -58,6 +66,8 @@ class SaveFormRemarkRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

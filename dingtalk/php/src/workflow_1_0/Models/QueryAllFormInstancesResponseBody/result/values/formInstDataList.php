@@ -16,6 +16,8 @@ class formInstDataList extends Model
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 具体参见审批控件列表
      *
      * @var string
@@ -30,6 +32,8 @@ class formInstDataList extends Model
     public $extendValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField-abcdefg
      *
      * @var string
@@ -37,6 +41,8 @@ class formInstDataList extends Model
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 员工姓名
      *
      * @var string
@@ -44,6 +50,8 @@ class formInstDataList extends Model
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string

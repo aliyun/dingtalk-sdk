@@ -24,6 +24,8 @@ class IndustryMmanufactureMaterialCostGetRequest extends Model
     public $appName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
@@ -64,11 +66,15 @@ class IndustryMmanufactureMaterialCostGetRequest extends Model
     public $orgId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;

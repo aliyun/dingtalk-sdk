@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class batchTradeDetails extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1.00
      *
      * @var string
@@ -23,6 +25,8 @@ class batchTradeDetails extends Model
     public $memo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试
      *
      * @var string
@@ -30,6 +34,8 @@ class batchTradeDetails extends Model
     public $payeeAccountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13000000000
      *
      * @var string
@@ -37,6 +43,8 @@ class batchTradeDetails extends Model
     public $payeeAccountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -44,6 +52,8 @@ class batchTradeDetails extends Model
     public $payeeAccountType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

@@ -17,6 +17,8 @@ class AddLeadsRequest extends Model
     public $assignTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1234
      *
      * @var string
@@ -24,6 +26,8 @@ class AddLeadsRequest extends Model
     public $assignUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1234
      *
      * @var string
@@ -31,11 +35,15 @@ class AddLeadsRequest extends Model
     public $assignedUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var leads[]
      */
     public $leads;
 
     /**
+     * @description This parameter is required.
+     *
      * @example t123123123
      *
      * @var string

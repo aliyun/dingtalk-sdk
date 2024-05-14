@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddResidentUsersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string

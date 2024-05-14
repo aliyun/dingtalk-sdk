@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddCustomerTrackRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example [华佗](http://******)创建了合同：**今日合同**
      *
      * @var string
@@ -16,6 +18,8 @@ class AddCustomerTrackRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fb037d68-c1bd-4be2-8c3b-6739261d1332
      *
      * @var string
@@ -44,6 +48,8 @@ class AddCustomerTrackRequest extends Model
     public $maskedContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1120
      *
      * @var string
@@ -51,6 +57,8 @@ class AddCustomerTrackRequest extends Model
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example crm_customer
      *
      * @var string
@@ -58,6 +66,8 @@ class AddCustomerTrackRequest extends Model
     public $relationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 创建合同
      *
      * @var string
@@ -65,6 +75,8 @@ class AddCustomerTrackRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 212
      *
      * @var int

@@ -49,11 +49,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ContractBenefitConsumeRequest $request
-     * @param ContractBenefitConsumeHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 合同权益核销
+     *  *
+     * @param ContractBenefitConsumeRequest $request ContractBenefitConsumeRequest
+     * @param ContractBenefitConsumeHeaders $headers ContractBenefitConsumeHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return ContractBenefitConsumeResponse
+     * @return ContractBenefitConsumeResponse ContractBenefitConsumeResponse
      */
     public function contractBenefitConsumeWithOptions($request, $headers, $runtime)
     {
@@ -107,9 +109,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ContractBenefitConsumeRequest $request
+     * @summary 合同权益核销
+     *  *
+     * @param ContractBenefitConsumeRequest $request ContractBenefitConsumeRequest
      *
-     * @return ContractBenefitConsumeResponse
+     * @return ContractBenefitConsumeResponse ContractBenefitConsumeResponse
      */
     public function contractBenefitConsume($request)
     {
@@ -120,11 +124,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryApprovalInfoRequest $request
-     * @param EsignQueryApprovalInfoHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 天谷侧查询审批单
+     *  *
+     * @param EsignQueryApprovalInfoRequest $request EsignQueryApprovalInfoRequest
+     * @param EsignQueryApprovalInfoHeaders $headers EsignQueryApprovalInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return EsignQueryApprovalInfoResponse
+     * @return EsignQueryApprovalInfoResponse EsignQueryApprovalInfoResponse
      */
     public function esignQueryApprovalInfoWithOptions($request, $headers, $runtime)
     {
@@ -166,9 +172,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryApprovalInfoRequest $request
+     * @summary 天谷侧查询审批单
+     *  *
+     * @param EsignQueryApprovalInfoRequest $request EsignQueryApprovalInfoRequest
      *
-     * @return EsignQueryApprovalInfoResponse
+     * @return EsignQueryApprovalInfoResponse EsignQueryApprovalInfoResponse
      */
     public function esignQueryApprovalInfo($request)
     {
@@ -179,11 +187,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryGrantInfoRequest $request
-     * @param EsignQueryGrantInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 天谷侧查询授权信息接口
+     *  *
+     * @param EsignQueryGrantInfoRequest $request EsignQueryGrantInfoRequest
+     * @param EsignQueryGrantInfoHeaders $headers EsignQueryGrantInfoHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return EsignQueryGrantInfoResponse
+     * @return EsignQueryGrantInfoResponse EsignQueryGrantInfoResponse
      */
     public function esignQueryGrantInfoWithOptions($request, $headers, $runtime)
     {
@@ -225,9 +235,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryGrantInfoRequest $request
+     * @summary 天谷侧查询授权信息接口
+     *  *
+     * @param EsignQueryGrantInfoRequest $request EsignQueryGrantInfoRequest
      *
-     * @return EsignQueryGrantInfoResponse
+     * @return EsignQueryGrantInfoResponse EsignQueryGrantInfoResponse
      */
     public function esignQueryGrantInfo($request)
     {
@@ -238,11 +250,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryIdentityByTicketRequest $request
-     * @param EsignQueryIdentityByTicketHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 天谷侧查询获取免登信息
+     *  *
+     * @param EsignQueryIdentityByTicketRequest $request EsignQueryIdentityByTicketRequest
+     * @param EsignQueryIdentityByTicketHeaders $headers EsignQueryIdentityByTicketHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return EsignQueryIdentityByTicketResponse
+     * @return EsignQueryIdentityByTicketResponse EsignQueryIdentityByTicketResponse
      */
     public function esignQueryIdentityByTicketWithOptions($request, $headers, $runtime)
     {
@@ -284,9 +298,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignQueryIdentityByTicketRequest $request
+     * @summary 天谷侧查询获取免登信息
+     *  *
+     * @param EsignQueryIdentityByTicketRequest $request EsignQueryIdentityByTicketRequest
      *
-     * @return EsignQueryIdentityByTicketResponse
+     * @return EsignQueryIdentityByTicketResponse EsignQueryIdentityByTicketResponse
      */
     public function esignQueryIdentityByTicket($request)
     {
@@ -297,11 +313,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignSyncEventRequest $request
-     * @param EsignSyncEventHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary e签宝电子签事件同步回传接口
+     *  *
+     * @param EsignSyncEventRequest $request EsignSyncEventRequest
+     * @param EsignSyncEventHeaders $headers EsignSyncEventHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return EsignSyncEventResponse
+     * @return EsignSyncEventResponse EsignSyncEventResponse
      */
     public function esignSyncEventWithOptions($request, $headers, $runtime)
     {
@@ -349,9 +367,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EsignSyncEventRequest $request
+     * @summary e签宝电子签事件同步回传接口
+     *  *
+     * @param EsignSyncEventRequest $request EsignSyncEventRequest
      *
-     * @return EsignSyncEventResponse
+     * @return EsignSyncEventResponse EsignSyncEventResponse
      */
     public function esignSyncEvent($request)
     {
@@ -362,11 +382,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAdvancedContractVersionRequest $request
-     * @param QueryAdvancedContractVersionHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @summary e签宝查询智能合同版本接口
+     *  *
+     * @param QueryAdvancedContractVersionRequest $request QueryAdvancedContractVersionRequest
+     * @param QueryAdvancedContractVersionHeaders $headers QueryAdvancedContractVersionHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryAdvancedContractVersionResponse
+     * @return QueryAdvancedContractVersionResponse QueryAdvancedContractVersionResponse
      */
     public function queryAdvancedContractVersionWithOptions($request, $headers, $runtime)
     {
@@ -405,9 +427,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAdvancedContractVersionRequest $request
+     * @summary e签宝查询智能合同版本接口
+     *  *
+     * @param QueryAdvancedContractVersionRequest $request QueryAdvancedContractVersionRequest
      *
-     * @return QueryAdvancedContractVersionResponse
+     * @return QueryAdvancedContractVersionResponse QueryAdvancedContractVersionResponse
      */
     public function queryAdvancedContractVersion($request)
     {
@@ -418,11 +442,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendContractCardRequest $request
-     * @param SendContractCardHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 发送合同相关卡片
+     *  *
+     * @param SendContractCardRequest $request SendContractCardRequest
+     * @param SendContractCardHeaders $headers SendContractCardHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendContractCardResponse
+     * @return SendContractCardResponse SendContractCardResponse
      */
     public function sendContractCardWithOptions($request, $headers, $runtime)
     {
@@ -482,9 +508,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendContractCardRequest $request
+     * @summary 发送合同相关卡片
+     *  *
+     * @param SendContractCardRequest $request SendContractCardRequest
      *
-     * @return SendContractCardResponse
+     * @return SendContractCardResponse SendContractCardResponse
      */
     public function sendContractCard($request)
     {

@@ -24,6 +24,8 @@ class CreateSpaceRequest extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试知识库
      *
      * @var string
@@ -31,6 +33,8 @@ class CreateSpaceRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string
@@ -45,6 +49,8 @@ class CreateSpaceRequest extends Model
     public $sectionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var shareScope
      */
     public $shareScope;

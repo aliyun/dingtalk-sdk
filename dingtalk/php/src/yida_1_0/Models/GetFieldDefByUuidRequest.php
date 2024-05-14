@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFieldDefByUuidRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -16,6 +18,8 @@ class GetFieldDefByUuidRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-J7966ZA1XN940B88DYNMNABXUXNU3F3FMLJ8L5
      *
      * @var string
@@ -23,6 +27,8 @@ class GetFieldDefByUuidRequest extends Model
     public $formUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
      *
      * @var string
@@ -30,6 +36,8 @@ class GetFieldDefByUuidRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5014533041684350
      *
      * @var string

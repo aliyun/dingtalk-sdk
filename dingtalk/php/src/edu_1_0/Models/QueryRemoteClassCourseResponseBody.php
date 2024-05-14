@@ -15,6 +15,8 @@ class QueryRemoteClassCourseResponseBody extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

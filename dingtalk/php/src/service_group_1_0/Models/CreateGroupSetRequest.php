@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupSetRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupSetName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

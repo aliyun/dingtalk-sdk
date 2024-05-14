@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class DescribeRelationMetaResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var relationMetaDTOList[]
      */
     public $relationMetaDTOList;

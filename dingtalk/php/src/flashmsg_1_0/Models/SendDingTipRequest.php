@@ -20,6 +20,8 @@ class SendDingTipRequest extends Model
     public $link;
 
     /**
+     * @description This parameter is required.
+     *
      * @example msg_f9aae78558b34e20a5badead4c29244c_223
      *
      * @var string
@@ -27,6 +29,8 @@ class SendDingTipRequest extends Model
     public $messageId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserId;
@@ -39,6 +43,8 @@ class SendDingTipRequest extends Model
     public $senderUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 您有一条闪读消息，请注意查收XX
      *
      * @var string

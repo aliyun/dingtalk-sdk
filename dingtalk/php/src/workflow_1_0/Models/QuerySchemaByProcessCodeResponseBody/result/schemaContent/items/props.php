@@ -170,6 +170,8 @@ class props extends Model
     public $holidayOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TextField-K2AD4O5B
      *
      * @var string
@@ -177,6 +179,8 @@ class props extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 单行输入框
      *
      * @var string

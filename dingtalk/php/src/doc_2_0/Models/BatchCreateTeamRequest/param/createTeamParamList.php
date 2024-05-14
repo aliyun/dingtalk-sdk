@@ -14,6 +14,8 @@ class createTeamParamList extends Model
     public $adminUnionIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example creator_union_id
      *
      * @var string
@@ -21,6 +23,8 @@ class createTeamParamList extends Model
     public $creatorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dept_id
      *
      * @var string
@@ -28,6 +32,8 @@ class createTeamParamList extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example team_name
      *
      * @var string

@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class metaList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldType;

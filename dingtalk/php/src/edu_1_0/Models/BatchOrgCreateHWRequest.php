@@ -10,21 +10,29 @@ use AlibabaCloud\Tea\Model;
 class BatchOrgCreateHWRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $attributes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $courseName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hwContent;
@@ -52,6 +60,8 @@ class BatchOrgCreateHWRequest extends Model
     public $hwPhoto;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hwTitle;
@@ -67,11 +77,15 @@ class BatchOrgCreateHWRequest extends Model
     public $hwVideo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $identifier;
 
     /**
+     * @description This parameter is required.
+     *
      * @var openSelectItemList[]
      */
     public $openSelectItemList;
@@ -87,6 +101,8 @@ class BatchOrgCreateHWRequest extends Model
     public $scheduledTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $status;
@@ -97,11 +113,15 @@ class BatchOrgCreateHWRequest extends Model
     public $targetRole;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $teacherName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $teacherUserId;

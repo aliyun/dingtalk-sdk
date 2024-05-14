@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class userMuteResult extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1645315682000
      *
      * @var int
@@ -16,6 +18,8 @@ class userMuteResult extends Model
     public $muteEndTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1645315682000
      *
      * @var int
@@ -23,6 +27,8 @@ class userMuteResult extends Model
     public $muteStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

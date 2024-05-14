@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessesInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryProcessesInstanceRequest extends Model
     public $bizObjectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string

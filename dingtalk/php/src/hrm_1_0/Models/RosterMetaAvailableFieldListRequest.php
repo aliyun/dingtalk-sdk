@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RosterMetaAvailableFieldListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1231
      *
      * @var int

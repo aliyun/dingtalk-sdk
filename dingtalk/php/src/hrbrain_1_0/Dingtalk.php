@@ -79,11 +79,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportAwardDetailRequest $request
-     * @param HrbrainImportAwardDetailHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 集成奖励记录
+     *  *
+     * @param HrbrainImportAwardDetailRequest $request HrbrainImportAwardDetailRequest
+     * @param HrbrainImportAwardDetailHeaders $headers HrbrainImportAwardDetailHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportAwardDetailResponse
+     * @return HrbrainImportAwardDetailResponse HrbrainImportAwardDetailResponse
      */
     public function hrbrainImportAwardDetailWithOptions($request, $headers, $runtime)
     {
@@ -120,9 +122,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportAwardDetailRequest $request
+     * @summary 集成奖励记录
+     *  *
+     * @param HrbrainImportAwardDetailRequest $request HrbrainImportAwardDetailRequest
      *
-     * @return HrbrainImportAwardDetailResponse
+     * @return HrbrainImportAwardDetailResponse HrbrainImportAwardDetailResponse
      */
     public function hrbrainImportAwardDetail($request)
     {
@@ -133,11 +137,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportDeptInfoRequest $request
-     * @param HrbrainImportDeptInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 集成组织架构
+     *  *
+     * @param HrbrainImportDeptInfoRequest $request HrbrainImportDeptInfoRequest
+     * @param HrbrainImportDeptInfoHeaders $headers HrbrainImportDeptInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportDeptInfoResponse
+     * @return HrbrainImportDeptInfoResponse HrbrainImportDeptInfoResponse
      */
     public function hrbrainImportDeptInfoWithOptions($request, $headers, $runtime)
     {
@@ -174,9 +180,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportDeptInfoRequest $request
+     * @summary 集成组织架构
+     *  *
+     * @param HrbrainImportDeptInfoRequest $request HrbrainImportDeptInfoRequest
      *
-     * @return HrbrainImportDeptInfoResponse
+     * @return HrbrainImportDeptInfoResponse HrbrainImportDeptInfoResponse
      */
     public function hrbrainImportDeptInfo($request)
     {
@@ -187,11 +195,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportDimissionRequest $request
-     * @param HrbrainImportDimissionHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 集成离职信息
+     *  *
+     * @param HrbrainImportDimissionRequest $request HrbrainImportDimissionRequest
+     * @param HrbrainImportDimissionHeaders $headers HrbrainImportDimissionHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportDimissionResponse
+     * @return HrbrainImportDimissionResponse HrbrainImportDimissionResponse
      */
     public function hrbrainImportDimissionWithOptions($request, $headers, $runtime)
     {
@@ -228,9 +238,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportDimissionRequest $request
+     * @summary 集成离职信息
+     *  *
+     * @param HrbrainImportDimissionRequest $request HrbrainImportDimissionRequest
      *
-     * @return HrbrainImportDimissionResponse
+     * @return HrbrainImportDimissionResponse HrbrainImportDimissionResponse
      */
     public function hrbrainImportDimission($request)
     {
@@ -241,11 +253,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportEduExpRequest $request
-     * @param HrbrainImportEduExpHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 集成教育经历
+     *  *
+     * @param HrbrainImportEduExpRequest $request HrbrainImportEduExpRequest
+     * @param HrbrainImportEduExpHeaders $headers HrbrainImportEduExpHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportEduExpResponse
+     * @return HrbrainImportEduExpResponse HrbrainImportEduExpResponse
      */
     public function hrbrainImportEduExpWithOptions($request, $headers, $runtime)
     {
@@ -282,9 +296,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportEduExpRequest $request
+     * @summary 集成教育经历
+     *  *
+     * @param HrbrainImportEduExpRequest $request HrbrainImportEduExpRequest
      *
-     * @return HrbrainImportEduExpResponse
+     * @return HrbrainImportEduExpResponse HrbrainImportEduExpResponse
      */
     public function hrbrainImportEduExp($request)
     {
@@ -295,11 +311,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportEmpInfoRequest $request
-     * @param HrbrainImportEmpInfoHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 集成人员信息
+     *  *
+     * @param HrbrainImportEmpInfoRequest $request HrbrainImportEmpInfoRequest
+     * @param HrbrainImportEmpInfoHeaders $headers HrbrainImportEmpInfoHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportEmpInfoResponse
+     * @return HrbrainImportEmpInfoResponse HrbrainImportEmpInfoResponse
      */
     public function hrbrainImportEmpInfoWithOptions($request, $headers, $runtime)
     {
@@ -336,9 +354,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportEmpInfoRequest $request
+     * @summary 集成人员信息
+     *  *
+     * @param HrbrainImportEmpInfoRequest $request HrbrainImportEmpInfoRequest
      *
-     * @return HrbrainImportEmpInfoResponse
+     * @return HrbrainImportEmpInfoResponse HrbrainImportEmpInfoResponse
      */
     public function hrbrainImportEmpInfo($request)
     {
@@ -349,11 +369,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelBaseRequest $request
-     * @param HrbrainImportLabelBaseHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 集成基础标签
+     *  *
+     * @param HrbrainImportLabelBaseRequest $request HrbrainImportLabelBaseRequest
+     * @param HrbrainImportLabelBaseHeaders $headers HrbrainImportLabelBaseHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportLabelBaseResponse
+     * @return HrbrainImportLabelBaseResponse HrbrainImportLabelBaseResponse
      */
     public function hrbrainImportLabelBaseWithOptions($request, $headers, $runtime)
     {
@@ -390,9 +412,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelBaseRequest $request
+     * @summary 集成基础标签
+     *  *
+     * @param HrbrainImportLabelBaseRequest $request HrbrainImportLabelBaseRequest
      *
-     * @return HrbrainImportLabelBaseResponse
+     * @return HrbrainImportLabelBaseResponse HrbrainImportLabelBaseResponse
      */
     public function hrbrainImportLabelBase($request)
     {
@@ -403,11 +427,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelCustomRequest $request
-     * @param HrbrainImportLabelCustomHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 集成自定义标签
+     *  *
+     * @param HrbrainImportLabelCustomRequest $request HrbrainImportLabelCustomRequest
+     * @param HrbrainImportLabelCustomHeaders $headers HrbrainImportLabelCustomHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportLabelCustomResponse
+     * @return HrbrainImportLabelCustomResponse HrbrainImportLabelCustomResponse
      */
     public function hrbrainImportLabelCustomWithOptions($request, $headers, $runtime)
     {
@@ -444,9 +470,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelCustomRequest $request
+     * @summary 集成自定义标签
+     *  *
+     * @param HrbrainImportLabelCustomRequest $request HrbrainImportLabelCustomRequest
      *
-     * @return HrbrainImportLabelCustomResponse
+     * @return HrbrainImportLabelCustomResponse HrbrainImportLabelCustomResponse
      */
     public function hrbrainImportLabelCustom($request)
     {
@@ -457,11 +485,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelIndustryRequest $request
-     * @param HrbrainImportLabelIndustryHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 集成领域经验
+     *  *
+     * @param HrbrainImportLabelIndustryRequest $request HrbrainImportLabelIndustryRequest
+     * @param HrbrainImportLabelIndustryHeaders $headers HrbrainImportLabelIndustryHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportLabelIndustryResponse
+     * @return HrbrainImportLabelIndustryResponse HrbrainImportLabelIndustryResponse
      */
     public function hrbrainImportLabelIndustryWithOptions($request, $headers, $runtime)
     {
@@ -498,9 +528,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelIndustryRequest $request
+     * @summary 集成领域经验
+     *  *
+     * @param HrbrainImportLabelIndustryRequest $request HrbrainImportLabelIndustryRequest
      *
-     * @return HrbrainImportLabelIndustryResponse
+     * @return HrbrainImportLabelIndustryResponse HrbrainImportLabelIndustryResponse
      */
     public function hrbrainImportLabelIndustry($request)
     {
@@ -511,11 +543,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelInventoryRequest $request
-     * @param HrbrainImportLabelInventoryHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 集成盘点数据
+     *  *
+     * @param HrbrainImportLabelInventoryRequest $request HrbrainImportLabelInventoryRequest
+     * @param HrbrainImportLabelInventoryHeaders $headers HrbrainImportLabelInventoryHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportLabelInventoryResponse
+     * @return HrbrainImportLabelInventoryResponse HrbrainImportLabelInventoryResponse
      */
     public function hrbrainImportLabelInventoryWithOptions($request, $headers, $runtime)
     {
@@ -552,9 +586,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelInventoryRequest $request
+     * @summary 集成盘点数据
+     *  *
+     * @param HrbrainImportLabelInventoryRequest $request HrbrainImportLabelInventoryRequest
      *
-     * @return HrbrainImportLabelInventoryResponse
+     * @return HrbrainImportLabelInventoryResponse HrbrainImportLabelInventoryResponse
      */
     public function hrbrainImportLabelInventory($request)
     {
@@ -565,11 +601,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelProfSkillRequest $request
-     * @param HrbrainImportLabelProfSkillHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 集成专业技能
+     *  *
+     * @param HrbrainImportLabelProfSkillRequest $request HrbrainImportLabelProfSkillRequest
+     * @param HrbrainImportLabelProfSkillHeaders $headers HrbrainImportLabelProfSkillHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportLabelProfSkillResponse
+     * @return HrbrainImportLabelProfSkillResponse HrbrainImportLabelProfSkillResponse
      */
     public function hrbrainImportLabelProfSkillWithOptions($request, $headers, $runtime)
     {
@@ -606,9 +644,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportLabelProfSkillRequest $request
+     * @summary 集成专业技能
+     *  *
+     * @param HrbrainImportLabelProfSkillRequest $request HrbrainImportLabelProfSkillRequest
      *
-     * @return HrbrainImportLabelProfSkillResponse
+     * @return HrbrainImportLabelProfSkillResponse HrbrainImportLabelProfSkillResponse
      */
     public function hrbrainImportLabelProfSkill($request)
     {
@@ -619,11 +659,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPerfEvalRequest $request
-     * @param HrbrainImportPerfEvalHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 集成绩效记录
+     *  *
+     * @param HrbrainImportPerfEvalRequest $request HrbrainImportPerfEvalRequest
+     * @param HrbrainImportPerfEvalHeaders $headers HrbrainImportPerfEvalHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportPerfEvalResponse
+     * @return HrbrainImportPerfEvalResponse HrbrainImportPerfEvalResponse
      */
     public function hrbrainImportPerfEvalWithOptions($request, $headers, $runtime)
     {
@@ -660,9 +702,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPerfEvalRequest $request
+     * @summary 集成绩效记录
+     *  *
+     * @param HrbrainImportPerfEvalRequest $request HrbrainImportPerfEvalRequest
      *
-     * @return HrbrainImportPerfEvalResponse
+     * @return HrbrainImportPerfEvalResponse HrbrainImportPerfEvalResponse
      */
     public function hrbrainImportPerfEval($request)
     {
@@ -673,11 +717,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPromEvalRequest $request
-     * @param HrbrainImportPromEvalHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 集成晋升记录
+     *  *
+     * @param HrbrainImportPromEvalRequest $request HrbrainImportPromEvalRequest
+     * @param HrbrainImportPromEvalHeaders $headers HrbrainImportPromEvalHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportPromEvalResponse
+     * @return HrbrainImportPromEvalResponse HrbrainImportPromEvalResponse
      */
     public function hrbrainImportPromEvalWithOptions($request, $headers, $runtime)
     {
@@ -714,9 +760,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPromEvalRequest $request
+     * @summary 集成晋升记录
+     *  *
+     * @param HrbrainImportPromEvalRequest $request HrbrainImportPromEvalRequest
      *
-     * @return HrbrainImportPromEvalResponse
+     * @return HrbrainImportPromEvalResponse HrbrainImportPromEvalResponse
      */
     public function hrbrainImportPromEval($request)
     {
@@ -727,11 +775,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPunDetailRequest $request
-     * @param HrbrainImportPunDetailHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 集成处分记录
+     *  *
+     * @param HrbrainImportPunDetailRequest $request HrbrainImportPunDetailRequest
+     * @param HrbrainImportPunDetailHeaders $headers HrbrainImportPunDetailHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportPunDetailResponse
+     * @return HrbrainImportPunDetailResponse HrbrainImportPunDetailResponse
      */
     public function hrbrainImportPunDetailWithOptions($request, $headers, $runtime)
     {
@@ -768,9 +818,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportPunDetailRequest $request
+     * @summary 集成处分记录
+     *  *
+     * @param HrbrainImportPunDetailRequest $request HrbrainImportPunDetailRequest
      *
-     * @return HrbrainImportPunDetailResponse
+     * @return HrbrainImportPunDetailResponse HrbrainImportPunDetailResponse
      */
     public function hrbrainImportPunDetail($request)
     {
@@ -781,11 +833,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportRegistRequest $request
-     * @param HrbrainImportRegistHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 集成入职信息
+     *  *
+     * @param HrbrainImportRegistRequest $request HrbrainImportRegistRequest
+     * @param HrbrainImportRegistHeaders $headers HrbrainImportRegistHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportRegistResponse
+     * @return HrbrainImportRegistResponse HrbrainImportRegistResponse
      */
     public function hrbrainImportRegistWithOptions($request, $headers, $runtime)
     {
@@ -822,9 +876,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportRegistRequest $request
+     * @summary 集成入职信息
+     *  *
+     * @param HrbrainImportRegistRequest $request HrbrainImportRegistRequest
      *
-     * @return HrbrainImportRegistResponse
+     * @return HrbrainImportRegistResponse HrbrainImportRegistResponse
      */
     public function hrbrainImportRegist($request)
     {
@@ -835,11 +891,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportTransferEvalRequest $request
-     * @param HrbrainImportTransferEvalHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 集成异动记录
+     *  *
+     * @param HrbrainImportTransferEvalRequest $request HrbrainImportTransferEvalRequest
+     * @param HrbrainImportTransferEvalHeaders $headers HrbrainImportTransferEvalHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportTransferEvalResponse
+     * @return HrbrainImportTransferEvalResponse HrbrainImportTransferEvalResponse
      */
     public function hrbrainImportTransferEvalWithOptions($request, $headers, $runtime)
     {
@@ -876,9 +934,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportTransferEvalRequest $request
+     * @summary 集成异动记录
+     *  *
+     * @param HrbrainImportTransferEvalRequest $request HrbrainImportTransferEvalRequest
      *
-     * @return HrbrainImportTransferEvalResponse
+     * @return HrbrainImportTransferEvalResponse HrbrainImportTransferEvalResponse
      */
     public function hrbrainImportTransferEval($request)
     {
@@ -889,11 +949,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportWorkExpRequest $request
-     * @param HrbrainImportWorkExpHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 集成工作经历
+     *  *
+     * @param HrbrainImportWorkExpRequest $request HrbrainImportWorkExpRequest
+     * @param HrbrainImportWorkExpHeaders $headers HrbrainImportWorkExpHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return HrbrainImportWorkExpResponse
+     * @return HrbrainImportWorkExpResponse HrbrainImportWorkExpResponse
      */
     public function hrbrainImportWorkExpWithOptions($request, $headers, $runtime)
     {
@@ -930,9 +992,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HrbrainImportWorkExpRequest $request
+     * @summary 集成工作经历
+     *  *
+     * @param HrbrainImportWorkExpRequest $request HrbrainImportWorkExpRequest
      *
-     * @return HrbrainImportWorkExpResponse
+     * @return HrbrainImportWorkExpResponse HrbrainImportWorkExpResponse
      */
     public function hrbrainImportWorkExp($request)
     {
@@ -943,11 +1007,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncDataRequest $request
-     * @param SyncDataHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 同步统计基础数据
+     *  *
+     * @param SyncDataRequest $request SyncDataRequest
+     * @param SyncDataHeaders $headers SyncDataHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncDataResponse
+     * @return SyncDataResponse SyncDataResponse
      */
     public function syncDataWithOptions($request, $headers, $runtime)
     {
@@ -995,9 +1061,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncDataRequest $request
+     * @summary 同步统计基础数据
+     *  *
+     * @param SyncDataRequest $request SyncDataRequest
      *
-     * @return SyncDataResponse
+     * @return SyncDataResponse SyncDataResponse
      */
     public function syncData($request)
     {

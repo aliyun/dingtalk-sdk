@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateActionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var actionInfo[]
      */
     public $actionInfo;

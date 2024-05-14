@@ -14,16 +14,22 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tag;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

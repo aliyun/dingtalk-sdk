@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class triggerInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $description;
@@ -19,6 +21,8 @@ class triggerInfo extends Model
     public $dingConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $inputSchema;
@@ -29,11 +33,15 @@ class triggerInfo extends Model
     public $integratorConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorTriggerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

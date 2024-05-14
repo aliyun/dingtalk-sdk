@@ -23,6 +23,8 @@ class CreateProcessRequest extends Model
     public $files;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $initiatorUserId;
@@ -48,6 +50,8 @@ class CreateProcessRequest extends Model
     public $sourceInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskName;

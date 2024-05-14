@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-07-27T18:53Z
      *
      * @var string
@@ -36,6 +38,8 @@ class result extends Model
     public $forms;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2022-07-27T18:53Z
      *
      * @var string

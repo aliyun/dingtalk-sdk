@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class BatchGetGroupSetConfigRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $configKeys;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

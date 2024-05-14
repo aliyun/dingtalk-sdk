@@ -23,11 +23,15 @@ class ProcessStartRequest extends Model
     public $ccs;
 
     /**
+     * @description This parameter is required.
+     *
      * @var files[]
      */
     public $files;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $initiatorUserId;

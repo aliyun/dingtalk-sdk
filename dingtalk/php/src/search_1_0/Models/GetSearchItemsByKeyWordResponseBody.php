@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemsByKeyWordResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -22,6 +26,8 @@ class GetSearchItemsByKeyWordResponseBody extends Model
     public $totalCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var value[]
      */
     public $value;

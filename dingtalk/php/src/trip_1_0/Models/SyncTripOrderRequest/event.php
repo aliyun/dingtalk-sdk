@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class event extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example INIT
      *
      * @var string
@@ -16,6 +18,8 @@ class event extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-05-15 10:10:10
      *
      * @var string

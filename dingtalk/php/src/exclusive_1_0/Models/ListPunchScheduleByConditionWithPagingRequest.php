@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListPunchScheduleByConditionWithPagingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2aa6736c715944329xxxxxxxxd38be41
      *
      * @var string
@@ -16,6 +18,8 @@ class ListPunchScheduleByConditionWithPagingRequest extends Model
     public $bizInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +27,8 @@ class ListPunchScheduleByConditionWithPagingRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextToken;

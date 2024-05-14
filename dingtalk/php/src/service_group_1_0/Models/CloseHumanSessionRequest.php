@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CloseHumanSessionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

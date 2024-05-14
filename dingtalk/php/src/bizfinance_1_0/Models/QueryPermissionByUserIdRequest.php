@@ -16,6 +16,8 @@ class QueryPermissionByUserIdRequest extends Model
     public $companyCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

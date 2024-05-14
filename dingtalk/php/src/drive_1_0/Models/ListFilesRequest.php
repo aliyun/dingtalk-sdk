@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListFilesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -29,6 +31,8 @@ class ListFilesRequest extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

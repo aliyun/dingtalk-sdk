@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class categoryStatisticsRecords extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class categoryStatisticsRecords extends Model
     public $count;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 9
      *
      * @var int
@@ -23,6 +27,8 @@ class categoryStatisticsRecords extends Model
     public $lastCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 工单类
      *
      * @var string

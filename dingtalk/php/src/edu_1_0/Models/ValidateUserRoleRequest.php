@@ -16,6 +16,8 @@ class ValidateUserRoleRequest extends Model
     public $timeThreshold;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VYn5fYjORJMi
      *
      * @var string

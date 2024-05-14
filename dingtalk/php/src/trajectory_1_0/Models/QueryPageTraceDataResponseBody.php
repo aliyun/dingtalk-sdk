@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryPageTraceDataResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,11 +19,15 @@ class QueryPageTraceDataResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

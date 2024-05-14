@@ -14,6 +14,8 @@ class RosterMetaFieldOptionsUpdateRequest extends Model
     public $appAgentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sys05-contractType
      *
      * @var string
@@ -21,6 +23,8 @@ class RosterMetaFieldOptionsUpdateRequest extends Model
     public $fieldCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sys05
      *
      * @var string
@@ -28,11 +32,15 @@ class RosterMetaFieldOptionsUpdateRequest extends Model
     public $groupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $labels;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OPTIONS_ADD
      *
      * @var string

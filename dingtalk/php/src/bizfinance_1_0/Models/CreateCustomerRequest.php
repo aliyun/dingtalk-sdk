@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 55001121
      *
      * @var string
@@ -37,6 +39,8 @@ class CreateCustomerRequest extends Model
     public $drawerTelephone;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx
      *
      * @var string

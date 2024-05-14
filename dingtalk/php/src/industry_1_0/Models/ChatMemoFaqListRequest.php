@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatMemoFaqListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 111111
      *
      * @var int
@@ -16,6 +18,8 @@ class ChatMemoFaqListRequest extends Model
     public $datasetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class ChatMemoFaqListRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int

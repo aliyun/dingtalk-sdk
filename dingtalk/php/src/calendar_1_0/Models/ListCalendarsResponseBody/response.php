@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class response extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var calendars[]
      */
     public $calendars;

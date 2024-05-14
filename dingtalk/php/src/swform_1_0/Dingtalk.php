@@ -37,12 +37,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取单个填表实例详情接口
+     *  *
      * @param string                 $formInstanceId
-     * @param GetFormInstanceRequest $request
-     * @param GetFormInstanceHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetFormInstanceRequest $request        GetFormInstanceRequest
+     * @param GetFormInstanceHeaders $headers        GetFormInstanceHeaders
+     * @param RuntimeOptions         $runtime        runtime options for this request RuntimeOptions
      *
-     * @return GetFormInstanceResponse
+     * @return GetFormInstanceResponse GetFormInstanceResponse
      */
     public function getFormInstanceWithOptions($formInstanceId, $request, $headers, $runtime)
     {
@@ -78,10 +80,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取单个填表实例详情接口
+     *  *
      * @param string                 $formInstanceId
-     * @param GetFormInstanceRequest $request
+     * @param GetFormInstanceRequest $request        GetFormInstanceRequest
      *
-     * @return GetFormInstanceResponse
+     * @return GetFormInstanceResponse GetFormInstanceResponse
      */
     public function getFormInstance($formInstanceId, $request)
     {
@@ -92,12 +96,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取填表模版下的填表实例列表接口
+     *  *
      * @param string                   $formCode
-     * @param ListFormInstancesRequest $request
-     * @param ListFormInstancesHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ListFormInstancesRequest $request  ListFormInstancesRequest
+     * @param ListFormInstancesHeaders $headers  ListFormInstancesHeaders
+     * @param RuntimeOptions           $runtime  runtime options for this request RuntimeOptions
      *
-     * @return ListFormInstancesResponse
+     * @return ListFormInstancesResponse ListFormInstancesResponse
      */
     public function listFormInstancesWithOptions($formCode, $request, $headers, $runtime)
     {
@@ -142,10 +148,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取填表模版下的填表实例列表接口
+     *  *
      * @param string                   $formCode
-     * @param ListFormInstancesRequest $request
+     * @param ListFormInstancesRequest $request  ListFormInstancesRequest
      *
-     * @return ListFormInstancesResponse
+     * @return ListFormInstancesResponse ListFormInstancesResponse
      */
     public function listFormInstances($formCode, $request)
     {
@@ -156,11 +164,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFormSchemasByCreatorRequest $request
-     * @param ListFormSchemasByCreatorHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取用户创建的填表模板列表接口
+     *  *
+     * @param ListFormSchemasByCreatorRequest $request ListFormSchemasByCreatorRequest
+     * @param ListFormSchemasByCreatorHeaders $headers ListFormSchemasByCreatorHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListFormSchemasByCreatorResponse
+     * @return ListFormSchemasByCreatorResponse ListFormSchemasByCreatorResponse
      */
     public function listFormSchemasByCreatorWithOptions($request, $headers, $runtime)
     {
@@ -205,9 +215,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFormSchemasByCreatorRequest $request
+     * @summary 获取用户创建的填表模板列表接口
+     *  *
+     * @param ListFormSchemasByCreatorRequest $request ListFormSchemasByCreatorRequest
      *
-     * @return ListFormSchemasByCreatorResponse
+     * @return ListFormSchemasByCreatorResponse ListFormSchemasByCreatorResponse
      */
     public function listFormSchemasByCreator($request)
     {

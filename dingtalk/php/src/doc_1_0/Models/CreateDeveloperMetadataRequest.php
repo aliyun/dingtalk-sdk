@@ -26,6 +26,8 @@ class CreateDeveloperMetadataRequest extends Model
     public $value;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

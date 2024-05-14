@@ -16,6 +16,8 @@ class CopyProcessRequest extends Model
     public $copyOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingabc
      *
      * @var string
@@ -23,6 +25,8 @@ class CopyProcessRequest extends Model
     public $sourceCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sourceProcessVOList[]
      */
     public $sourceProcessVOList;

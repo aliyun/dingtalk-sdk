@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetMediaUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example @wesfsdfsfwe
      *
      * @var string

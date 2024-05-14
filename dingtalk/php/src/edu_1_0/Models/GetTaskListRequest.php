@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTaskListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example staff234
      *
      * @var string
@@ -16,6 +18,8 @@ class GetTaskListRequest extends Model
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class GetTaskListRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

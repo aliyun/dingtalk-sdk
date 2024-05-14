@@ -29,6 +29,8 @@ class SyncTaskTemplateRequest extends Model
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 培训模版
      *
      * @var string
@@ -36,6 +38,8 @@ class SyncTaskTemplateRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23234
      *
      * @var string
@@ -43,6 +47,8 @@ class SyncTaskTemplateRequest extends Model
     public $optUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 232332
      *
      * @var string
@@ -55,6 +61,8 @@ class SyncTaskTemplateRequest extends Model
     public $taskScopeVO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PERFORMANCE_TASK、TRAIN_TASK
      *
      * @var string
@@ -62,6 +70,8 @@ class SyncTaskTemplateRequest extends Model
     public $taskType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example onboarding
      *
      * @var string

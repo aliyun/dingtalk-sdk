@@ -16,6 +16,8 @@ class ExportPointOpenRequest extends Model
     public $exportDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class ExportPointOpenRequest extends Model
     public $exportType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11185568-1380470824
      *
      * @var string

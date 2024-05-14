@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryGroupMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -30,6 +32,8 @@ class BatchQueryGroupMemberRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888
      *
      * @var string

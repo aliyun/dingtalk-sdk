@@ -20,6 +20,8 @@ class OkrPeriodsResponseBody extends Model
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

@@ -30,6 +30,8 @@ class GetRecognizeRecordsRequest extends Model
     public $fromTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +39,8 @@ class GetRecognizeRecordsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

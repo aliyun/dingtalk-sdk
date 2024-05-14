@@ -14,6 +14,8 @@ class GetOfficialAccountOTOMessageResultRequest extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openPushId;

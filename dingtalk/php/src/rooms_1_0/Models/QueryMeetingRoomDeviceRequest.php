@@ -23,6 +23,8 @@ class QueryMeetingRoomDeviceRequest extends Model
     public $deviceUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example "lmvUrEjpboFrSMtgsiS9V3AiEiE"
      *
      * @var string

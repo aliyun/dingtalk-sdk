@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ConsumePointRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class ConsumePointRequest extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -30,6 +34,8 @@ class ConsumePointRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FAMILY_GIFT_MALL
      *
      * @var string

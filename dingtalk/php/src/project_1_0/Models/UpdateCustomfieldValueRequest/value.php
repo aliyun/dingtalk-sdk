@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class value extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 我是具体显示值
      *
      * @var string

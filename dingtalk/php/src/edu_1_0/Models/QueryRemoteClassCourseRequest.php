@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryRemoteClassCourseRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1635436800000
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryRemoteClassCourseRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager1234
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryRemoteClassCourseRequest extends Model
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1634832000000
      *
      * @var int

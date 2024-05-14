@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateManagementGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 财务管理组
      *
      * @var string
@@ -18,16 +20,22 @@ class UpdateManagementGroupRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;

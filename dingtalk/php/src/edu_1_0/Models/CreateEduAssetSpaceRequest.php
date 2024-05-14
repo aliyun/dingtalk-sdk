@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateEduAssetSpaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 目前仅支持soke
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateEduAssetSpaceRequest extends Model
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 存放语文教研文件
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateEduAssetSpaceRequest extends Model
     public $spaceDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://gw.alicdn.com/imgextra/i4/O1CN01QGjRTl27z8YPPEQdr_!!6000000007867-2-tps-99-78.png
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateEduAssetSpaceRequest extends Model
     public $spaceIcon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 语文教研组空间
      *
      * @var string
@@ -37,6 +45,8 @@ class CreateEduAssetSpaceRequest extends Model
     public $spaceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aa12324
      *
      * @var string

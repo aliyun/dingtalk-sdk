@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetUserInfoByOpenTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $docKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openToken;

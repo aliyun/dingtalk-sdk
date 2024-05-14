@@ -14,6 +14,8 @@ class AddGroupMemberRequest extends Model
     public $appUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string
@@ -21,6 +23,8 @@ class AddGroupMemberRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8777
      *
      * @var string

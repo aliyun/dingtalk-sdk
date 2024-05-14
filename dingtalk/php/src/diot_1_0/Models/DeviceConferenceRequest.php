@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeviceConferenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 设备的应急会议
      *
      * @var string
@@ -30,6 +32,8 @@ class DeviceConferenceRequest extends Model
     public $conferencePassword;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $deviceIds;

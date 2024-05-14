@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetCategoryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example INCOME_XXX
      *
      * @var string

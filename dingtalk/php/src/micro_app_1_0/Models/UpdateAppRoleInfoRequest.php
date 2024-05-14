@@ -19,6 +19,8 @@ class UpdateAppRoleInfoRequest extends Model
     public $newRoleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class orgDetailsList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12320211126
      *
      * @var string
@@ -16,6 +18,8 @@ class orgDetailsList extends Model
     public $actionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-26 10:09:37
      *
      * @var string
@@ -23,6 +27,8 @@ class orgDetailsList extends Model
     public $actionTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO
      *
      * @var string
@@ -30,6 +36,8 @@ class orgDetailsList extends Model
     public $actionType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3.21
      *
      * @var string
@@ -37,6 +45,8 @@ class orgDetailsList extends Model
     public $carbonAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding12344
      *
      * @var string
@@ -44,6 +54,8 @@ class orgDetailsList extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var int
@@ -51,6 +63,8 @@ class orgDetailsList extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

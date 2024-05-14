@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $sectionIndexList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $subscriberIds;
@@ -26,6 +30,8 @@ class QueryClassScheduleRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 234623456
      *
      * @var string

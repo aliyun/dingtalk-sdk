@@ -23,6 +23,8 @@ class linkedData extends Model
     public $thumbnailUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 我是标题
      *
      * @var string
@@ -30,6 +32,8 @@ class linkedData extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://abcd.com/url
      *
      * @var string

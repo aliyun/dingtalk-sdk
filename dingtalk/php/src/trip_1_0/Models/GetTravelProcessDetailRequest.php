@@ -16,6 +16,8 @@ class GetTravelProcessDetailRequest extends Model
     public $processCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1fbmtOweRdqLamaXHExxxxxx
      *
      * @var string

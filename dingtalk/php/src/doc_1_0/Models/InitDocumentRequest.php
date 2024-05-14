@@ -16,6 +16,8 @@ class InitDocumentRequest extends Model
     public $attachmentsMap;
 
     /**
+     * @description This parameter is required.
+     *
      * @example import_type
      *
      * @var int
@@ -30,6 +32,8 @@ class InitDocumentRequest extends Model
     public $linksKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

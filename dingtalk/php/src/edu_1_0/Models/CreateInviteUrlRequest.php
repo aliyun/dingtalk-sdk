@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CreateInviteUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $authCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $targetOperator;

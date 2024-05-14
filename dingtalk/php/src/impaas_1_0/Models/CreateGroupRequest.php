@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $channel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUid;
@@ -24,16 +28,22 @@ class CreateGroupRequest extends Model
     public $iconMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $properties;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uuid;

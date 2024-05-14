@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class residentUpdateInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 11112
      *
      * @var int
@@ -30,6 +32,8 @@ class residentUpdateInfo extends Model
     public $memberDeptExtension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -37,6 +41,8 @@ class residentUpdateInfo extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11123
      *
      * @var int

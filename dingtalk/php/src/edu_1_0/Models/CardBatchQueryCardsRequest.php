@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CardBatchQueryCardsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example industry_center
      *
      * @var string
@@ -16,11 +18,15 @@ class CardBatchQueryCardsRequest extends Model
     public $cardBizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $cardIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YUFANAI
      *
      * @var string
@@ -28,6 +34,8 @@ class CardBatchQueryCardsRequest extends Model
     public $sourceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1678445875001
      *
      * @var string

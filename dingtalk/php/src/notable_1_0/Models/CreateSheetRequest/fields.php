@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class fields extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -21,6 +23,8 @@ class fields extends Model
     public $property;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddPartnerManagersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 56781213
      *
      * @var int
@@ -16,11 +18,15 @@ class SupplyAddPartnerManagersRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $interfaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $interfaceType;

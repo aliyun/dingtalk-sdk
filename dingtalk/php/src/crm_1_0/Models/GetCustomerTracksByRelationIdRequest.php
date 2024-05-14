@@ -21,6 +21,8 @@ class GetCustomerTracksByRelationIdRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fasd-afsd1-21312-faaa
      *
      * @var string

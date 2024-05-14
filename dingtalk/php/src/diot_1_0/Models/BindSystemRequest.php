@@ -16,6 +16,8 @@ class BindSystemRequest extends Model
     public $authCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example d12345
      *
      * @var string
@@ -23,6 +25,8 @@ class BindSystemRequest extends Model
     public $clientId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xx社区。
      *
      * @var string
@@ -30,6 +34,8 @@ class BindSystemRequest extends Model
     public $clientName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding12345
      *
      * @var string

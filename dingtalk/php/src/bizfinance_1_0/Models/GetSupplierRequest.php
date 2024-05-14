@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSupplierRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example SUP_XXX
      *
      * @var string

@@ -17,6 +17,8 @@ class ListEmpLeaveRecordsResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var records[]
      */
     public $records;

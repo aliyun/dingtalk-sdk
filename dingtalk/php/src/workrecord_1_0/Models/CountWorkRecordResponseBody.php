@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CountWorkRecordResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

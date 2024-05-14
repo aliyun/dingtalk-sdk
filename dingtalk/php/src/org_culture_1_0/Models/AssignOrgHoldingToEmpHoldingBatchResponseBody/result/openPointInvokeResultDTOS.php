@@ -16,6 +16,8 @@ class openPointInvokeResultDTOS extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string
@@ -30,6 +32,8 @@ class openPointInvokeResultDTOS extends Model
     public $msg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23423568784
      *
      * @var string
@@ -37,6 +41,8 @@ class openPointInvokeResultDTOS extends Model
     public $outId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 01274411491620908910
      *
      * @var string

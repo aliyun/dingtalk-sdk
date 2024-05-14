@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetPersonalCarbonInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example salary
      *
      * @var string
@@ -16,6 +18,8 @@ class GetPersonalCarbonInfoRequest extends Model
     public $actionType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23121
      *
      * @var string

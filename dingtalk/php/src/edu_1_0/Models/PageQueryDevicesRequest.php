@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PageQueryDevicesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class PageQueryDevicesRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -23,6 +27,8 @@ class PageQueryDevicesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO_CALL
      *
      * @var string

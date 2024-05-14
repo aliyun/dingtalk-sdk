@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GrantPrivilegeOfCustomSpaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $duration;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $fileIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

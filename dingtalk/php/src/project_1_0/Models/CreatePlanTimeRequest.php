@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreatePlanTimeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-09-05
      *
      * @var string
@@ -16,6 +18,8 @@ class CreatePlanTimeRequest extends Model
     public $endDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -23,16 +27,22 @@ class CreatePlanTimeRequest extends Model
     public $executorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $includesHolidays;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isDuration;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 63186e54e07f18003fea6b90
      *
      * @var string
@@ -40,6 +50,8 @@ class CreatePlanTimeRequest extends Model
     public $objectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example task
      *
      * @var string
@@ -47,6 +59,8 @@ class CreatePlanTimeRequest extends Model
     public $objectType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3600000
      *
      * @var int
@@ -54,6 +68,8 @@ class CreatePlanTimeRequest extends Model
     public $planTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-09-05
      *
      * @var string
@@ -61,6 +77,8 @@ class CreatePlanTimeRequest extends Model
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -68,6 +86,8 @@ class CreatePlanTimeRequest extends Model
     public $submitterId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example organization
      *
      * @var string

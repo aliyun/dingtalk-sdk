@@ -19,6 +19,8 @@ class list_ extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1631524595555
      *
      * @var int
@@ -26,6 +28,8 @@ class list_ extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaaa
      *
      * @var string
@@ -45,6 +49,8 @@ class list_ extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROJ-xxx
      *
      * @var string
@@ -52,6 +58,8 @@ class list_ extends Model
     public $projectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 外派项目
      *
      * @var string
@@ -59,6 +67,8 @@ class list_ extends Model
     public $projectName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example valid
      *
      * @var string

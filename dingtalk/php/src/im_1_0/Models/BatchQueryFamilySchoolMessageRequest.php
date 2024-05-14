@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryFamilySchoolMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidxxxx
      *
      * @var string
@@ -16,11 +18,15 @@ class BatchQueryFamilySchoolMessageRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $openMessageIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

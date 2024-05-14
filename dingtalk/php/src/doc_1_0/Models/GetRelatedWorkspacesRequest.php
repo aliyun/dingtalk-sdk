@@ -14,6 +14,8 @@ class GetRelatedWorkspacesRequest extends Model
     public $includeRecent;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListItemUserDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $body;

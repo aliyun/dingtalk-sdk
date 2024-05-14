@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class livePlayInfoList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example testUrl
      *
      * @var string
@@ -16,6 +18,8 @@ class livePlayInfoList extends Model
     public $liveInputUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example testUrl
      *
      * @var string
@@ -23,6 +27,8 @@ class livePlayInfoList extends Model
     public $liveOutputUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class livePlayInfoList extends Model
     public $liveType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example testUrl
      *
      * @var string

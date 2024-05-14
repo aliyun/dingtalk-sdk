@@ -19,6 +19,8 @@ class DentryVO extends Model
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1663918630284
      *
      * @var int
@@ -31,6 +33,8 @@ class DentryVO extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YRBd*****KGDA
      *
      * @var string
@@ -38,6 +42,8 @@ class DentryVO extends Model
     public $dentryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example file
      *
      * @var string
@@ -45,6 +51,8 @@ class DentryVO extends Model
     public $dentryType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6or0dp8Z****XWa91xzy3
      *
      * @var string
@@ -66,6 +74,8 @@ class DentryVO extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -78,6 +88,8 @@ class DentryVO extends Model
     public $linkSourceInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉钉文档
      *
      * @var string
@@ -97,6 +109,8 @@ class DentryVO extends Model
     public $space;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YGv0****0xXAr
      *
      * @var string
@@ -104,6 +118,8 @@ class DentryVO extends Model
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1663918630284
      *
      * @var int

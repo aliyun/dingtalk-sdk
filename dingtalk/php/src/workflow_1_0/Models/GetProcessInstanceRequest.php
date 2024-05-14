@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetProcessInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example a171de6c-8bxxxx
      *
      * @var string

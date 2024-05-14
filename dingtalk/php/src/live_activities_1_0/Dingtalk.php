@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushLiveActivityRequest $request
-     * @param PushLiveActivityHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 实时活动发送接口
+     *  *
+     * @param PushLiveActivityRequest $request PushLiveActivityRequest
+     * @param PushLiveActivityHeaders $headers PushLiveActivityHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PushLiveActivityResponse
+     * @return PushLiveActivityResponse PushLiveActivityResponse
      */
     public function pushLiveActivityWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushLiveActivityRequest $request
+     * @summary 实时活动发送接口
+     *  *
+     * @param PushLiveActivityRequest $request PushLiveActivityRequest
      *
-     * @return PushLiveActivityResponse
+     * @return PushLiveActivityResponse PushLiveActivityResponse
      */
     public function pushLiveActivity($request)
     {
@@ -93,11 +97,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendLiveActivityRequest $request
-     * @param SendLiveActivityHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 发送实时活动
+     *  *
+     * @param SendLiveActivityRequest $request SendLiveActivityRequest
+     * @param SendLiveActivityHeaders $headers SendLiveActivityHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendLiveActivityResponse
+     * @return SendLiveActivityResponse SendLiveActivityResponse
      */
     public function sendLiveActivityWithOptions($request, $headers, $runtime)
     {
@@ -139,9 +145,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendLiveActivityRequest $request
+     * @summary 发送实时活动
+     *  *
+     * @param SendLiveActivityRequest $request SendLiveActivityRequest
      *
-     * @return SendLiveActivityResponse
+     * @return SendLiveActivityResponse SendLiveActivityResponse
      */
     public function sendLiveActivity($request)
     {

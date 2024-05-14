@@ -51,6 +51,8 @@ class PediaWordsUpdateRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2131321
      *
      * @var int
@@ -63,6 +65,8 @@ class PediaWordsUpdateRequest extends Model
     public $wordAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 词条名称
      *
      * @var string
@@ -70,6 +74,8 @@ class PediaWordsUpdateRequest extends Model
     public $wordName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 释义
      *
      * @var string

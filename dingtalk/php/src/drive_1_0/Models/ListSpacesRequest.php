@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListSpacesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -19,11 +21,15 @@ class ListSpacesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

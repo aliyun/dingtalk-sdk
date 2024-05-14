@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class OpenConnectionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example suiteudabcd123
      *
      * @var string
@@ -17,6 +19,8 @@ class OpenConnectionRequest extends Model
     public $clientId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 9W1berqrwfs
      *
      * @var string
@@ -36,6 +40,8 @@ class OpenConnectionRequest extends Model
     public $localIp;
 
     /**
+     * @description This parameter is required.
+     *
      * @var subscriptions[]
      */
     public $subscriptions;

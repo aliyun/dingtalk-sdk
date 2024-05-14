@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyUpdateMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $isCopyDept;
@@ -35,6 +37,8 @@ class SupplyUpdateMemberRequest extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11
      *
      * @var int
@@ -42,6 +46,8 @@ class SupplyUpdateMemberRequest extends Model
     public $newDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var int

@@ -15,6 +15,8 @@ class tmcProductList extends Model
     public $productDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tmcCorpId;

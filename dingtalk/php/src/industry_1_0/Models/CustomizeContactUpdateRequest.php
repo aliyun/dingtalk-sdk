@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactUpdateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example alt-contact:MjkwMDAa
      *
      * @var string
@@ -21,6 +23,8 @@ class CustomizeContactUpdateRequest extends Model
     public $managerIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example A项目通讯录
      *
      * @var string
@@ -28,6 +32,8 @@ class CustomizeContactUpdateRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $order;

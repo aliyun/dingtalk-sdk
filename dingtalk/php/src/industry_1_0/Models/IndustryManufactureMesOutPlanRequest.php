@@ -23,6 +23,8 @@ class IndustryManufactureMesOutPlanRequest extends Model
     public $approver;
 
     /**
+     * @description This parameter is required.
+     *
      * @example wwPlan
      *
      * @var string
@@ -30,6 +32,8 @@ class IndustryManufactureMesOutPlanRequest extends Model
     public $baseDataName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WWJH-20220728
      *
      * @var string
@@ -128,6 +132,8 @@ class IndustryManufactureMesOutPlanRequest extends Model
     public $totalWage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string

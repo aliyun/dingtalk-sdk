@@ -14,11 +14,15 @@ class body extends Model
     public $createDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptNo;
@@ -44,6 +48,8 @@ class body extends Model
     public $superDeptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $superDeptNo;

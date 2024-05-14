@@ -20,6 +20,8 @@ class SendOfficialAccountOTOMessageRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detail
      */
     public $detail;

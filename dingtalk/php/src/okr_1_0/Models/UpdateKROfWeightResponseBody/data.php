@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var objectiveProgress
      */
     public $objectiveProgress;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

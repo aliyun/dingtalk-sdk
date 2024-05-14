@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $avatarUrl;
@@ -24,6 +26,8 @@ class list_ extends Model
     public $cardAcceptTimeLong;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardId;
@@ -36,36 +40,50 @@ class list_ extends Model
     public $cardSource;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $industryName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $introduce;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orgName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

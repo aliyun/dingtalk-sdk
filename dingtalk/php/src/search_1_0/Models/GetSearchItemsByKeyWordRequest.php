@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemsByKeyWordRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 诺贝尔奖
      *
      * @var string
@@ -16,6 +18,8 @@ class GetSearchItemsByKeyWordRequest extends Model
     public $keyWord;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -23,6 +27,8 @@ class GetSearchItemsByKeyWordRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var string

@@ -17,6 +17,8 @@ class UpdateIntegratedTaskRequest extends Model
     public $processInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var tasks[]
      */
     public $tasks;

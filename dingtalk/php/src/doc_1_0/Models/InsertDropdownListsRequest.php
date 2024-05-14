@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class InsertDropdownListsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var options[]
      */
     public $options;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

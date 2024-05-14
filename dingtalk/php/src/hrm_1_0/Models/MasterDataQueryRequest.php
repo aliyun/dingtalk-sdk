@@ -17,6 +17,8 @@ class MasterDataQueryRequest extends Model
     public $bizUK;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -24,6 +26,8 @@ class MasterDataQueryRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -43,11 +47,15 @@ class MasterDataQueryRequest extends Model
     public $queryParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $relationIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PERFORMANCE
      *
      * @var string
@@ -55,6 +63,8 @@ class MasterDataQueryRequest extends Model
     public $scopeCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -62,6 +72,8 @@ class MasterDataQueryRequest extends Model
     public $tenantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example base
      *
      * @var string

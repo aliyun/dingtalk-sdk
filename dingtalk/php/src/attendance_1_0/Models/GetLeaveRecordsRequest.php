@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetLeaveRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example f84a2dxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class GetLeaveRecordsRequest extends Model
     public $leaveCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string
@@ -23,6 +27,8 @@ class GetLeaveRecordsRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class GetLeaveRecordsRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +45,8 @@ class GetLeaveRecordsRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

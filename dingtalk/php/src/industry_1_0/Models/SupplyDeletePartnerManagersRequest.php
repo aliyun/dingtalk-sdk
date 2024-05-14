@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyDeletePartnerManagersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1231
      *
      * @var int
@@ -16,6 +18,8 @@ class SupplyDeletePartnerManagersRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12131
      *
      * @var string
@@ -23,6 +27,8 @@ class SupplyDeletePartnerManagersRequest extends Model
     public $interfaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user
      *
      * @var string

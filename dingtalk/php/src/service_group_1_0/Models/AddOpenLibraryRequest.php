@@ -16,6 +16,8 @@ class AddOpenLibraryRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jxi12wo3qxoa
      *
      * @var string
@@ -23,6 +25,8 @@ class AddOpenLibraryRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XMD
      *
      * @var string
@@ -30,6 +34,8 @@ class AddOpenLibraryRequest extends Model
     public $source;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试库
      *
      * @var string
@@ -37,6 +43,8 @@ class AddOpenLibraryRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EXTERNAL
      *
      * @var string
@@ -44,6 +52,8 @@ class AddOpenLibraryRequest extends Model
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0159003451667222
      *
      * @var string
@@ -51,6 +61,8 @@ class AddOpenLibraryRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉三多
      *
      * @var string

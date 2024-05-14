@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ExternalQueryExternalOrgsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ecological
      *
      * @var string

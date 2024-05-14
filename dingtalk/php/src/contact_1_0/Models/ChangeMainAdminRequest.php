@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChangeMainAdminRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpIdCCC
      *
      * @var string
@@ -16,6 +18,8 @@ class ChangeMainAdminRequest extends Model
     public $effectCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example userIdAA
      *
      * @var string
@@ -23,6 +27,8 @@ class ChangeMainAdminRequest extends Model
     public $sourceUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example userIdBB
      *
      * @var string

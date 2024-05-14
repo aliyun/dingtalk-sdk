@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceLogResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 失败false，成功true。
      *
      * @var bool

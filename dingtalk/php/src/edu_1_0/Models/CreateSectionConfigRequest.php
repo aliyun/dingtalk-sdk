@@ -17,11 +17,15 @@ class CreateSectionConfigRequest extends Model
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionConfigs[]
      */
     public $sectionConfigs;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager235
      *
      * @var string

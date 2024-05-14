@@ -14,6 +14,8 @@ class UpdateResidentBlackBoardRequest extends Model
     public $blackboardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $context;
@@ -24,6 +26,8 @@ class UpdateResidentBlackBoardRequest extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

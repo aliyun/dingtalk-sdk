@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BusinessMatchResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

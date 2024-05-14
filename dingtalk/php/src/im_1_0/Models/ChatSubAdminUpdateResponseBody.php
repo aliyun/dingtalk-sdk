@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatSubAdminUpdateResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $success;

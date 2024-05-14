@@ -13,6 +13,8 @@ use AlibabaCloud\Tea\Model;
 class permissions extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -20,21 +22,29 @@ class permissions extends Model
     public $defaultRole;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fieldScopes[]
      */
     public $fieldScopes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var managingScopeList[]
      */
     public $managingScopeList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var operateScopes[]
      */
     public $operateScopes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-478E50CA-856C-4C08-B806-E664D4CEC8C4
      *
      * @var string
@@ -42,6 +52,8 @@ class permissions extends Model
     public $resourceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12821738
      *
      * @var float
@@ -49,11 +61,15 @@ class permissions extends Model
     public $roleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var roleMemberList[]
      */
     public $roleMemberList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 销售权限组
      *
      * @var string

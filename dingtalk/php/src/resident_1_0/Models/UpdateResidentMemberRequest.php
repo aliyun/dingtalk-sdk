@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidentMemberRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 测试小区1
      *
      * @var residentUpdateInfo
@@ -17,6 +19,8 @@ class UpdateResidentMemberRequest extends Model
     public $residentUpdateInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1212
      *
      * @var string

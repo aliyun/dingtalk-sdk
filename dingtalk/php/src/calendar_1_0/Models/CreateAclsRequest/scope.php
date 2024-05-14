@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $scopeType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

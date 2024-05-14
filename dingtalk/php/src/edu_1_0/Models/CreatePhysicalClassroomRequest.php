@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreatePhysicalClassroomRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 主楼
      *
      * @var string
@@ -16,6 +18,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $classroomBuilding;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 主校区
      *
      * @var string
@@ -23,6 +27,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $classroomCampus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2层
      *
      * @var string
@@ -30,6 +36,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $classroomFloor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 实验室
      *
      * @var string
@@ -37,6 +45,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $classroomName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 201
      *
      * @var string
@@ -44,6 +54,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $classroomNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Y
      *
      * @var string
@@ -58,6 +70,8 @@ class CreatePhysicalClassroomRequest extends Model
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manger1234
      *
      * @var string

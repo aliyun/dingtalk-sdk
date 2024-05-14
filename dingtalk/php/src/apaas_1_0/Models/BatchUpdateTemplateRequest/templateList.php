@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class templateList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $adaptEnv;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 这是测试
      *
      * @var string
@@ -21,6 +25,8 @@ class templateList extends Model
     public $appDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @lALPDe7s2JOuoyjNBaDNCgA
      *
      * @var string
@@ -33,6 +39,8 @@ class templateList extends Model
     public $caseVideoList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example template_category
      *
      * @var string
@@ -52,6 +60,8 @@ class templateList extends Model
     public $expUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $industryLabelList;
@@ -62,6 +72,8 @@ class templateList extends Model
     public $mobilePreviewMediaList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 这是测试
      *
      * @var string
@@ -69,6 +81,8 @@ class templateList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $previewMediaList;
@@ -81,11 +95,15 @@ class templateList extends Model
     public $providerName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $roleLabelList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 这是一个描述
      *
      * @var string
@@ -93,6 +111,8 @@ class templateList extends Model
     public $simpleDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example template_key_1
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RunCallUserRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example corpidxxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class RunCallUserRequest extends Model
     public $authorizeCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxx
      *
      * @var string
@@ -23,6 +27,8 @@ class RunCallUserRequest extends Model
     public $authorizeUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -30,6 +36,8 @@ class RunCallUserRequest extends Model
     public $orderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

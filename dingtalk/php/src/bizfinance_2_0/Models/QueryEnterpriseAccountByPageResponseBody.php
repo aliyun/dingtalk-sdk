@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryEnterpriseAccountByPageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -17,6 +19,8 @@ class QueryEnterpriseAccountByPageResponseBody extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var list_[]
      */
     public $list;

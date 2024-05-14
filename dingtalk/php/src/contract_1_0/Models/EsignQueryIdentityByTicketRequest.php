@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class EsignQueryIdentityByTicketRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingd0c871e2dfc941a34ac5d6980864d335
      *
      * @var string
@@ -21,6 +23,8 @@ class EsignQueryIdentityByTicketRequest extends Model
     public $extension;
 
     /**
+     * @description This parameter is required.
+     *
      * @example feb4b8e5-d6d9-4d22-a6b8-c8e26823a73a
      *
      * @var string

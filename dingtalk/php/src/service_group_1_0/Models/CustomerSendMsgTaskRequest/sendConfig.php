@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class sendConfig extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -24,6 +26,8 @@ class sendConfig extends Model
     public $sendTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INSTANT
      *
      * @var string

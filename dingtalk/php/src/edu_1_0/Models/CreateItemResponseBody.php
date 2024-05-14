@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class CreateItemResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $status;

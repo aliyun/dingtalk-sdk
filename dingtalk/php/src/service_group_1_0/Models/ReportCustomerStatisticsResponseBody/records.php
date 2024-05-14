@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class records extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -30,6 +34,8 @@ class records extends Model
     public $customerCnt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试群
      *
      * @var string
@@ -37,6 +43,8 @@ class records extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试群分组
      *
      * @var string
@@ -44,6 +52,8 @@ class records extends Model
     public $groupSetName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -51,6 +61,8 @@ class records extends Model
     public $loginCnt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -58,6 +70,8 @@ class records extends Model
     public $openConvCnt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXX
      *
      * @var string
@@ -65,6 +79,8 @@ class records extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iSoqrhLQDtK
      *
      * @var string
@@ -72,6 +88,8 @@ class records extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int
@@ -79,6 +97,8 @@ class records extends Model
     public $sendMsgCnt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeductPointRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example biz01
      *
      * @var string
@@ -16,6 +18,8 @@ class DeductPointRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 兑换商品
      *
      * @var string
@@ -23,6 +27,8 @@ class DeductPointRequest extends Model
     public $deductDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.dingtalk.com/
      *
      * @var string
@@ -30,11 +36,15 @@ class DeductPointRequest extends Model
     public $deductDetailUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $deductNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example personal
      *
      * @var string

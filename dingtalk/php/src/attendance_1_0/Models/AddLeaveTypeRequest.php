@@ -12,6 +12,8 @@ use AlibabaCloud\Tea\Model;
 class AddLeaveTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example general_leave
      *
      * @var string
@@ -33,6 +35,8 @@ class AddLeaveTypeRequest extends Model
     public $freedomLeave;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1000
      *
      * @var int
@@ -52,6 +56,8 @@ class AddLeaveTypeRequest extends Model
     public $leaveHourCeil;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 年假
      *
      * @var string
@@ -73,6 +79,8 @@ class AddLeaveTypeRequest extends Model
     public $leaveTimeCeilMinUnit;
 
     /**
+     * @description This parameter is required.
+     *
      * @example day
      *
      * @var string
@@ -94,6 +102,8 @@ class AddLeaveTypeRequest extends Model
     public $minLeaveHour;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -125,6 +135,8 @@ class AddLeaveTypeRequest extends Model
     public $whenCanLeave;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

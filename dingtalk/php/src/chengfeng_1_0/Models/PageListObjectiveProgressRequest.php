@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PageListObjectiveProgressRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var string

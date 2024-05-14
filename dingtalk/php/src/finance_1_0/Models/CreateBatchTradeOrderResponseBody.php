@@ -14,11 +14,15 @@ class CreateBatchTradeOrderResponseBody extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $outBatchNo;

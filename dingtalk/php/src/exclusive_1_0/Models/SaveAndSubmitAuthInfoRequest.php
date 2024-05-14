@@ -23,6 +23,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $authorizeMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 计算机
      *
      * @var string
@@ -30,6 +32,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $industry;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉三多
      *
      * @var string
@@ -37,6 +41,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $legalPerson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3301XX1997XXXXXXXXX
      *
      * @var string
@@ -51,6 +57,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $licenseMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 330100
      *
      * @var int
@@ -58,6 +66,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $locCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 杭州
      *
      * @var string
@@ -65,6 +75,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $locCityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 330000
      *
      * @var int
@@ -72,6 +84,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $locProvince;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 浙江
      *
      * @var string
@@ -79,6 +93,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $locProvinceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15869110714
      *
      * @var string
@@ -86,6 +102,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $mobileNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试组织
      *
      * @var string
@@ -107,6 +125,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $organizationCodeMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 余杭区文一西路XX号
      *
      * @var string
@@ -121,6 +141,8 @@ class SaveAndSubmitAuthInfoRequest extends Model
     public $registNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string

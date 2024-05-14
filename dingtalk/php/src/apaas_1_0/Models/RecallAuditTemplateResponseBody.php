@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class RecallAuditTemplateResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var recallResult[]
      */
     public $recallResult;

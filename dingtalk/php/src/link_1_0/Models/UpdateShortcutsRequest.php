@@ -15,6 +15,8 @@ class UpdateShortcutsRequest extends Model
     public $details;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sid001234
      *
      * @var string
@@ -22,6 +24,8 @@ class UpdateShortcutsRequest extends Model
     public $sessionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example idzb26bxl64vqx2keyi
      *
      * @var string

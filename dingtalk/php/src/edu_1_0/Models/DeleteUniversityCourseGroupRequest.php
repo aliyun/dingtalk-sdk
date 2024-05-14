@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteUniversityCourseGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example GS1002
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteUniversityCourseGroupRequest extends Model
     public $courseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manger1234
      *
      * @var string

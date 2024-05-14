@@ -19,6 +19,8 @@ class GetInAppSkuUrlRequest extends Model
     public $extendParam;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $goodsCode;

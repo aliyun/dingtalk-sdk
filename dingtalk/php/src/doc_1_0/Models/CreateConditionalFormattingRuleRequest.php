@@ -21,11 +21,15 @@ class CreateConditionalFormattingRuleRequest extends Model
     public $duplicateCondition;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $ranges;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class list_ extends Model
     public $buildStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.5
      *
      * @var string

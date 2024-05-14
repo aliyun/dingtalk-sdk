@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmCustomObjectDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example PROC_xx
      *
      * @var string

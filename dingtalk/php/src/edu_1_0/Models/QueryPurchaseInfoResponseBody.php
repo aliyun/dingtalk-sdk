@@ -16,6 +16,8 @@ class QueryPurchaseInfoResponseBody extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 300001
      *
      * @var string
@@ -23,6 +25,8 @@ class QueryPurchaseInfoResponseBody extends Model
     public $merchantId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小明
      *
      * @var string
@@ -30,6 +34,8 @@ class QueryPurchaseInfoResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1视频通话
      *
      * @var int
@@ -37,6 +43,8 @@ class QueryPurchaseInfoResponseBody extends Model
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10、已订购；11、未订购（包含已过期）；12、取消
      *
      * @var int
@@ -44,6 +52,8 @@ class QueryPurchaseInfoResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200001
      *
      * @var string

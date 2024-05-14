@@ -36,6 +36,8 @@ class CreateTeamRequest extends Model
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试小组名称
      *
      * @var string
@@ -43,6 +45,8 @@ class CreateTeamRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string
@@ -50,6 +54,8 @@ class CreateTeamRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

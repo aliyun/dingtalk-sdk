@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallOTORequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processQueryKeys;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingXXXXXX
      *
      * @var string

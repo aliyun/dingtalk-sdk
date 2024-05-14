@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class PushBadgeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 110000000
      *
      * @var string
@@ -22,6 +24,8 @@ class PushBadgeRequest extends Model
     public $badgeItems;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CallbackRegiesterRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 3b89df4dfaaccd5b8e1f9a2
      *
      * @var string
@@ -16,6 +18,8 @@ class CallbackRegiesterRequest extends Model
     public $apiSecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc-123
      *
      * @var string
@@ -23,6 +27,8 @@ class CallbackRegiesterRequest extends Model
     public $callbackKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.your.com/callback
      *
      * @var string
@@ -30,6 +36,8 @@ class CallbackRegiesterRequest extends Model
     public $callbackUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example shortcut
      *
      * @var string

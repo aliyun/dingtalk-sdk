@@ -14,6 +14,8 @@ class textStyle extends Model
     public $bold;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $dataType;

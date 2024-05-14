@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class sectionStartDate extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 9
      *
      * @var int
@@ -16,6 +18,8 @@ class sectionStartDate extends Model
     public $dayOfMonth;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11
      *
      * @var int
@@ -23,6 +27,8 @@ class sectionStartDate extends Model
     public $month;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class receipts extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abcd_efgh
      *
      * @var string
@@ -16,6 +18,8 @@ class receipts extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example emp_xxx
      *
      * @var string
@@ -23,6 +27,8 @@ class receipts extends Model
     public $deleteUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

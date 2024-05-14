@@ -10,21 +10,29 @@ use AlibabaCloud\Tea\Model;
 class relationMetaDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $desc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var items[]
      */
     public $items;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;

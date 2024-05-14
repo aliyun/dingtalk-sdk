@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetLatestDingIndexResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 50
      *
      * @var float
@@ -16,6 +18,8 @@ class GetLatestDingIndexResponseBody extends Model
     public $idxCarbon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 50
      *
      * @var float
@@ -23,6 +27,8 @@ class GetLatestDingIndexResponseBody extends Model
     public $idxEfficiency;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888
      *
      * @var float
@@ -30,6 +36,8 @@ class GetLatestDingIndexResponseBody extends Model
     public $idxMonthlyAvg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888
      *
      * @var float
@@ -37,6 +45,8 @@ class GetLatestDingIndexResponseBody extends Model
     public $idxTotal;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210412
      *
      * @var string

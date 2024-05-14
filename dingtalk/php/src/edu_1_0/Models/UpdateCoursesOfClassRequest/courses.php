@@ -16,11 +16,15 @@ class courses extends Model
     public $courseCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $courseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 语文
      *
      * @var string
@@ -35,6 +39,8 @@ class courses extends Model
     public $creatorName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var dateModel
      */
     public $dateModel;
@@ -52,6 +58,8 @@ class courses extends Model
     public $location;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionModel
      */
     public $sectionModel;

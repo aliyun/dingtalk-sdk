@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateSubInstitutionResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 202110110000001
      *
      * @var string

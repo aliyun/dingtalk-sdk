@@ -16,6 +16,8 @@ class csUserInfo extends Model
     public $avatar;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 用户名
      *
      * @var string
@@ -23,6 +25,8 @@ class csUserInfo extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16621*******284773
      *
      * @var string

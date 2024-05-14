@@ -87,11 +87,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchInsertBizObjectRequest $request
-     * @param BatchInsertBizObjectHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 批量创建表单业务对象数据
+     *  *
+     * @param BatchInsertBizObjectRequest $request BatchInsertBizObjectRequest
+     * @param BatchInsertBizObjectHeaders $headers BatchInsertBizObjectHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchInsertBizObjectResponse
+     * @return BatchInsertBizObjectResponse BatchInsertBizObjectResponse
      */
     public function batchInsertBizObjectWithOptions($request, $headers, $runtime)
     {
@@ -136,9 +138,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchInsertBizObjectRequest $request
+     * @summary 批量创建表单业务对象数据
+     *  *
+     * @param BatchInsertBizObjectRequest $request BatchInsertBizObjectRequest
      *
-     * @return BatchInsertBizObjectResponse
+     * @return BatchInsertBizObjectResponse BatchInsertBizObjectResponse
      */
     public function batchInsertBizObject($request)
     {
@@ -149,11 +153,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelProcessInstanceRequest $request
-     * @param CancelProcessInstanceHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 取消流程实例
+     *  *
+     * @param CancelProcessInstanceRequest $request CancelProcessInstanceRequest
+     * @param CancelProcessInstanceHeaders $headers CancelProcessInstanceHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CancelProcessInstanceResponse
+     * @return CancelProcessInstanceResponse CancelProcessInstanceResponse
      */
     public function cancelProcessInstanceWithOptions($request, $headers, $runtime)
     {
@@ -189,9 +195,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelProcessInstanceRequest $request
+     * @summary 取消流程实例
+     *  *
+     * @param CancelProcessInstanceRequest $request CancelProcessInstanceRequest
      *
-     * @return CancelProcessInstanceResponse
+     * @return CancelProcessInstanceResponse CancelProcessInstanceResponse
      */
     public function cancelProcessInstance($request)
     {
@@ -202,11 +210,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBizObjectRequest $request
-     * @param CreateBizObjectHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建单条表单业务对象实例
+     *  *
+     * @param CreateBizObjectRequest $request CreateBizObjectRequest
+     * @param CreateBizObjectHeaders $headers CreateBizObjectHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateBizObjectResponse
+     * @return CreateBizObjectResponse CreateBizObjectResponse
      */
     public function createBizObjectWithOptions($request, $headers, $runtime)
     {
@@ -251,9 +261,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBizObjectRequest $request
+     * @summary 创建单条表单业务对象实例
+     *  *
+     * @param CreateBizObjectRequest $request CreateBizObjectRequest
      *
-     * @return CreateBizObjectResponse
+     * @return CreateBizObjectResponse CreateBizObjectResponse
      */
     public function createBizObject($request)
     {
@@ -264,11 +276,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateProcessesInstanceRequest $request
-     * @param CreateProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 创建流程实例
+     *  *
+     * @param CreateProcessesInstanceRequest $request CreateProcessesInstanceRequest
+     * @param CreateProcessesInstanceHeaders $headers CreateProcessesInstanceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateProcessesInstanceResponse
+     * @return CreateProcessesInstanceResponse CreateProcessesInstanceResponse
      */
     public function createProcessesInstanceWithOptions($request, $headers, $runtime)
     {
@@ -310,9 +324,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateProcessesInstanceRequest $request
+     * @summary 创建流程实例
+     *  *
+     * @param CreateProcessesInstanceRequest $request CreateProcessesInstanceRequest
      *
-     * @return CreateProcessesInstanceResponse
+     * @return CreateProcessesInstanceResponse CreateProcessesInstanceResponse
      */
     public function createProcessesInstance($request)
     {
@@ -323,11 +339,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteBizObjectRequest $request
-     * @param DeleteBizObjectHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 删除表单业务对象实例
+     *  *
+     * @param DeleteBizObjectRequest $request DeleteBizObjectRequest
+     * @param DeleteBizObjectHeaders $headers DeleteBizObjectHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteBizObjectResponse
+     * @return DeleteBizObjectResponse DeleteBizObjectResponse
      */
     public function deleteBizObjectWithOptions($request, $headers, $runtime)
     {
@@ -366,9 +384,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteBizObjectRequest $request
+     * @summary 删除表单业务对象实例
+     *  *
+     * @param DeleteBizObjectRequest $request DeleteBizObjectRequest
      *
-     * @return DeleteBizObjectResponse
+     * @return DeleteBizObjectResponse DeleteBizObjectResponse
      */
     public function deleteBizObject($request)
     {
@@ -379,11 +399,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteProcessesInstanceRequest $request
-     * @param DeleteProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 删除流程实例
+     *  *
+     * @param DeleteProcessesInstanceRequest $request DeleteProcessesInstanceRequest
+     * @param DeleteProcessesInstanceHeaders $headers DeleteProcessesInstanceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteProcessesInstanceResponse
+     * @return DeleteProcessesInstanceResponse DeleteProcessesInstanceResponse
      */
     public function deleteProcessesInstanceWithOptions($request, $headers, $runtime)
     {
@@ -422,9 +444,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteProcessesInstanceRequest $request
+     * @summary 删除流程实例
+     *  *
+     * @param DeleteProcessesInstanceRequest $request DeleteProcessesInstanceRequest
      *
-     * @return DeleteProcessesInstanceResponse
+     * @return DeleteProcessesInstanceResponse DeleteProcessesInstanceResponse
      */
     public function deleteProcessesInstance($request)
     {
@@ -435,11 +459,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAppsRequest $request
-     * @param GetAppsHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 获取应用数据
+     *  *
+     * @param GetAppsRequest $request GetAppsRequest
+     * @param GetAppsHeaders $headers GetAppsHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAppsResponse
+     * @return GetAppsResponse GetAppsResponse
      */
     public function getAppsWithOptions($request, $headers, $runtime)
     {
@@ -478,9 +504,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAppsRequest $request
+     * @summary 获取应用数据
+     *  *
+     * @param GetAppsRequest $request GetAppsRequest
      *
-     * @return GetAppsResponse
+     * @return GetAppsResponse GetAppsResponse
      */
     public function getApps($request)
     {
@@ -491,11 +519,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAttachmentTemporaryUrlRequest $request
-     * @param GetAttachmentTemporaryUrlHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 获取附件临时免登地址
+     *  *
+     * @param GetAttachmentTemporaryUrlRequest $request GetAttachmentTemporaryUrlRequest
+     * @param GetAttachmentTemporaryUrlHeaders $headers GetAttachmentTemporaryUrlHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAttachmentTemporaryUrlResponse
+     * @return GetAttachmentTemporaryUrlResponse GetAttachmentTemporaryUrlResponse
      */
     public function getAttachmentTemporaryUrlWithOptions($request, $headers, $runtime)
     {
@@ -531,9 +561,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAttachmentTemporaryUrlRequest $request
+     * @summary 获取附件临时免登地址
+     *  *
+     * @param GetAttachmentTemporaryUrlRequest $request GetAttachmentTemporaryUrlRequest
      *
-     * @return GetAttachmentTemporaryUrlResponse
+     * @return GetAttachmentTemporaryUrlResponse GetAttachmentTemporaryUrlResponse
      */
     public function getAttachmentTemporaryUrl($request)
     {
@@ -544,11 +576,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOrganizationsRequest $request
-     * @param GetOrganizationsHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取组织数据
+     *  *
+     * @param GetOrganizationsRequest $request GetOrganizationsRequest
+     * @param GetOrganizationsHeaders $headers GetOrganizationsHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetOrganizationsResponse
+     * @return GetOrganizationsResponse GetOrganizationsResponse
      */
     public function getOrganizationsWithOptions($request, $headers, $runtime)
     {
@@ -584,9 +618,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOrganizationsRequest $request
+     * @summary 获取组织数据
+     *  *
+     * @param GetOrganizationsRequest $request GetOrganizationsRequest
      *
-     * @return GetOrganizationsResponse
+     * @return GetOrganizationsResponse GetOrganizationsResponse
      */
     public function getOrganizations($request)
     {
@@ -597,11 +633,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRoleUsersRequest $request
-     * @param GetRoleUsersHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取角色用户信息
+     *  *
+     * @param GetRoleUsersRequest $request GetRoleUsersRequest
+     * @param GetRoleUsersHeaders $headers GetRoleUsersHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRoleUsersResponse
+     * @return GetRoleUsersResponse GetRoleUsersResponse
      */
     public function getRoleUsersWithOptions($request, $headers, $runtime)
     {
@@ -637,9 +675,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRoleUsersRequest $request
+     * @summary 获取角色用户信息
+     *  *
+     * @param GetRoleUsersRequest $request GetRoleUsersRequest
      *
-     * @return GetRoleUsersResponse
+     * @return GetRoleUsersResponse GetRoleUsersResponse
      */
     public function getRoleUsers($request)
     {
@@ -650,10 +690,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRolesHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 获取角色数据
+     *  *
+     * @param GetRolesHeaders $headers GetRolesHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetRolesResponse
+     * @return GetRolesResponse GetRolesResponse
      */
     public function getRolesWithOptions($headers, $runtime)
     {
@@ -683,7 +725,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetRolesResponse
+     * @summary 获取角色数据
+     *  *
+     * @return GetRolesResponse GetRolesResponse
      */
     public function getRoles()
     {
@@ -694,11 +738,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadUrlRequest $request
-     * @param GetUploadUrlHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取文件上传地址
+     *  *
+     * @param GetUploadUrlRequest $request GetUploadUrlRequest
+     * @param GetUploadUrlHeaders $headers GetUploadUrlHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUploadUrlResponse
+     * @return GetUploadUrlResponse GetUploadUrlResponse
      */
     public function getUploadUrlWithOptions($request, $headers, $runtime)
     {
@@ -743,9 +789,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadUrlRequest $request
+     * @summary 获取文件上传地址
+     *  *
+     * @param GetUploadUrlRequest $request GetUploadUrlRequest
      *
-     * @return GetUploadUrlResponse
+     * @return GetUploadUrlResponse GetUploadUrlResponse
      */
     public function getUploadUrl($request)
     {
@@ -756,11 +804,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUsersRequest $request
-     * @param GetUsersHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 获取用户数据
+     *  *
+     * @param GetUsersRequest $request GetUsersRequest
+     * @param GetUsersHeaders $headers GetUsersHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUsersResponse
+     * @return GetUsersResponse GetUsersResponse
      */
     public function getUsersWithOptions($request, $headers, $runtime)
     {
@@ -799,9 +849,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUsersRequest $request
+     * @summary 获取用户数据
+     *  *
+     * @param GetUsersRequest $request GetUsersRequest
      *
-     * @return GetUsersResponse
+     * @return GetUsersResponse GetUsersResponse
      */
     public function getUsers($request)
     {
@@ -812,11 +864,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizFieldsRequest $request
-     * @param LoadBizFieldsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取表单业务字段信息
+     *  *
+     * @param LoadBizFieldsRequest $request LoadBizFieldsRequest
+     * @param LoadBizFieldsHeaders $headers LoadBizFieldsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return LoadBizFieldsResponse
+     * @return LoadBizFieldsResponse LoadBizFieldsResponse
      */
     public function loadBizFieldsWithOptions($request, $headers, $runtime)
     {
@@ -852,9 +906,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizFieldsRequest $request
+     * @summary 获取表单业务字段信息
+     *  *
+     * @param LoadBizFieldsRequest $request LoadBizFieldsRequest
      *
-     * @return LoadBizFieldsResponse
+     * @return LoadBizFieldsResponse LoadBizFieldsResponse
      */
     public function loadBizFields($request)
     {
@@ -865,11 +921,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizObjectRequest $request
-     * @param LoadBizObjectHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取单条表单业务对象实例
+     *  *
+     * @param LoadBizObjectRequest $request LoadBizObjectRequest
+     * @param LoadBizObjectHeaders $headers LoadBizObjectHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return LoadBizObjectResponse
+     * @return LoadBizObjectResponse LoadBizObjectResponse
      */
     public function loadBizObjectWithOptions($request, $headers, $runtime)
     {
@@ -908,9 +966,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizObjectRequest $request
+     * @summary 获取单条表单业务对象实例
+     *  *
+     * @param LoadBizObjectRequest $request LoadBizObjectRequest
      *
-     * @return LoadBizObjectResponse
+     * @return LoadBizObjectResponse LoadBizObjectResponse
      */
     public function loadBizObject($request)
     {
@@ -921,11 +981,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizObjectsRequest $request
-     * @param LoadBizObjectsHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 查询表单实例列表
+     *  *
+     * @param LoadBizObjectsRequest $request LoadBizObjectsRequest
+     * @param LoadBizObjectsHeaders $headers LoadBizObjectsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return LoadBizObjectsResponse
+     * @return LoadBizObjectsResponse LoadBizObjectsResponse
      */
     public function loadBizObjectsWithOptions($request, $headers, $runtime)
     {
@@ -976,9 +1038,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param LoadBizObjectsRequest $request
+     * @summary 查询表单实例列表
+     *  *
+     * @param LoadBizObjectsRequest $request LoadBizObjectsRequest
      *
-     * @return LoadBizObjectsResponse
+     * @return LoadBizObjectsResponse LoadBizObjectsResponse
      */
     public function loadBizObjects($request)
     {
@@ -989,11 +1053,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAppFunctionNodesRequest $request
-     * @param QueryAppFunctionNodesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取应用的功能节点信息
+     *  *
+     * @param QueryAppFunctionNodesRequest $request QueryAppFunctionNodesRequest
+     * @param QueryAppFunctionNodesHeaders $headers QueryAppFunctionNodesHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryAppFunctionNodesResponse
+     * @return QueryAppFunctionNodesResponse QueryAppFunctionNodesResponse
      */
     public function queryAppFunctionNodesWithOptions($request, $headers, $runtime)
     {
@@ -1029,9 +1095,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAppFunctionNodesRequest $request
+     * @summary 获取应用的功能节点信息
+     *  *
+     * @param QueryAppFunctionNodesRequest $request QueryAppFunctionNodesRequest
      *
-     * @return QueryAppFunctionNodesResponse
+     * @return QueryAppFunctionNodesResponse QueryAppFunctionNodesResponse
      */
     public function queryAppFunctionNodes($request)
     {
@@ -1042,11 +1110,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProcessesInstanceRequest $request
-     * @param QueryProcessesInstanceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 获取流程实例
+     *  *
+     * @param QueryProcessesInstanceRequest $request QueryProcessesInstanceRequest
+     * @param QueryProcessesInstanceHeaders $headers QueryProcessesInstanceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryProcessesInstanceResponse
+     * @return QueryProcessesInstanceResponse QueryProcessesInstanceResponse
      */
     public function queryProcessesInstanceWithOptions($request, $headers, $runtime)
     {
@@ -1085,9 +1155,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProcessesInstanceRequest $request
+     * @summary 获取流程实例
+     *  *
+     * @param QueryProcessesInstanceRequest $request QueryProcessesInstanceRequest
      *
-     * @return QueryProcessesInstanceResponse
+     * @return QueryProcessesInstanceResponse QueryProcessesInstanceResponse
      */
     public function queryProcessesInstance($request)
     {
@@ -1098,11 +1170,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProcessesWorkItemsRequest $request
-     * @param QueryProcessesWorkItemsHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 获取流程实例节点工作项
+     *  *
+     * @param QueryProcessesWorkItemsRequest $request QueryProcessesWorkItemsRequest
+     * @param QueryProcessesWorkItemsHeaders $headers QueryProcessesWorkItemsHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryProcessesWorkItemsResponse
+     * @return QueryProcessesWorkItemsResponse QueryProcessesWorkItemsResponse
      */
     public function queryProcessesWorkItemsWithOptions($request, $headers, $runtime)
     {
@@ -1138,9 +1212,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProcessesWorkItemsRequest $request
+     * @summary 获取流程实例节点工作项
+     *  *
+     * @param QueryProcessesWorkItemsRequest $request QueryProcessesWorkItemsRequest
      *
-     * @return QueryProcessesWorkItemsResponse
+     * @return QueryProcessesWorkItemsResponse QueryProcessesWorkItemsResponse
      */
     public function queryProcessesWorkItems($request)
     {
@@ -1151,11 +1227,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateBizObjectRequest $request
-     * @param UpdateBizObjectHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 修改表单业务对象数据
+     *  *
+     * @param UpdateBizObjectRequest $request UpdateBizObjectRequest
+     * @param UpdateBizObjectHeaders $headers UpdateBizObjectHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateBizObjectResponse
+     * @return UpdateBizObjectResponse UpdateBizObjectResponse
      */
     public function updateBizObjectWithOptions($request, $headers, $runtime)
     {
@@ -1197,9 +1275,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateBizObjectRequest $request
+     * @summary 修改表单业务对象数据
+     *  *
+     * @param UpdateBizObjectRequest $request UpdateBizObjectRequest
      *
-     * @return UpdateBizObjectResponse
+     * @return UpdateBizObjectResponse UpdateBizObjectResponse
      */
     public function updateBizObject($request)
     {

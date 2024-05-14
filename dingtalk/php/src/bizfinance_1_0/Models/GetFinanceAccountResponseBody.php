@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFinanceAccountResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string
@@ -23,6 +25,8 @@ class GetFinanceAccountResponseBody extends Model
     public $accountId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试
      *
      * @var string
@@ -35,6 +39,8 @@ class GetFinanceAccountResponseBody extends Model
     public $accountRemark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -64,6 +70,8 @@ class GetFinanceAccountResponseBody extends Model
     public $bankName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1631526550994
      *
      * @var int
@@ -71,6 +79,8 @@ class GetFinanceAccountResponseBody extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abcdef
      *
      * @var string

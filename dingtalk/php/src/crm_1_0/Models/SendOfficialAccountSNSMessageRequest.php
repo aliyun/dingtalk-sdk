@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SendOfficialAccountSNSMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bindingToken;
@@ -20,6 +22,8 @@ class SendOfficialAccountSNSMessageRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detail
      */
     public $detail;

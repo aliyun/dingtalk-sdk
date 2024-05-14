@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ExtractFacialFeatureRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userid;

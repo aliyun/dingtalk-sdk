@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessByBizCategoryIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string

@@ -94,11 +94,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchOTOQueryRequest $request
-     * @param BatchOTOQueryHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 批量查询人与机器人会话机器人消息是否已读
+     *  *
+     * @param BatchOTOQueryRequest $request BatchOTOQueryRequest
+     * @param BatchOTOQueryHeaders $headers BatchOTOQueryHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchOTOQueryResponse
+     * @return BatchOTOQueryResponse BatchOTOQueryResponse
      */
     public function batchOTOQueryWithOptions($request, $headers, $runtime)
     {
@@ -137,9 +139,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchOTOQueryRequest $request
+     * @summary 批量查询人与机器人会话机器人消息是否已读
+     *  *
+     * @param BatchOTOQueryRequest $request BatchOTOQueryRequest
      *
-     * @return BatchOTOQueryResponse
+     * @return BatchOTOQueryResponse BatchOTOQueryResponse
      */
     public function batchOTOQuery($request)
     {
@@ -150,11 +154,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallGroupRequest $request
-     * @param BatchRecallGroupHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 批量撤回群聊机器人消息
+     *  *
+     * @param BatchRecallGroupRequest $request BatchRecallGroupRequest
+     * @param BatchRecallGroupHeaders $headers BatchRecallGroupHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchRecallGroupResponse
+     * @return BatchRecallGroupResponse BatchRecallGroupResponse
      */
     public function batchRecallGroupWithOptions($request, $headers, $runtime)
     {
@@ -196,9 +202,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallGroupRequest $request
+     * @summary 批量撤回群聊机器人消息
+     *  *
+     * @param BatchRecallGroupRequest $request BatchRecallGroupRequest
      *
-     * @return BatchRecallGroupResponse
+     * @return BatchRecallGroupResponse BatchRecallGroupResponse
      */
     public function batchRecallGroup($request)
     {
@@ -209,11 +217,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallOTORequest $request
-     * @param BatchRecallOTOHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 批量撤回人与机器人会话中机器人消息
+     *  *
+     * @param BatchRecallOTORequest $request BatchRecallOTORequest
+     * @param BatchRecallOTOHeaders $headers BatchRecallOTOHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchRecallOTOResponse
+     * @return BatchRecallOTOResponse BatchRecallOTOResponse
      */
     public function batchRecallOTOWithOptions($request, $headers, $runtime)
     {
@@ -252,9 +262,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallOTORequest $request
+     * @summary 批量撤回人与机器人会话中机器人消息
+     *  *
+     * @param BatchRecallOTORequest $request BatchRecallOTORequest
      *
-     * @return BatchRecallOTOResponse
+     * @return BatchRecallOTOResponse BatchRecallOTOResponse
      */
     public function batchRecallOTO($request)
     {
@@ -265,11 +277,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallPrivateChatRequest $request
-     * @param BatchRecallPrivateChatHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 批量撤回人与人会话中机器人消息
+     *  *
+     * @param BatchRecallPrivateChatRequest $request BatchRecallPrivateChatRequest
+     * @param BatchRecallPrivateChatHeaders $headers BatchRecallPrivateChatHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchRecallPrivateChatResponse
+     * @return BatchRecallPrivateChatResponse BatchRecallPrivateChatResponse
      */
     public function batchRecallPrivateChatWithOptions($request, $headers, $runtime)
     {
@@ -311,9 +325,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRecallPrivateChatRequest $request
+     * @summary 批量撤回人与人会话中机器人消息
+     *  *
+     * @param BatchRecallPrivateChatRequest $request BatchRecallPrivateChatRequest
      *
-     * @return BatchRecallPrivateChatResponse
+     * @return BatchRecallPrivateChatResponse BatchRecallPrivateChatResponse
      */
     public function batchRecallPrivateChat($request)
     {
@@ -324,11 +340,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchSendOTORequest $request
-     * @param BatchSendOTOHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 批量发送人与机器人会话中机器人消息
+     *  *
+     * @param BatchSendOTORequest $request BatchSendOTORequest
+     * @param BatchSendOTOHeaders $headers BatchSendOTOHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchSendOTOResponse
+     * @return BatchSendOTOResponse BatchSendOTOResponse
      */
     public function batchSendOTOWithOptions($request, $headers, $runtime)
     {
@@ -373,9 +391,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchSendOTORequest $request
+     * @summary 批量发送人与机器人会话中机器人消息
+     *  *
+     * @param BatchSendOTORequest $request BatchSendOTORequest
      *
-     * @return BatchSendOTOResponse
+     * @return BatchSendOTOResponse BatchSendOTOResponse
      */
     public function batchSendOTO($request)
     {
@@ -386,11 +406,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ClearRobotPluginRequest $request
-     * @param ClearRobotPluginHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 清空单聊机器人快捷入口
+     *  *
+     * @param ClearRobotPluginRequest $request ClearRobotPluginRequest
+     * @param ClearRobotPluginHeaders $headers ClearRobotPluginHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ClearRobotPluginResponse
+     * @return ClearRobotPluginResponse ClearRobotPluginResponse
      */
     public function clearRobotPluginWithOptions($request, $headers, $runtime)
     {
@@ -426,9 +448,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ClearRobotPluginRequest $request
+     * @summary 清空单聊机器人快捷入口
+     *  *
+     * @param ClearRobotPluginRequest $request ClearRobotPluginRequest
      *
-     * @return ClearRobotPluginResponse
+     * @return ClearRobotPluginResponse ClearRobotPluginResponse
      */
     public function clearRobotPlugin($request)
     {
@@ -439,11 +463,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExecuteRobotAiSkillRequest $request
-     * @param ExecuteRobotAiSkillHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 执行机器人的AI技能
+     *  *
+     * @param ExecuteRobotAiSkillRequest $request ExecuteRobotAiSkillRequest
+     * @param ExecuteRobotAiSkillHeaders $headers ExecuteRobotAiSkillHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return ExecuteRobotAiSkillResponse
+     * @return ExecuteRobotAiSkillResponse ExecuteRobotAiSkillResponse
      */
     public function executeRobotAiSkillWithOptions($request, $headers, $runtime)
     {
@@ -488,9 +514,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExecuteRobotAiSkillRequest $request
+     * @summary 执行机器人的AI技能
+     *  *
+     * @param ExecuteRobotAiSkillRequest $request ExecuteRobotAiSkillRequest
      *
-     * @return ExecuteRobotAiSkillResponse
+     * @return ExecuteRobotAiSkillResponse ExecuteRobotAiSkillResponse
      */
     public function executeRobotAiSkill($request)
     {
@@ -501,11 +529,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBotListInGroupRequest $request
-     * @param GetBotListInGroupHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 查询群内的机器人列表
+     *  *
+     * @param GetBotListInGroupRequest $request GetBotListInGroupRequest
+     * @param GetBotListInGroupHeaders $headers GetBotListInGroupHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetBotListInGroupResponse
+     * @return GetBotListInGroupResponse GetBotListInGroupResponse
      */
     public function getBotListInGroupWithOptions($request, $headers, $runtime)
     {
@@ -541,9 +571,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBotListInGroupRequest $request
+     * @summary 查询群内的机器人列表
+     *  *
+     * @param GetBotListInGroupRequest $request GetBotListInGroupRequest
      *
-     * @return GetBotListInGroupResponse
+     * @return GetBotListInGroupResponse GetBotListInGroupResponse
      */
     public function getBotListInGroup($request)
     {
@@ -554,11 +586,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManageSingleChatRobotStatusRequest $request
-     * @param ManageSingleChatRobotStatusHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 管理机器人启用，停用状态
+     *  *
+     * @param ManageSingleChatRobotStatusRequest $request ManageSingleChatRobotStatusRequest
+     * @param ManageSingleChatRobotStatusHeaders $headers ManageSingleChatRobotStatusHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return ManageSingleChatRobotStatusResponse
+     * @return ManageSingleChatRobotStatusResponse ManageSingleChatRobotStatusResponse
      */
     public function manageSingleChatRobotStatusWithOptions($request, $headers, $runtime)
     {
@@ -597,9 +631,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManageSingleChatRobotStatusRequest $request
+     * @summary 管理机器人启用，停用状态
+     *  *
+     * @param ManageSingleChatRobotStatusRequest $request ManageSingleChatRobotStatusRequest
      *
-     * @return ManageSingleChatRobotStatusResponse
+     * @return ManageSingleChatRobotStatusResponse ManageSingleChatRobotStatusResponse
      */
     public function manageSingleChatRobotStatus($request)
     {
@@ -610,11 +646,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupQueryRequest $request
-     * @param OrgGroupQueryHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 查询企业机器人群聊消息用户已读状态
+     *  *
+     * @param OrgGroupQueryRequest $request OrgGroupQueryRequest
+     * @param OrgGroupQueryHeaders $headers OrgGroupQueryHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return OrgGroupQueryResponse
+     * @return OrgGroupQueryResponse OrgGroupQueryResponse
      */
     public function orgGroupQueryWithOptions($request, $headers, $runtime)
     {
@@ -665,9 +703,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupQueryRequest $request
+     * @summary 查询企业机器人群聊消息用户已读状态
+     *  *
+     * @param OrgGroupQueryRequest $request OrgGroupQueryRequest
      *
-     * @return OrgGroupQueryResponse
+     * @return OrgGroupQueryResponse OrgGroupQueryResponse
      */
     public function orgGroupQuery($request)
     {
@@ -678,11 +718,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupRecallRequest $request
-     * @param OrgGroupRecallHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 企业机器人撤回内部群消息
+     *  *
+     * @param OrgGroupRecallRequest $request OrgGroupRecallRequest
+     * @param OrgGroupRecallHeaders $headers OrgGroupRecallHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return OrgGroupRecallResponse
+     * @return OrgGroupRecallResponse OrgGroupRecallResponse
      */
     public function orgGroupRecallWithOptions($request, $headers, $runtime)
     {
@@ -724,9 +766,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupRecallRequest $request
+     * @summary 企业机器人撤回内部群消息
+     *  *
+     * @param OrgGroupRecallRequest $request OrgGroupRecallRequest
      *
-     * @return OrgGroupRecallResponse
+     * @return OrgGroupRecallResponse OrgGroupRecallResponse
      */
     public function orgGroupRecall($request)
     {
@@ -737,11 +781,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupSendRequest $request
-     * @param OrgGroupSendHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 机器人发送群聊消息
+     *  *
+     * @param OrgGroupSendRequest $request OrgGroupSendRequest
+     * @param OrgGroupSendHeaders $headers OrgGroupSendHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return OrgGroupSendResponse
+     * @return OrgGroupSendResponse OrgGroupSendResponse
      */
     public function orgGroupSendWithOptions($request, $headers, $runtime)
     {
@@ -792,9 +838,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrgGroupSendRequest $request
+     * @summary 机器人发送群聊消息
+     *  *
+     * @param OrgGroupSendRequest $request OrgGroupSendRequest
      *
-     * @return OrgGroupSendResponse
+     * @return OrgGroupSendResponse OrgGroupSendResponse
      */
     public function orgGroupSend($request)
     {
@@ -805,11 +853,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrivateChatQueryRequest $request
-     * @param PrivateChatQueryHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询人与人会话中机器人已读消息
+     *  *
+     * @param PrivateChatQueryRequest $request PrivateChatQueryRequest
+     * @param PrivateChatQueryHeaders $headers PrivateChatQueryHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return PrivateChatQueryResponse
+     * @return PrivateChatQueryResponse PrivateChatQueryResponse
      */
     public function privateChatQueryWithOptions($request, $headers, $runtime)
     {
@@ -857,9 +907,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrivateChatQueryRequest $request
+     * @summary 查询人与人会话中机器人已读消息
+     *  *
+     * @param PrivateChatQueryRequest $request PrivateChatQueryRequest
      *
-     * @return PrivateChatQueryResponse
+     * @return PrivateChatQueryResponse PrivateChatQueryResponse
      */
     public function privateChatQuery($request)
     {
@@ -870,11 +922,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrivateChatSendRequest $request
-     * @param PrivateChatSendHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 人与人会话中机器人发送普通消息
+     *  *
+     * @param PrivateChatSendRequest $request PrivateChatSendRequest
+     * @param PrivateChatSendHeaders $headers PrivateChatSendHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return PrivateChatSendResponse
+     * @return PrivateChatSendResponse PrivateChatSendResponse
      */
     public function privateChatSendWithOptions($request, $headers, $runtime)
     {
@@ -922,9 +976,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrivateChatSendRequest $request
+     * @summary 人与人会话中机器人发送普通消息
+     *  *
+     * @param PrivateChatSendRequest $request PrivateChatSendRequest
      *
-     * @return PrivateChatSendResponse
+     * @return PrivateChatSendResponse PrivateChatSendResponse
      */
     public function privateChatSend($request)
     {
@@ -935,11 +991,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBotInstanceInGroupInfoRequest $request
-     * @param QueryBotInstanceInGroupInfoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @summary 获取机器人所在群信息
+     *  *
+     * @param QueryBotInstanceInGroupInfoRequest $request QueryBotInstanceInGroupInfoRequest
+     * @param QueryBotInstanceInGroupInfoHeaders $headers QueryBotInstanceInGroupInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBotInstanceInGroupInfoResponse
+     * @return QueryBotInstanceInGroupInfoResponse QueryBotInstanceInGroupInfoResponse
      */
     public function queryBotInstanceInGroupInfoWithOptions($request, $headers, $runtime)
     {
@@ -981,9 +1039,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBotInstanceInGroupInfoRequest $request
+     * @summary 获取机器人所在群信息
+     *  *
+     * @param QueryBotInstanceInGroupInfoRequest $request QueryBotInstanceInGroupInfoRequest
      *
-     * @return QueryBotInstanceInGroupInfoResponse
+     * @return QueryBotInstanceInGroupInfoResponse QueryBotInstanceInGroupInfoResponse
      */
     public function queryBotInstanceInGroupInfo($request)
     {
@@ -994,11 +1054,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRobotPluginRequest $request
-     * @param QueryRobotPluginHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询单聊机器人快捷入口
+     *  *
+     * @param QueryRobotPluginRequest $request QueryRobotPluginRequest
+     * @param QueryRobotPluginHeaders $headers QueryRobotPluginHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRobotPluginResponse
+     * @return QueryRobotPluginResponse QueryRobotPluginResponse
      */
     public function queryRobotPluginWithOptions($request, $headers, $runtime)
     {
@@ -1034,9 +1096,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRobotPluginRequest $request
+     * @summary 查询单聊机器人快捷入口
+     *  *
+     * @param QueryRobotPluginRequest $request QueryRobotPluginRequest
      *
-     * @return QueryRobotPluginResponse
+     * @return QueryRobotPluginResponse QueryRobotPluginResponse
      */
     public function queryRobotPlugin($request)
     {
@@ -1047,11 +1111,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotMessageFileDownloadRequest $request
-     * @param RobotMessageFileDownloadHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @summary 获取机器人消息中文件下载链接
+     *  *
+     * @param RobotMessageFileDownloadRequest $request RobotMessageFileDownloadRequest
+     * @param RobotMessageFileDownloadHeaders $headers RobotMessageFileDownloadHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
-     * @return RobotMessageFileDownloadResponse
+     * @return RobotMessageFileDownloadResponse RobotMessageFileDownloadResponse
      */
     public function robotMessageFileDownloadWithOptions($request, $headers, $runtime)
     {
@@ -1090,9 +1156,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotMessageFileDownloadRequest $request
+     * @summary 获取机器人消息中文件下载链接
+     *  *
+     * @param RobotMessageFileDownloadRequest $request RobotMessageFileDownloadRequest
      *
-     * @return RobotMessageFileDownloadResponse
+     * @return RobotMessageFileDownloadResponse RobotMessageFileDownloadResponse
      */
     public function robotMessageFileDownload($request)
     {
@@ -1103,11 +1171,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotRecallDingRequest $request
-     * @param RobotRecallDingHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 撤回已经发送的DING消息
+     *  *
+     * @param RobotRecallDingRequest $request RobotRecallDingRequest
+     * @param RobotRecallDingHeaders $headers RobotRecallDingHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return RobotRecallDingResponse
+     * @return RobotRecallDingResponse RobotRecallDingResponse
      */
     public function robotRecallDingWithOptions($request, $headers, $runtime)
     {
@@ -1146,9 +1216,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotRecallDingRequest $request
+     * @summary 撤回已经发送的DING消息
+     *  *
+     * @param RobotRecallDingRequest $request RobotRecallDingRequest
      *
-     * @return RobotRecallDingResponse
+     * @return RobotRecallDingResponse RobotRecallDingResponse
      */
     public function robotRecallDing($request)
     {
@@ -1159,11 +1231,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotSendDingRequest $request
-     * @param RobotSendDingHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 发送DING消息
+     *  *
+     * @param RobotSendDingRequest $request RobotSendDingRequest
+     * @param RobotSendDingHeaders $headers RobotSendDingHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return RobotSendDingResponse
+     * @return RobotSendDingResponse RobotSendDingResponse
      */
     public function robotSendDingWithOptions($request, $headers, $runtime)
     {
@@ -1208,9 +1282,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RobotSendDingRequest $request
+     * @summary 发送DING消息
+     *  *
+     * @param RobotSendDingRequest $request RobotSendDingRequest
      *
-     * @return RobotSendDingResponse
+     * @return RobotSendDingResponse RobotSendDingResponse
      */
     public function robotSendDing($request)
     {
@@ -1221,11 +1297,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotDingMessageRequest $request
-     * @param SendRobotDingMessageHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 机器人发送DING消息
+     *  *
+     * @param SendRobotDingMessageRequest $request SendRobotDingMessageRequest
+     * @param SendRobotDingMessageHeaders $headers SendRobotDingMessageHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendRobotDingMessageResponse
+     * @return SendRobotDingMessageResponse SendRobotDingMessageResponse
      */
     public function sendRobotDingMessageWithOptions($request, $headers, $runtime)
     {
@@ -1273,9 +1351,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRobotDingMessageRequest $request
+     * @summary 机器人发送DING消息
+     *  *
+     * @param SendRobotDingMessageRequest $request SendRobotDingMessageRequest
      *
-     * @return SendRobotDingMessageResponse
+     * @return SendRobotDingMessageResponse SendRobotDingMessageResponse
      */
     public function sendRobotDingMessage($request)
     {
@@ -1286,11 +1366,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetRobotPluginRequest $request
-     * @param SetRobotPluginHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 设置单聊机器人快捷入口
+     *  *
+     * @param SetRobotPluginRequest $request SetRobotPluginRequest
+     * @param SetRobotPluginHeaders $headers SetRobotPluginHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetRobotPluginResponse
+     * @return SetRobotPluginResponse SetRobotPluginResponse
      */
     public function setRobotPluginWithOptions($request, $headers, $runtime)
     {
@@ -1329,9 +1411,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetRobotPluginRequest $request
+     * @summary 设置单聊机器人快捷入口
+     *  *
+     * @param SetRobotPluginRequest $request SetRobotPluginRequest
      *
-     * @return SetRobotPluginResponse
+     * @return SetRobotPluginResponse SetRobotPluginResponse
      */
     public function setRobotPlugin($request)
     {
@@ -1342,11 +1426,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInstalledRobotRequest $request
-     * @param UpdateInstalledRobotHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 更新安装到组织的机器人信息
+     *  *
+     * @param UpdateInstalledRobotRequest $request UpdateInstalledRobotRequest
+     * @param UpdateInstalledRobotHeaders $headers UpdateInstalledRobotHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateInstalledRobotResponse
+     * @return UpdateInstalledRobotResponse UpdateInstalledRobotResponse
      */
     public function updateInstalledRobotWithOptions($request, $headers, $runtime)
     {
@@ -1397,9 +1483,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateInstalledRobotRequest $request
+     * @summary 更新安装到组织的机器人信息
+     *  *
+     * @param UpdateInstalledRobotRequest $request UpdateInstalledRobotRequest
      *
-     * @return UpdateInstalledRobotResponse
+     * @return UpdateInstalledRobotResponse UpdateInstalledRobotResponse
      */
     public function updateInstalledRobot($request)
     {

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ProcessForecastRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -17,11 +19,15 @@ class ProcessForecastRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
      *
      * @var string
@@ -29,6 +35,8 @@ class ProcessForecastRequest extends Model
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager432
      *
      * @var string

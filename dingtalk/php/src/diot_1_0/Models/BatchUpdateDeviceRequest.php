@@ -17,6 +17,8 @@ class BatchUpdateDeviceRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var devices[]
      */
     public $devices;

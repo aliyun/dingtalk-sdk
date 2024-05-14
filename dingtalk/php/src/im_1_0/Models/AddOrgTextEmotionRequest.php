@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddOrgTextEmotionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example @123xxx
      *
      * @var string
@@ -16,6 +18,8 @@ class AddOrgTextEmotionRequest extends Model
     public $backgroundMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @345xxx
      *
      * @var string
@@ -23,6 +27,8 @@ class AddOrgTextEmotionRequest extends Model
     public $backgroundMediaIdForPanel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example -1
      *
      * @var int
@@ -30,6 +36,8 @@ class AddOrgTextEmotionRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 企业表情1
      *
      * @var string

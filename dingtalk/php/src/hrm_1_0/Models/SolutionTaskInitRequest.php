@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SolutionTaskInitRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example training
      *
      * @var string
@@ -37,6 +39,8 @@ class SolutionTaskInitRequest extends Model
     public $finishTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fdagshfjhajl
      *
      * @var string
@@ -44,6 +48,8 @@ class SolutionTaskInitRequest extends Model
     public $outerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example running
      *
      * @var string
@@ -51,6 +57,8 @@ class SolutionTaskInitRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 新人学习任务
      *
      * @var string
@@ -58,6 +66,8 @@ class SolutionTaskInitRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -65,6 +75,8 @@ class SolutionTaskInitRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example onboarding
      *
      * @var string

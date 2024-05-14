@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetRoleUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 34ddd46f-e6c4-4eb0-b63a-aac0dd9232b0
      *
      * @var string

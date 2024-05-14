@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NlpWordDistinguishRequest $request
-     * @param NlpWordDistinguishHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 自然语言处理之关键词识别
+     *  *
+     * @param NlpWordDistinguishRequest $request NlpWordDistinguishRequest
+     * @param NlpWordDistinguishHeaders $headers NlpWordDistinguishHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return NlpWordDistinguishResponse
+     * @return NlpWordDistinguishResponse NlpWordDistinguishResponse
      */
     public function nlpWordDistinguishWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NlpWordDistinguishRequest $request
+     * @summary 自然语言处理之关键词识别
+     *  *
+     * @param NlpWordDistinguishRequest $request NlpWordDistinguishRequest
      *
-     * @return NlpWordDistinguishResponse
+     * @return NlpWordDistinguishResponse NlpWordDistinguishResponse
      */
     public function nlpWordDistinguish($request)
     {
@@ -93,11 +97,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrOpenRecommendRequest $request
-     * @param OkrOpenRecommendHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary Okr内容推荐
+     *  *
+     * @param OkrOpenRecommendRequest $request OkrOpenRecommendRequest
+     * @param OkrOpenRecommendHeaders $headers OkrOpenRecommendHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return OkrOpenRecommendResponse
+     * @return OkrOpenRecommendResponse OkrOpenRecommendResponse
      */
     public function okrOpenRecommendWithOptions($request, $headers, $runtime)
     {
@@ -148,9 +154,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrOpenRecommendRequest $request
+     * @summary Okr内容推荐
+     *  *
+     * @param OkrOpenRecommendRequest $request OkrOpenRecommendRequest
      *
-     * @return OkrOpenRecommendResponse
+     * @return OkrOpenRecommendResponse OkrOpenRecommendResponse
      */
     public function okrOpenRecommend($request)
     {

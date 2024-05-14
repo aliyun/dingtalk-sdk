@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveFormDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -16,6 +18,8 @@ class SaveFormDataRequest extends Model
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
      *
      * @var string
@@ -23,6 +27,8 @@ class SaveFormDataRequest extends Model
     public $formDataJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
      *
      * @var string
@@ -37,6 +43,8 @@ class SaveFormDataRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -44,6 +52,8 @@ class SaveFormDataRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

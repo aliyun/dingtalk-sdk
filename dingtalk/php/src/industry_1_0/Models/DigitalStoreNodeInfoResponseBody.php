@@ -16,6 +16,8 @@ class DigitalStoreNodeInfoResponseBody extends Model
     public $dingDeptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6756433
      *
      * @var int
@@ -23,6 +25,8 @@ class DigitalStoreNodeInfoResponseBody extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 华夏之心店
      *
      * @var string
@@ -30,6 +34,8 @@ class DigitalStoreNodeInfoResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 873366531
      *
      * @var int
@@ -37,6 +43,8 @@ class DigitalStoreNodeInfoResponseBody extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

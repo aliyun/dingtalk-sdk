@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ContractBenefitConsumeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example esign
      *
      * @var string
@@ -16,6 +18,8 @@ class ContractBenefitConsumeRequest extends Model
     public $benefitPoint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sjdaujii129w9qej2nqas
      *
      * @var string
@@ -23,6 +27,8 @@ class ContractBenefitConsumeRequest extends Model
     public $bizRequestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -30,6 +36,8 @@ class ContractBenefitConsumeRequest extends Model
     public $consumeQuota;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1231ndu29923312
      *
      * @var string
@@ -42,6 +50,8 @@ class ContractBenefitConsumeRequest extends Model
     public $extParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding12939912nduaejjwe
      *
      * @var string

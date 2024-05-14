@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupSetName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateId;

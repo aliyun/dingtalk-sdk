@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class GetSignDetailResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $businessScene;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $flowStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var signers[]
      */
     public $signers;

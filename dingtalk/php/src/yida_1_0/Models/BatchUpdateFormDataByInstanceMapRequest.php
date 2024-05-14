@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateFormDataByInstanceMapRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
@@ -23,6 +25,8 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     public $asynchronousExecution;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
@@ -44,6 +48,8 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     public $noExecuteExpression;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
@@ -51,6 +57,8 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"FINST-ANSFSNNDS2212NSKLKKSFD":"{\"rateField_l0c1cwis\":3,\"countrySelectField_l0c1cwiu\":[{\"value\":\"US\"}]}"}
      *
      * @var mixed[]
@@ -65,6 +73,8 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     public $useLatestFormSchemaVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryGlobalInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 301227837938
      *
      * @var string

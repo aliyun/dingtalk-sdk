@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example service-card-20220824-001
      *
      * @var string
@@ -16,6 +18,8 @@ class detail extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3erkfi-42b0-4c83-bc56-ffhssde43
      *
      * @var string
@@ -23,6 +27,8 @@ class detail extends Model
     public $cardTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user001
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class permission extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $ownerStaffIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $participantStaffIds;

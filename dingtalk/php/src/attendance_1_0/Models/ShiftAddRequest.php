@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class ShiftAddRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 白班
      *
      * @var string
@@ -25,6 +27,8 @@ class ShiftAddRequest extends Model
     public $owner;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sections[]
      */
     public $sections;
@@ -49,6 +53,8 @@ class ShiftAddRequest extends Model
     public $shiftId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

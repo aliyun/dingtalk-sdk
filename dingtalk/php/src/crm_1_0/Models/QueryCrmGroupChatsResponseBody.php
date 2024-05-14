@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupChatsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

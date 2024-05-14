@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ApproveProcessCallbackRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sampleKeyId1234
      *
      * @var string
@@ -17,6 +19,8 @@ class ApproveProcessCallbackRequest extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sampleSecretId1234
      *
      * @var string
@@ -24,6 +28,8 @@ class ApproveProcessCallbackRequest extends Model
     public $accessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @var request
      */
     public $request;

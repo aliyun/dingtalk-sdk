@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetMemberListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example cidjyErBTyw0FnIQQXXX2223==
      *
      * @var string
@@ -16,11 +18,15 @@ class GetMemberListRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

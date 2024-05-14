@@ -14,11 +14,15 @@ class RemoveGroupMemberRequest extends Model
     public $appUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8777
      *
      * @var string

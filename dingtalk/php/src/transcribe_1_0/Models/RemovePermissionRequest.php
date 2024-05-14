@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class RemovePermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;

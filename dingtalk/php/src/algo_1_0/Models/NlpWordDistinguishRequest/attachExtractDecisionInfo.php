@@ -19,16 +19,22 @@ class attachExtractDecisionInfo extends Model
     public $candidateWords;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $deptIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

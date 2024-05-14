@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetOpenCourseDetailResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fdjakl-fdaf-ds
      *
      * @var string
@@ -17,6 +19,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $courseId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -24,6 +28,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $courseType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png
      *
      * @var string
@@ -31,6 +37,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $coverUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开学的第一堂课
      *
      * @var string
@@ -38,11 +46,15 @@ class GetOpenCourseDetailResponseBody extends Model
     public $introduction;
 
     /**
+     * @description This parameter is required.
+     *
      * @var pushModel
      */
     public $pushModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1618369786000
      *
      * @var int
@@ -50,6 +62,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123124312314
      *
      * @var string
@@ -57,6 +71,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $teacherId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张老师
      *
      * @var string
@@ -64,6 +80,8 @@ class GetOpenCourseDetailResponseBody extends Model
     public $teacherName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开学第一课
      *
      * @var string

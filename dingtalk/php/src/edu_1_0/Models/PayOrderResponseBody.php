@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PayOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

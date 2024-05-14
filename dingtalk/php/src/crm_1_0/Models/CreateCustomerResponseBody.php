@@ -15,6 +15,8 @@ class CreateCustomerResponseBody extends Model
     public $contacts;
 
     /**
+     * @description This parameter is required.
+     *
      * @example customer_id
      *
      * @var string

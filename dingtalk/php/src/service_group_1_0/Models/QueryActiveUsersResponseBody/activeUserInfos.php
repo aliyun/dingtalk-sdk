@@ -9,36 +9,50 @@ use AlibabaCloud\Tea\Model;
 class activeUserInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $actionIndexL14d;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $actionIndexL30d;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $actionIndexL7d;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $activeScore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nickName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $ranking;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

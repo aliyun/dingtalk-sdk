@@ -21,6 +21,8 @@ class CreateGroupConversationRequest extends Model
     public $groupAvatar;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 客户群
      *
      * @var string
@@ -28,6 +30,8 @@ class CreateGroupConversationRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8777
      *
      * @var string
@@ -42,6 +46,8 @@ class CreateGroupConversationRequest extends Model
     public $groupOwnerType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8d42****nkld
      *
      * @var string
@@ -49,6 +55,8 @@ class CreateGroupConversationRequest extends Model
     public $groupTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1745****8777
      *
      * @var string

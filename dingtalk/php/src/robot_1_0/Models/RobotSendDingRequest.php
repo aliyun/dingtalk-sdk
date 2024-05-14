@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class RobotSendDingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1:APP，2:短信，3:电话
      *
      * @var int
@@ -26,6 +32,8 @@ class RobotSendDingRequest extends Model
     public $remindType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $robotCode;

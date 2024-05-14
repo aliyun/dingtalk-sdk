@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ReduceQuotaWithLeaveRecordRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example asdfaad-asdfadfa-asdfa
      *
      * @var string
@@ -21,6 +25,8 @@ class ReduceQuotaWithLeaveRecordRequest extends Model
     public $leaveCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123342345
      *
      * @var string
@@ -28,6 +34,8 @@ class ReduceQuotaWithLeaveRecordRequest extends Model
     public $outerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -42,6 +50,8 @@ class ReduceQuotaWithLeaveRecordRequest extends Model
     public $reason;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;

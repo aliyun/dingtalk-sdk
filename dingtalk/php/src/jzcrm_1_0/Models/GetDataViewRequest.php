@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetDataViewRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 150
      *
      * @var string
@@ -16,6 +18,8 @@ class GetDataViewRequest extends Model
     public $datatype;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

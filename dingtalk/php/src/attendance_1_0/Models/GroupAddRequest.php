@@ -175,6 +175,8 @@ class GroupAddRequest extends Model
     public $groupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 白班考勤
      *
      * @var string
@@ -187,6 +189,8 @@ class GroupAddRequest extends Model
     public $managerList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
@@ -275,6 +279,8 @@ class GroupAddRequest extends Model
     public $trimDistance;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TURN
      *
      * @var string
@@ -292,6 +298,8 @@ class GroupAddRequest extends Model
     public $workdayClassList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123dfd
      *
      * @var string

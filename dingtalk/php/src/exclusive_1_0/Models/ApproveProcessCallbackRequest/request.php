@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class request extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example agree
      *
      * @var string
@@ -16,6 +18,8 @@ class request extends Model
     public $approveResult;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $approveType;
@@ -26,6 +30,8 @@ class request extends Model
     public $approvers;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1495592259000
      *
      * @var int
@@ -33,6 +39,8 @@ class request extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example approve_open_group_expansion
      *
      * @var string
@@ -40,6 +48,8 @@ class request extends Model
     public $eventType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1495592259000
      *
      * @var int
@@ -52,6 +62,8 @@ class request extends Model
     public $params;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processInstanceId;

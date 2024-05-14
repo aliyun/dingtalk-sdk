@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class pluginInfoList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example @lALPDtXaDkO3j7hgYA
      *
      * @var string
@@ -23,6 +25,8 @@ class pluginInfoList extends Model
     public $mobileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 快捷入口名字
      *
      * @var string

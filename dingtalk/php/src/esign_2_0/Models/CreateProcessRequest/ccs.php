@@ -19,6 +19,8 @@ class ccs extends Model
     public $accountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $accountType;

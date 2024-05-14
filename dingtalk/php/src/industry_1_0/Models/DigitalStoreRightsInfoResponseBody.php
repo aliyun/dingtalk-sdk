@@ -16,6 +16,8 @@ class DigitalStoreRightsInfoResponseBody extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -30,6 +32,8 @@ class DigitalStoreRightsInfoResponseBody extends Model
     public $rightsCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高级版
      *
      * @var string

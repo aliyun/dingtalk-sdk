@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CfJobLevelResp extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class CfJobLevelResp extends Model
     public $level;
 
     /**
+     * @description This parameter is required.
+     *
      * @example P1
      *
      * @var string
@@ -23,6 +27,8 @@ class CfJobLevelResp extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1639065600000
      *
      * @var string
@@ -30,6 +36,8 @@ class CfJobLevelResp extends Model
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1652198400000
      *
      * @var string

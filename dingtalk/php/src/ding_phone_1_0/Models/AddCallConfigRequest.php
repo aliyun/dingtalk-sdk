@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddCallConfigRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding3f583b067f2q450c12d
      *
      * @var string

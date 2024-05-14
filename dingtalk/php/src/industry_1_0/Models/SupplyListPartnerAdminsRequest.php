@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SupplyListPartnerAdminsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 56781123
      *
      * @var int

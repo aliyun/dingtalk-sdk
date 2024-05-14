@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveFormInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example {}
      *
      * @var string
@@ -16,6 +18,8 @@ class SaveFormInstanceRequest extends Model
     public $formDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string

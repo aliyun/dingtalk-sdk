@@ -14,6 +14,8 @@ use AlibabaCloud\Tea\Model;
 class sectionConfigs extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 第一学期课表
      *
      * @var string
@@ -21,6 +23,8 @@ class sectionConfigs extends Model
     public $scheduleName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-2022
      *
      * @var string
@@ -28,21 +32,29 @@ class sectionConfigs extends Model
     public $schoolYear;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionEndDate
      */
     public $sectionEndDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
+     * @description This parameter is required.
+     *
      * @var sectionStartDate
      */
     public $sectionStartDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -50,11 +62,15 @@ class sectionConfigs extends Model
     public $semester;
 
     /**
+     * @description This parameter is required.
+     *
      * @var semesterEndDate
      */
     public $semesterEndDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var semesterStartDate
      */
     public $semesterStartDate;

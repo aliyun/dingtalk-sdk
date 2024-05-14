@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CfStaffResp extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string
@@ -16,6 +18,8 @@ class CfStaffResp extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开发部
      *
      * @var string
@@ -23,6 +27,8 @@ class CfStaffResp extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 17*******@qq.com
      *
      * @var string
@@ -30,6 +36,8 @@ class CfStaffResp extends Model
     public $email;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 151********
      *
      * @var string
@@ -37,6 +45,8 @@ class CfStaffResp extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -44,6 +54,8 @@ class CfStaffResp extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 松柏
      *
      * @var string
@@ -51,6 +63,8 @@ class CfStaffResp extends Model
     public $nickName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

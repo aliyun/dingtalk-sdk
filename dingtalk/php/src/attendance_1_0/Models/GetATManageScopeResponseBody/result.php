@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -16,6 +18,8 @@ class result extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example partial
      *
      * @var string

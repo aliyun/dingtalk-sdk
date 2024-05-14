@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetOrganizationsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string
@@ -22,6 +24,8 @@ class GetOrganizationsResponseBody extends Model
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OK
      *
      * @var string

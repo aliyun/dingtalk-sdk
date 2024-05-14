@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class messageReadInfoList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 曲大岳
      *
      * @var string
@@ -16,6 +18,8 @@ class messageReadInfoList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example READ
      *
      * @var string
@@ -23,6 +27,8 @@ class messageReadInfoList extends Model
     public $readStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1433138400000
      *
      * @var int
@@ -30,6 +36,8 @@ class messageReadInfoList extends Model
     public $readTimestamp;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 201382020
      *
      * @var string

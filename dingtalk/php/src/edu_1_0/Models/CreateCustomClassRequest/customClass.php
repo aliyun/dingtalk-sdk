@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class customClass extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2021级培训班
      *
      * @var string

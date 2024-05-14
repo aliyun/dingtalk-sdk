@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryTripProcessTemplatesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingcd2016f425331dc1acaaa37764f94726
      *
      * @var string

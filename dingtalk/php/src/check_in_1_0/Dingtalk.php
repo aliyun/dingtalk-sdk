@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckinRecordByUserRequest $request
-     * @param GetCheckinRecordByUserHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 调用本接口，获取用户签到记录
+     *  *
+     * @param GetCheckinRecordByUserRequest $request GetCheckinRecordByUserRequest
+     * @param GetCheckinRecordByUserHeaders $headers GetCheckinRecordByUserHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCheckinRecordByUserResponse
+     * @return GetCheckinRecordByUserResponse GetCheckinRecordByUserResponse
      */
     public function getCheckinRecordByUserWithOptions($request, $headers, $runtime)
     {
@@ -86,9 +88,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCheckinRecordByUserRequest $request
+     * @summary 调用本接口，获取用户签到记录
+     *  *
+     * @param GetCheckinRecordByUserRequest $request GetCheckinRecordByUserRequest
      *
-     * @return GetCheckinRecordByUserResponse
+     * @return GetCheckinRecordByUserResponse GetCheckinRecordByUserResponse
      */
     public function getCheckinRecordByUser($request)
     {

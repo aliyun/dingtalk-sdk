@@ -14,11 +14,15 @@ class AbandonCustomerRequest extends Model
     public $customTrackDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $instanceIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123123123
      *
      * @var string

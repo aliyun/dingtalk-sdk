@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class TitleMention extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 22
      *
      * @var int
@@ -16,6 +18,8 @@ class TitleMention extends Model
     public $length;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +27,8 @@ class TitleMention extends Model
     public $offset;
 
     /**
+     * @description This parameter is required.
+     *
      * @var OpenUserDTO
      */
     public $user;

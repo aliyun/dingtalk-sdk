@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-08
      *
      * @var string
@@ -16,6 +18,8 @@ class applyIntentionInfoDO extends Model
     public $checkIn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-08
      *
      * @var string
@@ -23,6 +27,8 @@ class applyIntentionInfoDO extends Model
     public $checkOut;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SHA
      *
      * @var string
@@ -30,6 +36,8 @@ class applyIntentionInfoDO extends Model
     public $cityCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 上海
      *
      * @var string
@@ -37,6 +45,8 @@ class applyIntentionInfoDO extends Model
     public $cityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -44,6 +54,8 @@ class applyIntentionInfoDO extends Model
     public $price;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -51,6 +63,8 @@ class applyIntentionInfoDO extends Model
     public $together;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 16
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SetPermissionInheritanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example PASS_ON
      *
      * @var string
@@ -16,6 +18,8 @@ class SetPermissionInheritanceRequest extends Model
     public $inheritance;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

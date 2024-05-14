@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactEmpAddRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 65722123
      *
      * @var int
@@ -21,6 +25,8 @@ class CustomizeContactEmpAddRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

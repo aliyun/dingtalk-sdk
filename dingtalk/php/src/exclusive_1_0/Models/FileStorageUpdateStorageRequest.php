@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class FileStorageUpdateStorageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sampleKeyId1234
      *
      * @var string
@@ -16,6 +18,8 @@ class FileStorageUpdateStorageRequest extends Model
     public $accessKeyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sampleSecretId1234
      *
      * @var string
@@ -23,6 +27,8 @@ class FileStorageUpdateStorageRequest extends Model
     public $accessKeySecret;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string

@@ -28,6 +28,8 @@ class SendRobotMessageRequest extends Model
     public $atDingUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example { "content": "我就是我, 是不一样的烟火"}
      *
      * @var string
@@ -35,6 +37,8 @@ class SendRobotMessageRequest extends Model
     public $msgContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example text
      *
      * @var string
@@ -42,6 +46,8 @@ class SendRobotMessageRequest extends Model
     public $msgType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $openConversationIds;

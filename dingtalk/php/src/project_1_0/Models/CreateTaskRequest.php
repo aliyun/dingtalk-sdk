@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateTaskRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 任务标题
      *
      * @var string
@@ -57,6 +59,8 @@ class CreateTaskRequest extends Model
     public $priority;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 62c25e3b376exxxxxx
      *
      * @var string

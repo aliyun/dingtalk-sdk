@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptCreateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $code;
@@ -19,6 +21,8 @@ class CustomizeContactDeptCreateRequest extends Model
     public $managerIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -29,6 +33,8 @@ class CustomizeContactDeptCreateRequest extends Model
     public $order;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $parentDeptId;
@@ -39,6 +45,8 @@ class CustomizeContactDeptCreateRequest extends Model
     public $refId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;

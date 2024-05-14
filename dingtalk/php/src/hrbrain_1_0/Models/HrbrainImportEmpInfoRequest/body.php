@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $birthday;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deptNo;
@@ -29,16 +35,22 @@ class body extends Model
     public $dimissionDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $empSource;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $empStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $empType;
@@ -49,6 +61,8 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gender;
@@ -69,6 +83,8 @@ class body extends Model
     public $isDimission;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $jobCodeName;
@@ -89,26 +105,36 @@ class body extends Model
     public $marriage;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nation;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nationCtry;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $politicalStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $postName;
@@ -149,6 +175,8 @@ class body extends Model
     public $workLocCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateProcessesInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateProcessesInstanceRequest extends Model
     public $bizObjectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateProcessesInstanceRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string

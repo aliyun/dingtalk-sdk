@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchExecuteProcessInstancesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 67583405630
      *
      * @var string
@@ -22,6 +24,8 @@ class BatchExecuteProcessInstancesRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example agree
      *
      * @var string
@@ -29,6 +33,8 @@ class BatchExecuteProcessInstancesRequest extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @var taskInfoList[]
      */
     public $taskInfoList;

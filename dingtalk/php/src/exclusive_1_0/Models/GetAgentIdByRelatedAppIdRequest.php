@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetAgentIdByRelatedAppIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -16,6 +18,8 @@ class GetAgentIdByRelatedAppIdRequest extends Model
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding24f2f5ccxxxxxxxx
      *
      * @var string

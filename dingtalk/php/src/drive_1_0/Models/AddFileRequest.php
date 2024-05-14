@@ -14,11 +14,15 @@ class AddFileRequest extends Model
     public $addConflictPolicy;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileType;
@@ -34,6 +38,8 @@ class AddFileRequest extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

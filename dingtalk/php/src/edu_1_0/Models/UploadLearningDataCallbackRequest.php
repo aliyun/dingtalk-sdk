@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UploadLearningDataCallbackRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -16,6 +18,8 @@ class UploadLearningDataCallbackRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example HOMEWORK
      *
      * @var string
@@ -23,6 +27,8 @@ class UploadLearningDataCallbackRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxxxxxxxxxx
      *
      * @var string
@@ -30,6 +36,8 @@ class UploadLearningDataCallbackRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -51,6 +59,8 @@ class UploadLearningDataCallbackRequest extends Model
     public $studentUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example shuxue
      *
      * @var string

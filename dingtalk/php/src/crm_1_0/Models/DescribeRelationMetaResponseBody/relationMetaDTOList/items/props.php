@@ -16,6 +16,8 @@ use AlibabaCloud\Tea\Model;
 class props extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 明细动作名称
      *
      * @var string
@@ -23,6 +25,8 @@ class props extends Model
     public $actionName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example top|middle|bottom
      *
      * @var string
@@ -35,11 +39,15 @@ class props extends Model
     public $availableTemplates;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1：多选，0：单选
      *
      * @var int
@@ -47,6 +55,8 @@ class props extends Model
     public $choice;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
@@ -64,6 +74,8 @@ class props extends Model
     public $defaultColor;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：可编辑
      *
      * @var bool
@@ -71,6 +83,8 @@ class props extends Model
     public $disabled;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：自动
      *
      * @var bool
@@ -78,6 +92,8 @@ class props extends Model
     public $duration;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 日期区间控件，自动计算时长的标题
      *
      * @var string
@@ -85,16 +101,22 @@ class props extends Model
     public $durationLabel;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var fields[]
      */
     public $fields;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DDDateField和DDDateRangeField
      *
      * @var string
@@ -102,11 +124,15 @@ class props extends Model
     public $format;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formula;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：隐藏
      *
      * @var bool
@@ -114,11 +140,15 @@ class props extends Model
     public $invisible;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：不可修改
      *
      * @var bool
@@ -126,6 +156,8 @@ class props extends Model
     public $labelEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 评分组件限制
      *
      * @var int
@@ -133,11 +165,15 @@ class props extends Model
     public $limit;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $link;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 电话控件模式 phone：仅手机，phone_tel： 手机和固话，tel：仅固话
      *
      * @var string
@@ -145,11 +181,15 @@ class props extends Model
     public $mode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $multi;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：支持多选，false：单选
      *
      * @var bool
@@ -157,11 +197,15 @@ class props extends Model
     public $multiple;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $needDetail;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1：不打印，0：打印
      *
      * @var string
@@ -169,6 +213,8 @@ class props extends Model
     public $notPrint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1:不需要大写, 空或者0:需要大写
      *
      * @var string
@@ -176,11 +222,15 @@ class props extends Model
     public $notUpper;
 
     /**
+     * @description This parameter is required.
+     *
      * @var options[]
      */
     public $options;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：是
      *
      * @var bool
@@ -188,11 +238,15 @@ class props extends Model
     public $payEnable;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $placeholder;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 关联表单 1：引用，0：拷贝
      *
      * @var int
@@ -200,6 +254,8 @@ class props extends Model
     public $quote;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 文本控件、选项控件等限制文本字数ratio
      *
      * @var int
@@ -207,11 +263,15 @@ class props extends Model
     public $ratio;
 
     /**
+     * @description This parameter is required.
+     *
      * @var relateSource[]
      */
     public $relateSource;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：必填
      *
      * @var bool
@@ -219,6 +279,8 @@ class props extends Model
     public $required;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：不可修改
      *
      * @var bool
@@ -226,16 +288,22 @@ class props extends Model
     public $requiredEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @var rule[]
      */
     public $rule;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $sortable;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 选项控件spread
      *
      * @var bool
@@ -243,11 +311,15 @@ class props extends Model
     public $spread;
 
     /**
+     * @description This parameter is required.
+     *
      * @var statField[]
      */
     public $statField;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 明细填写方式 table：表格，list：列表
      *
      * @var string
@@ -255,11 +327,15 @@ class props extends Model
     public $tableViewMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：纵向，false：横向
      *
      * @var bool
@@ -267,6 +343,8 @@ class props extends Model
     public $verticalPrint;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 是否水印照片 true：是，false：否
      *
      * @var bool

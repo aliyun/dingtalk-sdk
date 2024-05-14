@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UploadFileResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example $csvsvsdvsvdscs
      *
      * @var string

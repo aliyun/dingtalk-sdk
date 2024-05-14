@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class MergeRangeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

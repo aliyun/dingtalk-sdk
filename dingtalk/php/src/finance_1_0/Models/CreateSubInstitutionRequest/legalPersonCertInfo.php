@@ -23,6 +23,8 @@ class legalPersonCertInfo extends Model
     public $certFrontImage;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 李某某
      *
      * @var string
@@ -37,6 +39,8 @@ class legalPersonCertInfo extends Model
     public $certType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 330104200010109999
      *
      * @var string

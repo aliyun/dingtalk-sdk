@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class policyList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var memberList[]
      */
     public $memberList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;

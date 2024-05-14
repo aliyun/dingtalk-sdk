@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateSearchTabResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 3333
      *
      * @var int

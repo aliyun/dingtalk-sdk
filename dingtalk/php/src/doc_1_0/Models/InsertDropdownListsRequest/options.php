@@ -14,6 +14,8 @@ class options extends Model
     public $color;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

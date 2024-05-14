@@ -12,6 +12,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateLeaveTypeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example general_leave
      *
      * @var string
@@ -38,6 +40,8 @@ class UpdateLeaveTypeRequest extends Model
     public $leaveCertificate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 047477ae-1009-4632-b8e9-e919ae5e7973
      *
      * @var string
@@ -52,6 +56,8 @@ class UpdateLeaveTypeRequest extends Model
     public $leaveName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example day
      *
      * @var string
@@ -76,6 +82,8 @@ class UpdateLeaveTypeRequest extends Model
     public $visibilityRules;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user01
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SaveStudentLearningDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -17,6 +19,8 @@ class SaveStudentLearningDataRequest extends Model
     public $assignNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -24,6 +28,8 @@ class SaveStudentLearningDataRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example HOMEWORK
      *
      * @var string
@@ -31,6 +37,8 @@ class SaveStudentLearningDataRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxxxxxxxxxxx
      *
      * @var string
@@ -38,6 +46,8 @@ class SaveStudentLearningDataRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -45,6 +55,8 @@ class SaveStudentLearningDataRequest extends Model
     public $correctNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -59,6 +71,8 @@ class SaveStudentLearningDataRequest extends Model
     public $fileSuffix;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1672502400000
      *
      * @var int
@@ -66,6 +80,8 @@ class SaveStudentLearningDataRequest extends Model
     public $generatedTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -73,6 +89,8 @@ class SaveStudentLearningDataRequest extends Model
     public $questionNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0123456
      *
      * @var string
@@ -80,6 +98,8 @@ class SaveStudentLearningDataRequest extends Model
     public $studentUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example shuxue
      *
      * @var string
@@ -87,6 +107,8 @@ class SaveStudentLearningDataRequest extends Model
     public $subjectCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

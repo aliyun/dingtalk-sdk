@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityCourseGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 高数
      *
      * @var string
@@ -18,6 +20,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $courseGroupIntroduce;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张老师_高数
      *
      * @var string
@@ -25,6 +29,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $courseGroupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var courserGroupItemModels[]
      */
     public $courserGroupItemModels;
@@ -37,6 +43,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @example GZ1001
      *
      * @var string
@@ -44,6 +52,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $isvCourseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 大学：university
      *
      * @var string
@@ -51,6 +61,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $periodCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-2022
      *
      * @var string
@@ -58,6 +70,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $schoolYear;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -65,6 +79,8 @@ class CreateUniversityCourseGroupRequest extends Model
     public $semester;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高等数学
      *
      * @var string
@@ -72,11 +88,15 @@ class CreateUniversityCourseGroupRequest extends Model
     public $subjectName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var teacherInfos[]
      */
     public $teacherInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

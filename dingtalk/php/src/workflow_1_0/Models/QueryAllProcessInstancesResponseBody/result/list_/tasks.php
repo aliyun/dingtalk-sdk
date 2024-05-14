@@ -37,6 +37,8 @@ class tasks extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）
      *
      * @var string
@@ -44,6 +46,8 @@ class tasks extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var int

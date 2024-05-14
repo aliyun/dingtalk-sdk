@@ -23,6 +23,8 @@ class ListFormSchemasByCreatorRequest extends Model
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -30,6 +32,8 @@ class ListFormSchemasByCreatorRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

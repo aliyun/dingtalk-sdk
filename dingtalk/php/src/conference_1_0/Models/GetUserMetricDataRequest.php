@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetUserMetricDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1682524800000
      *
      * @var int
@@ -16,6 +18,8 @@ class GetUserMetricDataRequest extends Model
     public $beginTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1682611199000
      *
      * @var int
@@ -23,6 +27,8 @@ class GetUserMetricDataRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example njMTqKo9iiyxxxxxxxxiEiE
      *
      * @var string

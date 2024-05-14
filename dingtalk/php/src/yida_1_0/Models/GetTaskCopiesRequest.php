@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTaskCopiesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -63,11 +65,15 @@ class GetTaskCopiesRequest extends Model
     public $processCodes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

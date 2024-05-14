@@ -14,6 +14,8 @@ class file extends Model
     public $contentType;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -59,6 +61,8 @@ class file extends Model
     public $modifier;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $modifyTime;

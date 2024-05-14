@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CheckWritePermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example GROUP
      *
      * @var string
@@ -16,11 +18,15 @@ class CheckWritePermissionRequest extends Model
     public $category;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $entityIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 050728xxx921
      *
      * @var string
@@ -28,6 +34,8 @@ class CheckWritePermissionRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SCHEDULE
      *
      * @var string

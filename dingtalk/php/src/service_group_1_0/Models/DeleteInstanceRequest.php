@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example DING_CUSTOMER
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteInstanceRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888***
      *
      * @var string
@@ -23,6 +27,8 @@ class DeleteInstanceRequest extends Model
     public $openDataInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888**
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example oapi
      *
      * @var string
@@ -16,6 +18,8 @@ class records extends Model
     public $leaveReason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-01-06T11:47:37Z
      *
      * @var string
@@ -23,6 +27,8 @@ class records extends Model
     public $leaveTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 185xxxx7676
      *
      * @var string
@@ -30,6 +36,8 @@ class records extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -37,6 +45,8 @@ class records extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 86
      *
      * @var string
@@ -44,6 +54,8 @@ class records extends Model
     public $stateCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var string

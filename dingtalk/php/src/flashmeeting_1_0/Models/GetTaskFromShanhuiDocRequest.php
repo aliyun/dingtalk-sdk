@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTaskFromShanhuiDocRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example gMp7ldNxoWbAqBQN
      *
      * @var string
@@ -30,6 +32,8 @@ class GetTaskFromShanhuiDocRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DMvP2vrwe5QVUk0RcNb2FgiEiE
      *
      * @var string

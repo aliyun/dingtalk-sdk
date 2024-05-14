@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidenceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int
@@ -16,6 +18,8 @@ class UpdateResidenceRequest extends Model
     public $departmentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 101户
      *
      * @var string
@@ -51,6 +55,8 @@ class UpdateResidenceRequest extends Model
     public $managerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int

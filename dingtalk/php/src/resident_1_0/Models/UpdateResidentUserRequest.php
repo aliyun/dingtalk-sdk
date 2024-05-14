@@ -17,6 +17,8 @@ class UpdateResidentUserRequest extends Model
     public $address;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int
@@ -43,6 +45,8 @@ class UpdateResidentUserRequest extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var int
@@ -57,6 +61,8 @@ class UpdateResidentUserRequest extends Model
     public $relateType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string
@@ -64,6 +70,8 @@ class UpdateResidentUserRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 王建国
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ListOperationLogsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example {"FINST-GW866DA1NHFZIPNE03UTM88NOAGQ27Q9VUP1L0":[{"currentText":null,"componentType":null,"gmtModified":"2022-04-08 11:15:34","preText":null,"operationType":"CREATE","componentName":"","operator":{"userInfo":null,"tbWang":null,"depDesc":null,"displayName":"娄修俊","mastedataDeptments":null,"orderNum":null,"displayEnName":null,"userId":null,"personalPhoto":null,"status":null},"fieldId":null}]}
      *
      * @var mixed[]

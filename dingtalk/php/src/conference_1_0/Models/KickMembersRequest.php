@@ -15,6 +15,8 @@ class KickMembersRequest extends Model
     public $forbiddenRejoin;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userList[]
      */
     public $userList;

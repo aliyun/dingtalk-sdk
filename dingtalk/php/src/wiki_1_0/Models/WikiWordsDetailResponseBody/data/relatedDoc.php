@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class relatedDoc extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $link;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

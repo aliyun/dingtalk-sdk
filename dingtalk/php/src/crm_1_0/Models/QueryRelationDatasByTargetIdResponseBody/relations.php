@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class relations extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bizDataList[]
      */
     public $bizDataList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $openConversationIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string
@@ -27,6 +33,8 @@ class relations extends Model
     public $relationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string

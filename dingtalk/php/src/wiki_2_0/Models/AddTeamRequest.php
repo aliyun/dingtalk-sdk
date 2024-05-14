@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddTeamRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example team_name
      *
      * @var string
@@ -22,6 +24,8 @@ class AddTeamRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

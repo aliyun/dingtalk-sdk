@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CfEmploymentRecordResp extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 666
      *
      * @var string
@@ -16,6 +18,8 @@ class CfEmploymentRecordResp extends Model
     public $deptCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开发部
      *
      * @var string
@@ -23,6 +27,8 @@ class CfEmploymentRecordResp extends Model
     public $deptName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var string
@@ -30,6 +36,8 @@ class CfEmploymentRecordResp extends Model
     public $employeeStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1652198400000
      *
      * @var string
@@ -37,6 +45,8 @@ class CfEmploymentRecordResp extends Model
     public $endDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -44,6 +54,8 @@ class CfEmploymentRecordResp extends Model
     public $isLatestRecord;
 
     /**
+     * @description This parameter is required.
+     *
      * @example P1
      *
      * @var string
@@ -51,6 +63,8 @@ class CfEmploymentRecordResp extends Model
     public $jobLevelName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 23
      *
      * @var string
@@ -58,6 +72,8 @@ class CfEmploymentRecordResp extends Model
     public $jobPositionCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Java开发工程师
      *
      * @var string
@@ -65,6 +81,8 @@ class CfEmploymentRecordResp extends Model
     public $jobPositionName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 343
      *
      * @var string
@@ -72,6 +90,8 @@ class CfEmploymentRecordResp extends Model
     public $jobPostCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 技术岗位
      *
      * @var string
@@ -79,6 +99,8 @@ class CfEmploymentRecordResp extends Model
     public $jobPostName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -86,6 +108,8 @@ class CfEmploymentRecordResp extends Model
     public $serviceStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5
      *
      * @var string
@@ -93,6 +117,8 @@ class CfEmploymentRecordResp extends Model
     public $serviceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1638892800000
      *
      * @var string
@@ -100,6 +126,8 @@ class CfEmploymentRecordResp extends Model
     public $startDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

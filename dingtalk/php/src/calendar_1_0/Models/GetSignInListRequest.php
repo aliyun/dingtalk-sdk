@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSignInListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -19,6 +21,8 @@ class GetSignInListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example check_in
      *
      * @var string

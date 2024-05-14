@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchDepartmentResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;
@@ -19,6 +21,8 @@ class SearchDepartmentResponseBody extends Model
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

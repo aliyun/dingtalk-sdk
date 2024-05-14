@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreUserInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example alt;ss1331
      *
      * @var string
@@ -16,6 +18,8 @@ class DigitalStoreUserInfoRequest extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2311sds1
      *
      * @var string

@@ -23,6 +23,8 @@ class QueryCustomerTaskUserDetailRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string
@@ -30,6 +32,8 @@ class QueryCustomerTaskUserDetailRequest extends Model
     public $openBatchTaskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string

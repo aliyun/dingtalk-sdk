@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCardVisitorStatisticDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example RCsp7PJmmTUr7w0hbs9aKAiEiE
      *
      * @var string

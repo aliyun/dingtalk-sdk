@@ -14,11 +14,15 @@ class RemoveMemberForAppRoleRequest extends Model
     public $deptIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $scopeVersion;

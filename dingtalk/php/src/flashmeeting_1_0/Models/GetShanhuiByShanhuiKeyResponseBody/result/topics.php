@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class topics extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 27Hio9BV23Ghj8LkRe34QzSdP94UtMkju
      *
      * @var string
@@ -16,6 +18,8 @@ class topics extends Model
     public $docKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 会议1
      *
      * @var string

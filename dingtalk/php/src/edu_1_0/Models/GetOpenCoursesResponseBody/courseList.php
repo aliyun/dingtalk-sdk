@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class courseList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fdjakl-fdaf-ds
      *
      * @var string
@@ -16,6 +18,8 @@ class courseList extends Model
     public $courseId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png
      *
      * @var string
@@ -23,6 +27,8 @@ class courseList extends Model
     public $coverUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -30,6 +36,8 @@ class courseList extends Model
     public $feedType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://h5.dingtalk.com/live/video_lesson.htm?feedId=4aa5ter-05d8-4aac-834a-3b3847cf642e&mcnId=7536041420201104593&feedProperty=1&itemId=4aa563e1-05d8-4aac-841a-3b3847cf642e&dd_nav_bgcolor=FF2C2D2F#/live
      *
      * @var string
@@ -37,6 +45,8 @@ class courseList extends Model
     public $jumpUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1618369786000
      *
      * @var int
@@ -44,6 +54,8 @@ class courseList extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123124312314
      *
      * @var string
@@ -51,6 +63,8 @@ class courseList extends Model
     public $teacherId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张老师
      *
      * @var string
@@ -58,6 +72,8 @@ class courseList extends Model
     public $teacherName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 开学第一课
      *
      * @var string

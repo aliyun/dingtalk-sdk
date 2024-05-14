@@ -14,6 +14,8 @@ class DeleteProcessRequest extends Model
     public $cleanRunningTask;
 
     /**
+     * @description This parameter is required.
+     *
      * @example proc-abc
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var templateList[]
      */
     public $templateList;

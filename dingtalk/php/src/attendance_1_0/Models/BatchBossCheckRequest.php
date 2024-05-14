@@ -15,6 +15,8 @@ class BatchBossCheckRequest extends Model
     public $models;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

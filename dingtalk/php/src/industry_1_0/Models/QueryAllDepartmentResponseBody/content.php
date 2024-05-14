@@ -11,16 +11,22 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var deptAndExt
      */
     public $deptAndExt;
 
     /**
+     * @description This parameter is required.
+     *
      * @var groupAndExtList[]
      */
     public $groupAndExtList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 130000
      *
      * @var int
@@ -28,6 +34,8 @@ class content extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 骨科
      *
      * @var string

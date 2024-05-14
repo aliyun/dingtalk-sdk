@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAgreementResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 201220123212312
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryUserAgreementResponseBody extends Model
     public $agreementNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding123123234234
      *
      * @var string
@@ -23,6 +27,8 @@ class QueryUserAgreementResponseBody extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-11 10:10:10
      *
      * @var string
@@ -30,6 +36,8 @@ class QueryUserAgreementResponseBody extends Model
     public $gmtExpire;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-11 10:10:10
      *
      * @var string
@@ -37,6 +45,8 @@ class QueryUserAgreementResponseBody extends Model
     public $gmtSign;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-11 10:10:10
      *
      * @var string
@@ -44,6 +54,8 @@ class QueryUserAgreementResponseBody extends Model
     public $gmtValid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021000001
      *
      * @var string
@@ -51,6 +63,8 @@ class QueryUserAgreementResponseBody extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -58,6 +72,8 @@ class QueryUserAgreementResponseBody extends Model
     public $payChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example *川
      *
      * @var string
@@ -65,6 +81,8 @@ class QueryUserAgreementResponseBody extends Model
     public $payChannelAccountName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 139*****0
      *
      * @var string
@@ -72,6 +90,8 @@ class QueryUserAgreementResponseBody extends Model
     public $payChannelAccountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string
@@ -79,6 +99,8 @@ class QueryUserAgreementResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 101
      *
      * @var string
@@ -86,6 +108,8 @@ class QueryUserAgreementResponseBody extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 54646545
      *
      * @var string

@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class groupAndExtList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var extendInfos[]
      */
     public $extendInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @var group
      */
     public $group;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryCorpUserStatisticRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20230101
      *
      * @var string
@@ -16,11 +18,15 @@ class QueryCorpUserStatisticRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -28,6 +34,8 @@ class QueryCorpUserStatisticRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20220101
      *
      * @var string
@@ -40,6 +48,8 @@ class QueryCorpUserStatisticRequest extends Model
     public $templateIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example RCsp7PJmmTUr7w0hbs9aKAiEiE
      *
      * @var string

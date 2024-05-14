@@ -16,11 +16,15 @@ class ListResidentSubDeptsRequest extends Model
     public $cursor;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $size;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;

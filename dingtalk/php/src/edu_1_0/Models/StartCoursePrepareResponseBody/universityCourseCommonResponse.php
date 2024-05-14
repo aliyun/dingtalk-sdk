@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class universityCourseCommonResponse extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example testCourseCode
      *
      * @var string
@@ -16,6 +18,8 @@ class universityCourseCommonResponse extends Model
     public $courseCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

@@ -20,6 +20,8 @@ class relationList extends Model
     public $bizExtMap;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fasdg8i814-0afsd
      *
      * @var string

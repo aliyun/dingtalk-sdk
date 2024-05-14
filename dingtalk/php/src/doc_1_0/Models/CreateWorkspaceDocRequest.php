@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceDocRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $docType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

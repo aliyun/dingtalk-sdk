@@ -14,6 +14,8 @@ class GetSceneGroupInfoRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidXXXXXXX
      *
      * @var string

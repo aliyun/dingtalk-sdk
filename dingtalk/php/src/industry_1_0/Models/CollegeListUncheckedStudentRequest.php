@@ -16,6 +16,8 @@ class CollegeListUncheckedStudentRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class CollegeListUncheckedStudentRequest extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

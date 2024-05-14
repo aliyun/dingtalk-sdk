@@ -19,6 +19,8 @@ class body extends Model
     public $extendInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -29,6 +31,8 @@ class body extends Model
     public $perfCate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $perfPlanName;
@@ -39,26 +43,36 @@ class body extends Model
     public $perfScore;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $period;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $periodEndDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $periodStartDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $score;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workNo;

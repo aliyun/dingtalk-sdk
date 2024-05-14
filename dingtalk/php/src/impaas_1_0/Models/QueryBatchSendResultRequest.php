@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchSendResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 234#dingxxx@dingding
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryBatchSendResultRequest extends Model
     public $senderUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567890
      *
      * @var string

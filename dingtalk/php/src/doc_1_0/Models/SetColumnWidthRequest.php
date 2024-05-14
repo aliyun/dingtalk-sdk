@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class SetColumnWidthRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $column;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $width;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

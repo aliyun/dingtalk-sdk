@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class ExecuteAgentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $agentCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var inputs
      */
     public $inputs;

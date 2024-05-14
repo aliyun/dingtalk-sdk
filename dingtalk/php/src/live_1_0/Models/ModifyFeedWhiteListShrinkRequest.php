@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ModifyFeedWhiteListShrinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -21,6 +23,8 @@ class ModifyFeedWhiteListShrinkRequest extends Model
     public $modifyUserListShrink;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1206186351746728
      *
      * @var string

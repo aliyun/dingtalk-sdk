@@ -17,6 +17,8 @@ class SendRobotInteractiveCardRequest extends Model
     public $callbackUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cardXXXX01
      *
      * @var string
@@ -24,6 +26,8 @@ class SendRobotInteractiveCardRequest extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 根据具体的cardTemplateId参考文档格式
      *
      * @var string
@@ -31,6 +35,8 @@ class SendRobotInteractiveCardRequest extends Model
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxxxx
      *
      * @var string
@@ -50,6 +56,8 @@ class SendRobotInteractiveCardRequest extends Model
     public $pullStrategy;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxx
      *
      * @var string

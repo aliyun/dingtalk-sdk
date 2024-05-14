@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateActivityRequest $request
-     * @param CreateActivityHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 创建活动
+     *  *
+     * @param CreateActivityRequest $request CreateActivityRequest
+     * @param CreateActivityHeaders $headers CreateActivityHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateActivityResponse
+     * @return CreateActivityResponse CreateActivityResponse
      */
     public function createActivityWithOptions($request, $headers, $runtime)
     {
@@ -74,9 +76,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateActivityRequest $request
+     * @summary 创建活动
+     *  *
+     * @param CreateActivityRequest $request CreateActivityRequest
      *
-     * @return CreateActivityResponse
+     * @return CreateActivityResponse CreateActivityResponse
      */
     public function createActivity($request)
     {
@@ -87,11 +91,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListActivityRequest $request
-     * @param ListActivityHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 查询活动列表
+     *  *
+     * @param ListActivityRequest $request ListActivityRequest
+     * @param ListActivityHeaders $headers ListActivityHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListActivityResponse
+     * @return ListActivityResponse ListActivityResponse
      */
     public function listActivityWithOptions($request, $headers, $runtime)
     {
@@ -130,9 +136,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListActivityRequest $request
+     * @summary 查询活动列表
+     *  *
+     * @param ListActivityRequest $request ListActivityRequest
      *
-     * @return ListActivityResponse
+     * @return ListActivityResponse ListActivityResponse
      */
     public function listActivity($request)
     {

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchInnerGroupsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20
      *
      * @var int
@@ -16,6 +18,8 @@ class SearchInnerGroupsRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试关键词
      *
      * @var string
@@ -23,6 +27,8 @@ class SearchInnerGroupsRequest extends Model
     public $searchKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 015*****
      *
      * @var string

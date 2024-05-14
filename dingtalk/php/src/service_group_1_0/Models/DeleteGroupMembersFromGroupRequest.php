@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteGroupMembersFromGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example GROUP：从群中删除；GROUP_SET：从群组中删除
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteGroupMembersFromGroupRequest extends Model
     public $deleteGroupType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string
@@ -37,6 +41,8 @@ class DeleteGroupMembersFromGroupRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string

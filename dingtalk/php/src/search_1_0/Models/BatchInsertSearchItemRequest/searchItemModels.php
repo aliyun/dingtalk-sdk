@@ -21,6 +21,8 @@ class searchItemModels extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1111
      *
      * @var string
@@ -49,6 +51,8 @@ class searchItemModels extends Model
     public $summary;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 红楼梦
      *
      * @var string

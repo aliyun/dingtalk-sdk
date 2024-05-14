@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAcrossCloudStroageConfigsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryAcrossCloudStroageConfigsRequest extends Model
     public $targetCloudType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding77b8cac4e026cc123xxxxxxxxeb6378f
      *
      * @var string

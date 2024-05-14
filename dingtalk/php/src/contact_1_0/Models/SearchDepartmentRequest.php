@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchDepartmentRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -16,6 +18,8 @@ class SearchDepartmentRequest extends Model
     public $offset;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 财务部
      *
      * @var string
@@ -23,6 +27,8 @@ class SearchDepartmentRequest extends Model
     public $queryWord;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class SendRobotDingMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $contentParams;
 
     /**
+     * @description This parameter is required.
+     *
      * @example template_ding_diot_monitor
      *
      * @var string
@@ -21,6 +25,8 @@ class SendRobotDingMessageRequest extends Model
     public $dingTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidfCSpXXXXXXXXXXXchatbotId
      *
      * @var string
@@ -28,11 +34,15 @@ class SendRobotDingMessageRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example qF9j5G8hmFLiqJ11629XXXXXXXX
      *
      * @var string

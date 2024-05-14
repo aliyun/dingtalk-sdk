@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetInnerGroupMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -21,6 +23,8 @@ class GetInnerGroupMembersRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid1e*****==
      *
      * @var string
@@ -28,6 +32,8 @@ class GetInnerGroupMembersRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 015*****
      *
      * @var string

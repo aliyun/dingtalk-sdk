@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HPublishPackageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5000000002761167
      *
      * @var string
@@ -16,6 +18,8 @@ class HPublishPackageRequest extends Model
     public $miniAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string

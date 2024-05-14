@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesOutputRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -16,6 +18,8 @@ class IndustryManufactureMesOutputRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example opsoft
      *
      * @var string
@@ -205,6 +209,8 @@ class IndustryManufactureMesOutputRequest extends Model
     public $userName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fsdfs3fsd2234wds
      *
      * @var string

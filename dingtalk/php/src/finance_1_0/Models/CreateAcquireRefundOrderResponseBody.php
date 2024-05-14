@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateAcquireRefundOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example r2021113000001
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateAcquireRefundOrderResponseBody extends Model
     public $outRefundNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111110000111
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateAcquireRefundOrderResponseBody extends Model
     public $refundOrderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string

@@ -37,6 +37,8 @@ class SpaceModel extends Model
     public $iconVO;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc
      *
      * @var string
@@ -44,6 +46,8 @@ class SpaceModel extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hello
      *
      * @var string

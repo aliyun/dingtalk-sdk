@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateCoupleGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 8d42****nkld
      *
      * @var string

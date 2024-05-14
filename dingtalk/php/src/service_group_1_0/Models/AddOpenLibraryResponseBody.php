@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class AddOpenLibraryResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var result
      */
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

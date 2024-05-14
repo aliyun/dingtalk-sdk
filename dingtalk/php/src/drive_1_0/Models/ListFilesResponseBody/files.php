@@ -14,6 +14,9 @@ class files extends Model
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $createTime;
@@ -29,16 +32,22 @@ class files extends Model
     public $fileExtension;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $filePath;
@@ -49,6 +58,8 @@ class files extends Model
     public $fileSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileType;
@@ -64,6 +75,9 @@ class files extends Model
     public $modifier;
 
     /**
+     * @description This parameter is required.
+     *
+     * Use the UTC time format: yyyy-MM-ddTHH:mmZ
      * @var string
      */
     public $modifyTime;
@@ -74,6 +88,8 @@ class files extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceId;

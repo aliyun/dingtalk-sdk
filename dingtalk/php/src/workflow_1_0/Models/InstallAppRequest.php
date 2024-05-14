@@ -15,11 +15,15 @@ class InstallAppRequest extends Model
     public $bizGroup;
 
     /**
+     * @description This parameter is required.
+     *
      * @var installOption
      */
     public $installOption;
 
     /**
+     * @description This parameter is required.
+     *
      * @example finance
      *
      * @var string

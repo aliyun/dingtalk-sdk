@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UploadInvoiceByMobileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var invoices[]
      */
     public $invoices;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13600000000
      *
      * @var string
@@ -22,6 +26,8 @@ class UploadInvoiceByMobileRequest extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 86
      *
      * @var string

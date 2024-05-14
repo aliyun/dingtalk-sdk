@@ -23,6 +23,8 @@ class UpdateOrganizationTaskNoteRequest extends Model
     public $disableNotification;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 我是一条备注哦
      *
      * @var string

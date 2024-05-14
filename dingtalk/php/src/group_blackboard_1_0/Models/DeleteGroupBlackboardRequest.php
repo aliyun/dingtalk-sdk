@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class DeleteGroupBlackboardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example e3b4f5
      *
      * @var string
@@ -16,6 +18,8 @@ class DeleteGroupBlackboardRequest extends Model
     public $dataId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid123456
      *
      * @var string
@@ -23,6 +27,8 @@ class DeleteGroupBlackboardRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 001
      *
      * @var string

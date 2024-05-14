@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class PageListRobotRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 50
      *
      * @var int
@@ -21,6 +25,8 @@ class PageListRobotRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

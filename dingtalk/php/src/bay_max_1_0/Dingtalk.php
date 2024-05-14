@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBaymaxSkillLogRequest $request
-     * @param QueryBaymaxSkillLogHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary Baymax技能执行日志
+     *  *
+     * @param QueryBaymaxSkillLogRequest $request QueryBaymaxSkillLogRequest
+     * @param QueryBaymaxSkillLogHeaders $headers QueryBaymaxSkillLogHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBaymaxSkillLogResponse
+     * @return QueryBaymaxSkillLogResponse QueryBaymaxSkillLogResponse
      */
     public function queryBaymaxSkillLogWithOptions($request, $headers, $runtime)
     {
@@ -77,9 +79,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBaymaxSkillLogRequest $request
+     * @summary Baymax技能执行日志
+     *  *
+     * @param QueryBaymaxSkillLogRequest $request QueryBaymaxSkillLogRequest
      *
-     * @return QueryBaymaxSkillLogResponse
+     * @return QueryBaymaxSkillLogResponse QueryBaymaxSkillLogResponse
      */
     public function queryBaymaxSkillLog($request)
     {

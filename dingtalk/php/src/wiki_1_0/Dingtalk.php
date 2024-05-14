@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WikiWordsDetailRequest $request
-     * @param WikiWordsDetailHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 根据词条名称获取该词条释义
+     *  *
+     * @param WikiWordsDetailRequest $request WikiWordsDetailRequest
+     * @param WikiWordsDetailHeaders $headers WikiWordsDetailHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return WikiWordsDetailResponse
+     * @return WikiWordsDetailResponse WikiWordsDetailResponse
      */
     public function wikiWordsDetailWithOptions($request, $headers, $runtime)
     {
@@ -74,9 +76,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WikiWordsDetailRequest $request
+     * @summary 根据词条名称获取该词条释义
+     *  *
+     * @param WikiWordsDetailRequest $request WikiWordsDetailRequest
      *
-     * @return WikiWordsDetailResponse
+     * @return WikiWordsDetailResponse WikiWordsDetailResponse
      */
     public function wikiWordsDetail($request)
     {
@@ -87,11 +91,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WikiWordsParseRequest $request
-     * @param WikiWordsParseHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 外部传递过来的消息根据百科词库分词
+     *  *
+     * @param WikiWordsParseRequest $request WikiWordsParseRequest
+     * @param WikiWordsParseHeaders $headers WikiWordsParseHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return WikiWordsParseResponse
+     * @return WikiWordsParseResponse WikiWordsParseResponse
      */
     public function wikiWordsParseWithOptions($request, $headers, $runtime)
     {
@@ -127,9 +133,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WikiWordsParseRequest $request
+     * @summary 外部传递过来的消息根据百科词库分词
+     *  *
+     * @param WikiWordsParseRequest $request WikiWordsParseRequest
      *
-     * @return WikiWordsParseResponse
+     * @return WikiWordsParseResponse WikiWordsParseResponse
      */
     public function wikiWordsParse($request)
     {

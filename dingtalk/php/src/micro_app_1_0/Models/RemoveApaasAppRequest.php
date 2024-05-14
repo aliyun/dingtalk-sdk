@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class RemoveApaasAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;

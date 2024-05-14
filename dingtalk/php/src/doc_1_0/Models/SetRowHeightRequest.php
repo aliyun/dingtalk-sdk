@@ -19,6 +19,8 @@ class SetRowHeightRequest extends Model
     public $row;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string

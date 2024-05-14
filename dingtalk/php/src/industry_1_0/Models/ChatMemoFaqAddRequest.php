@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatMemoFaqAddRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 办公室的电话是：13222333232
      *
      * @var string
@@ -23,6 +25,8 @@ class ChatMemoFaqAddRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111111
      *
      * @var int
@@ -30,6 +34,8 @@ class ChatMemoFaqAddRequest extends Model
     public $datasetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 办公室的电话是多少
      *
      * @var string

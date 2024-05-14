@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountRobotInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var int
@@ -16,6 +18,8 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小蜜客服机器人
      *
      * @var string
@@ -23,6 +27,8 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $brief;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小蜜客服机器人是7*24小时智能问答机器人
      *
      * @var string
@@ -30,6 +36,8 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -37,6 +45,8 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小蜜机器人
      *
      * @var string
@@ -44,6 +54,8 @@ class GetOfficialAccountRobotInfoResponseBody extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string

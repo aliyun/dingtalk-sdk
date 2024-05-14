@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgPointDetailsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ORG_DEDUCTIONS
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryOrgPointDetailsRequest extends Model
     public $accountType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -30,6 +34,8 @@ class QueryOrgPointDetailsRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 042216842933
      *
      * @var string

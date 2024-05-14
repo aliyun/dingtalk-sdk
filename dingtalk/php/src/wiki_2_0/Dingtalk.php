@@ -76,11 +76,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddTeamRequest $request
-     * @param AddTeamHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 新建知识小组
+     *  *
+     * @param AddTeamRequest $request AddTeamRequest
+     * @param AddTeamHeaders $headers AddTeamHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddTeamResponse
+     * @return AddTeamResponse AddTeamResponse
      */
     public function addTeamWithOptions($request, $headers, $runtime)
     {
@@ -124,9 +126,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddTeamRequest $request
+     * @summary 新建知识小组
+     *  *
+     * @param AddTeamRequest $request AddTeamRequest
      *
-     * @return AddTeamResponse
+     * @return AddTeamResponse AddTeamResponse
      */
     public function addTeam($request)
     {
@@ -137,11 +141,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddWorkspaceRequest $request
-     * @param AddWorkspaceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 新建知识库
+     *  *
+     * @param AddWorkspaceRequest $request AddWorkspaceRequest
+     * @param AddWorkspaceHeaders $headers AddWorkspaceHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddWorkspaceResponse
+     * @return AddWorkspaceResponse AddWorkspaceResponse
      */
     public function addWorkspaceWithOptions($request, $headers, $runtime)
     {
@@ -185,9 +191,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddWorkspaceRequest $request
+     * @summary 新建知识库
+     *  *
+     * @param AddWorkspaceRequest $request AddWorkspaceRequest
      *
-     * @return AddWorkspaceResponse
+     * @return AddWorkspaceResponse AddWorkspaceResponse
      */
     public function addWorkspace($request)
     {
@@ -198,12 +206,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识小组
+     *  *
      * @param string            $teamId
-     * @param DeleteTeamRequest $request
-     * @param DeleteTeamHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param DeleteTeamRequest $request DeleteTeamRequest
+     * @param DeleteTeamHeaders $headers DeleteTeamHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteTeamResponse
+     * @return DeleteTeamResponse DeleteTeamResponse
      */
     public function deleteTeamWithOptions($teamId, $request, $headers, $runtime)
     {
@@ -239,10 +249,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除知识小组
+     *  *
      * @param string            $teamId
-     * @param DeleteTeamRequest $request
+     * @param DeleteTeamRequest $request DeleteTeamRequest
      *
-     * @return DeleteTeamResponse
+     * @return DeleteTeamResponse DeleteTeamResponse
      */
     public function deleteTeam($teamId, $request)
     {
@@ -253,11 +265,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDefaultHandOverUserRequest $request
-     * @param GetDefaultHandOverUserHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 查询员工离职时知识库默认转交人
+     *  *
+     * @param GetDefaultHandOverUserRequest $request GetDefaultHandOverUserRequest
+     * @param GetDefaultHandOverUserHeaders $headers GetDefaultHandOverUserHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDefaultHandOverUserResponse
+     * @return GetDefaultHandOverUserResponse GetDefaultHandOverUserResponse
      */
     public function getDefaultHandOverUserWithOptions($request, $headers, $runtime)
     {
@@ -293,9 +307,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDefaultHandOverUserRequest $request
+     * @summary 查询员工离职时知识库默认转交人
+     *  *
+     * @param GetDefaultHandOverUserRequest $request GetDefaultHandOverUserRequest
      *
-     * @return GetDefaultHandOverUserResponse
+     * @return GetDefaultHandOverUserResponse GetDefaultHandOverUserResponse
      */
     public function getDefaultHandOverUser($request)
     {
@@ -306,11 +322,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMineWorkspaceRequest $request
-     * @param GetMineWorkspaceHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取我的文档
+     *  *
+     * @param GetMineWorkspaceRequest $request GetMineWorkspaceRequest
+     * @param GetMineWorkspaceHeaders $headers GetMineWorkspaceHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMineWorkspaceResponse
+     * @return GetMineWorkspaceResponse GetMineWorkspaceResponse
      */
     public function getMineWorkspaceWithOptions($request, $headers, $runtime)
     {
@@ -346,9 +364,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMineWorkspaceRequest $request
+     * @summary 获取我的文档
+     *  *
+     * @param GetMineWorkspaceRequest $request GetMineWorkspaceRequest
      *
-     * @return GetMineWorkspaceResponse
+     * @return GetMineWorkspaceResponse GetMineWorkspaceResponse
      */
     public function getMineWorkspace($request)
     {
@@ -359,12 +379,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取节点
+     *  *
      * @param string         $nodeId
-     * @param GetNodeRequest $request
-     * @param GetNodeHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetNodeRequest $request GetNodeRequest
+     * @param GetNodeHeaders $headers GetNodeHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetNodeResponse
+     * @return GetNodeResponse GetNodeResponse
      */
     public function getNodeWithOptions($nodeId, $request, $headers, $runtime)
     {
@@ -406,10 +428,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取节点
+     *  *
      * @param string         $nodeId
-     * @param GetNodeRequest $request
+     * @param GetNodeRequest $request GetNodeRequest
      *
-     * @return GetNodeResponse
+     * @return GetNodeResponse GetNodeResponse
      */
     public function getNode($nodeId, $request)
     {
@@ -420,11 +444,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNodeByUrlRequest $request
-     * @param GetNodeByUrlHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 通过链接获取节点
+     *  *
+     * @param GetNodeByUrlRequest $request GetNodeByUrlRequest
+     * @param GetNodeByUrlHeaders $headers GetNodeByUrlHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetNodeByUrlResponse
+     * @return GetNodeByUrlResponse GetNodeByUrlResponse
      */
     public function getNodeByUrlWithOptions($request, $headers, $runtime)
     {
@@ -468,9 +494,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNodeByUrlRequest $request
+     * @summary 通过链接获取节点
+     *  *
+     * @param GetNodeByUrlRequest $request GetNodeByUrlRequest
      *
-     * @return GetNodeByUrlResponse
+     * @return GetNodeByUrlResponse GetNodeByUrlResponse
      */
     public function getNodeByUrl($request)
     {
@@ -481,11 +509,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNodesRequest $request
-     * @param GetNodesHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 批量获取节点
+     *  *
+     * @param GetNodesRequest $request GetNodesRequest
+     * @param GetNodesHeaders $headers GetNodesHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetNodesResponse
+     * @return GetNodesResponse GetNodesResponse
      */
     public function getNodesWithOptions($request, $headers, $runtime)
     {
@@ -529,9 +559,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetNodesRequest $request
+     * @summary 批量获取节点
+     *  *
+     * @param GetNodesRequest $request GetNodesRequest
      *
-     * @return GetNodesResponse
+     * @return GetNodesResponse GetNodesResponse
      */
     public function getNodes($request)
     {
@@ -542,12 +574,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取知识小组
+     *  *
      * @param string         $teamId
-     * @param GetTeamRequest $request
-     * @param GetTeamHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetTeamRequest $request GetTeamRequest
+     * @param GetTeamHeaders $headers GetTeamHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTeamResponse
+     * @return GetTeamResponse GetTeamResponse
      */
     public function getTeamWithOptions($teamId, $request, $headers, $runtime)
     {
@@ -583,10 +617,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取知识小组
+     *  *
      * @param string         $teamId
-     * @param GetTeamRequest $request
+     * @param GetTeamRequest $request GetTeamRequest
      *
-     * @return GetTeamResponse
+     * @return GetTeamResponse GetTeamResponse
      */
     public function getTeam($teamId, $request)
     {
@@ -597,12 +633,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取知识库
+     *  *
      * @param string              $workspaceId
-     * @param GetWorkspaceRequest $request
-     * @param GetWorkspaceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetWorkspaceRequest $request     GetWorkspaceRequest
+     * @param GetWorkspaceHeaders $headers     GetWorkspaceHeaders
+     * @param RuntimeOptions      $runtime     runtime options for this request RuntimeOptions
      *
-     * @return GetWorkspaceResponse
+     * @return GetWorkspaceResponse GetWorkspaceResponse
      */
     public function getWorkspaceWithOptions($workspaceId, $request, $headers, $runtime)
     {
@@ -641,10 +679,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取知识库
+     *  *
      * @param string              $workspaceId
-     * @param GetWorkspaceRequest $request
+     * @param GetWorkspaceRequest $request     GetWorkspaceRequest
      *
-     * @return GetWorkspaceResponse
+     * @return GetWorkspaceResponse GetWorkspaceResponse
      */
     public function getWorkspace($workspaceId, $request)
     {
@@ -655,11 +695,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWorkspacesRequest $request
-     * @param GetWorkspacesHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 批量获取知识库
+     *  *
+     * @param GetWorkspacesRequest $request GetWorkspacesRequest
+     * @param GetWorkspacesHeaders $headers GetWorkspacesHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetWorkspacesResponse
+     * @return GetWorkspacesResponse GetWorkspacesResponse
      */
     public function getWorkspacesWithOptions($request, $headers, $runtime)
     {
@@ -703,9 +745,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWorkspacesRequest $request
+     * @summary 批量获取知识库
+     *  *
+     * @param GetWorkspacesRequest $request GetWorkspacesRequest
      *
-     * @return GetWorkspacesResponse
+     * @return GetWorkspacesResponse GetWorkspacesResponse
      */
     public function getWorkspaces($request)
     {
@@ -716,11 +760,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HandOverWorkspaceRequest $request
-     * @param HandOverWorkspaceHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 转交知识库
+     *  *
+     * @param HandOverWorkspaceRequest $request HandOverWorkspaceRequest
+     * @param HandOverWorkspaceHeaders $headers HandOverWorkspaceHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return HandOverWorkspaceResponse
+     * @return HandOverWorkspaceResponse HandOverWorkspaceResponse
      */
     public function handOverWorkspaceWithOptions($request, $headers, $runtime)
     {
@@ -767,9 +813,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HandOverWorkspaceRequest $request
+     * @summary 转交知识库
+     *  *
+     * @param HandOverWorkspaceRequest $request HandOverWorkspaceRequest
      *
-     * @return HandOverWorkspaceResponse
+     * @return HandOverWorkspaceResponse HandOverWorkspaceResponse
      */
     public function handOverWorkspace($request)
     {
@@ -780,11 +828,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListNodesRequest $request
-     * @param ListNodesHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 获取节点列表
+     *  *
+     * @param ListNodesRequest $request ListNodesRequest
+     * @param ListNodesHeaders $headers ListNodesHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListNodesResponse
+     * @return ListNodesResponse ListNodesResponse
      */
     public function listNodesWithOptions($request, $headers, $runtime)
     {
@@ -832,9 +882,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListNodesRequest $request
+     * @summary 获取节点列表
+     *  *
+     * @param ListNodesRequest $request ListNodesRequest
      *
-     * @return ListNodesResponse
+     * @return ListNodesResponse ListNodesResponse
      */
     public function listNodes($request)
     {
@@ -845,11 +897,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListTeamsRequest $request
-     * @param ListTeamsHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 获取知识小组列表
+     *  *
+     * @param ListTeamsRequest $request ListTeamsRequest
+     * @param ListTeamsHeaders $headers ListTeamsHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListTeamsResponse
+     * @return ListTeamsResponse ListTeamsResponse
      */
     public function listTeamsWithOptions($request, $headers, $runtime)
     {
@@ -891,9 +945,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListTeamsRequest $request
+     * @summary 获取知识小组列表
+     *  *
+     * @param ListTeamsRequest $request ListTeamsRequest
      *
-     * @return ListTeamsResponse
+     * @return ListTeamsResponse ListTeamsResponse
      */
     public function listTeams($request)
     {
@@ -904,11 +960,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListWorkspacesRequest $request
-     * @param ListWorkspacesHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取知识库列表
+     *  *
+     * @param ListWorkspacesRequest $request ListWorkspacesRequest
+     * @param ListWorkspacesHeaders $headers ListWorkspacesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListWorkspacesResponse
+     * @return ListWorkspacesResponse ListWorkspacesResponse
      */
     public function listWorkspacesWithOptions($request, $headers, $runtime)
     {
@@ -959,9 +1017,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListWorkspacesRequest $request
+     * @summary 获取知识库列表
+     *  *
+     * @param ListWorkspacesRequest $request ListWorkspacesRequest
      *
-     * @return ListWorkspacesResponse
+     * @return ListWorkspacesResponse ListWorkspacesResponse
      */
     public function listWorkspaces($request)
     {
@@ -972,11 +1032,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetDefaultHandOverUserRequest $request
-     * @param SetDefaultHandOverUserHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 设置员工离职时知识库默认转交人
+     *  *
+     * @param SetDefaultHandOverUserRequest $request SetDefaultHandOverUserRequest
+     * @param SetDefaultHandOverUserHeaders $headers SetDefaultHandOverUserHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return SetDefaultHandOverUserResponse
+     * @return SetDefaultHandOverUserResponse SetDefaultHandOverUserResponse
      */
     public function setDefaultHandOverUserWithOptions($request, $headers, $runtime)
     {
@@ -1017,9 +1079,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetDefaultHandOverUserRequest $request
+     * @summary 设置员工离职时知识库默认转交人
+     *  *
+     * @param SetDefaultHandOverUserRequest $request SetDefaultHandOverUserRequest
      *
-     * @return SetDefaultHandOverUserResponse
+     * @return SetDefaultHandOverUserResponse SetDefaultHandOverUserResponse
      */
     public function setDefaultHandOverUser($request)
     {

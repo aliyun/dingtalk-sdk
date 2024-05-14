@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GroupStatisticsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -17,11 +19,15 @@ class GroupStatisticsResponseBody extends Model
     public $groupCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var groupTrend[]
      */
     public $groupTrend;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -29,6 +35,8 @@ class GroupStatisticsResponseBody extends Model
     public $increaseGroupCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.1
      *
      * @var string

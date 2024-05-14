@@ -53,12 +53,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 为指定的数据源批量添加数据项
+     *  *
      * @param string                       $tabId
-     * @param BatchInsertSearchItemRequest $request
-     * @param BatchInsertSearchItemHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param BatchInsertSearchItemRequest $request BatchInsertSearchItemRequest
+     * @param BatchInsertSearchItemHeaders $headers BatchInsertSearchItemHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchInsertSearchItemResponse
+     * @return BatchInsertSearchItemResponse BatchInsertSearchItemResponse
      */
     public function batchInsertSearchItemWithOptions($tabId, $request, $headers, $runtime)
     {
@@ -94,10 +96,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 为指定的数据源批量添加数据项
+     *  *
      * @param string                       $tabId
-     * @param BatchInsertSearchItemRequest $request
+     * @param BatchInsertSearchItemRequest $request BatchInsertSearchItemRequest
      *
-     * @return BatchInsertSearchItemResponse
+     * @return BatchInsertSearchItemResponse BatchInsertSearchItemResponse
      */
     public function batchInsertSearchItem($tabId, $request)
     {
@@ -108,11 +112,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSearchTabRequest $request
-     * @param CreateSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建搜索数据源
+     *  *
+     * @param CreateSearchTabRequest $request CreateSearchTabRequest
+     * @param CreateSearchTabHeaders $headers CreateSearchTabHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateSearchTabResponse
+     * @return CreateSearchTabResponse CreateSearchTabResponse
      */
     public function createSearchTabWithOptions($request, $headers, $runtime)
     {
@@ -163,9 +169,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSearchTabRequest $request
+     * @summary 创建搜索数据源
+     *  *
+     * @param CreateSearchTabRequest $request CreateSearchTabRequest
      *
-     * @return CreateSearchTabResponse
+     * @return CreateSearchTabResponse CreateSearchTabResponse
      */
     public function createSearchTab($request)
     {
@@ -176,12 +184,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 从指定的数据源中删除一条数据项
+     *  *
      * @param string                  $tabId
      * @param string                  $itemId
-     * @param DeleteSearchItemHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param DeleteSearchItemHeaders $headers DeleteSearchItemHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteSearchItemResponse
+     * @return DeleteSearchItemResponse DeleteSearchItemResponse
      */
     public function deleteSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
@@ -211,10 +221,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 从指定的数据源中删除一条数据项
+     *  *
      * @param string $tabId
      * @param string $itemId
      *
-     * @return DeleteSearchItemResponse
+     * @return DeleteSearchItemResponse DeleteSearchItemResponse
      */
     public function deleteSearchItem($tabId, $itemId)
     {
@@ -225,11 +237,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除搜索数据源
+     *  *
      * @param string                 $tabId
-     * @param DeleteSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param DeleteSearchTabHeaders $headers DeleteSearchTabHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteSearchTabResponse
+     * @return DeleteSearchTabResponse DeleteSearchTabResponse
      */
     public function deleteSearchTabWithOptions($tabId, $headers, $runtime)
     {
@@ -259,9 +273,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除搜索数据源
+     *  *
      * @param string $tabId
      *
-     * @return DeleteSearchTabResponse
+     * @return DeleteSearchTabResponse DeleteSearchTabResponse
      */
     public function deleteSearchTab($tabId)
     {
@@ -272,12 +288,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取指定数据源中的一条数据项
+     *  *
      * @param string               $tabId
      * @param string               $itemId
-     * @param GetSearchItemHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetSearchItemHeaders $headers GetSearchItemHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSearchItemResponse
+     * @return GetSearchItemResponse GetSearchItemResponse
      */
     public function getSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
@@ -307,10 +325,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取指定数据源中的一条数据项
+     *  *
      * @param string $tabId
      * @param string $itemId
      *
-     * @return GetSearchItemResponse
+     * @return GetSearchItemResponse GetSearchItemResponse
      */
     public function getSearchItem($tabId, $itemId)
     {
@@ -321,12 +341,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据搜索关键词获取相关数据项
+     *  *
      * @param string                         $tabId
-     * @param GetSearchItemsByKeyWordRequest $request
-     * @param GetSearchItemsByKeyWordHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param GetSearchItemsByKeyWordRequest $request GetSearchItemsByKeyWordRequest
+     * @param GetSearchItemsByKeyWordHeaders $headers GetSearchItemsByKeyWordHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSearchItemsByKeyWordResponse
+     * @return GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWordResponse
      */
     public function getSearchItemsByKeyWordWithOptions($tabId, $request, $headers, $runtime)
     {
@@ -368,10 +390,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据搜索关键词获取相关数据项
+     *  *
      * @param string                         $tabId
-     * @param GetSearchItemsByKeyWordRequest $request
+     * @param GetSearchItemsByKeyWordRequest $request GetSearchItemsByKeyWordRequest
      *
-     * @return GetSearchItemsByKeyWordResponse
+     * @return GetSearchItemsByKeyWordResponse GetSearchItemsByKeyWordResponse
      */
     public function getSearchItemsByKeyWord($tabId, $request)
     {
@@ -382,11 +406,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取搜索数据源
+     *  *
      * @param string              $tabId
-     * @param GetSearchTabHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param GetSearchTabHeaders $headers GetSearchTabHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSearchTabResponse
+     * @return GetSearchTabResponse GetSearchTabResponse
      */
     public function getSearchTabWithOptions($tabId, $headers, $runtime)
     {
@@ -416,9 +442,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取搜索数据源
+     *  *
      * @param string $tabId
      *
-     * @return GetSearchTabResponse
+     * @return GetSearchTabResponse GetSearchTabResponse
      */
     public function getSearchTab($tabId)
     {
@@ -429,12 +457,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 为指定的数据源添加一条数据项
+     *  *
      * @param string                  $tabId
-     * @param InsertSearchItemRequest $request
-     * @param InsertSearchItemHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param InsertSearchItemRequest $request InsertSearchItemRequest
+     * @param InsertSearchItemHeaders $headers InsertSearchItemHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return InsertSearchItemResponse
+     * @return InsertSearchItemResponse InsertSearchItemResponse
      */
     public function insertSearchItemWithOptions($tabId, $request, $headers, $runtime)
     {
@@ -491,10 +521,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 为指定的数据源添加一条数据项
+     *  *
      * @param string                  $tabId
-     * @param InsertSearchItemRequest $request
+     * @param InsertSearchItemRequest $request InsertSearchItemRequest
      *
-     * @return InsertSearchItemResponse
+     * @return InsertSearchItemResponse InsertSearchItemResponse
      */
     public function insertSearchItem($tabId, $request)
     {
@@ -505,10 +537,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSearchTabsByOrgIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 列出企业所有的搜索数据源
+     *  *
+     * @param ListSearchTabsByOrgIdHeaders $headers ListSearchTabsByOrgIdHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListSearchTabsByOrgIdResponse
+     * @return ListSearchTabsByOrgIdResponse ListSearchTabsByOrgIdResponse
      */
     public function listSearchTabsByOrgIdWithOptions($headers, $runtime)
     {
@@ -538,7 +572,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ListSearchTabsByOrgIdResponse
+     * @summary 列出企业所有的搜索数据源
+     *  *
+     * @return ListSearchTabsByOrgIdResponse ListSearchTabsByOrgIdResponse
      */
     public function listSearchTabsByOrgId()
     {
@@ -549,12 +585,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新搜索数据源
+     *  *
      * @param string                 $tabId
-     * @param UpdateSearchTabRequest $request
-     * @param UpdateSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param UpdateSearchTabRequest $request UpdateSearchTabRequest
+     * @param UpdateSearchTabHeaders $headers UpdateSearchTabHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateSearchTabResponse
+     * @return UpdateSearchTabResponse UpdateSearchTabResponse
      */
     public function updateSearchTabWithOptions($tabId, $request, $headers, $runtime)
     {
@@ -605,10 +643,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新搜索数据源
+     *  *
      * @param string                 $tabId
-     * @param UpdateSearchTabRequest $request
+     * @param UpdateSearchTabRequest $request UpdateSearchTabRequest
      *
-     * @return UpdateSearchTabResponse
+     * @return UpdateSearchTabResponse UpdateSearchTabResponse
      */
     public function updateSearchTab($tabId, $request)
     {

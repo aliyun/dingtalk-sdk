@@ -14,6 +14,8 @@ class QueryBaymaxSkillLogRequest extends Model
     public $from;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 14da****2760
      *
      * @var string

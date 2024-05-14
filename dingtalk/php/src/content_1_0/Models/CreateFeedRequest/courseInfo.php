@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class courseInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var lectorUserInfo
      */
     public $lectorUserInfo;

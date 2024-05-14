@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomDeptRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var customDept
      */
     public $customDept;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string
@@ -22,6 +26,8 @@ class CreateCustomDeptRequest extends Model
     public $operator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1233
      *
      * @var int

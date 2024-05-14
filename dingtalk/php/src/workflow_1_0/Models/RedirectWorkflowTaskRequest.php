@@ -22,6 +22,8 @@ class RedirectWorkflowTaskRequest extends Model
     public $file;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager001
      *
      * @var string
@@ -36,6 +38,8 @@ class RedirectWorkflowTaskRequest extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var int
@@ -43,6 +47,8 @@ class RedirectWorkflowTaskRequest extends Model
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager001
      *
      * @var string

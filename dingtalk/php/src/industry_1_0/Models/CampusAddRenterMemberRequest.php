@@ -16,6 +16,8 @@ class CampusAddRenterMemberRequest extends Model
     public $extend;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 158********
      *
      * @var string
@@ -23,6 +25,8 @@ class CampusAddRenterMemberRequest extends Model
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三组
      *
      * @var string
@@ -30,6 +34,8 @@ class CampusAddRenterMemberRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 612355
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CardDeleteCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example industry_center
      *
      * @var string
@@ -23,6 +25,8 @@ class CardDeleteCardRequest extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 234234234
      *
      * @var int
@@ -30,6 +34,8 @@ class CardDeleteCardRequest extends Model
     public $cardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YUFANAI
      *
      * @var string
@@ -37,6 +43,8 @@ class CardDeleteCardRequest extends Model
     public $sourceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 234234234
      *
      * @var string

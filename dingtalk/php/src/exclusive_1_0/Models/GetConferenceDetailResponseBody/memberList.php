@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class memberList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $attendDuration;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $staffId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

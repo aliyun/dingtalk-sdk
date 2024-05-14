@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class MoveFilesResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var files[]
      */
     public $files;

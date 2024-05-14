@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AvaliableTemplate extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 出差申请
      *
      * @var string
@@ -16,6 +18,8 @@ class AvaliableTemplate extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-abcd
      *
      * @var string

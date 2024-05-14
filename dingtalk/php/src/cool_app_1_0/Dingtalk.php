@@ -40,11 +40,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppOrderToGroupRequest $request
-     * @param InstallCoolAppOrderToGroupHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @summary 群酷应用排序
+     *  *
+     * @param InstallCoolAppOrderToGroupRequest $request InstallCoolAppOrderToGroupRequest
+     * @param InstallCoolAppOrderToGroupHeaders $headers InstallCoolAppOrderToGroupHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
      *
-     * @return InstallCoolAppOrderToGroupResponse
+     * @return InstallCoolAppOrderToGroupResponse InstallCoolAppOrderToGroupResponse
      */
     public function installCoolAppOrderToGroupWithOptions($request, $headers, $runtime)
     {
@@ -89,9 +91,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppOrderToGroupRequest $request
+     * @summary 群酷应用排序
+     *  *
+     * @param InstallCoolAppOrderToGroupRequest $request InstallCoolAppOrderToGroupRequest
      *
-     * @return InstallCoolAppOrderToGroupResponse
+     * @return InstallCoolAppOrderToGroupResponse InstallCoolAppOrderToGroupResponse
      */
     public function installCoolAppOrderToGroup($request)
     {
@@ -102,11 +106,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppToGroupRequest $request
-     * @param InstallCoolAppToGroupHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 安装酷应用到群
+     *  *
+     * @param InstallCoolAppToGroupRequest $request InstallCoolAppToGroupRequest
+     * @param InstallCoolAppToGroupHeaders $headers InstallCoolAppToGroupHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return InstallCoolAppToGroupResponse
+     * @return InstallCoolAppToGroupResponse InstallCoolAppToGroupResponse
      */
     public function installCoolAppToGroupWithOptions($request, $headers, $runtime)
     {
@@ -151,9 +157,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallCoolAppToGroupRequest $request
+     * @summary 安装酷应用到群
+     *  *
+     * @param InstallCoolAppToGroupRequest $request InstallCoolAppToGroupRequest
      *
-     * @return InstallCoolAppToGroupResponse
+     * @return InstallCoolAppToGroupResponse InstallCoolAppToGroupResponse
      */
     public function installCoolAppToGroup($request)
     {
@@ -164,11 +172,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCoolAppShortcutOrderRequest $request
-     * @param QueryCoolAppShortcutOrderHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询群插件栏
+     *  *
+     * @param QueryCoolAppShortcutOrderRequest $request QueryCoolAppShortcutOrderRequest
+     * @param QueryCoolAppShortcutOrderHeaders $headers QueryCoolAppShortcutOrderHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCoolAppShortcutOrderResponse
+     * @return QueryCoolAppShortcutOrderResponse QueryCoolAppShortcutOrderResponse
      */
     public function queryCoolAppShortcutOrderWithOptions($request, $headers, $runtime)
     {
@@ -210,9 +220,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCoolAppShortcutOrderRequest $request
+     * @summary 查询群插件栏
+     *  *
+     * @param QueryCoolAppShortcutOrderRequest $request QueryCoolAppShortcutOrderRequest
      *
-     * @return QueryCoolAppShortcutOrderResponse
+     * @return QueryCoolAppShortcutOrderResponse QueryCoolAppShortcutOrderResponse
      */
     public function queryCoolAppShortcutOrder($request)
     {
@@ -223,11 +235,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UninstallCoolAppFromGroupRequest $request
-     * @param UninstallCoolAppFromGroupHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 从群内卸载酷应用
+     *  *
+     * @param UninstallCoolAppFromGroupRequest $request UninstallCoolAppFromGroupRequest
+     * @param UninstallCoolAppFromGroupHeaders $headers UninstallCoolAppFromGroupHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return UninstallCoolAppFromGroupResponse
+     * @return UninstallCoolAppFromGroupResponse UninstallCoolAppFromGroupResponse
      */
     public function uninstallCoolAppFromGroupWithOptions($request, $headers, $runtime)
     {
@@ -272,9 +286,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UninstallCoolAppFromGroupRequest $request
+     * @summary 从群内卸载酷应用
+     *  *
+     * @param UninstallCoolAppFromGroupRequest $request UninstallCoolAppFromGroupRequest
      *
-     * @return UninstallCoolAppFromGroupResponse
+     * @return UninstallCoolAppFromGroupResponse UninstallCoolAppFromGroupResponse
      */
     public function uninstallCoolAppFromGroup($request)
     {

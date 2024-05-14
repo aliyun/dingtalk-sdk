@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class EditFeedReplayRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1617356058000
      *
      * @var int
@@ -16,6 +18,8 @@ class EditFeedReplayRequest extends Model
     public $editEndTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1617336058000
      *
      * @var int
@@ -23,6 +27,8 @@ class EditFeedReplayRequest extends Model
     public $editStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1206186351746728
      *
      * @var string

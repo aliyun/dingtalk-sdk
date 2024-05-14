@@ -23,6 +23,8 @@ class ListNodesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string
@@ -30,6 +32,8 @@ class ListNodesRequest extends Model
     public $operatorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example parent_node_id
      *
      * @var string

@@ -35,6 +35,8 @@ class IndustrializeManufactureJobBookResponseBody extends Model
     public $httpCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

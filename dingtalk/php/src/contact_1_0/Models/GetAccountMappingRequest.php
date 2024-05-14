@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetAccountMappingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example BizName1
      *
      * @var string
@@ -16,6 +18,8 @@ class GetAccountMappingRequest extends Model
     public $domain;
 
     /**
+     * @description This parameter is required.
+     *
      * @example id_123
      *
      * @var string

@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class GetOssTempUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fetchMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openTeamId;

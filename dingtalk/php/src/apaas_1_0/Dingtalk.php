@@ -46,11 +46,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateTemplateRequest $request
-     * @param BatchCreateTemplateHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量创建模板
+     *  *
+     * @param BatchCreateTemplateRequest $request BatchCreateTemplateRequest
+     * @param BatchCreateTemplateHeaders $headers BatchCreateTemplateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchCreateTemplateResponse
+     * @return BatchCreateTemplateResponse BatchCreateTemplateResponse
      */
     public function batchCreateTemplateWithOptions($request, $headers, $runtime)
     {
@@ -86,9 +88,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateTemplateRequest $request
+     * @summary 批量创建模板
+     *  *
+     * @param BatchCreateTemplateRequest $request BatchCreateTemplateRequest
      *
-     * @return BatchCreateTemplateResponse
+     * @return BatchCreateTemplateResponse BatchCreateTemplateResponse
      */
     public function batchCreateTemplate($request)
     {
@@ -99,11 +103,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryByTemplateKeyRequest $request
-     * @param BatchQueryByTemplateKeyHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 批量查询模板
+     *  *
+     * @param BatchQueryByTemplateKeyRequest $request BatchQueryByTemplateKeyRequest
+     * @param BatchQueryByTemplateKeyHeaders $headers BatchQueryByTemplateKeyHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryByTemplateKeyResponse
+     * @return BatchQueryByTemplateKeyResponse BatchQueryByTemplateKeyResponse
      */
     public function batchQueryByTemplateKeyWithOptions($request, $headers, $runtime)
     {
@@ -139,9 +145,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryByTemplateKeyRequest $request
+     * @summary 批量查询模板
+     *  *
+     * @param BatchQueryByTemplateKeyRequest $request BatchQueryByTemplateKeyRequest
      *
-     * @return BatchQueryByTemplateKeyResponse
+     * @return BatchQueryByTemplateKeyResponse BatchQueryByTemplateKeyResponse
      */
     public function batchQueryByTemplateKey($request)
     {
@@ -152,11 +160,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateTemplateRequest $request
-     * @param BatchUpdateTemplateHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量修改模板
+     *  *
+     * @param BatchUpdateTemplateRequest $request BatchUpdateTemplateRequest
+     * @param BatchUpdateTemplateHeaders $headers BatchUpdateTemplateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchUpdateTemplateResponse
+     * @return BatchUpdateTemplateResponse BatchUpdateTemplateResponse
      */
     public function batchUpdateTemplateWithOptions($request, $headers, $runtime)
     {
@@ -192,9 +202,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateTemplateRequest $request
+     * @summary 批量修改模板
+     *  *
+     * @param BatchUpdateTemplateRequest $request BatchUpdateTemplateRequest
      *
-     * @return BatchUpdateTemplateResponse
+     * @return BatchUpdateTemplateResponse BatchUpdateTemplateResponse
      */
     public function batchUpdateTemplate($request)
     {
@@ -205,10 +217,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryIndustryTagListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 查询行业标签
+     *  *
+     * @param QueryIndustryTagListHeaders $headers QueryIndustryTagListHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryIndustryTagListResponse
+     * @return QueryIndustryTagListResponse QueryIndustryTagListResponse
      */
     public function queryIndustryTagListWithOptions($headers, $runtime)
     {
@@ -238,7 +252,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryIndustryTagListResponse
+     * @summary 查询行业标签
+     *  *
+     * @return QueryIndustryTagListResponse QueryIndustryTagListResponse
      */
     public function queryIndustryTagList()
     {
@@ -249,10 +265,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRoleTagListHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 查询角色
+     *  *
+     * @param QueryRoleTagListHeaders $headers QueryRoleTagListHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryRoleTagListResponse
+     * @return QueryRoleTagListResponse QueryRoleTagListResponse
      */
     public function queryRoleTagListWithOptions($headers, $runtime)
     {
@@ -282,7 +300,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryRoleTagListResponse
+     * @summary 查询角色
+     *  *
+     * @return QueryRoleTagListResponse QueryRoleTagListResponse
      */
     public function queryRoleTagList()
     {
@@ -293,10 +313,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTemplateCategorysHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 查询模板分类
+     *  *
+     * @param QueryTemplateCategorysHeaders $headers QueryTemplateCategorysHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryTemplateCategorysResponse
+     * @return QueryTemplateCategorysResponse QueryTemplateCategorysResponse
      */
     public function queryTemplateCategorysWithOptions($headers, $runtime)
     {
@@ -326,7 +348,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return QueryTemplateCategorysResponse
+     * @summary 查询模板分类
+     *  *
+     * @return QueryTemplateCategorysResponse QueryTemplateCategorysResponse
      */
     public function queryTemplateCategorys()
     {
@@ -337,11 +361,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RecallAuditTemplateRequest $request
-     * @param RecallAuditTemplateHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 撤回模板审核
+     *  *
+     * @param RecallAuditTemplateRequest $request RecallAuditTemplateRequest
+     * @param RecallAuditTemplateHeaders $headers RecallAuditTemplateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return RecallAuditTemplateResponse
+     * @return RecallAuditTemplateResponse RecallAuditTemplateResponse
      */
     public function recallAuditTemplateWithOptions($request, $headers, $runtime)
     {
@@ -377,9 +403,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RecallAuditTemplateRequest $request
+     * @summary 撤回模板审核
+     *  *
+     * @param RecallAuditTemplateRequest $request RecallAuditTemplateRequest
      *
-     * @return RecallAuditTemplateResponse
+     * @return RecallAuditTemplateResponse RecallAuditTemplateResponse
      */
     public function recallAuditTemplate($request)
     {

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateAppGoodsServiceConversationRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $isvUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $orderId;

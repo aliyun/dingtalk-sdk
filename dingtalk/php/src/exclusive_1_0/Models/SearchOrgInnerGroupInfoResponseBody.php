@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class SearchOrgInnerGroupInfoResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $itemCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var items[]
      */
     public $items;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

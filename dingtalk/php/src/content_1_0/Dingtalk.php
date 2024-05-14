@@ -43,11 +43,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateFeedRequest $request
-     * @param CreateFeedHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 创建内容
+     *  *
+     * @param CreateFeedRequest $request CreateFeedRequest
+     * @param CreateFeedHeaders $headers CreateFeedHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateFeedResponse
+     * @return CreateFeedResponse CreateFeedResponse
      */
     public function createFeedWithOptions($request, $headers, $runtime)
     {
@@ -89,9 +91,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateFeedRequest $request
+     * @summary 创建内容
+     *  *
+     * @param CreateFeedRequest $request CreateFeedRequest
      *
-     * @return CreateFeedResponse
+     * @return CreateFeedResponse CreateFeedResponse
      */
     public function createFeed($request)
     {
@@ -102,12 +106,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取feed的详细信息，包括子课程的信息
+     *  *
      * @param string         $feedId
-     * @param GetFeedRequest $request
-     * @param GetFeedHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetFeedRequest $request GetFeedRequest
+     * @param GetFeedHeaders $headers GetFeedHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFeedResponse
+     * @return GetFeedResponse GetFeedResponse
      */
     public function getFeedWithOptions($feedId, $request, $headers, $runtime)
     {
@@ -143,10 +149,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取feed的详细信息，包括子课程的信息
+     *  *
      * @param string         $feedId
-     * @param GetFeedRequest $request
+     * @param GetFeedRequest $request GetFeedRequest
      *
-     * @return GetFeedResponse
+     * @return GetFeedResponse GetFeedResponse
      */
     public function getFeed($feedId, $request)
     {
@@ -157,11 +165,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMediaCerficateRequest $request
-     * @param GetMediaCerficateHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取oss上传凭证
+     *  *
+     * @param GetMediaCerficateRequest $request GetMediaCerficateRequest
+     * @param GetMediaCerficateHeaders $headers GetMediaCerficateHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetMediaCerficateResponse
+     * @return GetMediaCerficateResponse GetMediaCerficateResponse
      */
     public function getMediaCerficateWithOptions($request, $headers, $runtime)
     {
@@ -215,9 +225,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMediaCerficateRequest $request
+     * @summary 获取oss上传凭证
+     *  *
+     * @param GetMediaCerficateRequest $request GetMediaCerficateRequest
      *
-     * @return GetMediaCerficateResponse
+     * @return GetMediaCerficateResponse GetMediaCerficateResponse
      */
     public function getMediaCerficate($request)
     {
@@ -228,12 +240,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 展示机构内观看内容的统计信息
+     *  *
      * @param string                  $itemId
-     * @param ListItemUserDataRequest $request
-     * @param ListItemUserDataHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param ListItemUserDataRequest $request ListItemUserDataRequest
+     * @param ListItemUserDataHeaders $headers ListItemUserDataHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListItemUserDataResponse
+     * @return ListItemUserDataResponse ListItemUserDataResponse
      */
     public function listItemUserDataWithOptions($itemId, $request, $headers, $runtime)
     {
@@ -265,10 +279,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 展示机构内观看内容的统计信息
+     *  *
      * @param string                  $itemId
-     * @param ListItemUserDataRequest $request
+     * @param ListItemUserDataRequest $request ListItemUserDataRequest
      *
-     * @return ListItemUserDataResponse
+     * @return ListItemUserDataResponse ListItemUserDataResponse
      */
     public function listItemUserData($itemId, $request)
     {
@@ -279,11 +295,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageFeedRequest $request
-     * @param PageFeedHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 获取机构下课程列表
+     *  *
+     * @param PageFeedRequest $request PageFeedRequest
+     * @param PageFeedHeaders $headers PageFeedHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return PageFeedResponse
+     * @return PageFeedResponse PageFeedResponse
      */
     public function pageFeedWithOptions($request, $headers, $runtime)
     {
@@ -326,9 +344,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageFeedRequest $request
+     * @summary 获取机构下课程列表
+     *  *
+     * @param PageFeedRequest $request PageFeedRequest
      *
-     * @return PageFeedResponse
+     * @return PageFeedResponse PageFeedResponse
      */
     public function pageFeed($request)
     {

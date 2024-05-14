@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDatasRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -44,6 +46,8 @@ class SearchFormDatasRequest extends Model
     public $dynamicOrder;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
@@ -91,6 +95,8 @@ class SearchFormDatasRequest extends Model
     public $searchFieldJson;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -98,6 +104,8 @@ class SearchFormDatasRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 173112212211
      *
      * @var string

@@ -44,6 +44,8 @@ class department extends Model
     public $deptType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -51,6 +53,8 @@ class department extends Model
     public $gmtCreateStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string

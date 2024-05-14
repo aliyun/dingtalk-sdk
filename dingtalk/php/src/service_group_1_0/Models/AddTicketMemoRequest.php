@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddTicketMemoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -17,6 +19,8 @@ class AddTicketMemoRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a8iS4X94TgtgiE
      *
      * @var string
@@ -24,6 +28,8 @@ class AddTicketMemoRequest extends Model
     public $openTicketId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ListParentByUserRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

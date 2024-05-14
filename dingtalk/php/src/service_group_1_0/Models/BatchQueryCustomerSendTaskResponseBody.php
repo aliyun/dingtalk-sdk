@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryCustomerSendTaskResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -17,6 +19,8 @@ class BatchQueryCustomerSendTaskResponseBody extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8888
      *
      * @var string
@@ -29,6 +33,8 @@ class BatchQueryCustomerSendTaskResponseBody extends Model
     public $records;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int

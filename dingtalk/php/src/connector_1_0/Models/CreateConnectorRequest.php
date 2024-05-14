@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateConnectorRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var connectorInfo[]
      */
     public $connectorInfo;

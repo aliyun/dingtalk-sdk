@@ -58,12 +58,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用批量获取文件或文件夹信息
+     *  *
      * @param string             $spaceId
-     * @param GetDentriesRequest $request
-     * @param GetDentriesHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetDentriesRequest $request GetDentriesRequest
+     * @param GetDentriesHeaders $headers GetDentriesHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDentriesResponse
+     * @return GetDentriesResponse GetDentriesResponse
      */
     public function getDentriesWithOptions($spaceId, $request, $headers, $runtime)
     {
@@ -107,10 +109,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用批量获取文件或文件夹信息
+     *  *
      * @param string             $spaceId
-     * @param GetDentriesRequest $request
+     * @param GetDentriesRequest $request GetDentriesRequest
      *
-     * @return GetDentriesResponse
+     * @return GetDentriesResponse GetDentriesResponse
      */
     public function getDentries($spaceId, $request)
     {
@@ -121,13 +125,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件(夹)信息
+     *  *
      * @param string           $spaceId
      * @param string           $dentryId
-     * @param GetDentryRequest $request
-     * @param GetDentryHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param GetDentryRequest $request  GetDentryRequest
+     * @param GetDentryHeaders $headers  GetDentryHeaders
+     * @param RuntimeOptions   $runtime  runtime options for this request RuntimeOptions
      *
-     * @return GetDentryResponse
+     * @return GetDentryResponse GetDentryResponse
      */
     public function getDentryWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
     {
@@ -168,11 +174,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件(夹)信息
+     *  *
      * @param string           $spaceId
      * @param string           $dentryId
-     * @param GetDentryRequest $request
+     * @param GetDentryRequest $request  GetDentryRequest
      *
-     * @return GetDentryResponse
+     * @return GetDentryResponse GetDentryResponse
      */
     public function getDentry($spaceId, $dentryId, $request)
     {
@@ -183,12 +191,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用批量获取文件缩略图
+     *  *
      * @param string                     $spaceId
-     * @param GetDentryThumbnailsRequest $request
-     * @param GetDentryThumbnailsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetDentryThumbnailsRequest $request GetDentryThumbnailsRequest
+     * @param GetDentryThumbnailsHeaders $headers GetDentryThumbnailsHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetDentryThumbnailsResponse
+     * @return GetDentryThumbnailsResponse GetDentryThumbnailsResponse
      */
     public function getDentryThumbnailsWithOptions($spaceId, $request, $headers, $runtime)
     {
@@ -229,10 +239,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用批量获取文件缩略图
+     *  *
      * @param string                     $spaceId
-     * @param GetDentryThumbnailsRequest $request
+     * @param GetDentryThumbnailsRequest $request GetDentryThumbnailsRequest
      *
-     * @return GetDentryThumbnailsResponse
+     * @return GetDentryThumbnailsResponse GetDentryThumbnailsResponse
      */
     public function getDentryThumbnails($spaceId, $request)
     {
@@ -243,13 +255,15 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件下载信息
+     *  *
      * @param string                     $spaceId
      * @param string                     $dentryId
-     * @param GetFileDownloadInfoRequest $request
-     * @param GetFileDownloadInfoHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetFileDownloadInfoRequest $request  GetFileDownloadInfoRequest
+     * @param GetFileDownloadInfoHeaders $headers  GetFileDownloadInfoHeaders
+     * @param RuntimeOptions             $runtime  runtime options for this request RuntimeOptions
      *
-     * @return GetFileDownloadInfoResponse
+     * @return GetFileDownloadInfoResponse GetFileDownloadInfoResponse
      */
     public function getFileDownloadInfoWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
     {
@@ -290,11 +304,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件下载信息
+     *  *
      * @param string                     $spaceId
      * @param string                     $dentryId
-     * @param GetFileDownloadInfoRequest $request
+     * @param GetFileDownloadInfoRequest $request  GetFileDownloadInfoRequest
      *
-     * @return GetFileDownloadInfoResponse
+     * @return GetFileDownloadInfoResponse GetFileDownloadInfoResponse
      */
     public function getFileDownloadInfo($spaceId, $dentryId, $request)
     {
@@ -305,11 +321,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceRequest $request
-     * @param GetSpaceHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 三方个人应用获取IM会话存储空间信息
+     *  *
+     * @param GetSpaceRequest $request GetSpaceRequest
+     * @param GetSpaceHeaders $headers GetSpaceHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSpaceResponse
+     * @return GetSpaceResponse GetSpaceResponse
      */
     public function getSpaceWithOptions($request, $headers, $runtime)
     {
@@ -350,9 +368,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceRequest $request
+     * @summary 三方个人应用获取IM会话存储空间信息
+     *  *
+     * @param GetSpaceRequest $request GetSpaceRequest
      *
-     * @return GetSpaceResponse
+     * @return GetSpaceResponse GetSpaceResponse
      */
     public function getSpace($request)
     {
@@ -363,12 +383,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取全部文件或文件夹列表
+     *  *
      * @param string                 $spaceId
-     * @param ListAllDentriesRequest $request
-     * @param ListAllDentriesHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ListAllDentriesRequest $request ListAllDentriesRequest
+     * @param ListAllDentriesHeaders $headers ListAllDentriesHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListAllDentriesResponse
+     * @return ListAllDentriesResponse ListAllDentriesResponse
      */
     public function listAllDentriesWithOptions($spaceId, $request, $headers, $runtime)
     {
@@ -409,10 +431,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取全部文件或文件夹列表
+     *  *
      * @param string                 $spaceId
-     * @param ListAllDentriesRequest $request
+     * @param ListAllDentriesRequest $request ListAllDentriesRequest
      *
-     * @return ListAllDentriesResponse
+     * @return ListAllDentriesResponse ListAllDentriesResponse
      */
     public function listAllDentries($spaceId, $request)
     {
@@ -423,12 +447,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件列表
+     *  *
      * @param string              $spaceId
-     * @param ListDentriesRequest $request
-     * @param ListDentriesHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param ListDentriesRequest $request ListDentriesRequest
+     * @param ListDentriesHeaders $headers ListDentriesHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListDentriesResponse
+     * @return ListDentriesResponse ListDentriesResponse
      */
     public function listDentriesWithOptions($spaceId, $request, $headers, $runtime)
     {
@@ -482,10 +508,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 三方个人应用获取文件列表
+     *  *
      * @param string              $spaceId
-     * @param ListDentriesRequest $request
+     * @param ListDentriesRequest $request ListDentriesRequest
      *
-     * @return ListDentriesResponse
+     * @return ListDentriesResponse ListDentriesResponse
      */
     public function listDentries($spaceId, $request)
     {
@@ -496,11 +524,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListExpiredRequest $request
-     * @param ListExpiredHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取会话过期文件列表
+     *  *
+     * @param ListExpiredRequest $request ListExpiredRequest
+     * @param ListExpiredHeaders $headers ListExpiredHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListExpiredResponse
+     * @return ListExpiredResponse ListExpiredResponse
      */
     public function listExpiredWithOptions($request, $headers, $runtime)
     {
@@ -544,9 +574,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListExpiredRequest $request
+     * @summary 获取会话过期文件列表
+     *  *
+     * @param ListExpiredRequest $request ListExpiredRequest
      *
-     * @return ListExpiredResponse
+     * @return ListExpiredResponse ListExpiredResponse
      */
     public function listExpired($request)
     {
@@ -557,11 +589,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeEventRequest $request
-     * @param SubscribeEventHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 三方个人应用订阅文件变更事件
+     *  *
+     * @param SubscribeEventRequest $request SubscribeEventRequest
+     * @param SubscribeEventHeaders $headers SubscribeEventHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SubscribeEventResponse
+     * @return SubscribeEventResponse SubscribeEventResponse
      */
     public function subscribeEventWithOptions($request, $headers, $runtime)
     {
@@ -605,9 +639,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeEventRequest $request
+     * @summary 三方个人应用订阅文件变更事件
+     *  *
+     * @param SubscribeEventRequest $request SubscribeEventRequest
      *
-     * @return SubscribeEventResponse
+     * @return SubscribeEventResponse SubscribeEventResponse
      */
     public function subscribeEvent($request)
     {
@@ -618,11 +654,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnsubscribeEventRequest $request
-     * @param UnsubscribeEventHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 三方个人应用取消订阅文件变更事件
+     *  *
+     * @param UnsubscribeEventRequest $request UnsubscribeEventRequest
+     * @param UnsubscribeEventHeaders $headers UnsubscribeEventHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return UnsubscribeEventResponse
+     * @return UnsubscribeEventResponse UnsubscribeEventResponse
      */
     public function unsubscribeEventWithOptions($request, $headers, $runtime)
     {
@@ -666,9 +704,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnsubscribeEventRequest $request
+     * @summary 三方个人应用取消订阅文件变更事件
+     *  *
+     * @param UnsubscribeEventRequest $request UnsubscribeEventRequest
      *
-     * @return UnsubscribeEventResponse
+     * @return UnsubscribeEventResponse UnsubscribeEventResponse
      */
     public function unsubscribeEvent($request)
     {

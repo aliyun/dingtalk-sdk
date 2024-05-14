@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendInvitationRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -16,6 +18,8 @@ class SendInvitationRequest extends Model
     public $deptId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉开放组织别名
      *
      * @var string
@@ -23,6 +27,8 @@ class SendInvitationRequest extends Model
     public $orgAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var int
@@ -30,6 +36,8 @@ class SendInvitationRequest extends Model
     public $partnerLabelId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -37,6 +45,8 @@ class SendInvitationRequest extends Model
     public $partnerNum;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 133XXXXXX57
      *
      * @var string

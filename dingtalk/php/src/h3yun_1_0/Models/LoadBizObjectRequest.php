@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LoadBizObjectRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 193f9efea-e27b-427d-bd13-e3be65e00ef9
      *
      * @var string
@@ -16,6 +18,8 @@ class LoadBizObjectRequest extends Model
     public $bizObjectId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string

@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class versions extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $buildStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $h5Bundle;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $packageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $packageUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $version;

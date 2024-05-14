@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CloseTopboxRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +39,8 @@ class CloseTopboxRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123xxx
      *
      * @var string

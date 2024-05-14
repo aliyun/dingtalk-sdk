@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class RobotSendDingResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $failedList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openDingId;

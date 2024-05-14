@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class intentionCategoryRecords extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -16,6 +18,8 @@ class intentionCategoryRecords extends Model
     public $askCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 工单类
      *
      * @var string
@@ -23,6 +27,8 @@ class intentionCategoryRecords extends Model
     public $categoryName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -30,6 +36,8 @@ class intentionCategoryRecords extends Model
     public $dissatisfiedCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -37,6 +45,8 @@ class intentionCategoryRecords extends Model
     public $errorCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -44,6 +54,8 @@ class intentionCategoryRecords extends Model
     public $praiseCount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

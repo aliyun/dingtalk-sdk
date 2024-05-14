@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetOutGroupsByPageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var responseBody
      */
     public $responseBody;

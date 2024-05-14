@@ -24,6 +24,8 @@ class CreateEventByMeResponseBody extends Model
     public $attendees;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $createTime;
@@ -79,6 +81,8 @@ class CreateEventByMeResponseBody extends Model
     public $richTextDescription;
 
     /**
+     * @description This parameter is required.
+     *
      * @var start
      */
     public $start;
@@ -94,6 +98,8 @@ class CreateEventByMeResponseBody extends Model
     public $uiConfigs;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @var string
      */
     public $updateTime;

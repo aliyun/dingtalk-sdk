@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAppActiveUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -16,6 +18,8 @@ class QueryAppActiveUsersRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class QueryAppActiveUsersRequest extends Model
     public $needPositionInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

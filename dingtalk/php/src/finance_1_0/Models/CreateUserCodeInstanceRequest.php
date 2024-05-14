@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class CreateUserCodeInstanceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var availableTimes[]
      */
     public $availableTimes;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TEST
      *
      * @var string
@@ -34,6 +38,8 @@ class CreateUserCodeInstanceRequest extends Model
     public $codeValueType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example corpid1234
      *
      * @var string
@@ -41,11 +47,15 @@ class CreateUserCodeInstanceRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example yyyy-MM-dd HH:mm:ss
      *
      * @var string
@@ -53,6 +63,8 @@ class CreateUserCodeInstanceRequest extends Model
     public $gmtExpired;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202102021212
      *
      * @var string
@@ -60,6 +72,8 @@ class CreateUserCodeInstanceRequest extends Model
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OPEN
      *
      * @var string
@@ -67,6 +81,8 @@ class CreateUserCodeInstanceRequest extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example INTERNAL_STAFF
      *
      * @var string
@@ -74,6 +90,8 @@ class CreateUserCodeInstanceRequest extends Model
     public $userCorpRelationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 86-xxxxxx
      *
      * @var string

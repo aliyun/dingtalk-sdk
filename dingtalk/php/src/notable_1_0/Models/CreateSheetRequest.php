@@ -20,6 +20,8 @@ class CreateSheetRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

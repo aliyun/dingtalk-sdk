@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 123123123123
      *
      * @var string
@@ -16,6 +18,8 @@ class SendMessageRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string
@@ -23,6 +27,8 @@ class SendMessageRequest extends Model
     public $fromUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SN123456
      *
      * @var string
@@ -30,11 +36,15 @@ class SendMessageRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $toUserIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

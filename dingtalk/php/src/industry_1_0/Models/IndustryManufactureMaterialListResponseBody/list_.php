@@ -9,61 +9,85 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $category;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $specification;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $stockMaxWarn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $stockMinWarn;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;

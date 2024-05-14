@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GetUploadUrlRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contentMd5;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $contentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $convert2Pdf;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $fileSize;

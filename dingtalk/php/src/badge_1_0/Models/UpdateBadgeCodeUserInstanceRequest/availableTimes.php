@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class availableTimes extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example yyyy-MM-dd HH:mm:ss
      *
      * @var string
@@ -16,6 +18,8 @@ class availableTimes extends Model
     public $gmtEnd;
 
     /**
+     * @description This parameter is required.
+     *
      * @example yyyy-MM-dd HH:mm:ss
      *
      * @var string

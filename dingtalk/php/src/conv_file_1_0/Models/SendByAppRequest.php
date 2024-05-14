@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SendByAppRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example file_id
      *
      * @var string
@@ -16,6 +18,8 @@ class SendByAppRequest extends Model
     public $dentryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example space_id
      *
      * @var string
@@ -23,6 +27,8 @@ class SendByAppRequest extends Model
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

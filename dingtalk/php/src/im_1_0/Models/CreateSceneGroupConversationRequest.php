@@ -15,6 +15,8 @@ class CreateSceneGroupConversationRequest extends Model
     public $features;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 客户群
      *
      * @var string
@@ -22,6 +24,8 @@ class CreateSceneGroupConversationRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string
@@ -41,6 +45,8 @@ class CreateSceneGroupConversationRequest extends Model
     public $managementOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8d42****nkld
      *
      * @var string

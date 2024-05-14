@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PushRobotMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -16,6 +18,8 @@ class PushRobotMessageRequest extends Model
     public $chatbotId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sampleText
      *
      * @var string
@@ -23,6 +27,8 @@ class PushRobotMessageRequest extends Model
     public $msgKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
      *
      * @var string
@@ -30,6 +36,8 @@ class PushRobotMessageRequest extends Model
     public $msgParam;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456abc
      *
      * @var string

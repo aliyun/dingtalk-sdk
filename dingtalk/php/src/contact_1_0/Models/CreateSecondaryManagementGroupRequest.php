@@ -11,6 +11,8 @@ use AlibabaCloud\Tea\Model;
 class CreateSecondaryManagementGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 财务常用权限
      *
      * @var string
@@ -18,21 +20,29 @@ class CreateSecondaryManagementGroupRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;
 
     /**
+     * @description This parameter is required.
+     *
      * @example WB001
      *
      * @var string

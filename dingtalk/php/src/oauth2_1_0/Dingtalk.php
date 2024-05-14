@@ -51,10 +51,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateJsapiTicketHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 生成jsapi ticket
+     *  *
+     * @param CreateJsapiTicketHeaders $headers CreateJsapiTicketHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateJsapiTicketResponse
+     * @return CreateJsapiTicketResponse CreateJsapiTicketResponse
      */
     public function createJsapiTicketWithOptions($headers, $runtime)
     {
@@ -84,7 +86,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return CreateJsapiTicketResponse
+     * @summary 生成jsapi ticket
+     *  *
+     * @return CreateJsapiTicketResponse CreateJsapiTicketResponse
      */
     public function createJsapiTicket()
     {
@@ -95,11 +99,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
-     * @param string[]              $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 获取企业accessToken(企业内部应用)
+     *  *
+     * @param GetAccessTokenRequest $request GetAccessTokenRequest
+     * @param string[]              $headers map
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAccessTokenResponse
+     * @return GetAccessTokenResponse GetAccessTokenResponse
      */
     public function getAccessTokenWithOptions($request, $headers, $runtime)
     {
@@ -131,9 +137,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
+     * @summary 获取企业accessToken(企业内部应用)
+     *  *
+     * @param GetAccessTokenRequest $request GetAccessTokenRequest
      *
-     * @return GetAccessTokenResponse
+     * @return GetAccessTokenResponse GetAccessTokenResponse
      */
     public function getAccessToken($request)
     {
@@ -144,11 +152,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAuthInfoRequest $request
-     * @param GetAuthInfoHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 获取企业开通应用后的授权信息
+     *  *
+     * @param GetAuthInfoRequest $request GetAuthInfoRequest
+     * @param GetAuthInfoHeaders $headers GetAuthInfoHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetAuthInfoResponse
+     * @return GetAuthInfoResponse GetAuthInfoResponse
      */
     public function getAuthInfoWithOptions($request, $headers, $runtime)
     {
@@ -184,9 +194,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAuthInfoRequest $request
+     * @summary 获取企业开通应用后的授权信息
+     *  *
+     * @param GetAuthInfoRequest $request GetAuthInfoRequest
      *
-     * @return GetAuthInfoResponse
+     * @return GetAuthInfoResponse GetAuthInfoResponse
      */
     public function getAuthInfo($request)
     {
@@ -197,11 +209,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCorpAccessTokenRequest $request
-     * @param string[]                  $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取企业accessToken(应用商店应用)
+     *  *
+     * @param GetCorpAccessTokenRequest $request GetCorpAccessTokenRequest
+     * @param string[]                  $headers map
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCorpAccessTokenResponse
+     * @return GetCorpAccessTokenResponse GetCorpAccessTokenResponse
      */
     public function getCorpAccessTokenWithOptions($request, $headers, $runtime)
     {
@@ -239,9 +253,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCorpAccessTokenRequest $request
+     * @summary 获取企业accessToken(应用商店应用)
+     *  *
+     * @param GetCorpAccessTokenRequest $request GetCorpAccessTokenRequest
      *
-     * @return GetCorpAccessTokenResponse
+     * @return GetCorpAccessTokenResponse GetCorpAccessTokenResponse
      */
     public function getCorpAccessToken($request)
     {
@@ -252,10 +268,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalAuthRuleHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 查询个人授权记录
+     *  *
+     * @param GetPersonalAuthRuleHeaders $headers GetPersonalAuthRuleHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPersonalAuthRuleResponse
+     * @return GetPersonalAuthRuleResponse GetPersonalAuthRuleResponse
      */
     public function getPersonalAuthRuleWithOptions($headers, $runtime)
     {
@@ -285,7 +303,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetPersonalAuthRuleResponse
+     * @summary 查询个人授权记录
+     *  *
+     * @return GetPersonalAuthRuleResponse GetPersonalAuthRuleResponse
      */
     public function getPersonalAuthRule()
     {
@@ -296,11 +316,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoAccessTokenRequest $request
-     * @param string[]                 $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 生成微应用管理后台accessToken
+     *  *
+     * @param GetSsoAccessTokenRequest $request GetSsoAccessTokenRequest
+     * @param string[]                 $headers map
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSsoAccessTokenResponse
+     * @return GetSsoAccessTokenResponse GetSsoAccessTokenResponse
      */
     public function getSsoAccessTokenWithOptions($request, $headers, $runtime)
     {
@@ -332,9 +354,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoAccessTokenRequest $request
+     * @summary 生成微应用管理后台accessToken
+     *  *
+     * @param GetSsoAccessTokenRequest $request GetSsoAccessTokenRequest
      *
-     * @return GetSsoAccessTokenResponse
+     * @return GetSsoAccessTokenResponse GetSsoAccessTokenResponse
      */
     public function getSsoAccessToken($request)
     {
@@ -345,11 +369,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoUserInfoRequest $request
-     * @param GetSsoUserInfoHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 查询微应用后台免登的用户信息
+     *  *
+     * @param GetSsoUserInfoRequest $request GetSsoUserInfoRequest
+     * @param GetSsoUserInfoHeaders $headers GetSsoUserInfoHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSsoUserInfoResponse
+     * @return GetSsoUserInfoResponse GetSsoUserInfoResponse
      */
     public function getSsoUserInfoWithOptions($request, $headers, $runtime)
     {
@@ -385,9 +411,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoUserInfoRequest $request
+     * @summary 查询微应用后台免登的用户信息
+     *  *
+     * @param GetSsoUserInfoRequest $request GetSsoUserInfoRequest
      *
-     * @return GetSsoUserInfoResponse
+     * @return GetSsoUserInfoResponse GetSsoUserInfoResponse
      */
     public function getSsoUserInfo($request)
     {
@@ -398,11 +426,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSuiteAccessTokenRequest $request
-     * @param string[]                   $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 获取isvAccessToken（三方企业应用）
+     *  *
+     * @param GetSuiteAccessTokenRequest $request GetSuiteAccessTokenRequest
+     * @param string[]                   $headers map
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSuiteAccessTokenResponse
+     * @return GetSuiteAccessTokenResponse GetSuiteAccessTokenResponse
      */
     public function getSuiteAccessTokenWithOptions($request, $headers, $runtime)
     {
@@ -437,9 +467,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSuiteAccessTokenRequest $request
+     * @summary 获取isvAccessToken（三方企业应用）
+     *  *
+     * @param GetSuiteAccessTokenRequest $request GetSuiteAccessTokenRequest
      *
-     * @return GetSuiteAccessTokenResponse
+     * @return GetSuiteAccessTokenResponse GetSuiteAccessTokenResponse
      */
     public function getSuiteAccessToken($request)
     {
@@ -450,12 +482,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取Access Token
+     *  *
      * @param string          $corpId
-     * @param GetTokenRequest $request
-     * @param string[]        $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetTokenRequest $request GetTokenRequest
+     * @param string[]        $headers map
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetTokenResponse
+     * @return GetTokenResponse GetTokenResponse
      */
     public function getTokenWithOptions($corpId, $request, $headers, $runtime)
     {
@@ -490,10 +524,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取Access Token
+     *  *
      * @param string          $corpId
-     * @param GetTokenRequest $request
+     * @param GetTokenRequest $request GetTokenRequest
      *
-     * @return GetTokenResponse
+     * @return GetTokenResponse GetTokenResponse
      */
     public function getToken($corpId, $request)
     {
@@ -504,11 +540,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserTokenRequest $request
-     * @param string[]            $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取用户token
+     *  *
+     * @param GetUserTokenRequest $request GetUserTokenRequest
+     * @param string[]            $headers map
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserTokenResponse
+     * @return GetUserTokenResponse GetUserTokenResponse
      */
     public function getUserTokenWithOptions($request, $headers, $runtime)
     {
@@ -549,9 +587,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserTokenRequest $request
+     * @summary 获取用户token
+     *  *
+     * @param GetUserTokenRequest $request GetUserTokenRequest
      *
-     * @return GetUserTokenResponse
+     * @return GetUserTokenResponse GetUserTokenResponse
      */
     public function getUserToken($request)
     {

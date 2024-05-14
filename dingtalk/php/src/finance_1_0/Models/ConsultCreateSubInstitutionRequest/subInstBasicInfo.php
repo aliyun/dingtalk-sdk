@@ -16,6 +16,8 @@ class subInstBasicInfo extends Model
     public $aliasName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 5812
      *
      * @var string
@@ -23,6 +25,8 @@ class subInstBasicInfo extends Model
     public $mcc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 食堂
      *
      * @var string
@@ -30,6 +34,8 @@ class subInstBasicInfo extends Model
     public $subInstName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 01
      *
      * @var string

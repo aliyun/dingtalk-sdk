@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleByTimeSchoolRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startTime;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesProcessRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -17,6 +19,8 @@ class IndustryManufactureMesProcessRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example opsoft
      *
      * @var string
@@ -92,6 +96,8 @@ class IndustryManufactureMesProcessRequest extends Model
     public $sop;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string

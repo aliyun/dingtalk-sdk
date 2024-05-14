@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListItemUserDataResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var studyInfos[]
      */
     public $studyInfos;

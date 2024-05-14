@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryRegisterOrderRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 202111090001
      *
      * @var string
@@ -30,6 +32,8 @@ class QueryRegisterOrderRequest extends Model
     public $outTradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var string

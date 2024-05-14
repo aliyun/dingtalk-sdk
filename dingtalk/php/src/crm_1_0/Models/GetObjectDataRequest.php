@@ -16,6 +16,8 @@ class GetObjectDataRequest extends Model
     public $currentOperatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var int
@@ -23,6 +25,8 @@ class GetObjectDataRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-EF199CCA-8AB6-482A-AE10-85EDE5E391D9
      *
      * @var string

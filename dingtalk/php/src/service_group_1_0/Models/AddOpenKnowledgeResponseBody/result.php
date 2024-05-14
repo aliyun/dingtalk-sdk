@@ -23,6 +23,8 @@ class result extends Model
     public $message;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

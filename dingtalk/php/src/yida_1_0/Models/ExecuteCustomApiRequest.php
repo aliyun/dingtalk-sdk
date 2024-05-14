@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class ExecuteCustomApiRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $data;
@@ -24,16 +28,22 @@ class ExecuteCustomApiRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $serviceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PageFormBaseInfosRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
@@ -26,16 +28,22 @@ class PageFormBaseInfosRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -43,6 +51,8 @@ class PageFormBaseInfosRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example david123
      *
      * @var string

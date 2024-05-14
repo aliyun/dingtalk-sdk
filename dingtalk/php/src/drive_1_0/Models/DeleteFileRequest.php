@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class DeleteFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deletePolicy;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

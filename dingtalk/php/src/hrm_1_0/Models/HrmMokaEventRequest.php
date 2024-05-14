@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HrmMokaEventRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example /user/role/get
      *
      * @var string
@@ -16,6 +18,8 @@ class HrmMokaEventRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"a":"b"}
      *
      * @var string

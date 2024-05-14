@@ -16,6 +16,8 @@ class SendMessageTipRequest extends Model
     public $defaultView;
 
     /**
+     * @description This parameter is required.
+     *
      * @example msg_f9aae78558b34e20a5badead4c29244c_123
      *
      * @var string
@@ -23,6 +25,8 @@ class SendMessageTipRequest extends Model
     public $messageId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidVcYPzxnAySJOMhYX2QDbLwUA==
      *
      * @var string
@@ -40,6 +44,8 @@ class SendMessageTipRequest extends Model
     public $publicField;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $receiverUserId;

@@ -27,6 +27,8 @@ class punches extends Model
     public $beginMin;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 1970-01-01 19:00:00
      *
      * @var string

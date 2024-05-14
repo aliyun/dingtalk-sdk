@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateFieldRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -21,11 +23,15 @@ class CreateFieldRequest extends Model
     public $property;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

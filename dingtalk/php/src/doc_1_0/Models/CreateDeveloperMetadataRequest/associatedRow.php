@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class associatedRow extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $row;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sheet;

@@ -11,21 +11,29 @@ use AlibabaCloud\Tea\Model;
 class CreateManagementGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var scope
      */
     public $scope;

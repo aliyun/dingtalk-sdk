@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class MuteMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example mute
      *
      * @var string
@@ -17,6 +19,8 @@ class MuteMembersRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userList[]
      */
     public $userList;

@@ -15,6 +15,8 @@ class QueryPointAutoIssueSettingResponseBody extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

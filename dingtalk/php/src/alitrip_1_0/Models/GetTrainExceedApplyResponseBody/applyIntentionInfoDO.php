@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example BJS
      *
      * @var string
@@ -16,6 +18,8 @@ class applyIntentionInfoDO extends Model
     public $arrCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 北京
      *
      * @var string
@@ -23,6 +27,8 @@ class applyIntentionInfoDO extends Model
     public $arrCityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 上海南
      *
      * @var string
@@ -30,6 +36,8 @@ class applyIntentionInfoDO extends Model
     public $arrStation;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-13 15:06:13
      *
      * @var string
@@ -37,6 +45,8 @@ class applyIntentionInfoDO extends Model
     public $arrTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SHA
      *
      * @var string
@@ -44,6 +54,8 @@ class applyIntentionInfoDO extends Model
     public $depCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 上海
      *
      * @var string
@@ -51,6 +63,8 @@ class applyIntentionInfoDO extends Model
     public $depCityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 北京南
      *
      * @var string
@@ -58,6 +72,8 @@ class applyIntentionInfoDO extends Model
     public $depStation;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-13 15:06:13
      *
      * @var string
@@ -65,6 +81,8 @@ class applyIntentionInfoDO extends Model
     public $depTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1000
      *
      * @var int
@@ -72,6 +90,8 @@ class applyIntentionInfoDO extends Model
     public $price;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 一等座
      *
      * @var string
@@ -79,6 +99,8 @@ class applyIntentionInfoDO extends Model
     public $seatName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example G39
      *
      * @var string
@@ -86,6 +108,8 @@ class applyIntentionInfoDO extends Model
     public $trainNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高铁
      *
      * @var string

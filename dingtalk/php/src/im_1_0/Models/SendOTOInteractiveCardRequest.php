@@ -21,6 +21,8 @@ class SendOTOInteractiveCardRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardData
      */
     public $cardData;
@@ -31,6 +33,8 @@ class SendOTOInteractiveCardRequest extends Model
     public $cardOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardTemplateId;
@@ -41,6 +45,8 @@ class SendOTOInteractiveCardRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $outTrackId;

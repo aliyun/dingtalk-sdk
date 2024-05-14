@@ -54,11 +54,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckInCrowdsByMobileRequest $request
-     * @param string[]                     $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+     *  *
+     * @param CheckInCrowdsByMobileRequest $request CheckInCrowdsByMobileRequest
+     * @param string[]                     $headers map
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return CheckInCrowdsByMobileResponse
+     * @return CheckInCrowdsByMobileResponse CheckInCrowdsByMobileResponse
      */
     public function checkInCrowdsByMobileWithOptions($request, $headers, $runtime)
     {
@@ -90,9 +92,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckInCrowdsByMobileRequest $request
+     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
+     *  *
+     * @param CheckInCrowdsByMobileRequest $request CheckInCrowdsByMobileRequest
      *
-     * @return CheckInCrowdsByMobileResponse
+     * @return CheckInCrowdsByMobileResponse CheckInCrowdsByMobileResponse
      */
     public function checkInCrowdsByMobile($request)
     {
@@ -103,11 +107,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ConsumePointRequest $tmpReq
-     * @param ConsumePointHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 消耗用户积分
+     *  *
+     * @param ConsumePointRequest $tmpReq  ConsumePointRequest
+     * @param ConsumePointHeaders $headers ConsumePointHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ConsumePointResponse
+     * @return ConsumePointResponse ConsumePointResponse
      */
     public function consumePointWithOptions($tmpReq, $headers, $runtime)
     {
@@ -148,9 +154,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ConsumePointRequest $request
+     * @summary 消耗用户积分
+     *  *
+     * @param ConsumePointRequest $request ConsumePointRequest
      *
-     * @return ConsumePointResponse
+     * @return ConsumePointResponse ConsumePointResponse
      */
     public function consumePoint($request)
     {
@@ -161,11 +169,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeliveryPlanRequest $request
-     * @param CreateDeliveryPlanHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+     *  *
+     * @param CreateDeliveryPlanRequest $request CreateDeliveryPlanRequest
+     * @param CreateDeliveryPlanHeaders $headers CreateDeliveryPlanHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateDeliveryPlanResponse
+     * @return CreateDeliveryPlanResponse CreateDeliveryPlanResponse
      */
     public function createDeliveryPlanWithOptions($request, $headers, $runtime)
     {
@@ -213,9 +223,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeliveryPlanRequest $request
+     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
+     *  *
+     * @param CreateDeliveryPlanRequest $request CreateDeliveryPlanRequest
      *
-     * @return CreateDeliveryPlanResponse
+     * @return CreateDeliveryPlanResponse CreateDeliveryPlanResponse
      */
     public function createDeliveryPlan($request)
     {
@@ -226,11 +238,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPointInfoRequest $request
-     * @param GetPointInfoHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 查询用户积分
+     *  *
+     * @param GetPointInfoRequest $request GetPointInfoRequest
+     * @param GetPointInfoHeaders $headers GetPointInfoHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPointInfoResponse
+     * @return GetPointInfoResponse GetPointInfoResponse
      */
     public function getPointInfoWithOptions($request, $headers, $runtime)
     {
@@ -266,9 +280,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPointInfoRequest $request
+     * @summary 查询用户积分
+     *  *
+     * @param GetPointInfoRequest $request GetPointInfoRequest
      *
-     * @return GetPointInfoResponse
+     * @return GetPointInfoResponse GetPointInfoResponse
      */
     public function getPointInfo($request)
     {
@@ -279,11 +295,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RevertPointRequest $tmpReq
-     * @param RevertPointHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 撤销用户单笔积分消耗
+     *  *
+     * @param RevertPointRequest $tmpReq  RevertPointRequest
+     * @param RevertPointHeaders $headers RevertPointHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return RevertPointResponse
+     * @return RevertPointResponse RevertPointResponse
      */
     public function revertPointWithOptions($tmpReq, $headers, $runtime)
     {
@@ -324,9 +342,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RevertPointRequest $request
+     * @summary 撤销用户单笔积分消耗
+     *  *
+     * @param RevertPointRequest $request RevertPointRequest
      *
-     * @return RevertPointResponse
+     * @return RevertPointResponse RevertPointResponse
      */
     public function revertPoint($request)
     {
@@ -337,11 +357,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendBannerRequest $request
-     * @param SendBannerHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 发送钉钉统一引导Banner
+     *  *
+     * @param SendBannerRequest $request SendBannerRequest
+     * @param SendBannerHeaders $headers SendBannerHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendBannerResponse
+     * @return SendBannerResponse SendBannerResponse
      */
     public function sendBannerWithOptions($request, $headers, $runtime)
     {
@@ -386,9 +408,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendBannerRequest $request
+     * @summary 发送钉钉统一引导Banner
+     *  *
+     * @param SendBannerRequest $request SendBannerRequest
      *
-     * @return SendBannerResponse
+     * @return SendBannerResponse SendBannerResponse
      */
     public function sendBanner($request)
     {
@@ -399,11 +423,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendPopupRequest $request
-     * @param SendPopupHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @summary 发送钉钉首页弹窗
+     *  *
+     * @param SendPopupRequest $request SendPopupRequest
+     * @param SendPopupHeaders $headers SendPopupHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendPopupResponse
+     * @return SendPopupResponse SendPopupResponse
      */
     public function sendPopupWithOptions($request, $headers, $runtime)
     {
@@ -448,9 +474,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendPopupRequest $request
+     * @summary 发送钉钉首页弹窗
+     *  *
+     * @param SendPopupRequest $request SendPopupRequest
      *
-     * @return SendPopupResponse
+     * @return SendPopupResponse SendPopupResponse
      */
     public function sendPopup($request)
     {
@@ -461,11 +489,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendSearchShadeRequest $request
-     * @param SendSearchShadeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 发送钉钉搜索底纹
+     *  *
+     * @param SendSearchShadeRequest $request SendSearchShadeRequest
+     * @param SendSearchShadeHeaders $headers SendSearchShadeHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendSearchShadeResponse
+     * @return SendSearchShadeResponse SendSearchShadeResponse
      */
     public function sendSearchShadeWithOptions($request, $headers, $runtime)
     {
@@ -510,9 +540,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendSearchShadeRequest $request
+     * @summary 发送钉钉搜索底纹
+     *  *
+     * @param SendSearchShadeRequest $request SendSearchShadeRequest
      *
-     * @return SendSearchShadeResponse
+     * @return SendSearchShadeResponse SendSearchShadeResponse
      */
     public function sendSearchShade($request)
     {

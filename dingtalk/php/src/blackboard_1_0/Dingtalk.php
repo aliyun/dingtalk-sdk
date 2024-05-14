@@ -34,11 +34,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardReadUnReadRequest $request
-     * @param QueryBlackboardReadUnReadHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @summary 查询公告已读未读人员列表
+     *  *
+     * @param QueryBlackboardReadUnReadRequest $request QueryBlackboardReadUnReadRequest
+     * @param QueryBlackboardReadUnReadHeaders $headers QueryBlackboardReadUnReadHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBlackboardReadUnReadResponse
+     * @return QueryBlackboardReadUnReadResponse QueryBlackboardReadUnReadResponse
      */
     public function queryBlackboardReadUnReadWithOptions($request, $headers, $runtime)
     {
@@ -83,9 +85,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardReadUnReadRequest $request
+     * @summary 查询公告已读未读人员列表
+     *  *
+     * @param QueryBlackboardReadUnReadRequest $request QueryBlackboardReadUnReadRequest
      *
-     * @return QueryBlackboardReadUnReadResponse
+     * @return QueryBlackboardReadUnReadResponse QueryBlackboardReadUnReadResponse
      */
     public function queryBlackboardReadUnRead($request)
     {
@@ -96,11 +100,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardSpaceRequest $request
-     * @param QueryBlackboardSpaceHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @summary 获取公告钉盘空间信息
+     *  *
+     * @param QueryBlackboardSpaceRequest $request QueryBlackboardSpaceRequest
+     * @param QueryBlackboardSpaceHeaders $headers QueryBlackboardSpaceHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryBlackboardSpaceResponse
+     * @return QueryBlackboardSpaceResponse QueryBlackboardSpaceResponse
      */
     public function queryBlackboardSpaceWithOptions($request, $headers, $runtime)
     {
@@ -136,9 +142,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryBlackboardSpaceRequest $request
+     * @summary 获取公告钉盘空间信息
+     *  *
+     * @param QueryBlackboardSpaceRequest $request QueryBlackboardSpaceRequest
      *
-     * @return QueryBlackboardSpaceResponse
+     * @return QueryBlackboardSpaceResponse QueryBlackboardSpaceResponse
      */
     public function queryBlackboardSpace($request)
     {

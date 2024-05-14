@@ -16,6 +16,8 @@ class list_ extends Model
     public $authorityUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $authorized;

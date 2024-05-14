@@ -17,6 +17,8 @@ class AddOpenKnowledgeRequest extends Model
     public $attachments;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 44555
      *
      * @var int
@@ -24,6 +26,8 @@ class AddOpenKnowledgeRequest extends Model
     public $categoryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 这是服务群的介绍
      *
      * @var string
@@ -45,6 +49,8 @@ class AddOpenKnowledgeRequest extends Model
     public $effectTimestart;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 这是问法1,这是问法2
      *
      * @var string
@@ -59,6 +65,8 @@ class AddOpenKnowledgeRequest extends Model
     public $keyword;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -66,6 +74,8 @@ class AddOpenKnowledgeRequest extends Model
     public $libraryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jxi12wo3qxoa
      *
      * @var string
@@ -73,6 +83,8 @@ class AddOpenKnowledgeRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example XMD
      *
      * @var string
@@ -87,6 +99,8 @@ class AddOpenKnowledgeRequest extends Model
     public $tags;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 服务群是什么
      *
      * @var string
@@ -94,6 +108,8 @@ class AddOpenKnowledgeRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example EXTERNAL
      *
      * @var string
@@ -101,6 +117,8 @@ class AddOpenKnowledgeRequest extends Model
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0159003451667222
      *
      * @var string
@@ -108,6 +126,8 @@ class AddOpenKnowledgeRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉三多
      *
      * @var string

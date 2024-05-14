@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetUserByUnionIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $contactType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

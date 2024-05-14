@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateStoreGroupConversationRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateStoreGroupConversationRequest extends Model
     public $appUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example store1
      *
      * @var string
@@ -30,6 +34,8 @@ class CreateStoreGroupConversationRequest extends Model
     public $groupAvatar;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 客户群
      *
      * @var string
@@ -37,6 +43,8 @@ class CreateStoreGroupConversationRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8d42****nkld
      *
      * @var string
@@ -44,6 +52,8 @@ class CreateStoreGroupConversationRequest extends Model
     public $groupTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string

@@ -90,12 +90,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 增加对齐目标
+     *  *
      * @param string                $objectiveId
-     * @param AlignObjectiveRequest $request
-     * @param AlignObjectiveHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param AlignObjectiveRequest $request     AlignObjectiveRequest
+     * @param AlignObjectiveHeaders $headers     AlignObjectiveHeaders
+     * @param RuntimeOptions        $runtime     runtime options for this request RuntimeOptions
      *
-     * @return AlignObjectiveResponse
+     * @return AlignObjectiveResponse AlignObjectiveResponse
      */
     public function alignObjectiveWithOptions($objectiveId, $request, $headers, $runtime)
     {
@@ -139,10 +141,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 增加对齐目标
+     *  *
      * @param string                $objectiveId
-     * @param AlignObjectiveRequest $request
+     * @param AlignObjectiveRequest $request     AlignObjectiveRequest
      *
-     * @return AlignObjectiveResponse
+     * @return AlignObjectiveResponse AlignObjectiveResponse
      */
     public function alignObjective($objectiveId, $request)
     {
@@ -153,11 +157,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddPermissionRequest $request
-     * @param BatchAddPermissionHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary  批量添加权限信息
+     *  *
+     * @param BatchAddPermissionRequest $request BatchAddPermissionRequest
+     * @param BatchAddPermissionHeaders $headers BatchAddPermissionHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchAddPermissionResponse
+     * @return BatchAddPermissionResponse BatchAddPermissionResponse
      */
     public function batchAddPermissionWithOptions($request, $headers, $runtime)
     {
@@ -204,9 +210,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddPermissionRequest $request
+     * @summary  批量添加权限信息
+     *  *
+     * @param BatchAddPermissionRequest $request BatchAddPermissionRequest
      *
-     * @return BatchAddPermissionResponse
+     * @return BatchAddPermissionResponse BatchAddPermissionResponse
      */
     public function batchAddPermission($request)
     {
@@ -217,11 +225,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryObjectiveRequest $request
-     * @param BatchQueryObjectiveHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @summary 批量查询目标
+     *  *
+     * @param BatchQueryObjectiveRequest $request BatchQueryObjectiveRequest
+     * @param BatchQueryObjectiveHeaders $headers BatchQueryObjectiveHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryObjectiveResponse
+     * @return BatchQueryObjectiveResponse BatchQueryObjectiveResponse
      */
     public function batchQueryObjectiveWithOptions($request, $headers, $runtime)
     {
@@ -274,9 +284,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryObjectiveRequest $request
+     * @summary 批量查询目标
+     *  *
+     * @param BatchQueryObjectiveRequest $request BatchQueryObjectiveRequest
      *
-     * @return BatchQueryObjectiveResponse
+     * @return BatchQueryObjectiveResponse BatchQueryObjectiveResponse
      */
     public function batchQueryObjective($request)
     {
@@ -287,11 +299,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryUserRequest $request
-     * @param BatchQueryUserHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 批量查询用户信息
+     *  *
+     * @param BatchQueryUserRequest $request BatchQueryUserRequest
+     * @param BatchQueryUserHeaders $headers BatchQueryUserHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return BatchQueryUserResponse
+     * @return BatchQueryUserResponse BatchQueryUserResponse
      */
     public function batchQueryUserWithOptions($request, $headers, $runtime)
     {
@@ -330,9 +344,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryUserRequest $request
+     * @summary 批量查询用户信息
+     *  *
+     * @param BatchQueryUserRequest $request BatchQueryUserRequest
      *
-     * @return BatchQueryUserResponse
+     * @return BatchQueryUserResponse BatchQueryUserResponse
      */
     public function batchQueryUser($request)
     {
@@ -343,11 +359,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateKeyResultRequest $request
-     * @param CreateKeyResultHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建keyResult
+     *  *
+     * @param CreateKeyResultRequest $request CreateKeyResultRequest
+     * @param CreateKeyResultHeaders $headers CreateKeyResultHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateKeyResultResponse
+     * @return CreateKeyResultResponse CreateKeyResultResponse
      */
     public function createKeyResultWithOptions($request, $headers, $runtime)
     {
@@ -400,9 +418,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateKeyResultRequest $request
+     * @summary 创建keyResult
+     *  *
+     * @param CreateKeyResultRequest $request CreateKeyResultRequest
      *
-     * @return CreateKeyResultResponse
+     * @return CreateKeyResultResponse CreateKeyResultResponse
      */
     public function createKeyResult($request)
     {
@@ -413,11 +433,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateObjectiveRequest $request
-     * @param CreateObjectiveHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建目标
+     *  *
+     * @param CreateObjectiveRequest $request CreateObjectiveRequest
+     * @param CreateObjectiveHeaders $headers CreateObjectiveHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateObjectiveResponse
+     * @return CreateObjectiveResponse CreateObjectiveResponse
      */
     public function createObjectiveWithOptions($request, $headers, $runtime)
     {
@@ -464,9 +486,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateObjectiveRequest $request
+     * @summary 创建目标
+     *  *
+     * @param CreateObjectiveRequest $request CreateObjectiveRequest
      *
-     * @return CreateObjectiveResponse
+     * @return CreateObjectiveResponse CreateObjectiveResponse
      */
     public function createObjective($request)
     {
@@ -477,11 +501,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteKeyResultRequest $request
-     * @param DeleteKeyResultHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 删除keyresult的方法
+     *  *
+     * @param DeleteKeyResultRequest $request DeleteKeyResultRequest
+     * @param DeleteKeyResultHeaders $headers DeleteKeyResultHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeleteKeyResultResponse
+     * @return DeleteKeyResultResponse DeleteKeyResultResponse
      */
     public function deleteKeyResultWithOptions($request, $headers, $runtime)
     {
@@ -520,9 +546,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteKeyResultRequest $request
+     * @summary 删除keyresult的方法
+     *  *
+     * @param DeleteKeyResultRequest $request DeleteKeyResultRequest
      *
-     * @return DeleteKeyResultResponse
+     * @return DeleteKeyResultResponse DeleteKeyResultResponse
      */
     public function deleteKeyResult($request)
     {
@@ -533,12 +561,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除目标
+     *  *
      * @param string                 $objectiveId
-     * @param DeleteObjectiveRequest $request
-     * @param DeleteObjectiveHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param DeleteObjectiveRequest $request     DeleteObjectiveRequest
+     * @param DeleteObjectiveHeaders $headers     DeleteObjectiveHeaders
+     * @param RuntimeOptions         $runtime     runtime options for this request RuntimeOptions
      *
-     * @return DeleteObjectiveResponse
+     * @return DeleteObjectiveResponse DeleteObjectiveResponse
      */
     public function deleteObjectiveWithOptions($objectiveId, $request, $headers, $runtime)
     {
@@ -574,10 +604,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除目标
+     *  *
      * @param string                 $objectiveId
-     * @param DeleteObjectiveRequest $request
+     * @param DeleteObjectiveRequest $request     DeleteObjectiveRequest
      *
-     * @return DeleteObjectiveResponse
+     * @return DeleteObjectiveResponse DeleteObjectiveResponse
      */
     public function deleteObjective($objectiveId, $request)
     {
@@ -588,11 +620,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeletePermissionRequest $request
-     * @param DeletePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary  删除权限信息
+     *  *
+     * @param DeletePermissionRequest $request DeletePermissionRequest
+     * @param DeletePermissionHeaders $headers DeletePermissionHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return DeletePermissionResponse
+     * @return DeletePermissionResponse DeletePermissionResponse
      */
     public function deletePermissionWithOptions($request, $headers, $runtime)
     {
@@ -643,9 +677,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeletePermissionRequest $request
+     * @summary  删除权限信息
+     *  *
+     * @param DeletePermissionRequest $request DeletePermissionRequest
      *
-     * @return DeletePermissionResponse
+     * @return DeletePermissionResponse DeletePermissionResponse
      */
     public function deletePermission($request)
     {
@@ -656,10 +692,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPeriodListHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取周期列表
+     *  *
+     * @param GetPeriodListHeaders $headers GetPeriodListHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPeriodListResponse
+     * @return GetPeriodListResponse GetPeriodListResponse
      */
     public function getPeriodListWithOptions($headers, $runtime)
     {
@@ -689,7 +727,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetPeriodListResponse
+     * @summary 获取周期列表
+     *  *
+     * @return GetPeriodListResponse GetPeriodListResponse
      */
     public function getPeriodList()
     {
@@ -700,11 +740,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPermissionRequest $request
-     * @param GetPermissionHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取权限信息
+     *  *
+     * @param GetPermissionRequest $request GetPermissionRequest
+     * @param GetPermissionHeaders $headers GetPermissionHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPermissionResponse
+     * @return GetPermissionResponse GetPermissionResponse
      */
     public function getPermissionWithOptions($request, $headers, $runtime)
     {
@@ -752,9 +794,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPermissionRequest $request
+     * @summary 获取权限信息
+     *  *
+     * @param GetPermissionRequest $request GetPermissionRequest
      *
-     * @return GetPermissionResponse
+     * @return GetPermissionResponse GetPermissionResponse
      */
     public function getPermission($request)
     {
@@ -765,11 +809,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserOkrRequest $request
-     * @param GetUserOkrHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary  获取用户当前周期下的全部 OKR 内容
+     *  *
+     * @param GetUserOkrRequest $request GetUserOkrRequest
+     * @param GetUserOkrHeaders $headers GetUserOkrHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserOkrResponse
+     * @return GetUserOkrResponse GetUserOkrResponse
      */
     public function getUserOkrWithOptions($request, $headers, $runtime)
     {
@@ -814,9 +860,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserOkrRequest $request
+     * @summary  获取用户当前周期下的全部 OKR 内容
+     *  *
+     * @param GetUserOkrRequest $request GetUserOkrRequest
      *
-     * @return GetUserOkrResponse
+     * @return GetUserOkrResponse GetUserOkrResponse
      */
     public function getUserOkr($request)
     {
@@ -827,11 +875,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrObjectivesBatchRequest $request
-     * @param OkrObjectivesBatchHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 批量查询OKR
+     *  *
+     * @param OkrObjectivesBatchRequest $request OkrObjectivesBatchRequest
+     * @param OkrObjectivesBatchHeaders $headers OkrObjectivesBatchHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return OkrObjectivesBatchResponse
+     * @return OkrObjectivesBatchResponse OkrObjectivesBatchResponse
      */
     public function okrObjectivesBatchWithOptions($request, $headers, $runtime)
     {
@@ -870,9 +920,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrObjectivesBatchRequest $request
+     * @summary 批量查询OKR
+     *  *
+     * @param OkrObjectivesBatchRequest $request OkrObjectivesBatchRequest
      *
-     * @return OkrObjectivesBatchResponse
+     * @return OkrObjectivesBatchResponse OkrObjectivesBatchResponse
      */
     public function okrObjectivesBatch($request)
     {
@@ -883,12 +935,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询单个用户的OKR
+     *  *
      * @param string                     $dingUserId
-     * @param OkrObjectivesByUserRequest $request
-     * @param OkrObjectivesByUserHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param OkrObjectivesByUserRequest $request    OkrObjectivesByUserRequest
+     * @param OkrObjectivesByUserHeaders $headers    OkrObjectivesByUserHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
      *
-     * @return OkrObjectivesByUserResponse
+     * @return OkrObjectivesByUserResponse OkrObjectivesByUserResponse
      */
     public function okrObjectivesByUserWithOptions($dingUserId, $request, $headers, $runtime)
     {
@@ -930,10 +984,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询单个用户的OKR
+     *  *
      * @param string                     $dingUserId
-     * @param OkrObjectivesByUserRequest $request
+     * @param OkrObjectivesByUserRequest $request    OkrObjectivesByUserRequest
      *
-     * @return OkrObjectivesByUserResponse
+     * @return OkrObjectivesByUserResponse OkrObjectivesByUserResponse
      */
     public function okrObjectivesByUser($dingUserId, $request)
     {
@@ -944,11 +1000,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrPeriodsRequest $request
-     * @param OkrPeriodsHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @summary 获取 OKR 周期
+     *  *
+     * @param OkrPeriodsRequest $request OkrPeriodsRequest
+     * @param OkrPeriodsHeaders $headers OkrPeriodsHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
      *
-     * @return OkrPeriodsResponse
+     * @return OkrPeriodsResponse OkrPeriodsResponse
      */
     public function okrPeriodsWithOptions($request, $headers, $runtime)
     {
@@ -993,9 +1051,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OkrPeriodsRequest $request
+     * @summary 获取 OKR 周期
+     *  *
+     * @param OkrPeriodsRequest $request OkrPeriodsRequest
      *
-     * @return OkrPeriodsResponse
+     * @return OkrPeriodsResponse OkrPeriodsResponse
      */
     public function okrPeriods($request)
     {
@@ -1006,12 +1066,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary  取消对齐Objective
+     *  *
      * @param string                  $objectiveId
-     * @param UnAlignObjectiveRequest $request
-     * @param UnAlignObjectiveHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UnAlignObjectiveRequest $request     UnAlignObjectiveRequest
+     * @param UnAlignObjectiveHeaders $headers     UnAlignObjectiveHeaders
+     * @param RuntimeOptions          $runtime     runtime options for this request RuntimeOptions
      *
-     * @return UnAlignObjectiveResponse
+     * @return UnAlignObjectiveResponse UnAlignObjectiveResponse
      */
     public function unAlignObjectiveWithOptions($objectiveId, $request, $headers, $runtime)
     {
@@ -1055,10 +1117,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary  取消对齐Objective
+     *  *
      * @param string                  $objectiveId
-     * @param UnAlignObjectiveRequest $request
+     * @param UnAlignObjectiveRequest $request     UnAlignObjectiveRequest
      *
-     * @return UnAlignObjectiveResponse
+     * @return UnAlignObjectiveResponse UnAlignObjectiveResponse
      */
     public function unAlignObjective($objectiveId, $request)
     {
@@ -1069,11 +1133,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfContentRequest $request
-     * @param UpdateKROfContentHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 更改KR内容
+     *  *
+     * @param UpdateKROfContentRequest $request UpdateKROfContentRequest
+     * @param UpdateKROfContentHeaders $headers UpdateKROfContentHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateKROfContentResponse
+     * @return UpdateKROfContentResponse UpdateKROfContentResponse
      */
     public function updateKROfContentWithOptions($request, $headers, $runtime)
     {
@@ -1120,9 +1186,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfContentRequest $request
+     * @summary 更改KR内容
+     *  *
+     * @param UpdateKROfContentRequest $request UpdateKROfContentRequest
      *
-     * @return UpdateKROfContentResponse
+     * @return UpdateKROfContentResponse UpdateKROfContentResponse
      */
     public function updateKROfContent($request)
     {
@@ -1133,11 +1201,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfScoreRequest $request
-     * @param UpdateKROfScoreHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 更改KR分数
+     *  *
+     * @param UpdateKROfScoreRequest $request UpdateKROfScoreRequest
+     * @param UpdateKROfScoreHeaders $headers UpdateKROfScoreHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateKROfScoreResponse
+     * @return UpdateKROfScoreResponse UpdateKROfScoreResponse
      */
     public function updateKROfScoreWithOptions($request, $headers, $runtime)
     {
@@ -1181,9 +1251,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfScoreRequest $request
+     * @summary 更改KR分数
+     *  *
+     * @param UpdateKROfScoreRequest $request UpdateKROfScoreRequest
      *
-     * @return UpdateKROfScoreResponse
+     * @return UpdateKROfScoreResponse UpdateKROfScoreResponse
      */
     public function updateKROfScore($request)
     {
@@ -1194,11 +1266,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfWeightRequest $request
-     * @param UpdateKROfWeightHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 更改 KR 权重
+     *  *
+     * @param UpdateKROfWeightRequest $request UpdateKROfWeightRequest
+     * @param UpdateKROfWeightHeaders $headers UpdateKROfWeightHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateKROfWeightResponse
+     * @return UpdateKROfWeightResponse UpdateKROfWeightResponse
      */
     public function updateKROfWeightWithOptions($request, $headers, $runtime)
     {
@@ -1242,9 +1316,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateKROfWeightRequest $request
+     * @summary 更改 KR 权重
+     *  *
+     * @param UpdateKROfWeightRequest $request UpdateKROfWeightRequest
      *
-     * @return UpdateKROfWeightResponse
+     * @return UpdateKROfWeightResponse UpdateKROfWeightResponse
      */
     public function updateKROfWeight($request)
     {
@@ -1255,12 +1331,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新目标
+     *  *
      * @param string                 $objectiveId
-     * @param UpdateObjectiveRequest $request
-     * @param UpdateObjectiveHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param UpdateObjectiveRequest $request     UpdateObjectiveRequest
+     * @param UpdateObjectiveHeaders $headers     UpdateObjectiveHeaders
+     * @param RuntimeOptions         $runtime     runtime options for this request RuntimeOptions
      *
-     * @return UpdateObjectiveResponse
+     * @return UpdateObjectiveResponse UpdateObjectiveResponse
      */
     public function updateObjectiveWithOptions($objectiveId, $request, $headers, $runtime)
     {
@@ -1301,10 +1379,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 更新目标
+     *  *
      * @param string                 $objectiveId
-     * @param UpdateObjectiveRequest $request
+     * @param UpdateObjectiveRequest $request     UpdateObjectiveRequest
      *
-     * @return UpdateObjectiveResponse
+     * @return UpdateObjectiveResponse UpdateObjectiveResponse
      */
     public function updateObjective($objectiveId, $request)
     {
@@ -1315,11 +1395,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePrivacyRequest $request
-     * @param UpdatePrivacyHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 更新资源隐私策略
+     *  *
+     * @param UpdatePrivacyRequest $request UpdatePrivacyRequest
+     * @param UpdatePrivacyHeaders $headers UpdatePrivacyHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdatePrivacyResponse
+     * @return UpdatePrivacyResponse UpdatePrivacyResponse
      */
     public function updatePrivacyWithOptions($request, $headers, $runtime)
     {
@@ -1366,9 +1448,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePrivacyRequest $request
+     * @summary 更新资源隐私策略
+     *  *
+     * @param UpdatePrivacyRequest $request UpdatePrivacyRequest
      *
-     * @return UpdatePrivacyResponse
+     * @return UpdatePrivacyResponse UpdatePrivacyResponse
      */
     public function updatePrivacy($request)
     {

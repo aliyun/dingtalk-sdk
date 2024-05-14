@@ -24,6 +24,8 @@ class ListGroupSetResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var resultList[]
      */
     public $resultList;

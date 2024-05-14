@@ -17,11 +17,15 @@ class schemaContent extends Model
     public $icon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var items[]
      */
     public $items;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 示例模板
      *
      * @var string

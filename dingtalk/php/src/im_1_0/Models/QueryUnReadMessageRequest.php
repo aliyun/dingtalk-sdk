@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUnReadMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1107****2120
      *
      * @var string

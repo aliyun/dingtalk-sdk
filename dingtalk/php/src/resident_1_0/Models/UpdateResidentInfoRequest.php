@@ -39,6 +39,8 @@ class UpdateResidentInfoRequest extends Model
     public $location;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试小区1
      *
      * @var string
@@ -51,6 +53,8 @@ class UpdateResidentInfoRequest extends Model
     public $provName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

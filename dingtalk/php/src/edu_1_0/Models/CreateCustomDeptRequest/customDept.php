@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class customDept extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 紫金港校区
      *
      * @var string
@@ -16,6 +18,8 @@ class customDept extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example custom_dept
      *
      * @var string

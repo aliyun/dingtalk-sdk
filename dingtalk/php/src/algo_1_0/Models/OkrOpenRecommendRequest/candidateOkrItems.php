@@ -15,11 +15,15 @@ class candidateOkrItems extends Model
     public $okrInfos;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relation;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HrmMokaOapiRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example /user/role/get
      *
      * @var string

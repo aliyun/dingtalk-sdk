@@ -25,11 +25,15 @@ class data extends Model
     public $cardCycle;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int[]
      */
     public $cardFrequency;
 
     /**
+     * @description This parameter is required.
+     *
      * @var cardRuleItemParamList[]
      */
     public $cardRuleItemParamList;
@@ -45,6 +49,8 @@ class data extends Model
     public $classNames;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 打卡的内容
      *
      * @var string
@@ -67,16 +73,22 @@ class data extends Model
     public $needMetering;
 
     /**
+     * @description This parameter is required.
+     *
      * @var orgClassStudentGroupList[]
      */
     public $orgClassStudentGroupList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $remindHour;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $remindMinute;
@@ -92,6 +104,8 @@ class data extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;

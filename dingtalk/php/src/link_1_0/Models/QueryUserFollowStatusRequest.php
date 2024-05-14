@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFollowStatusRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string

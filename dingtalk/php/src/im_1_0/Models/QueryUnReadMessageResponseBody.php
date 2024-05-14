@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUnReadMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

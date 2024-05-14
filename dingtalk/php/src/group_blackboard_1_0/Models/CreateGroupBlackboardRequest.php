@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupBlackboardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 这是一条群公告
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateGroupBlackboardRequest extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cid123456
      *
      * @var string
@@ -37,6 +41,8 @@ class CreateGroupBlackboardRequest extends Model
     public $sticky;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string
@@ -44,6 +50,8 @@ class CreateGroupBlackboardRequest extends Model
     public $uniqueId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 001
      *
      * @var string

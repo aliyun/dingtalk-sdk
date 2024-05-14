@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class MoveDentriesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $dentryIds;
@@ -20,6 +22,8 @@ class MoveDentriesRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example target_folder_id
      *
      * @var string
@@ -27,6 +31,8 @@ class MoveDentriesRequest extends Model
     public $targetFolderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example target_space_id
      *
      * @var string
@@ -34,6 +40,8 @@ class MoveDentriesRequest extends Model
     public $targetSpaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

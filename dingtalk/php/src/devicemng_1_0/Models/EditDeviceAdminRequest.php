@@ -23,6 +23,8 @@ class EditDeviceAdminRequest extends Model
     public $roleUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

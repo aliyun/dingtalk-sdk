@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeDetailListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var batchTradeDetailList[]
      */
     public $batchTradeDetailList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -22,6 +26,8 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -36,6 +42,8 @@ class QueryBatchTradeDetailListResponseBody extends Model
     public $total;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

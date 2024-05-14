@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryActiveUsersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var activeUserInfos[]
      */
     public $activeUserInfos;

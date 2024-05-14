@@ -26,6 +26,8 @@ class TransformToExclusiveAccountRequest extends Model
     public $loginId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example migrate
      *
      * @var string
@@ -33,6 +35,8 @@ class TransformToExclusiveAccountRequest extends Model
     public $transformType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

@@ -23,6 +23,8 @@ class CreateCooperateOrgRequest extends Model
     public $logoMediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试联盟
      *
      * @var string

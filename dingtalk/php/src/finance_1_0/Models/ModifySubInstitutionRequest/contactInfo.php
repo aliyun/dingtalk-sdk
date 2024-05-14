@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class contactInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 李某某
      *
      * @var string
@@ -16,6 +18,8 @@ class contactInfo extends Model
     public $contactName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13900000000
      *
      * @var string

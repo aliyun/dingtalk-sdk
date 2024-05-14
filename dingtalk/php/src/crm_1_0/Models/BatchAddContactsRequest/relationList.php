@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class relationList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bizDataList[]
      */
     public $bizDataList;

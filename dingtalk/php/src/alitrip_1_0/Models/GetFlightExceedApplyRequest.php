@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFlightExceedApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -16,6 +18,8 @@ class GetFlightExceedApplyRequest extends Model
     public $applyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string

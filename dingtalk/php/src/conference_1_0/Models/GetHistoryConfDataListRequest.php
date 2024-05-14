@@ -16,6 +16,8 @@ class GetHistoryConfDataListRequest extends Model
     public $creatorNike;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1682611199000
      *
      * @var int
@@ -44,6 +46,8 @@ class GetHistoryConfDataListRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $realData;
@@ -56,6 +60,8 @@ class GetHistoryConfDataListRequest extends Model
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1682524800000
      *
      * @var int

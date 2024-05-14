@@ -15,6 +15,8 @@ class ServiceWindowMessageBatchPushRequest extends Model
     public $bizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var detail
      */
     public $detail;

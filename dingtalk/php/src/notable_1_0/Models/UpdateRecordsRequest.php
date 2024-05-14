@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateRecordsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var records[]
      */
     public $records;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

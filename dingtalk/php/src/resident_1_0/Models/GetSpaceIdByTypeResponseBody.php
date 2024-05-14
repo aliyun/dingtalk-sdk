@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceIdByTypeResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12343
      *
      * @var int

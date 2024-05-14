@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class QueryTaskOfProjectResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example f279e812-e431-428d-846d-cxxxxxx
      *
      * @var string
@@ -22,6 +24,8 @@ class QueryTaskOfProjectResponseBody extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 35
      *
      * @var int

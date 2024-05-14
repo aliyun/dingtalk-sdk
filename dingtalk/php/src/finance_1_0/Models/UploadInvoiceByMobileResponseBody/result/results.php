@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 20006
      *
      * @var string
@@ -16,6 +18,8 @@ class results extends Model
     public $errCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 033002000712
      *
      * @var string
@@ -23,6 +27,8 @@ class results extends Model
     public $invoiceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20532643
      *
      * @var string
@@ -30,6 +36,8 @@ class results extends Model
     public $invoiceNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example duplicateInvoice
      *
      * @var string
@@ -37,6 +45,8 @@ class results extends Model
     public $reason;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

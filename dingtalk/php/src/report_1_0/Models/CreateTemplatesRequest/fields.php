@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class fields extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -22,16 +24,22 @@ class fields extends Model
     public $dataValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $need;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -39,6 +47,8 @@ class fields extends Model
     public $order;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

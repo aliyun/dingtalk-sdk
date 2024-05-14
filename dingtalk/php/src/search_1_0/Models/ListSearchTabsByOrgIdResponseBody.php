@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListSearchTabsByOrgIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var searchTabResult[]
      */
     public $searchTabResult;

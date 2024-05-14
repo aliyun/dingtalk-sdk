@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class target extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -28,6 +30,8 @@ class target extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formCode;

@@ -17,6 +17,8 @@ class result extends Model
     public $objId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example admind123
      *
      * @var string

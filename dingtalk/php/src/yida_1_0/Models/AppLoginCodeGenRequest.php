@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class AppLoginCodeGenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $appKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $signTimestampStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $signature;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.aliwork.com/APP_xx/workbench
      *
      * @var string
@@ -31,6 +39,8 @@ class AppLoginCodeGenRequest extends Model
     public $fullUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123456
      *
      * @var string

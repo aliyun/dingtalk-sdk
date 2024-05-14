@@ -16,6 +16,8 @@ class item extends Model
     public $dingConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxxx
      *
      * @var string
@@ -33,6 +35,8 @@ class item extends Model
     public $subErrMsg;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

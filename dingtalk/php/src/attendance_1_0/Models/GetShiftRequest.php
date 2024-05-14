@@ -14,6 +14,8 @@ class GetShiftRequest extends Model
     public $opUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int

@@ -16,11 +16,15 @@ class GetUserByUnionIdRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $subCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

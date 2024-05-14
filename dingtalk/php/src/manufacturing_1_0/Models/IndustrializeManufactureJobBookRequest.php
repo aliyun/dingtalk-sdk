@@ -23,6 +23,8 @@ class IndustrializeManufactureJobBookRequest extends Model
     public $extend;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instNo;
@@ -35,6 +37,8 @@ class IndustrializeManufactureJobBookRequest extends Model
     public $isBatchJob;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-05 08:00:21
      *
      * @var string
@@ -42,6 +46,8 @@ class IndustrializeManufactureJobBookRequest extends Model
     public $manufactureDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mesAppKey;
@@ -77,6 +83,8 @@ class IndustrializeManufactureJobBookRequest extends Model
     public $productSpecification;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $qualifiedQuantity;
@@ -118,6 +126,8 @@ class IndustrializeManufactureJobBookRequest extends Model
     public $userNameList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uuid;

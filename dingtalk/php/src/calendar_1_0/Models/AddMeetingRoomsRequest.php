@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddMeetingRoomsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var meetingRoomsToAdd[]
      */
     public $meetingRoomsToAdd;

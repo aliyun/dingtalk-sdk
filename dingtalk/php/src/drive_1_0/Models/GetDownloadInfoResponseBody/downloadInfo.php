@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class downloadInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $expirationSeconds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $headers;
@@ -24,6 +28,8 @@ class downloadInfo extends Model
     public $internalResourceUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $resourceUrl;

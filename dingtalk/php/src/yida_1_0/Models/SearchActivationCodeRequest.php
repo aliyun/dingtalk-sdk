@@ -14,6 +14,8 @@ class SearchActivationCodeRequest extends Model
     public $accessKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $callerUid;

@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class InstallCoolAppShrinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
@@ -29,11 +35,15 @@ class InstallCoolAppShrinkRequest extends Model
     public $featureShrink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $installUid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $openConversationId;
@@ -44,6 +54,8 @@ class InstallCoolAppShrinkRequest extends Model
     public $optionsShrink;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $suiteId;

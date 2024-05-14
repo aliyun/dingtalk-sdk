@@ -55,6 +55,8 @@ class GetMsgConfigRequest extends Model
     public $ruleCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $secretKey;

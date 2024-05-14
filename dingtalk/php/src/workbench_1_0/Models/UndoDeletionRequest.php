@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class UndoDeletionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $bizIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $redDotRelationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example workbench_component
      *
      * @var string
@@ -26,6 +32,8 @@ class UndoDeletionRequest extends Model
     public $redDotType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

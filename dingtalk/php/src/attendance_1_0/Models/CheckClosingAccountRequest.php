@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class CheckClosingAccountRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var userTimeRange[]
      */
     public $userTimeRange;

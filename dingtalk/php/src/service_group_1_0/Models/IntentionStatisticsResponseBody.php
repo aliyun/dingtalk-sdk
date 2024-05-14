@@ -11,11 +11,15 @@ use AlibabaCloud\Tea\Model;
 class IntentionStatisticsResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var intentionStatisticsRecords[]
      */
     public $intentionStatisticsRecords;
 
     /**
+     * @description This parameter is required.
+     *
      * @var intentionTrend[]
      */
     public $intentionTrend;

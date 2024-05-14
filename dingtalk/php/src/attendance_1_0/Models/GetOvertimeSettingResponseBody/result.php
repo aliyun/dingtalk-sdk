@@ -22,6 +22,8 @@ class result extends Model
     public $durationSettings;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $id;

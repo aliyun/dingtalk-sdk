@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreatWithholdingOrderAndPayResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10.01
      *
      * @var string
@@ -23,6 +25,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $gmtPay;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111010001
      *
      * @var string
@@ -30,6 +34,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202121241343151
      *
      * @var string
@@ -37,6 +43,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111020001
      *
      * @var string
@@ -44,6 +52,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $outTradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -51,6 +61,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $payChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13****09
      *
      * @var string
@@ -58,6 +70,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $payChannelAccountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123124
      *
      * @var string
@@ -72,6 +86,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string
@@ -79,6 +95,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -86,6 +104,8 @@ class CreatWithholdingOrderAndPayResponseBody extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 餐费
      *
      * @var string

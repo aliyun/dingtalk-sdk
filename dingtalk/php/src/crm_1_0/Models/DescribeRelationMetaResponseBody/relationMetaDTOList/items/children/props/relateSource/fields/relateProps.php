@@ -11,16 +11,22 @@ use AlibabaCloud\Tea\Model;
 class relateProps extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $align;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $bizAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1：多选，0：单选
      *
      * @var int
@@ -28,11 +34,15 @@ class relateProps extends Model
     public $choice;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：可编辑
      *
      * @var bool
@@ -40,6 +50,8 @@ class relateProps extends Model
     public $disabled;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：自动
      *
      * @var string
@@ -47,11 +59,15 @@ class relateProps extends Model
     public $duration;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fieldId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example DDDateField和DDDateRangeField
      *
      * @var string
@@ -59,11 +75,15 @@ class relateProps extends Model
     public $format;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $formula;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：隐藏
      *
      * @var bool
@@ -71,26 +91,36 @@ class relateProps extends Model
     public $invisible;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $label;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $labelEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $link;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $multi;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1:不需要大写, 空或者0:需要大写
      *
      * @var string
@@ -98,11 +128,15 @@ class relateProps extends Model
     public $notUpper;
 
     /**
+     * @description This parameter is required.
+     *
      * @var options[]
      */
     public $options;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：是
      *
      * @var bool
@@ -110,16 +144,22 @@ class relateProps extends Model
     public $payEnable;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $placeholder;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quote;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：必填
      *
      * @var bool
@@ -127,21 +167,29 @@ class relateProps extends Model
     public $required;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $requiredEditableFreeze;
 
     /**
+     * @description This parameter is required.
+     *
      * @var statField[]
      */
     public $statField;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true：纵向，false：横向
      *
      * @var bool

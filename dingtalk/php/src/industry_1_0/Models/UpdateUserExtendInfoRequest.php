@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateUserExtendInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 备注, 当jobStatusCode为其他(0)时, 需要通过该字段补充状态
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateUserExtendInfoRequest extends Model
     public $comments;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string
@@ -28,6 +32,8 @@ class UpdateUserExtendInfoRequest extends Model
     public $jobStatusCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

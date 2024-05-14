@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class LiandanluExclusiveModelRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example maas1234
      *
      * @var string
@@ -16,6 +18,8 @@ class LiandanluExclusiveModelRequest extends Model
     public $modelId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example GENERAL
      *
      * @var string
@@ -23,6 +27,8 @@ class LiandanluExclusiveModelRequest extends Model
     public $module;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OKR是什么
      *
      * @var string
@@ -30,6 +36,8 @@ class LiandanluExclusiveModelRequest extends Model
     public $prompt;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 使用该功能的用户id
      *
      * @var string

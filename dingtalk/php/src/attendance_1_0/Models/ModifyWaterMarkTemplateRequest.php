@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ModifyWaterMarkTemplateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
@@ -30,6 +32,8 @@ class ModifyWaterMarkTemplateRequest extends Model
     public $layoutDesignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
      *
      * @var string
@@ -51,6 +55,8 @@ class ModifyWaterMarkTemplateRequest extends Model
     public $waterMarkId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1234567
      *
      * @var string
@@ -58,6 +64,8 @@ class ModifyWaterMarkTemplateRequest extends Model
     public $openConversationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manage123
      *
      * @var string

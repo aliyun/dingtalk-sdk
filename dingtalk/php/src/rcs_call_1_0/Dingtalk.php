@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RunCallUserRequest $request
-     * @param RunCallUserHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+     *  *
+     * @param RunCallUserRequest $request RunCallUserRequest
+     * @param RunCallUserHeaders $headers RunCallUserHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return RunCallUserResponse
+     * @return RunCallUserResponse RunCallUserResponse
      */
     public function runCallUserWithOptions($request, $headers, $runtime)
     {
@@ -80,9 +82,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RunCallUserRequest $request
+     * @summary 主叫方发起免费电话给授权企业人员，关联订单id
+     *  *
+     * @param RunCallUserRequest $request RunCallUserRequest
      *
-     * @return RunCallUserResponse
+     * @return RunCallUserResponse RunCallUserResponse
      */
     public function runCallUser($request)
     {

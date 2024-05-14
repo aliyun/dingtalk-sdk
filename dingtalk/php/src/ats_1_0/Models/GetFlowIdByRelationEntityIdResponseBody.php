@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetFlowIdByRelationEntityIdResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxx
      *
      * @var string

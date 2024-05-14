@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class appList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -16,6 +18,8 @@ class appList extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var int
@@ -23,6 +27,8 @@ class appList extends Model
     public $appId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +43,8 @@ class appList extends Model
     public $desc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

@@ -21,6 +21,8 @@ class UpdateCardRequest extends Model
     public $cardUpdateOptions;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123
      *
      * @var string

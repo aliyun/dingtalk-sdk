@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetDingReportSummaryResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var string

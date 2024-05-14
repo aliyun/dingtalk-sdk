@@ -14,16 +14,22 @@ class QueryUserBehaviorRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $platform;
@@ -34,6 +40,8 @@ class QueryUserBehaviorRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $type;

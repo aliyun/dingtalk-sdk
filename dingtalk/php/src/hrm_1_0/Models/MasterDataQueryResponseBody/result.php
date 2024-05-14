@@ -17,6 +17,8 @@ class result extends Model
     public $outerId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example admind123
      *
      * @var string
@@ -24,6 +26,8 @@ class result extends Model
     public $relationId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example PERFORMANCE
      *
      * @var string
@@ -31,6 +35,8 @@ class result extends Model
     public $scopeCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example base
      *
      * @var string

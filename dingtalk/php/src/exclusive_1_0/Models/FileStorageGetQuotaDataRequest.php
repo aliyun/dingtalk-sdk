@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class FileStorageGetQuotaDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2022-04
      *
      * @var string
@@ -16,6 +18,8 @@ class FileStorageGetQuotaDataRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-04
      *
      * @var string
@@ -23,6 +27,8 @@ class FileStorageGetQuotaDataRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding77b8cac4e026cc123xxxxxxxxeb6378f
      *
      * @var string
@@ -30,6 +36,8 @@ class FileStorageGetQuotaDataRequest extends Model
     public $targetCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var string

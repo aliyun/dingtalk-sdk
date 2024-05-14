@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class CreateFlashMeetingRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $eventId;

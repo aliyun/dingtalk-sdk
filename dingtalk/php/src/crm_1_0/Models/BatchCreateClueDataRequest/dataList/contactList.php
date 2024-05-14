@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class contactList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

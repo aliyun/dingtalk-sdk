@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddApplicationRegFormTemplateResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example xxxxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class AddApplicationRegFormTemplateResponseBody extends Model
     public $templateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

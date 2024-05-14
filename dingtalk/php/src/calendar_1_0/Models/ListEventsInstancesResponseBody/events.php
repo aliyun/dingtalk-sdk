@@ -23,6 +23,8 @@ class events extends Model
     public $attendees;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-01-01T10:15:30+08:00
      *
      * @var string
@@ -112,6 +114,8 @@ class events extends Model
     public $summary;
 
     /**
+     * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
+     *
      * @example 2020-01-01T10:15:30+08:00
      *
      * @var string

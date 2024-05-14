@@ -10,56 +10,78 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorNick;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $data;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $extendData;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $objectType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var permission
      */
     public $permission;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $procInstStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $procOutResult;

@@ -30,6 +30,8 @@ class punchParam extends Model
     public $positionType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1650511474978
      *
      * @var int

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SaveOpenTerminalInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dingf8d907412a586
      *
      * @var string
@@ -16,6 +18,8 @@ class SaveOpenTerminalInfoRequest extends Model
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 云枢
      *
      * @var string
@@ -23,6 +27,8 @@ class SaveOpenTerminalInfoRequest extends Model
     public $logSource;
 
     /**
+     * @description This parameter is required.
+     *
      * @example terminalInfo
      *
      * @var string
@@ -30,6 +36,8 @@ class SaveOpenTerminalInfoRequest extends Model
     public $logType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example [{"date":"2023-05-10","macAddress":"34-2E-B7-AF-EA-JF","devSn":"68D1F0-B76A-5CC9-BCFC-BD7548BA","staffId":"05166141678164"}]
      *
      * @var string

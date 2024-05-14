@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class feedItem extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 9320
      *
      * @var int
@@ -16,6 +18,8 @@ class feedItem extends Model
     public $durationMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int
@@ -23,6 +27,8 @@ class feedItem extends Model
     public $feedContentType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 08****b5-2442-****-bd56-99cf****8861
      *
      * @var string
@@ -30,6 +36,8 @@ class feedItem extends Model
     public $itemId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 子内容标题
      *
      * @var string
@@ -37,6 +45,8 @@ class feedItem extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://h5.dingtalk.com/live/video_lesson.htm?feedId=66****03-a825-****-9501-b1eeb****a8d&mcnId=1832**********06173&feedProperty=2&itemId=08****b5-2442-****-bd56-99c*****8861&dd_nav_bgcolor=FF2C2D2F#/video
      *
      * @var string

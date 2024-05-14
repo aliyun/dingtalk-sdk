@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class member extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;

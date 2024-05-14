@@ -23,6 +23,8 @@ class UpdateTeamRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string

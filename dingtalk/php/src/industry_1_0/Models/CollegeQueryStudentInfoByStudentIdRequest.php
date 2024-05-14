@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CollegeQueryStudentInfoByStudentIdRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 22222
      *
      * @var int

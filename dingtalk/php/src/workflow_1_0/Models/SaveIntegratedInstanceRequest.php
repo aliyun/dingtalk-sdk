@@ -28,11 +28,15 @@ class SaveIntegratedInstanceRequest extends Model
     public $notifiers;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $originatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processCode;
@@ -43,6 +47,8 @@ class SaveIntegratedInstanceRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.dingtalk.com/
      *
      * @var string

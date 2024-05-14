@@ -67,12 +67,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加权限
+     *  *
      * @param string               $dentryUuid
-     * @param AddPermissionRequest $request
-     * @param AddPermissionHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param AddPermissionRequest $request    AddPermissionRequest
+     * @param AddPermissionHeaders $headers    AddPermissionHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
      *
-     * @return AddPermissionResponse
+     * @return AddPermissionResponse AddPermissionResponse
      */
     public function addPermissionWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -119,10 +121,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 添加权限
+     *  *
      * @param string               $dentryUuid
-     * @param AddPermissionRequest $request
+     * @param AddPermissionRequest $request    AddPermissionRequest
      *
-     * @return AddPermissionResponse
+     * @return AddPermissionResponse AddPermissionResponse
      */
     public function addPermission($dentryUuid, $request)
     {
@@ -133,12 +137,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 提交文件
+     *  *
      * @param string            $parentDentryUuid
-     * @param CommitFileRequest $request
-     * @param CommitFileHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param CommitFileRequest $request          CommitFileRequest
+     * @param CommitFileHeaders $headers          CommitFileHeaders
+     * @param RuntimeOptions    $runtime          runtime options for this request RuntimeOptions
      *
-     * @return CommitFileResponse
+     * @return CommitFileResponse CommitFileResponse
      */
     public function commitFileWithOptions($parentDentryUuid, $request, $headers, $runtime)
     {
@@ -185,10 +191,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 提交文件
+     *  *
      * @param string            $parentDentryUuid
-     * @param CommitFileRequest $request
+     * @param CommitFileRequest $request          CommitFileRequest
      *
-     * @return CommitFileResponse
+     * @return CommitFileResponse CommitFileResponse
      */
     public function commitFile($parentDentryUuid, $request)
     {
@@ -199,12 +207,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除权限
+     *  *
      * @param string                  $dentryUuid
-     * @param DeletePermissionRequest $request
-     * @param DeletePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param DeletePermissionRequest $request    DeletePermissionRequest
+     * @param DeletePermissionHeaders $headers    DeletePermissionHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
      *
-     * @return DeletePermissionResponse
+     * @return DeletePermissionResponse DeletePermissionResponse
      */
     public function deletePermissionWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -248,10 +258,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除权限
+     *  *
      * @param string                  $dentryUuid
-     * @param DeletePermissionRequest $request
+     * @param DeletePermissionRequest $request    DeletePermissionRequest
      *
-     * @return DeletePermissionResponse
+     * @return DeletePermissionResponse DeletePermissionResponse
      */
     public function deletePermission($dentryUuid, $request)
     {
@@ -262,12 +274,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取文件上传信息
+     *  *
      * @param string                   $parentDentryUuid
-     * @param GetFileUploadInfoRequest $request
-     * @param GetFileUploadInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetFileUploadInfoRequest $request          GetFileUploadInfoRequest
+     * @param GetFileUploadInfoHeaders $headers          GetFileUploadInfoHeaders
+     * @param RuntimeOptions           $runtime          runtime options for this request RuntimeOptions
      *
-     * @return GetFileUploadInfoResponse
+     * @return GetFileUploadInfoResponse GetFileUploadInfoResponse
      */
     public function getFileUploadInfoWithOptions($parentDentryUuid, $request, $headers, $runtime)
     {
@@ -311,10 +325,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取文件上传信息
+     *  *
      * @param string                   $parentDentryUuid
-     * @param GetFileUploadInfoRequest $request
+     * @param GetFileUploadInfoRequest $request          GetFileUploadInfoRequest
      *
-     * @return GetFileUploadInfoResponse
+     * @return GetFileUploadInfoResponse GetFileUploadInfoResponse
      */
     public function getFileUploadInfo($parentDentryUuid, $request)
     {
@@ -325,12 +341,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取权限继承模式
+     *  *
      * @param string                          $dentryUuid
-     * @param GetPermissionInheritanceRequest $request
-     * @param GetPermissionInheritanceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param GetPermissionInheritanceRequest $request    GetPermissionInheritanceRequest
+     * @param GetPermissionInheritanceHeaders $headers    GetPermissionInheritanceHeaders
+     * @param RuntimeOptions                  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return GetPermissionInheritanceResponse
+     * @return GetPermissionInheritanceResponse GetPermissionInheritanceResponse
      */
     public function getPermissionInheritanceWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -366,10 +384,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取权限继承模式
+     *  *
      * @param string                          $dentryUuid
-     * @param GetPermissionInheritanceRequest $request
+     * @param GetPermissionInheritanceRequest $request    GetPermissionInheritanceRequest
      *
-     * @return GetPermissionInheritanceResponse
+     * @return GetPermissionInheritanceResponse GetPermissionInheritanceResponse
      */
     public function getPermissionInheritance($dentryUuid, $request)
     {
@@ -380,12 +400,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取权限列表
+     *  *
      * @param string                 $dentryUuid
-     * @param ListPermissionsRequest $request
-     * @param ListPermissionsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ListPermissionsRequest $request    ListPermissionsRequest
+     * @param ListPermissionsHeaders $headers    ListPermissionsHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
      *
-     * @return ListPermissionsResponse
+     * @return ListPermissionsResponse ListPermissionsResponse
      */
     public function listPermissionsWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -426,10 +448,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取权限列表
+     *  *
      * @param string                 $dentryUuid
-     * @param ListPermissionsRequest $request
+     * @param ListPermissionsRequest $request    ListPermissionsRequest
      *
-     * @return ListPermissionsResponse
+     * @return ListPermissionsResponse ListPermissionsResponse
      */
     public function listPermissions($dentryUuid, $request)
     {
@@ -440,11 +464,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManagerGetDefaultHandOverUserRequest $request
-     * @param ManagerGetDefaultHandOverUserHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 查询员工离职时空间默认转交人(管理员)
+     *  *
+     * @param ManagerGetDefaultHandOverUserRequest $request ManagerGetDefaultHandOverUserRequest
+     * @param ManagerGetDefaultHandOverUserHeaders $headers ManagerGetDefaultHandOverUserHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return ManagerGetDefaultHandOverUserResponse
+     * @return ManagerGetDefaultHandOverUserResponse ManagerGetDefaultHandOverUserResponse
      */
     public function managerGetDefaultHandOverUserWithOptions($request, $headers, $runtime)
     {
@@ -480,9 +506,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManagerGetDefaultHandOverUserRequest $request
+     * @summary 查询员工离职时空间默认转交人(管理员)
+     *  *
+     * @param ManagerGetDefaultHandOverUserRequest $request ManagerGetDefaultHandOverUserRequest
      *
-     * @return ManagerGetDefaultHandOverUserResponse
+     * @return ManagerGetDefaultHandOverUserResponse ManagerGetDefaultHandOverUserResponse
      */
     public function managerGetDefaultHandOverUser($request)
     {
@@ -493,11 +521,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManagerSetDefaultHandOverUserRequest $request
-     * @param ManagerSetDefaultHandOverUserHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @summary 设置员工离职时空间默认转交人(管理员)
+     *  *
+     * @param ManagerSetDefaultHandOverUserRequest $request ManagerSetDefaultHandOverUserRequest
+     * @param ManagerSetDefaultHandOverUserHeaders $headers ManagerSetDefaultHandOverUserHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
-     * @return ManagerSetDefaultHandOverUserResponse
+     * @return ManagerSetDefaultHandOverUserResponse ManagerSetDefaultHandOverUserResponse
      */
     public function managerSetDefaultHandOverUserWithOptions($request, $headers, $runtime)
     {
@@ -538,9 +568,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ManagerSetDefaultHandOverUserRequest $request
+     * @summary 设置员工离职时空间默认转交人(管理员)
+     *  *
+     * @param ManagerSetDefaultHandOverUserRequest $request ManagerSetDefaultHandOverUserRequest
      *
-     * @return ManagerSetDefaultHandOverUserResponse
+     * @return ManagerSetDefaultHandOverUserResponse ManagerSetDefaultHandOverUserResponse
      */
     public function managerSetDefaultHandOverUser($request)
     {
@@ -551,11 +583,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchDentriesRequest $request
-     * @param SearchDentriesHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 搜索文件
+     *  *
+     * @param SearchDentriesRequest $request SearchDentriesRequest
+     * @param SearchDentriesHeaders $headers SearchDentriesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchDentriesResponse
+     * @return SearchDentriesResponse SearchDentriesResponse
      */
     public function searchDentriesWithOptions($request, $headers, $runtime)
     {
@@ -599,9 +633,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchDentriesRequest $request
+     * @summary 搜索文件
+     *  *
+     * @param SearchDentriesRequest $request SearchDentriesRequest
      *
-     * @return SearchDentriesResponse
+     * @return SearchDentriesResponse SearchDentriesResponse
      */
     public function searchDentries($request)
     {
@@ -612,11 +648,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchPublishDentriesRequest $request
-     * @param SearchPublishDentriesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 搜索公开发布文件
+     *  *
+     * @param SearchPublishDentriesRequest $request SearchPublishDentriesRequest
+     * @param SearchPublishDentriesHeaders $headers SearchPublishDentriesHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchPublishDentriesResponse
+     * @return SearchPublishDentriesResponse SearchPublishDentriesResponse
      */
     public function searchPublishDentriesWithOptions($request, $headers, $runtime)
     {
@@ -663,9 +701,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchPublishDentriesRequest $request
+     * @summary 搜索公开发布文件
+     *  *
+     * @param SearchPublishDentriesRequest $request SearchPublishDentriesRequest
      *
-     * @return SearchPublishDentriesResponse
+     * @return SearchPublishDentriesResponse SearchPublishDentriesResponse
      */
     public function searchPublishDentries($request)
     {
@@ -676,11 +716,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchWorkspacesRequest $request
-     * @param SearchWorkspacesHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 搜索知识库
+     *  *
+     * @param SearchWorkspacesRequest $request SearchWorkspacesRequest
+     * @param SearchWorkspacesHeaders $headers SearchWorkspacesHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchWorkspacesResponse
+     * @return SearchWorkspacesResponse SearchWorkspacesResponse
      */
     public function searchWorkspacesWithOptions($request, $headers, $runtime)
     {
@@ -724,9 +766,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchWorkspacesRequest $request
+     * @summary 搜索知识库
+     *  *
+     * @param SearchWorkspacesRequest $request SearchWorkspacesRequest
      *
-     * @return SearchWorkspacesResponse
+     * @return SearchWorkspacesResponse SearchWorkspacesResponse
      */
     public function searchWorkspaces($request)
     {
@@ -737,12 +781,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置权限继承模式
+     *  *
      * @param string                          $dentryUuid
-     * @param SetPermissionInheritanceRequest $request
-     * @param SetPermissionInheritanceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param SetPermissionInheritanceRequest $request    SetPermissionInheritanceRequest
+     * @param SetPermissionInheritanceHeaders $headers    SetPermissionInheritanceHeaders
+     * @param RuntimeOptions                  $runtime    runtime options for this request RuntimeOptions
      *
-     * @return SetPermissionInheritanceResponse
+     * @return SetPermissionInheritanceResponse SetPermissionInheritanceResponse
      */
     public function setPermissionInheritanceWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -783,10 +829,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置权限继承模式
+     *  *
      * @param string                          $dentryUuid
-     * @param SetPermissionInheritanceRequest $request
+     * @param SetPermissionInheritanceRequest $request    SetPermissionInheritanceRequest
      *
-     * @return SetPermissionInheritanceResponse
+     * @return SetPermissionInheritanceResponse SetPermissionInheritanceResponse
      */
     public function setPermissionInheritance($dentryUuid, $request)
     {
@@ -797,12 +845,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改权限
+     *  *
      * @param string                  $dentryUuid
-     * @param UpdatePermissionRequest $request
-     * @param UpdatePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UpdatePermissionRequest $request    UpdatePermissionRequest
+     * @param UpdatePermissionHeaders $headers    UpdatePermissionHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
      *
-     * @return UpdatePermissionResponse
+     * @return UpdatePermissionResponse UpdatePermissionResponse
      */
     public function updatePermissionWithOptions($dentryUuid, $request, $headers, $runtime)
     {
@@ -849,10 +899,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改权限
+     *  *
      * @param string                  $dentryUuid
-     * @param UpdatePermissionRequest $request
+     * @param UpdatePermissionRequest $request    UpdatePermissionRequest
      *
-     * @return UpdatePermissionResponse
+     * @return UpdatePermissionResponse UpdatePermissionResponse
      */
     public function updatePermission($dentryUuid, $request)
     {

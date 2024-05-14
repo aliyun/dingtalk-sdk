@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class webWndParams extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example https://www.dingtalk.com/
      *
      * @var string

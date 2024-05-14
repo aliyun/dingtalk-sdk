@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTranslateFileJobResultRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fXrgPrvsNiZNa8RWis9Nk1SY
      *
      * @var string

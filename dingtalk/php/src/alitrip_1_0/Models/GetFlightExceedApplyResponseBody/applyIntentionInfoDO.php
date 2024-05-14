@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example HGH
      *
      * @var string
@@ -16,6 +18,8 @@ class applyIntentionInfoDO extends Model
     public $arrCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 杭州
      *
      * @var string
@@ -23,6 +27,8 @@ class applyIntentionInfoDO extends Model
     public $arrCityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-08 15:23:56
      *
      * @var string
@@ -30,6 +36,8 @@ class applyIntentionInfoDO extends Model
     public $arrTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example F
      *
      * @var string
@@ -37,6 +45,8 @@ class applyIntentionInfoDO extends Model
     public $cabin;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -44,6 +54,8 @@ class applyIntentionInfoDO extends Model
     public $cabinClass;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 经济舱
      *
      * @var string
@@ -51,6 +63,8 @@ class applyIntentionInfoDO extends Model
     public $cabinClassStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SHA
      *
      * @var string
@@ -58,6 +72,8 @@ class applyIntentionInfoDO extends Model
     public $depCity;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 上海
      *
      * @var string
@@ -65,6 +81,8 @@ class applyIntentionInfoDO extends Model
     public $depCityName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-07-08 15:23:56
      *
      * @var string
@@ -72,6 +90,8 @@ class applyIntentionInfoDO extends Model
     public $depTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 4.1
      *
      * @var float
@@ -79,6 +99,8 @@ class applyIntentionInfoDO extends Model
     public $discount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example MU2759
      *
      * @var string
@@ -86,6 +108,8 @@ class applyIntentionInfoDO extends Model
     public $flightNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1000
      *
      * @var int
@@ -93,6 +117,8 @@ class applyIntentionInfoDO extends Model
     public $price;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

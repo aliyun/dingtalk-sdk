@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class createResultList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $templateKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $value;

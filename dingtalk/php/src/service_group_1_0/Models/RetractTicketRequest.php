@@ -16,6 +16,8 @@ class RetractTicketRequest extends Model
     public $notify;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -23,6 +25,8 @@ class RetractTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example a8iS4X94TgtgiE
      *
      * @var string

@@ -15,6 +15,8 @@ class QueryScheduleConferenceInfoResponseBody extends Model
     public $conferenceList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $nextToken;

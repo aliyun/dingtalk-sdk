@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AttachmentsMapValue extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example upload_key
      *
      * @var string
@@ -16,6 +18,8 @@ class AttachmentsMapValue extends Model
     public $uploadKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example name
      *
      * @var string

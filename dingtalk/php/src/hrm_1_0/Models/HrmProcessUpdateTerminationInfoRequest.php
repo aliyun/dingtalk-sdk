@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class HrmProcessUpdateTerminationInfoRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 因个人原因离职
      *
      * @var string
@@ -16,6 +18,8 @@ class HrmProcessUpdateTerminationInfoRequest extends Model
     public $dismissionMemo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1672502400000
      *
      * @var int
@@ -23,6 +27,8 @@ class HrmProcessUpdateTerminationInfoRequest extends Model
     public $lastWorkDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example admin123
      *
      * @var string

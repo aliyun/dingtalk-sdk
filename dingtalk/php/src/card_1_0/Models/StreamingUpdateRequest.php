@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class StreamingUpdateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $guid;
@@ -34,11 +38,15 @@ class StreamingUpdateRequest extends Model
     public $isFull;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $outTrackId;

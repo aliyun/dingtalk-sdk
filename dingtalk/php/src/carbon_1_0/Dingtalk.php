@@ -49,11 +49,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalCarbonInfoRequest $request
-     * @param GetPersonalCarbonInfoHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 获取用户的减碳明细
+     *  *
+     * @param GetPersonalCarbonInfoRequest $request GetPersonalCarbonInfoRequest
+     * @param GetPersonalCarbonInfoHeaders $headers GetPersonalCarbonInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetPersonalCarbonInfoResponse
+     * @return GetPersonalCarbonInfoResponse GetPersonalCarbonInfoResponse
      */
     public function getPersonalCarbonInfoWithOptions($request, $headers, $runtime)
     {
@@ -92,9 +94,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalCarbonInfoRequest $request
+     * @summary 获取用户的减碳明细
+     *  *
+     * @param GetPersonalCarbonInfoRequest $request GetPersonalCarbonInfoRequest
      *
-     * @return GetPersonalCarbonInfoResponse
+     * @return GetPersonalCarbonInfoResponse GetPersonalCarbonInfoResponse
      */
     public function getPersonalCarbonInfo($request)
     {
@@ -105,11 +109,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaOrgCarbonRequest $request
-     * @param WriteAlibabaOrgCarbonHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 写入阿里巴巴每日组织明细碳能量数据
+     *  *
+     * @param WriteAlibabaOrgCarbonRequest $request WriteAlibabaOrgCarbonRequest
+     * @param WriteAlibabaOrgCarbonHeaders $headers WriteAlibabaOrgCarbonHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteAlibabaOrgCarbonResponse
+     * @return WriteAlibabaOrgCarbonResponse WriteAlibabaOrgCarbonResponse
      */
     public function writeAlibabaOrgCarbonWithOptions($request, $headers, $runtime)
     {
@@ -145,9 +151,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaOrgCarbonRequest $request
+     * @summary 写入阿里巴巴每日组织明细碳能量数据
+     *  *
+     * @param WriteAlibabaOrgCarbonRequest $request WriteAlibabaOrgCarbonRequest
      *
-     * @return WriteAlibabaOrgCarbonResponse
+     * @return WriteAlibabaOrgCarbonResponse WriteAlibabaOrgCarbonResponse
      */
     public function writeAlibabaOrgCarbon($request)
     {
@@ -158,11 +166,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaUserCarbonRequest $request
-     * @param WriteAlibabaUserCarbonHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @summary 写入阿里巴巴每日用户碳能量数据
+     *  *
+     * @param WriteAlibabaUserCarbonRequest $request WriteAlibabaUserCarbonRequest
+     * @param WriteAlibabaUserCarbonHeaders $headers WriteAlibabaUserCarbonHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteAlibabaUserCarbonResponse
+     * @return WriteAlibabaUserCarbonResponse WriteAlibabaUserCarbonResponse
      */
     public function writeAlibabaUserCarbonWithOptions($request, $headers, $runtime)
     {
@@ -198,9 +208,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaUserCarbonRequest $request
+     * @summary 写入阿里巴巴每日用户碳能量数据
+     *  *
+     * @param WriteAlibabaUserCarbonRequest $request WriteAlibabaUserCarbonRequest
      *
-     * @return WriteAlibabaUserCarbonResponse
+     * @return WriteAlibabaUserCarbonResponse WriteAlibabaUserCarbonResponse
      */
     public function writeAlibabaUserCarbon($request)
     {
@@ -211,11 +223,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteIsvStateRequest $request
-     * @param WriteIsvStateHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary ISV记录数据传输当前状态
+     *  *
+     * @param WriteIsvStateRequest $request WriteIsvStateRequest
+     * @param WriteIsvStateHeaders $headers WriteIsvStateHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteIsvStateResponse
+     * @return WriteIsvStateResponse WriteIsvStateResponse
      */
     public function writeIsvStateWithOptions($request, $headers, $runtime)
     {
@@ -254,9 +268,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteIsvStateRequest $request
+     * @summary ISV记录数据传输当前状态
+     *  *
+     * @param WriteIsvStateRequest $request WriteIsvStateRequest
      *
-     * @return WriteIsvStateResponse
+     * @return WriteIsvStateResponse WriteIsvStateResponse
      */
     public function writeIsvState($request)
     {
@@ -267,11 +283,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteOrgCarbonRequest $request
-     * @param WriteOrgCarbonHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 写入isv每日组织明细碳能量数据
+     *  *
+     * @param WriteOrgCarbonRequest $request WriteOrgCarbonRequest
+     * @param WriteOrgCarbonHeaders $headers WriteOrgCarbonHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteOrgCarbonResponse
+     * @return WriteOrgCarbonResponse WriteOrgCarbonResponse
      */
     public function writeOrgCarbonWithOptions($request, $headers, $runtime)
     {
@@ -307,9 +325,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteOrgCarbonRequest $request
+     * @summary 写入isv每日组织明细碳能量数据
+     *  *
+     * @param WriteOrgCarbonRequest $request WriteOrgCarbonRequest
      *
-     * @return WriteOrgCarbonResponse
+     * @return WriteOrgCarbonResponse WriteOrgCarbonResponse
      */
     public function writeOrgCarbon($request)
     {
@@ -320,11 +340,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteUserCarbonRequest $request
-     * @param WriteUserCarbonHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 写入isv每日用户明细碳能量数据
+     *  *
+     * @param WriteUserCarbonRequest $request WriteUserCarbonRequest
+     * @param WriteUserCarbonHeaders $headers WriteUserCarbonHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteUserCarbonResponse
+     * @return WriteUserCarbonResponse WriteUserCarbonResponse
      */
     public function writeUserCarbonWithOptions($request, $headers, $runtime)
     {
@@ -360,9 +382,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteUserCarbonRequest $request
+     * @summary 写入isv每日用户明细碳能量数据
+     *  *
+     * @param WriteUserCarbonRequest $request WriteUserCarbonRequest
      *
-     * @return WriteUserCarbonResponse
+     * @return WriteUserCarbonResponse WriteUserCarbonResponse
      */
     public function writeUserCarbon($request)
     {
@@ -373,11 +397,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteUserCarbonEnergyRequest $request
-     * @param WriteUserCarbonEnergyHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @summary 写入isv能耗每日用户明细碳能量数据
+     *  *
+     * @param WriteUserCarbonEnergyRequest $request WriteUserCarbonEnergyRequest
+     * @param WriteUserCarbonEnergyHeaders $headers WriteUserCarbonEnergyHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
-     * @return WriteUserCarbonEnergyResponse
+     * @return WriteUserCarbonEnergyResponse WriteUserCarbonEnergyResponse
      */
     public function writeUserCarbonEnergyWithOptions($request, $headers, $runtime)
     {
@@ -413,9 +439,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteUserCarbonEnergyRequest $request
+     * @summary 写入isv能耗每日用户明细碳能量数据
+     *  *
+     * @param WriteUserCarbonEnergyRequest $request WriteUserCarbonEnergyRequest
      *
-     * @return WriteUserCarbonEnergyResponse
+     * @return WriteUserCarbonEnergyResponse WriteUserCarbonEnergyResponse
      */
     public function writeUserCarbonEnergy($request)
     {

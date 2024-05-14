@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class darkWatermarkVOList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example https://down-cdn.dingtalk.com/ddmedia/iAEKAqRmaWxlAwYEzh55BdsFzlFx040G2gAhhAGkC1HdIgKqLZPt3bUH2pAeUAPPAAABgRPQ5KgEzTBIBwAIAA.file
      *
      * @var string
@@ -16,6 +18,8 @@ class darkWatermarkVOList extends Model
     public $darkWatermark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0138350100401024915916
      *
      * @var string

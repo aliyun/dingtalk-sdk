@@ -9,86 +9,120 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $count;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $ext;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtCreate;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $gmtModified;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $instanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $isDeleted;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $materialNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var float
      */
     public $perAmount;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $processCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $productionTaskNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unit;

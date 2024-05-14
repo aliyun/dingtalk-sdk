@@ -14,41 +14,57 @@ class result extends Model
     public $deviceCategory;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceDetailUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $deviceUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $introduction;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $roleUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $typeUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIds;

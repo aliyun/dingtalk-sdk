@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceFileUrlResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $headers;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $internalResourceUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $resourceUrl;

@@ -16,6 +16,8 @@ class HUploadPackageStatusResponseBody extends Model
     public $buildTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $finished;
@@ -28,6 +30,8 @@ class HUploadPackageStatusResponseBody extends Model
     public $packageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2
      *
      * @var string
@@ -35,6 +39,8 @@ class HUploadPackageStatusResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1663748308644pjpF
      *
      * @var string
@@ -42,6 +48,8 @@ class HUploadPackageStatusResponseBody extends Model
     public $taskId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0.0.1
      *
      * @var string

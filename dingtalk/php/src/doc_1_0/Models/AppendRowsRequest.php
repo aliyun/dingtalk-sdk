@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class AppendRowsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[][]
      */
     public $values;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

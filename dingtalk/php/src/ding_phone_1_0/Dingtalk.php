@@ -37,11 +37,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCallConfigRequest $request
-     * @param AddCallConfigHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 添加外呼码号配置
+     *  *
+     * @param AddCallConfigRequest $request AddCallConfigRequest
+     * @param AddCallConfigHeaders $headers AddCallConfigHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return AddCallConfigResponse
+     * @return AddCallConfigResponse AddCallConfigResponse
      */
     public function addCallConfigWithOptions($request, $headers, $runtime)
     {
@@ -86,9 +88,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCallConfigRequest $request
+     * @summary 添加外呼码号配置
+     *  *
+     * @param AddCallConfigRequest $request AddCallConfigRequest
      *
-     * @return AddCallConfigResponse
+     * @return AddCallConfigResponse AddCallConfigResponse
      */
     public function addCallConfig($request)
     {
@@ -99,11 +103,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DelCallConfigRequest $request
-     * @param DelCallConfigHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 删除码号配置
+     *  *
+     * @param DelCallConfigRequest $request DelCallConfigRequest
+     * @param DelCallConfigHeaders $headers DelCallConfigHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return DelCallConfigResponse
+     * @return DelCallConfigResponse DelCallConfigResponse
      */
     public function delCallConfigWithOptions($request, $headers, $runtime)
     {
@@ -145,9 +151,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DelCallConfigRequest $request
+     * @summary 删除码号配置
+     *  *
+     * @param DelCallConfigRequest $request DelCallConfigRequest
      *
-     * @return DelCallConfigResponse
+     * @return DelCallConfigResponse DelCallConfigResponse
      */
     public function delCallConfig($request)
     {
@@ -158,11 +166,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCallConfigRequest $request
-     * @param QueryCallConfigHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询外呼码号配置
+     *  *
+     * @param QueryCallConfigRequest $request QueryCallConfigRequest
+     * @param QueryCallConfigHeaders $headers QueryCallConfigHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return QueryCallConfigResponse
+     * @return QueryCallConfigResponse QueryCallConfigResponse
      */
     public function queryCallConfigWithOptions($request, $headers, $runtime)
     {
@@ -207,9 +217,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCallConfigRequest $request
+     * @summary 查询外呼码号配置
+     *  *
+     * @param QueryCallConfigRequest $request QueryCallConfigRequest
      *
-     * @return QueryCallConfigResponse
+     * @return QueryCallConfigResponse QueryCallConfigResponse
      */
     public function queryCallConfig($request)
     {

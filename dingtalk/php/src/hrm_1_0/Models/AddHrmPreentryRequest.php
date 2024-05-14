@@ -20,11 +20,15 @@ class AddHrmPreentryRequest extends Model
     public $groups;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mobile;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

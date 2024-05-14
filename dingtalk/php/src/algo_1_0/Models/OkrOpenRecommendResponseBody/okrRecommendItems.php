@@ -21,11 +21,15 @@ class okrRecommendItems extends Model
     public $objectiveRelatedResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $relatedLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3
      *
      * @var int
@@ -33,6 +37,8 @@ class okrRecommendItems extends Model
     public $semanticLevel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string

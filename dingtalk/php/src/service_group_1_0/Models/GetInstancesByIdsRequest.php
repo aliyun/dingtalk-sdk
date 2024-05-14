@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example DING_CUSTOMER
      *
      * @var string
@@ -16,11 +18,15 @@ class GetInstancesByIdsRequest extends Model
     public $formCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $openDataInstanceIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 888***
      *
      * @var string

@@ -14,11 +14,15 @@ class ExecuteRobotAiSkillRequest extends Model
     public $context;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $input;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $robotCode;

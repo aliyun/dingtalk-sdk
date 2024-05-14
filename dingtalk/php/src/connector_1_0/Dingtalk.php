@@ -70,11 +70,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateActionRequest $request
-     * @param CreateActionHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 创建执行动作
+     *  *
+     * @param CreateActionRequest $request CreateActionRequest
+     * @param CreateActionHeaders $headers CreateActionHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateActionResponse
+     * @return CreateActionResponse CreateActionResponse
      */
     public function createActionWithOptions($request, $headers, $runtime)
     {
@@ -113,9 +115,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateActionRequest $request
+     * @summary 创建执行动作
+     *  *
+     * @param CreateActionRequest $request CreateActionRequest
      *
-     * @return CreateActionResponse
+     * @return CreateActionResponse CreateActionResponse
      */
     public function createAction($request)
     {
@@ -126,11 +130,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateConnectorRequest $request
-     * @param CreateConnectorHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 创建连接器
+     *  *
+     * @param CreateConnectorRequest $request CreateConnectorRequest
+     * @param CreateConnectorHeaders $headers CreateConnectorHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateConnectorResponse
+     * @return CreateConnectorResponse CreateConnectorResponse
      */
     public function createConnectorWithOptions($request, $headers, $runtime)
     {
@@ -169,9 +175,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateConnectorRequest $request
+     * @summary 创建连接器
+     *  *
+     * @param CreateConnectorRequest $request CreateConnectorRequest
      *
-     * @return CreateConnectorResponse
+     * @return CreateConnectorResponse CreateConnectorResponse
      */
     public function createConnector($request)
     {
@@ -182,11 +190,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInvocableInstanceRequest $request
-     * @param CreateInvocableInstanceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @summary 创建一个用于运行执行动作/集成流的可调用实例
+     *  *
+     * @param CreateInvocableInstanceRequest $request CreateInvocableInstanceRequest
+     * @param CreateInvocableInstanceHeaders $headers CreateInvocableInstanceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateInvocableInstanceResponse
+     * @return CreateInvocableInstanceResponse CreateInvocableInstanceResponse
      */
     public function createInvocableInstanceWithOptions($request, $headers, $runtime)
     {
@@ -225,9 +235,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInvocableInstanceRequest $request
+     * @summary 创建一个用于运行执行动作/集成流的可调用实例
+     *  *
+     * @param CreateInvocableInstanceRequest $request CreateInvocableInstanceRequest
      *
-     * @return CreateInvocableInstanceResponse
+     * @return CreateInvocableInstanceResponse CreateInvocableInstanceResponse
      */
     public function createInvocableInstance($request)
     {
@@ -238,11 +250,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTriggerRequest $request
-     * @param CreateTriggerHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 创建触发器
+     *  *
+     * @param CreateTriggerRequest $request CreateTriggerRequest
+     * @param CreateTriggerHeaders $headers CreateTriggerHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateTriggerResponse
+     * @return CreateTriggerResponse CreateTriggerResponse
      */
     public function createTriggerWithOptions($request, $headers, $runtime)
     {
@@ -281,9 +295,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTriggerRequest $request
+     * @summary 创建触发器
+     *  *
+     * @param CreateTriggerRequest $request CreateTriggerRequest
      *
-     * @return CreateTriggerResponse
+     * @return CreateTriggerResponse CreateTriggerResponse
      */
     public function createTrigger($request)
     {
@@ -294,11 +310,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetActionDetailRequest $request
-     * @param GetActionDetailHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 获取执行动作详情
+     *  *
+     * @param GetActionDetailRequest $request GetActionDetailRequest
+     * @param GetActionDetailHeaders $headers GetActionDetailHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetActionDetailResponse
+     * @return GetActionDetailResponse GetActionDetailResponse
      */
     public function getActionDetailWithOptions($request, $headers, $runtime)
     {
@@ -334,9 +352,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetActionDetailRequest $request
+     * @summary 获取执行动作详情
+     *  *
+     * @param GetActionDetailRequest $request GetActionDetailRequest
      *
-     * @return GetActionDetailResponse
+     * @return GetActionDetailResponse GetActionDetailResponse
      */
     public function getActionDetail($request)
     {
@@ -347,11 +367,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InvokeInstanceRequest $request
-     * @param InvokeInstanceHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 调用执行实例
+     *  *
+     * @param InvokeInstanceRequest $request InvokeInstanceRequest
+     * @param InvokeInstanceHeaders $headers InvokeInstanceHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return InvokeInstanceResponse
+     * @return InvokeInstanceResponse InvokeInstanceResponse
      */
     public function invokeInstanceWithOptions($request, $headers, $runtime)
     {
@@ -393,9 +415,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InvokeInstanceRequest $request
+     * @summary 调用执行实例
+     *  *
+     * @param InvokeInstanceRequest $request InvokeInstanceRequest
      *
-     * @return InvokeInstanceResponse
+     * @return InvokeInstanceResponse InvokeInstanceResponse
      */
     public function invokeInstance($request)
     {
@@ -406,11 +430,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullDataByPageRequest $request
-     * @param PullDataByPageHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 分页拉取连接器主数据
+     *  *
+     * @param PullDataByPageRequest $request PullDataByPageRequest
+     * @param PullDataByPageHeaders $headers PullDataByPageHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return PullDataByPageResponse
+     * @return PullDataByPageResponse PullDataByPageResponse
      */
     public function pullDataByPageWithOptions($request, $headers, $runtime)
     {
@@ -464,9 +490,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PullDataByPageRequest $request
+     * @summary 分页拉取连接器主数据
+     *  *
+     * @param PullDataByPageRequest $request PullDataByPageRequest
      *
-     * @return PullDataByPageResponse
+     * @return PullDataByPageResponse PullDataByPageResponse
      */
     public function pullDataByPage($request)
     {
@@ -477,12 +505,14 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过业务主键拉取单条连接器主数据
+     *  *
      * @param string              $dataModelId
-     * @param PullDataByPkRequest $request
-     * @param PullDataByPkHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param PullDataByPkRequest $request     PullDataByPkRequest
+     * @param PullDataByPkHeaders $headers     PullDataByPkHeaders
+     * @param RuntimeOptions      $runtime     runtime options for this request RuntimeOptions
      *
-     * @return PullDataByPkResponse
+     * @return PullDataByPkResponse PullDataByPkResponse
      */
     public function pullDataByPkWithOptions($dataModelId, $request, $headers, $runtime)
     {
@@ -521,10 +551,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 通过业务主键拉取单条连接器主数据
+     *  *
      * @param string              $dataModelId
-     * @param PullDataByPkRequest $request
+     * @param PullDataByPkRequest $request     PullDataByPkRequest
      *
-     * @return PullDataByPkResponse
+     * @return PullDataByPkResponse PullDataByPkResponse
      */
     public function pullDataByPk($dataModelId, $request)
     {
@@ -535,11 +567,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchActionsRequest $request
-     * @param SearchActionsHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 搜索执行动作
+     *  *
+     * @param SearchActionsRequest $request SearchActionsRequest
+     * @param SearchActionsHeaders $headers SearchActionsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchActionsResponse
+     * @return SearchActionsResponse SearchActionsResponse
      */
     public function searchActionsWithOptions($request, $headers, $runtime)
     {
@@ -587,9 +621,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchActionsRequest $request
+     * @summary 搜索执行动作
+     *  *
+     * @param SearchActionsRequest $request SearchActionsRequest
      *
-     * @return SearchActionsResponse
+     * @return SearchActionsResponse SearchActionsResponse
      */
     public function searchActions($request)
     {
@@ -600,11 +636,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchConnectorsRequest $request
-     * @param SearchConnectorsHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 搜索连接器
+     *  *
+     * @param SearchConnectorsRequest $request SearchConnectorsRequest
+     * @param SearchConnectorsHeaders $headers SearchConnectorsHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return SearchConnectorsResponse
+     * @return SearchConnectorsResponse SearchConnectorsResponse
      */
     public function searchConnectorsWithOptions($request, $headers, $runtime)
     {
@@ -646,9 +684,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchConnectorsRequest $request
+     * @summary 搜索连接器
+     *  *
+     * @param SearchConnectorsRequest $request SearchConnectorsRequest
      *
-     * @return SearchConnectorsResponse
+     * @return SearchConnectorsResponse SearchConnectorsResponse
      */
     public function searchConnectors($request)
     {
@@ -659,11 +699,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncDataRequest $request
-     * @param SyncDataHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 同步连接器数据
+     *  *
+     * @param SyncDataRequest $request SyncDataRequest
+     * @param SyncDataHeaders $headers SyncDataHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return SyncDataResponse
+     * @return SyncDataResponse SyncDataResponse
      */
     public function syncDataWithOptions($request, $headers, $runtime)
     {
@@ -702,9 +744,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SyncDataRequest $request
+     * @summary 同步连接器数据
+     *  *
+     * @param SyncDataRequest $request SyncDataRequest
      *
-     * @return SyncDataResponse
+     * @return SyncDataResponse SyncDataResponse
      */
     public function syncData($request)
     {
@@ -715,11 +759,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateActionRequest $request
-     * @param UpdateActionHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 更新执行动作信息
+     *  *
+     * @param UpdateActionRequest $request UpdateActionRequest
+     * @param UpdateActionHeaders $headers UpdateActionHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateActionResponse
+     * @return UpdateActionResponse UpdateActionResponse
      */
     public function updateActionWithOptions($request, $headers, $runtime)
     {
@@ -758,9 +804,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateActionRequest $request
+     * @summary 更新执行动作信息
+     *  *
+     * @param UpdateActionRequest $request UpdateActionRequest
      *
-     * @return UpdateActionResponse
+     * @return UpdateActionResponse UpdateActionResponse
      */
     public function updateAction($request)
     {
@@ -771,11 +819,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateConnectorRequest $request
-     * @param UpdateConnectorHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 更新连接器信息
+     *  *
+     * @param UpdateConnectorRequest $request UpdateConnectorRequest
+     * @param UpdateConnectorHeaders $headers UpdateConnectorHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateConnectorResponse
+     * @return UpdateConnectorResponse UpdateConnectorResponse
      */
     public function updateConnectorWithOptions($request, $headers, $runtime)
     {
@@ -814,9 +864,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateConnectorRequest $request
+     * @summary 更新连接器信息
+     *  *
+     * @param UpdateConnectorRequest $request UpdateConnectorRequest
      *
-     * @return UpdateConnectorResponse
+     * @return UpdateConnectorResponse UpdateConnectorResponse
      */
     public function updateConnector($request)
     {
@@ -827,11 +879,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateTriggerRequest $request
-     * @param UpdateTriggerHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 更新触发事件信息
+     *  *
+     * @param UpdateTriggerRequest $request UpdateTriggerRequest
+     * @param UpdateTriggerHeaders $headers UpdateTriggerHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateTriggerResponse
+     * @return UpdateTriggerResponse UpdateTriggerResponse
      */
     public function updateTriggerWithOptions($request, $headers, $runtime)
     {
@@ -870,9 +924,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateTriggerRequest $request
+     * @summary 更新触发事件信息
+     *  *
+     * @param UpdateTriggerRequest $request UpdateTriggerRequest
      *
-     * @return UpdateTriggerResponse
+     * @return UpdateTriggerResponse UpdateTriggerResponse
      */
     public function updateTrigger($request)
     {

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateStsTokenRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example fjke/12-131jk
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateStsTokenRequest extends Model
     public $deviceSn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sls
      *
      * @var string

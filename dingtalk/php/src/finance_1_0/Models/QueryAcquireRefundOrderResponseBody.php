@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryAcquireRefundOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 10.01
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $amount;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-11-15 10:10:09
      *
      * @var string
@@ -30,6 +34,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $gmtRefund;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111010001
      *
      * @var string
@@ -37,6 +43,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $instId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202121241343151
      *
      * @var string
@@ -44,6 +52,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $orderNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 202111020001
      *
      * @var string
@@ -51,6 +61,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $originOutTradeNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example r202111020001
      *
      * @var string
@@ -58,6 +70,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $outRefundNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ALIPAY
      *
      * @var string
@@ -65,6 +79,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $payChannel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 13****09
      *
      * @var string
@@ -72,6 +88,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $payChannelAccountNo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 123124
      *
      * @var string
@@ -86,6 +104,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $remark;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SUCCESS
      *
      * @var string
@@ -93,6 +113,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $status;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1001
      *
      * @var string
@@ -100,6 +122,8 @@ class QueryAcquireRefundOrderResponseBody extends Model
     public $subInstId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 餐费
      *
      * @var string

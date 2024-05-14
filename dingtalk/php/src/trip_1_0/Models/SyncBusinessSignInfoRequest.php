@@ -30,6 +30,8 @@ class SyncBusinessSignInfoRequest extends Model
     public $gmtSign;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ORG_PAY
      *
      * @var string
@@ -37,6 +39,8 @@ class SyncBusinessSignInfoRequest extends Model
     public $orgPayStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SIGN
      *
      * @var string
@@ -44,6 +48,8 @@ class SyncBusinessSignInfoRequest extends Model
     public $signStatus;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding89233847892ndkas
      *
      * @var string

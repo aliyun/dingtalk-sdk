@@ -17,6 +17,8 @@ class actionInfo extends Model
     public $apiPath;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $description;
@@ -37,6 +39,8 @@ class actionInfo extends Model
     public $inputSchema;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $integratorActionId;
@@ -47,6 +51,8 @@ class actionInfo extends Model
     public $integratorConnectorId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

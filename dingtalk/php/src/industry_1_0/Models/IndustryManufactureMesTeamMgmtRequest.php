@@ -13,6 +13,8 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesTeamMgmtRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example add
      *
      * @var string
@@ -20,6 +22,8 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
     public $action;
 
     /**
+     * @description This parameter is required.
+     *
      * @example libai
      *
      * @var string
@@ -27,6 +31,8 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
     public $appKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example team
      *
      * @var string
@@ -61,6 +67,8 @@ class IndustryManufactureMesTeamMgmtRequest extends Model
     public $groupType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example d41d8cd98f00b204e9800998ecf8427e
      *
      * @var string

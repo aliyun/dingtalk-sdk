@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class extendInfos extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 28765
      *
      * @var string
@@ -23,6 +25,8 @@ class extendInfos extends Model
     public $deptExtendDisplayName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 科室、医生都不一样
      *
      * @var string
@@ -30,6 +34,8 @@ class extendInfos extends Model
     public $deptExtendKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 科室、医生都不一样
      *
      * @var string
@@ -37,6 +43,8 @@ class extendInfos extends Model
     public $deptExtendValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -44,6 +52,8 @@ class extendInfos extends Model
     public $gmtCreateStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-08-24 20:30:31
      *
      * @var string
@@ -51,6 +61,8 @@ class extendInfos extends Model
     public $gmtModifiedStr;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10000
      *
      * @var int
@@ -58,6 +70,8 @@ class extendInfos extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

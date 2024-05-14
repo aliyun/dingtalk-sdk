@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class associatedColumn extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $column;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $sheet;

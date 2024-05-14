@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class bizDataList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example {}
      *
      * @var string
@@ -16,6 +18,8 @@ class bizDataList extends Model
     public $extendValue;
 
     /**
+     * @description This parameter is required.
+     *
      * @example customer_name
      *
      * @var string
@@ -23,6 +27,8 @@ class bizDataList extends Model
     public $key;
 
     /**
+     * @description This parameter is required.
+     *
      * @example abc123
      *
      * @var string

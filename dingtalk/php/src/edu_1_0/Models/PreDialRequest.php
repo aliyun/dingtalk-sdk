@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PreDialRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 00003213130
      *
      * @var string
@@ -16,6 +18,8 @@ class PreDialRequest extends Model
     public $callerUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 312000030213120
      *
      * @var string
@@ -23,6 +27,8 @@ class PreDialRequest extends Model
     public $receiverUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example fdaf-2132
      *
      * @var string
@@ -30,6 +36,8 @@ class PreDialRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example VIDEO_CALL
      *
      * @var string

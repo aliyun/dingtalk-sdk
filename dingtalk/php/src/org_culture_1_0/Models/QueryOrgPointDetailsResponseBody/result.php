@@ -15,6 +15,8 @@ class result extends Model
     public $details;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -22,6 +24,8 @@ class result extends Model
     public $hasMore;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

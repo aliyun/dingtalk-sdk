@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class OrderResaleRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $orderCreateTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $orderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quantity;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $serviceStartTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $serviceStopTime;

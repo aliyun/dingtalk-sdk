@@ -14,6 +14,8 @@ class GetSpaceDirectoriesRequest extends Model
     public $dentryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $maxResults;
@@ -24,6 +26,8 @@ class GetSpaceDirectoriesRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorId;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetFeedResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 3d******-1cd2-****-ba1d-8******3c6dc
      *
      * @var string
@@ -17,6 +19,8 @@ class GetFeedResponseBody extends Model
     public $feedId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var feedItem[]
      */
     public $feedItem;

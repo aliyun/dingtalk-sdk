@@ -51,6 +51,8 @@ class UpdateRangeRequest extends Model
     public $verticalAlignments;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

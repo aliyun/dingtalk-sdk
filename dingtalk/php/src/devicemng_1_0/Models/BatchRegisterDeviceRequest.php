@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class BatchRegisterDeviceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var deviceList[]
      */
     public $deviceList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager10
      *
      * @var string

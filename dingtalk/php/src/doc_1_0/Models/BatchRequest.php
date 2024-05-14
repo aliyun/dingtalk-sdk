@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class BatchRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var requests[]
      */
     public $requests;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ppgAQuHxxxxx
      *
      * @var string

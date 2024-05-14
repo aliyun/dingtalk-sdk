@@ -15,11 +15,15 @@ class GetWorkspacesRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $workspaceIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

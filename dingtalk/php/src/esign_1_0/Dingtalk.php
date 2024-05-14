@@ -81,11 +81,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AuthUrlRequest $request
-     * @param AuthUrlHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 获取授权的页面地址
+     *  *
+     * @param AuthUrlRequest $request AuthUrlRequest
+     * @param AuthUrlHeaders $headers AuthUrlHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return AuthUrlResponse
+     * @return AuthUrlResponse AuthUrlResponse
      */
     public function authUrlWithOptions($request, $headers, $runtime)
     {
@@ -121,9 +123,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AuthUrlRequest $request
+     * @summary 获取授权的页面地址
+     *  *
+     * @param AuthUrlRequest $request AuthUrlRequest
      *
-     * @return AuthUrlResponse
+     * @return AuthUrlResponse AuthUrlResponse
      */
     public function authUrl($request)
     {
@@ -134,10 +138,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelCorpAuthHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 取消企业的授权
+     *  *
+     * @param CancelCorpAuthHeaders $headers CancelCorpAuthHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return CancelCorpAuthResponse
+     * @return CancelCorpAuthResponse CancelCorpAuthResponse
      */
     public function cancelCorpAuthWithOptions($headers, $runtime)
     {
@@ -167,7 +173,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return CancelCorpAuthResponse
+     * @summary 取消企业的授权
+     *  *
+     * @return CancelCorpAuthResponse CancelCorpAuthResponse
      */
     public function cancelCorpAuth()
     {
@@ -178,11 +186,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChannelOrderRequest $request
-     * @param ChannelOrderHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 套餐转售1（分润模式）
+     *  *
+     * @param ChannelOrderRequest $request ChannelOrderRequest
+     * @param ChannelOrderHeaders $headers ChannelOrderHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ChannelOrderResponse
+     * @return ChannelOrderResponse ChannelOrderResponse
      */
     public function channelOrderWithOptions($request, $headers, $runtime)
     {
@@ -233,9 +243,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChannelOrderRequest $request
+     * @summary 套餐转售1（分润模式）
+     *  *
+     * @param ChannelOrderRequest $request ChannelOrderRequest
      *
-     * @return ChannelOrderResponse
+     * @return ChannelOrderResponse ChannelOrderResponse
      */
     public function channelOrder($request)
     {
@@ -246,10 +258,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ContractMarginHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 查询套餐余量
+     *  *
+     * @param ContractMarginHeaders $headers ContractMarginHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return ContractMarginResponse
+     * @return ContractMarginResponse ContractMarginResponse
      */
     public function contractMarginWithOptions($headers, $runtime)
     {
@@ -279,7 +293,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return ContractMarginResponse
+     * @summary 查询套餐余量
+     *  *
+     * @return ContractMarginResponse ContractMarginResponse
      */
     public function contractMargin()
     {
@@ -290,10 +306,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CorpConsoleHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 查询个人信息
+     *  *
+     * @param CorpConsoleHeaders $headers CorpConsoleHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return CorpConsoleResponse
+     * @return CorpConsoleResponse CorpConsoleResponse
      */
     public function corpConsoleWithOptions($headers, $runtime)
     {
@@ -323,7 +341,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return CorpConsoleResponse
+     * @summary 查询个人信息
+     *  *
+     * @return CorpConsoleResponse CorpConsoleResponse
      */
     public function corpConsole()
     {
@@ -334,10 +354,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CorpInfoHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @summary 查询企业信息
+     *  *
+     * @param CorpInfoHeaders $headers CorpInfoHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
      *
-     * @return CorpInfoResponse
+     * @return CorpInfoResponse CorpInfoResponse
      */
     public function corpInfoWithOptions($headers, $runtime)
     {
@@ -367,7 +389,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return CorpInfoResponse
+     * @summary 查询企业信息
+     *  *
+     * @return CorpInfoResponse CorpInfoResponse
      */
     public function corpInfo()
     {
@@ -378,11 +402,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeveloperRequest $request
-     * @param CreateDeveloperHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 钉钉ISV服务商的数据初始化
+     *  *
+     * @param CreateDeveloperRequest $request CreateDeveloperRequest
+     * @param CreateDeveloperHeaders $headers CreateDeveloperHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CreateDeveloperResponse
+     * @return CreateDeveloperResponse CreateDeveloperResponse
      */
     public function createDeveloperWithOptions($request, $headers, $runtime)
     {
@@ -418,9 +444,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDeveloperRequest $request
+     * @summary 钉钉ISV服务商的数据初始化
+     *  *
+     * @param CreateDeveloperRequest $request CreateDeveloperRequest
      *
-     * @return CreateDeveloperResponse
+     * @return CreateDeveloperResponse CreateDeveloperResponse
      */
     public function createDeveloper($request)
     {
@@ -431,11 +459,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCorpRealnameUrlRequest $request
-     * @param GetCorpRealnameUrlHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取跳转到个人实名的地址
+     *  *
+     * @param GetCorpRealnameUrlRequest $request GetCorpRealnameUrlRequest
+     * @param GetCorpRealnameUrlHeaders $headers GetCorpRealnameUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCorpRealnameUrlResponse
+     * @return GetCorpRealnameUrlResponse GetCorpRealnameUrlResponse
      */
     public function getCorpRealnameUrlWithOptions($request, $headers, $runtime)
     {
@@ -471,9 +501,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCorpRealnameUrlRequest $request
+     * @summary 获取跳转到个人实名的地址
+     *  *
+     * @param GetCorpRealnameUrlRequest $request GetCorpRealnameUrlRequest
      *
-     * @return GetCorpRealnameUrlResponse
+     * @return GetCorpRealnameUrlResponse GetCorpRealnameUrlResponse
      */
     public function getCorpRealnameUrl($request)
     {
@@ -484,10 +516,12 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCropStatusHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取企业e签宝微应用状态
+     *  *
+     * @param GetCropStatusHeaders $headers GetCropStatusHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetCropStatusResponse
+     * @return GetCropStatusResponse GetCropStatusResponse
      */
     public function getCropStatusWithOptions($headers, $runtime)
     {
@@ -517,7 +551,9 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @return GetCropStatusResponse
+     * @summary 获取企业e签宝微应用状态
+     *  *
+     * @return GetCropStatusResponse GetCropStatusResponse
      */
     public function getCropStatus()
     {
@@ -528,11 +564,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文件详情/下载文件
+     *  *
      * @param string         $fileId
-     * @param GetFileHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param GetFileHeaders $headers GetFileHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFileResponse
+     * @return GetFileResponse GetFileResponse
      */
     public function getFileWithOptions($fileId, $headers, $runtime)
     {
@@ -562,9 +600,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文件详情/下载文件
+     *  *
      * @param string $fileId
      *
-     * @return GetFileResponse
+     * @return GetFileResponse GetFileResponse
      */
     public function getFile($fileId)
     {
@@ -575,11 +615,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowDetailRequest $request
-     * @param GetFlowDetailHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @summary 获取对应流程任务详情
+     *  *
+     * @param GetFlowDetailRequest $request GetFlowDetailRequest
+     * @param GetFlowDetailHeaders $headers GetFlowDetailHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFlowDetailResponse
+     * @return GetFlowDetailResponse GetFlowDetailResponse
      */
     public function getFlowDetailWithOptions($request, $headers, $runtime)
     {
@@ -615,9 +657,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowDetailRequest $request
+     * @summary 获取对应流程任务详情
+     *  *
+     * @param GetFlowDetailRequest $request GetFlowDetailRequest
      *
-     * @return GetFlowDetailResponse
+     * @return GetFlowDetailResponse GetFlowDetailResponse
      */
     public function getFlowDetail($request)
     {
@@ -628,11 +672,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowSignDetailRequest $request
-     * @param GetFlowSignDetailHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @summary 获取对应流程任务详情
+     *  *
+     * @param GetFlowSignDetailRequest $request GetFlowSignDetailRequest
+     * @param GetFlowSignDetailHeaders $headers GetFlowSignDetailHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetFlowSignDetailResponse
+     * @return GetFlowSignDetailResponse GetFlowSignDetailResponse
      */
     public function getFlowSignDetailWithOptions($request, $headers, $runtime)
     {
@@ -668,9 +714,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFlowSignDetailRequest $request
+     * @summary 获取对应流程任务详情
+     *  *
+     * @param GetFlowSignDetailRequest $request GetFlowSignDetailRequest
      *
-     * @return GetFlowSignDetailResponse
+     * @return GetFlowSignDetailResponse GetFlowSignDetailResponse
      */
     public function getFlowSignDetail($request)
     {
@@ -681,11 +729,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProcessStartUrlRequest $request
-     * @param GetProcessStartUrlHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 发起签署的地址
+     *  *
+     * @param GetProcessStartUrlRequest $request GetProcessStartUrlRequest
+     * @param GetProcessStartUrlHeaders $headers GetProcessStartUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetProcessStartUrlResponse
+     * @return GetProcessStartUrlResponse GetProcessStartUrlResponse
      */
     public function getProcessStartUrlWithOptions($request, $headers, $runtime)
     {
@@ -739,9 +789,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProcessStartUrlRequest $request
+     * @summary 发起签署的地址
+     *  *
+     * @param GetProcessStartUrlRequest $request GetProcessStartUrlRequest
      *
-     * @return GetProcessStartUrlResponse
+     * @return GetProcessStartUrlResponse GetProcessStartUrlResponse
      */
     public function getProcessStartUrl($request)
     {
@@ -752,11 +804,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSignNoticeUrlRequest $request
-     * @param GetSignNoticeUrlHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取签署人签署地址
+     *  *
+     * @param GetSignNoticeUrlRequest $request GetSignNoticeUrlRequest
+     * @param GetSignNoticeUrlHeaders $headers GetSignNoticeUrlHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetSignNoticeUrlResponse
+     * @return GetSignNoticeUrlResponse GetSignNoticeUrlResponse
      */
     public function getSignNoticeUrlWithOptions($request, $headers, $runtime)
     {
@@ -792,9 +846,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSignNoticeUrlRequest $request
+     * @summary 获取签署人签署地址
+     *  *
+     * @param GetSignNoticeUrlRequest $request GetSignNoticeUrlRequest
      *
-     * @return GetSignNoticeUrlResponse
+     * @return GetSignNoticeUrlResponse GetSignNoticeUrlResponse
      */
     public function getSignNoticeUrl($request)
     {
@@ -805,11 +861,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadUrlRequest $request
-     * @param GetUploadUrlHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 通过上传方式创建文件
+     *  *
+     * @param GetUploadUrlRequest $request GetUploadUrlRequest
+     * @param GetUploadUrlHeaders $headers GetUploadUrlHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUploadUrlResponse
+     * @return GetUploadUrlResponse GetUploadUrlResponse
      */
     public function getUploadUrlWithOptions($request, $headers, $runtime)
     {
@@ -857,9 +915,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadUrlRequest $request
+     * @summary 通过上传方式创建文件
+     *  *
+     * @param GetUploadUrlRequest $request GetUploadUrlRequest
      *
-     * @return GetUploadUrlResponse
+     * @return GetUploadUrlResponse GetUploadUrlResponse
      */
     public function getUploadUrl($request)
     {
@@ -870,11 +930,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询个人信息
+     *  *
      * @param string             $userId
-     * @param GetUserInfoHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetUserInfoHeaders $headers GetUserInfoHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserInfoResponse
+     * @return GetUserInfoResponse GetUserInfoResponse
      */
     public function getUserInfoWithOptions($userId, $headers, $runtime)
     {
@@ -904,9 +966,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询个人信息
+     *  *
      * @param string $userId
      *
-     * @return GetUserInfoResponse
+     * @return GetUserInfoResponse GetUserInfoResponse
      */
     public function getUserInfo($userId)
     {
@@ -917,11 +981,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserRealnameUrlRequest $request
-     * @param GetUserRealnameUrlHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @summary 获取跳转到个人实名的地址
+     *  *
+     * @param GetUserRealnameUrlRequest $request GetUserRealnameUrlRequest
+     * @param GetUserRealnameUrlHeaders $headers GetUserRealnameUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
      *
-     * @return GetUserRealnameUrlResponse
+     * @return GetUserRealnameUrlResponse GetUserRealnameUrlResponse
      */
     public function getUserRealnameUrlWithOptions($request, $headers, $runtime)
     {
@@ -960,9 +1026,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserRealnameUrlRequest $request
+     * @summary 获取跳转到个人实名的地址
+     *  *
+     * @param GetUserRealnameUrlRequest $request GetUserRealnameUrlRequest
      *
-     * @return GetUserRealnameUrlResponse
+     * @return GetUserRealnameUrlResponse GetUserRealnameUrlResponse
      */
     public function getUserRealnameUrl($request)
     {
@@ -973,11 +1041,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFlowDocsRequest $request
-     * @param ListFlowDocsHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @summary 获取流程任务合同列表
+     *  *
+     * @param ListFlowDocsRequest $request ListFlowDocsRequest
+     * @param ListFlowDocsHeaders $headers ListFlowDocsHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListFlowDocsResponse
+     * @return ListFlowDocsResponse ListFlowDocsResponse
      */
     public function listFlowDocsWithOptions($request, $headers, $runtime)
     {
@@ -1013,9 +1083,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListFlowDocsRequest $request
+     * @summary 获取流程任务合同列表
+     *  *
+     * @param ListFlowDocsRequest $request ListFlowDocsRequest
      *
-     * @return ListFlowDocsResponse
+     * @return ListFlowDocsResponse ListFlowDocsResponse
      */
     public function listFlowDocs($request)
     {
@@ -1026,11 +1098,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSealApprovalRequest $request
-     * @param ListSealApprovalHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @summary 获取流程任务用印审批列表
+     *  *
+     * @param ListSealApprovalRequest $request ListSealApprovalRequest
+     * @param ListSealApprovalHeaders $headers ListSealApprovalHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
-     * @return ListSealApprovalResponse
+     * @return ListSealApprovalResponse ListSealApprovalResponse
      */
     public function listSealApprovalWithOptions($request, $headers, $runtime)
     {
@@ -1066,9 +1140,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSealApprovalRequest $request
+     * @summary 获取流程任务用印审批列表
+     *  *
+     * @param ListSealApprovalRequest $request ListSealApprovalRequest
      *
-     * @return ListSealApprovalResponse
+     * @return ListSealApprovalResponse ListSealApprovalResponse
      */
     public function listSealApproval($request)
     {
@@ -1079,11 +1155,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrderResaleRequest $request
-     * @param OrderResaleHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @summary 套餐转售2（底价结算模式）
+     *  *
+     * @param OrderResaleRequest $request OrderResaleRequest
+     * @param OrderResaleHeaders $headers OrderResaleHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
-     * @return OrderResaleResponse
+     * @return OrderResaleResponse OrderResaleResponse
      */
     public function orderResaleWithOptions($request, $headers, $runtime)
     {
@@ -1131,9 +1209,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OrderResaleRequest $request
+     * @summary 套餐转售2（底价结算模式）
+     *  *
+     * @param OrderResaleRequest $request OrderResaleRequest
      *
-     * @return OrderResaleResponse
+     * @return OrderResaleResponse OrderResaleResponse
      */
     public function orderResale($request)
     {

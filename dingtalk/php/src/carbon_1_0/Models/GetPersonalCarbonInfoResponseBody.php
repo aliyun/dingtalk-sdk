@@ -14,6 +14,8 @@ class GetPersonalCarbonInfoResponseBody extends Model
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3.25
      *
      * @var float

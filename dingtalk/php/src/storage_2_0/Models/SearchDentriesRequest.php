@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class SearchDentriesRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example keyword
      *
      * @var string
@@ -22,6 +24,8 @@ class SearchDentriesRequest extends Model
     public $option;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

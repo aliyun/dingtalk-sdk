@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class QueryTradeOrderResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $articleCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $articleItemCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $articleItemName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $articleName;
@@ -34,21 +42,29 @@ class QueryTradeOrderResponseBody extends Model
     public $closeTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $fee;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $isvCropId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $orderId;
@@ -59,6 +75,8 @@ class QueryTradeOrderResponseBody extends Model
     public $outerOrderId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $payFee;
@@ -69,6 +87,8 @@ class QueryTradeOrderResponseBody extends Model
     public $payTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quantity;
@@ -79,6 +99,8 @@ class QueryTradeOrderResponseBody extends Model
     public $refundTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $status;

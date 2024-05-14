@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateBranchVisibleSettingInCooperateRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var body[]
      */
     public $body;

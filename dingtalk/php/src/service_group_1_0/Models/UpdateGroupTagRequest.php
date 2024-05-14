@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupTagRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $openConversationIds;
@@ -19,6 +21,8 @@ class UpdateGroupTagRequest extends Model
     public $tagNames;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $updateType;

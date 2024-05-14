@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class CreateReceiptResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var results[]
      */
     public $results;

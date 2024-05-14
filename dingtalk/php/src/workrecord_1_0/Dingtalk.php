@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CountWorkRecordRequest $request
-     * @param CountWorkRecordHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @summary 查询个人单企业待办数
+     *  *
+     * @param CountWorkRecordRequest $request CountWorkRecordRequest
+     * @param CountWorkRecordHeaders $headers CountWorkRecordHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
-     * @return CountWorkRecordResponse
+     * @return CountWorkRecordResponse CountWorkRecordResponse
      */
     public function countWorkRecordWithOptions($request, $headers, $runtime)
     {
@@ -71,9 +73,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CountWorkRecordRequest $request
+     * @summary 查询个人单企业待办数
+     *  *
+     * @param CountWorkRecordRequest $request CountWorkRecordRequest
      *
-     * @return CountWorkRecordResponse
+     * @return CountWorkRecordResponse CountWorkRecordResponse
      */
     public function countWorkRecord($request)
     {

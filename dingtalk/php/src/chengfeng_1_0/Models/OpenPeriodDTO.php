@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenPeriodDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 311212121
      *
      * @var int
@@ -16,6 +18,8 @@ class OpenPeriodDTO extends Model
     public $endDate;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 111
      *
      * @var string
@@ -23,6 +27,8 @@ class OpenPeriodDTO extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2023
      *
      * @var string
@@ -30,6 +36,8 @@ class OpenPeriodDTO extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FY_S1
      *
      * @var string
@@ -37,6 +45,8 @@ class OpenPeriodDTO extends Model
     public $periodBizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 8383838383
      *
      * @var int

@@ -23,6 +23,8 @@ class SearchConnectorsRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example official
      *
      * @var string

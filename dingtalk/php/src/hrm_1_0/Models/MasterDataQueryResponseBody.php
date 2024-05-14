@@ -24,11 +24,15 @@ class MasterDataQueryResponseBody extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @var result[]
      */
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

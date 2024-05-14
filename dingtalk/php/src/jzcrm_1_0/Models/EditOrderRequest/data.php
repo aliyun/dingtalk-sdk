@@ -16,6 +16,8 @@ class data extends Model
     public $childMx;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -38,6 +40,8 @@ class data extends Model
     public $htContract;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htCustomerid;
@@ -48,6 +52,8 @@ class data extends Model
     public $htCusub;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htDate;
@@ -98,6 +104,8 @@ class data extends Model
     public $htNumber;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htOrder;
@@ -108,6 +116,8 @@ class data extends Model
     public $htPaymode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htPreside;
@@ -118,6 +128,8 @@ class data extends Model
     public $htRemark;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htState;
@@ -128,6 +140,8 @@ class data extends Model
     public $htSummemo;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $htSummoney;

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class OpenProgressDTO extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 48383883
      *
      * @var int
@@ -16,11 +18,15 @@ class OpenProgressDTO extends Model
     public $created;
 
     /**
+     * @description This parameter is required.
+     *
      * @var OpenUserDTO
      */
     public $creator;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 我的目标
      *
      * @var string
@@ -28,6 +34,8 @@ class OpenProgressDTO extends Model
     public $htmlContent;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 11
      *
      * @var string
@@ -35,11 +43,15 @@ class OpenProgressDTO extends Model
     public $id;
 
     /**
+     * @description This parameter is required.
+     *
      * @var OpenUserDTO
      */
     public $modifier;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 48383883
      *
      * @var int

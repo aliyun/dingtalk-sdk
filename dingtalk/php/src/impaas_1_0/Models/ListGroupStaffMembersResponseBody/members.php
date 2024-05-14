@@ -14,6 +14,8 @@ class members extends Model
     public $nick;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $uid;

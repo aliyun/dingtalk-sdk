@@ -16,6 +16,8 @@ class detail extends Model
     public $callbackUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example service-card-20220824-001
      *
      * @var string
@@ -23,11 +25,15 @@ class detail extends Model
     public $cardBizId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $cardData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 3erkfi-42b0-4c83-bc56-ffhssde43
      *
      * @var string
@@ -35,6 +41,8 @@ class detail extends Model
     public $cardTemplateId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user0001
      *
      * @var string

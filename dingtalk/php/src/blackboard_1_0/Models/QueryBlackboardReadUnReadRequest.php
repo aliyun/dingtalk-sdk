@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryBlackboardReadUnReadRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 49dc87dc1b30cd099b13a
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryBlackboardReadUnReadRequest extends Model
     public $blackboardId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 200
      *
      * @var int
@@ -30,6 +34,8 @@ class QueryBlackboardReadUnReadRequest extends Model
     public $nextToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager01
      *
      * @var string

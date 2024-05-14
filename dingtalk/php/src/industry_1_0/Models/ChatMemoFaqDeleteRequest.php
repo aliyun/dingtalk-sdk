@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class ChatMemoFaqDeleteRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 111111
      *
      * @var int
@@ -16,6 +18,8 @@ class ChatMemoFaqDeleteRequest extends Model
     public $datasetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example aaaa
      *
      * @var string

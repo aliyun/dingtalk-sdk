@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class FormDataSource extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var target
      */
     public $target;

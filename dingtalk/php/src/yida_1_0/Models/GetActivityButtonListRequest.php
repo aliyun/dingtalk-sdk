@@ -16,6 +16,8 @@ class GetActivityButtonListRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hello1234
      *
      * @var string
@@ -23,6 +25,8 @@ class GetActivityButtonListRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 未知
      *
      * @var string

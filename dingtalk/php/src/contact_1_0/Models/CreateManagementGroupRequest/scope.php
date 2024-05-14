@@ -14,6 +14,8 @@ class scope extends Model
     public $deptIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1:全公司 2:所在部门 3:指定部门
      *
      * @var int

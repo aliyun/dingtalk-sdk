@@ -16,6 +16,8 @@ class CreateMeetingRoomGroupRequest extends Model
     public $groupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 172
      *
      * @var int
@@ -23,6 +25,8 @@ class CreateMeetingRoomGroupRequest extends Model
     public $parentGroupId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string

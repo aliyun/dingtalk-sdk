@@ -15,11 +15,15 @@ class workspaces extends Model
     public $createTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $deleted;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;
@@ -42,11 +46,15 @@ class workspaces extends Model
     public $role;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $url;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $workspaceId;

@@ -19,6 +19,8 @@ class PageListTicketRequest extends Model
     public $foreignId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 10
      *
      * @var int
@@ -26,6 +28,8 @@ class PageListTicketRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var string
@@ -57,6 +61,8 @@ class PageListTicketRequest extends Model
     public $startTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 42
      *
      * @var string

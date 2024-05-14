@@ -14,6 +14,8 @@ class SignOutRequest extends Model
     public $reason;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

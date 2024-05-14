@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $endIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $startIndex;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $wordName;

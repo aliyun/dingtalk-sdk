@@ -9,21 +9,29 @@ use AlibabaCloud\Tea\Model;
 class DeleteRelationMetaFieldRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $fieldIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $relationType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tenant;

@@ -37,6 +37,8 @@ class UpdateInstalledRobotRequest extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingXXXXXXXXXX
      *
      * @var string
@@ -44,6 +46,8 @@ class UpdateInstalledRobotRequest extends Model
     public $robotCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

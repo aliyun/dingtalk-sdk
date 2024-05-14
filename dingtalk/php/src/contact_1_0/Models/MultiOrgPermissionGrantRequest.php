@@ -16,6 +16,8 @@ class MultiOrgPermissionGrantRequest extends Model
     public $grantDeptIdList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxx
      *
      * @var string

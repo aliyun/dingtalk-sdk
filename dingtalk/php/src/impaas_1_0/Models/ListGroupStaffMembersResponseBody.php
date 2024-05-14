@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class ListGroupStaffMembersResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;

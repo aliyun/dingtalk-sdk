@@ -10,26 +10,36 @@ use AlibabaCloud\Tea\Model;
 class OkrOpenRecommendRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var candidateOkrItems[]
      */
     public $candidateOkrItems;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $corpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $deptIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $isvAppId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;

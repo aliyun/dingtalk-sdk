@@ -16,6 +16,8 @@ class PagePointHistoryRequest extends Model
     public $endTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example false
      *
      * @var bool
@@ -23,6 +25,8 @@ class PagePointHistoryRequest extends Model
     public $isCircle;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 15
      *
      * @var int
@@ -30,6 +34,8 @@ class PagePointHistoryRequest extends Model
     public $maxResults;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

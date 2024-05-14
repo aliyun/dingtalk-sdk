@@ -10,16 +10,22 @@ use AlibabaCloud\Tea\Model;
 class AddPermissionRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $role;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

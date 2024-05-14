@@ -28,6 +28,8 @@ class AppendSpaceRequest extends Model
     public $imRobotOpenSpaceModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example xxx_yyyy_123456
      *
      * @var string

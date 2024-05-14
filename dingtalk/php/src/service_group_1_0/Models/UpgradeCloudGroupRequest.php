@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpgradeCloudGroupRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example sdfdfser
      *
      * @var string
@@ -16,6 +18,8 @@ class UpgradeCloudGroupRequest extends Model
     public $ccsInstanceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example cidrQnTVXH/X+ERaVqGaH+asw==
      *
      * @var string

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureLabourCostResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $hasMore;
@@ -20,11 +22,15 @@ class IndustryManufactureLabourCostResponseBody extends Model
     public $list;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $nextCursor;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $totalCount;

@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class DescribeRelationMetaRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $operatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $relationTypes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $tenant;

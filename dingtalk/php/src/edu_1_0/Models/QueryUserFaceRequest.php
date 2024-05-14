@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 30001
      *
      * @var string
@@ -16,6 +18,8 @@ class QueryUserFaceRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example sn123
      *
      * @var string

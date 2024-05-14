@@ -51,6 +51,8 @@ class BatchQuerySendMessageTaskRequest extends Model
     public $openGroupSetId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jciwnfw
      *
      * @var string

@@ -16,6 +16,8 @@ class ExclusiveCreateDingPortalRequest extends Model
     public $dingPortalName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string
@@ -23,6 +25,8 @@ class ExclusiveCreateDingPortalRequest extends Model
     public $targetCorpId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example TPL_APP-C97B75277B144ED7AEFE7XXXXXXXX6BA
      *
      * @var string
@@ -30,6 +34,8 @@ class ExclusiveCreateDingPortalRequest extends Model
     public $templateAppUuid;
 
     /**
+     * @description This parameter is required.
+     *
      * @example dingxxxxxxxxxxxx
      *
      * @var string

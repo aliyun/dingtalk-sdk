@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataSecondGenerationRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
@@ -30,6 +32,8 @@ class SearchFormDataSecondGenerationRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @description This parameter is required.
+     *
      * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
@@ -86,6 +90,8 @@ class SearchFormDataSecondGenerationRequest extends Model
     public $searchCondition;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
@@ -93,6 +99,8 @@ class SearchFormDataSecondGenerationRequest extends Model
     public $systemToken;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding173982232112232
      *
      * @var string

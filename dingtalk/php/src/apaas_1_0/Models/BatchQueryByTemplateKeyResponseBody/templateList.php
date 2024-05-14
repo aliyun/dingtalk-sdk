@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class templateList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $adaptEnv;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试用
      *
      * @var string
@@ -21,6 +25,8 @@ class templateList extends Model
     public $appDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example @lALPDe7s2JOuoyjNBaDNCgA
      *
      * @var string
@@ -28,11 +34,15 @@ class templateList extends Model
     public $appIcon;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $caseVideoList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example template_category
      *
      * @var string
@@ -40,11 +50,15 @@ class templateList extends Model
     public $category;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $coverImgList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example http://www.baidu.com
      *
      * @var string
@@ -52,11 +66,15 @@ class templateList extends Model
     public $expUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $industryLabelList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 100
      *
      * @var float
@@ -64,11 +82,15 @@ class templateList extends Model
     public $installTimes;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $mobilePreviewMediaList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试用
      *
      * @var string
@@ -76,11 +98,15 @@ class templateList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $previewMediaList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 小明
      *
      * @var string
@@ -88,11 +114,15 @@ class templateList extends Model
     public $providerName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $roleLabelList;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试用
      *
      * @var string
@@ -100,6 +130,8 @@ class templateList extends Model
     public $simpleDesc;
 
     /**
+     * @description This parameter is required.
+     *
      * @example template_key
      *
      * @var string
@@ -107,6 +139,8 @@ class templateList extends Model
     public $templateKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $useCasesMediaList;

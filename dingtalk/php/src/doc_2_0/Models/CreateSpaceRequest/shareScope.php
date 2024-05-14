@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class shareScope extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 0
      *
      * @var int

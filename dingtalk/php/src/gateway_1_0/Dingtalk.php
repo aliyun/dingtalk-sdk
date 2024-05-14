@@ -31,11 +31,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OpenConnectionRequest $request
-     * @param string[]              $headers
-     * @param RuntimeOptions        $runtime
+     * @summary 云上网关注册长连接
+     *  *
+     * @param OpenConnectionRequest $request OpenConnectionRequest
+     * @param string[]              $headers map
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
-     * @return OpenConnectionResponse
+     * @return OpenConnectionResponse OpenConnectionResponse
      */
     public function openConnectionWithOptions($request, $headers, $runtime)
     {
@@ -76,9 +78,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OpenConnectionRequest $request
+     * @summary 云上网关注册长连接
+     *  *
+     * @param OpenConnectionRequest $request OpenConnectionRequest
      *
-     * @return OpenConnectionResponse
+     * @return OpenConnectionResponse OpenConnectionResponse
      */
     public function openConnection($request)
     {

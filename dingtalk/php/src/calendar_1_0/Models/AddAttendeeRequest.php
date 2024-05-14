@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddAttendeeRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var attendeesToAdd[]
      */
     public $attendeesToAdd;

@@ -16,6 +16,8 @@ class TransferTicketRequest extends Model
     public $notify;
 
     /**
+     * @description This parameter is required.
+     *
      * @example eKWh3GBwsKEiE
      *
      * @var string
@@ -23,6 +25,8 @@ class TransferTicketRequest extends Model
     public $openTeamId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example iPFWCyMGWPiiIiE
      *
      * @var string
@@ -30,6 +34,8 @@ class TransferTicketRequest extends Model
     public $openTicketId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
@@ -37,6 +43,8 @@ class TransferTicketRequest extends Model
     public $processorUnionId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $processorUnionIds;

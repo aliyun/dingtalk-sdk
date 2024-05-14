@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UserAgreementPageSignResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 略
      *
      * @var string

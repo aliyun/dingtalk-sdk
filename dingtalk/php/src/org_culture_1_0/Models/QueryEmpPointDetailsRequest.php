@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryEmpPointDetailsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -23,6 +25,8 @@ class QueryEmpPointDetailsRequest extends Model
     public $pageSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 042216842933
      *
      * @var string

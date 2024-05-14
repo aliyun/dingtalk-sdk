@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetDingMeBaseDataRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dsfsfr434
      *
      * @var string
@@ -16,6 +18,8 @@ class GetDingMeBaseDataRequest extends Model
     public $appKey;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool
@@ -23,6 +27,8 @@ class GetDingMeBaseDataRequest extends Model
     public $byDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210506
      *
      * @var string
@@ -30,6 +36,8 @@ class GetDingMeBaseDataRequest extends Model
     public $endDay;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 20210405
      *
      * @var string

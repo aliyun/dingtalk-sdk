@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class universityCourseGroupInfo extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example GS1001
      *
      * @var string
@@ -17,6 +19,8 @@ class universityCourseGroupInfo extends Model
     public $courseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高数
      *
      * @var string
@@ -24,6 +28,8 @@ class universityCourseGroupInfo extends Model
     public $courseGroupIntroduce;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高数_李老师
      *
      * @var string
@@ -31,11 +37,15 @@ class universityCourseGroupInfo extends Model
     public $courseGroupName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var courserGroupItemModels[]
      */
     public $courserGroupItemModels;
 
     /**
+     * @description This parameter is required.
+     *
      * @example GZ1001
      *
      * @var string
@@ -43,6 +53,8 @@ class universityCourseGroupInfo extends Model
     public $isvCourseGroupCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example university
      *
      * @var string
@@ -50,6 +62,8 @@ class universityCourseGroupInfo extends Model
     public $periodCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2021-2022
      *
      * @var string
@@ -57,6 +71,8 @@ class universityCourseGroupInfo extends Model
     public $schoolYear;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -64,6 +80,8 @@ class universityCourseGroupInfo extends Model
     public $semester;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 高等数学
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class RenameDentryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example dentry_name
      *
      * @var string
@@ -16,6 +18,8 @@ class RenameDentryRequest extends Model
     public $newName;
 
     /**
+     * @description This parameter is required.
+     *
      * @example union_id
      *
      * @var string

@@ -19,6 +19,8 @@ class enterprise extends Model
     public $industryCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $name;

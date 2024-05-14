@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class RemoveTeamMembersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
@@ -20,6 +22,8 @@ class RemoveTeamMembersRequest extends Model
     public $notify;
 
     /**
+     * @description This parameter is required.
+     *
      * @example YEp3JcM******UIbhwiE
      *
      * @var string

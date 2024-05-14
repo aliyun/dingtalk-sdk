@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchSendResultResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var results[]
      */
     public $results;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int

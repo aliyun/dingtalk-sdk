@@ -16,6 +16,8 @@ class data extends Model
     public $childMx;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -38,6 +40,8 @@ class data extends Model
     public $hhInempid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hhInlibid;
@@ -48,6 +52,8 @@ class data extends Model
     public $hhIntime;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hhNumber;
@@ -63,6 +69,8 @@ class data extends Model
     public $hhOutempid;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hhOutlibid;
@@ -83,6 +91,8 @@ class data extends Model
     public $hhState;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $hhTitle;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateSpaceRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example A栋
      *
      * @var spaceInfoVOList[]

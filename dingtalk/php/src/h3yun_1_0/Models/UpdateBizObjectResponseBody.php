@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateBizObjectResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example success
      *
      * @var string
@@ -16,6 +18,8 @@ class UpdateBizObjectResponseBody extends Model
     public $code;
 
     /**
+     * @description This parameter is required.
+     *
      * @example OK
      *
      * @var string

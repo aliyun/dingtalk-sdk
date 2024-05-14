@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class roleMemberList extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 可以是员工 uid，可以是部门 ID 等，根据 type 确定
      *
      * @var string
@@ -16,6 +18,8 @@ class roleMemberList extends Model
     public $memberId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 张三
      *
      * @var string
@@ -23,6 +27,8 @@ class roleMemberList extends Model
     public $name;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user：组织成员   dept：部门   tag：标签  org：组织     org_res_admin：组织管理员
      *
      * @var string

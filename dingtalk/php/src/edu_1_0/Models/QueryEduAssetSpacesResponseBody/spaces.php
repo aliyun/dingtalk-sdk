@@ -9,41 +9,57 @@ use AlibabaCloud\Tea\Model;
 class spaces extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $createTimeMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $modifyTimeMillis;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $permissionMode;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $quota;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $spaceType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $usedQuota;

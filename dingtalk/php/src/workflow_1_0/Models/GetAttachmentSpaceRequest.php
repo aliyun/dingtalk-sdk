@@ -16,6 +16,8 @@ class GetAttachmentSpaceRequest extends Model
     public $agentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example user123
      *
      * @var string

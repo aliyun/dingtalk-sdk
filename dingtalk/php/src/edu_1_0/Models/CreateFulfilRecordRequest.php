@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateFulfilRecordRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1647503420000
      *
      * @var int
@@ -16,6 +18,8 @@ class CreateFulfilRecordRequest extends Model
     public $bizTime;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"key":"value"}
      *
      * @var string
@@ -23,6 +27,8 @@ class CreateFulfilRecordRequest extends Model
     public $extInfo;
 
     /**
+     * @description This parameter is required.
+     *
      * @example F123123
      *
      * @var string
@@ -30,6 +36,8 @@ class CreateFulfilRecordRequest extends Model
     public $faceId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -37,6 +45,8 @@ class CreateFulfilRecordRequest extends Model
     public $scene;
 
     /**
+     * @description This parameter is required.
+     *
      * @example SN123456
      *
      * @var string
@@ -44,6 +54,8 @@ class CreateFulfilRecordRequest extends Model
     public $sn;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 12312312444
      *
      * @var string

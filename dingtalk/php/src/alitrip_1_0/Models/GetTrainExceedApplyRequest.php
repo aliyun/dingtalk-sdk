@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetTrainExceedApplyRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 12345
      *
      * @var string
@@ -16,6 +18,8 @@ class GetTrainExceedApplyRequest extends Model
     public $applyId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example ding1234
      *
      * @var string

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class QueryFeedWhiteListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1206186351746728
      *
      * @var string

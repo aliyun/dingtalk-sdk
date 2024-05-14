@@ -43,11 +43,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param FinishRequest  $request
-     * @param FinishHeaders  $headers
-     * @param RuntimeOptions $runtime
+     * @summary 在主动模式下完结会话框
+     *  *
+     * @param FinishRequest  $request FinishRequest
+     * @param FinishHeaders  $headers FinishHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return FinishResponse
+     * @return FinishResponse FinishResponse
      */
     public function finishWithOptions($request, $headers, $runtime)
     {
@@ -83,9 +85,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param FinishRequest $request
+     * @summary 在主动模式下完结会话框
+     *  *
+     * @param FinishRequest $request FinishRequest
      *
-     * @return FinishResponse
+     * @return FinishResponse FinishResponse
      */
     public function finish($request)
     {
@@ -96,11 +100,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrepareRequest $request
-     * @param PrepareHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @summary 在主动模式下准备会话框
+     *  *
+     * @param PrepareRequest $request PrepareRequest
+     * @param PrepareHeaders $headers PrepareHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return PrepareResponse
+     * @return PrepareResponse PrepareResponse
      */
     public function prepareWithOptions($request, $headers, $runtime)
     {
@@ -145,9 +151,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PrepareRequest $request
+     * @summary 在主动模式下准备会话框
+     *  *
+     * @param PrepareRequest $request PrepareRequest
      *
-     * @return PrepareResponse
+     * @return PrepareResponse PrepareResponse
      */
     public function prepare($request)
     {
@@ -158,11 +166,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReplyRequest   $request
-     * @param ReplyHeaders   $headers
-     * @param RuntimeOptions $runtime
+     * @summary 在回复模式下更新会话框
+     *  *
+     * @param ReplyRequest   $request ReplyRequest
+     * @param ReplyHeaders   $headers ReplyHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return ReplyResponse
+     * @return ReplyResponse ReplyResponse
      */
     public function replyWithOptions($request, $headers, $runtime)
     {
@@ -204,9 +214,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReplyRequest $request
+     * @summary 在回复模式下更新会话框
+     *  *
+     * @param ReplyRequest $request ReplyRequest
      *
-     * @return ReplyResponse
+     * @return ReplyResponse ReplyResponse
      */
     public function reply($request)
     {
@@ -217,11 +229,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRequest    $request
-     * @param SendHeaders    $headers
-     * @param RuntimeOptions $runtime
+     * @summary 直接发送消息
+     *  *
+     * @param SendRequest    $request SendRequest
+     * @param SendHeaders    $headers SendHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return SendResponse
+     * @return SendResponse SendResponse
      */
     public function sendWithOptions($request, $headers, $runtime)
     {
@@ -266,9 +280,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRequest $request
+     * @summary 直接发送消息
+     *  *
+     * @param SendRequest $request SendRequest
      *
-     * @return SendResponse
+     * @return SendResponse SendResponse
      */
     public function send($request)
     {
@@ -279,11 +295,13 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRequest  $request
-     * @param UpdateHeaders  $headers
-     * @param RuntimeOptions $runtime
+     * @summary 在主动模式下更新会话框
+     *  *
+     * @param UpdateRequest  $request UpdateRequest
+     * @param UpdateHeaders  $headers UpdateHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
      *
-     * @return UpdateResponse
+     * @return UpdateResponse UpdateResponse
      */
     public function updateWithOptions($request, $headers, $runtime)
     {
@@ -325,9 +343,11 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRequest $request
+     * @summary 在主动模式下更新会话框
+     *  *
+     * @param UpdateRequest $request UpdateRequest
      *
-     * @return UpdateResponse
+     * @return UpdateResponse UpdateResponse
      */
     public function update($request)
     {

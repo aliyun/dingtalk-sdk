@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -16,6 +18,8 @@ class data extends Model
     public $labelId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 目前无意义
      *
      * @var float
@@ -23,6 +27,8 @@ class data extends Model
     public $typeId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 经销商
      *
      * @var string

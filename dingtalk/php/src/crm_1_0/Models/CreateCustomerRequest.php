@@ -17,6 +17,8 @@ class CreateCustomerRequest extends Model
     public $contacts;
 
     /**
+     * @description This parameter is required.
+     *
      * @example manager123
      *
      * @var string
@@ -24,6 +26,8 @@ class CreateCustomerRequest extends Model
     public $creatorUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var mixed[]
      */
     public $data;
@@ -53,6 +57,8 @@ class CreateCustomerRequest extends Model
     public $permission;
 
     /**
+     * @description This parameter is required.
+     *
      * @var saveOption
      */
     public $saveOption;

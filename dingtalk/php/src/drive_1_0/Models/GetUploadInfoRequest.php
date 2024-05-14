@@ -19,16 +19,22 @@ class GetUploadInfoRequest extends Model
     public $callerRegion;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var int
      */
     public $fileSize;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $md5;
@@ -39,6 +45,8 @@ class GetUploadInfoRequest extends Model
     public $mediaId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

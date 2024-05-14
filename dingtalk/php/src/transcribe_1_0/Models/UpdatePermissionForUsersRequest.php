@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdatePermissionForUsersRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -17,11 +19,15 @@ class UpdatePermissionForUsersRequest extends Model
     public $bizType;
 
     /**
+     * @description This parameter is required.
+     *
      * @var members[]
      */
     public $members;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 533xxxxxx
      *
      * @var int

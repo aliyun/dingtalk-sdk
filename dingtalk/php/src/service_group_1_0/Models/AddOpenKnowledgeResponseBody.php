@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class AddOpenKnowledgeResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 22
      *
      * @var result
@@ -17,6 +19,8 @@ class AddOpenKnowledgeResponseBody extends Model
     public $result;
 
     /**
+     * @description This parameter is required.
+     *
      * @example true
      *
      * @var bool

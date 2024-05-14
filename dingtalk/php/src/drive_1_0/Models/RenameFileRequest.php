@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class RenameFileRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $newFileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $unionId;

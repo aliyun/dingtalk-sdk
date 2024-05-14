@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AddOpenCategoryRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 5555
      *
      * @var int
@@ -16,6 +18,8 @@ class AddOpenCategoryRequest extends Model
     public $libraryId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example Jxi12wo3qxoa
      *
      * @var string
@@ -30,6 +34,8 @@ class AddOpenCategoryRequest extends Model
     public $parentId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 测试类目
      *
      * @var string
@@ -37,6 +43,8 @@ class AddOpenCategoryRequest extends Model
     public $title;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 0159003451667222
      *
      * @var string
@@ -44,6 +52,8 @@ class AddOpenCategoryRequest extends Model
     public $userId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 钉三多
      *
      * @var string

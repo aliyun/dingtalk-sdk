@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CfJobPostResp extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1234
      *
      * @var string
@@ -16,6 +18,8 @@ class CfJobPostResp extends Model
     public $jobPostCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 技术岗
      *
      * @var string
