@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
@@ -98,6 +101,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageResponse;
@@ -122,6 +131,86 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 新增法人公司
+     *  *
+     * @param AddHrmLegalEntityRequest $request AddHrmLegalEntityRequest
+     * @param AddHrmLegalEntityHeaders $headers AddHrmLegalEntityHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddHrmLegalEntityResponse AddHrmLegalEntityResponse
+     */
+    public function addHrmLegalEntityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTenantId)) {
+            $query['dingTenantId'] = $request->dingTenantId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->createUserId)) {
+            $body['createUserId'] = $request->createUserId;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->legalEntityName)) {
+            $body['legalEntityName'] = $request->legalEntityName;
+        }
+        if (!Utils::isUnset($request->legalEntityShortName)) {
+            $body['legalEntityShortName'] = $request->legalEntityShortName;
+        }
+        if (!Utils::isUnset($request->legalEntityStatus)) {
+            $body['legalEntityStatus'] = $request->legalEntityStatus;
+        }
+        if (!Utils::isUnset($request->legalPersonName)) {
+            $body['legalPersonName'] = $request->legalPersonName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddHrmLegalEntity',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/legalEntities/companies',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddHrmLegalEntityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增法人公司
+     *  *
+     * @param AddHrmLegalEntityRequest $request AddHrmLegalEntityRequest
+     *
+     * @return AddHrmLegalEntityResponse AddHrmLegalEntityResponse
+     */
+    public function addHrmLegalEntity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddHrmLegalEntityHeaders([]);
+
+        return $this->addHrmLegalEntityWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2235,6 +2324,149 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTaskTemplateHeaders([]);
 
         return $this->syncTaskTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新法人公司名称
+     *  *
+     * @param UpdateHrmLegalEntityNameRequest $request UpdateHrmLegalEntityNameRequest
+     * @param UpdateHrmLegalEntityNameHeaders $headers UpdateHrmLegalEntityNameHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateHrmLegalEntityNameResponse UpdateHrmLegalEntityNameResponse
+     */
+    public function updateHrmLegalEntityNameWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTenantId)) {
+            $query['dingTenantId'] = $request->dingTenantId;
+        }
+        if (!Utils::isUnset($request->legalEntityName)) {
+            $query['legalEntityName'] = $request->legalEntityName;
+        }
+        if (!Utils::isUnset($request->originLegalEntityName)) {
+            $query['originLegalEntityName'] = $request->originLegalEntityName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateHrmLegalEntityName',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/legalEntities/companyNames',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateHrmLegalEntityNameResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新法人公司名称
+     *  *
+     * @param UpdateHrmLegalEntityNameRequest $request UpdateHrmLegalEntityNameRequest
+     *
+     * @return UpdateHrmLegalEntityNameResponse UpdateHrmLegalEntityNameResponse
+     */
+    public function updateHrmLegalEntityName($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateHrmLegalEntityNameHeaders([]);
+
+        return $this->updateHrmLegalEntityNameWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新法人公司
+     *  *
+     * @param UpdateHrmLegalEntityWithoutNameRequest $request UpdateHrmLegalEntityWithoutNameRequest
+     * @param UpdateHrmLegalEntityWithoutNameHeaders $headers UpdateHrmLegalEntityWithoutNameHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateHrmLegalEntityWithoutNameResponse UpdateHrmLegalEntityWithoutNameResponse
+     */
+    public function updateHrmLegalEntityWithoutNameWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTenantId)) {
+            $query['dingTenantId'] = $request->dingTenantId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->createUserId)) {
+            $body['createUserId'] = $request->createUserId;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->legalEntityName)) {
+            $body['legalEntityName'] = $request->legalEntityName;
+        }
+        if (!Utils::isUnset($request->legalEntityShortName)) {
+            $body['legalEntityShortName'] = $request->legalEntityShortName;
+        }
+        if (!Utils::isUnset($request->legalEntityStatus)) {
+            $body['legalEntityStatus'] = $request->legalEntityStatus;
+        }
+        if (!Utils::isUnset($request->legalPersonName)) {
+            $body['legalPersonName'] = $request->legalPersonName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateHrmLegalEntityWithoutName',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/legalEntities/companies',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateHrmLegalEntityWithoutNameResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新法人公司
+     *  *
+     * @param UpdateHrmLegalEntityWithoutNameRequest $request UpdateHrmLegalEntityWithoutNameRequest
+     *
+     * @return UpdateHrmLegalEntityWithoutNameResponse UpdateHrmLegalEntityWithoutNameResponse
+     */
+    public function updateHrmLegalEntityWithoutName($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateHrmLegalEntityWithoutNameHeaders([]);
+
+        return $this->updateHrmLegalEntityWithoutNameWithOptions($request, $headers, $runtime);
     }
 
     /**

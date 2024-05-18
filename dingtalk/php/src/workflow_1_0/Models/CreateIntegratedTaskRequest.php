@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CreateIntegratedTaskRequest\featureConfig;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CreateIntegratedTaskRequest\tasks;
 use AlibabaCloud\Tea\Model;
 
@@ -15,6 +16,11 @@ class CreateIntegratedTaskRequest extends Model
      * @var string
      */
     public $activityId;
+
+    /**
+     * @var featureConfig
+     */
+    public $featureConfig;
 
     /**
      * @description This parameter is required.
@@ -33,6 +39,7 @@ class CreateIntegratedTaskRequest extends Model
     public $tasks;
     protected $_name = [
         'activityId'        => 'activityId',
+        'featureConfig'     => 'featureConfig',
         'processInstanceId' => 'processInstanceId',
         'tasks'             => 'tasks',
     ];
@@ -46,6 +53,9 @@ class CreateIntegratedTaskRequest extends Model
         $res = [];
         if (null !== $this->activityId) {
             $res['activityId'] = $this->activityId;
+        }
+        if (null !== $this->featureConfig) {
+            $res['featureConfig'] = null !== $this->featureConfig ? $this->featureConfig->toMap() : null;
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
@@ -73,6 +83,9 @@ class CreateIntegratedTaskRequest extends Model
         $model = new self();
         if (isset($map['activityId'])) {
             $model->activityId = $map['activityId'];
+        }
+        if (isset($map['featureConfig'])) {
+            $model->featureConfig = featureConfig::fromMap($map['featureConfig']);
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];

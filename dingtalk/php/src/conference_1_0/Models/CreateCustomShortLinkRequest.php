@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomShortLinkRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example COOLAPP-0-1026633886192127xxxB000W
      *
      * @var string
@@ -16,6 +18,8 @@ class CreateCustomShortLinkRequest extends Model
     public $coolAppCode;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
@@ -30,6 +34,8 @@ class CreateCustomShortLinkRequest extends Model
     public $extensionAppBizData;
 
     /**
+     * @description This parameter is required.
+     *
      * @example f6fb627e-a7e8-403e-b1f8-26e85450f4a9
      *
      * @var string

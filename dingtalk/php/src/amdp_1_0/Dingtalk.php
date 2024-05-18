@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmployeeDataPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmployeeDataPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmployeeDataPushResponse;
+use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmpRoleDataPushHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmpRoleDataPushRequest;
+use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpEmpRoleDataPushResponse;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpJobPositionDataPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpJobPositionDataPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vamdp_1_0\Models\AmdpJobPositionDataPushResponse;
@@ -34,6 +37,63 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 人员角色数据推送
+     *  *
+     * @param AmdpEmpRoleDataPushRequest $request AmdpEmpRoleDataPushRequest
+     * @param AmdpEmpRoleDataPushHeaders $headers AmdpEmpRoleDataPushHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPushResponse
+     */
+    public function amdpEmpRoleDataPushWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AmdpEmpRoleDataPush',
+            'version'     => 'amdp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/amdp/employeeRoles/datas/push',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AmdpEmpRoleDataPushResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人员角色数据推送
+     *  *
+     * @param AmdpEmpRoleDataPushRequest $request AmdpEmpRoleDataPushRequest
+     *
+     * @return AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPushResponse
+     */
+    public function amdpEmpRoleDataPush($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AmdpEmpRoleDataPushHeaders([]);
+
+        return $this->amdpEmpRoleDataPushWithOptions($request, $headers, $runtime);
     }
 
     /**

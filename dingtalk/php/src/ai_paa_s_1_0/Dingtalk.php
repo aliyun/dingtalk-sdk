@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\LiandanluTextToImageModelResp
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\LiandanTextImageGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\LiandanTextImageGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\LiandanTextImageGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\NLToFrameServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\NLToFrameServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\NLToFrameServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryBaymaxSkillLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryBaymaxSkillLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryBaymaxSkillLogResponse;
@@ -318,6 +321,75 @@ class Dingtalk extends OpenApiClient
         $headers = new LiandanluTextToImageModelHeaders([]);
 
         return $this->liandanluTextToImageModelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过配置的指令，连接用户和系统，训练大模型
+     *  *
+     * @param NLToFrameServiceRequest $request NLToFrameServiceRequest
+     * @param NLToFrameServiceHeaders $headers NLToFrameServiceHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return NLToFrameServiceResponse NLToFrameServiceResponse
+     */
+    public function nLToFrameServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extensionStr)) {
+            $body['extensionStr'] = $request->extensionStr;
+        }
+        if (!Utils::isUnset($request->isNewModel)) {
+            $body['isNewModel'] = $request->isNewModel;
+        }
+        if (!Utils::isUnset($request->modelId)) {
+            $body['modelId'] = $request->modelId;
+        }
+        if (!Utils::isUnset($request->modelName)) {
+            $body['modelName'] = $request->modelName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'NLToFrameService',
+            'version'     => 'aiPaaS_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiPaaS/ai/nl2frame',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return NLToFrameServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过配置的指令，连接用户和系统，训练大模型
+     *  *
+     * @param NLToFrameServiceRequest $request NLToFrameServiceRequest
+     *
+     * @return NLToFrameServiceResponse NLToFrameServiceResponse
+     */
+    public function nLToFrameService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new NLToFrameServiceHeaders([]);
+
+        return $this->nLToFrameServiceWithOptions($request, $headers, $runtime);
     }
 
     /**

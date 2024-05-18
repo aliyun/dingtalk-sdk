@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceRequest\featureConfig;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceRequest\formComponentValueList;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceRequest\notifiers;
 use AlibabaCloud\Tea\Model;
@@ -16,6 +17,11 @@ class SaveIntegratedInstanceRequest extends Model
      * @var string
      */
     public $bizData;
+
+    /**
+     * @var featureConfig
+     */
+    public $featureConfig;
 
     /**
      * @var formComponentValueList[]
@@ -56,6 +62,7 @@ class SaveIntegratedInstanceRequest extends Model
     public $url;
     protected $_name = [
         'bizData'                => 'bizData',
+        'featureConfig'          => 'featureConfig',
         'formComponentValueList' => 'formComponentValueList',
         'notifiers'              => 'notifiers',
         'originatorUserId'       => 'originatorUserId',
@@ -73,6 +80,9 @@ class SaveIntegratedInstanceRequest extends Model
         $res = [];
         if (null !== $this->bizData) {
             $res['bizData'] = $this->bizData;
+        }
+        if (null !== $this->featureConfig) {
+            $res['featureConfig'] = null !== $this->featureConfig ? $this->featureConfig->toMap() : null;
         }
         if (null !== $this->formComponentValueList) {
             $res['formComponentValueList'] = [];
@@ -118,6 +128,9 @@ class SaveIntegratedInstanceRequest extends Model
         $model = new self();
         if (isset($map['bizData'])) {
             $model->bizData = $map['bizData'];
+        }
+        if (isset($map['featureConfig'])) {
+            $model->featureConfig = featureConfig::fromMap($map['featureConfig']);
         }
         if (isset($map['formComponentValueList'])) {
             if (!empty($map['formComponentValueList'])) {

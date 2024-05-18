@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CopyProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CreateIntegratedTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CreateIntegratedTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\CreateIntegratedTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteDirHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteDirRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteDirResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteProcessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\DeleteProcessResponse;
@@ -77,6 +80,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantCspaceAuthorizationRespo
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GrantProcessInstanceForDownloadFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InsertOrUpdateDirHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InsertOrUpdateDirRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InsertOrUpdateDirResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\InstallAppResponse;
@@ -613,6 +619,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->activityId)) {
             $body['activityId'] = $request->activityId;
         }
+        if (!Utils::isUnset($request->featureConfig)) {
+            $body['featureConfig'] = $request->featureConfig;
+        }
         if (!Utils::isUnset($request->processInstanceId)) {
             $body['processInstanceId'] = $request->processInstanceId;
         }
@@ -658,6 +667,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateIntegratedTaskHeaders([]);
 
         return $this->createIntegratedTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除分组
+     *  *
+     * @param DeleteDirRequest $request DeleteDirRequest
+     * @param DeleteDirHeaders $headers DeleteDirHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteDirResponse DeleteDirResponse
+     */
+    public function deleteDirWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dirId)) {
+            $query['dirId'] = $request->dirId;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $query['operateUserId'] = $request->operateUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteDir',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/directories',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteDirResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除分组
+     *  *
+     * @param DeleteDirRequest $request DeleteDirRequest
+     *
+     * @return DeleteDirResponse DeleteDirResponse
+     */
+    public function deleteDir($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDirHeaders([]);
+
+        return $this->deleteDirWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1629,6 +1698,75 @@ class Dingtalk extends OpenApiClient
         $headers = new GrantProcessInstanceForDownloadFileHeaders([]);
 
         return $this->grantProcessInstanceForDownloadFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建或更新分组
+     *  *
+     * @param InsertOrUpdateDirRequest $request InsertOrUpdateDirRequest
+     * @param InsertOrUpdateDirHeaders $headers InsertOrUpdateDirHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InsertOrUpdateDirResponse InsertOrUpdateDirResponse
+     */
+    public function insertOrUpdateDirWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizGroup)) {
+            $body['bizGroup'] = $request->bizGroup;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->name18n)) {
+            $body['name18n'] = $request->name18n;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InsertOrUpdateDir',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/directories',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InsertOrUpdateDirResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建或更新分组
+     *  *
+     * @param InsertOrUpdateDirRequest $request InsertOrUpdateDirRequest
+     *
+     * @return InsertOrUpdateDirResponse InsertOrUpdateDirResponse
+     */
+    public function insertOrUpdateDir($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InsertOrUpdateDirHeaders([]);
+
+        return $this->insertOrUpdateDirWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2633,6 +2771,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->bizData)) {
             $body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->featureConfig)) {
+            $body['featureConfig'] = $request->featureConfig;
         }
         if (!Utils::isUnset($request->formComponentValueList)) {
             $body['formComponentValueList'] = $request->formComponentValueList;

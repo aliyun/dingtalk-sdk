@@ -39,6 +39,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalResponse;
@@ -182,6 +185,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListRulesShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskResponse;
@@ -259,6 +265,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateRoleVisibilityResponse
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateStorageModeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -1007,6 +1016,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DistributePartnerAppHeaders([]);
 
         return $this->distributePartnerAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更换组织主管理员
+     *  *
+     * @param ExchangeMainAdminRequest $request ExchangeMainAdminRequest
+     * @param ExchangeMainAdminHeaders $headers ExchangeMainAdminHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExchangeMainAdminResponse ExchangeMainAdminResponse
+     */
+    public function exchangeMainAdminWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->newAdminUserId)) {
+            $body['newAdminUserId'] = $request->newAdminUserId;
+        }
+        if (!Utils::isUnset($request->oldAdminUserId)) {
+            $body['oldAdminUserId'] = $request->oldAdminUserId;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExchangeMainAdmin',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/orgnizations/mainAdministrators/exchange',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ExchangeMainAdminResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更换组织主管理员
+     *  *
+     * @param ExchangeMainAdminRequest $request ExchangeMainAdminRequest
+     *
+     * @return ExchangeMainAdminResponse ExchangeMainAdminResponse
+     */
+    public function exchangeMainAdmin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExchangeMainAdminHeaders([]);
+
+        return $this->exchangeMainAdminWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4086,6 +4158,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 购买权益包
+     *  *
+     * @param OpenBenefitPackageRequest $request OpenBenefitPackageRequest
+     * @param OpenBenefitPackageHeaders $headers OpenBenefitPackageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenBenefitPackageResponse OpenBenefitPackageResponse
+     */
+    public function openBenefitPackageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitPackage)) {
+            $body['benefitPackage'] = $request->benefitPackage;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenBenefitPackage',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/benefitPackages/purchase',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenBenefitPackageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 购买权益包
+     *  *
+     * @param OpenBenefitPackageRequest $request OpenBenefitPackageRequest
+     *
+     * @return OpenBenefitPackageResponse OpenBenefitPackageResponse
+     */
+    public function openBenefitPackage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenBenefitPackageHeaders([]);
+
+        return $this->openBenefitPackageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 防作弊风险检测
      *  *
      * @param PreventCheatingCheckRiskRequest $request PreventCheatingCheckRiskRequest
@@ -5817,5 +5955,65 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateStorageModeHeaders([]);
 
         return $this->updateStorageModeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 允许三方调用该API，决定对应的语音消息管控状态
+     *  *
+     * @param UpdateVoiceMsgCtrlStatusRequest $request UpdateVoiceMsgCtrlStatusRequest
+     * @param UpdateVoiceMsgCtrlStatusHeaders $headers UpdateVoiceMsgCtrlStatusHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateVoiceMsgCtrlStatusResponse UpdateVoiceMsgCtrlStatusResponse
+     */
+    public function updateVoiceMsgCtrlStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->voiceMsgCtrlInfo)) {
+            $body['voiceMsgCtrlInfo'] = $request->voiceMsgCtrlInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateVoiceMsgCtrlStatus',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/voiceMessages/ctrlStatuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateVoiceMsgCtrlStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 允许三方调用该API，决定对应的语音消息管控状态
+     *  *
+     * @param UpdateVoiceMsgCtrlStatusRequest $request UpdateVoiceMsgCtrlStatusRequest
+     *
+     * @return UpdateVoiceMsgCtrlStatusResponse UpdateVoiceMsgCtrlStatusResponse
+     */
+    public function updateVoiceMsgCtrlStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateVoiceMsgCtrlStatusHeaders([]);
+
+        return $this->updateVoiceMsgCtrlStatusWithOptions($request, $headers, $runtime);
     }
 }

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class tasks extends Model
 {
     /**
-     * @example xxxxx
+     * @example {\"id\":\"12345\"}
      *
      * @var string
      */
