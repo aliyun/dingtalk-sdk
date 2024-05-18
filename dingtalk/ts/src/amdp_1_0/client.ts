@@ -9,6 +9,100 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AmdpEmpRoleDataPushHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AmdpEmpRoleDataPushRequest extends $tea.Model {
+  param?: AmdpEmpRoleDataPushRequestParam[];
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: { 'type': 'array', 'itemType': AmdpEmpRoleDataPushRequestParam },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AmdpEmpRoleDataPushResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: boolean;
+  status?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      status: 'status',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'boolean',
+      status: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AmdpEmpRoleDataPushResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AmdpEmpRoleDataPushResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AmdpEmpRoleDataPushResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AmdpEmployeeDataPushHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -291,6 +385,34 @@ export class AmdpOrganizationDataPushResponse extends $tea.Model {
   }
 }
 
+export class AmdpEmpRoleDataPushRequestParam extends $tea.Model {
+  deptId?: string;
+  isDelete?: string;
+  roleCode?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      isDelete: 'isDelete',
+      roleCode: 'roleCode',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      isDelete: 'string',
+      roleCode: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AmdpEmployeeDataPushRequestParam extends $tea.Model {
   avatar?: string;
   isDelete?: string;
@@ -411,6 +533,60 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * @summary 人员角色数据推送
+   *
+   * @param request AmdpEmpRoleDataPushRequest
+   * @param headers AmdpEmpRoleDataPushHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AmdpEmpRoleDataPushResponse
+   */
+  async amdpEmpRoleDataPushWithOptions(request: AmdpEmpRoleDataPushRequest, headers: AmdpEmpRoleDataPushHeaders, runtime: $Util.RuntimeOptions): Promise<AmdpEmpRoleDataPushResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AmdpEmpRoleDataPush",
+      version: "amdp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/amdp/employeeRoles/datas/push`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AmdpEmpRoleDataPushResponse>(await this.execute(params, req, runtime), new AmdpEmpRoleDataPushResponse({}));
+  }
+
+  /**
+   * @summary 人员角色数据推送
+   *
+   * @param request AmdpEmpRoleDataPushRequest
+   * @return AmdpEmpRoleDataPushResponse
+   */
+  async amdpEmpRoleDataPush(request: AmdpEmpRoleDataPushRequest): Promise<AmdpEmpRoleDataPushResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AmdpEmpRoleDataPushHeaders({ });
+    return await this.amdpEmpRoleDataPushWithOptions(request, headers, runtime);
+  }
 
   /**
    * @summary 人员数据推送

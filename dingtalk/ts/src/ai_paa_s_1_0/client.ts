@@ -397,6 +397,103 @@ export class LiandanluTextToImageModelResponse extends $tea.Model {
   }
 }
 
+export class NLToFrameServiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NLToFrameServiceRequest extends $tea.Model {
+  extensionStr?: string;
+  isNewModel?: boolean;
+  modelId?: string;
+  modelName?: string;
+  userId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      extensionStr: 'extensionStr',
+      isNewModel: 'isNewModel',
+      modelId: 'modelId',
+      modelName: 'modelName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extensionStr: 'string',
+      isNewModel: 'boolean',
+      modelId: 'string',
+      modelName: 'string',
+      userId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NLToFrameServiceResponseBody extends $tea.Model {
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class NLToFrameServiceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: NLToFrameServiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: NLToFrameServiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryBaymaxSkillLogHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1345,6 +1442,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LiandanluTextToImageModelHeaders({ });
     return await this.liandanluTextToImageModelWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 通过配置的指令，连接用户和系统，训练大模型
+   *
+   * @param request NLToFrameServiceRequest
+   * @param headers NLToFrameServiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return NLToFrameServiceResponse
+   */
+  async nLToFrameServiceWithOptions(request: NLToFrameServiceRequest, headers: NLToFrameServiceHeaders, runtime: $Util.RuntimeOptions): Promise<NLToFrameServiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.extensionStr)) {
+      body["extensionStr"] = request.extensionStr;
+    }
+
+    if (!Util.isUnset(request.isNewModel)) {
+      body["isNewModel"] = request.isNewModel;
+    }
+
+    if (!Util.isUnset(request.modelId)) {
+      body["modelId"] = request.modelId;
+    }
+
+    if (!Util.isUnset(request.modelName)) {
+      body["modelName"] = request.modelName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "NLToFrameService",
+      version: "aiPaaS_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/aiPaaS/ai/nl2frame`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<NLToFrameServiceResponse>(await this.execute(params, req, runtime), new NLToFrameServiceResponse({}));
+  }
+
+  /**
+   * @summary 通过配置的指令，连接用户和系统，训练大模型
+   *
+   * @param request NLToFrameServiceRequest
+   * @return NLToFrameServiceResponse
+   */
+  async nLToFrameService(request: NLToFrameServiceRequest): Promise<NLToFrameServiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new NLToFrameServiceHeaders({ });
+    return await this.nLToFrameServiceWithOptions(request, headers, runtime);
   }
 
   /**

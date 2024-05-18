@@ -1029,6 +1029,97 @@ export class DistributePartnerAppResponse extends $tea.Model {
   }
 }
 
+export class ExchangeMainAdminHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExchangeMainAdminRequest extends $tea.Model {
+  newAdminUserId?: string;
+  oldAdminUserId?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      newAdminUserId: 'newAdminUserId',
+      oldAdminUserId: 'oldAdminUserId',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      newAdminUserId: 'string',
+      oldAdminUserId: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExchangeMainAdminResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExchangeMainAdminResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExchangeMainAdminResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ExchangeMainAdminResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ExclusiveCreateDingPortalHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5605,6 +5696,100 @@ export class LogoutResponse extends $tea.Model {
   }
 }
 
+export class OpenBenefitPackageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenBenefitPackageRequest extends $tea.Model {
+  benefitPackage?: number;
+  endDate?: number;
+  startDate?: number;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitPackage: 'benefitPackage',
+      endDate: 'endDate',
+      startDate: 'startDate',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitPackage: 'number',
+      endDate: 'number',
+      startDate: 'number',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenBenefitPackageResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenBenefitPackageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenBenefitPackageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenBenefitPackageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PreventCheatingCheckRiskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7986,6 +8171,94 @@ export class UpdateStorageModeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateStorageModeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVoiceMsgCtrlStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVoiceMsgCtrlStatusRequest extends $tea.Model {
+  status?: number;
+  voiceMsgCtrlInfo?: UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+      voiceMsgCtrlInfo: 'voiceMsgCtrlInfo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+      voiceMsgCtrlInfo: UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVoiceMsgCtrlStatusResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateVoiceMsgCtrlStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateVoiceMsgCtrlStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateVoiceMsgCtrlStatusResponseBody,
     };
   }
 
@@ -10426,6 +10699,31 @@ export class UpdateRealmLicenseRequestDetailList extends $tea.Model {
   }
 }
 
+export class UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo extends $tea.Model {
+  openConversationId?: string;
+  openMsgId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openMsgId: 'openMsgId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openMsgId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -11142,6 +11440,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DistributePartnerAppHeaders({ });
     return await this.distributePartnerAppWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 更换组织主管理员
+   *
+   * @param request ExchangeMainAdminRequest
+   * @param headers ExchangeMainAdminHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ExchangeMainAdminResponse
+   */
+  async exchangeMainAdminWithOptions(request: ExchangeMainAdminRequest, headers: ExchangeMainAdminHeaders, runtime: $Util.RuntimeOptions): Promise<ExchangeMainAdminResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.newAdminUserId)) {
+      body["newAdminUserId"] = request.newAdminUserId;
+    }
+
+    if (!Util.isUnset(request.oldAdminUserId)) {
+      body["oldAdminUserId"] = request.oldAdminUserId;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ExchangeMainAdmin",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/orgnizations/mainAdministrators/exchange`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExchangeMainAdminResponse>(await this.execute(params, req, runtime), new ExchangeMainAdminResponse({}));
+  }
+
+  /**
+   * @summary 更换组织主管理员
+   *
+   * @param request ExchangeMainAdminRequest
+   * @return ExchangeMainAdminResponse
+   */
+  async exchangeMainAdmin(request: ExchangeMainAdminRequest): Promise<ExchangeMainAdminResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExchangeMainAdminHeaders({ });
+    return await this.exchangeMainAdminWithOptions(request, headers, runtime);
   }
 
   /**
@@ -14124,6 +14484,72 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 购买权益包
+   *
+   * @param request OpenBenefitPackageRequest
+   * @param headers OpenBenefitPackageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenBenefitPackageResponse
+   */
+  async openBenefitPackageWithOptions(request: OpenBenefitPackageRequest, headers: OpenBenefitPackageHeaders, runtime: $Util.RuntimeOptions): Promise<OpenBenefitPackageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitPackage)) {
+      body["benefitPackage"] = request.benefitPackage;
+    }
+
+    if (!Util.isUnset(request.endDate)) {
+      body["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenBenefitPackage",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/benefitPackages/purchase`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenBenefitPackageResponse>(await this.execute(params, req, runtime), new OpenBenefitPackageResponse({}));
+  }
+
+  /**
+   * @summary 购买权益包
+   *
+   * @param request OpenBenefitPackageRequest
+   * @return OpenBenefitPackageResponse
+   */
+  async openBenefitPackage(request: OpenBenefitPackageRequest): Promise<OpenBenefitPackageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenBenefitPackageHeaders({ });
+    return await this.openBenefitPackageWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 防作弊风险检测
    *
    * @param request PreventCheatingCheckRiskRequest
@@ -15860,6 +16286,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateStorageModeHeaders({ });
     return await this.updateStorageModeWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 允许三方调用该API，决定对应的语音消息管控状态
+   *
+   * @param request UpdateVoiceMsgCtrlStatusRequest
+   * @param headers UpdateVoiceMsgCtrlStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateVoiceMsgCtrlStatusResponse
+   */
+  async updateVoiceMsgCtrlStatusWithOptions(request: UpdateVoiceMsgCtrlStatusRequest, headers: UpdateVoiceMsgCtrlStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVoiceMsgCtrlStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.voiceMsgCtrlInfo)) {
+      body["voiceMsgCtrlInfo"] = request.voiceMsgCtrlInfo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateVoiceMsgCtrlStatus",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/voiceMessages/ctrlStatuses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateVoiceMsgCtrlStatusResponse>(await this.execute(params, req, runtime), new UpdateVoiceMsgCtrlStatusResponse({}));
+  }
+
+  /**
+   * @summary 允许三方调用该API，决定对应的语音消息管控状态
+   *
+   * @param request UpdateVoiceMsgCtrlStatusRequest
+   * @return UpdateVoiceMsgCtrlStatusResponse
+   */
+  async updateVoiceMsgCtrlStatus(request: UpdateVoiceMsgCtrlStatusRequest): Promise<UpdateVoiceMsgCtrlStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateVoiceMsgCtrlStatusHeaders({ });
+    return await this.updateVoiceMsgCtrlStatusWithOptions(request, headers, runtime);
   }
 
 }

@@ -904,11 +904,13 @@ export class CreateIntegratedTaskHeaders extends $tea.Model {
 
 export class CreateIntegratedTaskRequest extends $tea.Model {
   activityId?: string;
+  featureConfig?: CreateIntegratedTaskRequestFeatureConfig;
   processInstanceId?: string;
   tasks?: CreateIntegratedTaskRequestTasks[];
   static names(): { [key: string]: string } {
     return {
       activityId: 'activityId',
+      featureConfig: 'featureConfig',
       processInstanceId: 'processInstanceId',
       tasks: 'tasks',
     };
@@ -917,6 +919,7 @@ export class CreateIntegratedTaskRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       activityId: 'string',
+      featureConfig: CreateIntegratedTaskRequestFeatureConfig,
       processInstanceId: 'string',
       tasks: { 'type': 'array', 'itemType': CreateIntegratedTaskRequestTasks },
     };
@@ -966,6 +969,94 @@ export class CreateIntegratedTaskResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CreateIntegratedTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDirHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDirRequest extends $tea.Model {
+  dirId?: string;
+  operateUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dirId: 'dirId',
+      operateUserId: 'operateUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dirId: 'string',
+      operateUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDirResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDirResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteDirResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteDirResponseBody,
     };
   }
 
@@ -2388,6 +2479,106 @@ export class GrantProcessInstanceForDownloadFileResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GrantProcessInstanceForDownloadFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertOrUpdateDirHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertOrUpdateDirRequest extends $tea.Model {
+  bizGroup?: string;
+  description?: string;
+  name?: string;
+  name18n?: string;
+  operateUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizGroup: 'bizGroup',
+      description: 'description',
+      name: 'name',
+      name18n: 'name18n',
+      operateUserId: 'operateUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizGroup: 'string',
+      description: 'string',
+      name: 'string',
+      name18n: 'string',
+      operateUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertOrUpdateDirResponseBody extends $tea.Model {
+  result?: InsertOrUpdateDirResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: InsertOrUpdateDirResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertOrUpdateDirResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InsertOrUpdateDirResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: InsertOrUpdateDirResponseBody,
     };
   }
 
@@ -3863,6 +4054,7 @@ export class SaveIntegratedInstanceHeaders extends $tea.Model {
 
 export class SaveIntegratedInstanceRequest extends $tea.Model {
   bizData?: string;
+  featureConfig?: SaveIntegratedInstanceRequestFeatureConfig;
   formComponentValueList?: SaveIntegratedInstanceRequestFormComponentValueList[];
   notifiers?: SaveIntegratedInstanceRequestNotifiers[];
   originatorUserId?: string;
@@ -3872,6 +4064,7 @@ export class SaveIntegratedInstanceRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       bizData: 'bizData',
+      featureConfig: 'featureConfig',
       formComponentValueList: 'formComponentValueList',
       notifiers: 'notifiers',
       originatorUserId: 'originatorUserId',
@@ -3884,6 +4077,7 @@ export class SaveIntegratedInstanceRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       bizData: 'string',
+      featureConfig: SaveIntegratedInstanceRequestFeatureConfig,
       formComponentValueList: { 'type': 'array', 'itemType': SaveIntegratedInstanceRequestFormComponentValueList },
       notifiers: { 'type': 'array', 'itemType': SaveIntegratedInstanceRequestNotifiers },
       originatorUserId: 'string',
@@ -4688,6 +4882,84 @@ export class CopyProcessResponseBodyResult extends $tea.Model {
       bizType: 'string',
       name: 'string',
       processCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateIntegratedTaskRequestFeatureConfigFeaturesCallback extends $tea.Model {
+  apiKey?: string;
+  appUuid?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiKey: 'apiKey',
+      appUuid: 'appUuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiKey: 'string',
+      appUuid: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateIntegratedTaskRequestFeatureConfigFeatures extends $tea.Model {
+  callback?: CreateIntegratedTaskRequestFeatureConfigFeaturesCallback;
+  config?: string;
+  mobileUrl?: string;
+  name?: string;
+  pcUrl?: string;
+  runType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callback: 'callback',
+      config: 'config',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      runType: 'runType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callback: CreateIntegratedTaskRequestFeatureConfigFeaturesCallback,
+      config: 'string',
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
+      runType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateIntegratedTaskRequestFeatureConfig extends $tea.Model {
+  features?: CreateIntegratedTaskRequestFeatureConfigFeatures[];
+  static names(): { [key: string]: string } {
+    return {
+      features: 'features',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      features: { 'type': 'array', 'itemType': CreateIntegratedTaskRequestFeatureConfigFeatures },
     };
   }
 
@@ -5525,6 +5797,28 @@ export class GrantProcessInstanceForDownloadFileResponseBodyResult extends $tea.
       downloadUri: 'string',
       fileId: 'string',
       spaceId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InsertOrUpdateDirResponseBodyResult extends $tea.Model {
+  bizGroup?: string;
+  dirId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizGroup: 'bizGroup',
+      dirId: 'dirId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizGroup: 'string',
+      dirId: 'string',
     };
   }
 
@@ -7298,6 +7592,84 @@ export class RedirectWorkflowTaskRequestFile extends $tea.Model {
   }
 }
 
+export class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback extends $tea.Model {
+  apiKey?: string;
+  appUuid?: string;
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiKey: 'apiKey',
+      appUuid: 'appUuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiKey: 'string',
+      appUuid: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveIntegratedInstanceRequestFeatureConfigFeatures extends $tea.Model {
+  callback?: SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback;
+  config?: string;
+  mobileUrl?: string;
+  name?: string;
+  pcUrl?: string;
+  runType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callback: 'callback',
+      config: 'config',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      runType: 'runType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callback: SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback,
+      config: 'string',
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
+      runType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveIntegratedInstanceRequestFeatureConfig extends $tea.Model {
+  features?: SaveIntegratedInstanceRequestFeatureConfigFeatures[];
+  static names(): { [key: string]: string } {
+    return {
+      features: 'features',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      features: { 'type': 'array', 'itemType': SaveIntegratedInstanceRequestFeatureConfigFeatures },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SaveIntegratedInstanceRequestFormComponentValueList extends $tea.Model {
   bizAlias?: string;
   componentType?: string;
@@ -7400,6 +7772,7 @@ export class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends $tea
 
 export class SaveProcessRequestProcessFeatureConfigFeatures extends $tea.Model {
   callback?: SaveProcessRequestProcessFeatureConfigFeaturesCallback;
+  config?: string;
   mobileUrl?: string;
   name?: string;
   pcUrl?: string;
@@ -7407,6 +7780,7 @@ export class SaveProcessRequestProcessFeatureConfigFeatures extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       callback: 'callback',
+      config: 'config',
       mobileUrl: 'mobileUrl',
       name: 'name',
       pcUrl: 'pcUrl',
@@ -7417,6 +7791,7 @@ export class SaveProcessRequestProcessFeatureConfigFeatures extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       callback: SaveProcessRequestProcessFeatureConfigFeaturesCallback,
+      config: 'string',
       mobileUrl: 'string',
       name: 'string',
       pcUrl: 'string',
@@ -8148,6 +8523,10 @@ export default class Client extends OpenApi {
       body["activityId"] = request.activityId;
     }
 
+    if (!Util.isUnset(request.featureConfig)) {
+      body["featureConfig"] = request.featureConfig;
+    }
+
     if (!Util.isUnset(request.processInstanceId)) {
       body["processInstanceId"] = request.processInstanceId;
     }
@@ -8193,6 +8572,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateIntegratedTaskHeaders({ });
     return await this.createIntegratedTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 删除分组
+   *
+   * @param request DeleteDirRequest
+   * @param headers DeleteDirHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteDirResponse
+   */
+  async deleteDirWithOptions(request: DeleteDirRequest, headers: DeleteDirHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDirResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dirId)) {
+      query["dirId"] = request.dirId;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      query["operateUserId"] = request.operateUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteDir",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/directories`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDirResponse>(await this.execute(params, req, runtime), new DeleteDirResponse({}));
+  }
+
+  /**
+   * @summary 删除分组
+   *
+   * @param request DeleteDirRequest
+   * @return DeleteDirResponse
+   */
+  async deleteDir(request: DeleteDirRequest): Promise<DeleteDirResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteDirHeaders({ });
+    return await this.deleteDirWithOptions(request, headers, runtime);
   }
 
   /**
@@ -9138,6 +9575,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GrantProcessInstanceForDownloadFileHeaders({ });
     return await this.grantProcessInstanceForDownloadFileWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 创建或更新分组
+   *
+   * @param request InsertOrUpdateDirRequest
+   * @param headers InsertOrUpdateDirHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return InsertOrUpdateDirResponse
+   */
+  async insertOrUpdateDirWithOptions(request: InsertOrUpdateDirRequest, headers: InsertOrUpdateDirHeaders, runtime: $Util.RuntimeOptions): Promise<InsertOrUpdateDirResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizGroup)) {
+      body["bizGroup"] = request.bizGroup;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.name18n)) {
+      body["name18n"] = request.name18n;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      body["operateUserId"] = request.operateUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "InsertOrUpdateDir",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/directories`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InsertOrUpdateDirResponse>(await this.execute(params, req, runtime), new InsertOrUpdateDirResponse({}));
+  }
+
+  /**
+   * @summary 创建或更新分组
+   *
+   * @param request InsertOrUpdateDirRequest
+   * @return InsertOrUpdateDirResponse
+   */
+  async insertOrUpdateDir(request: InsertOrUpdateDirRequest): Promise<InsertOrUpdateDirResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InsertOrUpdateDirHeaders({ });
+    return await this.insertOrUpdateDirWithOptions(request, headers, runtime);
   }
 
   /**
@@ -10139,6 +10646,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizData)) {
       body["bizData"] = request.bizData;
+    }
+
+    if (!Util.isUnset(request.featureConfig)) {
+      body["featureConfig"] = request.featureConfig;
     }
 
     if (!Util.isUnset(request.formComponentValueList)) {

@@ -9,6 +9,115 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddHrmLegalEntityHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityRequest extends $tea.Model {
+  corpId?: string;
+  createUserId?: string;
+  ext?: AddHrmLegalEntityRequestExt;
+  legalEntityName?: string;
+  legalEntityShortName?: string;
+  legalEntityStatus?: number;
+  legalPersonName?: string;
+  dingTenantId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      createUserId: 'createUserId',
+      ext: 'ext',
+      legalEntityName: 'legalEntityName',
+      legalEntityShortName: 'legalEntityShortName',
+      legalEntityStatus: 'legalEntityStatus',
+      legalPersonName: 'legalPersonName',
+      dingTenantId: 'dingTenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      createUserId: 'string',
+      ext: AddHrmLegalEntityRequestExt,
+      legalEntityName: 'string',
+      legalEntityShortName: 'string',
+      legalEntityStatus: 'number',
+      legalPersonName: 'string',
+      dingTenantId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityResponseBody extends $tea.Model {
+  result?: AddHrmLegalEntityResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: AddHrmLegalEntityResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddHrmLegalEntityResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddHrmLegalEntityResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmPreentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3107,6 +3216,209 @@ export class SyncTaskTemplateResponse extends $tea.Model {
   }
 }
 
+export class UpdateHrmLegalEntityNameHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityNameRequest extends $tea.Model {
+  dingTenantId?: number;
+  legalEntityName?: string;
+  originLegalEntityName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingTenantId: 'dingTenantId',
+      legalEntityName: 'legalEntityName',
+      originLegalEntityName: 'originLegalEntityName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingTenantId: 'number',
+      legalEntityName: 'string',
+      originLegalEntityName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityNameResponseBody extends $tea.Model {
+  result?: UpdateHrmLegalEntityNameResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateHrmLegalEntityNameResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityNameResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateHrmLegalEntityNameResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateHrmLegalEntityNameResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameRequest extends $tea.Model {
+  corpId?: string;
+  createUserId?: string;
+  ext?: UpdateHrmLegalEntityWithoutNameRequestExt;
+  legalEntityName?: string;
+  legalEntityShortName?: string;
+  legalEntityStatus?: number;
+  legalPersonName?: string;
+  dingTenantId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      createUserId: 'createUserId',
+      ext: 'ext',
+      legalEntityName: 'legalEntityName',
+      legalEntityShortName: 'legalEntityShortName',
+      legalEntityStatus: 'legalEntityStatus',
+      legalPersonName: 'legalPersonName',
+      dingTenantId: 'dingTenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      createUserId: 'string',
+      ext: UpdateHrmLegalEntityWithoutNameRequestExt,
+      legalEntityName: 'string',
+      legalEntityShortName: 'string',
+      legalEntityStatus: 'number',
+      legalPersonName: 'string',
+      dingTenantId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameResponseBody extends $tea.Model {
+  result?: UpdateHrmLegalEntityWithoutNameResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UpdateHrmLegalEntityWithoutNameResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateHrmLegalEntityWithoutNameResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateHrmLegalEntityWithoutNameResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIsvCardMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3208,6 +3520,178 @@ export class UpdateIsvCardMessageResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateIsvCardMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityRequestExtManageAddress extends $tea.Model {
+  areaCode?: string;
+  areaName?: string;
+  cityCode?: string;
+  cityName?: string;
+  countryCode?: string;
+  countryName?: string;
+  detailAddress?: string;
+  globalAreaType?: string;
+  provinceCode?: string;
+  provinceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      areaCode: 'areaCode',
+      areaName: 'areaName',
+      cityCode: 'cityCode',
+      cityName: 'cityName',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
+      detailAddress: 'detailAddress',
+      globalAreaType: 'globalAreaType',
+      provinceCode: 'provinceCode',
+      provinceName: 'provinceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      areaCode: 'string',
+      areaName: 'string',
+      cityCode: 'string',
+      cityName: 'string',
+      countryCode: 'string',
+      countryName: 'string',
+      detailAddress: 'string',
+      globalAreaType: 'string',
+      provinceCode: 'string',
+      provinceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityRequestExtRegistrationAddress extends $tea.Model {
+  areaCode?: string;
+  areaName?: string;
+  cityCode?: string;
+  cityName?: string;
+  countryCode?: string;
+  countryName?: string;
+  detailAddress?: string;
+  globalAreaType?: string;
+  provinceCode?: string;
+  provinceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      areaCode: 'areaCode',
+      areaName: 'areaName',
+      cityCode: 'cityCode',
+      cityName: 'cityName',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
+      detailAddress: 'detailAddress',
+      globalAreaType: 'globalAreaType',
+      provinceCode: 'provinceCode',
+      provinceName: 'provinceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      areaCode: 'string',
+      areaName: 'string',
+      cityCode: 'string',
+      cityName: 'string',
+      countryCode: 'string',
+      countryName: 'string',
+      detailAddress: 'string',
+      globalAreaType: 'string',
+      provinceCode: 'string',
+      provinceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityRequestExt extends $tea.Model {
+  legalEntityEnName?: string;
+  legalEntityEnShortName?: string;
+  legalEntityType?: string;
+  manageAddress?: AddHrmLegalEntityRequestExtManageAddress;
+  registrationAddress?: AddHrmLegalEntityRequestExtRegistrationAddress;
+  registrationDate?: number;
+  unifiedSocialCreditCode?: string;
+  zipCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      legalEntityEnName: 'legalEntityEnName',
+      legalEntityEnShortName: 'legalEntityEnShortName',
+      legalEntityType: 'legalEntityType',
+      manageAddress: 'manageAddress',
+      registrationAddress: 'registrationAddress',
+      registrationDate: 'registrationDate',
+      unifiedSocialCreditCode: 'unifiedSocialCreditCode',
+      zipCode: 'zipCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      legalEntityEnName: 'string',
+      legalEntityEnShortName: 'string',
+      legalEntityType: 'string',
+      manageAddress: AddHrmLegalEntityRequestExtManageAddress,
+      registrationAddress: AddHrmLegalEntityRequestExtRegistrationAddress,
+      registrationDate: 'number',
+      unifiedSocialCreditCode: 'string',
+      zipCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddHrmLegalEntityResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  gmtCreate?: number;
+  gmtModified?: number;
+  legalEntityId?: string;
+  legalEntityName?: string;
+  legalEntityShortName?: string;
+  legalEntityStatus?: number;
+  legalPersonName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      legalEntityId: 'legalEntityId',
+      legalEntityName: 'legalEntityName',
+      legalEntityShortName: 'legalEntityShortName',
+      legalEntityStatus: 'legalEntityStatus',
+      legalPersonName: 'legalPersonName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      legalEntityId: 'string',
+      legalEntityName: 'string',
+      legalEntityShortName: 'string',
+      legalEntityStatus: 'number',
+      legalPersonName: 'string',
     };
   }
 
@@ -4352,6 +4836,218 @@ export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
   }
 }
 
+export class UpdateHrmLegalEntityNameResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  gmtCreate?: number;
+  gmtModified?: number;
+  legalEntityId?: string;
+  legalEntityName?: string;
+  legalEntityShortName?: string;
+  legalEntityStatus?: number;
+  legalPersonName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      legalEntityId: 'legalEntityId',
+      legalEntityName: 'legalEntityName',
+      legalEntityShortName: 'legalEntityShortName',
+      legalEntityStatus: 'legalEntityStatus',
+      legalPersonName: 'legalPersonName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      legalEntityId: 'string',
+      legalEntityName: 'string',
+      legalEntityShortName: 'string',
+      legalEntityStatus: 'number',
+      legalPersonName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameRequestExtManageAddress extends $tea.Model {
+  areaCode?: string;
+  areaName?: string;
+  cityCode?: string;
+  cityName?: string;
+  countryCode?: string;
+  countryName?: string;
+  detailAddress?: string;
+  globalAreaType?: string;
+  provinceCode?: string;
+  provinceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      areaCode: 'areaCode',
+      areaName: 'areaName',
+      cityCode: 'cityCode',
+      cityName: 'cityName',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
+      detailAddress: 'detailAddress',
+      globalAreaType: 'globalAreaType',
+      provinceCode: 'provinceCode',
+      provinceName: 'provinceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      areaCode: 'string',
+      areaName: 'string',
+      cityCode: 'string',
+      cityName: 'string',
+      countryCode: 'string',
+      countryName: 'string',
+      detailAddress: 'string',
+      globalAreaType: 'string',
+      provinceCode: 'string',
+      provinceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress extends $tea.Model {
+  areaCode?: string;
+  areaName?: string;
+  cityCode?: string;
+  cityName?: string;
+  countryCode?: string;
+  countryName?: string;
+  detailAddress?: string;
+  globalAreaType?: string;
+  provinceCode?: string;
+  provinceName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      areaCode: 'areaCode',
+      areaName: 'areaName',
+      cityCode: 'cityCode',
+      cityName: 'cityName',
+      countryCode: 'countryCode',
+      countryName: 'countryName',
+      detailAddress: 'detailAddress',
+      globalAreaType: 'globalAreaType',
+      provinceCode: 'provinceCode',
+      provinceName: 'provinceName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      areaCode: 'string',
+      areaName: 'string',
+      cityCode: 'string',
+      cityName: 'string',
+      countryCode: 'string',
+      countryName: 'string',
+      detailAddress: 'string',
+      globalAreaType: 'string',
+      provinceCode: 'string',
+      provinceName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameRequestExt extends $tea.Model {
+  legalEntityEnName?: string;
+  legalEntityEnShortName?: string;
+  legalEntityType?: string;
+  manageAddress?: UpdateHrmLegalEntityWithoutNameRequestExtManageAddress;
+  registrationAddress?: UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress;
+  registrationDate?: number;
+  unifiedSocialCreditCode?: string;
+  zipCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      legalEntityEnName: 'legalEntityEnName',
+      legalEntityEnShortName: 'legalEntityEnShortName',
+      legalEntityType: 'legalEntityType',
+      manageAddress: 'manageAddress',
+      registrationAddress: 'registrationAddress',
+      registrationDate: 'registrationDate',
+      unifiedSocialCreditCode: 'unifiedSocialCreditCode',
+      zipCode: 'zipCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      legalEntityEnName: 'string',
+      legalEntityEnShortName: 'string',
+      legalEntityType: 'string',
+      manageAddress: UpdateHrmLegalEntityWithoutNameRequestExtManageAddress,
+      registrationAddress: UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress,
+      registrationDate: 'number',
+      unifiedSocialCreditCode: 'string',
+      zipCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmLegalEntityWithoutNameResponseBodyResult extends $tea.Model {
+  corpId?: string;
+  gmtCreate?: number;
+  gmtModified?: number;
+  legalEntityId?: string;
+  legalEntityName?: string;
+  legalEntityShortName?: string;
+  legalEntityStatus?: number;
+  legalPersonName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      legalEntityId: 'legalEntityId',
+      legalEntityName: 'legalEntityName',
+      legalEntityShortName: 'legalEntityShortName',
+      legalEntityStatus: 'legalEntityStatus',
+      legalPersonName: 'legalPersonName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      gmtCreate: 'number',
+      gmtModified: 'number',
+      legalEntityId: 'string',
+      legalEntityName: 'string',
+      legalEntityShortName: 'string',
+      legalEntityStatus: 'number',
+      legalPersonName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -4368,6 +5064,90 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * @summary 新增法人公司
+   *
+   * @param request AddHrmLegalEntityRequest
+   * @param headers AddHrmLegalEntityHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddHrmLegalEntityResponse
+   */
+  async addHrmLegalEntityWithOptions(request: AddHrmLegalEntityRequest, headers: AddHrmLegalEntityHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmLegalEntityResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTenantId)) {
+      query["dingTenantId"] = request.dingTenantId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.createUserId)) {
+      body["createUserId"] = request.createUserId;
+    }
+
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.legalEntityName)) {
+      body["legalEntityName"] = request.legalEntityName;
+    }
+
+    if (!Util.isUnset(request.legalEntityShortName)) {
+      body["legalEntityShortName"] = request.legalEntityShortName;
+    }
+
+    if (!Util.isUnset(request.legalEntityStatus)) {
+      body["legalEntityStatus"] = request.legalEntityStatus;
+    }
+
+    if (!Util.isUnset(request.legalPersonName)) {
+      body["legalPersonName"] = request.legalPersonName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddHrmLegalEntity",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/legalEntities/companies`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddHrmLegalEntityResponse>(await this.execute(params, req, runtime), new AddHrmLegalEntityResponse({}));
+  }
+
+  /**
+   * @summary 新增法人公司
+   *
+   * @param request AddHrmLegalEntityRequest
+   * @return AddHrmLegalEntityResponse
+   */
+  async addHrmLegalEntity(request: AddHrmLegalEntityRequest): Promise<AddHrmLegalEntityResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddHrmLegalEntityHeaders({ });
+    return await this.addHrmLegalEntityWithOptions(request, headers, runtime);
+  }
 
   /**
    * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
@@ -6481,6 +7261,152 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SyncTaskTemplateHeaders({ });
     return await this.syncTaskTemplateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 更新法人公司名称
+   *
+   * @param request UpdateHrmLegalEntityNameRequest
+   * @param headers UpdateHrmLegalEntityNameHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateHrmLegalEntityNameResponse
+   */
+  async updateHrmLegalEntityNameWithOptions(request: UpdateHrmLegalEntityNameRequest, headers: UpdateHrmLegalEntityNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateHrmLegalEntityNameResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTenantId)) {
+      query["dingTenantId"] = request.dingTenantId;
+    }
+
+    if (!Util.isUnset(request.legalEntityName)) {
+      query["legalEntityName"] = request.legalEntityName;
+    }
+
+    if (!Util.isUnset(request.originLegalEntityName)) {
+      query["originLegalEntityName"] = request.originLegalEntityName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateHrmLegalEntityName",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/legalEntities/companyNames`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateHrmLegalEntityNameResponse>(await this.execute(params, req, runtime), new UpdateHrmLegalEntityNameResponse({}));
+  }
+
+  /**
+   * @summary 更新法人公司名称
+   *
+   * @param request UpdateHrmLegalEntityNameRequest
+   * @return UpdateHrmLegalEntityNameResponse
+   */
+  async updateHrmLegalEntityName(request: UpdateHrmLegalEntityNameRequest): Promise<UpdateHrmLegalEntityNameResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateHrmLegalEntityNameHeaders({ });
+    return await this.updateHrmLegalEntityNameWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 更新法人公司
+   *
+   * @param request UpdateHrmLegalEntityWithoutNameRequest
+   * @param headers UpdateHrmLegalEntityWithoutNameHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateHrmLegalEntityWithoutNameResponse
+   */
+  async updateHrmLegalEntityWithoutNameWithOptions(request: UpdateHrmLegalEntityWithoutNameRequest, headers: UpdateHrmLegalEntityWithoutNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateHrmLegalEntityWithoutNameResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingTenantId)) {
+      query["dingTenantId"] = request.dingTenantId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.createUserId)) {
+      body["createUserId"] = request.createUserId;
+    }
+
+    if (!Util.isUnset(request.ext)) {
+      body["ext"] = request.ext;
+    }
+
+    if (!Util.isUnset(request.legalEntityName)) {
+      body["legalEntityName"] = request.legalEntityName;
+    }
+
+    if (!Util.isUnset(request.legalEntityShortName)) {
+      body["legalEntityShortName"] = request.legalEntityShortName;
+    }
+
+    if (!Util.isUnset(request.legalEntityStatus)) {
+      body["legalEntityStatus"] = request.legalEntityStatus;
+    }
+
+    if (!Util.isUnset(request.legalPersonName)) {
+      body["legalPersonName"] = request.legalPersonName;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateHrmLegalEntityWithoutName",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/legalEntities/companies`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateHrmLegalEntityWithoutNameResponse>(await this.execute(params, req, runtime), new UpdateHrmLegalEntityWithoutNameResponse({}));
+  }
+
+  /**
+   * @summary 更新法人公司
+   *
+   * @param request UpdateHrmLegalEntityWithoutNameRequest
+   * @return UpdateHrmLegalEntityWithoutNameResponse
+   */
+  async updateHrmLegalEntityWithoutName(request: UpdateHrmLegalEntityWithoutNameRequest): Promise<UpdateHrmLegalEntityWithoutNameResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateHrmLegalEntityWithoutNameHeaders({ });
+    return await this.updateHrmLegalEntityWithoutNameWithOptions(request, headers, runtime);
   }
 
   /**
