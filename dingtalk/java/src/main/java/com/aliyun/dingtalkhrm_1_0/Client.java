@@ -21,6 +21,90 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
+     * @summary 新增法人公司
+     *
+     * @param request AddHrmLegalEntityRequest
+     * @param headers AddHrmLegalEntityHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddHrmLegalEntityResponse
+     */
+    public AddHrmLegalEntityResponse addHrmLegalEntityWithOptions(AddHrmLegalEntityRequest request, AddHrmLegalEntityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTenantId)) {
+            query.put("dingTenantId", request.dingTenantId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createUserId)) {
+            body.put("createUserId", request.createUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ext)) {
+            body.put("ext", request.ext);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityName)) {
+            body.put("legalEntityName", request.legalEntityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityShortName)) {
+            body.put("legalEntityShortName", request.legalEntityShortName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityStatus)) {
+            body.put("legalEntityStatus", request.legalEntityStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPersonName)) {
+            body.put("legalPersonName", request.legalPersonName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddHrmLegalEntity"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/legalEntities/companies"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddHrmLegalEntityResponse());
+    }
+
+    /**
+     * @summary 新增法人公司
+     *
+     * @param request AddHrmLegalEntityRequest
+     * @return AddHrmLegalEntityResponse
+     */
+    public AddHrmLegalEntityResponse addHrmLegalEntity(AddHrmLegalEntityRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddHrmLegalEntityHeaders headers = new AddHrmLegalEntityHeaders();
+        return this.addHrmLegalEntityWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
      *
      * @param request AddHrmPreentryRequest
@@ -2132,6 +2216,152 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
         return this.syncTaskTemplateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 更新法人公司名称
+     *
+     * @param request UpdateHrmLegalEntityNameRequest
+     * @param headers UpdateHrmLegalEntityNameHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateHrmLegalEntityNameResponse
+     */
+    public UpdateHrmLegalEntityNameResponse updateHrmLegalEntityNameWithOptions(UpdateHrmLegalEntityNameRequest request, UpdateHrmLegalEntityNameHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTenantId)) {
+            query.put("dingTenantId", request.dingTenantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityName)) {
+            query.put("legalEntityName", request.legalEntityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originLegalEntityName)) {
+            query.put("originLegalEntityName", request.originLegalEntityName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateHrmLegalEntityName"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/legalEntities/companyNames"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateHrmLegalEntityNameResponse());
+    }
+
+    /**
+     * @summary 更新法人公司名称
+     *
+     * @param request UpdateHrmLegalEntityNameRequest
+     * @return UpdateHrmLegalEntityNameResponse
+     */
+    public UpdateHrmLegalEntityNameResponse updateHrmLegalEntityName(UpdateHrmLegalEntityNameRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateHrmLegalEntityNameHeaders headers = new UpdateHrmLegalEntityNameHeaders();
+        return this.updateHrmLegalEntityNameWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 更新法人公司
+     *
+     * @param request UpdateHrmLegalEntityWithoutNameRequest
+     * @param headers UpdateHrmLegalEntityWithoutNameHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateHrmLegalEntityWithoutNameResponse
+     */
+    public UpdateHrmLegalEntityWithoutNameResponse updateHrmLegalEntityWithoutNameWithOptions(UpdateHrmLegalEntityWithoutNameRequest request, UpdateHrmLegalEntityWithoutNameHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingTenantId)) {
+            query.put("dingTenantId", request.dingTenantId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createUserId)) {
+            body.put("createUserId", request.createUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ext)) {
+            body.put("ext", request.ext);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityName)) {
+            body.put("legalEntityName", request.legalEntityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityShortName)) {
+            body.put("legalEntityShortName", request.legalEntityShortName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalEntityStatus)) {
+            body.put("legalEntityStatus", request.legalEntityStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.legalPersonName)) {
+            body.put("legalPersonName", request.legalPersonName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateHrmLegalEntityWithoutName"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/legalEntities/companies"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateHrmLegalEntityWithoutNameResponse());
+    }
+
+    /**
+     * @summary 更新法人公司
+     *
+     * @param request UpdateHrmLegalEntityWithoutNameRequest
+     * @return UpdateHrmLegalEntityWithoutNameResponse
+     */
+    public UpdateHrmLegalEntityWithoutNameResponse updateHrmLegalEntityWithoutName(UpdateHrmLegalEntityWithoutNameRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateHrmLegalEntityWithoutNameHeaders headers = new UpdateHrmLegalEntityWithoutNameHeaders();
+        return this.updateHrmLegalEntityWithoutNameWithOptions(request, headers, runtime);
     }
 
     /**

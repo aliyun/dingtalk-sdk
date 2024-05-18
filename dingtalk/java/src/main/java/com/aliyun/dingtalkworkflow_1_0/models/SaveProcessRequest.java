@@ -127,6 +127,9 @@ public class SaveProcessRequest extends TeaModel {
         @NameInMap("callback")
         public SaveProcessRequestProcessFeatureConfigFeaturesCallback callback;
 
+        @NameInMap("config")
+        public String config;
+
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
@@ -150,6 +153,14 @@ public class SaveProcessRequest extends TeaModel {
         }
         public SaveProcessRequestProcessFeatureConfigFeaturesCallback getCallback() {
             return this.callback;
+        }
+
+        public SaveProcessRequestProcessFeatureConfigFeatures setConfig(String config) {
+            this.config = config;
+            return this;
+        }
+        public String getConfig() {
+            return this.config;
         }
 
         public SaveProcessRequestProcessFeatureConfigFeatures setMobileUrl(String mobileUrl) {

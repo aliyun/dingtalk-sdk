@@ -7,6 +7,9 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     @NameInMap("bizData")
     public String bizData;
 
+    @NameInMap("featureConfig")
+    public SaveIntegratedInstanceRequestFeatureConfig featureConfig;
+
     @NameInMap("formComponentValueList")
     public java.util.List<SaveIntegratedInstanceRequestFormComponentValueList> formComponentValueList;
 
@@ -45,6 +48,14 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
     public String getBizData() {
         return this.bizData;
+    }
+
+    public SaveIntegratedInstanceRequest setFeatureConfig(SaveIntegratedInstanceRequestFeatureConfig featureConfig) {
+        this.featureConfig = featureConfig;
+        return this;
+    }
+    public SaveIntegratedInstanceRequestFeatureConfig getFeatureConfig() {
+        return this.featureConfig;
     }
 
     public SaveIntegratedInstanceRequest setFormComponentValueList(java.util.List<SaveIntegratedInstanceRequestFormComponentValueList> formComponentValueList) {
@@ -93,6 +104,140 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
     public String getUrl() {
         return this.url;
+    }
+
+    public static class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback extends TeaModel {
+        @NameInMap("apiKey")
+        public String apiKey;
+
+        @NameInMap("appUuid")
+        public String appUuid;
+
+        @NameInMap("version")
+        public String version;
+
+        public static SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback build(java.util.Map<String, ?> map) throws Exception {
+            SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback self = new SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback();
+            return TeaModel.build(map, self);
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback setApiKey(String apiKey) {
+            this.apiKey = apiKey;
+            return this;
+        }
+        public String getApiKey() {
+            return this.apiKey;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback setAppUuid(String appUuid) {
+            this.appUuid = appUuid;
+            return this;
+        }
+        public String getAppUuid() {
+            return this.appUuid;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback setVersion(String version) {
+            this.version = version;
+            return this;
+        }
+        public String getVersion() {
+            return this.version;
+        }
+
+    }
+
+    public static class SaveIntegratedInstanceRequestFeatureConfigFeatures extends TeaModel {
+        @NameInMap("callback")
+        public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback callback;
+
+        @NameInMap("config")
+        public String config;
+
+        @NameInMap("mobileUrl")
+        public String mobileUrl;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("pcUrl")
+        public String pcUrl;
+
+        @NameInMap("runType")
+        public String runType;
+
+        public static SaveIntegratedInstanceRequestFeatureConfigFeatures build(java.util.Map<String, ?> map) throws Exception {
+            SaveIntegratedInstanceRequestFeatureConfigFeatures self = new SaveIntegratedInstanceRequestFeatureConfigFeatures();
+            return TeaModel.build(map, self);
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setCallback(SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback callback) {
+            this.callback = callback;
+            return this;
+        }
+        public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback getCallback() {
+            return this.callback;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setConfig(String config) {
+            this.config = config;
+            return this;
+        }
+        public String getConfig() {
+            return this.config;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setMobileUrl(String mobileUrl) {
+            this.mobileUrl = mobileUrl;
+            return this;
+        }
+        public String getMobileUrl() {
+            return this.mobileUrl;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setPcUrl(String pcUrl) {
+            this.pcUrl = pcUrl;
+            return this;
+        }
+        public String getPcUrl() {
+            return this.pcUrl;
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfigFeatures setRunType(String runType) {
+            this.runType = runType;
+            return this;
+        }
+        public String getRunType() {
+            return this.runType;
+        }
+
+    }
+
+    public static class SaveIntegratedInstanceRequestFeatureConfig extends TeaModel {
+        @NameInMap("features")
+        public java.util.List<SaveIntegratedInstanceRequestFeatureConfigFeatures> features;
+
+        public static SaveIntegratedInstanceRequestFeatureConfig build(java.util.Map<String, ?> map) throws Exception {
+            SaveIntegratedInstanceRequestFeatureConfig self = new SaveIntegratedInstanceRequestFeatureConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public SaveIntegratedInstanceRequestFeatureConfig setFeatures(java.util.List<SaveIntegratedInstanceRequestFeatureConfigFeatures> features) {
+            this.features = features;
+            return this;
+        }
+        public java.util.List<SaveIntegratedInstanceRequestFeatureConfigFeatures> getFeatures() {
+            return this.features;
+        }
+
     }
 
     public static class SaveIntegratedInstanceRequestFormComponentValueList extends TeaModel {

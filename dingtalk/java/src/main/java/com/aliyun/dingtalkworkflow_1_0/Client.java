@@ -460,6 +460,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("activityId", request.activityId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.featureConfig)) {
+            body.put("featureConfig", request.featureConfig);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
             body.put("processInstanceId", request.processInstanceId);
         }
@@ -505,6 +509,64 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateIntegratedTaskHeaders headers = new CreateIntegratedTaskHeaders();
         return this.createIntegratedTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 删除分组
+     *
+     * @param request DeleteDirRequest
+     * @param headers DeleteDirHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteDirResponse
+     */
+    public DeleteDirResponse deleteDirWithOptions(DeleteDirRequest request, DeleteDirHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dirId)) {
+            query.put("dirId", request.dirId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            query.put("operateUserId", request.operateUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteDir"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/processCentres/directories"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteDirResponse());
+    }
+
+    /**
+     * @summary 删除分组
+     *
+     * @param request DeleteDirRequest
+     * @return DeleteDirResponse
+     */
+    public DeleteDirResponse deleteDir(DeleteDirRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteDirHeaders headers = new DeleteDirHeaders();
+        return this.deleteDirWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1450,6 +1512,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GrantProcessInstanceForDownloadFileHeaders headers = new GrantProcessInstanceForDownloadFileHeaders();
         return this.grantProcessInstanceForDownloadFileWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 创建或更新分组
+     *
+     * @param request InsertOrUpdateDirRequest
+     * @param headers InsertOrUpdateDirHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InsertOrUpdateDirResponse
+     */
+    public InsertOrUpdateDirResponse insertOrUpdateDirWithOptions(InsertOrUpdateDirRequest request, InsertOrUpdateDirHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizGroup)) {
+            body.put("bizGroup", request.bizGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name18n)) {
+            body.put("name18n", request.name18n);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InsertOrUpdateDir"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/processCentres/directories"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InsertOrUpdateDirResponse());
+    }
+
+    /**
+     * @summary 创建或更新分组
+     *
+     * @param request InsertOrUpdateDirRequest
+     * @return InsertOrUpdateDirResponse
+     */
+    public InsertOrUpdateDirResponse insertOrUpdateDir(InsertOrUpdateDirRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        InsertOrUpdateDirHeaders headers = new InsertOrUpdateDirHeaders();
+        return this.insertOrUpdateDirWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2451,6 +2583,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.bizData)) {
             body.put("bizData", request.bizData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.featureConfig)) {
+            body.put("featureConfig", request.featureConfig);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.formComponentValueList)) {

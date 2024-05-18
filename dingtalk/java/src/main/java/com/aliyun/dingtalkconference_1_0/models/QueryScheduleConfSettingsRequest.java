@@ -4,6 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryScheduleConfSettingsRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 

@@ -722,6 +722,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 更换组织主管理员
+     *
+     * @param request ExchangeMainAdminRequest
+     * @param headers ExchangeMainAdminHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ExchangeMainAdminResponse
+     */
+    public ExchangeMainAdminResponse exchangeMainAdminWithOptions(ExchangeMainAdminRequest request, ExchangeMainAdminHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.newAdminUserId)) {
+            body.put("newAdminUserId", request.newAdminUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.oldAdminUserId)) {
+            body.put("oldAdminUserId", request.oldAdminUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ExchangeMainAdmin"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/orgnizations/mainAdministrators/exchange"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ExchangeMainAdminResponse());
+    }
+
+    /**
+     * @summary 更换组织主管理员
+     *
+     * @param request ExchangeMainAdminRequest
+     * @return ExchangeMainAdminResponse
+     */
+    public ExchangeMainAdminResponse exchangeMainAdmin(ExchangeMainAdminRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ExchangeMainAdminHeaders headers = new ExchangeMainAdminHeaders();
+        return this.exchangeMainAdminWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 分发工作台模版
      *
      * @param request ExclusiveCreateDingPortalRequest
@@ -3701,6 +3763,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 购买权益包
+     *
+     * @param request OpenBenefitPackageRequest
+     * @param headers OpenBenefitPackageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OpenBenefitPackageResponse
+     */
+    public OpenBenefitPackageResponse openBenefitPackageWithOptions(OpenBenefitPackageRequest request, OpenBenefitPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitPackage)) {
+            body.put("benefitPackage", request.benefitPackage);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endDate)) {
+            body.put("endDate", request.endDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
+            body.put("startDate", request.startDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OpenBenefitPackage"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/benefitPackages/purchase"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OpenBenefitPackageResponse());
+    }
+
+    /**
+     * @summary 购买权益包
+     *
+     * @param request OpenBenefitPackageRequest
+     * @return OpenBenefitPackageResponse
+     */
+    public OpenBenefitPackageResponse openBenefitPackage(OpenBenefitPackageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OpenBenefitPackageHeaders headers = new OpenBenefitPackageHeaders();
+        return this.openBenefitPackageWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 防作弊风险检测
      *
      * @param request PreventCheatingCheckRiskRequest
@@ -5437,5 +5565,63 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateStorageModeHeaders headers = new UpdateStorageModeHeaders();
         return this.updateStorageModeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 允许三方调用该API，决定对应的语音消息管控状态
+     *
+     * @param request UpdateVoiceMsgCtrlStatusRequest
+     * @param headers UpdateVoiceMsgCtrlStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateVoiceMsgCtrlStatusResponse
+     */
+    public UpdateVoiceMsgCtrlStatusResponse updateVoiceMsgCtrlStatusWithOptions(UpdateVoiceMsgCtrlStatusRequest request, UpdateVoiceMsgCtrlStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.voiceMsgCtrlInfo)) {
+            body.put("voiceMsgCtrlInfo", request.voiceMsgCtrlInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateVoiceMsgCtrlStatus"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/voiceMessages/ctrlStatuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateVoiceMsgCtrlStatusResponse());
+    }
+
+    /**
+     * @summary 允许三方调用该API，决定对应的语音消息管控状态
+     *
+     * @param request UpdateVoiceMsgCtrlStatusRequest
+     * @return UpdateVoiceMsgCtrlStatusResponse
+     */
+    public UpdateVoiceMsgCtrlStatusResponse updateVoiceMsgCtrlStatus(UpdateVoiceMsgCtrlStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateVoiceMsgCtrlStatusHeaders headers = new UpdateVoiceMsgCtrlStatusHeaders();
+        return this.updateVoiceMsgCtrlStatusWithOptions(request, headers, runtime);
     }
 }

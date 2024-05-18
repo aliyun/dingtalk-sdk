@@ -4,15 +4,24 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomShortLinkRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
     @NameInMap("extensionAppBizData")
     public String extensionAppBizData;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
