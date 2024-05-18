@@ -1445,6 +1445,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.DistributePartnerAppHeaders()
         return await self.distribute_partner_app_with_options_async(request, headers, runtime)
 
+    def exchange_main_admin_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ExchangeMainAdminRequest,
+        headers: dingtalkexclusive__1__0_models.ExchangeMainAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExchangeMainAdminResponse:
+        """
+        @summary 更换组织主管理员
+        
+        @param request: ExchangeMainAdminRequest
+        @param headers: ExchangeMainAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExchangeMainAdminResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.new_admin_user_id):
+            body['newAdminUserId'] = request.new_admin_user_id
+        if not UtilClient.is_unset(request.old_admin_user_id):
+            body['oldAdminUserId'] = request.old_admin_user_id
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExchangeMainAdmin',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/orgnizations/mainAdministrators/exchange',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExchangeMainAdminResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def exchange_main_admin_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExchangeMainAdminRequest,
+        headers: dingtalkexclusive__1__0_models.ExchangeMainAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExchangeMainAdminResponse:
+        """
+        @summary 更换组织主管理员
+        
+        @param request: ExchangeMainAdminRequest
+        @param headers: ExchangeMainAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExchangeMainAdminResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.new_admin_user_id):
+            body['newAdminUserId'] = request.new_admin_user_id
+        if not UtilClient.is_unset(request.old_admin_user_id):
+            body['oldAdminUserId'] = request.old_admin_user_id
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExchangeMainAdmin',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/orgnizations/mainAdministrators/exchange',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExchangeMainAdminResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def exchange_main_admin(
+        self,
+        request: dingtalkexclusive__1__0_models.ExchangeMainAdminRequest,
+    ) -> dingtalkexclusive__1__0_models.ExchangeMainAdminResponse:
+        """
+        @summary 更换组织主管理员
+        
+        @param request: ExchangeMainAdminRequest
+        @return: ExchangeMainAdminResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExchangeMainAdminHeaders()
+        return self.exchange_main_admin_with_options(request, headers, runtime)
+
+    async def exchange_main_admin_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExchangeMainAdminRequest,
+    ) -> dingtalkexclusive__1__0_models.ExchangeMainAdminResponse:
+        """
+        @summary 更换组织主管理员
+        
+        @param request: ExchangeMainAdminRequest
+        @return: ExchangeMainAdminResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExchangeMainAdminHeaders()
+        return await self.exchange_main_admin_with_options_async(request, headers, runtime)
+
     def exclusive_create_ding_portal_with_options(
         self,
         request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,
@@ -7399,6 +7521,132 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.LogoutHeaders()
         return await self.logout_with_options_async(request, headers, runtime)
 
+    def open_benefit_package_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.OpenBenefitPackageRequest,
+        headers: dingtalkexclusive__1__0_models.OpenBenefitPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.OpenBenefitPackageResponse:
+        """
+        @summary 购买权益包
+        
+        @param request: OpenBenefitPackageRequest
+        @param headers: OpenBenefitPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenBenefitPackageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_package):
+            body['benefitPackage'] = request.benefit_package
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenBenefitPackage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/benefitPackages/purchase',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.OpenBenefitPackageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_benefit_package_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.OpenBenefitPackageRequest,
+        headers: dingtalkexclusive__1__0_models.OpenBenefitPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.OpenBenefitPackageResponse:
+        """
+        @summary 购买权益包
+        
+        @param request: OpenBenefitPackageRequest
+        @param headers: OpenBenefitPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenBenefitPackageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_package):
+            body['benefitPackage'] = request.benefit_package
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenBenefitPackage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/benefitPackages/purchase',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.OpenBenefitPackageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_benefit_package(
+        self,
+        request: dingtalkexclusive__1__0_models.OpenBenefitPackageRequest,
+    ) -> dingtalkexclusive__1__0_models.OpenBenefitPackageResponse:
+        """
+        @summary 购买权益包
+        
+        @param request: OpenBenefitPackageRequest
+        @return: OpenBenefitPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.OpenBenefitPackageHeaders()
+        return self.open_benefit_package_with_options(request, headers, runtime)
+
+    async def open_benefit_package_async(
+        self,
+        request: dingtalkexclusive__1__0_models.OpenBenefitPackageRequest,
+    ) -> dingtalkexclusive__1__0_models.OpenBenefitPackageResponse:
+        """
+        @summary 购买权益包
+        
+        @param request: OpenBenefitPackageRequest
+        @return: OpenBenefitPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.OpenBenefitPackageHeaders()
+        return await self.open_benefit_package_with_options_async(request, headers, runtime)
+
     def prevent_cheating_check_risk_with_options(
         self,
         request: dingtalkexclusive__1__0_models.PreventCheatingCheckRiskRequest,
@@ -10692,3 +10940,121 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.UpdateStorageModeHeaders()
         return await self.update_storage_mode_with_options_async(request, headers, runtime)
+
+    def update_voice_msg_ctrl_status_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse:
+        """
+        @summary 允许三方调用该API，决定对应的语音消息管控状态
+        
+        @param request: UpdateVoiceMsgCtrlStatusRequest
+        @param headers: UpdateVoiceMsgCtrlStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVoiceMsgCtrlStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.voice_msg_ctrl_info):
+            body['voiceMsgCtrlInfo'] = request.voice_msg_ctrl_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateVoiceMsgCtrlStatus',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/voiceMessages/ctrlStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_voice_msg_ctrl_status_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse:
+        """
+        @summary 允许三方调用该API，决定对应的语音消息管控状态
+        
+        @param request: UpdateVoiceMsgCtrlStatusRequest
+        @param headers: UpdateVoiceMsgCtrlStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateVoiceMsgCtrlStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.voice_msg_ctrl_info):
+            body['voiceMsgCtrlInfo'] = request.voice_msg_ctrl_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateVoiceMsgCtrlStatus',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/voiceMessages/ctrlStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_voice_msg_ctrl_status(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse:
+        """
+        @summary 允许三方调用该API，决定对应的语音消息管控状态
+        
+        @param request: UpdateVoiceMsgCtrlStatusRequest
+        @return: UpdateVoiceMsgCtrlStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusHeaders()
+        return self.update_voice_msg_ctrl_status_with_options(request, headers, runtime)
+
+    async def update_voice_msg_ctrl_status_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusResponse:
+        """
+        @summary 允许三方调用该API，决定对应的语音消息管控状态
+        
+        @param request: UpdateVoiceMsgCtrlStatusRequest
+        @return: UpdateVoiceMsgCtrlStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateVoiceMsgCtrlStatusHeaders()
+        return await self.update_voice_msg_ctrl_status_with_options_async(request, headers, runtime)

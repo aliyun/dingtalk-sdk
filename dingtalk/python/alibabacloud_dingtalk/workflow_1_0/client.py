@@ -893,6 +893,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.activity_id):
             body['activityId'] = request.activity_id
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.tasks):
@@ -940,6 +942,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.activity_id):
             body['activityId'] = request.activity_id
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.tasks):
@@ -996,6 +1000,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.CreateIntegratedTaskHeaders()
         return await self.create_integrated_task_with_options_async(request, headers, runtime)
+
+    def delete_dir_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.DeleteDirRequest,
+        headers: dingtalkworkflow__1__0_models.DeleteDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.DeleteDirResponse:
+        """
+        @summary 删除分组
+        
+        @param request: DeleteDirRequest
+        @param headers: DeleteDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDirResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dir_id):
+            query['dirId'] = request.dir_id
+        if not UtilClient.is_unset(request.operate_user_id):
+            query['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processCentres/directories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.DeleteDirResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_dir_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.DeleteDirRequest,
+        headers: dingtalkworkflow__1__0_models.DeleteDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.DeleteDirResponse:
+        """
+        @summary 删除分组
+        
+        @param request: DeleteDirRequest
+        @param headers: DeleteDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDirResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dir_id):
+            query['dirId'] = request.dir_id
+        if not UtilClient.is_unset(request.operate_user_id):
+            query['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processCentres/directories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.DeleteDirResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_dir(
+        self,
+        request: dingtalkworkflow__1__0_models.DeleteDirRequest,
+    ) -> dingtalkworkflow__1__0_models.DeleteDirResponse:
+        """
+        @summary 删除分组
+        
+        @param request: DeleteDirRequest
+        @return: DeleteDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.DeleteDirHeaders()
+        return self.delete_dir_with_options(request, headers, runtime)
+
+    async def delete_dir_async(
+        self,
+        request: dingtalkworkflow__1__0_models.DeleteDirRequest,
+    ) -> dingtalkworkflow__1__0_models.DeleteDirResponse:
+        """
+        @summary 删除分组
+        
+        @param request: DeleteDirRequest
+        @return: DeleteDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.DeleteDirHeaders()
+        return await self.delete_dir_with_options_async(request, headers, runtime)
 
     def delete_process_with_options(
         self,
@@ -2890,6 +3012,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.GrantProcessInstanceForDownloadFileHeaders()
         return await self.grant_process_instance_for_download_file_with_options_async(request, headers, runtime)
+
+    def insert_or_update_dir_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.InsertOrUpdateDirRequest,
+        headers: dingtalkworkflow__1__0_models.InsertOrUpdateDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组
+        
+        @param request: InsertOrUpdateDirRequest
+        @param headers: InsertOrUpdateDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertOrUpdateDirResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.name_18n):
+            body['name18n'] = request.name_18n
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InsertOrUpdateDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processCentres/directories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def insert_or_update_dir_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.InsertOrUpdateDirRequest,
+        headers: dingtalkworkflow__1__0_models.InsertOrUpdateDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组
+        
+        @param request: InsertOrUpdateDirRequest
+        @param headers: InsertOrUpdateDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InsertOrUpdateDirResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.name_18n):
+            body['name18n'] = request.name_18n
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InsertOrUpdateDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/processCentres/directories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def insert_or_update_dir(
+        self,
+        request: dingtalkworkflow__1__0_models.InsertOrUpdateDirRequest,
+    ) -> dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组
+        
+        @param request: InsertOrUpdateDirRequest
+        @return: InsertOrUpdateDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.InsertOrUpdateDirHeaders()
+        return self.insert_or_update_dir_with_options(request, headers, runtime)
+
+    async def insert_or_update_dir_async(
+        self,
+        request: dingtalkworkflow__1__0_models.InsertOrUpdateDirRequest,
+    ) -> dingtalkworkflow__1__0_models.InsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组
+        
+        @param request: InsertOrUpdateDirRequest
+        @return: InsertOrUpdateDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.InsertOrUpdateDirHeaders()
+        return await self.insert_or_update_dir_with_options_async(request, headers, runtime)
 
     def install_app_with_options(
         self,
@@ -4795,6 +5047,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_data):
             body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):
@@ -4850,6 +5104,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_data):
             body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
         if not UtilClient.is_unset(request.form_component_value_list):
             body['formComponentValueList'] = request.form_component_value_list
         if not UtilClient.is_unset(request.notifiers):

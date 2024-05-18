@@ -1730,6 +1730,149 @@ class DistributePartnerAppResponse(TeaModel):
         return self
 
 
+class ExchangeMainAdminHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExchangeMainAdminRequest(TeaModel):
+    def __init__(
+        self,
+        new_admin_user_id: str = None,
+        old_admin_user_id: str = None,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.new_admin_user_id = new_admin_user_id
+        # This parameter is required.
+        self.old_admin_user_id = old_admin_user_id
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.new_admin_user_id is not None:
+            result['newAdminUserId'] = self.new_admin_user_id
+        if self.old_admin_user_id is not None:
+            result['oldAdminUserId'] = self.old_admin_user_id
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('newAdminUserId') is not None:
+            self.new_admin_user_id = m.get('newAdminUserId')
+        if m.get('oldAdminUserId') is not None:
+            self.old_admin_user_id = m.get('oldAdminUserId')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class ExchangeMainAdminResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ExchangeMainAdminResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExchangeMainAdminResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExchangeMainAdminResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ExclusiveCreateDingPortalHeaders(TeaModel):
     def __init__(
         self,
@@ -12591,6 +12734,156 @@ class LogoutResponse(TeaModel):
         return self
 
 
+class OpenBenefitPackageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OpenBenefitPackageRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_package: int = None,
+        end_date: int = None,
+        start_date: int = None,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.benefit_package = benefit_package
+        # This parameter is required.
+        self.end_date = end_date
+        # This parameter is required.
+        self.start_date = start_date
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_package is not None:
+            result['benefitPackage'] = self.benefit_package
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitPackage') is not None:
+            self.benefit_package = m.get('benefitPackage')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class OpenBenefitPackageResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class OpenBenefitPackageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OpenBenefitPackageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OpenBenefitPackageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PreventCheatingCheckRiskHeaders(TeaModel):
     def __init__(
         self,
@@ -17270,6 +17563,187 @@ class UpdateStorageModeResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateStorageModeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateVoiceMsgCtrlStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        open_msg_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.open_msg_id = open_msg_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateVoiceMsgCtrlStatusRequest(TeaModel):
+    def __init__(
+        self,
+        status: int = None,
+        voice_msg_ctrl_info: UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo = None,
+    ):
+        # This parameter is required.
+        self.status = status
+        # This parameter is required.
+        self.voice_msg_ctrl_info = voice_msg_ctrl_info
+
+    def validate(self):
+        if self.voice_msg_ctrl_info:
+            self.voice_msg_ctrl_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.voice_msg_ctrl_info is not None:
+            result['voiceMsgCtrlInfo'] = self.voice_msg_ctrl_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('voiceMsgCtrlInfo') is not None:
+            temp_model = UpdateVoiceMsgCtrlStatusRequestVoiceMsgCtrlInfo()
+            self.voice_msg_ctrl_info = temp_model.from_map(m['voiceMsgCtrlInfo'])
+        return self
+
+
+class UpdateVoiceMsgCtrlStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # This parameter is required.
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateVoiceMsgCtrlStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateVoiceMsgCtrlStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateVoiceMsgCtrlStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

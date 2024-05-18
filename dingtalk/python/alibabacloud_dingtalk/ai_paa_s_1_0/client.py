@@ -537,6 +537,136 @@ class Client(OpenApiClient):
         headers = dingtalkai_paa_s__1__0_models.LiandanluTextToImageModelHeaders()
         return await self.liandanlu_text_to_image_model_with_options_async(request, headers, runtime)
 
+    def n_lto_frame_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.NLToFrameServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.NLToFrameServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse:
+        """
+        @summary 通过配置的指令，连接用户和系统，训练大模型
+        
+        @param request: NLToFrameServiceRequest
+        @param headers: NLToFrameServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NLToFrameServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extension_str):
+            body['extensionStr'] = request.extension_str
+        if not UtilClient.is_unset(request.is_new_model):
+            body['isNewModel'] = request.is_new_model
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.model_name):
+            body['modelName'] = request.model_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='NLToFrameService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/nl2frame',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def n_lto_frame_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.NLToFrameServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.NLToFrameServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse:
+        """
+        @summary 通过配置的指令，连接用户和系统，训练大模型
+        
+        @param request: NLToFrameServiceRequest
+        @param headers: NLToFrameServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: NLToFrameServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.extension_str):
+            body['extensionStr'] = request.extension_str
+        if not UtilClient.is_unset(request.is_new_model):
+            body['isNewModel'] = request.is_new_model
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.model_name):
+            body['modelName'] = request.model_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='NLToFrameService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/nl2frame',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def n_lto_frame_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.NLToFrameServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse:
+        """
+        @summary 通过配置的指令，连接用户和系统，训练大模型
+        
+        @param request: NLToFrameServiceRequest
+        @return: NLToFrameServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.NLToFrameServiceHeaders()
+        return self.n_lto_frame_service_with_options(request, headers, runtime)
+
+    async def n_lto_frame_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.NLToFrameServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.NLToFrameServiceResponse:
+        """
+        @summary 通过配置的指令，连接用户和系统，训练大模型
+        
+        @param request: NLToFrameServiceRequest
+        @return: NLToFrameServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.NLToFrameServiceHeaders()
+        return await self.n_lto_frame_service_with_options_async(request, headers, runtime)
+
     def query_baymax_skill_log_with_options(
         self,
         request: dingtalkai_paa_s__1__0_models.QueryBaymaxSkillLogRequest,

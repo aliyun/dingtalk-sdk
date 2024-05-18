@@ -31,6 +31,152 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_hrm_legal_entity_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmLegalEntityRequest,
+        headers: dingtalkhrm__1__0_models.AddHrmLegalEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddHrmLegalEntityResponse:
+        """
+        @summary 新增法人公司
+        
+        @param request: AddHrmLegalEntityRequest
+        @param headers: AddHrmLegalEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddHrmLegalEntityResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.create_user_id):
+            body['createUserId'] = request.create_user_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.legal_entity_name):
+            body['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.legal_entity_short_name):
+            body['legalEntityShortName'] = request.legal_entity_short_name
+        if not UtilClient.is_unset(request.legal_entity_status):
+            body['legalEntityStatus'] = request.legal_entity_status
+        if not UtilClient.is_unset(request.legal_person_name):
+            body['legalPersonName'] = request.legal_person_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddHrmLegalEntity',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companies',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddHrmLegalEntityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_hrm_legal_entity_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmLegalEntityRequest,
+        headers: dingtalkhrm__1__0_models.AddHrmLegalEntityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AddHrmLegalEntityResponse:
+        """
+        @summary 新增法人公司
+        
+        @param request: AddHrmLegalEntityRequest
+        @param headers: AddHrmLegalEntityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddHrmLegalEntityResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.create_user_id):
+            body['createUserId'] = request.create_user_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.legal_entity_name):
+            body['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.legal_entity_short_name):
+            body['legalEntityShortName'] = request.legal_entity_short_name
+        if not UtilClient.is_unset(request.legal_entity_status):
+            body['legalEntityStatus'] = request.legal_entity_status
+        if not UtilClient.is_unset(request.legal_person_name):
+            body['legalPersonName'] = request.legal_person_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddHrmLegalEntity',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companies',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AddHrmLegalEntityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_hrm_legal_entity(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmLegalEntityRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmLegalEntityResponse:
+        """
+        @summary 新增法人公司
+        
+        @param request: AddHrmLegalEntityRequest
+        @return: AddHrmLegalEntityResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddHrmLegalEntityHeaders()
+        return self.add_hrm_legal_entity_with_options(request, headers, runtime)
+
+    async def add_hrm_legal_entity_async(
+        self,
+        request: dingtalkhrm__1__0_models.AddHrmLegalEntityRequest,
+    ) -> dingtalkhrm__1__0_models.AddHrmLegalEntityResponse:
+        """
+        @summary 新增法人公司
+        
+        @param request: AddHrmLegalEntityRequest
+        @return: AddHrmLegalEntityResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AddHrmLegalEntityHeaders()
+        return await self.add_hrm_legal_entity_with_options_async(request, headers, runtime)
+
     def add_hrm_preentry_with_options(
         self,
         request: dingtalkhrm__1__0_models.AddHrmPreentryRequest,
@@ -4054,6 +4200,274 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
         return await self.sync_task_template_with_options_async(request, headers, runtime)
+
+    def update_hrm_legal_entity_name_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse:
+        """
+        @summary 更新法人公司名称
+        
+        @param request: UpdateHrmLegalEntityNameRequest
+        @param headers: UpdateHrmLegalEntityNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmLegalEntityNameResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        if not UtilClient.is_unset(request.legal_entity_name):
+            query['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.origin_legal_entity_name):
+            query['originLegalEntityName'] = request.origin_legal_entity_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmLegalEntityName',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companyNames',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_hrm_legal_entity_name_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse:
+        """
+        @summary 更新法人公司名称
+        
+        @param request: UpdateHrmLegalEntityNameRequest
+        @param headers: UpdateHrmLegalEntityNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmLegalEntityNameResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        if not UtilClient.is_unset(request.legal_entity_name):
+            query['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.origin_legal_entity_name):
+            query['originLegalEntityName'] = request.origin_legal_entity_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmLegalEntityName',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companyNames',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_hrm_legal_entity_name(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse:
+        """
+        @summary 更新法人公司名称
+        
+        @param request: UpdateHrmLegalEntityNameRequest
+        @return: UpdateHrmLegalEntityNameResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameHeaders()
+        return self.update_hrm_legal_entity_name_with_options(request, headers, runtime)
+
+    async def update_hrm_legal_entity_name_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameResponse:
+        """
+        @summary 更新法人公司名称
+        
+        @param request: UpdateHrmLegalEntityNameRequest
+        @return: UpdateHrmLegalEntityNameResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmLegalEntityNameHeaders()
+        return await self.update_hrm_legal_entity_name_with_options_async(request, headers, runtime)
+
+    def update_hrm_legal_entity_without_name_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse:
+        """
+        @summary 更新法人公司
+        
+        @param request: UpdateHrmLegalEntityWithoutNameRequest
+        @param headers: UpdateHrmLegalEntityWithoutNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmLegalEntityWithoutNameResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.create_user_id):
+            body['createUserId'] = request.create_user_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.legal_entity_name):
+            body['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.legal_entity_short_name):
+            body['legalEntityShortName'] = request.legal_entity_short_name
+        if not UtilClient.is_unset(request.legal_entity_status):
+            body['legalEntityStatus'] = request.legal_entity_status
+        if not UtilClient.is_unset(request.legal_person_name):
+            body['legalPersonName'] = request.legal_person_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmLegalEntityWithoutName',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_hrm_legal_entity_without_name_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse:
+        """
+        @summary 更新法人公司
+        
+        @param request: UpdateHrmLegalEntityWithoutNameRequest
+        @param headers: UpdateHrmLegalEntityWithoutNameHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmLegalEntityWithoutNameResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_tenant_id):
+            query['dingTenantId'] = request.ding_tenant_id
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.create_user_id):
+            body['createUserId'] = request.create_user_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.legal_entity_name):
+            body['legalEntityName'] = request.legal_entity_name
+        if not UtilClient.is_unset(request.legal_entity_short_name):
+            body['legalEntityShortName'] = request.legal_entity_short_name
+        if not UtilClient.is_unset(request.legal_entity_status):
+            body['legalEntityStatus'] = request.legal_entity_status
+        if not UtilClient.is_unset(request.legal_person_name):
+            body['legalPersonName'] = request.legal_person_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmLegalEntityWithoutName',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/legalEntities/companies',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_hrm_legal_entity_without_name(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse:
+        """
+        @summary 更新法人公司
+        
+        @param request: UpdateHrmLegalEntityWithoutNameRequest
+        @return: UpdateHrmLegalEntityWithoutNameResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameHeaders()
+        return self.update_hrm_legal_entity_without_name_with_options(request, headers, runtime)
+
+    async def update_hrm_legal_entity_without_name_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameResponse:
+        """
+        @summary 更新法人公司
+        
+        @param request: UpdateHrmLegalEntityWithoutNameRequest
+        @return: UpdateHrmLegalEntityWithoutNameResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameHeaders()
+        return await self.update_hrm_legal_entity_without_name_with_options_async(request, headers, runtime)
 
     def update_isv_card_message_with_options(
         self,

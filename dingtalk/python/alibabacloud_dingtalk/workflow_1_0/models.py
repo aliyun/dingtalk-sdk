@@ -1972,6 +1972,139 @@ class CreateIntegratedTaskHeaders(TeaModel):
         return self
 
 
+class CreateIntegratedTaskRequestFeatureConfigFeaturesCallback(TeaModel):
+    def __init__(
+        self,
+        api_key: str = None,
+        app_uuid: str = None,
+        version: str = None,
+    ):
+        self.api_key = api_key
+        self.app_uuid = app_uuid
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_key is not None:
+            result['apiKey'] = self.api_key
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiKey') is not None:
+            self.api_key = m.get('apiKey')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class CreateIntegratedTaskRequestFeatureConfigFeatures(TeaModel):
+    def __init__(
+        self,
+        callback: CreateIntegratedTaskRequestFeatureConfigFeaturesCallback = None,
+        config: str = None,
+        mobile_url: str = None,
+        name: str = None,
+        pc_url: str = None,
+        run_type: str = None,
+    ):
+        self.callback = callback
+        self.config = config
+        self.mobile_url = mobile_url
+        self.name = name
+        self.pc_url = pc_url
+        self.run_type = run_type
+
+    def validate(self):
+        if self.callback:
+            self.callback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback is not None:
+            result['callback'] = self.callback.to_map()
+        if self.config is not None:
+            result['config'] = self.config
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.run_type is not None:
+            result['runType'] = self.run_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callback') is not None:
+            temp_model = CreateIntegratedTaskRequestFeatureConfigFeaturesCallback()
+            self.callback = temp_model.from_map(m['callback'])
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('runType') is not None:
+            self.run_type = m.get('runType')
+        return self
+
+
+class CreateIntegratedTaskRequestFeatureConfig(TeaModel):
+    def __init__(
+        self,
+        features: List[CreateIntegratedTaskRequestFeatureConfigFeatures] = None,
+    ):
+        self.features = features
+
+    def validate(self):
+        if self.features:
+            for k in self.features:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['features'] = []
+        if self.features is not None:
+            for k in self.features:
+                result['features'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.features = []
+        if m.get('features') is not None:
+            for k in m.get('features'):
+                temp_model = CreateIntegratedTaskRequestFeatureConfigFeatures()
+                self.features.append(temp_model.from_map(k))
+        return self
+
+
 class CreateIntegratedTaskRequestTasks(TeaModel):
     def __init__(
         self,
@@ -2015,16 +2148,20 @@ class CreateIntegratedTaskRequest(TeaModel):
     def __init__(
         self,
         activity_id: str = None,
+        feature_config: CreateIntegratedTaskRequestFeatureConfig = None,
         process_instance_id: str = None,
         tasks: List[CreateIntegratedTaskRequestTasks] = None,
     ):
         self.activity_id = activity_id
+        self.feature_config = feature_config
         # This parameter is required.
         self.process_instance_id = process_instance_id
         # This parameter is required.
         self.tasks = tasks
 
     def validate(self):
+        if self.feature_config:
+            self.feature_config.validate()
         if self.tasks:
             for k in self.tasks:
                 if k:
@@ -2038,6 +2175,8 @@ class CreateIntegratedTaskRequest(TeaModel):
         result = dict()
         if self.activity_id is not None:
             result['activityId'] = self.activity_id
+        if self.feature_config is not None:
+            result['featureConfig'] = self.feature_config.to_map()
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         result['tasks'] = []
@@ -2050,6 +2189,9 @@ class CreateIntegratedTaskRequest(TeaModel):
         m = m or dict()
         if m.get('activityId') is not None:
             self.activity_id = m.get('activityId')
+        if m.get('featureConfig') is not None:
+            temp_model = CreateIntegratedTaskRequestFeatureConfig()
+            self.feature_config = temp_model.from_map(m['featureConfig'])
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         self.tasks = []
@@ -2171,6 +2313,142 @@ class CreateIntegratedTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateIntegratedTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteDirHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteDirRequest(TeaModel):
+    def __init__(
+        self,
+        dir_id: str = None,
+        operate_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.dir_id = dir_id
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dir_id is not None:
+            result['dirId'] = self.dir_id
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dirId') is not None:
+            self.dir_id = m.get('dirId')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        return self
+
+
+class DeleteDirResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteDirResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteDirResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteDirResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5825,6 +6103,203 @@ class GrantProcessInstanceForDownloadFileResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GrantProcessInstanceForDownloadFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InsertOrUpdateDirHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InsertOrUpdateDirRequest(TeaModel):
+    def __init__(
+        self,
+        biz_group: str = None,
+        description: str = None,
+        name: str = None,
+        name_18n: str = None,
+        operate_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_group = biz_group
+        self.description = description
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.name_18n = name_18n
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_group is not None:
+            result['bizGroup'] = self.biz_group
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.name_18n is not None:
+            result['name18n'] = self.name_18n
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizGroup') is not None:
+            self.biz_group = m.get('bizGroup')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('name18n') is not None:
+            self.name_18n = m.get('name18n')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        return self
+
+
+class InsertOrUpdateDirResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_group: str = None,
+        dir_id: str = None,
+    ):
+        self.biz_group = biz_group
+        self.dir_id = dir_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_group is not None:
+            result['bizGroup'] = self.biz_group
+        if self.dir_id is not None:
+            result['dirId'] = self.dir_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizGroup') is not None:
+            self.biz_group = m.get('bizGroup')
+        if m.get('dirId') is not None:
+            self.dir_id = m.get('dirId')
+        return self
+
+
+class InsertOrUpdateDirResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: InsertOrUpdateDirResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = InsertOrUpdateDirResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class InsertOrUpdateDirResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: InsertOrUpdateDirResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = InsertOrUpdateDirResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -11532,6 +12007,139 @@ class SaveIntegratedInstanceHeaders(TeaModel):
         return self
 
 
+class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback(TeaModel):
+    def __init__(
+        self,
+        api_key: str = None,
+        app_uuid: str = None,
+        version: str = None,
+    ):
+        self.api_key = api_key
+        self.app_uuid = app_uuid
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_key is not None:
+            result['apiKey'] = self.api_key
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiKey') is not None:
+            self.api_key = m.get('apiKey')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class SaveIntegratedInstanceRequestFeatureConfigFeatures(TeaModel):
+    def __init__(
+        self,
+        callback: SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback = None,
+        config: str = None,
+        mobile_url: str = None,
+        name: str = None,
+        pc_url: str = None,
+        run_type: str = None,
+    ):
+        self.callback = callback
+        self.config = config
+        self.mobile_url = mobile_url
+        self.name = name
+        self.pc_url = pc_url
+        self.run_type = run_type
+
+    def validate(self):
+        if self.callback:
+            self.callback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback is not None:
+            result['callback'] = self.callback.to_map()
+        if self.config is not None:
+            result['config'] = self.config
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.run_type is not None:
+            result['runType'] = self.run_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callback') is not None:
+            temp_model = SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback()
+            self.callback = temp_model.from_map(m['callback'])
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('runType') is not None:
+            self.run_type = m.get('runType')
+        return self
+
+
+class SaveIntegratedInstanceRequestFeatureConfig(TeaModel):
+    def __init__(
+        self,
+        features: List[SaveIntegratedInstanceRequestFeatureConfigFeatures] = None,
+    ):
+        self.features = features
+
+    def validate(self):
+        if self.features:
+            for k in self.features:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['features'] = []
+        if self.features is not None:
+            for k in self.features:
+                result['features'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.features = []
+        if m.get('features') is not None:
+            for k in m.get('features'):
+                temp_model = SaveIntegratedInstanceRequestFeatureConfigFeatures()
+                self.features.append(temp_model.from_map(k))
+        return self
+
+
 class SaveIntegratedInstanceRequestFormComponentValueList(TeaModel):
     def __init__(
         self,
@@ -11626,6 +12234,7 @@ class SaveIntegratedInstanceRequest(TeaModel):
     def __init__(
         self,
         biz_data: str = None,
+        feature_config: SaveIntegratedInstanceRequestFeatureConfig = None,
         form_component_value_list: List[SaveIntegratedInstanceRequestFormComponentValueList] = None,
         notifiers: List[SaveIntegratedInstanceRequestNotifiers] = None,
         originator_user_id: str = None,
@@ -11634,6 +12243,7 @@ class SaveIntegratedInstanceRequest(TeaModel):
         url: str = None,
     ):
         self.biz_data = biz_data
+        self.feature_config = feature_config
         self.form_component_value_list = form_component_value_list
         self.notifiers = notifiers
         # This parameter is required.
@@ -11645,6 +12255,8 @@ class SaveIntegratedInstanceRequest(TeaModel):
         self.url = url
 
     def validate(self):
+        if self.feature_config:
+            self.feature_config.validate()
         if self.form_component_value_list:
             for k in self.form_component_value_list:
                 if k:
@@ -11662,6 +12274,8 @@ class SaveIntegratedInstanceRequest(TeaModel):
         result = dict()
         if self.biz_data is not None:
             result['bizData'] = self.biz_data
+        if self.feature_config is not None:
+            result['featureConfig'] = self.feature_config.to_map()
         result['formComponentValueList'] = []
         if self.form_component_value_list is not None:
             for k in self.form_component_value_list:
@@ -11684,6 +12298,9 @@ class SaveIntegratedInstanceRequest(TeaModel):
         m = m or dict()
         if m.get('bizData') is not None:
             self.biz_data = m.get('bizData')
+        if m.get('featureConfig') is not None:
+            temp_model = SaveIntegratedInstanceRequestFeatureConfig()
+            self.feature_config = temp_model.from_map(m['featureConfig'])
         self.form_component_value_list = []
         if m.get('formComponentValueList') is not None:
             for k in m.get('formComponentValueList'):
@@ -11878,12 +12495,14 @@ class SaveProcessRequestProcessFeatureConfigFeatures(TeaModel):
     def __init__(
         self,
         callback: SaveProcessRequestProcessFeatureConfigFeaturesCallback = None,
+        config: str = None,
         mobile_url: str = None,
         name: str = None,
         pc_url: str = None,
         run_type: str = None,
     ):
         self.callback = callback
+        self.config = config
         self.mobile_url = mobile_url
         self.name = name
         self.pc_url = pc_url
@@ -11901,6 +12520,8 @@ class SaveProcessRequestProcessFeatureConfigFeatures(TeaModel):
         result = dict()
         if self.callback is not None:
             result['callback'] = self.callback.to_map()
+        if self.config is not None:
+            result['config'] = self.config
         if self.mobile_url is not None:
             result['mobileUrl'] = self.mobile_url
         if self.name is not None:
@@ -11916,6 +12537,8 @@ class SaveProcessRequestProcessFeatureConfigFeatures(TeaModel):
         if m.get('callback') is not None:
             temp_model = SaveProcessRequestProcessFeatureConfigFeaturesCallback()
             self.callback = temp_model.from_map(m['callback'])
+        if m.get('config') is not None:
+            self.config = m.get('config')
         if m.get('mobileUrl') is not None:
             self.mobile_url = m.get('mobileUrl')
         if m.get('name') is not None:

@@ -4,6 +4,494 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AddHrmLegalEntityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddHrmLegalEntityRequestExtManageAddress(TeaModel):
+    def __init__(
+        self,
+        area_code: str = None,
+        area_name: str = None,
+        city_code: str = None,
+        city_name: str = None,
+        country_code: str = None,
+        country_name: str = None,
+        detail_address: str = None,
+        global_area_type: str = None,
+        province_code: str = None,
+        province_name: str = None,
+    ):
+        self.area_code = area_code
+        self.area_name = area_name
+        self.city_code = city_code
+        self.city_name = city_name
+        self.country_code = country_code
+        self.country_name = country_name
+        self.detail_address = detail_address
+        self.global_area_type = global_area_type
+        self.province_code = province_code
+        self.province_name = province_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area_code is not None:
+            result['areaCode'] = self.area_code
+        if self.area_name is not None:
+            result['areaName'] = self.area_name
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
+        if self.detail_address is not None:
+            result['detailAddress'] = self.detail_address
+        if self.global_area_type is not None:
+            result['globalAreaType'] = self.global_area_type
+        if self.province_code is not None:
+            result['provinceCode'] = self.province_code
+        if self.province_name is not None:
+            result['provinceName'] = self.province_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('areaCode') is not None:
+            self.area_code = m.get('areaCode')
+        if m.get('areaName') is not None:
+            self.area_name = m.get('areaName')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
+        if m.get('detailAddress') is not None:
+            self.detail_address = m.get('detailAddress')
+        if m.get('globalAreaType') is not None:
+            self.global_area_type = m.get('globalAreaType')
+        if m.get('provinceCode') is not None:
+            self.province_code = m.get('provinceCode')
+        if m.get('provinceName') is not None:
+            self.province_name = m.get('provinceName')
+        return self
+
+
+class AddHrmLegalEntityRequestExtRegistrationAddress(TeaModel):
+    def __init__(
+        self,
+        area_code: str = None,
+        area_name: str = None,
+        city_code: str = None,
+        city_name: str = None,
+        country_code: str = None,
+        country_name: str = None,
+        detail_address: str = None,
+        global_area_type: str = None,
+        province_code: str = None,
+        province_name: str = None,
+    ):
+        self.area_code = area_code
+        self.area_name = area_name
+        self.city_code = city_code
+        self.city_name = city_name
+        self.country_code = country_code
+        self.country_name = country_name
+        self.detail_address = detail_address
+        self.global_area_type = global_area_type
+        self.province_code = province_code
+        self.province_name = province_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area_code is not None:
+            result['areaCode'] = self.area_code
+        if self.area_name is not None:
+            result['areaName'] = self.area_name
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
+        if self.detail_address is not None:
+            result['detailAddress'] = self.detail_address
+        if self.global_area_type is not None:
+            result['globalAreaType'] = self.global_area_type
+        if self.province_code is not None:
+            result['provinceCode'] = self.province_code
+        if self.province_name is not None:
+            result['provinceName'] = self.province_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('areaCode') is not None:
+            self.area_code = m.get('areaCode')
+        if m.get('areaName') is not None:
+            self.area_name = m.get('areaName')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
+        if m.get('detailAddress') is not None:
+            self.detail_address = m.get('detailAddress')
+        if m.get('globalAreaType') is not None:
+            self.global_area_type = m.get('globalAreaType')
+        if m.get('provinceCode') is not None:
+            self.province_code = m.get('provinceCode')
+        if m.get('provinceName') is not None:
+            self.province_name = m.get('provinceName')
+        return self
+
+
+class AddHrmLegalEntityRequestExt(TeaModel):
+    def __init__(
+        self,
+        legal_entity_en_name: str = None,
+        legal_entity_en_short_name: str = None,
+        legal_entity_type: str = None,
+        manage_address: AddHrmLegalEntityRequestExtManageAddress = None,
+        registration_address: AddHrmLegalEntityRequestExtRegistrationAddress = None,
+        registration_date: int = None,
+        unified_social_credit_code: str = None,
+        zip_code: str = None,
+    ):
+        self.legal_entity_en_name = legal_entity_en_name
+        self.legal_entity_en_short_name = legal_entity_en_short_name
+        self.legal_entity_type = legal_entity_type
+        self.manage_address = manage_address
+        self.registration_address = registration_address
+        self.registration_date = registration_date
+        self.unified_social_credit_code = unified_social_credit_code
+        self.zip_code = zip_code
+
+    def validate(self):
+        if self.manage_address:
+            self.manage_address.validate()
+        if self.registration_address:
+            self.registration_address.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.legal_entity_en_name is not None:
+            result['legalEntityEnName'] = self.legal_entity_en_name
+        if self.legal_entity_en_short_name is not None:
+            result['legalEntityEnShortName'] = self.legal_entity_en_short_name
+        if self.legal_entity_type is not None:
+            result['legalEntityType'] = self.legal_entity_type
+        if self.manage_address is not None:
+            result['manageAddress'] = self.manage_address.to_map()
+        if self.registration_address is not None:
+            result['registrationAddress'] = self.registration_address.to_map()
+        if self.registration_date is not None:
+            result['registrationDate'] = self.registration_date
+        if self.unified_social_credit_code is not None:
+            result['unifiedSocialCreditCode'] = self.unified_social_credit_code
+        if self.zip_code is not None:
+            result['zipCode'] = self.zip_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('legalEntityEnName') is not None:
+            self.legal_entity_en_name = m.get('legalEntityEnName')
+        if m.get('legalEntityEnShortName') is not None:
+            self.legal_entity_en_short_name = m.get('legalEntityEnShortName')
+        if m.get('legalEntityType') is not None:
+            self.legal_entity_type = m.get('legalEntityType')
+        if m.get('manageAddress') is not None:
+            temp_model = AddHrmLegalEntityRequestExtManageAddress()
+            self.manage_address = temp_model.from_map(m['manageAddress'])
+        if m.get('registrationAddress') is not None:
+            temp_model = AddHrmLegalEntityRequestExtRegistrationAddress()
+            self.registration_address = temp_model.from_map(m['registrationAddress'])
+        if m.get('registrationDate') is not None:
+            self.registration_date = m.get('registrationDate')
+        if m.get('unifiedSocialCreditCode') is not None:
+            self.unified_social_credit_code = m.get('unifiedSocialCreditCode')
+        if m.get('zipCode') is not None:
+            self.zip_code = m.get('zipCode')
+        return self
+
+
+class AddHrmLegalEntityRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        create_user_id: str = None,
+        ext: AddHrmLegalEntityRequestExt = None,
+        legal_entity_name: str = None,
+        legal_entity_short_name: str = None,
+        legal_entity_status: int = None,
+        legal_person_name: str = None,
+        ding_tenant_id: int = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.create_user_id = create_user_id
+        self.ext = ext
+        # This parameter is required.
+        self.legal_entity_name = legal_entity_name
+        self.legal_entity_short_name = legal_entity_short_name
+        # This parameter is required.
+        self.legal_entity_status = legal_entity_status
+        self.legal_person_name = legal_person_name
+        self.ding_tenant_id = ding_tenant_id
+
+    def validate(self):
+        if self.ext:
+            self.ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_user_id is not None:
+            result['createUserId'] = self.create_user_id
+        if self.ext is not None:
+            result['ext'] = self.ext.to_map()
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.legal_entity_short_name is not None:
+            result['legalEntityShortName'] = self.legal_entity_short_name
+        if self.legal_entity_status is not None:
+            result['legalEntityStatus'] = self.legal_entity_status
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        if self.ding_tenant_id is not None:
+            result['dingTenantId'] = self.ding_tenant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createUserId') is not None:
+            self.create_user_id = m.get('createUserId')
+        if m.get('ext') is not None:
+            temp_model = AddHrmLegalEntityRequestExt()
+            self.ext = temp_model.from_map(m['ext'])
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('legalEntityShortName') is not None:
+            self.legal_entity_short_name = m.get('legalEntityShortName')
+        if m.get('legalEntityStatus') is not None:
+            self.legal_entity_status = m.get('legalEntityStatus')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        if m.get('dingTenantId') is not None:
+            self.ding_tenant_id = m.get('dingTenantId')
+        return self
+
+
+class AddHrmLegalEntityResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        legal_entity_id: str = None,
+        legal_entity_name: str = None,
+        legal_entity_short_name: str = None,
+        legal_entity_status: int = None,
+        legal_person_name: str = None,
+    ):
+        self.corp_id = corp_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.legal_entity_id = legal_entity_id
+        self.legal_entity_name = legal_entity_name
+        self.legal_entity_short_name = legal_entity_short_name
+        self.legal_entity_status = legal_entity_status
+        self.legal_person_name = legal_person_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.legal_entity_id is not None:
+            result['legalEntityId'] = self.legal_entity_id
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.legal_entity_short_name is not None:
+            result['legalEntityShortName'] = self.legal_entity_short_name
+        if self.legal_entity_status is not None:
+            result['legalEntityStatus'] = self.legal_entity_status
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('legalEntityId') is not None:
+            self.legal_entity_id = m.get('legalEntityId')
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('legalEntityShortName') is not None:
+            self.legal_entity_short_name = m.get('legalEntityShortName')
+        if m.get('legalEntityStatus') is not None:
+            self.legal_entity_status = m.get('legalEntityStatus')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        return self
+
+
+class AddHrmLegalEntityResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddHrmLegalEntityResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddHrmLegalEntityResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddHrmLegalEntityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddHrmLegalEntityResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddHrmLegalEntityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddHrmPreentryHeaders(TeaModel):
     def __init__(
         self,
@@ -7104,6 +7592,713 @@ class SyncTaskTemplateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTaskTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateHrmLegalEntityNameHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateHrmLegalEntityNameRequest(TeaModel):
+    def __init__(
+        self,
+        ding_tenant_id: int = None,
+        legal_entity_name: str = None,
+        origin_legal_entity_name: str = None,
+    ):
+        self.ding_tenant_id = ding_tenant_id
+        # This parameter is required.
+        self.legal_entity_name = legal_entity_name
+        # This parameter is required.
+        self.origin_legal_entity_name = origin_legal_entity_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_tenant_id is not None:
+            result['dingTenantId'] = self.ding_tenant_id
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.origin_legal_entity_name is not None:
+            result['originLegalEntityName'] = self.origin_legal_entity_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTenantId') is not None:
+            self.ding_tenant_id = m.get('dingTenantId')
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('originLegalEntityName') is not None:
+            self.origin_legal_entity_name = m.get('originLegalEntityName')
+        return self
+
+
+class UpdateHrmLegalEntityNameResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        legal_entity_id: str = None,
+        legal_entity_name: str = None,
+        legal_entity_short_name: str = None,
+        legal_entity_status: int = None,
+        legal_person_name: str = None,
+    ):
+        self.corp_id = corp_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.legal_entity_id = legal_entity_id
+        self.legal_entity_name = legal_entity_name
+        self.legal_entity_short_name = legal_entity_short_name
+        self.legal_entity_status = legal_entity_status
+        self.legal_person_name = legal_person_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.legal_entity_id is not None:
+            result['legalEntityId'] = self.legal_entity_id
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.legal_entity_short_name is not None:
+            result['legalEntityShortName'] = self.legal_entity_short_name
+        if self.legal_entity_status is not None:
+            result['legalEntityStatus'] = self.legal_entity_status
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('legalEntityId') is not None:
+            self.legal_entity_id = m.get('legalEntityId')
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('legalEntityShortName') is not None:
+            self.legal_entity_short_name = m.get('legalEntityShortName')
+        if m.get('legalEntityStatus') is not None:
+            self.legal_entity_status = m.get('legalEntityStatus')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        return self
+
+
+class UpdateHrmLegalEntityNameResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateHrmLegalEntityNameResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateHrmLegalEntityNameResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateHrmLegalEntityNameResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateHrmLegalEntityNameResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateHrmLegalEntityNameResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameRequestExtManageAddress(TeaModel):
+    def __init__(
+        self,
+        area_code: str = None,
+        area_name: str = None,
+        city_code: str = None,
+        city_name: str = None,
+        country_code: str = None,
+        country_name: str = None,
+        detail_address: str = None,
+        global_area_type: str = None,
+        province_code: str = None,
+        province_name: str = None,
+    ):
+        self.area_code = area_code
+        self.area_name = area_name
+        self.city_code = city_code
+        self.city_name = city_name
+        self.country_code = country_code
+        self.country_name = country_name
+        self.detail_address = detail_address
+        self.global_area_type = global_area_type
+        self.province_code = province_code
+        self.province_name = province_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area_code is not None:
+            result['areaCode'] = self.area_code
+        if self.area_name is not None:
+            result['areaName'] = self.area_name
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
+        if self.detail_address is not None:
+            result['detailAddress'] = self.detail_address
+        if self.global_area_type is not None:
+            result['globalAreaType'] = self.global_area_type
+        if self.province_code is not None:
+            result['provinceCode'] = self.province_code
+        if self.province_name is not None:
+            result['provinceName'] = self.province_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('areaCode') is not None:
+            self.area_code = m.get('areaCode')
+        if m.get('areaName') is not None:
+            self.area_name = m.get('areaName')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
+        if m.get('detailAddress') is not None:
+            self.detail_address = m.get('detailAddress')
+        if m.get('globalAreaType') is not None:
+            self.global_area_type = m.get('globalAreaType')
+        if m.get('provinceCode') is not None:
+            self.province_code = m.get('provinceCode')
+        if m.get('provinceName') is not None:
+            self.province_name = m.get('provinceName')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress(TeaModel):
+    def __init__(
+        self,
+        area_code: str = None,
+        area_name: str = None,
+        city_code: str = None,
+        city_name: str = None,
+        country_code: str = None,
+        country_name: str = None,
+        detail_address: str = None,
+        global_area_type: str = None,
+        province_code: str = None,
+        province_name: str = None,
+    ):
+        self.area_code = area_code
+        self.area_name = area_name
+        self.city_code = city_code
+        self.city_name = city_name
+        self.country_code = country_code
+        self.country_name = country_name
+        self.detail_address = detail_address
+        self.global_area_type = global_area_type
+        self.province_code = province_code
+        self.province_name = province_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.area_code is not None:
+            result['areaCode'] = self.area_code
+        if self.area_name is not None:
+            result['areaName'] = self.area_name
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.city_name is not None:
+            result['cityName'] = self.city_name
+        if self.country_code is not None:
+            result['countryCode'] = self.country_code
+        if self.country_name is not None:
+            result['countryName'] = self.country_name
+        if self.detail_address is not None:
+            result['detailAddress'] = self.detail_address
+        if self.global_area_type is not None:
+            result['globalAreaType'] = self.global_area_type
+        if self.province_code is not None:
+            result['provinceCode'] = self.province_code
+        if self.province_name is not None:
+            result['provinceName'] = self.province_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('areaCode') is not None:
+            self.area_code = m.get('areaCode')
+        if m.get('areaName') is not None:
+            self.area_name = m.get('areaName')
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('cityName') is not None:
+            self.city_name = m.get('cityName')
+        if m.get('countryCode') is not None:
+            self.country_code = m.get('countryCode')
+        if m.get('countryName') is not None:
+            self.country_name = m.get('countryName')
+        if m.get('detailAddress') is not None:
+            self.detail_address = m.get('detailAddress')
+        if m.get('globalAreaType') is not None:
+            self.global_area_type = m.get('globalAreaType')
+        if m.get('provinceCode') is not None:
+            self.province_code = m.get('provinceCode')
+        if m.get('provinceName') is not None:
+            self.province_name = m.get('provinceName')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameRequestExt(TeaModel):
+    def __init__(
+        self,
+        legal_entity_en_name: str = None,
+        legal_entity_en_short_name: str = None,
+        legal_entity_type: str = None,
+        manage_address: UpdateHrmLegalEntityWithoutNameRequestExtManageAddress = None,
+        registration_address: UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress = None,
+        registration_date: int = None,
+        unified_social_credit_code: str = None,
+        zip_code: str = None,
+    ):
+        self.legal_entity_en_name = legal_entity_en_name
+        self.legal_entity_en_short_name = legal_entity_en_short_name
+        self.legal_entity_type = legal_entity_type
+        self.manage_address = manage_address
+        self.registration_address = registration_address
+        self.registration_date = registration_date
+        self.unified_social_credit_code = unified_social_credit_code
+        self.zip_code = zip_code
+
+    def validate(self):
+        if self.manage_address:
+            self.manage_address.validate()
+        if self.registration_address:
+            self.registration_address.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.legal_entity_en_name is not None:
+            result['legalEntityEnName'] = self.legal_entity_en_name
+        if self.legal_entity_en_short_name is not None:
+            result['legalEntityEnShortName'] = self.legal_entity_en_short_name
+        if self.legal_entity_type is not None:
+            result['legalEntityType'] = self.legal_entity_type
+        if self.manage_address is not None:
+            result['manageAddress'] = self.manage_address.to_map()
+        if self.registration_address is not None:
+            result['registrationAddress'] = self.registration_address.to_map()
+        if self.registration_date is not None:
+            result['registrationDate'] = self.registration_date
+        if self.unified_social_credit_code is not None:
+            result['unifiedSocialCreditCode'] = self.unified_social_credit_code
+        if self.zip_code is not None:
+            result['zipCode'] = self.zip_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('legalEntityEnName') is not None:
+            self.legal_entity_en_name = m.get('legalEntityEnName')
+        if m.get('legalEntityEnShortName') is not None:
+            self.legal_entity_en_short_name = m.get('legalEntityEnShortName')
+        if m.get('legalEntityType') is not None:
+            self.legal_entity_type = m.get('legalEntityType')
+        if m.get('manageAddress') is not None:
+            temp_model = UpdateHrmLegalEntityWithoutNameRequestExtManageAddress()
+            self.manage_address = temp_model.from_map(m['manageAddress'])
+        if m.get('registrationAddress') is not None:
+            temp_model = UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress()
+            self.registration_address = temp_model.from_map(m['registrationAddress'])
+        if m.get('registrationDate') is not None:
+            self.registration_date = m.get('registrationDate')
+        if m.get('unifiedSocialCreditCode') is not None:
+            self.unified_social_credit_code = m.get('unifiedSocialCreditCode')
+        if m.get('zipCode') is not None:
+            self.zip_code = m.get('zipCode')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        create_user_id: str = None,
+        ext: UpdateHrmLegalEntityWithoutNameRequestExt = None,
+        legal_entity_name: str = None,
+        legal_entity_short_name: str = None,
+        legal_entity_status: int = None,
+        legal_person_name: str = None,
+        ding_tenant_id: int = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.create_user_id = create_user_id
+        self.ext = ext
+        # This parameter is required.
+        self.legal_entity_name = legal_entity_name
+        self.legal_entity_short_name = legal_entity_short_name
+        # This parameter is required.
+        self.legal_entity_status = legal_entity_status
+        self.legal_person_name = legal_person_name
+        self.ding_tenant_id = ding_tenant_id
+
+    def validate(self):
+        if self.ext:
+            self.ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_user_id is not None:
+            result['createUserId'] = self.create_user_id
+        if self.ext is not None:
+            result['ext'] = self.ext.to_map()
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.legal_entity_short_name is not None:
+            result['legalEntityShortName'] = self.legal_entity_short_name
+        if self.legal_entity_status is not None:
+            result['legalEntityStatus'] = self.legal_entity_status
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        if self.ding_tenant_id is not None:
+            result['dingTenantId'] = self.ding_tenant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createUserId') is not None:
+            self.create_user_id = m.get('createUserId')
+        if m.get('ext') is not None:
+            temp_model = UpdateHrmLegalEntityWithoutNameRequestExt()
+            self.ext = temp_model.from_map(m['ext'])
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('legalEntityShortName') is not None:
+            self.legal_entity_short_name = m.get('legalEntityShortName')
+        if m.get('legalEntityStatus') is not None:
+            self.legal_entity_status = m.get('legalEntityStatus')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        if m.get('dingTenantId') is not None:
+            self.ding_tenant_id = m.get('dingTenantId')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        legal_entity_id: str = None,
+        legal_entity_name: str = None,
+        legal_entity_short_name: str = None,
+        legal_entity_status: int = None,
+        legal_person_name: str = None,
+    ):
+        self.corp_id = corp_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.legal_entity_id = legal_entity_id
+        self.legal_entity_name = legal_entity_name
+        self.legal_entity_short_name = legal_entity_short_name
+        self.legal_entity_status = legal_entity_status
+        self.legal_person_name = legal_person_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.legal_entity_id is not None:
+            result['legalEntityId'] = self.legal_entity_id
+        if self.legal_entity_name is not None:
+            result['legalEntityName'] = self.legal_entity_name
+        if self.legal_entity_short_name is not None:
+            result['legalEntityShortName'] = self.legal_entity_short_name
+        if self.legal_entity_status is not None:
+            result['legalEntityStatus'] = self.legal_entity_status
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('legalEntityId') is not None:
+            self.legal_entity_id = m.get('legalEntityId')
+        if m.get('legalEntityName') is not None:
+            self.legal_entity_name = m.get('legalEntityName')
+        if m.get('legalEntityShortName') is not None:
+            self.legal_entity_short_name = m.get('legalEntityShortName')
+        if m.get('legalEntityStatus') is not None:
+            self.legal_entity_status = m.get('legalEntityStatus')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateHrmLegalEntityWithoutNameResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateHrmLegalEntityWithoutNameResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateHrmLegalEntityWithoutNameResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateHrmLegalEntityWithoutNameResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateHrmLegalEntityWithoutNameResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

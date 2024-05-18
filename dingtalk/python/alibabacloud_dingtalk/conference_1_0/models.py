@@ -742,9 +742,12 @@ class CreateCustomShortLinkRequest(TeaModel):
         schedule_conference_id: str = None,
         use_extension_app: bool = None,
     ):
+        # This parameter is required.
         self.cool_app_code = cool_app_code
+        # This parameter is required.
         self.creator_union_id = creator_union_id
         self.extension_app_biz_data = extension_app_biz_data
+        # This parameter is required.
         self.schedule_conference_id = schedule_conference_id
         self.use_extension_app = use_extension_app
 
@@ -4842,6 +4845,7 @@ class QueryScheduleConfSettingsRequest(TeaModel):
         self,
         schedule_conference_id: str = None,
     ):
+        # This parameter is required.
         self.schedule_conference_id = schedule_conference_id
 
     def validate(self):

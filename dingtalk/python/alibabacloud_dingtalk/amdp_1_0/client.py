@@ -29,6 +29,120 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def amdp_emp_role_data_push_with_options(
+        self,
+        request: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushRequest,
+        headers: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse:
+        """
+        @summary 人员角色数据推送
+        
+        @param request: AmdpEmpRoleDataPushRequest
+        @param headers: AmdpEmpRoleDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpEmpRoleDataPushResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AmdpEmpRoleDataPush',
+            version='amdp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/amdp/employeeRoles/datas/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def amdp_emp_role_data_push_with_options_async(
+        self,
+        request: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushRequest,
+        headers: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse:
+        """
+        @summary 人员角色数据推送
+        
+        @param request: AmdpEmpRoleDataPushRequest
+        @param headers: AmdpEmpRoleDataPushHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AmdpEmpRoleDataPushResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AmdpEmpRoleDataPush',
+            version='amdp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/amdp/employeeRoles/datas/push',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def amdp_emp_role_data_push(
+        self,
+        request: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushRequest,
+    ) -> dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse:
+        """
+        @summary 人员角色数据推送
+        
+        @param request: AmdpEmpRoleDataPushRequest
+        @return: AmdpEmpRoleDataPushResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkamdp__1__0_models.AmdpEmpRoleDataPushHeaders()
+        return self.amdp_emp_role_data_push_with_options(request, headers, runtime)
+
+    async def amdp_emp_role_data_push_async(
+        self,
+        request: dingtalkamdp__1__0_models.AmdpEmpRoleDataPushRequest,
+    ) -> dingtalkamdp__1__0_models.AmdpEmpRoleDataPushResponse:
+        """
+        @summary 人员角色数据推送
+        
+        @param request: AmdpEmpRoleDataPushRequest
+        @return: AmdpEmpRoleDataPushResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkamdp__1__0_models.AmdpEmpRoleDataPushHeaders()
+        return await self.amdp_emp_role_data_push_with_options_async(request, headers, runtime)
+
     def amdp_employee_data_push_with_options(
         self,
         request: dingtalkamdp__1__0_models.AmdpEmployeeDataPushRequest,
