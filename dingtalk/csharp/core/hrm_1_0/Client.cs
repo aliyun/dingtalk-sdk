@@ -31,6 +31,182 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
 
         /**
+         * @summary 新增法人公司
+         *
+         * @param request AddHrmLegalEntityRequest
+         * @param headers AddHrmLegalEntityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddHrmLegalEntityResponse
+         */
+        public AddHrmLegalEntityResponse AddHrmLegalEntityWithOptions(AddHrmLegalEntityRequest request, AddHrmLegalEntityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateUserId))
+            {
+                body["createUserId"] = request.CreateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                body["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityShortName))
+            {
+                body["legalEntityShortName"] = request.LegalEntityShortName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityStatus))
+            {
+                body["legalEntityStatus"] = request.LegalEntityStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPersonName))
+            {
+                body["legalPersonName"] = request.LegalPersonName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddHrmLegalEntity",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companies",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddHrmLegalEntityResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增法人公司
+         *
+         * @param request AddHrmLegalEntityRequest
+         * @param headers AddHrmLegalEntityHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddHrmLegalEntityResponse
+         */
+        public async Task<AddHrmLegalEntityResponse> AddHrmLegalEntityWithOptionsAsync(AddHrmLegalEntityRequest request, AddHrmLegalEntityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateUserId))
+            {
+                body["createUserId"] = request.CreateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                body["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityShortName))
+            {
+                body["legalEntityShortName"] = request.LegalEntityShortName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityStatus))
+            {
+                body["legalEntityStatus"] = request.LegalEntityStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPersonName))
+            {
+                body["legalPersonName"] = request.LegalPersonName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddHrmLegalEntity",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companies",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddHrmLegalEntityResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增法人公司
+         *
+         * @param request AddHrmLegalEntityRequest
+         * @return AddHrmLegalEntityResponse
+         */
+        public AddHrmLegalEntityResponse AddHrmLegalEntity(AddHrmLegalEntityRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddHrmLegalEntityHeaders headers = new AddHrmLegalEntityHeaders();
+            return AddHrmLegalEntityWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 新增法人公司
+         *
+         * @param request AddHrmLegalEntityRequest
+         * @return AddHrmLegalEntityResponse
+         */
+        public async Task<AddHrmLegalEntityResponse> AddHrmLegalEntityAsync(AddHrmLegalEntityRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddHrmLegalEntityHeaders headers = new AddHrmLegalEntityHeaders();
+            return await AddHrmLegalEntityWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
          *
          * @param request AddHrmPreentryRequest
@@ -4512,6 +4688,314 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
             return await SyncTaskTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新法人公司名称
+         *
+         * @param request UpdateHrmLegalEntityNameRequest
+         * @param headers UpdateHrmLegalEntityNameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmLegalEntityNameResponse
+         */
+        public UpdateHrmLegalEntityNameResponse UpdateHrmLegalEntityNameWithOptions(UpdateHrmLegalEntityNameRequest request, UpdateHrmLegalEntityNameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                query["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginLegalEntityName))
+            {
+                query["originLegalEntityName"] = request.OriginLegalEntityName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmLegalEntityName",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companyNames",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmLegalEntityNameResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新法人公司名称
+         *
+         * @param request UpdateHrmLegalEntityNameRequest
+         * @param headers UpdateHrmLegalEntityNameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmLegalEntityNameResponse
+         */
+        public async Task<UpdateHrmLegalEntityNameResponse> UpdateHrmLegalEntityNameWithOptionsAsync(UpdateHrmLegalEntityNameRequest request, UpdateHrmLegalEntityNameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                query["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginLegalEntityName))
+            {
+                query["originLegalEntityName"] = request.OriginLegalEntityName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmLegalEntityName",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companyNames",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmLegalEntityNameResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新法人公司名称
+         *
+         * @param request UpdateHrmLegalEntityNameRequest
+         * @return UpdateHrmLegalEntityNameResponse
+         */
+        public UpdateHrmLegalEntityNameResponse UpdateHrmLegalEntityName(UpdateHrmLegalEntityNameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmLegalEntityNameHeaders headers = new UpdateHrmLegalEntityNameHeaders();
+            return UpdateHrmLegalEntityNameWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新法人公司名称
+         *
+         * @param request UpdateHrmLegalEntityNameRequest
+         * @return UpdateHrmLegalEntityNameResponse
+         */
+        public async Task<UpdateHrmLegalEntityNameResponse> UpdateHrmLegalEntityNameAsync(UpdateHrmLegalEntityNameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmLegalEntityNameHeaders headers = new UpdateHrmLegalEntityNameHeaders();
+            return await UpdateHrmLegalEntityNameWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新法人公司
+         *
+         * @param request UpdateHrmLegalEntityWithoutNameRequest
+         * @param headers UpdateHrmLegalEntityWithoutNameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmLegalEntityWithoutNameResponse
+         */
+        public UpdateHrmLegalEntityWithoutNameResponse UpdateHrmLegalEntityWithoutNameWithOptions(UpdateHrmLegalEntityWithoutNameRequest request, UpdateHrmLegalEntityWithoutNameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateUserId))
+            {
+                body["createUserId"] = request.CreateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                body["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityShortName))
+            {
+                body["legalEntityShortName"] = request.LegalEntityShortName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityStatus))
+            {
+                body["legalEntityStatus"] = request.LegalEntityStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPersonName))
+            {
+                body["legalPersonName"] = request.LegalPersonName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmLegalEntityWithoutName",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmLegalEntityWithoutNameResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新法人公司
+         *
+         * @param request UpdateHrmLegalEntityWithoutNameRequest
+         * @param headers UpdateHrmLegalEntityWithoutNameHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmLegalEntityWithoutNameResponse
+         */
+        public async Task<UpdateHrmLegalEntityWithoutNameResponse> UpdateHrmLegalEntityWithoutNameWithOptionsAsync(UpdateHrmLegalEntityWithoutNameRequest request, UpdateHrmLegalEntityWithoutNameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingTenantId))
+            {
+                query["dingTenantId"] = request.DingTenantId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateUserId))
+            {
+                body["createUserId"] = request.CreateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityName))
+            {
+                body["legalEntityName"] = request.LegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityShortName))
+            {
+                body["legalEntityShortName"] = request.LegalEntityShortName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalEntityStatus))
+            {
+                body["legalEntityStatus"] = request.LegalEntityStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LegalPersonName))
+            {
+                body["legalPersonName"] = request.LegalPersonName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmLegalEntityWithoutName",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/legalEntities/companies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmLegalEntityWithoutNameResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新法人公司
+         *
+         * @param request UpdateHrmLegalEntityWithoutNameRequest
+         * @return UpdateHrmLegalEntityWithoutNameResponse
+         */
+        public UpdateHrmLegalEntityWithoutNameResponse UpdateHrmLegalEntityWithoutName(UpdateHrmLegalEntityWithoutNameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmLegalEntityWithoutNameHeaders headers = new UpdateHrmLegalEntityWithoutNameHeaders();
+            return UpdateHrmLegalEntityWithoutNameWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新法人公司
+         *
+         * @param request UpdateHrmLegalEntityWithoutNameRequest
+         * @return UpdateHrmLegalEntityWithoutNameResponse
+         */
+        public async Task<UpdateHrmLegalEntityWithoutNameResponse> UpdateHrmLegalEntityWithoutNameAsync(UpdateHrmLegalEntityWithoutNameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmLegalEntityWithoutNameHeaders headers = new UpdateHrmLegalEntityWithoutNameHeaders();
+            return await UpdateHrmLegalEntityWithoutNameWithOptionsAsync(request, headers, runtime);
         }
 
         /**

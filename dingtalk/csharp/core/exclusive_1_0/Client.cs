@@ -1530,6 +1530,138 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 更换组织主管理员
+         *
+         * @param request ExchangeMainAdminRequest
+         * @param headers ExchangeMainAdminHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExchangeMainAdminResponse
+         */
+        public ExchangeMainAdminResponse ExchangeMainAdminWithOptions(ExchangeMainAdminRequest request, ExchangeMainAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewAdminUserId))
+            {
+                body["newAdminUserId"] = request.NewAdminUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OldAdminUserId))
+            {
+                body["oldAdminUserId"] = request.OldAdminUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExchangeMainAdmin",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/orgnizations/mainAdministrators/exchange",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExchangeMainAdminResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更换组织主管理员
+         *
+         * @param request ExchangeMainAdminRequest
+         * @param headers ExchangeMainAdminHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExchangeMainAdminResponse
+         */
+        public async Task<ExchangeMainAdminResponse> ExchangeMainAdminWithOptionsAsync(ExchangeMainAdminRequest request, ExchangeMainAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewAdminUserId))
+            {
+                body["newAdminUserId"] = request.NewAdminUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OldAdminUserId))
+            {
+                body["oldAdminUserId"] = request.OldAdminUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExchangeMainAdmin",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/orgnizations/mainAdministrators/exchange",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExchangeMainAdminResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更换组织主管理员
+         *
+         * @param request ExchangeMainAdminRequest
+         * @return ExchangeMainAdminResponse
+         */
+        public ExchangeMainAdminResponse ExchangeMainAdmin(ExchangeMainAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExchangeMainAdminHeaders headers = new ExchangeMainAdminHeaders();
+            return ExchangeMainAdminWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更换组织主管理员
+         *
+         * @param request ExchangeMainAdminRequest
+         * @return ExchangeMainAdminResponse
+         */
+        public async Task<ExchangeMainAdminResponse> ExchangeMainAdminAsync(ExchangeMainAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExchangeMainAdminHeaders headers = new ExchangeMainAdminHeaders();
+            return await ExchangeMainAdminWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 分发工作台模版
          *
          * @param request ExclusiveCreateDingPortalRequest
@@ -7888,6 +8020,146 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 购买权益包
+         *
+         * @param request OpenBenefitPackageRequest
+         * @param headers OpenBenefitPackageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenBenefitPackageResponse
+         */
+        public OpenBenefitPackageResponse OpenBenefitPackageWithOptions(OpenBenefitPackageRequest request, OpenBenefitPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitPackage))
+            {
+                body["benefitPackage"] = request.BenefitPackage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenBenefitPackage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/benefitPackages/purchase",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenBenefitPackageResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 购买权益包
+         *
+         * @param request OpenBenefitPackageRequest
+         * @param headers OpenBenefitPackageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenBenefitPackageResponse
+         */
+        public async Task<OpenBenefitPackageResponse> OpenBenefitPackageWithOptionsAsync(OpenBenefitPackageRequest request, OpenBenefitPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitPackage))
+            {
+                body["benefitPackage"] = request.BenefitPackage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenBenefitPackage",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/benefitPackages/purchase",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenBenefitPackageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 购买权益包
+         *
+         * @param request OpenBenefitPackageRequest
+         * @return OpenBenefitPackageResponse
+         */
+        public OpenBenefitPackageResponse OpenBenefitPackage(OpenBenefitPackageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenBenefitPackageHeaders headers = new OpenBenefitPackageHeaders();
+            return OpenBenefitPackageWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 购买权益包
+         *
+         * @param request OpenBenefitPackageRequest
+         * @return OpenBenefitPackageResponse
+         */
+        public async Task<OpenBenefitPackageResponse> OpenBenefitPackageAsync(OpenBenefitPackageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenBenefitPackageHeaders headers = new OpenBenefitPackageHeaders();
+            return await OpenBenefitPackageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 防作弊风险检测
          *
          * @param request PreventCheatingCheckRiskRequest
@@ -11571,6 +11843,130 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateStorageModeHeaders headers = new UpdateStorageModeHeaders();
             return await UpdateStorageModeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 允许三方调用该API，决定对应的语音消息管控状态
+         *
+         * @param request UpdateVoiceMsgCtrlStatusRequest
+         * @param headers UpdateVoiceMsgCtrlStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVoiceMsgCtrlStatusResponse
+         */
+        public UpdateVoiceMsgCtrlStatusResponse UpdateVoiceMsgCtrlStatusWithOptions(UpdateVoiceMsgCtrlStatusRequest request, UpdateVoiceMsgCtrlStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoiceMsgCtrlInfo))
+            {
+                body["voiceMsgCtrlInfo"] = request.VoiceMsgCtrlInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVoiceMsgCtrlStatus",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/voiceMessages/ctrlStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVoiceMsgCtrlStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 允许三方调用该API，决定对应的语音消息管控状态
+         *
+         * @param request UpdateVoiceMsgCtrlStatusRequest
+         * @param headers UpdateVoiceMsgCtrlStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateVoiceMsgCtrlStatusResponse
+         */
+        public async Task<UpdateVoiceMsgCtrlStatusResponse> UpdateVoiceMsgCtrlStatusWithOptionsAsync(UpdateVoiceMsgCtrlStatusRequest request, UpdateVoiceMsgCtrlStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoiceMsgCtrlInfo))
+            {
+                body["voiceMsgCtrlInfo"] = request.VoiceMsgCtrlInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVoiceMsgCtrlStatus",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/voiceMessages/ctrlStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVoiceMsgCtrlStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 允许三方调用该API，决定对应的语音消息管控状态
+         *
+         * @param request UpdateVoiceMsgCtrlStatusRequest
+         * @return UpdateVoiceMsgCtrlStatusResponse
+         */
+        public UpdateVoiceMsgCtrlStatusResponse UpdateVoiceMsgCtrlStatus(UpdateVoiceMsgCtrlStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVoiceMsgCtrlStatusHeaders headers = new UpdateVoiceMsgCtrlStatusHeaders();
+            return UpdateVoiceMsgCtrlStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 允许三方调用该API，决定对应的语音消息管控状态
+         *
+         * @param request UpdateVoiceMsgCtrlStatusRequest
+         * @return UpdateVoiceMsgCtrlStatusResponse
+         */
+        public async Task<UpdateVoiceMsgCtrlStatusResponse> UpdateVoiceMsgCtrlStatusAsync(UpdateVoiceMsgCtrlStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVoiceMsgCtrlStatusHeaders headers = new UpdateVoiceMsgCtrlStatusHeaders();
+            return await UpdateVoiceMsgCtrlStatusWithOptionsAsync(request, headers, runtime);
         }
 
     }

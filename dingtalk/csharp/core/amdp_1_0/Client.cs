@@ -30,6 +30,122 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
 
 
         /**
+         * @summary 人员角色数据推送
+         *
+         * @param request AmdpEmpRoleDataPushRequest
+         * @param headers AmdpEmpRoleDataPushHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AmdpEmpRoleDataPushResponse
+         */
+        public AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPushWithOptions(AmdpEmpRoleDataPushRequest request, AmdpEmpRoleDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AmdpEmpRoleDataPush",
+                Version = "amdp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/amdp/employeeRoles/datas/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AmdpEmpRoleDataPushResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 人员角色数据推送
+         *
+         * @param request AmdpEmpRoleDataPushRequest
+         * @param headers AmdpEmpRoleDataPushHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AmdpEmpRoleDataPushResponse
+         */
+        public async Task<AmdpEmpRoleDataPushResponse> AmdpEmpRoleDataPushWithOptionsAsync(AmdpEmpRoleDataPushRequest request, AmdpEmpRoleDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AmdpEmpRoleDataPush",
+                Version = "amdp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/amdp/employeeRoles/datas/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AmdpEmpRoleDataPushResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 人员角色数据推送
+         *
+         * @param request AmdpEmpRoleDataPushRequest
+         * @return AmdpEmpRoleDataPushResponse
+         */
+        public AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPush(AmdpEmpRoleDataPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AmdpEmpRoleDataPushHeaders headers = new AmdpEmpRoleDataPushHeaders();
+            return AmdpEmpRoleDataPushWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 人员角色数据推送
+         *
+         * @param request AmdpEmpRoleDataPushRequest
+         * @return AmdpEmpRoleDataPushResponse
+         */
+        public async Task<AmdpEmpRoleDataPushResponse> AmdpEmpRoleDataPushAsync(AmdpEmpRoleDataPushRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AmdpEmpRoleDataPushHeaders headers = new AmdpEmpRoleDataPushHeaders();
+            return await AmdpEmpRoleDataPushWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 人员数据推送
          *
          * @param request AmdpEmployeeDataPushRequest

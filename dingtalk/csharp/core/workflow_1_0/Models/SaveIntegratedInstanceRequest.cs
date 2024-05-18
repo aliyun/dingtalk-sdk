@@ -13,6 +13,56 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string BizData { get; set; }
 
+        [NameInMap("featureConfig")]
+        [Validation(Required=false)]
+        public SaveIntegratedInstanceRequestFeatureConfig FeatureConfig { get; set; }
+        public class SaveIntegratedInstanceRequestFeatureConfig : TeaModel {
+            [NameInMap("features")]
+            [Validation(Required=false)]
+            public List<SaveIntegratedInstanceRequestFeatureConfigFeatures> Features { get; set; }
+            public class SaveIntegratedInstanceRequestFeatureConfigFeatures : TeaModel {
+                [NameInMap("callback")]
+                [Validation(Required=false)]
+                public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback Callback { get; set; }
+                public class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback : TeaModel {
+                    [NameInMap("apiKey")]
+                    [Validation(Required=false)]
+                    public string ApiKey { get; set; }
+
+                    [NameInMap("appUuid")]
+                    [Validation(Required=false)]
+                    public string AppUuid { get; set; }
+
+                    [NameInMap("version")]
+                    [Validation(Required=false)]
+                    public string Version { get; set; }
+
+                }
+
+                [NameInMap("config")]
+                [Validation(Required=false)]
+                public string Config { get; set; }
+
+                [NameInMap("mobileUrl")]
+                [Validation(Required=false)]
+                public string MobileUrl { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("pcUrl")]
+                [Validation(Required=false)]
+                public string PcUrl { get; set; }
+
+                [NameInMap("runType")]
+                [Validation(Required=false)]
+                public string RunType { get; set; }
+
+            }
+
+        }
+
         [NameInMap("formComponentValueList")]
         [Validation(Required=false)]
         public List<SaveIntegratedInstanceRequestFormComponentValueList> FormComponentValueList { get; set; }

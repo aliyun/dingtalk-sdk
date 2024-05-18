@@ -57,6 +57,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
                 }
 
+                [NameInMap("config")]
+                [Validation(Required=false)]
+                public string Config { get; set; }
+
                 [NameInMap("mobileUrl")]
                 [Validation(Required=false)]
                 public string MobileUrl { get; set; }

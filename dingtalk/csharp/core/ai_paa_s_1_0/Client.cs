@@ -598,6 +598,154 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
         }
 
         /**
+         * @summary 通过配置的指令，连接用户和系统，训练大模型
+         *
+         * @param request NLToFrameServiceRequest
+         * @param headers NLToFrameServiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NLToFrameServiceResponse
+         */
+        public NLToFrameServiceResponse NLToFrameServiceWithOptions(NLToFrameServiceRequest request, NLToFrameServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtensionStr))
+            {
+                body["extensionStr"] = request.ExtensionStr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsNewModel))
+            {
+                body["isNewModel"] = request.IsNewModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelId))
+            {
+                body["modelId"] = request.ModelId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelName))
+            {
+                body["modelName"] = request.ModelName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NLToFrameService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/nl2frame",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NLToFrameServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 通过配置的指令，连接用户和系统，训练大模型
+         *
+         * @param request NLToFrameServiceRequest
+         * @param headers NLToFrameServiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return NLToFrameServiceResponse
+         */
+        public async Task<NLToFrameServiceResponse> NLToFrameServiceWithOptionsAsync(NLToFrameServiceRequest request, NLToFrameServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtensionStr))
+            {
+                body["extensionStr"] = request.ExtensionStr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsNewModel))
+            {
+                body["isNewModel"] = request.IsNewModel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelId))
+            {
+                body["modelId"] = request.ModelId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelName))
+            {
+                body["modelName"] = request.ModelName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NLToFrameService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/nl2frame",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NLToFrameServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 通过配置的指令，连接用户和系统，训练大模型
+         *
+         * @param request NLToFrameServiceRequest
+         * @return NLToFrameServiceResponse
+         */
+        public NLToFrameServiceResponse NLToFrameService(NLToFrameServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            NLToFrameServiceHeaders headers = new NLToFrameServiceHeaders();
+            return NLToFrameServiceWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 通过配置的指令，连接用户和系统，训练大模型
+         *
+         * @param request NLToFrameServiceRequest
+         * @return NLToFrameServiceResponse
+         */
+        public async Task<NLToFrameServiceResponse> NLToFrameServiceAsync(NLToFrameServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            NLToFrameServiceHeaders headers = new NLToFrameServiceHeaders();
+            return await NLToFrameServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary Baymax技能执行日志
          *
          * @param request QueryBaymaxSkillLogRequest

@@ -953,6 +953,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["activityId"] = request.ActivityId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
@@ -1005,6 +1009,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActivityId))
             {
                 body["activityId"] = request.ActivityId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
@@ -1067,6 +1075,130 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateIntegratedTaskHeaders headers = new CreateIntegratedTaskHeaders();
             return await CreateIntegratedTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 删除分组
+         *
+         * @param request DeleteDirRequest
+         * @param headers DeleteDirHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteDirResponse
+         */
+        public DeleteDirResponse DeleteDirWithOptions(DeleteDirRequest request, DeleteDirHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DirId))
+            {
+                query["dirId"] = request.DirId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                query["operateUserId"] = request.OperateUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDir",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processCentres/directories",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDirResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 删除分组
+         *
+         * @param request DeleteDirRequest
+         * @param headers DeleteDirHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteDirResponse
+         */
+        public async Task<DeleteDirResponse> DeleteDirWithOptionsAsync(DeleteDirRequest request, DeleteDirHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DirId))
+            {
+                query["dirId"] = request.DirId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                query["operateUserId"] = request.OperateUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDir",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processCentres/directories",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDirResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 删除分组
+         *
+         * @param request DeleteDirRequest
+         * @return DeleteDirResponse
+         */
+        public DeleteDirResponse DeleteDir(DeleteDirRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDirHeaders headers = new DeleteDirHeaders();
+            return DeleteDirWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 删除分组
+         *
+         * @param request DeleteDirRequest
+         * @return DeleteDirResponse
+         */
+        public async Task<DeleteDirResponse> DeleteDirAsync(DeleteDirRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDirHeaders headers = new DeleteDirHeaders();
+            return await DeleteDirWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -3085,6 +3217,154 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GrantProcessInstanceForDownloadFileHeaders headers = new GrantProcessInstanceForDownloadFileHeaders();
             return await GrantProcessInstanceForDownloadFileWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建或更新分组
+         *
+         * @param request InsertOrUpdateDirRequest
+         * @param headers InsertOrUpdateDirHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertOrUpdateDirResponse
+         */
+        public InsertOrUpdateDirResponse InsertOrUpdateDirWithOptions(InsertOrUpdateDirRequest request, InsertOrUpdateDirHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizGroup))
+            {
+                body["bizGroup"] = request.BizGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name18n))
+            {
+                body["name18n"] = request.Name18n;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertOrUpdateDir",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processCentres/directories",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertOrUpdateDirResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建或更新分组
+         *
+         * @param request InsertOrUpdateDirRequest
+         * @param headers InsertOrUpdateDirHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InsertOrUpdateDirResponse
+         */
+        public async Task<InsertOrUpdateDirResponse> InsertOrUpdateDirWithOptionsAsync(InsertOrUpdateDirRequest request, InsertOrUpdateDirHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizGroup))
+            {
+                body["bizGroup"] = request.BizGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name18n))
+            {
+                body["name18n"] = request.Name18n;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertOrUpdateDir",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/processCentres/directories",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertOrUpdateDirResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建或更新分组
+         *
+         * @param request InsertOrUpdateDirRequest
+         * @return InsertOrUpdateDirResponse
+         */
+        public InsertOrUpdateDirResponse InsertOrUpdateDir(InsertOrUpdateDirRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InsertOrUpdateDirHeaders headers = new InsertOrUpdateDirHeaders();
+            return InsertOrUpdateDirWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建或更新分组
+         *
+         * @param request InsertOrUpdateDirRequest
+         * @return InsertOrUpdateDirResponse
+         */
+        public async Task<InsertOrUpdateDirResponse> InsertOrUpdateDirAsync(InsertOrUpdateDirRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InsertOrUpdateDirHeaders headers = new InsertOrUpdateDirHeaders();
+            return await InsertOrUpdateDirWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -5195,6 +5475,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["bizData"] = request.BizData;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {
                 body["formComponentValueList"] = request.FormComponentValueList;
@@ -5263,6 +5547,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizData))
             {
                 body["bizData"] = request.BizData;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FeatureConfig))
+            {
+                body["featureConfig"] = request.FeatureConfig;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormComponentValueList))
             {

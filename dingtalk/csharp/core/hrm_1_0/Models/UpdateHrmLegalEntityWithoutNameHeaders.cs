@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
-    public class AddHrmPreentryHeaders : TeaModel {
+    public class UpdateHrmLegalEntityWithoutNameHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

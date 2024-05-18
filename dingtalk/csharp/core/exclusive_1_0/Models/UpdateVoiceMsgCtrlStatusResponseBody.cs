@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class QueryScheduleConfSettingsRequest : TeaModel {
+    public class UpdateVoiceMsgCtrlStatusResponseBody : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("scheduleConferenceId")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string ScheduleConferenceId { get; set; }
+        public bool? Success { get; set; }
 
     }
 
