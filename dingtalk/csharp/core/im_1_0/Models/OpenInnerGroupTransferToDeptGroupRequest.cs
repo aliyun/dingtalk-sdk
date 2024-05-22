@@ -6,22 +6,22 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class DeleteMeetingRoomControlPanelRequest : TeaModel {
+    public class OpenInnerGroupTransferToDeptGroupRequest : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("roomIds")]
+        [NameInMap("deptId")]
         [Validation(Required=false)]
-        public List<string> RoomIds { get; set; }
+        public long? DeptId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("unionId")]
+        [NameInMap("openConversationId")]
         [Validation(Required=false)]
-        public string UnionId { get; set; }
+        public string OpenConversationId { get; set; }
 
     }
 

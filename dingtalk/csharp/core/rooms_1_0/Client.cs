@@ -992,24 +992,22 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         /**
          * @summary 删除会议室配置
          *
-         * @param tmpReq DeleteMeetingRoomControlPanelRequest
+         * @param request DeleteMeetingRoomControlPanelRequest
          * @param headers DeleteMeetingRoomControlPanelHeaders
          * @param runtime runtime options for this request RuntimeOptions
          * @return DeleteMeetingRoomControlPanelResponse
          */
-        public DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest tmpReq, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest request, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            DeleteMeetingRoomControlPanelShrinkRequest request = new DeleteMeetingRoomControlPanelShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                body["roomIds"] = request.RoomIds;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
-                query["body"] = request.BodyShrink;
+                body["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1023,7 +1021,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -1043,24 +1041,22 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         /**
          * @summary 删除会议室配置
          *
-         * @param tmpReq DeleteMeetingRoomControlPanelRequest
+         * @param request DeleteMeetingRoomControlPanelRequest
          * @param headers DeleteMeetingRoomControlPanelHeaders
          * @param runtime runtime options for this request RuntimeOptions
          * @return DeleteMeetingRoomControlPanelResponse
          */
-        public async Task<DeleteMeetingRoomControlPanelResponse> DeleteMeetingRoomControlPanelWithOptionsAsync(DeleteMeetingRoomControlPanelRequest tmpReq, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteMeetingRoomControlPanelResponse> DeleteMeetingRoomControlPanelWithOptionsAsync(DeleteMeetingRoomControlPanelRequest request, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            DeleteMeetingRoomControlPanelShrinkRequest request = new DeleteMeetingRoomControlPanelShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoomIds))
             {
-                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+                body["roomIds"] = request.RoomIds;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
-                query["body"] = request.BodyShrink;
+                body["unionId"] = request.UnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1074,7 +1070,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {

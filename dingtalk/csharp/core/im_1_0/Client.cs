@@ -4848,6 +4848,394 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 内部群转部门群
+         *
+         * @param request OpenInnerGroupTransferToDeptGroupRequest
+         * @param headers OpenInnerGroupTransferToDeptGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenInnerGroupTransferToDeptGroupResponse
+         */
+        public OpenInnerGroupTransferToDeptGroupResponse OpenInnerGroupTransferToDeptGroupWithOptions(OpenInnerGroupTransferToDeptGroupRequest request, OpenInnerGroupTransferToDeptGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenInnerGroupTransferToDeptGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/transferToDeptGroups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenInnerGroupTransferToDeptGroupResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 内部群转部门群
+         *
+         * @param request OpenInnerGroupTransferToDeptGroupRequest
+         * @param headers OpenInnerGroupTransferToDeptGroupHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenInnerGroupTransferToDeptGroupResponse
+         */
+        public async Task<OpenInnerGroupTransferToDeptGroupResponse> OpenInnerGroupTransferToDeptGroupWithOptionsAsync(OpenInnerGroupTransferToDeptGroupRequest request, OpenInnerGroupTransferToDeptGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenInnerGroupTransferToDeptGroup",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/transferToDeptGroups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenInnerGroupTransferToDeptGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 内部群转部门群
+         *
+         * @param request OpenInnerGroupTransferToDeptGroupRequest
+         * @return OpenInnerGroupTransferToDeptGroupResponse
+         */
+        public OpenInnerGroupTransferToDeptGroupResponse OpenInnerGroupTransferToDeptGroup(OpenInnerGroupTransferToDeptGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenInnerGroupTransferToDeptGroupHeaders headers = new OpenInnerGroupTransferToDeptGroupHeaders();
+            return OpenInnerGroupTransferToDeptGroupWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 内部群转部门群
+         *
+         * @param request OpenInnerGroupTransferToDeptGroupRequest
+         * @return OpenInnerGroupTransferToDeptGroupResponse
+         */
+        public async Task<OpenInnerGroupTransferToDeptGroupResponse> OpenInnerGroupTransferToDeptGroupAsync(OpenInnerGroupTransferToDeptGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenInnerGroupTransferToDeptGroupHeaders headers = new OpenInnerGroupTransferToDeptGroupHeaders();
+            return await OpenInnerGroupTransferToDeptGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 群搜索
+         *
+         * @param request OpenSearchGroupListRequest
+         * @param headers OpenSearchGroupListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenSearchGroupListResponse
+         */
+        public OpenSearchGroupListResponse OpenSearchGroupListWithOptions(OpenSearchGroupListRequest request, OpenSearchGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
+            {
+                body["keyword"] = request.Keyword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenSearchGroupList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenSearchGroupListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 群搜索
+         *
+         * @param request OpenSearchGroupListRequest
+         * @param headers OpenSearchGroupListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenSearchGroupListResponse
+         */
+        public async Task<OpenSearchGroupListResponse> OpenSearchGroupListWithOptionsAsync(OpenSearchGroupListRequest request, OpenSearchGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
+            {
+                body["keyword"] = request.Keyword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenSearchGroupList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenSearchGroupListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 群搜索
+         *
+         * @param request OpenSearchGroupListRequest
+         * @return OpenSearchGroupListResponse
+         */
+        public OpenSearchGroupListResponse OpenSearchGroupList(OpenSearchGroupListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenSearchGroupListHeaders headers = new OpenSearchGroupListHeaders();
+            return OpenSearchGroupListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 群搜索
+         *
+         * @param request OpenSearchGroupListRequest
+         * @return OpenSearchGroupListResponse
+         */
+        public async Task<OpenSearchGroupListResponse> OpenSearchGroupListAsync(OpenSearchGroupListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenSearchGroupListHeaders headers = new OpenSearchGroupListHeaders();
+            return await OpenSearchGroupListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 以个人身份发送卡片消息
+         *
+         * @param request OpenUserSendCardMessageRequest
+         * @param headers OpenUserSendCardMessageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenUserSendCardMessageResponse
+         */
+        public OpenUserSendCardMessageResponse OpenUserSendCardMessageWithOptions(OpenUserSendCardMessageRequest request, OpenUserSendCardMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardContent))
+            {
+                body["cardContent"] = request.CardContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiveUserId))
+            {
+                body["receiveUserId"] = request.ReceiveUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenUserSendCardMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/cardMessages/users/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenUserSendCardMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以个人身份发送卡片消息
+         *
+         * @param request OpenUserSendCardMessageRequest
+         * @param headers OpenUserSendCardMessageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenUserSendCardMessageResponse
+         */
+        public async Task<OpenUserSendCardMessageResponse> OpenUserSendCardMessageWithOptionsAsync(OpenUserSendCardMessageRequest request, OpenUserSendCardMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardContent))
+            {
+                body["cardContent"] = request.CardContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiveUserId))
+            {
+                body["receiveUserId"] = request.ReceiveUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenUserSendCardMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/cardMessages/users/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenUserSendCardMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以个人身份发送卡片消息
+         *
+         * @param request OpenUserSendCardMessageRequest
+         * @return OpenUserSendCardMessageResponse
+         */
+        public OpenUserSendCardMessageResponse OpenUserSendCardMessage(OpenUserSendCardMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenUserSendCardMessageHeaders headers = new OpenUserSendCardMessageHeaders();
+            return OpenUserSendCardMessageWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 以个人身份发送卡片消息
+         *
+         * @param request OpenUserSendCardMessageRequest
+         * @return OpenUserSendCardMessageResponse
+         */
+        public async Task<OpenUserSendCardMessageResponse> OpenUserSendCardMessageAsync(OpenUserSendCardMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenUserSendCardMessageHeaders headers = new OpenUserSendCardMessageHeaders();
+            return await OpenUserSendCardMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 成员授权场景下查询群信息
          *
          * @param request QueryGroupInfoByMemberAuthRequest
@@ -5336,6 +5724,262 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 读取群成员列表
+         *
+         * @param request QueryInnerGroupMemberListRequest
+         * @param headers QueryInnerGroupMemberListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryInnerGroupMemberListResponse
+         */
+        public QueryInnerGroupMemberListResponse QueryInnerGroupMemberListWithOptions(QueryInnerGroupMemberListRequest request, QueryInnerGroupMemberListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInnerGroupMemberList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/memberLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInnerGroupMemberListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 读取群成员列表
+         *
+         * @param request QueryInnerGroupMemberListRequest
+         * @param headers QueryInnerGroupMemberListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryInnerGroupMemberListResponse
+         */
+        public async Task<QueryInnerGroupMemberListResponse> QueryInnerGroupMemberListWithOptionsAsync(QueryInnerGroupMemberListRequest request, QueryInnerGroupMemberListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInnerGroupMemberList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/memberLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInnerGroupMemberListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 读取群成员列表
+         *
+         * @param request QueryInnerGroupMemberListRequest
+         * @return QueryInnerGroupMemberListResponse
+         */
+        public QueryInnerGroupMemberListResponse QueryInnerGroupMemberList(QueryInnerGroupMemberListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInnerGroupMemberListHeaders headers = new QueryInnerGroupMemberListHeaders();
+            return QueryInnerGroupMemberListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 读取群成员列表
+         *
+         * @param request QueryInnerGroupMemberListRequest
+         * @return QueryInnerGroupMemberListResponse
+         */
+        public async Task<QueryInnerGroupMemberListResponse> QueryInnerGroupMemberListAsync(QueryInnerGroupMemberListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInnerGroupMemberListHeaders headers = new QueryInnerGroupMemberListHeaders();
+            return await QueryInnerGroupMemberListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询最近活跃的企业内部群列表
+         *
+         * @param request QueryInnerGroupRecentListRequest
+         * @param headers QueryInnerGroupRecentListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryInnerGroupRecentListResponse
+         */
+        public QueryInnerGroupRecentListResponse QueryInnerGroupRecentListWithOptions(QueryInnerGroupRecentListRequest request, QueryInnerGroupRecentListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInnerGroupRecentList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/recentLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInnerGroupRecentListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询最近活跃的企业内部群列表
+         *
+         * @param request QueryInnerGroupRecentListRequest
+         * @param headers QueryInnerGroupRecentListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryInnerGroupRecentListResponse
+         */
+        public async Task<QueryInnerGroupRecentListResponse> QueryInnerGroupRecentListWithOptionsAsync(QueryInnerGroupRecentListRequest request, QueryInnerGroupRecentListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInnerGroupRecentList",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/innerGroups/recentLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInnerGroupRecentListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询最近活跃的企业内部群列表
+         *
+         * @param request QueryInnerGroupRecentListRequest
+         * @return QueryInnerGroupRecentListResponse
+         */
+        public QueryInnerGroupRecentListResponse QueryInnerGroupRecentList(QueryInnerGroupRecentListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInnerGroupRecentListHeaders headers = new QueryInnerGroupRecentListHeaders();
+            return QueryInnerGroupRecentListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询最近活跃的企业内部群列表
+         *
+         * @param request QueryInnerGroupRecentListRequest
+         * @return QueryInnerGroupRecentListResponse
+         */
+        public async Task<QueryInnerGroupRecentListResponse> QueryInnerGroupRecentListAsync(QueryInnerGroupRecentListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryInnerGroupRecentListHeaders headers = new QueryInnerGroupRecentListHeaders();
+            return await QueryInnerGroupRecentListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询群内具有指定群角色的所有群成员
          *
          * @param request QueryMembersOfGroupRoleRequest
@@ -5465,6 +6109,122 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMembersOfGroupRoleHeaders headers = new QueryMembersOfGroupRoleHeaders();
             return await QueryMembersOfGroupRoleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取最近联系人及群组
+         *
+         * @param request QueryRecentConversationsRequest
+         * @param headers QueryRecentConversationsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRecentConversationsResponse
+         */
+        public QueryRecentConversationsResponse QueryRecentConversationsWithOptions(QueryRecentConversationsRequest request, QueryRecentConversationsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryRecentConversations",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/conversations/recentLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryRecentConversationsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取最近联系人及群组
+         *
+         * @param request QueryRecentConversationsRequest
+         * @param headers QueryRecentConversationsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryRecentConversationsResponse
+         */
+        public async Task<QueryRecentConversationsResponse> QueryRecentConversationsWithOptionsAsync(QueryRecentConversationsRequest request, QueryRecentConversationsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryRecentConversations",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/conversations/recentLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryRecentConversationsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取最近联系人及群组
+         *
+         * @param request QueryRecentConversationsRequest
+         * @return QueryRecentConversationsResponse
+         */
+        public QueryRecentConversationsResponse QueryRecentConversations(QueryRecentConversationsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRecentConversationsHeaders headers = new QueryRecentConversationsHeaders();
+            return QueryRecentConversationsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取最近联系人及群组
+         *
+         * @param request QueryRecentConversationsRequest
+         * @return QueryRecentConversationsResponse
+         */
+        public async Task<QueryRecentConversationsResponse> QueryRecentConversationsAsync(QueryRecentConversationsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryRecentConversationsHeaders headers = new QueryRecentConversationsHeaders();
+            return await QueryRecentConversationsWithOptionsAsync(request, headers, runtime);
         }
 
         /**
