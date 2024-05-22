@@ -2,18 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class DeleteMeetingRoomControlPanelShrinkRequest extends Model
+class QueryRecentConversationsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
-    public $bodyShrink;
+    public $userId;
     protected $_name = [
-        'bodyShrink' => 'body',
+        'userId' => 'userId',
     ];
 
     public function validate()
@@ -23,8 +25,8 @@ class DeleteMeetingRoomControlPanelShrinkRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->bodyShrink) {
-            $res['body'] = $this->bodyShrink;
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -33,13 +35,13 @@ class DeleteMeetingRoomControlPanelShrinkRequest extends Model
     /**
      * @param array $map
      *
-     * @return DeleteMeetingRoomControlPanelShrinkRequest
+     * @return QueryRecentConversationsRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['body'])) {
-            $model->bodyShrink = $map['body'];
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -107,6 +107,15 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceReques
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenSearchGroupListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenSearchGroupListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenSearchGroupListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthResponse;
@@ -119,9 +128,18 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupMuteStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupMemberListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupMemberListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupMemberListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupRecentListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupRecentListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupRecentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotResponse;
@@ -2485,6 +2503,192 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 内部群转部门群
+     *  *
+     * @param OpenInnerGroupTransferToDeptGroupRequest $request OpenInnerGroupTransferToDeptGroupRequest
+     * @param OpenInnerGroupTransferToDeptGroupHeaders $headers OpenInnerGroupTransferToDeptGroupHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenInnerGroupTransferToDeptGroupResponse OpenInnerGroupTransferToDeptGroupResponse
+     */
+    public function openInnerGroupTransferToDeptGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenInnerGroupTransferToDeptGroup',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/innerGroups/transferToDeptGroups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenInnerGroupTransferToDeptGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 内部群转部门群
+     *  *
+     * @param OpenInnerGroupTransferToDeptGroupRequest $request OpenInnerGroupTransferToDeptGroupRequest
+     *
+     * @return OpenInnerGroupTransferToDeptGroupResponse OpenInnerGroupTransferToDeptGroupResponse
+     */
+    public function openInnerGroupTransferToDeptGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenInnerGroupTransferToDeptGroupHeaders([]);
+
+        return $this->openInnerGroupTransferToDeptGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 群搜索
+     *  *
+     * @param OpenSearchGroupListRequest $request OpenSearchGroupListRequest
+     * @param OpenSearchGroupListHeaders $headers OpenSearchGroupListHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenSearchGroupListResponse OpenSearchGroupListResponse
+     */
+    public function openSearchGroupListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenSearchGroupList',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/search',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenSearchGroupListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群搜索
+     *  *
+     * @param OpenSearchGroupListRequest $request OpenSearchGroupListRequest
+     *
+     * @return OpenSearchGroupListResponse OpenSearchGroupListResponse
+     */
+    public function openSearchGroupList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenSearchGroupListHeaders([]);
+
+        return $this->openSearchGroupListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以个人身份发送卡片消息
+     *  *
+     * @param OpenUserSendCardMessageRequest $request OpenUserSendCardMessageRequest
+     * @param OpenUserSendCardMessageHeaders $headers OpenUserSendCardMessageHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenUserSendCardMessageResponse OpenUserSendCardMessageResponse
+     */
+    public function openUserSendCardMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardContent)) {
+            $body['cardContent'] = $request->cardContent;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receiveUserId)) {
+            $body['receiveUserId'] = $request->receiveUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenUserSendCardMessage',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/cardMessages/users/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenUserSendCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以个人身份发送卡片消息
+     *  *
+     * @param OpenUserSendCardMessageRequest $request OpenUserSendCardMessageRequest
+     *
+     * @return OpenUserSendCardMessageResponse OpenUserSendCardMessageResponse
+     */
+    public function openUserSendCardMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenUserSendCardMessageHeaders([]);
+
+        return $this->openUserSendCardMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 成员授权场景下查询群信息
      *  *
      * @param QueryGroupInfoByMemberAuthRequest $request QueryGroupInfoByMemberAuthRequest
@@ -2722,6 +2926,129 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 读取群成员列表
+     *  *
+     * @param QueryInnerGroupMemberListRequest $request QueryInnerGroupMemberListRequest
+     * @param QueryInnerGroupMemberListHeaders $headers QueryInnerGroupMemberListHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryInnerGroupMemberListResponse QueryInnerGroupMemberListResponse
+     */
+    public function queryInnerGroupMemberListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryInnerGroupMemberList',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/innerGroups/memberLists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryInnerGroupMemberListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 读取群成员列表
+     *  *
+     * @param QueryInnerGroupMemberListRequest $request QueryInnerGroupMemberListRequest
+     *
+     * @return QueryInnerGroupMemberListResponse QueryInnerGroupMemberListResponse
+     */
+    public function queryInnerGroupMemberList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInnerGroupMemberListHeaders([]);
+
+        return $this->queryInnerGroupMemberListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询最近活跃的企业内部群列表
+     *  *
+     * @param QueryInnerGroupRecentListRequest $request QueryInnerGroupRecentListRequest
+     * @param QueryInnerGroupRecentListHeaders $headers QueryInnerGroupRecentListHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryInnerGroupRecentListResponse QueryInnerGroupRecentListResponse
+     */
+    public function queryInnerGroupRecentListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryInnerGroupRecentList',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/innerGroups/recentLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryInnerGroupRecentListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询最近活跃的企业内部群列表
+     *  *
+     * @param QueryInnerGroupRecentListRequest $request QueryInnerGroupRecentListRequest
+     *
+     * @return QueryInnerGroupRecentListResponse QueryInnerGroupRecentListResponse
+     */
+    public function queryInnerGroupRecentList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInnerGroupRecentListHeaders([]);
+
+        return $this->queryInnerGroupRecentListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询群内具有指定群角色的所有群成员
      *  *
      * @param QueryMembersOfGroupRoleRequest $request QueryMembersOfGroupRoleRequest
@@ -2782,6 +3109,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMembersOfGroupRoleHeaders([]);
 
         return $this->queryMembersOfGroupRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取最近联系人及群组
+     *  *
+     * @param QueryRecentConversationsRequest $request QueryRecentConversationsRequest
+     * @param QueryRecentConversationsHeaders $headers QueryRecentConversationsHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryRecentConversationsResponse QueryRecentConversationsResponse
+     */
+    public function queryRecentConversationsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryRecentConversations',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/conversations/recentLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryRecentConversationsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取最近联系人及群组
+     *  *
+     * @param QueryRecentConversationsRequest $request QueryRecentConversationsRequest
+     *
+     * @return QueryRecentConversationsResponse QueryRecentConversationsResponse
+     */
+    public function queryRecentConversations($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRecentConversationsHeaders([]);
+
+        return $this->queryRecentConversationsWithOptions($request, $headers, $runtime);
     }
 
     /**

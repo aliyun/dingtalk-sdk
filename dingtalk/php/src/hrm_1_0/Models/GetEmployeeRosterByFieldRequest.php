@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetEmployeeRosterByFieldRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 1
      *
      * @var int
@@ -26,6 +28,8 @@ class GetEmployeeRosterByFieldRequest extends Model
     public $text2SelectConvert;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $userIdList;

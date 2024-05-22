@@ -4,17 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelRequest\body;
 use AlibabaCloud\Tea\Model;
 
 class DeleteMeetingRoomControlPanelRequest extends Model
 {
     /**
-     * @var body
+     * @description This parameter is required.
+     *
+     * @var string[]
      */
-    public $body;
+    public $roomIds;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example A1FAxxxxx
+     *
+     * @var string
+     */
+    public $unionId;
     protected $_name = [
-        'body' => 'body',
+        'roomIds' => 'roomIds',
+        'unionId' => 'unionId',
     ];
 
     public function validate()
@@ -24,8 +35,11 @@ class DeleteMeetingRoomControlPanelRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->body) {
-            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
+        if (null !== $this->roomIds) {
+            $res['roomIds'] = $this->roomIds;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -39,8 +53,13 @@ class DeleteMeetingRoomControlPanelRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['body'])) {
-            $model->body = body::fromMap($map['body']);
+        if (isset($map['roomIds'])) {
+            if (!empty($map['roomIds'])) {
+                $model->roomIds = $map['roomIds'];
+            }
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

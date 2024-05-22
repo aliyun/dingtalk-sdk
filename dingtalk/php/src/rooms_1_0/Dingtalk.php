@@ -23,7 +23,6 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateRespon
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelResponse;
-use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomControlPanelShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteMeetingRoomGroupResponse;
@@ -541,23 +540,21 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 删除会议室配置
      *  *
-     * @param DeleteMeetingRoomControlPanelRequest $tmpReq  DeleteMeetingRoomControlPanelRequest
+     * @param DeleteMeetingRoomControlPanelRequest $request DeleteMeetingRoomControlPanelRequest
      * @param DeleteMeetingRoomControlPanelHeaders $headers DeleteMeetingRoomControlPanelHeaders
      * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
      *
      * @return DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelResponse
      */
-    public function deleteMeetingRoomControlPanelWithOptions($tmpReq, $headers, $runtime)
+    public function deleteMeetingRoomControlPanelWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new DeleteMeetingRoomControlPanelShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->body)) {
-            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->roomIds)) {
+            $body['roomIds'] = $request->roomIds;
         }
-        $query = [];
-        if (!Utils::isUnset($request->bodyShrink)) {
-            $query['body'] = $request->bodyShrink;
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -568,7 +565,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'DeleteMeetingRoomControlPanel',
