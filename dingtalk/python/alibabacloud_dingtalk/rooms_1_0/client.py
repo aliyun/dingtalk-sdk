@@ -851,26 +851,24 @@ class Client(OpenApiClient):
 
     def delete_meeting_room_control_panel_with_options(
         self,
-        tmp_req: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelRequest,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelRequest,
         headers: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelResponse:
         """
         @summary 删除会议室配置
         
-        @param tmp_req: DeleteMeetingRoomControlPanelRequest
+        @param request: DeleteMeetingRoomControlPanelRequest
         @param headers: DeleteMeetingRoomControlPanelHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: DeleteMeetingRoomControlPanelResponse
         """
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -878,7 +876,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='DeleteMeetingRoomControlPanel',
@@ -898,26 +896,24 @@ class Client(OpenApiClient):
 
     async def delete_meeting_room_control_panel_with_options_async(
         self,
-        tmp_req: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelRequest,
+        request: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelRequest,
         headers: dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelResponse:
         """
         @summary 删除会议室配置
         
-        @param tmp_req: DeleteMeetingRoomControlPanelRequest
+        @param request: DeleteMeetingRoomControlPanelRequest
         @param headers: DeleteMeetingRoomControlPanelHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: DeleteMeetingRoomControlPanelResponse
         """
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkrooms__1__0_models.DeleteMeetingRoomControlPanelShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.body):
-            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.body_shrink):
-            query['body'] = request.body_shrink
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.room_ids):
+            body['roomIds'] = request.room_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -925,7 +921,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='DeleteMeetingRoomControlPanel',

@@ -1228,7 +1228,7 @@ class DeleteMeetingRoomControlPanelHeaders(TeaModel):
         return self
 
 
-class DeleteMeetingRoomControlPanelRequestBody(TeaModel):
+class DeleteMeetingRoomControlPanelRequest(TeaModel):
     def __init__(
         self,
         room_ids: List[str] = None,
@@ -1260,62 +1260,6 @@ class DeleteMeetingRoomControlPanelRequestBody(TeaModel):
             self.room_ids = m.get('roomIds')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
-        return self
-
-
-class DeleteMeetingRoomControlPanelRequest(TeaModel):
-    def __init__(
-        self,
-        body: DeleteMeetingRoomControlPanelRequestBody = None,
-    ):
-        self.body = body
-
-    def validate(self):
-        if self.body:
-            self.body.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body is not None:
-            result['body'] = self.body.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            temp_model = DeleteMeetingRoomControlPanelRequestBody()
-            self.body = temp_model.from_map(m['body'])
-        return self
-
-
-class DeleteMeetingRoomControlPanelShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        body_shrink: str = None,
-    ):
-        self.body_shrink = body_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.body_shrink is not None:
-            result['body'] = self.body_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('body') is not None:
-            self.body_shrink = m.get('body')
         return self
 
 

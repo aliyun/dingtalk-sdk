@@ -1457,9 +1457,11 @@ class GetEmployeeRosterByFieldRequest(TeaModel):
         text_2select_convert: bool = None,
         user_id_list: List[str] = None,
     ):
+        # This parameter is required.
         self.app_agent_id = app_agent_id
         self.field_filter_list = field_filter_list
         self.text_2select_convert = text_2select_convert
+        # This parameter is required.
         self.user_id_list = user_id_list
 
     def validate(self):
