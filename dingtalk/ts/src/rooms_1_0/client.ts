@@ -641,35 +641,19 @@ export class DeleteMeetingRoomControlPanelHeaders extends $tea.Model {
 }
 
 export class DeleteMeetingRoomControlPanelRequest extends $tea.Model {
-  body?: DeleteMeetingRoomControlPanelRequestBody;
+  roomIds?: string[];
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      body: 'body',
+      roomIds: 'roomIds',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      body: DeleteMeetingRoomControlPanelRequestBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DeleteMeetingRoomControlPanelShrinkRequest extends $tea.Model {
-  bodyShrink?: string;
-  static names(): { [key: string]: string } {
-    return {
-      bodyShrink: 'body',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      bodyShrink: 'string',
+      roomIds: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
     };
   }
 
@@ -2322,28 +2306,6 @@ export class CreateMeetingRoomControlPanelRequestRoomConfig extends $tea.Model {
   }
 }
 
-export class DeleteMeetingRoomControlPanelRequestBody extends $tea.Model {
-  roomIds?: string[];
-  unionId?: string;
-  static names(): { [key: string]: string } {
-    return {
-      roomIds: 'roomIds',
-      unionId: 'unionId',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      roomIds: { 'type': 'array', 'itemType': 'string' },
-      unionId: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 export class QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate extends $tea.Model {
   bgImageList?: string[];
   bgType?: number;
@@ -3650,22 +3612,20 @@ export default class Client extends OpenApi {
   /**
    * @summary 删除会议室配置
    *
-   * @param tmpReq DeleteMeetingRoomControlPanelRequest
+   * @param request DeleteMeetingRoomControlPanelRequest
    * @param headers DeleteMeetingRoomControlPanelHeaders
    * @param runtime runtime options for this request RuntimeOptions
    * @return DeleteMeetingRoomControlPanelResponse
    */
-  async deleteMeetingRoomControlPanelWithOptions(tmpReq: DeleteMeetingRoomControlPanelRequest, headers: DeleteMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomControlPanelResponse> {
-    Util.validateModel(tmpReq);
-    let request = new DeleteMeetingRoomControlPanelShrinkRequest({ });
-    OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset(tmpReq.body)) {
-      request.bodyShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+  async deleteMeetingRoomControlPanelWithOptions(request: DeleteMeetingRoomControlPanelRequest, headers: DeleteMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomControlPanelResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.roomIds)) {
+      body["roomIds"] = request.roomIds;
     }
 
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.bodyShrink)) {
-      query["body"] = request.bodyShrink;
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -3679,7 +3639,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
     let params = new $OpenApi.Params({
       action: "DeleteMeetingRoomControlPanel",
