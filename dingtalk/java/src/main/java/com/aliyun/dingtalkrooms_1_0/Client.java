@@ -478,22 +478,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * @summary 删除会议室配置
      *
-     * @param tmpReq DeleteMeetingRoomControlPanelRequest
+     * @param request DeleteMeetingRoomControlPanelRequest
      * @param headers DeleteMeetingRoomControlPanelHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteMeetingRoomControlPanelResponse
      */
-    public DeleteMeetingRoomControlPanelResponse deleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest tmpReq, DeleteMeetingRoomControlPanelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        DeleteMeetingRoomControlPanelShrinkRequest request = new DeleteMeetingRoomControlPanelShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
-            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+    public DeleteMeetingRoomControlPanelResponse deleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest request, DeleteMeetingRoomControlPanelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.roomIds)) {
+            body.put("roomIds", request.roomIds);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
-            query.put("body", request.bodyShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -507,7 +505,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "DeleteMeetingRoomControlPanel"),

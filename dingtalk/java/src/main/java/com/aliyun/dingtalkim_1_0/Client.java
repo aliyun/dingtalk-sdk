@@ -2293,6 +2293,188 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 内部群转部门群
+     *
+     * @param request OpenInnerGroupTransferToDeptGroupRequest
+     * @param headers OpenInnerGroupTransferToDeptGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OpenInnerGroupTransferToDeptGroupResponse
+     */
+    public OpenInnerGroupTransferToDeptGroupResponse openInnerGroupTransferToDeptGroupWithOptions(OpenInnerGroupTransferToDeptGroupRequest request, OpenInnerGroupTransferToDeptGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OpenInnerGroupTransferToDeptGroup"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/innerGroups/transferToDeptGroups"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OpenInnerGroupTransferToDeptGroupResponse());
+    }
+
+    /**
+     * @summary 内部群转部门群
+     *
+     * @param request OpenInnerGroupTransferToDeptGroupRequest
+     * @return OpenInnerGroupTransferToDeptGroupResponse
+     */
+    public OpenInnerGroupTransferToDeptGroupResponse openInnerGroupTransferToDeptGroup(OpenInnerGroupTransferToDeptGroupRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OpenInnerGroupTransferToDeptGroupHeaders headers = new OpenInnerGroupTransferToDeptGroupHeaders();
+        return this.openInnerGroupTransferToDeptGroupWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 群搜索
+     *
+     * @param request OpenSearchGroupListRequest
+     * @param headers OpenSearchGroupListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OpenSearchGroupListResponse
+     */
+    public OpenSearchGroupListResponse openSearchGroupListWithOptions(OpenSearchGroupListRequest request, OpenSearchGroupListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            body.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OpenSearchGroupList"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/groups/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OpenSearchGroupListResponse());
+    }
+
+    /**
+     * @summary 群搜索
+     *
+     * @param request OpenSearchGroupListRequest
+     * @return OpenSearchGroupListResponse
+     */
+    public OpenSearchGroupListResponse openSearchGroupList(OpenSearchGroupListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OpenSearchGroupListHeaders headers = new OpenSearchGroupListHeaders();
+        return this.openSearchGroupListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 以个人身份发送卡片消息
+     *
+     * @param request OpenUserSendCardMessageRequest
+     * @param headers OpenUserSendCardMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OpenUserSendCardMessageResponse
+     */
+    public OpenUserSendCardMessageResponse openUserSendCardMessageWithOptions(OpenUserSendCardMessageRequest request, OpenUserSendCardMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cardContent)) {
+            body.put("cardContent", request.cardContent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receiveUserId)) {
+            body.put("receiveUserId", request.receiveUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OpenUserSendCardMessage"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/cardMessages/users/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OpenUserSendCardMessageResponse());
+    }
+
+    /**
+     * @summary 以个人身份发送卡片消息
+     *
+     * @param request OpenUserSendCardMessageRequest
+     * @return OpenUserSendCardMessageResponse
+     */
+    public OpenUserSendCardMessageResponse openUserSendCardMessage(OpenUserSendCardMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OpenUserSendCardMessageHeaders headers = new OpenUserSendCardMessageHeaders();
+        return this.openUserSendCardMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 成员授权场景下查询群信息
      *
      * @param request QueryGroupInfoByMemberAuthRequest
@@ -2521,6 +2703,126 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 读取群成员列表
+     *
+     * @param request QueryInnerGroupMemberListRequest
+     * @param headers QueryInnerGroupMemberListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryInnerGroupMemberListResponse
+     */
+    public QueryInnerGroupMemberListResponse queryInnerGroupMemberListWithOptions(QueryInnerGroupMemberListRequest request, QueryInnerGroupMemberListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryInnerGroupMemberList"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/innerGroups/memberLists/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryInnerGroupMemberListResponse());
+    }
+
+    /**
+     * @summary 读取群成员列表
+     *
+     * @param request QueryInnerGroupMemberListRequest
+     * @return QueryInnerGroupMemberListResponse
+     */
+    public QueryInnerGroupMemberListResponse queryInnerGroupMemberList(QueryInnerGroupMemberListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryInnerGroupMemberListHeaders headers = new QueryInnerGroupMemberListHeaders();
+        return this.queryInnerGroupMemberListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询最近活跃的企业内部群列表
+     *
+     * @param request QueryInnerGroupRecentListRequest
+     * @param headers QueryInnerGroupRecentListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryInnerGroupRecentListResponse
+     */
+    public QueryInnerGroupRecentListResponse queryInnerGroupRecentListWithOptions(QueryInnerGroupRecentListRequest request, QueryInnerGroupRecentListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryInnerGroupRecentList"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/innerGroups/recentLists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryInnerGroupRecentListResponse());
+    }
+
+    /**
+     * @summary 查询最近活跃的企业内部群列表
+     *
+     * @param request QueryInnerGroupRecentListRequest
+     * @return QueryInnerGroupRecentListResponse
+     */
+    public QueryInnerGroupRecentListResponse queryInnerGroupRecentList(QueryInnerGroupRecentListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryInnerGroupRecentListHeaders headers = new QueryInnerGroupRecentListHeaders();
+        return this.queryInnerGroupRecentListWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 查询群内具有指定群角色的所有群成员
      *
      * @param request QueryMembersOfGroupRoleRequest
@@ -2580,6 +2882,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMembersOfGroupRoleHeaders headers = new QueryMembersOfGroupRoleHeaders();
         return this.queryMembersOfGroupRoleWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 获取最近联系人及群组
+     *
+     * @param request QueryRecentConversationsRequest
+     * @param headers QueryRecentConversationsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryRecentConversationsResponse
+     */
+    public QueryRecentConversationsResponse queryRecentConversationsWithOptions(QueryRecentConversationsRequest request, QueryRecentConversationsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryRecentConversations"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/conversations/recentLists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryRecentConversationsResponse());
+    }
+
+    /**
+     * @summary 获取最近联系人及群组
+     *
+     * @param request QueryRecentConversationsRequest
+     * @return QueryRecentConversationsResponse
+     */
+    public QueryRecentConversationsResponse queryRecentConversations(QueryRecentConversationsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryRecentConversationsHeaders headers = new QueryRecentConversationsHeaders();
+        return this.queryRecentConversationsWithOptions(request, headers, runtime);
     }
 
     /**

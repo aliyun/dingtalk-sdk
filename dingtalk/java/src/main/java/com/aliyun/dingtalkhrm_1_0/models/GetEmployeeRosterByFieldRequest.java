@@ -4,6 +4,9 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmployeeRosterByFieldRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("appAgentId")
     public Long appAgentId;
 
@@ -13,6 +16,9 @@ public class GetEmployeeRosterByFieldRequest extends TeaModel {
     @NameInMap("text2SelectConvert")
     public Boolean text2SelectConvert;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 
