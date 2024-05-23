@@ -463,6 +463,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->attendees)) {
             $body['attendees'] = $request->attendees;
         }
+        if (!Utils::isUnset($request->cardInstances)) {
+            $body['cardInstances'] = $request->cardInstances;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }
@@ -1929,6 +1932,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->attendees)) {
             $body['attendees'] = $request->attendees;
+        }
+        if (!Utils::isUnset($request->cardInstances)) {
+            $body['cardInstances'] = $request->cardInstances;
         }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;

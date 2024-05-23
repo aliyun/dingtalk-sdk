@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\attendees;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\cardInstances;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest\onlineMeetingInfo;
@@ -21,6 +22,11 @@ class PatchEventRequest extends Model
      * @var attendees[]
      */
     public $attendees;
+
+    /**
+     * @var cardInstances[]
+     */
+    public $cardInstances;
 
     /**
      * @var string
@@ -90,6 +96,7 @@ class PatchEventRequest extends Model
     public $uiConfigs;
     protected $_name = [
         'attendees'           => 'attendees',
+        'cardInstances'       => 'cardInstances',
         'description'         => 'description',
         'end'                 => 'end',
         'extra'               => 'extra',
@@ -118,6 +125,15 @@ class PatchEventRequest extends Model
                 $n = 0;
                 foreach ($this->attendees as $item) {
                     $res['attendees'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->cardInstances) {
+            $res['cardInstances'] = [];
+            if (null !== $this->cardInstances && \is_array($this->cardInstances)) {
+                $n = 0;
+                foreach ($this->cardInstances as $item) {
+                    $res['cardInstances'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -190,6 +206,15 @@ class PatchEventRequest extends Model
                 $n                = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['cardInstances'])) {
+            if (!empty($map['cardInstances'])) {
+                $model->cardInstances = [];
+                $n                    = 0;
+                foreach ($map['cardInstances'] as $item) {
+                    $model->cardInstances[$n++] = null !== $item ? cardInstances::fromMap($item) : $item;
                 }
             }
         }

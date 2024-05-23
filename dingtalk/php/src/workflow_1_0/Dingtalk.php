@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentResp
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchTasksRedirectHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchTasksRedirectRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchTasksRedirectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchUpdateProcessInstanceResponse;
@@ -140,6 +143,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TerminateProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TerminateProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TerminateProcessInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TodoTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TodoTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\TodoTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\UpdateIntegratedTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\UpdateIntegratedTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\UpdateIntegratedTaskResponse;
@@ -358,6 +364,72 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchExecuteProcessInstancesHeaders([]);
 
         return $this->batchExecuteProcessInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量流程审批任务转交
+     *  *
+     * @param BatchTasksRedirectRequest $request BatchTasksRedirectRequest
+     * @param BatchTasksRedirectHeaders $headers BatchTasksRedirectHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchTasksRedirectResponse BatchTasksRedirectResponse
+     */
+    public function batchTasksRedirectWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->handoverUserId)) {
+            $body['handoverUserId'] = $request->handoverUserId;
+        }
+        if (!Utils::isUnset($request->managerUserId)) {
+            $body['managerUserId'] = $request->managerUserId;
+        }
+        if (!Utils::isUnset($request->taskIds)) {
+            $body['taskIds'] = $request->taskIds;
+        }
+        if (!Utils::isUnset($request->transfereeUserId)) {
+            $body['transfereeUserId'] = $request->transfereeUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchTasksRedirect',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/tasks/batchRedirect',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchTasksRedirectResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量流程审批任务转交
+     *  *
+     * @param BatchTasksRedirectRequest $request BatchTasksRedirectRequest
+     *
+     * @return BatchTasksRedirectResponse BatchTasksRedirectResponse
+     */
+    public function batchTasksRedirect($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchTasksRedirectHeaders([]);
+
+        return $this->batchTasksRedirectWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3051,6 +3123,72 @@ class Dingtalk extends OpenApiClient
         $headers = new TerminateProcessInstanceHeaders([]);
 
         return $this->terminateProcessInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 流程转交待处理任务查询
+     *  *
+     * @param TodoTasksRequest $request TodoTasksRequest
+     * @param TodoTasksHeaders $headers TodoTasksHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TodoTasksResponse TodoTasksResponse
+     */
+    public function todoTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->actionerUserId)) {
+            $query['actionerUserId'] = $request->actionerUserId;
+        }
+        if (!Utils::isUnset($request->managerUserId)) {
+            $query['managerUserId'] = $request->managerUserId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'TodoTasks',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/tasks/todoTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 流程转交待处理任务查询
+     *  *
+     * @param TodoTasksRequest $request TodoTasksRequest
+     *
+     * @return TodoTasksResponse TodoTasksResponse
+     */
+    public function todoTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TodoTasksHeaders([]);
+
+        return $this->todoTasksWithOptions($request, $headers, $runtime);
     }
 
     /**

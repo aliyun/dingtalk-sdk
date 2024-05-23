@@ -116,6 +116,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetLastOrgAuthDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
@@ -2698,6 +2701,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetMsgConfigHeaders([]);
 
         return $this->getMsgConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取消息定位链接
+     *  *
+     * @param GetMsgLocationRequest $request GetMsgLocationRequest
+     * @param GetMsgLocationHeaders $headers GetMsgLocationHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetMsgLocationResponse GetMsgLocationResponse
+     */
+    public function getMsgLocationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMsgId)) {
+            $body['openMsgId'] = $request->openMsgId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMsgLocation',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/messageLocations/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetMsgLocationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取消息定位链接
+     *  *
+     * @param GetMsgLocationRequest $request GetMsgLocationRequest
+     *
+     * @return GetMsgLocationResponse GetMsgLocationResponse
+     */
+    public function getMsgLocation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMsgLocationHeaders([]);
+
+        return $this->getMsgLocationWithOptions($request, $headers, $runtime);
     }
 
     /**

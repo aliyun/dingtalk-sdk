@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\attendees;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\cardInstances;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\end;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\extendedProperties;
@@ -17,6 +18,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\recurren
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\richTextDescription;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\start;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponseBody\uiConfigs;
 use AlibabaCloud\Tea\Model;
 
 class GetEventResponseBody extends Model
@@ -25,6 +27,11 @@ class GetEventResponseBody extends Model
      * @var attendees[]
      */
     public $attendees;
+
+    /**
+     * @var cardInstances[]
+     */
+    public $cardInstances;
 
     /**
      * @var categories[]
@@ -128,6 +135,11 @@ class GetEventResponseBody extends Model
     public $summary;
 
     /**
+     * @var uiConfigs[]
+     */
+    public $uiConfigs;
+
+    /**
      * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
      *
      * @var string
@@ -135,6 +147,7 @@ class GetEventResponseBody extends Model
     public $updateTime;
     protected $_name = [
         'attendees'           => 'attendees',
+        'cardInstances'       => 'cardInstances',
         'categories'          => 'categories',
         'createTime'          => 'createTime',
         'description'         => 'description',
@@ -154,6 +167,7 @@ class GetEventResponseBody extends Model
         'start'               => 'start',
         'status'              => 'status',
         'summary'             => 'summary',
+        'uiConfigs'           => 'uiConfigs',
         'updateTime'          => 'updateTime',
     ];
 
@@ -170,6 +184,15 @@ class GetEventResponseBody extends Model
                 $n = 0;
                 foreach ($this->attendees as $item) {
                     $res['attendees'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->cardInstances) {
+            $res['cardInstances'] = [];
+            if (null !== $this->cardInstances && \is_array($this->cardInstances)) {
+                $n = 0;
+                foreach ($this->cardInstances as $item) {
+                    $res['cardInstances'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -248,6 +271,15 @@ class GetEventResponseBody extends Model
         if (null !== $this->summary) {
             $res['summary'] = $this->summary;
         }
+        if (null !== $this->uiConfigs) {
+            $res['uiConfigs'] = [];
+            if (null !== $this->uiConfigs && \is_array($this->uiConfigs)) {
+                $n = 0;
+                foreach ($this->uiConfigs as $item) {
+                    $res['uiConfigs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->updateTime) {
             $res['updateTime'] = $this->updateTime;
         }
@@ -269,6 +301,15 @@ class GetEventResponseBody extends Model
                 $n                = 0;
                 foreach ($map['attendees'] as $item) {
                     $model->attendees[$n++] = null !== $item ? attendees::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['cardInstances'])) {
+            if (!empty($map['cardInstances'])) {
+                $model->cardInstances = [];
+                $n                    = 0;
+                foreach ($map['cardInstances'] as $item) {
+                    $model->cardInstances[$n++] = null !== $item ? cardInstances::fromMap($item) : $item;
                 }
             }
         }
@@ -346,6 +387,15 @@ class GetEventResponseBody extends Model
         }
         if (isset($map['summary'])) {
             $model->summary = $map['summary'];
+        }
+        if (isset($map['uiConfigs'])) {
+            if (!empty($map['uiConfigs'])) {
+                $model->uiConfigs = [];
+                $n                = 0;
+                foreach ($map['uiConfigs'] as $item) {
+                    $model->uiConfigs[$n++] = null !== $item ? uiConfigs::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['updateTime'])) {
             $model->updateTime = $map['updateTime'];
