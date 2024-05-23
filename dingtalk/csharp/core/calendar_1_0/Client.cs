@@ -655,6 +655,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["attendees"] = request.Attendees;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardInstances))
+            {
+                body["cardInstances"] = request.CardInstances;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -751,6 +755,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
             {
                 body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardInstances))
+            {
+                body["cardInstances"] = request.CardInstances;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
@@ -3545,6 +3553,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["attendees"] = request.Attendees;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardInstances))
+            {
+                body["cardInstances"] = request.CardInstances;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -3645,6 +3657,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attendees))
             {
                 body["attendees"] = request.Attendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardInstances))
+            {
+                body["cardInstances"] = request.CardInstances;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {

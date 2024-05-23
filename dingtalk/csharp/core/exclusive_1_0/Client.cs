@@ -4980,6 +4980,138 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 获取消息定位链接
+         *
+         * @param request GetMsgLocationRequest
+         * @param headers GetMsgLocationHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMsgLocationResponse
+         */
+        public GetMsgLocationResponse GetMsgLocationWithOptions(GetMsgLocationRequest request, GetMsgLocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMsgLocation",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/messageLocations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMsgLocationResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取消息定位链接
+         *
+         * @param request GetMsgLocationRequest
+         * @param headers GetMsgLocationHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetMsgLocationResponse
+         */
+        public async Task<GetMsgLocationResponse> GetMsgLocationWithOptionsAsync(GetMsgLocationRequest request, GetMsgLocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMsgLocation",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/messageLocations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMsgLocationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取消息定位链接
+         *
+         * @param request GetMsgLocationRequest
+         * @return GetMsgLocationResponse
+         */
+        public GetMsgLocationResponse GetMsgLocation(GetMsgLocationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMsgLocationHeaders headers = new GetMsgLocationHeaders();
+            return GetMsgLocationWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取消息定位链接
+         *
+         * @param request GetMsgLocationRequest
+         * @return GetMsgLocationResponse
+         */
+        public async Task<GetMsgLocationResponse> GetMsgLocationAsync(GetMsgLocationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMsgLocationHeaders headers = new GetMsgLocationHeaders();
+            return await GetMsgLocationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取oa后台操作日志记录
          *
          * @param request GetOaOperatorLogListRequest

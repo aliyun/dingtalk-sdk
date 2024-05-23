@@ -23,6 +23,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("cardInstances")]
+        [Validation(Required=false)]
+        public List<CreateEventRequestCardInstances> CardInstances { get; set; }
+        public class CreateEventRequestCardInstances : TeaModel {
+            [NameInMap("outTrackId")]
+            [Validation(Required=false)]
+            public string OutTrackId { get; set; }
+
+            [NameInMap("scenario")]
+            [Validation(Required=false)]
+            public string Scenario { get; set; }
+
+        }
+
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }

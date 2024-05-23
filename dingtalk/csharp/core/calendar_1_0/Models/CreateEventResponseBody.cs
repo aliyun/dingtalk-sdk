@@ -35,6 +35,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("cardInstances")]
+        [Validation(Required=false)]
+        public List<CreateEventResponseBodyCardInstances> CardInstances { get; set; }
+        public class CreateEventResponseBodyCardInstances : TeaModel {
+            [NameInMap("outTrackId")]
+            [Validation(Required=false)]
+            public string OutTrackId { get; set; }
+
+            [NameInMap("scenario")]
+            [Validation(Required=false)]
+            public string Scenario { get; set; }
+
+        }
+
         /// <summary>
         /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
         /// </summary>

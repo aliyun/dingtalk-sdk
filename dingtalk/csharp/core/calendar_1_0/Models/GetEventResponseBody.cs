@@ -35,6 +35,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("cardInstances")]
+        [Validation(Required=false)]
+        public List<GetEventResponseBodyCardInstances> CardInstances { get; set; }
+        public class GetEventResponseBodyCardInstances : TeaModel {
+            [NameInMap("outTrackId")]
+            [Validation(Required=false)]
+            public string OutTrackId { get; set; }
+
+            [NameInMap("scenario")]
+            [Validation(Required=false)]
+            public string Scenario { get; set; }
+
+        }
+
         [NameInMap("categories")]
         [Validation(Required=false)]
         public List<GetEventResponseBodyCategories> Categories { get; set; }
@@ -301,6 +315,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [NameInMap("summary")]
         [Validation(Required=false)]
         public string Summary { get; set; }
+
+        [NameInMap("uiConfigs")]
+        [Validation(Required=false)]
+        public List<GetEventResponseBodyUiConfigs> UiConfigs { get; set; }
+        public class GetEventResponseBodyUiConfigs : TeaModel {
+            [NameInMap("uiName")]
+            [Validation(Required=false)]
+            public string UiName { get; set; }
+
+            [NameInMap("uiStatus")]
+            [Validation(Required=false)]
+            public string UiStatus { get; set; }
+
+        }
 
         /// <summary>
         /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
