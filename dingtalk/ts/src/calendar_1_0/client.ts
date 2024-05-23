@@ -444,6 +444,7 @@ export class CreateEventHeaders extends $tea.Model {
 
 export class CreateEventRequest extends $tea.Model {
   attendees?: CreateEventRequestAttendees[];
+  cardInstances?: CreateEventRequestCardInstances[];
   description?: string;
   end?: CreateEventRequestEnd;
   extra?: { [key: string]: string };
@@ -459,6 +460,7 @@ export class CreateEventRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      cardInstances: 'cardInstances',
       description: 'description',
       end: 'end',
       extra: 'extra',
@@ -477,6 +479,7 @@ export class CreateEventRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': CreateEventRequestAttendees },
+      cardInstances: { 'type': 'array', 'itemType': CreateEventRequestCardInstances },
       description: 'string',
       end: CreateEventRequestEnd,
       extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
@@ -499,6 +502,7 @@ export class CreateEventRequest extends $tea.Model {
 
 export class CreateEventResponseBody extends $tea.Model {
   attendees?: CreateEventResponseBodyAttendees[];
+  cardInstances?: CreateEventResponseBodyCardInstances[];
   createTime?: string;
   description?: string;
   end?: CreateEventResponseBodyEnd;
@@ -517,6 +521,7 @@ export class CreateEventResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      cardInstances: 'cardInstances',
       createTime: 'createTime',
       description: 'description',
       end: 'end',
@@ -538,6 +543,7 @@ export class CreateEventResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': CreateEventResponseBodyAttendees },
+      cardInstances: { 'type': 'array', 'itemType': CreateEventResponseBodyCardInstances },
       createTime: 'string',
       description: 'string',
       end: CreateEventResponseBodyEnd,
@@ -1162,6 +1168,7 @@ export class GetEventRequest extends $tea.Model {
 
 export class GetEventResponseBody extends $tea.Model {
   attendees?: GetEventResponseBodyAttendees[];
+  cardInstances?: GetEventResponseBodyCardInstances[];
   categories?: GetEventResponseBodyCategories[];
   createTime?: string;
   description?: string;
@@ -1181,10 +1188,12 @@ export class GetEventResponseBody extends $tea.Model {
   start?: GetEventResponseBodyStart;
   status?: string;
   summary?: string;
+  uiConfigs?: GetEventResponseBodyUiConfigs[];
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      cardInstances: 'cardInstances',
       categories: 'categories',
       createTime: 'createTime',
       description: 'description',
@@ -1204,6 +1213,7 @@ export class GetEventResponseBody extends $tea.Model {
       start: 'start',
       status: 'status',
       summary: 'summary',
+      uiConfigs: 'uiConfigs',
       updateTime: 'updateTime',
     };
   }
@@ -1211,6 +1221,7 @@ export class GetEventResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': GetEventResponseBodyAttendees },
+      cardInstances: { 'type': 'array', 'itemType': GetEventResponseBodyCardInstances },
       categories: { 'type': 'array', 'itemType': GetEventResponseBodyCategories },
       createTime: 'string',
       description: 'string',
@@ -1230,6 +1241,7 @@ export class GetEventResponseBody extends $tea.Model {
       start: GetEventResponseBodyStart,
       status: 'string',
       summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': GetEventResponseBodyUiConfigs },
       updateTime: 'string',
     };
   }
@@ -2503,6 +2515,7 @@ export class PatchEventHeaders extends $tea.Model {
 
 export class PatchEventRequest extends $tea.Model {
   attendees?: PatchEventRequestAttendees[];
+  cardInstances?: PatchEventRequestCardInstances[];
   description?: string;
   end?: PatchEventRequestEnd;
   extra?: { [key: string]: string };
@@ -2519,6 +2532,7 @@ export class PatchEventRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      cardInstances: 'cardInstances',
       description: 'description',
       end: 'end',
       extra: 'extra',
@@ -2538,6 +2552,7 @@ export class PatchEventRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': PatchEventRequestAttendees },
+      cardInstances: { 'type': 'array', 'itemType': PatchEventRequestCardInstances },
       description: 'string',
       end: PatchEventRequestEnd,
       extra: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
@@ -2561,6 +2576,7 @@ export class PatchEventRequest extends $tea.Model {
 
 export class PatchEventResponseBody extends $tea.Model {
   attendees?: PatchEventResponseBodyAttendees[];
+  cardInstances?: PatchEventResponseBodyCardInstances[];
   createTime?: string;
   description?: string;
   end?: PatchEventResponseBodyEnd;
@@ -2579,6 +2595,7 @@ export class PatchEventResponseBody extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
+      cardInstances: 'cardInstances',
       createTime: 'createTime',
       description: 'description',
       end: 'end',
@@ -2600,6 +2617,7 @@ export class PatchEventResponseBody extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       attendees: { 'type': 'array', 'itemType': PatchEventResponseBodyAttendees },
+      cardInstances: { 'type': 'array', 'itemType': PatchEventResponseBodyCardInstances },
       createTime: 'string',
       description: 'string',
       end: PatchEventResponseBodyEnd,
@@ -3405,6 +3423,28 @@ export class CreateEventRequestAttendees extends $tea.Model {
   }
 }
 
+export class CreateEventRequestCardInstances extends $tea.Model {
+  outTrackId?: string;
+  scenario?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTrackId: 'outTrackId',
+      scenario: 'scenario',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTrackId: 'string',
+      scenario: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateEventRequestEnd extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -3660,6 +3700,28 @@ export class CreateEventResponseBodyAttendees extends $tea.Model {
       isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventResponseBodyCardInstances extends $tea.Model {
+  outTrackId?: string;
+  scenario?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTrackId: 'outTrackId',
+      scenario: 'scenario',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTrackId: 'string',
+      scenario: 'string',
     };
   }
 
@@ -4547,6 +4609,28 @@ export class GetEventResponseBodyAttendees extends $tea.Model {
   }
 }
 
+export class GetEventResponseBodyCardInstances extends $tea.Model {
+  outTrackId?: string;
+  scenario?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTrackId: 'outTrackId',
+      scenario: 'scenario',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTrackId: 'string',
+      scenario: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEventResponseBodyCategories extends $tea.Model {
   displayName?: string;
   static names(): { [key: string]: string } {
@@ -4893,6 +4977,28 @@ export class GetEventResponseBodyStart extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventResponseBodyUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
     };
   }
 
@@ -7010,6 +7116,28 @@ export class PatchEventRequestAttendees extends $tea.Model {
   }
 }
 
+export class PatchEventRequestCardInstances extends $tea.Model {
+  outTrackId?: string;
+  scenario?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTrackId: 'outTrackId',
+      scenario: 'scenario',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTrackId: 'string',
+      scenario: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PatchEventRequestEnd extends $tea.Model {
   date?: string;
   dateTime?: string;
@@ -7265,6 +7393,28 @@ export class PatchEventResponseBodyAttendees extends $tea.Model {
       isOptional: 'boolean',
       responseStatus: 'string',
       self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PatchEventResponseBodyCardInstances extends $tea.Model {
+  outTrackId?: string;
+  scenario?: string;
+  static names(): { [key: string]: string } {
+    return {
+      outTrackId: 'outTrackId',
+      scenario: 'scenario',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      outTrackId: 'string',
+      scenario: 'string',
     };
   }
 
@@ -7919,6 +8069,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendees)) {
       body["attendees"] = request.attendees;
+    }
+
+    if (!Util.isUnset(request.cardInstances)) {
+      body["cardInstances"] = request.cardInstances;
     }
 
     if (!Util.isUnset(request.description)) {
@@ -9276,6 +9430,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendees)) {
       body["attendees"] = request.attendees;
+    }
+
+    if (!Util.isUnset(request.cardInstances)) {
+      body["cardInstances"] = request.cardInstances;
     }
 
     if (!Util.isUnset(request.description)) {

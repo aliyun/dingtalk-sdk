@@ -3534,6 +3534,97 @@ export class GetMsgConfigResponse extends $tea.Model {
   }
 }
 
+export class GetMsgLocationHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgLocationRequest extends $tea.Model {
+  openConversationId?: string;
+  openMsgId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openMsgId: 'openMsgId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openMsgId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgLocationResponseBody extends $tea.Model {
+  msgLocationUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      msgLocationUrl: 'msgLocationUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      msgLocationUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetMsgLocationResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetMsgLocationResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetMsgLocationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOaOperatorLogListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13053,6 +13144,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMsgConfigHeaders({ });
     return await this.getMsgConfigWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取消息定位链接
+   *
+   * @param request GetMsgLocationRequest
+   * @param headers GetMsgLocationHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetMsgLocationResponse
+   */
+  async getMsgLocationWithOptions(request: GetMsgLocationRequest, headers: GetMsgLocationHeaders, runtime: $Util.RuntimeOptions): Promise<GetMsgLocationResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openMsgId)) {
+      body["openMsgId"] = request.openMsgId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetMsgLocation",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/messageLocations/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMsgLocationResponse>(await this.execute(params, req, runtime), new GetMsgLocationResponse({}));
+  }
+
+  /**
+   * @summary 获取消息定位链接
+   *
+   * @param request GetMsgLocationRequest
+   * @return GetMsgLocationResponse
+   */
+  async getMsgLocation(request: GetMsgLocationRequest): Promise<GetMsgLocationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetMsgLocationHeaders({ });
+    return await this.getMsgLocationWithOptions(request, headers, runtime);
   }
 
   /**

@@ -1,0 +1,1 @@
+module.exports = require('./dist').agoal_1_0;

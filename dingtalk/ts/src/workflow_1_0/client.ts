@@ -525,6 +525,103 @@ export class BatchExecuteProcessInstancesResponse extends $tea.Model {
   }
 }
 
+export class BatchTasksRedirectHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchTasksRedirectRequest extends $tea.Model {
+  handoverUserId?: string;
+  managerUserId?: string;
+  taskIds?: number[];
+  transfereeUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      handoverUserId: 'handoverUserId',
+      managerUserId: 'managerUserId',
+      taskIds: 'taskIds',
+      transfereeUserId: 'transfereeUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      handoverUserId: 'string',
+      managerUserId: 'string',
+      taskIds: { 'type': 'array', 'itemType': 'number' },
+      transfereeUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchTasksRedirectResponseBody extends $tea.Model {
+  result?: BatchTasksRedirectResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: BatchTasksRedirectResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchTasksRedirectResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchTasksRedirectResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchTasksRedirectResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchUpdateProcessInstanceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4442,6 +4539,100 @@ export class TerminateProcessInstanceResponse extends $tea.Model {
   }
 }
 
+export class TodoTasksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TodoTasksRequest extends $tea.Model {
+  actionerUserId?: string;
+  managerUserId?: string;
+  maxResults?: number;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      actionerUserId: 'actionerUserId',
+      managerUserId: 'managerUserId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionerUserId: 'string',
+      managerUserId: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TodoTasksResponseBody extends $tea.Model {
+  result?: TodoTasksResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: TodoTasksResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TodoTasksResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TodoTasksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TodoTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIntegratedTaskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4766,6 +4957,56 @@ export class BatchExecuteProcessInstancesRequestTaskInfoList extends $tea.Model 
     return {
       processInstanceId: 'string',
       taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchTasksRedirectResponseBodyResultRedirectResults extends $tea.Model {
+  errorMsg?: string;
+  success?: boolean;
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      errorMsg: 'errorMsg',
+      success: 'success',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorMsg: 'string',
+      success: 'boolean',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchTasksRedirectResponseBodyResult extends $tea.Model {
+  failCount?: number;
+  redirectResults?: BatchTasksRedirectResponseBodyResultRedirectResults[];
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      failCount: 'failCount',
+      redirectResults: 'redirectResults',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failCount: 'number',
+      redirectResults: { 'type': 'array', 'itemType': BatchTasksRedirectResponseBodyResultRedirectResults },
+      totalCount: 'number',
     };
   }
 
@@ -8022,6 +8263,68 @@ export class StartProcessInstanceRequestTargetSelectActioners extends $tea.Model
   }
 }
 
+export class TodoTasksResponseBodyResultList extends $tea.Model {
+  businessId?: string;
+  canRedirect?: boolean;
+  createTime?: number;
+  processCode?: string;
+  processInstanceId?: string;
+  taskId?: number;
+  title?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      businessId: 'businessId',
+      canRedirect: 'canRedirect',
+      createTime: 'createTime',
+      processCode: 'processCode',
+      processInstanceId: 'processInstanceId',
+      taskId: 'taskId',
+      title: 'title',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      businessId: 'string',
+      canRedirect: 'boolean',
+      createTime: 'number',
+      processCode: 'string',
+      processInstanceId: 'string',
+      taskId: 'number',
+      title: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TodoTasksResponseBodyResult extends $tea.Model {
+  hasMore?: string;
+  list?: TodoTasksResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'string',
+      list: { 'type': 'array', 'itemType': TodoTasksResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIntegratedTaskRequestTasks extends $tea.Model {
   result?: string;
   status?: string;
@@ -8270,6 +8573,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BatchExecuteProcessInstancesHeaders({ });
     return await this.batchExecuteProcessInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 批量流程审批任务转交
+   *
+   * @param request BatchTasksRedirectRequest
+   * @param headers BatchTasksRedirectHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchTasksRedirectResponse
+   */
+  async batchTasksRedirectWithOptions(request: BatchTasksRedirectRequest, headers: BatchTasksRedirectHeaders, runtime: $Util.RuntimeOptions): Promise<BatchTasksRedirectResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.handoverUserId)) {
+      body["handoverUserId"] = request.handoverUserId;
+    }
+
+    if (!Util.isUnset(request.managerUserId)) {
+      body["managerUserId"] = request.managerUserId;
+    }
+
+    if (!Util.isUnset(request.taskIds)) {
+      body["taskIds"] = request.taskIds;
+    }
+
+    if (!Util.isUnset(request.transfereeUserId)) {
+      body["transfereeUserId"] = request.transfereeUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchTasksRedirect",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/tasks/batchRedirect`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchTasksRedirectResponse>(await this.execute(params, req, runtime), new BatchTasksRedirectResponse({}));
+  }
+
+  /**
+   * @summary 批量流程审批任务转交
+   *
+   * @param request BatchTasksRedirectRequest
+   * @return BatchTasksRedirectResponse
+   */
+  async batchTasksRedirect(request: BatchTasksRedirectRequest): Promise<BatchTasksRedirectResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchTasksRedirectHeaders({ });
+    return await this.batchTasksRedirectWithOptions(request, headers, runtime);
   }
 
   /**
@@ -10939,6 +11308,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TerminateProcessInstanceHeaders({ });
     return await this.terminateProcessInstanceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 流程转交待处理任务查询
+   *
+   * @param request TodoTasksRequest
+   * @param headers TodoTasksHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TodoTasksResponse
+   */
+  async todoTasksWithOptions(request: TodoTasksRequest, headers: TodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<TodoTasksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionerUserId)) {
+      query["actionerUserId"] = request.actionerUserId;
+    }
+
+    if (!Util.isUnset(request.managerUserId)) {
+      query["managerUserId"] = request.managerUserId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "TodoTasks",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/tasks/todoTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TodoTasksResponse>(await this.execute(params, req, runtime), new TodoTasksResponse({}));
+  }
+
+  /**
+   * @summary 流程转交待处理任务查询
+   *
+   * @param request TodoTasksRequest
+   * @return TodoTasksResponse
+   */
+  async todoTasks(request: TodoTasksRequest): Promise<TodoTasksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TodoTasksHeaders({ });
+    return await this.todoTasksWithOptions(request, headers, runtime);
   }
 
   /**
