@@ -7,6 +7,9 @@ public class PatchEventRequest extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<PatchEventRequestAttendees> attendees;
 
+    @NameInMap("cardInstances")
+    public java.util.List<PatchEventRequestCardInstances> cardInstances;
+
     @NameInMap("description")
     public String description;
 
@@ -60,6 +63,14 @@ public class PatchEventRequest extends TeaModel {
     }
     public java.util.List<PatchEventRequestAttendees> getAttendees() {
         return this.attendees;
+    }
+
+    public PatchEventRequest setCardInstances(java.util.List<PatchEventRequestCardInstances> cardInstances) {
+        this.cardInstances = cardInstances;
+        return this;
+    }
+    public java.util.List<PatchEventRequestCardInstances> getCardInstances() {
+        return this.cardInstances;
     }
 
     public PatchEventRequest setDescription(String description) {
@@ -203,6 +214,36 @@ public class PatchEventRequest extends TeaModel {
         }
         public Boolean getIsOptional() {
             return this.isOptional;
+        }
+
+    }
+
+    public static class PatchEventRequestCardInstances extends TeaModel {
+        @NameInMap("outTrackId")
+        public String outTrackId;
+
+        @NameInMap("scenario")
+        public String scenario;
+
+        public static PatchEventRequestCardInstances build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventRequestCardInstances self = new PatchEventRequestCardInstances();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventRequestCardInstances setOutTrackId(String outTrackId) {
+            this.outTrackId = outTrackId;
+            return this;
+        }
+        public String getOutTrackId() {
+            return this.outTrackId;
+        }
+
+        public PatchEventRequestCardInstances setScenario(String scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+        public String getScenario() {
+            return this.scenario;
         }
 
     }

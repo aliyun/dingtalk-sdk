@@ -7,6 +7,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<PatchEventResponseBodyAttendees> attendees;
 
+    @NameInMap("cardInstances")
+    public java.util.List<PatchEventResponseBodyCardInstances> cardInstances;
+
     /**
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
@@ -72,6 +75,14 @@ public class PatchEventResponseBody extends TeaModel {
     }
     public java.util.List<PatchEventResponseBodyAttendees> getAttendees() {
         return this.attendees;
+    }
+
+    public PatchEventResponseBody setCardInstances(java.util.List<PatchEventResponseBodyCardInstances> cardInstances) {
+        this.cardInstances = cardInstances;
+        return this;
+    }
+    public java.util.List<PatchEventResponseBodyCardInstances> getCardInstances() {
+        return this.cardInstances;
     }
 
     public PatchEventResponseBody setCreateTime(String createTime) {
@@ -253,6 +264,36 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public Boolean getSelf() {
             return this.self;
+        }
+
+    }
+
+    public static class PatchEventResponseBodyCardInstances extends TeaModel {
+        @NameInMap("outTrackId")
+        public String outTrackId;
+
+        @NameInMap("scenario")
+        public String scenario;
+
+        public static PatchEventResponseBodyCardInstances build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventResponseBodyCardInstances self = new PatchEventResponseBodyCardInstances();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventResponseBodyCardInstances setOutTrackId(String outTrackId) {
+            this.outTrackId = outTrackId;
+            return this;
+        }
+        public String getOutTrackId() {
+            return this.outTrackId;
+        }
+
+        public PatchEventResponseBodyCardInstances setScenario(String scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+        public String getScenario() {
+            return this.scenario;
         }
 
     }

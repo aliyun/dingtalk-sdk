@@ -7,6 +7,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<GetEventResponseBodyAttendees> attendees;
 
+    @NameInMap("cardInstances")
+    public java.util.List<GetEventResponseBodyCardInstances> cardInstances;
+
     @NameInMap("categories")
     public java.util.List<GetEventResponseBodyCategories> categories;
 
@@ -70,6 +73,9 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    @NameInMap("uiConfigs")
+    public java.util.List<GetEventResponseBodyUiConfigs> uiConfigs;
+
     /**
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
@@ -87,6 +93,14 @@ public class GetEventResponseBody extends TeaModel {
     }
     public java.util.List<GetEventResponseBodyAttendees> getAttendees() {
         return this.attendees;
+    }
+
+    public GetEventResponseBody setCardInstances(java.util.List<GetEventResponseBodyCardInstances> cardInstances) {
+        this.cardInstances = cardInstances;
+        return this;
+    }
+    public java.util.List<GetEventResponseBodyCardInstances> getCardInstances() {
+        return this.cardInstances;
     }
 
     public GetEventResponseBody setCategories(java.util.List<GetEventResponseBodyCategories> categories) {
@@ -241,6 +255,14 @@ public class GetEventResponseBody extends TeaModel {
         return this.summary;
     }
 
+    public GetEventResponseBody setUiConfigs(java.util.List<GetEventResponseBodyUiConfigs> uiConfigs) {
+        this.uiConfigs = uiConfigs;
+        return this;
+    }
+    public java.util.List<GetEventResponseBodyUiConfigs> getUiConfigs() {
+        return this.uiConfigs;
+    }
+
     public GetEventResponseBody setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -308,6 +330,36 @@ public class GetEventResponseBody extends TeaModel {
         }
         public Boolean getSelf() {
             return this.self;
+        }
+
+    }
+
+    public static class GetEventResponseBodyCardInstances extends TeaModel {
+        @NameInMap("outTrackId")
+        public String outTrackId;
+
+        @NameInMap("scenario")
+        public String scenario;
+
+        public static GetEventResponseBodyCardInstances build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyCardInstances self = new GetEventResponseBodyCardInstances();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyCardInstances setOutTrackId(String outTrackId) {
+            this.outTrackId = outTrackId;
+            return this;
+        }
+        public String getOutTrackId() {
+            return this.outTrackId;
+        }
+
+        public GetEventResponseBodyCardInstances setScenario(String scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+        public String getScenario() {
+            return this.scenario;
         }
 
     }
@@ -849,6 +901,36 @@ public class GetEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class GetEventResponseBodyUiConfigs extends TeaModel {
+        @NameInMap("uiName")
+        public String uiName;
+
+        @NameInMap("uiStatus")
+        public String uiStatus;
+
+        public static GetEventResponseBodyUiConfigs build(java.util.Map<String, ?> map) throws Exception {
+            GetEventResponseBodyUiConfigs self = new GetEventResponseBodyUiConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public GetEventResponseBodyUiConfigs setUiName(String uiName) {
+            this.uiName = uiName;
+            return this;
+        }
+        public String getUiName() {
+            return this.uiName;
+        }
+
+        public GetEventResponseBodyUiConfigs setUiStatus(String uiStatus) {
+            this.uiStatus = uiStatus;
+            return this;
+        }
+        public String getUiStatus() {
+            return this.uiStatus;
         }
 
     }

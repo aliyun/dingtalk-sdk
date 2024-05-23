@@ -7,6 +7,9 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<CreateEventRequestAttendees> attendees;
 
+    @NameInMap("cardInstances")
+    public java.util.List<CreateEventRequestCardInstances> cardInstances;
+
     @NameInMap("description")
     public String description;
 
@@ -60,6 +63,14 @@ public class CreateEventRequest extends TeaModel {
     }
     public java.util.List<CreateEventRequestAttendees> getAttendees() {
         return this.attendees;
+    }
+
+    public CreateEventRequest setCardInstances(java.util.List<CreateEventRequestCardInstances> cardInstances) {
+        this.cardInstances = cardInstances;
+        return this;
+    }
+    public java.util.List<CreateEventRequestCardInstances> getCardInstances() {
+        return this.cardInstances;
     }
 
     public CreateEventRequest setDescription(String description) {
@@ -184,6 +195,36 @@ public class CreateEventRequest extends TeaModel {
         }
         public Boolean getIsOptional() {
             return this.isOptional;
+        }
+
+    }
+
+    public static class CreateEventRequestCardInstances extends TeaModel {
+        @NameInMap("outTrackId")
+        public String outTrackId;
+
+        @NameInMap("scenario")
+        public String scenario;
+
+        public static CreateEventRequestCardInstances build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestCardInstances self = new CreateEventRequestCardInstances();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestCardInstances setOutTrackId(String outTrackId) {
+            this.outTrackId = outTrackId;
+            return this;
+        }
+        public String getOutTrackId() {
+            return this.outTrackId;
+        }
+
+        public CreateEventRequestCardInstances setScenario(String scenario) {
+            this.scenario = scenario;
+            return this;
+        }
+        public String getScenario() {
+            return this.scenario;
         }
 
     }
