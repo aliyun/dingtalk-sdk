@@ -399,6 +399,132 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesHeaders()
         return await self.batch_execute_process_instances_with_options_async(request, headers, runtime)
 
+    def batch_tasks_redirect_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchTasksRedirectRequest,
+        headers: dingtalkworkflow__1__0_models.BatchTasksRedirectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.BatchTasksRedirectResponse:
+        """
+        @summary 批量流程审批任务转交
+        
+        @param request: BatchTasksRedirectRequest
+        @param headers: BatchTasksRedirectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchTasksRedirectResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.handover_user_id):
+            body['handoverUserId'] = request.handover_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            body['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        if not UtilClient.is_unset(request.transferee_user_id):
+            body['transfereeUserId'] = request.transferee_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchTasksRedirect',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/batchRedirect',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.BatchTasksRedirectResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_tasks_redirect_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchTasksRedirectRequest,
+        headers: dingtalkworkflow__1__0_models.BatchTasksRedirectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.BatchTasksRedirectResponse:
+        """
+        @summary 批量流程审批任务转交
+        
+        @param request: BatchTasksRedirectRequest
+        @param headers: BatchTasksRedirectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchTasksRedirectResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.handover_user_id):
+            body['handoverUserId'] = request.handover_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            body['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        if not UtilClient.is_unset(request.transferee_user_id):
+            body['transfereeUserId'] = request.transferee_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchTasksRedirect',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/batchRedirect',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.BatchTasksRedirectResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_tasks_redirect(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchTasksRedirectRequest,
+    ) -> dingtalkworkflow__1__0_models.BatchTasksRedirectResponse:
+        """
+        @summary 批量流程审批任务转交
+        
+        @param request: BatchTasksRedirectRequest
+        @return: BatchTasksRedirectResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.BatchTasksRedirectHeaders()
+        return self.batch_tasks_redirect_with_options(request, headers, runtime)
+
+    async def batch_tasks_redirect_async(
+        self,
+        request: dingtalkworkflow__1__0_models.BatchTasksRedirectRequest,
+    ) -> dingtalkworkflow__1__0_models.BatchTasksRedirectResponse:
+        """
+        @summary 批量流程审批任务转交
+        
+        @param request: BatchTasksRedirectRequest
+        @return: BatchTasksRedirectResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.BatchTasksRedirectHeaders()
+        return await self.batch_tasks_redirect_with_options_async(request, headers, runtime)
+
     def batch_update_process_instance_with_options(
         self,
         request: dingtalkworkflow__1__0_models.BatchUpdateProcessInstanceRequest,
@@ -5576,6 +5702,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.TerminateProcessInstanceHeaders()
         return await self.terminate_process_instance_with_options_async(request, headers, runtime)
+
+    def todo_tasks_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.TodoTasksRequest,
+        headers: dingtalkworkflow__1__0_models.TodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.TodoTasksResponse:
+        """
+        @summary 流程转交待处理任务查询
+        
+        @param request: TodoTasksRequest
+        @param headers: TodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TodoTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            query['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            query['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TodoTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.TodoTasksResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def todo_tasks_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.TodoTasksRequest,
+        headers: dingtalkworkflow__1__0_models.TodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.TodoTasksResponse:
+        """
+        @summary 流程转交待处理任务查询
+        
+        @param request: TodoTasksRequest
+        @param headers: TodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TodoTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            query['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            query['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TodoTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.TodoTasksResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def todo_tasks(
+        self,
+        request: dingtalkworkflow__1__0_models.TodoTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.TodoTasksResponse:
+        """
+        @summary 流程转交待处理任务查询
+        
+        @param request: TodoTasksRequest
+        @return: TodoTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.TodoTasksHeaders()
+        return self.todo_tasks_with_options(request, headers, runtime)
+
+    async def todo_tasks_async(
+        self,
+        request: dingtalkworkflow__1__0_models.TodoTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.TodoTasksResponse:
+        """
+        @summary 流程转交待处理任务查询
+        
+        @param request: TodoTasksRequest
+        @return: TodoTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.TodoTasksHeaders()
+        return await self.todo_tasks_with_options_async(request, headers, runtime)
 
     def update_integrated_task_with_options(
         self,

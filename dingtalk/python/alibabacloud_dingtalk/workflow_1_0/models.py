@@ -1175,6 +1175,255 @@ class BatchExecuteProcessInstancesResponse(TeaModel):
         return self
 
 
+class BatchTasksRedirectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchTasksRedirectRequest(TeaModel):
+    def __init__(
+        self,
+        handover_user_id: str = None,
+        manager_user_id: str = None,
+        task_ids: List[int] = None,
+        transferee_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.handover_user_id = handover_user_id
+        # This parameter is required.
+        self.manager_user_id = manager_user_id
+        # This parameter is required.
+        self.task_ids = task_ids
+        # This parameter is required.
+        self.transferee_user_id = transferee_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.handover_user_id is not None:
+            result['handoverUserId'] = self.handover_user_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.task_ids is not None:
+            result['taskIds'] = self.task_ids
+        if self.transferee_user_id is not None:
+            result['transfereeUserId'] = self.transferee_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('handoverUserId') is not None:
+            self.handover_user_id = m.get('handoverUserId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('taskIds') is not None:
+            self.task_ids = m.get('taskIds')
+        if m.get('transfereeUserId') is not None:
+            self.transferee_user_id = m.get('transfereeUserId')
+        return self
+
+
+class BatchTasksRedirectResponseBodyResultRedirectResults(TeaModel):
+    def __init__(
+        self,
+        error_msg: str = None,
+        success: bool = None,
+        task_id: int = None,
+    ):
+        self.error_msg = error_msg
+        # This parameter is required.
+        self.success = success
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.success is not None:
+            result['success'] = self.success
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class BatchTasksRedirectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_count: int = None,
+        redirect_results: List[BatchTasksRedirectResponseBodyResultRedirectResults] = None,
+        total_count: int = None,
+    ):
+        # This parameter is required.
+        self.fail_count = fail_count
+        # This parameter is required.
+        self.redirect_results = redirect_results
+        # This parameter is required.
+        self.total_count = total_count
+
+    def validate(self):
+        if self.redirect_results:
+            for k in self.redirect_results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fail_count is not None:
+            result['failCount'] = self.fail_count
+        result['redirectResults'] = []
+        if self.redirect_results is not None:
+            for k in self.redirect_results:
+                result['redirectResults'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failCount') is not None:
+            self.fail_count = m.get('failCount')
+        self.redirect_results = []
+        if m.get('redirectResults') is not None:
+            for k in m.get('redirectResults'):
+                temp_model = BatchTasksRedirectResponseBodyResultRedirectResults()
+                self.redirect_results.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class BatchTasksRedirectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: BatchTasksRedirectResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = BatchTasksRedirectResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BatchTasksRedirectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchTasksRedirectResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchTasksRedirectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchUpdateProcessInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -13423,6 +13672,268 @@ class TerminateProcessInstanceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TerminateProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TodoTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TodoTasksRequest(TeaModel):
+    def __init__(
+        self,
+        actioner_user_id: str = None,
+        manager_user_id: str = None,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        # This parameter is required.
+        self.actioner_user_id = actioner_user_id
+        # This parameter is required.
+        self.manager_user_id = manager_user_id
+        # This parameter is required.
+        self.max_results = max_results
+        # This parameter is required.
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actioner_user_id is not None:
+            result['actionerUserId'] = self.actioner_user_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionerUserId') is not None:
+            self.actioner_user_id = m.get('actionerUserId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class TodoTasksResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        business_id: str = None,
+        can_redirect: bool = None,
+        create_time: int = None,
+        process_code: str = None,
+        process_instance_id: str = None,
+        task_id: int = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.business_id = business_id
+        self.can_redirect = can_redirect
+        self.create_time = create_time
+        self.process_code = process_code
+        self.process_instance_id = process_instance_id
+        self.task_id = task_id
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.can_redirect is not None:
+            result['canRedirect'] = self.can_redirect
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('canRedirect') is not None:
+            self.can_redirect = m.get('canRedirect')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TodoTasksResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: str = None,
+        list: List[TodoTasksResponseBodyResultList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = TodoTasksResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class TodoTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TodoTasksResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TodoTasksResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TodoTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TodoTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TodoTasksResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

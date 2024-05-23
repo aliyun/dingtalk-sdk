@@ -673,6 +673,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees):
             body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.card_instances):
+            body['cardInstances'] = request.card_instances
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
@@ -744,6 +746,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees):
             body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.card_instances):
+            body['cardInstances'] = request.card_instances
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
@@ -3476,6 +3480,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees):
             body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.card_instances):
+            body['cardInstances'] = request.card_instances
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
@@ -3550,6 +3556,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.attendees):
             body['attendees'] = request.attendees
+        if not UtilClient.is_unset(request.card_instances):
+            body['cardInstances'] = request.card_instances
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):

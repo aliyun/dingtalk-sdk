@@ -4711,6 +4711,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetMsgConfigHeaders()
         return await self.get_msg_config_with_options_async(request, headers, runtime)
 
+    def get_msg_location_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgLocationRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgLocationResponse:
+        """
+        @summary 获取消息定位链接
+        
+        @param request: GetMsgLocationRequest
+        @param headers: GetMsgLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMsgLocationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgLocation',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/messageLocations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgLocationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_msg_location_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgLocationRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgLocationResponse:
+        """
+        @summary 获取消息定位链接
+        
+        @param request: GetMsgLocationRequest
+        @param headers: GetMsgLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMsgLocationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgLocation',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/messageLocations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgLocationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_msg_location(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgLocationRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgLocationResponse:
+        """
+        @summary 获取消息定位链接
+        
+        @param request: GetMsgLocationRequest
+        @return: GetMsgLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgLocationHeaders()
+        return self.get_msg_location_with_options(request, headers, runtime)
+
+    async def get_msg_location_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgLocationRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgLocationResponse:
+        """
+        @summary 获取消息定位链接
+        
+        @param request: GetMsgLocationRequest
+        @return: GetMsgLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgLocationHeaders()
+        return await self.get_msg_location_with_options_async(request, headers, runtime)
+
     def get_oa_operator_log_list_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
