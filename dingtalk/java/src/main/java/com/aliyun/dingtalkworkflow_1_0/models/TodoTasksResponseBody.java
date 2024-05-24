@@ -118,7 +118,7 @@ public class TodoTasksResponseBody extends TeaModel {
 
     public static class TodoTasksResponseBodyResult extends TeaModel {
         @NameInMap("hasMore")
-        public String hasMore;
+        public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<TodoTasksResponseBodyResultList> list;
@@ -128,11 +128,11 @@ public class TodoTasksResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public TodoTasksResponseBodyResult setHasMore(String hasMore) {
+        public TodoTasksResponseBodyResult setHasMore(Boolean hasMore) {
             this.hasMore = hasMore;
             return this;
         }
-        public String getHasMore() {
+        public Boolean getHasMore() {
             return this.hasMore;
         }
 
