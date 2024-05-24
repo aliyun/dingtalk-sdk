@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BusinessMatchResponse;
@@ -362,6 +365,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleResponse;
@@ -460,6 +466,63 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 批量查询任务结果
+     *  *
+     * @param BatchGetTaskResultRequest $request BatchGetTaskResultRequest
+     * @param BatchGetTaskResultHeaders $headers BatchGetTaskResultHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchGetTaskResultResponse BatchGetTaskResultResponse
+     */
+    public function batchGetTaskResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskIds)) {
+            $body['taskIds'] = $request->taskIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchGetTaskResult',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/ai/taskResults/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchGetTaskResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询任务结果
+     *  *
+     * @param BatchGetTaskResultRequest $request BatchGetTaskResultRequest
+     *
+     * @return BatchGetTaskResultResponse BatchGetTaskResultResponse
+     */
+    public function batchGetTaskResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetTaskResultHeaders([]);
+
+        return $this->batchGetTaskResultWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -8634,6 +8697,69 @@ class Dingtalk extends OpenApiClient
         $headers = new SaveUserExtendValuesHeaders([]);
 
         return $this->saveUserExtendValuesWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交ai解析任务
+     *  *
+     * @param SubmitTaskRequest $request SubmitTaskRequest
+     * @param SubmitTaskHeaders $headers SubmitTaskHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitTaskResponse SubmitTaskResponse
+     */
+    public function submitTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SubmitTask',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/ai/tasks/submit',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SubmitTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交ai解析任务
+     *  *
+     * @param SubmitTaskRequest $request SubmitTaskRequest
+     *
+     * @return SubmitTaskResponse SubmitTaskResponse
+     */
+    public function submitTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitTaskHeaders([]);
+
+        return $this->submitTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

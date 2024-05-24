@@ -25,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryResponse;
@@ -616,6 +619,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetEmployeeRosterByFieldHeaders([]);
 
         return $this->getEmployeeRosterByFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能人事权限查询
+     *  *
+     * @param HrmAuthResourcesQueryRequest $request HrmAuthResourcesQueryRequest
+     * @param HrmAuthResourcesQueryHeaders $headers HrmAuthResourcesQueryHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrmAuthResourcesQueryResponse HrmAuthResourcesQueryResponse
+     */
+    public function hrmAuthResourcesQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->authResourceIds)) {
+            $body['authResourceIds'] = $request->authResourceIds;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmAuthResourcesQuery',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/authResources/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmAuthResourcesQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能人事权限查询
+     *  *
+     * @param HrmAuthResourcesQueryRequest $request HrmAuthResourcesQueryRequest
+     *
+     * @return HrmAuthResourcesQueryResponse HrmAuthResourcesQueryResponse
+     */
+    public function hrmAuthResourcesQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmAuthResourcesQueryHeaders([]);
+
+        return $this->hrmAuthResourcesQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

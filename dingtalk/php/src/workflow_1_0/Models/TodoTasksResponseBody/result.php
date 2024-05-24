@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @var string
+     * @var bool
      */
     public $hasMore;
 
