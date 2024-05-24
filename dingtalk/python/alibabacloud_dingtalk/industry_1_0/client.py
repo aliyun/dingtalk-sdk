@@ -29,6 +29,120 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_get_task_result_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,
+        headers: dingtalkindustry__1__0_models.BatchGetTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BatchGetTaskResultResponse:
+        """
+        @summary 批量查询任务结果
+        
+        @param request: BatchGetTaskResultRequest
+        @param headers: BatchGetTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchGetTaskResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskResults/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BatchGetTaskResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_get_task_result_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,
+        headers: dingtalkindustry__1__0_models.BatchGetTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.BatchGetTaskResultResponse:
+        """
+        @summary 批量查询任务结果
+        
+        @param request: BatchGetTaskResultRequest
+        @param headers: BatchGetTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchGetTaskResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskResults/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.BatchGetTaskResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_get_task_result(
+        self,
+        request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,
+    ) -> dingtalkindustry__1__0_models.BatchGetTaskResultResponse:
+        """
+        @summary 批量查询任务结果
+        
+        @param request: BatchGetTaskResultRequest
+        @return: BatchGetTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BatchGetTaskResultHeaders()
+        return self.batch_get_task_result_with_options(request, headers, runtime)
+
+    async def batch_get_task_result_async(
+        self,
+        request: dingtalkindustry__1__0_models.BatchGetTaskResultRequest,
+    ) -> dingtalkindustry__1__0_models.BatchGetTaskResultResponse:
+        """
+        @summary 批量查询任务结果
+        
+        @param request: BatchGetTaskResultRequest
+        @return: BatchGetTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.BatchGetTaskResultHeaders()
+        return await self.batch_get_task_result_with_options_async(request, headers, runtime)
+
     def business_match_with_options(
         self,
         request: dingtalkindustry__1__0_models.BusinessMatchRequest,
@@ -15504,6 +15618,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.SaveUserExtendValuesHeaders()
         return await self.save_user_extend_values_with_options_async(user_id, request, headers, runtime)
+
+    def submit_task_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskRequest,
+        headers: dingtalkindustry__1__0_models.SubmitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskResponse:
+        """
+        @summary 提交ai解析任务
+        
+        @param request: SubmitTaskRequest
+        @param headers: SubmitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTask',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/tasks/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SubmitTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_task_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskRequest,
+        headers: dingtalkindustry__1__0_models.SubmitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskResponse:
+        """
+        @summary 提交ai解析任务
+        
+        @param request: SubmitTaskRequest
+        @param headers: SubmitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTask',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/tasks/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SubmitTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_task(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskRequest,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskResponse:
+        """
+        @summary 提交ai解析任务
+        
+        @param request: SubmitTaskRequest
+        @return: SubmitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SubmitTaskHeaders()
+        return self.submit_task_with_options(request, headers, runtime)
+
+    async def submit_task_async(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskRequest,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskResponse:
+        """
+        @summary 提交ai解析任务
+        
+        @param request: SubmitTaskRequest
+        @return: SubmitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SubmitTaskHeaders()
+        return await self.submit_task_with_options_async(request, headers, runtime)
 
     def suppl_add_role_with_options(
         self,

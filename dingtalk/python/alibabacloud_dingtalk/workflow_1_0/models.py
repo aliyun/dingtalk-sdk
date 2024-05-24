@@ -13830,7 +13830,7 @@ class TodoTasksResponseBodyResultList(TeaModel):
 class TodoTasksResponseBodyResult(TeaModel):
     def __init__(
         self,
-        has_more: str = None,
+        has_more: bool = None,
         list: List[TodoTasksResponseBodyResultList] = None,
     ):
         self.has_more = has_more

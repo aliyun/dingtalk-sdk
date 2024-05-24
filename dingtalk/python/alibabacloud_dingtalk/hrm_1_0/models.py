@@ -1717,6 +1717,183 @@ class GetEmployeeRosterByFieldResponse(TeaModel):
         return self
 
 
+class HrmAuthResourcesQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrmAuthResourcesQueryRequest(TeaModel):
+    def __init__(
+        self,
+        auth_resource_ids: List[str] = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.auth_resource_ids = auth_resource_ids
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_resource_ids is not None:
+            result['authResourceIds'] = self.auth_resource_ids
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authResourceIds') is not None:
+            self.auth_resource_ids = m.get('authResourceIds')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class HrmAuthResourcesQueryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        authorized: bool = None,
+        resource_id: str = None,
+    ):
+        self.authorized = authorized
+        self.resource_id = resource_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authorized is not None:
+            result['authorized'] = self.authorized
+        if self.resource_id is not None:
+            result['resourceId'] = self.resource_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorized') is not None:
+            self.authorized = m.get('authorized')
+        if m.get('resourceId') is not None:
+            self.resource_id = m.get('resourceId')
+        return self
+
+
+class HrmAuthResourcesQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[HrmAuthResourcesQueryResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = HrmAuthResourcesQueryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class HrmAuthResourcesQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrmAuthResourcesQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrmAuthResourcesQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HrmBenefitQueryHeaders(TeaModel):
     def __init__(
         self,
