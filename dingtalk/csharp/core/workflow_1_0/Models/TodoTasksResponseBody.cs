@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public class TodoTasksResponseBodyResult : TeaModel {
             [NameInMap("hasMore")]
             [Validation(Required=false)]
-            public string HasMore { get; set; }
+            public bool? HasMore { get; set; }
 
             [NameInMap("list")]
             [Validation(Required=false)]

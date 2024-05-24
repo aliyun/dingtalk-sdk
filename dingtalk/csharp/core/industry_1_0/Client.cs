@@ -30,6 +30,122 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
 
         /**
+         * @summary 批量查询任务结果
+         *
+         * @param request BatchGetTaskResultRequest
+         * @param headers BatchGetTaskResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BatchGetTaskResultResponse
+         */
+        public BatchGetTaskResultResponse BatchGetTaskResultWithOptions(BatchGetTaskResultRequest request, BatchGetTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskIds))
+            {
+                body["taskIds"] = request.TaskIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetTaskResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/taskResults/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetTaskResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 批量查询任务结果
+         *
+         * @param request BatchGetTaskResultRequest
+         * @param headers BatchGetTaskResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return BatchGetTaskResultResponse
+         */
+        public async Task<BatchGetTaskResultResponse> BatchGetTaskResultWithOptionsAsync(BatchGetTaskResultRequest request, BatchGetTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskIds))
+            {
+                body["taskIds"] = request.TaskIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetTaskResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/taskResults/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetTaskResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 批量查询任务结果
+         *
+         * @param request BatchGetTaskResultRequest
+         * @return BatchGetTaskResultResponse
+         */
+        public BatchGetTaskResultResponse BatchGetTaskResult(BatchGetTaskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetTaskResultHeaders headers = new BatchGetTaskResultHeaders();
+            return BatchGetTaskResultWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 批量查询任务结果
+         *
+         * @param request BatchGetTaskResultRequest
+         * @return BatchGetTaskResultResponse
+         */
+        public async Task<BatchGetTaskResultResponse> BatchGetTaskResultAsync(BatchGetTaskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetTaskResultHeaders headers = new BatchGetTaskResultHeaders();
+            return await BatchGetTaskResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 商机匹配
          *
          * @param request BusinessMatchRequest
@@ -17391,6 +17507,138 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SaveUserExtendValuesHeaders headers = new SaveUserExtendValuesHeaders();
             return await SaveUserExtendValuesWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 提交ai解析任务
+         *
+         * @param request SubmitTaskRequest
+         * @param headers SubmitTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SubmitTaskResponse
+         */
+        public SubmitTaskResponse SubmitTaskWithOptions(SubmitTaskRequest request, SubmitTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitTask",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/tasks/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 提交ai解析任务
+         *
+         * @param request SubmitTaskRequest
+         * @param headers SubmitTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SubmitTaskResponse
+         */
+        public async Task<SubmitTaskResponse> SubmitTaskWithOptionsAsync(SubmitTaskRequest request, SubmitTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitTask",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/tasks/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 提交ai解析任务
+         *
+         * @param request SubmitTaskRequest
+         * @return SubmitTaskResponse
+         */
+        public SubmitTaskResponse SubmitTask(SubmitTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitTaskHeaders headers = new SubmitTaskHeaders();
+            return SubmitTaskWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 提交ai解析任务
+         *
+         * @param request SubmitTaskRequest
+         * @return SubmitTaskResponse
+         */
+        public async Task<SubmitTaskResponse> SubmitTaskAsync(SubmitTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitTaskHeaders headers = new SubmitTaskHeaders();
+            return await SubmitTaskWithOptionsAsync(request, headers, runtime);
         }
 
         /**

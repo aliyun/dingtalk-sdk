@@ -1047,6 +1047,130 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 智能人事权限查询
+         *
+         * @param request HrmAuthResourcesQueryRequest
+         * @param headers HrmAuthResourcesQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmAuthResourcesQueryResponse
+         */
+        public HrmAuthResourcesQueryResponse HrmAuthResourcesQueryWithOptions(HrmAuthResourcesQueryRequest request, HrmAuthResourcesQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthResourceIds))
+            {
+                body["authResourceIds"] = request.AuthResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmAuthResourcesQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/authResources/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmAuthResourcesQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事权限查询
+         *
+         * @param request HrmAuthResourcesQueryRequest
+         * @param headers HrmAuthResourcesQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmAuthResourcesQueryResponse
+         */
+        public async Task<HrmAuthResourcesQueryResponse> HrmAuthResourcesQueryWithOptionsAsync(HrmAuthResourcesQueryRequest request, HrmAuthResourcesQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthResourceIds))
+            {
+                body["authResourceIds"] = request.AuthResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmAuthResourcesQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/authResources/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmAuthResourcesQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事权限查询
+         *
+         * @param request HrmAuthResourcesQueryRequest
+         * @return HrmAuthResourcesQueryResponse
+         */
+        public HrmAuthResourcesQueryResponse HrmAuthResourcesQuery(HrmAuthResourcesQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmAuthResourcesQueryHeaders headers = new HrmAuthResourcesQueryHeaders();
+            return HrmAuthResourcesQueryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事权限查询
+         *
+         * @param request HrmAuthResourcesQueryRequest
+         * @return HrmAuthResourcesQueryResponse
+         */
+        public async Task<HrmAuthResourcesQueryResponse> HrmAuthResourcesQueryAsync(HrmAuthResourcesQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmAuthResourcesQueryHeaders headers = new HrmAuthResourcesQueryHeaders();
+            return await HrmAuthResourcesQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事权益查询
          *
          * @param request HrmBenefitQueryRequest
