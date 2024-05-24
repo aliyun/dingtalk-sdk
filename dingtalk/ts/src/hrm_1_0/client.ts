@@ -712,6 +712,94 @@ export class GetEmployeeRosterByFieldResponse extends $tea.Model {
   }
 }
 
+export class HrmAuthResourcesQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmAuthResourcesQueryRequest extends $tea.Model {
+  authResourceIds?: string[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authResourceIds: 'authResourceIds',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authResourceIds: { 'type': 'array', 'itemType': 'string' },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmAuthResourcesQueryResponseBody extends $tea.Model {
+  result?: HrmAuthResourcesQueryResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': HrmAuthResourcesQueryResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmAuthResourcesQueryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HrmAuthResourcesQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmAuthResourcesQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmBenefitQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3847,6 +3935,28 @@ export class GetEmployeeRosterByFieldResponseBodyResult extends $tea.Model {
   }
 }
 
+export class HrmAuthResourcesQueryResponseBodyResult extends $tea.Model {
+  authorized?: boolean;
+  resourceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorized: 'authorized',
+      resourceId: 'resourceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorized: 'boolean',
+      resourceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmMailSendRequestMailAttachments extends $tea.Model {
   name?: string;
   path?: string;
@@ -5539,6 +5649,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmployeeRosterByFieldHeaders({ });
     return await this.getEmployeeRosterByFieldWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 智能人事权限查询
+   *
+   * @param request HrmAuthResourcesQueryRequest
+   * @param headers HrmAuthResourcesQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmAuthResourcesQueryResponse
+   */
+  async hrmAuthResourcesQueryWithOptions(request: HrmAuthResourcesQueryRequest, headers: HrmAuthResourcesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<HrmAuthResourcesQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authResourceIds)) {
+      body["authResourceIds"] = request.authResourceIds;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmAuthResourcesQuery",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/authResources/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmAuthResourcesQueryResponse>(await this.execute(params, req, runtime), new HrmAuthResourcesQueryResponse({}));
+  }
+
+  /**
+   * @summary 智能人事权限查询
+   *
+   * @param request HrmAuthResourcesQueryRequest
+   * @return HrmAuthResourcesQueryResponse
+   */
+  async hrmAuthResourcesQuery(request: HrmAuthResourcesQueryRequest): Promise<HrmAuthResourcesQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmAuthResourcesQueryHeaders({ });
+    return await this.hrmAuthResourcesQueryWithOptions(request, headers, runtime);
   }
 
   /**

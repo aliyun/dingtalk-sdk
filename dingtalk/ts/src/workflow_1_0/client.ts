@@ -8304,7 +8304,7 @@ export class TodoTasksResponseBodyResultList extends $tea.Model {
 }
 
 export class TodoTasksResponseBodyResult extends $tea.Model {
-  hasMore?: string;
+  hasMore?: boolean;
   list?: TodoTasksResponseBodyResultList[];
   static names(): { [key: string]: string } {
     return {
@@ -8315,7 +8315,7 @@ export class TodoTasksResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      hasMore: 'string',
+      hasMore: 'boolean',
       list: { 'type': 'array', 'itemType': TodoTasksResponseBodyResultList },
     };
   }

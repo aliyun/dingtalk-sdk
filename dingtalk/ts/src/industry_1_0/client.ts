@@ -9,6 +9,91 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class BatchGetTaskResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultRequest extends $tea.Model {
+  taskIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      taskIds: 'taskIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultResponseBody extends $tea.Model {
+  tasks?: BatchGetTaskResultResponseBodyTasks[];
+  static names(): { [key: string]: string } {
+    return {
+      tasks: 'tasks',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tasks: { 'type': 'array', 'itemType': BatchGetTaskResultResponseBodyTasks },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BatchGetTaskResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BatchGetTaskResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BusinessMatchHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12048,6 +12133,97 @@ export class SaveUserExtendValuesResponse extends $tea.Model {
   }
 }
 
+export class SubmitTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubmitTaskRequest extends $tea.Model {
+  appId?: number;
+  bizCode?: string;
+  data?: SubmitTaskRequestData[];
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      bizCode: 'bizCode',
+      data: 'data',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'number',
+      bizCode: 'string',
+      data: { 'type': 'array', 'itemType': SubmitTaskRequestData },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubmitTaskResponseBody extends $tea.Model {
+  tasks?: SubmitTaskResponseBodyTasks[];
+  static names(): { [key: string]: string } {
+    return {
+      tasks: 'tasks',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tasks: { 'type': 'array', 'itemType': SubmitTaskResponseBodyTasks },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubmitTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SubmitTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SubmitTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SupplAddRoleHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -14360,6 +14536,93 @@ export class UpdateUserExtendInfoResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultResponseBodyTasksResultItems extends $tea.Model {
+  info?: string;
+  name?: string;
+  point?: number;
+  static names(): { [key: string]: string } {
+    return {
+      info: 'info',
+      name: 'name',
+      point: 'point',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      info: 'string',
+      name: 'string',
+      point: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultResponseBodyTasksResult extends $tea.Model {
+  audioText?: string;
+  date?: string;
+  desc?: string;
+  id?: number;
+  items?: BatchGetTaskResultResponseBodyTasksResultItems[];
+  name?: string;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      audioText: 'audioText',
+      date: 'date',
+      desc: 'desc',
+      id: 'id',
+      items: 'items',
+      name: 'name',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      audioText: 'string',
+      date: 'string',
+      desc: 'string',
+      id: 'number',
+      items: { 'type': 'array', 'itemType': BatchGetTaskResultResponseBodyTasksResultItems },
+      name: 'string',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BatchGetTaskResultResponseBodyTasks extends $tea.Model {
+  result?: BatchGetTaskResultResponseBodyTasksResult;
+  status?: string;
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: BatchGetTaskResultResponseBodyTasksResult,
+      status: 'string',
+      taskId: 'string',
     };
   }
 
@@ -17658,6 +17921,62 @@ export class QueryUserRolesResponseBodyContent extends $tea.Model {
   }
 }
 
+export class SubmitTaskRequestData extends $tea.Model {
+  date?: string;
+  desc?: string;
+  fileType?: string;
+  fileUrl?: string[];
+  id?: number;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      desc: 'desc',
+      fileType: 'fileType',
+      fileUrl: 'fileUrl',
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      desc: 'string',
+      fileType: 'string',
+      fileUrl: { 'type': 'array', 'itemType': 'string' },
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SubmitTaskResponseBodyTasks extends $tea.Model {
+  id?: number;
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SupplyAddDeptResponseBodyResult extends $tea.Model {
   deptId?: number;
   static names(): { [key: string]: string } {
@@ -18077,6 +18396,60 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * @summary 批量查询任务结果
+   *
+   * @param request BatchGetTaskResultRequest
+   * @param headers BatchGetTaskResultHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BatchGetTaskResultResponse
+   */
+  async batchGetTaskResultWithOptions(request: BatchGetTaskResultRequest, headers: BatchGetTaskResultHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetTaskResultResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.taskIds)) {
+      body["taskIds"] = request.taskIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "BatchGetTaskResult",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/ai/taskResults/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchGetTaskResultResponse>(await this.execute(params, req, runtime), new BatchGetTaskResultResponse({}));
+  }
+
+  /**
+   * @summary 批量查询任务结果
+   *
+   * @param request BatchGetTaskResultRequest
+   * @return BatchGetTaskResultResponse
+   */
+  async batchGetTaskResult(request: BatchGetTaskResultRequest): Promise<BatchGetTaskResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BatchGetTaskResultHeaders({ });
+    return await this.batchGetTaskResultWithOptions(request, headers, runtime);
+  }
 
   /**
    * @summary 商机匹配
@@ -26262,6 +26635,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveUserExtendValuesHeaders({ });
     return await this.saveUserExtendValuesWithOptions(userId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 提交ai解析任务
+   *
+   * @param request SubmitTaskRequest
+   * @param headers SubmitTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SubmitTaskResponse
+   */
+  async submitTaskWithOptions(request: SubmitTaskRequest, headers: SubmitTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SubmitTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.bizCode)) {
+      body["bizCode"] = request.bizCode;
+    }
+
+    if (!Util.isUnset(request.data)) {
+      body["data"] = request.data;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SubmitTask",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/ai/tasks/submit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SubmitTaskResponse>(await this.execute(params, req, runtime), new SubmitTaskResponse({}));
+  }
+
+  /**
+   * @summary 提交ai解析任务
+   *
+   * @param request SubmitTaskRequest
+   * @return SubmitTaskResponse
+   */
+  async submitTask(request: SubmitTaskRequest): Promise<SubmitTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SubmitTaskHeaders({ });
+    return await this.submitTaskWithOptions(request, headers, runtime);
   }
 
   /**
