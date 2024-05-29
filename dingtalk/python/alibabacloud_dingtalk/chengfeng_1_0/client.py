@@ -1901,6 +1901,136 @@ class Client(OpenApiClient):
         headers = dingtalkchengfeng__1__0_models.ListProgressByIdsHeaders()
         return await self.list_progress_by_ids_with_options_async(request, headers, runtime)
 
+    def list_sls_log_with_options(
+        self,
+        request: dingtalkchengfeng__1__0_models.ListSlsLogRequest,
+        headers: dingtalkchengfeng__1__0_models.ListSlsLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkchengfeng__1__0_models.ListSlsLogResponse:
+        """
+        @summary 获取组织下的日志数据
+        
+        @param request: ListSlsLogRequest
+        @param headers: ListSlsLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSlsLogResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_code):
+            query['appCode'] = request.app_code
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSlsLog',
+            version='chengfeng_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/chengfeng/organizations/slsLogDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkchengfeng__1__0_models.ListSlsLogResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_sls_log_with_options_async(
+        self,
+        request: dingtalkchengfeng__1__0_models.ListSlsLogRequest,
+        headers: dingtalkchengfeng__1__0_models.ListSlsLogHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkchengfeng__1__0_models.ListSlsLogResponse:
+        """
+        @summary 获取组织下的日志数据
+        
+        @param request: ListSlsLogRequest
+        @param headers: ListSlsLogHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSlsLogResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_code):
+            query['appCode'] = request.app_code
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSlsLog',
+            version='chengfeng_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/chengfeng/organizations/slsLogDatas',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkchengfeng__1__0_models.ListSlsLogResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_sls_log(
+        self,
+        request: dingtalkchengfeng__1__0_models.ListSlsLogRequest,
+    ) -> dingtalkchengfeng__1__0_models.ListSlsLogResponse:
+        """
+        @summary 获取组织下的日志数据
+        
+        @param request: ListSlsLogRequest
+        @return: ListSlsLogResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkchengfeng__1__0_models.ListSlsLogHeaders()
+        return self.list_sls_log_with_options(request, headers, runtime)
+
+    async def list_sls_log_async(
+        self,
+        request: dingtalkchengfeng__1__0_models.ListSlsLogRequest,
+    ) -> dingtalkchengfeng__1__0_models.ListSlsLogResponse:
+        """
+        @summary 获取组织下的日志数据
+        
+        @param request: ListSlsLogRequest
+        @return: ListSlsLogResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkchengfeng__1__0_models.ListSlsLogHeaders()
+        return await self.list_sls_log_with_options_async(request, headers, runtime)
+
     def page_list_objective_progress_with_options(
         self,
         request: dingtalkchengfeng__1__0_models.PageListObjectiveProgressRequest,

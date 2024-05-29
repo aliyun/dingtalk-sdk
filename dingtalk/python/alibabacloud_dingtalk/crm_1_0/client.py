@@ -6011,6 +6011,98 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.QueryCrmPersonalCustomerHeaders()
         return await self.query_crm_personal_customer_with_options_async(request, headers, runtime)
 
+    def query_customer_biz_type_with_options(
+        self,
+        headers: dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+        """
+        @summary 查询客户模板启用类型
+        
+        @param headers: QueryCustomerBizTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomerBizTypeResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryCustomerBizType',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_customer_biz_type_with_options_async(
+        self,
+        headers: dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+        """
+        @summary 查询客户模板启用类型
+        
+        @param headers: QueryCustomerBizTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomerBizTypeResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryCustomerBizType',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_customer_biz_type(self) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+        """
+        @summary 查询客户模板启用类型
+        
+        @return: QueryCustomerBizTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders()
+        return self.query_customer_biz_type_with_options(headers, runtime)
+
+    async def query_customer_biz_type_async(self) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+        """
+        @summary 查询客户模板启用类型
+        
+        @return: QueryCustomerBizTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders()
+        return await self.query_customer_biz_type_with_options_async(headers, runtime)
+
     def query_global_info_with_options(
         self,
         request: dingtalkcrm__1__0_models.QueryGlobalInfoRequest,
@@ -6986,6 +7078,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateCrmPersonalCustomerHeaders()
         return await self.update_crm_personal_customer_with_options_async(request, headers, runtime)
+
+    def update_customer_biz_type_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateCustomerBizTypeRequest,
+        headers: dingtalkcrm__1__0_models.UpdateCustomerBizTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse:
+        """
+        @summary 更新客户模板类型
+        
+        @param request: UpdateCustomerBizTypeRequest
+        @param headers: UpdateCustomerBizTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomerBizTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_biz_type):
+            body['customerBizType'] = request.customer_biz_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomerBizType',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_customer_biz_type_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateCustomerBizTypeRequest,
+        headers: dingtalkcrm__1__0_models.UpdateCustomerBizTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse:
+        """
+        @summary 更新客户模板类型
+        
+        @param request: UpdateCustomerBizTypeRequest
+        @param headers: UpdateCustomerBizTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomerBizTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_biz_type):
+            body['customerBizType'] = request.customer_biz_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomerBizType',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_customer_biz_type(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateCustomerBizTypeRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse:
+        """
+        @summary 更新客户模板类型
+        
+        @param request: UpdateCustomerBizTypeRequest
+        @return: UpdateCustomerBizTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateCustomerBizTypeHeaders()
+        return self.update_customer_biz_type_with_options(request, headers, runtime)
+
+    async def update_customer_biz_type_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateCustomerBizTypeRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateCustomerBizTypeResponse:
+        """
+        @summary 更新客户模板类型
+        
+        @param request: UpdateCustomerBizTypeRequest
+        @return: UpdateCustomerBizTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateCustomerBizTypeHeaders()
+        return await self.update_customer_biz_type_with_options_async(request, headers, runtime)
 
     def update_group_set_with_options(
         self,

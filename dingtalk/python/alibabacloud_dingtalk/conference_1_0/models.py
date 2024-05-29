@@ -6304,20 +6304,30 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
 class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting(TeaModel):
     def __init__(
         self,
+        cloud_record_owner_union_id: str = None,
         enable_chat: int = None,
         enable_web_anonymous_join: bool = None,
         join_before_host: int = None,
         lock_media_status_mic_mute: int = None,
         lock_nick: int = None,
+        minutes_owner_union_id: str = None,
         mozi_conf_extension_app_settings: List[UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings] = None,
+        push_all_meeting_records: bool = None,
+        push_cloud_record_card: bool = None,
+        push_minutes_card: bool = None,
         waiting_room: int = None,
     ):
+        self.cloud_record_owner_union_id = cloud_record_owner_union_id
         self.enable_chat = enable_chat
         self.enable_web_anonymous_join = enable_web_anonymous_join
         self.join_before_host = join_before_host
         self.lock_media_status_mic_mute = lock_media_status_mic_mute
         self.lock_nick = lock_nick
+        self.minutes_owner_union_id = minutes_owner_union_id
         self.mozi_conf_extension_app_settings = mozi_conf_extension_app_settings
+        self.push_all_meeting_records = push_all_meeting_records
+        self.push_cloud_record_card = push_cloud_record_card
+        self.push_minutes_card = push_minutes_card
         self.waiting_room = waiting_room
 
     def validate(self):
@@ -6332,6 +6342,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             return _map
 
         result = dict()
+        if self.cloud_record_owner_union_id is not None:
+            result['cloudRecordOwnerUnionId'] = self.cloud_record_owner_union_id
         if self.enable_chat is not None:
             result['enableChat'] = self.enable_chat
         if self.enable_web_anonymous_join is not None:
@@ -6342,16 +6354,26 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             result['lockMediaStatusMicMute'] = self.lock_media_status_mic_mute
         if self.lock_nick is not None:
             result['lockNick'] = self.lock_nick
+        if self.minutes_owner_union_id is not None:
+            result['minutesOwnerUnionId'] = self.minutes_owner_union_id
         result['moziConfExtensionAppSettings'] = []
         if self.mozi_conf_extension_app_settings is not None:
             for k in self.mozi_conf_extension_app_settings:
                 result['moziConfExtensionAppSettings'].append(k.to_map() if k else None)
+        if self.push_all_meeting_records is not None:
+            result['pushAllMeetingRecords'] = self.push_all_meeting_records
+        if self.push_cloud_record_card is not None:
+            result['pushCloudRecordCard'] = self.push_cloud_record_card
+        if self.push_minutes_card is not None:
+            result['pushMinutesCard'] = self.push_minutes_card
         if self.waiting_room is not None:
             result['waitingRoom'] = self.waiting_room
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('cloudRecordOwnerUnionId') is not None:
+            self.cloud_record_owner_union_id = m.get('cloudRecordOwnerUnionId')
         if m.get('enableChat') is not None:
             self.enable_chat = m.get('enableChat')
         if m.get('enableWebAnonymousJoin') is not None:
@@ -6362,11 +6384,19 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             self.lock_media_status_mic_mute = m.get('lockMediaStatusMicMute')
         if m.get('lockNick') is not None:
             self.lock_nick = m.get('lockNick')
+        if m.get('minutesOwnerUnionId') is not None:
+            self.minutes_owner_union_id = m.get('minutesOwnerUnionId')
         self.mozi_conf_extension_app_settings = []
         if m.get('moziConfExtensionAppSettings') is not None:
             for k in m.get('moziConfExtensionAppSettings'):
                 temp_model = UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings()
                 self.mozi_conf_extension_app_settings.append(temp_model.from_map(k))
+        if m.get('pushAllMeetingRecords') is not None:
+            self.push_all_meeting_records = m.get('pushAllMeetingRecords')
+        if m.get('pushCloudRecordCard') is not None:
+            self.push_cloud_record_card = m.get('pushCloudRecordCard')
+        if m.get('pushMinutesCard') is not None:
+            self.push_minutes_card = m.get('pushMinutesCard')
         if m.get('waitingRoom') is not None:
             self.waiting_room = m.get('waitingRoom')
         return self

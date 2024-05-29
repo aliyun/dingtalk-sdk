@@ -903,6 +903,90 @@ class OpenProgressDTO(TeaModel):
         return self
 
 
+class SlsLogResp(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        entity: str = None,
+        header: str = None,
+        id: str = None,
+        info: str = None,
+        operator: str = None,
+        tenant: str = None,
+        tenant_id: str = None,
+        time: int = None,
+    ):
+        # This parameter is required.
+        self.action = action
+        # This parameter is required.
+        self.entity = entity
+        # This parameter is required.
+        self.header = header
+        # This parameter is required.
+        self.id = id
+        # This parameter is required.
+        self.info = info
+        # This parameter is required.
+        self.operator = operator
+        # This parameter is required.
+        self.tenant = tenant
+        # This parameter is required.
+        self.tenant_id = tenant_id
+        # This parameter is required.
+        self.time = time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.entity is not None:
+            result['entity'] = self.entity
+        if self.header is not None:
+            result['header'] = self.header
+        if self.id is not None:
+            result['id'] = self.id
+        if self.info is not None:
+            result['info'] = self.info
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.tenant is not None:
+            result['tenant'] = self.tenant
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        if self.time is not None:
+            result['time'] = self.time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('entity') is not None:
+            self.entity = m.get('entity')
+        if m.get('header') is not None:
+            self.header = m.get('header')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('info') is not None:
+            self.info = m.get('info')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('tenant') is not None:
+            self.tenant = m.get('tenant')
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        return self
+
+
 class GetAllJobLevelHeaders(TeaModel):
     def __init__(
         self,
@@ -3663,6 +3747,234 @@ class ListProgressByIdsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListProgressByIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListSlsLogHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListSlsLogRequest(TeaModel):
+    def __init__(
+        self,
+        app_code: str = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+    ):
+        # This parameter is required.
+        self.app_code = app_code
+        self.end_time = end_time
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_code is not None:
+            result['appCode'] = self.app_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appCode') is not None:
+            self.app_code = m.get('appCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class ListSlsLogResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        current_page_size: int = None,
+        data: List[SlsLogResp] = None,
+        page_number: int = None,
+        page_size: int = None,
+        pages: int = None,
+        total_count: int = None,
+    ):
+        self.current_page_size = current_page_size
+        self.data = data
+        self.page_number = page_number
+        self.page_size = page_size
+        self.pages = pages
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page_size is not None:
+            result['currentPageSize'] = self.current_page_size
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.pages is not None:
+            result['pages'] = self.pages
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPageSize') is not None:
+            self.current_page_size = m.get('currentPageSize')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SlsLogResp()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pages') is not None:
+            self.pages = m.get('pages')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListSlsLogResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: ListSlsLogResponseBodyContent = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = ListSlsLogResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListSlsLogResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListSlsLogResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListSlsLogResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
