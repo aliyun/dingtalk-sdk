@@ -16450,7 +16450,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "formData",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<GetMeCorpSubmissionResponse>(await this.execute(params, req, runtime), new GetMeCorpSubmissionResponse({}));

@@ -4684,6 +4684,72 @@ export class QueryCrmPersonalCustomerResponse extends $tea.Model {
   }
 }
 
+export class QueryCustomerBizTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomerBizTypeResponseBody extends $tea.Model {
+  result?: QueryCustomerBizTypeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryCustomerBizTypeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCustomerBizTypeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCustomerBizTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryCustomerBizTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGlobalInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5413,6 +5479,91 @@ export class UpdateCrmPersonalCustomerResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateCrmPersonalCustomerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomerBizTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomerBizTypeRequest extends $tea.Model {
+  customerBizType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerBizType: 'customerBizType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerBizType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomerBizTypeResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCustomerBizTypeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCustomerBizTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCustomerBizTypeResponseBody,
     };
   }
 
@@ -10272,6 +10423,25 @@ export class QueryCrmPersonalCustomerResponseBodyValues extends $tea.Model {
   }
 }
 
+export class QueryCustomerBizTypeResponseBodyResult extends $tea.Model {
+  customerBizType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerBizType: 'customerBizType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerBizType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGlobalInfoResponseBodyResult extends $tea.Model {
   oemEnable?: boolean;
   static names(): { [key: string]: string } {
@@ -14297,6 +14467,51 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 查询客户模板启用类型
+   *
+   * @param headers QueryCustomerBizTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryCustomerBizTypeResponse
+   */
+  async queryCustomerBizTypeWithOptions(headers: QueryCustomerBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerBizTypeResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryCustomerBizType",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/orgSettings/templates/customerBizTypes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCustomerBizTypeResponse>(await this.execute(params, req, runtime), new QueryCustomerBizTypeResponse({}));
+  }
+
+  /**
+   * @summary 查询客户模板启用类型
+   *
+   * @return QueryCustomerBizTypeResponse
+   */
+  async queryCustomerBizType(): Promise<QueryCustomerBizTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCustomerBizTypeHeaders({ });
+    return await this.queryCustomerBizTypeWithOptions(headers, runtime);
+  }
+
+  /**
    * @summary 营销服融合三方全局信息
    *
    * @param request QueryGlobalInfoRequest
@@ -14786,6 +15001,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCrmPersonalCustomerHeaders({ });
     return await this.updateCrmPersonalCustomerWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 更新客户模板类型
+   *
+   * @param request UpdateCustomerBizTypeRequest
+   * @param headers UpdateCustomerBizTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateCustomerBizTypeResponse
+   */
+  async updateCustomerBizTypeWithOptions(request: UpdateCustomerBizTypeRequest, headers: UpdateCustomerBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomerBizTypeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customerBizType)) {
+      body["customerBizType"] = request.customerBizType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCustomerBizType",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/orgSettings/templates/customerBizTypes`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCustomerBizTypeResponse>(await this.execute(params, req, runtime), new UpdateCustomerBizTypeResponse({}));
+  }
+
+  /**
+   * @summary 更新客户模板类型
+   *
+   * @param request UpdateCustomerBizTypeRequest
+   * @return UpdateCustomerBizTypeResponse
+   */
+  async updateCustomerBizType(request: UpdateCustomerBizTypeRequest): Promise<UpdateCustomerBizTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCustomerBizTypeHeaders({ });
+    return await this.updateCustomerBizTypeWithOptions(request, headers, runtime);
   }
 
   /**

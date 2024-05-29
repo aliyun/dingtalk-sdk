@@ -4171,33 +4171,48 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
 }
 
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
+  cloudRecordOwnerUnionId?: string;
   enableChat?: number;
   enableWebAnonymousJoin?: boolean;
   joinBeforeHost?: number;
   lockMediaStatusMicMute?: number;
   lockNick?: number;
+  minutesOwnerUnionId?: string;
   moziConfExtensionAppSettings?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings[];
+  pushAllMeetingRecords?: boolean;
+  pushCloudRecordCard?: boolean;
+  pushMinutesCard?: boolean;
   waitingRoom?: number;
   static names(): { [key: string]: string } {
     return {
+      cloudRecordOwnerUnionId: 'cloudRecordOwnerUnionId',
       enableChat: 'enableChat',
       enableWebAnonymousJoin: 'enableWebAnonymousJoin',
       joinBeforeHost: 'joinBeforeHost',
       lockMediaStatusMicMute: 'lockMediaStatusMicMute',
       lockNick: 'lockNick',
+      minutesOwnerUnionId: 'minutesOwnerUnionId',
       moziConfExtensionAppSettings: 'moziConfExtensionAppSettings',
+      pushAllMeetingRecords: 'pushAllMeetingRecords',
+      pushCloudRecordCard: 'pushCloudRecordCard',
+      pushMinutesCard: 'pushMinutesCard',
       waitingRoom: 'waitingRoom',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      cloudRecordOwnerUnionId: 'string',
       enableChat: 'number',
       enableWebAnonymousJoin: 'boolean',
       joinBeforeHost: 'number',
       lockMediaStatusMicMute: 'number',
       lockNick: 'number',
+      minutesOwnerUnionId: 'string',
       moziConfExtensionAppSettings: { 'type': 'array', 'itemType': UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings },
+      pushAllMeetingRecords: 'boolean',
+      pushCloudRecordCard: 'boolean',
+      pushMinutesCard: 'boolean',
       waitingRoom: 'number',
     };
   }

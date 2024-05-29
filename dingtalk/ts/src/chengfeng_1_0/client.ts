@@ -451,6 +451,49 @@ export class OpenUserDTO extends $tea.Model {
   }
 }
 
+export class SlsLogResp extends $tea.Model {
+  action?: string;
+  entity?: string;
+  header?: string;
+  id?: string;
+  info?: string;
+  operator?: string;
+  tenant?: string;
+  tenantId?: string;
+  time?: number;
+  static names(): { [key: string]: string } {
+    return {
+      action: 'action',
+      entity: 'entity',
+      header: 'header',
+      id: 'id',
+      info: 'info',
+      operator: 'operator',
+      tenant: 'tenant',
+      tenantId: 'tenantId',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      action: 'string',
+      entity: 'string',
+      header: 'string',
+      id: 'string',
+      info: 'string',
+      operator: 'string',
+      tenant: 'string',
+      tenantId: 'string',
+      time: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TitleMention extends $tea.Model {
   length?: number;
   offset?: number;
@@ -1919,6 +1962,106 @@ export class ListProgressByIdsResponse extends $tea.Model {
   }
 }
 
+export class ListSlsLogHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSlsLogRequest extends $tea.Model {
+  appCode?: string;
+  endTime?: number;
+  pageNumber?: number;
+  pageSize?: number;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appCode: 'appCode',
+      endTime: 'endTime',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appCode: 'string',
+      endTime: 'number',
+      pageNumber: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSlsLogResponseBody extends $tea.Model {
+  content?: ListSlsLogResponseBodyContent;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: ListSlsLogResponseBodyContent,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSlsLogResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListSlsLogResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListSlsLogResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageListObjectiveProgressHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2346,6 +2489,40 @@ export class ListObjectiveByUserResponseBodyContent extends $tea.Model {
     return {
       count: 'number',
       objectives: { 'type': 'array', 'itemType': OpenObjectiveDTO },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListSlsLogResponseBodyContent extends $tea.Model {
+  currentPageSize?: number;
+  data?: SlsLogResp[];
+  pageNumber?: number;
+  pageSize?: number;
+  pages?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      currentPageSize: 'currentPageSize',
+      data: 'data',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      pages: 'pages',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      currentPageSize: 'number',
+      data: { 'type': 'array', 'itemType': SlsLogResp },
+      pageNumber: 'number',
+      pageSize: 'number',
+      pages: 'number',
+      totalCount: 'number',
     };
   }
 
@@ -3297,6 +3474,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListProgressByIdsHeaders({ });
     return await this.listProgressByIdsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取组织下的日志数据
+   *
+   * @param request ListSlsLogRequest
+   * @param headers ListSlsLogHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListSlsLogResponse
+   */
+  async listSlsLogWithOptions(request: ListSlsLogRequest, headers: ListSlsLogHeaders, runtime: $Util.RuntimeOptions): Promise<ListSlsLogResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appCode)) {
+      query["appCode"] = request.appCode;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListSlsLog",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/organizations/slsLogDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListSlsLogResponse>(await this.execute(params, req, runtime), new ListSlsLogResponse({}));
+  }
+
+  /**
+   * @summary 获取组织下的日志数据
+   *
+   * @param request ListSlsLogRequest
+   * @return ListSlsLogResponse
+   */
+  async listSlsLog(request: ListSlsLogRequest): Promise<ListSlsLogResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListSlsLogHeaders({ });
+    return await this.listSlsLogWithOptions(request, headers, runtime);
   }
 
   /**

@@ -1778,6 +1778,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   mainProcessInstanceId?: string;
   memo?: string;
   originatorId?: string;
+  originatorIdOnBehalf?: string;
   processInstanceId?: string;
   processResult?: string;
   processStatus?: string;
@@ -1804,6 +1805,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       mainProcessInstanceId: 'mainProcessInstanceId',
       memo: 'memo',
       originatorId: 'originatorId',
+      originatorIdOnBehalf: 'originatorIdOnBehalf',
       processInstanceId: 'processInstanceId',
       processResult: 'processResult',
       processStatus: 'processStatus',
@@ -1833,6 +1835,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       mainProcessInstanceId: 'string',
       memo: 'string',
       originatorId: 'string',
+      originatorIdOnBehalf: 'string',
       processInstanceId: 'string',
       processResult: 'string',
       processStatus: 'string',
