@@ -503,6 +503,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("originatorId")
         public String originatorId;
 
+        @NameInMap("originatorIdOnBehalf")
+        public String originatorIdOnBehalf;
+
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
@@ -668,6 +671,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getOriginatorId() {
             return this.originatorId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setOriginatorIdOnBehalf(String originatorIdOnBehalf) {
+            this.originatorIdOnBehalf = originatorIdOnBehalf;
+            return this;
+        }
+        public String getOriginatorIdOnBehalf() {
+            return this.originatorIdOnBehalf;
         }
 
         public GetTravelProcessDetailResponseBodyResult setProcessInstanceId(String processInstanceId) {

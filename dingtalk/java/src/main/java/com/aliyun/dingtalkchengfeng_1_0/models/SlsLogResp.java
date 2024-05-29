@@ -1,0 +1,138 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkchengfeng_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class SlsLogResp extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("action")
+    public String action;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("entity")
+    public String entity;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("header")
+    public String header;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("id")
+    public String id;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("info")
+    public String info;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("operator")
+    public String operator;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("tenant")
+    public String tenant;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("tenantId")
+    public String tenantId;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("time")
+    public Long time;
+
+    public static SlsLogResp build(java.util.Map<String, ?> map) throws Exception {
+        SlsLogResp self = new SlsLogResp();
+        return TeaModel.build(map, self);
+    }
+
+    public SlsLogResp setAction(String action) {
+        this.action = action;
+        return this;
+    }
+    public String getAction() {
+        return this.action;
+    }
+
+    public SlsLogResp setEntity(String entity) {
+        this.entity = entity;
+        return this;
+    }
+    public String getEntity() {
+        return this.entity;
+    }
+
+    public SlsLogResp setHeader(String header) {
+        this.header = header;
+        return this;
+    }
+    public String getHeader() {
+        return this.header;
+    }
+
+    public SlsLogResp setId(String id) {
+        this.id = id;
+        return this;
+    }
+    public String getId() {
+        return this.id;
+    }
+
+    public SlsLogResp setInfo(String info) {
+        this.info = info;
+        return this;
+    }
+    public String getInfo() {
+        return this.info;
+    }
+
+    public SlsLogResp setOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+    public String getOperator() {
+        return this.operator;
+    }
+
+    public SlsLogResp setTenant(String tenant) {
+        this.tenant = tenant;
+        return this;
+    }
+    public String getTenant() {
+        return this.tenant;
+    }
+
+    public SlsLogResp setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+    public String getTenantId() {
+        return this.tenantId;
+    }
+
+    public SlsLogResp setTime(Long time) {
+        this.time = time;
+        return this;
+    }
+    public Long getTime() {
+        return this.time;
+    }
+
+}
