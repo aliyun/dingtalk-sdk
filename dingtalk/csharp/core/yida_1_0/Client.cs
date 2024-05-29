@@ -6040,7 +6040,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "formData",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetMeCorpSubmissionResponse>(Execute(params_, req, runtime));
@@ -6121,7 +6121,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "formData",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetMeCorpSubmissionResponse>(await ExecuteAsync(params_, req, runtime));

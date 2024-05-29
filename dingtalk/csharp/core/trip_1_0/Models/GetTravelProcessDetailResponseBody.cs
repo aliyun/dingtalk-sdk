@@ -233,6 +233,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public string OriginatorId { get; set; }
 
+            [NameInMap("originatorIdOnBehalf")]
+            [Validation(Required=false)]
+            public string OriginatorIdOnBehalf { get; set; }
+
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }

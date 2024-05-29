@@ -1980,6 +1980,154 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0
         }
 
         /**
+         * @summary 获取组织下的日志数据
+         *
+         * @param request ListSlsLogRequest
+         * @param headers ListSlsLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSlsLogResponse
+         */
+        public ListSlsLogResponse ListSlsLogWithOptions(ListSlsLogRequest request, ListSlsLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppCode))
+            {
+                query["appCode"] = request.AppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListSlsLog",
+                Version = "chengfeng_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/chengfeng/organizations/slsLogDatas",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListSlsLogResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取组织下的日志数据
+         *
+         * @param request ListSlsLogRequest
+         * @param headers ListSlsLogHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListSlsLogResponse
+         */
+        public async Task<ListSlsLogResponse> ListSlsLogWithOptionsAsync(ListSlsLogRequest request, ListSlsLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppCode))
+            {
+                query["appCode"] = request.AppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListSlsLog",
+                Version = "chengfeng_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/chengfeng/organizations/slsLogDatas",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListSlsLogResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取组织下的日志数据
+         *
+         * @param request ListSlsLogRequest
+         * @return ListSlsLogResponse
+         */
+        public ListSlsLogResponse ListSlsLog(ListSlsLogRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSlsLogHeaders headers = new ListSlsLogHeaders();
+            return ListSlsLogWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取组织下的日志数据
+         *
+         * @param request ListSlsLogRequest
+         * @return ListSlsLogResponse
+         */
+        public async Task<ListSlsLogResponse> ListSlsLogAsync(ListSlsLogRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSlsLogHeaders headers = new ListSlsLogHeaders();
+            return await ListSlsLogWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 分页获取目标进展记录
          *
          * @param request PageListObjectiveProgressRequest

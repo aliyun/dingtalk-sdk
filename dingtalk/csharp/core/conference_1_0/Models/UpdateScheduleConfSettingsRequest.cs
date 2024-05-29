@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting MoziConfVirtualExtraSetting { get; set; }
             public class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting : TeaModel {
+                [NameInMap("cloudRecordOwnerUnionId")]
+                [Validation(Required=false)]
+                public string CloudRecordOwnerUnionId { get; set; }
+
                 [NameInMap("enableChat")]
                 [Validation(Required=false)]
                 public int? EnableChat { get; set; }
@@ -57,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [Validation(Required=false)]
                 public int? LockNick { get; set; }
 
+                [NameInMap("minutesOwnerUnionId")]
+                [Validation(Required=false)]
+                public string MinutesOwnerUnionId { get; set; }
+
                 [NameInMap("moziConfExtensionAppSettings")]
                 [Validation(Required=false)]
                 public List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> MoziConfExtensionAppSettings { get; set; }
@@ -74,6 +82,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                     public string ExtensionAppBizData { get; set; }
 
                 }
+
+                [NameInMap("pushAllMeetingRecords")]
+                [Validation(Required=false)]
+                public bool? PushAllMeetingRecords { get; set; }
+
+                [NameInMap("pushCloudRecordCard")]
+                [Validation(Required=false)]
+                public bool? PushCloudRecordCard { get; set; }
+
+                [NameInMap("pushMinutesCard")]
+                [Validation(Required=false)]
+                public bool? PushMinutesCard { get; set; }
 
                 [NameInMap("waitingRoom")]
                 [Validation(Required=false)]

@@ -6526,6 +6526,104 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 查询客户模板启用类型
+         *
+         * @param headers QueryCustomerBizTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCustomerBizTypeResponse
+         */
+        public QueryCustomerBizTypeResponse QueryCustomerBizTypeWithOptions(QueryCustomerBizTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerBizType",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/orgSettings/templates/customerBizTypes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerBizTypeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询客户模板启用类型
+         *
+         * @param headers QueryCustomerBizTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCustomerBizTypeResponse
+         */
+        public async Task<QueryCustomerBizTypeResponse> QueryCustomerBizTypeWithOptionsAsync(QueryCustomerBizTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerBizType",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/orgSettings/templates/customerBizTypes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerBizTypeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询客户模板启用类型
+         *
+         * @return QueryCustomerBizTypeResponse
+         */
+        public QueryCustomerBizTypeResponse QueryCustomerBizType()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCustomerBizTypeHeaders headers = new QueryCustomerBizTypeHeaders();
+            return QueryCustomerBizTypeWithOptions(headers, runtime);
+        }
+
+        /**
+         * @summary 查询客户模板启用类型
+         *
+         * @return QueryCustomerBizTypeResponse
+         */
+        public async Task<QueryCustomerBizTypeResponse> QueryCustomerBizTypeAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCustomerBizTypeHeaders headers = new QueryCustomerBizTypeHeaders();
+            return await QueryCustomerBizTypeWithOptionsAsync(headers, runtime);
+        }
+
+        /**
          * @summary 营销服融合三方全局信息
          *
          * @param request QueryGlobalInfoRequest
@@ -7571,6 +7669,122 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCrmPersonalCustomerHeaders headers = new UpdateCrmPersonalCustomerHeaders();
             return await UpdateCrmPersonalCustomerWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新客户模板类型
+         *
+         * @param request UpdateCustomerBizTypeRequest
+         * @param headers UpdateCustomerBizTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCustomerBizTypeResponse
+         */
+        public UpdateCustomerBizTypeResponse UpdateCustomerBizTypeWithOptions(UpdateCustomerBizTypeRequest request, UpdateCustomerBizTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerBizType))
+            {
+                body["customerBizType"] = request.CustomerBizType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomerBizType",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/orgSettings/templates/customerBizTypes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomerBizTypeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新客户模板类型
+         *
+         * @param request UpdateCustomerBizTypeRequest
+         * @param headers UpdateCustomerBizTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCustomerBizTypeResponse
+         */
+        public async Task<UpdateCustomerBizTypeResponse> UpdateCustomerBizTypeWithOptionsAsync(UpdateCustomerBizTypeRequest request, UpdateCustomerBizTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerBizType))
+            {
+                body["customerBizType"] = request.CustomerBizType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomerBizType",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/orgSettings/templates/customerBizTypes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomerBizTypeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新客户模板类型
+         *
+         * @param request UpdateCustomerBizTypeRequest
+         * @return UpdateCustomerBizTypeResponse
+         */
+        public UpdateCustomerBizTypeResponse UpdateCustomerBizType(UpdateCustomerBizTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomerBizTypeHeaders headers = new UpdateCustomerBizTypeHeaders();
+            return UpdateCustomerBizTypeWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新客户模板类型
+         *
+         * @param request UpdateCustomerBizTypeRequest
+         * @return UpdateCustomerBizTypeResponse
+         */
+        public async Task<UpdateCustomerBizTypeResponse> UpdateCustomerBizTypeAsync(UpdateCustomerBizTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomerBizTypeHeaders headers = new UpdateCustomerBizTypeHeaders();
+            return await UpdateCustomerBizTypeWithOptionsAsync(request, headers, runtime);
         }
 
         /**
