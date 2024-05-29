@@ -10,6 +10,13 @@ use AlibabaCloud\Tea\Model;
 class moziConfVirtualExtraSetting extends Model
 {
     /**
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+     *
+     * @var string
+     */
+    public $cloudRecordOwnerUnionId;
+
+    /**
      * @example 0：未开启 1：开启
      *
      * @var int
@@ -45,9 +52,31 @@ class moziConfVirtualExtraSetting extends Model
     public $lockNick;
 
     /**
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+     *
+     * @var string
+     */
+    public $minutesOwnerUnionId;
+
+    /**
      * @var moziConfExtensionAppSettings[]
      */
     public $moziConfExtensionAppSettings;
+
+    /**
+     * @var bool
+     */
+    public $pushAllMeetingRecords;
+
+    /**
+     * @var bool
+     */
+    public $pushCloudRecordCard;
+
+    /**
+     * @var bool
+     */
+    public $pushMinutesCard;
 
     /**
      * @example 0：未开启 1：开启
@@ -56,12 +85,17 @@ class moziConfVirtualExtraSetting extends Model
      */
     public $waitingRoom;
     protected $_name = [
+        'cloudRecordOwnerUnionId'      => 'cloudRecordOwnerUnionId',
         'enableChat'                   => 'enableChat',
         'enableWebAnonymousJoin'       => 'enableWebAnonymousJoin',
         'joinBeforeHost'               => 'joinBeforeHost',
         'lockMediaStatusMicMute'       => 'lockMediaStatusMicMute',
         'lockNick'                     => 'lockNick',
+        'minutesOwnerUnionId'          => 'minutesOwnerUnionId',
         'moziConfExtensionAppSettings' => 'moziConfExtensionAppSettings',
+        'pushAllMeetingRecords'        => 'pushAllMeetingRecords',
+        'pushCloudRecordCard'          => 'pushCloudRecordCard',
+        'pushMinutesCard'              => 'pushMinutesCard',
         'waitingRoom'                  => 'waitingRoom',
     ];
 
@@ -72,6 +106,9 @@ class moziConfVirtualExtraSetting extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->cloudRecordOwnerUnionId) {
+            $res['cloudRecordOwnerUnionId'] = $this->cloudRecordOwnerUnionId;
+        }
         if (null !== $this->enableChat) {
             $res['enableChat'] = $this->enableChat;
         }
@@ -87,6 +124,9 @@ class moziConfVirtualExtraSetting extends Model
         if (null !== $this->lockNick) {
             $res['lockNick'] = $this->lockNick;
         }
+        if (null !== $this->minutesOwnerUnionId) {
+            $res['minutesOwnerUnionId'] = $this->minutesOwnerUnionId;
+        }
         if (null !== $this->moziConfExtensionAppSettings) {
             $res['moziConfExtensionAppSettings'] = [];
             if (null !== $this->moziConfExtensionAppSettings && \is_array($this->moziConfExtensionAppSettings)) {
@@ -95,6 +135,15 @@ class moziConfVirtualExtraSetting extends Model
                     $res['moziConfExtensionAppSettings'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->pushAllMeetingRecords) {
+            $res['pushAllMeetingRecords'] = $this->pushAllMeetingRecords;
+        }
+        if (null !== $this->pushCloudRecordCard) {
+            $res['pushCloudRecordCard'] = $this->pushCloudRecordCard;
+        }
+        if (null !== $this->pushMinutesCard) {
+            $res['pushMinutesCard'] = $this->pushMinutesCard;
         }
         if (null !== $this->waitingRoom) {
             $res['waitingRoom'] = $this->waitingRoom;
@@ -111,6 +160,9 @@ class moziConfVirtualExtraSetting extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['cloudRecordOwnerUnionId'])) {
+            $model->cloudRecordOwnerUnionId = $map['cloudRecordOwnerUnionId'];
+        }
         if (isset($map['enableChat'])) {
             $model->enableChat = $map['enableChat'];
         }
@@ -126,6 +178,9 @@ class moziConfVirtualExtraSetting extends Model
         if (isset($map['lockNick'])) {
             $model->lockNick = $map['lockNick'];
         }
+        if (isset($map['minutesOwnerUnionId'])) {
+            $model->minutesOwnerUnionId = $map['minutesOwnerUnionId'];
+        }
         if (isset($map['moziConfExtensionAppSettings'])) {
             if (!empty($map['moziConfExtensionAppSettings'])) {
                 $model->moziConfExtensionAppSettings = [];
@@ -134,6 +189,15 @@ class moziConfVirtualExtraSetting extends Model
                     $model->moziConfExtensionAppSettings[$n++] = null !== $item ? moziConfExtensionAppSettings::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['pushAllMeetingRecords'])) {
+            $model->pushAllMeetingRecords = $map['pushAllMeetingRecords'];
+        }
+        if (isset($map['pushCloudRecordCard'])) {
+            $model->pushCloudRecordCard = $map['pushCloudRecordCard'];
+        }
+        if (isset($map['pushMinutesCard'])) {
+            $model->pushMinutesCard = $map['pushMinutesCard'];
         }
         if (isset($map['waitingRoom'])) {
             $model->waitingRoom = $map['waitingRoom'];

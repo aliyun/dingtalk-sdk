@@ -3133,7 +3133,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'formData',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 

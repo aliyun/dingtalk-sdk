@@ -149,6 +149,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmGroupChatsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCustomerBizTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCustomerBizTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoResponse;
@@ -173,6 +175,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCustomerBizTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCustomerBizTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCustomerBizTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetResponse;
@@ -3308,6 +3313,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询客户模板启用类型
+     *  *
+     * @param QueryCustomerBizTypeHeaders $headers QueryCustomerBizTypeHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCustomerBizTypeResponse QueryCustomerBizTypeResponse
+     */
+    public function queryCustomerBizTypeWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCustomerBizType',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCustomerBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询客户模板启用类型
+     *  *
+     * @return QueryCustomerBizTypeResponse QueryCustomerBizTypeResponse
+     */
+    public function queryCustomerBizType()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCustomerBizTypeHeaders([]);
+
+        return $this->queryCustomerBizTypeWithOptions($headers, $runtime);
+    }
+
+    /**
      * @summary 营销服融合三方全局信息
      *  *
      * @param QueryGlobalInfoRequest $request QueryGlobalInfoRequest
@@ -3808,6 +3861,63 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCrmPersonalCustomerHeaders([]);
 
         return $this->updateCrmPersonalCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新客户模板类型
+     *  *
+     * @param UpdateCustomerBizTypeRequest $request UpdateCustomerBizTypeRequest
+     * @param UpdateCustomerBizTypeHeaders $headers UpdateCustomerBizTypeHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCustomerBizTypeResponse UpdateCustomerBizTypeResponse
+     */
+    public function updateCustomerBizTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customerBizType)) {
+            $body['customerBizType'] = $request->customerBizType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCustomerBizType',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCustomerBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新客户模板类型
+     *  *
+     * @param UpdateCustomerBizTypeRequest $request UpdateCustomerBizTypeRequest
+     *
+     * @return UpdateCustomerBizTypeResponse UpdateCustomerBizTypeResponse
+     */
+    public function updateCustomerBizType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCustomerBizTypeHeaders([]);
+
+        return $this->updateCustomerBizTypeWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -51,6 +51,9 @@ use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListObjectiveByUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListProgressByIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListProgressByIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListProgressByIdsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListSlsLogHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListSlsLogRequest;
+use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\ListSlsLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\PageListObjectiveProgressHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\PageListObjectiveProgressRequest;
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\PageListObjectiveProgressResponse;
@@ -1030,6 +1033,75 @@ class Dingtalk extends OpenApiClient
         $headers = new ListProgressByIdsHeaders([]);
 
         return $this->listProgressByIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取组织下的日志数据
+     *  *
+     * @param ListSlsLogRequest $request ListSlsLogRequest
+     * @param ListSlsLogHeaders $headers ListSlsLogHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListSlsLogResponse ListSlsLogResponse
+     */
+    public function listSlsLogWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appCode)) {
+            $query['appCode'] = $request->appCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListSlsLog',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/organizations/slsLogDatas',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListSlsLogResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取组织下的日志数据
+     *  *
+     * @param ListSlsLogRequest $request ListSlsLogRequest
+     *
+     * @return ListSlsLogResponse ListSlsLogResponse
+     */
+    public function listSlsLog($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSlsLogHeaders([]);
+
+        return $this->listSlsLogWithOptions($request, $headers, $runtime);
     }
 
     /**
