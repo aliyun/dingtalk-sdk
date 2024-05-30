@@ -398,6 +398,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         remark: str = None,
         travel_category: str = None,
         travelers: List[str] = None,
+        trip_days: str = None,
     ):
         self.biz_category_id = biz_category_id
         self.business_id = business_id
@@ -424,6 +425,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.remark = remark
         self.travel_category = travel_category
         self.travelers = travelers
+        self.trip_days = trip_days
 
     def validate(self):
         if self.ext_form_component:
@@ -495,6 +497,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['travelCategory'] = self.travel_category
         if self.travelers is not None:
             result['travelers'] = self.travelers
+        if self.trip_days is not None:
+            result['tripDays'] = self.trip_days
         return result
 
     def from_map(self, m: dict = None):
@@ -555,6 +559,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.travel_category = m.get('travelCategory')
         if m.get('travelers') is not None:
             self.travelers = m.get('travelers')
+        if m.get('tripDays') is not None:
+            self.trip_days = m.get('tripDays')
         return self
 
 

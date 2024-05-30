@@ -4,6 +4,48 @@ from Tea.model import TeaModel
 from typing import List, Dict
 
 
+class OpenAgoalKeyActionDTO(TeaModel):
+    def __init__(
+        self,
+        key_action_id: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        # This parameter is required.
+        self.key_action_id = key_action_id
+        # This parameter is required.
+        self.title = title
+        # This parameter is required.
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key_action_id is not None:
+            result['keyActionId'] = self.key_action_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('keyActionId') is not None:
+            self.key_action_id = m.get('keyActionId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
 class OpenAgoalUserDTO(TeaModel):
     def __init__(
         self,
@@ -93,6 +135,7 @@ class TitleMention(TeaModel):
 class OpenAgoalKeyResultDTO(TeaModel):
     def __init__(
         self,
+        key_actions: List[OpenAgoalKeyActionDTO] = None,
         key_result_id: str = None,
         progress: int = None,
         status: int = None,
@@ -101,6 +144,8 @@ class OpenAgoalKeyResultDTO(TeaModel):
         type: int = None,
         weight: float = None,
     ):
+        # This parameter is required.
+        self.key_actions = key_actions
         # This parameter is required.
         self.key_result_id = key_result_id
         # This parameter is required.
@@ -117,6 +162,10 @@ class OpenAgoalKeyResultDTO(TeaModel):
         self.weight = weight
 
     def validate(self):
+        if self.key_actions:
+            for k in self.key_actions:
+                if k:
+                    k.validate()
         if self.title_mentions:
             for k in self.title_mentions:
                 if k:
@@ -128,6 +177,10 @@ class OpenAgoalKeyResultDTO(TeaModel):
             return _map
 
         result = dict()
+        result['keyActions'] = []
+        if self.key_actions is not None:
+            for k in self.key_actions:
+                result['keyActions'].append(k.to_map() if k else None)
         if self.key_result_id is not None:
             result['keyResultId'] = self.key_result_id
         if self.progress is not None:
@@ -148,6 +201,11 @@ class OpenAgoalKeyResultDTO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.key_actions = []
+        if m.get('keyActions') is not None:
+            for k in m.get('keyActions'):
+                temp_model = OpenAgoalKeyActionDTO()
+                self.key_actions.append(temp_model.from_map(k))
         if m.get('keyResultId') is not None:
             self.key_result_id = m.get('keyResultId')
         if m.get('progress') is not None:
@@ -165,6 +223,57 @@ class OpenAgoalKeyResultDTO(TeaModel):
             self.type = m.get('type')
         if m.get('weight') is not None:
             self.weight = m.get('weight')
+        return self
+
+
+class OpenAgoalLatestProgressDTO(TeaModel):
+    def __init__(
+        self,
+        created: int = None,
+        creator: OpenAgoalUserDTO = None,
+        htmldescription: str = None,
+        progress_id: str = None,
+    ):
+        # This parameter is required.
+        self.created = created
+        # This parameter is required.
+        self.creator = creator
+        # This parameter is required.
+        self.htmldescription = htmldescription
+        # This parameter is required.
+        self.progress_id = progress_id
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.htmldescription is not None:
+            result['htmldescription'] = self.htmldescription
+        if self.progress_id is not None:
+            result['progressId'] = self.progress_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creator') is not None:
+            temp_model = OpenAgoalUserDTO()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('htmldescription') is not None:
+            self.htmldescription = m.get('htmldescription')
+        if m.get('progressId') is not None:
+            self.progress_id = m.get('progressId')
         return self
 
 
@@ -305,7 +414,9 @@ class OpenAgoalObjectiveDTO(TeaModel):
     def __init__(
         self,
         executor: OpenAgoalUserDTO = None,
+        key_actions: List[OpenAgoalKeyActionDTO] = None,
         key_results: List[OpenAgoalKeyResultDTO] = None,
+        latest_progress: OpenAgoalLatestProgressDTO = None,
         objective_id: str = None,
         objective_rule: OpenOrgObjectiveRuleDTO = None,
         period: OpenObjectiveRulePeriodDTO = None,
@@ -318,7 +429,11 @@ class OpenAgoalObjectiveDTO(TeaModel):
         # This parameter is required.
         self.executor = executor
         # This parameter is required.
+        self.key_actions = key_actions
+        # This parameter is required.
         self.key_results = key_results
+        # This parameter is required.
+        self.latest_progress = latest_progress
         # This parameter is required.
         self.objective_id = objective_id
         # This parameter is required.
@@ -339,10 +454,16 @@ class OpenAgoalObjectiveDTO(TeaModel):
     def validate(self):
         if self.executor:
             self.executor.validate()
+        if self.key_actions:
+            for k in self.key_actions:
+                if k:
+                    k.validate()
         if self.key_results:
             for k in self.key_results:
                 if k:
                     k.validate()
+        if self.latest_progress:
+            self.latest_progress.validate()
         if self.objective_rule:
             self.objective_rule.validate()
         if self.period:
@@ -360,10 +481,16 @@ class OpenAgoalObjectiveDTO(TeaModel):
         result = dict()
         if self.executor is not None:
             result['executor'] = self.executor.to_map()
+        result['keyActions'] = []
+        if self.key_actions is not None:
+            for k in self.key_actions:
+                result['keyActions'].append(k.to_map() if k else None)
         result['keyResults'] = []
         if self.key_results is not None:
             for k in self.key_results:
                 result['keyResults'].append(k.to_map() if k else None)
+        if self.latest_progress is not None:
+            result['latestProgress'] = self.latest_progress.to_map()
         if self.objective_id is not None:
             result['objectiveId'] = self.objective_id
         if self.objective_rule is not None:
@@ -389,11 +516,19 @@ class OpenAgoalObjectiveDTO(TeaModel):
         if m.get('executor') is not None:
             temp_model = OpenAgoalUserDTO()
             self.executor = temp_model.from_map(m['executor'])
+        self.key_actions = []
+        if m.get('keyActions') is not None:
+            for k in m.get('keyActions'):
+                temp_model = OpenAgoalKeyActionDTO()
+                self.key_actions.append(temp_model.from_map(k))
         self.key_results = []
         if m.get('keyResults') is not None:
             for k in m.get('keyResults'):
                 temp_model = OpenAgoalKeyResultDTO()
                 self.key_results.append(temp_model.from_map(k))
+        if m.get('latestProgress') is not None:
+            temp_model = OpenAgoalLatestProgressDTO()
+            self.latest_progress = temp_model.from_map(m['latestProgress'])
         if m.get('objectiveId') is not None:
             self.objective_id = m.get('objectiveId')
         if m.get('objectiveRule') is not None:
@@ -491,6 +626,7 @@ class AgoalObjectiveRulePeriodListRequest(TeaModel):
         self,
         objective_rule_id: str = None,
     ):
+        # This parameter is required.
         self.objective_rule_id = objective_rule_id
 
     def validate(self):
@@ -520,8 +656,10 @@ class AgoalObjectiveRulePeriodListResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.content = content
         self.request_id = request_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -641,8 +779,10 @@ class AgoalOrgObjectiveRuleListResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.content = content
         self.request_id = request_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -765,11 +905,17 @@ class AgoalSendMessageRequest(TeaModel):
         target_ding_user_ids: List[str] = None,
         template_id: str = None,
     ):
+        # This parameter is required.
         self.mobile_url = mobile_url
+        # This parameter is required.
         self.params = params
+        # This parameter is required.
         self.pc_url = pc_url
+        # This parameter is required.
         self.source_ding_user_id = source_ding_user_id
+        # This parameter is required.
         self.target_ding_user_ids = target_ding_user_ids
+        # This parameter is required.
         self.template_id = template_id
 
     def validate(self):
@@ -819,8 +965,11 @@ class AgoalSendMessageResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.request_id = request_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -932,8 +1081,10 @@ class AgoalUserAdminListResponseBody(TeaModel):
         request_id: str = None,
         success: bool = None,
     ):
+        # This parameter is required.
         self.content = content
         self.request_id = request_id
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -1053,8 +1204,11 @@ class AgoalUserObjectiveListRequest(TeaModel):
         objective_rule_id: str = None,
         period_ids: List[str] = None,
     ):
+        # This parameter is required.
         self.ding_user_id = ding_user_id
+        # This parameter is required.
         self.objective_rule_id = objective_rule_id
+        # This parameter is required.
         self.period_ids = period_ids
 
     def validate(self):
