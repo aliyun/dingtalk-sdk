@@ -11,6 +11,13 @@ class OpenAgoalKeyResultDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var OpenAgoalKeyActionDTO[]
+     */
+    public $keyActions;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 6444f5e9a4261c6e699dxxxx
      *
      * @var string
@@ -69,6 +76,7 @@ class OpenAgoalKeyResultDTO extends Model
      */
     public $weight;
     protected $_name = [
+        'keyActions'    => 'keyActions',
         'keyResultId'   => 'keyResultId',
         'progress'      => 'progress',
         'status'        => 'status',
@@ -85,6 +93,15 @@ class OpenAgoalKeyResultDTO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->keyActions) {
+            $res['keyActions'] = [];
+            if (null !== $this->keyActions && \is_array($this->keyActions)) {
+                $n = 0;
+                foreach ($this->keyActions as $item) {
+                    $res['keyActions'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->keyResultId) {
             $res['keyResultId'] = $this->keyResultId;
         }
@@ -124,6 +141,15 @@ class OpenAgoalKeyResultDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['keyActions'])) {
+            if (!empty($map['keyActions'])) {
+                $model->keyActions = [];
+                $n                 = 0;
+                foreach ($map['keyActions'] as $item) {
+                    $model->keyActions[$n++] = null !== $item ? OpenAgoalKeyActionDTO::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['keyResultId'])) {
             $model->keyResultId = $map['keyResultId'];
         }

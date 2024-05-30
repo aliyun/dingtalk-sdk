@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AgoalSendMessageRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example https://agoal.dingtalk.com
      *
      * @var string
@@ -16,6 +18,8 @@ class AgoalSendMessageRequest extends Model
     public $mobileUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example {"A":"a", "B":"b"}
      *
      * @var string
@@ -23,6 +27,8 @@ class AgoalSendMessageRequest extends Model
     public $params;
 
     /**
+     * @description This parameter is required.
+     *
      * @example https://agoal.dingtalk.com
      *
      * @var string
@@ -30,6 +36,8 @@ class AgoalSendMessageRequest extends Model
     public $pcUrl;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 211042291978xxxx
      *
      * @var string
@@ -37,11 +45,15 @@ class AgoalSendMessageRequest extends Model
     public $sourceDingUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $targetDingUserIds;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 1d01a14febc7482ca3b6e1d30cf5xxxx
      *
      * @var string

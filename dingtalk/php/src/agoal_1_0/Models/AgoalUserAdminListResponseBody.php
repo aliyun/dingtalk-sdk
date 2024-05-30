@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AgoalUserAdminListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var OpenUserAdminDTO[]
      */
     public $content;
@@ -21,6 +23,8 @@ class AgoalUserAdminListResponseBody extends Model
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

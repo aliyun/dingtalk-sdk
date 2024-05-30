@@ -9,16 +9,24 @@ use AlibabaCloud\Tea\Model;
 class AgoalSendMessageResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $content;
 
     /**
+     * @description This parameter is required.
+     *
+     * @example 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+     *
      * @var string
      */
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

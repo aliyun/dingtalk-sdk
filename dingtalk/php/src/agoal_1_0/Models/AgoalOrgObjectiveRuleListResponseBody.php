@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AgoalOrgObjectiveRuleListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var OpenOrgObjectiveRuleDTO[]
      */
     public $content;
@@ -21,6 +23,8 @@ class AgoalOrgObjectiveRuleListResponseBody extends Model
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

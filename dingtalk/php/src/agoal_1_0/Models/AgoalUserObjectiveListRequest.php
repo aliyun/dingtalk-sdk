@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AgoalUserObjectiveListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 211042291978xxxx
      *
      * @var string
@@ -16,6 +18,8 @@ class AgoalUserObjectiveListRequest extends Model
     public $dingUserId;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 6444f5e9a4261c6e699dxxxx
      *
      * @var string
@@ -23,6 +27,8 @@ class AgoalUserObjectiveListRequest extends Model
     public $objectiveRuleId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string[]
      */
     public $periodIds;

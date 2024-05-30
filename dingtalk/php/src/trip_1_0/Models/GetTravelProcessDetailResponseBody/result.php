@@ -178,6 +178,13 @@ class result extends Model
      * @var string[]
      */
     public $travelers;
+
+    /**
+     * @example 2
+     *
+     * @var string
+     */
+    public $tripDays;
     protected $_name = [
         'bizCategoryId'                => 'bizCategoryId',
         'businessId'                   => 'businessId',
@@ -204,6 +211,7 @@ class result extends Model
         'remark'                       => 'remark',
         'travelCategory'               => 'travelCategory',
         'travelers'                    => 'travelers',
+        'tripDays'                     => 'tripDays',
     ];
 
     public function validate()
@@ -299,6 +307,9 @@ class result extends Model
         }
         if (null !== $this->travelers) {
             $res['travelers'] = $this->travelers;
+        }
+        if (null !== $this->tripDays) {
+            $res['tripDays'] = $this->tripDays;
         }
 
         return $res;
@@ -400,6 +411,9 @@ class result extends Model
             if (!empty($map['travelers'])) {
                 $model->travelers = $map['travelers'];
             }
+        }
+        if (isset($map['tripDays'])) {
+            $model->tripDays = $map['tripDays'];
         }
 
         return $model;

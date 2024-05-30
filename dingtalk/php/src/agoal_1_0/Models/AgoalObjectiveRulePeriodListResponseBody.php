@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class AgoalObjectiveRulePeriodListResponseBody extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var OpenObjectiveRulePeriodDTO[]
      */
     public $content;
 
     /**
+     * @example 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+     *
      * @var string
      */
     public $requestId;
 
     /**
+     * @description This parameter is required.
+     *
      * @var bool
      */
     public $success;

@@ -18,9 +18,23 @@ class OpenAgoalObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @var OpenAgoalKeyActionDTO[]
+     */
+    public $keyActions;
+
+    /**
+     * @description This parameter is required.
+     *
      * @var OpenAgoalKeyResultDTO[]
      */
     public $keyResults;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var OpenAgoalLatestProgressDTO
+     */
+    public $latestProgress;
 
     /**
      * @description This parameter is required.
@@ -88,16 +102,18 @@ class OpenAgoalObjectiveDTO extends Model
      */
     public $weight;
     protected $_name = [
-        'executor'      => 'executor',
-        'keyResults'    => 'keyResults',
-        'objectiveId'   => 'objectiveId',
-        'objectiveRule' => 'objectiveRule',
-        'period'        => 'period',
-        'progress'      => 'progress',
-        'status'        => 'status',
-        'teams'         => 'teams',
-        'title'         => 'title',
-        'weight'        => 'weight',
+        'executor'       => 'executor',
+        'keyActions'     => 'keyActions',
+        'keyResults'     => 'keyResults',
+        'latestProgress' => 'latestProgress',
+        'objectiveId'    => 'objectiveId',
+        'objectiveRule'  => 'objectiveRule',
+        'period'         => 'period',
+        'progress'       => 'progress',
+        'status'         => 'status',
+        'teams'          => 'teams',
+        'title'          => 'title',
+        'weight'         => 'weight',
     ];
 
     public function validate()
@@ -110,6 +126,15 @@ class OpenAgoalObjectiveDTO extends Model
         if (null !== $this->executor) {
             $res['executor'] = null !== $this->executor ? $this->executor->toMap() : null;
         }
+        if (null !== $this->keyActions) {
+            $res['keyActions'] = [];
+            if (null !== $this->keyActions && \is_array($this->keyActions)) {
+                $n = 0;
+                foreach ($this->keyActions as $item) {
+                    $res['keyActions'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->keyResults) {
             $res['keyResults'] = [];
             if (null !== $this->keyResults && \is_array($this->keyResults)) {
@@ -118,6 +143,9 @@ class OpenAgoalObjectiveDTO extends Model
                     $res['keyResults'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->latestProgress) {
+            $res['latestProgress'] = null !== $this->latestProgress ? $this->latestProgress->toMap() : null;
         }
         if (null !== $this->objectiveId) {
             $res['objectiveId'] = $this->objectiveId;
@@ -164,6 +192,15 @@ class OpenAgoalObjectiveDTO extends Model
         if (isset($map['executor'])) {
             $model->executor = OpenAgoalUserDTO::fromMap($map['executor']);
         }
+        if (isset($map['keyActions'])) {
+            if (!empty($map['keyActions'])) {
+                $model->keyActions = [];
+                $n                 = 0;
+                foreach ($map['keyActions'] as $item) {
+                    $model->keyActions[$n++] = null !== $item ? OpenAgoalKeyActionDTO::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['keyResults'])) {
             if (!empty($map['keyResults'])) {
                 $model->keyResults = [];
@@ -172,6 +209,9 @@ class OpenAgoalObjectiveDTO extends Model
                     $model->keyResults[$n++] = null !== $item ? OpenAgoalKeyResultDTO::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['latestProgress'])) {
+            $model->latestProgress = OpenAgoalLatestProgressDTO::fromMap($map['latestProgress']);
         }
         if (isset($map['objectiveId'])) {
             $model->objectiveId = $map['objectiveId'];

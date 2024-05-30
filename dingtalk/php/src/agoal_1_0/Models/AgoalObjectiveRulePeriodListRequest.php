@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class AgoalObjectiveRulePeriodListRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 6444f5e9a4261c6e699dxxxx
      *
      * @var string
