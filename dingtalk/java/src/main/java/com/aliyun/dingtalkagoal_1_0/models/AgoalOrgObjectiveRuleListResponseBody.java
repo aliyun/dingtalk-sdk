@@ -4,12 +4,18 @@ package com.aliyun.dingtalkagoal_1_0.models;
 import com.aliyun.tea.*;
 
 public class AgoalOrgObjectiveRuleListResponseBody extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("content")
     public java.util.List<OpenOrgObjectiveRuleDTO> content;
 
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

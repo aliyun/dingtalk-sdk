@@ -13,8 +13,20 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
+    @NameInMap("keyActions")
+    public java.util.List<OpenAgoalKeyActionDTO> keyActions;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyResults")
     public java.util.List<OpenAgoalKeyResultDTO> keyResults;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("latestProgress")
+    public OpenAgoalLatestProgressDTO latestProgress;
 
     /**
      * <p>This parameter is required.</p>
@@ -77,12 +89,28 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
         return this.executor;
     }
 
+    public OpenAgoalObjectiveDTO setKeyActions(java.util.List<OpenAgoalKeyActionDTO> keyActions) {
+        this.keyActions = keyActions;
+        return this;
+    }
+    public java.util.List<OpenAgoalKeyActionDTO> getKeyActions() {
+        return this.keyActions;
+    }
+
     public OpenAgoalObjectiveDTO setKeyResults(java.util.List<OpenAgoalKeyResultDTO> keyResults) {
         this.keyResults = keyResults;
         return this;
     }
     public java.util.List<OpenAgoalKeyResultDTO> getKeyResults() {
         return this.keyResults;
+    }
+
+    public OpenAgoalObjectiveDTO setLatestProgress(OpenAgoalLatestProgressDTO latestProgress) {
+        this.latestProgress = latestProgress;
+        return this;
+    }
+    public OpenAgoalLatestProgressDTO getLatestProgress() {
+        return this.latestProgress;
     }
 
     public OpenAgoalObjectiveDTO setObjectiveId(String objectiveId) {

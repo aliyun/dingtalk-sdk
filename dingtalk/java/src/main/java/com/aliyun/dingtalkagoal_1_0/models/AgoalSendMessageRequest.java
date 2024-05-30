@@ -4,21 +4,39 @@ package com.aliyun.dingtalkagoal_1_0.models;
 import com.aliyun.tea.*;
 
 public class AgoalSendMessageRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("mobileUrl")
     public String mobileUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("params")
     public String params;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("pcUrl")
     public String pcUrl;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("sourceDingUserId")
     public String sourceDingUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("targetDingUserIds")
     public java.util.List<String> targetDingUserIds;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

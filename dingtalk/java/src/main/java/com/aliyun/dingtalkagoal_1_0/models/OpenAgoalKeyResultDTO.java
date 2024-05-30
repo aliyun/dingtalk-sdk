@@ -7,6 +7,12 @@ public class OpenAgoalKeyResultDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
+    @NameInMap("keyActions")
+    public java.util.List<OpenAgoalKeyActionDTO> keyActions;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("keyResultId")
     public String keyResultId;
 
@@ -49,6 +55,14 @@ public class OpenAgoalKeyResultDTO extends TeaModel {
     public static OpenAgoalKeyResultDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenAgoalKeyResultDTO self = new OpenAgoalKeyResultDTO();
         return TeaModel.build(map, self);
+    }
+
+    public OpenAgoalKeyResultDTO setKeyActions(java.util.List<OpenAgoalKeyActionDTO> keyActions) {
+        this.keyActions = keyActions;
+        return this;
+    }
+    public java.util.List<OpenAgoalKeyActionDTO> getKeyActions() {
+        return this.keyActions;
     }
 
     public OpenAgoalKeyResultDTO setKeyResultId(String keyResultId) {

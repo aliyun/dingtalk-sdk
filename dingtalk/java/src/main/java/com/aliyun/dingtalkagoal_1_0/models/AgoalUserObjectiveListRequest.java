@@ -4,12 +4,21 @@ package com.aliyun.dingtalkagoal_1_0.models;
 import com.aliyun.tea.*;
 
 public class AgoalUserObjectiveListRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("objectiveRuleId")
     public String objectiveRuleId;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("periodIds")
     public java.util.List<String> periodIds;
 
