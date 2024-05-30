@@ -8,27 +8,34 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
-    public class AgoalSendMessageResponseBody : TeaModel {
+    public class OpenAgoalLatestProgressDTO : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("content")]
+        [NameInMap("created")]
         [Validation(Required=false)]
-        public bool? Content { get; set; }
+        public long? Created { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("requestId")]
+        [NameInMap("creator")]
         [Validation(Required=false)]
-        public string RequestId { get; set; }
+        public OpenAgoalUserDTO Creator { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("success")]
+        [NameInMap("htmldescription")]
         [Validation(Required=false)]
-        public bool? Success { get; set; }
+        public string Htmldescription { get; set; }
+
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
+        [NameInMap("progressId")]
+        [Validation(Required=false)]
+        public string ProgressId { get; set; }
 
     }
 

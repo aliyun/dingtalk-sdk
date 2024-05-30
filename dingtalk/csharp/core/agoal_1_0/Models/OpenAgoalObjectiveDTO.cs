@@ -19,9 +19,23 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         /// <summary>
         /// This parameter is required.
         /// </summary>
+        [NameInMap("keyActions")]
+        [Validation(Required=false)]
+        public List<OpenAgoalKeyActionDTO> KeyActions { get; set; }
+
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("keyResults")]
         [Validation(Required=false)]
         public List<OpenAgoalKeyResultDTO> KeyResults { get; set; }
+
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
+        [NameInMap("latestProgress")]
+        [Validation(Required=false)]
+        public OpenAgoalLatestProgressDTO LatestProgress { get; set; }
 
         /// <summary>
         /// This parameter is required.

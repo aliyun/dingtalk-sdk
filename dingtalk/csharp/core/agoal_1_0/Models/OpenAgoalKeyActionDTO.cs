@@ -1,3 +1,6 @@
+/**
+ *
+ */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -8,27 +11,27 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
-    public class AgoalSendMessageResponseBody : TeaModel {
+    public class OpenAgoalKeyActionDTO : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("content")]
+        [NameInMap("keyActionId")]
         [Validation(Required=false)]
-        public bool? Content { get; set; }
+        public string KeyActionId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("requestId")]
+        [NameInMap("title")]
         [Validation(Required=false)]
-        public string RequestId { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("success")]
+        [NameInMap("url")]
         [Validation(Required=false)]
-        public bool? Success { get; set; }
+        public string Url { get; set; }
 
     }
 

@@ -261,6 +261,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [Validation(Required=false)]
             public List<string> Travelers { get; set; }
 
+            [NameInMap("tripDays")]
+            [Validation(Required=false)]
+            public string TripDays { get; set; }
+
         }
 
         [NameInMap("success")]

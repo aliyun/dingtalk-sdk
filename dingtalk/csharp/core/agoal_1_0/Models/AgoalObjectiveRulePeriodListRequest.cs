@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class AgoalObjectiveRulePeriodListRequest : TeaModel {
+        /// <summary>
+        /// This parameter is required.
+        /// </summary>
         [NameInMap("objectiveRuleId")]
         [Validation(Required=false)]
         public string ObjectiveRuleId { get; set; }
