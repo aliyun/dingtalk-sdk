@@ -9,7 +9,33 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class OpenAgoalKeyActionDTO extends $tea.Model {
+  keyActionId?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      keyActionId: 'keyActionId',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      keyActionId: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenAgoalKeyResultDTO extends $tea.Model {
+  keyActions?: OpenAgoalKeyActionDTO[];
   keyResultId?: string;
   progress?: number;
   status?: number;
@@ -19,6 +45,7 @@ export class OpenAgoalKeyResultDTO extends $tea.Model {
   weight?: number;
   static names(): { [key: string]: string } {
     return {
+      keyActions: 'keyActions',
       keyResultId: 'keyResultId',
       progress: 'progress',
       status: 'status',
@@ -31,6 +58,7 @@ export class OpenAgoalKeyResultDTO extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      keyActions: { 'type': 'array', 'itemType': OpenAgoalKeyActionDTO },
       keyResultId: 'string',
       progress: 'number',
       status: 'number',
@@ -46,9 +74,39 @@ export class OpenAgoalKeyResultDTO extends $tea.Model {
   }
 }
 
+export class OpenAgoalLatestProgressDTO extends $tea.Model {
+  created?: number;
+  creator?: OpenAgoalUserDTO;
+  htmldescription?: string;
+  progressId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      creator: 'creator',
+      htmldescription: 'htmldescription',
+      progressId: 'progressId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'number',
+      creator: OpenAgoalUserDTO,
+      htmldescription: 'string',
+      progressId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenAgoalObjectiveDTO extends $tea.Model {
   executor?: OpenAgoalUserDTO;
+  keyActions?: OpenAgoalKeyActionDTO[];
   keyResults?: OpenAgoalKeyResultDTO[];
+  latestProgress?: OpenAgoalLatestProgressDTO;
   objectiveId?: string;
   objectiveRule?: OpenOrgObjectiveRuleDTO;
   period?: OpenObjectiveRulePeriodDTO;
@@ -60,7 +118,9 @@ export class OpenAgoalObjectiveDTO extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       executor: 'executor',
+      keyActions: 'keyActions',
       keyResults: 'keyResults',
+      latestProgress: 'latestProgress',
       objectiveId: 'objectiveId',
       objectiveRule: 'objectiveRule',
       period: 'period',
@@ -75,7 +135,9 @@ export class OpenAgoalObjectiveDTO extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       executor: OpenAgoalUserDTO,
+      keyActions: { 'type': 'array', 'itemType': OpenAgoalKeyActionDTO },
       keyResults: { 'type': 'array', 'itemType': OpenAgoalKeyResultDTO },
+      latestProgress: OpenAgoalLatestProgressDTO,
       objectiveId: 'string',
       objectiveRule: OpenOrgObjectiveRuleDTO,
       period: OpenObjectiveRulePeriodDTO,

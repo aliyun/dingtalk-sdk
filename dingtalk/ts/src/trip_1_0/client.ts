@@ -1785,6 +1785,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   remark?: string;
   travelCategory?: string;
   travelers?: string[];
+  tripDays?: string;
   static names(): { [key: string]: string } {
     return {
       bizCategoryId: 'bizCategoryId',
@@ -1812,6 +1813,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       remark: 'remark',
       travelCategory: 'travelCategory',
       travelers: 'travelers',
+      tripDays: 'tripDays',
     };
   }
 
@@ -1842,6 +1844,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       remark: 'string',
       travelCategory: 'string',
       travelers: { 'type': 'array', 'itemType': 'string' },
+      tripDays: 'string',
     };
   }
 
