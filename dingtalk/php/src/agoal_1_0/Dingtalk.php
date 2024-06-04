@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListResponse;
@@ -38,6 +41,69 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+     *  *
+     * @param AgoalObjectiveKeyActionListRequest $request AgoalObjectiveKeyActionListRequest
+     * @param AgoalObjectiveKeyActionListHeaders $headers AgoalObjectiveKeyActionListHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionListResponse
+     */
+    public function agoalObjectiveKeyActionListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingUserId)) {
+            $query['dingUserId'] = $request->dingUserId;
+        }
+        if (!Utils::isUnset($request->keyResultId)) {
+            $query['keyResultId'] = $request->keyResultId;
+        }
+        if (!Utils::isUnset($request->objectiveId)) {
+            $query['objectiveId'] = $request->objectiveId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalObjectiveKeyActionList',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/objectives/keyActionLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalObjectiveKeyActionListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+     *  *
+     * @param AgoalObjectiveKeyActionListRequest $request AgoalObjectiveKeyActionListRequest
+     *
+     * @return AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionListResponse
+     */
+    public function agoalObjectiveKeyActionList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalObjectiveKeyActionListHeaders([]);
+
+        return $this->agoalObjectiveKeyActionListWithOptions($request, $headers, $runtime);
     }
 
     /**

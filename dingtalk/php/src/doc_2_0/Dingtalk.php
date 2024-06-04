@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentForELMHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentForELMRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentForELMResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentResponse;
@@ -1040,6 +1043,65 @@ class Dingtalk extends OpenApiClient
         $headers = new GetDocContentHeaders([]);
 
         return $this->getDocContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 委托权限获取文档内容
+     *  *
+     * @param string                     $dentryUuid
+     * @param GetDocContentForELMRequest $request    GetDocContentForELMRequest
+     * @param GetDocContentForELMHeaders $headers    GetDocContentForELMHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetDocContentForELMResponse GetDocContentForELMResponse
+     */
+    public function getDocContentForELMWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDocContentForELM',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/elm/me/dentries/' . $dentryUuid . '/contents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDocContentForELMResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 委托权限获取文档内容
+     *  *
+     * @param string                     $dentryUuid
+     * @param GetDocContentForELMRequest $request    GetDocContentForELMRequest
+     *
+     * @return GetDocContentForELMResponse GetDocContentForELMResponse
+     */
+    public function getDocContentForELM($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDocContentForELMHeaders([]);
+
+        return $this->getDocContentForELMWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

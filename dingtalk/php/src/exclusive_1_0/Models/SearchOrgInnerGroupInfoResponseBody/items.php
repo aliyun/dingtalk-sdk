@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
+     * @var string[]
+     */
+    public $extensions;
+
+    /**
      * @description This parameter is required.
      *
      * @var int
@@ -106,6 +111,7 @@ class items extends Model
      */
     public $usedQuota;
     protected $_name = [
+        'extensions'              => 'extensions',
         'groupAdminsCount'        => 'groupAdminsCount',
         'groupCreateTime'         => 'groupCreateTime',
         'groupLastActiveTime'     => 'groupLastActiveTime',
@@ -129,6 +135,9 @@ class items extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->extensions) {
+            $res['extensions'] = $this->extensions;
+        }
         if (null !== $this->groupAdminsCount) {
             $res['groupAdminsCount'] = $this->groupAdminsCount;
         }
@@ -183,6 +192,9 @@ class items extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['extensions'])) {
+            $model->extensions = $map['extensions'];
+        }
         if (isset($map['groupAdminsCount'])) {
             $model->groupAdminsCount = $map['groupAdminsCount'];
         }

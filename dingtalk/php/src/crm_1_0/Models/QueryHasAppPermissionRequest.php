@@ -6,28 +6,18 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateCustomerBizTypeRequest extends Model
+class QueryHasAppPermissionRequest extends Model
 {
     /**
      * @description This parameter is required.
      *
-     * @example crm_customer
-     *
-     * @var string
-     */
-    public $customerBizType;
-
-    /**
-     * @description This parameter is required.
-     *
-     * @example 34234234ddddad
+     * @example 34234dfdfddd
      *
      * @var string
      */
     public $operatorUserId;
     protected $_name = [
-        'customerBizType' => 'customerBizType',
-        'operatorUserId'  => 'operatorUserId',
+        'operatorUserId' => 'operatorUserId',
     ];
 
     public function validate()
@@ -37,9 +27,6 @@ class UpdateCustomerBizTypeRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customerBizType) {
-            $res['customerBizType'] = $this->customerBizType;
-        }
         if (null !== $this->operatorUserId) {
             $res['operatorUserId'] = $this->operatorUserId;
         }
@@ -50,14 +37,11 @@ class UpdateCustomerBizTypeRequest extends Model
     /**
      * @param array $map
      *
-     * @return UpdateCustomerBizTypeRequest
+     * @return QueryHasAppPermissionRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customerBizType'])) {
-            $model->customerBizType = $map['customerBizType'];
-        }
         if (isset($map['operatorUserId'])) {
             $model->operatorUserId = $map['operatorUserId'];
         }

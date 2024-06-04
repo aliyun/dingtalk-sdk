@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateFollowRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchUpdateRelationDatasResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ConsumeBenefitInventoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ConsumeBenefitInventoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ConsumeBenefitInventoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\CreateCustomerResponse;
@@ -106,6 +109,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetCustomerTracksByRelationIdRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetInAppPurchaseGoodsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetInAppPurchaseGoodsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetInAppPurchaseGoodsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetNavigationCatalogResponse;
@@ -126,6 +132,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\JoinGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListAvailableBenefitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListAvailableBenefitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListAvailableBenefitResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListBenefitLicenseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListBenefitLicenseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListBenefitLicenseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListClueTagHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListClueTagResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersHeaders;
@@ -140,6 +152,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryClueFollowStatusResponse;
@@ -150,10 +165,14 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCrmPersonalCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCustomerBizTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCustomerBizTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryCustomerBizTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryGlobalInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryHasAppPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryHasAppPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryHasAppPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryOfficialAccountUserBasicInfoResponse;
@@ -163,6 +182,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryRelationDatasByTargetIdRespon
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\RecallOfficialAccountOTOMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SaveBenefitLicenseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SaveBenefitLicenseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SaveBenefitLicenseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountOTOMessageResponse;
@@ -1125,6 +1147,72 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchUpdateRelationDatasHeaders([]);
 
         return $this->batchUpdateRelationDatasWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 核销权益库存
+     *  *
+     * @param ConsumeBenefitInventoryRequest $request ConsumeBenefitInventoryRequest
+     * @param ConsumeBenefitInventoryHeaders $headers ConsumeBenefitInventoryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ConsumeBenefitInventoryResponse ConsumeBenefitInventoryResponse
+     */
+    public function consumeBenefitInventoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $body['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $body['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->consumeQuota)) {
+            $body['consumeQuota'] = $request->consumeQuota;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            $body['optUserId'] = $request->optUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ConsumeBenefitInventory',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefitInventories/consume',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ConsumeBenefitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 核销权益库存
+     *  *
+     * @param ConsumeBenefitInventoryRequest $request ConsumeBenefitInventoryRequest
+     *
+     * @return ConsumeBenefitInventoryResponse ConsumeBenefitInventoryResponse
+     */
+    public function consumeBenefitInventory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConsumeBenefitInventoryHeaders([]);
+
+        return $this->consumeBenefitInventoryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2391,6 +2479,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取内购商品信息
+     *  *
+     * @param GetInAppPurchaseGoodsRequest $request GetInAppPurchaseGoodsRequest
+     * @param GetInAppPurchaseGoodsHeaders $headers GetInAppPurchaseGoodsHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetInAppPurchaseGoodsResponse GetInAppPurchaseGoodsResponse
+     */
+    public function getInAppPurchaseGoodsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetInAppPurchaseGoods',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/inAppPurchaseGoods/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetInAppPurchaseGoodsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取内购商品信息
+     *  *
+     * @param GetInAppPurchaseGoodsRequest $request GetInAppPurchaseGoodsRequest
+     *
+     * @return GetInAppPurchaseGoodsResponse GetInAppPurchaseGoodsResponse
+     */
+    public function getInAppPurchaseGoods($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInAppPurchaseGoodsHeaders([]);
+
+        return $this->getInAppPurchaseGoodsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取自定义导航挂靠节点结构
      *  *
      * @param GetNavigationCatalogRequest $request GetNavigationCatalogRequest
@@ -2817,6 +2962,120 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary  批量查询可用权益
+     *  *
+     * @param ListAvailableBenefitRequest $request ListAvailableBenefitRequest
+     * @param ListAvailableBenefitHeaders $headers ListAvailableBenefitHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListAvailableBenefitResponse ListAvailableBenefitResponse
+     */
+    public function listAvailableBenefitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitCodeList)) {
+            $body['benefitCodeList'] = $request->benefitCodeList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListAvailableBenefit',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefits/lists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListAvailableBenefitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary  批量查询可用权益
+     *  *
+     * @param ListAvailableBenefitRequest $request ListAvailableBenefitRequest
+     *
+     * @return ListAvailableBenefitResponse ListAvailableBenefitResponse
+     */
+    public function listAvailableBenefit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAvailableBenefitHeaders([]);
+
+        return $this->listAvailableBenefitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询license
+     *  *
+     * @param ListBenefitLicenseRequest $request ListBenefitLicenseRequest
+     * @param ListBenefitLicenseHeaders $headers ListBenefitLicenseHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListBenefitLicenseResponse ListBenefitLicenseResponse
+     */
+    public function listBenefitLicenseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->domains)) {
+            $body['domains'] = $request->domains;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListBenefitLicense',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefitLicenses/lists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListBenefitLicenseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询license
+     *  *
+     * @param ListBenefitLicenseRequest $request ListBenefitLicenseRequest
+     *
+     * @return ListBenefitLicenseResponse ListBenefitLicenseResponse
+     */
+    public function listBenefitLicense($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListBenefitLicenseHeaders([]);
+
+        return $this->listBenefitLicenseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取线索标签列表
      *  *
      * @param ListClueTagHeaders $headers ListClueTagHeaders
@@ -3121,6 +3380,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询权益库存
+     *  *
+     * @param QueryBenefitInventoryRequest $request QueryBenefitInventoryRequest
+     * @param QueryBenefitInventoryHeaders $headers QueryBenefitInventoryHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryBenefitInventoryResponse QueryBenefitInventoryResponse
+     */
+    public function queryBenefitInventoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $body['benefitCode'] = $request->benefitCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryBenefitInventory',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefitInventories/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryBenefitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询权益库存
+     *  *
+     * @param QueryBenefitInventoryRequest $request QueryBenefitInventoryRequest
+     *
+     * @return QueryBenefitInventoryResponse QueryBenefitInventoryResponse
+     */
+    public function queryBenefitInventory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBenefitInventoryHeaders([]);
+
+        return $this->queryBenefitInventoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询线索跟进状态
      *  *
      * @param QueryClueFollowStatusRequest $request QueryClueFollowStatusRequest
@@ -3315,13 +3631,19 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询客户模板启用类型
      *  *
+     * @param QueryCustomerBizTypeRequest $request QueryCustomerBizTypeRequest
      * @param QueryCustomerBizTypeHeaders $headers QueryCustomerBizTypeHeaders
      * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
      * @return QueryCustomerBizTypeResponse QueryCustomerBizTypeResponse
      */
-    public function queryCustomerBizTypeWithOptions($headers, $runtime)
+    public function queryCustomerBizTypeWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -3331,13 +3653,14 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'QueryCustomerBizType',
             'version'     => 'crm_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes',
-            'method'      => 'GET',
+            'pathname'    => '/v1.0/crm/orgSettings/templates/customerBizTypes/query',
+            'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
@@ -3350,14 +3673,16 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询客户模板启用类型
      *  *
+     * @param QueryCustomerBizTypeRequest $request QueryCustomerBizTypeRequest
+     *
      * @return QueryCustomerBizTypeResponse QueryCustomerBizTypeResponse
      */
-    public function queryCustomerBizType()
+    public function queryCustomerBizType($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new QueryCustomerBizTypeHeaders([]);
 
-        return $this->queryCustomerBizTypeWithOptions($headers, $runtime);
+        return $this->queryCustomerBizTypeWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3415,6 +3740,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryGlobalInfoHeaders([]);
 
         return $this->queryGlobalInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户是否有应用管理员权限
+     *  *
+     * @param QueryHasAppPermissionRequest $request QueryHasAppPermissionRequest
+     * @param QueryHasAppPermissionHeaders $headers QueryHasAppPermissionHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryHasAppPermissionResponse QueryHasAppPermissionResponse
+     */
+    public function queryHasAppPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryHasAppPermission',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/apps/adminPermissions/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryHasAppPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户是否有应用管理员权限
+     *  *
+     * @param QueryHasAppPermissionRequest $request QueryHasAppPermissionRequest
+     *
+     * @return QueryHasAppPermissionResponse QueryHasAppPermissionResponse
+     */
+    public function queryHasAppPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryHasAppPermissionHeaders([]);
+
+        return $this->queryHasAppPermissionWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3594,6 +3976,69 @@ class Dingtalk extends OpenApiClient
         $headers = new RecallOfficialAccountOTOMessageHeaders([]);
 
         return $this->recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存license
+     *  *
+     * @param SaveBenefitLicenseRequest $request SaveBenefitLicenseRequest
+     * @param SaveBenefitLicenseHeaders $headers SaveBenefitLicenseHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveBenefitLicenseResponse SaveBenefitLicenseResponse
+     */
+    public function saveBenefitLicenseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->domain)) {
+            $body['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->licenses)) {
+            $body['licenses'] = $request->licenses;
+        }
+        if (!Utils::isUnset($request->saveUserId)) {
+            $body['saveUserId'] = $request->saveUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveBenefitLicense',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefitLicenses/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveBenefitLicenseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存license
+     *  *
+     * @param SaveBenefitLicenseRequest $request SaveBenefitLicenseRequest
+     *
+     * @return SaveBenefitLicenseResponse SaveBenefitLicenseResponse
+     */
+    public function saveBenefitLicense($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveBenefitLicenseHeaders([]);
+
+        return $this->saveBenefitLicenseWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3878,6 +4323,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->customerBizType)) {
             $body['customerBizType'] = $request->customerBizType;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

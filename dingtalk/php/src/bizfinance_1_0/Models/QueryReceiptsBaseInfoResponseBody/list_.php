@@ -28,6 +28,13 @@ class list_ extends Model
     public $amount;
 
     /**
+     * @example 1714973165000
+     *
+     * @var string
+     */
+    public $approvedAt;
+
+    /**
      * @example 123
      *
      * @var string
@@ -42,7 +49,7 @@ class list_ extends Model
     public $companyCode;
 
     /**
-     * @example 1600000
+     * @example 1714973165000
      *
      * @var string
      */
@@ -129,6 +136,7 @@ class list_ extends Model
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
         'amount'           => 'amount',
+        'approvedAt'       => 'approvedAt',
         'businessId'       => 'businessId',
         'companyCode'      => 'companyCode',
         'createTime'       => 'createTime',
@@ -159,6 +167,9 @@ class list_ extends Model
         }
         if (null !== $this->amount) {
             $res['amount'] = $this->amount;
+        }
+        if (null !== $this->approvedAt) {
+            $res['approvedAt'] = $this->approvedAt;
         }
         if (null !== $this->businessId) {
             $res['businessId'] = $this->businessId;
@@ -225,6 +236,9 @@ class list_ extends Model
         }
         if (isset($map['amount'])) {
             $model->amount = $map['amount'];
+        }
+        if (isset($map['approvedAt'])) {
+            $model->approvedAt = $map['approvedAt'];
         }
         if (isset($map['businessId'])) {
             $model->businessId = $map['businessId'];

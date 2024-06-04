@@ -86,6 +86,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConfBaseInfoByLogicalIdRe
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConfBaseInfoByLogicalIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryResponse;
@@ -241,6 +243,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendInvitationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
@@ -250,6 +255,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateConversationTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateConversationTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateConversationTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateFileStatusResponse;
@@ -2026,6 +2034,54 @@ class Dingtalk extends OpenApiClient
         $headers = new GetConferenceDetailHeaders([]);
 
         return $this->getConferenceDetailWithOptions($conferenceId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取会话分组数据
+     *  *
+     * @param GetConversationCategoryHeaders $headers GetConversationCategoryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetConversationCategoryResponse GetConversationCategoryResponse
+     */
+    public function getConversationCategoryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetConversationCategory',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/conversationCategories',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取会话分组数据
+     *  *
+     * @return GetConversationCategoryResponse GetConversationCategoryResponse
+     */
+    public function getConversationCategory()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConversationCategoryHeaders([]);
+
+        return $this->getConversationCategoryWithOptions($headers, $runtime);
     }
 
     /**
@@ -5460,6 +5516,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置会话所属分组
+     *  *
+     * @param SetConversationCategoryRequest $request SetConversationCategoryRequest
+     * @param SetConversationCategoryHeaders $headers SetConversationCategoryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetConversationCategoryResponse SetConversationCategoryResponse
+     */
+    public function setConversationCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryId)) {
+            $body['categoryId'] = $request->categoryId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetConversationCategory',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/conversationCategories/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置会话所属分组
+     *  *
+     * @param SetConversationCategoryRequest $request SetConversationCategoryRequest
+     *
+     * @return SetConversationCategoryResponse SetConversationCategoryResponse
+     */
+    public function setConversationCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetConversationCategoryHeaders([]);
+
+        return $this->setConversationCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 伙伴钉设置部门伙伴编码和伙伴类型
      *  *
      * @param SetDeptPartnerTypeAndNumRequest $request SetDeptPartnerTypeAndNumRequest
@@ -5655,6 +5771,66 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCategoryNameHeaders([]);
 
         return $this->updateCategoryNameWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 变更群聊类型
+     *  *
+     * @param UpdateConversationTypeRequest $request UpdateConversationTypeRequest
+     * @param UpdateConversationTypeHeaders $headers UpdateConversationTypeHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateConversationTypeResponse UpdateConversationTypeResponse
+     */
+    public function updateConversationTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->manageSign)) {
+            $body['manageSign'] = $request->manageSign;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateConversationType',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/conversationTypes',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateConversationTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 变更群聊类型
+     *  *
+     * @param UpdateConversationTypeRequest $request UpdateConversationTypeRequest
+     *
+     * @return UpdateConversationTypeResponse UpdateConversationTypeResponse
+     */
+    public function updateConversationType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateConversationTypeHeaders([]);
+
+        return $this->updateConversationTypeWithOptions($request, $headers, $runtime);
     }
 
     /**
