@@ -1577,6 +1577,91 @@ export class GetDocContentResponse extends $tea.Model {
   }
 }
 
+export class GetDocContentForELMHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocContentForELMRequest extends $tea.Model {
+  targetFormat?: string;
+  static names(): { [key: string]: string } {
+    return {
+      targetFormat: 'targetFormat',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      targetFormat: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocContentForELMResponseBody extends $tea.Model {
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDocContentForELMResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDocContentForELMResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDocContentForELMResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetMySpaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8468,6 +8553,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetDocContentHeaders({ });
     return await this.getDocContentWithOptions(dentryUuid, request, headers, runtime);
+  }
+
+  /**
+   * @summary 委托权限获取文档内容
+   *
+   * @param request GetDocContentForELMRequest
+   * @param headers GetDocContentForELMHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDocContentForELMResponse
+   */
+  async getDocContentForELMWithOptions(dentryUuid: string, request: GetDocContentForELMRequest, headers: GetDocContentForELMHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocContentForELMResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.targetFormat)) {
+      query["targetFormat"] = request.targetFormat;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDocContentForELM",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/elm/me/dentries/${dentryUuid}/contents`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDocContentForELMResponse>(await this.execute(params, req, runtime), new GetDocContentForELMResponse({}));
+  }
+
+  /**
+   * @summary 委托权限获取文档内容
+   *
+   * @param request GetDocContentForELMRequest
+   * @return GetDocContentForELMResponse
+   */
+  async getDocContentForELM(dentryUuid: string, request: GetDocContentForELMRequest): Promise<GetDocContentForELMResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDocContentForELMHeaders({ });
+    return await this.getDocContentForELMWithOptions(dentryUuid, request, headers, runtime);
   }
 
   /**

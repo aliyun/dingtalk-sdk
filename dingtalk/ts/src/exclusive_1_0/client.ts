@@ -2557,6 +2557,75 @@ export class GetConferenceDetailResponse extends $tea.Model {
   }
 }
 
+export class GetConversationCategoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationCategoryResponseBody extends $tea.Model {
+  result?: GetConversationCategoryResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetConversationCategoryResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationCategoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConversationCategoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetConversationCategoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingReportDeptSummaryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7499,6 +7568,97 @@ export class SendPhoneDingResponse extends $tea.Model {
   }
 }
 
+export class SetConversationCategoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetConversationCategoryRequest extends $tea.Model {
+  categoryId?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetConversationCategoryResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetConversationCategoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetConversationCategoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SetConversationCategoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SetDeptPartnerTypeAndNumHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7763,6 +7923,97 @@ export class UpdateCategoryNameResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: UpdateCategoryNameResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConversationTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConversationTypeRequest extends $tea.Model {
+  manageSign?: number;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      manageSign: 'manageSign',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      manageSign: 'number',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConversationTypeResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateConversationTypeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateConversationTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateConversationTypeResponseBody,
     };
   }
 
@@ -8878,6 +9129,65 @@ export class GetConferenceDetailResponseBodyMemberList extends $tea.Model {
       name: 'string',
       staffId: 'string',
       unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationCategoryResponseBodyResultChildren extends $tea.Model {
+  categoryId?: number;
+  categoryName?: string;
+  levelNum?: number;
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      categoryName: 'categoryName',
+      levelNum: 'levelNum',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      categoryName: 'string',
+      levelNum: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationCategoryResponseBodyResult extends $tea.Model {
+  categoryId?: number;
+  categoryName?: string;
+  children?: GetConversationCategoryResponseBodyResultChildren[];
+  levelNum?: number;
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      categoryName: 'categoryName',
+      children: 'children',
+      levelNum: 'levelNum',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      categoryName: 'string',
+      children: { 'type': 'array', 'itemType': GetConversationCategoryResponseBodyResultChildren },
+      levelNum: 'number',
+      order: 'number',
     };
   }
 
@@ -10602,6 +10912,7 @@ export class RuleBatchReceiverResponseBodyRows extends $tea.Model {
 }
 
 export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
+  extensions?: { [key: string]: string };
   groupAdminsCount?: number;
   groupCreateTime?: number;
   groupLastActiveTime?: number;
@@ -10618,6 +10929,7 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
+      extensions: 'extensions',
       groupAdminsCount: 'groupAdminsCount',
       groupCreateTime: 'groupCreateTime',
       groupLastActiveTime: 'groupLastActiveTime',
@@ -10637,6 +10949,7 @@ export class SearchOrgInnerGroupInfoResponseBodyItems extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      extensions: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       groupAdminsCount: 'number',
       groupCreateTime: 'number',
       groupLastActiveTime: 'number',
@@ -12497,6 +12810,51 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConferenceDetailHeaders({ });
     return await this.getConferenceDetailWithOptions(conferenceId, headers, runtime);
+  }
+
+  /**
+   * @summary 获取会话分组数据
+   *
+   * @param headers GetConversationCategoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetConversationCategoryResponse
+   */
+  async getConversationCategoryWithOptions(headers: GetConversationCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationCategoryResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetConversationCategory",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/conversationCategories`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConversationCategoryResponse>(await this.execute(params, req, runtime), new GetConversationCategoryResponse({}));
+  }
+
+  /**
+   * @summary 获取会话分组数据
+   *
+   * @return GetConversationCategoryResponse
+   */
+  async getConversationCategory(): Promise<GetConversationCategoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConversationCategoryHeaders({ });
+    return await this.getConversationCategoryWithOptions(headers, runtime);
   }
 
   /**
@@ -15888,6 +16246,64 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 设置会话所属分组
+   *
+   * @param request SetConversationCategoryRequest
+   * @param headers SetConversationCategoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SetConversationCategoryResponse
+   */
+  async setConversationCategoryWithOptions(request: SetConversationCategoryRequest, headers: SetConversationCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<SetConversationCategoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.categoryId)) {
+      body["categoryId"] = request.categoryId;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SetConversationCategory",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/conversationCategories/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetConversationCategoryResponse>(await this.execute(params, req, runtime), new SetConversationCategoryResponse({}));
+  }
+
+  /**
+   * @summary 设置会话所属分组
+   *
+   * @param request SetConversationCategoryRequest
+   * @return SetConversationCategoryResponse
+   */
+  async setConversationCategory(request: SetConversationCategoryRequest): Promise<SetConversationCategoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetConversationCategoryHeaders({ });
+    return await this.setConversationCategoryWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 伙伴钉设置部门伙伴编码和伙伴类型
    *
    * @param request SetDeptPartnerTypeAndNumRequest
@@ -16083,6 +16499,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCategoryNameHeaders({ });
     return await this.updateCategoryNameWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 变更群聊类型
+   *
+   * @param request UpdateConversationTypeRequest
+   * @param headers UpdateConversationTypeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateConversationTypeResponse
+   */
+  async updateConversationTypeWithOptions(request: UpdateConversationTypeRequest, headers: UpdateConversationTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateConversationTypeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.manageSign)) {
+      body["manageSign"] = request.manageSign;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateConversationType",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/conversationTypes`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateConversationTypeResponse>(await this.execute(params, req, runtime), new UpdateConversationTypeResponse({}));
+  }
+
+  /**
+   * @summary 变更群聊类型
+   *
+   * @param request UpdateConversationTypeRequest
+   * @return UpdateConversationTypeResponse
+   */
+  async updateConversationType(request: UpdateConversationTypeRequest): Promise<UpdateConversationTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateConversationTypeHeaders({ });
+    return await this.updateConversationTypeWithOptions(request, headers, runtime);
   }
 
   /**

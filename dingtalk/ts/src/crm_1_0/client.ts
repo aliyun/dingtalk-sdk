@@ -1325,6 +1325,100 @@ export class BatchUpdateRelationDatasResponse extends $tea.Model {
   }
 }
 
+export class ConsumeBenefitInventoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeBenefitInventoryRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  consumeQuota?: number;
+  optUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      consumeQuota: 'consumeQuota',
+      optUserId: 'optUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      consumeQuota: 'number',
+      optUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeBenefitInventoryResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ConsumeBenefitInventoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ConsumeBenefitInventoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ConsumeBenefitInventoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3297,6 +3391,91 @@ export class GetGroupSetResponse extends $tea.Model {
   }
 }
 
+export class GetInAppPurchaseGoodsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsRequest extends $tea.Model {
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponseBody extends $tea.Model {
+  result?: GetInAppPurchaseGoodsResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetInAppPurchaseGoodsResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetInAppPurchaseGoodsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetInAppPurchaseGoodsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetNavigationCatalogHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3933,6 +4112,176 @@ export class JoinGroupSetResponse extends $tea.Model {
   }
 }
 
+export class ListAvailableBenefitHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAvailableBenefitRequest extends $tea.Model {
+  benefitCodeList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      benefitCodeList: 'benefitCodeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCodeList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAvailableBenefitResponseBody extends $tea.Model {
+  result?: ListAvailableBenefitResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListAvailableBenefitResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAvailableBenefitResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAvailableBenefitResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListAvailableBenefitResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseRequest extends $tea.Model {
+  domains?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      domains: 'domains',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domains: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseResponseBody extends $tea.Model {
+  result?: ListBenefitLicenseResponseBodyResult[];
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListBenefitLicenseResponseBodyResult },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListBenefitLicenseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListBenefitLicenseResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListClueTagHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4387,6 +4736,91 @@ export class QueryAllTracksResponse extends $tea.Model {
   }
 }
 
+export class QueryBenefitInventoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitInventoryRequest extends $tea.Model {
+  benefitCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitInventoryResponseBody extends $tea.Model {
+  result?: QueryBenefitInventoryResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryBenefitInventoryResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitInventoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBenefitInventoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryBenefitInventoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryClueFollowStatusHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4706,6 +5140,25 @@ export class QueryCustomerBizTypeHeaders extends $tea.Model {
   }
 }
 
+export class QueryCustomerBizTypeRequest extends $tea.Model {
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomerBizTypeResponseBody extends $tea.Model {
   result?: QueryCustomerBizTypeResponseBodyResult;
   static names(): { [key: string]: string } {
@@ -4827,6 +5280,91 @@ export class QueryGlobalInfoResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryGlobalInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHasAppPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHasAppPermissionRequest extends $tea.Model {
+  operatorUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorUserId: 'operatorUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHasAppPermissionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryHasAppPermissionResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryHasAppPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryHasAppPermissionResponseBody,
     };
   }
 
@@ -5091,6 +5629,97 @@ export class RecallOfficialAccountOTOMessageResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RecallOfficialAccountOTOMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseRequest extends $tea.Model {
+  domain?: string;
+  licenses?: SaveBenefitLicenseRequestLicenses[];
+  saveUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      licenses: 'licenses',
+      saveUserId: 'saveUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      licenses: { 'type': 'array', 'itemType': SaveBenefitLicenseRequestLicenses },
+      saveUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseResponseBody extends $tea.Model {
+  result?: SaveBenefitLicenseResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SaveBenefitLicenseResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveBenefitLicenseResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveBenefitLicenseResponseBody,
     };
   }
 
@@ -5511,15 +6140,18 @@ export class UpdateCustomerBizTypeHeaders extends $tea.Model {
 
 export class UpdateCustomerBizTypeRequest extends $tea.Model {
   customerBizType?: string;
+  operatorUserId?: string;
   static names(): { [key: string]: string } {
     return {
       customerBizType: 'customerBizType',
+      operatorUserId: 'operatorUserId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       customerBizType: 'string',
+      operatorUserId: 'string',
     };
   }
 
@@ -9642,6 +10274,155 @@ export class GetGroupSetResponseBodyOwner extends $tea.Model {
   }
 }
 
+export class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMainOperationInfo extends $tea.Model {
+  goodsCode?: string;
+  originalUrl?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      goodsCode: 'goodsCode',
+      originalUrl: 'originalUrl',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      goodsCode: 'string',
+      originalUrl: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMedia extends $tea.Model {
+  mediaType?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaType: 'mediaType',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaType: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListSubOperationInfo extends $tea.Model {
+  goodsCode?: string;
+  originalUrl?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      goodsCode: 'goodsCode',
+      originalUrl: 'originalUrl',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      goodsCode: 'string',
+      originalUrl: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsList extends $tea.Model {
+  applicableVersion?: string[];
+  applyNum?: number;
+  belongIndustry?: string[];
+  goodsId?: string;
+  goodsType?: string;
+  icon?: string;
+  mainOperationInfo?: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMainOperationInfo;
+  media?: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMedia[];
+  price?: string;
+  subOperationInfo?: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListSubOperationInfo;
+  subTitle?: string;
+  tag?: string[];
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      applicableVersion: 'applicableVersion',
+      applyNum: 'applyNum',
+      belongIndustry: 'belongIndustry',
+      goodsId: 'goodsId',
+      goodsType: 'goodsType',
+      icon: 'icon',
+      mainOperationInfo: 'mainOperationInfo',
+      media: 'media',
+      price: 'price',
+      subOperationInfo: 'subOperationInfo',
+      subTitle: 'subTitle',
+      tag: 'tag',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      applicableVersion: { 'type': 'array', 'itemType': 'string' },
+      applyNum: 'number',
+      belongIndustry: { 'type': 'array', 'itemType': 'string' },
+      goodsId: 'string',
+      goodsType: 'string',
+      icon: 'string',
+      mainOperationInfo: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMainOperationInfo,
+      media: { 'type': 'array', 'itemType': GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMedia },
+      price: 'string',
+      subOperationInfo: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListSubOperationInfo,
+      subTitle: 'string',
+      tag: { 'type': 'array', 'itemType': 'string' },
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetInAppPurchaseGoodsResponseBodyResult extends $tea.Model {
+  orderVersion?: string;
+  purchaseGoodsList?: GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsList[];
+  static names(): { [key: string]: string } {
+    return {
+      orderVersion: 'orderVersion',
+      purchaseGoodsList: 'purchaseGoodsList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderVersion: 'string',
+      purchaseGoodsList: { 'type': 'array', 'itemType': GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetNavigationCatalogResponseBodyResultNavCatalog extends $tea.Model {
   children?: any;
   navCode?: string;
@@ -9942,6 +10723,72 @@ export class JoinGroupSetRequestBizDataList extends $tea.Model {
       extendValue: 'string',
       key: 'string',
       value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
+  benefitCode?: string;
+  quota?: number;
+  usedQuota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      quota: 'quota',
+      usedQuota: 'usedQuota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      quota: 'number',
+      usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseResponseBodyResultLicenses extends $tea.Model {
+  licenseUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      licenseUserId: 'licenseUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      licenseUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListBenefitLicenseResponseBodyResult extends $tea.Model {
+  domain?: string;
+  licenses?: ListBenefitLicenseResponseBodyResultLicenses[];
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      licenses: 'licenses',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      licenses: { 'type': 'array', 'itemType': ListBenefitLicenseResponseBodyResultLicenses },
     };
   }
 
@@ -10290,6 +11137,28 @@ export class QueryAllTracksResponseBodyValues extends $tea.Model {
   }
 }
 
+export class QueryBenefitInventoryResponseBodyResult extends $tea.Model {
+  totalQuota?: number;
+  usedQuota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      totalQuota: 'totalQuota',
+      usedQuota: 'usedQuota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      totalQuota: 'number',
+      usedQuota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryClueFollowStatusResponseBodyResult extends $tea.Model {
   clueId?: string;
   scope?: string;
@@ -10525,6 +11394,66 @@ export class QueryRelationDatasByTargetIdResponseBodyRelations extends $tea.Mode
       openConversationIds: { 'type': 'array', 'itemType': 'string' },
       relationId: 'string',
       relationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseRequestLicenses extends $tea.Model {
+  licenseUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      licenseUserId: 'licenseUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      licenseUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseResponseBodyResultLicenses extends $tea.Model {
+  licenseUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      licenseUserId: 'licenseUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      licenseUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveBenefitLicenseResponseBodyResult extends $tea.Model {
+  domain?: string;
+  licenses?: SaveBenefitLicenseResponseBodyResultLicenses[];
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      licenses: 'licenses',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      licenses: { 'type': 'array', 'itemType': SaveBenefitLicenseResponseBodyResultLicenses },
     };
   }
 
@@ -12331,6 +13260,72 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 核销权益库存
+   *
+   * @param request ConsumeBenefitInventoryRequest
+   * @param headers ConsumeBenefitInventoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ConsumeBenefitInventoryResponse
+   */
+  async consumeBenefitInventoryWithOptions(request: ConsumeBenefitInventoryRequest, headers: ConsumeBenefitInventoryHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumeBenefitInventoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      body["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      body["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.consumeQuota)) {
+      body["consumeQuota"] = request.consumeQuota;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ConsumeBenefitInventory",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefitInventories/consume`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ConsumeBenefitInventoryResponse>(await this.execute(params, req, runtime), new ConsumeBenefitInventoryResponse({}));
+  }
+
+  /**
+   * @summary 核销权益库存
+   *
+   * @param request ConsumeBenefitInventoryRequest
+   * @return ConsumeBenefitInventoryResponse
+   */
+  async consumeBenefitInventory(request: ConsumeBenefitInventoryRequest): Promise<ConsumeBenefitInventoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ConsumeBenefitInventoryHeaders({ });
+    return await this.consumeBenefitInventoryWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
    *
    * @param request CreateCustomerRequest
@@ -13566,6 +14561,60 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 获取内购商品信息
+   *
+   * @param request GetInAppPurchaseGoodsRequest
+   * @param headers GetInAppPurchaseGoodsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetInAppPurchaseGoodsResponse
+   */
+  async getInAppPurchaseGoodsWithOptions(request: GetInAppPurchaseGoodsRequest, headers: GetInAppPurchaseGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<GetInAppPurchaseGoodsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetInAppPurchaseGoods",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/inAppPurchaseGoods/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInAppPurchaseGoodsResponse>(await this.execute(params, req, runtime), new GetInAppPurchaseGoodsResponse({}));
+  }
+
+  /**
+   * @summary 获取内购商品信息
+   *
+   * @param request GetInAppPurchaseGoodsRequest
+   * @return GetInAppPurchaseGoodsResponse
+   */
+  async getInAppPurchaseGoods(request: GetInAppPurchaseGoodsRequest): Promise<GetInAppPurchaseGoodsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInAppPurchaseGoodsHeaders({ });
+    return await this.getInAppPurchaseGoodsWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 获取自定义导航挂靠节点结构
    *
    * @param request GetNavigationCatalogRequest
@@ -13979,6 +15028,114 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary  批量查询可用权益
+   *
+   * @param request ListAvailableBenefitRequest
+   * @param headers ListAvailableBenefitHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListAvailableBenefitResponse
+   */
+  async listAvailableBenefitWithOptions(request: ListAvailableBenefitRequest, headers: ListAvailableBenefitHeaders, runtime: $Util.RuntimeOptions): Promise<ListAvailableBenefitResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCodeList)) {
+      body["benefitCodeList"] = request.benefitCodeList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListAvailableBenefit",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefits/lists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAvailableBenefitResponse>(await this.execute(params, req, runtime), new ListAvailableBenefitResponse({}));
+  }
+
+  /**
+   * @summary  批量查询可用权益
+   *
+   * @param request ListAvailableBenefitRequest
+   * @return ListAvailableBenefitResponse
+   */
+  async listAvailableBenefit(request: ListAvailableBenefitRequest): Promise<ListAvailableBenefitResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAvailableBenefitHeaders({ });
+    return await this.listAvailableBenefitWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 批量查询license
+   *
+   * @param request ListBenefitLicenseRequest
+   * @param headers ListBenefitLicenseHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListBenefitLicenseResponse
+   */
+  async listBenefitLicenseWithOptions(request: ListBenefitLicenseRequest, headers: ListBenefitLicenseHeaders, runtime: $Util.RuntimeOptions): Promise<ListBenefitLicenseResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domains)) {
+      body["domains"] = request.domains;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListBenefitLicense",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefitLicenses/lists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListBenefitLicenseResponse>(await this.execute(params, req, runtime), new ListBenefitLicenseResponse({}));
+  }
+
+  /**
+   * @summary 批量查询license
+   *
+   * @param request ListBenefitLicenseRequest
+   * @return ListBenefitLicenseResponse
+   */
+  async listBenefitLicense(request: ListBenefitLicenseRequest): Promise<ListBenefitLicenseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListBenefitLicenseHeaders({ });
+    return await this.listBenefitLicenseWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 获取线索标签列表
    *
    * @param headers ListClueTagHeaders
@@ -14277,6 +15434,60 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 查询权益库存
+   *
+   * @param request QueryBenefitInventoryRequest
+   * @param headers QueryBenefitInventoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBenefitInventoryResponse
+   */
+  async queryBenefitInventoryWithOptions(request: QueryBenefitInventoryRequest, headers: QueryBenefitInventoryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBenefitInventoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      body["benefitCode"] = request.benefitCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryBenefitInventory",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefitInventories/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBenefitInventoryResponse>(await this.execute(params, req, runtime), new QueryBenefitInventoryResponse({}));
+  }
+
+  /**
+   * @summary 查询权益库存
+   *
+   * @param request QueryBenefitInventoryRequest
+   * @return QueryBenefitInventoryResponse
+   */
+  async queryBenefitInventory(request: QueryBenefitInventoryRequest): Promise<QueryBenefitInventoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBenefitInventoryHeaders({ });
+    return await this.queryBenefitInventoryWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 查询线索跟进状态
    *
    * @param request QueryClueFollowStatusRequest
@@ -14469,11 +15680,18 @@ export default class Client extends OpenApi {
   /**
    * @summary 查询客户模板启用类型
    *
+   * @param request QueryCustomerBizTypeRequest
    * @param headers QueryCustomerBizTypeHeaders
    * @param runtime runtime options for this request RuntimeOptions
    * @return QueryCustomerBizTypeResponse
    */
-  async queryCustomerBizTypeWithOptions(headers: QueryCustomerBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerBizTypeResponse> {
+  async queryCustomerBizTypeWithOptions(request: QueryCustomerBizTypeRequest, headers: QueryCustomerBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerBizTypeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -14485,13 +15703,14 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
     });
     let params = new $OpenApi.Params({
       action: "QueryCustomerBizType",
       version: "crm_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/crm/orgSettings/templates/customerBizTypes`,
-      method: "GET",
+      pathname: `/v1.0/crm/orgSettings/templates/customerBizTypes/query`,
+      method: "POST",
       authType: "AK",
       style: "ROA",
       reqBodyType: "none",
@@ -14503,12 +15722,13 @@ export default class Client extends OpenApi {
   /**
    * @summary 查询客户模板启用类型
    *
+   * @param request QueryCustomerBizTypeRequest
    * @return QueryCustomerBizTypeResponse
    */
-  async queryCustomerBizType(): Promise<QueryCustomerBizTypeResponse> {
+  async queryCustomerBizType(request: QueryCustomerBizTypeRequest): Promise<QueryCustomerBizTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCustomerBizTypeHeaders({ });
-    return await this.queryCustomerBizTypeWithOptions(headers, runtime);
+    return await this.queryCustomerBizTypeWithOptions(request, headers, runtime);
   }
 
   /**
@@ -14563,6 +15783,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGlobalInfoHeaders({ });
     return await this.queryGlobalInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询用户是否有应用管理员权限
+   *
+   * @param request QueryHasAppPermissionRequest
+   * @param headers QueryHasAppPermissionHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryHasAppPermissionResponse
+   */
+  async queryHasAppPermissionWithOptions(request: QueryHasAppPermissionRequest, headers: QueryHasAppPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHasAppPermissionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryHasAppPermission",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/apps/adminPermissions/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHasAppPermissionResponse>(await this.execute(params, req, runtime), new QueryHasAppPermissionResponse({}));
+  }
+
+  /**
+   * @summary 查询用户是否有应用管理员权限
+   *
+   * @param request QueryHasAppPermissionRequest
+   * @return QueryHasAppPermissionResponse
+   */
+  async queryHasAppPermission(request: QueryHasAppPermissionRequest): Promise<QueryHasAppPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryHasAppPermissionHeaders({ });
+    return await this.queryHasAppPermissionWithOptions(request, headers, runtime);
   }
 
   /**
@@ -14733,6 +16007,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RecallOfficialAccountOTOMessageHeaders({ });
     return await this.recallOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 保存license
+   *
+   * @param request SaveBenefitLicenseRequest
+   * @param headers SaveBenefitLicenseHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveBenefitLicenseResponse
+   */
+  async saveBenefitLicenseWithOptions(request: SaveBenefitLicenseRequest, headers: SaveBenefitLicenseHeaders, runtime: $Util.RuntimeOptions): Promise<SaveBenefitLicenseResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domain)) {
+      body["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.licenses)) {
+      body["licenses"] = request.licenses;
+    }
+
+    if (!Util.isUnset(request.saveUserId)) {
+      body["saveUserId"] = request.saveUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveBenefitLicense",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefitLicenses/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveBenefitLicenseResponse>(await this.execute(params, req, runtime), new SaveBenefitLicenseResponse({}));
+  }
+
+  /**
+   * @summary 保存license
+   *
+   * @param request SaveBenefitLicenseRequest
+   * @return SaveBenefitLicenseResponse
+   */
+  async saveBenefitLicense(request: SaveBenefitLicenseRequest): Promise<SaveBenefitLicenseResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveBenefitLicenseHeaders({ });
+    return await this.saveBenefitLicenseWithOptions(request, headers, runtime);
   }
 
   /**
@@ -15016,6 +16352,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.customerBizType)) {
       body["customerBizType"] = request.customerBizType;
+    }
+
+    if (!Util.isUnset(request.operatorUserId)) {
+      body["operatorUserId"] = request.operatorUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

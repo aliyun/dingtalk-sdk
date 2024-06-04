@@ -7567,6 +7567,7 @@ export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
 export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   accountantBookId?: string;
   amount?: string;
+  approvedAt?: string;
   businessId?: string;
   companyCode?: string;
   createTime?: string;
@@ -7587,6 +7588,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
     return {
       accountantBookId: 'accountantBookId',
       amount: 'amount',
+      approvedAt: 'approvedAt',
       businessId: 'businessId',
       companyCode: 'companyCode',
       createTime: 'createTime',
@@ -7610,6 +7612,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
     return {
       accountantBookId: 'string',
       amount: 'string',
+      approvedAt: 'string',
       businessId: 'string',
       companyCode: 'string',
       createTime: 'string',

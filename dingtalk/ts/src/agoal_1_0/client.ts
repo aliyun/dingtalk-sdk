@@ -304,6 +304,103 @@ export class TitleMention extends $tea.Model {
   }
 }
 
+export class AgoalObjectiveKeyActionListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalObjectiveKeyActionListRequest extends $tea.Model {
+  dingUserId?: string;
+  keyResultId?: string;
+  objectiveId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingUserId: 'dingUserId',
+      keyResultId: 'keyResultId',
+      objectiveId: 'objectiveId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingUserId: 'string',
+      keyResultId: 'string',
+      objectiveId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalObjectiveKeyActionListResponseBody extends $tea.Model {
+  content?: OpenAgoalKeyActionDTO[];
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': OpenAgoalKeyActionDTO },
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalObjectiveKeyActionListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AgoalObjectiveKeyActionListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AgoalObjectiveKeyActionListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AgoalObjectiveRulePeriodListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -757,6 +854,68 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+   *
+   * @param request AgoalObjectiveKeyActionListRequest
+   * @param headers AgoalObjectiveKeyActionListHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AgoalObjectiveKeyActionListResponse
+   */
+  async agoalObjectiveKeyActionListWithOptions(request: AgoalObjectiveKeyActionListRequest, headers: AgoalObjectiveKeyActionListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalObjectiveKeyActionListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingUserId)) {
+      query["dingUserId"] = request.dingUserId;
+    }
+
+    if (!Util.isUnset(request.keyResultId)) {
+      query["keyResultId"] = request.keyResultId;
+    }
+
+    if (!Util.isUnset(request.objectiveId)) {
+      query["objectiveId"] = request.objectiveId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "AgoalObjectiveKeyActionList",
+      version: "agoal_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/agoal/objectives/keyActionLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AgoalObjectiveKeyActionListResponse>(await this.execute(params, req, runtime), new AgoalObjectiveKeyActionListResponse({}));
+  }
+
+  /**
+   * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+   *
+   * @param request AgoalObjectiveKeyActionListRequest
+   * @return AgoalObjectiveKeyActionListResponse
+   */
+  async agoalObjectiveKeyActionList(request: AgoalObjectiveKeyActionListRequest): Promise<AgoalObjectiveKeyActionListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AgoalObjectiveKeyActionListHeaders({ });
+    return await this.agoalObjectiveKeyActionListWithOptions(request, headers, runtime);
+  }
 
   /**
    * @summary 获取Agoal目标规则下的周期列表
