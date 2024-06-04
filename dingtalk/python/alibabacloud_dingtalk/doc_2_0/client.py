@@ -1683,6 +1683,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetDocContentHeaders()
         return await self.get_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_doc_content_for_elmwith_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentForELMRequest,
+        headers: dingtalkdoc__2__0_models.GetDocContentForELMHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDocContentForELMResponse:
+        """
+        @summary 委托权限获取文档内容
+        
+        @param request: GetDocContentForELMRequest
+        @param headers: GetDocContentForELMHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDocContentForELMResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDocContentForELM',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/elm/me/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDocContentForELMResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_doc_content_for_elmwith_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentForELMRequest,
+        headers: dingtalkdoc__2__0_models.GetDocContentForELMHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetDocContentForELMResponse:
+        """
+        @summary 委托权限获取文档内容
+        
+        @param request: GetDocContentForELMRequest
+        @param headers: GetDocContentForELMHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDocContentForELMResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDocContentForELM',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/elm/me/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetDocContentForELMResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_doc_content_for_elm(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentForELMRequest,
+    ) -> dingtalkdoc__2__0_models.GetDocContentForELMResponse:
+        """
+        @summary 委托权限获取文档内容
+        
+        @param request: GetDocContentForELMRequest
+        @return: GetDocContentForELMResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDocContentForELMHeaders()
+        return self.get_doc_content_for_elmwith_options(dentry_uuid, request, headers, runtime)
+
+    async def get_doc_content_for_elm_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetDocContentForELMRequest,
+    ) -> dingtalkdoc__2__0_models.GetDocContentForELMResponse:
+        """
+        @summary 委托权限获取文档内容
+        
+        @param request: GetDocContentForELMRequest
+        @return: GetDocContentForELMResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetDocContentForELMHeaders()
+        return await self.get_doc_content_for_elmwith_options_async(dentry_uuid, request, headers, runtime)
+
     def get_my_space_with_options(
         self,
         request: dingtalkdoc__2__0_models.GetMySpaceRequest,

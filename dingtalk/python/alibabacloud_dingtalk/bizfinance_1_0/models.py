@@ -9666,6 +9666,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         self,
         accountant_book_id: str = None,
         amount: str = None,
+        approved_at: str = None,
         business_id: str = None,
         company_code: str = None,
         create_time: str = None,
@@ -9685,6 +9686,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
     ):
         self.accountant_book_id = accountant_book_id
         self.amount = amount
+        self.approved_at = approved_at
         self.business_id = business_id
         self.company_code = company_code
         self.create_time = create_time
@@ -9724,6 +9726,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
             result['accountantBookId'] = self.accountant_book_id
         if self.amount is not None:
             result['amount'] = self.amount
+        if self.approved_at is not None:
+            result['approvedAt'] = self.approved_at
         if self.business_id is not None:
             result['businessId'] = self.business_id
         if self.company_code is not None:
@@ -9764,6 +9768,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
             self.accountant_book_id = m.get('accountantBookId')
         if m.get('amount') is not None:
             self.amount = m.get('amount')
+        if m.get('approvedAt') is not None:
+            self.approved_at = m.get('approvedAt')
         if m.get('businessId') is not None:
             self.business_id = m.get('businessId')
         if m.get('companyCode') is not None:

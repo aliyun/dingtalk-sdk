@@ -1785,6 +1785,132 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.BatchUpdateRelationDatasHeaders()
         return await self.batch_update_relation_datas_with_options_async(request, headers, runtime)
 
+    def consume_benefit_inventory_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.ConsumeBenefitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.ConsumeBenefitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse:
+        """
+        @summary 核销权益库存
+        
+        @param request: ConsumeBenefitInventoryRequest
+        @param headers: ConsumeBenefitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumeBenefitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.consume_quota):
+            body['consumeQuota'] = request.consume_quota
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConsumeBenefitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def consume_benefit_inventory_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.ConsumeBenefitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.ConsumeBenefitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse:
+        """
+        @summary 核销权益库存
+        
+        @param request: ConsumeBenefitInventoryRequest
+        @param headers: ConsumeBenefitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConsumeBenefitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.consume_quota):
+            body['consumeQuota'] = request.consume_quota
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConsumeBenefitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/consume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def consume_benefit_inventory(
+        self,
+        request: dingtalkcrm__1__0_models.ConsumeBenefitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse:
+        """
+        @summary 核销权益库存
+        
+        @param request: ConsumeBenefitInventoryRequest
+        @return: ConsumeBenefitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ConsumeBenefitInventoryHeaders()
+        return self.consume_benefit_inventory_with_options(request, headers, runtime)
+
+    async def consume_benefit_inventory_async(
+        self,
+        request: dingtalkcrm__1__0_models.ConsumeBenefitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.ConsumeBenefitInventoryResponse:
+        """
+        @summary 核销权益库存
+        
+        @param request: ConsumeBenefitInventoryRequest
+        @return: ConsumeBenefitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ConsumeBenefitInventoryHeaders()
+        return await self.consume_benefit_inventory_with_options_async(request, headers, runtime)
+
     def create_customer_with_options(
         self,
         request: dingtalkcrm__1__0_models.CreateCustomerRequest,
@@ -4227,6 +4353,120 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.GetGroupSetHeaders()
         return await self.get_group_set_with_options_async(request, headers, runtime)
 
+    def get_in_app_purchase_goods_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsRequest,
+        headers: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse:
+        """
+        @summary 获取内购商品信息
+        
+        @param request: GetInAppPurchaseGoodsRequest
+        @param headers: GetInAppPurchaseGoodsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInAppPurchaseGoodsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetInAppPurchaseGoods',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/inAppPurchaseGoods/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_in_app_purchase_goods_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsRequest,
+        headers: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse:
+        """
+        @summary 获取内购商品信息
+        
+        @param request: GetInAppPurchaseGoodsRequest
+        @param headers: GetInAppPurchaseGoodsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInAppPurchaseGoodsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetInAppPurchaseGoods',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/inAppPurchaseGoods/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_in_app_purchase_goods(
+        self,
+        request: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsRequest,
+    ) -> dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse:
+        """
+        @summary 获取内购商品信息
+        
+        @param request: GetInAppPurchaseGoodsRequest
+        @return: GetInAppPurchaseGoodsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetInAppPurchaseGoodsHeaders()
+        return self.get_in_app_purchase_goods_with_options(request, headers, runtime)
+
+    async def get_in_app_purchase_goods_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetInAppPurchaseGoodsRequest,
+    ) -> dingtalkcrm__1__0_models.GetInAppPurchaseGoodsResponse:
+        """
+        @summary 获取内购商品信息
+        
+        @param request: GetInAppPurchaseGoodsRequest
+        @return: GetInAppPurchaseGoodsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetInAppPurchaseGoodsHeaders()
+        return await self.get_in_app_purchase_goods_with_options_async(request, headers, runtime)
+
     def get_navigation_catalog_with_options(
         self,
         request: dingtalkcrm__1__0_models.GetNavigationCatalogRequest,
@@ -5055,6 +5295,234 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.JoinGroupSetHeaders()
         return await self.join_group_set_with_options_async(request, headers, runtime)
 
+    def list_available_benefit_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.ListAvailableBenefitRequest,
+        headers: dingtalkcrm__1__0_models.ListAvailableBenefitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListAvailableBenefitResponse:
+        """
+        @summary  批量查询可用权益
+        
+        @param request: ListAvailableBenefitRequest
+        @param headers: ListAvailableBenefitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAvailableBenefitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code_list):
+            body['benefitCodeList'] = request.benefit_code_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListAvailableBenefit',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefits/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListAvailableBenefitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_available_benefit_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListAvailableBenefitRequest,
+        headers: dingtalkcrm__1__0_models.ListAvailableBenefitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListAvailableBenefitResponse:
+        """
+        @summary  批量查询可用权益
+        
+        @param request: ListAvailableBenefitRequest
+        @param headers: ListAvailableBenefitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAvailableBenefitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code_list):
+            body['benefitCodeList'] = request.benefit_code_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListAvailableBenefit',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefits/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListAvailableBenefitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_available_benefit(
+        self,
+        request: dingtalkcrm__1__0_models.ListAvailableBenefitRequest,
+    ) -> dingtalkcrm__1__0_models.ListAvailableBenefitResponse:
+        """
+        @summary  批量查询可用权益
+        
+        @param request: ListAvailableBenefitRequest
+        @return: ListAvailableBenefitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListAvailableBenefitHeaders()
+        return self.list_available_benefit_with_options(request, headers, runtime)
+
+    async def list_available_benefit_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListAvailableBenefitRequest,
+    ) -> dingtalkcrm__1__0_models.ListAvailableBenefitResponse:
+        """
+        @summary  批量查询可用权益
+        
+        @param request: ListAvailableBenefitRequest
+        @return: ListAvailableBenefitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListAvailableBenefitHeaders()
+        return await self.list_available_benefit_with_options_async(request, headers, runtime)
+
+    def list_benefit_license_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.ListBenefitLicenseRequest,
+        headers: dingtalkcrm__1__0_models.ListBenefitLicenseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListBenefitLicenseResponse:
+        """
+        @summary 批量查询license
+        
+        @param request: ListBenefitLicenseRequest
+        @param headers: ListBenefitLicenseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListBenefitLicenseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.domains):
+            body['domains'] = request.domains
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListBenefitLicense',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitLicenses/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListBenefitLicenseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_benefit_license_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListBenefitLicenseRequest,
+        headers: dingtalkcrm__1__0_models.ListBenefitLicenseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.ListBenefitLicenseResponse:
+        """
+        @summary 批量查询license
+        
+        @param request: ListBenefitLicenseRequest
+        @param headers: ListBenefitLicenseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListBenefitLicenseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.domains):
+            body['domains'] = request.domains
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListBenefitLicense',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitLicenses/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.ListBenefitLicenseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_benefit_license(
+        self,
+        request: dingtalkcrm__1__0_models.ListBenefitLicenseRequest,
+    ) -> dingtalkcrm__1__0_models.ListBenefitLicenseResponse:
+        """
+        @summary 批量查询license
+        
+        @param request: ListBenefitLicenseRequest
+        @return: ListBenefitLicenseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListBenefitLicenseHeaders()
+        return self.list_benefit_license_with_options(request, headers, runtime)
+
+    async def list_benefit_license_async(
+        self,
+        request: dingtalkcrm__1__0_models.ListBenefitLicenseRequest,
+    ) -> dingtalkcrm__1__0_models.ListBenefitLicenseResponse:
+        """
+        @summary 批量查询license
+        
+        @param request: ListBenefitLicenseRequest
+        @return: ListBenefitLicenseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.ListBenefitLicenseHeaders()
+        return await self.list_benefit_license_with_options_async(request, headers, runtime)
+
     def list_clue_tag_with_options(
         self,
         headers: dingtalkcrm__1__0_models.ListClueTagHeaders,
@@ -5641,6 +6109,120 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.QueryAllTracksHeaders()
         return await self.query_all_tracks_with_options_async(request, headers, runtime)
 
+    def query_benefit_inventory_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryBenefitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.QueryBenefitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryBenefitInventoryResponse:
+        """
+        @summary 查询权益库存
+        
+        @param request: QueryBenefitInventoryRequest
+        @param headers: QueryBenefitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBenefitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryBenefitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryBenefitInventoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_benefit_inventory_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryBenefitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.QueryBenefitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryBenefitInventoryResponse:
+        """
+        @summary 查询权益库存
+        
+        @param request: QueryBenefitInventoryRequest
+        @param headers: QueryBenefitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBenefitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryBenefitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryBenefitInventoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_benefit_inventory(
+        self,
+        request: dingtalkcrm__1__0_models.QueryBenefitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.QueryBenefitInventoryResponse:
+        """
+        @summary 查询权益库存
+        
+        @param request: QueryBenefitInventoryRequest
+        @return: QueryBenefitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryBenefitInventoryHeaders()
+        return self.query_benefit_inventory_with_options(request, headers, runtime)
+
+    async def query_benefit_inventory_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryBenefitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.QueryBenefitInventoryResponse:
+        """
+        @summary 查询权益库存
+        
+        @param request: QueryBenefitInventoryRequest
+        @return: QueryBenefitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryBenefitInventoryHeaders()
+        return await self.query_benefit_inventory_with_options_async(request, headers, runtime)
+
     def query_clue_follow_status_with_options(
         self,
         request: dingtalkcrm__1__0_models.QueryClueFollowStatusRequest,
@@ -6013,30 +6595,37 @@ class Client(OpenApiClient):
 
     def query_customer_biz_type_with_options(
         self,
+        request: dingtalkcrm__1__0_models.QueryCustomerBizTypeRequest,
         headers: dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
         """
         @summary 查询客户模板启用类型
         
+        @param request: QueryCustomerBizTypeRequest
         @param headers: QueryCustomerBizTypeHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: QueryCustomerBizTypeResponse
         """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='QueryCustomerBizType',
             version='crm_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
-            method='GET',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -6049,30 +6638,37 @@ class Client(OpenApiClient):
 
     async def query_customer_biz_type_with_options_async(
         self,
+        request: dingtalkcrm__1__0_models.QueryCustomerBizTypeRequest,
         headers: dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
         """
         @summary 查询客户模板启用类型
         
+        @param request: QueryCustomerBizTypeRequest
         @param headers: QueryCustomerBizTypeHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: QueryCustomerBizTypeResponse
         """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='QueryCustomerBizType',
             version='crm_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes',
-            method='GET',
+            pathname=f'/v1.0/crm/orgSettings/templates/customerBizTypes/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -6083,25 +6679,33 @@ class Client(OpenApiClient):
             await self.execute_async(params, req, runtime)
         )
 
-    def query_customer_biz_type(self) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+    def query_customer_biz_type(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCustomerBizTypeRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
         """
         @summary 查询客户模板启用类型
         
+        @param request: QueryCustomerBizTypeRequest
         @return: QueryCustomerBizTypeResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders()
-        return self.query_customer_biz_type_with_options(headers, runtime)
+        return self.query_customer_biz_type_with_options(request, headers, runtime)
 
-    async def query_customer_biz_type_async(self) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
+    async def query_customer_biz_type_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryCustomerBizTypeRequest,
+    ) -> dingtalkcrm__1__0_models.QueryCustomerBizTypeResponse:
         """
         @summary 查询客户模板启用类型
         
+        @param request: QueryCustomerBizTypeRequest
         @return: QueryCustomerBizTypeResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryCustomerBizTypeHeaders()
-        return await self.query_customer_biz_type_with_options_async(headers, runtime)
+        return await self.query_customer_biz_type_with_options_async(request, headers, runtime)
 
     def query_global_info_with_options(
         self,
@@ -6216,6 +6820,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.QueryGlobalInfoHeaders()
         return await self.query_global_info_with_options_async(request, headers, runtime)
+
+    def query_has_app_permission_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.QueryHasAppPermissionRequest,
+        headers: dingtalkcrm__1__0_models.QueryHasAppPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryHasAppPermissionResponse:
+        """
+        @summary 查询用户是否有应用管理员权限
+        
+        @param request: QueryHasAppPermissionRequest
+        @param headers: QueryHasAppPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryHasAppPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryHasAppPermission',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/apps/adminPermissions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryHasAppPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_has_app_permission_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryHasAppPermissionRequest,
+        headers: dingtalkcrm__1__0_models.QueryHasAppPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.QueryHasAppPermissionResponse:
+        """
+        @summary 查询用户是否有应用管理员权限
+        
+        @param request: QueryHasAppPermissionRequest
+        @param headers: QueryHasAppPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryHasAppPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryHasAppPermission',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/apps/adminPermissions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.QueryHasAppPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_has_app_permission(
+        self,
+        request: dingtalkcrm__1__0_models.QueryHasAppPermissionRequest,
+    ) -> dingtalkcrm__1__0_models.QueryHasAppPermissionResponse:
+        """
+        @summary 查询用户是否有应用管理员权限
+        
+        @param request: QueryHasAppPermissionRequest
+        @return: QueryHasAppPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryHasAppPermissionHeaders()
+        return self.query_has_app_permission_with_options(request, headers, runtime)
+
+    async def query_has_app_permission_async(
+        self,
+        request: dingtalkcrm__1__0_models.QueryHasAppPermissionRequest,
+    ) -> dingtalkcrm__1__0_models.QueryHasAppPermissionResponse:
+        """
+        @summary 查询用户是否有应用管理员权限
+        
+        @param request: QueryHasAppPermissionRequest
+        @return: QueryHasAppPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.QueryHasAppPermissionHeaders()
+        return await self.query_has_app_permission_with_options_async(request, headers, runtime)
 
     def query_official_account_user_basic_info_with_options(
         self,
@@ -6570,6 +7288,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.RecallOfficialAccountOTOMessageHeaders()
         return await self.recall_official_account_otomessage_with_options_async(request, headers, runtime)
+
+    def save_benefit_license_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.SaveBenefitLicenseRequest,
+        headers: dingtalkcrm__1__0_models.SaveBenefitLicenseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SaveBenefitLicenseResponse:
+        """
+        @summary 保存license
+        
+        @param request: SaveBenefitLicenseRequest
+        @param headers: SaveBenefitLicenseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveBenefitLicenseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.licenses):
+            body['licenses'] = request.licenses
+        if not UtilClient.is_unset(request.save_user_id):
+            body['saveUserId'] = request.save_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveBenefitLicense',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitLicenses/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SaveBenefitLicenseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_benefit_license_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.SaveBenefitLicenseRequest,
+        headers: dingtalkcrm__1__0_models.SaveBenefitLicenseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.SaveBenefitLicenseResponse:
+        """
+        @summary 保存license
+        
+        @param request: SaveBenefitLicenseRequest
+        @param headers: SaveBenefitLicenseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveBenefitLicenseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.licenses):
+            body['licenses'] = request.licenses
+        if not UtilClient.is_unset(request.save_user_id):
+            body['saveUserId'] = request.save_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveBenefitLicense',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitLicenses/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.SaveBenefitLicenseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_benefit_license(
+        self,
+        request: dingtalkcrm__1__0_models.SaveBenefitLicenseRequest,
+    ) -> dingtalkcrm__1__0_models.SaveBenefitLicenseResponse:
+        """
+        @summary 保存license
+        
+        @param request: SaveBenefitLicenseRequest
+        @return: SaveBenefitLicenseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SaveBenefitLicenseHeaders()
+        return self.save_benefit_license_with_options(request, headers, runtime)
+
+    async def save_benefit_license_async(
+        self,
+        request: dingtalkcrm__1__0_models.SaveBenefitLicenseRequest,
+    ) -> dingtalkcrm__1__0_models.SaveBenefitLicenseResponse:
+        """
+        @summary 保存license
+        
+        @param request: SaveBenefitLicenseRequest
+        @return: SaveBenefitLicenseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.SaveBenefitLicenseHeaders()
+        return await self.save_benefit_license_with_options_async(request, headers, runtime)
 
     def send_official_account_otomessage_with_options(
         self,
@@ -7097,6 +7937,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.customer_biz_type):
             body['customerBizType'] = request.customer_biz_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -7140,6 +7982,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.customer_biz_type):
             body['customerBizType'] = request.customer_biz_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -3407,6 +3407,98 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetConferenceDetailHeaders()
         return await self.get_conference_detail_with_options_async(conference_id, headers, runtime)
 
+    def get_conversation_category_with_options(
+        self,
+        headers: dingtalkexclusive__1__0_models.GetConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConversationCategoryResponse:
+        """
+        @summary 获取会话分组数据
+        
+        @param headers: GetConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationCategoryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationCategories',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConversationCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_conversation_category_with_options_async(
+        self,
+        headers: dingtalkexclusive__1__0_models.GetConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConversationCategoryResponse:
+        """
+        @summary 获取会话分组数据
+        
+        @param headers: GetConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationCategoryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationCategories',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConversationCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_conversation_category(self) -> dingtalkexclusive__1__0_models.GetConversationCategoryResponse:
+        """
+        @summary 获取会话分组数据
+        
+        @return: GetConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConversationCategoryHeaders()
+        return self.get_conversation_category_with_options(headers, runtime)
+
+    async def get_conversation_category_async(self) -> dingtalkexclusive__1__0_models.GetConversationCategoryResponse:
+        """
+        @summary 获取会话分组数据
+        
+        @return: GetConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConversationCategoryHeaders()
+        return await self.get_conversation_category_with_options_async(headers, runtime)
+
     def get_ding_report_dept_summary_with_options(
         self,
         data_id: str,
@@ -9969,6 +10061,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SendPhoneDingHeaders()
         return await self.send_phone_ding_with_options_async(request, headers, runtime)
 
+    def set_conversation_category_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationCategoryResponse:
+        """
+        @summary 设置会话所属分组
+        
+        @param request: SetConversationCategoryRequest
+        @param headers: SetConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_id):
+            body['categoryId'] = request.category_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationCategories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_conversation_category_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationCategoryResponse:
+        """
+        @summary 设置会话所属分组
+        
+        @param request: SetConversationCategoryRequest
+        @param headers: SetConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_id):
+            body['categoryId'] = request.category_id
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationCategories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_conversation_category(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationCategoryResponse:
+        """
+        @summary 设置会话所属分组
+        
+        @param request: SetConversationCategoryRequest
+        @return: SetConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationCategoryHeaders()
+        return self.set_conversation_category_with_options(request, headers, runtime)
+
+    async def set_conversation_category_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationCategoryResponse:
+        """
+        @summary 设置会话所属分组
+        
+        @param request: SetConversationCategoryRequest
+        @return: SetConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationCategoryHeaders()
+        return await self.set_conversation_category_with_options_async(request, headers, runtime)
+
     def set_dept_partner_type_and_num_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SetDeptPartnerTypeAndNumRequest,
@@ -10346,6 +10556,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.UpdateCategoryNameHeaders()
         return await self.update_category_name_with_options_async(request, headers, runtime)
+
+    def update_conversation_type_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateConversationTypeRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateConversationTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateConversationTypeResponse:
+        """
+        @summary 变更群聊类型
+        
+        @param request: UpdateConversationTypeRequest
+        @param headers: UpdateConversationTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConversationTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.manage_sign):
+            body['manageSign'] = request.manage_sign
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateConversationType',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationTypes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateConversationTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_conversation_type_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateConversationTypeRequest,
+        headers: dingtalkexclusive__1__0_models.UpdateConversationTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.UpdateConversationTypeResponse:
+        """
+        @summary 变更群聊类型
+        
+        @param request: UpdateConversationTypeRequest
+        @param headers: UpdateConversationTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConversationTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.manage_sign):
+            body['manageSign'] = request.manage_sign
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateConversationType',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversationTypes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.UpdateConversationTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_conversation_type(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateConversationTypeRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateConversationTypeResponse:
+        """
+        @summary 变更群聊类型
+        
+        @param request: UpdateConversationTypeRequest
+        @return: UpdateConversationTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateConversationTypeHeaders()
+        return self.update_conversation_type_with_options(request, headers, runtime)
+
+    async def update_conversation_type_async(
+        self,
+        request: dingtalkexclusive__1__0_models.UpdateConversationTypeRequest,
+    ) -> dingtalkexclusive__1__0_models.UpdateConversationTypeResponse:
+        """
+        @summary 变更群聊类型
+        
+        @param request: UpdateConversationTypeRequest
+        @return: UpdateConversationTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.UpdateConversationTypeHeaders()
+        return await self.update_conversation_type_with_options_async(request, headers, runtime)
 
     def update_file_status_with_options(
         self,
