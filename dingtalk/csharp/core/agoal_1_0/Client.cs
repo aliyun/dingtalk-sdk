@@ -30,6 +30,138 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
 
         /**
+         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+         *
+         * @param request AgoalObjectiveKeyActionListRequest
+         * @param headers AgoalObjectiveKeyActionListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalObjectiveKeyActionListResponse
+         */
+        public AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionListWithOptions(AgoalObjectiveKeyActionListRequest request, AgoalObjectiveKeyActionListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                query["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KeyResultId))
+            {
+                query["keyResultId"] = request.KeyResultId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                query["objectiveId"] = request.ObjectiveId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalObjectiveKeyActionList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/objectives/keyActionLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalObjectiveKeyActionListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+         *
+         * @param request AgoalObjectiveKeyActionListRequest
+         * @param headers AgoalObjectiveKeyActionListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalObjectiveKeyActionListResponse
+         */
+        public async Task<AgoalObjectiveKeyActionListResponse> AgoalObjectiveKeyActionListWithOptionsAsync(AgoalObjectiveKeyActionListRequest request, AgoalObjectiveKeyActionListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingUserId))
+            {
+                query["dingUserId"] = request.DingUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KeyResultId))
+            {
+                query["keyResultId"] = request.KeyResultId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                query["objectiveId"] = request.ObjectiveId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalObjectiveKeyActionList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/objectives/keyActionLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalObjectiveKeyActionListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+         *
+         * @param request AgoalObjectiveKeyActionListRequest
+         * @return AgoalObjectiveKeyActionListResponse
+         */
+        public AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionList(AgoalObjectiveKeyActionListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalObjectiveKeyActionListHeaders headers = new AgoalObjectiveKeyActionListHeaders();
+            return AgoalObjectiveKeyActionListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+         *
+         * @param request AgoalObjectiveKeyActionListRequest
+         * @return AgoalObjectiveKeyActionListResponse
+         */
+        public async Task<AgoalObjectiveKeyActionListResponse> AgoalObjectiveKeyActionListAsync(AgoalObjectiveKeyActionListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalObjectiveKeyActionListHeaders headers = new AgoalObjectiveKeyActionListHeaders();
+            return await AgoalObjectiveKeyActionListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取Agoal目标规则下的周期列表
          *
          * @param request AgoalObjectiveRulePeriodListRequest

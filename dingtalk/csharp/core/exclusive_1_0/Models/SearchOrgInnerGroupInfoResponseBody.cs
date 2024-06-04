@@ -23,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<SearchOrgInnerGroupInfoResponseBodyItems> Items { get; set; }
         public class SearchOrgInnerGroupInfoResponseBodyItems : TeaModel {
+            [NameInMap("extensions")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> Extensions { get; set; }
+
             /// <summary>
             /// This parameter is required.
             /// </summary>

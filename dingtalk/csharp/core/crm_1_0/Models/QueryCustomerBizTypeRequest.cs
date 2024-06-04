@@ -8,14 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class UpdateCustomerBizTypeRequest : TeaModel {
-        /// <summary>
-        /// This parameter is required.
-        /// </summary>
-        [NameInMap("customerBizType")]
-        [Validation(Required=false)]
-        public string CustomerBizType { get; set; }
-
+    public class QueryCustomerBizTypeRequest : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>

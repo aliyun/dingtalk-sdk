@@ -6,22 +6,22 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class UpdateCustomerBizTypeRequest : TeaModel {
+    public class SetConversationCategoryRequest : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("customerBizType")]
+        [NameInMap("categoryId")]
         [Validation(Required=false)]
-        public string CustomerBizType { get; set; }
+        public long? CategoryId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("operatorUserId")]
+        [NameInMap("openConversationId")]
         [Validation(Required=false)]
-        public string OperatorUserId { get; set; }
+        public string OpenConversationId { get; set; }
 
     }
 

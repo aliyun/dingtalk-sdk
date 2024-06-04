@@ -1802,6 +1802,122 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         }
 
         /**
+         * @summary 委托权限获取文档内容
+         *
+         * @param request GetDocContentForELMRequest
+         * @param headers GetDocContentForELMHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDocContentForELMResponse
+         */
+        public GetDocContentForELMResponse GetDocContentForELMWithOptions(string dentryUuid, GetDocContentForELMRequest request, GetDocContentForELMHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDocContentForELM",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/elm/me/dentries/" + dentryUuid + "/contents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDocContentForELMResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 委托权限获取文档内容
+         *
+         * @param request GetDocContentForELMRequest
+         * @param headers GetDocContentForELMHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDocContentForELMResponse
+         */
+        public async Task<GetDocContentForELMResponse> GetDocContentForELMWithOptionsAsync(string dentryUuid, GetDocContentForELMRequest request, GetDocContentForELMHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDocContentForELM",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/elm/me/dentries/" + dentryUuid + "/contents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDocContentForELMResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 委托权限获取文档内容
+         *
+         * @param request GetDocContentForELMRequest
+         * @return GetDocContentForELMResponse
+         */
+        public GetDocContentForELMResponse GetDocContentForELM(string dentryUuid, GetDocContentForELMRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDocContentForELMHeaders headers = new GetDocContentForELMHeaders();
+            return GetDocContentForELMWithOptions(dentryUuid, request, headers, runtime);
+        }
+
+        /**
+         * @summary 委托权限获取文档内容
+         *
+         * @param request GetDocContentForELMRequest
+         * @return GetDocContentForELMResponse
+         */
+        public async Task<GetDocContentForELMResponse> GetDocContentForELMAsync(string dentryUuid, GetDocContentForELMRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDocContentForELMHeaders headers = new GetDocContentForELMHeaders();
+            return await GetDocContentForELMWithOptionsAsync(dentryUuid, request, headers, runtime);
+        }
+
+        /**
          * @summary 获取当前企业下钉盘目录我的文件对应的空间信息
          *
          * @param request GetMySpaceRequest
