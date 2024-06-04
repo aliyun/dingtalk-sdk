@@ -936,6 +936,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 核销权益库存
+     *
+     * @param request ConsumeBenefitInventoryRequest
+     * @param headers ConsumeBenefitInventoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConsumeBenefitInventoryResponse
+     */
+    public ConsumeBenefitInventoryResponse consumeBenefitInventoryWithOptions(ConsumeBenefitInventoryRequest request, ConsumeBenefitInventoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            body.put("benefitCode", request.benefitCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizRequestId)) {
+            body.put("bizRequestId", request.bizRequestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.consumeQuota)) {
+            body.put("consumeQuota", request.consumeQuota);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optUserId)) {
+            body.put("optUserId", request.optUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ConsumeBenefitInventory"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/benefitInventories/consume"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ConsumeBenefitInventoryResponse());
+    }
+
+    /**
+     * @summary 核销权益库存
+     *
+     * @param request ConsumeBenefitInventoryRequest
+     * @return ConsumeBenefitInventoryResponse
+     */
+    public ConsumeBenefitInventoryResponse consumeBenefitInventory(ConsumeBenefitInventoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ConsumeBenefitInventoryHeaders headers = new ConsumeBenefitInventoryHeaders();
+        return this.consumeBenefitInventoryWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary CRM客户通讯录数据写入接口，支持客户&联系人数据合并写入
      *
      * @param request CreateCustomerRequest
@@ -2171,6 +2237,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 获取内购商品信息
+     *
+     * @param request GetInAppPurchaseGoodsRequest
+     * @param headers GetInAppPurchaseGoodsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetInAppPurchaseGoodsResponse
+     */
+    public GetInAppPurchaseGoodsResponse getInAppPurchaseGoodsWithOptions(GetInAppPurchaseGoodsRequest request, GetInAppPurchaseGoodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetInAppPurchaseGoods"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/inAppPurchaseGoods/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetInAppPurchaseGoodsResponse());
+    }
+
+    /**
+     * @summary 获取内购商品信息
+     *
+     * @param request GetInAppPurchaseGoodsRequest
+     * @return GetInAppPurchaseGoodsResponse
+     */
+    public GetInAppPurchaseGoodsResponse getInAppPurchaseGoods(GetInAppPurchaseGoodsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetInAppPurchaseGoodsHeaders headers = new GetInAppPurchaseGoodsHeaders();
+        return this.getInAppPurchaseGoodsWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 获取自定义导航挂靠节点结构
      *
      * @param request GetNavigationCatalogRequest
@@ -2584,6 +2704,114 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary  批量查询可用权益
+     *
+     * @param request ListAvailableBenefitRequest
+     * @param headers ListAvailableBenefitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAvailableBenefitResponse
+     */
+    public ListAvailableBenefitResponse listAvailableBenefitWithOptions(ListAvailableBenefitRequest request, ListAvailableBenefitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCodeList)) {
+            body.put("benefitCodeList", request.benefitCodeList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAvailableBenefit"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/benefits/lists/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAvailableBenefitResponse());
+    }
+
+    /**
+     * @summary  批量查询可用权益
+     *
+     * @param request ListAvailableBenefitRequest
+     * @return ListAvailableBenefitResponse
+     */
+    public ListAvailableBenefitResponse listAvailableBenefit(ListAvailableBenefitRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListAvailableBenefitHeaders headers = new ListAvailableBenefitHeaders();
+        return this.listAvailableBenefitWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 批量查询license
+     *
+     * @param request ListBenefitLicenseRequest
+     * @param headers ListBenefitLicenseHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListBenefitLicenseResponse
+     */
+    public ListBenefitLicenseResponse listBenefitLicenseWithOptions(ListBenefitLicenseRequest request, ListBenefitLicenseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.domains)) {
+            body.put("domains", request.domains);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListBenefitLicense"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/benefitLicenses/lists/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListBenefitLicenseResponse());
+    }
+
+    /**
+     * @summary 批量查询license
+     *
+     * @param request ListBenefitLicenseRequest
+     * @return ListBenefitLicenseResponse
+     */
+    public ListBenefitLicenseResponse listBenefitLicense(ListBenefitLicenseRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListBenefitLicenseHeaders headers = new ListBenefitLicenseHeaders();
+        return this.listBenefitLicenseWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 获取线索标签列表
      *
      * @param headers ListClueTagHeaders
@@ -2882,6 +3110,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 查询权益库存
+     *
+     * @param request QueryBenefitInventoryRequest
+     * @param headers QueryBenefitInventoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryBenefitInventoryResponse
+     */
+    public QueryBenefitInventoryResponse queryBenefitInventoryWithOptions(QueryBenefitInventoryRequest request, QueryBenefitInventoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            body.put("benefitCode", request.benefitCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBenefitInventory"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/benefitInventories/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBenefitInventoryResponse());
+    }
+
+    /**
+     * @summary 查询权益库存
+     *
+     * @param request QueryBenefitInventoryRequest
+     * @return QueryBenefitInventoryResponse
+     */
+    public QueryBenefitInventoryResponse queryBenefitInventory(QueryBenefitInventoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryBenefitInventoryHeaders headers = new QueryBenefitInventoryHeaders();
+        return this.queryBenefitInventoryWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 查询线索跟进状态
      *
      * @param request QueryClueFollowStatusRequest
@@ -3074,11 +3356,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * @summary 查询客户模板启用类型
      *
+     * @param request QueryCustomerBizTypeRequest
      * @param headers QueryCustomerBizTypeHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryCustomerBizTypeResponse
      */
-    public QueryCustomerBizTypeResponse queryCustomerBizTypeWithOptions(QueryCustomerBizTypeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public QueryCustomerBizTypeResponse queryCustomerBizTypeWithOptions(QueryCustomerBizTypeRequest request, QueryCustomerBizTypeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -3089,14 +3378,15 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "QueryCustomerBizType"),
             new TeaPair("version", "crm_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/crm/orgSettings/templates/customerBizTypes"),
-            new TeaPair("method", "GET"),
+            new TeaPair("pathname", "/v1.0/crm/orgSettings/templates/customerBizTypes/query"),
+            new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
             new TeaPair("reqBodyType", "none"),
@@ -3108,12 +3398,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * @summary 查询客户模板启用类型
      *
+     * @param request QueryCustomerBizTypeRequest
      * @return QueryCustomerBizTypeResponse
      */
-    public QueryCustomerBizTypeResponse queryCustomerBizType() throws Exception {
+    public QueryCustomerBizTypeResponse queryCustomerBizType(QueryCustomerBizTypeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCustomerBizTypeHeaders headers = new QueryCustomerBizTypeHeaders();
-        return this.queryCustomerBizTypeWithOptions(headers, runtime);
+        return this.queryCustomerBizTypeWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3168,6 +3459,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryGlobalInfoHeaders headers = new QueryGlobalInfoHeaders();
         return this.queryGlobalInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询用户是否有应用管理员权限
+     *
+     * @param request QueryHasAppPermissionRequest
+     * @param headers QueryHasAppPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryHasAppPermissionResponse
+     */
+    public QueryHasAppPermissionResponse queryHasAppPermissionWithOptions(QueryHasAppPermissionRequest request, QueryHasAppPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryHasAppPermission"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/apps/adminPermissions/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryHasAppPermissionResponse());
+    }
+
+    /**
+     * @summary 查询用户是否有应用管理员权限
+     *
+     * @param request QueryHasAppPermissionRequest
+     * @return QueryHasAppPermissionResponse
+     */
+    public QueryHasAppPermissionResponse queryHasAppPermission(QueryHasAppPermissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryHasAppPermissionHeaders headers = new QueryHasAppPermissionHeaders();
+        return this.queryHasAppPermissionWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3338,6 +3683,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RecallOfficialAccountOTOMessageHeaders headers = new RecallOfficialAccountOTOMessageHeaders();
         return this.recallOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 保存license
+     *
+     * @param request SaveBenefitLicenseRequest
+     * @param headers SaveBenefitLicenseHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveBenefitLicenseResponse
+     */
+    public SaveBenefitLicenseResponse saveBenefitLicenseWithOptions(SaveBenefitLicenseRequest request, SaveBenefitLicenseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.domain)) {
+            body.put("domain", request.domain);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.licenses)) {
+            body.put("licenses", request.licenses);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.saveUserId)) {
+            body.put("saveUserId", request.saveUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveBenefitLicense"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/benefitLicenses/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveBenefitLicenseResponse());
+    }
+
+    /**
+     * @summary 保存license
+     *
+     * @param request SaveBenefitLicenseRequest
+     * @return SaveBenefitLicenseResponse
+     */
+    public SaveBenefitLicenseResponse saveBenefitLicense(SaveBenefitLicenseRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveBenefitLicenseHeaders headers = new SaveBenefitLicenseHeaders();
+        return this.saveBenefitLicenseWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3621,6 +4028,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.customerBizType)) {
             body.put("customerBizType", request.customerBizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();

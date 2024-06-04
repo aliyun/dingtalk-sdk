@@ -52,6 +52,9 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
     }
 
     public static class SearchOrgInnerGroupInfoResponseBodyItems extends TeaModel {
+        @NameInMap("extensions")
+        public java.util.Map<String, String> extensions;
+
         /**
          * <p>This parameter is required.</p>
          */
@@ -139,6 +142,14 @@ public class SearchOrgInnerGroupInfoResponseBody extends TeaModel {
         public static SearchOrgInnerGroupInfoResponseBodyItems build(java.util.Map<String, ?> map) throws Exception {
             SearchOrgInnerGroupInfoResponseBodyItems self = new SearchOrgInnerGroupInfoResponseBodyItems();
             return TeaModel.build(map, self);
+        }
+
+        public SearchOrgInnerGroupInfoResponseBodyItems setExtensions(java.util.Map<String, String> extensions) {
+            this.extensions = extensions;
+            return this;
+        }
+        public java.util.Map<String, String> getExtensions() {
+            return this.extensions;
         }
 
         public SearchOrgInnerGroupInfoResponseBodyItems setGroupAdminsCount(Integer groupAdminsCount) {

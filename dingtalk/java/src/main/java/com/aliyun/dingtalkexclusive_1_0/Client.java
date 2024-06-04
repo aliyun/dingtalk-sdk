@@ -1688,6 +1688,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 获取会话分组数据
+     *
+     * @param headers GetConversationCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetConversationCategoryResponse
+     */
+    public GetConversationCategoryResponse getConversationCategoryWithOptions(GetConversationCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetConversationCategory"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/conversationCategories"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetConversationCategoryResponse());
+    }
+
+    /**
+     * @summary 获取会话分组数据
+     *
+     * @return GetConversationCategoryResponse
+     */
+    public GetConversationCategoryResponse getConversationCategory() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetConversationCategoryHeaders headers = new GetConversationCategoryHeaders();
+        return this.getConversationCategoryWithOptions(headers, runtime);
+    }
+
+    /**
      * @summary 获取部门维度发布日志信息
      *
      * @param request GetDingReportDeptSummaryRequest
@@ -5076,6 +5121,64 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 设置会话所属分组
+     *
+     * @param request SetConversationCategoryRequest
+     * @param headers SetConversationCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetConversationCategoryResponse
+     */
+    public SetConversationCategoryResponse setConversationCategoryWithOptions(SetConversationCategoryRequest request, SetConversationCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryId)) {
+            body.put("categoryId", request.categoryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetConversationCategory"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/conversationCategories/set"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetConversationCategoryResponse());
+    }
+
+    /**
+     * @summary 设置会话所属分组
+     *
+     * @param request SetConversationCategoryRequest
+     * @return SetConversationCategoryResponse
+     */
+    public SetConversationCategoryResponse setConversationCategory(SetConversationCategoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetConversationCategoryHeaders headers = new SetConversationCategoryHeaders();
+        return this.setConversationCategoryWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 伙伴钉设置部门伙伴编码和伙伴类型
      *
      * @param request SetDeptPartnerTypeAndNumRequest
@@ -5271,6 +5374,64 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCategoryNameHeaders headers = new UpdateCategoryNameHeaders();
         return this.updateCategoryNameWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 变更群聊类型
+     *
+     * @param request UpdateConversationTypeRequest
+     * @param headers UpdateConversationTypeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateConversationTypeResponse
+     */
+    public UpdateConversationTypeResponse updateConversationTypeWithOptions(UpdateConversationTypeRequest request, UpdateConversationTypeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.manageSign)) {
+            body.put("manageSign", request.manageSign);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateConversationType"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/conversationTypes"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateConversationTypeResponse());
+    }
+
+    /**
+     * @summary 变更群聊类型
+     *
+     * @param request UpdateConversationTypeRequest
+     * @return UpdateConversationTypeResponse
+     */
+    public UpdateConversationTypeResponse updateConversationType(UpdateConversationTypeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateConversationTypeHeaders headers = new UpdateConversationTypeHeaders();
+        return this.updateConversationTypeWithOptions(request, headers, runtime);
     }
 
     /**

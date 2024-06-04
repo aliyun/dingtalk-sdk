@@ -221,6 +221,9 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("amount")
         public String amount;
 
+        @NameInMap("approvedAt")
+        public String approvedAt;
+
         @NameInMap("businessId")
         public String businessId;
 
@@ -288,6 +291,14 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         }
         public String getAmount() {
             return this.amount;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setApprovedAt(String approvedAt) {
+            this.approvedAt = approvedAt;
+            return this;
+        }
+        public String getApprovedAt() {
+            return this.approvedAt;
         }
 
         public QueryReceiptsBaseInfoResponseBodyList setBusinessId(String businessId) {

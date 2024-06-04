@@ -20,6 +20,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
+     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+     *
+     * @param request AgoalObjectiveKeyActionListRequest
+     * @param headers AgoalObjectiveKeyActionListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalObjectiveKeyActionListResponse
+     */
+    public AgoalObjectiveKeyActionListResponse agoalObjectiveKeyActionListWithOptions(AgoalObjectiveKeyActionListRequest request, AgoalObjectiveKeyActionListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingUserId)) {
+            query.put("dingUserId", request.dingUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyResultId)) {
+            query.put("keyResultId", request.keyResultId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectiveId)) {
+            query.put("objectiveId", request.objectiveId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalObjectiveKeyActionList"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectives/keyActionLists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalObjectiveKeyActionListResponse());
+    }
+
+    /**
+     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
+     *
+     * @param request AgoalObjectiveKeyActionListRequest
+     * @return AgoalObjectiveKeyActionListResponse
+     */
+    public AgoalObjectiveKeyActionListResponse agoalObjectiveKeyActionList(AgoalObjectiveKeyActionListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalObjectiveKeyActionListHeaders headers = new AgoalObjectiveKeyActionListHeaders();
+        return this.agoalObjectiveKeyActionListWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 获取Agoal目标规则下的周期列表
      *
      * @param request AgoalObjectiveRulePeriodListRequest
