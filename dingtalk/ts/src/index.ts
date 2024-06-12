@@ -67,6 +67,7 @@ import * as manufacturing_1_0 from './manufacturing_1_0/client';
 import * as micro_app_1_0 from './micro_app_1_0/client';
 import * as miniapp_1_0 from './miniapp_1_0/client';
 import * as notable_1_0 from './notable_1_0/client';
+import * as notable_2_0 from './notable_2_0/client';
 import * as oauth2_1_0 from './oauth2_1_0/client';
 import * as occupationauth_1_0 from './occupationauth_1_0/client';
 import * as okr_1_0 from './okr_1_0/client';
@@ -173,6 +174,7 @@ export = {
   micro_app_1_0,
   miniapp_1_0,
   notable_1_0,
+  notable_2_0,
   oauth2_1_0,
   occupationauth_1_0,
   okr_1_0,

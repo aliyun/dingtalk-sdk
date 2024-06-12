@@ -1,0 +1,1 @@
+module.exports = require('./dist').notable_2_0;

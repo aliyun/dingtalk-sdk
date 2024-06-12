@@ -2488,6 +2488,97 @@ export class ListInstancesResponse extends $tea.Model {
   }
 }
 
+export class MeetingRoomRespondHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  userAgent?: string;
+  xClientToken?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      userAgent: 'userAgent',
+      xClientToken: 'x-client-token',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      userAgent: 'string',
+      xClientToken: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MeetingRoomRespondRequest extends $tea.Model {
+  responseStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      responseStatus: 'responseStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      responseStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MeetingRoomRespondResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MeetingRoomRespondResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: MeetingRoomRespondResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: MeetingRoomRespondResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PatchEventHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xClientToken?: string;
@@ -9415,6 +9506,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListInstancesHeaders({ });
     return await this.listInstancesWithOptions(userId, calendarId, eventId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 设置会议室在日程中的响应状态
+   *
+   * @param request MeetingRoomRespondRequest
+   * @param headers MeetingRoomRespondHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return MeetingRoomRespondResponse
+   */
+  async meetingRoomRespondWithOptions(calendarId: string, userId: string, eventId: string, roomId: string, request: MeetingRoomRespondRequest, headers: MeetingRoomRespondHeaders, runtime: $Util.RuntimeOptions): Promise<MeetingRoomRespondResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.responseStatus)) {
+      body["responseStatus"] = request.responseStatus;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.userAgent)) {
+      realHeaders["userAgent"] = Util.toJSONString(headers.userAgent);
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "MeetingRoomRespond",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms/${roomId}/respond`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MeetingRoomRespondResponse>(await this.execute(params, req, runtime), new MeetingRoomRespondResponse({}));
+  }
+
+  /**
+   * @summary 设置会议室在日程中的响应状态
+   *
+   * @param request MeetingRoomRespondRequest
+   * @return MeetingRoomRespondResponse
+   */
+  async meetingRoomRespond(calendarId: string, userId: string, eventId: string, roomId: string, request: MeetingRoomRespondRequest): Promise<MeetingRoomRespondResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MeetingRoomRespondHeaders({ });
+    return await this.meetingRoomRespondWithOptions(calendarId, userId, eventId, roomId, request, headers, runtime);
   }
 
   /**

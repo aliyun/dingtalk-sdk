@@ -530,6 +530,197 @@ export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
   }
 }
 
+export class TextToImageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TextToImageRequest extends $tea.Model {
+  modelId?: string;
+  pictureNum?: number;
+  pictureSize?: string;
+  query?: string;
+  static names(): { [key: string]: string } {
+    return {
+      modelId: 'modelId',
+      pictureNum: 'pictureNum',
+      pictureSize: 'pictureSize',
+      query: 'query',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      modelId: 'string',
+      pictureNum: 'number',
+      pictureSize: 'string',
+      query: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TextToImageResponseBody extends $tea.Model {
+  result?: TextToImageResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: TextToImageResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TextToImageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TextToImageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TextToImageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VoiceCloneHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VoiceCloneRequest extends $tea.Model {
+  text?: string;
+  userId?: string;
+  voiceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+      userId: 'userId',
+      voiceId: 'voiceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+      userId: 'string',
+      voiceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VoiceCloneResponseBody extends $tea.Model {
+  result?: VoiceCloneResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: VoiceCloneResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VoiceCloneResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: VoiceCloneResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: VoiceCloneResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MachineManagerUpdateRequestAtmManagerRightMap extends $tea.Model {
   attendancePersonManage?: boolean;
   bluetoothPunchManage?: boolean;
@@ -556,6 +747,53 @@ export class MachineManagerUpdateRequestAtmManagerRightMap extends $tea.Model {
       deviceSettings: 'boolean',
       facePunchManage: 'boolean',
       fingerPunchManage: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TextToImageResponseBodyResult extends $tea.Model {
+  requestId?: string;
+  taskId?: string;
+  taskStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      taskId: 'taskId',
+      taskStatus: 'taskStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      taskId: 'string',
+      taskStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class VoiceCloneResponseBodyResult extends $tea.Model {
+  mediaUrl?: string;
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaUrl: 'mediaUrl',
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaUrl: 'string',
+      requestId: 'string',
     };
   }
 
@@ -983,6 +1221,134 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryDeviceVideoConferenceBookHeaders({ });
     return await this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
+  }
+
+  /**
+   * @summary 文生图开放接口
+   *
+   * @param request TextToImageRequest
+   * @param headers TextToImageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TextToImageResponse
+   */
+  async textToImageWithOptions(request: TextToImageRequest, headers: TextToImageHeaders, runtime: $Util.RuntimeOptions): Promise<TextToImageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.modelId)) {
+      body["modelId"] = request.modelId;
+    }
+
+    if (!Util.isUnset(request.pictureNum)) {
+      body["pictureNum"] = request.pictureNum;
+    }
+
+    if (!Util.isUnset(request.pictureSize)) {
+      body["pictureSize"] = request.pictureSize;
+    }
+
+    if (!Util.isUnset(request.query)) {
+      body["query"] = request.query;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TextToImage",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/textToImages/generate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TextToImageResponse>(await this.execute(params, req, runtime), new TextToImageResponse({}));
+  }
+
+  /**
+   * @summary 文生图开放接口
+   *
+   * @param request TextToImageRequest
+   * @return TextToImageResponse
+   */
+  async textToImage(request: TextToImageRequest): Promise<TextToImageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TextToImageHeaders({ });
+    return await this.textToImageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 音频复刻
+   *
+   * @param request VoiceCloneRequest
+   * @param headers VoiceCloneHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return VoiceCloneResponse
+   */
+  async voiceCloneWithOptions(request: VoiceCloneRequest, headers: VoiceCloneHeaders, runtime: $Util.RuntimeOptions): Promise<VoiceCloneResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.text)) {
+      body["text"] = request.text;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.voiceId)) {
+      body["voiceId"] = request.voiceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "VoiceClone",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/voices/clone`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<VoiceCloneResponse>(await this.execute(params, req, runtime), new VoiceCloneResponse({}));
+  }
+
+  /**
+   * @summary 音频复刻
+   *
+   * @param request VoiceCloneRequest
+   * @return VoiceCloneResponse
+   */
+  async voiceClone(request: VoiceCloneRequest): Promise<VoiceCloneResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new VoiceCloneHeaders({ });
+    return await this.voiceCloneWithOptions(request, headers, runtime);
   }
 
 }

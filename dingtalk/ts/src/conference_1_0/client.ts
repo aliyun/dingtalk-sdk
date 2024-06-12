@@ -2280,6 +2280,279 @@ export class QueryConferenceMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryMinutesAudioHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesAudioRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesAudioResponseBody extends $tea.Model {
+  audioList?: QueryMinutesAudioResponseBodyAudioList[];
+  static names(): { [key: string]: string } {
+    return {
+      audioList: 'audioList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      audioList: { 'type': 'array', 'itemType': QueryMinutesAudioResponseBodyAudioList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesAudioResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMinutesAudioResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMinutesAudioResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryRequest extends $tea.Model {
+  summaryTypeList?: string[];
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      summaryTypeList: 'summaryTypeList',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      summaryTypeList: { 'type': 'array', 'itemType': 'string' },
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBody extends $tea.Model {
+  summary?: QueryMinutesSummaryResponseBodySummary;
+  static names(): { [key: string]: string } {
+    return {
+      summary: 'summary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      summary: QueryMinutesSummaryResponseBodySummary,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMinutesSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMinutesSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextRequest extends $tea.Model {
+  direction?: string;
+  maxResults?: number;
+  nextToken?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      direction: 'direction',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      direction: 'string',
+      maxResults: 'number',
+      nextToken: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  nextToken?: string;
+  paragraphList?: QueryMinutesTextResponseBodyParagraphList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+      paragraphList: 'paragraphList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      nextToken: 'string',
+      paragraphList: { 'type': 'array', 'itemType': QueryMinutesTextResponseBodyParagraphList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMinutesTextResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMinutesTextResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryScheduleConfSettingsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2744,6 +3017,97 @@ export class StartCloudRecordResponse extends $tea.Model {
   }
 }
 
+export class StartMinutesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartMinutesRequest extends $tea.Model {
+  ownerUnionId?: string;
+  recordAudio?: boolean;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      ownerUnionId: 'ownerUnionId',
+      recordAudio: 'recordAudio',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      ownerUnionId: 'string',
+      recordAudio: 'boolean',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartMinutesResponseBody extends $tea.Model {
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StartMinutesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StartMinutesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: StartMinutesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class StartStreamOutHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2924,6 +3288,91 @@ export class StopCloudRecordResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: StopCloudRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopMinutesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopMinutesRequest extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopMinutesResponseBody extends $tea.Model {
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StopMinutesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StopMinutesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: StopMinutesResponseBody,
     };
   }
 
@@ -4001,6 +4450,325 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
       pstnJoin: 'boolean',
       unionId: 'string',
       userNick: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesAudioResponseBodyAudioList extends $tea.Model {
+  duration?: number;
+  endTime?: number;
+  fileSize?: number;
+  playUrl?: string;
+  recordId?: string;
+  startTime?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      endTime: 'endTime',
+      fileSize: 'fileSize',
+      playUrl: 'playUrl',
+      recordId: 'recordId',
+      startTime: 'startTime',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      endTime: 'number',
+      fileSize: 'number',
+      playUrl: 'string',
+      recordId: 'string',
+      startTime: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummaryActions extends $tea.Model {
+  end?: number;
+  id?: number;
+  sentenceId?: number;
+  start?: number;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      id: 'id',
+      sentenceId: 'sentenceId',
+      start: 'start',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: 'number',
+      id: 'number',
+      sentenceId: 'number',
+      start: 'number',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummaryAutoChapters extends $tea.Model {
+  end?: number;
+  headline?: string;
+  id?: number;
+  start?: number;
+  summary?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      headline: 'headline',
+      id: 'id',
+      start: 'start',
+      summary: 'summary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: 'number',
+      headline: 'string',
+      id: 'number',
+      start: 'number',
+      summary: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummaryConversationalSummary extends $tea.Model {
+  speakerId?: string;
+  speakerName?: string;
+  summary?: string;
+  static names(): { [key: string]: string } {
+    return {
+      speakerId: 'speakerId',
+      speakerName: 'speakerName',
+      summary: 'summary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      speakerId: 'string',
+      speakerName: 'string',
+      summary: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummaryKeySentences extends $tea.Model {
+  end?: number;
+  id?: number;
+  sentenceId?: number;
+  start?: number;
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      id: 'id',
+      sentenceId: 'sentenceId',
+      start: 'start',
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: 'number',
+      id: 'number',
+      sentenceId: 'number',
+      start: 'number',
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary extends $tea.Model {
+  answer?: string;
+  question?: string;
+  sentenceIdsOfAnswer?: number[];
+  sentenceIdsOfQuestion?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      answer: 'answer',
+      question: 'question',
+      sentenceIdsOfAnswer: 'sentenceIdsOfAnswer',
+      sentenceIdsOfQuestion: 'sentenceIdsOfQuestion',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      answer: 'string',
+      question: 'string',
+      sentenceIdsOfAnswer: { 'type': 'array', 'itemType': 'number' },
+      sentenceIdsOfQuestion: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesSummaryResponseBodySummary extends $tea.Model {
+  actions?: QueryMinutesSummaryResponseBodySummaryActions;
+  autoChapters?: QueryMinutesSummaryResponseBodySummaryAutoChapters[];
+  conversationalSummary?: QueryMinutesSummaryResponseBodySummaryConversationalSummary[];
+  keySentences?: QueryMinutesSummaryResponseBodySummaryKeySentences;
+  keywords?: string[];
+  paragraphSummary?: string;
+  questionsAnsweringSummary?: QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary[];
+  static names(): { [key: string]: string } {
+    return {
+      actions: 'actions',
+      autoChapters: 'autoChapters',
+      conversationalSummary: 'conversationalSummary',
+      keySentences: 'keySentences',
+      keywords: 'keywords',
+      paragraphSummary: 'paragraphSummary',
+      questionsAnsweringSummary: 'questionsAnsweringSummary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actions: QueryMinutesSummaryResponseBodySummaryActions,
+      autoChapters: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryAutoChapters },
+      conversationalSummary: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryConversationalSummary },
+      keySentences: QueryMinutesSummaryResponseBodySummaryKeySentences,
+      keywords: { 'type': 'array', 'itemType': 'string' },
+      paragraphSummary: 'string',
+      questionsAnsweringSummary: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextResponseBodyParagraphListSentenceListWordList extends $tea.Model {
+  endTime?: number;
+  startTime?: number;
+  word?: string;
+  wordId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+      word: 'word',
+      wordId: 'wordId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      startTime: 'number',
+      word: 'string',
+      wordId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextResponseBodyParagraphListSentenceList extends $tea.Model {
+  endTime?: number;
+  sentence?: string;
+  startTime?: number;
+  unionId?: string;
+  wordList?: QueryMinutesTextResponseBodyParagraphListSentenceListWordList[];
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      sentence: 'sentence',
+      startTime: 'startTime',
+      unionId: 'unionId',
+      wordList: 'wordList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      sentence: 'string',
+      startTime: 'number',
+      unionId: 'string',
+      wordList: { 'type': 'array', 'itemType': QueryMinutesTextResponseBodyParagraphListSentenceListWordList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMinutesTextResponseBodyParagraphList extends $tea.Model {
+  endTime?: number;
+  nickName?: string;
+  paragraph?: string;
+  paragraphId?: number;
+  recordId?: number;
+  sentenceList?: QueryMinutesTextResponseBodyParagraphListSentenceList[];
+  startTime?: number;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      nickName: 'nickName',
+      paragraph: 'paragraph',
+      paragraphId: 'paragraphId',
+      recordId: 'recordId',
+      sentenceList: 'sentenceList',
+      startTime: 'startTime',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'number',
+      nickName: 'string',
+      paragraph: 'string',
+      paragraphId: 'number',
+      recordId: 'number',
+      sentenceList: { 'type': 'array', 'itemType': QueryMinutesTextResponseBodyParagraphListSentenceList },
+      startTime: 'number',
+      unionId: 'string',
     };
   }
 
@@ -5657,6 +6425,184 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 查询会议闪记的音频信息
+   *
+   * @param request QueryMinutesAudioRequest
+   * @param headers QueryMinutesAudioHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMinutesAudioResponse
+   */
+  async queryMinutesAudioWithOptions(conferenceId: string, request: QueryMinutesAudioRequest, headers: QueryMinutesAudioHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesAudioResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMinutesAudio",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/minutes/audioInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMinutesAudioResponse>(await this.execute(params, req, runtime), new QueryMinutesAudioResponse({}));
+  }
+
+  /**
+   * @summary 查询会议闪记的音频信息
+   *
+   * @param request QueryMinutesAudioRequest
+   * @return QueryMinutesAudioResponse
+   */
+  async queryMinutesAudio(conferenceId: string, request: QueryMinutesAudioRequest): Promise<QueryMinutesAudioResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMinutesAudioHeaders({ });
+    return await this.queryMinutesAudioWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询会议闪记智能纪要
+   *
+   * @param request QueryMinutesSummaryRequest
+   * @param headers QueryMinutesSummaryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMinutesSummaryResponse
+   */
+  async queryMinutesSummaryWithOptions(conferenceId: string, request: QueryMinutesSummaryRequest, headers: QueryMinutesSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesSummaryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.summaryTypeList)) {
+      body["summaryTypeList"] = request.summaryTypeList;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMinutesSummary",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/minutes/summaries/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMinutesSummaryResponse>(await this.execute(params, req, runtime), new QueryMinutesSummaryResponse({}));
+  }
+
+  /**
+   * @summary 查询会议闪记智能纪要
+   *
+   * @param request QueryMinutesSummaryRequest
+   * @return QueryMinutesSummaryResponse
+   */
+  async queryMinutesSummary(conferenceId: string, request: QueryMinutesSummaryRequest): Promise<QueryMinutesSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMinutesSummaryHeaders({ });
+    return await this.queryMinutesSummaryWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询会议闪记文本信息
+   *
+   * @param request QueryMinutesTextRequest
+   * @param headers QueryMinutesTextHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryMinutesTextResponse
+   */
+  async queryMinutesTextWithOptions(conferenceId: string, request: QueryMinutesTextRequest, headers: QueryMinutesTextHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesTextResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.direction)) {
+      query["direction"] = request.direction;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMinutesText",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/minutes/textInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMinutesTextResponse>(await this.execute(params, req, runtime), new QueryMinutesTextResponse({}));
+  }
+
+  /**
+   * @summary 查询会议闪记文本信息
+   *
+   * @param request QueryMinutesTextRequest
+   * @return QueryMinutesTextResponse
+   */
+  async queryMinutesText(conferenceId: string, request: QueryMinutesTextRequest): Promise<QueryMinutesTextResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMinutesTextHeaders({ });
+    return await this.queryMinutesTextWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
    * @summary 查询预约会议设置
    *
    * @param request QueryScheduleConfSettingsRequest
@@ -5939,6 +6885,68 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 开启会议闪记
+   *
+   * @param request StartMinutesRequest
+   * @param headers StartMinutesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StartMinutesResponse
+   */
+  async startMinutesWithOptions(conferenceId: string, request: StartMinutesRequest, headers: StartMinutesHeaders, runtime: $Util.RuntimeOptions): Promise<StartMinutesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.ownerUnionId)) {
+      body["ownerUnionId"] = request.ownerUnionId;
+    }
+
+    if (!Util.isUnset(request.recordAudio)) {
+      body["recordAudio"] = request.recordAudio;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "StartMinutes",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/minutes/start`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StartMinutesResponse>(await this.execute(params, req, runtime), new StartMinutesResponse({}));
+  }
+
+  /**
+   * @summary 开启会议闪记
+   *
+   * @param request StartMinutesRequest
+   * @return StartMinutesResponse
+   */
+  async startMinutes(conferenceId: string, request: StartMinutesRequest): Promise<StartMinutesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StartMinutesHeaders({ });
+    return await this.startMinutesWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
    * @summary 会议开始直播推流
    *
    * @param request StartStreamOutRequest
@@ -6064,6 +7072,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopCloudRecordHeaders({ });
     return await this.stopCloudRecordWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 暂停会议闪记
+   *
+   * @param request StopMinutesRequest
+   * @param headers StopMinutesHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StopMinutesResponse
+   */
+  async stopMinutesWithOptions(conferenceId: string, request: StopMinutesRequest, headers: StopMinutesHeaders, runtime: $Util.RuntimeOptions): Promise<StopMinutesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "StopMinutes",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/minutes/pause`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StopMinutesResponse>(await this.execute(params, req, runtime), new StopMinutesResponse({}));
+  }
+
+  /**
+   * @summary 暂停会议闪记
+   *
+   * @param request StopMinutesRequest
+   * @return StopMinutesResponse
+   */
+  async stopMinutes(conferenceId: string, request: StopMinutesRequest): Promise<StopMinutesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StopMinutesHeaders({ });
+    return await this.stopMinutesWithOptions(conferenceId, request, headers, runtime);
   }
 
   /**

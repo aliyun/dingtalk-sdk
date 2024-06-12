@@ -731,6 +731,94 @@ export class CreateTrustedDeviceBatchResponse extends $tea.Model {
   }
 }
 
+export class DataSyncHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DataSyncRequest extends $tea.Model {
+  sql?: string;
+  static names(): { [key: string]: string } {
+    return {
+      sql: 'sql',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sql: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DataSyncResponseBody extends $tea.Model {
+  dataList?: { [key: string]: any }[];
+  rowsAffected?: number;
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      rowsAffected: 'rowsAffected',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      rowsAffected: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DataSyncResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DataSyncResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DataSyncResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteAcrossCloudStroageConfigsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11626,6 +11714,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTrustedDeviceBatchHeaders({ });
     return await this.createTrustedDeviceBatchWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 为应用同步数据到专属存储
+   *
+   * @param request DataSyncRequest
+   * @param headers DataSyncHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DataSyncResponse
+   */
+  async dataSyncWithOptions(request: DataSyncRequest, headers: DataSyncHeaders, runtime: $Util.RuntimeOptions): Promise<DataSyncResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.sql)) {
+      body["sql"] = request.sql;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DataSync",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/datas/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DataSyncResponse>(await this.execute(params, req, runtime), new DataSyncResponse({}));
+  }
+
+  /**
+   * @summary 为应用同步数据到专属存储
+   *
+   * @param request DataSyncRequest
+   * @return DataSyncResponse
+   */
+  async dataSync(request: DataSyncRequest): Promise<DataSyncResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DataSyncHeaders({ });
+    return await this.dataSyncWithOptions(request, headers, runtime);
   }
 
   /**

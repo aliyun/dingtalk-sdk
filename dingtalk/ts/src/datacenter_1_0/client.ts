@@ -9,6 +9,109 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CreateDataDeliverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDataDeliverRequest extends $tea.Model {
+  bizcode?: string;
+  param?: string;
+  userId?: string;
+  dispatchingCycle?: string;
+  dispatchingItemType?: string;
+  dispatchingStartDate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      bizcode: 'bizcode',
+      param: 'param',
+      userId: 'userId',
+      dispatchingCycle: 'dispatchingCycle',
+      dispatchingItemType: 'dispatchingItemType',
+      dispatchingStartDate: 'dispatchingStartDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizcode: 'string',
+      param: 'string',
+      userId: 'string',
+      dispatchingCycle: 'string',
+      dispatchingItemType: 'string',
+      dispatchingStartDate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDataDeliverResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDataDeliverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateDataDeliverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateDataDeliverResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAbnormalOperationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -941,6 +1044,100 @@ export class GetEnvironmentalPenaltiesResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetEnvironmentalPenaltiesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventDataRequest extends $tea.Model {
+  bizId?: string;
+  eventUid?: string;
+  subId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      eventUid: 'eventUid',
+      subId: 'subId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      eventUid: 'string',
+      subId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventDataResponseBody extends $tea.Model {
+  success?: string;
+  value?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'string',
+      value: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetEventDataResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetEventDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetEventDataResponseBody,
     };
   }
 
@@ -10546,6 +10743,82 @@ export default class Client extends OpenApi {
 
 
   /**
+   * @summary 创建数据投递
+   *
+   * @param request CreateDataDeliverRequest
+   * @param headers CreateDataDeliverHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateDataDeliverResponse
+   */
+  async createDataDeliverWithOptions(request: CreateDataDeliverRequest, headers: CreateDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDataDeliverResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizcode)) {
+      query["bizcode"] = request.bizcode;
+    }
+
+    if (!Util.isUnset(request.dispatchingCycle)) {
+      query["dispatchingCycle"] = request.dispatchingCycle;
+    }
+
+    if (!Util.isUnset(request.dispatchingItemType)) {
+      query["dispatchingItemType"] = request.dispatchingItemType;
+    }
+
+    if (!Util.isUnset(request.dispatchingStartDate)) {
+      query["dispatchingStartDate"] = request.dispatchingStartDate;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateDataDeliver",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dataDeliveries`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDataDeliverResponse>(await this.execute(params, req, runtime), new CreateDataDeliverResponse({}));
+  }
+
+  /**
+   * @summary 创建数据投递
+   *
+   * @param request CreateDataDeliverRequest
+   * @return CreateDataDeliverResponse
+   */
+  async createDataDeliver(request: CreateDataDeliverRequest): Promise<CreateDataDeliverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateDataDeliverHeaders({ });
+    return await this.createDataDeliverWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 工商-经营异常
    *
    * @param request GetAbnormalOperationRequest
@@ -11163,6 +11436,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEnvironmentalPenaltiesHeaders({ });
     return await this.getEnvironmentalPenaltiesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取事件订阅的数据
+   *
+   * @param request GetEventDataRequest
+   * @param headers GetEventDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetEventDataResponse
+   */
+  async getEventDataWithOptions(request: GetEventDataRequest, headers: GetEventDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.eventUid)) {
+      body["eventUid"] = request.eventUid;
+    }
+
+    if (!Util.isUnset(request.subId)) {
+      body["subId"] = request.subId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetEventData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/eventDatas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEventDataResponse>(await this.execute(params, req, runtime), new GetEventDataResponse({}));
+  }
+
+  /**
+   * @summary 获取事件订阅的数据
+   *
+   * @param request GetEventDataRequest
+   * @return GetEventDataResponse
+   */
+  async getEventData(request: GetEventDataRequest): Promise<GetEventDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetEventDataHeaders({ });
+    return await this.getEventDataWithOptions(request, headers, runtime);
   }
 
   /**
