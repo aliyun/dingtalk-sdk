@@ -25,6 +25,12 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateRequest
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\VoiceCloneResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -477,5 +483,134 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDeviceVideoConferenceBookHeaders([]);
 
         return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 文生图开放接口
+     *  *
+     * @param TextToImageRequest $request TextToImageRequest
+     * @param TextToImageHeaders $headers TextToImageHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TextToImageResponse TextToImageResponse
+     */
+    public function textToImageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->modelId)) {
+            $body['modelId'] = $request->modelId;
+        }
+        if (!Utils::isUnset($request->pictureNum)) {
+            $body['pictureNum'] = $request->pictureNum;
+        }
+        if (!Utils::isUnset($request->pictureSize)) {
+            $body['pictureSize'] = $request->pictureSize;
+        }
+        if (!Utils::isUnset($request->query)) {
+            $body['query'] = $request->query;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TextToImage',
+            'version'     => 'smartDevice_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/smartDevice/textToImages/generate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TextToImageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文生图开放接口
+     *  *
+     * @param TextToImageRequest $request TextToImageRequest
+     *
+     * @return TextToImageResponse TextToImageResponse
+     */
+    public function textToImage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TextToImageHeaders([]);
+
+        return $this->textToImageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 音频复刻
+     *  *
+     * @param VoiceCloneRequest $request VoiceCloneRequest
+     * @param VoiceCloneHeaders $headers VoiceCloneHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return VoiceCloneResponse VoiceCloneResponse
+     */
+    public function voiceCloneWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->voiceId)) {
+            $body['voiceId'] = $request->voiceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'VoiceClone',
+            'version'     => 'smartDevice_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/smartDevice/voices/clone',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return VoiceCloneResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 音频复刻
+     *  *
+     * @param VoiceCloneRequest $request VoiceCloneRequest
+     *
+     * @return VoiceCloneResponse VoiceCloneResponse
+     */
+    public function voiceClone($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new VoiceCloneHeaders([]);
+
+        return $this->voiceCloneWithOptions($request, $headers, $runtime);
     }
 }

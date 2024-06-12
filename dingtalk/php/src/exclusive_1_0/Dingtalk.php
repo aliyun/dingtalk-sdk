@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteAcrossCloudStroageConfigsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteCommentHeaders;
@@ -794,6 +797,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTrustedDeviceBatchHeaders([]);
 
         return $this->createTrustedDeviceBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 为应用同步数据到专属存储
+     *  *
+     * @param DataSyncRequest $request DataSyncRequest
+     * @param DataSyncHeaders $headers DataSyncHeaders
+     * @param RuntimeOptions  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DataSyncResponse DataSyncResponse
+     */
+    public function dataSyncWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sql)) {
+            $body['sql'] = $request->sql;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DataSync',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/datas/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DataSyncResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 为应用同步数据到专属存储
+     *  *
+     * @param DataSyncRequest $request DataSyncRequest
+     *
+     * @return DataSyncResponse DataSyncResponse
+     */
+    public function dataSync($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DataSyncHeaders([]);
+
+        return $this->dataSyncWithOptions($request, $headers, $runtime);
     }
 
     /**

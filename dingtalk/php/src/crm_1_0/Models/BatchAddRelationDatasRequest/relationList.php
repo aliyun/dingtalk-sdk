@@ -26,10 +26,18 @@ class relationList extends Model
      * @var relationPermissionDTO
      */
     public $relationPermissionDTO;
+
+    /**
+     * @example ddsf3234234
+     *
+     * @var string
+     */
+    public $sourceDataId;
     protected $_name = [
         'bizDataList'           => 'bizDataList',
         'bizExtMap'             => 'bizExtMap',
         'relationPermissionDTO' => 'relationPermissionDTO',
+        'sourceDataId'          => 'sourceDataId',
     ];
 
     public function validate()
@@ -53,6 +61,9 @@ class relationList extends Model
         }
         if (null !== $this->relationPermissionDTO) {
             $res['relationPermissionDTO'] = null !== $this->relationPermissionDTO ? $this->relationPermissionDTO->toMap() : null;
+        }
+        if (null !== $this->sourceDataId) {
+            $res['sourceDataId'] = $this->sourceDataId;
         }
 
         return $res;
@@ -80,6 +91,9 @@ class relationList extends Model
         }
         if (isset($map['relationPermissionDTO'])) {
             $model->relationPermissionDTO = relationPermissionDTO::fromMap($map['relationPermissionDTO']);
+        }
+        if (isset($map['sourceDataId'])) {
+            $model->sourceDataId = $map['sourceDataId'];
         }
 
         return $model;

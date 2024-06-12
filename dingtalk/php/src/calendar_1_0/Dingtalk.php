@@ -78,6 +78,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponse;
@@ -1912,6 +1915,77 @@ class Dingtalk extends OpenApiClient
         $headers = new ListInstancesHeaders([]);
 
         return $this->listInstancesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置会议室在日程中的响应状态
+     *  *
+     * @param string                    $calendarId
+     * @param string                    $userId
+     * @param string                    $eventId
+     * @param string                    $roomId
+     * @param MeetingRoomRespondRequest $request    MeetingRoomRespondRequest
+     * @param MeetingRoomRespondHeaders $headers    MeetingRoomRespondHeaders
+     * @param RuntimeOptions            $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return MeetingRoomRespondResponse MeetingRoomRespondResponse
+     */
+    public function meetingRoomRespondWithOptions($calendarId, $userId, $eventId, $roomId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->responseStatus)) {
+            $body['responseStatus'] = $request->responseStatus;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->userAgent)) {
+            $realHeaders['userAgent'] = Utils::toJSONString($headers->userAgent);
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'MeetingRoomRespond',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/meetingRooms/' . $roomId . '/respond',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return MeetingRoomRespondResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置会议室在日程中的响应状态
+     *  *
+     * @param string                    $calendarId
+     * @param string                    $userId
+     * @param string                    $eventId
+     * @param string                    $roomId
+     * @param MeetingRoomRespondRequest $request    MeetingRoomRespondRequest
+     *
+     * @return MeetingRoomRespondResponse MeetingRoomRespondResponse
+     */
+    public function meetingRoomRespond($calendarId, $userId, $eventId, $roomId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MeetingRoomRespondHeaders([]);
+
+        return $this->meetingRoomRespondWithOptions($calendarId, $userId, $eventId, $roomId, $request, $headers, $runtime);
     }
 
     /**

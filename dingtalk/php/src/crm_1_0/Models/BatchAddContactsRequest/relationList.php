@@ -20,9 +20,17 @@ class relationList extends Model
      * @var string[]
      */
     public $bizExtMap;
+
+    /**
+     * @example 1343434dd
+     *
+     * @var string
+     */
+    public $sourceDataId;
     protected $_name = [
-        'bizDataList' => 'bizDataList',
-        'bizExtMap'   => 'bizExtMap',
+        'bizDataList'  => 'bizDataList',
+        'bizExtMap'    => 'bizExtMap',
+        'sourceDataId' => 'sourceDataId',
     ];
 
     public function validate()
@@ -43,6 +51,9 @@ class relationList extends Model
         }
         if (null !== $this->bizExtMap) {
             $res['bizExtMap'] = $this->bizExtMap;
+        }
+        if (null !== $this->sourceDataId) {
+            $res['sourceDataId'] = $this->sourceDataId;
         }
 
         return $res;
@@ -67,6 +78,9 @@ class relationList extends Model
         }
         if (isset($map['bizExtMap'])) {
             $model->bizExtMap = $map['bizExtMap'];
+        }
+        if (isset($map['sourceDataId'])) {
+            $model->sourceDataId = $map['sourceDataId'];
         }
 
         return $model;

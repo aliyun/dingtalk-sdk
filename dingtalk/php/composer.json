@@ -89,6 +89,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vmicro_app_1_0\\": "src/micro_app_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vminiapp_1_0\\": "src/miniapp_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vnotable_1_0\\": "src/notable_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vnotable_2_0\\": "src/notable_2_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Voauth2_1_0\\": "src/oauth2_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Voccupationauth_1_0\\": "src/occupationauth_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vokr_1_0\\": "src/okr_1_0/",

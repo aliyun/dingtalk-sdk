@@ -10,12 +10,18 @@ use AlibabaCloud\Tea\Model;
 class instanceList extends Model
 {
     /**
+     * @var string[]
+     */
+    public $bizExtMap;
+
+    /**
      * @description This parameter is required.
      *
      * @var dataArray[]
      */
     public $dataArray;
     protected $_name = [
+        'bizExtMap' => 'bizExtMap',
         'dataArray' => 'dataArray',
     ];
 
@@ -26,6 +32,9 @@ class instanceList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizExtMap) {
+            $res['bizExtMap'] = $this->bizExtMap;
+        }
         if (null !== $this->dataArray) {
             $res['dataArray'] = [];
             if (null !== $this->dataArray && \is_array($this->dataArray)) {
@@ -47,6 +56,9 @@ class instanceList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizExtMap'])) {
+            $model->bizExtMap = $map['bizExtMap'];
+        }
         if (isset($map['dataArray'])) {
             if (!empty($map['dataArray'])) {
                 $model->dataArray = [];

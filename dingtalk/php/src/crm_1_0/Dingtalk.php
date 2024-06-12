@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddCustomerTrackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddLeadsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddMetaModelFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddMetaModelFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddMetaModelFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
@@ -80,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DeleteRelationMetaFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeCrmPersonalCustomerObjectMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeMetaModelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeMetaModelRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeMetaModelResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponse;
@@ -206,6 +212,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateGroupSetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMenuDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMetaModelFieldHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMetaModelFieldRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateMetaModelFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponse;
@@ -523,6 +532,72 @@ class Dingtalk extends OpenApiClient
         $headers = new AddLeadsHeaders([]);
 
         return $this->addLeadsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 模型表结构增加字段
+     *  *
+     * @param AddMetaModelFieldRequest $request AddMetaModelFieldRequest
+     * @param AddMetaModelFieldHeaders $headers AddMetaModelFieldHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddMetaModelFieldResponse AddMetaModelFieldResponse
+     */
+    public function addMetaModelFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            $body['fieldDTOList'] = $request->fieldDTOList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddMetaModelField',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/metas/models/fields',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddMetaModelFieldResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 模型表结构增加字段
+     *  *
+     * @param AddMetaModelFieldRequest $request AddMetaModelFieldRequest
+     *
+     * @return AddMetaModelFieldResponse AddMetaModelFieldResponse
+     */
+    public function addMetaModelField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddMetaModelFieldHeaders([]);
+
+        return $this->addMetaModelFieldWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1867,6 +1942,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DescribeCrmPersonalCustomerObjectMetaHeaders([]);
 
         return $this->describeCrmPersonalCustomerObjectMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询模型表结构
+     *  *
+     * @param DescribeMetaModelRequest $request DescribeMetaModelRequest
+     * @param DescribeMetaModelHeaders $headers DescribeMetaModelHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DescribeMetaModelResponse DescribeMetaModelResponse
+     */
+    public function describeMetaModelWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizTypes)) {
+            $body['bizTypes'] = $request->bizTypes;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DescribeMetaModel',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/metas/models/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DescribeMetaModelResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询模型表结构
+     *  *
+     * @param DescribeMetaModelRequest $request DescribeMetaModelRequest
+     *
+     * @return DescribeMetaModelResponse DescribeMetaModelResponse
+     */
+    public function describeMetaModel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DescribeMetaModelHeaders([]);
+
+        return $this->describeMetaModelWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4519,6 +4657,72 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateMenuDataHeaders([]);
 
         return $this->updateMenuDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 模型表结构更新字段
+     *  *
+     * @param UpdateMetaModelFieldRequest $request UpdateMetaModelFieldRequest
+     * @param UpdateMetaModelFieldHeaders $headers UpdateMetaModelFieldHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateMetaModelFieldResponse UpdateMetaModelFieldResponse
+     */
+    public function updateMetaModelFieldWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            $body['fieldDTOList'] = $request->fieldDTOList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateMetaModelField',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/metas/models/fields',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateMetaModelFieldResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 模型表结构更新字段
+     *  *
+     * @param UpdateMetaModelFieldRequest $request UpdateMetaModelFieldRequest
+     *
+     * @return UpdateMetaModelFieldResponse UpdateMetaModelFieldResponse
+     */
+    public function updateMetaModelField($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateMetaModelFieldHeaders([]);
+
+        return $this->updateMetaModelFieldWithOptions($request, $headers, $runtime);
     }
 
     /**

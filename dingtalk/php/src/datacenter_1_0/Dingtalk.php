@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationResponse;
@@ -35,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDoubleRandomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEnvironmentalPenaltiesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEventDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEventDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetEventDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetHolderInfoResponse;
@@ -306,6 +312,80 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 创建数据投递
+     *  *
+     * @param CreateDataDeliverRequest $request CreateDataDeliverRequest
+     * @param CreateDataDeliverHeaders $headers CreateDataDeliverHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateDataDeliverResponse CreateDataDeliverResponse
+     */
+    public function createDataDeliverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizcode)) {
+            $query['bizcode'] = $request->bizcode;
+        }
+        if (!Utils::isUnset($request->dispatchingCycle)) {
+            $query['dispatchingCycle'] = $request->dispatchingCycle;
+        }
+        if (!Utils::isUnset($request->dispatchingItemType)) {
+            $query['dispatchingItemType'] = $request->dispatchingItemType;
+        }
+        if (!Utils::isUnset($request->dispatchingStartDate)) {
+            $query['dispatchingStartDate'] = $request->dispatchingStartDate;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateDataDeliver',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dataDeliveries',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建数据投递
+     *  *
+     * @param CreateDataDeliverRequest $request CreateDataDeliverRequest
+     *
+     * @return CreateDataDeliverResponse CreateDataDeliverResponse
+     */
+    public function createDataDeliver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateDataDeliverHeaders([]);
+
+        return $this->createDataDeliverWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -936,6 +1016,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetEnvironmentalPenaltiesHeaders([]);
 
         return $this->getEnvironmentalPenaltiesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取事件订阅的数据
+     *  *
+     * @param GetEventDataRequest $request GetEventDataRequest
+     * @param GetEventDataHeaders $headers GetEventDataHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetEventDataResponse GetEventDataResponse
+     */
+    public function getEventDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->eventUid)) {
+            $body['eventUid'] = $request->eventUid;
+        }
+        if (!Utils::isUnset($request->subId)) {
+            $body['subId'] = $request->subId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetEventData',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/eventDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetEventDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取事件订阅的数据
+     *  *
+     * @param GetEventDataRequest $request GetEventDataRequest
+     *
+     * @return GetEventDataResponse GetEventDataResponse
+     */
+    public function getEventData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetEventDataHeaders([]);
+
+        return $this->getEventDataWithOptions($request, $headers, $runtime);
     }
 
     /**

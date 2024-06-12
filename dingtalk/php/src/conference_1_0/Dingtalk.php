@@ -73,6 +73,15 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoResponse
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoRequest;
@@ -88,12 +97,18 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryUserOnGoingConferenceR
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartCloudRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartMinutesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartMinutesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartStreamOutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartStreamOutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StartStreamOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopCloudRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopCloudRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopCloudRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopMinutesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopMinutesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutResponse;
@@ -1579,6 +1594,195 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询会议闪记的音频信息
+     *  *
+     * @param string                   $conferenceId
+     * @param QueryMinutesAudioRequest $request      QueryMinutesAudioRequest
+     * @param QueryMinutesAudioHeaders $headers      QueryMinutesAudioHeaders
+     * @param RuntimeOptions           $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesAudioResponse QueryMinutesAudioResponse
+     */
+    public function queryMinutesAudioWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMinutesAudio',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/audioInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMinutesAudioResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询会议闪记的音频信息
+     *  *
+     * @param string                   $conferenceId
+     * @param QueryMinutesAudioRequest $request      QueryMinutesAudioRequest
+     *
+     * @return QueryMinutesAudioResponse QueryMinutesAudioResponse
+     */
+    public function queryMinutesAudio($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesAudioHeaders([]);
+
+        return $this->queryMinutesAudioWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询会议闪记智能纪要
+     *  *
+     * @param string                     $conferenceId
+     * @param QueryMinutesSummaryRequest $request      QueryMinutesSummaryRequest
+     * @param QueryMinutesSummaryHeaders $headers      QueryMinutesSummaryHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesSummaryResponse QueryMinutesSummaryResponse
+     */
+    public function queryMinutesSummaryWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->summaryTypeList)) {
+            $body['summaryTypeList'] = $request->summaryTypeList;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMinutesSummary',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/summaries/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMinutesSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询会议闪记智能纪要
+     *  *
+     * @param string                     $conferenceId
+     * @param QueryMinutesSummaryRequest $request      QueryMinutesSummaryRequest
+     *
+     * @return QueryMinutesSummaryResponse QueryMinutesSummaryResponse
+     */
+    public function queryMinutesSummary($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesSummaryHeaders([]);
+
+        return $this->queryMinutesSummaryWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询会议闪记文本信息
+     *  *
+     * @param string                  $conferenceId
+     * @param QueryMinutesTextRequest $request      QueryMinutesTextRequest
+     * @param QueryMinutesTextHeaders $headers      QueryMinutesTextHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesTextResponse QueryMinutesTextResponse
+     */
+    public function queryMinutesTextWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->direction)) {
+            $query['direction'] = $request->direction;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMinutesText',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/textInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMinutesTextResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询会议闪记文本信息
+     *  *
+     * @param string                  $conferenceId
+     * @param QueryMinutesTextRequest $request      QueryMinutesTextRequest
+     *
+     * @return QueryMinutesTextResponse QueryMinutesTextResponse
+     */
+    public function queryMinutesText($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesTextHeaders([]);
+
+        return $this->queryMinutesTextWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询预约会议设置
      *  *
      * @param QueryScheduleConfSettingsRequest $request QueryScheduleConfSettingsRequest
@@ -1879,6 +2083,71 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开启会议闪记
+     *  *
+     * @param string              $conferenceId
+     * @param StartMinutesRequest $request      StartMinutesRequest
+     * @param StartMinutesHeaders $headers      StartMinutesHeaders
+     * @param RuntimeOptions      $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return StartMinutesResponse StartMinutesResponse
+     */
+    public function startMinutesWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            $body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        if (!Utils::isUnset($request->recordAudio)) {
+            $body['recordAudio'] = $request->recordAudio;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'StartMinutes',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/start',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return StartMinutesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开启会议闪记
+     *  *
+     * @param string              $conferenceId
+     * @param StartMinutesRequest $request      StartMinutesRequest
+     *
+     * @return StartMinutesResponse StartMinutesResponse
+     */
+    public function startMinutes($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StartMinutesHeaders([]);
+
+        return $this->startMinutesWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 会议开始直播推流
      *  *
      * @param string                $conferenceId
@@ -2009,6 +2278,65 @@ class Dingtalk extends OpenApiClient
         $headers = new StopCloudRecordHeaders([]);
 
         return $this->stopCloudRecordWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 暂停会议闪记
+     *  *
+     * @param string             $conferenceId
+     * @param StopMinutesRequest $request      StopMinutesRequest
+     * @param StopMinutesHeaders $headers      StopMinutesHeaders
+     * @param RuntimeOptions     $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return StopMinutesResponse StopMinutesResponse
+     */
+    public function stopMinutesWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'StopMinutes',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/minutes/pause',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return StopMinutesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 暂停会议闪记
+     *  *
+     * @param string             $conferenceId
+     * @param StopMinutesRequest $request      StopMinutesRequest
+     *
+     * @return StopMinutesResponse StopMinutesResponse
+     */
+    public function stopMinutes($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StopMinutesHeaders([]);
+
+        return $this->stopMinutesWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
