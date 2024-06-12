@@ -3459,6 +3459,144 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
         return await self.list_instances_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
 
+    def meeting_room_respond_with_options(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        room_id: str,
+        request: dingtalkcalendar__1__0_models.MeetingRoomRespondRequest,
+        headers: dingtalkcalendar__1__0_models.MeetingRoomRespondHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.MeetingRoomRespondResponse:
+        """
+        @summary 设置会议室在日程中的响应状态
+        
+        @param request: MeetingRoomRespondRequest
+        @param headers: MeetingRoomRespondHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MeetingRoomRespondResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.response_status):
+            body['responseStatus'] = request.response_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.user_agent):
+            real_headers['userAgent'] = UtilClient.to_jsonstring(headers.user_agent)
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MeetingRoomRespond',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms/{room_id}/respond',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.MeetingRoomRespondResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def meeting_room_respond_with_options_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        room_id: str,
+        request: dingtalkcalendar__1__0_models.MeetingRoomRespondRequest,
+        headers: dingtalkcalendar__1__0_models.MeetingRoomRespondHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.MeetingRoomRespondResponse:
+        """
+        @summary 设置会议室在日程中的响应状态
+        
+        @param request: MeetingRoomRespondRequest
+        @param headers: MeetingRoomRespondHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MeetingRoomRespondResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.response_status):
+            body['responseStatus'] = request.response_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.user_agent):
+            real_headers['userAgent'] = UtilClient.to_jsonstring(headers.user_agent)
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MeetingRoomRespond',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/meetingRooms/{room_id}/respond',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.MeetingRoomRespondResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def meeting_room_respond(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        room_id: str,
+        request: dingtalkcalendar__1__0_models.MeetingRoomRespondRequest,
+    ) -> dingtalkcalendar__1__0_models.MeetingRoomRespondResponse:
+        """
+        @summary 设置会议室在日程中的响应状态
+        
+        @param request: MeetingRoomRespondRequest
+        @return: MeetingRoomRespondResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.MeetingRoomRespondHeaders()
+        return self.meeting_room_respond_with_options(calendar_id, user_id, event_id, room_id, request, headers, runtime)
+
+    async def meeting_room_respond_async(
+        self,
+        calendar_id: str,
+        user_id: str,
+        event_id: str,
+        room_id: str,
+        request: dingtalkcalendar__1__0_models.MeetingRoomRespondRequest,
+    ) -> dingtalkcalendar__1__0_models.MeetingRoomRespondResponse:
+        """
+        @summary 设置会议室在日程中的响应状态
+        
+        @param request: MeetingRoomRespondRequest
+        @return: MeetingRoomRespondResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.MeetingRoomRespondHeaders()
+        return await self.meeting_room_respond_with_options_async(calendar_id, user_id, event_id, room_id, request, headers, runtime)
+
     def patch_event_with_options(
         self,
         user_id: str,

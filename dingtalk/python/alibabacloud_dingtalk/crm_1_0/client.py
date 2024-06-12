@@ -573,6 +573,132 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.AddLeadsHeaders()
         return await self.add_leads_with_options_async(request, headers, runtime)
 
+    def add_meta_model_field_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.AddMetaModelFieldRequest,
+        headers: dingtalkcrm__1__0_models.AddMetaModelFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AddMetaModelFieldResponse:
+        """
+        @summary 模型表结构增加字段
+        
+        @param request: AddMetaModelFieldRequest
+        @param headers: AddMetaModelFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddMetaModelFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddMetaModelField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AddMetaModelFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_meta_model_field_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.AddMetaModelFieldRequest,
+        headers: dingtalkcrm__1__0_models.AddMetaModelFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AddMetaModelFieldResponse:
+        """
+        @summary 模型表结构增加字段
+        
+        @param request: AddMetaModelFieldRequest
+        @param headers: AddMetaModelFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddMetaModelFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddMetaModelField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/fields',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AddMetaModelFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_meta_model_field(
+        self,
+        request: dingtalkcrm__1__0_models.AddMetaModelFieldRequest,
+    ) -> dingtalkcrm__1__0_models.AddMetaModelFieldResponse:
+        """
+        @summary 模型表结构增加字段
+        
+        @param request: AddMetaModelFieldRequest
+        @return: AddMetaModelFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AddMetaModelFieldHeaders()
+        return self.add_meta_model_field_with_options(request, headers, runtime)
+
+    async def add_meta_model_field_async(
+        self,
+        request: dingtalkcrm__1__0_models.AddMetaModelFieldRequest,
+    ) -> dingtalkcrm__1__0_models.AddMetaModelFieldResponse:
+        """
+        @summary 模型表结构增加字段
+        
+        @param request: AddMetaModelFieldRequest
+        @return: AddMetaModelFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AddMetaModelFieldHeaders()
+        return await self.add_meta_model_field_with_options_async(request, headers, runtime)
+
     def add_relation_meta_field_with_options(
         self,
         request: dingtalkcrm__1__0_models.AddRelationMetaFieldRequest,
@@ -3166,6 +3292,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.DescribeCrmPersonalCustomerObjectMetaHeaders()
         return await self.describe_crm_personal_customer_object_meta_with_options_async(request, headers, runtime)
+
+    def describe_meta_model_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeMetaModelRequest,
+        headers: dingtalkcrm__1__0_models.DescribeMetaModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DescribeMetaModelResponse:
+        """
+        @summary 查询模型表结构
+        
+        @param request: DescribeMetaModelRequest
+        @param headers: DescribeMetaModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeMetaModelResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_types):
+            body['bizTypes'] = request.biz_types
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DescribeMetaModel',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DescribeMetaModelResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def describe_meta_model_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeMetaModelRequest,
+        headers: dingtalkcrm__1__0_models.DescribeMetaModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.DescribeMetaModelResponse:
+        """
+        @summary 查询模型表结构
+        
+        @param request: DescribeMetaModelRequest
+        @param headers: DescribeMetaModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DescribeMetaModelResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_types):
+            body['bizTypes'] = request.biz_types
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DescribeMetaModel',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.DescribeMetaModelResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def describe_meta_model(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeMetaModelRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeMetaModelResponse:
+        """
+        @summary 查询模型表结构
+        
+        @param request: DescribeMetaModelRequest
+        @return: DescribeMetaModelResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DescribeMetaModelHeaders()
+        return self.describe_meta_model_with_options(request, headers, runtime)
+
+    async def describe_meta_model_async(
+        self,
+        request: dingtalkcrm__1__0_models.DescribeMetaModelRequest,
+    ) -> dingtalkcrm__1__0_models.DescribeMetaModelResponse:
+        """
+        @summary 查询模型表结构
+        
+        @param request: DescribeMetaModelRequest
+        @return: DescribeMetaModelResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.DescribeMetaModelHeaders()
+        return await self.describe_meta_model_with_options_async(request, headers, runtime)
 
     def describe_relation_meta_with_options(
         self,
@@ -8316,6 +8564,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.UpdateMenuDataHeaders()
         return await self.update_menu_data_with_options_async(request, headers, runtime)
+
+    def update_meta_model_field_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMetaModelFieldRequest,
+        headers: dingtalkcrm__1__0_models.UpdateMetaModelFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse:
+        """
+        @summary 模型表结构更新字段
+        
+        @param request: UpdateMetaModelFieldRequest
+        @param headers: UpdateMetaModelFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMetaModelFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMetaModelField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_meta_model_field_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMetaModelFieldRequest,
+        headers: dingtalkcrm__1__0_models.UpdateMetaModelFieldHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse:
+        """
+        @summary 模型表结构更新字段
+        
+        @param request: UpdateMetaModelFieldRequest
+        @param headers: UpdateMetaModelFieldHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMetaModelFieldResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.field_dtolist):
+            body['fieldDTOList'] = request.field_dtolist
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tenant):
+            body['tenant'] = request.tenant
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMetaModelField',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/metas/models/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_meta_model_field(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMetaModelFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse:
+        """
+        @summary 模型表结构更新字段
+        
+        @param request: UpdateMetaModelFieldRequest
+        @return: UpdateMetaModelFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateMetaModelFieldHeaders()
+        return self.update_meta_model_field_with_options(request, headers, runtime)
+
+    async def update_meta_model_field_async(
+        self,
+        request: dingtalkcrm__1__0_models.UpdateMetaModelFieldRequest,
+    ) -> dingtalkcrm__1__0_models.UpdateMetaModelFieldResponse:
+        """
+        @summary 模型表结构更新字段
+        
+        @param request: UpdateMetaModelFieldRequest
+        @return: UpdateMetaModelFieldResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.UpdateMetaModelFieldHeaders()
+        return await self.update_meta_model_field_with_options_async(request, headers, runtime)
 
     def update_relation_meta_field_with_options(
         self,

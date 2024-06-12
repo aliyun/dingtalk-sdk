@@ -872,3 +872,251 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders()
         return await self.query_device_video_conference_book_with_options_async(device_id, book_id, headers, runtime)
+
+    def text_to_image_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.TextToImageRequest,
+        headers: dingtalksmart_device__1__0_models.TextToImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.TextToImageResponse:
+        """
+        @summary 文生图开放接口
+        
+        @param request: TextToImageRequest
+        @param headers: TextToImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TextToImageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.picture_num):
+            body['pictureNum'] = request.picture_num
+        if not UtilClient.is_unset(request.picture_size):
+            body['pictureSize'] = request.picture_size
+        if not UtilClient.is_unset(request.query):
+            body['query'] = request.query
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TextToImage',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/textToImages/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.TextToImageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def text_to_image_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.TextToImageRequest,
+        headers: dingtalksmart_device__1__0_models.TextToImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.TextToImageResponse:
+        """
+        @summary 文生图开放接口
+        
+        @param request: TextToImageRequest
+        @param headers: TextToImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TextToImageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.model_id):
+            body['modelId'] = request.model_id
+        if not UtilClient.is_unset(request.picture_num):
+            body['pictureNum'] = request.picture_num
+        if not UtilClient.is_unset(request.picture_size):
+            body['pictureSize'] = request.picture_size
+        if not UtilClient.is_unset(request.query):
+            body['query'] = request.query
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TextToImage',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/textToImages/generate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.TextToImageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def text_to_image(
+        self,
+        request: dingtalksmart_device__1__0_models.TextToImageRequest,
+    ) -> dingtalksmart_device__1__0_models.TextToImageResponse:
+        """
+        @summary 文生图开放接口
+        
+        @param request: TextToImageRequest
+        @return: TextToImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.TextToImageHeaders()
+        return self.text_to_image_with_options(request, headers, runtime)
+
+    async def text_to_image_async(
+        self,
+        request: dingtalksmart_device__1__0_models.TextToImageRequest,
+    ) -> dingtalksmart_device__1__0_models.TextToImageResponse:
+        """
+        @summary 文生图开放接口
+        
+        @param request: TextToImageRequest
+        @return: TextToImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.TextToImageHeaders()
+        return await self.text_to_image_with_options_async(request, headers, runtime)
+
+    def voice_clone_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.VoiceCloneRequest,
+        headers: dingtalksmart_device__1__0_models.VoiceCloneHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.VoiceCloneResponse:
+        """
+        @summary 音频复刻
+        
+        @param request: VoiceCloneRequest
+        @param headers: VoiceCloneHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VoiceCloneResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.voice_id):
+            body['voiceId'] = request.voice_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VoiceClone',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/voices/clone',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.VoiceCloneResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def voice_clone_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.VoiceCloneRequest,
+        headers: dingtalksmart_device__1__0_models.VoiceCloneHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.VoiceCloneResponse:
+        """
+        @summary 音频复刻
+        
+        @param request: VoiceCloneRequest
+        @param headers: VoiceCloneHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VoiceCloneResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.text):
+            body['text'] = request.text
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.voice_id):
+            body['voiceId'] = request.voice_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VoiceClone',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/voices/clone',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.VoiceCloneResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def voice_clone(
+        self,
+        request: dingtalksmart_device__1__0_models.VoiceCloneRequest,
+    ) -> dingtalksmart_device__1__0_models.VoiceCloneResponse:
+        """
+        @summary 音频复刻
+        
+        @param request: VoiceCloneRequest
+        @return: VoiceCloneResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.VoiceCloneHeaders()
+        return self.voice_clone_with_options(request, headers, runtime)
+
+    async def voice_clone_async(
+        self,
+        request: dingtalksmart_device__1__0_models.VoiceCloneRequest,
+    ) -> dingtalksmart_device__1__0_models.VoiceCloneResponse:
+        """
+        @summary 音频复刻
+        
+        @param request: VoiceCloneRequest
+        @return: VoiceCloneResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.VoiceCloneHeaders()
+        return await self.voice_clone_with_options_async(request, headers, runtime)

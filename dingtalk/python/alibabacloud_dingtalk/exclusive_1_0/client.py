@@ -993,6 +993,120 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders()
         return await self.create_trusted_device_batch_with_options_async(request, headers, runtime)
 
+    def data_sync_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.DataSyncRequest,
+        headers: dingtalkexclusive__1__0_models.DataSyncHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DataSyncResponse:
+        """
+        @summary 为应用同步数据到专属存储
+        
+        @param request: DataSyncRequest
+        @param headers: DataSyncHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DataSyncResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sql):
+            body['sql'] = request.sql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DataSync',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/datas/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DataSyncResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def data_sync_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DataSyncRequest,
+        headers: dingtalkexclusive__1__0_models.DataSyncHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.DataSyncResponse:
+        """
+        @summary 为应用同步数据到专属存储
+        
+        @param request: DataSyncRequest
+        @param headers: DataSyncHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DataSyncResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sql):
+            body['sql'] = request.sql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DataSync',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/datas/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.DataSyncResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def data_sync(
+        self,
+        request: dingtalkexclusive__1__0_models.DataSyncRequest,
+    ) -> dingtalkexclusive__1__0_models.DataSyncResponse:
+        """
+        @summary 为应用同步数据到专属存储
+        
+        @param request: DataSyncRequest
+        @return: DataSyncResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DataSyncHeaders()
+        return self.data_sync_with_options(request, headers, runtime)
+
+    async def data_sync_async(
+        self,
+        request: dingtalkexclusive__1__0_models.DataSyncRequest,
+    ) -> dingtalkexclusive__1__0_models.DataSyncResponse:
+        """
+        @summary 为应用同步数据到专属存储
+        
+        @param request: DataSyncRequest
+        @return: DataSyncResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.DataSyncHeaders()
+        return await self.data_sync_with_options_async(request, headers, runtime)
+
     def delete_across_cloud_stroage_configs_with_options(
         self,
         target_corp_id: str,

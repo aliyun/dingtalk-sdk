@@ -29,6 +29,144 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_data_deliver_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.CreateDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CreateDataDeliverResponse:
+        """
+        @summary 创建数据投递
+        
+        @param request: CreateDataDeliverRequest
+        @param headers: CreateDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bizcode):
+            query['bizcode'] = request.bizcode
+        if not UtilClient.is_unset(request.dispatching_cycle):
+            query['dispatchingCycle'] = request.dispatching_cycle
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        if not UtilClient.is_unset(request.dispatching_start_date):
+            query['dispatchingStartDate'] = request.dispatching_start_date
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliveries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CreateDataDeliverResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_data_deliver_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.CreateDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CreateDataDeliverResponse:
+        """
+        @summary 创建数据投递
+        
+        @param request: CreateDataDeliverRequest
+        @param headers: CreateDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bizcode):
+            query['bizcode'] = request.bizcode
+        if not UtilClient.is_unset(request.dispatching_cycle):
+            query['dispatchingCycle'] = request.dispatching_cycle
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        if not UtilClient.is_unset(request.dispatching_start_date):
+            query['dispatchingStartDate'] = request.dispatching_start_date
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliveries',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CreateDataDeliverResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_data_deliver(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.CreateDataDeliverResponse:
+        """
+        @summary 创建数据投递
+        
+        @param request: CreateDataDeliverRequest
+        @return: CreateDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CreateDataDeliverHeaders()
+        return self.create_data_deliver_with_options(request, headers, runtime)
+
+    async def create_data_deliver_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.CreateDataDeliverResponse:
+        """
+        @summary 创建数据投递
+        
+        @param request: CreateDataDeliverRequest
+        @return: CreateDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CreateDataDeliverHeaders()
+        return await self.create_data_deliver_with_options_async(request, headers, runtime)
+
     def get_abnormal_operation_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
@@ -1248,6 +1386,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.GetEnvironmentalPenaltiesHeaders()
         return await self.get_environmental_penalties_with_options_async(request, headers, runtime)
+
+    def get_event_data_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetEventDataRequest,
+        headers: dingtalkdatacenter__1__0_models.GetEventDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetEventDataResponse:
+        """
+        @summary 获取事件订阅的数据
+        
+        @param request: GetEventDataRequest
+        @param headers: GetEventDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetEventDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.event_uid):
+            body['eventUid'] = request.event_uid
+        if not UtilClient.is_unset(request.sub_id):
+            body['subId'] = request.sub_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetEventData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/eventDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetEventDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_event_data_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetEventDataRequest,
+        headers: dingtalkdatacenter__1__0_models.GetEventDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetEventDataResponse:
+        """
+        @summary 获取事件订阅的数据
+        
+        @param request: GetEventDataRequest
+        @param headers: GetEventDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetEventDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.event_uid):
+            body['eventUid'] = request.event_uid
+        if not UtilClient.is_unset(request.sub_id):
+            body['subId'] = request.sub_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetEventData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/eventDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetEventDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_event_data(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetEventDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetEventDataResponse:
+        """
+        @summary 获取事件订阅的数据
+        
+        @param request: GetEventDataRequest
+        @return: GetEventDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetEventDataHeaders()
+        return self.get_event_data_with_options(request, headers, runtime)
+
+    async def get_event_data_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetEventDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetEventDataResponse:
+        """
+        @summary 获取事件订阅的数据
+        
+        @param request: GetEventDataRequest
+        @return: GetEventDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetEventDataHeaders()
+        return await self.get_event_data_with_options_async(request, headers, runtime)
 
     def get_holder_info_with_options(
         self,
