@@ -670,6 +670,146 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 模型表结构增加字段
+         *
+         * @param request AddMetaModelFieldRequest
+         * @param headers AddMetaModelFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddMetaModelFieldResponse
+         */
+        public AddMetaModelFieldResponse AddMetaModelFieldWithOptions(AddMetaModelFieldRequest request, AddMetaModelFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddMetaModelField",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/fields",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddMetaModelFieldResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 模型表结构增加字段
+         *
+         * @param request AddMetaModelFieldRequest
+         * @param headers AddMetaModelFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddMetaModelFieldResponse
+         */
+        public async Task<AddMetaModelFieldResponse> AddMetaModelFieldWithOptionsAsync(AddMetaModelFieldRequest request, AddMetaModelFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddMetaModelField",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/fields",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddMetaModelFieldResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 模型表结构增加字段
+         *
+         * @param request AddMetaModelFieldRequest
+         * @return AddMetaModelFieldResponse
+         */
+        public AddMetaModelFieldResponse AddMetaModelField(AddMetaModelFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddMetaModelFieldHeaders headers = new AddMetaModelFieldHeaders();
+            return AddMetaModelFieldWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 模型表结构增加字段
+         *
+         * @param request AddMetaModelFieldRequest
+         * @return AddMetaModelFieldResponse
+         */
+        public async Task<AddMetaModelFieldResponse> AddMetaModelFieldAsync(AddMetaModelFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddMetaModelFieldHeaders headers = new AddMetaModelFieldHeaders();
+            return await AddMetaModelFieldWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 关系模型表结构增加字段
          *
          * @param request AddRelationMetaFieldRequest
@@ -3479,6 +3619,138 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DescribeCrmPersonalCustomerObjectMetaHeaders headers = new DescribeCrmPersonalCustomerObjectMetaHeaders();
             return await DescribeCrmPersonalCustomerObjectMetaWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询模型表结构
+         *
+         * @param request DescribeMetaModelRequest
+         * @param headers DescribeMetaModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DescribeMetaModelResponse
+         */
+        public DescribeMetaModelResponse DescribeMetaModelWithOptions(DescribeMetaModelRequest request, DescribeMetaModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypes))
+            {
+                body["bizTypes"] = request.BizTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DescribeMetaModel",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DescribeMetaModelResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询模型表结构
+         *
+         * @param request DescribeMetaModelRequest
+         * @param headers DescribeMetaModelHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DescribeMetaModelResponse
+         */
+        public async Task<DescribeMetaModelResponse> DescribeMetaModelWithOptionsAsync(DescribeMetaModelRequest request, DescribeMetaModelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizTypes))
+            {
+                body["bizTypes"] = request.BizTypes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DescribeMetaModel",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DescribeMetaModelResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询模型表结构
+         *
+         * @param request DescribeMetaModelRequest
+         * @return DescribeMetaModelResponse
+         */
+        public DescribeMetaModelResponse DescribeMetaModel(DescribeMetaModelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DescribeMetaModelHeaders headers = new DescribeMetaModelHeaders();
+            return DescribeMetaModelWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询模型表结构
+         *
+         * @param request DescribeMetaModelRequest
+         * @return DescribeMetaModelResponse
+         */
+        public async Task<DescribeMetaModelResponse> DescribeMetaModelAsync(DescribeMetaModelRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DescribeMetaModelHeaders headers = new DescribeMetaModelHeaders();
+            return await DescribeMetaModelWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -8999,6 +9271,146 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateMenuDataHeaders headers = new UpdateMenuDataHeaders();
             return await UpdateMenuDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 模型表结构更新字段
+         *
+         * @param request UpdateMetaModelFieldRequest
+         * @param headers UpdateMetaModelFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateMetaModelFieldResponse
+         */
+        public UpdateMetaModelFieldResponse UpdateMetaModelFieldWithOptions(UpdateMetaModelFieldRequest request, UpdateMetaModelFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMetaModelField",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/fields",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMetaModelFieldResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 模型表结构更新字段
+         *
+         * @param request UpdateMetaModelFieldRequest
+         * @param headers UpdateMetaModelFieldHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateMetaModelFieldResponse
+         */
+        public async Task<UpdateMetaModelFieldResponse> UpdateMetaModelFieldWithOptionsAsync(UpdateMetaModelFieldRequest request, UpdateMetaModelFieldHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldDTOList))
+            {
+                body["fieldDTOList"] = request.FieldDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tenant))
+            {
+                body["tenant"] = request.Tenant;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMetaModelField",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/metas/models/fields",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMetaModelFieldResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 模型表结构更新字段
+         *
+         * @param request UpdateMetaModelFieldRequest
+         * @return UpdateMetaModelFieldResponse
+         */
+        public UpdateMetaModelFieldResponse UpdateMetaModelField(UpdateMetaModelFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMetaModelFieldHeaders headers = new UpdateMetaModelFieldHeaders();
+            return UpdateMetaModelFieldWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 模型表结构更新字段
+         *
+         * @param request UpdateMetaModelFieldRequest
+         * @return UpdateMetaModelFieldResponse
+         */
+        public async Task<UpdateMetaModelFieldResponse> UpdateMetaModelFieldAsync(UpdateMetaModelFieldRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMetaModelFieldHeaders headers = new UpdateMetaModelFieldHeaders();
+            return await UpdateMetaModelFieldWithOptionsAsync(request, headers, runtime);
         }
 
         /**

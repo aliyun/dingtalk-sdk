@@ -54,6 +54,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> BizExtMap { get; set; }
 
+            [NameInMap("sourceDataId")]
+            [Validation(Required=false)]
+            public string SourceDataId { get; set; }
+
         }
 
     }

@@ -68,6 +68,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
             }
 
+            [NameInMap("sourceDataId")]
+            [Validation(Required=false)]
+            public string SourceDataId { get; set; }
+
         }
 
         /// <summary>

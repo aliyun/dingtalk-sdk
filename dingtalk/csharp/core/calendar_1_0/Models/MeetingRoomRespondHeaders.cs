@@ -1,0 +1,30 @@
+// This file is auto-generated, don't edit it. Thanks.
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+using Tea;
+
+namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
+{
+    public class MeetingRoomRespondHeaders : TeaModel {
+        [NameInMap("commonHeaders")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> CommonHeaders { get; set; }
+
+        [NameInMap("userAgent")]
+        [Validation(Required=false)]
+        public string UserAgent { get; set; }
+
+        [NameInMap("x-client-token")]
+        [Validation(Required=false)]
+        public string XClientToken { get; set; }
+
+        [NameInMap("x-acs-dingtalk-access-token")]
+        [Validation(Required=false)]
+        public string XAcsDingtalkAccessToken { get; set; }
+
+    }
+
+}

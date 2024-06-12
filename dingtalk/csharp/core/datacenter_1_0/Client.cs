@@ -30,6 +30,166 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
 
 
         /**
+         * @summary 创建数据投递
+         *
+         * @param request CreateDataDeliverRequest
+         * @param headers CreateDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDataDeliverResponse
+         */
+        public CreateDataDeliverResponse CreateDataDeliverWithOptions(CreateDataDeliverRequest request, CreateDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Bizcode))
+            {
+                query["bizcode"] = request.Bizcode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingCycle))
+            {
+                query["dispatchingCycle"] = request.DispatchingCycle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingStartDate))
+            {
+                query["dispatchingStartDate"] = request.DispatchingStartDate;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliveries",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDataDeliverResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建数据投递
+         *
+         * @param request CreateDataDeliverRequest
+         * @param headers CreateDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDataDeliverResponse
+         */
+        public async Task<CreateDataDeliverResponse> CreateDataDeliverWithOptionsAsync(CreateDataDeliverRequest request, CreateDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Bizcode))
+            {
+                query["bizcode"] = request.Bizcode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingCycle))
+            {
+                query["dispatchingCycle"] = request.DispatchingCycle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingStartDate))
+            {
+                query["dispatchingStartDate"] = request.DispatchingStartDate;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliveries",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDataDeliverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建数据投递
+         *
+         * @param request CreateDataDeliverRequest
+         * @return CreateDataDeliverResponse
+         */
+        public CreateDataDeliverResponse CreateDataDeliver(CreateDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDataDeliverHeaders headers = new CreateDataDeliverHeaders();
+            return CreateDataDeliverWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建数据投递
+         *
+         * @param request CreateDataDeliverRequest
+         * @return CreateDataDeliverResponse
+         */
+        public async Task<CreateDataDeliverResponse> CreateDataDeliverAsync(CreateDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDataDeliverHeaders headers = new CreateDataDeliverHeaders();
+            return await CreateDataDeliverWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 工商-经营异常
          *
          * @param request GetAbnormalOperationRequest
@@ -1347,6 +1507,138 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetEnvironmentalPenaltiesHeaders headers = new GetEnvironmentalPenaltiesHeaders();
             return await GetEnvironmentalPenaltiesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取事件订阅的数据
+         *
+         * @param request GetEventDataRequest
+         * @param headers GetEventDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetEventDataResponse
+         */
+        public GetEventDataResponse GetEventDataWithOptions(GetEventDataRequest request, GetEventDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventUid))
+            {
+                body["eventUid"] = request.EventUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubId))
+            {
+                body["subId"] = request.SubId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetEventData",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/eventDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetEventDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取事件订阅的数据
+         *
+         * @param request GetEventDataRequest
+         * @param headers GetEventDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetEventDataResponse
+         */
+        public async Task<GetEventDataResponse> GetEventDataWithOptionsAsync(GetEventDataRequest request, GetEventDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventUid))
+            {
+                body["eventUid"] = request.EventUid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubId))
+            {
+                body["subId"] = request.SubId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetEventData",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/eventDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetEventDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取事件订阅的数据
+         *
+         * @param request GetEventDataRequest
+         * @return GetEventDataResponse
+         */
+        public GetEventDataResponse GetEventData(GetEventDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEventDataHeaders headers = new GetEventDataHeaders();
+            return GetEventDataWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取事件订阅的数据
+         *
+         * @param request GetEventDataRequest
+         * @return GetEventDataResponse
+         */
+        public async Task<GetEventDataResponse> GetEventDataAsync(GetEventDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetEventDataHeaders headers = new GetEventDataHeaders();
+            return await GetEventDataWithOptionsAsync(request, headers, runtime);
         }
 
         /**

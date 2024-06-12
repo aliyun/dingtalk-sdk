@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<BatchAddFollowRecordsRequestInstanceList> InstanceList { get; set; }
         public class BatchAddFollowRecordsRequestInstanceList : TeaModel {
+            [NameInMap("bizExtMap")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> BizExtMap { get; set; }
+
             /// <summary>
             /// This parameter is required.
             /// </summary>

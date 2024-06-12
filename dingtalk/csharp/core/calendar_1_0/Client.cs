@@ -3538,6 +3538,138 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
         }
 
         /**
+         * @summary 设置会议室在日程中的响应状态
+         *
+         * @param request MeetingRoomRespondRequest
+         * @param headers MeetingRoomRespondHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MeetingRoomRespondResponse
+         */
+        public MeetingRoomRespondResponse MeetingRoomRespondWithOptions(string calendarId, string userId, string eventId, string roomId, MeetingRoomRespondRequest request, MeetingRoomRespondHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            {
+                body["responseStatus"] = request.ResponseStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.UserAgent))
+            {
+                realHeaders["userAgent"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.UserAgent);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MeetingRoomRespond",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/meetingRooms/" + roomId + "/respond",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MeetingRoomRespondResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 设置会议室在日程中的响应状态
+         *
+         * @param request MeetingRoomRespondRequest
+         * @param headers MeetingRoomRespondHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MeetingRoomRespondResponse
+         */
+        public async Task<MeetingRoomRespondResponse> MeetingRoomRespondWithOptionsAsync(string calendarId, string userId, string eventId, string roomId, MeetingRoomRespondRequest request, MeetingRoomRespondHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResponseStatus))
+            {
+                body["responseStatus"] = request.ResponseStatus;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.UserAgent))
+            {
+                realHeaders["userAgent"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.UserAgent);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MeetingRoomRespond",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/meetingRooms/" + roomId + "/respond",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MeetingRoomRespondResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 设置会议室在日程中的响应状态
+         *
+         * @param request MeetingRoomRespondRequest
+         * @return MeetingRoomRespondResponse
+         */
+        public MeetingRoomRespondResponse MeetingRoomRespond(string calendarId, string userId, string eventId, string roomId, MeetingRoomRespondRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MeetingRoomRespondHeaders headers = new MeetingRoomRespondHeaders();
+            return MeetingRoomRespondWithOptions(calendarId, userId, eventId, roomId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 设置会议室在日程中的响应状态
+         *
+         * @param request MeetingRoomRespondRequest
+         * @return MeetingRoomRespondResponse
+         */
+        public async Task<MeetingRoomRespondResponse> MeetingRoomRespondAsync(string calendarId, string userId, string eventId, string roomId, MeetingRoomRespondRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MeetingRoomRespondHeaders headers = new MeetingRoomRespondHeaders();
+            return await MeetingRoomRespondWithOptionsAsync(calendarId, userId, eventId, roomId, request, headers, runtime);
+        }
+
+        /**
          * @summary 修改日程
          *
          * @param request PatchEventRequest

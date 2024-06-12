@@ -1062,6 +1062,122 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 为应用同步数据到专属存储
+         *
+         * @param request DataSyncRequest
+         * @param headers DataSyncHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DataSyncResponse
+         */
+        public DataSyncResponse DataSyncWithOptions(DataSyncRequest request, DataSyncHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sql))
+            {
+                body["sql"] = request.Sql;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DataSync",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/datas/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DataSyncResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 为应用同步数据到专属存储
+         *
+         * @param request DataSyncRequest
+         * @param headers DataSyncHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DataSyncResponse
+         */
+        public async Task<DataSyncResponse> DataSyncWithOptionsAsync(DataSyncRequest request, DataSyncHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sql))
+            {
+                body["sql"] = request.Sql;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DataSync",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/datas/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DataSyncResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 为应用同步数据到专属存储
+         *
+         * @param request DataSyncRequest
+         * @return DataSyncResponse
+         */
+        public DataSyncResponse DataSync(DataSyncRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DataSyncHeaders headers = new DataSyncHeaders();
+            return DataSyncWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 为应用同步数据到专属存储
+         *
+         * @param request DataSyncRequest
+         * @return DataSyncResponse
+         */
+        public async Task<DataSyncResponse> DataSyncAsync(DataSyncRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DataSyncHeaders headers = new DataSyncHeaders();
+            return await DataSyncWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 删除跨云存储配置
          *
          * @param headers DeleteAcrossCloudStroageConfigsHeaders

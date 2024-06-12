@@ -895,5 +895,277 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
             return await QueryDeviceVideoConferenceBookWithOptionsAsync(deviceId, bookId, headers, runtime);
         }
 
+        /**
+         * @summary 文生图开放接口
+         *
+         * @param request TextToImageRequest
+         * @param headers TextToImageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TextToImageResponse
+         */
+        public TextToImageResponse TextToImageWithOptions(TextToImageRequest request, TextToImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelId))
+            {
+                body["modelId"] = request.ModelId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PictureNum))
+            {
+                body["pictureNum"] = request.PictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PictureSize))
+            {
+                body["pictureSize"] = request.PictureSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                body["query"] = request.Query;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TextToImage",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/textToImages/generate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TextToImageResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 文生图开放接口
+         *
+         * @param request TextToImageRequest
+         * @param headers TextToImageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TextToImageResponse
+         */
+        public async Task<TextToImageResponse> TextToImageWithOptionsAsync(TextToImageRequest request, TextToImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModelId))
+            {
+                body["modelId"] = request.ModelId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PictureNum))
+            {
+                body["pictureNum"] = request.PictureNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PictureSize))
+            {
+                body["pictureSize"] = request.PictureSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                body["query"] = request.Query;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TextToImage",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/textToImages/generate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TextToImageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 文生图开放接口
+         *
+         * @param request TextToImageRequest
+         * @return TextToImageResponse
+         */
+        public TextToImageResponse TextToImage(TextToImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TextToImageHeaders headers = new TextToImageHeaders();
+            return TextToImageWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 文生图开放接口
+         *
+         * @param request TextToImageRequest
+         * @return TextToImageResponse
+         */
+        public async Task<TextToImageResponse> TextToImageAsync(TextToImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TextToImageHeaders headers = new TextToImageHeaders();
+            return await TextToImageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 音频复刻
+         *
+         * @param request VoiceCloneRequest
+         * @param headers VoiceCloneHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return VoiceCloneResponse
+         */
+        public VoiceCloneResponse VoiceCloneWithOptions(VoiceCloneRequest request, VoiceCloneHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoiceId))
+            {
+                body["voiceId"] = request.VoiceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "VoiceClone",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/voices/clone",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<VoiceCloneResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 音频复刻
+         *
+         * @param request VoiceCloneRequest
+         * @param headers VoiceCloneHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return VoiceCloneResponse
+         */
+        public async Task<VoiceCloneResponse> VoiceCloneWithOptionsAsync(VoiceCloneRequest request, VoiceCloneHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VoiceId))
+            {
+                body["voiceId"] = request.VoiceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "VoiceClone",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/voices/clone",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<VoiceCloneResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 音频复刻
+         *
+         * @param request VoiceCloneRequest
+         * @return VoiceCloneResponse
+         */
+        public VoiceCloneResponse VoiceClone(VoiceCloneRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            VoiceCloneHeaders headers = new VoiceCloneHeaders();
+            return VoiceCloneWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 音频复刻
+         *
+         * @param request VoiceCloneRequest
+         * @return VoiceCloneResponse
+         */
+        public async Task<VoiceCloneResponse> VoiceCloneAsync(VoiceCloneRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            VoiceCloneHeaders headers = new VoiceCloneHeaders();
+            return await VoiceCloneWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }
