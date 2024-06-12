@@ -423,4 +423,132 @@ public class Client extends com.aliyun.teaopenapi.Client {
         QueryDeviceVideoConferenceBookHeaders headers = new QueryDeviceVideoConferenceBookHeaders();
         return this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
     }
+
+    /**
+     * @summary 文生图开放接口
+     *
+     * @param request TextToImageRequest
+     * @param headers TextToImageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TextToImageResponse
+     */
+    public TextToImageResponse textToImageWithOptions(TextToImageRequest request, TextToImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.modelId)) {
+            body.put("modelId", request.modelId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pictureNum)) {
+            body.put("pictureNum", request.pictureNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pictureSize)) {
+            body.put("pictureSize", request.pictureSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.query)) {
+            body.put("query", request.query);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TextToImage"),
+            new TeaPair("version", "smartDevice_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/smartDevice/textToImages/generate"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TextToImageResponse());
+    }
+
+    /**
+     * @summary 文生图开放接口
+     *
+     * @param request TextToImageRequest
+     * @return TextToImageResponse
+     */
+    public TextToImageResponse textToImage(TextToImageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TextToImageHeaders headers = new TextToImageHeaders();
+        return this.textToImageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 音频复刻
+     *
+     * @param request VoiceCloneRequest
+     * @param headers VoiceCloneHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return VoiceCloneResponse
+     */
+    public VoiceCloneResponse voiceCloneWithOptions(VoiceCloneRequest request, VoiceCloneHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.text)) {
+            body.put("text", request.text);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.voiceId)) {
+            body.put("voiceId", request.voiceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "VoiceClone"),
+            new TeaPair("version", "smartDevice_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/smartDevice/voices/clone"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new VoiceCloneResponse());
+    }
+
+    /**
+     * @summary 音频复刻
+     *
+     * @param request VoiceCloneRequest
+     * @return VoiceCloneResponse
+     */
+    public VoiceCloneResponse voiceClone(VoiceCloneRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        VoiceCloneHeaders headers = new VoiceCloneHeaders();
+        return this.voiceCloneWithOptions(request, headers, runtime);
+    }
 }

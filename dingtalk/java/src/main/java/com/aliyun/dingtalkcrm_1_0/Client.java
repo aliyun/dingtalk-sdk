@@ -324,6 +324,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 模型表结构增加字段
+     *
+     * @param request AddMetaModelFieldRequest
+     * @param headers AddMetaModelFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddMetaModelFieldResponse
+     */
+    public AddMetaModelFieldResponse addMetaModelFieldWithOptions(AddMetaModelFieldRequest request, AddMetaModelFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldDTOList)) {
+            body.put("fieldDTOList", request.fieldDTOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tenant)) {
+            body.put("tenant", request.tenant);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddMetaModelField"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/metas/models/fields"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddMetaModelFieldResponse());
+    }
+
+    /**
+     * @summary 模型表结构增加字段
+     *
+     * @param request AddMetaModelFieldRequest
+     * @return AddMetaModelFieldResponse
+     */
+    public AddMetaModelFieldResponse addMetaModelField(AddMetaModelFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddMetaModelFieldHeaders headers = new AddMetaModelFieldHeaders();
+        return this.addMetaModelFieldWithOptions(request, headers, runtime);
+    }
+
+    /**
      * @summary 关系模型表结构增加字段
      *
      * @param request AddRelationMetaFieldRequest
@@ -1643,6 +1709,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DescribeCrmPersonalCustomerObjectMetaHeaders headers = new DescribeCrmPersonalCustomerObjectMetaHeaders();
         return this.describeCrmPersonalCustomerObjectMetaWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询模型表结构
+     *
+     * @param request DescribeMetaModelRequest
+     * @param headers DescribeMetaModelHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DescribeMetaModelResponse
+     */
+    public DescribeMetaModelResponse describeMetaModelWithOptions(DescribeMetaModelRequest request, DescribeMetaModelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizTypes)) {
+            body.put("bizTypes", request.bizTypes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tenant)) {
+            body.put("tenant", request.tenant);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DescribeMetaModel"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/metas/models/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DescribeMetaModelResponse());
+    }
+
+    /**
+     * @summary 查询模型表结构
+     *
+     * @param request DescribeMetaModelRequest
+     * @return DescribeMetaModelResponse
+     */
+    public DescribeMetaModelResponse describeMetaModel(DescribeMetaModelRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DescribeMetaModelHeaders headers = new DescribeMetaModelHeaders();
+        return this.describeMetaModelWithOptions(request, headers, runtime);
     }
 
     /**
@@ -4231,6 +4359,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateMenuDataHeaders headers = new UpdateMenuDataHeaders();
         return this.updateMenuDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * @summary 模型表结构更新字段
+     *
+     * @param request UpdateMetaModelFieldRequest
+     * @param headers UpdateMetaModelFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateMetaModelFieldResponse
+     */
+    public UpdateMetaModelFieldResponse updateMetaModelFieldWithOptions(UpdateMetaModelFieldRequest request, UpdateMetaModelFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldDTOList)) {
+            body.put("fieldDTOList", request.fieldDTOList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tenant)) {
+            body.put("tenant", request.tenant);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateMetaModelField"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/metas/models/fields"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateMetaModelFieldResponse());
+    }
+
+    /**
+     * @summary 模型表结构更新字段
+     *
+     * @param request UpdateMetaModelFieldRequest
+     * @return UpdateMetaModelFieldResponse
+     */
+    public UpdateMetaModelFieldResponse updateMetaModelField(UpdateMetaModelFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateMetaModelFieldHeaders headers = new UpdateMetaModelFieldHeaders();
+        return this.updateMetaModelFieldWithOptions(request, headers, runtime);
     }
 
     /**

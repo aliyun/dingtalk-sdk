@@ -1401,6 +1401,184 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 查询会议闪记的音频信息
+     *
+     * @param request QueryMinutesAudioRequest
+     * @param headers QueryMinutesAudioHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMinutesAudioResponse
+     */
+    public QueryMinutesAudioResponse queryMinutesAudioWithOptions(String conferenceId, QueryMinutesAudioRequest request, QueryMinutesAudioHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMinutesAudio"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/minutes/audioInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMinutesAudioResponse());
+    }
+
+    /**
+     * @summary 查询会议闪记的音频信息
+     *
+     * @param request QueryMinutesAudioRequest
+     * @return QueryMinutesAudioResponse
+     */
+    public QueryMinutesAudioResponse queryMinutesAudio(String conferenceId, QueryMinutesAudioRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMinutesAudioHeaders headers = new QueryMinutesAudioHeaders();
+        return this.queryMinutesAudioWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询会议闪记智能纪要
+     *
+     * @param request QueryMinutesSummaryRequest
+     * @param headers QueryMinutesSummaryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMinutesSummaryResponse
+     */
+    public QueryMinutesSummaryResponse queryMinutesSummaryWithOptions(String conferenceId, QueryMinutesSummaryRequest request, QueryMinutesSummaryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.summaryTypeList)) {
+            body.put("summaryTypeList", request.summaryTypeList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMinutesSummary"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/minutes/summaries/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMinutesSummaryResponse());
+    }
+
+    /**
+     * @summary 查询会议闪记智能纪要
+     *
+     * @param request QueryMinutesSummaryRequest
+     * @return QueryMinutesSummaryResponse
+     */
+    public QueryMinutesSummaryResponse queryMinutesSummary(String conferenceId, QueryMinutesSummaryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMinutesSummaryHeaders headers = new QueryMinutesSummaryHeaders();
+        return this.queryMinutesSummaryWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * @summary 查询会议闪记文本信息
+     *
+     * @param request QueryMinutesTextRequest
+     * @param headers QueryMinutesTextHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMinutesTextResponse
+     */
+    public QueryMinutesTextResponse queryMinutesTextWithOptions(String conferenceId, QueryMinutesTextRequest request, QueryMinutesTextHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.direction)) {
+            query.put("direction", request.direction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMinutesText"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/minutes/textInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMinutesTextResponse());
+    }
+
+    /**
+     * @summary 查询会议闪记文本信息
+     *
+     * @param request QueryMinutesTextRequest
+     * @return QueryMinutesTextResponse
+     */
+    public QueryMinutesTextResponse queryMinutesText(String conferenceId, QueryMinutesTextRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMinutesTextHeaders headers = new QueryMinutesTextHeaders();
+        return this.queryMinutesTextWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
      * @summary 查询预约会议设置
      *
      * @param request QueryScheduleConfSettingsRequest
@@ -1683,6 +1861,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 开启会议闪记
+     *
+     * @param request StartMinutesRequest
+     * @param headers StartMinutesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StartMinutesResponse
+     */
+    public StartMinutesResponse startMinutesWithOptions(String conferenceId, StartMinutesRequest request, StartMinutesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUnionId)) {
+            body.put("ownerUnionId", request.ownerUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recordAudio)) {
+            body.put("recordAudio", request.recordAudio);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "StartMinutes"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/minutes/start"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new StartMinutesResponse());
+    }
+
+    /**
+     * @summary 开启会议闪记
+     *
+     * @param request StartMinutesRequest
+     * @return StartMinutesResponse
+     */
+    public StartMinutesResponse startMinutes(String conferenceId, StartMinutesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        StartMinutesHeaders headers = new StartMinutesHeaders();
+        return this.startMinutesWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
      * @summary 会议开始直播推流
      *
      * @param request StartStreamOutRequest
@@ -1808,6 +2048,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         StopCloudRecordHeaders headers = new StopCloudRecordHeaders();
         return this.stopCloudRecordWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * @summary 暂停会议闪记
+     *
+     * @param request StopMinutesRequest
+     * @param headers StopMinutesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StopMinutesResponse
+     */
+    public StopMinutesResponse stopMinutesWithOptions(String conferenceId, StopMinutesRequest request, StopMinutesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "StopMinutes"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/minutes/pause"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new StopMinutesResponse());
+    }
+
+    /**
+     * @summary 暂停会议闪记
+     *
+     * @param request StopMinutesRequest
+     * @return StopMinutesResponse
+     */
+    public StopMinutesResponse stopMinutes(String conferenceId, StopMinutesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        StopMinutesHeaders headers = new StopMinutesHeaders();
+        return this.stopMinutesWithOptions(conferenceId, request, headers, runtime);
     }
 
     /**

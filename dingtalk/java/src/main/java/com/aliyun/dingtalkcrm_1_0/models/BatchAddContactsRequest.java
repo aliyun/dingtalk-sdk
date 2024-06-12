@@ -94,6 +94,9 @@ public class BatchAddContactsRequest extends TeaModel {
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 
+        @NameInMap("sourceDataId")
+        public String sourceDataId;
+
         public static BatchAddContactsRequestRelationList build(java.util.Map<String, ?> map) throws Exception {
             BatchAddContactsRequestRelationList self = new BatchAddContactsRequestRelationList();
             return TeaModel.build(map, self);
@@ -113,6 +116,14 @@ public class BatchAddContactsRequest extends TeaModel {
         }
         public java.util.Map<String, String> getBizExtMap() {
             return this.bizExtMap;
+        }
+
+        public BatchAddContactsRequestRelationList setSourceDataId(String sourceDataId) {
+            this.sourceDataId = sourceDataId;
+            return this;
+        }
+        public String getSourceDataId() {
+            return this.sourceDataId;
         }
 
     }

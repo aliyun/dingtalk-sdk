@@ -85,6 +85,9 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
     }
 
     public static class BatchAddFollowRecordsRequestInstanceList extends TeaModel {
+        @NameInMap("bizExtMap")
+        public java.util.Map<String, String> bizExtMap;
+
         /**
          * <p>This parameter is required.</p>
          */
@@ -94,6 +97,14 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
         public static BatchAddFollowRecordsRequestInstanceList build(java.util.Map<String, ?> map) throws Exception {
             BatchAddFollowRecordsRequestInstanceList self = new BatchAddFollowRecordsRequestInstanceList();
             return TeaModel.build(map, self);
+        }
+
+        public BatchAddFollowRecordsRequestInstanceList setBizExtMap(java.util.Map<String, String> bizExtMap) {
+            this.bizExtMap = bizExtMap;
+            return this;
+        }
+        public java.util.Map<String, String> getBizExtMap() {
+            return this.bizExtMap;
         }
 
         public BatchAddFollowRecordsRequestInstanceList setDataArray(java.util.List<BatchAddFollowRecordsRequestInstanceListDataArray> dataArray) {

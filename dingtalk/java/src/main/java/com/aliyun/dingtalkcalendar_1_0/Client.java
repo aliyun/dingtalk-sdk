@@ -1666,6 +1666,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
+     * @summary 设置会议室在日程中的响应状态
+     *
+     * @param request MeetingRoomRespondRequest
+     * @param headers MeetingRoomRespondHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MeetingRoomRespondResponse
+     */
+    public MeetingRoomRespondResponse meetingRoomRespondWithOptions(String calendarId, String userId, String eventId, String roomId, MeetingRoomRespondRequest request, MeetingRoomRespondHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.responseStatus)) {
+            body.put("responseStatus", request.responseStatus);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.userAgent)) {
+            realHeaders.put("userAgent", com.aliyun.teautil.Common.toJSONString(headers.userAgent));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "MeetingRoomRespond"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/meetingRooms/" + roomId + "/respond"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new MeetingRoomRespondResponse());
+    }
+
+    /**
+     * @summary 设置会议室在日程中的响应状态
+     *
+     * @param request MeetingRoomRespondRequest
+     * @return MeetingRoomRespondResponse
+     */
+    public MeetingRoomRespondResponse meetingRoomRespond(String calendarId, String userId, String eventId, String roomId, MeetingRoomRespondRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        MeetingRoomRespondHeaders headers = new MeetingRoomRespondHeaders();
+        return this.meetingRoomRespondWithOptions(calendarId, userId, eventId, roomId, request, headers, runtime);
+    }
+
+    /**
      * @summary 修改日程
      *
      * @param request PatchEventRequest

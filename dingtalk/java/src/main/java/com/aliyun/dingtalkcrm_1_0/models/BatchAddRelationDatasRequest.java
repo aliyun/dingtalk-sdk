@@ -152,6 +152,9 @@ public class BatchAddRelationDatasRequest extends TeaModel {
         @NameInMap("relationPermissionDTO")
         public BatchAddRelationDatasRequestRelationListRelationPermissionDTO relationPermissionDTO;
 
+        @NameInMap("sourceDataId")
+        public String sourceDataId;
+
         public static BatchAddRelationDatasRequestRelationList build(java.util.Map<String, ?> map) throws Exception {
             BatchAddRelationDatasRequestRelationList self = new BatchAddRelationDatasRequestRelationList();
             return TeaModel.build(map, self);
@@ -179,6 +182,14 @@ public class BatchAddRelationDatasRequest extends TeaModel {
         }
         public BatchAddRelationDatasRequestRelationListRelationPermissionDTO getRelationPermissionDTO() {
             return this.relationPermissionDTO;
+        }
+
+        public BatchAddRelationDatasRequestRelationList setSourceDataId(String sourceDataId) {
+            this.sourceDataId = sourceDataId;
+            return this;
+        }
+        public String getSourceDataId() {
+            return this.sourceDataId;
         }
 
     }
