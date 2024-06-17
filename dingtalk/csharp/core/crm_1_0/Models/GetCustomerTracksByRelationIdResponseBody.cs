@@ -59,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public string GmtCreate { get; set; }
 
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public string Id { get; set; }
+
             [NameInMap("isvInfo")]
             [Validation(Required=false)]
             public GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo IsvInfo { get; set; }

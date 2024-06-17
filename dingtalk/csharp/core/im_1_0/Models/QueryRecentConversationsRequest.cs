@@ -9,9 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryRecentConversationsRequest : TeaModel {
-        /// <summary>
-        /// This parameter is required.
-        /// </summary>
+        [NameInMap("onlyHuman")]
+        [Validation(Required=false)]
+        public bool? OnlyHuman { get; set; }
+
+        [NameInMap("onlyInnerGroup")]
+        [Validation(Required=false)]
+        public bool? OnlyInnerGroup { get; set; }
+
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

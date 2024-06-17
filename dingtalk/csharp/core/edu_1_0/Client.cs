@@ -178,6 +178,310 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         }
 
         /**
+         * @summary 高校校友会批量创建部门
+         *
+         * @param request AddCollegeAlumniDeptsRequest
+         * @param headers AddCollegeAlumniDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeAlumniDeptsResponse
+         */
+        public AddCollegeAlumniDeptsResponse AddCollegeAlumniDeptsWithOptions(AddCollegeAlumniDeptsRequest request, AddCollegeAlumniDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Depts))
+            {
+                body["depts"] = request.Depts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeAlumniDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/depts/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<AddCollegeAlumniDeptsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会批量创建部门
+         *
+         * @param request AddCollegeAlumniDeptsRequest
+         * @param headers AddCollegeAlumniDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeAlumniDeptsResponse
+         */
+        public async Task<AddCollegeAlumniDeptsResponse> AddCollegeAlumniDeptsWithOptionsAsync(AddCollegeAlumniDeptsRequest request, AddCollegeAlumniDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Depts))
+            {
+                body["depts"] = request.Depts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeAlumniDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/depts/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<AddCollegeAlumniDeptsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会批量创建部门
+         *
+         * @param request AddCollegeAlumniDeptsRequest
+         * @return AddCollegeAlumniDeptsResponse
+         */
+        public AddCollegeAlumniDeptsResponse AddCollegeAlumniDepts(AddCollegeAlumniDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeAlumniDeptsHeaders headers = new AddCollegeAlumniDeptsHeaders();
+            return AddCollegeAlumniDeptsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会批量创建部门
+         *
+         * @param request AddCollegeAlumniDeptsRequest
+         * @return AddCollegeAlumniDeptsResponse
+         */
+        public async Task<AddCollegeAlumniDeptsResponse> AddCollegeAlumniDeptsAsync(AddCollegeAlumniDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeAlumniDeptsHeaders headers = new AddCollegeAlumniDeptsHeaders();
+            return await AddCollegeAlumniDeptsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会新增校友信息
+         *
+         * @param request AddCollegeAlumniUserInfoRequest
+         * @param headers AddCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeAlumniUserInfoResponse
+         */
+        public AddCollegeAlumniUserInfoResponse AddCollegeAlumniUserInfoWithOptions(AddCollegeAlumniUserInfoRequest request, AddCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Intake))
+            {
+                body["intake"] = request.Intake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Outtake))
+            {
+                body["outtake"] = request.Outtake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNumber))
+            {
+                body["studentNumber"] = request.StudentNumber;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeAlumniUserInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会新增校友信息
+         *
+         * @param request AddCollegeAlumniUserInfoRequest
+         * @param headers AddCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeAlumniUserInfoResponse
+         */
+        public async Task<AddCollegeAlumniUserInfoResponse> AddCollegeAlumniUserInfoWithOptionsAsync(AddCollegeAlumniUserInfoRequest request, AddCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Intake))
+            {
+                body["intake"] = request.Intake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Outtake))
+            {
+                body["outtake"] = request.Outtake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNumber))
+            {
+                body["studentNumber"] = request.StudentNumber;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeAlumniUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会新增校友信息
+         *
+         * @param request AddCollegeAlumniUserInfoRequest
+         * @return AddCollegeAlumniUserInfoResponse
+         */
+        public AddCollegeAlumniUserInfoResponse AddCollegeAlumniUserInfo(AddCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeAlumniUserInfoHeaders headers = new AddCollegeAlumniUserInfoHeaders();
+            return AddCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会新增校友信息
+         *
+         * @param request AddCollegeAlumniUserInfoRequest
+         * @return AddCollegeAlumniUserInfoResponse
+         */
+        public async Task<AddCollegeAlumniUserInfoResponse> AddCollegeAlumniUserInfoAsync(AddCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeAlumniUserInfoHeaders headers = new AddCollegeAlumniUserInfoHeaders();
+            return await AddCollegeAlumniUserInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 增加赛事记录
          *
          * @param request AddCompetitionRecordRequest
@@ -6342,6 +6646,262 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         }
 
         /**
+         * @summary 高校校友会删除当前部门
+         *
+         * @param request DeleteCollegeAlumniDeptRequest
+         * @param headers DeleteCollegeAlumniDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteCollegeAlumniDeptResponse
+         */
+        public DeleteCollegeAlumniDeptResponse DeleteCollegeAlumniDeptWithOptions(DeleteCollegeAlumniDeptRequest request, DeleteCollegeAlumniDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeAlumniDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/depts",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeAlumniDeptResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会删除当前部门
+         *
+         * @param request DeleteCollegeAlumniDeptRequest
+         * @param headers DeleteCollegeAlumniDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteCollegeAlumniDeptResponse
+         */
+        public async Task<DeleteCollegeAlumniDeptResponse> DeleteCollegeAlumniDeptWithOptionsAsync(DeleteCollegeAlumniDeptRequest request, DeleteCollegeAlumniDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeAlumniDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/depts",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeAlumniDeptResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会删除当前部门
+         *
+         * @param request DeleteCollegeAlumniDeptRequest
+         * @return DeleteCollegeAlumniDeptResponse
+         */
+        public DeleteCollegeAlumniDeptResponse DeleteCollegeAlumniDept(DeleteCollegeAlumniDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeAlumniDeptHeaders headers = new DeleteCollegeAlumniDeptHeaders();
+            return DeleteCollegeAlumniDeptWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会删除当前部门
+         *
+         * @param request DeleteCollegeAlumniDeptRequest
+         * @return DeleteCollegeAlumniDeptResponse
+         */
+        public async Task<DeleteCollegeAlumniDeptResponse> DeleteCollegeAlumniDeptAsync(DeleteCollegeAlumniDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeAlumniDeptHeaders headers = new DeleteCollegeAlumniDeptHeaders();
+            return await DeleteCollegeAlumniDeptWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会删除校友信息
+         *
+         * @param request DeleteCollegeAlumniUserInfoRequest
+         * @param headers DeleteCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteCollegeAlumniUserInfoResponse
+         */
+        public DeleteCollegeAlumniUserInfoResponse DeleteCollegeAlumniUserInfoWithOptions(DeleteCollegeAlumniUserInfoRequest request, DeleteCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeAlumniUserInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会删除校友信息
+         *
+         * @param request DeleteCollegeAlumniUserInfoRequest
+         * @param headers DeleteCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteCollegeAlumniUserInfoResponse
+         */
+        public async Task<DeleteCollegeAlumniUserInfoResponse> DeleteCollegeAlumniUserInfoWithOptionsAsync(DeleteCollegeAlumniUserInfoRequest request, DeleteCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeAlumniUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会删除校友信息
+         *
+         * @param request DeleteCollegeAlumniUserInfoRequest
+         * @return DeleteCollegeAlumniUserInfoResponse
+         */
+        public DeleteCollegeAlumniUserInfoResponse DeleteCollegeAlumniUserInfo(DeleteCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeAlumniUserInfoHeaders headers = new DeleteCollegeAlumniUserInfoHeaders();
+            return DeleteCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会删除校友信息
+         *
+         * @param request DeleteCollegeAlumniUserInfoRequest
+         * @return DeleteCollegeAlumniUserInfoResponse
+         */
+        public async Task<DeleteCollegeAlumniUserInfoResponse> DeleteCollegeAlumniUserInfoAsync(DeleteCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeAlumniUserInfoHeaders headers = new DeleteCollegeAlumniUserInfoHeaders();
+            return await DeleteCollegeAlumniUserInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 删除家校部门
          *
          * @param request DeleteDeptRequest
@@ -8615,6 +9175,254 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetBindChildInfoHeaders headers = new GetBindChildInfoHeaders();
             return await GetBindChildInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会获取当前部门的所有子部门
+         *
+         * @param request GetCollegeAlumniDeptsRequest
+         * @param headers GetCollegeAlumniDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeAlumniDeptsResponse
+         */
+        public GetCollegeAlumniDeptsResponse GetCollegeAlumniDeptsWithOptions(GetCollegeAlumniDeptsRequest request, GetCollegeAlumniDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeAlumniDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/subDepts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<GetCollegeAlumniDeptsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会获取当前部门的所有子部门
+         *
+         * @param request GetCollegeAlumniDeptsRequest
+         * @param headers GetCollegeAlumniDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeAlumniDeptsResponse
+         */
+        public async Task<GetCollegeAlumniDeptsResponse> GetCollegeAlumniDeptsWithOptionsAsync(GetCollegeAlumniDeptsRequest request, GetCollegeAlumniDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeAlumniDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/subDepts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "array",
+            };
+            return TeaModel.ToObject<GetCollegeAlumniDeptsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会获取当前部门的所有子部门
+         *
+         * @param request GetCollegeAlumniDeptsRequest
+         * @return GetCollegeAlumniDeptsResponse
+         */
+        public GetCollegeAlumniDeptsResponse GetCollegeAlumniDepts(GetCollegeAlumniDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeAlumniDeptsHeaders headers = new GetCollegeAlumniDeptsHeaders();
+            return GetCollegeAlumniDeptsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会获取当前部门的所有子部门
+         *
+         * @param request GetCollegeAlumniDeptsRequest
+         * @return GetCollegeAlumniDeptsResponse
+         */
+        public async Task<GetCollegeAlumniDeptsResponse> GetCollegeAlumniDeptsAsync(GetCollegeAlumniDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeAlumniDeptsHeaders headers = new GetCollegeAlumniDeptsHeaders();
+            return await GetCollegeAlumniDeptsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会查询校友信息
+         *
+         * @param request GetCollegeAlumniUserInfoRequest
+         * @param headers GetCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeAlumniUserInfoResponse
+         */
+        public GetCollegeAlumniUserInfoResponse GetCollegeAlumniUserInfoWithOptions(GetCollegeAlumniUserInfoRequest request, GetCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeAlumniUserInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会查询校友信息
+         *
+         * @param request GetCollegeAlumniUserInfoRequest
+         * @param headers GetCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeAlumniUserInfoResponse
+         */
+        public async Task<GetCollegeAlumniUserInfoResponse> GetCollegeAlumniUserInfoWithOptionsAsync(GetCollegeAlumniUserInfoRequest request, GetCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeAlumniUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会查询校友信息
+         *
+         * @param request GetCollegeAlumniUserInfoRequest
+         * @return GetCollegeAlumniUserInfoResponse
+         */
+        public GetCollegeAlumniUserInfoResponse GetCollegeAlumniUserInfo(GetCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeAlumniUserInfoHeaders headers = new GetCollegeAlumniUserInfoHeaders();
+            return GetCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会查询校友信息
+         *
+         * @param request GetCollegeAlumniUserInfoRequest
+         * @return GetCollegeAlumniUserInfoResponse
+         */
+        public async Task<GetCollegeAlumniUserInfoResponse> GetCollegeAlumniUserInfoAsync(GetCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeAlumniUserInfoHeaders headers = new GetCollegeAlumniUserInfoHeaders();
+            return await GetCollegeAlumniUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -16713,6 +17521,186 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UnsubscribeUniversityCourseGroupHeaders headers = new UnsubscribeUniversityCourseGroupHeaders();
             return await UnsubscribeUniversityCourseGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会更新校友信息
+         *
+         * @param request UpdateCollegeAlumniUserInfoRequest
+         * @param headers UpdateCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeAlumniUserInfoResponse
+         */
+        public UpdateCollegeAlumniUserInfoResponse UpdateCollegeAlumniUserInfoWithOptions(UpdateCollegeAlumniUserInfoRequest request, UpdateCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Intake))
+            {
+                body["intake"] = request.Intake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Outtake))
+            {
+                body["outtake"] = request.Outtake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNumber))
+            {
+                body["studentNumber"] = request.StudentNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeAlumniUserInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会更新校友信息
+         *
+         * @param request UpdateCollegeAlumniUserInfoRequest
+         * @param headers UpdateCollegeAlumniUserInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeAlumniUserInfoResponse
+         */
+        public async Task<UpdateCollegeAlumniUserInfoResponse> UpdateCollegeAlumniUserInfoWithOptionsAsync(UpdateCollegeAlumniUserInfoRequest request, UpdateCollegeAlumniUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Address))
+            {
+                body["address"] = request.Address;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Intake))
+            {
+                body["intake"] = request.Intake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Outtake))
+            {
+                body["outtake"] = request.Outtake;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentNumber))
+            {
+                body["studentNumber"] = request.StudentNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeAlumniUserInfo",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeAlumni/userInfos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeAlumniUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 高校校友会更新校友信息
+         *
+         * @param request UpdateCollegeAlumniUserInfoRequest
+         * @return UpdateCollegeAlumniUserInfoResponse
+         */
+        public UpdateCollegeAlumniUserInfoResponse UpdateCollegeAlumniUserInfo(UpdateCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeAlumniUserInfoHeaders headers = new UpdateCollegeAlumniUserInfoHeaders();
+            return UpdateCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 高校校友会更新校友信息
+         *
+         * @param request UpdateCollegeAlumniUserInfoRequest
+         * @return UpdateCollegeAlumniUserInfoResponse
+         */
+        public async Task<UpdateCollegeAlumniUserInfoResponse> UpdateCollegeAlumniUserInfoAsync(UpdateCollegeAlumniUserInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeAlumniUserInfoHeaders headers = new UpdateCollegeAlumniUserInfoHeaders();
+            return await UpdateCollegeAlumniUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /**

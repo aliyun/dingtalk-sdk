@@ -6236,6 +6236,130 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
         }
 
         /**
+         * @summary 获取HOLO中官方OA表单数据集数据
+         *
+         * @param request QueryOfficialFormDataDirectHoloRequest
+         * @param headers QueryOfficialFormDataDirectHoloHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryOfficialFormDataDirectHoloResponse
+         */
+        public QueryOfficialFormDataDirectHoloResponse QueryOfficialFormDataDirectHoloWithOptions(QueryOfficialFormDataDirectHoloRequest request, QueryOfficialFormDataDirectHoloHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOfficialFormDataDirectHolo",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/oaDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOfficialFormDataDirectHoloResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取HOLO中官方OA表单数据集数据
+         *
+         * @param request QueryOfficialFormDataDirectHoloRequest
+         * @param headers QueryOfficialFormDataDirectHoloHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryOfficialFormDataDirectHoloResponse
+         */
+        public async Task<QueryOfficialFormDataDirectHoloResponse> QueryOfficialFormDataDirectHoloWithOptionsAsync(QueryOfficialFormDataDirectHoloRequest request, QueryOfficialFormDataDirectHoloHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOfficialFormDataDirectHolo",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/oaDatas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOfficialFormDataDirectHoloResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取HOLO中官方OA表单数据集数据
+         *
+         * @param request QueryOfficialFormDataDirectHoloRequest
+         * @return QueryOfficialFormDataDirectHoloResponse
+         */
+        public QueryOfficialFormDataDirectHoloResponse QueryOfficialFormDataDirectHolo(QueryOfficialFormDataDirectHoloRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOfficialFormDataDirectHoloHeaders headers = new QueryOfficialFormDataDirectHoloHeaders();
+            return QueryOfficialFormDataDirectHoloWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取HOLO中官方OA表单数据集数据
+         *
+         * @param request QueryOfficialFormDataDirectHoloRequest
+         * @return QueryOfficialFormDataDirectHoloResponse
+         */
+        public async Task<QueryOfficialFormDataDirectHoloResponse> QueryOfficialFormDataDirectHoloAsync(QueryOfficialFormDataDirectHoloRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOfficialFormDataDirectHoloHeaders headers = new QueryOfficialFormDataDirectHoloHeaders();
+            return await QueryOfficialFormDataDirectHoloWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取企业用户在线统计数据
          *
          * @param request QueryOnlineUserStatisticalDataRequest
