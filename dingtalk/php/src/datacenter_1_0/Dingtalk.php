@@ -148,6 +148,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetFieldsR
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataDirectHoloHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataDirectHoloRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataDirectHoloResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataResponse;
@@ -3299,6 +3302,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryOfficialFormDataHeaders([]);
 
         return $this->queryOfficialFormDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取HOLO中官方OA表单数据集数据
+     *  *
+     * @param QueryOfficialFormDataDirectHoloRequest $request QueryOfficialFormDataDirectHoloRequest
+     * @param QueryOfficialFormDataDirectHoloHeaders $headers QueryOfficialFormDataDirectHoloHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOfficialFormDataDirectHoloResponse QueryOfficialFormDataDirectHoloResponse
+     */
+    public function queryOfficialFormDataDirectHoloWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOfficialFormDataDirectHolo',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/oaDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOfficialFormDataDirectHoloResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取HOLO中官方OA表单数据集数据
+     *  *
+     * @param QueryOfficialFormDataDirectHoloRequest $request QueryOfficialFormDataDirectHoloRequest
+     *
+     * @return QueryOfficialFormDataDirectHoloResponse QueryOfficialFormDataDirectHoloResponse
+     */
+    public function queryOfficialFormDataDirectHolo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialFormDataDirectHoloHeaders([]);
+
+        return $this->queryOfficialFormDataDirectHoloWithOptions($request, $headers, $runtime);
     }
 
     /**

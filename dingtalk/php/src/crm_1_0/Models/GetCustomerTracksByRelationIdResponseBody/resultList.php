@@ -49,6 +49,13 @@ class resultList extends Model
     public $gmtCreate;
 
     /**
+     * @example dadf134234
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
      * @var isvInfo
      */
     public $isvInfo;
@@ -81,6 +88,7 @@ class resultList extends Model
         'detail'      => 'detail',
         'format'      => 'format',
         'gmtCreate'   => 'gmtCreate',
+        'id'          => 'id',
         'isvInfo'     => 'isvInfo',
         'title'       => 'title',
         'type'        => 'type',
@@ -108,6 +116,9 @@ class resultList extends Model
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
         }
         if (null !== $this->isvInfo) {
             $res['isvInfo'] = null !== $this->isvInfo ? $this->isvInfo->toMap() : null;
@@ -147,6 +158,9 @@ class resultList extends Model
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
         }
         if (isset($map['isvInfo'])) {
             $model->isvInfo = isvInfo::fromMap($map['isvInfo']);

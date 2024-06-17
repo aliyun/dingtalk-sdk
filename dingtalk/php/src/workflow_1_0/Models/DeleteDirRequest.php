@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteDirRequest extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @example oaDirIdxxx
      *
      * @var string

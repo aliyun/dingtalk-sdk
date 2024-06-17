@@ -8,6 +8,12 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ActivateDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordResponse;
@@ -125,6 +131,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeactivateDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeductPointResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptResponse;
@@ -179,6 +191,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
@@ -357,6 +375,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupResp
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
@@ -473,6 +494,147 @@ class Dingtalk extends OpenApiClient
         $headers = new ActivateDeviceHeaders([]);
 
         return $this->activateDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会批量创建部门
+     *  *
+     * @param AddCollegeAlumniDeptsRequest $request AddCollegeAlumniDeptsRequest
+     * @param AddCollegeAlumniDeptsHeaders $headers AddCollegeAlumniDeptsHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCollegeAlumniDeptsResponse AddCollegeAlumniDeptsResponse
+     */
+    public function addCollegeAlumniDeptsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->depts)) {
+            $body['depts'] = $request->depts;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCollegeAlumniDepts',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/depts/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'array',
+        ]);
+
+        return AddCollegeAlumniDeptsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会批量创建部门
+     *  *
+     * @param AddCollegeAlumniDeptsRequest $request AddCollegeAlumniDeptsRequest
+     *
+     * @return AddCollegeAlumniDeptsResponse AddCollegeAlumniDeptsResponse
+     */
+    public function addCollegeAlumniDepts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCollegeAlumniDeptsHeaders([]);
+
+        return $this->addCollegeAlumniDeptsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会新增校友信息
+     *  *
+     * @param AddCollegeAlumniUserInfoRequest $request AddCollegeAlumniUserInfoRequest
+     * @param AddCollegeAlumniUserInfoHeaders $headers AddCollegeAlumniUserInfoHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCollegeAlumniUserInfoResponse AddCollegeAlumniUserInfoResponse
+     */
+    public function addCollegeAlumniUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            $body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->intake)) {
+            $body['intake'] = $request->intake;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->outtake)) {
+            $body['outtake'] = $request->outtake;
+        }
+        if (!Utils::isUnset($request->studentNumber)) {
+            $body['studentNumber'] = $request->studentNumber;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCollegeAlumniUserInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/userInfos',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCollegeAlumniUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会新增校友信息
+     *  *
+     * @param AddCollegeAlumniUserInfoRequest $request AddCollegeAlumniUserInfoRequest
+     *
+     * @return AddCollegeAlumniUserInfoResponse AddCollegeAlumniUserInfoResponse
+     */
+    public function addCollegeAlumniUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCollegeAlumniUserInfoHeaders([]);
+
+        return $this->addCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3316,6 +3478,129 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 高校校友会删除当前部门
+     *  *
+     * @param DeleteCollegeAlumniDeptRequest $request DeleteCollegeAlumniDeptRequest
+     * @param DeleteCollegeAlumniDeptHeaders $headers DeleteCollegeAlumniDeptHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteCollegeAlumniDeptResponse DeleteCollegeAlumniDeptResponse
+     */
+    public function deleteCollegeAlumniDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteCollegeAlumniDept',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/depts',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteCollegeAlumniDeptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会删除当前部门
+     *  *
+     * @param DeleteCollegeAlumniDeptRequest $request DeleteCollegeAlumniDeptRequest
+     *
+     * @return DeleteCollegeAlumniDeptResponse DeleteCollegeAlumniDeptResponse
+     */
+    public function deleteCollegeAlumniDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCollegeAlumniDeptHeaders([]);
+
+        return $this->deleteCollegeAlumniDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会删除校友信息
+     *  *
+     * @param DeleteCollegeAlumniUserInfoRequest $request DeleteCollegeAlumniUserInfoRequest
+     * @param DeleteCollegeAlumniUserInfoHeaders $headers DeleteCollegeAlumniUserInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteCollegeAlumniUserInfoResponse DeleteCollegeAlumniUserInfoResponse
+     */
+    public function deleteCollegeAlumniUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteCollegeAlumniUserInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/userInfos/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteCollegeAlumniUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会删除校友信息
+     *  *
+     * @param DeleteCollegeAlumniUserInfoRequest $request DeleteCollegeAlumniUserInfoRequest
+     *
+     * @return DeleteCollegeAlumniUserInfoResponse DeleteCollegeAlumniUserInfoResponse
+     */
+    public function deleteCollegeAlumniUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCollegeAlumniUserInfoHeaders([]);
+
+        return $this->deleteCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除家校部门
      *  *
      * @param string            $deptId
@@ -4426,6 +4711,126 @@ class Dingtalk extends OpenApiClient
         $headers = new GetBindChildInfoHeaders([]);
 
         return $this->getBindChildInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会获取当前部门的所有子部门
+     *  *
+     * @param GetCollegeAlumniDeptsRequest $request GetCollegeAlumniDeptsRequest
+     * @param GetCollegeAlumniDeptsHeaders $headers GetCollegeAlumniDeptsHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCollegeAlumniDeptsResponse GetCollegeAlumniDeptsResponse
+     */
+    public function getCollegeAlumniDeptsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCollegeAlumniDepts',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/subDepts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'array',
+        ]);
+
+        return GetCollegeAlumniDeptsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会获取当前部门的所有子部门
+     *  *
+     * @param GetCollegeAlumniDeptsRequest $request GetCollegeAlumniDeptsRequest
+     *
+     * @return GetCollegeAlumniDeptsResponse GetCollegeAlumniDeptsResponse
+     */
+    public function getCollegeAlumniDepts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCollegeAlumniDeptsHeaders([]);
+
+        return $this->getCollegeAlumniDeptsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会查询校友信息
+     *  *
+     * @param GetCollegeAlumniUserInfoRequest $request GetCollegeAlumniUserInfoRequest
+     * @param GetCollegeAlumniUserInfoHeaders $headers GetCollegeAlumniUserInfoHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCollegeAlumniUserInfoResponse GetCollegeAlumniUserInfoResponse
+     */
+    public function getCollegeAlumniUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCollegeAlumniUserInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/userInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetCollegeAlumniUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会查询校友信息
+     *  *
+     * @param GetCollegeAlumniUserInfoRequest $request GetCollegeAlumniUserInfoRequest
+     *
+     * @return GetCollegeAlumniUserInfoResponse GetCollegeAlumniUserInfoResponse
+     */
+    public function getCollegeAlumniUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCollegeAlumniUserInfoHeaders([]);
+
+        return $this->getCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -8277,6 +8682,87 @@ class Dingtalk extends OpenApiClient
         $headers = new UnsubscribeUniversityCourseGroupHeaders([]);
 
         return $this->unsubscribeUniversityCourseGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 高校校友会更新校友信息
+     *  *
+     * @param UpdateCollegeAlumniUserInfoRequest $request UpdateCollegeAlumniUserInfoRequest
+     * @param UpdateCollegeAlumniUserInfoHeaders $headers UpdateCollegeAlumniUserInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeAlumniUserInfoResponse UpdateCollegeAlumniUserInfoResponse
+     */
+    public function updateCollegeAlumniUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            $body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->intake)) {
+            $body['intake'] = $request->intake;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->outtake)) {
+            $body['outtake'] = $request->outtake;
+        }
+        if (!Utils::isUnset($request->studentNumber)) {
+            $body['studentNumber'] = $request->studentNumber;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeAlumniUserInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeAlumni/userInfos',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeAlumniUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 高校校友会更新校友信息
+     *  *
+     * @param UpdateCollegeAlumniUserInfoRequest $request UpdateCollegeAlumniUserInfoRequest
+     *
+     * @return UpdateCollegeAlumniUserInfoResponse UpdateCollegeAlumniUserInfoResponse
+     */
+    public function updateCollegeAlumniUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeAlumniUserInfoHeaders([]);
+
+        return $this->updateCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

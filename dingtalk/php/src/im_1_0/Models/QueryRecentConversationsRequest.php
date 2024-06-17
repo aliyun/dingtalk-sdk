@@ -9,13 +9,23 @@ use AlibabaCloud\Tea\Model;
 class QueryRecentConversationsRequest extends Model
 {
     /**
-     * @description This parameter is required.
-     *
+     * @var bool
+     */
+    public $onlyHuman;
+
+    /**
+     * @var bool
+     */
+    public $onlyInnerGroup;
+
+    /**
      * @var string
      */
     public $userId;
     protected $_name = [
-        'userId' => 'userId',
+        'onlyHuman'      => 'onlyHuman',
+        'onlyInnerGroup' => 'onlyInnerGroup',
+        'userId'         => 'userId',
     ];
 
     public function validate()
@@ -25,6 +35,12 @@ class QueryRecentConversationsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->onlyHuman) {
+            $res['onlyHuman'] = $this->onlyHuman;
+        }
+        if (null !== $this->onlyInnerGroup) {
+            $res['onlyInnerGroup'] = $this->onlyInnerGroup;
+        }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
         }
@@ -40,6 +56,12 @@ class QueryRecentConversationsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['onlyHuman'])) {
+            $model->onlyHuman = $map['onlyHuman'];
+        }
+        if (isset($map['onlyInnerGroup'])) {
+            $model->onlyInnerGroup = $map['onlyInnerGroup'];
+        }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
         }

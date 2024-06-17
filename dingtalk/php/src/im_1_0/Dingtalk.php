@@ -137,6 +137,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupRecentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsResponse;
@@ -3112,6 +3118,123 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary  根据单聊会话及发送方获取接收方用户信息
+     *  *
+     * @param QueryOpenConversationReceiveUserRequest $request QueryOpenConversationReceiveUserRequest
+     * @param QueryOpenConversationReceiveUserHeaders $headers QueryOpenConversationReceiveUserHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOpenConversationReceiveUserResponse QueryOpenConversationReceiveUserResponse
+     */
+    public function queryOpenConversationReceiveUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->sendUserId)) {
+            $body['sendUserId'] = $request->sendUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOpenConversationReceiveUser',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/otoChat/receiveUsers/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOpenConversationReceiveUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary  根据单聊会话及发送方获取接收方用户信息
+     *  *
+     * @param QueryOpenConversationReceiveUserRequest $request QueryOpenConversationReceiveUserRequest
+     *
+     * @return QueryOpenConversationReceiveUserResponse QueryOpenConversationReceiveUserResponse
+     */
+    public function queryOpenConversationReceiveUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOpenConversationReceiveUserHeaders([]);
+
+        return $this->queryOpenConversationReceiveUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取群基础信息
+     *  *
+     * @param QueryOpenGroupBaseInfoRequest $request QueryOpenGroupBaseInfoRequest
+     * @param QueryOpenGroupBaseInfoHeaders $headers QueryOpenGroupBaseInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOpenGroupBaseInfoResponse QueryOpenGroupBaseInfoResponse
+     */
+    public function queryOpenGroupBaseInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOpenGroupBaseInfo',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/baseInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOpenGroupBaseInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取群基础信息
+     *  *
+     * @param QueryOpenGroupBaseInfoRequest $request QueryOpenGroupBaseInfoRequest
+     *
+     * @return QueryOpenGroupBaseInfoResponse QueryOpenGroupBaseInfoResponse
+     */
+    public function queryOpenGroupBaseInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOpenGroupBaseInfoHeaders([]);
+
+        return $this->queryOpenGroupBaseInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取最近联系人及群组
      *  *
      * @param QueryRecentConversationsRequest $request QueryRecentConversationsRequest
@@ -3123,9 +3246,15 @@ class Dingtalk extends OpenApiClient
     public function queryRecentConversationsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
+        if (!Utils::isUnset($request->onlyHuman)) {
+            $body['onlyHuman'] = $request->onlyHuman;
+        }
+        if (!Utils::isUnset($request->onlyInnerGroup)) {
+            $body['onlyInnerGroup'] = $request->onlyInnerGroup;
+        }
         if (!Utils::isUnset($request->userId)) {
-            $query['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -3136,14 +3265,14 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'QueryRecentConversations',
             'version'     => 'im_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/im/conversations/recentLists',
-            'method'      => 'GET',
+            'pathname'    => '/v1.0/im/conversations/recentLists/query',
+            'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
